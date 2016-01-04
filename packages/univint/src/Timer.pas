@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       CarbonCore/Timer.h
  
      Contains:   Time Manager interfaces.
@@ -30,11 +31,15 @@
 =======
      File:       CarbonCore/Timer.h
 >>>>>>> origin/fixes_2.4
+=======
+     File:       CarbonCore/Timer.h
+>>>>>>> origin/cpstrnew
  
      Contains:   Time Manager interfaces.
  
      Version:    CarbonCore-859.2~1
  
+<<<<<<< HEAD
 <<<<<<< HEAD
      Copyright:  © 1985-2002 by Apple Computer, Inc., all rights reserved
 <<<<<<< HEAD
@@ -44,6 +49,9 @@
 =======
      Copyright:  © 1985-2008 by Apple Computer, Inc., all rights reserved
 >>>>>>> origin/fixes_2.4
+=======
+     Copyright:  © 1985-2008 by Apple Computer, Inc., all rights reserved
+>>>>>>> origin/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -51,6 +59,7 @@
                      http://www.freepascal.org/bugs.html
  
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -80,6 +89,9 @@
 =======
 {    Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 >>>>>>> origin/fixes_2.4
+=======
+{    Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> origin/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -88,12 +100,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -105,6 +121,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -119,6 +136,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -134,6 +155,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -144,6 +166,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -151,13 +176,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -165,6 +194,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -173,8 +204,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -185,6 +219,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -205,6 +240,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -213,12 +250,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -226,6 +266,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -463,6 +504,21 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
@@ -476,6 +532,7 @@ interface
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -517,6 +574,41 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -545,6 +637,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -553,6 +646,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -563,6 +658,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,ConditionalMacros,OSUtils;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -585,6 +681,11 @@ uses MacTypes,ConditionalMacros,OSUtils;
 
 >>>>>>> graemeg/cpstrnew
 =======
+
+
+>>>>>>> origin/cpstrnew
+=======
+{$endc} {not MACOSALLINCLUDE}
 
 
 >>>>>>> origin/cpstrnew
@@ -621,6 +722,7 @@ uses MacTypes,ConditionalMacros,OSUtils;
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure Microseconds( var microTickCount: UnsignedWide ); external name '_Microseconds';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -697,6 +799,13 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{***************************************************************************
+
+>>>>>>> origin/cpstrnew
     The remaining functions in this file have all been deprecated on Mac
     OS X 10.4.  There are other solutions which perform better, and consume
     fewer system resources which are recommended.  The Time Manager on
@@ -708,11 +817,14 @@ const
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     1.  If you want a function to be called periodically from an
         application, then look at using a CFRunLoopTimer ( in CFRunLoop.h ).
 
@@ -769,6 +881,7 @@ procedure InsTime( tmTaskPtr: QElemPtr ); external name '_InsTime';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
@@ -779,6 +892,9 @@ procedure InsTime( tmTaskPtr: QElemPtr ); external name '_InsTime';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> origin/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> origin/cpstrnew
@@ -800,6 +916,7 @@ procedure InsXTime( tmTaskPtr: QElemPtr ); external name '_InsXTime';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
@@ -810,6 +927,9 @@ procedure InsXTime( tmTaskPtr: QElemPtr ); external name '_InsXTime';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> origin/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> origin/cpstrnew
@@ -831,6 +951,7 @@ procedure PrimeTime( tmTaskPtr: QElemPtr; count: SIGNEDLONG ); external name '_P
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
@@ -841,6 +962,9 @@ procedure PrimeTime( tmTaskPtr: QElemPtr; count: SIGNEDLONG ); external name '_P
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> origin/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> origin/cpstrnew
@@ -862,6 +986,7 @@ procedure RmvTime( tmTaskPtr: QElemPtr ); external name '_RmvTime';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
@@ -872,6 +997,9 @@ procedure RmvTime( tmTaskPtr: QElemPtr ); external name '_RmvTime';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> origin/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> origin/cpstrnew
@@ -909,6 +1037,7 @@ procedure RmvTime( tmTaskPtr: QElemPtr ); external name '_RmvTime';
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in InterfaceLib 9.1 and later
  }
@@ -1032,6 +1161,38 @@ function InstallXTimeTask( tmTaskPtr: QElemPtr ): OSErr; external name '_Install
  *    then reinstall it (by calling the InstallXTimeTask function), you
  *    can continue the previous delay by calling the PrimeTimeTask
  *    function with the count parameter set to 0.
+=======
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in InterfaceLib 9.1 and later
+ }
+function InstallTimeTask( tmTaskPtr: QElemPtr ): OSErr; external name '_InstallTimeTask';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  InstallXTimeTask()   *** DEPRECATED ***
+ *  
+ *  Summary:
+ *    Installs a task, taking advantage of the drift-free,
+ *    fixed-frequency timing services of the extended Time Manager.
+ *  
+ *  Discussion:
+ *    The InstallXTimeTask function adds the Time Manager task
+ *    structure specified by tmTaskPtr to the Time Manager queue. Use
+ *    InstallXTimeTask only if you wish to use the drift-free,
+ *    fixed-frequency timing services of the extended Time Manager; use
+ *    InstallTimeTask in all other cases. The tmTaskPtr parameter must
+ *    point to an extended Time Manager task structure. Your
+ *    application must fill in the tmAddr field of that task. You
+ *    should set the tmWakeUp and tmReserved fields to 0 the first time
+ *    you call InsXTime.
+ *    With the extended Time Manager, you can set tmAddr to NULL if you
+ *    do not want a task to execute when the delay passed to PrimeTime
+ *    expires. Also, InsXTime resets the high-order bit of the qType
+ *    field to 0.
+ *    The InstallXTimeTask function, which returns a value of type
+ *    OSErr, takes the place of InsXTime.
+>>>>>>> origin/cpstrnew
  *    
  *    
  *    
@@ -1047,6 +1208,7 @@ function InstallXTimeTask( tmTaskPtr: QElemPtr ): OSErr; external name '_Install
  *  Parameters:
  *    
  *    tmTaskPtr:
+<<<<<<< HEAD
  *      A pointer to a task structure already installed in the queue.
  *    
  *    count:
@@ -1275,10 +1437,22 @@ type
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure InsTime( tmTaskPtr: QElemPtr ); external name '_InsTime';
+=======
+ *      A pointer to an extended task structure to be installed in the
+ *      queue.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in InterfaceLib 9.1 and later
+ }
+function InstallXTimeTask( tmTaskPtr: QElemPtr ): OSErr; external name '_InstallXTimeTask';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  InsXTime()   *** DEPRECATED ***
  *  
  *  Discussion:
@@ -1409,10 +1583,7 @@ function InstallTimeTask( tmTaskPtr: QElemPtr ): OSErr; external name '_InstallT
  *    Non-Carbon CFM:   in InterfaceLib 9.1 and later
  }
 function InstallXTimeTask( tmTaskPtr: QElemPtr ): OSErr; external name '_InstallXTimeTask';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
-
-
-{
+=======
  *  PrimeTimeTask()   *** DEPRECATED ***
  *  
  *  Summary:
@@ -1472,6 +1643,96 @@ function InstallXTimeTask( tmTaskPtr: QElemPtr ): OSErr; external name '_Install
  *    Non-Carbon CFM:   in InterfaceLib 9.1 and later
  }
 function PrimeTimeTask( tmTaskPtr: QElemPtr; count: SIGNEDLONG ): OSErr; external name '_PrimeTimeTask';
+>>>>>>> origin/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+<<<<<<< HEAD
+ *  PrimeTimeTask()   *** DEPRECATED ***
+ *  
+ *  Summary:
+ *    Activates a task in the Time Manager queue.
+ *  
+ *  Discussion:
+ *    The PrimeTimeTask function schedules the task specified by the
+ *    tmAddr field of the structure pointed to by the tmTaskPtr
+ *    parameter for execution after the delay specified by the count
+ *    parameter has elapsed.
+ *    
+ *    If the count parameter is a positive value, it is interpreted as
+ *    milliseconds. If count is a negative value, it is interpreted in
+ *    negated microseconds. Microsecond delays are allowable only in
+ *    the revised and extended Time Managers.
+ *    
+ *    The task record specified by the tmTaskPtr parameter must already
+ *    be installed in the queue (by a previous call to the functions
+ *    InstallTimeTask or InstallXTimeTask) before your application
+ *    calls the PrimeTimeTask function. The PrimeTimeTask function
+ *    returns immediately, and the specified task is executed after the
+ *    specified delay has elapsed. If you call the PrimeTimeTask
+ *    function with a time delay of 0, the task runs as soon as
+ *    interrupts are enabled.
+ *    
+ *    In the revised and extended Time Managers, the PrimeTimeTask
+ *    function sets the high-order bit of the qType field to 1. In
+ *    addition, any value of the count parameter that exceeds the
+ *    maximum millisecond delay is reduced to the maximum. If you stop
+ *    an unexpired task (by calling the function RemoveTimeTask) and
+ *    then reinstall it (by calling the InstallXTimeTask function), you
+ *    can continue the previous delay by calling the PrimeTimeTask
+ *    function with the count parameter set to 0.
+ *    
+=======
+ *  RemoveTimeTask()   *** DEPRECATED ***
+ *  
+ *  Summary:
+ *    Removes a task from the Time Manager queue.
+ *  
+ *  Discussion:
+ *    The RemoveTimeTask function removes the Time Manager task
+ *    structure specified by the tmTaskPtr parameter from the Time
+ *    Manager queue. In both the revised and extended Time Managers, if
+ *    the specified task record is active (that is, if it has been
+ *    activated but the specified time has not yet elapsed), the
+ *    tmCount field of the task structure returns the amount of time
+ *    remaining. To provide the greatest accuracy, the unused time is
+ *    reported as negated microseconds if that value is small enough to
+ *    fit into the tmCount field (even if the delay was originally
+ *    specified in milliseconds); otherwise, the unused time is
+ *    reported in positive milliseconds. If the time has already
+ *    expired, the tmCount field contains 0.
+ *    
+ *    In the revised and extended Time Managers, the RemoveTimeTask
+ *    function sets the high-order bit of the qType field to 0.
+ *     
+>>>>>>> origin/cpstrnew
+ *    
+ *    
+ *    
+ *    
+ *    
+ *    *************************************************************
+ *     See the discussion at the top of this file for information about
+ *    why this call is deprecated on Mac OS X, and what other system
+ *    facilities you can use in your code instead of the Time Manager.
+ *    *****************************************************************
+ *  
+ *  Parameters:
+ *    
+ *    tmTaskPtr:
+<<<<<<< HEAD
+ *      A pointer to a task structure already installed in the queue.
+ *    
+ *    count:
+ *      The desired delay before execution of the task.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in InterfaceLib 9.1 and later
+ }
+function PrimeTimeTask( tmTaskPtr: QElemPtr; count: SIGNEDLONG ): OSErr; external name '_PrimeTimeTask';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
@@ -1516,6 +1777,12 @@ function PrimeTimeTask( tmTaskPtr: QElemPtr; count: SIGNEDLONG ): OSErr; externa
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
+=======
+ *      A pointer to a task structure to be removed from the queue.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in InterfaceLib 9.1 and later
  }
@@ -1531,6 +1798,7 @@ function RemoveTimeTask( tmTaskPtr: QElemPtr ): OSErr; external name '_RemoveTim
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   available as macro/inline
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure Microseconds(var microTickCount: UnsignedWide); external name '_Microseconds';
 const
@@ -1553,10 +1821,16 @@ function NewTimerUPP( userRoutine: TimerProcPtr ): TimerUPP; external name '_New
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function NewTimerUPP( userRoutine: TimerProcPtr ): TimerUPP; external name '_NewTimerUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  DisposeTimerUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1604,10 +1878,20 @@ procedure DisposeTimerUPP( userUPP: TimerUPP ); external name '_DisposeTimerUPP'
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeTimerUPP( userUPP: TimerUPP ); external name '_DisposeTimerUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  InvokeTimerUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1648,6 +1932,9 @@ end.
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   available as macro/inline
  }
@@ -1662,9 +1949,13 @@ procedure InvokeTimerUPP( tmTaskPtr_: TMTaskPtr; userUPP: TimerUPP ); external n
 end.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

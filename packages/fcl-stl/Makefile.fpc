@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
 =======
 #   Makefile.fpc for Free Component Library
@@ -16,10 +17,14 @@
 =======
 #   Makefile.fpc for Free Component Library
 >>>>>>> origin/cpstrnew
+=======
+#   Makefile.fpc for Free Component Library
+>>>>>>> origin/cpstrnew
 #
 
 [package]
 name=fcl-stl
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -35,10 +40,13 @@ packages=rtl fpmkunit
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 version=2.5.1
 
 [target]
 units=garrayutils gdeque gmap gpriorityqueue gqueue gset gstack gutil gvector ghashset ghashmap
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -49,6 +57,8 @@ units=garrayutils gdeque gmap gpriorityqueue gqueue gset gstack gutil gvector gh
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 [install]
 fpcpackage=y
@@ -56,6 +66,7 @@ fpcpackage=y
 [default]
 fpcdir=../..
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -152,6 +163,8 @@ endif
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 [compiler]
 options=-S2h
 sourcedir=src
@@ -161,10 +174,13 @@ sourcedir=src
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew

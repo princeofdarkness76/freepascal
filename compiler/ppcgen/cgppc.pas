@@ -37,6 +37,7 @@ unit cgppc;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         procedure a_loadaddr_ref_cgpara(list : TAsmList;const r : treference;const paraloc : tcgpara); override;
 
         procedure a_bit_scan_reg_reg(list: TAsmList; reverse: boolean; srcsize, dstsize: tcgsize; src, dst: TRegister); override;
@@ -52,6 +53,10 @@ unit cgppc;
         procedure a_load_const_cgpara(list: TAsmList; size: tcgsize; a: aint; const paraloc : tcgpara); override;
         procedure a_loadaddr_ref_cgpara(list : TAsmList;const r : treference;const paraloc : tcgpara); override;
 >>>>>>> graemeg/cpstrnew
+=======
+        procedure a_load_const_cgpara(list: TAsmList; size: tcgsize; a: aint; const paraloc : tcgpara); override;
+        procedure a_loadaddr_ref_cgpara(list : TAsmList;const r : treference;const paraloc : tcgpara); override;
+>>>>>>> origin/cpstrnew
 =======
         procedure a_load_const_cgpara(list: TAsmList; size: tcgsize; a: aint; const paraloc : tcgpara); override;
         procedure a_loadaddr_ref_cgpara(list : TAsmList;const r : treference;const paraloc : tcgpara); override;
@@ -341,11 +346,14 @@ unit cgppc;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     procedure tcgppcgen.a_load_const_cgpara(list: TAsmList; size: tcgsize; a: aint; const
@@ -374,11 +382,14 @@ unit cgppc;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     procedure tcgppcgen.a_loadaddr_ref_cgpara(list : TAsmList;const r : treference;const paraloc : tcgpara);
@@ -542,16 +553,20 @@ unit cgppc;
           current_asmdata.asmlists[al_imports]:=TAsmList.create;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         current_asmdata.asmlists[al_imports].concat(Tai_section.create(sec_stub,'',0));
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
         if (cs_create_pic in current_settings.moduleswitches) then
           stubalign:=32
         else
           stubalign:=16;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         new_section(current_asmdata.asmlists[al_imports],sec_stub,'',stubalign);
@@ -573,6 +588,9 @@ unit cgppc;
 =======
         current_asmdata.asmlists[al_imports].concat(Tai_align.Create(stubalign));
 >>>>>>> origin/fixes_2_2
+=======
+        new_section(current_asmdata.asmlists[al_imports],sec_stub,'',stubalign);
+>>>>>>> origin/cpstrnew
         result := current_asmdata.RefAsmSymbol(stubname);
 >>>>>>> graemeg/cpstrnew
         current_asmdata.asmlists[al_imports].concat(Tai_symbol.Create(result,0));
@@ -1023,11 +1041,14 @@ unit cgppc;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
           a_load_reg_cgpara(list,OS_ADDR,NR_R0,paraloc1);
@@ -1329,7 +1350,11 @@ unit cgppc;
           if (procdef.extnumber=$ffff) then
             Internalerror(200006139);
           { call/jmp  vmtoffs(%eax) ; method offs }
+<<<<<<< HEAD
           reference_reset_base(href,NR_R11,procdef._class.vmtmethodoffset(procdef.extnumber));
+=======
+          reference_reset_base(href,NR_R11,tobjectdef(procdef.struct).vmtmethodoffset(procdef.extnumber),sizeof(pint));
+>>>>>>> origin/cpstrnew
           if hasLargeOffset(href) then
             begin
 {$ifdef cpu64}
@@ -1359,11 +1384,15 @@ unit cgppc;
       begin
         if not(procdef.proctypeoption in [potype_function,potype_procedure]) then
           Internalerror(200006137);
+<<<<<<< HEAD
         if not assigned(procdef._class) or
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+        if not assigned(procdef.struct) or
+>>>>>>> origin/cpstrnew
            (procdef.procoptions*[po_classmethod, po_staticmethod,
              po_methodpointer, po_interrupt, po_iocheck]<>[]) then
           Internalerror(200006138);
@@ -1510,6 +1539,7 @@ unit cgppc;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1528,6 +1558,8 @@ unit cgppc;
             if (ref.symbol.bind = AB_EXTERNAL) or
                ((cs_create_pic in current_settings.moduleswitches) and
                 (ref.symbol.bind in [AB_COMMON,AB_GLOBAL])) then
+=======
+>>>>>>> origin/cpstrnew
               begin
                 tmpreg := g_indirect_sym_load(list,ref.symbol.name);
 <<<<<<< HEAD

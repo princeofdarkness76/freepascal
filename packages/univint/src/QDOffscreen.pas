@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       QD/QDOffscreen.h
  
      Contains:   Quickdraw Offscreen GWorld Interfaces.
@@ -16,11 +17,15 @@
 =======
      File:       QD/QDOffscreen.h
 >>>>>>> origin/fixes_2.4
+=======
+     File:       QD/QDOffscreen.h
+>>>>>>> origin/cpstrnew
  
      Contains:   Quickdraw Offscreen GWorld Interfaces.
  
      Version:    Quickdraw-262~1
  
+<<<<<<< HEAD
 <<<<<<< HEAD
      Copyright:  © 1985-2002 by Apple Computer, Inc., all rights reserved
 <<<<<<< HEAD
@@ -30,6 +35,9 @@
 =======
      Copyright:  © 1985-2008 by Apple Inc. all rights reserved.
 >>>>>>> origin/fixes_2.4
+=======
+     Copyright:  © 1985-2008 by Apple Inc. all rights reserved.
+>>>>>>> origin/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -40,6 +48,7 @@
  
 }
 {   Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+<<<<<<< HEAD
 {
     Modified for use with Free Pascal
     Version 308
@@ -54,6 +63,8 @@
  
 }
 {   Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+=======
+>>>>>>> origin/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -62,12 +73,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -79,6 +94,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -93,6 +109,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -108,6 +128,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -118,6 +139,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -125,13 +149,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -139,6 +167,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -147,8 +177,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -159,6 +192,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -179,6 +213,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -187,12 +223,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -200,6 +239,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -442,6 +482,10 @@ interface
 	{$setc TARGET_CPU_PPC64 := FALSE}
 >>>>>>> origin/fixes_2.4
 	{$setc TARGET_CPU_X86 := FALSE}
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
@@ -490,6 +534,7 @@ interface
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 {$endc}
@@ -507,6 +552,17 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -535,6 +591,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -543,6 +600,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -552,6 +611,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -585,6 +645,14 @@ uses MacTypes,MacErrors,QuickdrawTypes;
 {$ifc TARGET_OS_MAC}
 
 >>>>>>> origin/cpstrnew
+=======
+uses MacTypes,MacErrors,QuickdrawTypes;
+{$endc} {not MACOSALLINCLUDE}
+
+
+{$ifc TARGET_OS_MAC}
+
+>>>>>>> origin/cpstrnew
 {$ALIGN POWER}
 
 
@@ -593,6 +661,7 @@ uses MacTypes,MacErrors,QuickdrawTypes;
            the following definitions for the GWorldFlags parameter in NewGWorld
            are all obsolete on Mac OS X, and ignored.
 }
+<<<<<<< HEAD
 const
 	pixPurgeBit = 0;
 	noNewDeviceBit = 1;
@@ -716,6 +785,28 @@ const
 	ditherPixBit = 30;
 	gwFlagErrBit = 31;
 
+=======
+const
+	pixPurgeBit = 0;
+	noNewDeviceBit = 1;
+	useTempMemBit = 2;
+	keepLocalBit = 3;
+	useDistantHdwrMemBit = 4;
+	useLocalHdwrMemBit = 5;
+	pixelsPurgeableBit = 6;
+	pixelsLockedBit = 7;
+	nativeEndianPixMapBit = 8;
+	mapPixBit = 16;
+	newDepthBit = 17;
+	alignPixBit = 18;
+	newRowBytesBit = 19;
+	reallocPixBit = 20;
+	clipPixBit = 28;
+	stretchPixBit = 29;
+	ditherPixBit = 30;
+	gwFlagErrBit = 31;
+
+>>>>>>> origin/cpstrnew
 const
 	pixPurge = 1 shl pixPurgeBit;
 	noNewDevice = 1 shl noNewDeviceBit;
@@ -771,6 +862,7 @@ const
 
 {$ifc TARGET_OS_WIN32}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc CALL_NOT_IN_CARBON}
 	{
 	 *  GetGDeviceSurface()
@@ -786,6 +878,8 @@ function GetGDeviceSurface(gdh: GDHandle): Ptr; external name '_GetGDeviceSurfac
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 {
  *  GetGDeviceSurface()
  *  
@@ -795,12 +889,16 @@ function GetGDeviceSurface(gdh: GDHandle): Ptr; external name '_GetGDeviceSurfac
  *    Non-Carbon CFM:   not available
  }
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {
  *  GetGDeviceAttributes()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -816,10 +914,13 @@ function GetGDeviceSurface(gdh: GDHandle): Ptr; external name '_GetGDeviceSurfac
  *    CarbonLib:        not available
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function GetGDeviceAttributes(gdh: GDHandle): UInt32; external name '_GetGDeviceAttributes';
 <<<<<<< HEAD
@@ -829,6 +930,9 @@ function GetGDeviceAttributes(gdh: GDHandle): UInt32; external name '_GetGDevice
 =======
 
 >>>>>>> origin/fixes_2.4
+=======
+
+>>>>>>> origin/cpstrnew
 
 { to allocate non-mac-rgb GWorlds use QTNewGWorld (ImageCompression.h) }
 {
@@ -838,6 +942,9 @@ function GetGDeviceAttributes(gdh: GDHandle): UInt32; external name '_GetGDevice
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
@@ -864,6 +971,7 @@ function NewGWorldFromPtr( var offscreenGWorld: GWorldPtr; PixelFormat: UInt32; 
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -880,10 +988,17 @@ function LockPixels( pm: PixMapHandle ): Boolean; external name '_LockPixels';
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure UnlockPixels( pm: PixMapHandle ); external name '_UnlockPixels';
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function LockPixels( pm: PixMapHandle ): Boolean; external name '_LockPixels';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  UpdateGWorld()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -904,10 +1019,21 @@ function UpdateGWorld( var offscreenGWorld: GWorldPtr; pixelDepth: SInt16; const
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure DisposeGWorld( offscreenGWorld: GWorldPtr ); external name '_DisposeGWorld';
+=======
+ *  UnlockPixels()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure UnlockPixels( pm: PixMapHandle ); external name '_UnlockPixels';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  GetGWorld()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -928,10 +1054,21 @@ procedure GetGWorld( var port: CGrafPtr; var gdh: GDHandle ); external name '_Ge
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure SetGWorld( port: CGrafPtr; gdh: GDHandle ); external name '_SetGWorld';
+=======
+ *  UpdateGWorld()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function UpdateGWorld( var offscreenGWorld: GWorldPtr; pixelDepth: SInt16; const (*var*) boundsRect: Rect; cTable: CTabHandle; aGDevice: GDHandle { can be NULL }; flags: GWorldFlags ): GWorldFlags; external name '_UpdateGWorld';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  CTabChanged()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -952,10 +1089,21 @@ procedure CTabChanged( ctab: CTabHandle ); external name '_CTabChanged';
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure PixPatChanged( ppat: PixPatHandle ); external name '_PixPatChanged';
+=======
+ *  DisposeGWorld()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure DisposeGWorld( offscreenGWorld: GWorldPtr ); external name '_DisposeGWorld';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  PortChanged()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -976,10 +1124,21 @@ procedure PortChanged( port: GrafPtr ); external name '_PortChanged';
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure GDeviceChanged( gdh: GDHandle ); external name '_GDeviceChanged';
+=======
+ *  GetGWorld()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure GetGWorld( var port: CGrafPtr; var gdh: GDHandle ); external name '_GetGWorld';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  AllowPurgePixels()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -1000,10 +1159,21 @@ procedure AllowPurgePixels( pm: PixMapHandle ); external name '_AllowPurgePixels
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure NoPurgePixels( pm: PixMapHandle ); external name '_NoPurgePixels';
+=======
+ *  SetGWorld()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure SetGWorld( port: CGrafPtr; gdh: GDHandle ); external name '_SetGWorld';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  GetPixelsState()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -1052,10 +1222,21 @@ procedure SetPixelsState( pm: PixMapHandle; state: GWorldFlags ); external name 
  *    Non-Carbon CFM:   not available
  }
 function NewGWorldFromPtr( var offscreenGWorld: GWorldPtr; PixelFormat: UInt32; const (*var*) boundsRect: Rect; cTable: CTabHandle { can be NULL }; aGDevice: GDHandle { can be NULL }; flags: GWorldFlags; newBuffer: Ptr; rowBytes: SInt32 ): QDErr; external name '_NewGWorldFromPtr';
+=======
+ *  CTabChanged()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure CTabChanged( ctab: CTabHandle ); external name '_CTabChanged';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  LockPixels()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -1076,10 +1257,21 @@ function LockPixels( pm: PixMapHandle ): Boolean; external name '_LockPixels';
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure UnlockPixels( pm: PixMapHandle ); external name '_UnlockPixels';
+=======
+ *  PixPatChanged()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure PixPatChanged( ppat: PixPatHandle ); external name '_PixPatChanged';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  UpdateGWorld()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -1100,10 +1292,21 @@ function UpdateGWorld( var offscreenGWorld: GWorldPtr; pixelDepth: SInt16; const
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure DisposeGWorld( offscreenGWorld: GWorldPtr ); external name '_DisposeGWorld';
+=======
+ *  PortChanged()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure PortChanged( port: GrafPtr ); external name '_PortChanged';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  GetGWorld()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -1124,10 +1327,21 @@ procedure GetGWorld( var port: CGrafPtr; var gdh: GDHandle ); external name '_Ge
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure SetGWorld( port: CGrafPtr; gdh: GDHandle ); external name '_SetGWorld';
+=======
+ *  GDeviceChanged()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure GDeviceChanged( gdh: GDHandle ); external name '_GDeviceChanged';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  CTabChanged()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -1148,10 +1362,21 @@ procedure CTabChanged( ctab: CTabHandle ); external name '_CTabChanged';
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure PixPatChanged( ppat: PixPatHandle ); external name '_PixPatChanged';
+=======
+ *  AllowPurgePixels()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure AllowPurgePixels( pm: PixMapHandle ); external name '_AllowPurgePixels';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  PortChanged()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -1172,10 +1397,21 @@ procedure PortChanged( port: GrafPtr ); external name '_PortChanged';
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure GDeviceChanged( gdh: GDHandle ); external name '_GDeviceChanged';
+=======
+ *  NoPurgePixels()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure NoPurgePixels( pm: PixMapHandle ); external name '_NoPurgePixels';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  AllowPurgePixels()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -1196,10 +1432,21 @@ procedure AllowPurgePixels( pm: PixMapHandle ); external name '_AllowPurgePixels
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure NoPurgePixels( pm: PixMapHandle ); external name '_NoPurgePixels';
+=======
+ *  GetPixelsState()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function GetPixelsState( pm: PixMapHandle ): GWorldFlags; external name '_GetPixelsState';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  GetPixelsState()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -1226,11 +1473,23 @@ procedure SetPixelsState(pm: PixMapHandle; state: GWorldFlags); external name '_
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+ *  SetPixelsState()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+>>>>>>> origin/cpstrnew
 procedure SetPixelsState( pm: PixMapHandle; state: GWorldFlags ); external name '_SetPixelsState';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  GetPixBaseAddr()
  *  
@@ -1238,6 +1497,9 @@ procedure SetPixelsState( pm: PixMapHandle; state: GWorldFlags ); external name 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only]
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -1251,6 +1513,7 @@ function GetPixBaseAddr( pm: PixMapHandle ): Ptr; external name '_GetPixBaseAddr
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
  }
@@ -1267,10 +1530,17 @@ function GetPixRowBytes( pm: PixMapHandle ): SInt32; external name '_GetPixRowBy
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function NewScreenBuffer( const (*var*) globalRect: Rect; purgeable: Boolean; var gdh: GDHandle; var offscreenPixMap: PixMapHandle ): QDErr; external name '_NewScreenBuffer';
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ }
+function GetPixRowBytes( pm: PixMapHandle ): SInt32; external name '_GetPixRowBytes';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  DisposeScreenBuffer()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -1291,10 +1561,21 @@ procedure DisposeScreenBuffer( offscreenPixMap: PixMapHandle ); external name '_
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function GetGWorldDevice( offscreenGWorld: GWorldPtr ): GDHandle; external name '_GetGWorldDevice';
+=======
+ *  NewScreenBuffer()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function NewScreenBuffer( const (*var*) globalRect: Rect; purgeable: Boolean; var gdh: GDHandle; var offscreenPixMap: PixMapHandle ): QDErr; external name '_NewScreenBuffer';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  QDDone()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -1315,10 +1596,21 @@ function QDDone( port: GrafPtr ): Boolean; external name '_QDDone';
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function OffscreenVersion: SInt32; external name '_OffscreenVersion';
+=======
+ *  DisposeScreenBuffer()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure DisposeScreenBuffer( offscreenPixMap: PixMapHandle ); external name '_DisposeScreenBuffer';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  NewTempScreenBuffer()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -1339,10 +1631,21 @@ function NewTempScreenBuffer( const (*var*) globalRect: Rect; purgeable: Boolean
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function PixMap32Bit( pmHandle: PixMapHandle ): Boolean; external name '_PixMap32Bit';
+=======
+ *  GetGWorldDevice()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function GetGWorldDevice( offscreenGWorld: GWorldPtr ): GDHandle; external name '_GetGWorldDevice';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  GetGWorldPixMap()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -1384,10 +1687,21 @@ function GetPixBaseAddr( pm: PixMapHandle ): Ptr; external name '_GetPixBaseAddr
  *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
  }
 function GetPixRowBytes( pm: PixMapHandle ): SInt32; external name '_GetPixRowBytes';
+=======
+ *  QDDone()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function QDDone( port: GrafPtr ): Boolean; external name '_QDDone';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  NewScreenBuffer()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -1408,10 +1722,21 @@ function NewScreenBuffer( const (*var*) globalRect: Rect; purgeable: Boolean; va
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure DisposeScreenBuffer( offscreenPixMap: PixMapHandle ); external name '_DisposeScreenBuffer';
+=======
+ *  OffscreenVersion()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function OffscreenVersion: SInt32; external name '_OffscreenVersion';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  GetGWorldDevice()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -1432,10 +1757,21 @@ function GetGWorldDevice( offscreenGWorld: GWorldPtr ): GDHandle; external name 
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function QDDone( port: GrafPtr ): Boolean; external name '_QDDone';
+=======
+ *  NewTempScreenBuffer()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function NewTempScreenBuffer( const (*var*) globalRect: Rect; purgeable: Boolean; var gdh: GDHandle; var offscreenPixMap: PixMapHandle ): QDErr; external name '_NewTempScreenBuffer';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  OffscreenVersion()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -1456,10 +1792,21 @@ function OffscreenVersion: SInt32; external name '_OffscreenVersion';
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function NewTempScreenBuffer( const (*var*) globalRect: Rect; purgeable: Boolean; var gdh: GDHandle; var offscreenPixMap: PixMapHandle ): QDErr; external name '_NewTempScreenBuffer';
+=======
+ *  PixMap32Bit()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function PixMap32Bit( pmHandle: PixMapHandle ): Boolean; external name '_PixMap32Bit';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  PixMap32Bit()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -1476,6 +1823,12 @@ function PixMap32Bit( pmHandle: PixMapHandle ): Boolean; external name '_PixMap3
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+=======
+ *  GetGWorldPixMap()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -1489,6 +1842,7 @@ function GetGWorldPixMap( offscreenGWorld: GWorldPtr ): PixMapHandle; external n
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -1497,3 +1851,6 @@ end.
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

@@ -288,6 +288,7 @@ A_FMRRD,
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 A_POP,
 A_PUSH,
 A_SDIV,
@@ -298,6 +299,8 @@ A_MOVT,
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 A_ASR,
@@ -312,11 +315,14 @@ A_STREX,
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 A_IT,
@@ -333,6 +339,7 @@ A_ITTTE,
 A_ITEET,
 A_ITTET,
 A_ITETT,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -412,6 +419,9 @@ A_ITTTT
 =======
 A_ITTTT
 >>>>>>> graemeg/cpstrnew
+=======
+A_ITTTT
+>>>>>>> origin/cpstrnew
 =======
 A_ITTTT
 >>>>>>> origin/cpstrnew

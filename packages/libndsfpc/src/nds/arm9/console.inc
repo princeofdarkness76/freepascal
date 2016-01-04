@@ -1,5 +1,8 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {$ifdef NDS_INTERFACE}
 //const
 //  CONSOLE_USE_COLOR255 = 16;

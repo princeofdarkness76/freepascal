@@ -44,6 +44,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     { procedure second_real_to_real; override; }
 =======
     procedure second_real_to_real; override;
@@ -54,6 +55,9 @@ type
 =======
     procedure second_real_to_real; override;
 >>>>>>> graemeg/cpstrnew
+=======
+    procedure second_real_to_real; override;
+>>>>>>> origin/cpstrnew
 =======
     procedure second_real_to_real; override;
 >>>>>>> origin/cpstrnew
@@ -82,6 +86,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   tgobj, cgobj,
   hlcgobj;
 =======
@@ -96,12 +101,16 @@ uses
 =======
   tgobj, cgobj;
 >>>>>>> origin/cpstrnew
+=======
+  tgobj, cgobj;
+>>>>>>> origin/cpstrnew
 
 
 {*****************************************************************************
                              FirstTypeConv
 *****************************************************************************}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -119,11 +128,15 @@ function tMIPSELtypeconvnode.first_int_to_real: tnode;
 =======
 function tMIPSELtypeconvnode.first_int_to_real: tnode;
 >>>>>>> origin/cpstrnew
+=======
+function tMIPSELtypeconvnode.first_int_to_real: tnode;
+>>>>>>> origin/cpstrnew
 var
   fname: string[19];
 begin
   { converting a 64bit integer to a float requires a helper }
   if is_64bitint(left.resultdef) or
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -168,6 +181,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     is_currency(left.resultdef) then
   begin
             { hack to avoid double division by 10000, as it's
@@ -198,11 +213,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 end;
@@ -214,6 +232,7 @@ end;
 
 procedure tMIPSELtypeconvnode.second_int_to_real;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -241,6 +260,8 @@ procedure tMIPSELtypeconvnode.second_int_to_real;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   procedure loadsigned;
   begin
     location_force_mem(current_asmdata.CurrAsmList, left.location);
@@ -253,11 +274,14 @@ procedure tMIPSELtypeconvnode.second_int_to_real;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       s32real:
@@ -273,6 +297,7 @@ var
   href:      treference;
   hregister: tregister;
   l1, l2:    tasmlabel;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -298,6 +323,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 begin
   location_reset(location, LOC_FPUREGISTER, def_cgsize(resultdef));
@@ -317,11 +344,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -331,6 +361,7 @@ begin
       s64real:
       begin
         hregister := cg.getfpuregister(current_asmdata.CurrAsmList, OS_F64);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -345,6 +376,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         current_asmdata.asmlists[al_typedconsts].concat(tai_align.Create(const_align(8)));
         current_asmdata.asmlists[al_typedconsts].concat(Tai_label.Create(l1));
 
@@ -354,11 +387,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -385,11 +421,14 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 procedure tMIPSELtypeconvnode.second_real_to_real;
@@ -421,6 +460,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -428,10 +468,13 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure tMIPSELtypeconvnode.second_int_to_bool;
 var
   hreg1, hreg2: tregister;
   opsize: tcgsize;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -447,12 +490,15 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   hlabel, oldtruelabel, oldfalselabel: tasmlabel;
 begin
   oldtruelabel  := current_procinfo.CurrTrueLabel;
   oldfalselabel := current_procinfo.CurrFalseLabel;
   current_asmdata.getjumplabel(current_procinfo.CurrTrueLabel);
   current_asmdata.getjumplabel(current_procinfo.CurrFalseLabel);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -463,10 +509,13 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   secondpass(left);
   if codegenerror then
     exit;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -500,6 +549,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   { byte(boolean) or word(wordbool) or longint(longbool) must }
   { be accepted for var parameters                            }
   if (nf_explicit in flags) and
@@ -516,11 +567,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   case left.location.loc of
@@ -529,6 +583,7 @@ begin
       if left.location.loc in [LOC_CREFERENCE, LOC_REFERENCE] then
       begin
         hreg2 := cg.getintregister(current_asmdata.CurrAsmList, opsize);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -569,6 +624,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         cg.a_load_ref_reg(current_asmdata.CurrAsmList, opsize, opsize, left.location.reference, hreg2);
       end
       else
@@ -587,6 +644,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -594,11 +652,14 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     end;
     LOC_JUMP:
     begin
       hreg1 := cg.getintregister(current_asmdata.CurrAsmList, OS_INT);
       current_asmdata.getjumplabel(hlabel);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -644,6 +705,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       cg.a_label(current_asmdata.CurrAsmList, current_procinfo.CurrTrueLabel);
       cg.a_load_const_reg(current_asmdata.CurrAsmList, OS_INT, 1, hreg1);
       cg.a_jmp_always(current_asmdata.CurrAsmList, hlabel);
@@ -664,11 +727,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 end;

@@ -150,6 +150,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         constructor create(info: pasminfo; smart:boolean);override;
 =======
         constructor create(smart:boolean);override;
@@ -163,11 +164,15 @@ type
 =======
         constructor create(smart:boolean);override;
 >>>>>>> origin/cpstrnew
+=======
+        constructor create(smart:boolean);override;
+>>>>>>> origin/cpstrnew
       end;
 
 
 implementation
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -181,6 +186,8 @@ uses
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   { TmachoObjData }
@@ -386,6 +393,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   constructor TMachoAssembler.create(info: pasminfo; smart: boolean);
     begin
       inherited;
@@ -398,6 +406,8 @@ uses
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   constructor TMachoAssembler.create(smart: boolean);
     begin
       inherited create(smart);
@@ -405,11 +415,14 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     end;
@@ -1275,6 +1288,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         dollarsign: '$';
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1282,6 +1296,8 @@ uses
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       );

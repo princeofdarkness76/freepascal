@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    Quickdraw-262~1
  
      Copyright:  © 2001-2008 by Apple Computer, Inc., all rights reserved.
@@ -24,6 +25,11 @@
  
      Copyright:  © 2001-2008 by Apple Computer, Inc., all rights reserved.
 >>>>>>> origin/fixes_2.4
+=======
+     Version:    Quickdraw-262~1
+ 
+     Copyright:  © 2001-2008 by Apple Computer, Inc., all rights reserved.
+>>>>>>> origin/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -35,6 +41,7 @@
 }
 {	  Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2004 }
 {   Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+<<<<<<< HEAD
 {
     Modified for use with Free Pascal
     Version 308
@@ -50,6 +57,8 @@
 }
 {	  Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2004 }
 {   Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+=======
+>>>>>>> origin/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -58,12 +67,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -75,6 +88,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -89,6 +103,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -104,6 +122,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -114,6 +133,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -121,13 +143,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -135,6 +161,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -143,8 +171,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -155,6 +186,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -175,6 +207,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -183,12 +217,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -196,6 +233,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -254,6 +292,12 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 >>>>>>> origin/cpstrnew
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
@@ -267,7 +311,10 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
@@ -280,6 +327,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -289,6 +337,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -296,8 +346,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$elsec}
@@ -308,11 +361,14 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
@@ -324,6 +380,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -340,12 +397,18 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
@@ -362,10 +425,13 @@ interface
 	{$setc TARGET_CPU_ARM64 := TRUE}
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
@@ -374,10 +440,15 @@ interface
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 >>>>>>> graemeg/cpstrnew
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> origin/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
+<<<<<<< HEAD
 {$elsec}
 =======
 {$elsec}
@@ -513,6 +584,11 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -541,6 +617,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -549,6 +626,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -558,6 +637,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -588,13 +668,22 @@ uses MacTypes,CGContext,CGGeometry,CGDataProvider,CFBase,CFURL;
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+uses MacTypes,CGContext,CGGeometry,CGDataProvider,CFBase,CFURL;
+{$endc} {not MACOSALLINCLUDE}
+
+
+>>>>>>> origin/cpstrnew
 {$ifc TARGET_OS_MAC}
 
 {$ALIGN POWER}
 
 type
 	QDPictRef = ^SInt32; { an opaque type }
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
     Note: QuickDraw picture data typically comes in two forms: a PICT resource
     that begins the picture header data at the beginning of the resource and PICT
@@ -614,6 +703,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -622,10 +712,14 @@ type
 =======
 {$ifc not TARGET_CPU_64}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not TARGET_CPU_64}
+>>>>>>> origin/cpstrnew
 {
  *  QDPictCreateWithProvider()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -642,10 +736,14 @@ function QDPictCreateWithProvider( provider: CGDataProviderRef ): QDPictRef; ext
 =======
  *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function QDPictCreateWithProvider( provider: CGDataProviderRef ): QDPictRef; external name '_QDPictCreateWithProvider';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -654,6 +752,9 @@ function QDPictCreateWithProvider( provider: CGDataProviderRef ): QDPictRef; ext
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 { Create a QDPict reference from `url'. 
@@ -669,6 +770,7 @@ function QDPictCreateWithProvider( provider: CGDataProviderRef ): QDPictRef; ext
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework [32-bit only]
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
@@ -682,10 +784,14 @@ function QDPictCreateWithURL( url: CFURLRef ): QDPictRef; external name '_QDPict
 =======
  *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function QDPictCreateWithURL( url: CFURLRef ): QDPictRef; external name '_QDPictCreateWithURL';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -694,6 +800,9 @@ function QDPictCreateWithURL( url: CFURLRef ): QDPictRef; external name '_QDPict
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 { Increment the retain count of `pictRef' and return it.  All 
@@ -705,6 +814,7 @@ function QDPictCreateWithURL( url: CFURLRef ): QDPictRef; external name '_QDPict
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework [32-bit only]
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
@@ -718,10 +828,14 @@ function QDPictRetain( pictRef: QDPictRef ): QDPictRef; external name '_QDPictRe
 =======
  *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function QDPictRetain( pictRef: QDPictRef ): QDPictRef; external name '_QDPictRetain';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -730,6 +844,9 @@ function QDPictRetain( pictRef: QDPictRef ): QDPictRef; external name '_QDPictRe
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 { Decrement the retain count of `pictRef'.  If the retain count reaches 0,
@@ -741,6 +858,7 @@ function QDPictRetain( pictRef: QDPictRef ): QDPictRef; external name '_QDPictRe
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework [32-bit only]
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
@@ -754,10 +872,14 @@ procedure QDPictRelease( pictRef: QDPictRef ); external name '_QDPictRelease';
 =======
  *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 procedure QDPictRelease( pictRef: QDPictRef ); external name '_QDPictRelease';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -766,6 +888,9 @@ procedure QDPictRelease( pictRef: QDPictRef ); external name '_QDPictRelease';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 { Return the Picture Bounds of the QuickDraw picture represented by `pictRef'. This
@@ -778,6 +903,7 @@ procedure QDPictRelease( pictRef: QDPictRef ); external name '_QDPictRelease';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework [32-bit only]
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
@@ -791,10 +917,14 @@ function QDPictGetBounds( pictRef: QDPictRef ): CGRect; external name '_QDPictGe
 =======
  *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function QDPictGetBounds( pictRef: QDPictRef ): CGRect; external name '_QDPictGetBounds';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -803,6 +933,9 @@ function QDPictGetBounds( pictRef: QDPictRef ): CGRect; external name '_QDPictGe
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 { Return the resolution of the QuickDraw picture represented by `pictRef'.
@@ -814,6 +947,7 @@ function QDPictGetBounds( pictRef: QDPictRef ): CGRect; external name '_QDPictGe
  *  QDPictGetResolution()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -844,6 +978,14 @@ procedure QDPictGetResolution( pictRef: QDPictRef; var xRes, yRes: Float32 ); ex
 procedure QDPictGetResolution( pictRef: QDPictRef; var xRes: Float32; var yRes: Float32 ); external name '_QDPictGetResolution';
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework [32-bit only]
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+procedure QDPictGetResolution( pictRef: QDPictRef; var xRes: Float32; var yRes: Float32 ); external name '_QDPictGetResolution';
+(* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 { Draw `pictRef' in the rectangular area specified by `rect'.
@@ -855,6 +997,7 @@ procedure QDPictGetResolution( pictRef: QDPictRef; var xRes: Float32; var yRes: 
  *  QDPictDrawToCGContext()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -879,6 +1022,9 @@ end.
 =======
  *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
@@ -893,9 +1039,13 @@ function QDPictDrawToCGContext( ctx: CGContextRef; rect: CGRect; pictRef: QDPict
 end.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

@@ -63,6 +63,7 @@ UNIT FVCommon;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef OS_WINDOWS}
 =======
 {$ifdef win32}
@@ -70,6 +71,9 @@ UNIT FVCommon;
 =======
 {$ifdef win32}
 >>>>>>> origin/fixes_2_2
+=======
+{$ifdef OS_WINDOWS}
+>>>>>>> origin/cpstrnew
   uses
     Windows;
 {$endif}
@@ -109,6 +113,7 @@ CONST
 {$ENDIF}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$IFDEF BIT_32_OR_MORE}                                       { 32 BIT DEFINITION }
 =======
 {$IFDEF BIT_32}                                       { 32 BIT DEFINITION }
@@ -116,6 +121,9 @@ CONST
 =======
 {$IFDEF BIT_32}                                       { 32 BIT DEFINITION }
 >>>>>>> origin/fixes_2_2
+=======
+{$IFDEF BIT_32_OR_MORE}                                       { 32 BIT DEFINITION }
+>>>>>>> origin/cpstrnew
    MaxBytes = 128*1024*1024;                          { Maximum data size }
 {$ENDIF}
    MaxWords = MaxBytes DIV SizeOf(Word);              { Max words }
@@ -135,6 +143,7 @@ CONST
 TYPE
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$IFDEF BIT_32_OR_MORE}                               { 32 BIT CODE }
 =======
 {$IFDEF BIT_32}                                       { 32 BIT CODE }
@@ -142,6 +151,9 @@ TYPE
 =======
 {$IFDEF BIT_32}                                       { 32 BIT CODE }
 >>>>>>> origin/fixes_2_2
+=======
+{$IFDEF BIT_32_OR_MORE}                               { 32 BIT CODE }
+>>>>>>> origin/cpstrnew
    CPUWord = Longint;                                 { CPUWord is 32 bit }
    CPUInt = Longint;                                  { CPUInt is 32 bit }
 {$ELSE}                                               { 16 BIT CODE }
@@ -159,6 +171,7 @@ TYPE
 {$ENDIF}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$IFDEF BIT_32_OR_MORE}                               { 32 BIT DEFINITIONS }
 =======
 {$IFDEF BIT_32}                                       { 32 BIT DEFINITIONS }
@@ -166,6 +179,9 @@ TYPE
 =======
 {$IFDEF BIT_32}                                       { 32 BIT DEFINITIONS }
 >>>>>>> origin/fixes_2_2
+=======
+{$IFDEF BIT_32_OR_MORE}                               { 32 BIT DEFINITIONS }
+>>>>>>> origin/cpstrnew
    Sw_Word    = Cardinal;                             { Long integer now }
    Sw_Integer = LongInt;                              { Long integer now }
 {$ENDIF}

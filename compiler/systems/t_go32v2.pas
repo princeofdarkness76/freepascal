@@ -222,6 +222,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -243,6 +244,9 @@ begin
 =======
 >>>>>>> origin/fixes_2_2
   
+=======
+
+>>>>>>> origin/cpstrnew
   { Add all options to link.res instead of passing them via command line:
     DOS command line is limited to 126 characters! }
   LinkRes.Add('--script='+maybequoted(outputexedir+Info.ScriptName));
@@ -341,6 +345,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   ScriptRes.Add('    *(.text.*)');
 =======
 >>>>>>> graemeg/cpstrnew
@@ -348,6 +353,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   ScriptRes.Add('    etext  =  . ;');
@@ -370,6 +377,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   ScriptRes.Add('      _environ = .;');
   ScriptRes.Add('      LONG(0)');
   ScriptRes.Add('      . = ALIGN(0x20);');
@@ -385,6 +393,10 @@ begin
   ScriptRes.Add('      PROVIDE(_environ = .);');
   ScriptRes.Add('      LONG(0)');
 >>>>>>> graemeg/cpstrnew
+=======
+  ScriptRes.Add('      PROVIDE(_environ = .);');
+  ScriptRes.Add('      LONG(0)');
+>>>>>>> origin/cpstrnew
 =======
   ScriptRes.Add('      PROVIDE(_environ = .);');
   ScriptRes.Add('      LONG(0)');

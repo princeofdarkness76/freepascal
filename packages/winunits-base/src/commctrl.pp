@@ -10901,6 +10901,9 @@ function DrawShadowText(hdc:HDC;pszText:LPCWSTR;cch:UINT;prc:PRECT;dwFlags:DWORD
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 // ===================== Task Dialog =========================
 
 Type
@@ -11047,10 +11050,13 @@ var
 
 // ==================== End TaskDialog =======================
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 
 IMPLEMENTATION
 
@@ -13019,6 +13025,7 @@ function TreeView_GetRoot(hwnd:hwnd) : HTREEITEM;inline;
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:=TreeView_GetNextItem(hwnd, NIL,  TVGN_ROOT);
 =======
   TreeView_GetNextItem(hwnd, NIL,  TVGN_ROOT);
@@ -13026,6 +13033,9 @@ begin
 =======
   TreeView_GetNextItem(hwnd, NIL,  TVGN_ROOT);
 >>>>>>> origin/fixes_2_2
+=======
+  Result:=TreeView_GetNextItem(hwnd, NIL,  TVGN_ROOT);
+>>>>>>> origin/cpstrnew
 end;
 
 // Macro 177
@@ -13036,6 +13046,7 @@ function TreeView_GetLastVisible(hwnd:hwnd) : HTREEITEM;inline;
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:=TreeView_GetNextItem(hwnd, NIL,  TVGN_LASTVISIBLE)
 =======
   TreeView_GetNextItem(hwnd, NIL,  TVGN_LASTVISIBLE)
@@ -13043,6 +13054,9 @@ begin
 =======
   TreeView_GetNextItem(hwnd, NIL,  TVGN_LASTVISIBLE)
 >>>>>>> origin/fixes_2_2
+=======
+  Result:=TreeView_GetNextItem(hwnd, NIL,  TVGN_LASTVISIBLE)
+>>>>>>> origin/cpstrnew
 end;
 
 // Macro 178
@@ -14828,10 +14842,13 @@ initialization
   Initialize;
 Finalization
   Finalize;  
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/fixes_2_2
 =======
 
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 End.

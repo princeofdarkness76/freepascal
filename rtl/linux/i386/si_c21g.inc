@@ -37,6 +37,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$asmmode att}
 
 { Some helpers }
@@ -75,6 +76,8 @@ end;
 
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/cpstrnew
 {
     This file is part of the Free Pascal run time library.
     Copyright (c) 2005 by Michael Van Canneyt, Peter Vreman,
@@ -83,6 +86,7 @@ end;
     See the file COPYING.FPC, included in this distribution,
     for details about the copyright.
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
@@ -94,6 +98,8 @@ end;
     See the file COPYING.FPC, included in this distribution,
     for details about the copyright.
 
+>>>>>>> origin/cpstrnew
+=======
 >>>>>>> origin/cpstrnew
     This program is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -123,6 +129,7 @@ end;
 }
 
 {$asmmode att}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -166,6 +173,11 @@ end;
 { Some helpers }
 
 >>>>>>> origin/cpstrnew
+=======
+
+{ Some helpers }
+
+>>>>>>> origin/cpstrnew
 {$ifdef FPC_PIC}
 function fpc0geteipasebx : pointer; compilerproc; nostackframe; assembler; 
 asm  
@@ -181,9 +193,12 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 procedure gmon_mcleanup; cdecl; external name '_mcleanup';
@@ -203,7 +218,6 @@ var
 {******************************************************************************
                           Process start/halt
  ******************************************************************************}
-{$asmmode ATT}
 
 procedure _FPC_libc21_gprof_gmon_start; public name '_FPC_libc21_gprof_gmon_start';
 begin
@@ -219,6 +233,7 @@ procedure _FPC_libc21_gprof_start; assembler; nostackframe; public name '_start'
 asm
   xorl    %ebp,%ebp
   { First locate the start of the environment variables }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -255,6 +270,8 @@ asm
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
   popl    %ecx                    { Get argc in ecx }
 
@@ -273,6 +290,7 @@ asm
 	movl  dlexitproc@GOT(%ebx),%ecx
 	movl  %edx,(%ecx)
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 	movl  operatingsystem_parameter_envp@GOT(%ebx),%ecx
 	movl  %eax,(%ecx)
@@ -289,6 +307,8 @@ asm
 =======
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/cpstrnew
 
 	movl  operatingsystem_parameter_envp@GOT(%ebx),%ecx
 	movl  %eax,(%ecx)
@@ -297,6 +317,9 @@ asm
 	popl  %ecx
 	movl  %ecx,(%edx)
 
+<<<<<<< HEAD
+>>>>>>> origin/cpstrnew
+=======
 >>>>>>> origin/cpstrnew
 	movl  operatingsystem_parameter_argv@GOT(%ebx),%edx
 	popl  %ebx
@@ -323,6 +346,9 @@ asm
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 
         { int __libc_start_main(
 		int *(main) (int, char * *, char * *), 
@@ -332,6 +358,7 @@ asm
 		void (*fini) (void), 
 		void (*rtld_fini) (void), 
 		void (* stack_end)); } 
+<<<<<<< HEAD
 <<<<<<< HEAD
 
         pushl %ebp   			{ padding }
@@ -424,6 +451,9 @@ begin
 		void (*rtld_fini) (void), 
 		void (* stack_end)); } 
 
+=======
+
+>>>>>>> origin/cpstrnew
         pushl %ebp   			{ padding }
         pushl %esp   			{ stack_end }
         pushl %edx   			{ function to be registered with
@@ -437,6 +467,9 @@ begin
 
         call  libc_start_main
 	hlt
+<<<<<<< HEAD
+>>>>>>> origin/cpstrnew
+=======
 >>>>>>> origin/cpstrnew
 end;
 =======
@@ -456,6 +489,7 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 
+<<<<<<< HEAD
         { int __libc_start_main(
 		int *(main) (int, char * *, char * *), 
 		int argc, 
@@ -481,6 +515,8 @@ end;
 	hlt
 end;
 
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 procedure _FPC_libc21_gprof_haltproc(e:longint);cdecl;public name '_haltproc';
@@ -551,10 +587,13 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew

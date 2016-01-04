@@ -37,6 +37,7 @@
 	.align 16
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	.globl FPC_SHARED_LIB_START
 	.type FPC_SHARED_LIB_START,@function
 FPC_SHARED_LIB_START:
@@ -52,6 +53,11 @@ _startlib:
 	.globl FPC_LIB_START
 	.type FPC_LIB_START,@function
 FPC_LIB_START:
+=======
+	.globl FPC_SHARED_LIB_START
+	.type FPC_SHARED_LIB_START,@function
+FPC_SHARED_LIB_START:
+>>>>>>> origin/cpstrnew
 	jmp	_startlib@PLT
 
         .text
@@ -93,6 +99,7 @@ _startlib:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 /* this routine is only called when the halt() routine of the RTL embedded in
   the shared library is called */
         .globl  _haltproc
@@ -111,6 +118,16 @@ _haltproc:
         .type   _haltproc,@function
 _haltproc:
 >>>>>>> origin/fixes_2_2
+=======
+/* this routine is only called when the halt() routine of the RTL embedded in
+  the shared library is called */
+        .globl  _haltproc
+        .type   _haltproc,@function
+_haltproc:
+	.globl FPC_SHARED_LIB_EXIT
+	.type FPC_SHARED_LIB_EXIT,@function
+FPC_SHARED_LIB_EXIT:
+>>>>>>> origin/cpstrnew
         movl    $231,%eax                 /* exit_group call */
         movq    operatingsystem_result@GOTPCREL(%rip),%rbx
         movzwl  (%rbx),%edi

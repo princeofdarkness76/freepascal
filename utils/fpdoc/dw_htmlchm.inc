@@ -12,6 +12,7 @@ type
     FTempUncompressedName: String;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FChmTitle: String;
     FTOCName,
     FIndexName,
@@ -22,11 +23,14 @@ type
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    FChmTitle: String;
+>>>>>>> origin/cpstrnew
     FTOCName,
     FIndexName,
     FDefaultPage: String;
-    FCSSFile: String;
     FMakeSearchable,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -36,6 +40,10 @@ type
     FNoBinToc,
     FNoBinIndex,
 >>>>>>> origin/fixes_2.4
+=======
+    FNoBinToc,
+    FNoBinIndex,
+>>>>>>> origin/cpstrnew
     FAutoTOC,
     FAutoIndex: Boolean;
     FOtherFiles: String;
@@ -87,6 +95,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     if not FileExists(FCSSFile) Then
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -103,10 +112,14 @@ begin
 =======
     if not FileExists(FCSSFile) Then
 >>>>>>> origin/fixes_2.4
+=======
+    if not FileExists(FCSSFile) Then
+>>>>>>> origin/cpstrnew
       begin
         Writeln(stderr,'Can''t find CSS file "',FCSSFILE,'"');
         halt(1);
       end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -124,6 +137,8 @@ begin
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
     TempStream := TMemoryStream.Create;
     TempStream.LoadFromFile(FCSSFile);
     TempStream.Position := 0;
@@ -336,6 +351,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   if not fnobintoc then
     fchm.AppendBinaryTOCFromSiteMap(Toc);  
@@ -350,6 +366,11 @@ begin
   if not fnobintoc then
     fchm.AppendBinaryTOCFromSiteMap(Toc);  
 >>>>>>> origin/fixes_2.4
+=======
+
+  if not fnobintoc then
+    fchm.AppendBinaryTOCFromSiteMap(Toc);  
+>>>>>>> origin/cpstrnew
   TOC.SaveToStream(Stream);
   TOC.Free;
 
@@ -556,6 +577,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     if not fnobinindex then
       fchm.AppendBinaryindexFromSitemap(index,false);
 =======
@@ -566,6 +588,10 @@ begin
     if not fnobinindex then
       fchm.AppendBinaryindexFromSitemap(index,false);
 >>>>>>> origin/fixes_2.4
+=======
+    if not fnobinindex then
+      fchm.AppendBinaryindexFromSitemap(index,false);
+>>>>>>> origin/cpstrnew
     Index.Free;
     Stream.Position :=0 ;
     FChm.AppendIndex(Stream);
@@ -627,6 +653,7 @@ begin
   FChm := TChmWriter.Create(FOutChm, False);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   FChm.Title := FChmTitle;
   FChm.TempRawStream := FTempUncompressed;
   FChm.OnGetFileData := @RetrieveOtherFiles;
@@ -650,6 +677,14 @@ begin
   fchm.hasbinarytoc:=not fnobintoc;;
   fchm.hasbinaryindex:=not fnobinindex;
 >>>>>>> origin/fixes_2.4
+=======
+  FChm.Title := FChmTitle;
+  FChm.TempRawStream := FTempUncompressed;
+  FChm.OnGetFileData := @RetrieveOtherFiles;
+  FChm.OnLastFile := @LastFileAdded;
+  fchm.hasbinarytoc:=not fnobintoc;;
+  fchm.hasbinaryindex:=not fnobinindex;
+>>>>>>> origin/cpstrnew
   ProcessOptions;
 
   FileStream := TMemoryStream.Create;
@@ -727,6 +762,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   FNoBinToc:=False;
   FnoBinIndex:=False;
 =======
@@ -737,6 +773,10 @@ begin
   FNoBinToc:=False;
   FnoBinIndex:=False;
 >>>>>>> origin/fixes_2.4
+=======
+  FNoBinToc:=False;
+  FnoBinIndex:=False;
+>>>>>>> origin/cpstrnew
   if Cmd = '--toc-file' then
     FTOCName := arg
   else if Cmd = '--index-file' then
@@ -747,6 +787,7 @@ begin
     FOtherFiles := arg
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   else if Cmd = '--css-file' then
     FCSSFile := arg
@@ -755,6 +796,8 @@ begin
   else if Cmd = '--css-file' then
     FCSSFile := arg
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
   else if Cmd = '--auto-index' then
     FAutoIndex := True
   else if Cmd = '--auto-toc' then
@@ -762,8 +805,11 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
   else if Cmd = '--no-bintoc' then
     FNoBinToc := True
   else if Cmd = '--no-binindex' then
@@ -777,6 +823,7 @@ begin
 
   if Length(FChmTitle) = 0 then
     FChmTitle := Copy(Package.Name, 2, Length(Package.Name));
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -788,6 +835,8 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 class procedure TCHMHTMLWriter.Usage(List: TStrings);
@@ -809,6 +858,7 @@ begin
   List.Add(SCHMUsageAutoTOC);
   List.add('--make-searchable');
   List.Add(SCHMUsageMakeSearch);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   List.Add('--chm-title');
@@ -843,6 +893,10 @@ end;
 
 >>>>>>> graemeg/fixes_2_2
 =======
+=======
+  List.Add('--chm-title');
+  List.Add(SCHMUsageChmTitle);
+>>>>>>> origin/cpstrnew
 end;
 
 

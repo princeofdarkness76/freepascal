@@ -36,7 +36,11 @@ packages=fcl-base gtk1
 
 [package]
 name=fpgtk
+<<<<<<< HEAD
 version=2.2.5
+=======
+version=2.5.1
+>>>>>>> origin/cpstrnew
 
 [target]
 units=fpglib fpgtk fpgtkext

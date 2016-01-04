@@ -38,12 +38,15 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure SortElementList(List : TFPList);
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     procedure SortElementList(List : TList);
@@ -108,11 +111,14 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   Public
@@ -147,11 +153,14 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     procedure WriteProperty(PropDecl: TPasProperty);
@@ -382,6 +391,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TLinearWriter.StartVersion;
 =======
 Procedure TLinearWriter.StartVersion;
@@ -395,6 +405,9 @@ Procedure TLinearWriter.StartVersion;
 =======
 Procedure TLinearWriter.StartVersion;
 >>>>>>> origin/cpstrnew
+=======
+Procedure TLinearWriter.StartVersion;
+>>>>>>> origin/cpstrnew
 
 begin
   Writeln('');
@@ -405,12 +418,15 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TLinearWriter.StartSeealso;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 Procedure TLinearWriter.StartSeealso;
@@ -489,6 +505,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     ConvertNotes(ClassDecl,DocNode.Notes);
   end;
 
@@ -508,6 +525,10 @@ begin
   end;
 
 >>>>>>> graemeg/cpstrnew
+=======
+  end;
+
+>>>>>>> origin/cpstrnew
 =======
   end;
 
@@ -610,6 +631,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TLinearWriter.WriteClassInterfacesOverview(ClassDecl: TPasClassType);
 =======
 procedure TLinearWriter.WriteClassInterfacesOverView(ClassDecl: TPasClassType);
@@ -620,6 +642,9 @@ procedure TLinearWriter.WriteClassInterfacesOverView(ClassDecl: TPasClassType);
 =======
 procedure TLinearWriter.WriteClassInterfacesOverView(ClassDecl: TPasClassType);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TLinearWriter.WriteClassInterfacesOverView(ClassDecl: TPasClassType);
+>>>>>>> origin/cpstrnew
 =======
 procedure TLinearWriter.WriteClassInterfacesOverView(ClassDecl: TPasClassType);
 >>>>>>> origin/cpstrnew
@@ -648,6 +673,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       StartOverView(SDocInterface,False);
 =======
       StartOverView(False);
@@ -658,6 +684,9 @@ begin
 =======
       StartOverView(False);
 >>>>>>> graemeg/cpstrnew
+=======
+      StartOverView(False);
+>>>>>>> origin/cpstrnew
 =======
       StartOverView(False);
 >>>>>>> origin/cpstrnew
@@ -696,6 +725,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TLinearWriter.WriteClassInheritanceOverview(ClassDecl: TPasClassType);
 begin
   { Do nothing by default. This will be implemented by descendant writers. See
@@ -708,6 +738,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -1049,6 +1081,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         EndListing;
         WriteLabel(TypeDecl);
         WriteIndex(TypeDecl);
@@ -1075,6 +1108,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       WriteDescr(TypeDecl);
@@ -1118,6 +1153,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         ConvertNotes(VarDecl,DocNode.Notes);
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1125,6 +1161,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         end;
@@ -1203,6 +1241,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       ConvertNotes(ProcDecl,DocNode.Notes);
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1210,6 +1249,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       end
@@ -1330,6 +1371,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       ConvertNotes(PropDecl,lNode.Notes);
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1337,6 +1379,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       EndProperty;
@@ -1682,6 +1726,7 @@ procedure TLinearWriter.WriteEndDocument;
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   // do nothing
 end;
 
@@ -1760,5 +1805,30 @@ end;
 end;
 
 >>>>>>> origin/fixes_2_2
+=======
+  // do nothing
+end;
+
+function TLinearWriter.InterpretOption(const Cmd: String; const Arg: String): Boolean;
+begin
+  Result := True;
+  if Cmd = cDupLinkedDocParam then
+  begin
+    FDupLinkedDoc := True;
+  end
+  else
+    Result := False;
+end;
+
+class procedure TLinearWriter.Usage(List: TStrings);
+begin
+  List.Add(cDupLinkedDocParam);
+  List.Add(SLinearUsageDupLinkedDocsP1);
+  List.Add('');
+  List.Add(SLinearUsageDupLinkedDocsP2);
+end;
+
+
+>>>>>>> origin/cpstrnew
 end.
 

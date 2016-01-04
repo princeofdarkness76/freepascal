@@ -213,12 +213,15 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       defcmp,defutil,procinfo,
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       defutil,
@@ -277,6 +280,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             result:=cstringconstnode.createunistr(pWideStringVal);
 =======
             result:=cstringconstnode.createwstr(pWideStringVal);
@@ -287,6 +291,9 @@ implementation
 =======
             result:=cstringconstnode.createwstr(pWideStringVal);
 >>>>>>> graemeg/cpstrnew
+=======
+            result:=cstringconstnode.createwstr(pWideStringVal);
+>>>>>>> origin/cpstrnew
 =======
             result:=cstringconstnode.createwstr(pWideStringVal);
 >>>>>>> origin/cpstrnew
@@ -339,6 +346,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               if not(cs_refcountedstrings in current_settings.localswitches) and (len>255) then
 =======
               if not(cs_ansistrings in current_settings.localswitches) and (len>255) then
@@ -349,6 +357,9 @@ implementation
 =======
               if not(cs_ansistrings in current_settings.localswitches) and (len>255) then
 >>>>>>> graemeg/cpstrnew
+=======
+              if not(cs_ansistrings in current_settings.localswitches) and (len>255) then
+>>>>>>> origin/cpstrnew
 =======
               if not(cs_ansistrings in current_settings.localswitches) and (len>255) then
 >>>>>>> origin/cpstrnew
@@ -366,6 +377,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             p1:=cstringconstnode.createunistr(pcompilerwidestring(p.value.valueptr));
 =======
             p1:=cstringconstnode.createwstr(pcompilerwidestring(p.value.valueptr));
@@ -376,6 +388,9 @@ implementation
 =======
             p1:=cstringconstnode.createwstr(pcompilerwidestring(p.value.valueptr));
 >>>>>>> graemeg/cpstrnew
+=======
+            p1:=cstringconstnode.createwstr(pcompilerwidestring(p.value.valueptr));
+>>>>>>> origin/cpstrnew
 =======
             p1:=cstringconstnode.createwstr(pcompilerwidestring(p.value.valueptr));
 >>>>>>> origin/cpstrnew
@@ -770,6 +785,7 @@ implementation
 <<<<<<< HEAD
         if (resultdef.typ in [orddef,enumdef]) then
            testrange(resultdef,value,not rangecheck,false)
+<<<<<<< HEAD
 =======
         if rangecheck and (resultdef.typ in [orddef,enumdef]) then
            testrange(resultdef,resultdef,value,false);
@@ -778,6 +794,8 @@ implementation
         if rangecheck and (resultdef.typ in [orddef,enumdef]) then
            testrange(resultdef,resultdef,value,false);
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
       end;
 
     function tordconstnode.pass_1 : tnode;
@@ -1141,6 +1159,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               cp1:=tstringdef(def).encoding;
               if (cp1=globals.CP_NONE) or (cp1=0) then
                 cp1:=current_settings.sourcecodepage;
@@ -1161,6 +1180,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
               if (tstringdef(def).encoding=CP_UTF8) or
                  (current_settings.sourcecodepage='utf8') then
                 begin
@@ -1178,6 +1199,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1185,11 +1207,14 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                 end
               else
                 begin
                   pw:=pcompilerwidestring(value_str);
                   getmem(pc,getlengthwidestring(pw)+1);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1207,10 +1232,14 @@ implementation
 =======
                   unicode2ascii(pw,pc,tstringdef(def).encoding);
 >>>>>>> origin/cpstrnew
+=======
+                  unicode2ascii(pw,pc,tstringdef(def).encoding);
+>>>>>>> origin/cpstrnew
                   donewidestring(pw);
                   value_str:=pc;
                 end;
             end
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1228,10 +1257,14 @@ implementation
 =======
         else 
 >>>>>>> origin/cpstrnew
+=======
+        else 
+>>>>>>> origin/cpstrnew
           if (tstringdef(def).stringtype = st_ansistring) and
              not(cst_type in [cst_widestring,cst_unicodestring]) then
             begin
               cp1:=tstringdef(def).encoding;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1304,6 +1337,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
               if (cst_type = cst_ansistring) then
                 cp2:=tstringdef(resultdef).encoding
               else if (cst_type in [cst_shortstring,cst_conststring,cst_longstring]) then
@@ -1313,11 +1348,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
             end;

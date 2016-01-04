@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
     This file is part of the PTCPas framebuffer library
 <<<<<<< HEAD
@@ -17,6 +18,11 @@
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
 =======
+    Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> origin/cpstrnew
+=======
+{
+    This file is part of the PTCPas framebuffer library
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> origin/cpstrnew
 
@@ -49,6 +55,7 @@
 
 type
   TWinCEWndProc = Function(Ahwnd: HWND; AuMsg: UINT; AwParam: WPARAM; AlParam: LPARAM): LRESULT of Object;
+<<<<<<< HEAD
 
   TWinCEWindow = Class(TObject)
   private
@@ -96,3 +103,24 @@ Type
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+
+  TWinCEWindow = Class(TObject)
+  private
+    FWindow: HWND;
+    FClassName: WideString;
+    FClassHInstance: HINST;
+  public
+    constructor Create(const AClassName, ATitle: WideString;
+                       AExStyle, AStyle: DWord;
+                       AShow, AX, AY, AWidth, AHeight: Integer;
+                       AWndProc: TWinCEWndProc;
+                       AData: Pointer = Nil);
+    destructor Destroy; override;
+
+    procedure Close;
+    procedure Update;
+
+    property WindowHandle: HWND read FWindow;
+  end;
+>>>>>>> origin/cpstrnew

@@ -71,6 +71,7 @@ type
   TParseState = set of TStepState;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   
   TEditMask = type string;
 =======
@@ -81,6 +82,10 @@ type
 
 
 >>>>>>> origin/fixes_2_2
+=======
+  
+  TEditMask = type string;
+>>>>>>> origin/cpstrnew
 
 { TMaskUtils }
 

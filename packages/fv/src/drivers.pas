@@ -499,16 +499,22 @@ procedure donekeyboard;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {-DetectVideo---------------------------------------------------------
 Detects the current video mode without initializing or otherwise
 changing the current screen.
 ---------------------------------------------------------------------}
 procedure DetectVideo;
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 {-InitVideo---------------------------------------------------------
 Initializes the video manager, Saves the current screen mode in
 StartupMode, and switches to the mode indicated by ScreenMode.
@@ -1116,6 +1122,7 @@ begin
      if (keycode and $FF = $E0) and
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         (byte(keycode shr 8) in
               [$1C,$1D,$2A,$35..$38,$46..$49,$4b,$4d,$4f,$50..$53]) Then
           keycode := keycode and $FF00;
@@ -1131,6 +1138,12 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+        (byte(keycode shr 8) in
+              [$1C,$1D,$2A,$35..$38,$46..$49,$4b,$4d,$4f,$50..$53]) Then
+          keycode := keycode and $FF00;
+
+>>>>>>> origin/cpstrnew
      { fixup shift-keys }
      if keyshift and kbShift<>0 then
        begin
@@ -1398,6 +1411,7 @@ begin
   GetVideoMode(ScreenMode);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef OS_WINDOWS}
   { Force the console to the current screen mode }
   Video.SetVideoMode(ScreenMode);
@@ -1413,6 +1427,12 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$ifdef OS_WINDOWS}
+  { Force the console to the current screen mode }
+  Video.SetVideoMode(ScreenMode);
+{$endif OS_WINDOWS}
+>>>>>>> origin/cpstrnew
 
   If (StoreScreenMode.Col<>0) and
      ((StoreScreenMode.color<>ScreenMode.color) or
@@ -1666,6 +1686,7 @@ BEGIN
    InitSystemMsg;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef OS_WINDOWS}
 =======
 {$ifdef win32}
@@ -1673,6 +1694,9 @@ BEGIN
 =======
 {$ifdef win32}
 >>>>>>> origin/fixes_2_2
+=======
+{$ifdef OS_WINDOWS}
+>>>>>>> origin/cpstrnew
    SetFileApisToOEM;
 {$endif}
 

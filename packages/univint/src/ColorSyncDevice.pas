@@ -8,6 +8,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  Pascal Translation:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
 =======
@@ -25,6 +26,9 @@
 =======
 {   Pascal Translation:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 >>>>>>> origin/fixes_2.4
+=======
+{   Pascal Translation:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> origin/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -84,6 +88,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
@@ -99,6 +104,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -122,6 +129,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -152,6 +160,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/fixes_2.4
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
@@ -163,6 +176,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -193,6 +207,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/fixes_2.4
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -204,6 +223,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -215,6 +235,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -224,6 +246,7 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -240,6 +263,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -251,6 +276,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -287,12 +313,18 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/fixes_2.4
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -324,10 +356,13 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
@@ -353,6 +388,10 @@ interface
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 >>>>>>> origin/fixes_2.4
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> origin/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -407,6 +446,7 @@ uses MacTypes,ColorSyncProfile,CFBase,CFDictionary,CFUUID;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> graemeg/cpstrnew
@@ -418,6 +458,8 @@ uses MacTypes,ColorSyncProfile,CFBase,CFDictionary,CFUUID;
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 var kColorSyncDeviceID: CFStringRef; external name '_kColorSyncDeviceID'; (* attribute const *)                { CFUUIDRef }
 var kColorSyncDeviceClass: CFStringRef; external name '_kColorSyncDeviceClass'; (* attribute const *)             { one of the below : }
 var kColorSyncCameraDeviceClass: CFStringRef; external name '_kColorSyncCameraDeviceClass'; (* attribute const *)   { cmra }
@@ -536,6 +578,7 @@ function ColorSyncRegisterDevice( deviceClass: CFStringRef; deviceID: CFUUIDRef;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     *           2. Pass kCFNull in lieu of the profile URL or no URl key/value pair at all if 
 =======
     *           2. Pass CFNullRef in lieu of the profile URL or no URl key/value pair at all if 
@@ -552,6 +595,9 @@ function ColorSyncRegisterDevice( deviceClass: CFStringRef; deviceID: CFUUIDRef;
 =======
     *           2. Pass CFNullRef in lieu of the profile URL or no URl key/value pair at all if 
 >>>>>>> origin/fixes_2.4
+=======
+    *           2. Pass CFNullRef in lieu of the profile URL or no URl key/value pair at all if 
+>>>>>>> origin/cpstrnew
     *              factory profile is not available. This will enable setting custom profile.
     *           3. For the reasons of compatibility with legacy API, it is recommended that the
     *              profile keys are created as CFStrings from uint32_t numbers as follows:
@@ -599,6 +645,7 @@ function ColorSyncDeviceSetCustomProfiles( deviceClass: CFStringRef; deviceID: C
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     *           3. Pass kCFNull in lieu of the profile URL to unset the custom profile and
 =======
     *           3. Pass CFNullRef in lieu of the profile URL to unset the custom profile and
@@ -615,6 +662,9 @@ function ColorSyncDeviceSetCustomProfiles( deviceClass: CFStringRef; deviceID: C
 =======
     *           3. Pass CFNullRef in lieu of the profile URL to unset the custom profile and
 >>>>>>> origin/fixes_2.4
+=======
+    *           3. Pass CFNullRef in lieu of the profile URL to unset the custom profile and
+>>>>>>> origin/cpstrnew
     *              reset the current profile to the factory profile.
     *
     *   returns true on success and false in case of failure
@@ -669,6 +719,7 @@ procedure ColorSyncIterateDeviceProfiles( callBack: ColorSyncDeviceProfileIterat
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     {
      * A utility function converting displayID to CFUUIDRef
@@ -692,6 +743,8 @@ function CGDisplayGetDisplayIDFromUUID( uuid: CFUUIDRef ): UInt32; external name
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$endc} {TARGET_OS_MAC}
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 

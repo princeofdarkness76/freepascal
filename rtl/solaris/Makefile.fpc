@@ -11,6 +11,7 @@ loaders=
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 units=$(SYSTEMUNIT) uuchar unixtype ctypes strings objpas iso7185 extpas macpas \
 =======
 units=$(SYSTEMUNIT) unixtype ctypes strings objpas iso7185 macpas \
@@ -21,6 +22,9 @@ units=$(SYSTEMUNIT) unixtype ctypes strings objpas iso7185 macpas \
 =======
 units=$(SYSTEMUNIT) unixtype ctypes strings objpas iso7185 macpas \
 >>>>>>> graemeg/cpstrnew
+=======
+units=$(SYSTEMUNIT) unixtype ctypes strings objpas iso7185 macpas \
+>>>>>>> origin/cpstrnew
 =======
 units=$(SYSTEMUNIT) unixtype ctypes strings objpas iso7185 macpas \
 >>>>>>> origin/cpstrnew
@@ -56,6 +60,7 @@ rsts=math typinfo classes sysconst rtlconst
       convutils stdconvs \
       dos objects \
 <<<<<<< HEAD
+<<<<<<< HEAD
       cwstring fpintres clocale $(CPU_UNITS)
 
 implicitunits=exeinfo
@@ -78,6 +83,13 @@ implicitunits=exeinfo
 
 rsts=math varutils typinfo classes variants dateutils sysconst rtlconst
 >>>>>>> graemeg/fixes_2_2
+=======
+      cwstring fpintres clocale $(CPU_UNITS)
+
+implicitunits=exeinfo
+
+rsts=math varutils typinfo classes variants dateutils sysconst rtlconst stdconvs
+>>>>>>> origin/cpstrnew
 
 [require]
 nortl=y
@@ -92,6 +104,7 @@ target=solaris
 [compiler]
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 includedir=$(INC) $(PROCINC) $(UNIXINC) $(OSPROCINC)
 =======
 includedir=$(INC) $(PROCINC) $(UNIXINC) $(OSPROCINC) 
@@ -99,6 +112,9 @@ includedir=$(INC) $(PROCINC) $(UNIXINC) $(OSPROCINC)
 =======
 includedir=$(INC) $(PROCINC) $(UNIXINC) $(OSPROCINC) 
 >>>>>>> origin/fixes_2_2
+=======
+includedir=$(INC) $(PROCINC) $(UNIXINC) $(OSPROCINC)
+>>>>>>> origin/cpstrnew
 sourcedir=$(INC) $(PROCINC) $(UNIXINC) $(COMMON)
 
 
@@ -114,12 +130,15 @@ libunits=$(SYSTEMUNIT) objpas strings \
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       errors
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       errors sockets ipc
@@ -315,6 +334,15 @@ stdconvs$(PPUEXT) : $(OBJPASDIR)/stdconvs.pp objpas$(PPUEXT) $(SYSTEMUNIT)$(PPUE
         $(COMPILER) $(OBJPASDIR)/stdconvs.pp
 
 
+convutils$(PPUEXT) : $(OBJPASDIR)/convutils.pp objpas$(PPUEXT) $(SYSTEMUNIT)$(PPUEXT) \
+                    sysutils$(PPUEXT)
+        $(COMPILER) $(OBJPASDIR)/convutils.pp
+
+stdconvs$(PPUEXT) : $(OBJPASDIR)/stdconvs.pp objpas$(PPUEXT) $(SYSTEMUNIT)$(PPUEXT) \
+                    sysutils$(PPUEXT)
+        $(COMPILER) $(OBJPASDIR)/stdconvs.pp
+
+
 #
 # Mac Pascal Model
 #
@@ -341,11 +369,14 @@ matrix$(PPUEXT) : $(INC)/matrix.pp $(SYSTEMUNIT)$(PPUEXT)
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 ifeq ($(ARCH),x86_64)

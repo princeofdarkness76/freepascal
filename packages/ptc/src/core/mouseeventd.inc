@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (C) 2001-2007, 2009-2011  Nikolay Nikolov (nickysn@users.sourceforge.net)
 =======
     Copyright (C) 2001-2006  Nikolay Nikolov (nickysn@users.sourceforge.net)
@@ -14,6 +15,9 @@
 =======
     Copyright (C) 2001-2006  Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
+=======
+    Copyright (C) 2001-2006  Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> origin/cpstrnew
 =======
     Copyright (C) 2001-2006  Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> origin/cpstrnew
@@ -59,6 +63,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   TPTCMouseButtonState = set of TPTCMouseButton;
   IPTCMouseEvent = interface(IPTCEvent)
     ['{4D093608-6F27-4578-B41E-3492A4C7FEED}']
@@ -99,6 +104,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   TPTCMouseButtonState = Set of TPTCMouseButton;
   TPTCMouseEvent = Class(TPTCEvent)
   private
@@ -128,11 +135,14 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   end;

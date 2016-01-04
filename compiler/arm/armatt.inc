@@ -288,6 +288,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 'pop',
 'push',
 'sdiv',
@@ -298,6 +299,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 'asr',
@@ -312,11 +315,14 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 'it',
@@ -333,6 +339,7 @@
 'iteet',
 'ittet',
 'itett',
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -412,6 +419,9 @@
 =======
 'itttt'
 >>>>>>> graemeg/cpstrnew
+=======
+'itttt'
+>>>>>>> origin/cpstrnew
 =======
 'itttt'
 >>>>>>> origin/cpstrnew

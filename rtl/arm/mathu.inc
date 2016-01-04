@@ -59,6 +59,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -72,6 +73,9 @@ end;
 >>>>>>> origin/fixes_2_2
 {$ifdef wince}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$if defined(wince)}
+>>>>>>> origin/cpstrnew
 
 const
   _DN_SAVE  = $00000000;
@@ -213,6 +217,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$elseif defined(darwin) or defined(FPUVFPV2) or defined(FPUVFPV3) or defined(FPUVFPV3_d16) or defined(FPUFPV4_s16)}
 =======
 {$elseif defined(darwin) or defined(FPUVFPV2) or defined(FPUVFPV3)}
@@ -223,6 +228,9 @@ end;
 =======
 {$elseif defined(darwin) or defined(FPUVFPV2) or defined(FPUVFPV3)}
 >>>>>>> graemeg/cpstrnew
+=======
+{$elseif defined(darwin) or defined(FPUVFPV2) or defined(FPUVFPV3)}
+>>>>>>> origin/cpstrnew
 =======
 {$elseif defined(darwin) or defined(FPUVFPV2) or defined(FPUVFPV3)}
 >>>>>>> origin/cpstrnew
@@ -268,6 +276,7 @@ procedure VFP_SetCW(cw : dword); nostackframe; assembler;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function VFPCw2RoundingMode(cw: dword): TFPURoundingMode;
   begin
     case (cw and _VFP_ROUNDINGMODE_MASK) shr _VFP_ROUNDINGMODE_MASK_SHIFT of
@@ -278,11 +287,14 @@ function VFPCw2RoundingMode(cw: dword): TFPURoundingMode;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 function GetRoundMode: TFPURoundingMode; 
   var
     rm: byte;
   begin
     case (VFP_GetCW and _VFP_ROUNDINGMODE_MASK) shr _VFP_ROUNDINGMODE_MASK_SHIFT of
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -293,6 +305,8 @@ function GetRoundMode: TFPURoundingMode;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       0 : result := rmNearest;
       1 : result := rmUp;
       2 : result := rmDown;
@@ -301,6 +315,7 @@ function GetRoundMode: TFPURoundingMode;
   end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -332,6 +347,8 @@ function SetRoundMode(const RoundMode: TFPURoundingMode): TFPURoundingMode;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 function SetRoundMode(const RoundMode: TFPURoundingMode): TFPURoundingMode;
@@ -366,11 +383,14 @@ function SetRoundMode(const RoundMode: TFPURoundingMode): TFPURoundingMode;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   end;
@@ -389,6 +409,7 @@ function SetPrecisionMode(const Precision: TFPUPrecisionMode): TFPUPrecisionMode
   end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -419,6 +440,8 @@ function VFPCw2ExceptionMask(cw: dword): TFPUExceptionMask;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 function GetExceptionMask: TFPUExceptionMask;
   var
     cw : dword;
@@ -445,6 +468,7 @@ function GetExceptionMask: TFPUExceptionMask;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -452,10 +476,13 @@ function GetExceptionMask: TFPUExceptionMask;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       include(Result,exPrecision);
   end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -474,10 +501,13 @@ function GetExceptionMask: TFPUExceptionMask;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 function SetExceptionMask(const Mask: TFPUExceptionMask): TFPUExceptionMask;
   var
     cw : dword;
   begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -514,6 +544,8 @@ function SetExceptionMask(const Mask: TFPUExceptionMask): TFPUExceptionMask;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     cw:=VFP_GetCW and not(_VFP_ENABLE_ALL);
 
 {$ifndef darwin}
@@ -542,11 +574,14 @@ function SetExceptionMask(const Mask: TFPUExceptionMask): TFPUExceptionMask;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   end;
@@ -690,12 +725,15 @@ function GetRoundMode: TFPURoundingMode;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     GetRoundMode:=softfloat_rounding_mode;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     case softfloat_rounding_mode of
@@ -711,11 +749,14 @@ function GetRoundMode: TFPURoundingMode;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   end;
@@ -727,6 +768,7 @@ function SetRoundMode(const RoundMode: TFPURoundingMode): TFPURoundingMode;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     result:=softfloat_rounding_mode;
     softfloat_rounding_mode:=RoundMode;
 =======
@@ -734,6 +776,8 @@ function SetRoundMode(const RoundMode: TFPURoundingMode): TFPURoundingMode;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     case (RoundMode) of
@@ -758,11 +802,14 @@ function SetRoundMode(const RoundMode: TFPURoundingMode): TFPURoundingMode;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   end;
@@ -884,7 +931,11 @@ function SetExceptionMask(const Mask: TFPUExceptionMask): TFPUExceptionMask;
 >>>>>>> graemeg/fixes_2_2
 =======
     softfloat_exception_mask:=FPUExceptionMaskToSoftFloatMask(Mask);
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2_2
+=======
+    Result:=Mask;
+>>>>>>> origin/cpstrnew
   end;
 
 

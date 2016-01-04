@@ -22,6 +22,7 @@
 interface
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef Load_Dynamically}{$define LinkDynamically}{$endif}
 uses
 {$IFDEF LinkDynamically}
@@ -32,6 +33,9 @@ uses
 =======
 >>>>>>> origin/fixes_2_2
 
+=======
+{$ifdef Load_Dynamically}{$define LinkDynamically}{$endif}
+>>>>>>> origin/cpstrnew
 uses
 {$IFDEF LinkDynamically}
       sysutils,
@@ -46,6 +50,7 @@ uses
   {$DEFINE extdecl:=cdecl}
   const
     mysqllib = 'libmysqlclient.'+sharedsuffix;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -83,16 +88,25 @@ uses
 
   {$IF DEFINED(mysql50)}
     mysqlvlib = 'libmysqlclient.'+sharedsuffix+'.15';
+=======
+  {$IF DEFINED(mysql51)}
+    mysqlvlib = mysqllib+'.16';
+  {$ELSEIF DEFINED(mysql50)}
+    mysqlvlib = mysqllib+'.15';
+>>>>>>> origin/cpstrnew
   {$ELSEIF DEFINED(mysql41)}
-    mysqlvlib = 'libmysqlclient.'+sharedsuffix+'.14';
+    mysqlvlib = mysqllib+'.14';
   {$ELSE}
-    mysqlvlib = 'libmysqlclient.'+sharedsuffix+'.12';
+    mysqlvlib = mysqllib+'.12';
   {$ENDIF}
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 {$ENDIF}
 {$IFDEF Windows}
   {$DEFINE extdecl:=stdcall}
@@ -101,6 +115,7 @@ uses
     mysqlvlib = 'libmysql.dll';
 {$ENDIF}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -128,14 +143,19 @@ uses
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$IFDEF mysql51}
   {$DEFINE mysql50}
 {$ENDIF mysql51}
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 {$IFDEF mysql50}
   {$DEFINE mysql41}
 {$ENDIF mysql50}
@@ -167,6 +187,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        ppcchar = ^pcchar;
        psize_t = pointer;
 =======
@@ -189,6 +210,10 @@ uses
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+//       pppchar = ^ppchar;
+//       ppbyte = ^pbyte;
+>>>>>>> origin/cpstrnew
 
        PVIO = Pointer;
 
@@ -198,6 +223,7 @@ uses
        Pmy_socket = ^my_socket;
        my_socket = cint;
        
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -210,6 +236,8 @@ uses
        PPByte     = ^PByte;
 
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 {  ------------ Start of declaration in "mysql_com.h"   ---------------------  }
 
   {
@@ -290,6 +318,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  {$IFDEF mysql51}
        COM_DAEMON,
   {$IFDEF mysql56}
@@ -315,6 +344,9 @@ uses
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+       {$IFDEF mysql51}COM_DAEMON,{$ENDIF}
+>>>>>>> origin/cpstrnew
 {$ELSE}
   {$IFDEF mysql41}
        COM_PREPARE,COM_EXECUTE,COM_LONG_DATA,COM_CLOSE_STMT,
@@ -366,6 +398,7 @@ uses
 {$ENDIF}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$IFDEF mysql51}
        ON_UPDATE_NOW_FLAG=8192;    // Field is set to NOW on UPDATE
 {$ENDIF}
@@ -373,6 +406,11 @@ uses
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$IFDEF mysql51}
+       ON_UPDATE_NOW_FLAG=8192;    // Field is set to NOW on UPDATE
+{$ENDIF}
+>>>>>>> origin/cpstrnew
        NUM_FLAG = 32768;           // Field is num (for clients)
        PART_KEY_FLAG = 16384;      // Intern; Part of some key
        GROUP_FLAG = 32768;         // Intern: Group field
@@ -564,6 +602,14 @@ uses
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+{$ENDIF}
+{$IFDEF mysql51}
+    {
+      Sent to the client if after a prepared statement reprepare
+      we discovered that the new statement returns a different
+      number of result set columns.
+    }
+       SERVER_STATUS_METADATA_CHANGED = 1024;
 {$ENDIF}
 
 {$IFDEF mysql41}
@@ -1177,6 +1223,7 @@ uses
             ftype : enum_field_types; // Type of field. See mysql_com.h for types
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$IFDEF mysql51}
             extension: pointer;
 {$ENDIF}
@@ -1184,6 +1231,11 @@ uses
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$IFDEF mysql51}
+            extension: pointer;
+{$ENDIF}
+>>>>>>> origin/cpstrnew
          end;
        MYSQL_FIELD = st_mysql_field;
        PMYSQL_FIELD = ^MYSQL_FIELD;
@@ -1870,6 +1922,7 @@ uses
        Pst_mysql_bind = ^st_mysql_bind;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1929,6 +1982,10 @@ uses
        end;
 {$ELSE}
 >>>>>>> graemeg/cpstrnew
+=======
+
+{$IFDEF mysql51}
+>>>>>>> origin/cpstrnew
        st_mysql_bind = record
             length : pculong;               // output length pointer
             is_null : Pmy_bool;             // Pointer to null indicator
@@ -1951,7 +2008,10 @@ uses
             extension : Pointer;
        end;
 {$ELSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
        st_mysql_bind = record
             length : pculong;               // output length pointer
             is_null : Pmy_bool;             // Pointer to null indicator
@@ -2092,6 +2152,7 @@ uses
             fetch_result : procedure (_para1:Pst_mysql_bind; _para2:PMYSQL_FIELD; row:PPbyte);
             skip_result : procedure (_para1:Pst_mysql_bind; _para2:PMYSQL_FIELD; row:PPbyte);
          end;
+{$ENDIF}
        MYSQL_BIND = st_mysql_bind;
        PMYSQL_BIND = ^MYSQL_BIND;
 
@@ -2987,6 +3048,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$IF DEFINED(mysql55)}
       IS_NUM := ((t <= FIELD_TYPE_INT24) and (t<>FIELD_TYPE_TIMESTAMP)) or (t=FIELD_TYPE_YEAR) or (t=FIELD_TYPE_NEWDECIMAL);
 {$ELSEIF DEFINED(mysql50) or DEFINED(mysql51)}
@@ -3008,6 +3070,9 @@ end;
 =======
 {$IFDEF mysql50}
 >>>>>>> origin/fixes_2_2
+=======
+{$IF DEFINED(mysql50) or DEFINED(mysql51)}
+>>>>>>> origin/cpstrnew
       IS_NUM := (t <= FIELD_TYPE_INT24) or (t=FIELD_TYPE_YEAR) or (t=FIELD_TYPE_NEWDECIMAL);
 {$ELSE}
       IS_NUM := (t <= FIELD_TYPE_INT24) or (t=FIELD_TYPE_YEAR);

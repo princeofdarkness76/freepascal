@@ -176,6 +176,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { the AArch64 ABI does not require special handling of struct returns, so no
   special handlers are provided/required }
 {$ifndef cpuaarch64}
@@ -193,6 +194,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   { The following two are declared as procedures with the hidden result pointer
     as their first parameter. This corresponds to the declaration below as far
     as the code generator is concerned (and is easier to handle in the compiler).  }
@@ -202,11 +205,14 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   { This one actually also exists to return extended on x86_64, but
@@ -265,6 +271,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef cpuaarch64}
   function class_getMethodImplementation_stret(cls:pobjc_class; name:SEL):IMP; cdecl; external libname;
 {$endif cpuaarch64}
@@ -277,6 +284,9 @@ type
 =======
   function class_getMethodImplementation_stret(cls:pobjc_class; name:SEL):IMP; cdecl; external libname;
 >>>>>>> graemeg/cpstrnew
+=======
+  function class_getMethodImplementation_stret(cls:pobjc_class; name:SEL):IMP; cdecl; external libname;
+>>>>>>> origin/cpstrnew
 =======
   function class_getMethodImplementation_stret(cls:pobjc_class; name:SEL):IMP; cdecl; external libname;
 >>>>>>> origin/cpstrnew

@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef NDS_INTERFACE}
   
 procedure scanKeys(); cdecl; external;
@@ -69,6 +70,9 @@ const
   KEY_Y      : KEYPAD_BITS = (1 shl 11); // Keypad Y button.
   KEY_TOUCH  : KEYPAD_BITS = (1 shl 12); // Touchscreen pendown.
   KEY_LID    : KEYPAD_BITS = (1 shl 13); // Lid state.
+=======
+{$ifdef NDS_INTERFACE}
+>>>>>>> origin/cpstrnew
   
 procedure scanKeys(); cdecl; external;
 

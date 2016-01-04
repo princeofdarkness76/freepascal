@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (c) 2002-2014 by Tomas Hajny,
 =======
     Copyright (c) 2002-2010 by Tomas Hajny,
@@ -14,6 +15,9 @@
 =======
     Copyright (c) 2002-2010 by Tomas Hajny,
 >>>>>>> graemeg/cpstrnew
+=======
+    Copyright (c) 2002-2010 by Tomas Hajny,
+>>>>>>> origin/cpstrnew
 =======
     Copyright (c) 2002-2010 by Tomas Hajny,
 >>>>>>> origin/cpstrnew
@@ -52,6 +56,7 @@ const
  dcWW_NoWait = 1;
  dpThread = 2;
  dpSameClass = 0;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -133,6 +138,8 @@ type
   TDosFreeThreadLocalMemory = function (P: pointer): cardinal; cdecl;
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 
 const
@@ -180,6 +187,7 @@ function DosKillThread (TID: cardinal): cardinal; cdecl;
 function DosWaitThread (var TID: cardinal; Option: cardinal): cardinal; cdecl;
                                                  external 'DOSCALLS' index 349;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -238,6 +246,11 @@ function DosEnterCritSec:cardinal; cdecl; external 'DOSCALLS' index 232;
 function DosEnterCritSec:cardinal; cdecl; external 'DOSCALLS' index 232;
 =======
 function DosEnterCritSec:cardinal; cdecl; external 'DOSCALLS' index 232;
+=======
+function DosEnterCritSec:cardinal; cdecl; external 'DOSCALLS' index 232;
+
+function DosExitCritSec:cardinal; cdecl; external 'DOSCALLS' index 233;
+>>>>>>> origin/cpstrnew
 
 function DosExitCritSec:cardinal; cdecl; external 'DOSCALLS' index 233;
 >>>>>>> origin/cpstrnew
@@ -247,6 +260,17 @@ function DosExitCritSec:cardinal; cdecl; external 'DOSCALLS' index 233;
 
 function DosExitCritSec:cardinal; cdecl; external 'DOSCALLS' index 233;
 >>>>>>> graemeg/cpstrnew
+
+function DosSetPriority (Scope, TrClass: cardinal; Delta: longint;
+                                           PortID: cardinal): cardinal; cdecl;
+                                                 external 'DOSCALLS' index 236;
+
+{
+procedure DosExit (Action, Result: cardinal); cdecl;
+                                                 external 'DOSCALLS' index 234;
+
+Already declared in the main part of system.pas...
+}
 
 function DosSetPriority (Scope, TrClass: cardinal; Delta: longint;
                                            PortID: cardinal): cardinal; cdecl;
@@ -302,6 +326,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   DataIndex: PPointer = nil;
 
 
@@ -324,6 +349,10 @@ type
  DataIndex: PPointer = nil;
 
 >>>>>>> graemeg/cpstrnew
+=======
+ DataIndex: PPointer = nil;
+
+>>>>>>> origin/cpstrnew
 =======
  DataIndex: PPointer = nil;
 
@@ -493,8 +522,11 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 end;
@@ -510,6 +542,7 @@ begin
      end;
     DataIndex := nil;
    end;
+<<<<<<< HEAD
 end;
 
 <<<<<<< HEAD
@@ -538,6 +571,11 @@ end;
 
 >>>>>>> graemeg/cpstrnew
 =======
+
+>>>>>>> origin/cpstrnew
+=======
+end;
+
 
 >>>>>>> origin/cpstrnew
 procedure SysReleaseThreadVars;
@@ -547,6 +585,7 @@ var
 (* to threadvars to avoid accessing a threadvar ThreadID afterwards.   *)
  TID: cardinal;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -576,6 +615,10 @@ begin
   DosFreeMem (DataIndex^);
   DataIndex^ := nil;
 >>>>>>> graemeg/cpstrnew
+=======
+  DosFreeMem (DataIndex^);
+  DataIndex^ := nil;
+>>>>>>> origin/cpstrnew
 =======
   DosFreeMem (DataIndex^);
   DataIndex^ := nil;
@@ -662,6 +705,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   RC: cardinal;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -669,6 +713,8 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 begin
@@ -692,6 +738,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   RC := DosCreateThread (cardinal (ThreadID), @ThreadMain, TI,
                                                      CreationFlags, StackSize);
   if RC = 0 then
@@ -711,6 +758,10 @@ begin
   if DosCreateThread (cardinal (ThreadID), @ThreadMain, TI,
                                              CreationFlags, StackSize) = 0 then
 >>>>>>> origin/cpstrnew
+=======
+  if DosCreateThread (cardinal (ThreadID), @ThreadMain, TI,
+                                             CreationFlags, StackSize) = 0 then
+>>>>>>> origin/cpstrnew
    SysBeginThread := ThreadID
   else
    begin
@@ -723,6 +774,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     OSErrorWatch (RC);
 =======
 >>>>>>> graemeg/cpstrnew
@@ -730,6 +782,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
    end;
@@ -750,6 +804,7 @@ end;
 
 
 function SysSuspendThread (ThreadHandle: dword): dword;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -782,10 +837,16 @@ begin
 {$WARNING Check expected return value}
   SysSuspendThread := DosSuspendThread (ThreadHandle);
 >>>>>>> origin/cpstrnew
+=======
+begin
+{$WARNING Check expected return value}
+  SysSuspendThread := DosSuspendThread (ThreadHandle);
+>>>>>>> origin/cpstrnew
 end;
 
 
 function SysResumeThread (ThreadHandle: dword): dword;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -818,10 +879,16 @@ begin
 {$WARNING Check expected return value}
   SysResumeThread := DosResumeThread (ThreadHandle);
 >>>>>>> origin/cpstrnew
+=======
+begin
+{$WARNING Check expected return value}
+  SysResumeThread := DosResumeThread (ThreadHandle);
+>>>>>>> origin/cpstrnew
 end;
 
 
 function SysKillThread (ThreadHandle: dword): dword;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -838,16 +905,22 @@ end;
 {$PUSH}
 {$WARNINGS OFF}
 =======
+=======
+>>>>>>> origin/cpstrnew
 begin
   SysKillThread := DosKillThread (ThreadHandle);
 end;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 function SysCloseThread (ThreadHandle: TThreadID): dword;
 begin
 { Probably not relevant under OS/2? }
 //      SysCloseThread:=CloseHandle(threadHandle);
 end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$POP}
 =======
@@ -917,12 +990,18 @@ end;
 =======
 
 >>>>>>> origin/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 function SysWaitForThreadTerminate (ThreadHandle: dword;
                                                     TimeoutMs: longint): dword;
 var
   RC: cardinal;
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 const
@@ -930,6 +1009,7 @@ const
   WaitTime = 100;
 begin
   if TimeoutMs = 0 then
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -947,6 +1027,9 @@ begin
 =======
    RC := DosWaitThread (ThreadHandle, dcWW_Wait)
 >>>>>>> origin/cpstrnew
+=======
+   RC := DosWaitThread (ThreadHandle, dcWW_Wait)
+>>>>>>> origin/cpstrnew
   else
    repeat
     RC := DosWaitThread (ThreadHandle, dcWW_NoWait);
@@ -957,6 +1040,7 @@ begin
       else
        begin
         DosSleep (TimeoutMs);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -973,10 +1057,13 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         DosWaitThread (ThreadHandle, dcWW_NoWait);
        end;
       Dec (TimeoutMs, WaitTime);
      end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
@@ -984,11 +1071,14 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
    until (RC <> 294) or (TimeoutMs <= 0);
   SysWaitForThreadTerminate := RC;
 end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1086,6 +1176,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 function SysThreadSetPriority (ThreadHandle: dword; Prio: longint): boolean;
 {-15..+15, 0=normal}
 var
@@ -1118,11 +1210,14 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 function SysGetCurrentThreadID: dword;
@@ -1499,6 +1594,38 @@ begin
 end;
 
 
+<<<<<<< HEAD
+procedure intRTLEventResetEvent (AEvent: PRTLEvent);
+=======
+procedure IntRTLEventWaitFor (AEvent: PRTLEvent);
+CONST INFINITE=-1;
+>>>>>>> origin/cpstrnew
+begin
+{$WARNING TODO!}
+{
+  ResetEvent(THANDLE(AEvent));
+}
+end;
+
+
+<<<<<<< HEAD
+>>>>>>> origin/cpstrnew
+=======
+function SysTryEnterCriticalSection (var CS): longint;
+begin
+{$WARNING TODO!}
+end;
+
+
+procedure IntRTLEventWaitForTimeout (AEvent: PRTLEvent; Timeout: longint);
+begin
+{$WARNING TODO!}
+{
+  WaitForSingleObject(THANDLE(AEvent), Timeout);
+}
+end;
+
+
 procedure intRTLEventResetEvent (AEvent: PRTLEvent);
 begin
 {$WARNING TODO!}
@@ -1582,11 +1709,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     end;

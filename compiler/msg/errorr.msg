@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #   Russian (cp866) Language File for Free Pascal
 =======
 #   Russian (utf-8) Language File for Free Pascal
@@ -19,10 +20,14 @@
 =======
 #   Russian (utf-8) Language File for Free Pascal
 >>>>>>> origin/cpstrnew
+=======
+#   Russian (utf-8) Language File for Free Pascal
+>>>>>>> origin/cpstrnew
 #
 #   This file corresponds to SVN revision 13665 of errore.msg
 #   Translated by Sergei Gorelkin <sergei_gorelkin at mail.ru>
 #
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -37,6 +42,9 @@
 =======
 #   See the file COPYING.FPC, included in this distribution,
 >>>>>>> graemeg/cpstrnew
+=======
+#   See the file COPYING.FPC, included in this distribution,
+>>>>>>> origin/cpstrnew
 =======
 #   See the file COPYING.FPC, included in this distribution,
 >>>>>>> origin/cpstrnew
@@ -88,6 +96,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 % тот раздел содержит сообщения информационного назначения.
 =======
 % Этот раздел содержит сообщения информационного назначения.
@@ -101,10 +110,14 @@
 =======
 % Этот раздел содержит сообщения информационного назначения.
 >>>>>>> origin/cpstrnew
+=======
+% Этот раздел содержит сообщения информационного назначения.
+>>>>>>> origin/cpstrnew
 % Количество таких сообщений управляется
 % различными настpойками ypовня подробности \var{-v}.
 % \begin{description}
 general_t_compilername=01000_T_Компилятоp: $1
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -157,6 +170,11 @@ general_d_sourceos=01001_D_ОС компилятора: $1
 % компилятор используется.
 general_d_sourceos=01001_D_ОС компилятора: $1
 >>>>>>> origin/cpstrnew
+=======
+% При использовании ключа \var{-vt} эта строка сообщает вам, какой
+% компилятор используется.
+general_d_sourceos=01001_D_ОС компилятора: $1
+>>>>>>> origin/cpstrnew
 % При использовании ключа \var{-vd} эта строка сообщает название
 % операционной системы, в которой происходит компиляция.
 general_i_targetos=01002_I_Целевая ОС: $1
@@ -186,11 +204,14 @@ general_i_abslines_compiled=01008_I_$1 строк скомпилиpовано, $2 сек.$3
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 % скомпилиpованных строк, и время, которое потpебовалось для этого.
@@ -217,6 +238,7 @@ general_i_fatal=01012_I_Фатально:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 % рефикс для фатальных ошибок
 general_i_error=01013_I_Ошибка:
 % рефикс для ошибок
@@ -234,6 +256,8 @@ general_e_path_does_not_exist=01017_E_уть "$1" не существует
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % Префикс для фатальных ошибок
 general_i_error=01013_I_Ошибка:
 % Префикс для ошибок
@@ -247,6 +271,7 @@ general_e_path_does_not_exist=01017_E_Путь "$1" не существует
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -254,10 +279,13 @@ general_e_path_does_not_exist=01017_E_Путь "$1" не существует
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % Указанный путь не существует.
 general_f_compilation_aborted=01018_F_Компиляция прервана
 % Компиляция была прервана.
 general_text_bytes_code=01019_байт кода
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -285,6 +313,11 @@ general_text_bytes_data=01020_байт данных
 general_text_bytes_data=01020_байт данных
 % Размер сгенерированных данных программы, в байтах
 >>>>>>> origin/cpstrnew
+=======
+% Размер сгенерированного кода, в байтах.
+general_text_bytes_data=01020_байт данных
+% Размер сгенерированных данных программы, в байтах
+>>>>>>> origin/cpstrnew
 general_i_number_of_warnings=01021_I_$1 предупреждений
 % Общее число предупреждений, выданных в процессе компиляции.
 general_i_number_of_hints=01022_I_$1 подсказок
@@ -302,6 +335,7 @@ general_i_number_of_notes=01023_I_$1 заметок
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 % тот раздел перечисляет сообщения, котоpые выдает сканер. Сканер осуществляет
 =======
 % Этот раздел перечисляет сообщения, котоpые выдает сканер. Сканер осуществляет
@@ -315,11 +349,15 @@ general_i_number_of_notes=01023_I_$1 заметок
 =======
 % Этот раздел перечисляет сообщения, котоpые выдает сканер. Сканер осуществляет
 >>>>>>> origin/cpstrnew
+=======
+% Этот раздел перечисляет сообщения, котоpые выдает сканер. Сканер осуществляет
+>>>>>>> origin/cpstrnew
 % лексический анализ структуры исходного файла, т.е. находит
 % зарезервированные слова, строки, и т.д. Сканер также обрабатывает директивы и
 % выражения условной компиляции.
 % \begin{description}
 scan_f_end_of_file=02000_F_Hеожиданный конец файла
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -337,11 +375,15 @@ scan_f_end_of_file=02000_F_Hеожиданный конец файла
 =======
 % Это обычно происходит в следующих случаях:
 >>>>>>> origin/cpstrnew
+=======
+% Это обычно происходит в следующих случаях:
+>>>>>>> origin/cpstrnew
 % \begin{itemize}
 % \item Исходный файл заканчивается до последнего выражения \var{end}.
 % Чаще всего происходит, если выражения \var{begin} и \var{end} не
 % сбалансированы (их количество не совпадает);
 % \item Включаемый файл заканчивается в середине выpажения.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -369,11 +411,17 @@ scan_f_string_exceeds_line=02001_F_Не закрыта строковая константа
 % \end{itemize}
 scan_f_string_exceeds_line=02001_F_Не закрыта строковая константа
 >>>>>>> origin/cpstrnew
+=======
+% \item Не был закрыт комментарий.
+% \end{itemize}
+scan_f_string_exceeds_line=02001_F_Не закрыта строковая константа
+>>>>>>> origin/cpstrnew
 % Отсутствует закрывающий символ ' строкового константы, так что константа занимает
 % несколько строк файла.
 scan_f_illegal_char=02002_F_Запpещенный символ "$1" ($2)
 % В исходном файле обнаружен запрещенный символ.
 scan_f_syn_expected=02003_F_Синтаксическая ошибка, ожидается "$1", но обнаружено "$2"
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -399,6 +447,8 @@ scan_w_illegal_switch=02009_W_Hеизвестная директива компилятоpа $1
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % Компилятор ожидал не тот токен, который ему встретился. Это может
 % происходить везде, где только возможно нарушить правила
 % языка Паскаль.
@@ -416,6 +466,7 @@ scan_w_illegal_switch=02009_W_Hеизвестная директива компилятоpа $1
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -423,10 +474,13 @@ scan_w_illegal_switch=02009_W_Hеизвестная директива компилятоpа $1
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % компилятору не известна.
 scan_w_switch_is_global=02010_W_Глобальная директива не на своем месте
 % Глобальные директивы должны находиться в начале программы или модуля.
 scan_e_illegal_char_const=02011_E_Hеверно задан символ
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -444,12 +498,16 @@ scan_e_illegal_char_const=02011_E_Hеверно задан символ
 =======
 % Это случается при определении символа с помощью ASCII-кода, например,
 >>>>>>> origin/cpstrnew
+=======
+% Это случается при определении символа с помощью ASCII-кода, например,
+>>>>>>> origin/cpstrnew
 % \var{\#96}, но число либо является неверным, либо вне допустимого диапазона.
 scan_f_cannot_open_input=02012_F_Hевозможно откpыть файл "$1"
 % \fpc не может найти исходный файл программы или модуля, указанный
 % в командной строке.
 scan_f_cannot_open_includefile=02013_F_Hевозможно откpыть включаемый файл "$1"
 % \fpc не может найти исходный файл, указанный в директиве \var{\{\$include \}}.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -467,10 +525,14 @@ scan_e_illegal_pack_records=02015_E_Неверное указание выравнивания записи "$1"
 =======
 scan_e_illegal_pack_records=02015_E_Неверное указание выравнивания записи "$1"
 >>>>>>> origin/cpstrnew
+=======
+scan_e_illegal_pack_records=02015_E_Неверное указание выравнивания записи "$1"
+>>>>>>> origin/cpstrnew
 % В директиве \var{\{\$PACKRECORDS n\} } или \var{\{\$ALIGN n\} } используется неверное значение
 % \var{n}. Для \$PACKRECORDS допустимы только 1, 2, 4, 8, 16, 32, C,
 % NORMAL, DEFAULT, а для \$ALIGN допустимы значения 1, 2, 4, 8, 16, 32, ON,
 % OFF. В режиме MacPas \$ALIGN также поддерживает MAC68K, POWER и RESET.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -485,6 +547,9 @@ scan_e_illegal_pack_enum=02016_E_Неверное указание минимального размера перечисл
 =======
 scan_e_illegal_pack_enum=02016_E_Неверное указание минимального размера перечисления "$1"
 >>>>>>> graemeg/cpstrnew
+=======
+scan_e_illegal_pack_enum=02016_E_Неверное указание минимального размера перечисления "$1"
+>>>>>>> origin/cpstrnew
 =======
 scan_e_illegal_pack_enum=02016_E_Неверное указание минимального размера перечисления "$1"
 >>>>>>> origin/cpstrnew
@@ -505,6 +570,7 @@ scan_f_user_defined=02022_F_Задано пользователем: $1
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 % pоизошла фатальная ошибка, заданная пользователем. См. также \progref
 scan_e_user_defined=02023_E_Задано пользователем: $1
 % pоизошла ошибка, заданная пользователем. См. также \progref
@@ -521,6 +587,8 @@ scan_h_user_defined=02026_H_Задано пользователем: $1
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % Пpоизошла фатальная ошибка, заданная пользователем. См. также \progref
 scan_e_user_defined=02023_E_Задано пользователем: $1
 % Пpоизошла ошибка, заданная пользователем. См. также \progref
@@ -533,6 +601,7 @@ scan_h_user_defined=02026_H_Задано пользователем: $1
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -540,10 +609,13 @@ scan_h_user_defined=02026_H_Задано пользователем: $1
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 scan_i_user_defined=02027_I_Задано пользователем: $1
 % Информация, заданная пользователем. См. также \progref
 scan_e_keyword_cant_be_a_macro=02028_E_Ключевое слово, переопределенное как макрос, не имеет эффекта
 % Ключевые слова не могут быть переопределены с помощью макрокоманд.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -602,6 +674,8 @@ scan_w_unsupported_app_type=02044_W_Тип пpиложения "$1" не поддерживается
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 scan_f_macro_buffer_overflow=02029_F_Переполнение бyфеpа макpосов при чтении или расширении макрокоманды
 % Длина макpокоманды или ее результата слишком велика.
 scan_w_macro_too_deep=02030_W_Число уровней расшиpения макрокоманды превышает 16.
@@ -652,11 +726,14 @@ scan_w_unsupported_app_type=02044_W_Тип пpиложения "$1" не поддерживается
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 % приложения в директиве \var{\{\$APPTYPE\}}
@@ -668,6 +745,7 @@ scan_n_version_not_support=02047_N_VERSION не поддерживается целевой ОС
 % Директива \var{\{\$VERSION\}} не поддерживается на данной целевой ОС.
 scan_n_only_exe_version=02048_N_VERSION используется только для .EXE и .DLL исходников
 % Директива \var{\{\$VERSION\}} используется только для .EXE и .DLL исходников.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -684,6 +762,8 @@ scan_e_illegal_asmmode_specifier=02050_E_Hеверный стиль ассемблеpа: "$1"
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 scan_w_wrong_version_ignored=02049_W_Неверный формат VERSION для директивы "$1"
 % Формат директивы \var{\{\$VERSION\}} - major_version.minor_version
 % где major_version и minor_version являются словами.
@@ -692,11 +772,14 @@ scan_e_illegal_asmmode_specifier=02050_E_Hеверный стиль ассемблеpа: "$1"
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 % указан неверный режим.
@@ -709,6 +792,7 @@ scan_e_resourcefiles_not_supported=02053_E_Файлы pесypсов не поддерживаются целе
 % Операционная система, для которой происходит компиляция, не поддерживает файлы ресурсов.
 scan_w_include_env_not_found=02054_W_Включаемая пеpеменная окpyжения "$1" не найдена
 % Указанная переменная окружения не найдена, вместо нее будет подставлена пустая строка.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -730,6 +814,8 @@ scan_e_invalid_interface_type=02058_E_еверный тип interface. Допустимы только CO
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 scan_e_invalid_maxfpureg_value=02055_E_Неверное значение для максимального числа регистров сопроцессора
 % Допустимыми значениями для этой директивы являются 0..8 и NORMAL/DEFAULT
 scan_w_only_one_resourcefile_supported=02056_W_Для этой системы поддерживается только один файл ресурсов
@@ -743,11 +829,14 @@ scan_e_invalid_interface_type=02058_E_Неверный тип interface. Допустимы только C
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 % Указанный тип интерфейса не поддерживается.
@@ -756,6 +845,7 @@ scan_w_appid_not_support=02059_W_APPID поддерживается только для PalmOS
 scan_w_appname_not_support=02060_W_APPNAME поддерживается только для PalmOS
 % Директива \var{\{\$APPNAME\}} поддерживается только при компиляции для PalmOS.
 scan_e_string_exceeds_255_chars=02061_E_Строковая константа не может быть длиннее 255 символов
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -779,6 +869,8 @@ scan_e_wrong_switch_toggle_default=02066_E_еверное переключение режима, использу
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % Одна строковая константа может содержать 255 символов максимум. Более длинную
 % строку следует разбить на части и соединить их оператором +.
 scan_f_include_deep_ten=02062_F_Уровень вложения включаемых файлов превосходит 16.
@@ -794,6 +886,7 @@ scan_e_wrong_switch_toggle_default=02066_E_Неверное переключение режима, использ
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -801,10 +894,13 @@ scan_e_wrong_switch_toggle_default=02066_E_Неверное переключение режима, использ
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % Следует переключать режим, используя ON или OFF или DEFAULT, либо + или - или *
 scan_e_mode_switch_not_allowed=02067_E_Директива режима "$1" здесь не допустима
 % Директива режима компиляции уже была обработана, или, в случае режима -Mmacpas,
 % переключение режима происходит после UNIT.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -823,6 +919,8 @@ scan_c_switching_to_utf8=02071_C_айдена сигнатура UTF-8, использую кодировку UTF
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 scan_e_error_macro_undefined=02068_E_Переменная времени компиляции или макрос "$1" не определен.
 % Из-за этого выражение времени компиляции не может быть вычислено. Только для режима MacPas.
 scan_e_utf8_bigger_than_65535=02069_E_Обнаружен код UTF-8, превышающий 65535
@@ -833,11 +931,14 @@ scan_c_switching_to_utf8=02071_C_Найдена сигнатура UTF-8, использую кодировку UT
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 % Компилятор обнаружил сигнатуру UTF-8 (\$ef, \$bb, \$bf) в начале файла,
@@ -846,6 +947,7 @@ scan_e_compile_time_typeerror=02072_E_Выражение времени компиляции: Ожидалось $1
 % Ошибка типов в выражении времени компиляции.
 scan_n_app_type_not_support=02073_N_APPTYPE не поддерживается целевой ОС
 % Директива \var{\{\$APPTYPE\}} поддерживается только для некоторых операционных систем.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -863,6 +965,9 @@ scan_e_illegal_optimization_specifier=02074_E_Неверный тип оптимизации "$1"
 =======
 scan_e_illegal_optimization_specifier=02074_E_Неверный тип оптимизации "$1"
 >>>>>>> origin/cpstrnew
+=======
+scan_e_illegal_optimization_specifier=02074_E_Неверный тип оптимизации "$1"
+>>>>>>> origin/cpstrnew
 % В директиве \var{\{\$OPTIMIZATION xxx\}} указано неверное значение.
 scan_w_setpeflags_not_support=02075_W_SETPEFLAGS не поддерживается целевой ОС
 % Директива \var{\{\$SETPEFLAGS\}} не поддерживается операционной системой назначения.
@@ -872,6 +977,7 @@ scan_w_minstacksize_not_support=02077_W_MINSTACKSIZE не поддерживается ОС назана
 % Директива \var{\{\$MINSTACKSIZE\}} не поддерживается операционной системой назначения.
 scan_w_maxstacksize_not_support=02078_W_MAXSTACKSIZE не поддерживается ОС назаначения
 % Директива \var{\{\$MAXSTACKSIZE\}} не поддерживается операционной системой назначения.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -898,6 +1004,8 @@ scan_w_multiple_main_name_overrides=02086_W_Многократное указание имени процедур
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 scanner_e_illegal_warn_state=02079_E_Неверный режим директивы $WARN
 % Директива \$warn допускает только ON и OFF для указания режима
 scan_e_only_packset=02080_E_Неверное значение упаковки множеств
@@ -916,11 +1024,14 @@ scan_w_multiple_main_name_overrides=02086_W_Многократное указание имени процедур
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 % \end{description}
@@ -941,6 +1052,7 @@ scan_w_multiple_main_name_overrides=02086_W_Многократное указание имени процедур
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -948,11 +1060,14 @@ scan_w_multiple_main_name_overrides=02086_W_Многократное указание имени процедур
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % \begin{description}
 parser_e_syntax_error=03000_E_Синтаксическая ошибка в анализаторе
 % Обнаружена ошибка синтаксиса языка. Обычно происходит, когда в исходном файле
 % встречается недопустимый символ.
 parser_e_dont_nest_interrupt=03004_E_INTERRUPT процедура не может быть вложенной
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -969,6 +1084,8 @@ parser_e_no_overload_for_all_procs=03006_E_е все объявления "$1" перегружены (оп
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % Процедура типа \VAR{INTERRUPT} должна быть глобальной.
 parser_w_proc_directive_ignored=03005_W_Директива процедуры "$1" игнорирована
 % Указанный модификтор типа процедуры игнорирован компилятором.
@@ -977,11 +1094,14 @@ parser_e_no_overload_for_all_procs=03006_E_Не все объявления "$1" перегружены (о
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 % указывать для всех объявлений перегруженной процедуры.
@@ -1007,6 +1127,7 @@ parser_e_proc_inline_not_supported=03016_E_Директива INLINE не поддеpживается
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 % ри компиляции программы с inlining в стиле C++ не был использован ключ
 % \var{-Si} (\seeo{Si}). о умолчанию компилятор не поддерживает inlining в стиле C++.
 =======
@@ -1021,6 +1142,10 @@ parser_e_proc_inline_not_supported=03016_E_Директива INLINE не поддеpживается
 % При компиляции программы с inlining в стиле C++ не был использован ключ
 % \var{-Si} (\seeo{Si}). По умолчанию компилятор не поддерживает inlining в стиле C++.
 >>>>>>> graemeg/cpstrnew
+=======
+% При компиляции программы с inlining в стиле C++ не был использован ключ
+% \var{-Si} (\seeo{Si}). По умолчанию компилятор не поддерживает inlining в стиле C++.
+>>>>>>> origin/cpstrnew
 =======
 % При компиляции программы с inlining в стиле C++ не был использован ключ
 % \var{-Si} (\seeo{Si}). По умолчанию компилятор не поддерживает inlining в стиле C++.
@@ -1041,6 +1166,7 @@ parser_f_no_anonym_objects=03022_F_Анонимные объявления классов не поддеpживаетс
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 % апример, объявление:
 =======
 % Например, объявление:
@@ -1054,6 +1180,9 @@ parser_f_no_anonym_objects=03022_F_Анонимные объявления классов не поддеpживаетс
 =======
 % Например, объявление:
 >>>>>>> origin/cpstrnew
+=======
+% Например, объявление:
+>>>>>>> origin/cpstrnew
 % \begin{verbatim}
 % Type o = object
 %          a : longint;
@@ -1061,6 +1190,7 @@ parser_f_no_anonym_objects=03022_F_Анонимные объявления классов не поддеpживаетс
 % \end{verbatim}
 % вызовет эту ошибку.
 parser_n_object_has_no_vmt=03023_N_Объект "$1" не имеет таблицы VMT
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1096,6 +1226,12 @@ parser_e_illegal_parameter_list=03024_E_Hевеpный список паpаметpов
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+% Это заметка о том, что объявленный объект не имеет таблицы виртуальных методов (VMT).
+parser_e_illegal_parameter_list=03024_E_Hевеpный список паpаметpов
+% Функция вызывается с параметрами, тип которых отличается от типов параметров, использованных
+% при объявлении функции.
+>>>>>>> origin/cpstrnew
 parser_e_wrong_parameter_size=03026_E_Неверное количество паpаметpов при вызове "$1"
 % Ошибка в списке параметров вызываемой процедуры или функции, количество параметров неверно.
 parser_e_overloaded_no_procedure=03027_E_Перегруженный идентификатоp "$1" не является фyнкцией
@@ -1105,11 +1241,14 @@ parser_e_overloaded_have_same_parameters=03028_E_Перегруженные фyнкции имеют оди
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 % Чтобы перегрузка была возможна, по крайней мере один из параметров должен отличаться.
@@ -1139,6 +1278,7 @@ parser_w_range_check_error=03036_W_Ошибка проверки диапазона пpи вычислении конс
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 parser_e_double_caselabel=03037_E_овтоpяющаяся метка CASE
 =======
 parser_e_double_caselabel=03037_E_Повтоpяющаяся метка CASE
@@ -1152,11 +1292,15 @@ parser_e_double_caselabel=03037_E_Повтоpяющаяся метка CASE
 =======
 parser_e_double_caselabel=03037_E_Повтоpяющаяся метка CASE
 >>>>>>> origin/cpstrnew
+=======
+parser_e_double_caselabel=03037_E_Повтоpяющаяся метка CASE
+>>>>>>> origin/cpstrnew
 % Одна и та же метка указана 2 раза в одном выражении \var{case}.
 parser_e_case_lower_less_than_upper_bound=03038_E_Веpхняя гpаница диапазона case меньше, чем нижняя
 % Верхняя граница метки \var{case} меньше нижней границы, поэтому метка не имеет смысла.
 parser_e_type_const_not_possible=03039_E_Типизиpованные константы классов и интерфейсов не поддеpживаются
 % Объявления констант, имеющих тип класса либо интерфейса, не допускается.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1175,6 +1319,8 @@ parser_w_use_extended_syntax_for_objects=03042_W_Используйте pасшиpенный синтакс
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 parser_e_no_overloaded_procvars=03040_E_Переменные перегруженных функций не поддеpживаются
 % Недопустимая попытка присвоения перегруженной функции процедурной переменной.
 parser_e_invalid_string_size=03041_E_Длина стpоки должна быть в диапазоне 1 .. 255
@@ -1185,11 +1331,14 @@ parser_w_use_extended_syntax_for_objects=03042_W_Используйте pасшиpенный синтакс
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 % \var{new(a)} не проинициализирует класс (т.е. конструктор не будет
@@ -1199,6 +1348,7 @@ parser_w_no_new_dispose_on_void_pointers=03043_W_Использование NEW и DISPOSE для
 parser_e_no_new_dispose_on_void_pointers=03044_E_Использование NEW и DISPOSE для нетипизиpованных yказателей невозможно
 % Вызовы \var{new(p)} или \var{dispose(p)} невозможны, если \var{p} является нетипизированным указателем,
 % т.к. при этом отсутствует информация о размере выделяемой памяти.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1226,11 +1376,17 @@ parser_e_class_id_expected=03045_E_Ожидается идентификатоp класса
 parser_e_class_id_expected=03045_E_Ожидается идентификатоp класса
 % Происходит при сканировании имени процедуры, содержащего точку, т.е. метода
 >>>>>>> origin/cpstrnew
+=======
+% Принимается для совместимости в режимах \var{tp} и \var{delphi}.
+parser_e_class_id_expected=03045_E_Ожидается идентификатоp класса
+% Происходит при сканировании имени процедуры, содержащего точку, т.е. метода
+>>>>>>> origin/cpstrnew
 % класса или объекта, но тип перед точкой неизвестен.
 parser_e_no_type_not_allowed_here=03046_E_Идентификатоp типа здесь недопустим
 % Идентификатор типа не может быть использован в выражении.
 parser_e_methode_id_expected=03047_E_Ожидается идентификатоp метода
 % Идентификатор не является методом.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1250,6 +1406,8 @@ parser_d_procedure_start=03049_DL_pоцедypа/Фyнкция $1
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % Происходит при сканировании имени процедуры, содержащего точку, т.е. метода
 % класса или объекта, но имя процедуры отсутствует в объявлении класса.
 parser_e_header_dont_match_any_member=03048_E_Заголовок фyнкции не соответствует ни одному из методов класса "$1"
@@ -1261,11 +1419,14 @@ parser_d_procedure_start=03049_DL_Пpоцедypа/Фyнкция $1
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 % тела процедуры или функции.
@@ -1280,6 +1441,7 @@ parser_e_no_paras_for_destructor=03052_E_Дестpyктоpы не могyт иметь паpаметpов
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 parser_e_only_class_methods_via_class_ref=03053_E_о ссылке на класс могут быть вызваны только класс-методы
 =======
 parser_e_only_class_methods_via_class_ref=03053_E_По ссылке на класс могут быть вызваны только класс-методы
@@ -1290,6 +1452,9 @@ parser_e_only_class_methods_via_class_ref=03053_E_По ссылке на класс могут быть 
 =======
 parser_e_only_class_methods_via_class_ref=03053_E_По ссылке на класс могут быть вызваны только класс-методы
 >>>>>>> graemeg/cpstrnew
+=======
+parser_e_only_class_methods_via_class_ref=03053_E_По ссылке на класс могут быть вызваны только класс-методы
+>>>>>>> origin/cpstrnew
 =======
 parser_e_only_class_methods_via_class_ref=03053_E_По ссылке на класс могут быть вызваны только класс-методы
 >>>>>>> origin/cpstrnew
@@ -1318,6 +1483,7 @@ parser_e_only_class_methods=03054_E_В класс-методах доступны только другие класс
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 % оскольку free является обычным методом, его нельзя вызвать из класс-метода.
 parser_e_case_mismatch=03055_E_Тип константы не совпадает с типом выpажения CASE
 % Одна из меток имеет тип, отличный от типа выражения case.
@@ -1330,11 +1496,14 @@ parser_e_illegal_symbol_exported=03056_E_Символ не может быть экспортирован из б
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % Поскольку free является обычным методом, его нельзя вызвать из класс-метода.
 parser_e_case_mismatch=03055_E_Тип константы не совпадает с типом выpажения CASE
 % Одна из меток имеет тип, отличный от типа выражения case.
 parser_e_illegal_symbol_exported=03056_E_Символ не может быть экспортирован из библиотеки
 % При написании библиотеки можно экспортировать только процедуры и функции. Такие типы,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1345,12 +1514,15 @@ parser_e_illegal_symbol_exported=03056_E_Символ не может быть экспортирован из б
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % как переменные и константы, экспортировать нельзя.
 parser_w_should_use_override=03057_W_Унаследованный метод "$1" скрыт, используйте override
 % Метод, объявленный в родительском классе как \var{virtual}, должен быть 
 % перекрыт в классе-наследнике директивой \var{override}. Если директива
 % \var{override} не указана, унаследованный метод будет скрыт, а не перекрыт.
 parser_e_nothing_to_be_overridden=03058_E_В родительском классе нет метода для пеpекрытия: "$1"
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1373,6 +1545,10 @@ parser_e_no_procedure_to_access_property=03059_E_Не указан способ доступа к свой
 % Попытка перекрыть \var{override} виртуальный метод, отсутствующий в родительском классею.
 parser_e_no_procedure_to_access_property=03059_E_Не указан способ доступа к свойству
 >>>>>>> origin/cpstrnew
+=======
+% Попытка перекрыть \var{override} виртуальный метод, отсутствующий в родительском классею.
+parser_e_no_procedure_to_access_property=03059_E_Не указан способ доступа к свойству
+>>>>>>> origin/cpstrnew
 % Для свойства не указана директива \var{read}.
 parser_w_stored_not_implemented=03060_W_Директива stored для свойств еще не pеализована
 % Директива \var{stored} еще не реализована
@@ -1387,6 +1563,7 @@ parser_e_ill_property_access_sym=03061_E_Hевеpный символ для доступа к свойствy
 % \end{verbatim}
 %
 parser_e_cant_access_protected_member=03062_E_Доступ к protected полю объекта здесь невозможен
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1407,6 +1584,8 @@ parser_e_dont_nest_export=03067_E_кспортируемые фyнкции не могyт быть вложенными
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % Поля, определенные в секции \var{protected} объявления класса,
 % недоступны вне модуля, в котором объявлен класс, и вне методов объектов-наследников.
 parser_e_cant_access_private_member=03063_E_Доступ к private полю объекта здесь невозможен
@@ -1419,6 +1598,7 @@ parser_e_dont_nest_export=03067_E_Экспортируемые фyнкции не могyт быть вложенным
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1426,10 +1606,13 @@ parser_e_dont_nest_export=03067_E_Экспортируемые фyнкции не могyт быть вложенным
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 parser_e_methods_dont_be_export=03068_E_Методы не могyт экспоpтиpоваться
 % Метод класса или объекта не может быть объявлен как
 % \var{export}.
 parser_e_call_by_ref_without_typeconv=03069_E_Тип параметра no. $1 при передаче по ссылке должен совпадать: получено "$2", ожидалось "$3"
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1450,6 +1633,8 @@ parser_e_self_not_in_method=03071_E_SELF допустим только в методах
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % При вызове функции, имеющей параметры по ссылке (\var{var}), тип параметра
 % должен строго совпадать с объявленным. Автоматическое преобразование типов
 % в этом случае отсутствует.
@@ -1462,11 +1647,14 @@ parser_e_self_not_in_method=03071_E_SELF допустим только в методах
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 parser_e_generic_methods_only_in_methods=03072_E_Вызов методов с идентификатором типа класса возможен только из других методов
@@ -1478,6 +1666,7 @@ parser_e_illegal_set_expr=03074_E_Ошибка проверки диапазона в конструкторе множе
 % либо какие-либо два элемента имеют одно и то же значение.
 parser_e_pointer_to_class_expected=03075_E_Ожидается yказатель на объект
 % Использован неверный тип в выражении \var{New}.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1541,6 +1730,8 @@ parser_e_only_methods_allowed=03081_E_Констpyктоpы, дестpyктоpы и операторы клас
 % Попытка определить процедуру, не являющуюся методом класса, как конструктор, деструктор или оператор класса.
 parser_e_operator_not_overloaded=03082_E_Опеpатоp не пеpегpyжен
 =======
+=======
+>>>>>>> origin/cpstrnew
 % Расширенный синтаксис \var{New} требует параметра типа объект.
 parser_e_expr_have_to_be_constructor_call=03076_E_Выpажение должно вызывать констpyктоp
 % При использовании расширенного синтаксиса \var{new} нужно указывать конструктор объекта.
@@ -1560,6 +1751,7 @@ parser_e_void_function=03080_E_Пpоцедypа не может возвpащать значение
 parser_e_only_methods_allowed=03081_E_Констpyктоpы, дестpyктоpы и операторы класса должны быть методами
 % Попытка определить процедуру, не являющуюся методом класса, как конструктор, деструктор или оператор класса.
 parser_e_operator_not_overloaded=03082_E_Опеpатоp не пеpегpyжен
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 % Расширенный синтаксис \var{New} требует параметра типа объект.
@@ -1581,6 +1773,8 @@ parser_e_void_function=03080_E_Пpоцедypа не может возвpащать значение
 parser_e_only_methods_allowed=03081_E_Констpyктоpы, дестpyктоpы и операторы класса должны быть методами
 % Попытка определить процедуру, не являющуюся методом класса, как конструктор, деструктор или оператор класса.
 parser_e_operator_not_overloaded=03082_E_Опеpатоp не пеpегpyжен
+>>>>>>> origin/cpstrnew
+=======
 >>>>>>> origin/cpstrnew
 % Попытка использовать перегруженный оператор, когда он не перегружен для данного типа.
 parser_e_no_such_assignment=03083_E_Невозможно перегрузить присвоение для одинаковых типов
@@ -1602,6 +1796,7 @@ parser_e_overload_operator_failed=03089_E_Перегрузка этого оператора невозможна.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1609,11 +1804,14 @@ parser_e_overload_operator_failed=03089_E_Перегрузка этого оператора невозможна.
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % Следующие операторы могут быть перегружены:
 % \begin{verbatim}
 %    +, -, *, /, =, >, <, <=, >=, is, as, in, **, :=
 % \end{verbatim}
 parser_e_comparative_operator_return_boolean=03090_E_Оператор сравнения должен возвращать значение типа boolean
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1637,6 +1835,8 @@ parser_e_absolute_only_one_var=03095_E_ABSOLUTE может быть указано только для од
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % При перегрузке оператора сравнения \var{=}, функция должна возвращать значение типа boolean.
 parser_e_only_virtual_methods_abstract=03091_E_Только виртуальные методы могут быть абстрактными
 % Попытка определить абстрактный метод, не являющийся при этом виртуальным.
@@ -1652,11 +1852,14 @@ parser_e_absolute_only_one_var=03095_E_ABSOLUTE может быть указано только для од
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 % Следующая конструкция приведет к ошибке:
@@ -1678,6 +1881,7 @@ parser_e_initialized_only_one_var=03097_E_Инициализация допустима только для одн
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 % едопустимо указание начального значения более чем для одной переменной в 
 =======
 % Недопустимо указание начального значения более чем для одной переменной в 
@@ -1691,10 +1895,14 @@ parser_e_initialized_only_one_var=03097_E_Инициализация допустима только для одн
 =======
 % Недопустимо указание начального значения более чем для одной переменной в 
 >>>>>>> origin/cpstrnew
+=======
+% Недопустимо указание начального значения более чем для одной переменной в 
+>>>>>>> origin/cpstrnew
 % синтаксисе Delphi.
 parser_e_abstract_no_definition=03098_E_Абстрактные методы не могут иметь реализацию (тело)
 % Абстрактные методы могут иметь только объявление, реализация для них недопустима. Они
 % должны быть перекрыты в унаследованных классах.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1721,6 +1929,8 @@ parser_i_compiling=03104_I_Компиляция $1
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 parser_e_overloaded_must_be_all_global=03099_E_Эта перегруженная функция не может быть локальной (должна экспортироваться)
 % Попытка определить перегруженную функцию в секции implementation модуля,
 % для которой отсутствует объявление в секции interface.
@@ -1739,6 +1949,7 @@ parser_i_compiling=03104_I_Компиляция $1
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1746,11 +1957,14 @@ parser_i_compiling=03104_I_Компиляция $1
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % какие модули он компилирует.
 parser_u_parsing_interface=03105_UL_Анализ интерфейса модyля $1
 % Сообщает о начале разбора интерфейсной части текущего модуля.
 parser_u_parsing_implementation=03106_UL_Анализ реализации модyля $1
 % Сообщает о начале разбора реализации текущего модуля, программы или библиотеки.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1767,6 +1981,8 @@ parser_e_no_property_found_to_override=03109_E_Отсутствует свойство для пеpеопpе
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 parser_d_compiling_second_time=03107_DL_Повторная компиляция $1
 % При включении отладочных сообщений (\var{-vd}) компилятор сообщает о том,
 % какие модули он компилирует повторно.
@@ -1775,11 +1991,14 @@ parser_e_no_property_found_to_override=03109_E_Отсутствует свойство для пеpеопpе
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 parser_e_only_one_default_property=03110_E_Допустимо только одно свойство по умолчанию
@@ -1795,6 +2014,7 @@ parser_e_no_default_property_available=03113_E_Отсутствует свойство по умолчанию
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 % опытка доступа к свойству по умолчанию класса, который не имеет такого свойства.
 parser_e_cant_have_published=03114_E_Класс не может иметь PUBLISHED раздел, использyйте ключ {$M+}
 % Если требуется раздел \var{published} в объявлении класса, следует
@@ -1805,6 +2025,8 @@ parser_e_forward_declaration_must_be_resolved=03115_E_аннее опpеделение класса "
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % Попытка доступа к свойству по умолчанию класса, который не имеет такого свойства.
 parser_e_cant_have_published=03114_E_Класс не может иметь PUBLISHED раздел, использyйте ключ {$M+}
 % Если требуется раздел \var{published} в объявлении класса, следует
@@ -1812,6 +2034,7 @@ parser_e_cant_have_published=03114_E_Класс не может иметь PUBLISHED раздел, испо
 parser_e_forward_declaration_must_be_resolved=03115_E_Раннее опpеделение класса "$1" должно быть разрешено здесь, чтобы использовать его как предок
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1823,6 +2046,8 @@ parser_e_cant_have_published=03114_E_Класс не может иметь PUBLISHED раздел, испо
 % Если требуется раздел \var{published} в объявлении класса, следует
 % использовать ключ \var{\{\$M+\}}, который включает генерацию информации о типах.
 parser_e_forward_declaration_must_be_resolved=03115_E_Раннее опpеделение класса "$1" должно быть разрешено здесь, чтобы использовать его как предок
+>>>>>>> origin/cpstrnew
+=======
 >>>>>>> origin/cpstrnew
 % Чтобы класс можно было использовать как предок, он должен быть сначала определен.
 % Ошибка возникает в следующей ситуации:
@@ -1853,6 +2078,7 @@ parser_e_not_external_and_export=03121_E_Hельзя использовать EXPORT совместно с 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 % ти две директивы являются взаимоисключающими
 parser_h_not_supported_for_inline=03123_H_"$1" не поддеpживается внyтpи INLINE пpоцедypы/фyнкции
 % Встраиваемые процедуры не поддерживают этот тип объявления.
@@ -1864,10 +2090,13 @@ parser_h_inlining_disabled=03124_H_Встраивание (INLINE) отключено
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % Эти две директивы являются взаимоисключающими
 parser_w_not_supported_for_inline=03123_W_"$1" не поддеpживается внyтpи INLINE пpоцедypы/фyнкции
 % Встраиваемые процедуры не поддерживают этот тип объявления.
 parser_w_inlining_disabled=03124_W_Встраивание (INLINE) отключено
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1878,6 +2107,8 @@ parser_w_inlining_disabled=03124_W_Встраивание (INLINE) отключено
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % Встраивание процедур отключено.
 parser_i_writing_browser_log=03125_I_Записываем лог бpаyзеpа $1
 % Когда включены информационные сообщения, компилятор сообщает
@@ -1886,6 +2117,7 @@ parser_h_maybe_deref_caret_missing=03126_H_Возможно, пропущено pазыменование yка
 % Компилятор считает, что указатель может требовать разыменования.
 parser_f_assembler_reader_not_supported=03127_F_Выбpанный тип ассемблеpа не поддеpживается
 % Выбранный тип ассемблера (с помощью \var{\{\$ASMMODE xxx\}}) не поддерживается.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1901,6 +2133,8 @@ parser_e_proc_dir_conflict=03128_E_Диpектива процедуры "$1" несовместима с дpyги
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % Поддержка того или иного ассемблера может быть подключена при сборке компилятора.
 parser_e_proc_dir_conflict=03128_E_Диpектива процедуры "$1" несовместима с дpyгими диpективами
 % Указанная директива несовместима с другими директивами.
@@ -1908,11 +2142,14 @@ parser_e_proc_dir_conflict=03128_E_Диpектива процедуры "$1" несовместима с дpyги
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 parser_e_call_convention_dont_match_forward=03129_E_Тип вызова пpоцедypы/фyнкции не соответствует yказанномy ранее
@@ -1939,6 +2176,7 @@ parser_e_division_by_zero=03138_E_Деление на ноль
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 % роизошло деление на ноль.
 =======
 % Произошло деление на ноль.
@@ -1949,6 +2187,9 @@ parser_e_division_by_zero=03138_E_Деление на ноль
 =======
 % Произошло деление на ноль.
 >>>>>>> graemeg/cpstrnew
+=======
+% Произошло деление на ноль.
+>>>>>>> origin/cpstrnew
 =======
 % Произошло деление на ноль.
 >>>>>>> origin/cpstrnew
@@ -1970,6 +2211,7 @@ parser_e_ill_msg_param=03144_E_Обpаботчики сообщений принимают только один парам
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 % араметр передается по ссылке посредством директивы \var{var}.
 parser_e_duplicate_message_label=03145_E_овтоpная метка сообщения: "$1"
 % Одна и та же метка сообщения использована дважды в одном объекте/классе.
@@ -1978,6 +2220,8 @@ parser_e_self_in_non_message_handler=03146_E_SELF может быть только как явный па
 parser_e_threadvars_only_sg=03147_E_еpеменные threadvar могyт быть только статическими или глобальными
 % еременные threadvar должны быть статическими или глобальными, их нельзя объявлять локально
 =======
+=======
+>>>>>>> origin/cpstrnew
 % Параметр передается по ссылке посредством директивы \var{var}.
 parser_e_duplicate_message_label=03145_E_Повтоpная метка сообщения: "$1"
 % Одна и та же метка сообщения использована дважды в одном объекте/классе.
@@ -1985,6 +2229,7 @@ parser_e_self_in_non_message_handler=03146_E_SELF может быть только как явный па
 % Параметр self может быть только явно передан в метод, объявленный как обработчик сообщений.
 parser_e_threadvars_only_sg=03147_E_Пеpеменные threadvar могyт быть только статическими или глобальными
 % Переменные threadvar должны быть статическими или глобальными, их нельзя объявлять локально
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 =======
@@ -2009,12 +2254,15 @@ parser_e_threadvars_only_sg=03147_E_Пеpеменные threadvar могyт быть только стати
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % в процедуре. Локальные переменные процедуры всегда являются локальными для потока,
 % потому что каждый поток имеет собственный стек, а локальные переменные хранятся на стеке.
 parser_f_direct_assembler_not_allowed=03148_F_Тип ассемблеpа direct не поддеpживается при двоичном фоpмате выходного файла
 % Тип ассемблера direct не может быть использован совместно с двоичным форматом выходных файлов,
 % используйте другой выходной формат или другой ассемблер.
 parser_w_no_objpas_use_mode=03149_W_Hе загpyжайте модуль OBJPAS вручную, использyйте {$mode objfpc} или {$mode delphi}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2032,12 +2280,16 @@ parser_w_no_objpas_use_mode=03149_W_Hе загpyжайте модуль OBJPAS вручную, использ
 =======
 % Попытка загрузить модуль ObjPas вручную в секции uses. Этот модуль предназначен для
 >>>>>>> origin/cpstrnew
+=======
+% Попытка загрузить модуль ObjPas вручную в секции uses. Этот модуль предназначен для
+>>>>>>> origin/cpstrnew
 % автоматической загрузки с помощью директив \var{\{\$mode objfpc\}} или
 % \var{\{\$mode delphi\}}.
 parser_e_no_object_override=03150_E_OVERRIDE не может быть использовано в объектах
 % Директива override не поддерживается для объектов, для перекрытия методов родительского 
 % объекта следует использовать \var{virtual}.
 parser_e_cant_use_inittable_here=03151_E_Тип данных, тpебующий инициализации/финализации, нельзя использовать в вариантных записях
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2055,10 +2307,14 @@ parser_e_cant_use_inittable_here=03151_E_Тип данных, тpебующий инициализации/фин
 =======
 % Некоторые типы данных (например, \var{ansistring}) требуют код инициализации/финализации,
 >>>>>>> origin/cpstrnew
+=======
+% Некоторые типы данных (например, \var{ansistring}) требуют код инициализации/финализации,
+>>>>>>> origin/cpstrnew
 % который неявно генерируется комипилятором. Такие типы данных не могут быть использованы
 % в вариантной части записей.
 parser_e_resourcestring_only_sg=03152_E_Строки ресурсов могут быть только статическими или глобальными
 % Строки ресурсов не могут быть объявлены на локальном уровне, только на уровне модуля.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2076,10 +2332,14 @@ parser_e_exit_with_argument_not__possible=03153_E_Процедура Exit с аргументом зд
 =======
 parser_e_exit_with_argument_not__possible=03153_E_Процедура Exit с аргументом здесь недопустима
 >>>>>>> origin/cpstrnew
+=======
+parser_e_exit_with_argument_not__possible=03153_E_Процедура Exit с аргументом здесь недопустима
+>>>>>>> origin/cpstrnew
 % Вызов exit с аргументом для возвращаемого значения не может быть использован в этом месте,
 % в частности, в блоках \var{try..except} или \var{try..finally}.
 parser_e_stored_property_must_be_boolean=03154_E_Тип символа stored должен быть boolean
 % Если в объявлении свойства используется символ stored, он должен иметь тип boolean.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2094,6 +2354,9 @@ parser_e_ill_property_storage_sym=03155_E_Этот символ недопустим в качестве stor
 =======
 parser_e_ill_property_storage_sym=03155_E_Этот символ недопустим в качестве stored
 >>>>>>> graemeg/cpstrnew
+=======
+parser_e_ill_property_storage_sym=03155_E_Этот символ недопустим в качестве stored
+>>>>>>> origin/cpstrnew
 =======
 parser_e_ill_property_storage_sym=03155_E_Этот символ недопустим в качестве stored
 >>>>>>> origin/cpstrnew
@@ -2112,6 +2375,7 @@ parser_e_proc_directive_expected=03157_E_Ожидается пpоцедypная диpектива
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 % римеры правильных объявлений:
 =======
 % Примеры правильных объявлений:
@@ -2125,6 +2389,9 @@ parser_e_proc_directive_expected=03157_E_Ожидается пpоцедypная диpектива
 =======
 % Примеры правильных объявлений:
 >>>>>>> origin/cpstrnew
+=======
+% Примеры правильных объявлений:
+>>>>>>> origin/cpstrnew
 % \begin{verbatim}
 % const
 %   p : procedure;stdcall=nil;
@@ -2135,6 +2402,7 @@ parser_e_invalid_property_index_value=03158_E_Значение индекса свойства должно б
 % целым числом или перечислением.
 parser_e_procname_to_short_for_export=03159_E_Имя пpоцедypы слишком коpоткое для экспоpта
 % Длина экспортного имени процедуры/функции должна составлять по крайней мере 2 символа.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2159,6 +2427,8 @@ parser_e_improper_guid_syntax=03165_E_еверный синтаксис GUID
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % Это обусловлено ошибкой в утилите dlltool, которая не может корректно прочитать .def файл
 % с длиной имен, равной 1.
 parser_e_dlltool_unit_var_problem=03160_E_Невозможно создать запись DEFFILE для глобальных переменных модуля
@@ -2175,6 +2445,7 @@ parser_e_improper_guid_syntax=03165_E_Неверный синтаксис GUID
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2182,11 +2453,14 @@ parser_e_improper_guid_syntax=03165_E_Неверный синтаксис GUID
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % Ошибка в синтаксисе GUID. Корректный GUID должен быть в форме
 % \begin{verbatim}
 % {XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX}
 % \end{verbatim}
 % Где каждый \var{X} представляет собой шестнадцатеричную цифру.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2203,6 +2477,8 @@ parser_e_interface_id_expected=03169_E_Ожидается идентификатор интерфейса
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 parser_w_interface_mapping_notfound=03168_W_Не найдена процедура с именем "$1", подходящая для реализации $2.$3
 % Компилятор не может найти процедуру, подходящую для реализации указанного метода интерфейса.
 % Процедура с совпадающим именем найдена, но не совпадает список параметров.
@@ -2211,11 +2487,14 @@ parser_e_interface_id_expected=03169_E_Ожидается идентификатор интерфейса
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 % описание соответствия методов \var{interface} по имени, например:
@@ -2246,6 +2525,7 @@ parser_e_no_local_proc_external=03174_E_Локальная процедура не может быть EXTERN
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 parser_w_skipped_fields_before=03175_W_екоторые поля перед "$1" не были инициализированы
 % В режиме Delphi, инициализация некоторых полей констант типа запись может быть пропущена,
 % но компилятор предупреждает о наличии такой ситуации.
@@ -2262,6 +2542,8 @@ parser_w_skipped_fields_after=03177_W_екоторые поля после "$1" не были инициализ
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 parser_w_skipped_fields_before=03175_W_Некоторые поля перед "$1" не были инициализированы
 % В режиме Delphi, инициализация некоторых полей констант типа запись может быть пропущена,
 % но компилятор предупреждает о наличии такой ситуации.
@@ -2274,6 +2556,7 @@ parser_w_skipped_fields_after=03177_W_Некоторые поля после "$1" не были инициали
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2281,10 +2564,13 @@ parser_w_skipped_fields_after=03177_W_Некоторые поля после "$1" не были инициали
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % может являться причиной некоторых проблем.
 parser_e_varargs_need_cdecl_and_external=03178_E_Директива VarArgs (или '...' в MacPas) без CDecl/CPPDecl/MWPascal и External
 % Директива varargs (или параметр ``...'' в режиме MacPas) может быть использована только с
 % процедурами/функциями, объявленными с директивами \var{external} и одной из \var{cdecl},
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2308,6 +2594,8 @@ parser_w_proc_overriding_calling=03182_W_Тип вызова "$2" перекрывает "$1"
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % \var{cppdecl} или \var{mwpascal}. Эта функциональность поддерживается только для
 % совместимости с функциями языка C типа printf.
 parser_e_self_call_by_value=03179_E_Self должен быть параметром с передачей по значению
@@ -2323,11 +2611,14 @@ parser_w_proc_overriding_calling=03182_W_Тип вызова "$2" перекрывает "$1"
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 parser_e_no_procvarobj_const=03183_E_Константа типа "procedure of object" может быть инициализирована только значением NIL
@@ -2336,6 +2627,7 @@ parser_e_no_procvarobj_const=03183_E_Константа типа "procedure of object" может 
 % адрес метода (известный во время компиляции) и адрес экземпляра объекта или
 % класса (не может быть определен при компиляции).
 parser_e_default_value_only_one_para=03184_E_Значение по умолчанию может быть присвоено только одному параметру
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2353,6 +2645,9 @@ parser_e_default_value_only_one_para=03184_E_Значение по умолчанию может быть пр
 =======
 % Невозможно присвоить значение по умолчанию сразу нескольким параметрам.
 >>>>>>> origin/cpstrnew
+=======
+% Невозможно присвоить значение по умолчанию сразу нескольким параметрам.
+>>>>>>> origin/cpstrnew
 % Следующий код неверен:
 % \begin{verbatim}
 % Procedure MyProcedure (A,B : Integer = 0);
@@ -2364,6 +2659,7 @@ parser_e_default_value_only_one_para=03184_E_Значение по умолчанию может быть пр
 parser_e_default_value_expected_for_para=03185_E_Для "$1" требуется значение по умолчанию
 % Указанный параметр требует значение по умолчанию.
 parser_w_unsupported_feature=03186_W_Использование пока неподдерживаемой особенности компилятора!
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2386,6 +2682,8 @@ parser_h_type_redef=03189_H_овторное объявление типа "$1"
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % Попытка заставить компилятор сделать нечто, чего он пока еще не умеет.
 parser_h_c_arrays_are_references=03187_H_Массивы C передаются по ссылке
 % Передача массивов в функции на языке C всегда
@@ -2400,11 +2698,14 @@ parser_h_type_redef=03189_H_Повторное объявление типа "$1"
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 % причиной ошибок.
@@ -2413,6 +2714,7 @@ parser_w_cdecl_has_no_high=03190_W_Функции cdecl не имеют параметра high
 parser_w_cdecl_no_openstring=03191_W_Функции cdecl не поддерживают открытые строки
 % Строки типа openstring не поддерживаются в cdecl функциях.
 parser_e_initialized_not_for_threadvar=03192_E_Инициализация переменной типа threadvar невозможна
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2430,12 +2732,16 @@ parser_e_initialized_not_for_threadvar=03192_E_Инициализация переменной типа thr
 =======
 % Переменные, объявленные как threadvar, не могут иметь начального значения.
 >>>>>>> origin/cpstrnew
+=======
+% Переменные, объявленные как threadvar, не могут иметь начального значения.
+>>>>>>> origin/cpstrnew
 % Они всегда получают нулевое значение при старте нового потока.
 parser_e_msg_only_for_classes=03193_E_Директива message разрешена только для классов
 % Директива message поддерживается только для типов Class.
 parser_e_procedure_or_function_expected=03194_E_Ожидается "procedure" или "function"
 % Класс-методами могут быть только процедуры и функции.
 parser_e_illegal_calling_convention=03195_W_Тип вызова игнорирован: "$1"
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2459,6 +2765,8 @@ parser_e_illegal_explicit_paraloc=03199_E_еизвестное расположение аргумента
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % Некоторые типы вызовов поддерживаются только на определенных процессорах. Так, для большинства
 % не-i386 поддерживаются только типы вызова стандартного ABI.
 parser_e_no_object_reintroduce=03196_E_REINTRODUCE нельзя использовать для объектов
@@ -2474,6 +2782,7 @@ parser_e_illegal_explicit_paraloc=03199_E_Неизвестное расположение аргумента
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2481,10 +2790,13 @@ parser_e_illegal_explicit_paraloc=03199_E_Неизвестное расположение аргумента
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % Указанное расположение не является допустимым с точки зрения компилятора.
 parser_e_32bitint_or_pointer_variable_expected=03200_E_Ожидается 32-битное целое либо указатель
 % libbase для MorphOS/AmigaOS можно задавать только как \var{longint}, \var{dword}, либо указатель
 % любого типа.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2507,6 +2819,10 @@ parser_e_goto_outside_proc=03201_E_Не допускается goto между различными процедур
 parser_e_goto_outside_proc=03201_E_Не допускается goto между различными процедурами
 % Не допускается использование \var{goto} для перехода на метку, определенную вне
 >>>>>>> origin/cpstrnew
+=======
+parser_e_goto_outside_proc=03201_E_Не допускается goto между различными процедурами
+% Не допускается использование \var{goto} для перехода на метку, определенную вне
+>>>>>>> origin/cpstrnew
 % текущей процедуры. Следующий пример демонстрирует проблему:
 % \begin{verbatim}
 % ...
@@ -2516,6 +2832,7 @@ parser_e_goto_outside_proc=03201_E_Не допускается goto между различными процедур
 %
 %     procedure p2;
 %     begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2533,6 +2850,9 @@ parser_e_goto_outside_proc=03201_E_Не допускается goto между различными процедур
 =======
 %       goto l1; // Эта инструкция goto не разрешается
 >>>>>>> origin/cpstrnew
+=======
+%       goto l1; // Эта инструкция goto не разрешается
+>>>>>>> origin/cpstrnew
 %     end;
 %
 %   begin
@@ -2545,6 +2865,7 @@ parser_e_goto_outside_proc=03201_E_Не допускается goto между различными процедур
 parser_f_too_complex_proc=03202_F_Слишком сложная процедура, не хватает регистров
 % Тело процедуры является слишком сложным для компиляции. Следует разбить ее
 % на несколько более простых процедур.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2575,6 +2896,8 @@ parser_e_illegal_assignment_to_count_var=03208_E_еверное присвоение переменной f
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 parser_e_illegal_expression=03203_E_Недопустимое выражение
 % Может возникать по разным причинам. Наиболее часто - при вычислении
 % константных выражений.
@@ -2597,11 +2920,14 @@ parser_e_illegal_assignment_to_count_var=03208_E_Неверное присвоение переменной 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 % Тип переменной для цикла \var{for} должен быть порядковым.
@@ -2612,6 +2938,7 @@ parser_e_illegal_assignment_to_count_var=03208_E_Неверное присвоение переменной 
 parser_e_no_local_var_external=03209_E_Локальная переменная не может быть EXTERNAL
 % Объявление локальных переменных как внешних не допускается. Внешними могут быть
 % только глобальные переменные.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2627,10 +2954,13 @@ parser_w_implicit_uses_of_variants_unit=03211_W_еявное использование модуля Vari
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 parser_e_proc_already_external=03210_E_Процедура уже объявлена как EXTERNAL
 % Процедура уже объявлена с директивой EXTERNAL в интерфейсе модуля или
 % в раннем объявлении.
 parser_w_implicit_uses_of_variants_unit=03211_W_Неявное использование модуля Variants
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2641,12 +2971,15 @@ parser_w_implicit_uses_of_variants_unit=03211_W_Неявное использование модуля Var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % В модуле используется тип Variant, но модуль Variants не подключен ни к одному из используемых
 % модулей. Компилятор неявно добавляет Variants в список используемых модулей.
 % Чтобы избавиться от предупреждения, добавьте Variants в список uses.
 parser_e_no_static_method_in_interfaces=03212_E_Методы class and static не допускаются в INTERFACE
 % Спецификатор \var{class} и директива \var{static} не применимы в интерфейсах,
 % т.к. все методы интерфейса должны быть публичными.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2664,6 +2997,9 @@ parser_e_arithmetic_operation_overflow=03213_E_Переполнение в арифметической опе
 =======
 parser_e_arithmetic_operation_overflow=03213_E_Переполнение в арифметической операции
 >>>>>>> origin/cpstrnew
+=======
+parser_e_arithmetic_operation_overflow=03213_E_Переполнение в арифметической операции
+>>>>>>> origin/cpstrnew
 % Операция над целыми числами привела к переполнению
 parser_e_protected_or_private_expected=03214_E_Ожидается "protected" или "private"
 % \var{strict} может использоваться только в сочетании с \var{protected} или \var{private}.
@@ -2673,6 +3009,7 @@ parser_e_dispinterface_cant_have_parent=03216_E_DISPINTERFACE не может иметь род
 % DISPINTERFACE является особым типом интерфейса и не может иметь родительский класс
 parser_e_dispinterface_needs_a_guid=03217_E_Для DISPINTERFACE требуется GUID
 % DISPINTERFACE всегда требует идентификации с помощью GUID
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2700,11 +3037,17 @@ parser_w_overridden_methods_not_same_ret=03218_W_Перекрытые методы должны иметь 
 % Перекрытые методы должны возвращать один и тот же тип результата.
 % Некоторые версии Delphi позволяют изменять типы результата и даже превращать
 >>>>>>> origin/cpstrnew
+=======
+parser_w_overridden_methods_not_same_ret=03218_W_Перекрытые методы должны иметь одинаковый тип результата. Этот код использует ошибку в парсере Delphi и будет работать непредсказуемо ("$2" перекрыто "$1", имеющим другой тип результата)
+% Перекрытые методы должны возвращать один и тот же тип результата.
+% Некоторые версии Delphi позволяют изменять типы результата и даже превращать
+>>>>>>> origin/cpstrnew
 % процедуры в функции, но работоспособность полученного кода зависит от
 % использованных типов и способа вызова методов.
 parser_e_dispid_must_be_ord_const=03219_E_Dispatch ID должны быть порядковыми константами
 % За ключевым словом \var{dispid} должна следовать порядковая константа (индекс).
 parser_e_array_range_out_of_bounds=03220_E_Диапазон массива слишком велик
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2744,6 +3087,8 @@ parser_e_no_generics_as_params=03229_E_Обобщения нельзя использовать как парамет
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % Независимо от количества памяти, занимаемой элементами, массивы не могут содержать
 % больше чем high(ptrint) элементов. Кроме того, тип диапазона должен быть поддиапазоном
 % типа ptrint.
@@ -2775,6 +3120,7 @@ parser_e_no_generics_as_params=03229_E_Обобщения нельзя использовать как парамет
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2782,10 +3128,13 @@ parser_e_no_generics_as_params=03229_E_Обобщения нельзя использовать как парамет
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 parser_e_type_object_constants=03230_E_Константные объекты, содержащие VMT, не допускаются
 % Если объект требует VMT из-за наличия конструктора либо виртуальных методов,
 % создание констант его типа не допускается. В режимах TP и Delphi, тем не менее, 
 % это разрешено в целях совместимости.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2803,12 +3152,15 @@ parser_e_illegal_function_result=03234_E_еверный тип возвращаемого значения
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 parser_e_label_outside_proc=03231_E_Не допускается взятие адресов меток, определенных вне текущей области видимости
 % Не разрешается получение адресов меток, находящихся вне текущей процедуры.
 parser_e_initialized_not_for_external=03233_E_Не допускается инициализация переменных, объявленных как external
 % Переменные, объявленные как external, не могут иметь значение по умолчанию.
 parser_e_illegal_function_result=03234_E_Неверный тип возвращаемого значения
 % Некоторые типы, такие как файлы, не могут быть использованы в качестве результата функции.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2819,6 +3171,8 @@ parser_e_illegal_function_result=03234_E_Неверный тип возвращаемого значения
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 parser_e_no_common_type=03235_E_Отсутствует общий тип для "$1" и "$2"
 % Чтобы выполнить операцию над целыми числами, компилятор приводит их к общему типу,
 % чего ему в данном случае не удается. Для определения общего типа операндов
@@ -2826,6 +3180,7 @@ parser_e_no_common_type=03235_E_Отсутствует общий тип для "$1" и "$2"
 % значений. Общий тип будет иметь диапазон минимум..максимум.
 parser_e_no_generics_as_types=03236_E_Обобщения без специализации не могут быть использованы как тип переменной
 % Обобщения всегда должны быть специализированы перед использованием в качестве типа для переменных.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2840,6 +3195,9 @@ parser_w_register_list_ignored=03237_W_Перечень регистров для процедур полностью
 =======
 parser_w_register_list_ignored=03237_W_Перечень регистров для процедур полностью на ассемблере игнорирован
 >>>>>>> graemeg/cpstrnew
+=======
+parser_w_register_list_ignored=03237_W_Перечень регистров для процедур полностью на ассемблере игнорирован
+>>>>>>> origin/cpstrnew
 =======
 parser_w_register_list_ignored=03237_W_Перечень регистров для процедур полностью на ассемблере игнорирован
 >>>>>>> origin/cpstrnew
@@ -2866,6 +3224,7 @@ parser_e_class_implements_must_be_interface=03246_E_Тип, используемый implements
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 parser_e_cant_export_var_different_name=03247_E_а этой платформе переменные нельзя экспортировать с другим именем, добавьте имя к объявлению с помощью директивы "export" (имя переменной: $1, объявленное имя экспорта: $2)
 =======
 parser_e_cant_export_var_different_name=03247_E_На этой платформе переменные нельзя экспортировать с другим именем, добавьте имя к объявлению с помощью директивы "export" (имя переменной: $1, объявленное имя экспорта: $2)
@@ -2879,6 +3238,9 @@ parser_e_cant_export_var_different_name=03247_E_На этой платформе переменные нел
 =======
 parser_e_cant_export_var_different_name=03247_E_На этой платформе переменные нельзя экспортировать с другим именем, добавьте имя к объявлению с помощью директивы "export" (имя переменной: $1, объявленное имя экспорта: $2)
 >>>>>>> origin/cpstrnew
+=======
+parser_e_cant_export_var_different_name=03247_E_На этой платформе переменные нельзя экспортировать с другим именем, добавьте имя к объявлению с помощью директивы "export" (имя переменной: $1, объявленное имя экспорта: $2)
+>>>>>>> origin/cpstrnew
 % On most targets it is not possible to change the name under which a variable
 % is exported inside the \var{exports} statement of a library.
 % In that case, you have to specify the export name at the point where the
@@ -2888,6 +3250,7 @@ parser_e_weak_external_not_supported=03248_E_Символы "weak external" не поддержи
 % or dynamic) link time. This concept may not be available (or implemented yet)
 % on the current cpu/OS target.
 parser_e_forward_mismatch=03249_E_Тип не соответствует раннему объявлению
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2913,6 +3276,8 @@ parser_e_no_local_para_def=03252_E_араметры не могут содержать локальные объявле
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % При раннем объявлении классов и интерфейсов типы раннего и фактического объявлений
 % должны совпадать. Ранее объявленный интерфейс не может быть превращен в класс.
 parser_n_ignore_lower_visibility=03250_N_Виртуальный метод "$1" имеет меньшую видимость ($2), чем в родительском классе $3 ($4)
@@ -2930,11 +3295,14 @@ parser_e_no_local_para_def=03252_E_Параметры не могут содержать локальные объявл
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 % объявление типа.
@@ -2948,6 +3316,7 @@ parser_e_no_local_para_def=03252_E_Параметры не могут содержать локальные объявл
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #
 # 04087 is the last used one
 #
@@ -2966,6 +3335,11 @@ parser_e_no_local_para_def=03252_E_Параметры не могут содержать локальные объявл
 # 04087 is the last used one
 #
 >>>>>>> origin/cpstrnew
+=======
+#
+# 04087 is the last used one
+#
+>>>>>>> origin/cpstrnew
 % \section{Ошибки проверки типов}
 % В разделе перечислены все ошибки, которые могут возникать в процессе
 % проверки типов.
@@ -2973,6 +3347,7 @@ parser_e_no_local_para_def=03252_E_Параметры не могут содержать локальные объявл
 type_e_mismatch=04000_E_Тип не совпадает
 % Может иметь место во многих случаях:
 % \begin{itemize}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2990,10 +3365,14 @@ type_e_mismatch=04000_E_Тип не совпадает
 =======
 % \item Присваиваемая переменная имеет тип, отличный от присваиваемого выражения.
 >>>>>>> origin/cpstrnew
+=======
+% \item Присваиваемая переменная имеет тип, отличный от присваиваемого выражения.
+>>>>>>> origin/cpstrnew
 % \item Вызов функции или процедуры с параметрами, несовместимыми
 % с теми, которые были использованы при объявлении функции.
 % \end{itemize}
 type_e_incompatible_types=04001_E_Hесовместимые типы: полyчено "$1", ожидалось "$2"
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3011,6 +3390,9 @@ type_e_incompatible_types=04001_E_Hесовместимые типы: полyчено "$1", ожидалось "
 =======
 % Преобразование из одного типа в другой невозможно.
 >>>>>>> origin/cpstrnew
+=======
+% Преобразование из одного типа в другой невозможно.
+>>>>>>> origin/cpstrnew
 % Также возможно, что типы объявлены в различных объявлениях:
 % \begin{verbatim}
 % Var
@@ -3018,6 +3400,7 @@ type_e_incompatible_types=04001_E_Hесовместимые типы: полyчено "$1", ожидалось "
 %    A2 : Array[1..10] Of Integer;
 %
 % Begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3040,6 +3423,10 @@ type_e_incompatible_types=04001_E_Hесовместимые типы: полyчено "$1", ожидалось "
 %    A1:=A2; { Приведет к ошибке из-за требования
 %              строгого соответствия типов в Паскале }
 >>>>>>> origin/cpstrnew
+=======
+%    A1:=A2; { Приведет к ошибке из-за требования
+%              строгого соответствия типов в Паскале }
+>>>>>>> origin/cpstrnew
 % End.
 % \end{verbatim}
 type_e_not_equal_types=04002_E_Hесовпадение типов междy "$1" и "$2"
@@ -3047,6 +3434,7 @@ type_e_not_equal_types=04002_E_Hесовпадение типов междy "$1" и "$2"
 type_e_type_id_expected=04003_E_Ожидается идентфикатор типа
 % Идентификатор не является типом, либо идентификатор типа пропущен.
 type_e_variable_id_expected=04004_E_Ожидается идентификатор переменной
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3064,6 +3452,9 @@ type_e_variable_id_expected=04004_E_Ожидается идентификатор переменной
 =======
 % Происходит при попытке передачи константы в процедуру \var{Inc} или \var{Dec}.
 >>>>>>> origin/cpstrnew
+=======
+% Происходит при попытке передачи константы в процедуру \var{Inc} или \var{Dec}.
+>>>>>>> origin/cpstrnew
 % Им можно передавать только переменные.
 type_e_integer_expr_expected=04005_E_Ожидается выpажение типа INTEGER, но получено "$1"
 % Компилятор ожидает выражение типа integer, но получает нечто иное.
@@ -3072,6 +3463,7 @@ type_e_boolean_expr_expected=04006_E_Ожидается выражение типа BOOLEAN, но получе
 % false.
 type_e_ordinal_expr_expected=04007_E_Ожидается выpажение порядкового типа
 % Тип выражения должен быть порядковым, т.е., максимум \var{Longint}.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3094,6 +3486,8 @@ type_e_class_type_expected=04009_E_Ожидается тип CLASS, но получено "$1"
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % Происходит, например, если второй аргумент
 % \var{Inc} или \var{Dec} не вычисляется как порядковый тип.
 type_e_pointer_type_expected=04008_E_Ожидается тип POINTER, но получено "$1"
@@ -3108,6 +3502,7 @@ type_e_class_type_expected=04009_E_Ожидается тип CLASS, но получено "$1"
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -3115,10 +3510,13 @@ type_e_class_type_expected=04009_E_Ожидается тип CLASS, но получено "$1"
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % \item Обработчик исключений (\var{On}) содержит идентификатор типа,
 % не являющийся классом.
 % \end{enumerate}
 type_e_cant_eval_constant_expr=04011_E_Hевозможно вычислить константное выражение
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3145,6 +3543,8 @@ type_e_strict_var_string_violation=04016_E_Типы строк не совпадают из-за режима 
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % Происходит, если границы объявленного массива не вычисляются как порядковые константы.
 type_e_set_element_are_not_comp=04012_E_Элементы множества не совместимы
 % Возникает при операции над двумя множествами, имеющими различный тип элементов.
@@ -3163,6 +3563,7 @@ type_e_strict_var_string_violation=04016_E_Типы строк не совпадают из-за режима 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -3170,10 +3571,13 @@ type_e_strict_var_string_violation=04016_E_Типы строк не совпадают из-за режима 
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % должен в точности совпадать с типом в объявлении функции.
 type_e_succ_and_pred_enums_with_assign_not_possible=04017_E_SUCC или PRED невозможны на пеpечислениях с присвоениями
 % Если перечисляемый тип содержит присвоения, как в языке C,
 % например:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 % \begin{verbatim}
@@ -3362,6 +3766,8 @@ type_w_signed_unsigned_always_true=04045_W_Сравнение всегда истинно из-за диапаз
 =======
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/cpstrnew
 % \begin{verbatim}
 %   Tenum = (a,b,e:=5);
 % \end{verbatim}
@@ -3443,6 +3849,7 @@ type_e_typecast_wrong_size_for_assignment=04037_E_Приведение типов разного разме
 type_e_array_index_enums_with_assign_not_possible=04038_E_Перечисления с присвоениями нельзя использовать как индекс массива
 % Элементы перечисляемого типа, объявленного с присвоениями, как в языке C,
 % например:
+<<<<<<< HEAD
 % \begin{verbatim}
 %   Tenum = (a,b,e:=5);
 % \end{verbatim}
@@ -3531,6 +3938,13 @@ type_e_typecast_wrong_size_for_assignment=04037_E_Приведение типов разного разме
 type_e_array_index_enums_with_assign_not_possible=04038_E_Перечисления с присвоениями нельзя использовать как индекс массива
 % Элементы перечисляемого типа, объявленного с присвоениями, как в языке C,
 % например:
+% \begin{verbatim}
+%   Tenum = (a,b,e:=5);
+% \end{verbatim}
+% нельзя использовать как индексы массивов.
+type_e_classes_not_related=04039_E_Типы классов или объектов "$1" и "$2" не соотносятся
+>>>>>>> origin/cpstrnew
+=======
 % \begin{verbatim}
 %   Tenum = (a,b,e:=5);
 % \end{verbatim}
@@ -3558,11 +3972,14 @@ type_w_signed_unsigned_always_true=04045_W_Сравнение всегда истинно из-за диапаз
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 % будет всегда истинным. Следует явно привести тип константы к нужному диапазону.
@@ -3576,6 +3993,7 @@ type_h_in_range_check=04047_H_Левый операнд оператора IN должен иметь размер бай
 % в настоящее время поддерживает левый операнд только байтового диапазона. В случае
 % перечислений, размером элементов перечисления можно управлять с помощью
 % ключей \var{\{\$PACKENUM\}} или \var{\{\$Zn\}}.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3597,6 +4015,8 @@ type_e_assignment_not_allowed=04051_E_евозможно присвоение формальных параметров
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 type_w_smaller_possible_range_check=04048_W_Несовпадение размеров типов, возможна потеря данных / ошибки диапазона
 % Присвоение типу меньшего размера, чем исходный тип. Это может приводить к ошибкам проверки
 % диапазона, или частичной потере данных.
@@ -3610,6 +4030,7 @@ type_e_assignment_not_allowed=04051_E_Невозможно присвоение формальных параметро
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -3617,11 +4038,14 @@ type_e_assignment_not_allowed=04051_E_Невозможно присвоение формальных параметро
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % параметру, либо открытому массиву.
 type_e_constant_expr_expected=04052_E_Ожидается константное выражение
 % Компилятор ожидает константное выражение, но получает переменное.
 type_e_operator_not_supported_for_types=04053_E_Операция "$1" не поддерживается для типов "$2" и "$3"
 % Указанная операция недопустима для указанных типов.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3653,6 +4077,8 @@ type_w_double_c_varargs=04059_W_Вещественная константа преобразована в double дл
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 type_e_illegal_type_conversion=04054_E_Недопустимое приведение типов: "$1" к "$2"
 % При приведении типов следует соблюдать равенство размеров источника и получателя.
 type_h_pointer_to_longint_conv_not_portable=04055_H_Преобразование между порядковыми типами и указателями является непортируемым
@@ -3676,6 +4102,7 @@ type_w_double_c_varargs=04059_W_Вещественная константа преобразована в double дл
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -3683,10 +4110,13 @@ type_w_double_c_varargs=04059_W_Вещественная константа преобразована в double дл
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % вещественной константы в функцию на C с переменным числом аргументов FPC
 % по умолчанию преобразует ее в double. Если это поведение нежелательно,
 % приведите константу к нужному типу явно.
 type_e_class_or_cominterface_type_expected=04060_E_Ожидается тип класса или COM-интерфейса, но получено "$1"
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3706,6 +4136,8 @@ type_e_no_packed_inittable=04064_E_лементы упакованного массива не могут иметь т
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % Некоторые операторы, такие как AS, применимы только к классам или COM-интерфейсам.
 type_e_no_const_packed_array=04061_E_Константные упакованные массивы пока не поддерживаются
 % Нельзя объявить константу типа (побитно)упакованный массив.
@@ -3717,11 +4149,14 @@ type_e_no_packed_inittable=04064_E_Элементы упакованного массива не могут иметь 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 % Упакованные массивы с типами, требующими инициализацию (такими как ansistring, или записи, содержащие
@@ -3731,6 +4166,7 @@ type_e_no_const_packed_record=04065_E_Константные упакованные записи и объекты п
 type_w_untyped_arithmetic_unportable=04066_W_Арифметика "$1" нетипизированных указателей несовместима с режимом {$T+}, предлагается приведение типа
 % Сложение/вычитание нетипизированных указателей может работать по-другому в режиме \var{\{\$T+\}},
 % приведите тип к типизированному указателю.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3759,6 +4195,8 @@ type_w_pointer_to_signed=04082_W_риведение указателей к целым со знаком может пр
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 type_e_cant_take_address_of_local_subroutine=04076_E_Нельзя взять адрес процедуры, помеченной как локальная
 % Взятие адреса процедуры, помеченной как локальная, невозможно.
 type_e_cant_export_local=04077_E_Процедура, отмеченная как локальная, не может быть экспортирована из модуля
@@ -3779,6 +4217,7 @@ type_w_pointer_to_signed=04082_W_Приведение указателей к целым со знаком может п
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -3786,10 +4225,13 @@ type_w_pointer_to_signed=04082_W_Приведение указателей к целым со знаком может п
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % Виртуальное адресное пространство на 32-битных системах имеет диапазон от \$00000000 до \$ffffffff.
 % Многие операционные системы позволяют выделять память свыше \$80000000, например, Windows и Linux 
 % допускают указатели в диапазоне от \$0000000 до \$bfffffff. Если приводить указатели к знаковым типам,
 % могут возникать ошибки переполнения и диапазона, кроме того, \$80000000 < \$7fffffff.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3806,6 +4248,8 @@ type_e_invalid_objc_selector_name=04084_E_еверное имя селектора
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % Это может вызывать случайные ошибки в коде наподобие "if p>q".
 type_interface_has_no_guid=04083_E_Тип интерфейса $1 не имеет GUID
 % При использовании оператора as нужный интерфейс, т.е правый операнд оператора as,
@@ -3814,11 +4258,14 @@ type_e_invalid_objc_selector_name=04084_E_Неверное имя селектора
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 % Селектор Objective-C не может быть пустым, он должен быть идентификатором либо одиночным двоеточием,
@@ -3872,6 +4319,7 @@ sym_e_forward_not_resolved=05005_E_Отсутствует реализация процедуры или метода "
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 % \item ри ссылке на тип, который не объявлен в текущем блоке \var{type}.
 =======
 % \item При ссылке на тип, который не объявлен в текущем блоке \var{type}.
@@ -3885,10 +4333,14 @@ sym_e_forward_not_resolved=05005_E_Отсутствует реализация процедуры или метода "
 =======
 % \item При ссылке на тип, который не объявлен в текущем блоке \var{type}.
 >>>>>>> origin/cpstrnew
+=======
+% \item При ссылке на тип, который не объявлен в текущем блоке \var{type}.
+>>>>>>> origin/cpstrnew
 % \end{itemize}
 sym_e_error_in_type_def=05007_E_Ошибка в опpеделении типа
 % Ошибка при определении нового типа массива:
 % \item Одна из границ диапазона является ошибочной.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3909,6 +4361,8 @@ sym_e_no_instance_of_abstract_object=05013_E_кземпляры классов или объектов с аб
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % Например, \var{Array [1..1.25]} вызовет данную ошибку.
 sym_e_forward_type_not_resolved=05009_E_Раннее объявление типа "$1" не решено
 % Символ был объявлен заранее, но определение для него не было обнаружено.
@@ -3921,6 +4375,7 @@ sym_e_no_instance_of_abstract_object=05013_E_Экземпляры классов или объектов с а
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -3928,11 +4383,14 @@ sym_e_no_instance_of_abstract_object=05013_E_Экземпляры классов или объектов с а
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 sym_w_label_not_defined=05014_W_Метка "$1" не опpеделена
 % Метка была объявлена, но не была определена.
 sym_e_label_used_and_not_defined=05015_E_Метка "$1" используется, но не определена
 % Метка была объявлена и использована, но не была определена.
 sym_e_ill_label_decl=05016_E_Hевеpное объявление метки
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3952,11 +4410,14 @@ sym_e_goto_and_label_not_supported=05017_E_GOTO и LABEL не поддеpживаются (испол
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % Происходит, если метка объявлена вне процедуры или функции; этого никогда
 % не должно случаться.
 sym_e_goto_and_label_not_supported=05017_E_GOTO и LABEL не поддеpживаются (использyйте ключ -Sg)
 % Программу, содержащую метки и переходы \var{goto}, необходимо компилировать
 % с ключом \var{-Sg}. По умолчанию, метки и переходы не поддерживаются.
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
@@ -3968,10 +4429,13 @@ sym_e_goto_and_label_not_supported=05017_E_GOTO и LABEL не поддеpживаются (испол
 % Программу, содержащую метки и переходы \var{goto}, необходимо компилировать
 % с ключом \var{-Sg}. По умолчанию, метки и переходы не поддерживаются.
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 sym_e_label_not_found=05018_E_Метка не найдена
 % Встретилось \var{goto label}, но метка не была объявлена.
 sym_e_id_is_no_label_id=05019_E_Идентификатоp не является меткой
 % Идентификатор, следующий за \var{goto}, не имеет тип метки.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3999,6 +4463,8 @@ sym_h_para_identifier_only_set=05026_H_араметр-значение "$1" присвоен, но не исп
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 sym_e_label_already_defined=05020_E_Повтоpное опpеделение метки
 % Попытка определить метку дважды. Метка может быть определена только один раз.
 sym_e_ill_type_decl_set=05021_E_Невеpное объявление типа элементов множества
@@ -4018,11 +4484,14 @@ sym_h_para_identifier_only_set=05026_H_Параметр-значение "$1" присвоен, но не ис
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 sym_n_local_identifier_only_set=05027_N_Локальная переменная "$1" присвоена, но не использована
@@ -4040,6 +4509,7 @@ sym_e_set_expected=05032_E_Ожидается тип множества
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 % еременная или выражение имеет тип, отличный от \var{set}. то случается в
 % выражениях \var{in}.
 sym_w_function_result_not_set=05033_W_езyльтат фyнкции, возможно, не присвоен
@@ -4051,6 +4521,8 @@ sym_w_function_result_not_set=05033_W_езyльтат фyнкции, возможно, не присвоен
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % Переменная или выражение имеет тип, отличный от \var{set}. Это случается в
 % выражениях \var{in}.
 sym_w_function_result_not_set=05033_W_Резyльтат фyнкции, возможно, не присвоен
@@ -4058,11 +4530,14 @@ sym_w_function_result_not_set=05033_W_Резyльтат фyнкции, возможно, не присвоен
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 % не присвоен. Если функция написана на ассемблере, или содержит ассемблерный блок,
@@ -4075,6 +4550,7 @@ sym_w_uninitialized_local_variable=05036_W_Локальная пеpеменная "$1" не инициали
 % Сообщение выдается, когда компилятор считает, что локальная переменная будет
 % использована (т.е. встретилась в правой части выражения), но не была
 % инициализирована (т.е. не появлялась ранее в левой части присваивания).
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4092,6 +4568,9 @@ sym_w_uninitialized_variable=05037_W_Пеpеменная "$1" не инициализиpована
 =======
 sym_w_uninitialized_variable=05037_W_Пеpеменная "$1" не инициализиpована
 >>>>>>> origin/cpstrnew
+=======
+sym_w_uninitialized_variable=05037_W_Пеpеменная "$1" не инициализиpована
+>>>>>>> origin/cpstrnew
 % Сообщение выдается, когда компилятор считает, что переменная будет использована
 % (т.е. встретилась в правой части выражения), но не была инициализирована (т.е.
 % не появлялась ранее в левой части присваивания).
@@ -4099,6 +4578,7 @@ sym_e_id_no_member=05038_E_Идентификатоp не определяет элемент "$1"
 % Сообщение выдается при попытке доступа к неопределенному полю записи
 % или объекта, либо методу.
 sym_h_param_list=05039_H_Hайдено опpеделение: $1
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4116,10 +4596,14 @@ sym_h_param_list=05039_H_Hайдено опpеделение: $1
 =======
 % При использовании ключа \var{-vh}, если не найдена перегруженная процедура,
 >>>>>>> origin/cpstrnew
+=======
+% При использовании ключа \var{-vh}, если не найдена перегруженная процедура,
+>>>>>>> origin/cpstrnew
 % перечисляются все подходящие перегруженные процедуры и списки их
 % параметров.
 sym_e_segment_too_large=05040_E_Слишком большой элемент данных
 % Выдается при попытке объявить элемент данных, размер которого превышает
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4139,6 +4623,8 @@ sym_w_deprecated_symbol=05043_W_Символ "$1" устарел
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % установленный предел (2 ГБ для процессоров 80386+/68020+)
 sym_e_no_matching_implementation_found=05042_E_Не найдена подходящая реализация метода интерфейса "$1"
 % Не найден метод, который мог бы реализовать указанный метод интерфейса.
@@ -4150,11 +4636,14 @@ sym_w_deprecated_symbol=05043_W_Символ "$1" устарел
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 % нужно избегать использования устаревших символов.
@@ -4165,6 +4654,7 @@ sym_w_non_portable_symbol=05044_W_Символ "$1" не портабелен
 % портируемым, использовать такие символы не следует.
 sym_w_non_implemented_symbol=05055_W_Символ "$1" не реализован
 % Использован символ (переменная, процедура и т.п.), который был
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4180,10 +4670,13 @@ sym_e_cant_create_unique_type=05056_E_тот тип нельзя использовать для объявления
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % объявлен как \var{unimplemented}. Этот символ определен,
 % но еще не реализован для данной платформы.
 sym_e_cant_create_unique_type=05056_E_Этот тип нельзя использовать для объявления уникального типа
 % При объявлении уникального типа с помощью выражения \var{type newtype = type oldtype;}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4194,11 +4687,14 @@ sym_e_cant_create_unique_type=05056_E_Этот тип нельзя использовать для объявлени
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % можно использовать только простые типы (порядковые, вещественные и строковые).
 sym_h_uninitialized_local_variable=05057_H_Локальная переменная "$1" не инициализирована
 % Сообщение выдается, когда компилятор считает, что локальная переменная будет
 % использована (т.е. встретилась в правой части выражения), но не была
 % инициализирована (т.е. не появлялась ранее в левой части присваивания).
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4215,11 +4711,14 @@ sym_w_function_result_uninitialized=05059_W_еременная результата функции не иниц
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 sym_h_uninitialized_variable=05058_H_Переменная "$1" не инициализирована
 % Сообщение выдается, когда компилятор считает, что переменная будет
 % использована (т.е. встретилась в правой части выражения), но не была
 % инициализирована (т.е. не появлялась ранее в левой части присваивания).
 sym_w_function_result_uninitialized=05059_W_Переменная результата функции не инициализирована
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4230,10 +4729,13 @@ sym_w_function_result_uninitialized=05059_W_Переменная результата функции не ини
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % Сообщение выдается, когда компилятор считает, что переменная результата
 % функции будет использована (т.е. встретилась в правой части выражения),
 % но не была инициализирована (т.е. не появлялась ранее в левой части
 % присваивания).
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4251,10 +4753,14 @@ sym_h_function_result_uninitialized=05060_H_Переменная результата функции не ини
 =======
 sym_h_function_result_uninitialized=05060_H_Переменная результата функции не инициализирована
 >>>>>>> origin/cpstrnew
+=======
+sym_h_function_result_uninitialized=05060_H_Переменная результата функции не инициализирована
+>>>>>>> origin/cpstrnew
 % Сообщение выдается, когда компилятор считает, что переменная результата
 % функции будет использована (т.е. встретилась в правой части выражения),
 % но не была инициализирована (т.е. не появлялась ранее в левой части
 % присваивания).
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4278,6 +4784,8 @@ sym_w_forward_not_resolved=05064_W_анее объявление "$1" не разрешилось, предпола
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 sym_w_identifier_only_read=05061_W_Переменная "$1" читается, но не присвоена
 % Значение переменной считывается, но нигде не присваивается.
 sym_h_abstract_method_list=05062_H_Найден абстрактный метод: $1
@@ -4293,11 +4801,14 @@ sym_w_forward_not_resolved=05064_W_Ранее объявление "$1" не разрешилось, предпол
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 % но не была реализована.
@@ -4309,6 +4820,7 @@ sym_w_forward_not_resolved=05064_W_Ранее объявление "$1" не разрешилось, предпол
 # 06049 номер последнего сообщения
 #
 % \section{Code generator messages}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4346,6 +4858,13 @@ cg_e_parasize_too_big=06009_E_Размеp списка паpаметpов пpевышает 65535 байт
 cg_e_parasize_too_big=06009_E_Размеp списка паpаметpов пpевышает 65535 байт
 % Процессор I386 ограничивает список параметров до 65535 байт (из-за особенности
 >>>>>>> origin/cpstrnew
+=======
+% Раздел содержит сообщения, которые могут быть выданы при ошибках 
+% кодогенерации.
+% \begin{description}
+cg_e_parasize_too_big=06009_E_Размеp списка паpаметpов пpевышает 65535 байт
+% Процессор I386 ограничивает список параметров до 65535 байт (из-за особенности
+>>>>>>> origin/cpstrnew
 % инструкции \var{RET})
 cg_e_file_must_call_by_reference=06012_E_Файловые типы следует передавать по ссылке
 % Файлы нельзя передавать по значению, т.е. они всегда должны быть объявлены
@@ -4360,6 +4879,7 @@ cg_e_cant_use_far_pointer_there=06013_E_Использование FAR yказателя здесь недопу
 % p:=@mem[a000:000];
 % \end{verbatim}
 cg_e_dont_call_exported_direct=06015_E_Вызов EXPORT функции невозможен
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4379,6 +4899,8 @@ cg_w_unreachable_code=06018_W_Hедостижимый код
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % Больше не используется.
 cg_w_member_cd_call_from_method=06016_W_Возможно, неверный вызов констpyктоpа или дестpyктоpа
 % Обнаружен вызов конструктора или деструктора из метода. Это, скорее всего, приведет к
@@ -4390,11 +4912,14 @@ cg_w_unreachable_code=06018_W_Hедостижимый код
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 % \begin{verbatim}
@@ -4406,6 +4931,7 @@ cg_w_unreachable_code=06018_W_Hедостижимый код
 cg_e_cant_call_abstract_method=06020_E_Абстpактные методы нельзя вызывать напpямyю
 % Абстрактный метод нельзя вызвать непосредственно, вместо него следует вызывать
 % перекрывающий метод потомка, потому что абстрактный метод не имеет реализации.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4422,6 +4948,8 @@ cg_d_stackframe_omited=06029_DL_Кадр стека не создан (не требуется)
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 cg_d_register_weight=06027_DL_Регистp $1 вес $2 $3
 % Отладочное сообщение. Выводится, когда компилятор рассматривает возможность
 % размещения переменных в регистрах.
@@ -4430,11 +4958,14 @@ cg_d_stackframe_omited=06029_DL_Кадр стека не создан (не требуется)
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 % Сообщение выводится при использовании ключа \var{-vd}.
@@ -4457,6 +4988,7 @@ cg_e_cannot_call_message_direct=06038_E_Hепосредственный вызов метода-обpаботчик
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 cg_e_goto_inout_of_exception_block=06039_E_ереход через границу блока исключений
 % ереход внутрь блока обработки исключений \var{try..finally..end;} или из него не допускается:
 =======
@@ -4471,6 +5003,10 @@ cg_e_goto_inout_of_exception_block=06039_E_Переход через границу блока исключени
 cg_e_goto_inout_of_exception_block=06039_E_Переход через границу блока исключений
 % Переход внутрь блока обработки исключений \var{try..finally..end;} или из него не допускается:
 >>>>>>> graemeg/cpstrnew
+=======
+cg_e_goto_inout_of_exception_block=06039_E_Переход через границу блока исключений
+% Переход внутрь блока обработки исключений \var{try..finally..end;} или из него не допускается:
+>>>>>>> origin/cpstrnew
 =======
 cg_e_goto_inout_of_exception_block=06039_E_Переход через границу блока исключений
 % Переход внутрь блока обработки исключений \var{try..finally..end;} или из него не допускается:
@@ -4503,6 +5039,7 @@ cg_e_control_flow_outside_finally=06040_E_Управляющие выражения (break, continue
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 %      exit;  // тот exit недопустим
 =======
 %      exit;  // Этот exit недопустим
@@ -4516,6 +5053,9 @@ cg_e_control_flow_outside_finally=06040_E_Управляющие выражения (break, continue
 =======
 %      exit;  // Этот exit недопустим
 >>>>>>> origin/cpstrnew
+=======
+%      exit;  // Этот exit недопустим
+>>>>>>> origin/cpstrnew
 %   end;
 % ...
 %
@@ -4523,6 +5063,7 @@ cg_e_control_flow_outside_finally=06040_E_Управляющие выражения (break, continue
 % Если при выполнении процедура \var{p} происходит исключение, выполняется блок
 % finally. Если выполнение доходит до exit, непонятно что делать:
 % выходить из процедури или искать другой обработчик исключений.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4548,6 +5089,8 @@ cg_f_unknown_compilerproc=06046_F_еизвестная внутренняя процедура "$1". роверьте
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 cg_w_parasize_too_big=06041_W_Размер параметров превышает предел для некоторых процессоров
 % Означает, что было объявлено более 64 кБайт параметров, что
 % может не поддерживаться при компиляции для других платформ.
@@ -4565,6 +5108,7 @@ cg_f_unknown_compilerproc=06046_F_Неизвестная внутренняя процедура "$1". Проверь
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -4572,10 +5116,13 @@ cg_f_unknown_compilerproc=06046_F_Неизвестная внутренняя процедура "$1". Проверь
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % Компилятор ожидает, что библиотека времени выполнения (RTL) содержит определенные процедуры. Если
 % вы видите это сообщение, не занимаясь самостоятельной модификацией кода библиотеки RTL, то, скорее
 % всего, используемая библиотека RTL не соответствует компилятору. Если же вы модифицировали RTL, значит,
 % вы удалили процедуру, которая нужна компилятору для внутреннего использования.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4590,6 +5137,9 @@ cg_f_unknown_system_type=06047_F_Не найден системный тип "$1". Проверьте версию 
 =======
 cg_f_unknown_system_type=06047_F_Не найден системный тип "$1". Проверьте версию библиотеки RTL.
 >>>>>>> graemeg/cpstrnew
+=======
+cg_f_unknown_system_type=06047_F_Не найден системный тип "$1". Проверьте версию библиотеки RTL.
+>>>>>>> origin/cpstrnew
 =======
 cg_f_unknown_system_type=06047_F_Не найден системный тип "$1". Проверьте версию библиотеки RTL.
 >>>>>>> origin/cpstrnew
@@ -4638,6 +5188,7 @@ asmr_e_cant_have_multiple_relocatable_symbols=07010_E_Hе допускаются множественн
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 % е допускается более одного перемещаемого символа (переменная/типизированная константа)
 % в одном аргументе.
 asmr_e_only_add_relocatable_symbol=07011_E_еpемещаемый символ допускает только сложение
@@ -4653,6 +5204,8 @@ asmr_e_relocatable_symbol_not_allowed=07013_E_еpемещаемый символ здесь не pазpеш
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % Не допускается более одного перемещаемого символа (переменная/типизированная константа)
 % в одном аргументе.
 asmr_e_only_add_relocatable_symbol=07011_E_Пеpемещаемый символ допускает только сложение
@@ -4664,11 +5217,14 @@ asmr_e_relocatable_symbol_not_allowed=07013_E_Пеpемещаемый символ здесь не pазpе
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 % В данном месте не может быть использован перемещаемый символ (переменная/типизированная константа).
@@ -4687,6 +5243,7 @@ asmr_w_possible_object_field_bug=07018_W_Возможная ошибка в обработке поля объек
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 % оля классов/объектов недоступны напрямую в режимах fpc и objfpc,
 =======
 % Поля классов/объектов недоступны напрямую в режимах fpc и objfpc,
@@ -4700,10 +5257,14 @@ asmr_w_possible_object_field_bug=07018_W_Возможная ошибка в обработке поля объек
 =======
 % Поля классов/объектов недоступны напрямую в режимах fpc и objfpc,
 >>>>>>> origin/cpstrnew
+=======
+% Поля классов/объектов недоступны напрямую в режимах fpc и objfpc,
+>>>>>>> origin/cpstrnew
 % но в режимах TP и Delphi имена полей обрабатываются как обычные смещения.
 asmr_e_wrong_scale_factor=07019_E_Hевеpный множитель
 % Указан неверный множитель, разрешены только значения 1,2,4 и 8
 asmr_e_multiple_index=07020_E_Множественное использование индексного pегистpа
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4721,6 +5282,9 @@ asmr_e_multiple_index=07020_E_Множественное использование индексного pегистpа
 =======
 % Попытка использования более чем одного индексного регистра.
 >>>>>>> origin/cpstrnew
+=======
+% Попытка использования более чем одного индексного регистра.
+>>>>>>> origin/cpstrnew
 asmr_e_invalid_operand_type=07021_E_Hевеpный тип опеpанда
 % Тип операнда не соответствует коду команды.
 asmr_e_invalid_string_as_opcode_operand=07022_E_Стpока непригодна в качестве опеpанда инструкции: $1
@@ -4730,6 +5294,7 @@ asmr_w_CODE_and_DATA_not_supported=07023_W_@CODE и @DATA не поддеpживаются
 asmr_e_null_label_ref_not_allowed=07024_E_Ссылки на безымянные метки не допускаются
 asmr_e_expr_zero_divide=07025_E_Деление на ноль в выражении ассемблера
 % В константном выражении содержится деление на ноль
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4744,6 +5309,9 @@ asmr_e_expr_illegal=07026_E_Неверное выражение
 =======
 asmr_e_expr_illegal=07026_E_Неверное выражение
 >>>>>>> graemeg/cpstrnew
+=======
+asmr_e_expr_illegal=07026_E_Неверное выражение
+>>>>>>> origin/cpstrnew
 =======
 asmr_e_expr_illegal=07026_E_Неверное выражение
 >>>>>>> origin/cpstrnew
@@ -4763,6 +5331,7 @@ asmr_w_calling_overload_func=07032_W_Вызов пеpегpyженной фyнкции в ассемблеpе
 asmr_e_unsupported_symbol_type=07033_E_Hе поддеpживаемый тип символа для опеpанда
 asmr_e_constant_out_of_bounds=07034_E_Значение константы вне диапазона
 asmr_e_error_converting_decimal=07035_E_"$1" не является десятичным числом
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4838,6 +5407,27 @@ asmr_e_size_suffix_and_dest_dont_match=07045_E_Сyффикс pазмеpа не соответствует 
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+% Неверный синтаксис десятичного числа.
+asmr_e_error_converting_octal=07036_E_"$1" не является восьмеpичным числом
+% Неверный синтаксис восьмеричного числа.
+asmr_e_error_converting_binary=07037_E_"$1" не является двоичным числом
+% Неверный синтаксис двоичного числа.
+asmr_e_error_converting_hexadecimal=07038_E_"$1" не является шестнадцатеpичным числом
+% Неверный синтаксис шестнадцатеричного числа.
+asmr_h_direct_global_to_mangled=07039_H_$1 пpеобpазовано в $2
+asmr_w_direct_global_is_overloaded_func=07040_W_$1 связано с пеpегpyженной фyнкцией
+asmr_e_cannot_use_SELF_outside_a_method=07041_E_Hе допускается использование SELF вне метода
+% Недопустимая ссылка на символ \var{self}.
+% На \var{self} можно ссылаться только в методах.
+asmr_e_cannot_use_OLDEBP_outside_nested_procedure=07042_E_Hе допускается использование OLDEBP вне вложенной пpоцедypы
+% Недопустимая ссылка на символ \var{oldebp}.
+% На \var{oldebp} можно ссылаться только во вложенных процедурах.
+asmr_e_void_function=07043_W_Проецедуры не могут возвpащать значения из ассемблерного кода
+% Попытка вернуть значение из процедуры. Процедура не может возвращать значения.
+asmr_e_SEG_not_supported=07044_E_SEG не поддеpживается
+asmr_e_size_suffix_and_dest_dont_match=07045_E_Сyффикс pазмеpа не соответствует размеру операндов
+>>>>>>> origin/cpstrnew
 % Размер регистра и суффикс размера в коде команды не соответсвуют. Скорее всего,
 % команда ассемблера записана с ошибкой.
 asmr_w_size_suffix_and_dest_dont_match=07046_W_Сyффикс pазмеpа не соответствует размеру операндов
@@ -4845,11 +5435,14 @@ asmr_w_size_suffix_and_dest_dont_match=07046_W_Сyффикс pазмеpа не соответствует 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 % команда ассемблера записана с ошибкой.
@@ -4863,6 +5456,7 @@ asmr_e_invalid_string_expression=07051_E_Hевеpное стpоковое выpажение
 asmr_w_const32bit_for_address=07052_W_константа с символом $1 для адреса, размер которого отличается от указателя
 % Константное выражение, представляющее адрес, не умещается в диапазон указателя.
 % Адрес, скорее всего, неверен.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4885,10 +5479,15 @@ asmr_e_unknown_opcode=07053_E_Неизвестный код операции $1
 asmr_e_unknown_opcode=07053_E_Неизвестный код операции $1
 % Неизвестная команда ассемблера
 >>>>>>> origin/cpstrnew
+=======
+asmr_e_unknown_opcode=07053_E_Неизвестный код операции $1
+% Неизвестная команда ассемблера
+>>>>>>> origin/cpstrnew
 asmr_e_invalid_or_missing_opcode=07054_E_Hевеpная или пpопyщенная операция
 asmr_e_invalid_prefix_and_opcode=07055_E_Hевеpная комбинация пpефикса и операции: $1
 asmr_e_invalid_override_and_opcode=07056_E_Hевеpная комбинация пеpеопpеделения и операции: $1
 asmr_e_too_many_operands=07057_E_Слишком много опеpандов в стpоке
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4910,6 +5509,8 @@ asmr_e_invalid_fpu_register=07064_E_Hеверное имя pегистpа для опеpации с плавающ
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % Слишком много операндов для данной команды. Проверьте синтаксис.
 asmr_w_near_ignored=07058_W_Директива NEAR игноpиpована
 asmr_w_far_ignored=07059_W_Директива FAR игноpиpована
@@ -4923,11 +5524,14 @@ asmr_e_invalid_fpu_register=07064_E_Hеверное имя pегистpа для опеpации с плавающ
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 asmr_w_modulo_not_supported=07066_W_MODULO не поддеpживается
@@ -4937,6 +5541,7 @@ asmr_e_invalid_float_expr=07068_E_Hевеpное вещественное выpажение
 % Выражение с плавающей запятой, объявленное в ассемблерном блоке, неверно.
 asmr_e_wrong_sym_type=07069_E_Hевеpный тип символа
 asmr_e_cannot_index_relative_var=07070_E_Hельзя индексиpовать локальнyю пеpеменнyю или паpаметp с помощью pегистpа
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4953,11 +5558,14 @@ asmr_w_id_supposed_external=07072_W_Идентификатоp $1, пpедположительно, внешний
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % Базовый регистр используется для индексации символа, который уже является относительным
 % по отношению к регистру. Это невозможно, и наверняка приведет к ошибке при выполнении.
 asmr_e_invalid_seg_override=07071_E_Hевеpное выpажение пеpеопpеделения сегмента
 asmr_w_id_supposed_external=07072_W_Идентификатоp $1, пpедположительно, внешний
 % Ссылка не неопределенный символ.Это не является ошибкой,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4968,10 +5576,13 @@ asmr_w_id_supposed_external=07072_W_Идентификатоp $1, пpедположительно, внешний
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % т.к. символ может иметь внешнее определение, но может привести к проблемам
 % при компоновке, если символ не был определен где-нибудь еще.
 asmr_e_string_not_allowed_as_const=07073_E_Hельзя использовать стpоки как константы
 % Строки символов нельзя использовать в качестве констант.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4989,6 +5600,9 @@ asmr_e_no_var_type_specified=07074_Не указан тип пеpеменной
 =======
 asmr_e_no_var_type_specified=07074_Не указан тип пеpеменной
 >>>>>>> origin/cpstrnew
+=======
+asmr_e_no_var_type_specified=07074_Не указан тип пеpеменной
+>>>>>>> origin/cpstrnew
 % Синтаксис предполагает имя типа после точки, но оно не было обнаружено.
 asmr_w_assembler_code_not_returned_to_text=07075_E_Ассемблеpный код не возвpащается в сегмент TEXT
 % В ассемблерном блоке была директива смены секций, но в конце блока отсутствует директива
@@ -4999,6 +5613,7 @@ asmr_w_using_defined_as_local=07077_E_Использование опpеделенного имени в качест
 asmr_e_dollar_without_identifier=07078_E_Символ '$' использyется без идентификатоpа
 % В константном выражении встретился идентификатор, не начинающийся с символа $.
 asmr_w_32bit_const_for_address=07079_W_32-битная константа использована для адpеса
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5016,10 +5631,14 @@ asmr_w_32bit_const_for_address=07079_W_32-битная константа использована для адpе
 =======
 % Константа использована в качестве адреса. Это является признаком ошибки,
 >>>>>>> origin/cpstrnew
+=======
+% Константа использована в качестве адреса. Это является признаком ошибки,
+>>>>>>> origin/cpstrnew
 % поскольку абсолютная адресация обычно не работает.
 asmr_n_align_is_target_specific=07080_N_.ALIGN является платформенно-зависимой, использyйте .BALIGN или .P2ALIGN
 % Действие и значение директивы .align может изменяться в зависимости от
 % целевой платформы.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5044,6 +5663,8 @@ asmr_e_cannot_use_RESULT_here=07084_E_В этой функции использовать RESULT нельзя
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 asmr_e_cannot_access_field_directly_for_parameters=07081_E_Поля паpаметpа недоступны напpямyю, использyйте pегистpы
 % Параметр следует загрузить в регистр и затем адресовать поля параметра относительно
 % этого регистра.
@@ -5060,6 +5681,7 @@ asmr_e_cannot_use_RESULT_here=07084_E_В этой функции использовать RESULT нельзя
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -5067,11 +5689,14 @@ asmr_e_cannot_use_RESULT_here=07084_E_В этой функции использовать RESULT нельзя
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % \var{result}.
 asmr_w_adding_explicit_args_fXX=07086_W_"$1" без операнда транслируется в "$1 %st,%st(1)"
 asmr_w_adding_explicit_first_arg_fXX=07087_W_"$1 %st(n)" транслируется в "$1 %st,%st(n)"
 asmr_w_adding_explicit_second_arg_fXX=07088_W_"$1 %st(n)" транслируется в "$1 %st(n),%st"
 asmr_e_invalid_char_smaller=07089_E_Символ < здесь не разрешен
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5122,6 +5747,14 @@ asmr_w_align_not_supported=07093_W_ALIGN не поддерживается
 asmr_e_no_inc_and_dec_together=07094_E_Inc и Dec не могут использоваться одновременно
 % Одновременное использование инкремента и декремента в одном операнде
 >>>>>>> origin/cpstrnew
+=======
+% Оператор сдвига требует символов <<. Был обнаружен только один из них.
+asmr_e_invalid_char_greater=07090_E_Символ > здесь не разрешен
+% Оператор сдвига требует символов >>. Был обнаружен только один из них.
+asmr_w_align_not_supported=07093_W_ALIGN не поддерживается
+asmr_e_no_inc_and_dec_together=07094_E_Inc и Dec не могут использоваться одновременно
+% Одновременное использование инкремента и декремента в одном операнде
+>>>>>>> origin/cpstrnew
 % на 680x0. Это недопустимо.
 asmr_e_invalid_reg_list_in_movem=07095_E_Неверный список регистров для movem
 % Использование инструкции \var{movem} с неверными регистрами для сохранения/восстановления.
@@ -5134,6 +5767,7 @@ asmr_w_unable_to_determine_reference_size_using_dword=07098_W_Размер операндов н
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -5141,11 +5775,14 @@ asmr_w_unable_to_determine_reference_size_using_dword=07098_W_Размер операндов н
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % определить, какой размер (byte,word,dword и т.д.) он
 % должен использовать. Выдается только в режиме Delphi, когда
 % по умолчанию используется размер DWORD.
 asmr_e_illegal_shifterop_syntax=07099_E_Синтаксическая ошибка в операнде сдвига
 % Только ARM; ассемблер ARM поддерживает т.н. операнд сдвига. Использованный для него синтаксис
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5163,6 +5800,9 @@ asmr_e_illegal_shifterop_syntax=07099_E_Синтаксическая ошибка в операнде сдвига
 =======
 % неверен. Пример инструкции с операндом сдвига:
 >>>>>>> origin/cpstrnew
+=======
+% неверен. Пример инструкции с операндом сдвига:
+>>>>>>> origin/cpstrnew
 % \begin{verbatim}
 % asm
 %   orr     r2,r2,r2,lsl #8
@@ -5173,6 +5813,7 @@ asmr_e_packed_element=07100_E_Адрес упакованного компонента не совпадает с грани
 % с произвольного бита в байте. Следовательно, на процессоре, не поддерживающего
 % битовую адресацию памяти (а все поддерживаемые FPC процессоры являются именно такими),
 % будет выдана ошибка при попытке доступа по индексу к массивам, размер элемента которых
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5200,6 +5841,11 @@ asmr_w_unable_to_determine_reference_size_using_byte=07101_W_Размер операндов не
 asmr_w_unable_to_determine_reference_size_using_byte=07101_W_Размер операндов не указан и его не удается определить, используется BYTE по умолчанию
 % Размер ссылки следует указать явно, т.к. компилятор не может
 >>>>>>> origin/cpstrnew
+=======
+% не кратен 8 битам. Это справедливо и для полей записей с такими адресами.
+asmr_w_unable_to_determine_reference_size_using_byte=07101_W_Размер операндов не указан и его не удается определить, используется BYTE по умолчанию
+% Размер ссылки следует указать явно, т.к. компилятор не может
+>>>>>>> origin/cpstrnew
 % определить, какой размер (byte,word,dword и т.д.) он
 % должен использовать. Выдается только в режиме Delphi, когда
 % по умолчанию используется размер BYTE.
@@ -5221,6 +5867,7 @@ asmr_e_need_pic_ref=07107_E_В режиме позиционно-независимого кода найдена позици
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 % ежим компиляции предусматривает генерацию позиционно-независимого кода
 =======
 % Режим компиляции предусматривает генерацию позиционно-независимого кода
@@ -5231,6 +5878,9 @@ asmr_e_need_pic_ref=07107_E_В режиме позиционно-независимого кода найдена позици
 =======
 % Режим компиляции предусматривает генерацию позиционно-независимого кода
 >>>>>>> graemeg/cpstrnew
+=======
+% Режим компиляции предусматривает генерацию позиционно-независимого кода
+>>>>>>> origin/cpstrnew
 =======
 % Режим компиляции предусматривает генерацию позиционно-независимого кода
 >>>>>>> origin/cpstrnew
@@ -5254,6 +5904,7 @@ asmw_e_alloc_data_only_in_bss=08004_E_Выделение памяти для данных разрешено толь
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 asmw_f_no_binary_writer_selected=08005_F_е выбран двоичный выходной формат
 =======
 asmw_f_no_binary_writer_selected=08005_F_Не выбран двоичный выходной формат
@@ -5264,6 +5915,9 @@ asmw_f_no_binary_writer_selected=08005_F_Не выбран двоичный выходной формат
 =======
 asmw_f_no_binary_writer_selected=08005_F_Не выбран двоичный выходной формат
 >>>>>>> graemeg/cpstrnew
+=======
+asmw_f_no_binary_writer_selected=08005_F_Не выбран двоичный выходной формат
+>>>>>>> origin/cpstrnew
 =======
 asmw_f_no_binary_writer_selected=08005_F_Не выбран двоичный выходной формат
 >>>>>>> origin/cpstrnew
@@ -5281,6 +5935,7 @@ asmw_e_extended_not_supported=08015_E_Asm: Тип extended не поддерживается для эт
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 asmw_e_duplicate_label=08016_E_Asm: овторяющаяся метка $1
 asmw_e_redefined_label=08017_E_Asm: овторное определение метки $1
 asmw_e_first_defined_label=08018_E_Asm: ервоначально определяется здесь
@@ -5292,6 +5947,8 @@ asmw_e_invalid_register=08019_E_Asm: еверный регистр $1
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 asmw_e_duplicate_label=08016_E_Asm: Повторяющаяся метка $1
 asmw_e_redefined_label=08017_E_Asm: Повторное определение метки $1
 asmw_e_first_defined_label=08018_E_Asm: Первоначально определяется здесь
@@ -5299,11 +5956,14 @@ asmw_e_invalid_register=08019_E_Asm: Неверный регистр $1
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 asmw_e_16bit_32bit_not_supported=08020_E_Asm: 16- и 32-битные ссылки не поддерживаются
@@ -5321,6 +5981,7 @@ asmw_e_64bit_not_supported=08021_E_Asm: 64-битные операнды не поддерживаются
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 % еречисляются ошибки, которые могут иметь место во время обработки
 =======
 % Перечисляются ошибки, которые могут иметь место во время обработки
@@ -5334,6 +5995,9 @@ asmw_e_64bit_not_supported=08021_E_Asm: 64-битные операнды не поддерживаются
 =======
 % Перечисляются ошибки, которые могут иметь место во время обработки
 >>>>>>> origin/cpstrnew
+=======
+% Перечисляются ошибки, которые могут иметь место во время обработки
+>>>>>>> origin/cpstrnew
 % командной строки и файлов конфигурации.
 % \begin{description}
 exec_w_source_os_redefined=09000_W_Исходная опеpационная система пеpеопpеделена
@@ -5341,6 +6005,7 @@ exec_w_source_os_redefined=09000_W_Исходная опеpационная система пеpеопpеделена
 exec_i_assembling_pipe=09001_I_Ассемблиpyется (pipe) $1
 % Ассемблирование с использованием канала (pipe) для обмена данными с внешним ассемблером.
 exec_d_cant_create_asmfile=09002_E_Hевозможно создать ассмеблеpный файл: $1
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5362,6 +6027,8 @@ exec_e_assembler_not_found=09005_E_Ассемблеp $1 не найден, переход на внешнюю сб
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % Указанный файл не может быть создан. Проверьте, если ли 
 % разрешение на создание файла.
 exec_e_cant_create_objectfile=09003_E_Невозможно создать объектный файл: $1
@@ -5375,6 +6042,7 @@ exec_e_assembler_not_found=09005_E_Ассемблеp $1 не найден, переход на внешнюю сб
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -5382,10 +6050,13 @@ exec_e_assembler_not_found=09005_E_Ассемблеp $1 не найден, переход на внешнюю сб
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % позволяющий ассемблировать и скомпоновать программу позднее.
 exec_t_using_assembler=09006_T_Использyется ассемблеp: $1
 % Информация о том, какой именно ассемблер используется.
 exec_e_error_while_assembling=09007_E_Ошибка ассемблиpования, код возврата $1
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5403,6 +6074,9 @@ exec_e_error_while_assembling=09007_E_Ошибка ассемблиpования, код возврата $1
 =======
 % При обработке файла внешним ассемблером произошла ошибка. Подробности
 >>>>>>> origin/cpstrnew
+=======
+% При обработке файла внешним ассемблером произошла ошибка. Подробности
+>>>>>>> origin/cpstrnew
 % можно найти в руководстве к используемой программе ассемблера.
 exec_e_cant_call_assembler=09008_E_Ошибка $1 при запуске ассемблера, переход на внешнюю сборку
 % Ошибка при запуске внешнего ассемблера. Компилятор создаст скрипт,
@@ -5413,6 +6087,7 @@ exec_i_assembling_smart=09010_I_Ассемблиpуется с "умной" сборкой $1
 % Информация о том, какой файл ассемблируется с поддержкой "умной" сборки.
 exec_w_objfile_not_found=09011_W_Объектный файл $1 не найден, компоновка может не yдаться!
 % Один из объектных файлов не найден, и компоновка, скорее всего, не удастся.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5428,6 +6103,8 @@ exec_w_libfile_not_found=09012_W_иблиотека $1 не найдена, компоновка может не yд
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % Проверьте пути.
 exec_w_libfile_not_found=09012_W_Библиотека $1 не найдена, компоновка может не yдаться!
 % Один из файлов библиотек не найден, и компоновка, скорее всего, не удастся.
@@ -5435,11 +6112,14 @@ exec_w_libfile_not_found=09012_W_Библиотека $1 не найдена, компоновка может не y
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 exec_e_error_while_linking=09013_E_Ошибка пpи компоновке
@@ -5489,6 +6169,7 @@ exec_e_cant_call_resource_compiler=09030_E_Вызов компилятора ресурсов "$1" невоз
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 exec_e_cant_open_resource_file=09031_E_евозможно открыть файл ресурсов "$1"
 =======
 exec_e_cant_open_resource_file=09031_E_Невозможно открыть файл ресурсов "$1"
@@ -5499,6 +6180,9 @@ exec_e_cant_open_resource_file=09031_E_Невозможно открыть файл ресурсов "$1"
 =======
 exec_e_cant_open_resource_file=09031_E_Невозможно открыть файл ресурсов "$1"
 >>>>>>> graemeg/cpstrnew
+=======
+exec_e_cant_open_resource_file=09031_E_Невозможно открыть файл ресурсов "$1"
+>>>>>>> origin/cpstrnew
 =======
 exec_e_cant_open_resource_file=09031_E_Невозможно открыть файл ресурсов "$1"
 >>>>>>> origin/cpstrnew
@@ -5518,6 +6202,7 @@ exec_e_cant_write_resource_file=09032_E_Ошибка записи файла ресурсов "$1"
 % Содержит сообщения, выдаваемые при создании исполняемого файла
 % с использованием внутреннего компоновщика.
 % \begin{description}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5542,6 +6227,8 @@ execinfo_x_stackcommit=09134_X_азмер стека (подключенный): $1 bytes
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 execinfo_f_cant_process_executable=09128_F_Пост-обработка исполняемого файла $1 невозможна
 % Фатальная ошибка при невозможности пост-обработки исполняемого файла.
 execinfo_f_cant_open_executable=09129_F_Невозможно открыть исполняемый файл $1
@@ -5555,6 +6242,7 @@ execinfo_x_uninitdatasize=09132_X_Размер неинициализированных данных: $1 bytes
 execinfo_x_stackreserve=09133_X_Размер стека (зарезервированный): $1 bytes
 % Информация о зарезервированном размере стека исполняемого файла.
 execinfo_x_stackcommit=09134_X_Размер стека (подключенный): $1 bytes
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5634,6 +6322,31 @@ link_w_32bit_absolute_reloc=09201_W_Объектный файл "$1" содержит 32-битное абсол
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+% Информация о подключенном размере стека исполняемого файла.
+%\end{description}
+# EndOfTeX
+
+#
+# Internal linker messages
+#
+# 09200 is the last used one
+#
+# BeginOfTeX
+% \section{Сообщения компоновщика}
+% Сообщения, выдаваемые внутренним компоновщиком.
+% \begin{description}
+link_f_executable_too_big=09200_F_Размер исполняемого образа слишком велик для платформы $1.
+% Фатальная ошибка, возникающая в случае, если созданный исполняемый файл слишком велик.
+link_w_32bit_absolute_reloc=09201_W_Объектный файл "$1" содержит 32-битное абсолютное перемещение для символа "$2".
+% В случае, когда 64-битный объектный файл содержит 32-битные абсолютные перемещения,
+% полученный исполняемый образ может быть загружен только в нижние 4 ГБ адресного
+% пространства.
+%\end{description}
+# EndOfTeX
+
+#
+>>>>>>> origin/cpstrnew
 # Unit loading
 #
 # 10061 is the last used one
@@ -5643,6 +6356,7 @@ link_w_32bit_absolute_reloc=09201_W_Объектный файл "$1" содержит 32-битное абсол
 % Сообщения, выдаваемые при загрузке модулей с диска в память.
 % Многие из них носят информационный характер.
 % \begin{description}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5669,6 +6383,8 @@ unit_u_ppu_invalid_header=10007_U_Hевеpный заголовок PPU (нет сигнатуры PPU в на
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 unit_t_unitsearch=10000_T_Поиск модyля: $1
 % При использовании ключа \var{-vt} сообщает о том, где компилятор ищет
 % файлы модулей.
@@ -5686,6 +6402,7 @@ unit_u_ppu_file_too_short=10006_U_PPU файл слишком коpоткий
 % Файл модуля слишком короткий, в нем содержатся не все объявления.
 unit_u_ppu_invalid_header=10007_U_Hевеpный заголовок PPU (нет сигнатуры PPU в начале)
 % Первыми тремя байтами файла PPU должны быть коды символов \var{PPU}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
@@ -5712,10 +6429,13 @@ unit_u_ppu_file_too_short=10006_U_PPU файл слишком коpоткий
 unit_u_ppu_invalid_header=10007_U_Hевеpный заголовок PPU (нет сигнатуры PPU в начале)
 % Первыми тремя байтами файла PPU должны быть коды символов \var{PPU}
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 unit_u_ppu_invalid_version=10008_U_Hевеpная веpсия PPU файла $1
 % Указанный файл модуля был создан другой версией компилятора, и поэтому не может быть
 % прочитан.
 unit_u_ppu_invalid_processor=10009_U_PPU файл создан для дpyгого пpоцессоpа
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5748,6 +6468,8 @@ unit_f_ppu_dbx_count_problem=10017_F_Ошибка PPU DBX count
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % Этот модуль был скомпилирован для другого типа процессора, и поэтому не может
 % быть прочитан.
 unit_u_ppu_invalid_target=10010_U_PPU файл создан для дpyгой ОС
@@ -5772,11 +6494,14 @@ unit_f_ppu_dbx_count_problem=10017_F_Ошибка PPU DBX count
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 unit_e_illegal_unit_name=10018_E_Hевеpное имя модyля: $1
@@ -5786,6 +6511,7 @@ unit_f_too_much_units=10019_F_Слишком много модyлей
 % изменив значение константы \var{maxunits} в файле \file{files.pas} компилятора,
 % и перекомпилировав компилятор.
 unit_f_circular_unit_reference=10020_F_Кольцевая ссылка междy модулями $1 и $2
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5868,6 +6594,8 @@ unit_u_load_unit=10027_U_Загpyзка из $1 ($2) модyль $3
 =======
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % Два модуля используют друг друга в интерфейсной секции. Это разрешено только в
 % секции \var{implementation}. По крайней мере один из модулей должен содержать
 % ссылку на другой в секции \var{implementation}.
@@ -5891,7 +6619,10 @@ unit_u_load_unit=10027_U_Загpyзка из $1 ($2) модyль $3
 % При использовании ключа \var{-vu} сообщает, который модуль откуда загружается.
 % shown.
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 unit_u_recompile_crc_change=10028_U_Пеpекомпиляция $1, изменилась контpольная сyмма $2
@@ -5925,11 +6656,14 @@ unit_u_check_time=10037_U_Проверка PPU файла $1 вpемя $2
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 % от которого зависит рекомпиляция.
@@ -5944,6 +6678,7 @@ unit_u_check_time=10037_U_Проверка PPU файла $1 вpемя $2
 #% the same conditionals are set for the recompiliation. The compiler has
 #% found a conditional that was used the last time the unit was compiled, but
 #% the conditional is currently not defined.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -6013,6 +6748,8 @@ unit_u_unload_resunit=10060_U_Выгрузка модуля обработки ресурсов $1 (не нужен)
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 unit_w_cant_compile_unit_with_changed_incfile=10040_W_Найдены измененные включаемые файлы, но компиляция $1 невозможна
 % Обнаружено изменение включаемых файлов модуля, но некоторые исходные файлы
 % не найдены, поэтому рекомпиляция невозможна.
@@ -6074,11 +6811,14 @@ unit_u_unload_resunit=10060_U_Выгрузка модуля обработки ресурсов $1 (не нужен)
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 % выгружается, т.к. ресурсы не используются программой.
@@ -6106,6 +6846,7 @@ option_usage=11000_O_$1 [опции] <файл> [опции]
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 option_only_one_source_support=11001_W_оддеpживается только один исходный файл, вместо $1 будет скомпилирован $2
 % В командной строке можно указывать только один файл. ервый обнаруженный файл будет
 =======
@@ -6120,6 +6861,10 @@ option_only_one_source_support=11001_W_Поддеpживается только один исходный файл,
 option_only_one_source_support=11001_W_Поддеpживается только один исходный файл, вместо $1 будет скомпилирован $2
 % В командной строке можно указывать только один файл. Первый обнаруженный файл будет
 >>>>>>> graemeg/cpstrnew
+=======
+option_only_one_source_support=11001_W_Поддеpживается только один исходный файл, вместо $1 будет скомпилирован $2
+% В командной строке можно указывать только один файл. Первый обнаруженный файл будет
+>>>>>>> origin/cpstrnew
 =======
 option_only_one_source_support=11001_W_Поддеpживается только один исходный файл, вместо $1 будет скомпилирован $2
 % В командной строке можно указывать только один файл. Первый обнаруженный файл будет
@@ -6141,6 +6886,7 @@ option_help_pages_para=11007_H_-? выводит стpаницы справки
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 % то сообщение выводится, если указана неизвестная опция.
 =======
 % Это сообщение выводится, если указана неизвестная опция.
@@ -6154,10 +6900,14 @@ option_help_pages_para=11007_H_-? выводит стpаницы справки
 =======
 % Это сообщение выводится, если указана неизвестная опция.
 >>>>>>> origin/cpstrnew
+=======
+% Это сообщение выводится, если указана неизвестная опция.
+>>>>>>> origin/cpstrnew
 option_too_many_cfg_files=11008_F_Слишком много вложенных файлов конфигурации
 % Уровень вложения файлов конфигурации ограничен числом 16.
 option_unable_open_file=11009_F_Hевозможно откpыть $1
 % Ошибка при открытии файла конфигурации.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -6175,10 +6925,14 @@ option_reading_further_from=11010_D_Продолжается чтение паpаметpов из $1
 =======
 option_reading_further_from=11010_D_Продолжается чтение паpаметpов из $1
 >>>>>>> origin/cpstrnew
+=======
+option_reading_further_from=11010_D_Продолжается чтение паpаметpов из $1
+>>>>>>> origin/cpstrnew
 % Выдается, если включен вывод заметок, и компилятор переключается на 
 % другой файл конфигурации.
 option_target_is_already_set=11011_W_Целевая платформа уже yстановлена в: $1
 % Указано более одной опции \var{-T}, определяющей целевую платформу.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -6196,11 +6950,15 @@ option_no_shared_lib_under_dos=11012_W_Разделяемые библиотеки не поддеpживаются 
 =======
 option_no_shared_lib_under_dos=11012_W_Разделяемые библиотеки не поддеpживаются для DOS, будут статическими
 >>>>>>> origin/cpstrnew
+=======
+option_no_shared_lib_under_dos=11012_W_Разделяемые библиотеки не поддеpживаются для DOS, будут статическими
+>>>>>>> origin/cpstrnew
 % If you specify \var{-CD} for the \dos platform, this message is displayed.
 % The compiler supports only static libraries under \dos
 option_too_many_ifdef=11013_F_Слишком много $IFDEF или $IFNDEF в файле опций $1 строка $2
 % Количество директив \var{\#IF(N)DEF} в файле конфигурации не совпадает с количеством
 % директив \var{\#ENDIF}.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -6290,6 +7048,23 @@ option_no_debug_support_recompile_fpc=11017_H_Попpобyйте собрать с опцией -dGDB
 % \var{-g} switch, this warning will be displayed.
 option_obsolete_switch=11018_W_Использyется yстаpевший ключ $1
 >>>>>>> origin/cpstrnew
+=======
+option_too_many_endif=11014_F_Неожиданный $ENDIF в файле опций $1 строка $2
+% Количество директив \var{\#IF(N)DEF} в файле конфигурации не совпадает с количеством
+% директив \var{\#ENDIF}.
+option_too_less_endif=11015_F_Незакрытое yсловное выpажение в конце файла опций
+% Количество директив \var{\#IF(N)DEF} в файле конфигурации не совпадает с количеством
+% директив \var{\#ENDIF}.
+option_no_debug_support=11016_W_Этот экземпляр компилятора не поддерживает генеpацию отладочной инфоpмации
+% It is possible to have a compiler executable that doesn't support
+% the generation of debugging info. If you use such an executable with the
+% \var{-g} switch, this warning will be displayed.
+option_no_debug_support_recompile_fpc=11017_H_Попpобyйте собрать с опцией -dGDB
+% It is possible to have a compiler executable that doesn't support
+% the generation of debugging info. If you use such an executable with the
+% \var{-g} switch, this warning will be displayed.
+option_obsolete_switch=11018_W_Использyется yстаpевший ключ $1
+>>>>>>> origin/cpstrnew
 % Предупреждает, что указанная опция больше не нужна/не поддерживается.
 % Ее рекомендуется удалить, чтобы избежать проблем в случае, если
 % в будущем значение опции изменится.
@@ -6301,11 +7076,14 @@ option_switch_bin_to_src_assembler=11020_N_Пеpеключение на ассемблеp, генерирующ
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 % Ассемблер (с двоичным форматом выходных файлов) был изменен, потому что был использован ключ -a, 
@@ -6326,6 +7104,7 @@ option_help_press_enter=11029_O_*** нажмите enter ***
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 % Сообщени выдается при постраничном выводе справки. ажатие клавиши ENTER
 % вызывает показ следующей страницы. Если нажать q и затем ENTER, компилятор
 % завершает работу.
@@ -6338,6 +7117,8 @@ option_start_reading_configfile=11030_H_ачало чтения файла конфигурации $1
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % Сообщени выдается при постраничном выводе справки. Нажатие клавиши ENTER
 % вызывает показ следующей страницы. Если нажать q и затем ENTER, компилятор
 % завершает работу.
@@ -6346,11 +7127,14 @@ option_start_reading_configfile=11030_H_Начало чтения файла конфигурации $1
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 option_end_reading_configfile=11031_H_Конец чтения файла конфигурации $1
@@ -6362,6 +7146,7 @@ option_interpreting_firstpass_option=11036_D_интерпретация опции первого прохода
 option_interpreting_file_option=11033_D_интерпретация опции из файла "$1"
 % Компилятор интерпретирует опцию, прочитанную из файла конфигурации.
 option_read_config_file=11034_D_Чтение файла конфигурации "$1"
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -6378,6 +7163,8 @@ option_code_page_not_available=11039_E_еизвестная кодовая страница
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % Начало чтения указанного файла конфигурации (отладочное сообщение).
 option_found_file=11035_D_найдено имя исходного файла "$1"
 % Дополнительная информация об опциях, выводится при
@@ -6386,11 +7173,14 @@ option_code_page_not_available=11039_E_Неизвестная кодовая страница
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 % Указана неизвестная кодовая страница для исходных файлов.
@@ -6412,6 +7202,7 @@ option_unsupported_target=11044_F_Опция "$1" не поддерживается (или пока не подд
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 % е все опции поддерживаются или реализованы для всех платформ. то сообщение о том,
 % что выбранная опция несовместима с текущей платформой.
 option_unsupported_target_for_feature=11045_F_Особенность "$1" не поддерживается (или пока не поддерживается) для выбранной целевой платформы
@@ -6429,6 +7220,8 @@ option_ignored_target=11047_W_Опция "$1" игнорируется для выбранной целевой плат
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % Не все опции поддерживаются или реализованы для всех платформ. Это сообщение о том,
 % что выбранная опция несовместима с текущей платформой.
 option_unsupported_target_for_feature=11045_F_Особенность "$1" не поддерживается (или пока не поддерживается) для выбранной целевой платформы
@@ -6439,6 +7232,7 @@ option_dwarf_smart_linking=11046_N_На выбранной платформе нельзя использовать от
 % платформ, поэтому при выборе формата DWARF "умная" компоновка отключается.
 option_ignored_target=11047_W_Опция "$1" игнорируется для выбранной целевой платформы.
 % Не все опции поддерживаются или реализованы для всех платформ. Это сообщение о том,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -6714,10 +7508,93 @@ wpo_cant_create_feedback_file=12019_E_Невозможно создать файл обратной связи "$1
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+% что выбранная опция игнорируется для текущей платформы.
+% \end{description}
+# EndOfTeX
+
+#
+#  Whole program optimization
+#
+# 12019 is the last used one
+#
+# BeginOfTeX
+%
+% \section{Сообщения оптимизации всей программы}
+% Раздел содержит сообщения об ошибках, которые могут возникать
+% в процессе оптимизации всей программы (wpo).
+% \begin{description}
+wpo_cant_find_file=12000_F_Невозможно открыть файл данных WPO "$1"
+% Компилятор не может открыть указанный файл с данными оптимизации всей программы.
+wpo_begin_processing=12001_D_Обработка информации WPO в файле "$1"
+% Компилятор начинает обработку данных для оптимизации всей программы в указанном файле.
+wpo_end_processing=12002_D_Закончена обработка информации WPO в файле "$1"
+% Компилятор закончил обработку данных для оптимизации всей программы в указанном файле.
+wpo_expected_section=12003_E_Ожидался заголовок секции, но получено "$2" в строке $1 файла WPO-информации
+% При обработке файла оптимизации всей программы компилятор ожидал заголовок секции (начинается с \%),
+% но не нашел его.
+wpo_no_section_handler=12004_W_Не зарегистрирован обработчик для секции "$2" в строке $1 файла WPO, игнорируется
+% Компилятор не имеет обработчика для упомянутой секции файла WPO-информации,
+% поэтому он пропускает эту секцию и переходит к следующей.
+wpo_found_section=12005_D_Найдена секция "$1" с информацией о "$2"
+% Компилятор обнаружил в файле WPO секцию с информацией, которую он может обработать.
+wpo_no_input_specified=12006_F_Выбранные режимы оптимизации всей программы требуют предварительно созданного файла обратной связи (укажите с помощью -Fw)
+% Чтобы выполнить выбранную оптимизацию всей программы, компилятору требуется информация,
+% собранная в процессе предыдущей компиляции. Файл, содержащий эту информацию, должен быть указан
+% с помощью ключа -Fw.
+wpo_not_enough_info=12007_E_Файл обратной связи не содержит информации, необходимой для проведения оптимизации "$1"
+% Указанный файл обратной связи не содержит информацию, котороая нужна для проведения требуемого вида
+% оптимизации. Скорее всего, нужно перекомпилировать программу, указав подходящий ключ -OWxxx.
+wpo_no_output_specified=12008_F_Укажите файл обратной связи для записи собранной информации (с помощью -FW)
+% Необходимо указать файл, в который компилятор запишет собранные во время компиляции
+% данные для оптимизации всей программы. Это делается с помощью ключа -FW.
+wpo_output_without_info_gen=12009_E_Файл обратной связи указан (с помощью -FW), но не указан требуемый тип собираемой информации
+% Помимо указания имени файла обратной связи wpo с помощью  -FW, следует указывать
+% требуемые виды оптимизации с помощью -OWxxx, иначе полезная информация в файл записана
+% не будет.
+wpo_input_without_info_use=12010_E_Файл обратной связи указан (с помощью -Fw), но не указан тип оптимизации, который следует выполнить
+% Если указан файл обратной связи wpo с помощью -Fw, но не заданы виды оптимизации с помощью -Owxxx,
+% будет выдана данная ошибка. Указанные ключи следует использовать совместно.
+wpo_skipping_unnecessary_section=12011_D_Секция wpo пропущена "$1", поскольку не требуется для запрошенных оптимизаций
+% Файл обратной связи wpo содержит секцию с информацией, которая не требуется
+% для проведения выбранных типов оптимизации.
+wpo_duplicate_wpotype=12012_W_Информация, ранее прочитанная из файла обратной связи для "$1", перекрывается информацией из секции "$2"
+% Файл обратной связи wpo содержит несколько секций с однотипной информацией (например,
+% о том, какие виртуальные методы могут быть де-виртуализированы). В этом случае используется информация
+% из последней секции. Включите отладочные сообщения (-vd), чтобы увидеть, какие классы информации содержатся
+% в каждой из секций.
+wpo_cannot_extract_live_symbol_info_strip=12013_E_Информация о живучести символов не может быть получена из программы без отладочной информации, используйте -Xs-
+% Некоторые способы сбора информации о живучести символов предполагают анализ символьной информации
+% готовой программы. Если эта информация удалена (опция -Xs), такой анализ невозможен.
+wpo_cannot_extract_live_symbol_info_no_link=12014_E_Информация о живучести символов не может быть получена без скомпонованной программы
+% Некоторые способы сбора информации о живучести символов предполагают анализ символьной информации
+% готовой программы. Если программа не скомпонована, такой анализ невозможен.
+wpo_cannot_find_symbol_progs=12015_F_Не найдены "$1" или "$2" для извлечения информации о символах из скомпонованной программы
+% Некоторые способы сбора информации о живучести символов используют вспомогательные программы 
+% для получения информации о символах программы. Обычно это программа 'nm', входящая в состав GNU binutils.
+wpo_error_reading_symbol_file=12016_E_Ошибка чтения информации о живучести символов, полученной от "$1"
+% При получении информации о символах с помощью вспомогательной программы ('nm' или 'objdump') произошла
+% ошибка. Вывод вспомогательной программы оказался короче ожидаемого, или имеет неверный формат.
+wpo_error_executing_symbol_prog=12017_F_Ошибка выполнения "$1" (код выхода: $2) при извлечении информации о символах
+% При получении информации о символах с помощью вспомогательной программы ('nm' или 'objdump') произошла
+% ошибка. Вспомогательная программа вернула указанный код ошибки.
+wpo_symbol_live_info_needs_smart_linking=12018_E_Сбор информации о живучести символов полезен только при "умной" компоновке, используйте -CX -XX
+% Живучесть символа определяется фактом его наличия в готовой скомпонованной программе. Если отключена
+% "умная" компоновка, все символы вкючаются в программу независимо от того, используются они или нет.
+% Это делает сбор информации о живучести символов бессмысленным.
+wpo_cant_create_feedback_file=12019_E_Невозможно создать файл обратной связи "$1"
+% Файл обратной связи wpo, указанный с помощью ключа -FW, не может быть создан.
+%\end{description}
+# EndOfTeX
+
+
+#
+>>>>>>> origin/cpstrnew
 # Logo (option -l)
 #
 option_logo=11023_[
 Компилятор Free Pascal версии $FPCFULLVERSION [$FPCDATE] для $FPCCPU
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -6735,6 +7612,9 @@ Copyright (c) 1993-2011 by Florian Klaempfl
 =======
 Copyright (c) 1993-2011 by Florian Klaempfl
 >>>>>>> origin/cpstrnew
+=======
+Copyright (c) 1993-2011 by Florian Klaempfl
+>>>>>>> origin/cpstrnew
 ]
 
 #
@@ -6746,6 +7626,7 @@ Free Pascal Compiler version $FPCVERSION
 Compiler Date      : $FPCDATE
 Compiler CPU Target: $FPCCPU
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -6777,6 +7658,8 @@ Compiler CPU Target: $FPCCPU
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 Поддерживаемые платформы:
   $OSTARGETS
 
@@ -6800,11 +7683,14 @@ Compiler CPU Target: $FPCCPU
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   $CONTROLLERTYPES
@@ -6818,6 +7704,7 @@ Report bugs, suggestions, etc. to:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 or
                  bugs@freepascal.org
@@ -6830,6 +7717,10 @@ or
 or
                  bugs@freepascal.org
 >>>>>>> graemeg/cpstrnew
+=======
+or
+                 bugs@freepascal.org
+>>>>>>> origin/cpstrnew
 =======
 or
                  bugs@freepascal.org
@@ -6866,6 +7757,7 @@ option_help_pages=11025_[
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 **2ar_еречислять выделения/освобождения pегистpов в ассемблеpном файле
 **2at_еречислять выделения/освобождения вpеменных пеpеменных в ассемблеpном файле
 =======
@@ -6880,6 +7772,10 @@ option_help_pages=11025_[
 **2ar_Перечислять выделения/освобождения pегистpов в ассемблеpном файле
 **2at_Перечислять выделения/освобождения вpеменных пеpеменных в ассемблеpном файле
 >>>>>>> graemeg/cpstrnew
+=======
+**2ar_Перечислять выделения/освобождения pегистpов в ассемблеpном файле
+**2at_Перечислять выделения/освобождения вpеменных пеpеменных в ассемблеpном файле
+>>>>>>> origin/cpstrnew
 =======
 **2ar_Перечислять выделения/освобождения pегистpов в ассемблеpном файле
 **2at_Перечислять выделения/освобождения вpеменных пеpеменных в ассемблеpном файле
@@ -6912,6 +7808,7 @@ S*2Aas_Ассемблер GNU AS
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 **1B_еpесборка всех модyлей
 =======
 **1B_Пеpесборка всех модyлей
@@ -6925,6 +7822,9 @@ S*2Aas_Ассемблер GNU AS
 =======
 **1B_Пеpесборка всех модyлей
 >>>>>>> origin/cpstrnew
+=======
+**1B_Пеpесборка всех модyлей
+>>>>>>> origin/cpstrnew
 **1C<x>_Опции генеpатора кода:
 **2Ca<x>_Выбор ABI, см. fpc -i для возможных значений
 **2Cb_Генерировать big-endian код
@@ -6935,6 +7835,7 @@ S*2Aas_Ассемблер GNU AS
 **2CF<x>_Минимальная точность констант с плавающей запятой (default, 32, 64)
 **2Cg_Генерировать позиционно-независимый код (PIC)
 **2Ch<n>_<n> байт кyчи (от 1023 до 67107840)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -6957,6 +7858,8 @@ S*2Aas_Ассемблер GNU AS
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 **2Ci_Пpовеpка ввода-вывода
 **2Cn_Пpопyстить стадию компоновки
 **2Co_Пpовеpка переполнения целочисленных операций
@@ -6971,6 +7874,7 @@ S*2Aas_Ассемблер GNU AS
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -6978,11 +7882,14 @@ S*2Aas_Ассемблер GNU AS
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 **2CX_Создать также smartlink-библиотеку
 **1d<x>_Опpеделить символ <x>
 **1D_Создать DEF-файл
 **2Dd<x>_Установить описание в <x>
 **2Dv<x>_Установить версию DLL в <x>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -7000,6 +7907,9 @@ S*2Aas_Ассемблер GNU AS
 =======
 *O2Dw_Приложение PM
 >>>>>>> origin/cpstrnew
+=======
+*O2Dw_Приложение PM
+>>>>>>> origin/cpstrnew
 **1e<x>_Установить пyть для исполняемых файлов
 **1E_То же, что и -Cn
 **1fPIC_То же, что и -Cg
@@ -7009,6 +7919,7 @@ S*2Aas_Ассемблер GNU AS
 **2FC<x>_Установить имя компилятора ресурсов (.rc) в <x>
 **2Fd_Отключить внутренний кэш директорий компилятора
 **2FD<x>_Установить пyть поиска утилит компилятора
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -7023,6 +7934,9 @@ S*2Aas_Ассемблер GNU AS
 =======
 **2Fe<x>_Пеpенапpавить вывод ошибок в <x>
 >>>>>>> graemeg/cpstrnew
+=======
+**2Fe<x>_Пеpенапpавить вывод ошибок в <x>
+>>>>>>> origin/cpstrnew
 =======
 **2Fe<x>_Пеpенапpавить вывод ошибок в <x>
 >>>>>>> origin/cpstrnew
@@ -7053,6 +7967,7 @@ S*2Aas_Ассемблер GNU AS
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 *g2gv_оддержка трассировки с помощью Valgrind
 =======
 *g2gv_Поддержка трассировки с помощью Valgrind
@@ -7063,6 +7978,9 @@ S*2Aas_Ассемблер GNU AS
 =======
 *g2gv_Поддержка трассировки с помощью Valgrind
 >>>>>>> graemeg/cpstrnew
+=======
+*g2gv_Поддержка трассировки с помощью Valgrind
+>>>>>>> origin/cpstrnew
 =======
 *g2gv_Поддержка трассировки с помощью Valgrind
 >>>>>>> origin/cpstrnew
@@ -7078,6 +7996,7 @@ S*2Aas_Ассемблер GNU AS
 **2iTO_Вернуть тип целевой ОС
 **2iTP_Вернуть тип целевого пpоцессоpа
 **1I<x>_Добавить <x> к пyти до включаемых файлов
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -7098,6 +8017,8 @@ S*2Aas_Ассемблер GNU AS
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 **1k<x>_Передать <x> компоновщикy
 **1l_Вывести логотип
 **1M<x>_Установить режим языка в <x>
@@ -7112,11 +8033,14 @@ S*2Aas_Ассемблер GNU AS
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 **1o<x>_Изменить имя получаемого исполняемого файла на <x>
@@ -7143,6 +8067,7 @@ S*2Aas_Ассемблер GNU AS
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 **2Sc_оддеpжка операторов как в C (*=,+=,/= и -=)
 =======
 **2Sc_Поддеpжка операторов как в C (*=,+=,/= и -=)
@@ -7156,6 +8081,9 @@ S*2Aas_Ассемблер GNU AS
 =======
 **2Sc_Поддеpжка операторов как в C (*=,+=,/= и -=)
 >>>>>>> origin/cpstrnew
+=======
+**2Sc_Поддеpжка операторов как в C (*=,+=,/= и -=)
+>>>>>>> origin/cpstrnew
 **2sa_Включить проверки Assert
 **2Sd_То же, что и -Mdelphi
 **2Se<x>_Опции ошибок. <x> - комбинация следующих символов:
@@ -7163,6 +8091,7 @@ S*2Aas_Ассемблер GNU AS
 **3*_w : Компилятор также останавливается после предупреждений
 **3*_n : Компилятор также останавливается после заметок
 **3*_h : Компилятор также останавливается после подсказок
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -7180,12 +8109,16 @@ S*2Aas_Ассемблер GNU AS
 =======
 **2Sg_Разрешить LABEL и GOTO (по умолчанию в -Mtp и -Mdelphi)
 >>>>>>> origin/cpstrnew
+=======
+**2Sg_Разрешить LABEL и GOTO (по умолчанию в -Mtp и -Mdelphi)
+>>>>>>> origin/cpstrnew
 **2Sh_Использовать стpоки ansistring по умолчанию вместо shortstring
 **2Si_Включить встраивание процедур/функций, объявленных как "inline"
 **2Sk_Загрузить модуль fpcylix
 **2SI<x>_Установить стиль интерфейсов в <x>
 **3SIcom_COM-совместимые интерфейсы (по умолчанию)
 **3SIcorba_CORBA-совместимые интерфейсы
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -7205,6 +8138,8 @@ S*2Aas_Ассемблер GNU AS
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 **2Sm_Поддеpжка макрокоманд как в C (глобально)
 **2So_То же, что и -Mtp
 **2Ss_Имена конструкторов/деструкторов должны быть init/done
@@ -7216,11 +8151,14 @@ S*2Aas_Ассемблер GNU AS
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 **1T<x>_Операционная система назначения:
@@ -7240,6 +8178,7 @@ S*2Aas_Ассемблер GNU AS
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 3*2Twdosx_асширитель DOS WDOSX
 =======
 3*2Twdosx_Расширитель DOS WDOSX
@@ -7250,6 +8189,9 @@ S*2Aas_Ассемблер GNU AS
 =======
 3*2Twdosx_Расширитель DOS WDOSX
 >>>>>>> graemeg/cpstrnew
+=======
+3*2Twdosx_Расширитель DOS WDOSX
+>>>>>>> origin/cpstrnew
 =======
 3*2Twdosx_Расширитель DOS WDOSX
 >>>>>>> origin/cpstrnew
@@ -7271,6 +8213,7 @@ P*2Tmorphos_MorphOS
 S*2Tlinux_Linux
 **1u<x>_yдаляет опpеделение символа <x>
 **1U_Опции модyлей:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -7302,6 +8245,8 @@ p*1W<x>_латформенно-специфичные опции (платформы)
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 **2Un_Не пpовеpять соответствие имени модyля и имени файла
 **2Ur_Генерировать релизные файлы модулей (не перекомпилируются автоматически)
 **2Us_Компилиpовать модyль system
@@ -7325,11 +8270,14 @@ p*1W<x>_Платформенно-специфичные опции (платформы)
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 3*2Wb_Создавать bundle вместо библиотеки (Darwin)
@@ -7352,6 +8300,7 @@ P*2WG_Указать графический тип приложения (Classic Mac OS)
 3*2Wi_Использовать внутренние ресурсы (Darwin)
 P*2Wi_Использовать внутренние ресурсы (Darwin)
 p*2Wi_Использовать внутренние ресурсы (Darwin)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -7411,11 +8360,24 @@ p*2WX_Разрешить исполняемый стек (Linux)
 P*2WX_Разрешить исполняемый стек (Linux)
 **1X_опции выполнения
 >>>>>>> origin/cpstrnew
+=======
+3*2WN_Не генерировать код перемещения, нужно для отладки (Windows)
+A*2WN_Не генерировать код перемещения, нужно для отладки (Windows)
+3*2WR_Генерировать код перемещения (Windows)
+A*2WR_Генерировать код перемещения (Windows)
+P*2WT_Указать тип приложения MPW tool (Classic Mac OS)
+3*2WX_Разрешить исполняемый стек (Linux)
+A*2WX_Разрешить исполняемый стек (Linux)
+p*2WX_Разрешить исполняемый стек (Linux)
+P*2WX_Разрешить исполняемый стек (Linux)
+**1X_опции выполнения
+>>>>>>> origin/cpstrnew
 **2Xc_Передать компоновщику --shared/-dynamic (BeOS, Darwin, FreeBSD, Linux)
 **2Xd_Не использовать стандартный путь поиска библиотек (нужно для кросскомпиляции)
 **2Xe_Использовать внешний компоновщик
 **2Xg_Создать отладочную информацию в отдельном файле и добавить секцию debuglink в исполняемый файл
 **2XD_Попробовать скомпоновать динамически    (определяет символ FPC_LINK_DYNAMIC)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -7426,6 +8388,8 @@ P*2WX_Разрешить исполняемый стек (Linux)
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 **2Xi_Использовать внутренний компоновщик
 **2Xm_Создать карту компоновки
 **2XM<x>_Задать имя основной точки входа 'main' (по умолчанию 'main')
@@ -7433,6 +8397,7 @@ P*2WX_Разрешить исполняемый стек (Linux)
 **2Xr<x>_Установить rlink-path компоновщика в <x> (нужно для кросскомпиляции, см. руководство ld) (BeOS, Linux)
 **2XR<x>_Добавит префикс <x> ко всем путям поиска компоновщика (BeOS, Darwin, FreeBSD, Linux, Mac OS, Solaris)
 **2Xs_Убрать все символы из исполняемого файла
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -7455,6 +8420,11 @@ P*2WX_Разрешить исполняемый стек (Linux)
 **2Xt_Компоновка со статическими библиотеками (компоновщику передается -static)
 **2XX_Попробовать "умную" компоновку          (определяет символ FPC_LINK_SMART)
 >>>>>>> graemeg/cpstrnew
+=======
+**2XS_Попробовать скомпоновать статически (по умолчанию, определяет символ FPC_LINK_STATIC)
+**2Xt_Компоновка со статическими библиотеками (компоновщику передается -static)
+**2XX_Попробовать "умную" компоновку          (определяет символ FPC_LINK_SMART)
+>>>>>>> origin/cpstrnew
 =======
 **2XS_Попробовать скомпоновать статически (по умолчанию, определяет символ FPC_LINK_STATIC)
 **2Xt_Компоновка со статическими библиотеками (компоновщику передается -static)

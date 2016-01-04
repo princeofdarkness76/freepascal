@@ -1271,6 +1271,9 @@ begin
     end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   end else
     FOnCompare:=AValue;
 end;

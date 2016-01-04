@@ -11,6 +11,7 @@ loaders=prt0
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 units=$(SYSTEMUNIT) uuchar objpas macpas iso7185 extpas strings \
       fpextres dos heaptrc lineinfo ctypes \
       sysutils fgl classes math typinfo \
@@ -24,6 +25,8 @@ implicitunits=cp1250 cp1251 cp1252 cp1253 cp1254 cp1255 cp1256 cp1257 cp1258 \
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 units=$(SYSTEMUNIT) objpas macpas iso7185 strings \

@@ -18,6 +18,7 @@ name=sdl
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 version=3.1.1
 
 [require]
@@ -36,6 +37,9 @@ version=2.2.5
 =======
 version=2.2.5
 >>>>>>> origin/fixes_2_2
+=======
+version=2.5.1
+>>>>>>> origin/cpstrnew
 
 [require]
 libc=y
@@ -49,6 +53,7 @@ units_i386_freebsd=sdlutils
 units_win32=sdlutils
 units_powerpc_darwin=sdlutils
 units_i386_darwin=sdlutils
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 units_i386_iphonesim=sdlutils
@@ -66,6 +71,9 @@ units_i386_iphonesim=sdlutils
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+units_i386_iphonesim=sdlutils
+>>>>>>> origin/cpstrnew
 
 [install]
 fpcpackage=y

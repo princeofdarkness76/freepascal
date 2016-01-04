@@ -8,6 +8,9 @@
     License as published by the Free Software Foundation; either
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
     version 2.1 of the License, or (at your option) any later version
     with the following modification:
 
@@ -21,12 +24,15 @@
     this library, you may extend this exception to your version of the library,
     but you are not obligated to do so. If you do not wish to do so, delete this
     exception statement from your version.
+<<<<<<< HEAD
 =======
     version 2.1 of the License, or (at your option) any later version.
 >>>>>>> graemeg/fixes_2_2
 =======
     version 2.1 of the License, or (at your option) any later version.
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 
     This library is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -38,6 +44,7 @@
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 constructor TWin32Event.Create;
@@ -81,44 +88,49 @@ end;
 Constructor TWin32Event.Create;
 
 Begin
+=======
+constructor TWin32Event.Create;
+begin
+>>>>>>> origin/cpstrnew
   { create event handle }
-  m_event := CreateEvent(Nil, True, False, Nil);
+  FEvent := CreateEvent(nil, True, False, nil);
 
   { check event handle }
-  If m_event = 0 Then
-    Raise TPTCError.Create('could not create event');
-End;
+  if FEvent = 0 then
+    raise TPTCError.Create('could not create event');
+end;
 
-Destructor TWin32Event.Destroy;
-
-Begin
+destructor TWin32Event.Destroy;
+begin
   { close handle }
-  CloseHandle(m_event);
+  CloseHandle(FEvent);
 
-  Inherited Destroy;
-End;
+  inherited Destroy;
+end;
 
-Procedure TWin32Event._set;
-
-Begin
+procedure TWin32Event.SetEvent;
+begin
   { set event }
-  SetEvent(m_event);
-End;
+  windows.SetEvent(FEvent);
+end;
 
-Procedure TWin32Event.reset;
-
-Begin
+procedure TWin32Event.ResetEvent;
+begin
   { reset event }
-  ResetEvent(m_event);
-End;
+  windows.ResetEvent(FEvent);
+end;
 
-Procedure TWin32Event.wait;
-
-Begin
+procedure TWin32Event.WaitForEvent;
+begin
   { wait for event }
+<<<<<<< HEAD
   WaitForSingleObject(m_event, INFINITE);
 End;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  WaitForSingleObject(FEvent, INFINITE);
+end;
+>>>>>>> origin/cpstrnew

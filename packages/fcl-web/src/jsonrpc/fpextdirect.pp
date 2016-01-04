@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
     This file is part of the Free Component Library
 
@@ -24,6 +25,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 unit fpextdirect;
 
 {$mode objfpc}{$H+}
@@ -32,6 +35,7 @@ unit fpextdirect;
 interface
 
 uses
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -57,6 +61,8 @@ Type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   Classes, SysUtils, fpjson, fpjsonrpc, webjsonrpc, httpdefs,websession;
@@ -111,11 +117,14 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   TExtDirectDispatcher = Class(TCustomExtDirectDispatcher)
@@ -199,6 +208,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Property OnNewSession;
     Property OnSessionExpired;
 =======
@@ -207,6 +217,8 @@ Type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   end;
@@ -225,6 +237,7 @@ Resourcestring
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 Procedure TCustomExtDirectDispatcher.InitContainer(H: TCustomJSONRPCHandler;
   AContext: TJSONRPCCallContext; AContainer: TComponent);
@@ -239,6 +252,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 Const
@@ -405,11 +420,14 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 { TCustomExtDirectContentProducer }
@@ -558,6 +576,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     AResponse.SendResponse;
 >>>>>>> graemeg/cpstrnew
@@ -567,6 +586,9 @@ begin
 =======
     AResponse.SendResponse;
 >>>>>>> graemeg/cpstrnew
+=======
+    AResponse.SendResponse;
+>>>>>>> origin/cpstrnew
 =======
     AResponse.SendResponse;
 >>>>>>> origin/cpstrnew

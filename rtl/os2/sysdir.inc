@@ -23,6 +23,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure do_MkDir(s: rawbytestring);
 var 
     Rc : word;
@@ -53,10 +54,17 @@ var
     Rc : word;
 begin
 >>>>>>> origin/cpstrnew
+=======
+Procedure MkDir(s: pchar;len:sizeuint);[IOCheck, public, alias : 'FPC_SYS_MKDIR'];
+var 
+    Rc : word;
+begin
+>>>>>>> origin/cpstrnew
   If not assigned(s) or (len=0) or (InOutRes <> 0) then
     exit;
   DoDirSeparators(s);
   Rc := DosCreateDir(s,nil);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -67,10 +75,13 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   if Rc <> 0 then
     begin
       InOutRes := Rc;
       Errno2Inoutres;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -122,6 +133,11 @@ end;
 end;
 
 >>>>>>> origin/cpstrnew
+=======
+    end;
+end;
+
+>>>>>>> origin/cpstrnew
 Procedure RmDir(s: pchar;len:sizeuint);[IOCheck, public, alias : 'FPC_SYS_RMDIR'];
 var 
     Rc : word;
@@ -129,10 +145,14 @@ begin
   if (len=1) and (s^ = '.' ) then
     InOutRes := 16;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   If not assigned(s) or (len=0) or (InOutRes <> 0) then
     exit;
   DoDirSeparators(s);
   Rc := DosDeleteDir(s);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -143,10 +163,13 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   if Rc <> 0 then
     begin
       InOutRes := Rc;
       Errno2Inoutres;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -174,10 +197,14 @@ begin
          Errno2Inoutres;
        end;
 >>>>>>> graemeg/fixes_2_2
+=======
+    end;
+>>>>>>> origin/cpstrnew
 end;
 
 {$ASMMODE INTEL}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -206,6 +233,8 @@ begin
 =======
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/cpstrnew
 Procedure ChDir(s: pchar;len:sizeuint);[IOCheck, public, alias : 'FPC_SYS_CHDIR'];
 
 var RC: cardinal;
@@ -214,6 +243,7 @@ begin
   If not assigned(s) or (len=0) or (InOutRes <> 0) then
     exit;
   if (Len >= 2) and (S[1] = ':') then
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 Procedure ChDir(s: pchar;len:sizeuint);[IOCheck, public, alias : 'FPC_SYS_CHDIR'];
@@ -225,6 +255,8 @@ begin
     exit;
   if (Len >= 2) and (S[1] = ':') then
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   begin
     RC := DosSetDefaultDisk ((Ord (S [0]) and not ($20)) - $40);
     if RC <> 0 then
@@ -235,6 +267,7 @@ begin
     else
       if Len > 2 then
       begin
+<<<<<<< HEAD
 <<<<<<< HEAD
         DoDirSeparators (s);
 <<<<<<< HEAD
@@ -262,6 +295,10 @@ begin
         DoDirSeparators (PChar (@Buffer));
         RC := DosSetCurrentDir (@Buffer);
 >>>>>>> graemeg/fixes_2_2
+=======
+        DoDirSeparators (s);
+        RC := DosSetCurrentDir (s);
+>>>>>>> origin/cpstrnew
         if RC <> 0 then
         begin
           InOutRes := RC;
@@ -270,6 +307,7 @@ begin
         end;
       end;
   end else begin
+<<<<<<< HEAD
 <<<<<<< HEAD
     DoDirSeparators (s);
 <<<<<<< HEAD
@@ -297,6 +335,10 @@ begin
     DoDirSeparators (PChar (@Buffer));
     RC := DosSetCurrentDir (@Buffer);
 >>>>>>> graemeg/fixes_2_2
+=======
+    DoDirSeparators (s);
+    RC := DosSetCurrentDir (s);
+>>>>>>> origin/cpstrnew
     if RC <> 0 then
     begin
       InOutRes:= RC;

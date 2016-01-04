@@ -268,6 +268,7 @@ type
     NodeTestType: TNodeTestType;
     NodeTestString: DOMString;
 <<<<<<< HEAD
+<<<<<<< HEAD
     NSTestString: DOMString;
     constructor Create(aAxis: TAxis; aTest: TNodeTestType);
 =======
@@ -285,6 +286,10 @@ type
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    NSTestString: DOMString;
+    constructor Create(aAxis: TAxis; aTest: TNodeTestType);
+>>>>>>> origin/cpstrnew
     function Evaluate(AContext: TXPathContext;
       AEnvironment: TXPathEnvironment): TXPathVariable; override;
   end;
@@ -371,6 +376,8 @@ type
     constructor Create(aNode: TDOMNode);
     function LookupNamespaceURI(const aPrefix: DOMString): DOMString; virtual;
   end;
+
+  TXPathNSResolver = TDOMNode {!!! experimental};
 
   TXPathNSResolver = TDOMNode {!!! experimental};
 
@@ -511,6 +518,7 @@ type
     { CompleteExpresion specifies wether the parser should check for gargabe
       after the recognised part. True => Throw exception if there is garbage }
 <<<<<<< HEAD
+<<<<<<< HEAD
     constructor Create(AScanner: TXPathScanner; CompleteExpression: Boolean;
       AResolver: TXPathNSResolver = nil);
     destructor Destroy; override;
@@ -521,6 +529,11 @@ type
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    constructor Create(AScanner: TXPathScanner; CompleteExpression: Boolean;
+      AResolver: TXPathNSResolver = nil);
+    destructor Destroy; override;
+>>>>>>> origin/cpstrnew
     function Evaluate(AContextNode: TDOMNode): TXPathVariable;
     function Evaluate(AContextNode: TDOMNode;
       AEnvironment: TXPathEnvironment): TXPathVariable;
@@ -590,10 +603,14 @@ begin
   Val(s, Result, Code);
 {$push}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$r-,q-}
 =======
 {$r-}
 >>>>>>> origin/fixes_2.4
+=======
+{$r-,q-}
+>>>>>>> origin/cpstrnew
   if Code <> 0 then
     Result := NaN;
 {$pop}
@@ -836,10 +853,14 @@ begin
         opMod: if IsNan(Op1) or IsNan(Op2) then
 {$push}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$r-,q-}
 =======
 {$r-}
 >>>>>>> origin/fixes_2.4
+=======
+{$r-,q-}
+>>>>>>> origin/cpstrnew
           NumberResult := NaN
 {$pop}
         else
@@ -1120,6 +1141,7 @@ var
   Attr: TDOMNamedNodeMap;
   i: Integer;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 begin
   for i := 0 to Predicates.Count - 1 do
@@ -1134,6 +1156,8 @@ begin
   FIsAbsolutePath := AIsAbsolutePath;
 end;
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 
   procedure DoNodeTest(Node: TDOMNode);
   begin
@@ -1400,6 +1424,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -1414,6 +1439,8 @@ begin
 end;
 
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 { Exceptions }
 
 procedure EvaluationError(const Msg: String);

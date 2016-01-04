@@ -88,6 +88,7 @@ type
     time_t   = clong;           { used for returning the time  }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     // TTime    = time_t;    // Not allowed in system unit, -> unixtype
 =======
@@ -96,6 +97,10 @@ type
 =======
     TTime    = time_t; 
 >>>>>>> origin/fixes_2_2
+=======
+
+    // TTime    = time_t;    // Not allowed in system unit, -> unixtype
+>>>>>>> origin/cpstrnew
     pTime    = ^time_t;
     ptime_t =  ^time_t;
     

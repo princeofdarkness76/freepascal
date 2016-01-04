@@ -87,11 +87,15 @@ unit cpupi;
         if tg.direction = -1 then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
           begin
             if (target_info.system<>system_arm_darwin) then
               { Non-Darwin, worst case: r4-r10,r11,r13,r14,r15 is saved -> -28-16, but we
                 always adjust the frame pointer to point to the first stored
                 register (= last register in list above) -> + 4 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -109,10 +113,13 @@ unit cpupi;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
               tg.setfirsttemp(-28-16+4)
             else
               { on Darwin r9 is not usable -> one less register to save }
               tg.setfirsttemp(-24-16+4)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -166,6 +173,9 @@ unit cpupi;
           end;
 =======
           tg.setfirsttemp(-12-28)
+=======
+          end
+>>>>>>> origin/cpstrnew
         else
           tg.setfirsttemp(maxpushedparasize);
 >>>>>>> graemeg/fixes_2_2
@@ -183,6 +193,7 @@ unit cpupi;
          r : byte;
          floatsavesize : aword;
          regs: tcpuregisterset;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -285,6 +296,8 @@ unit cpupi;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       begin

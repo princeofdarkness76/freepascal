@@ -86,14 +86,20 @@ type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {
   Generated from fpmkunit.pp, using data2inc:
   data2inc -b -s fpmkunit.pp fpmkunitsrc.inc fpmkunitsrc
 }
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 {$i fpmkunitsrc.inc}
 
 procedure CreateFPMKUnitSource(const AFileName:string);
@@ -197,6 +203,7 @@ begin
       AddOption('-n');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       AddOption('-dCOMPILED_BY_FPPKG');
       for i:=0 to high(FPMKUnitDeps) do
         begin
@@ -212,17 +219,26 @@ begin
 =======
 >>>>>>> origin/fixes_2_2
       for i:=1 to FPMKUnitDepCount do
+=======
+      AddOption('-dCOMPILED_BY_FPPKG');
+      for i:=0 to high(FPMKUnitDeps) do
+>>>>>>> origin/cpstrnew
         begin
-          if FPMKUnitDepAvailable[i] then
+          if FPMKUnitDeps[i].available then
             begin
               if CheckUnitDir(FPMKUnitDeps[i].package,DepDir) then
-                AddOption(maybequoted('-Fu'+DepDir))
+                AddOption('-Fu'+DepDir)
               else
                 Error(SErrMissingInstallPackage,[FPMKUnitDeps[i].package]);
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+              if FPMKUnitDeps[i].def<>'' then
+                AddOption('-d'+FPMKUnitDeps[i].def);
+>>>>>>> origin/cpstrnew
             end
           else
             begin
@@ -276,11 +292,15 @@ Function TFPMakeRunner.RunFPMake(const Command:string) : Integer;
 Var
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   ManifestPackage,
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  ManifestPackage,
+>>>>>>> origin/cpstrnew
   P : TFPPackage;
   FPMakeBin,
   OOptions : string;
@@ -294,22 +314,31 @@ Var
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   procedure CondAddOption(const Name,Value:string);
   begin
     if Value<>'' then
       AddOption(Name+'='+Value);
   end;
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 begin
   OOptions:='';
   // Does the current package support this CPU-OS?
   if PackageName<>'' then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
     begin
       P:=AvailableRepository.PackageByName(PackageName);
       if (PackageName=CurrentDirPackageName) and (FileExists(ManifestFileName)) then
@@ -320,16 +349,20 @@ begin
           ManifestPackage.Free;
         end;
     end
+<<<<<<< HEAD
 =======
     P:=AvailableRepository.PackageByName(PackageName)
 >>>>>>> graemeg/fixes_2_2
 =======
     P:=AvailableRepository.PackageByName(PackageName)
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
   else
     P:=nil;
   if assigned(P) then
     begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       if (command<>'archive') and (command<>'manifest') and
@@ -343,11 +376,17 @@ begin
       if not(CompilerOptions.CompilerOS in P.OSes) or
          not(CompilerOptions.CompilerCPU in P.CPUs) then
 >>>>>>> origin/fixes_2_2
+=======
+      if (command<>'archive') and (command<>'manifest') and
+         (not(CompilerOptions.CompilerOS in P.OSes) or
+          not(CompilerOptions.CompilerCPU in P.CPUs)) then
+>>>>>>> origin/cpstrnew
         Error(SErrPackageDoesNotSupportTarget,[P.Name,MakeTargetString(CompilerOptions.CompilerCPU,CompilerOptions.CompilerOS)]);
     end;
   { Maybe compile fpmake executable? }
   ExecuteAction(PackageName,'compilefpmake');
   { Create options }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   if vlDebug in LogLevels then
@@ -392,13 +431,21 @@ begin
 >>>>>>> origin/fixes_2_2
   AddOption('--nofpccfg');
   if vlInfo in LogLevels then
+=======
+  if vlDebug in LogLevels then
+    AddOption('--debug')
+  else if vlInfo in LogLevels then
+>>>>>>> origin/cpstrnew
     AddOption('--verbose');
-  AddOption('--compiler='+CompilerOptions.Compiler);
-  AddOption('--cpu='+CPUToString(CompilerOptions.CompilerCPU));
-  AddOption('--os='+OSToString(CompilerOptions.CompilerOS));
-  if IsSuperUser or GlobalOptions.InstallGlobal then
-    AddOption('--baseinstalldir='+CompilerOptions.GlobalInstallDir)
+  if P.RecompileBroken and
+     (P.FPMakeOptionsString<>'') then // Check for a empty FPMakeOptionString for packages being installed with an old fpmkunit
+    begin
+      // When the package is being reinstalled because of broken dependencies, use the same fpmake-options
+      // as were used to compile the package in the first place.
+      OOptions:=P.FPMakeOptionsString;
+    end
   else
+<<<<<<< HEAD
     AddOption('--baseinstalldir='+CompilerOptions.LocalInstallDir);
   if CompilerOptions.LocalInstallDir<>'' then
     AddOption('--localunitdir='+CompilerOptions.LocalUnitDir);
@@ -407,6 +454,33 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    begin
+      AddOption('--nofpccfg');
+      AddOption('--compiler='+CompilerOptions.Compiler);
+      AddOption('--cpu='+CPUToString(CompilerOptions.CompilerCPU));
+      AddOption('--os='+OSToString(CompilerOptions.CompilerOS));
+      if CompilerOptions.HasOptions then
+        AddOption('--options='+CompilerOptions.Options.DelimitedText);
+      if IsSuperUser or GlobalOptions.InstallGlobal then
+        begin
+          CondAddOption('--prefix',CompilerOptions.GlobalPrefix);
+          CondAddOption('--baseinstalldir',CompilerOptions.GlobalInstallDir);
+        end
+      else
+        begin
+          CondAddOption('--prefix',CompilerOptions.LocalPrefix);
+          CondAddOption('--baseinstalldir',CompilerOptions.LocalInstallDir);
+        end;
+      CondAddOption('--localunitdir',CompilerOptions.LocalUnitDir);
+      CondAddOption('--globalunitdir',CompilerOptions.GlobalUnitDir);
+      if GlobalOptions.CustomFPMakeOptions<>'' then
+        begin
+        AddOption('--ignoreinvalidoption');
+        AddOption(GlobalOptions.CustomFPMakeOptions);
+        end;
+    end;
+>>>>>>> origin/cpstrnew
   { Run FPMake }
   FPMakeBin:='fpmake'+ExeExt;
   SetCurrentDir(PackageBuildPath(P));

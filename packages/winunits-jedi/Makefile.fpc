@@ -18,6 +18,7 @@ name=winunits-jedi
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 version=3.1.1
 
 [require]
@@ -55,6 +56,13 @@ packages_win64=winunits-base
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+version=2.5.1
+
+[require]
+packages_win32=winunits-base fcl-registry fcl-base
+packages_win64=winunits-base fcl-registry fcl-base
+>>>>>>> origin/cpstrnew
 
 [target]
 units=buildjwa

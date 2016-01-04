@@ -67,13 +67,22 @@ var
 =======
 >>>>>>> origin/fixes_2_2
 
+const
+  EBUF_SIZE = 100;
+
+{$WARNING This code is not thread-safe, and needs improvement}
 var
   { the input file to read DWARF debug info from, i.e. paramstr(0) }
   e : TExeFile;
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  EBuf: Array [0..EBUF_SIZE-1] of Byte;
+  EBufCnt, EBufPos: Integer;
+>>>>>>> origin/cpstrnew
   DwarfErr : boolean;
   { the offset and size of the DWARF debug_line section in the file }
   DwarfOffset : longint;
@@ -205,12 +214,17 @@ begin
   seek(e.f, base);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   EBufCnt := 0;
   EBufPos := 0;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  EBufCnt := 0;
+  EBufPos := 0;
+>>>>>>> origin/cpstrnew
   index := 0;
 end;
 
@@ -232,17 +246,23 @@ begin
   system.seek(e.f, base + index);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   EBufCnt := 0;
   EBufPos := 0;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  EBufCnt := 0;
+  EBufPos := 0;
+>>>>>>> origin/cpstrnew
 end;
 
 
 { Returns the next Byte from the input stream, or -1 if there has been
   an error }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 function ReadNext() : Longint; inline;
@@ -304,17 +324,28 @@ end;
 
 =======
 function ReadNext() : Longint;
+=======
+function ReadNext() : Longint; inline;
+>>>>>>> origin/cpstrnew
 var
   bytesread : SizeInt;
   b : Byte;
 begin
   ReadNext := -1;
-  if (index < limit) then begin
-    blockread(e.f, b, 1, bytesread);
-    ReadNext := b;
-    inc(index);
+  if EBufPos >= EBufCnt then begin
+    EBufPos := 0;
+    EBufCnt := EBUF_SIZE;
+    if EBufCnt > limit - index then
+      EBufCnt := limit - index;
+    blockread(e.f, EBuf, EBufCnt, bytesread);
+    EBufCnt := bytesread;
   end;
-  if (bytesread <> 1) then
+  if EBufPos < EBufCnt then begin
+    ReadNext := EBuf[EBufPos];
+    inc(EBufPos);
+    inc(index);
+  end
+  else
     ReadNext := -1;
 end;
 
@@ -338,16 +369,36 @@ end;
 { Reads the next size bytes into dest. Returns true if successful,
   false otherwise. Note that dest may be partially overwritten after
   returning false. }
-function ReadNext(var dest; size : SizeInt) : Boolean;
+function ReadNext(var dest; size : SizeInt) : Boolean; inline;
 var
-  bytesread : SizeInt;
+  bytesread, totalread : SizeInt;
+  r: Boolean;
+  d: PByte;
 begin
-  bytesread := 0;
-  if ((index + size) < limit) then begin
-    blockread(e.f, dest, size, bytesread);
-    inc(index, size);
+  d := @dest;
+  totalread := 0;
+  r := True;
+  while (totalread < size) and r do begin;
+    if EBufPos >= EBufCnt then begin
+      EBufPos := 0;
+      EBufCnt := EBUF_SIZE;
+      if EBufCnt > limit - index then
+        EBufCnt := limit - index;
+      blockread(e.f, EBuf, EBufCnt, bytesread);
+      EBufCnt := bytesread;
+      if bytesread <= 0 then
+        r := False;
+    end;
+    if EBufPos < EBufCnt then begin
+      bytesread := EBufCnt - EBufPos;
+      if bytesread > size - totalread then bytesread := size - totalread;
+      System.Move(EBuf[EBufPos], d[totalread], bytesread);
+      inc(EBufPos, bytesread);
+      inc(index, bytesread);
+      inc(totalread, bytesread);
+    end;
   end;
-  ReadNext := (bytesread = size);
+  ReadNext := r;
 end;
 
 <<<<<<< HEAD

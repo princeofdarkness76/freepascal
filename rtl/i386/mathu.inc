@@ -94,12 +94,15 @@ function log2(x : float) : float;assembler;
   end;
 
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$define FPC_MATH_HAS_DIVMOD}

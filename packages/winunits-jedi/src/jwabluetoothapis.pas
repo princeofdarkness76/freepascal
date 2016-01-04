@@ -586,6 +586,7 @@ function BluetoothRemoveDevice(var pAddress: BLUETOOTH_ADDRESS): DWORD; stdcall;
 //                  //
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 //                  //  TODO:   Do something useful with the device info
 =======
 //                  //  TODO:   Do something usefull with the device info
@@ -593,6 +594,9 @@ function BluetoothRemoveDevice(var pAddress: BLUETOOTH_ADDRESS): DWORD; stdcall;
 =======
 //                  //  TODO:   Do something usefull with the device info
 >>>>>>> origin/fixes_2_2
+=======
+//                  //  TODO:   Do something useful with the device info
+>>>>>>> origin/cpstrnew
 //                  //
 //              }
 //

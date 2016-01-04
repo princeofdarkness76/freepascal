@@ -34,6 +34,7 @@ uses uw8730b;
 exports
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$if defined(darwin)}
 =======
 {$if defined(darwin) or defined(win32) or defined(wince)}
@@ -41,6 +42,9 @@ exports
 =======
 {$if defined(darwin) or defined(win32) or defined(wince)}
 >>>>>>> origin/fixes_2_2
+=======
+{$if defined(darwin)}
+>>>>>>> origin/cpstrnew
 Lib2Func name '_Lib2Func';
 {$else}
 Lib2Func;

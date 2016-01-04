@@ -174,6 +174,7 @@ uses
 {$ENDIF}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$IFDEF MORPHOS}
   exec,
 {$ENDIF}
@@ -181,6 +182,11 @@ uses
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$IFDEF MORPHOS}
+  exec,
+{$ENDIF}
+>>>>>>> origin/cpstrnew
   sdl;
 
 const
@@ -206,14 +212,20 @@ const
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {$IFDEF MACOS}
   SDLttfLibName = 'powersdl_ttf.library';
 {$ENDIF}
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
   {* Printable format: "%d.%d.%d", MAJOR, MINOR, PATCHLEVEL *}
   SDL_TTF_MAJOR_VERSION = 2;
 {$EXTERNALSYM SDL_TTF_MAJOR_VERSION}
@@ -253,14 +265,20 @@ procedure SDL_TTF_VERSION( var X : TSDL_version );
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {$IFDEF MORPHOS}
 {$INCLUDE powersdl_ttf.inc}
 {$ELSE MORPHOS}
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 { This function gets the version of the dynamically linked SDL_ttf library.
      It should NOT be used to fill a version structure, instead you should use the
      SDL_TTF_VERSION() macro. }
@@ -491,12 +509,17 @@ cdecl; external {$IFDEF __GPC__}name 'TTF_WasInit'{$ELSE} SDLttfLibName{$ENDIF _
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ENDIF MORPHOS}
 
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$ENDIF MORPHOS}
+
+>>>>>>> origin/cpstrnew
 // We'll use SDL for reporting errors
 procedure TTF_SetError( fmt : PChar );
 

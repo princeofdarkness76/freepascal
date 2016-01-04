@@ -50,6 +50,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         procedure a_load_const_cgpara(list:TAsmList;size:tcgsize;a:aint;const paraloc:TCGPara);override;
         procedure a_load_ref_cgpara(list:TAsmList;sz:tcgsize;const r:TReference;const paraloc:TCGPara);override;
@@ -65,6 +66,11 @@ interface
         procedure a_load_ref_cgpara(list:TAsmList;sz:tcgsize;const r:TReference;const paraloc:TCGPara);override;
         procedure a_loadaddr_ref_cgpara(list:TAsmList;const r:TReference;const paraloc:TCGPara);override;
 >>>>>>> graemeg/cpstrnew
+=======
+        procedure a_load_const_cgpara(list:TAsmList;size:tcgsize;a:aint;const paraloc:TCGPara);override;
+        procedure a_load_ref_cgpara(list:TAsmList;sz:tcgsize;const r:TReference;const paraloc:TCGPara);override;
+        procedure a_loadaddr_ref_cgpara(list:TAsmList;const r:TReference;const paraloc:TCGPara);override;
+>>>>>>> origin/cpstrnew
 =======
         procedure a_load_const_cgpara(list:TAsmList;size:tcgsize;a:aint;const paraloc:TCGPara);override;
         procedure a_load_ref_cgpara(list:TAsmList;sz:tcgsize;const r:TReference;const paraloc:TCGPara);override;
@@ -142,11 +148,14 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       end;
@@ -170,12 +179,15 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     procedure create_codegen;
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -429,11 +441,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     procedure TCgSparc.a_load_const_cgpara(list:TAsmList;size:tcgsize;a:aint;const paraloc:TCGPara);
@@ -533,11 +548,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     procedure tcgsparc.a_loadfpu_ref_cgpara(list : TAsmList;size : tcgsize;const ref : treference;const paraloc : TCGPara);
@@ -1401,11 +1419,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         a_loadaddr_ref_cgpara(list,dest,paraloc2);
@@ -1620,6 +1641,7 @@ implementation
             href.refaddr := addr_high;
             list.concat(taicpu.op_ref_reg(A_SETHI,href,NR_G1));
 	    g1_used:=true;
+<<<<<<< HEAD
             href.refaddr := addr_low;
             list.concat(taicpu.op_reg_ref_reg(A_OR,NR_G1,href,NR_G1));
             list.concat(taicpu.op_reg(A_JMP,NR_G1));
@@ -1644,6 +1666,12 @@ implementation
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+            href.refaddr := addr_low;
+            list.concat(taicpu.op_reg_ref_reg(A_OR,NR_G1,href,NR_G1));
+            list.concat(taicpu.op_reg(A_JMP,NR_G1));
+	    g1_used:=false;
+>>>>>>> origin/cpstrnew
           end;
         { Delay slot }
         list.Concat(TAiCpu.Op_none(A_NOP));
@@ -1820,6 +1848,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if target_info.system=system_sparc_linux then
           TCgSparc(cg).use_unlimited_pic_mode:=true
         else
@@ -1842,6 +1871,11 @@ implementation
       end;
       
 >>>>>>> graemeg/cpstrnew
+=======
+        cg64:=TCg64Sparc.Create;
+      end;
+      
+>>>>>>> origin/cpstrnew
 =======
         cg64:=TCg64Sparc.Create;
       end;

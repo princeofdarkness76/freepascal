@@ -293,6 +293,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <<<<<<< HEAD
        { common functionality of as-nodes and is-nodes }
@@ -323,6 +324,9 @@ interface
 =======
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 =======
 
 >>>>>>> origin/cpstrnew
@@ -401,6 +405,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           remain too so that not too many/few bits are laoded.
 
           Also, in case the deftyp changes, don't ignore because lots of code
@@ -424,6 +429,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           remain too so that not too many/few bits are laoded }
         if equal_defs(p.resultdef,def) and
            not is_bitpacked_access(p) then
@@ -432,6 +439,9 @@ implementation
         else
          begin
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
            case convtype of
              tct_implicit:
                p:=ctypeconvnode.create(p,def);
@@ -440,9 +450,12 @@ implementation
              tct_internal:
                p:=ctypeconvnode.create_internal(p,def);
            end;
+<<<<<<< HEAD
 =======
            p:=ctypeconvnode.create(p,def);
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
            p.fileinfo:=ttypeconvnode(p).left.fileinfo;
            typecheckpass(p);
          end;
@@ -454,6 +467,7 @@ implementation
       begin
         do_inserttypeconv(p,def,tct_implicit);
       end;
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 
@@ -463,10 +477,21 @@ implementation
         do_inserttypeconv(p,def,tct_explicit);
       end;
 
+=======
+
+
+    procedure inserttypeconv_explicit(var p: tnode; def: tdef);
+
+      begin
+        do_inserttypeconv(p,def,tct_explicit);
+      end;
+
+>>>>>>> origin/cpstrnew
     procedure inserttypeconv_internal(var p:tnode;def:tdef);
 
       begin
         do_inserttypeconv(p,def,tct_internal);
+<<<<<<< HEAD
 =======
         { don't insert obsolete type conversions }
         if equal_defs(p.resultdef,def) then
@@ -478,6 +503,8 @@ implementation
            typecheckpass(p);
          end;
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
       end;
 
 
@@ -626,6 +653,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               oldfilepos:=current_filepos;
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -634,6 +662,9 @@ implementation
 =======
               oldfilepos:=current_filepos;
 >>>>>>> origin/fixes_2.4
+=======
+              oldfilepos:=current_filepos;
+>>>>>>> origin/cpstrnew
               current_filepos:=p2.fileinfo;
               case p2.resultdef.typ of
                  enumdef,
@@ -831,12 +862,15 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           p:=ctypeconvnode.create_internal(p,getansistringdef)
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
           p:=ctypeconvnode.create_internal(p,cansistringtype)
@@ -981,6 +1015,7 @@ implementation
              addn:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                cgmessage1(type_h_convert_add_operands_to_prevent_overflow,def.typename);
              subn:
                cgmessage1(type_h_convert_sub_operands_to_prevent_overflow,def.typename);
@@ -990,14 +1025,21 @@ implementation
 =======
 >>>>>>> origin/fixes_2_2
                cgmessage1(type_h_convert_add_operands_to_prevent_overflow,def.gettypename);
+=======
+               cgmessage1(type_h_convert_add_operands_to_prevent_overflow,def.typename);
+>>>>>>> origin/cpstrnew
              subn:
-               cgmessage1(type_h_convert_sub_operands_to_prevent_overflow,def.gettypename);
+               cgmessage1(type_h_convert_sub_operands_to_prevent_overflow,def.typename);
              muln:
+<<<<<<< HEAD
                cgmessage1(type_h_convert_mul_operands_to_prevent_overflow,def.gettypename);
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+               cgmessage1(type_h_convert_mul_operands_to_prevent_overflow,def.typename);
+>>>>>>> origin/cpstrnew
            end;
       end;
 
@@ -1193,6 +1235,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         else if (tstringdef(resultdef).stringtype=st_ansistring) then
 =======
         else if is_widechar(tarraydef(left.resultdef).elementdef) and
@@ -1210,12 +1253,17 @@ implementation
         else if is_widechar(tarraydef(left.resultdef).elementdef) and
                 (tstringdef(resultdef).stringtype=st_ansistring) then
 >>>>>>> origin/cpstrnew
+=======
+        else if is_widechar(tarraydef(left.resultdef).elementdef) and
+                (tstringdef(resultdef).stringtype=st_ansistring) then
+>>>>>>> origin/cpstrnew
           begin
             result:=ccallnode.createinternres(
                       'fpc_'+chartype+'array_to_'+tstringdef(resultdef).stringtypname,
                       ccallparanode.create(
                         cordconstnode.create(
                           ord(tarraydef(left.resultdef).lowrange=0),
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1233,10 +1281,14 @@ implementation
 =======
                           booltype,
 >>>>>>> origin/cpstrnew
+=======
+                          booltype,
+>>>>>>> origin/cpstrnew
                           false
                         ),
                         ccallparanode.create(
                           cordconstnode.create(
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1254,6 +1306,9 @@ implementation
 =======
                             tstringdef(resultdef).encoding,
 >>>>>>> origin/cpstrnew
+=======
+                            tstringdef(resultdef).encoding,
+>>>>>>> origin/cpstrnew
                             u16inttype,
                             true
                           ),
@@ -1263,10 +1318,13 @@ implementation
                       resultdef
                     );
           end
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
         else
           result:=ccallnode.createinternres(
             'fpc_'+chartype+'array_to_'+tstringdef(resultdef).stringtypname,
@@ -1386,6 +1444,9 @@ implementation
         newblock : tblocknode;
         newstat  : tstatementnode;
         restemp  : ttempcreatenode;
+        sa : ansistring;
+        cw : WideChar;
+        l : SizeUInt;
       begin
          result:=nil;
          if (left.nodetype=stringconstn) and
@@ -1441,6 +1502,9 @@ implementation
          { this maps all non-ascii chars to '?' -> loses information           }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 
          if (left.nodetype=ordconstn) and
             ((tstringdef(resultdef).stringtype in [st_widestring,st_unicodestring]) or
@@ -1451,6 +1515,7 @@ implementation
             )
              { widechar >=128 is destroyed }
              {(tordconstnode(left).value.uvalue<128))} then
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1473,6 +1538,8 @@ implementation
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
            begin
               if (tstringdef(resultdef).stringtype in [st_widestring,st_unicodestring]) then
                begin
@@ -1490,6 +1557,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
                   if (torddef(left.resultdef).ordtype=uwidechar) then
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1533,6 +1601,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                    begin
                     if (current_settings.sourcecodepage<>'utf8') then
                       hp:=cstringconstnode.createstr(unicode2asciichar(tcompilerwidechar(tordconstnode(left).value.uvalue)))
@@ -1549,11 +1619,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                   else
@@ -1577,6 +1650,7 @@ implementation
            end
          else
            { shortstrings are handled 'inline' (except for widechars) }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
            if (tstringdef(resultdef).stringtype<>st_shortstring) or
@@ -1674,19 +1748,34 @@ implementation
              begin
 >>>>>>> origin/fixes_2_2
                if (tstringdef(resultdef).stringtype <> st_shortstring) then
+=======
+           if (tstringdef(resultdef).stringtype<>st_shortstring) or
+              (torddef(left.resultdef).ordtype=uwidechar) then
+             begin
+               if (tstringdef(resultdef).stringtype<>st_shortstring) then
+>>>>>>> origin/cpstrnew
                  begin
+                   { parameter }
+                   para:=ccallparanode.create(left,nil);
+
                    { create the procname }
                    if torddef(left.resultdef).ordtype<>uwidechar then
-                     procname := 'fpc_char_to_'
+                     procname:='fpc_char_to_'
                    else
+<<<<<<< HEAD
                      procname := 'fpc_wchar_to_';
+=======
+                     begin
+                       { encoding required? }
+                       if tstringdef(resultdef).stringtype=st_ansistring then
+                         para:=ccallparanode.create(cordconstnode.create(tstringdef(resultdef).encoding,u16inttype,true),para);
+                       procname:='fpc_uchar_to_';
+                     end;
+>>>>>>> origin/cpstrnew
                    procname:=procname+tstringdef(resultdef).stringtypname;
 
-                   { and the parameter }
-                   para := ccallparanode.create(left,nil);
-
                    { and finally the call }
-                   result := ccallnode.createinternres(procname,para,resultdef);
+                   result:=ccallnode.createinternres(procname,para,resultdef);
                  end
                else
                  begin
@@ -1726,9 +1815,12 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       begin
@@ -1873,6 +1965,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
              (current_settings.sourcecodepage<>CP_UTF8))
          then
            begin
@@ -1897,6 +1990,11 @@ implementation
              { >= 128 is replaced by '?' currently -> loses information }
              (tordconstnode(left).value<128)) then
 >>>>>>> origin/fixes_2_2
+=======
+             (current_settings.sourcecodepage<>'utf8'))
+             { >= 128 is replaced by '?' currently -> loses information }
+             {(tordconstnode(left).value.uvalue<128))} then
+>>>>>>> origin/cpstrnew
            begin
              if (torddef(resultdef).ordtype=uchar) and
                 (torddef(left.resultdef).ordtype=uwidechar) and
@@ -1904,11 +2002,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
               begin
@@ -2321,12 +2422,16 @@ implementation
           end
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
         else if tstringdef(resultdef).stringtype=st_ansistring then
           begin
             result:=ccallnode.createinternres(
                         'fpc_pwidechar_to_'+tstringdef(resultdef).stringtypname,
                          ccallparanode.create(
                            cordconstnode.create(
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2344,6 +2449,9 @@ implementation
 =======
                              tstringdef(resultdef).encoding,
 >>>>>>> origin/cpstrnew
+=======
+                             tstringdef(resultdef).encoding,
+>>>>>>> origin/cpstrnew
                              u16inttype,
                              true
                            ),
@@ -2352,10 +2460,13 @@ implementation
                          resultdef
                       );
           end
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
         else
           result := ccallnode.createinternres(
             'fpc_pwidechar_to_'+tstringdef(resultdef).stringtypname,
@@ -2513,9 +2624,12 @@ implementation
         nestinglevel : byte;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       begin
@@ -2532,6 +2646,7 @@ implementation
 
 <<<<<<< HEAD
 
+<<<<<<< HEAD
     function ttypeconvnode._typecheck_chararray_to_string : tnode;
       begin
         result := typecheck_chararray_to_string;
@@ -2548,6 +2663,8 @@ implementation
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         { create procvardef (default for create_proc_to_procvar is voiddef,
@@ -3085,6 +3202,7 @@ implementation
         if convtype=tc_none then
           begin
 <<<<<<< HEAD
+<<<<<<< HEAD
             cdoptions:=[cdo_allow_variant,cdo_warn_incompatible_univ];
             { overloaded operators require calls, which is not possible inside
               a constant declaration }
@@ -3094,6 +3212,9 @@ implementation
 =======
             cdoptions:=[cdo_check_operator,cdo_allow_variant,cdo_warn_incompatible_univ];
 >>>>>>> graemeg/cpstrnew
+=======
+            cdoptions:=[cdo_check_operator,cdo_allow_variant,cdo_warn_incompatible_univ];
+>>>>>>> origin/cpstrnew
             if nf_explicit in flags then
               include(cdoptions,cdo_explicit);
             if nf_internal in flags then
@@ -3104,6 +3225,7 @@ implementation
               te_equal :
                 begin
                   result := simplify(false);
+<<<<<<< HEAD
                   if assigned(result) then
                     exit;
 
@@ -3125,6 +3247,11 @@ implementation
                     exit;
 
 >>>>>>> graemeg/cpstrnew
+=======
+                  if assigned(result) then
+                    exit;
+
+>>>>>>> origin/cpstrnew
                   { in case of bitpacked accesses, the original type must
                     remain so that not too many/few bits are laoded }
                   if is_bitpacked_access(left) then
@@ -3182,6 +3309,7 @@ implementation
 =======
 >>>>>>> origin/fixes_2_2
               te_convert_l5:
+<<<<<<< HEAD
                 begin
                   result := simplify;
                   if assigned(result) then
@@ -3189,6 +3317,10 @@ implementation
                   { nothing to do }
                 end;
 >>>>>>> graemeg/fixes_2_2
+=======
+                { nothing to do }
+                ;
+>>>>>>> origin/cpstrnew
 
               te_convert_operator :
                 begin
@@ -3249,6 +3381,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                        IncompatibleTypes(left.resultdef,resultdef)
                      else
                        result:=typecheck_call_helper(convtype);
@@ -3257,6 +3390,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                        IncompatibleTypes(left.resultdef,resultdef);
@@ -3394,13 +3529,14 @@ implementation
                                 (
                                  not(is_open_array(left.resultdef)) and
                                  not(is_array_constructor(left.resultdef)) and
+                                 not(is_array_of_const(left.resultdef)) and
                                  (left.resultdef.size=resultdef.size) and
                                  { disallow casts of const nodes }
                                  (not is_constnode(left) or
                                    { however, there are some exceptions }
                                    (not(resultdef.typ in [arraydef,recorddef,setdef,stringdef,
                                                           filedef,variantdef,objectdef]) or
-                                   is_class_or_interface(resultdef) or
+                                   is_class_or_interface_or_objc(resultdef) or
                                    { the softfloat code generates casts <const. float> to record }
                                    (nf_internal in flags)
                                  ))
@@ -3430,6 +3566,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                            CGMessage2(type_e_illegal_type_conversion,left.resultdef.typename,resultdef.typename)
                          else
                            begin
@@ -3450,6 +3587,9 @@ implementation
 =======
                            CGMessage2(type_e_illegal_type_conversion,left.resultdef.typename,resultdef.typename);
 >>>>>>> graemeg/cpstrnew
+=======
+                           CGMessage2(type_e_illegal_type_conversion,left.resultdef.typename,resultdef.typename);
+>>>>>>> origin/cpstrnew
 =======
                            CGMessage2(type_e_illegal_type_conversion,left.resultdef.typename,resultdef.typename);
 >>>>>>> origin/cpstrnew
@@ -3511,6 +3651,7 @@ implementation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       We do this on 64 bit CPUs as well, they benefit from it as well }
 
 <<<<<<< HEAD
@@ -3522,6 +3663,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$ifndef cpu64bitalu}
@@ -3536,6 +3679,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -3544,6 +3688,8 @@ implementation
         had one but was implicitly converted to s64bit                 }
       function wasoriginallysmallerint(n: tnode): boolean;
 =======
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -3644,6 +3790,9 @@ implementation
 
 
     procedure doremove64bittypeconvs(var n: tnode; todef: tdef; forceunsigned: boolean);
+<<<<<<< HEAD
+>>>>>>> origin/cpstrnew
+=======
 >>>>>>> origin/cpstrnew
       begin
         case n.nodetype of
@@ -3652,6 +3801,7 @@ implementation
               exclude(n.flags,nf_internal);
               if not forceunsigned and
                  is_signed(n.resultdef) then
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                 begin
@@ -3672,6 +3822,9 @@ implementation
 =======
                 begin
 >>>>>>> graemeg/cpstrnew
+=======
+                begin
+>>>>>>> origin/cpstrnew
 =======
                 begin
 >>>>>>> origin/cpstrnew
@@ -3739,7 +3892,10 @@ implementation
       end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$endif not cpu64bitalu}
@@ -3749,6 +3905,7 @@ implementation
     function ttypeconvnode.simplify(forinline : boolean): tnode;
       var
         hp: tnode;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3771,6 +3928,11 @@ implementation
         foundsint: boolean;
 {$endif not cpu64bitalu}
 >>>>>>> graemeg/cpstrnew
+=======
+{$ifndef cpu64bitalu}
+        foundsint: boolean;
+{$endif not cpu64bitalu}
+>>>>>>> origin/cpstrnew
 =======
 {$ifndef cpu64bitalu}
         foundsint: boolean;
@@ -3799,11 +3961,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
               ) then
@@ -3927,6 +4092,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                      begin
                        { for constant values on absolute variables, swaping is required }
                        if (target_info.endian = endian_big) and (nf_absolute in flags) then
@@ -3974,6 +4140,11 @@ implementation
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+                     testrange(resultdef,tordconstnode(left).value,(nf_explicit in flags),false);
+                   left.resultdef:=resultdef;
+                   tordconstnode(left).typedef:=resultdef;
+>>>>>>> origin/cpstrnew
                    result:=left;
                    left:=nil;
                    exit;
@@ -4010,6 +4181,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef CPUNO32BITOPS}
 =======
 
@@ -4022,6 +4194,10 @@ implementation
 
 {$ifndef cpu64bitalu}
 >>>>>>> graemeg/cpstrnew
+=======
+
+{$ifndef cpu64bitalu}
+>>>>>>> origin/cpstrnew
 =======
 
 {$ifndef cpu64bitalu}
@@ -4713,6 +4889,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 (tstringdef(left.resultdef).stringtype in [st_widestring,st_unicodestring,st_shortstring,st_ansistring]) then
             result:=ccallnode.createinternres(procname,
               ccallparanode.create(cordconstnode.create(getparaencoding(resultdef),u16inttype,true),
@@ -4721,6 +4898,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
             ((tstringdef(left.resultdef).stringtype in [st_widestring,st_unicodestring]) or
@@ -4735,11 +4914,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
               ccallparanode.create(left,nil)),resultdef)
@@ -5225,6 +5407,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function tasisnode.target_specific_typecheck: boolean;
       begin
         result:=false;
@@ -5239,6 +5422,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     function tasisnode.pass_typecheck: tnode;
       var
         hp : tnode;
@@ -5246,6 +5431,7 @@ implementation
         result:=nil;
         typecheckpass(right);
         typecheckpass(left);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5290,10 +5476,20 @@ implementation
 =======
 
 >>>>>>> origin/cpstrnew
+=======
+
+        set_varstate(right,vs_read,[vsf_must_be_valid]);
+        set_varstate(left,vs_read,[vsf_must_be_valid]);
+
+        if codegenerror then
+          exit;
+
+>>>>>>> origin/cpstrnew
         if (right.resultdef.typ=classrefdef) then
           begin
             { left maybe an interface reference }
             if is_interfacecom(left.resultdef) then
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5304,10 +5500,13 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
               begin
                 { relation checks are not possible }
               end
             { or left must be a class }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5326,6 +5525,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
             else if is_class(left.resultdef) then
               begin
                 { the operands must be related }
@@ -5335,11 +5536,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                    tobjectdef(left.resultdef)))) then
@@ -5351,6 +5555,7 @@ implementation
               CGMessage1(type_e_class_or_cominterface_type_expected,left.resultdef.typename);
             case nodetype of
               isn:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5368,10 +5573,14 @@ implementation
 =======
                 resultdef:=booltype;
 >>>>>>> origin/cpstrnew
+=======
+                resultdef:=booltype;
+>>>>>>> origin/cpstrnew
               asn:
                 resultdef:=tclassrefdef(right.resultdef).pointeddef;
             end;
           end
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5444,6 +5653,10 @@ implementation
         else if is_interface(right.resultdef) or is_dispinterface(right.resultdef) then
           begin
 >>>>>>> origin/cpstrnew
+=======
+        else if is_interface(right.resultdef) or is_dispinterface(right.resultdef) then
+          begin
+>>>>>>> origin/cpstrnew
             { left is a class }
             if not(is_class(left.resultdef) or
                    is_interfacecom(left.resultdef)) then
@@ -5488,6 +5701,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -5495,10 +5709,13 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
               end;
           end
         else
           CGMessage1(type_e_class_or_interface_type_expected,right.resultdef.typename);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5536,6 +5753,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       end;
@@ -5618,6 +5837,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     destructor tasnode.destroy;
 
 <<<<<<< HEAD
@@ -5653,6 +5873,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     function tasnode.dogetcopy: tnode;

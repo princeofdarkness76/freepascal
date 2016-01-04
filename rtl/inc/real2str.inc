@@ -186,6 +186,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (int(intPartStack[stackPtr]-corrVal) >= 5.0) then
 =======
         if (int(intPartStack[stackPtr]-corrVal+roundcorr) >= 5.0) then
@@ -196,6 +197,9 @@ const
 =======
         if (int(intPartStack[stackPtr]-corrVal) >= 5.0) then
 >>>>>>> origin/fixes_2.4
+=======
+        if (int(intPartStack[stackPtr]-corrVal) >= 5.0) then
+>>>>>>> origin/cpstrnew
            roundStr(temp,spos);
         end;
 {$ifdef DEBUG_NASM}
@@ -464,14 +468,18 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
           { for single, we may write more significant digits than are available,
             so the rounding correction itself can show up -> don't round in that
             case
           }
           if real_type<>rt_s32real then
             d:=d+d*roundCorr;
+<<<<<<< HEAD
 =======
           if (d<>0.0) then
             d:=d+roundCorr;
@@ -480,12 +488,15 @@ begin
           if (d<>0.0) then
             d:=d+roundCorr;
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
           if d >= corrVal then
             d := d + corrVal;
           if int(d) = 1 then
             begin
               roundStr(temp,spos);
               d := frac(d);
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
               if (f < 0) then
@@ -501,6 +512,8 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
             end;
           { calculate the necessary fractional digits }
           for fracCount := 1 to currPrec do

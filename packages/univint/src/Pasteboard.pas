@@ -41,6 +41,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    HIServices-416~44
 =======
      Version:    HIServices-308~1
@@ -71,6 +72,11 @@
  
      Copyright:  © 2003-2008 by Apple Computer, Inc., all rights reserved.
 >>>>>>> origin/fixes_2.4
+=======
+     Version:    HIServices-308~1
+ 
+     Copyright:  © 2003-2008 by Apple Computer, Inc., all rights reserved.
+>>>>>>> origin/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -80,6 +86,7 @@
                      http://bugs.freepascal.org
  
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -111,6 +118,8 @@
                      http://www.freepascal.org/bugs.html
  
 }
+=======
+>>>>>>> origin/cpstrnew
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {
     Modified for use with Free Pascal
@@ -120,12 +129,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -137,6 +150,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -151,6 +165,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -166,6 +184,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -176,6 +195,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -183,13 +205,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -197,6 +223,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -205,8 +233,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -217,6 +248,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -237,6 +269,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -245,12 +279,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -258,6 +295,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -308,6 +346,12 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 >>>>>>> origin/cpstrnew
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
@@ -322,6 +366,7 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
@@ -330,6 +375,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
@@ -342,6 +389,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -349,6 +397,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
@@ -364,6 +414,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -373,12 +424,15 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -566,6 +620,30 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -594,6 +672,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -602,6 +681,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -615,12 +696,16 @@ uses MacTypes,CFBase,CFArray,CFData,CFURL;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$endc} {not MACOSALLINCLUDE}
 
 
 {$ifc TARGET_OS_MAC}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -628,6 +713,8 @@ uses MacTypes,CFBase,CFArray,CFData,CFURL;
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ALIGN POWER}
 
@@ -695,6 +782,7 @@ uses MacTypes,CFBase,CFArray,CFData,CFURL;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 type
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -730,11 +818,14 @@ const
  
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 type
 	PasteboardRef = ^SInt32; { an opaque type }
 	PasteboardItemID = UnivPtr;
 { Pasteboard Manager error codes}
 const
+<<<<<<< HEAD
 <<<<<<< HEAD
   badPasteboardSyncErr          = -25130; { pasteboard has been modified and must be synchronized }
   badPasteboardIndexErr         = -25131; { item index does not exist }
@@ -748,6 +839,8 @@ const
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 	badPasteboardSyncErr = -25130; { pasteboard has been modified and must be synchronized}
 	badPasteboardIndexErr = -25131; { item index does not exist}
 	badPasteboardItemErr = -25132; { item reference does not exist}
@@ -755,7 +848,10 @@ const
 	duplicatePasteboardFlavorErr = -25134; { item flavor already exists}
 	notPasteboardOwnerErr = -25135; { client did not clear the pasteboard}
 	noPasteboardPromiseKeeperErr = -25136; { a promise is being added without a promise keeper}
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -767,6 +863,7 @@ const
  *    in relation to the global, cross process pasteboard resource.
  }
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -790,6 +887,11 @@ const
 const
 {
 >>>>>>> origin/fixes_2.4
+=======
+	PasteboardSyncFlags = OptionBits;
+const
+{
+>>>>>>> origin/cpstrnew
    * Indicates that the global pasteboard resource has been modified
    * since the last time it was accessed via the local pasteboard
    * reference. The call to PasteboardSynchronize() has updated the
@@ -801,6 +903,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kPasteboardModified = 1 shl 0;
 
   {
@@ -819,6 +922,11 @@ const
 
   {
 >>>>>>> origin/fixes_2.4
+=======
+	kPasteboardModified = 1 shl 0;
+
+  {
+>>>>>>> origin/cpstrnew
    * Indicates that the global pasteboard resource was most recently
    * cleared by the this application. Any local pasteboard reference in
    * the client application may add data to the global pasteboard
@@ -827,6 +935,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kPasteboardClientIsOwner = 1 shl 1;
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -887,6 +996,9 @@ const
 
 {
 =======
+=======
+	kPasteboardClientIsOwner = 1 shl 1;
+>>>>>>> origin/cpstrnew
 
 {
  *  Pasteboard File Promising
@@ -930,6 +1042,7 @@ const
 {$ifc USE_CFSTR_CONSTANT_MACROS}
 {$definec kPasteboardTypeFileURLPromise CFSTRP('com.apple.pasteboard.promised-file-url')}
 {$endc}
+<<<<<<< HEAD
 
 {
 >>>>>>> graemeg/cpstrnew
@@ -960,6 +1073,9 @@ const
 >>>>>>> origin/fixes_2_2
 =======
 
+=======
+
+>>>>>>> origin/cpstrnew
 {
  *  kPasteboardTypeFilePromiseContent
  *  
@@ -970,7 +1086,10 @@ const
 {$ifc USE_CFSTR_CONSTANT_MACROS}
 {$definec kPasteboardTypeFilePromiseContent CFSTRP('com.apple.pasteboard.promised-file-content-type')}
 {$endc}
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {
  *  PasteboardFlavorFlags
@@ -988,6 +1107,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	PasteboardFlavorFlags = OptionBits;
 const
 {
@@ -1002,10 +1122,14 @@ const
 =======
 	PasteboardFlavorFlags = OptionBits;
 >>>>>>> origin/fixes_2.4
+=======
+	PasteboardFlavorFlags = OptionBits;
+>>>>>>> origin/cpstrnew
 const
 {
    * No additional information exists for this flavor.
    }
+<<<<<<< HEAD
 <<<<<<< HEAD
     kPasteboardFlavorNoFlags      		= $00000000;
 <<<<<<< HEAD
@@ -1015,6 +1139,9 @@ const
 =======
 	kPasteboardFlavorNoFlags = 0;
 >>>>>>> origin/fixes_2.4
+=======
+	kPasteboardFlavorNoFlags = 0;
+>>>>>>> origin/cpstrnew
 
   {
    * Only the process which has added this flavor can see it. If the
@@ -1025,6 +1152,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kPasteboardFlavorSenderOnly = 1 shl 0;
 =======
     kPasteboardFlavorSenderOnly   		= $00000001; {(1 << 0)}
@@ -1035,6 +1163,9 @@ const
 =======
 	kPasteboardFlavorSenderOnly = 1 shl 0;
 >>>>>>> origin/fixes_2.4
+=======
+	kPasteboardFlavorSenderOnly = 1 shl 0;
+>>>>>>> origin/cpstrnew
 
   {
    * The data for this flavor was translated in some manner by the
@@ -1044,6 +1175,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kPasteboardFlavorSenderTranslated = 1 shl 1;
 =======
     kPasteboardFlavorSenderTranslated		= $00000002; {(1 << 1)}
@@ -1054,6 +1186,9 @@ const
 =======
 	kPasteboardFlavorSenderTranslated = 1 shl 1;
 >>>>>>> origin/fixes_2.4
+=======
+	kPasteboardFlavorSenderTranslated = 1 shl 1;
+>>>>>>> origin/cpstrnew
 
   {
    * Set by the sender if the flavor data should not be saved by the
@@ -1064,6 +1199,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kPasteboardFlavorNotSaved = 1 shl 2;
 =======
     kPasteboardFlavorNotSaved     			= $00000004; {(1 << 2)}
@@ -1074,6 +1210,9 @@ const
 =======
 	kPasteboardFlavorNotSaved = 1 shl 2;
 >>>>>>> origin/fixes_2.4
+=======
+	kPasteboardFlavorNotSaved = 1 shl 2;
+>>>>>>> origin/cpstrnew
 
   {
    * Like kPasteboardFlavorSenderOnly, when the sender adds this flag,
@@ -1088,6 +1227,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kPasteboardFlavorRequestOnly = 1 shl 3;
 =======
     kPasteboardFlavorRequestOnly  			= $00000008; {(1 << 3)}
@@ -1098,6 +1238,9 @@ const
 =======
 	kPasteboardFlavorRequestOnly = 1 shl 3;
 >>>>>>> origin/fixes_2.4
+=======
+	kPasteboardFlavorRequestOnly = 1 shl 3;
+>>>>>>> origin/cpstrnew
 
   {
    * The data for this flavor is provided by the Translation Manager as
@@ -1109,6 +1252,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kPasteboardFlavorSystemTranslated = 1 shl 8;
 =======
     kPasteboardFlavorSystemTranslated = $00000100; {(1 << 8)}
@@ -1119,6 +1263,9 @@ const
 =======
 	kPasteboardFlavorSystemTranslated = 1 shl 8;
 >>>>>>> origin/fixes_2.4
+=======
+	kPasteboardFlavorSystemTranslated = 1 shl 8;
+>>>>>>> origin/cpstrnew
 
   {
    * The data for this flavor has not yet been added to the pasteboard
@@ -1131,8 +1278,11 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	kPasteboardFlavorPromised = 1 shl 9;
 
 
@@ -1161,6 +1311,7 @@ const
    }
 	kPasteboardStandardLocationUnknown = FourCharCode('unkn');
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     kPasteboardFlavorPromised     = $00000200; {(1 << 9)}
 >>>>>>> graemeg/fixes_2_2
@@ -1169,6 +1320,8 @@ const
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {
  *  PasteboardGetTypeID()
@@ -1190,6 +1343,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function PasteboardGetTypeID: CFTypeID; external name '_PasteboardGetTypeID';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 
@@ -1208,6 +1362,11 @@ function PasteboardGetTypeID: CFTypeID; external name '_PasteboardGetTypeID';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function PasteboardGetTypeID: CFTypeID; external name '_PasteboardGetTypeID';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {$ifc USE_CFSTR_CONSTANT_MACROS}
 {$definec kPasteboardClipboard CFSTRP('com.apple.pasteboard.clipboard')}
@@ -1266,6 +1425,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function PasteboardCreate( inName: CFStringRef { can be NULL }; var outPasteboard: PasteboardRef ): OSStatus; external name '_PasteboardCreate';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 
@@ -1289,6 +1449,12 @@ function PasteboardCreate( inName: CFStringRef { can be NULL }; var outPasteboar
 
 
 >>>>>>> origin/fixes_2.4
+=======
+function PasteboardCreate( inName: CFStringRef { can be NULL }; var outPasteboard: PasteboardRef ): OSStatus; external name '_PasteboardCreate';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
 {
  *  PasteboardSynchronize()
  *  
@@ -1319,6 +1485,7 @@ function PasteboardCreate( inName: CFStringRef { can be NULL }; var outPasteboar
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function PasteboardSynchronize( inPasteboard: PasteboardRef ): PasteboardSyncFlags; external name '_PasteboardSynchronize';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 =======
@@ -1335,6 +1502,10 @@ function PasteboardSynchronize(inPasteboard: PasteboardRef): PasteboardSyncFlags
 function PasteboardSynchronize( inPasteboard: PasteboardRef ): PasteboardSyncFlags; external name '_PasteboardSynchronize';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+function PasteboardSynchronize( inPasteboard: PasteboardRef ): PasteboardSyncFlags; external name '_PasteboardSynchronize';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1367,6 +1538,7 @@ function PasteboardSynchronize( inPasteboard: PasteboardRef ): PasteboardSyncFla
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function PasteboardClear( inPasteboard: PasteboardRef ): OSStatus; external name '_PasteboardClear';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 =======
@@ -1383,6 +1555,10 @@ function PasteboardClear(inPasteboard: PasteboardRef): OSStatus; external name '
 function PasteboardClear( inPasteboard: PasteboardRef ): OSStatus; external name '_PasteboardClear';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+function PasteboardClear( inPasteboard: PasteboardRef ): OSStatus; external name '_PasteboardClear';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1446,6 +1622,7 @@ function PasteboardCopyName( inPasteboard: PasteboardRef; var outName: CFStringR
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function PasteboardGetItemCount( inPasteboard: PasteboardRef; var outItemCount: ItemCount ): OSStatus; external name '_PasteboardGetItemCount';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 =======
@@ -1464,6 +1641,10 @@ function PasteboardGetItemCount(
 function PasteboardGetItemCount( inPasteboard: PasteboardRef; var outItemCount: ItemCount ): OSStatus; external name '_PasteboardGetItemCount';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+function PasteboardGetItemCount( inPasteboard: PasteboardRef; var outItemCount: ItemCount ): OSStatus; external name '_PasteboardGetItemCount';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1484,6 +1665,7 @@ function PasteboardGetItemCount( inPasteboard: PasteboardRef; var outItemCount: 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *      A 1-based CFIndex requesting the nth pasteboard item reference.
 =======
  *      A 1-based UInt32 index requesting the nth pasteboard item reference.
@@ -1494,6 +1676,9 @@ function PasteboardGetItemCount( inPasteboard: PasteboardRef; var outItemCount: 
 =======
  *      A 1-based CFIndex requesting the nth pasteboard item reference.
 >>>>>>> origin/fixes_2.4
+=======
+ *      A 1-based CFIndex requesting the nth pasteboard item reference.
+>>>>>>> origin/cpstrnew
  *    
  *    outItem:
  *      A PasteboardItemID which receives the nth pasteboard item
@@ -1507,6 +1692,7 @@ function PasteboardGetItemCount( inPasteboard: PasteboardRef; var outItemCount: 
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.3 and later
  *    Non-Carbon CFM:   not available
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1531,6 +1717,11 @@ function PasteboardGetItemIdentifier( inPasteboard: PasteboardRef; inIndex: CFIn
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function PasteboardGetItemIdentifier( inPasteboard: PasteboardRef; inIndex: CFIndex; var outItem: PasteboardItemID ): OSStatus; external name '_PasteboardGetItemIdentifier';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  PasteboardCopyItemFlavors()
@@ -1566,6 +1757,7 @@ function PasteboardGetItemIdentifier( inPasteboard: PasteboardRef; inIndex: CFIn
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function PasteboardCopyItemFlavors( inPasteboard: PasteboardRef; inItem: PasteboardItemID; var outFlavorTypes: CFArrayRef ): OSStatus; external name '_PasteboardCopyItemFlavors';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 =======
@@ -1585,6 +1777,10 @@ function PasteboardCopyItemFlavors(
 function PasteboardCopyItemFlavors( inPasteboard: PasteboardRef; inItem: PasteboardItemID; var outFlavorTypes: CFArrayRef ): OSStatus; external name '_PasteboardCopyItemFlavors';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+function PasteboardCopyItemFlavors( inPasteboard: PasteboardRef; inItem: PasteboardItemID; var outFlavorTypes: CFArrayRef ): OSStatus; external name '_PasteboardCopyItemFlavors';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1623,6 +1819,7 @@ function PasteboardCopyItemFlavors( inPasteboard: PasteboardRef; inItem: Pastebo
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  }
 function PasteboardGetItemFlavorFlags( inPasteboard: PasteboardRef; inItem: PasteboardItemID; inFlavorType: CFStringRef; var outFlags: PasteboardFlavorFlags ): OSStatus; external name '_PasteboardGetItemFlavorFlags';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
@@ -1646,6 +1843,11 @@ function PasteboardGetItemFlavorFlags(
 function PasteboardGetItemFlavorFlags( inPasteboard: PasteboardRef; inItem: PasteboardItemID; inFlavorType: CFStringRef; var outFlags: PasteboardFlavorFlags ): OSStatus; external name '_PasteboardGetItemFlavorFlags';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+ }
+function PasteboardGetItemFlavorFlags( inPasteboard: PasteboardRef; inItem: PasteboardItemID; inFlavorType: CFStringRef; var outFlags: PasteboardFlavorFlags ): OSStatus; external name '_PasteboardGetItemFlavorFlags';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1669,6 +1871,7 @@ function PasteboardGetItemFlavorFlags( inPasteboard: PasteboardRef; inItem: Past
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *      A Uniform Type Identifier-based flavor type whose data is being
  *      retrieved.
 =======
@@ -1683,6 +1886,10 @@ function PasteboardGetItemFlavorFlags( inPasteboard: PasteboardRef; inItem: Past
  *      A Uniform Type Identifier-based flavor type whose data is being
  *      retrieved.
 >>>>>>> origin/fixes_2.4
+=======
+ *      A Uniform Type Identifier-based flavor type whose data is being
+ *      retrieved.
+>>>>>>> origin/cpstrnew
  *    
  *    outData:
  *      A CFDataRef reference which receives the flavor data. It is the
@@ -1696,6 +1903,7 @@ function PasteboardGetItemFlavorFlags( inPasteboard: PasteboardRef; inItem: Past
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.3 and later
  *    Non-Carbon CFM:   not available
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1721,6 +1929,11 @@ function PasteboardCopyItemFlavorData( inPasteboard: PasteboardRef; inItem: Past
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function PasteboardCopyItemFlavorData( inPasteboard: PasteboardRef; inItem: PasteboardItemID; inFlavorType: CFStringRef; var outData: CFDataRef ): OSStatus; external name '_PasteboardCopyItemFlavorData';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 const
     kPasteboardPromisedData = NIL;
@@ -1778,6 +1991,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  }
 function PasteboardPutItemFlavor( inPasteboard: PasteboardRef; inItem: PasteboardItemID; inFlavorType: CFStringRef; inData: CFDataRef { can be NULL }; inFlags: PasteboardFlavorFlags ): OSStatus; external name '_PasteboardPutItemFlavor';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
@@ -1802,6 +2016,11 @@ function PasteboardPutItemFlavor(
 function PasteboardPutItemFlavor( inPasteboard: PasteboardRef; inItem: PasteboardItemID; inFlavorType: CFStringRef; inData: CFDataRef { can be NULL }; inFlags: PasteboardFlavorFlags ): OSStatus; external name '_PasteboardPutItemFlavor';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+ }
+function PasteboardPutItemFlavor( inPasteboard: PasteboardRef; inItem: PasteboardItemID; inFlavorType: CFStringRef; inData: CFDataRef { can be NULL }; inFlags: PasteboardFlavorFlags ): OSStatus; external name '_PasteboardPutItemFlavor';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1834,6 +2053,7 @@ function PasteboardPutItemFlavor( inPasteboard: PasteboardRef; inItem: Pasteboar
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function PasteboardCopyPasteLocation( inPasteboard: PasteboardRef; var outPasteLocation: CFURLRef ): OSStatus; external name '_PasteboardCopyPasteLocation';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 =======
@@ -1852,6 +2072,10 @@ function PasteboardCopyPasteLocation(
 function PasteboardCopyPasteLocation( inPasteboard: PasteboardRef; var outPasteLocation: CFURLRef ): OSStatus; external name '_PasteboardCopyPasteLocation';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+function PasteboardCopyPasteLocation( inPasteboard: PasteboardRef; var outPasteLocation: CFURLRef ): OSStatus; external name '_PasteboardCopyPasteLocation';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1886,6 +2110,7 @@ function PasteboardCopyPasteLocation( inPasteboard: PasteboardRef; var outPasteL
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function PasteboardSetPasteLocation( inPasteboard: PasteboardRef; inPasteLocation: CFURLRef ): OSStatus; external name '_PasteboardSetPasteLocation';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 =======
@@ -1904,6 +2129,10 @@ function PasteboardSetPasteLocation(
 function PasteboardSetPasteLocation( inPasteboard: PasteboardRef; inPasteLocation: CFURLRef ): OSStatus; external name '_PasteboardSetPasteLocation';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+function PasteboardSetPasteLocation( inPasteboard: PasteboardRef; inPasteLocation: CFURLRef ): OSStatus; external name '_PasteboardSetPasteLocation';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1932,6 +2161,7 @@ function PasteboardSetPasteLocation( inPasteboard: PasteboardRef; inPasteLocatio
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  }
 type
 	PasteboardPromiseKeeperProcPtr = function( pasteboard: PasteboardRef; item: PasteboardItemID; flavorType: CFStringRef; context: UnivPtr ): OSStatus;
@@ -1956,6 +2186,11 @@ type
 type
 	PasteboardPromiseKeeperProcPtr = function( pasteboard: PasteboardRef; item: PasteboardItemID; flavorType: CFStringRef; context: UnivPtr ): OSStatus;
 >>>>>>> origin/fixes_2.4
+=======
+ }
+type
+	PasteboardPromiseKeeperProcPtr = function( pasteboard: PasteboardRef; item: PasteboardItemID; flavorType: CFStringRef; context: UnivPtr ): OSStatus;
+>>>>>>> origin/cpstrnew
 {
  *  PasteboardSetPromiseKeeper()
  *  
@@ -1990,6 +2225,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function PasteboardSetPromiseKeeper( inPasteboard: PasteboardRef; inPromiseKeeper: PasteboardPromiseKeeperProcPtr; inContext: UnivPtr ): OSStatus; external name '_PasteboardSetPromiseKeeper';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 
@@ -2011,6 +2247,11 @@ function PasteboardSetPromiseKeeper( inPasteboard: PasteboardRef; inPromiseKeepe
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function PasteboardSetPromiseKeeper( inPasteboard: PasteboardRef; inPromiseKeeper: PasteboardPromiseKeeperProcPtr; inContext: UnivPtr ): OSStatus; external name '_PasteboardSetPromiseKeeper';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 const
     kPasteboardResolveAllPromises = NIL;
@@ -2046,6 +2287,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function PasteboardResolvePromises( inPasteboard: PasteboardRef ): OSStatus; external name '_PasteboardResolvePromises';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 
@@ -2066,11 +2308,16 @@ function PasteboardResolvePromises(inPasteboard: PasteboardRef): OSStatus; exter
 function PasteboardResolvePromises( inPasteboard: PasteboardRef ): OSStatus; external name '_PasteboardResolvePromises';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+function PasteboardResolvePromises( inPasteboard: PasteboardRef ): OSStatus; external name '_PasteboardResolvePromises';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 {$endc} {TARGET_OS_MAC}
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -2079,3 +2326,6 @@ end.
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

@@ -729,15 +729,18 @@ procedure TWriter.WriteComponent(Component: TComponent);
 
 var
   SA : TPersistent;
-  SR : TComponent;
-  
+  SR, SRA : TComponent;
 begin
   SR:=FRoot;
   SA:=FAncestor;
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  SRA:=FRootAncestor;
+>>>>>>> origin/cpstrnew
   Try
     Component.FComponentState:=Component.FComponentState+[csWriting];
     Try
@@ -755,11 +758,15 @@ begin
     FRoot:=SR;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FRootAncestor:=SRA;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    FRootAncestor:=SRA;
+>>>>>>> origin/cpstrnew
   end;
 end;
 
@@ -1134,6 +1141,9 @@ begin
           begin
             //writeln('TWriter.WriteProperty AncestorObj=',TComponent(AncestorObj).Name,' OwnerFit=',TComponent(AncestorObj).Owner = FRootAncestor,' ',TComponent(ObjValue).Name,' OwnerFit=',TComponent(ObjValue).Owner = Root);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
             if (AncestorObj<> ObjValue) and
              (TComponent(AncestorObj).Owner = FRootAncestor) and
              (TComponent(ObjValue).Owner = Root) and
@@ -1142,6 +1152,7 @@ begin
               // different components, but with the same name
               // treat it like an override
               AncestorObj := ObjValue;
+<<<<<<< HEAD
 =======
             if (TComponent(AncestorObj).Owner <> FRootAncestor) or
              (TComponent(ObjValue).Owner <> Root) or
@@ -1149,6 +1160,8 @@ begin
             begin
               AncestorObj := nil;
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
             end;
           end;
         end else
@@ -1176,6 +1189,9 @@ begin
               begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
               Name:= '';
               C:= Component;
               While (C<>Nil) and (C.Name<>'') do
@@ -1198,6 +1214,7 @@ begin
               if (C=nil) and (Component.Owner=nil) then 
                 if (Name<>'') then              //foreign root
                   Name:=Name+'.Owner';
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -1215,6 +1232,8 @@ begin
                 SetLength(Name, 0);
 
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
               if Length(Name) > 0 then
                 begin
                 Driver.BeginProperty(FPropPath + PPropInfo(PropInfo)^.Name);

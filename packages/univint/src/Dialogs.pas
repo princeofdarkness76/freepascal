@@ -10,6 +10,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    HIToolbox-624~3
 =======
      Version:    HIToolbox-437~1
@@ -40,6 +41,11 @@
  
      Copyright:  © 1985-2008 by Apple Computer, Inc., all rights reserved
 >>>>>>> origin/fixes_2.4
+=======
+     Version:    HIToolbox-437~1
+ 
+     Copyright:  © 1985-2008 by Apple Computer, Inc., all rights reserved
+>>>>>>> origin/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -89,12 +95,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -106,6 +116,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -120,6 +131,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -135,6 +150,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -145,6 +161,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -152,13 +171,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -166,6 +189,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -174,8 +199,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -186,6 +214,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -206,6 +235,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -214,12 +245,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -227,6 +261,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -478,12 +513,27 @@ interface
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
+=======
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -518,6 +568,7 @@ interface
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 {$endc}
@@ -535,6 +586,17 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -563,6 +625,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -571,6 +634,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -580,6 +645,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -618,8 +684,14 @@ uses MacTypes,CFBase,CarbonEventsCore,QuickdrawTypes,Events,IconsCore,TextEdit,H
 >>>>>>> graemeg/fixes_2_2
 =======
 uses MacTypes,CFBase,CarbonEventsCore,Quickdraw,MixedMode,Events,MacWindows,TextEdit,Controls,MacErrors,CarbonEvents;
+=======
+uses MacTypes,CFBase,CarbonEventsCore,QuickdrawTypes,Events,IconsCore,TextEdit,HIObject;
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 
 >>>>>>> origin/fixes_2_2
+
+{$ifc TARGET_OS_MAC}
 
 {$ifc TARGET_OS_MAC}
 
@@ -674,6 +746,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/fixes_2_2
@@ -682,6 +755,8 @@ const
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {  Dialog Item List Manipulation Constants }
 type
 	DITLMethod = SInt16;
@@ -730,6 +805,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	DialogItemIndex = SInt16;
 	DialogItemIndexPtr = ^DialogItemIndex;
 	DialogItemType = SInt16;
@@ -745,11 +821,16 @@ type
 >>>>>>> origin/fixes_2.4
 	DialogItemIndex = SInt16;
 	DialogItemIndexPtr = ^DialogItemIndex;
+=======
+	DialogItemIndex = SInt16;
+	DialogItemIndexPtr = ^DialogItemIndex;
+>>>>>>> origin/cpstrnew
 	DialogItemType = SInt16;
 	DialogItemTypePtr = ^DialogItemType;
 { dialog manager callbacks }
 type
 	SoundProcPtr = procedure( soundNumber: SInt16 );
+<<<<<<< HEAD
 <<<<<<< HEAD
 type
 <<<<<<< HEAD
@@ -758,6 +839,8 @@ type
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	ModalFilterProcPtr = function( theDialog: DialogRef; var theEvent: EventRecord; var itemHit: DialogItemIndex ): Boolean;
 { ModalFilterYDProcPtr was previously in StandardFile.h }
 type
@@ -765,6 +848,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	UserItemProcPtr = procedure( theDialog: DialogRef; itemNo: DialogItemIndex );
 	SoundUPP = SoundProcPtr;
 	ModalFilterUPP = ModalFilterProcPtr;
@@ -787,6 +871,12 @@ type
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+	UserItemProcPtr = procedure( theDialog: DialogRef; itemNo: DialogItemIndex );
+	SoundUPP = SoundProcPtr;
+	ModalFilterUPP = ModalFilterProcPtr;
+	ModalFilterYDUPP = ModalFilterYDProcPtr;
+>>>>>>> origin/cpstrnew
 	UserItemUPP = UserItemProcPtr;
 {
  *  NewSoundUPP()
@@ -944,8 +1034,11 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {
  *  Dialog feature flags
@@ -955,6 +1048,9 @@ const
  *    inFlags parameter to NewFeaturesDialog.
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 const
 {
    * Requests the Dialog Manager to set the dialog box’s background
@@ -1032,6 +1128,7 @@ const
    * X, this flag is ignored; alerts always use controls to implement
    * standard alert items.
    }
+<<<<<<< HEAD
 	kAlertFlagsUseThemeControls = 1 shl 3;
 
   {
@@ -1131,6 +1228,10 @@ const
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+	kAlertFlagsUseThemeControls = 1 shl 3;
+
+>>>>>>> origin/cpstrnew
   {
    * Requests the Dialog Manager to create a compositing window to
    * contain the alert items. The window will also use the standard
@@ -1138,7 +1239,10 @@ const
    }
 	kAlertFlagsUseCompositing = 1 shl 8;
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 { For dftb resource }
 const
 	kDialogFontNoFontStyle = 0;
@@ -1162,8 +1266,11 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {
  *  AlertStdAlertParamRec
@@ -1176,6 +1283,7 @@ const
  *    cancelButton. Prior to Mac OS X 10.5, having cancelButton and
  *    defaultButton the same will cause a paramErr.
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 type
 	AlertStdAlertParamRec = record
@@ -1259,6 +1367,9 @@ const
 =======
 >>>>>>> origin/fixes_2.4
 type
+=======
+type
+>>>>>>> origin/cpstrnew
 	AlertStdAlertParamRec = record
 {
    * Is the alert movable? This parameter is ignored on Mac OS X; all
@@ -1315,6 +1426,7 @@ type
    * and is equal to kWindowAlertPositionParentWindowScreen.
    }
 		position: UInt16;
+<<<<<<< HEAD
 	end;
 type
 	AlertStdAlertParamRecPtr = ^AlertStdAlertParamRec;
@@ -1507,6 +1619,27 @@ type
    * Options for the behavior of the alert or sheet.
    }
 		flags: OptionBits;
+=======
+	end;
+type
+	AlertStdAlertParamRecPtr = ^AlertStdAlertParamRec;
+const
+	kHICommandOther = FourCharCode('othr'); { sent by standard sheet dialogs when the "other" button is pressed }
+
+
+const
+{
+   * AlertStdCFStringAlertParamRec version prior to Mac OS X 10.5.
+   }
+	kStdCFStringAlertVersionOne = 1;
+
+  {
+   * AlertStdCFStringAlertParamRec version for Mac OS X 10.5 and later.
+   * When using this version, you must set the icon field of the
+   * structure to NULL or a valid IconRef.
+   }
+	kStdCFStringAlertVersionTwo = 2;
+>>>>>>> origin/cpstrnew
 
 <<<<<<< HEAD
 =======
@@ -1554,6 +1687,7 @@ type
    }
 		cancelText: CFStringRef;
 
+<<<<<<< HEAD
   {
    * Text for the button in the leftmost/help position.
    }
@@ -1600,6 +1734,8 @@ type
 	AlertStdCFStringAlertParamPtr = ^AlertStdCFStringAlertParamRec;
 { ——— end Appearance 1.0 or later stuff}
 
+=======
+>>>>>>> origin/cpstrnew
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1614,6 +1750,7 @@ type
 =======
 >>>>>>> origin/fixes_2_2
 {
+<<<<<<< HEAD
     NOTE: Code running under MultiFinder or System 7.0 or newer
     should always pass NULL to InitDialogs.
 }
@@ -1650,6 +1787,35 @@ type
    }
 		movable: Boolean;
 
+=======
+ *  AlertStdCFStringAlertParamRec
+ *  
+ *  Summary:
+ *    A CFString variant of AlertStdAlertParamRec. CFStrings are
+ *    preferred.
+ *  
+ *  Discussion:
+ *    As of Mac OS X 10.5, defaultButton can be the same as the
+ *    cancelButton. Prior to Mac OS X 10.5, having cancelButton and
+ *    defaultButton the same will cause a paramErr.
+ }
+type
+	AlertStdCFStringAlertParamRec = record
+{
+   * The version of the structure. Prior to Mac OS X 10.5, you must use
+   * kStdCFStringAlertVersionOne. In Mac OS X 10.5 or later, you may
+   * use either VersionOne or VersionTwo. If you use VersionTwo, you
+   * must set the icon field to NULL or a valid IconRef.
+   }
+		version: UInt32;
+
+  {
+   * Is the alert movable? This parameter is ignored on Mac OS X; all
+   * standard alerts are movable.
+   }
+		movable: Boolean;
+
+>>>>>>> origin/cpstrnew
   {
    * Is there a help button?
    }
@@ -1711,12 +1877,16 @@ type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not TARGET_CPU_64}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not TARGET_CPU_64}
+>>>>>>> origin/cpstrnew
 {
  *  NewDialog()
  *  
@@ -1724,6 +1894,7 @@ type
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1751,6 +1922,13 @@ function NewDialog( dStorage: UnivPtr; const (*var*) boundsRect: Rect; const (*v
  }
 function NewDialog( dStorage: UnivPtr; const (*var*) boundsRect: Rect; const (*var*) title: Str255; visible: Boolean; procID: SInt16; behind: WindowRef; goAwayFlag: Boolean; refCon: SRefCon; items: Handle ): DialogRef; external name '_NewDialog';
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function NewDialog( dStorage: UnivPtr; const (*var*) boundsRect: Rect; const (*var*) title: Str255; visible: Boolean; procID: SInt16; behind: WindowRef; goAwayFlag: Boolean; refCon: SRefCon; items: Handle ): DialogRef; external name '_NewDialog';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -1764,6 +1942,7 @@ function NewDialog( dStorage: UnivPtr; const (*var*) boundsRect: Rect; const (*v
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -1774,6 +1953,9 @@ function NewDialog( dStorage: UnivPtr; const (*var*) boundsRect: Rect; const (*v
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -1788,6 +1970,7 @@ function GetNewDialog( dialogID: SInt16; dStorage: UnivPtr; behind: WindowRef ):
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1815,10 +1998,18 @@ function NewColorDialog( dStorage: UnivPtr; const (*var*) boundsRect: Rect; cons
  }
 function NewColorDialog( dStorage: UnivPtr; const (*var*) boundsRect: Rect; const (*var*) title: Str255; visible: Boolean; procID: SInt16; behind: WindowRef; goAwayFlag: Boolean; refCon: SRefCon; items: Handle ): DialogRef; external name '_NewColorDialog';
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function NewColorDialog( dStorage: UnivPtr; const (*var*) boundsRect: Rect; const (*var*) title: Str255; visible: Boolean; procID: SInt16; behind: WindowRef; goAwayFlag: Boolean; refCon: SRefCon; items: Handle ): DialogRef; external name '_NewColorDialog';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1841,12 +2032,15 @@ function NewColorDialog( dStorage: UnivPtr; const (*var*) boundsRect: Rect; cons
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  DisposeDialog()
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1860,6 +2054,9 @@ function NewColorDialog( dStorage: UnivPtr; const (*var*) boundsRect: Rect; cons
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -1877,6 +2074,7 @@ procedure DisposeDialog( theDialog: DialogRef ); external name '_DisposeDialog';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -1887,6 +2085,9 @@ procedure DisposeDialog( theDialog: DialogRef ); external name '_DisposeDialog';
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -1904,6 +2105,7 @@ procedure ModalDialog( modalFilter: ModalFilterUPP; var itemHit: DialogItemIndex
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -1914,6 +2116,9 @@ procedure ModalDialog( modalFilter: ModalFilterUPP; var itemHit: DialogItemIndex
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -1931,6 +2136,7 @@ function IsDialogEvent( const (*var*) theEvent: EventRecord ): Boolean; external
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -1941,6 +2147,9 @@ function IsDialogEvent( const (*var*) theEvent: EventRecord ): Boolean; external
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -1958,6 +2167,7 @@ function DialogSelect( const (*var*) theEvent: EventRecord; var theDialog: Dialo
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -1968,6 +2178,9 @@ function DialogSelect( const (*var*) theEvent: EventRecord; var theDialog: Dialo
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -1985,6 +2198,7 @@ procedure DrawDialog( theDialog: DialogRef ); external name '_DrawDialog';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -1995,6 +2209,9 @@ procedure DrawDialog( theDialog: DialogRef ); external name '_DrawDialog';
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -2012,6 +2229,7 @@ procedure UpdateDialog( theDialog: DialogRef; updateRgn: RgnHandle ); external n
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -2022,6 +2240,9 @@ procedure UpdateDialog( theDialog: DialogRef; updateRgn: RgnHandle ); external n
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -2039,6 +2260,7 @@ procedure HideDialogItem( theDialog: DialogRef; itemNo: DialogItemIndex ); exter
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -2049,6 +2271,9 @@ procedure HideDialogItem( theDialog: DialogRef; itemNo: DialogItemIndex ); exter
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -2066,6 +2291,7 @@ procedure ShowDialogItem( theDialog: DialogRef; itemNo: DialogItemIndex ); exter
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -2076,6 +2302,9 @@ procedure ShowDialogItem( theDialog: DialogRef; itemNo: DialogItemIndex ); exter
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -2086,6 +2315,7 @@ function FindDialogItem( theDialog: DialogRef; thePt: Point ): DialogItemIndexZe
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not TARGET_CPU_64}
 
 {$ifc not TARGET_CPU_64}
@@ -2098,6 +2328,11 @@ function FindDialogItem( theDialog: DialogRef; thePt: Point ): DialogItemIndexZe
 
 {$ifc not TARGET_CPU_64}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not TARGET_CPU_64}
+
+{$ifc not TARGET_CPU_64}
+>>>>>>> origin/cpstrnew
 {
  *  DialogCut()
  *  
@@ -2108,6 +2343,7 @@ function FindDialogItem( theDialog: DialogRef; thePt: Point ): DialogItemIndexZe
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -2118,6 +2354,9 @@ function FindDialogItem( theDialog: DialogRef; thePt: Point ): DialogItemIndexZe
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -2135,6 +2374,7 @@ procedure DialogCut( theDialog: DialogRef ); external name '_DialogCut';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -2145,6 +2385,9 @@ procedure DialogCut( theDialog: DialogRef ); external name '_DialogCut';
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -2162,6 +2405,7 @@ procedure DialogPaste( theDialog: DialogRef ); external name '_DialogPaste';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -2172,6 +2416,9 @@ procedure DialogPaste( theDialog: DialogRef ); external name '_DialogPaste';
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -2189,6 +2436,7 @@ procedure DialogCopy( theDialog: DialogRef ); external name '_DialogCopy';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -2199,6 +2447,9 @@ procedure DialogCopy( theDialog: DialogRef ); external name '_DialogCopy';
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -2209,6 +2460,7 @@ procedure DialogDelete( theDialog: DialogRef ); external name '_DialogDelete';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not TARGET_CPU_64}
 
 {$ifc not TARGET_CPU_64}
@@ -2221,6 +2473,11 @@ procedure DialogDelete( theDialog: DialogRef ); external name '_DialogDelete';
 
 {$ifc not TARGET_CPU_64}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not TARGET_CPU_64}
+
+{$ifc not TARGET_CPU_64}
+>>>>>>> origin/cpstrnew
 {
  *  Alert()
  *  
@@ -2231,6 +2488,7 @@ procedure DialogDelete( theDialog: DialogRef ); external name '_DialogDelete';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -2241,6 +2499,9 @@ procedure DialogDelete( theDialog: DialogRef ); external name '_DialogDelete';
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -2258,6 +2519,7 @@ function Alert( alertID: SInt16; modalFilter: ModalFilterUPP ): DialogItemIndex;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -2268,6 +2530,9 @@ function Alert( alertID: SInt16; modalFilter: ModalFilterUPP ): DialogItemIndex;
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -2285,6 +2550,7 @@ function StopAlert( alertID: SInt16; modalFilter: ModalFilterUPP ): DialogItemIn
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -2295,6 +2561,9 @@ function StopAlert( alertID: SInt16; modalFilter: ModalFilterUPP ): DialogItemIn
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -2312,6 +2581,7 @@ function NoteAlert( alertID: SInt16; modalFilter: ModalFilterUPP ): DialogItemIn
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -2322,6 +2592,9 @@ function NoteAlert( alertID: SInt16; modalFilter: ModalFilterUPP ): DialogItemIn
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -2339,6 +2612,7 @@ function CautionAlert( alertID: SInt16; modalFilter: ModalFilterUPP ): DialogIte
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -2349,6 +2623,9 @@ function CautionAlert( alertID: SInt16; modalFilter: ModalFilterUPP ): DialogIte
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -2366,6 +2643,7 @@ procedure GetDialogItem( theDialog: DialogRef; itemNo: DialogItemIndex; var item
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -2376,6 +2654,9 @@ procedure GetDialogItem( theDialog: DialogRef; itemNo: DialogItemIndex; var item
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -2393,6 +2674,7 @@ procedure SetDialogItem( theDialog: DialogRef; itemNo: DialogItemIndex; itemType
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -2403,6 +2685,9 @@ procedure SetDialogItem( theDialog: DialogRef; itemNo: DialogItemIndex; itemType
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -2420,6 +2705,7 @@ procedure ParamText( const (*var*) param0: Str255; const (*var*) param1: Str255;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -2430,6 +2716,9 @@ procedure ParamText( const (*var*) param0: Str255; const (*var*) param1: Str255;
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -2447,6 +2736,7 @@ procedure SelectDialogItemText( theDialog: DialogRef; itemNo: DialogItemIndex; s
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -2457,6 +2747,9 @@ procedure SelectDialogItemText( theDialog: DialogRef; itemNo: DialogItemIndex; s
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -2474,6 +2767,7 @@ procedure GetDialogItemText( item: Handle; var text: Str255 ); external name '_G
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -2484,6 +2778,9 @@ procedure GetDialogItemText( item: Handle; var text: Str255 ); external name '_G
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -2501,6 +2798,7 @@ procedure SetDialogItemText( item: Handle; const (*var*) text: Str255 ); externa
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -2511,6 +2809,9 @@ procedure SetDialogItemText( item: Handle; const (*var*) text: Str255 ); externa
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -2528,6 +2829,7 @@ function GetAlertStage: SInt16; external name '_GetAlertStage';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -2538,6 +2840,9 @@ function GetAlertStage: SInt16; external name '_GetAlertStage';
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -2555,6 +2860,7 @@ procedure SetDialogFont( fontNum: SInt16 ); external name '_SetDialogFont';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -2565,6 +2871,9 @@ procedure SetDialogFont( fontNum: SInt16 ); external name '_SetDialogFont';
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -2583,6 +2892,7 @@ procedure ResetAlertStage; external name '_ResetAlertStage';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -2593,6 +2903,9 @@ procedure ResetAlertStage; external name '_ResetAlertStage';
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in CarbonAccessors.o 1.0 and later
  }
@@ -2601,6 +2914,7 @@ procedure GetParamText( param0: StringPtr; param1: StringPtr; param2: StringPtr;
 
 
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2673,12 +2987,15 @@ procedure GetParamText( param0: StringPtr; param1: StringPtr; param2: StringPtr;
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  AppendDITL()
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2692,6 +3009,9 @@ procedure GetParamText( param0: StringPtr; param1: StringPtr; param2: StringPtr;
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -2709,6 +3029,7 @@ procedure AppendDITL( theDialog: DialogRef; theHandle: Handle; method: DITLMetho
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -2719,6 +3040,9 @@ procedure AppendDITL( theDialog: DialogRef; theHandle: Handle; method: DITLMetho
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -2736,6 +3060,7 @@ function CountDITL( theDialog: DialogRef ): DialogItemIndex; external name '_Cou
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -2746,6 +3071,9 @@ function CountDITL( theDialog: DialogRef ): DialogItemIndex; external name '_Cou
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -2763,6 +3091,7 @@ procedure ShortenDITL( theDialog: DialogRef; numberItems: DialogItemIndex ); ext
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -2773,6 +3102,9 @@ procedure ShortenDITL( theDialog: DialogRef; numberItems: DialogItemIndex ); ext
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2790,6 +3122,7 @@ function InsertDialogItem( theDialog: DialogRef; afterItem: DialogItemIndex; ite
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -2800,6 +3133,9 @@ function InsertDialogItem( theDialog: DialogRef; afterItem: DialogItemIndex; ite
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2810,6 +3146,7 @@ function RemoveDialogItems( theDialog: DialogRef; itemNo: DialogItemIndex; amoun
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not TARGET_CPU_64}
 
 {$ifc not TARGET_CPU_64}
@@ -2822,6 +3159,11 @@ function RemoveDialogItems( theDialog: DialogRef; itemNo: DialogItemIndex; amoun
 
 {$ifc not TARGET_CPU_64}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not TARGET_CPU_64}
+
+{$ifc not TARGET_CPU_64}
+>>>>>>> origin/cpstrnew
 {
  *  StdFilterProc()
  *  
@@ -2832,6 +3174,7 @@ function RemoveDialogItems( theDialog: DialogRef; itemNo: DialogItemIndex; amoun
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -2842,6 +3185,9 @@ function RemoveDialogItems( theDialog: DialogRef; itemNo: DialogItemIndex; amoun
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -2852,6 +3198,7 @@ function StdFilterProc( theDialog: DialogRef; var event: EventRecord; var itemHi
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not TARGET_CPU_64}
 
 {$ifc not TARGET_CPU_64}
@@ -2864,6 +3211,11 @@ function StdFilterProc( theDialog: DialogRef; var event: EventRecord; var itemHi
 
 {$ifc not TARGET_CPU_64}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not TARGET_CPU_64}
+
+{$ifc not TARGET_CPU_64}
+>>>>>>> origin/cpstrnew
 {
  *  GetStdFilterProc()
  *  
@@ -2874,6 +3226,7 @@ function StdFilterProc( theDialog: DialogRef; var event: EventRecord; var itemHi
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -2884,6 +3237,9 @@ function StdFilterProc( theDialog: DialogRef; var event: EventRecord; var itemHi
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -2901,6 +3257,7 @@ function GetStdFilterProc( var theProc: ModalFilterUPP ): OSErr; external name '
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -2911,6 +3268,9 @@ function GetStdFilterProc( var theProc: ModalFilterUPP ): OSErr; external name '
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -2928,6 +3288,7 @@ function SetDialogDefaultItem( theDialog: DialogRef; newItem: DialogItemIndex ):
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -2938,6 +3299,9 @@ function SetDialogDefaultItem( theDialog: DialogRef; newItem: DialogItemIndex ):
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -2955,6 +3319,7 @@ function SetDialogCancelItem( theDialog: DialogRef; newItem: DialogItemIndex ): 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -2965,6 +3330,9 @@ function SetDialogCancelItem( theDialog: DialogRef; newItem: DialogItemIndex ): 
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -2985,6 +3353,7 @@ function SetDialogTracksCursor( theDialog: DialogRef; tracks: Boolean ): OSErr; 
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3012,6 +3381,13 @@ function NewFeaturesDialog( inStorage: UnivPtr; const (*var*) inBoundsRect: Rect
  }
 function NewFeaturesDialog( inStorage: UnivPtr; const (*var*) inBoundsRect: Rect; const (*var*) inTitle: Str255; inIsVisible: Boolean; inProcID: SInt16; inBehind: WindowRef; inGoAwayFlag: Boolean; inRefCon: SRefCon; inItemListHandle: Handle; inFlags: UInt32 ): DialogRef; external name '_NewFeaturesDialog';
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in AppearanceLib 1.0 and later
+ }
+function NewFeaturesDialog( inStorage: UnivPtr; const (*var*) inBoundsRect: Rect; const (*var*) inTitle: Str255; inIsVisible: Boolean; inProcID: SInt16; inBehind: WindowRef; inGoAwayFlag: Boolean; inRefCon: SRefCon; inItemListHandle: Handle; inFlags: UInt32 ): DialogRef; external name '_NewFeaturesDialog';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -3025,6 +3401,7 @@ function NewFeaturesDialog( inStorage: UnivPtr; const (*var*) inBoundsRect: Rect
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -3035,6 +3412,9 @@ function NewFeaturesDialog( inStorage: UnivPtr; const (*var*) inBoundsRect: Rect
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.0 and later
  }
@@ -3057,6 +3437,7 @@ function AutoSizeDialog( inDialog: DialogRef ): OSErr; external name '_AutoSizeD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -3067,6 +3448,9 @@ function AutoSizeDialog( inDialog: DialogRef ): OSErr; external name '_AutoSizeD
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in AppearanceLib 1.0 and later
  }
@@ -3083,14 +3467,18 @@ function StandardAlert( inAlertType: AlertType; const (*var*) inError: Str255; c
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *    Fills out an AlertStdCFStringAlertParamRec with default
  *    values:
  *    -   movable
  *    -   no help button
  *    -   default button with title kAlertDefaultOKText
  *    -   no cancel or other buttons
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
  *    Fills out an AlertStdCFStringAlertParamRec with default values: -
@@ -3104,6 +3492,8 @@ function StandardAlert( inAlertType: AlertType; const (*var*) inError: Str255; c
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -3120,6 +3510,7 @@ function StandardAlert( inAlertType: AlertType; const (*var*) inError: Str255; c
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -3130,6 +3521,9 @@ function StandardAlert( inAlertType: AlertType; const (*var*) inError: Str255; c
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -3189,6 +3583,7 @@ function GetStandardAlertDefaultParams( param: AlertStdCFStringAlertParamPtr; ve
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -3199,6 +3594,9 @@ function GetStandardAlertDefaultParams( param: AlertStdCFStringAlertParamPtr; ve
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -3244,6 +3642,7 @@ function CreateStandardAlert( alertType_: AlertType; error: CFStringRef; explana
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -3254,6 +3653,9 @@ function CreateStandardAlert( alertType_: AlertType; error: CFStringRef; explana
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -3345,6 +3747,7 @@ function RunStandardAlert( inAlert: DialogRef; filterProc: ModalFilterUPP { can 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -3355,6 +3758,9 @@ function RunStandardAlert( inAlert: DialogRef; filterProc: ModalFilterUPP { can 
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -3403,6 +3809,7 @@ function CreateStandardSheet( alertType_: AlertType; error: CFStringRef; explana
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -3413,6 +3820,9 @@ function CreateStandardSheet( alertType_: AlertType; error: CFStringRef; explana
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -3427,6 +3837,7 @@ function CloseStandardSheet( inSheet: DialogRef; inResultCommand: UInt32 ): OSSt
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3454,6 +3865,13 @@ function GetDialogItemAsControl( inDialog: DialogRef; inItemNo: SInt16; var outC
  }
 function GetDialogItemAsControl( inDialog: DialogRef; inItemNo: DialogItemIndex; var outControl: ControlRef ): OSErr; external name '_GetDialogItemAsControl';
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in AppearanceLib 1.0 and later
+ }
+function GetDialogItemAsControl( inDialog: DialogRef; inItemNo: DialogItemIndex; var outControl: ControlRef ): OSErr; external name '_GetDialogItemAsControl';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -3464,6 +3882,7 @@ function GetDialogItemAsControl( inDialog: DialogRef; inItemNo: DialogItemIndex;
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3491,6 +3910,13 @@ function MoveDialogItem( inDialog: DialogRef; inItemNo: SInt16; inHoriz: SInt16;
  }
 function MoveDialogItem( inDialog: DialogRef; inItemNo: DialogItemIndex; inHoriz: SInt16; inVert: SInt16 ): OSErr; external name '_MoveDialogItem';
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in AppearanceLib 1.0 and later
+ }
+function MoveDialogItem( inDialog: DialogRef; inItemNo: DialogItemIndex; inHoriz: SInt16; inVert: SInt16 ): OSErr; external name '_MoveDialogItem';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -3501,6 +3927,7 @@ function MoveDialogItem( inDialog: DialogRef; inItemNo: DialogItemIndex; inHoriz
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3528,6 +3955,13 @@ function SizeDialogItem( inDialog: DialogRef; inItemNo: SInt16; inWidth: SInt16;
  }
 function SizeDialogItem( inDialog: DialogRef; inItemNo: DialogItemIndex; inWidth: SInt16; inHeight: SInt16 ): OSErr; external name '_SizeDialogItem';
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in AppearanceLib 1.0 and later
+ }
+function SizeDialogItem( inDialog: DialogRef; inItemNo: DialogItemIndex; inWidth: SInt16; inHeight: SInt16 ): OSErr; external name '_SizeDialogItem';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -3541,6 +3975,7 @@ function SizeDialogItem( inDialog: DialogRef; inItemNo: DialogItemIndex; inWidth
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -3551,6 +3986,9 @@ function SizeDialogItem( inDialog: DialogRef; inItemNo: DialogItemIndex; inWidth
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in DialogsLib 8.5 and later
  }
@@ -3606,6 +4044,7 @@ function AppendDialogItemList( dialog: DialogRef; ditlID: SInt16; method: DITLMe
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in DialogsLib 8.5 and later
@@ -3630,6 +4069,13 @@ function SetDialogTimeout( inDialog: DialogRef; inButtonToPress: SInt16; inSecon
  }
 function SetDialogTimeout( inDialog: DialogRef; inButtonToPress: DialogItemIndex; inSecondsToWait: UInt32 ): OSStatus; external name '_SetDialogTimeout';
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in DialogsLib 8.5 and later
+ }
+function SetDialogTimeout( inDialog: DialogRef; inButtonToPress: DialogItemIndex; inSecondsToWait: UInt32 ): OSStatus; external name '_SetDialogTimeout';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -3669,6 +4115,7 @@ function SetDialogTimeout( inDialog: DialogRef; inButtonToPress: DialogItemIndex
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in DialogsLib 8.5 and later
@@ -3693,6 +4140,13 @@ function GetDialogTimeout( inDialog: DialogRef; outButtonToPress: SInt16Ptr { ca
  }
 function GetDialogTimeout( inDialog: DialogRef; outButtonToPress: DialogItemIndexPtr { can be NULL }; outSecondsToWait: UInt32Ptr { can be NULL }; outSecondsRemaining: UInt32Ptr { can be NULL } ): OSStatus; external name '_GetDialogTimeout';
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in DialogsLib 8.5 and later
+ }
+function GetDialogTimeout( inDialog: DialogRef; outButtonToPress: DialogItemIndexPtr { can be NULL }; outSecondsToWait: UInt32Ptr { can be NULL }; outSecondsRemaining: UInt32Ptr { can be NULL } ): OSStatus; external name '_GetDialogTimeout';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -3706,6 +4160,7 @@ function GetDialogTimeout( inDialog: DialogRef; outButtonToPress: DialogItemInde
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -3716,6 +4171,9 @@ function GetDialogTimeout( inDialog: DialogRef; outButtonToPress: DialogItemInde
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in DialogsLib 8.5 and later
  }
@@ -3733,6 +4191,7 @@ function SetModalDialogEventMask( inDialog: DialogRef; inMask: EventMask ): OSSt
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -3743,6 +4202,9 @@ function SetModalDialogEventMask( inDialog: DialogRef; inMask: EventMask ): OSSt
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in DialogsLib 8.5 and later
  }
@@ -3767,6 +4229,7 @@ function GetModalDialogEventMask( inDialog: DialogRef; var outMask: EventMask ):
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -3777,6 +4240,9 @@ function GetModalDialogEventMask( inDialog: DialogRef; var outMask: EventMask ):
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in CarbonAccessors.o 1.0 and later or as macro/inline
  }
@@ -3794,6 +4260,7 @@ function GetDialogWindow( dialog: DialogRef ): WindowRef; external name '_GetDia
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -3804,6 +4271,9 @@ function GetDialogWindow( dialog: DialogRef ): WindowRef; external name '_GetDia
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in CarbonAccessors.o 1.0 and later or as macro/inline
  }
@@ -3821,6 +4291,7 @@ function GetDialogTextEditHandle( dialog: DialogRef ): TEHandle; external name '
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -3831,6 +4302,9 @@ function GetDialogTextEditHandle( dialog: DialogRef ): TEHandle; external name '
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in CarbonAccessors.o 1.0 and later or as macro/inline
  }
@@ -3848,6 +4322,7 @@ function GetDialogDefaultItem( dialog: DialogRef ): SInt16; external name '_GetD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -3858,6 +4333,9 @@ function GetDialogDefaultItem( dialog: DialogRef ): SInt16; external name '_GetD
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in CarbonAccessors.o 1.0 and later or as macro/inline
  }
@@ -3875,6 +4353,7 @@ function GetDialogCancelItem( dialog: DialogRef ): SInt16; external name '_GetDi
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -3885,6 +4364,9 @@ function GetDialogCancelItem( dialog: DialogRef ): SInt16; external name '_GetDi
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in CarbonAccessors.o 1.0 and later or as macro/inline
  }
@@ -3902,6 +4384,7 @@ function GetDialogKeyboardFocusItem( dialog: DialogRef ): SInt16; external name 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -3912,6 +4395,9 @@ function GetDialogKeyboardFocusItem( dialog: DialogRef ): SInt16; external name 
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in CarbonAccessors.o 1.0 and later or as macro/inline
  }
@@ -3929,6 +4415,7 @@ procedure SetPortDialogPort( dialog: DialogRef ); external name '_SetPortDialogP
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -3939,6 +4426,9 @@ procedure SetPortDialogPort( dialog: DialogRef ); external name '_SetPortDialogP
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in CarbonAccessors.o 1.0 and later or as macro/inline
  }
@@ -3956,6 +4446,7 @@ function GetDialogPort( dialog: DialogRef ): CGrafPtr; external name '_GetDialog
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
@@ -3966,6 +4457,9 @@ function GetDialogPort( dialog: DialogRef ): CGrafPtr; external name '_GetDialog
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in CarbonAccessors.o 1.0 and later or as macro/inline
  }
@@ -3973,6 +4467,7 @@ function GetDialogFromWindow( window: WindowRef ): DialogRef; external name '_Ge
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4034,6 +4529,12 @@ function GetDialogFromWindow( window: WindowRef ): DialogRef; external name '_Ge
 (*
 #if OLDROUTINENAMES && !__LP64__
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not TARGET_CPU_64}
+
+(*
+#if OLDROUTINENAMES && !__LP64__
+>>>>>>> origin/cpstrnew
 #define DisposDialog(theDialog) DisposeDialog(theDialog)
 #define UpdtDialog(theDialog, updateRgn) UpdateDialog(theDialog, updateRgn)
 #define GetDItem(theDialog, itemNo, itemType, item, box) GetDialogItem(theDialog, itemNo, itemType, item, box)
@@ -4060,6 +4561,7 @@ NewColorDialog(dStorage, boundsRect, title, visible, procID, behind, goAwayFlag,
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {TARGET_OS_MAC}
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
@@ -4076,9 +4578,14 @@ end.
 end.
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 {$endc} {TARGET_OS_MAC}
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew

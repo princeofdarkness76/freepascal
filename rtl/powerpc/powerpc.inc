@@ -1284,6 +1284,7 @@ procedure ReadBarrier;assembler;nostackframe;{$ifdef SYSTEMINLINE}inline;{$endif
 asm
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   isync
 =======
   sync
@@ -1291,6 +1292,9 @@ asm
 =======
   sync
 >>>>>>> origin/fixes_2_2
+=======
+  isync
+>>>>>>> origin/cpstrnew
 end;
 
 procedure ReadDependencyBarrier;{$ifdef SYSTEMINLINE}inline;{$endif}
@@ -1302,6 +1306,7 @@ procedure ReadWriteBarrier;assembler;nostackframe;{$ifdef SYSTEMINLINE}inline;{$
 asm
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   isync
   eieio
 =======
@@ -1310,6 +1315,10 @@ asm
 =======
   sync
 >>>>>>> origin/fixes_2_2
+=======
+  isync
+  eieio
+>>>>>>> origin/cpstrnew
 end;
 
 procedure WriteBarrier;assembler;nostackframe;{$ifdef SYSTEMINLINE}inline;{$endif}

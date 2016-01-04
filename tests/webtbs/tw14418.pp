@@ -62,9 +62,13 @@ procedure TObj.M1;
 begin
   Writeln('TObj.M1 called');
 <<<<<<< HEAD
+<<<<<<< HEAD
   halt(1);
 =======
 >>>>>>> origin/fixes_2.4
+=======
+  halt(1);
+>>>>>>> origin/cpstrnew
 end;
 
 {

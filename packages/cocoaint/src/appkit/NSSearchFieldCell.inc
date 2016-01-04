@@ -53,6 +53,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __sfFlags: record
       case byte of
        0: (_anonbitfield_NSSearchFieldCell0: cuint);
@@ -64,6 +65,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     __sfFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSSearchFieldCell0: cuint);
@@ -71,11 +74,14 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         _sendsWholeSearchString: 0..1;
@@ -92,6 +98,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -99,6 +106,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       );

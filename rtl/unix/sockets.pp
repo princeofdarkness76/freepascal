@@ -19,6 +19,7 @@ Uses baseunix,UnixType;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$i osdefs.inc}       { Compile time defines }
 
 {$if 
@@ -39,8 +40,15 @@ Type
 {$ifdef FreeBSD}
 {$DEFINE SOCK_HAS_SINLEN}               // BSD definition of socketaddr
 {$endif}
+=======
+{$i osdefs.inc}       { Compile time defines }
+>>>>>>> origin/cpstrnew
 
-{$ifdef Darwin}
+{$if 
+     defined(FreeBSD) or 
+     defined(Darwin) or 
+     defined(Haiku)
+}
 {$DEFINE SOCK_HAS_SINLEN}               // BSD definition of socketaddr
 {$endif}
 >>>>>>> graemeg/fixes_2_2

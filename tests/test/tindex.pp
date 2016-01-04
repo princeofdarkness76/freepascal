@@ -56,6 +56,9 @@ begin
             end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
           {same for length=-1}
           if indexbyte(b[k+4],-1,0)<>index then
             begin
@@ -64,10 +67,13 @@ begin
               halt(22);
             end;
   
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 
           if indexbyte(b[k+4],i,b[k+4+i-1])<>i-1 then
             begin
@@ -76,6 +82,9 @@ begin
             end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
           {same for length=-1}  
           if i<>0 then   // previous test will be no-op when i=0
             if indexbyte(b[k+4],-1,b[k+4+i-1])<>i-1 then
@@ -85,10 +94,13 @@ begin
               end;
 
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
           if (i<1) then
             index:=-1
           else
@@ -101,6 +113,9 @@ begin
             end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
           {same for length=-1}
           if i<>0 then  // previous test will be no-op when i=0
             if indexbyte(b[k+4],-1,b[k+4+i shr 1])<>index then
@@ -111,10 +126,13 @@ begin
               end;
 
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
           if (i=0) then
             index:=-1
           else
@@ -122,6 +140,7 @@ begin
           if indexbyte(b[k+4],i,b[k+4])<>index then
             begin
               writeln('indexbyte error 5 for (',i,',',j,',',k,')');
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
               halt(5);
@@ -141,6 +160,17 @@ begin
               halt(3);
             end;
 >>>>>>> origin/fixes_2_2
+=======
+              halt(5);
+            end;
+          {same for length=-1}
+          if i<>0 then
+            if indexbyte(b[k+4],-1,b[k+4])<>index then
+              begin
+                writeln('indexbyte error 5a for (',i,',',j,',',k,')');
+                halt(25);
+              end;
+>>>>>>> origin/cpstrnew
 
 
           if indexword(b[k+4],i shr 1,0)<>-1 then

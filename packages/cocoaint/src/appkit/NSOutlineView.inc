@@ -23,6 +23,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     case byte of
     0: (_anonbitfield_NSOutlineView0: cuint);
     1: (data: bitpacked record
@@ -98,6 +99,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifdef fpc_big_endian}
     delegateWillDisplayCell: 0..1;
     delegateShouldEditTableColumn: 0..1;
@@ -164,11 +167,14 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   end;

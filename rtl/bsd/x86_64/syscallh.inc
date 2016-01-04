@@ -44,6 +44,7 @@ function do_sysCall(sysnr,param1,param2,param3,param4,param5,param6,param7:TSysP
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 // special
 function do__sysCall(sysnr,param1,param2,param3,param4,param5,param6,param7,Param8:TSysParam):TSysResult; external name 'FPC__DOSYS';
@@ -52,5 +53,7 @@ function do__sysCall(sysnr,param1,param2,param3,param4,param5,param6,param7,Para
 // special
 function do__sysCall(sysnr,param1,param2,param3,param4,param5,param6,param7,Param8:TSysParam):TSysResult; external name 'FPC__DOSYS';
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 {$endif}
 

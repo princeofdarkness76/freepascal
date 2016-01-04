@@ -10,6 +10,7 @@ name=fcl-xml
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 version=3.1.1
 
 [require]
@@ -19,6 +20,8 @@ packages=rtl fpmkunit
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 version=2.5.1
@@ -82,6 +85,7 @@ endif
 LOCALFPMAKE=./fpmake$(SRCEXEEXT)
 
 [rules]
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -169,6 +173,9 @@ endif
 =======
 .NOTPARALLEL:
 >>>>>>> graemeg/cpstrnew
+=======
+.NOTPARALLEL:
+>>>>>>> origin/cpstrnew
 =======
 .NOTPARALLEL:
 >>>>>>> origin/cpstrnew

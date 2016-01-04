@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  - Mac OS X support
 =======
 >>>>>>> graemeg/cpstrnew
@@ -9,6 +10,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
  - mouse grab support
@@ -20,6 +23,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
  - cross-platform opengl initialization support (like sdl or glut)
 >>>>>>> graemeg/cpstrnew
@@ -29,6 +33,9 @@
 =======
  - cross-platform opengl initialization support (like sdl or glut)
 >>>>>>> graemeg/cpstrnew
+=======
+ - cross-platform opengl initialization support (like sdl or glut)
+>>>>>>> origin/cpstrnew
 =======
  - cross-platform opengl initialization support (like sdl or glut)
 >>>>>>> origin/cpstrnew

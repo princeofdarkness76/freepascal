@@ -16,6 +16,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 procedure PASCALMAIN; external name 'PASCALMAIN';
 
@@ -24,6 +25,8 @@ procedure PASCALMAIN; external name 'PASCALMAIN';
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$goto on}
@@ -58,6 +61,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -65,12 +69,14 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {******************************************************************************
                         Shared library start/halt
  ******************************************************************************}
-{$asmmode ATT}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 procedure _FPC_shared_lib_start(argc : dword;argv,envp : pointer); cdecl; public name 'FPC_SHARED_LIB_START'; public name '_start';
@@ -80,6 +86,9 @@ procedure _FPC_shared_lib_start(argc : dword;argv,envp : pointer); cdecl; public
 =======
 procedure _FPC_shared_lib_start(argc : dword;argv,envp : pointer); cdecl; public name '_FPC_SHARED_LIB_START_LOCAL'; public name '_start';
 >>>>>>> origin/fixes_2_2
+=======
+procedure _FPC_shared_lib_start(argc : dword;argv,envp : pointer); cdecl; public name 'FPC_SHARED_LIB_START'; public name '_start';
+>>>>>>> origin/cpstrnew
 begin
 
   operatingsystem_parameter_argc:=argc;    { Copy the argument count      }
@@ -123,6 +132,9 @@ begin
 =======
   IsLibrary:=true;
 
+<<<<<<< HEAD
+>>>>>>> origin/cpstrnew
+=======
 >>>>>>> origin/cpstrnew
   asm
     { Save initial stackpointer }
@@ -135,6 +147,7 @@ begin
 	movl    %esp,initialstkptr
     {$endif FPC_PIC}
   end;
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
@@ -166,30 +179,25 @@ procedure _FPC_shared_lib_haltproc; assembler; nostackframe; public name 'FPC_SH
 { this hack is needed so we can make the reference below to _FPC_shared_lib_start }
 { local in compiler/systems/t_linux.pas                                           }
 procedure _FPC_SHARED_LIB_START_LOCAL(argc : dword;argv,envp : pointer); cdecl; external;
+=======
+>>>>>>> origin/cpstrnew
 
-procedure initdummy; assembler; nostackframe;
-label
-  FPC_LIB_START;
-asm
-.init
-  .align 16
-  .globl FPC_LIB_START
-//    .type FPC_LIB_START,@function
-FPC_LIB_START:
-{$ifdef FPC_PIC}
-  jmp	_FPC_SHARED_LIB_START_LOCAL@PLT
-{$else FPC_PIC}
-  jmp	_FPC_SHARED_LIB_START_LOCAL
-{$endif FPC_PIC}
-.text
+  PASCALMAIN;
 end;
-{$endif VER_2_0}
 
+<<<<<<< HEAD
 procedure _FPC_shared_lib_haltproc; assembler; nostackframe; public name '_haltproc';
 >>>>>>> graemeg/fixes_2_2
 asm
 .Lhaltproc:
 =======
+procedure _FPC_shared_lib_haltproc; assembler; nostackframe; public name 'FPC_SHARED_LIB_EXIT'; public name '_haltproc';
+asm
+.Lhaltproc:
+>>>>>>> origin/cpstrnew
+=======
+{ this routine is only called when the halt() routine of the RTL embedded in
+  the shared library is called }
 procedure _FPC_shared_lib_haltproc; assembler; nostackframe; public name 'FPC_SHARED_LIB_EXIT'; public name '_haltproc';
 asm
 .Lhaltproc:
@@ -213,11 +221,14 @@ asm
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   xorl    %eax,%eax

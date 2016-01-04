@@ -186,6 +186,9 @@ begin
         end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
     T:=P.Targets.AddUnit('fpreadgif.pas');
       with T.Dependencies do
         begin
@@ -203,10 +206,13 @@ begin
           AddUnit('fpimage');
           AddUnit('xwdfile');
         end;
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
     T:=P.Targets.AddUnit('fpwritebmp.pp');
       with T.Dependencies do
         begin
@@ -306,11 +312,15 @@ begin
     T:=P.Targets.AddUnit('pscanvas.pp');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       T.ResourceStrings:=true;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+      T.ResourceStrings:=true;
+>>>>>>> origin/cpstrnew
       with T.Dependencies do
         begin
           AddUnit('fpimage');

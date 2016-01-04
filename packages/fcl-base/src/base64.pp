@@ -60,8 +60,12 @@ type
 =======
     constructor Create(AOutputStream: TStream);
     destructor Destroy; override;
+<<<<<<< HEAD
 
 >>>>>>> origin/fixes_2_2
+=======
+    Function Flush : Boolean;
+>>>>>>> origin/cpstrnew
     function Write(const Buffer; Count: Longint): Longint; override;
     function Seek(Offset: Longint; Origin: Word): Longint; override;
   end;
@@ -150,6 +154,7 @@ type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function EncodeStringBase64(const s:string):String;
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -173,6 +178,11 @@ function DecodeStringBase64(const s:string):String;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+function EncodeStringBase64(const s:string):String;
+function DecodeStringBase64(const s:string):String;
+
+>>>>>>> origin/cpstrnew
 implementation
 
 uses
@@ -243,11 +253,16 @@ begin
   OutputStream := AOutputStream;
 end;
 
+<<<<<<< HEAD
 destructor TBase64EncodingStream.Destroy;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+function TBase64EncodingStream.Flush : Boolean;
+
+>>>>>>> origin/cpstrnew
 var
   WriteBuf: array[0..3] of Char;
 begin
@@ -263,12 +278,15 @@ begin
         Source.Write(WriteBuf, 4);
         Result:=True;
         Inc(TotalBytesProcessed,2);
+<<<<<<< HEAD
 =======
         OutputStream.Write(WriteBuf, 4);
 >>>>>>> graemeg/fixes_2_2
 =======
         OutputStream.Write(WriteBuf, 4);
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
       end;
     2: begin
         WriteBuf[0] := EncodingTable[Buf[0] shr 2];
@@ -289,6 +307,7 @@ end;
 destructor TBase64EncodingStream.Destroy;
 begin
   Flush;
+<<<<<<< HEAD
 =======
         OutputStream.Write(WriteBuf, 4);
       end;
@@ -299,6 +318,8 @@ begin
       end;
   end;
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
   inherited Destroy;
 end;
 
@@ -663,6 +684,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function DecodeStringBase64(const s:string;strict:boolean=false):String;
 =======
 function DecodeStringBase64(const s:string):String;
@@ -676,6 +698,9 @@ function DecodeStringBase64(const s:string):String;
 =======
 function DecodeStringBase64(const s:string):String;
 >>>>>>> origin/cpstrnew
+=======
+function DecodeStringBase64(const s:string):String;
+>>>>>>> origin/cpstrnew
 
 var 
   Instream, 
@@ -686,6 +711,7 @@ begin
   try
     Outstream:=TStringStream.Create('');
     try 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -704,6 +730,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       Decoder:=TBase64DecodingStream.Create(Instream,bdmMIME);
       try
          Outstream.CopyFrom(Decoder,Decoder.Size);
@@ -712,11 +740,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       finally
@@ -748,6 +779,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Result:=Outstream.DataString;
 =======
     Outstream.Position:=0;
@@ -765,13 +797,20 @@ begin
     Outstream.Position:=0;
     Result:=Outstream.ReadString(Outstream.Size);
 >>>>>>> origin/cpstrnew
+=======
+    Outstream.Position:=0;
+    Result:=Outstream.ReadString(Outstream.Size);
+>>>>>>> origin/cpstrnew
   finally
     Outstream.free;
     end;
 end;
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 
 end.

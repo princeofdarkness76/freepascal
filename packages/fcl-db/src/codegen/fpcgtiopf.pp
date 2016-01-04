@@ -403,6 +403,7 @@ begin
   S:=BeginAcceptVisitor(Strings,C,ObjectClassName);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   AddLn(Strings,'Result:=Result and (Visited.ObjectState in [posCreate,posDelete,posUpdate]);');
 =======
   AddLn(Strings,'Result:=Result and (Visited.ObjectState in [posCreate,posdelete,posUpdate]);');
@@ -410,6 +411,9 @@ begin
 =======
   AddLn(Strings,'Result:=Result and (Visited.ObjectState in [posCreate,posdelete,posUpdate]);');
 >>>>>>> origin/fixes_2_2
+=======
+  AddLn(Strings,'Result:=Result and (Visited.ObjectState in [posCreate,posDelete,posUpdate]);');
+>>>>>>> origin/cpstrnew
   DecIndent;
   EndMethod(Strings,S);
   S:=BeginSetupParams(Strings,C,ObjectClassName,True);
@@ -518,6 +522,7 @@ begin
     A:=Format('TUpdateCreate%sVisitor',[StripType(ObjectClassName)])
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   else If (V in [voCreate,voDelete,voUpdate,voCommonSetupParams,voSingleSaveVisitor]) then
 =======
   else If (V in [voCreate,voDelete,voUpdate,voCommonSetupParams]) then
@@ -525,6 +530,9 @@ begin
 =======
   else If (V in [voCreate,voDelete,voUpdate,voCommonSetupParams]) then
 >>>>>>> origin/fixes_2_2
+=======
+  else If (V in [voCreate,voDelete,voUpdate,voCommonSetupParams,voSingleSaveVisitor]) then
+>>>>>>> origin/cpstrnew
     A:='TtiVisitorUpdate'
   else
     A:='TtiVisitorSelect';
@@ -1380,6 +1388,7 @@ end;
 Initialization
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   RegisterCodeGenerator('tiOPF','tiOPF classes and hard-coded visitors for the data',TTiOPFCodeGenerator);
 =======
   RegisterCodeGenerator('tiOPF','tiOPF class and visitors for the data',TTiOPFCodeGenerator);
@@ -1387,6 +1396,9 @@ Initialization
 =======
   RegisterCodeGenerator('tiOPF','tiOPF class and visitors for the data',TTiOPFCodeGenerator);
 >>>>>>> origin/fixes_2_2
+=======
+  RegisterCodeGenerator('tiOPF','tiOPF classes and hard-coded visitors for the data',TTiOPFCodeGenerator);
+>>>>>>> origin/cpstrnew
 
 Finalization
   UnRegisterCodeGenerator(TTiOPFCodeGenerator);

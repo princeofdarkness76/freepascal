@@ -1,8 +1,11 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {%MainUnit ../symbian.pas}
 
 {
@@ -2868,6 +2871,7 @@ variables passed or returned by value.
 #endif /* __SOFTFP }
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
@@ -5743,3 +5747,5 @@ variables passed or returned by value.
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew

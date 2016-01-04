@@ -83,6 +83,7 @@ begin
           AddInclude('jedi-sdl.inc');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
           AddUnit('pthreads');
           AddUnit('xlib');
@@ -91,6 +92,8 @@ begin
           AddUnit('pthreads');
           AddUnit('xlib');
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
         end;
     T:=P.Targets.AddUnit('sdl_ttf.pas');
       with T.Dependencies do
@@ -98,6 +101,7 @@ begin
           AddInclude('jedi-sdl.inc');
           AddUnit('sdl');
         end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -132,6 +136,12 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    T:=P.Targets.AddUnit('sdlutils.pas',[i386,powerpc],[linux,freebsd,win32,darwin]);
+      with T.Dependencies do
+        begin
+          AddInclude('jedi-sdl.inc');
+>>>>>>> origin/cpstrnew
           AddUnit('sdl');
         end;
     T:=P.Targets.AddUnit('smpeg.pas');
@@ -146,10 +156,13 @@ begin
     P.Sources.AddSrc('LGPL.addon');
     P.Sources.AddSrc('MPL-1.1');
     P.Sources.AddSrc('README.txt');
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifndef ALLPACKAGES}
     Run;
@@ -167,6 +180,7 @@ end.
 <<<<<<< HEAD
 <<<<<<< HEAD
 
+<<<<<<< HEAD
 =======
  
 >>>>>>> graemeg/cpstrnew
@@ -183,3 +197,6 @@ end.
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ 
+>>>>>>> origin/cpstrnew

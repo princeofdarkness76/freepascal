@@ -88,6 +88,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __fmFlags: record
       case byte of
        0: (_anonbitfield_NSFontManager0: cuint);
@@ -99,10 +100,13 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     __fmFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSFontManager0: cuint);
        1: (
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -113,10 +117,13 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         multipleFont: 0..1;
         disabled: 0..1;
         senderTagMode: 0..((1 shl 2)-1);
         _RESERVED: 0..((1 shl 12)-1);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -128,6 +135,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       );

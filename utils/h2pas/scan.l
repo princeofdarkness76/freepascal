@@ -1,7 +1,10 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 %{
 {
     Copyright (c) 1998-2000 by Florian Klaempfl
@@ -29,6 +32,7 @@ unit scan;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$H+}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -40,6 +44,8 @@ unit scan;
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
   interface
 
@@ -1100,6 +1106,7 @@ end.
 
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 %{
@@ -2192,3 +2199,5 @@ end.
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew

@@ -58,6 +58,7 @@ begin
 
     with P.Targets.AddUnit('src/fpmkunit.pp') do
       ResourceStrings:=true;
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -72,6 +73,8 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifndef ALLPACKAGES}
     Run;

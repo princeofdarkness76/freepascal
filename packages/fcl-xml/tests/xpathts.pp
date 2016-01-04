@@ -933,6 +933,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   resolver: TXPathNSResolver;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -940,6 +941,8 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 begin
@@ -950,6 +953,7 @@ begin
       nsdoc := ParseString(tests[i].re);
       try
         try
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -971,6 +975,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           rslt := EvaluateXPathExpression(tests[i].expr, doc.DocumentElement, nsdoc.DocumentElement);
           try
             CheckResult(tests[i], rslt);
@@ -979,11 +985,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
           end;

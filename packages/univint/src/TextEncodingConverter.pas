@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       CarbonCore/TextEncodingConverter.h
  
      Contains:   Text Encoding Conversion Interfaces.
@@ -38,11 +39,15 @@
 =======
      File:       CarbonCore/TextEncodingConverter.h
 >>>>>>> origin/fixes_2.4
+=======
+     File:       CarbonCore/TextEncodingConverter.h
+>>>>>>> origin/cpstrnew
  
      Contains:   Text Encoding Conversion Interfaces.
  
      Version:    CarbonCore-859.2~1
  
+<<<<<<< HEAD
 <<<<<<< HEAD
      Copyright:  © 1994-2002 by Apple Computer, Inc., all rights reserved.
 <<<<<<< HEAD
@@ -52,6 +57,9 @@
 =======
      Copyright:  © 1994-2008 Apple Inc. All rights reserved.
 >>>>>>> origin/fixes_2.4
+=======
+     Copyright:  © 1994-2008 Apple Inc. All rights reserved.
+>>>>>>> origin/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -61,6 +69,7 @@
                      http://bugs.freepascal.org
  
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -90,6 +99,8 @@
                      http://www.freepascal.org/bugs.html
  
 }
+=======
+>>>>>>> origin/cpstrnew
 {    Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {
     Modified for use with Free Pascal
@@ -99,12 +110,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -116,6 +131,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -130,6 +146,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -145,6 +165,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -155,6 +176,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -162,13 +186,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -176,6 +204,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -184,8 +214,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -196,6 +229,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -216,6 +250,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -224,12 +260,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -237,6 +276,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -283,6 +323,9 @@ interface
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -292,12 +335,24 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
+>>>>>>> origin/cpstrnew
+=======
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -309,6 +364,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -318,6 +374,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -325,8 +383,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$elsec}
@@ -337,11 +398,14 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
@@ -350,6 +414,7 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -528,6 +593,30 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -556,6 +645,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -564,6 +654,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -573,6 +665,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -670,8 +763,23 @@ const
 const
 	kTECDisableFallbacksBit = 16;
 	kTECDisableLooseMappingsBit = 17;
+=======
+uses MacTypes,TextCommon,CFBase;
+{$endc} {not MACOSALLINCLUDE}
 
+
+{$ifc TARGET_OS_MAC}
+
+
+{$ALIGN MAC68K}
+>>>>>>> origin/cpstrnew
+
+type
+	TECPluginSignature = OSType;
+	TECPluginVersion = UInt32;
+{ plugin signatures }
 const
+<<<<<<< HEAD
 	kTECDisableFallbacksMask = 1 shl kTECDisableFallbacksBit;
 	kTECDisableLooseMappingsMask = 1 shl kTECDisableLooseMappingsBit;
 
@@ -709,8 +817,18 @@ function TECCountAvailableTextEncodings( var numberEncodings: ItemCount ): OSSta
 >>>>>>> origin/fixes_2_2
 
 {$ALIGN MAC68K}
+=======
+	kTECSignature = FourCharCode('encv');
+	kTECUnicodePluginSignature = FourCharCode('puni');
+	kTECJapanesePluginSignature = FourCharCode('pjpn');
+	kTECChinesePluginSignature = FourCharCode('pzho');
+	kTECKoreanPluginSignature = FourCharCode('pkor');
 
+>>>>>>> origin/cpstrnew
+
+{ converter object reference }
 type
+<<<<<<< HEAD
 	TECPluginSignature = OSType;
 	TECPluginVersion = UInt32;
 { plugin signatures }
@@ -724,6 +842,8 @@ const
 
 { converter object reference }
 type
+=======
+>>>>>>> origin/cpstrnew
 	TECObjectRef = ^SInt32; { an opaque type }
 	TECObjectRefPtr = ^TECObjectRef;  { when a var xx:TECObjectRef parameter can be nil, it is changed to xx: TECObjectRefPtr }
 	TECSnifferObjectRef = ^SInt32; { an opaque type }
@@ -737,6 +857,7 @@ type
 		reserved2: UInt16;
 	end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{	 return number of encodings types supported by user's configuraton of the encoding converter 	}
 	{
@@ -753,6 +874,8 @@ function TECCountAvailableTextEncodings(var numberEncodings: ItemCount): OSStatu
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 {
  *  TECInternetNameUsageMask
  *  
@@ -812,13 +935,17 @@ const
 function TECCountAvailableTextEncodings( var numberEncodings: ItemCount ): OSStatus; external name '_TECCountAvailableTextEncodings';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 { fill in an array of type TextEncoding passed in by the user with types of encodings the current configuration of the encoder can handle. }
 {
  *  TECGetAvailableTextEncodings()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -866,12 +993,22 @@ function TECGetAvailableTextEncodings( availableEncodings: {variable-size-array}
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
+ }
+function TECGetAvailableTextEncodings( availableEncodings: {variable-size-array} TextEncodingPtr; maxAvailableEncodings: ItemCount; var actualAvailableEncodings: ItemCount ): OSStatus; external name '_TECGetAvailableTextEncodings';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 { return number of from-to encoding conversion pairs supported  }
 {
  *  TECCountDirectTextEncodingConversions()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -919,12 +1056,22 @@ function TECCountDirectTextEncodingConversions( var numberOfEncodings: ItemCount
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
+ }
+function TECCountDirectTextEncodingConversions( var numberOfEncodings: ItemCount ): OSStatus; external name '_TECCountDirectTextEncodingConversions';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 { fill in an array of type TextEncodingPair passed in by the user with types of encoding pairs the current configuration of the encoder can handle. }
 {
  *  TECGetDirectTextEncodingConversions()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -972,12 +1119,22 @@ function TECGetDirectTextEncodingConversions( availableConversions: {variable-si
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
+ }
+function TECGetDirectTextEncodingConversions( availableConversions: {variable-size-array} TECConversionInfoPtr; maxAvailableConversions: ItemCount; var actualAvailableConversions: ItemCount ): OSStatus; external name '_TECGetDirectTextEncodingConversions';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 { return number of encodings a given encoding can be converter into }
 {
  *  TECCountDestinationTextEncodings()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1025,12 +1182,22 @@ function TECCountDestinationTextEncodings( inputEncoding: TextEncoding; var numb
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
+ }
+function TECCountDestinationTextEncodings( inputEncoding: TextEncoding; var numberOfEncodings: ItemCount ): OSStatus; external name '_TECCountDestinationTextEncodings';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 { fill in an array of type TextEncodingPair passed in by the user with types of encodings pairs the current configuration of the encoder can handle. }
 {
  *  TECGetDestinationTextEncodings()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1078,12 +1245,22 @@ function TECGetDestinationTextEncodings( inputEncoding: TextEncoding; destinatio
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
+ }
+function TECGetDestinationTextEncodings( inputEncoding: TextEncoding; destinationEncodings: {variable-size-array} TextEncodingPtr; maxDestinationEncodings: ItemCount; var actualDestinationEncodings: ItemCount ): OSStatus; external name '_TECGetDestinationTextEncodings';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 { get info about a text encoding }
 {
  *  TECGetTextEncodingInternetName()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1131,11 +1308,21 @@ function TECGetTextEncodingInternetName( textEncoding_: TextEncoding; var encodi
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.1 and later
+ }
+function TECGetTextEncodingInternetName( textEncoding_: TextEncoding; var encodingName: Str255 ): OSStatus; external name '_TECGetTextEncodingInternetName';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  TECGetTextEncodingFromInternetName()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1183,12 +1370,22 @@ function TECGetTextEncodingFromInternetName( var textEncoding_: TextEncoding; co
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.1 and later
+ }
+function TECGetTextEncodingFromInternetName( var textEncoding_: TextEncoding; const (*var*) encodingName: Str255 ): OSStatus; external name '_TECGetTextEncodingFromInternetName';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 { create/dispose converters }
 {
  *  TECCreateConverter()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1236,11 +1433,21 @@ function TECCreateConverter( var newEncodingConverter: TECObjectRef; inputEncodi
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.1 and later
+ }
+function TECCreateConverter( var newEncodingConverter: TECObjectRef; inputEncoding: TextEncoding; outputEncoding: TextEncoding ): OSStatus; external name '_TECCreateConverter';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  TECCreateConverterFromPath()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1288,11 +1495,21 @@ function TECCreateConverterFromPath( var newEncodingConverter: TECObjectRef; {co
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
+ }
+function TECCreateConverterFromPath( var newEncodingConverter: TECObjectRef; {const} inPath: {variable-size-array} TextEncodingPtr; inEncodings: ItemCount ): OSStatus; external name '_TECCreateConverterFromPath';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  TECDisposeConverter()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1340,12 +1557,22 @@ function TECDisposeConverter( newEncodingConverter: TECObjectRef ): OSStatus; ex
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.1 and later
+ }
+function TECDisposeConverter( newEncodingConverter: TECObjectRef ): OSStatus; external name '_TECDisposeConverter';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 { convert text encodings }
 {
  *  TECClearConverterContextInfo()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1393,11 +1620,21 @@ function TECClearConverterContextInfo( encodingConverter: TECObjectRef ): OSStat
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
+ }
+function TECClearConverterContextInfo( encodingConverter: TECObjectRef ): OSStatus; external name '_TECClearConverterContextInfo';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  TECConvertText()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1445,11 +1682,21 @@ function TECConvertText( encodingConverter: TECObjectRef; inputBuffer: ConstText
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
+ }
+function TECConvertText( encodingConverter: TECObjectRef; inputBuffer: ConstTextPtr; inputBufferLength: ByteCount; var actualInputLength: ByteCount; outputBuffer: TextPtr; outputBufferLength: ByteCount; var actualOutputLength: ByteCount ): OSStatus; external name '_TECConvertText';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  TECFlushText()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1497,12 +1744,22 @@ function TECFlushText( encodingConverter: TECObjectRef; outputBuffer: TextPtr; o
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
+ }
+function TECFlushText( encodingConverter: TECObjectRef; outputBuffer: TextPtr; outputBufferLength: ByteCount; var actualOutputLength: ByteCount ): OSStatus; external name '_TECFlushText';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 { one-to-many routines }
 {
  *  TECCountSubTextEncodings()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1550,11 +1807,21 @@ function TECCountSubTextEncodings( inputEncoding: TextEncoding; var numberOfEnco
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
+ }
+function TECCountSubTextEncodings( inputEncoding: TextEncoding; var numberOfEncodings: ItemCount ): OSStatus; external name '_TECCountSubTextEncodings';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  TECGetSubTextEncodings()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1602,6 +1869,15 @@ function TECGetSubTextEncodings( inputEncoding: TextEncoding; subEncodings: {var
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
+ }
+function TECGetSubTextEncodings( inputEncoding: TextEncoding; subEncodings: {variable-size-array} TextEncodingPtr; maxSubEncodings: ItemCount; var actualSubEncodings: ItemCount ): OSStatus; external name '_TECGetSubTextEncodings';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  TECGetEncodingList()
@@ -1609,8 +1885,11 @@ function TECGetSubTextEncodings( inputEncoding: TextEncoding; subEncodings: {var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  Parameters:
  *    
  *    encodingConverter:
@@ -1624,6 +1903,7 @@ function TECGetSubTextEncodings( inputEncoding: TextEncoding; subEncodings: {var
  *      TextEncoding, for each known encoding.  Do not dispose of this
  *      handle.
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
@@ -1670,11 +1950,22 @@ function TECGetEncodingList( encodingConverter: TECObjectRef; var numEncodings: 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.1 and later
+ }
+function TECGetEncodingList( encodingConverter: TECObjectRef; var numEncodings: ItemCount; var encodingList: Handle ): OSStatus; external name '_TECGetEncodingList';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  TECCreateOneToManyConverter()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1722,11 +2013,21 @@ function TECCreateOneToManyConverter( var newEncodingConverter: TECObjectRef; in
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
+ }
+function TECCreateOneToManyConverter( var newEncodingConverter: TECObjectRef; inputEncoding: TextEncoding; numOutputEncodings: ItemCount; {const} outputEncodings: {variable-size-array} TextEncodingPtr ): OSStatus; external name '_TECCreateOneToManyConverter';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  TECConvertTextToMultipleEncodings()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1774,11 +2075,21 @@ function TECConvertTextToMultipleEncodings( encodingConverter: TECObjectRef; inp
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
+ }
+function TECConvertTextToMultipleEncodings( encodingConverter: TECObjectRef; inputBuffer: ConstTextPtr; inputBufferLength: ByteCount; var actualInputLength: ByteCount; outputBuffer: TextPtr; outputBufferLength: ByteCount; var actualOutputLength: ByteCount; outEncodingsBuffer: {variable-size-array} TextEncodingRunPtr; maxOutEncodingRuns: ItemCount; var actualOutEncodingRuns: ItemCount ): OSStatus; external name '_TECConvertTextToMultipleEncodings';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  TECFlushMultipleEncodings()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1826,12 +2137,22 @@ function TECFlushMultipleEncodings( encodingConverter: TECObjectRef; outputBuffe
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
+ }
+function TECFlushMultipleEncodings( encodingConverter: TECObjectRef; outputBuffer: TextPtr; outputBufferLength: ByteCount; var actualOutputLength: ByteCount; outEncodingsBuffer: {variable-size-array} TextEncodingRunPtr; maxOutEncodingRuns: ItemCount; var actualOutEncodingRuns: ItemCount ): OSStatus; external name '_TECFlushMultipleEncodings';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 { international internet info }
 {
  *  TECCountWebTextEncodings()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1879,11 +2200,21 @@ function TECCountWebTextEncodings( locale: RegionCode; var numberEncodings: Item
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
+ }
+function TECCountWebTextEncodings( locale: RegionCode; var numberEncodings: ItemCount ): OSStatus; external name '_TECCountWebTextEncodings';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  TECGetWebTextEncodings()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1931,11 +2262,21 @@ function TECGetWebTextEncodings( locale: RegionCode; availableEncodings: {variab
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
+ }
+function TECGetWebTextEncodings( locale: RegionCode; availableEncodings: {variable-size-array} TextEncodingPtr; maxAvailableEncodings: ItemCount; var actualAvailableEncodings: ItemCount ): OSStatus; external name '_TECGetWebTextEncodings';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  TECCountMailTextEncodings()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1983,11 +2324,21 @@ function TECCountMailTextEncodings( locale: RegionCode; var numberEncodings: Ite
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
+ }
+function TECCountMailTextEncodings( locale: RegionCode; var numberEncodings: ItemCount ): OSStatus; external name '_TECCountMailTextEncodings';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  TECGetMailTextEncodings()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2035,12 +2386,22 @@ function TECGetMailTextEncodings( locale: RegionCode; availableEncodings: {varia
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
+ }
+function TECGetMailTextEncodings( locale: RegionCode; availableEncodings: {variable-size-array} TextEncodingPtr; maxAvailableEncodings: ItemCount; var actualAvailableEncodings: ItemCount ): OSStatus; external name '_TECGetMailTextEncodings';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 { examine text encodings }
 {
  *  TECCountAvailableSniffers()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2088,11 +2449,21 @@ function TECCountAvailableSniffers( var numberOfEncodings: ItemCount ): OSStatus
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
+ }
+function TECCountAvailableSniffers( var numberOfEncodings: ItemCount ): OSStatus; external name '_TECCountAvailableSniffers';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  TECGetAvailableSniffers()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2140,11 +2511,21 @@ function TECGetAvailableSniffers( availableSniffers: {variable-size-array} TextE
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
+ }
+function TECGetAvailableSniffers( availableSniffers: {variable-size-array} TextEncodingPtr; maxAvailableSniffers: ItemCount; var actualAvailableSniffers: ItemCount ): OSStatus; external name '_TECGetAvailableSniffers';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  TECCreateSniffer()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2192,11 +2573,21 @@ function TECCreateSniffer( var encodingSniffer: TECSnifferObjectRef; {const} tes
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
+ }
+function TECCreateSniffer( var encodingSniffer: TECSnifferObjectRef; {const} testEncodings: {variable-size-array} TextEncodingPtr; numTextEncodings: ItemCount ): OSStatus; external name '_TECCreateSniffer';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  TECSniffTextEncoding()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2244,11 +2635,21 @@ function TECSniffTextEncoding( encodingSniffer: TECSnifferObjectRef; inputBuffer
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
+ }
+function TECSniffTextEncoding( encodingSniffer: TECSnifferObjectRef; inputBuffer: ConstTextPtr; inputBufferLength: ByteCount; testEncodings: {variable-size-array} TextEncodingPtr; numTextEncodings: ItemCount; numErrsArray: {variable-size-array} ItemCountPtr; maxErrs: ItemCount; numFeaturesArray: {variable-size-array} ItemCountPtr; maxFeatures: ItemCount ): OSStatus; external name '_TECSniffTextEncoding';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  TECDisposeSniffer()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2296,11 +2697,21 @@ function TECDisposeSniffer( encodingSniffer: TECSnifferObjectRef ): OSStatus; ex
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
+ }
+function TECDisposeSniffer( encodingSniffer: TECSnifferObjectRef ): OSStatus; external name '_TECDisposeSniffer';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  TECClearSnifferContextInfo()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2514,6 +2925,9 @@ end.
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
  }
@@ -2653,9 +3067,13 @@ function TECGetTextEncodingFromInternetNameOrMIB( var textEncodingPtr: TextEncod
 end.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

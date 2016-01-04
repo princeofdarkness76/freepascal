@@ -27,6 +27,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 uses DOM, PasTree, dGlobals, dwriter, xmlWrite, SysUtils, Classes;
 =======
 uses DOM, PasTree, dwriter, xmlWrite, SysUtils;
@@ -37,6 +38,9 @@ uses DOM, PasTree, dwriter, xmlWrite, SysUtils;
 =======
 uses DOM, PasTree, dwriter, xmlWrite, SysUtils;
 >>>>>>> graemeg/cpstrnew
+=======
+uses DOM, PasTree, dwriter, xmlWrite, SysUtils;
+>>>>>>> origin/cpstrnew
 =======
 uses DOM, PasTree, dwriter, xmlWrite, SysUtils;
 >>>>>>> origin/cpstrnew
@@ -614,10 +618,13 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 begin
@@ -630,6 +637,7 @@ begin
     WriteXMLFile(doc, Engine.Output + TPasModule(Package.Modules[i]).Name + '.xml' );
     doc.Free;
   end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -663,6 +671,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 end;

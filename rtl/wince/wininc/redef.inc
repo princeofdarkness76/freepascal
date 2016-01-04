@@ -22,11 +22,15 @@ type
   TIID = TGUID;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   REFIID = ^TIID;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  REFIID = ^TIID;
+>>>>>>> origin/cpstrnew
   THANDLE = HANDLE;
 
   PSmallRect = ^TSmallRect;

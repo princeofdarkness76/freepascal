@@ -414,6 +414,9 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 type
   { TGraphVizClassChartFormatter }
 
@@ -488,6 +491,7 @@ type
   end;
 
 
+<<<<<<< HEAD
 Type
   TOutputFormat = (ofXML,ofPostscript, ofGraphViz);
 =======
@@ -498,6 +502,10 @@ Type
 Type
   TOutputFormat = (ofxml,ofPostscript);
 >>>>>>> origin/fixes_2_2
+=======
+Type
+  TOutputFormat = (ofXML,ofPostscript, ofGraphViz);
+>>>>>>> origin/cpstrnew
 
 Var
   OutputFormat : TOutputFormat = ofXML;
@@ -510,12 +518,15 @@ const
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   
 >>>>>>> graemeg/fixes_2_2
 =======
   
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 
 function TClassTreeEngine.CreateElement(AClass: TPTreeElement; const AName: String;
   AParent: TPasElement; AVisibility : TPasMemberVisibility;
@@ -847,6 +858,9 @@ begin
           end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
       ofGraphViz :
         With TGraphVizClassChartFormatter.Create(XML) do
           try
@@ -855,10 +869,13 @@ begin
           finally
             Free;
           end;
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
     end;
     Writeln(StdErr,Format(SClassesAdded,[ACount,InputFiles.Count]));
   Finally
@@ -917,11 +934,15 @@ begin
   Writeln(' --output=filename   Send output to file.');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Writeln(' --format=name       Kind of output to create: XML, PostScript, GraphViz.');
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  Writeln(' --format=name       Kind of output to create: XML, PostScript, GraphViz.');
+>>>>>>> origin/cpstrnew
 end;
 
 procedure ParseOption(const s: String);

@@ -216,6 +216,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    ENoDynLibsSupport = class(Exception);
    ENotImplemented = class(Exception);
 
@@ -241,6 +242,9 @@ type
 =======
 
 >>>>>>> origin/fixes_2_2
+=======
+   ENotImplemented = class(Exception);
+>>>>>>> origin/cpstrnew
 
    { Exception handling routines }
    function ExceptObject: TObject;
@@ -315,6 +319,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$macro on}
 {$define PathStr:=UnicodeString}
 {$define PathPChar:=PWideChar}
@@ -330,6 +335,8 @@ Type
   {$i finah.inc}
 {$define PathStr:=RawByteString}
 {$define PathPChar:=PAnsiChar}
+=======
+>>>>>>> origin/cpstrnew
   { Read filename handling functions declaration }
   {$i finah.inc}
 {$undef PathStr}
@@ -358,6 +365,7 @@ Type
     ErrorMode: DWord = {$ifdef windows}SEM_NOOPENFILEERRORBOX{$else windows}0{$endif windows}): HMODULE;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   function GetModuleName(Module: HMODULE): string;
 
@@ -371,6 +379,11 @@ Type
   function GetModuleName(Module: HMODULE): string;
   
 >>>>>>> origin/fixes_2_2
+=======
+
+  function GetModuleName(Module: HMODULE): string;
+
+>>>>>>> origin/cpstrnew
 { some packages and unit related constants for compatibility }
 
 const

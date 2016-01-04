@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       QD/Displays.h
  
      Contains:   Display Manager Interfaces.
@@ -16,11 +17,15 @@
 =======
      File:       QD/Displays.h
 >>>>>>> origin/fixes_2.4
+=======
+     File:       QD/Displays.h
+>>>>>>> origin/cpstrnew
  
      Contains:   Display Manager Interfaces.
  
      Version:    Quickdraw-262~1
  
+<<<<<<< HEAD
 <<<<<<< HEAD
      Copyright:  © 1993-2002 by Apple Computer, Inc., all rights reserved.
 <<<<<<< HEAD
@@ -30,6 +35,9 @@
 =======
      Copyright:  © 1993-2008 by Apple Inc. all rights reserved.
 >>>>>>> origin/fixes_2.4
+=======
+     Copyright:  © 1993-2008 by Apple Inc. all rights reserved.
+>>>>>>> origin/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -40,6 +48,7 @@
  
 }
 {   Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+<<<<<<< HEAD
 {
     Modified for use with Free Pascal
     Version 308
@@ -54,6 +63,8 @@
  
 }
 {   Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+=======
+>>>>>>> origin/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -62,12 +73,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -79,6 +94,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -93,6 +109,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -108,6 +128,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -118,6 +139,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -125,13 +149,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -139,6 +167,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -147,8 +177,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -159,6 +192,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -179,6 +213,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -187,12 +223,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -200,6 +239,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -431,12 +471,27 @@ interface
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
+=======
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -447,6 +502,7 @@ interface
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -488,6 +544,41 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -516,6 +607,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -524,6 +616,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -533,6 +627,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -551,6 +646,13 @@ uses MacTypes,QuickdrawTypes,ColorSyncDeprecated,AEDataModel,ConditionalMacros,C
 
 >>>>>>> origin/cpstrnew
 {$ifc TARGET_OS_MAC}
+=======
+uses MacTypes,QuickdrawTypes,ColorSyncDeprecated,AEDataModel,ConditionalMacros,Components,Video,AppleEvents,Events,Processes,Dialogs;
+{$endc} {not MACOSALLINCLUDE}
+
+
+{$ifc TARGET_OS_MAC}
+>>>>>>> origin/cpstrnew
 
 {$ALIGN MAC68K}
 
@@ -604,6 +706,7 @@ const
 	dmOnlyActiveDisplays = true;
 	dmAllDisplays = false;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 const
@@ -644,6 +747,45 @@ const
 
 
 const
+=======
+
+
+const
+{ DMSendDependentNotification notifyClass }
+	kDependentNotifyClassShowCursor = FourCharCode('shcr'); { When display mgr shows a hidden cursor during an unmirror }
+	kDependentNotifyClassDriverOverride = FourCharCode('ndrv'); { When a driver is overridden }
+	kDependentNotifyClassDisplayMgrOverride = FourCharCode('dmgr'); { When display manager is upgraded }
+	kDependentNotifyClassProfileChanged = FourCharCode('prof'); { When DMSetProfileByAVID is called }
+
+
+const
+{ Switch Flags }
+	kNoSwitchConfirmBit = 0;    { Flag indicating that there is no need to confirm a switch to this mode }
+	kDepthNotAvailableBit = 1;    { Current depth not available in new mode }
+	kShowModeBit = 3;    { Show this mode even though it requires a confirm. }
+	kModeNotResizeBit = 4;    { Do not use this mode to resize display (for cards that mode drives a different connector). }
+	kNeverShowModeBit = 5;     { This mode should not be shown in the user interface. }
+
+{    Summary Change Flags (sticky bits indicating an operation was performed)
+    For example, moving a display then moving it back will still set the kMovedDisplayBit.
+}
+const
+	kBeginEndConfigureBit = 0;
+	kMovedDisplayBit = 1;
+	kSetMainDisplayBit = 2;
+	kSetDisplayModeBit = 3;
+	kAddDisplayBit = 4;
+	kRemoveDisplayBit = 5;
+	kNewDisplayBit = 6;
+	kDisposeDisplayBit = 7;
+	kEnabledDisplayBit = 8;
+	kDisabledDisplayBit = 9;
+	kMirrorDisplayBit = 10;
+	kUnMirrorDisplayBit = 11;
+
+
+const
+>>>>>>> origin/cpstrnew
 { Notification Messages for extended call back routines }
 	kDMNotifyRequestConnectionProbe = 0;  { Like kDMNotifyRequestDisplayProbe only not for smart displays (used in wake before all busses are awake) }
 	kDMNotifyInstalled = 1;    { At install time }
@@ -709,8 +851,11 @@ const
 const
 { Should offline devices be put into the port list (such as dummy display) }
 	kPLIncludeOfflineDevicesBit = 0;
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 
 { confirmFlags for DMConfirmConfiguration }
@@ -721,6 +866,7 @@ const
 
 { Flags for displayModeFlags }
 const
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 { Notification Messages for extended call back routines }
@@ -750,11 +896,16 @@ const
 	kDummyDeviceID = $00FF; { This is the ID of the dummy display, used when the last ÒrealÓ display is disabled.}
 	kInvalidDisplayID = $0000; { This is the invalid ID}
 	kFirstDisplayID = $0100;
+=======
+	kDisplayModeListNotPreferredBit = 0;
+	kDisplayModeListNotPreferredMask = 1 shl kDisplayModeListNotPreferredBit;
+>>>>>>> origin/cpstrnew
 
 const
 { bits for panelListFlags }
 	kAllowDuplicatesBit = 0;
 
+<<<<<<< HEAD
 const
 { bits for nameFlags }
 	kSuppressNumberBit = 0;
@@ -798,6 +949,40 @@ const
 const
 	kFullNotify = 0;    { This is the appleevent whole nine yards notify }
 	kFullDependencyNotify = 1;     { Only sends to those who want to know about interrelated functionality (used for updating UI) }
+=======
+{ Flags for itemFlags }
+const
+	kComponentListNotPreferredBit = 0;
+	kComponentListNotPreferredMask = 1 shl kComponentListNotPreferredBit;
+
+const
+	kDisplayTimingInfoVersionZero = 1;
+	kDisplayTimingInfoReservedCountVersionZero = 16;
+	kDisplayModeEntryVersionZero = 0;    { displayModeVersion - original version}
+	kDisplayModeEntryVersionOne = 1;     { displayModeVersion - added displayModeOverrideInfo}
+
+
+const
+	kMakeAndModelReservedCount = 4;     { Number of reserved fields}
+
+
+{ Display Gestalt for DMDisplayGestalt}
+const
+	kDisplayGestaltDisplayCommunicationAttr = FourCharCode('comm');
+	kDisplayGestaltForbidI2CMask = 1 shl 0; { Some displays have firmware problems if they get I2C communication.  If this bit is set, then I2C communication is forbidden}
+	kDisplayGestaltUseI2CPowerMask = 1 shl 1; { Some displays require I2C power settings (most use DPMS).}
+	kDisplayGestaltCalibratorAttr = FourCharCode('cali');
+	kDisplayGestaltBrightnessAffectsGammaMask = 1 shl 0; { Used by default calibrator (should we show brightness panel) }
+	kDisplayGestaltViewAngleAffectsGammaMask = 1 shl 1; { Currently not used by color sync}
+
+
+type
+	DMFidelityType = UInt32;
+{
+   AVID is an ID for ports and devices the old DisplayID type
+    is carried on for compatibility
+}
+>>>>>>> origin/cpstrnew
 
 { DisplayID/DeviceID constants }
 const
@@ -805,6 +990,7 @@ const
 	kInvalidDisplayID = $0000; { This is the invalid ID}
 	kFirstDisplayID = $0100;
 
+<<<<<<< HEAD
 const
 { bits for panelListFlags }
 	kAllowDuplicatesBit = 0;
@@ -1086,6 +1272,26 @@ type
 type
 	DMDisplayTimingInfoPtr = ^DMDisplayTimingInfoRec;
 
+=======
+type
+	DMListType = UnivPtr;
+	DMListIndexType = UInt32;
+	AVPowerStateRec = VDPowerStateRec;
+	AVPowerStateRecPtr = ^AVPowerStateRec;
+	AVPowerStatePtr = VDPowerStateRecPtr;
+	DMDisplayTimingInfoRecPtr = ^DMDisplayTimingInfoRec;
+	DMDisplayTimingInfoRec = record
+		timingInfoVersion: UInt32;
+		timingInfoAttributes: UInt32;   { Flags }
+		timingInfoRelativeQuality: SInt32; { quality of the timing }
+		timingInfoRelativeDefault: SInt32; { relative default of the timing }
+
+		timingInfoReserved: array [0..15] of UInt32;  
+	end;
+type
+	DMDisplayTimingInfoPtr = ^DMDisplayTimingInfoRec;
+
+>>>>>>> origin/cpstrnew
 type
 	DMComponentListEntryRecPtr = ^DMComponentListEntryRec;
 	DMComponentListEntryRec = record
@@ -1156,6 +1362,7 @@ type
 		notifyClass: ResType;            { What class was the change (eg geometry, color etc)}
 		notifyPortID: DisplayIDType;           { Which device was touched (kInvalidDisplayID -> all or none)}
 		notifyComponent: ComponentInstance;        { What engine did it (may be 0)?}
+<<<<<<< HEAD
 
 		notifyVersion: UInt32;          { Set to 0 (future expansion)}
 		notifyFlags: UInt32;            { Set to 0 (future expansion)}
@@ -1165,6 +1372,17 @@ type
 type
 	DependentNotifyPtr = DependentNotifyRecPtr;
 
+=======
+
+		notifyVersion: UInt32;          { Set to 0 (future expansion)}
+		notifyFlags: UInt32;            { Set to 0 (future expansion)}
+		notifyReserved: UInt32;         { Set to 0 (future expansion)}
+		notifyFuture: UInt32;           { Set to 0 (future expansion)}
+	end;
+type
+	DependentNotifyPtr = DependentNotifyRecPtr;
+
+>>>>>>> origin/cpstrnew
 type
 	DMMakeAndModelRecPtr = ^DMMakeAndModelRec;
 	DMMakeAndModelRec = record
@@ -1174,6 +1392,7 @@ type
 		manufactureDate: UInt32;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 		makeReserved: array [0..3] of UInt32;
 	end;
@@ -1197,6 +1416,9 @@ const
 =======
 =======
 
+=======
+
+>>>>>>> origin/cpstrnew
 		makeReserved: array [0..3] of UInt32;
 	end;
 type
@@ -1208,6 +1430,7 @@ const
 	kIncludeOfflineDisplaysMask = 1 shl 2;
 	kIncludeOfflineDummyDisplaysMask = 1 shl 3;
 	kIncludeHardwareMirroredDisplaysMask = 1 shl 4;
+<<<<<<< HEAD
 
 >>>>>>> graemeg/cpstrnew
 
@@ -1223,6 +1446,10 @@ const
 
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+
+
+>>>>>>> origin/cpstrnew
 const
 { modeListFlags for DMNewDisplayModeList }
 	kDMModeListIncludeAllModesMask = 1 shl 0; { Include all timing modes not _explicitly_ excluded (see other bits)}
@@ -1233,6 +1460,7 @@ const
 	kDMModeListPreferStretchedModesMask = 1 shl 5; { Prefer modes that are stretched over modes that are letterboxed when setting kDisplayModeListNotPreferredBit}
 	kDMModeListPreferSafeModesMask = 1 shl 6; { Prefer modes that are safe over modes that are not when setting kDisplayModeListNotPreferredBit}
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -3572,6 +3800,45 @@ type
 	DMDisplayModeListIteratorUPP = DMDisplayModeListIteratorProcPtr;
 	DMProfileListIteratorUPP = DMProfileListIteratorProcPtr;
 	DMDisplayListIteratorUPP = DMDisplayListIteratorProcPtr;
+=======
+
+{ DMNewDisplayList displayListFlags}
+type
+	DisplayListEntryRecPtr = ^DisplayListEntryRec;
+	DisplayListEntryRec = record
+		displayListEntryGDevice: GDHandle;
+		displayListEntryDisplayID: DisplayIDType;
+		displayListEntryIncludeFlags: UInt32; { Reason this entry was included}
+		displayListEntryReserved1: UInt32;
+
+		displayListEntryReserved2: UInt32; { Zero}
+		displayListEntryReserved3: UInt32; { Zero}
+		displayListEntryReserved4: UInt32; { Zero}
+		displayListEntryReserved5: UInt32; { Zero}
+	end;
+type
+	DisplayListEntryPtr = DisplayListEntryRecPtr;
+	DMProfileListEntryRecPtr = ^DMProfileListEntryRec;
+	DMProfileListEntryRec = record
+		profileRef: UnivPtr;             { was CMProfileRef}
+		profileReserved1: Ptr;       { Reserved}
+		profileReserved2: Ptr;       { Reserved}
+		profileReserved3: Ptr;       { Reserved}
+	end;
+type
+	DMProfileListEntryPtr = DMProfileListEntryRecPtr;
+	DMNotificationProcPtr = procedure( var theEvent: AppleEvent );
+	DMExtendedNotificationProcPtr = procedure( userData: UnivPtr; theMessage: SInt16; notifyData: UnivPtr );
+	DMComponentListIteratorProcPtr = procedure( userData: UnivPtr; itemIndex: DMListIndexType; componentInfo: DMComponentListEntryPtr );
+	DMDisplayModeListIteratorProcPtr = procedure( userData: UnivPtr; itemIndex: DMListIndexType; displaymodeInfo: DMDisplayModeListEntryPtr );
+	DMProfileListIteratorProcPtr = procedure( userData: UnivPtr; itemIndex: DMListIndexType; profileInfo: DMProfileListEntryPtr );
+	DMDisplayListIteratorProcPtr = procedure( userData: UnivPtr; itemIndex: DMListIndexType; displaymodeInfo: DisplayListEntryPtr );
+	DMNotificationUPP = DMNotificationProcPtr;
+	DMExtendedNotificationUPP = DMExtendedNotificationProcPtr;
+	DMComponentListIteratorUPP = DMComponentListIteratorProcPtr;
+	DMDisplayModeListIteratorUPP = DMDisplayModeListIteratorProcPtr;
+	DMProfileListIteratorUPP = DMProfileListIteratorProcPtr;
+	DMDisplayListIteratorUPP = DMDisplayListIteratorProcPtr;
 {
  *  NewDMNotificationUPP()
  *  
@@ -3583,11 +3850,26 @@ type
 function NewDMNotificationUPP( userRoutine: DMNotificationProcPtr ): DMNotificationUPP; external name '_NewDMNotificationUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
+>>>>>>> origin/cpstrnew
+{
+ *  NewDMNotificationUPP()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+<<<<<<< HEAD
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function NewDMNotificationUPP( userRoutine: DMNotificationProcPtr ): DMNotificationUPP; external name '_NewDMNotificationUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
 {
  *  NewDMExtendedNotificationUPP()
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+=======
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   available as macro/inline
  }
@@ -4186,11 +4468,15 @@ function DMUnblockMirroring: OSErr; external name '_DMUnblockMirroring';
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in InterfaceLib 7.5 and later
 =======
  *    Mac OS X:         not available [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         not available [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in InterfaceLib 7.5 and later
  }
@@ -4612,9 +4898,13 @@ function DMConfirmConfiguration( filterProc: DMModalFilterUPP; confirmFlags: UIn
 end.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

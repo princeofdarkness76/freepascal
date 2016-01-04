@@ -19,6 +19,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure SignalToRunerror(sig : longint; SigInfo: PSigInfo; UContext: PUContext);cdecl;public name '_FPC_DEFAULTSIGHANDLER';
 var
   res : word;
@@ -29,6 +30,8 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 const
@@ -49,11 +52,14 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 begin
@@ -62,6 +68,7 @@ begin
   case sig of
     SIGFPE :
         begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -83,6 +90,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           addr := siginfo^._sifields._sigfault.si_addr;
           res := 207;
           case  siginfo^.si_code of
@@ -95,11 +104,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
             FPE_FLTOVF:
@@ -110,11 +122,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
             FPE_FLTRES,
@@ -124,11 +139,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
             else
@@ -139,6 +157,7 @@ begin
     SIGBUS,
     SIGSEGV :
         begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -156,12 +175,16 @@ begin
 =======
           addr := siginfo^._sifields._sigfault.si_addr;
 >>>>>>> origin/cpstrnew
+=======
+          addr := siginfo^._sifields._sigfault.si_addr;
+>>>>>>> origin/cpstrnew
           res:=216;
         end;
   end;
   reenable_signal(sig);
   { give runtime error at the position where the signal was raised }
   if res<>0 then
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -207,6 +230,9 @@ begin
 =======
     HandleErrorAddrFrame(res,addr,nil);
 >>>>>>> graemeg/cpstrnew
+=======
+    HandleErrorAddrFrame(res,addr,nil);
+>>>>>>> origin/cpstrnew
 =======
     HandleErrorAddrFrame(res,addr,nil);
 >>>>>>> origin/cpstrnew

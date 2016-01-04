@@ -6,6 +6,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   procedure DivMod(Dividend: LongInt; Divisor: Word;  var Result, Remainder: Word);
   procedure DivMod(Dividend: LongInt; Divisor: Word; var Result, Remainder: SmallInt);
   procedure DivMod(Dividend: DWord; Divisor: DWord; var Result, Remainder: DWord);
@@ -19,6 +20,8 @@ procedure doerror(i : LongInt);
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   procedure DivMod(Dividend: Integer; Divisor: Word;  var Result, Remainder: Word);
   procedure DivMod(Dividend: Integer; Divisor: Word; var Result, Remainder: SmallInt);
   procedure DivMod(Dividend: DWord; Divisor: DWord; var Result, Remainder: DWord);
@@ -28,11 +31,14 @@ procedure doerror(i : integer);
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   begin
@@ -49,6 +55,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   QuotientLongInt,RemainderLongInt : LongInt;
 =======
   QuotientInteger,RemainderInteger : Integer;
@@ -59,6 +66,9 @@ var
 =======
   QuotientInteger,RemainderInteger : Integer;
 >>>>>>> graemeg/cpstrnew
+=======
+  QuotientInteger,RemainderInteger : Integer;
+>>>>>>> origin/cpstrnew
 =======
   QuotientInteger,RemainderInteger : Integer;
 >>>>>>> origin/cpstrnew
@@ -92,6 +102,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   DivMod($ffff,65,QuotientLongInt,RemainderLongInt);
   if QuotientLongInt<>1008 then
     doerror(3001);
@@ -121,6 +132,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   DivMod($ffff,65,QuotientInteger,RemainderInteger);
   if QuotientInteger<>1008 then
     doerror(3001);
@@ -146,11 +159,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     doerror(3008);

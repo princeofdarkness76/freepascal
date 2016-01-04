@@ -36,6 +36,7 @@ unit i_beos;
             shortname    : 'Beos';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             flags        : [tf_under_development,tf_needs_symbol_size,tf_files_case_sensitive,
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -48,6 +49,9 @@ unit i_beos;
 =======
 >>>>>>> graemeg/cpstrnew
 =======
+>>>>>>> origin/cpstrnew
+=======
+            flags        : [tf_under_development,tf_needs_symbol_size,tf_files_case_sensitive,
 >>>>>>> origin/cpstrnew
                             tf_smartlink_sections, tf_smartlink_library];
 >>>>>>> graemeg/cpstrnew

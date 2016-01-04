@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 110,
 129,
 92,
@@ -38,6 +39,9 @@
 =======
 89,
 >>>>>>> graemeg/cpstrnew
+=======
+89,
+>>>>>>> origin/cpstrnew
 =======
 89,
 >>>>>>> origin/cpstrnew
@@ -87,6 +91,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 122,
 127,
 90,
@@ -110,6 +115,9 @@
 =======
 90,
 >>>>>>> graemeg/cpstrnew
+=======
+90,
+>>>>>>> origin/cpstrnew
 =======
 90,
 >>>>>>> origin/cpstrnew

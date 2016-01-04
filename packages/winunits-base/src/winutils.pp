@@ -18,6 +18,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$mode objfpc}{$H+}
 =======
 {$mode objfpc}
@@ -34,10 +35,14 @@
 =======
 {$mode objfpc}
 >>>>>>> origin/fixes_2.4
+=======
+{$mode objfpc}
+>>>>>>> origin/cpstrnew
 unit winutils;
 
 Interface
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -59,11 +64,15 @@ Uses Windows;
 =======
 Uses Windows;
 >>>>>>> origin/fixes_2.4
+=======
+Uses Windows;
+>>>>>>> origin/cpstrnew
 
 // returns True if the currently logged Windows user has Administrator rights. Delphi.about.com
 // From Delphi.about.com with permission, http://delphi.about.com/od/delphitips2007/qt/is_win_admin.htm
 function IsWindowsAdmin: Boolean;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -97,6 +106,8 @@ procedure RemoveExceptionFromFW(Const exCaption: WideString);
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 implementation
 
 const
@@ -157,6 +168,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure UnBlockFile(const name:String);
 var f : file;
 begin
@@ -203,4 +215,6 @@ end;
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 end.

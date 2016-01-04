@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       CarbonCore/AVLTree.h
  
      Contains:   Interfaces for AVL balanced trees.
@@ -28,11 +29,15 @@
 =======
      File:       CarbonCore/AVLTree.h
 >>>>>>> origin/fixes_2.4
+=======
+     File:       CarbonCore/AVLTree.h
+>>>>>>> origin/cpstrnew
  
      Contains:   Interfaces for AVL balanced trees.
  
      Version:    CarbonCore-859.2~1
  
+<<<<<<< HEAD
 <<<<<<< HEAD
      Copyright:  © 1999-2002 by Apple Computer, Inc., all rights reserved.
 <<<<<<< HEAD
@@ -42,6 +47,9 @@
 =======
      Copyright:  © 1999-2008 by Apple Computer, Inc., all rights reserved.
 >>>>>>> origin/fixes_2.4
+=======
+     Copyright:  © 1999-2008 by Apple Computer, Inc., all rights reserved.
+>>>>>>> origin/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -74,6 +82,7 @@
     Version 308
     Please report any bugs to <gpc@microbizz.nl>
 }
+<<<<<<< HEAD
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 =======
@@ -81,6 +90,8 @@
 >>>>>>> origin/fixes_2_2
  
 }
+=======
+>>>>>>> origin/cpstrnew
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {
     Modified for use with Free Pascal
@@ -90,12 +101,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -107,6 +122,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -121,6 +137,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -136,6 +156,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -146,6 +167,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -153,13 +177,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -167,6 +195,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -175,8 +205,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -187,6 +220,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -207,6 +241,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -215,12 +251,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -231,12 +270,16 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -262,6 +305,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -277,6 +325,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -302,12 +351,18 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -342,6 +397,8 @@ interface
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -350,6 +407,7 @@ interface
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 {$elifc defined __arm__ and __arm__}
@@ -553,6 +611,37 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -581,6 +670,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -589,6 +679,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -598,6 +690,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -638,6 +731,12 @@ uses MacTypes;
 >>>>>>> origin/fixes_2.4
 
 >>>>>>> origin/fixes_2_2
+=======
+uses MacTypes;
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
+
+{$ifc TARGET_OS_MAC}
 
 {$ifc TARGET_OS_MAC}
 
@@ -647,14 +746,18 @@ uses MacTypes;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  AVLVisitStage
  *  
  *  Discussion:
  *    The visit stage for AVLWalk() walkProcs
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 type
 	AVLVisitStage = UInt16;
@@ -735,6 +838,26 @@ const
 const
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+type
+	AVLVisitStage = UInt16;
+const
+{
+   * Passed the first time AVLWalk iterates thru a given node.
+   }
+	kAVLPreOrder = 0;
+
+  {
+   * Passed the AVLWalk iterates thru a given node when it is 'in
+   * order'.
+   }
+	kAVLInOrder = 1;
+
+  {
+   * Passed the last time AVLWalk iterates thru a given node.
+   }
+	kAVLPostOrder = 2;
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -773,6 +896,9 @@ const
 	kAVLNullNode = 4;
 
 const
+<<<<<<< HEAD
+>>>>>>> origin/cpstrnew
+=======
 >>>>>>> origin/cpstrnew
 	errItemAlreadyInTree = -960;
 	errNotValidTree = -961;
@@ -837,6 +963,7 @@ type
  }
 type
 	AVLCompareItemsProcPtr = function( tree: AVLTreePtr; i1: {const} UnivPtr; i2: {const} UnivPtr; nd_typ: AVLNodeType ): SInt32;
+<<<<<<< HEAD
 
 {
  *  AVLItemSizeProcPtr
@@ -878,10 +1005,26 @@ type
  *    when AVLDispose() deletes all of the items in the tree ). This
  *    might be useful if the nodes in the tree own 'resources'  ( like,
  *    open files ) which should be released before the item is removed.
+=======
+
+{
+ *  AVLItemSizeProcPtr
+ *  
+ *  Summary:
+ *    A callback function which returns the size of an item.
+ *  
+ *  Discussion:
+ *    Every tree must have a itemSizeProc; this routine gets passed a
+ *    pointer to the item's data and returns the size of the data.  If
+ *    a tree contains records of a fixed size, this function can just
+ *    return sizeof( that-struct ); otherwise it should calculate the
+ *    size of the item based on the data for the item.
+>>>>>>> origin/cpstrnew
  *  
  *  Parameters:
  *    
  *    tree:
+<<<<<<< HEAD
  *      The tree containing the item being disposed.
  *    
  *    dataP:
@@ -911,10 +1054,37 @@ type
  *    the tree, up until the last item in the tree structure is called.
  *    In general, you'll only care about calls to this function when
  *    visitStage == kAVLInOrder.
+=======
+ *      The tree which contains the item whose size is being requested.
+ *    
+ *    itemPtr:
+ *      A pointer to the item whose size is being returned.
+ *  
+ *  Result:
+ *    The size of the item.
+ }
+type
+	AVLItemSizeProcPtr = function( tree: AVLTreePtr; itemPtr: {const} UnivPtr ): ByteCount;
+
+{
+ *  AVLDisposeItemProcPtr
+ *  
+ *  Summary:
+ *    Dispose of any additional memory associated with an item in the
+ *    tree.
+ *  
+ *  Discussion:
+ *    A tree may have an optional disposeItemProc, which gets called
+ *    whenever an item is removed from the tree ( via AVLRemove() or
+ *    when AVLDispose() deletes all of the items in the tree ). This
+ *    might be useful if the nodes in the tree own 'resources'  ( like,
+ *    open files ) which should be released before the item is removed.
+>>>>>>> origin/cpstrnew
  *  
  *  Parameters:
  *    
  *    tree:
+<<<<<<< HEAD
  *      The tree being walked.
  *    
  *    dataPtr:
@@ -1151,6 +1321,16 @@ type
 type
 	AVLDisposeItemProcPtr = procedure( tree: AVLTreePtr; dataP: {const} UnivPtr );
 
+=======
+ *      The tree containing the item being disposed.
+ *    
+ *    dataP:
+ *      A pointer to the data for the item being disposed.
+ }
+type
+	AVLDisposeItemProcPtr = procedure( tree: AVLTreePtr; dataP: {const} UnivPtr );
+
+>>>>>>> origin/cpstrnew
 {
  *  AVLWalkProcPtr
  *  
@@ -1220,6 +1400,7 @@ function NewAVLCompareItemsUPP( userRoutine: AVLCompareItemsProcPtr ): AVLCompar
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 const
 	uppAVLCompareItemsProcInfo = $00002FF0;
 	uppAVLItemSizeProcInfo = $000003F0;
@@ -1240,10 +1421,13 @@ function NewAVLCompareItemsUPP(userRoutine: AVLCompareItemsProcPtr): AVLCompareI
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  NewAVLItemSizeUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1291,10 +1475,20 @@ function NewAVLItemSizeUPP( userRoutine: AVLItemSizeProcPtr ): AVLItemSizeUPP; e
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function NewAVLItemSizeUPP( userRoutine: AVLItemSizeProcPtr ): AVLItemSizeUPP; external name '_NewAVLItemSizeUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+>>>>>>> origin/cpstrnew
 {
  *  NewAVLDisposeItemUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1342,10 +1536,20 @@ function NewAVLDisposeItemUPP( userRoutine: AVLDisposeItemProcPtr ): AVLDisposeI
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function NewAVLDisposeItemUPP( userRoutine: AVLDisposeItemProcPtr ): AVLDisposeItemUPP; external name '_NewAVLDisposeItemUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+>>>>>>> origin/cpstrnew
 {
  *  NewAVLWalkUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1393,10 +1597,20 @@ function NewAVLWalkUPP( userRoutine: AVLWalkProcPtr ): AVLWalkUPP; external name
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function NewAVLWalkUPP( userRoutine: AVLWalkProcPtr ): AVLWalkUPP; external name '_NewAVLWalkUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+>>>>>>> origin/cpstrnew
 {
  *  DisposeAVLCompareItemsUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1444,10 +1658,20 @@ procedure DisposeAVLCompareItemsUPP( userUPP: AVLCompareItemsUPP ); external nam
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeAVLCompareItemsUPP( userUPP: AVLCompareItemsUPP ); external name '_DisposeAVLCompareItemsUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+>>>>>>> origin/cpstrnew
 {
  *  DisposeAVLItemSizeUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1495,10 +1719,20 @@ procedure DisposeAVLItemSizeUPP( userUPP: AVLItemSizeUPP ); external name '_Disp
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeAVLItemSizeUPP( userUPP: AVLItemSizeUPP ); external name '_DisposeAVLItemSizeUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+>>>>>>> origin/cpstrnew
 {
  *  DisposeAVLDisposeItemUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1546,10 +1780,20 @@ procedure DisposeAVLDisposeItemUPP( userUPP: AVLDisposeItemUPP ); external name 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeAVLDisposeItemUPP( userUPP: AVLDisposeItemUPP ); external name '_DisposeAVLDisposeItemUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+>>>>>>> origin/cpstrnew
 {
  *  DisposeAVLWalkUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1597,10 +1841,20 @@ procedure DisposeAVLWalkUPP( userUPP: AVLWalkUPP ); external name '_DisposeAVLWa
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeAVLWalkUPP( userUPP: AVLWalkUPP ); external name '_DisposeAVLWalkUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+>>>>>>> origin/cpstrnew
 {
  *  InvokeAVLCompareItemsUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1648,10 +1902,20 @@ function InvokeAVLCompareItemsUPP( tree: AVLTreePtr; i1: {const} UnivPtr; i2: {c
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function InvokeAVLCompareItemsUPP( tree: AVLTreePtr; i1: {const} UnivPtr; i2: {const} UnivPtr; nd_typ: AVLNodeType; userUPP: AVLCompareItemsUPP ): SInt32; external name '_InvokeAVLCompareItemsUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+>>>>>>> origin/cpstrnew
 {
  *  InvokeAVLItemSizeUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1699,10 +1963,20 @@ function InvokeAVLItemSizeUPP( tree: AVLTreePtr; itemPtr: {const} UnivPtr; userU
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function InvokeAVLItemSizeUPP( tree: AVLTreePtr; itemPtr: {const} UnivPtr; userUPP: AVLItemSizeUPP ): ByteCount; external name '_InvokeAVLItemSizeUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+>>>>>>> origin/cpstrnew
 {
  *  InvokeAVLDisposeItemUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1750,6 +2024,15 @@ procedure InvokeAVLDisposeItemUPP( tree: AVLTreePtr; dataP: {const} UnivPtr; use
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure InvokeAVLDisposeItemUPP( tree: AVLTreePtr; dataP: {const} UnivPtr; userUPP: AVLDisposeItemUPP ); external name '_InvokeAVLDisposeItemUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+>>>>>>> origin/cpstrnew
 {
  *  InvokeAVLWalkUPP()
  *  
@@ -1757,11 +2040,15 @@ procedure InvokeAVLDisposeItemUPP( tree: AVLTreePtr; dataP: {const} UnivPtr; use
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   available as macro/inline
  }
 function InvokeAVLWalkUPP( tree: AVLTreePtr; dataPtr: {const} UnivPtr; visitStage: AVLVisitStage; node: AVLNodeType; level: UInt32; balance: SInt32; refCon: UnivPtr; userUPP: AVLWalkUPP ): OSErr; external name '_InvokeAVLWalkUPP';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1779,10 +2066,14 @@ function InvokeAVLWalkUPP( tree: AVLTreePtr; dataPtr: {const} UnivPtr; visitStag
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> origin/cpstrnew
 
 {$ifc not TARGET_CPU_64}
 {
  *  AVLInit()   *** DEPRECATED ***
+<<<<<<< HEAD
  *  
  *  Summary:
  *    Create an AVL ( balanced binary ) tree
@@ -1880,12 +2171,62 @@ function AVLInit( flags: UInt32; compareItemsProc: AVLCompareItemsUPP; sizeItemP
  *    
  *    order:
  *      The order to dispose of the items in the tree.
+=======
+ *  
+ *  Summary:
+ *    Create an AVL ( balanced binary ) tree
+ *  
+ *  Discussion:
+ *    Create an AVL tree.  The compareItemsProc and the sizeItemProc
+ *    are required; disposeItemProc is optional and can be nil.  The
+ *    refCon is stored with the list, and is passed back to the
+ *    compareItemsProc, sizeItemProc, and disposeItemsProc calls.  The
+ *    allocation of the tree ( and all nodes later added to the list
+ *    with AVLInsert ) will be created in what is the current zone at
+ *    the time AVLInit() is called.  Always call AVLDispose() to
+ *    dispose of a list created with AVLInit().
+ *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
+ *  Parameters:
+ *    
+ *    flags:
+ *      Creation flags.  Currently, no flags are defined, so pass 0.
+ *    
+ *    compareItemsProc:
+ *      A UPP for a function which compares two data items, and returns
+ *      a value which is < 0, == 0, or > 0 depending on whether the
+ *      first item is 'before', 'equal', or 'after' the first item.
+ *    
+ *    sizeItemProc:
+ *      A UPP for a function which takes a pointer to a data item, and
+ *      returns the size in bytes which it requires to store.
+ *    
+ *    disposeItemProc:
+ *      A UPP for a function which takes a pointer to a data item, and
+ *      disposes of any memory which may have been allocated for the
+ *      item.  This does not need to dispose of the item itself ( the
+ *      AVLTree Manager will do that ), only any memory which the item
+ *      passed in may be pointing to.  This function may be NULL if
+ *      data items do not use any memory besides that taken up by the
+ *      item itself.
+ *    
+ *    refCon:
+ *      A 32 bit quantity which is stored with this tree, and can be
+ *      retrieved at an time ( and in a callback, if desired ) with
+ *      AVLGetRefcon().
+ *    
+ *    tree:
+ *      The created AVLTree, or NULL if there is an error.
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 9.0 and later
  }
+<<<<<<< HEAD
 function AVLDispose( var tree: AVLTreePtr; order: AVLOrder ): OSErr; external name '_AVLDispose';
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1947,12 +2288,35 @@ function AVLDispose( var tree: AVLTreePtr; order: AVLOrder ): OSErr; external na
  *    AVLWalk is thread safe as long as no other thread tries to modify
  *    the tree by inserting or removing an item, or disposing of the
  *    tree itself.
+=======
+function AVLInit( flags: UInt32; compareItemsProc: AVLCompareItemsUPP; sizeItemProc: AVLItemSizeUPP; disposeItemProc: AVLDisposeItemUPP; refCon: UnivPtr; var tree: AVLTreePtr ): OSErr; external name '_AVLInit';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{
+ *  AVLDispose()   *** DEPRECATED ***
+ *  
+ *  Summary:
+ *    Dispose of an AVL tree created with AVLInit()
+ *  
+ *  Discussion:
+ *    Dispose of an AVL tree.  This will dispose of each item in the
+ *    tree in the order specified, call the tree's disposeProc proc for
+ *    each item, and then dispose of the space allocated for the tree
+ *    itself.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *    AVLDispose is thread safe provided no other thread is still using
+ *    the tree being dispose.
+>>>>>>> origin/cpstrnew
  *  
  *  Parameters:
  *    
  *    tree:
  *      The tree to dispose, which was created with AVLInit().
  *    
+<<<<<<< HEAD
  *    walkProc:
  *      A UPP for a function which is called during the walk thru the
  *      tree for each item.
@@ -1962,12 +2326,17 @@ function AVLDispose( var tree: AVLTreePtr; order: AVLOrder ): OSErr; external na
  *    
  *    walkRefCon:
  *      A 32 bit value passed to the walkProc each time it is called.
+=======
+ *    order:
+ *      The order to dispose of the items in the tree.
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 9.0 and later
  }
+<<<<<<< HEAD
 function AVLWalk( tree: AVLTreePtr; walkProc: AVLWalkUPP; order: AVLOrder; walkRefCon: UnivPtr ): OSErr; external name '_AVLWalk';
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2002,20 +2371,82 @@ function AVLWalk( tree: AVLTreePtr; walkProc: AVLWalkUPP; order: AVLOrder; walkR
  *    AVLCount is thread safe as long as no other thread tries to
  *    modify the tree by inserting or removing an item, or disposing of
  *    the tree itself.
+=======
+function AVLDispose( var tree: AVLTreePtr; order: AVLOrder ): OSErr; external name '_AVLDispose';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{
+ *  AVLWalk()   *** DEPRECATED ***
+ *  
+ *  Summary:
+ *    Iterate across all of the items in an AVL tree, in a specified
+ *    order.
+ *  
+ *  Discussion:
+ *    Iterate across all of the items in the tree, in the order
+ *    specified.  kLeftToRight is basically lowest-to-highest order,
+ *    kRightToLeft is highest-to-lowest order.  For each node in the
+ *    tree, it will call the walkProc with three messages ( at the
+ *    appropriate time ).  First, with kAVLPreOrder when the walking
+ *    gets to this node in the tree, before handling either the left or
+ *    right subtree, secondly, with kAVLInOrder after handling one
+ *    subtree but before handling the other, and lastly with
+ *    kAVLPostOrder after handling both subtrees.  If you want to
+ *    handle items in order, then only do something if the visit stage
+ *    is kAVLInOrder.  You can only call AVLRemove() from inside a
+ *    walkProc if visit stage is kAVLPostOrder ( because if you remove
+ *    a node during the pre or in order stages you will corrupt the
+ *    list ) OR if you return a non-zero result from the walkProc call
+ *    which called AVLRemove() to immediately terminate the walkProc. 
+ *    Do not call AVLInsert() to insert a node into the tree from
+ *    inside a walkProc. The walkProc function gets called with the
+ *    AVLTreePtr, a pointer to the data for the current node ( which
+ *    you can change in place as long as you do not affect the order
+ *    within the tree ), the visit stage, the type of the current node
+ *    ( leaf node, right or left branch, or full tree ), the level
+ *    within the tree ( the root is level 1 ), the balance for the
+ *    current node, and the refCon passed to AVLWalk().  This refCon is
+ *    different from the one passed into AVLInit(); use AVLGetRefCon()
+ *    to get that refCon if you want it inside a walkProc. ( Most
+ *    walkProcs will not care about the values for node type, level, or
+ *    balance. )
+ *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *    AVLWalk is thread safe as long as no other thread tries to modify
+ *    the tree by inserting or removing an item, or disposing of the
+ *    tree itself.
+>>>>>>> origin/cpstrnew
  *  
  *  Parameters:
  *    
  *    tree:
+<<<<<<< HEAD
  *      The tree to return the count of items for.
  *    
  *    count:
  *      On return, the count of items ( 1-based ) in the tree.
+=======
+ *      The tree to dispose, which was created with AVLInit().
+ *    
+ *    walkProc:
+ *      A UPP for a function which is called during the walk thru the
+ *      tree for each item.
+ *    
+ *    order:
+ *      The order to iterate thru the tree.
+ *    
+ *    walkRefCon:
+ *      A 32 bit value passed to the walkProc each time it is called.
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 9.0 and later
  }
+<<<<<<< HEAD
 function AVLCount( tree: AVLTreePtr; var count: UInt32 ): OSErr; external name '_AVLCount';
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2053,12 +2484,31 @@ function AVLCount( tree: AVLTreePtr; var count: UInt32 ): OSErr; external name '
  *  Mac OS X threading:
  *    Thread safe
  *    AVLGetIndItem is thread safe as long as no other thread tries to
+=======
+function AVLWalk( tree: AVLTreePtr; walkProc: AVLWalkUPP; order: AVLOrder; walkRefCon: UnivPtr ): OSErr; external name '_AVLWalk';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{
+ *  AVLCount()   *** DEPRECATED ***
+ *  
+ *  Summary:
+ *    Return the number of items in the given tree.
+ *  
+ *  Discussion:
+ *    Return the number of items in the given tree.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *    AVLCount is thread safe as long as no other thread tries to
+>>>>>>> origin/cpstrnew
  *    modify the tree by inserting or removing an item, or disposing of
  *    the tree itself.
  *  
  *  Parameters:
  *    
  *    tree:
+<<<<<<< HEAD
  *      The tree to return the index-th items for.
  *    
  *    index:
@@ -2074,12 +2524,19 @@ function AVLCount( tree: AVLTreePtr; var count: UInt32 ): OSErr; external name '
  *    itemSize:
  *      On return, the size of the data for the index-th item.  If you
  *      do not care about the size of the data, pass NULL.
+=======
+ *      The tree to return the count of items for.
+ *    
+ *    count:
+ *      On return, the count of items ( 1-based ) in the tree.
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 9.0 and later
  }
+<<<<<<< HEAD
 function AVLGetIndItem( tree: AVLTreePtr; index: UInt32; dataPtr: UnivPtr; var itemSize: ByteCount ): OSErr; external name '_AVLGetIndItem';
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2120,20 +2577,62 @@ function AVLGetIndItem( tree: AVLTreePtr; index: UInt32; dataPtr: UnivPtr; var i
  *    AVLInsert is thread safe as long as no other thread tries to walk
  *    or modify the tree by inserting or removing an item, or disposing
  *    of the tree itself.
+=======
+function AVLCount( tree: AVLTreePtr; var count: UInt32 ): OSErr; external name '_AVLCount';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{
+ *  AVLGetIndItem()   *** DEPRECATED ***
+ *  
+ *  Summary:
+ *    Return the data of the index-th item from the tree.
+ *  
+ *  Discussion:
+ *    Return the one-based index-th item from the tree by putting it's
+ *    data at dataPtr if dataPtr is non-nil, and it's size into
+ *    *itemSize if itemSize is non-nil. If index is out of range,
+ *    return errItemNotFoundInTree.  ( Internally, this does an
+ *    AVLWalk(), so the tree can not be modified while this call is in
+ *    progress ).
+ *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *    AVLGetIndItem is thread safe as long as no other thread tries to
+ *    modify the tree by inserting or removing an item, or disposing of
+ *    the tree itself.
+>>>>>>> origin/cpstrnew
  *  
  *  Parameters:
  *    
  *    tree:
  *      The tree to return the index-th items for.
  *    
+<<<<<<< HEAD
  *    data:
  *      A pointer to the item to be inserted.
+=======
+ *    index:
+ *      A index of the item to return.  The 'first' item in the tree is
+ *      index = 1, the last item is index = the count of items in the
+ *      tree.
+ *    
+ *    dataPtr:
+ *      An address in memory to return the data for the item, or NULL
+ *      if you don not want data returned.  The memory point to must be
+ *      large enough to hold all of the data for the item.
+ *    
+ *    itemSize:
+ *      On return, the size of the data for the index-th item.  If you
+ *      do not care about the size of the data, pass NULL.
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 9.0 and later
  }
+<<<<<<< HEAD
 function AVLInsert( tree: AVLTreePtr; data: {const} UnivPtr ): OSErr; external name '_AVLInsert';
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2169,11 +2668,34 @@ function AVLInsert( tree: AVLTreePtr; data: {const} UnivPtr ): OSErr; external n
  *    key, only that the compareItemsProc return 0 when asked to
  *    compare the data at key with the node in the tree to be deleted. 
  *    If the item cannot be found in the tree, this will return
+=======
+function AVLGetIndItem( tree: AVLTreePtr; index: UInt32; dataPtr: UnivPtr; var itemSize: ByteCount ): OSErr; external name '_AVLGetIndItem';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{
+ *  AVLInsert()   *** DEPRECATED ***
+ *  
+ *  Summary:
+ *    Insert an item into the tree.
+ *  
+ *  Discussion:
+ *    Insert the given item into the tree.  This will call the tree's
+ *    sizeItemProc to determine how big the item at data is, and then
+ *    will make a copy of the item and insert it into the tree in the
+ *    appropriate place.  If an item already exists in the tree with
+ *    the same key ( so that the compareItemsUPP returns 0 when asked
+ *    to compare this item to an existing one ), then it will return
+>>>>>>> origin/cpstrnew
  *    errItemNotFoundInTree.
  *  
  *  Mac OS X threading:
  *    Thread safe
+<<<<<<< HEAD
  *    AVLRemove is thread safe as long as no other thread tries to walk
+=======
+ *    AVLInsert is thread safe as long as no other thread tries to walk
+>>>>>>> origin/cpstrnew
  *    or modify the tree by inserting or removing an item, or disposing
  *    of the tree itself.
  *  
@@ -2182,6 +2704,7 @@ function AVLInsert( tree: AVLTreePtr; data: {const} UnivPtr ): OSErr; external n
  *    tree:
  *      The tree to return the index-th items for.
  *    
+<<<<<<< HEAD
  *    key:
  *      A pointer to the item to be removed ( or, enough of the item
  *      that it can be found in the tree ).
@@ -2194,12 +2717,17 @@ function AVLInsert( tree: AVLTreePtr; data: {const} UnivPtr ): OSErr; external n
  *    itemSize:
  *      On return, the size of the data for the index-th item.  If you
  *      do not care about the size of the data, pass NULL.
+=======
+ *    data:
+ *      A pointer to the item to be inserted.
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 9.0 and later
  }
+<<<<<<< HEAD
 function AVLRemove( tree: AVLTreePtr; key: {const} UnivPtr; dataPtr: UnivPtr; var itemSize: ByteCount ): OSErr; external name '_AVLRemove';
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2298,10 +2826,39 @@ function AVLFind( tree: AVLTreePtr; key: {const} UnivPtr; dataPtr: UnivPtr; var 
  *    Thread safe
  *    AVLGetRefcon is thread safe as long as no other thread tries to
  *    dispose of the tree itself.
+=======
+function AVLInsert( tree: AVLTreePtr; data: {const} UnivPtr ): OSErr; external name '_AVLInsert';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{
+ *  AVLRemove()   *** DEPRECATED ***
+ *  
+ *  Summary:
+ *    Remove an item from the tree.
+ *  
+ *  Discussion:
+ *    Remove any item from the tree with the given key.  If dataPtr !=
+ *    nil, then copy the item's data to dataPtr before removing it from
+ *    the tree.  Before removing the item, call the tree's
+ *    disposeItemProc to let it release anything used by the data in
+ *    the tree.  It is not necessary to fill in a complete record for
+ *    key, only that the compareItemsProc return 0 when asked to
+ *    compare the data at key with the node in the tree to be deleted. 
+ *    If the item cannot be found in the tree, this will return
+ *    errItemNotFoundInTree.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *    AVLRemove is thread safe as long as no other thread tries to walk
+ *    or modify the tree by inserting or removing an item, or disposing
+ *    of the tree itself.
+>>>>>>> origin/cpstrnew
  *  
  *  Parameters:
  *    
  *    tree:
+<<<<<<< HEAD
  *      The tree to return the refcon for.
  *    
  *    refCon:
@@ -2409,10 +2966,34 @@ function InvokeAVLWalkUPP( tree: AVLTreePtr; dataPtr: {const} UnivPtr; visitStag
  *    Non-Carbon CFM:   in InterfaceLib 9.0 and later
  }
 function AVLInit( flags: UInt32; compareItemsProc: AVLCompareItemsUPP; sizeItemProc: AVLItemSizeUPP; disposeItemProc: AVLDisposeItemUPP; refCon: UnivPtr; var tree: AVLTreePtr ): OSErr; external name '_AVLInit';
+=======
+ *      The tree to return the index-th items for.
+ *    
+ *    key:
+ *      A pointer to the item to be removed ( or, enough of the item
+ *      that it can be found in the tree ).
+ *    
+ *    dataPtr:
+ *      An address in memory to return the data for the item, or NULL
+ *      if you don not want data returned.  The memory point to must be
+ *      large enough to hold all of the data for the item.
+ *    
+ *    itemSize:
+ *      On return, the size of the data for the index-th item.  If you
+ *      do not care about the size of the data, pass NULL.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 9.0 and later
+ }
+function AVLRemove( tree: AVLTreePtr; key: {const} UnivPtr; dataPtr: UnivPtr; var itemSize: ByteCount ): OSErr; external name '_AVLRemove';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
 {
+<<<<<<< HEAD
  *  AVLDispose()   *** DEPRECATED ***
  *  
  *  Summary:
@@ -2428,10 +3009,32 @@ function AVLInit( flags: UInt32; compareItemsProc: AVLCompareItemsUPP; sizeItemP
  *    Thread safe
  *    AVLDispose is thread safe provided no other thread is still using
  *    the tree being dispose.
+=======
+ *  AVLFind()   *** DEPRECATED ***
+ *  
+ *  Summary:
+ *    Remove an item from the tree.
+ *  
+ *  Discussion:
+ *    Find the item in the tree with the given key, and return it's
+ *    data in dataPtr ( if dataPtr != nil ), and it's size in *itemSize
+ *    ( if itemSize != nil ).  It is not necessary to fill in a
+ *    complete record for key, only that the compareItemsProc return 0
+ *    when asked to compare the data at key with the node in the tree
+ *    to be deleted.  If the item cannot be found in the tree, this
+ *    will return errItemNotFoundInTree.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *    AVLRemove is thread safe as long as no other thread tries to walk
+ *    or modify the tree by inserting or removing an item, or disposing
+ *    of the tree itself.
+>>>>>>> origin/cpstrnew
  *  
  *  Parameters:
  *    
  *    tree:
+<<<<<<< HEAD
  *      The tree to dispose, which was created with AVLInit().
  *    
  *    order:
@@ -2541,10 +3144,34 @@ function AVLWalk( tree: AVLTreePtr; walkProc: AVLWalkUPP; order: AVLOrder; walkR
  *    Non-Carbon CFM:   in InterfaceLib 9.0 and later
  }
 function AVLCount( tree: AVLTreePtr; var count: UInt32 ): OSErr; external name '_AVLCount';
+=======
+ *      The tree to return the index-th items for.
+ *    
+ *    key:
+ *      A pointer to the item to be found ( or, enough of the item that
+ *      it can be found in the tree ).
+ *    
+ *    dataPtr:
+ *      An address in memory to return the data for the item, or NULL
+ *      if you don not want data returned.  The memory point to must be
+ *      large enough to hold all of the data for the item.
+ *    
+ *    itemSize:
+ *      On return, the size of the data for the index-th item.  If you
+ *      do not care about the size of the data, pass NULL.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 9.0 and later
+ }
+function AVLFind( tree: AVLTreePtr; key: {const} UnivPtr; dataPtr: UnivPtr; var itemSize: ByteCount ): OSErr; external name '_AVLFind';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
 {
+<<<<<<< HEAD
  *  AVLGetIndItem()   *** DEPRECATED ***
  *  
  *  Summary:
@@ -2734,6 +3361,13 @@ function AVLFind( tree: AVLTreePtr; key: {const} UnivPtr; dataPtr: UnivPtr; var 
  *  Summary:
  *    Return the refCon set when the tree was created.
  *  
+=======
+ *  AVLGetRefcon()   *** DEPRECATED ***
+ *  
+ *  Summary:
+ *    Return the refCon set when the tree was created.
+ *  
+>>>>>>> origin/cpstrnew
  *  Discussion:
  *    Get the refCon for the given tree ( set in AVLInit ) and return
  *    it.
@@ -2766,6 +3400,7 @@ function AVLGetRefcon( tree: AVLTreePtr; var refCon: UnivPtr ): OSErr; external 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -2774,3 +3409,6 @@ end.
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

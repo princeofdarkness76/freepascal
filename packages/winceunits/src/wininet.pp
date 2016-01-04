@@ -1034,6 +1034,7 @@ function InternetReadFile(_hFile:HINTERNET;
                                 lpdwNumberOfBytesRead:LPDWORD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                ):BOOL; external WinInetDLL name 'InternetReadFile';
 =======
                                ):BOOL; external WinInetDLL name 'InternetREadFile';
@@ -1041,6 +1042,9 @@ function InternetReadFile(_hFile:HINTERNET;
 =======
                                ):BOOL; external WinInetDLL name 'InternetREadFile';
 >>>>>>> origin/fixes_2_2
+=======
+                               ):BOOL; external WinInetDLL name 'InternetReadFile';
+>>>>>>> origin/cpstrnew
 
 function InternetReadFileExA(_hFile:HINTERNET;
                                       lpBuffersOut:LPINTERNET_BUFFERSA;
@@ -3233,6 +3237,7 @@ const
                                         TRACK_OFFLINE_CACHE_ENTRY or
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                         TRACK_ONLINE_CACHE_ENTRY or
 =======
                                         TRACK_ONLINE_CACHE_ENTRY or       
@@ -3240,6 +3245,9 @@ const
 =======
                                         TRACK_ONLINE_CACHE_ENTRY or       
 >>>>>>> origin/fixes_2_2
+=======
+                                        TRACK_ONLINE_CACHE_ENTRY or
+>>>>>>> origin/cpstrnew
                                         STICKY_CACHE_ENTRY;
 
 
@@ -4170,6 +4178,7 @@ const
       INTERNET_CONNECTION_PROXY           = $04;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       INTERNET_CONNECTION_MODEM_BUSY      = $08;  // no longer used
 =======
       INTERNET_CONNECTION_MODEM_BUSY      = $08;  // no longer used 
@@ -4177,6 +4186,9 @@ const
 =======
       INTERNET_CONNECTION_MODEM_BUSY      = $08;  // no longer used 
 >>>>>>> origin/fixes_2_2
+=======
+      INTERNET_CONNECTION_MODEM_BUSY      = $08;  // no longer used
+>>>>>>> origin/cpstrnew
       INTERNET_RAS_INSTALLED              = $10;
       INTERNET_CONNECTION_OFFLINE         = $20;
       INTERNET_CONNECTION_CONFIGURED      = $40;

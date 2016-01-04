@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       CommonPanels/ColorPicker.h
  
      Contains:   Color Picker package Interfaces.
@@ -32,11 +33,15 @@
 =======
      File:       CommonPanels/ColorPicker.h
 >>>>>>> origin/fixes_2.4
+=======
+     File:       CommonPanels/ColorPicker.h
+>>>>>>> origin/cpstrnew
  
      Contains:   Color Picker package Interfaces.
  
      Version:    CommonPanels-91~177
  
+<<<<<<< HEAD
 <<<<<<< HEAD
      Copyright:  © 1987-2002 by Apple Computer, Inc., all rights reserved
 <<<<<<< HEAD
@@ -46,6 +51,9 @@
 =======
      Copyright:  © 1987-2008 by Apple Computer, Inc., all rights reserved
 >>>>>>> origin/fixes_2.4
+=======
+     Copyright:  © 1987-2008 by Apple Computer, Inc., all rights reserved
+>>>>>>> origin/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -55,6 +63,7 @@
                      http://bugs.freepascal.org
  
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -86,6 +95,8 @@
                      http://www.freepascal.org/bugs.html
  
 }
+=======
+>>>>>>> origin/cpstrnew
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {
     Modified for use with Free Pascal
@@ -95,12 +106,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -112,6 +127,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -126,6 +142,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -141,6 +161,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -151,6 +172,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -158,13 +182,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -172,6 +200,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -180,8 +210,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -192,6 +225,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -212,6 +246,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -220,12 +256,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -233,6 +272,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -252,6 +292,9 @@ interface
 =======
 =======
 >>>>>>> origin/cpstrnew
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -259,7 +302,10 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
@@ -268,6 +314,7 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
@@ -305,6 +352,11 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -320,6 +372,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -327,6 +380,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
@@ -342,6 +397,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -349,6 +405,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
@@ -361,6 +419,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -387,6 +446,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -402,15 +466,19 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
@@ -442,10 +510,15 @@ interface
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 >>>>>>> origin/cpstrnew
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> origin/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$elsec}
@@ -543,6 +616,11 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -571,6 +649,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -579,6 +658,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -591,6 +672,9 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 uses MacTypes,ColorSyncDeprecated,MixedMode,QuickdrawTypes,Events;
 {$endc} {not MACOSALLINCLUDE}
 
@@ -642,6 +726,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -657,16 +742,22 @@ const
 =======
 >>>>>>> graemeg/cpstrnew
 
+=======
+
+>>>>>>> origin/cpstrnew
 const
 	kDefaultWidth = 383;
 	kDefaultHeight = 238;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 { Since OS X uses the Cocoa NSColorPanel, the flags below are no longer used. }
@@ -730,6 +821,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	Picker = ^OpaquePicker; { an opaque type }
 	OpaquePicker = record end;
 =======
@@ -744,6 +836,9 @@ type
 =======
 	Picker = ^SInt32; { an opaque type }
 >>>>>>> origin/cpstrnew
+=======
+	Picker = ^SInt32; { an opaque type }
+>>>>>>> origin/cpstrnew
 	PickerPtr = ^Picker;  { when a var xx:Picker parameter can be nil, it is changed to xx: PickerPtr }
 { Since OS X uses the Cocoa NSColorPanel, the struct below is no longer used. }
 type
@@ -755,6 +850,7 @@ type
 		pasteItem: SInt16;
 		clearItem: SInt16;
 		undoItem: SInt16;
+<<<<<<< HEAD
 	end;
 { The following proc ptr is the only supported way to communicate with the Cocoa NSColorPanel on OS X. }
 type
@@ -910,8 +1006,25 @@ type
 		mInfo: PickerMenuItemInfo;                  { Ignored }
 		newColorChosen: Boolean;
 		reserved: UInt8;               { Must be 0 }
+=======
+>>>>>>> origin/cpstrnew
 	end;
+{ The following proc ptr is the only supported way to communicate with the Cocoa NSColorPanel on OS X. }
+type
+	NColorChangedProcPtr = procedure( userData: SRefCon; var newColor: NPMColor );
+	NColorChangedUPP = NColorChangedProcPtr;
+{
+ *  NewNColorChangedUPP()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function NewNColorChangedUPP( userRoutine: NColorChangedProcPtr ): NColorChangedUPP; external name '_NewNColorChangedUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
 {
  *  Fix2SmallFract()
@@ -924,11 +1037,24 @@ type
 function Fix2SmallFract( f: Fixed ): SmallFract; external name '_Fix2SmallFract';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
-
+=======
 {
- *  SmallFract2Fix()
+ *  DisposeNColorChangedUPP()
  *  
  *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeNColorChangedUPP( userUPP: NColorChangedUPP ); external name '_DisposeNColorChangedUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
+
+{
+ *  InvokeNColorChangedUPP()
+ *  
+ *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -937,10 +1063,31 @@ function SmallFract2Fix( s: SmallFract ): Fixed; external name '_SmallFract2Fix'
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure InvokeNColorChangedUPP( userData: SRefCon; var newColor: NPMColor; userUPP: NColorChangedUPP ); external name '_InvokeNColorChangedUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+{$ifc TARGET_CPU_64}
+
+type
+	ColorChangedUPP = UnivPtr;
+	UserEventUPP = UnivPtr;
+{$elsec}
+type
+	ColorChangedProcPtr = procedure( userData: SInt32; var newColor: PMColor );
+	UserEventProcPtr = function( var event: EventRecord ): Boolean;
+	ColorChangedUPP = ColorChangedProcPtr;
+	UserEventUPP = UserEventProcPtr;
+>>>>>>> origin/cpstrnew
 {
- *  CMY2RGB()
+ *  NewColorChangedUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -949,10 +1096,20 @@ procedure CMY2RGB( const (*var*) cColor: CMYColor; var rColor: RGBColor ); exter
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function NewColorChangedUPP( userRoutine: ColorChangedProcPtr ): ColorChangedUPP; external name '_NewColorChangedUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
- *  RGB2CMY()
+ *  NewUserEventUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -961,10 +1118,20 @@ procedure RGB2CMY( const (*var*) rColor: RGBColor; var cColor: CMYColor ); exter
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function NewUserEventUPP( userRoutine: UserEventProcPtr ): UserEventUPP; external name '_NewUserEventUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
- *  HSL2RGB()
+ *  DisposeColorChangedUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -973,10 +1140,20 @@ procedure HSL2RGB( const (*var*) hColor: HSLColor; var rColor: RGBColor ); exter
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeColorChangedUPP( userUPP: ColorChangedUPP ); external name '_DisposeColorChangedUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
- *  RGB2HSL()
+ *  DisposeUserEventUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -985,10 +1162,20 @@ procedure RGB2HSL( const (*var*) rColor: RGBColor; var hColor: HSLColor ); exter
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeUserEventUPP( userUPP: UserEventUPP ); external name '_DisposeUserEventUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
- *  HSV2RGB()
+ *  InvokeColorChangedUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -997,10 +1184,20 @@ procedure HSV2RGB( const (*var*) hColor: HSVColor; var rColor: RGBColor ); exter
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure InvokeColorChangedUPP( userData: SInt32; var newColor: PMColor; userUPP: ColorChangedUPP ); external name '_InvokeColorChangedUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
- *  RGB2HSV()
+ *  InvokeUserEventUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -1011,10 +1208,63 @@ procedure RGB2HSV( const (*var*) rColor: RGBColor; var hColor: HSVColor ); exter
 
 {$endc} {not TARGET_CPU_64}
 
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function InvokeUserEventUPP( var event: EventRecord; userUPP: UserEventUPP ): Boolean; external name '_InvokeUserEventUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+{$endc} {TARGET_CPU_64}
+
+{$ifc not TARGET_CPU_64}
+type
+	ColorPickerInfo = record
+		theColor: PMColor;
+		dstProfile: CMProfileHandle;
+		flags: UInt32;
+		placeWhere: DialogPlacementSpec;
+		dialogOrigin: Point;
+		pickerType: OSType;
+		eventProc: UserEventUPP;
+		colorProc: ColorChangedUPP;
+		colorProcData: UInt32;
+		prompt: Str255;
+		mInfo: PickerMenuItemInfo;
+		newColorChosen: Boolean;
+		filler: SInt8;
+	end;
+{$endc} {not TARGET_CPU_64}
+
+type
+	NColorPickerInfo = record
+		theColor: NPMColor;
+		dstProfile: CMProfileRef;             { Currently ignored }
+		flags: UInt32;                  { Currently ignored }
+		placeWhere: DialogPlacementSpec;            { Currently ignored }
+		dialogOrigin: Point;           { Currently ignored }
+		pickerType: OSType;             { Currently ignored }
+{$ifc not TARGET_CPU_64}
+
+		eventProc: UserEventUPP;              { Ignored }
+{$endc} {not TARGET_CPU_64}
+
+		colorProc: NColorChangedUPP;
+		colorProcData: URefCon;
+		prompt: Str255;                 { Currently ignored }
+		mInfo: PickerMenuItemInfo;                  { Ignored }
+		newColorChosen: Boolean;
+		reserved: UInt8;               { Must be 0 }
+	end;
+
+{$ifc not TARGET_CPU_64}
+>>>>>>> origin/cpstrnew
 {
- *  GetColor()
+ *  Fix2SmallFract()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -1024,12 +1274,23 @@ function GetColor( where: Point; const (*var*) prompt: Str255; const (*var*) inC
 
 
 {$ifc not TARGET_CPU_64}
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function Fix2SmallFract( f: Fixed ): SmallFract; external name '_Fix2SmallFract';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
 {
- *  PickColor()
+ *  SmallFract2Fix()
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
  *    Non-Carbon CFM:   in ColorPickerLib 2.0 and later
  }
 function PickColor( var theColorInfo: ColorPickerInfo ): OSErr; external name '_PickColor';
@@ -1038,10 +1299,19 @@ function PickColor( var theColorInfo: ColorPickerInfo ): OSErr; external name '_
 
 {$endc} {not TARGET_CPU_64}
 
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function SmallFract2Fix( s: SmallFract ): Fixed; external name '_SmallFract2Fix';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
 {
- *  NPickColor()
+ *  CMY2RGB()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ColorPickerLib 2.1 and later
@@ -1188,10 +1458,21 @@ type
 type
 	NColorChangedProcPtr = procedure( userData: SRefCon; var newColor: NPMColor );
 	NColorChangedUPP = NColorChangedProcPtr;
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure CMY2RGB( const (*var*) cColor: CMYColor; var rColor: RGBColor ); external name '_CMY2RGB';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
 {
- *  NewNColorChangedUPP()
+ *  RGB2CMY()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   available as macro/inline
@@ -1265,10 +1546,57 @@ function NewUserEventUPP( userRoutine: UserEventProcPtr ): UserEventUPP; externa
 procedure DisposeColorChangedUPP( userUPP: ColorChangedUPP ); external name '_DisposeColorChangedUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure RGB2CMY( const (*var*) rColor: RGBColor; var cColor: CMYColor ); external name '_RGB2CMY';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
 {
- *  DisposeUserEventUPP()
+ *  HSL2RGB()
  *  
  *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure HSL2RGB( const (*var*) hColor: HSLColor; var rColor: RGBColor ); external name '_HSL2RGB';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  RGB2HSL()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure RGB2HSL( const (*var*) rColor: RGBColor; var hColor: HSLColor ); external name '_RGB2HSL';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  HSV2RGB()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure HSV2RGB( const (*var*) hColor: HSVColor; var rColor: RGBColor ); external name '_HSV2RGB';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
+{
+ *  RGB2HSV()
+ *  
+ *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   available as macro/inline
@@ -1276,12 +1604,25 @@ procedure DisposeColorChangedUPP( userUPP: ColorChangedUPP ); external name '_Di
 procedure DisposeUserEventUPP( userUPP: UserEventUPP ); external name '_DisposeUserEventUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure RGB2HSV( const (*var*) rColor: RGBColor; var hColor: HSVColor ); external name '_RGB2HSV';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{$endc} {not TARGET_CPU_64}
+
+>>>>>>> origin/cpstrnew
 {
- *  InvokeColorChangedUPP()
+ *  GetColor()
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
  *    Non-Carbon CFM:   available as macro/inline
  }
 procedure InvokeColorChangedUPP( userData: SInt32; var newColor: PMColor; userUPP: ColorChangedUPP ); external name '_InvokeColorChangedUPP';
@@ -1474,6 +1815,37 @@ function PickColor( var theColorInfo: ColorPickerInfo ): OSErr; external name '_
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ColorPickerLib 2.1 and later
  }
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function GetColor( where: Point; const (*var*) prompt: Str255; const (*var*) inColor: RGBColor; var outColor: RGBColor ): Boolean; external name '_GetColor';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{$ifc not TARGET_CPU_64}
+{
+ *  PickColor()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in ColorPickerLib 2.0 and later
+ }
+function PickColor( var theColorInfo: ColorPickerInfo ): OSErr; external name '_PickColor';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{$endc} {not TARGET_CPU_64}
+
+{
+ *  NPickColor()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in ColorPickerLib 2.1 and later
+ }
+>>>>>>> origin/cpstrnew
 function NPickColor( var theColorInfo: NColorPickerInfo ): OSErr; external name '_NPickColor';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
@@ -1485,9 +1857,13 @@ function NPickColor( var theColorInfo: NColorPickerInfo ): OSErr; external name 
 end.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

@@ -18,6 +18,7 @@ name=fcl-async
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 version=3.1.1
 =======
 version=2.5.1
@@ -38,6 +39,9 @@ packages=rtl fpmkunit
 =======
 >>>>>>> origin/fixes_2_2
 version=2.2.5
+=======
+version=2.5.1
+>>>>>>> origin/cpstrnew
 
 [target]
 units=libasync fpasync
@@ -67,6 +71,7 @@ sourcedir_haiku=src/unix
 sourcedir_freebsd=src/unix
 sourcedir_darwin=src/unix
 sourcedir_iphonesim=src/unix
+<<<<<<< HEAD
 =======
 sourcedir_freebsd=src/unix
 sourcedir_darwin=src/unix
@@ -75,6 +80,8 @@ sourcedir_darwin=src/unix
 sourcedir_freebsd=src/unix
 sourcedir_darwin=src/unix
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 sourcedir_solaris=src/unix
 sourcedir_netbsd=src/unix
 sourcedir_openbsd=src/unix
@@ -87,6 +94,7 @@ includedir_haiku=src/unix
 includedir_freebsd=src/unix
 includedir_darwin=src/unix
 includedir_iphonesim=src/unix
+<<<<<<< HEAD
 =======
 includedir_freebsd=src/unix
 includedir_darwin=src/unix
@@ -95,6 +103,8 @@ includedir_darwin=src/unix
 includedir_freebsd=src/unix
 includedir_darwin=src/unix
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 includedir_solaris=src/unix
 includedir_netbsd=src/unix
 includedir_openbsd=src/unix

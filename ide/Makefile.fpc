@@ -12,6 +12,7 @@ packages=rtl fpmkunit
 name=ide
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 version=2.5.1
 =======
 version=2.2.5
@@ -19,6 +20,9 @@ version=2.2.5
 =======
 version=2.2.5
 >>>>>>> origin/fixes_2_2
+=======
+version=2.5.1
+>>>>>>> origin/cpstrnew
 
 [target]
 dirs=compiler
@@ -181,7 +185,7 @@ SYSLIBDIR=/lib /usr/lib /usr/local/lib
 # Detect if libgdb.a is available
 override LIBGDBFILE=$(firstword $(wildcard $(addsuffix /libgdb.a,$(SYSLIBDIR))))
 ifneq (${LIBGDBFILE},)
-$(warning Using system sefault libgdb file located in ${LIBGDBFILE})
+$(warning Using system default libgdb file located in ${LIBGDBFILE})
 GDBLIBDIR=$(dir ${LIBGDBFILE})
 endif
 endif
@@ -207,9 +211,13 @@ GDBLIBINCCOND=-dUSE_GDBLIBINC -I$(GDBLIBDIR)
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 =======
+=======
+endif
+>>>>>>> origin/cpstrnew
 endif
 >>>>>>> origin/cpstrnew
 endif

@@ -92,17 +92,21 @@ type
 =======
 >>>>>>> origin/fixes_2_2
     procedure StoreFieldDefs(AFieldDefs : TFieldDefs); override;
-    procedure StoreRecord(ADataset : TBufDataset; ARowState : TRowState; AUpdOrder : integer = 0); override;
+    procedure StoreRecord(ADataset : TCustomBufDataset; ARowState : TRowState; AUpdOrder : integer = 0); override;
     procedure FinalizeStoreRecords; override;
     procedure LoadFieldDefs(AFieldDefs : TFieldDefs); override;
     procedure InitLoadRecords; override;
     function GetCurrentRecord : boolean; override;
     function GetRecordRowState(out AUpdOrder : Integer) : TRowState; override;
+<<<<<<< HEAD
     procedure RestoreRecord(ADataset : TBufDataset); override;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    procedure RestoreRecord(ADataset : TCustomBufDataset); override;
+>>>>>>> origin/cpstrnew
     procedure GotoNextRecord; override;
     class function RecognizeStream(AStream : TStream) : boolean; override;
   end;
@@ -537,6 +541,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TXMLDatapacketReader.RestoreRecord;
 var FieldNr      : integer;
     AFieldNode   : TDomNode;
@@ -606,6 +611,9 @@ var FieldNr : Integer;
 =======
 >>>>>>> origin/fixes_2_2
 procedure TXMLDatapacketReader.RestoreRecord(ADataset : TBufDataset);
+=======
+procedure TXMLDatapacketReader.RestoreRecord(ADataset : TCustomBufDataset);
+>>>>>>> origin/cpstrnew
 var FieldNr    : integer;
     AFieldNode : TDomNode;
 begin
@@ -619,7 +627,7 @@ begin
     end;
 end;
 
-procedure TXMLDatapacketReader.StoreRecord(ADataset : TBufDataset; ARowState : TRowState; AUpdOrder : integer = 0);
+procedure TXMLDatapacketReader.StoreRecord(ADataset : TCustomBufDataset; ARowState : TRowState; AUpdOrder : integer = 0);
 var FieldNr : Integer;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2

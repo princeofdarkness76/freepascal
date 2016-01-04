@@ -44,6 +44,7 @@ unit cpupara;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           function  get_funcretloc(p : tabstractprocdef; side: tcallercallee; forcetempdef: tdef): tcgpara;override;
 =======
           function  get_funcretloc(p : tabstractprocdef; side: tcallercallee; def: tdef): tcgpara;override;
@@ -54,6 +55,9 @@ unit cpupara;
 =======
           function  get_funcretloc(p : tabstractprocdef; side: tcallercallee; def: tdef): tcgpara;override;
 >>>>>>> graemeg/cpstrnew
+=======
+          function  get_funcretloc(p : tabstractprocdef; side: tcallercallee; def: tdef): tcgpara;override;
+>>>>>>> origin/cpstrnew
 =======
           function  get_funcretloc(p : tabstractprocdef; side: tcallercallee; def: tdef): tcgpara;override;
 >>>>>>> origin/cpstrnew
@@ -225,6 +229,7 @@ unit cpupara;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
            if (nextintreg>RS_R9) and
 =======
            if (nextintreg<=RS_R3) and
@@ -235,6 +240,9 @@ unit cpupara;
 =======
            if (nextintreg<=RS_R3) and
 >>>>>>> graemeg/cpstrnew
+=======
+           if (nextintreg<=RS_R3) and
+>>>>>>> origin/cpstrnew
 =======
            if (nextintreg<=RS_R3) and
 >>>>>>> origin/cpstrnew
@@ -435,6 +443,7 @@ unit cpupara;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 <<<<<<< HEAD
@@ -475,6 +484,10 @@ unit cpupara;
 
 
 >>>>>>> origin/cpstrnew
+=======
+
+
+>>>>>>> origin/cpstrnew
     procedure tavrparamanager.create_funcretloc_info(p : tabstractprocdef; side: tcallercallee);
       begin
         p.funcretloc[side]:=get_funcretloc(p,side,p.returndef);
@@ -482,7 +495,10 @@ unit cpupara;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     function  tavrparamanager.get_funcretloc(p : tabstractprocdef; side: tcallercallee; def: tdef): tcgpara;
@@ -529,11 +545,14 @@ unit cpupara;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
           begin
@@ -550,6 +569,7 @@ unit cpupara;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                       paraloc^.def:=u32inttype;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -557,6 +577,8 @@ unit cpupara;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                       paraloc:=result.add_location;
@@ -567,6 +589,7 @@ unit cpupara;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                       paraloc^.def:=u32inttype;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -574,6 +597,8 @@ unit cpupara;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                     end;
@@ -587,6 +612,7 @@ unit cpupara;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                       paraloc^.def:=u32inttype;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -594,6 +620,8 @@ unit cpupara;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                     end;
@@ -610,6 +638,7 @@ unit cpupara;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 paraloc^.def:=result.def;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -617,6 +646,8 @@ unit cpupara;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
               end;
@@ -682,6 +713,7 @@ unit cpupara;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 paraloc^.def:=u32inttype;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -689,6 +721,8 @@ unit cpupara;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                 paraloc:=result.add_location;
@@ -699,6 +733,7 @@ unit cpupara;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 paraloc^.def:=u32inttype;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -708,11 +743,14 @@ unit cpupara;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
               end
             else
               begin
                 paraloc^.loc:=LOC_REGISTER;
                 paraloc^.register:=NR_FUNCTION_RETURN_REG;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -732,6 +770,10 @@ unit cpupara;
                 paraloc^.size:=OS_32;
               end;
 >>>>>>> graemeg/cpstrnew
+=======
+                paraloc^.size:=OS_32;
+              end;
+>>>>>>> origin/cpstrnew
 =======
                 paraloc^.size:=OS_32;
               end;

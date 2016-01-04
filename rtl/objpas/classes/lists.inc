@@ -42,6 +42,28 @@ end;
 =======
 >>>>>>> origin/fixes_2_2
 {****************************************************************************}
+{*                           TFPListEnumerator                              *}
+{****************************************************************************}
+
+constructor TFPListEnumerator.Create(AList: TFPList);
+begin
+  inherited Create;
+  FList := AList;
+  FPosition := -1;
+end;
+
+function TFPListEnumerator.GetCurrent: Pointer;
+begin
+  Result := FList[FPosition];
+end;
+
+function TFPListEnumerator.MoveNext: Boolean;
+begin
+  Inc(FPosition);
+  Result := FPosition < FList.Count;
+end;
+
+{****************************************************************************}
 {*                           TFPList                                        *}
 {****************************************************************************}
 
@@ -560,6 +582,7 @@ end;
 {$endif}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 
 procedure TFPList.MergeMove (aList : TFPList);
@@ -679,7 +702,29 @@ begin
       l.Free;
     end;
 end;
+=======
+{****************************************************************************}
+{*                TListEnumerator                                           *}
+{****************************************************************************}
+>>>>>>> origin/cpstrnew
 
+constructor TListEnumerator.Create(AList: TList);
+begin
+  inherited Create;
+  FList := AList;
+  FPosition := -1;
+end;
+
+function TListEnumerator.GetCurrent: Pointer;
+begin
+  Result := FList[FPosition];
+end;
+
+function TListEnumerator.MoveNext: Boolean;
+begin
+  Inc(FPosition);
+  Result := FPosition < FList.Count;
+end;
 
 procedure TFPList.Assign (ListA: TFPList; AOperator: TListAssignOp=laCopy; ListB: TFPList=nil);
 begin
@@ -932,6 +977,7 @@ end;
 Procedure TList.AddList(AList : TList);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 var
   I: Integer;
 begin
@@ -965,10 +1011,24 @@ begin
 end;
 >>>>>>> graemeg/fixes_2_2
 =======
+=======
+var
+  I: Integer;
+>>>>>>> origin/cpstrnew
 begin
+  { this only does FList.AddList(AList.FList), avoiding notifications }
   FList.AddList(AList.FList);
+<<<<<<< HEAD
 end;
 >>>>>>> origin/fixes_2_2
+=======
+
+  { make lnAdded notifications }
+  for I := 0 to AList.Count - 1 do
+    if AList[I] <> nil then
+      Notify(AList[I], lnAdded);
+end;            
+>>>>>>> origin/cpstrnew
 
 procedure TList.Clear;
 

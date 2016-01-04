@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       HIServices/InternetConfig.h
  
      Contains:   Internet Config interfaces
@@ -32,11 +33,15 @@
 =======
      File:       HIServices/InternetConfig.h
 >>>>>>> origin/fixes_2.4
+=======
+     File:       HIServices/InternetConfig.h
+>>>>>>> origin/cpstrnew
  
      Contains:   Internet Config interfaces
  
      Version:    HIServices-308~1
  
+<<<<<<< HEAD
 <<<<<<< HEAD
      Copyright:  � 1999-2002 by Apple Computer, Inc., all rights reserved.
 <<<<<<< HEAD
@@ -46,6 +51,9 @@
 =======
      Copyright:  � 1999-2008 by Apple Computer, Inc., all rights reserved.
 >>>>>>> origin/fixes_2.4
+=======
+     Copyright:  � 1999-2008 by Apple Computer, Inc., all rights reserved.
+>>>>>>> origin/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -55,6 +63,7 @@
                      http://bugs.freepascal.org
  
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -86,6 +95,8 @@
                      http://www.freepascal.org/bugs.html
  
 }
+=======
+>>>>>>> origin/cpstrnew
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {
     Modified for use with Free Pascal
@@ -95,12 +106,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -112,6 +127,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -126,6 +142,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -141,6 +161,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -151,6 +172,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -158,13 +182,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -172,6 +200,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -180,8 +210,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -192,6 +225,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -212,6 +246,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -220,12 +256,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -236,12 +275,16 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -471,13 +514,18 @@ interface
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -528,6 +576,7 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc TARGET_CPU_PPC_64 := FALSE}
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -535,6 +584,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -563,6 +614,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -571,6 +623,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -581,6 +635,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,Files,Aliases,Components,AEDataModel;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -624,11 +679,15 @@ uses MacTypes,Files,Aliases,Components,AEDataModel;
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 
 
 {$ifc TARGET_OS_MAC}
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {
     IMPORTANT NOTES ABOUT THE C HEADERS
@@ -665,6 +724,8 @@ uses MacTypes,Files,Aliases,Components,AEDataModel;
 
 }
 
+=======
+>>>>>>> origin/cpstrnew
 {
     IMPORTANT NOTES ABOUT THE C HEADERS
     -----------------------------------
@@ -682,6 +743,7 @@ uses MacTypes,Files,Aliases,Components,AEDataModel;
         or greater.]
 }
 {*********************************************************************************************}
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -692,6 +754,8 @@ uses MacTypes,Files,Aliases,Components,AEDataModel;
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 
 {$ALIGN MAC68K}
@@ -705,6 +769,9 @@ uses MacTypes,Files,Aliases,Components,AEDataModel;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 const
 	icPrefNotFoundErr = -666; { preference not found (duh!)  }
 	icPermErr = -667; { cannot set preference  }
@@ -722,6 +789,7 @@ const
 {***********************************************************************************************
   IC versions (not necessarily, but historically, from a component)
  ***********************************************************************************************}
+<<<<<<< HEAD
 
 const
 	kICComponentInterfaceVersion0 = $00000000; { IC >= 1.0  }
@@ -857,12 +925,45 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+=======
+
+const
+	kICComponentInterfaceVersion0 = $00000000; { IC >= 1.0  }
+	kICComponentInterfaceVersion1 = $00010000; { IC >= 1.1  }
+	kICComponentInterfaceVersion2 = $00020000; { IC >= 1.2  }
+	kICComponentInterfaceVersion3 = $00030000; { IC >= 2.0  }
+	kICComponentInterfaceVersion4 = $00040000; { IC >= 2.5  }
+	kICComponentInterfaceVersion = kICComponentInterfaceVersion4; { current version number is 4  }
+
+{***********************************************************************************************
+  opaque type for preference reference
+ ***********************************************************************************************}
+
+type
+	ICInstance = ^SInt32; { an opaque type }
+	ICInstancePtr = ^ICInstance;  { when a var xx:ICInstance parameter can be nil, it is changed to xx: ICInstancePtr }
+{$ifc not TARGET_CPU_64}
+{***********************************************************************************************
+  a record that specifies a folder, an array of such records, and a pointer to such an array
+ ***********************************************************************************************}
+type
+	ICDirSpec = record
+		vRefNum: SInt16;
+		dirID: SIGNEDLONG;
+	end;
+	ICDirSpecPtr = ^ICDirSpec;
+
+	ICDirSpecArray = array [0..3] of ICDirSpec;
+	ICDirSpecArrayPtr = ^ICDirSpecArray;
+{$endc} {not TARGET_CPU_64}
+>>>>>>> origin/cpstrnew
 
 {***********************************************************************************************
   preference attributes type, bit number constants, and mask constants
  ***********************************************************************************************}
 type
 	ICAttr = UInt32;
+<<<<<<< HEAD
 const
 	kICAttrLockedBit = 0;
 	kICAttrVolatileBit = 1;
@@ -936,11 +1037,33 @@ type
 	ICDirSpecArray = array [0..3] of ICDirSpec;
 	ICDirSpecArrayPtr = ^ICDirSpecArray;
 {$endc} {not TARGET_CPU_64}
+=======
+const
+	kICAttrLockedBit = 0;
+	kICAttrVolatileBit = 1;
+
+const
+	kICAttrNoChange = $FFFFFFFF; { pass this to ICSetPref to tell it not to change the attributes  }
+	kICAttrLockedMask = $00000001;
+	kICAttrVolatileMask = $00000002;
+
+{***********************************************************************************************
+  permissions for use with ICBegin
+ ***********************************************************************************************}
+type
+	ICPerm = UInt8;
+const
+	icNoPerm = 0;
+	icReadOnlyPerm = 1;
+	icReadWritePerm = 2;
+
+>>>>>>> origin/cpstrnew
 
 {***********************************************************************************************
   preference attributes type, bit number constants, and mask constants
  ***********************************************************************************************}
 type
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -985,6 +1108,13 @@ type
 const
 	kICNilProfileID = 0;
 
+=======
+	ICProfileID = SInt32;
+	ICProfileIDPtr = ^ICProfileID;
+const
+	kICNilProfileID = 0;
+
+>>>>>>> origin/cpstrnew
 {***********************************************************************************************
   other constants
  ***********************************************************************************************}
@@ -1014,6 +1144,7 @@ const
 	keyICEditPreferenceDestination = FourCharCode('dest');
 
 {***********************************************************************************************
+<<<<<<< HEAD
 =======
 	ICProfileID = SInt32;
 	ICProfileIDPtr = ^ICProfileID;
@@ -1221,6 +1352,102 @@ type
 	ICMapEntryHandle = ^ICMapEntryPtr;
 <<<<<<< HEAD
 const
+=======
+  constants for use with ICGetVersion
+ ***********************************************************************************************}
+const
+	kICComponentVersion = 0;    { Return a component version, comparable to kICComponentInterfaceVersion  }
+	kICNumVersion = 1;     { Return a NumVersion structure  }
+
+{***********************************************************************************************
+  types and constants for use with kICDocumentFont, et. al.
+ ***********************************************************************************************}
+type
+	ICFontRecord = record
+		size: SInt16;
+		face: SInt8;
+		pad: SInt8;
+		font: Str255;
+	end;
+	ICFontRecordPtr = ^ICFontRecord;
+type
+	ICFontRecordHandle = ^ICFontRecordPtr;
+
+{***********************************************************************************************
+  types and constants for use with kICCharacterSet, et. al.
+ ***********************************************************************************************}
+type
+	ICCharTable = record
+		netToMac: packed array [0..255] of UInt8;
+		macToNet: packed array [0..255] of UInt8;
+	end;
+	ICCharTablePtr = ^ICCharTable;
+type
+	ICCharTableHandle = ^ICCharTablePtr;
+
+{***********************************************************************************************
+  types and constants for use with kICHelper, et. al.
+ ***********************************************************************************************}
+type
+	ICAppSpec = record
+		fCreator: OSType;
+		name: Str63;
+	end;
+	ICAppSpecPtr = ^ICAppSpec;
+type
+	ICAppSpecHandle = ^ICAppSpecPtr;
+	ICAppSpecList = record
+		numberOfItems: SInt16;
+		appSpecs: array [0..0] of ICAppSpec;
+	end;
+	ICAppSpecListPtr = ^ICAppSpecList;
+type
+	ICAppSpecListHandle = ^ICAppSpecListPtr;
+
+{***********************************************************************************************
+  types and constants for use with kICDownloadFolder, et. al.
+ ***********************************************************************************************}
+type
+	ICFileSpec = record
+		volName: Str31;                { this field should be ignored, use the alias }
+		volCreationDate: SInt32;        { this field should be ignored, use the alias }
+		fss: FSSpec;                    { this field should be ignored, use the alias }
+		alias: AliasRecord;
+                                              { plus extra data, aliasSize 0 means no alias manager present when}
+                                              { ICFileSpecification was created}
+	end;
+	ICFileSpecPtr = ^ICFileSpec;
+type
+	ICFileSpecHandle = ^ICFileSpecPtr;
+const
+	kICFileSpecHeaderSize = SizeOf(ICFileSpec) - sizeof(AliasRecord);
+
+{***********************************************************************************************
+  types and constants for use with ICMapFilename, et. al.
+ ***********************************************************************************************}
+type
+	ICMapEntryFlags = SInt32;
+	ICFixedLength = SInt16;
+	ICMapEntry = record
+		totalLength: SInt16;
+		fixedLength: ICFixedLength;
+		version: SInt16;
+		fileType: OSType;
+		fileCreator: OSType;
+		postCreator: OSType;
+		flags: ICMapEntryFlags;
+                                              { variable part starts here}
+		extension: Str255;
+		creatorAppName: Str255;
+		postAppName: Str255;
+		MIMEType: Str255;
+		entryName: Str255;
+	end;
+	ICMapEntryPtr = ^ICMapEntry;
+type
+	ICMapEntryHandle = ^ICMapEntryPtr;
+const
+>>>>>>> origin/cpstrnew
 	kICMapFixedLength = 22;
 
 const
@@ -1269,6 +1496,7 @@ type
 	ICServicesPtr = ^ICServices;
 type
 	ICServicesHandle = ^ICServicesPtr;
+<<<<<<< HEAD
 =======
 
 const
@@ -8107,10 +8335,282 @@ const
 const
 	kICSocksHost = 'SocksHost';
 {
+=======
+{***********************************************************************************************
+  keys
+ ***********************************************************************************************}
+{ 
+    key reserved for use by Internet Config 
+}
+const
+	kICReservedKey = 'kICReservedKey';
+{
+    STR# -- formatted, list of Archie servers  
+}
+const
+	kICArchieAll = 'ArchieAll';
+{
+    PString -- formatted, preferred Archie server   
+}
+const
+	kICArchiePreferred = 'ArchiePreferred';
+{
+    ICCharTable -- Mac-to-Net and Net-to-Mac character translation   
+}
+const
+	kICCharacterSet = 'CharacterSet';
+{
+    ICFontRecord -- font used for proportional text   
+}
+const
+	kICDocumentFont = 'DocumentFont';
+{
+    ICFileSpec -- where to put newly downloaded files   
+}
+const
+	kICDownloadFolder = 'DownloadFolder';
+{
+    PString -- user@host.domain, email address of user, ie return address   
+}
+const
+	kICEmail = 'Email';
+{
+    PString -- host.domain, default FTP server   
+}
+const
+	kICFTPHost = 'FTPHost';
+{
+    PString -- second level FTP proxy authorisation   
+}
+const
+	kICFTPProxyAccount = 'FTPProxyAccount';
+{
+    PString -- host.domain   
+}
+const
+	kICFTPProxyHost = 'FTPProxyHost';
+{
+    PString -- scrambled, password for FTPProxyUser   
+}
+const
+	kICFTPProxyPassword = 'FTPProxyPassword';
+{
+    PString -- first level FTP proxy authorisation   
+}
+const
+	kICFTPProxyUser = 'FTPProxyUser';
+{
+    PString -- host.domain, default finger server   
+}
+const
+	kICFingerHost = 'FingerHost';
+{
+    PString -- host.domain, default Gopher server   
+}
+const
+	kICGopherHost = 'GopherHost';
+{
+    PString -- host.domain, see note in Prog Docs   
+}
+const
+	kICGopherProxy = 'GopherProxy';
+{
+    PString -- host.domain   
+}
+const
+	kICHTTPProxyHost = 'HTTPProxyHost';
+{
+    ICAppSpec -- helpers for URL schemes   
+}
+const
+	kICHelper = 'Helper�';
+{
+    PString -- description for URL scheme   
+}
+const
+	kICHelperDesc = 'HelperDesc�';
+{
+    ICAppSpecList -- list of common helpers for URL schemes   
+}
+const
+	kICHelperList = 'HelperList�';
+{
+    PString -- host.domain, Internet Relay Chat server   
+}
+const
+	kICIRCHost = 'IRCHost';
+{
+    STR# -- formatted, list of Info-Mac servers   
+}
+const
+	kICInfoMacAll = 'InfoMacAll';
+{
+    PString -- formatted, preferred Info-Mac server   
+}
+const
+	kICInfoMacPreferred = 'InfoMacPreferred';
+{
+    PString -- string LDAP thing   
+}
+const
+	kICLDAPSearchbase = 'LDAPSearchbase';
+{
+    PString -- host.domain   
+}
+const
+	kICLDAPServer = 'LDAPServer';
+{
+    ICFontRecord -- font used for lists of items (eg news article lists)   
+}
+const
+	kICListFont = 'ListFont';
+{
+    PString -- host for MacSearch queries   
+}
+const
+	kICMacSearchHost = 'MacSearchHost';
+{
+    PString -- user@host.domain, account from which to fetch mail   
+}
+const
+	kICMailAccount = 'MailAccount';
+{
+    TEXT -- extra headers for mail messages   
+}
+const
+	kICMailHeaders = 'MailHeaders';
+{
+    PString -- scrambled, password for MailAccount   
+}
+const
+	kICMailPassword = 'MailPassword';
+{
+    ICMapEntries -- file type mapping, see documentation   
+}
+const
+	kICMapping = 'Mapping';
+{
+    PString -- host.domain, NNTP server   
+}
+const
+	kICNNTPHost = 'NNTPHost';
+{
+    PString -- host.domain, Network Time Protocol (NTP)   
+}
+const
+	kICNTPHost = 'NTPHost';
+{
+    Boolean   
+}
+const
+	kICNewMailDialog = 'NewMailDialog';
+{
+    Boolean -- how to announce new mail   
+}
+const
+	kICNewMailFlashIcon = 'NewMailFlashIcon';
+{
+    Boolean   
+}
+const
+	kICNewMailPlaySound = 'NewMailPlaySound';
+{
+    PString   
+}
+const
+	kICNewMailSoundName = 'NewMailSoundName';
+{
+    PString -- scrambled, password for NewsAuthUsername   
+}
+const
+	kICNewsAuthPassword = 'NewsAuthPassword';
+{
+    PString -- user name for authorised news servers   
+}
+const
+	kICNewsAuthUsername = 'NewsAuthUsername';
+{
+    TEXT -- extra headers for news messages   
+}
+const
+	kICNewsHeaders = 'NewsHeaders';
+{
+    STR# -- list of domains not to be proxied   
+}
+const
+	kICNoProxyDomains = 'NoProxyDomains';
+{
+    PString -- for X-Organization string   
+}
+const
+	kICOrganization = 'Organization';
+{
+    PString -- host.domain, default Ph server   
+}
+const
+	kICPhHost = 'PhHost';
+{
+    TEXT -- default response for finger servers   
+}
+const
+	kICPlan = 'Plan';
+{
+    ICFontRecord -- font used to print ScreenFont   
+}
+const
+	kICPrinterFont = 'PrinterFont';
+{
+    PString -- used to quote responses in news and mail   
+}
+const
+	kICQuotingString = 'QuotingString';
+{
+    PString -- real name of user   
+}
+const
+	kICRealName = 'RealName';
+{
+    PString -- RTSP Proxy Host
+}
+const
+	kICRTSPProxyHost = 'RTSPProxyHost';
+{
+    PString -- host.domain, SMTP server   
+}
+const
+	kICSMTPHost = 'SMTPHost';
+{
+    ICFontRecord -- font used for monospaced text (eg news articles)   
+}
+const
+	kICScreenFont = 'ScreenFont';
+{
+    ICServices -- TCP and IP port-to-name mapping   
+}
+const
+	kICServices = 'Services';
+{
+    TEXT -- append to news and mail messages   
+}
+const
+	kICSignature = 'Signature';
+{
+    TEXT -- preferred mailing address   
+}
+const
+	kICSnailMailAddress = 'SnailMailAddress';
+{
+    PString -- host.domain, remember that host.domain format allows ":port" and " port"  
+}
+const
+	kICSocksHost = 'SocksHost';
+{
+>>>>>>> origin/cpstrnew
     PString -- host.domain, default Telnet address   
 }
 const
 	kICTelnetHost = 'TelnetHost';
+<<<<<<< HEAD
 {
     STR# -- formatted, list of UMich servers   
 }
@@ -8344,6 +8844,137 @@ function ICGetSeed( inst: ICInstance; var seed: SIGNEDLONG ): OSStatus; external
 {
  *  ICGetPerm()
  *  
+=======
+{
+    STR# -- formatted, list of UMich servers   
+}
+const
+	kICUMichAll = 'UMichAll';
+{
+    PString -- formatted, preferred UMich server   
+}
+const
+	kICUMichPreferred = 'UMichPreferred';
+{
+    Boolean   
+}
+const
+	kICUseFTPProxy = 'UseFTPProxy';
+{
+    Boolean   
+}
+const
+	kICUseGopherProxy = 'UseGopherProxy';
+{
+    Boolean   
+}
+const
+	kICUseHTTPProxy = 'UseHTTPProxy';
+{
+    Boolean -- use PASV command for FTP transfers   
+}
+const
+	kICUsePassiveFTP = 'UsePassiveFTP';
+{
+    Boolean
+}
+const
+	kICUseRTSPProxy = 'UseRTSPProxy';
+{
+    Boolean   
+}
+const
+	kICUseSocks = 'UseSocks';
+{
+    PString -- no idea   
+}
+const
+	kICWAISGateway = 'WAISGateway';
+{
+    PString -- URL, users default WWW page   
+}
+const
+	kICWWWHomePage = 'WWWHomePage';
+{
+    RGBColor -- background colour for web pages   
+}
+const
+	kICWebBackgroundColour = 'WebBackgroundColour';
+{
+    RGBColor -- colour for read links   
+}
+const
+	kICWebReadColor = '646F6777쩦ebReadColor';
+{
+    PString -- URL, users default search page   
+}
+const
+	kICWebSearchPagePrefs = 'WebSearchPagePrefs';
+{
+    RGBColor -- colour for normal text   
+}
+const
+	kICWebTextColor = 'WebTextColor';
+{
+    Boolean -- whether to underline links   
+}
+const
+	kICWebUnderlineLinks = '646F6777쩦ebUnderlineLinks';
+{
+    RGBColor -- colour for unread links   
+}
+const
+	kICWebUnreadColor = '646F6777쩦ebUnreadColor';
+{
+    PString -- host.domain, default whois server   
+}
+const
+	kICWhoisHost = 'WhoisHost';
+
+{***********************************************************************************************
+
+      FUNCTIONS
+
+      What do the annotations after each API mean?
+      --------------------------------------------
+
+      [r1] Requires IC 1.1 or higher.
+      [r2] Requires IC 1.2 or higher.
+      [r3] Requires IC 2.0 or higher.
+      [r4] Requires IC 2.5 or higher.
+      
+      IMPORTANT:
+
+      In IC 2.5, instances automatically use the default configuration.
+      You no longer need to configure an instance explicitly, except
+      if your code might run with an older version of IC.  So the following
+      notes only apply to IC 2.0 and earlier.
+
+      [c1]  You must have specified a configuration before calling this routine.
+      
+      [c2]  You must have specified the default configuration before calling this
+            routine.
+      
+      [c3]  You do not need to specify a configuration before calling this routine.
+      
+      [b1]  You must be inside a Begin/End pair when calling this routine.
+      
+      [b2]  You must be inside a Begin/End read/write pair when calling this routine.
+      
+      [b3]  You do not need to be inside a Begin/End pair when calling this routine.
+      
+      [b4]  If you are getting or setting multiple preferences, you should make this
+            call inside a Begin/End pair. If you do not make this call inside a Begin/End
+            pair, the call will automatically do it for you.
+      
+      [b5]  It is illegal to call this routine inside a Begin/End pair.
+
+ ***********************************************************************************************}
+
+{ ***** Starting Up and Shutting Down *****  }
+{
+ *  ICStart()
+ *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
@@ -8352,6 +8983,169 @@ function ICGetSeed( inst: ICInstance; var seed: SIGNEDLONG ): OSStatus; external
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in InternetConfig 2.5 and later
  }
+function ICStart( var inst: ICInstance; signature: OSType ): OSStatus; external name '_ICStart';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ Call this at application initialisation. Set signature to a value
+   * which has been regsitered with DTS to allow for future expansion
+   * of the IC system. Returns inst as a connection to the IC system.
+   }
+{
+ *  ICStop()
+ *  
+>>>>>>> origin/cpstrnew
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ }
+<<<<<<< HEAD
+function ICGetPerm( inst: ICInstance; var perm: ICPerm ): OSStatus; external name '_ICGetPerm';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ [c3] [b3] 
+   * Returns the access permissions currently associated with this instance.
+   * While applications normally know what permissions they have,
+   * this routine is designed for use by override components.
+   }
+{ ***** Reading and Writing Preferences *****  }
+{
+ *  ICBegin()
+ *  
+=======
+function ICStop( inst: ICInstance ): OSStatus; external name '_ICStop';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ [b5] 
+   * Call this at application initialisation, after which inst
+   * is no longer valid connection to IC.
+   }
+{
+ *  ICGetVersion()
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ }
+function ICGetVersion( inst: ICInstance; whichVersion: SIGNEDLONG; var version: UInt32 ): OSStatus; external name '_ICGetVersion';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ [r4] [c3] [b3] 
+   * Returns the version of Internet Config.  Pass kICComponentVersion
+   * to get the version as previously returned by GetComponenVerson.
+   * Pass kICNumVersion to get a NumVersion structure.
+   }
+{
+ *  ICGetConfigName()
+ *  
+>>>>>>> origin/cpstrnew
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ }
+<<<<<<< HEAD
+function ICBegin( inst: ICInstance; perm: ICPerm ): OSStatus; external name '_ICBegin';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ [c1] [b5] 
+   * Starting reading or writing multiple preferences.
+   * A call to this must be balanced by a call to ICEnd.
+   * Do not call WaitNextEvent between these calls.
+   * The perm specifies whether you intend to read or read/write.
+   * Only one writer is allowed per instance.
+   * Note that this may open resource files that are not closed
+   * until you call ICEnd.
+   }
+{
+ *  ICGetPref()
+ *  
+=======
+function ICGetConfigName( inst: ICInstance; longname: Boolean; var name: Str255 ): OSStatus; external name '_ICGetConfigName';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ [r2] [c1] [b3] 
+   * Returns a string that describes the current configuration at a user
+   * level. Set longname to true if you want a long name, up to 255
+   * characters, or false if you want a short name, typically about 32
+   * characters.
+   * The returned string is for user display only. If you rely on the
+   * exact format of it, you will conflict with any future IC
+   * implementation that doesn't use explicit preference files.
+   }
+{ ***** Getting Information *****  }
+{
+ *  ICGetSeed()
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ }
+function ICGetSeed( inst: ICInstance; var seed: SIGNEDLONG ): OSStatus; external name '_ICGetSeed';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ [c3] [b3] 
+   * Returns the current seed for the IC prefs database.
+   * This seed changes each time a non-volatile preference is changed.
+   * You can poll this to determine if any cached preferences change.
+   }
+{
+ *  ICGetPerm()
+ *  
+>>>>>>> origin/cpstrnew
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ }
+<<<<<<< HEAD
+function ICGetPref( inst: ICInstance; const (*var*) key: Str255; var attr: ICAttr; buf: UnivPtr; var size: SIGNEDLONG ): OSStatus; external name '_ICGetPref';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ [c1] [b4] 
+   * Reads the preference specified by key from the IC database to the
+   * buffer pointed to by buf and size.
+   * key must not be the empty string.
+   * If buf is nil then no data is returned.
+   * size must be non-negative.
+   * attr and size are always set on return. On errors (except icTruncatedErr)
+   * attr is set to ICattr_no_change and size is set to 0.
+   * size is the actual size of the data.
+   * attr is set to the attributes associated with the preference.
+   * If this routine returns icTruncatedErr then the other returned
+   * values are valid except that only the first size bytes have been
+   * return. size is adjusted to reflect the true size of the preference.
+   * Returns icPrefNotFound if there is no preference for the key.
+   }
+{
+ *  ICSetPref()
+ *  
+=======
 function ICGetPerm( inst: ICInstance; var perm: ICPerm ): OSStatus; external name '_ICGetPerm';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
@@ -8389,6 +9183,7 @@ function ICBegin( inst: ICInstance; perm: ICPerm ): OSStatus; external name '_IC
 {
  *  ICGetPref()
  *  
+>>>>>>> origin/cpstrnew
  *  Mac OS X threading:
  *    Not thread safe
  *  
@@ -8397,11 +9192,32 @@ function ICBegin( inst: ICInstance; perm: ICPerm ): OSStatus; external name '_IC
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in InternetConfig 2.5 and later
  }
+<<<<<<< HEAD
+function ICSetPref( inst: ICInstance; const (*var*) key: Str255; attr: ICAttr; buf: {const} UnivPtr; size: SIGNEDLONG ): OSStatus; external name '_ICSetPref';
+=======
 function ICGetPref( inst: ICInstance; const (*var*) key: Str255; var attr: ICAttr; buf: UnivPtr; var size: SIGNEDLONG ): OSStatus; external name '_ICGetPref';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
 { [c1] [b4] 
+<<<<<<< HEAD
+   * Sets the preference specified by key from the IC database to the
+   * value pointed to by buf and size.
+   * key must not be the empty string.
+   * size must be non-negative. 
+   * If buf is nil then the preference value is not set and size is ignored.
+   * If buf is not nil then the preference value is set to the size
+   * bytes pointed to by buf.
+   * If attr is ICattr_no_change then the preference attributes are not set.
+   * Otherwise the preference attributes are set to attr.
+   * Returns icPermErr if the previous ICBegin was passed icReadOnlyPerm.
+   * Returns icPermErr if current attr is locked, new attr is locked and buf <> nil.
+   }
+{
+ *  ICFindPrefHandle()
+ *  
+=======
    * Reads the preference specified by key from the IC database to the
    * buffer pointed to by buf and size.
    * key must not be the empty string.
@@ -8447,6 +9263,7 @@ function ICSetPref( inst: ICInstance; const (*var*) key: Str255; attr: ICAttr; b
 {
  *  ICFindPrefHandle()
  *  
+>>>>>>> origin/cpstrnew
  *  Mac OS X threading:
  *    Not thread safe
  *  
@@ -8470,6 +9287,9 @@ function ICFindPrefHandle( inst: ICInstance; const (*var*) key: Str255; var attr
    }
 {
  *  ICGetPrefHandle()
+<<<<<<< HEAD
+ *  
+=======
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -8498,6 +9318,7 @@ function ICGetPrefHandle( inst: ICInstance; const (*var*) key: Str255; var attr:
 {
  *  ICSetPrefHandle()
  *  
+>>>>>>> origin/cpstrnew
  *  Mac OS X threading:
  *    Not thread safe
  *  
@@ -8506,11 +9327,31 @@ function ICGetPrefHandle( inst: ICInstance; const (*var*) key: Str255; var attr:
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in InternetConfig 2.5 and later
  }
+<<<<<<< HEAD
+function ICGetPrefHandle( inst: ICInstance; const (*var*) key: Str255; var attr: ICAttr; var prefh: Handle ): OSStatus; external name '_ICGetPrefHandle';
+=======
 function ICSetPrefHandle( inst: ICInstance; const (*var*) key: Str255; attr: ICAttr; prefh: Handle ): OSStatus; external name '_ICSetPrefHandle';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
 { [r1] [c1] [b4] 
+<<<<<<< HEAD
+   * This routine is now obsolete. Use ICFindPrefHandle instead.
+   * Reads the preference specified by key from the IC database into
+   * a newly created handle, prefh.
+   * key must not be the empty string.
+   * attr is set to the attributes associated with the preference.
+   * The incoming value of prefh is ignored.
+   * A new handle is created in the current heap and returned in prefh.
+   * If the routine returns an error, prefh is set to nil.
+   * If the preference does not exist, no error is returned and prefh is set
+   * to an empty handle.
+   }
+{
+ *  ICSetPrefHandle()
+ *  
+=======
    * Sets the preference specified by key from the IC database to the
    * value contained in prefh.
    * key must not be the empty string.
@@ -8544,6 +9385,7 @@ function ICCountPref( inst: ICInstance; var count: SIGNEDLONG ): OSStatus; exter
 {
  *  ICGetIndPref()
  *  
+>>>>>>> origin/cpstrnew
  *  Mac OS X threading:
  *    Not thread safe
  *  
@@ -8552,6 +9394,26 @@ function ICCountPref( inst: ICInstance; var count: SIGNEDLONG ): OSStatus; exter
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in InternetConfig 2.5 and later
  }
+<<<<<<< HEAD
+function ICSetPrefHandle( inst: ICInstance; const (*var*) key: Str255; attr: ICAttr; prefh: Handle ): OSStatus; external name '_ICSetPrefHandle';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ [r1] [c1] [b4] 
+   * Sets the preference specified by key from the IC database to the
+   * value contained in prefh.
+   * key must not be the empty string.
+   * If prefh is nil then the preference value is not set.
+   * If prefh is not nil then the preference value is set to the data
+   * contained in it.
+   * If attr is ICattr_no_change then the preference attributes are not set.
+   * Otherwise the preference attributes are set to attr.
+   * Returns icPermErr if the previous ICBegin was passed icReadOnlyPerm.
+   * Returns icPermErr if current attr is locked, new attr is locked and prefh <> nil.
+   }
+{
+ *  ICCountPref()
+=======
 function ICGetIndPref( inst: ICInstance; index: SIGNEDLONG; var key: Str255 ): OSStatus; external name '_ICGetIndPref';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
@@ -8564,6 +9426,7 @@ function ICGetIndPref( inst: ICInstance; index: SIGNEDLONG; var key: Str255 ): O
    }
 {
  *  ICDeletePref()
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -8573,6 +9436,18 @@ function ICGetIndPref( inst: ICInstance; index: SIGNEDLONG; var key: Str255 ): O
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in InternetConfig 2.5 and later
  }
+<<<<<<< HEAD
+function ICCountPref( inst: ICInstance; var count: SIGNEDLONG ): OSStatus; external name '_ICCountPref';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ [c1] [b1] 
+   * Counts the total number of preferences.
+   * If the routine returns an error, count is set to 0.
+   }
+{
+ *  ICGetIndPref()
+=======
 function ICDeletePref( inst: ICInstance; const (*var*) key: Str255 ): OSStatus; external name '_ICDeletePref';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
@@ -8584,6 +9459,7 @@ function ICDeletePref( inst: ICInstance; const (*var*) key: Str255 ): OSStatus; 
    }
 {
  *  ICEnd()
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -8593,16 +9469,30 @@ function ICDeletePref( inst: ICInstance; const (*var*) key: Str255 ): OSStatus; 
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in InternetConfig 2.5 and later
  }
+<<<<<<< HEAD
+function ICGetIndPref( inst: ICInstance; index: SIGNEDLONG; var key: Str255 ): OSStatus; external name '_ICGetIndPref';
+=======
 function ICEnd( inst: ICInstance ): OSStatus; external name '_ICEnd';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
 { [c1] [b1] 
+<<<<<<< HEAD
+   * Returns the key of the index'th preference.
+   * index must be positive.
+   * Returns icPrefNotFoundErr if index is greater than the total number of preferences.
+   * If the routine returns an error, key is undefined.
+   }
+{
+ *  ICDeletePref()
+=======
    * Terminates a preference session, as started by ICBegin.
    * You must have called ICBegin before calling this routine.
    }
 {
  *  ICGetDefaultPref()
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -8612,6 +9502,19 @@ function ICEnd( inst: ICInstance ): OSStatus; external name '_ICEnd';
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in InternetConfig 2.5 and later
  }
+<<<<<<< HEAD
+function ICDeletePref( inst: ICInstance; const (*var*) key: Str255 ): OSStatus; external name '_ICDeletePref';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ [c1] [b2] 
+   * Deletes the preference specified by key.
+   * key must not be the empty string.
+   * Returns icPrefNotFound if the preference specified by key is not present.
+   }
+{
+ *  ICEnd()
+=======
 function ICGetDefaultPref( inst: ICInstance; const (*var*) key: Str255; prefH: Handle ): OSStatus; external name '_ICGetDefaultPref';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
@@ -8623,6 +9526,7 @@ function ICGetDefaultPref( inst: ICInstance; const (*var*) key: Str255; prefH: H
 { ***** User Interface Stuff *****  }
 {
  *  ICEditPreferences()
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -8632,11 +9536,103 @@ function ICGetDefaultPref( inst: ICInstance; const (*var*) key: Str255; prefH: H
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in InternetConfig 2.5 and later
  }
+<<<<<<< HEAD
+function ICEnd( inst: ICInstance ): OSStatus; external name '_ICEnd';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ [c1] [b1] 
+   * Terminates a preference session, as started by ICBegin.
+   * You must have called ICBegin before calling this routine.
+   }
+{
+ *  ICGetDefaultPref()
+=======
 function ICEditPreferences( inst: ICInstance; const (*var*) key: Str255 ): OSStatus; external name '_ICEditPreferences';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
 { [r1] [c1] [b3] 
+   * Instructs IC to display the user interface associated with editing
+   * preferences and focusing on the preference specified by key.
+   * If key is the empty string then no preference should be focused upon.
+   * You must have specified a configuration before calling this routine.
+   * You do not need to call ICBegin before calling this routine.
+   * In the current implementation this launches the IC application
+   * (or brings it to the front) and displays the window containing
+   * the preference specified by key.
+   * It may have a radically different implementation in future
+   * IC systems.
+   }
+{ ***** URL Handling *****  }
+{
+ *  ICLaunchURL()
+>>>>>>> origin/cpstrnew
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ }
+<<<<<<< HEAD
+function ICGetDefaultPref( inst: ICInstance; const (*var*) key: Str255; prefH: Handle ): OSStatus; external name '_ICGetDefaultPref';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ [r4] [c3] [b5] 
+   * Returns a default preference value for the specified key.  You
+   * must pass in a valid prefH, which is resized to fit the data.
+   }
+{ ***** User Interface Stuff *****  }
+{
+ *  ICEditPreferences()
+=======
+function ICLaunchURL( inst: ICInstance; const (*var*) hint: Str255; data: {const} UnivPtr; len: SIGNEDLONG; var selStart: SIGNEDLONG; var selEnd: SIGNEDLONG ): OSStatus; external name '_ICLaunchURL';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ [r1] [c1] [b3] 
+   * Parses a URL out of the specified text and feeds it off to the
+   * appropriate helper.
+   * hint indicates the default scheme for URLs of the form "name@address".
+   * If hint is the empty string then URLs of that form are not allowed.
+   * data points to the start of the text. It must not be nil.
+   * len indicates the length of the text. It must be non-negative.
+   * selStart and selEnd should be passed in as the current selection of
+   * the text. This selection is given in the same manner as TextEdit,
+   * ie if selStart = selEnd then there is no selection only an insertion
+   * point. Also selStart � selEnd and 0 � selStart � len and 0 � selEnd � len.
+   * selStart and selEnd are returned as the bounds of the URL. If the
+   * routine returns an error then these new boundaries may be
+   * invalid but they will be close.
+   * The URL is parsed out of the text and passed off to the appropriate
+   * helper using the GURL AppleEvent.
+   }
+{
+ *  ICParseURL()
+>>>>>>> origin/cpstrnew
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ }
+<<<<<<< HEAD
+function ICEditPreferences( inst: ICInstance; const (*var*) key: Str255 ): OSStatus; external name '_ICEditPreferences';
+=======
+function ICParseURL( inst: ICInstance; const (*var*) hint: Str255; data: {const} UnivPtr; len: SIGNEDLONG; var selStart: SIGNEDLONG; var selEnd: SIGNEDLONG; url: Handle ): OSStatus; external name '_ICParseURL';
+>>>>>>> origin/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ [r1] [c1] [b3] 
+<<<<<<< HEAD
    * Instructs IC to display the user interface associated with editing
    * preferences and focusing on the preference specified by key.
    * If key is the empty string then no preference should be focused upon.
@@ -8684,6 +9680,27 @@ function ICLaunchURL( inst: ICInstance; const (*var*) hint: Str255; data: {const
 {
  *  ICParseURL()
  *  
+=======
+   * Parses a URL out of the specified text and returns it in a canonical form
+   * in a handle.
+   * hint indicates the default scheme for URLs of the form "name@address".
+   * If hint is the empty string then URLs of that form are not allowed.
+   * data points to the start of the text. It must not be nil.
+   * len indicates the length of the text. It must be non-negative.
+   * selStart and selEnd should be passed in as the current selection of
+   * the text. This selection is given in the same manner as TextEdit,
+   * ie if selStart = selEnd then there is no selection only an insertion
+   * point. Also selStart � selEnd and 0 � selStart � len and 0 � selEnd � len.
+   * selStart and selEnd are returned as the bounds of the URL. If the
+   * routine returns an error then these new boundaries may be
+   * invalid but they will be close.
+   * The incoming url handle must not be nil.  The resulting URL is normalised
+   * and copied into the url handle, which is resized to fit.
+   }
+{
+ *  ICCreateGURLEvent()
+ *  
+>>>>>>> origin/cpstrnew
  *  Mac OS X threading:
  *    Not thread safe
  *  
@@ -8692,6 +9709,7 @@ function ICLaunchURL( inst: ICInstance; const (*var*) hint: Str255; data: {const
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in InternetConfig 2.5 and later
  }
+<<<<<<< HEAD
 function ICParseURL( inst: ICInstance; const (*var*) hint: Str255; data: {const} UnivPtr; len: SIGNEDLONG; var selStart: SIGNEDLONG; var selEnd: SIGNEDLONG; url: Handle ): OSStatus; external name '_ICParseURL';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
@@ -8735,6 +9753,19 @@ function ICCreateGURLEvent( inst: ICInstance; helperCreator: OSType; urlH: Handl
 {
  *  ICSendGURLEvent()
  *  
+=======
+function ICCreateGURLEvent( inst: ICInstance; helperCreator: OSType; urlH: Handle; var theEvent: AppleEvent ): OSStatus; external name '_ICCreateGURLEvent';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ [r4] [c1] [b3] 
+   * Creates a GURL Apple event, targetted at the application whose creator
+   * code is helperCreator, with a direct object containing the URL text from urlH.
+   }
+{
+ *  ICSendGURLEvent()
+ *  
+>>>>>>> origin/cpstrnew
  *  Mac OS X threading:
  *    Not thread safe
  *  
@@ -9143,9 +10174,13 @@ function ICDeleteProfile( inst: ICInstance; thisID: ICProfileID ): OSStatus; ext
 end.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

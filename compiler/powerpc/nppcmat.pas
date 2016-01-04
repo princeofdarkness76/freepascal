@@ -447,6 +447,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 hlcg.location_force_reg(current_asmdata.CurrAsmList,left.location,left.resultdef,left.resultdef,true);
 =======
                 location_force_reg(current_asmdata.CurrAsmList,left.location,left.location.size,true);
@@ -457,6 +458,9 @@ implementation
 =======
                 location_force_reg(current_asmdata.CurrAsmList,left.location,left.location.size,true);
 >>>>>>> graemeg/cpstrnew
+=======
+                location_force_reg(current_asmdata.CurrAsmList,left.location,left.location.size,true);
+>>>>>>> origin/cpstrnew
 =======
                 location_force_reg(current_asmdata.CurrAsmList,left.location,left.location.size,true);
 >>>>>>> origin/cpstrnew

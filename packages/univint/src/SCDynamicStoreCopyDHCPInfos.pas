@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Copyright (c) 2001, 2002, 2004, 2005, 2008 Apple Inc. All rights reserved.
 =======
  * Copyright (c) 2001-2002 Apple Computer, Inc. All rights reserved.
@@ -12,6 +13,9 @@
 =======
  * Copyright (c) 2001, 2002, 2004, 2005, 2008 Apple Inc. All rights reserved.
 >>>>>>> origin/fixes_2.4
+=======
+ * Copyright (c) 2001, 2002, 2004, 2005, 2008 Apple Inc. All rights reserved.
+>>>>>>> origin/cpstrnew
  *
  * @APPLE_LICENSE_HEADER_START@
  * 
@@ -26,6 +30,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  * distributed on an 'AS IS' basis, WITHOUT WARRANTY OF ANY KIND, EITHER
  * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
  * INCLUDING WITHOUT LIMITATION, ANY WARRANTIES OF MERCHANTABILITY,
@@ -44,6 +49,11 @@
  * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
  * INCLUDING WITHOUT LIMITATION, ANY WARRANTIES OF MERCHANTABILITY,
 >>>>>>> origin/fixes_2.4
+=======
+ * distributed on an 'AS IS' basis, WITHOUT WARRANTY OF ANY KIND, EITHER
+ * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
+ * INCLUDING WITHOUT LIMITATION, ANY WARRANTIES OF MERCHANTABILITY,
+>>>>>>> origin/cpstrnew
  * FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT.
  * Please see the License for the specific language governing rights and
  * limitations under the License.
@@ -95,12 +105,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -112,6 +126,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -126,6 +141,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -141,6 +160,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -151,6 +171,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -158,13 +181,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -172,6 +199,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -180,8 +209,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -192,6 +224,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -212,6 +245,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -220,12 +255,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -233,6 +271,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -469,6 +508,10 @@ interface
 	{$setc TARGET_CPU_PPC64 := FALSE}
 >>>>>>> origin/fixes_2.4
 	{$setc TARGET_CPU_X86 := FALSE}
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
@@ -493,6 +536,7 @@ interface
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -534,6 +578,41 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -562,6 +641,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -570,6 +650,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -580,6 +662,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,CFBase,SCDynamicStore,CFDictionary,CFData,CFDate;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -604,11 +687,16 @@ uses MacTypes,CFBase,SCDynamicStore,CFDictionary,CFData,CFDate;
 {$endc} {not MACOSALLINCLUDE}
 
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+
+>>>>>>> origin/cpstrnew
 
 { until __IPHONE_NA is automatically translated }
 {$ifc TARGET_OS_MAC}
 
 {$ALIGN POWER}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -660,6 +748,8 @@ uses MacTypes,CFBase,SCDynamicStore,CFDictionary,CFData,CFDate;
 {$ALIGN MAC68K}
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {!
 	@header SCDynamicStoreCopyDHCPInfo
@@ -681,6 +771,7 @@ uses MacTypes,CFBase,SCDynamicStore,CFDictionary,CFData,CFDate;
 	@result Returns a dictionary containing DHCP information if successful;
 		NULL otherwise.
 <<<<<<< HEAD
+<<<<<<< HEAD
 		Use the DHCPInfoGetOption() to retrieve
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -689,11 +780,15 @@ uses MacTypes,CFBase,SCDynamicStore,CFDictionary,CFData,CFDate;
 =======
 		Use the DHCPInfoGetOption function to retrieve
 >>>>>>> origin/fixes_2.4
+=======
+		Use the DHCPInfoGetOption function to retrieve
+>>>>>>> origin/cpstrnew
 		individual options from the returned dictionary.
 
 		A non-NULL return value must be released using CFRelease().
  }
 function SCDynamicStoreCopyDHCPInfo( store: SCDynamicStoreRef; serviceID: CFStringRef ): CFDictionaryRef; external name '_SCDynamicStoreCopyDHCPInfo';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -715,6 +810,9 @@ function SCDynamicStoreCopyDHCPInfo( store: SCDynamicStoreRef; serviceID: CFStri
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_NA) *)
 >>>>>>> origin/fixes_2.4
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_NA) *)
+>>>>>>> origin/cpstrnew
 
 {!
 	@function DHCPInfoGetOptionData
@@ -724,6 +822,7 @@ function SCDynamicStoreCopyDHCPInfo( store: SCDynamicStoreRef; serviceID: CFStri
 		calling SCDynamicStoreCopyDHCPInfo.
 	@param code The DHCP option code (see RFC 2132) to return
 		data for.
+<<<<<<< HEAD
 <<<<<<< HEAD
 	@result A non-NULL CFDataRef containing the option data,
 		NULL otherwise.
@@ -735,10 +834,15 @@ function SCDynamicStoreCopyDHCPInfo( store: SCDynamicStoreRef; serviceID: CFStri
 	@result Returns a non-NULL CFDataRef containing the option data;
 		NULL if the requested option data is not present.
 >>>>>>> origin/fixes_2.4
+=======
+	@result Returns a non-NULL CFDataRef containing the option data;
+		NULL if the requested option data is not present.
+>>>>>>> origin/cpstrnew
 
 		The return value must NOT be released.
  }
 function DHCPInfoGetOptionData( info: CFDictionaryRef; code: UInt8 ): CFDataRef; external name '_DHCPInfoGetOptionData';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -750,10 +854,14 @@ function DHCPInfoGetOptionData( info: CFDictionaryRef; code: UInt8 ): CFDataRef;
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_NA) *)
 >>>>>>> origin/fixes_2.4
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_NA) *)
+>>>>>>> origin/cpstrnew
 
 {!
 	@function DHCPInfoGetLeaseStartTime
 	@discussion Returns a CFDateRef corresponding to the lease start time,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -783,10 +891,19 @@ function DHCPInfoGetOptionData( info: CFDictionaryRef; code: UInt8 ): CFDataRef;
 		present; NULL if the information is not present or if the
 		configuration method is not DHCP.
 >>>>>>> origin/fixes_2.4
+=======
+		if present.
+	@param info The non-NULL DHCP information dictionary returned by
+		calling SCDynamicStoreCopyDHCPInfo.
+	@result Returns a non-NULL CFDateRef if lease start time information is
+		present; NULL if the information is not present or if the
+		configuration method is not DHCP.
+>>>>>>> origin/cpstrnew
 
 		The return value must NOT be released.
  }
 function DHCPInfoGetLeaseStartTime( info: CFDictionaryRef ): CFDateRef; external name '_DHCPInfoGetLeaseStartTime';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -839,6 +956,8 @@ end.
 end.
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_NA) *)
 
 {$endc} {TARGET_OS_MAC}
@@ -846,4 +965,7 @@ end.
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew

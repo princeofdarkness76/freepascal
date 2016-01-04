@@ -55,6 +55,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   FileNameCasePreserving: boolean = true;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -62,6 +63,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   CtrlZMarksEOF: boolean = true; (* #26 not considered as end of file *)
@@ -225,6 +228,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      if i<argc-1 then
 =======
      if i<argc then
@@ -235,6 +239,9 @@ begin
 =======
      if i<argc then
 >>>>>>> graemeg/cpstrnew
+=======
+     if i<argc then
+>>>>>>> origin/cpstrnew
 =======
      if i<argc then
 >>>>>>> origin/cpstrnew
@@ -263,6 +270,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   OpenStdIO(Input,fmInput,StdInputHandle);
   OpenStdIO(Output,fmOutput,StdOutputHandle);
   OpenStdIO(ErrOutput,fmOutput,StdErrorHandle);
@@ -275,6 +283,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   OpenStdIO(Input,fmInput,0);
   OpenStdIO(Output,fmOutput,0);
   OpenStdIO(ErrOutput,fmOutput,0);
@@ -283,11 +293,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 end;
@@ -305,6 +318,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   StackBottom := Sptr - StackLength;
 { OS specific startup }
 
@@ -317,11 +331,14 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   StackBottom := StackTop - StackLength;
 { OS specific startup }
 
 { Set up signals handlers }
 //  fpc_cpucodeinit;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -332,10 +349,13 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 { Setup heap }
   InitHeap;
   SysInitExceptions;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -350,6 +370,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
   SetupCmdLine;
   
@@ -357,11 +379,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$ifdef FPC_HAS_FEATURE_CONSOLEIO}
@@ -379,6 +404,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   initvariantmanager;
 >>>>>>> graemeg/cpstrnew
@@ -388,6 +414,9 @@ begin
 =======
   initvariantmanager;
 >>>>>>> graemeg/cpstrnew
+=======
+  initvariantmanager;
+>>>>>>> origin/cpstrnew
 =======
   initvariantmanager;
 >>>>>>> origin/cpstrnew

@@ -30,6 +30,7 @@ unit parabase;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        aasmbase,cpubase,cgbase,cgutils,
 =======
        cpubase,cgbase,cgutils,
@@ -40,6 +41,9 @@ unit parabase;
 =======
        cpubase,cgbase,cgutils,
 >>>>>>> graemeg/cpstrnew
+=======
+       cpubase,cgbase,cgutils,
+>>>>>>> origin/cpstrnew
 =======
        cpubase,cgbase,cgutils,
 >>>>>>> origin/cpstrnew
@@ -121,6 +125,7 @@ unit parabase;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           DefDeref  : tderef;
           Alignment : ShortInt;
           Size      : TCGSize;  { Size of the parameter included in all locations }
@@ -130,6 +135,8 @@ unit parabase;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
           Alignment : ShortInt;
@@ -150,6 +157,7 @@ unit parabase;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           function    locations_count:integer;
 
           procedure   buildderef;
@@ -163,6 +171,9 @@ unit parabase;
 =======
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 =======
 
 >>>>>>> origin/cpstrnew
@@ -339,6 +350,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function TCGPara.locations_count: integer;
       var
         hlocation: pcgparalocation;
@@ -373,6 +385,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     procedure TCGPara.ppuwrite(ppufile: tcompilerppufile);
       var
         hparaloc: PCGParaLocation;
@@ -381,6 +395,7 @@ implementation
         ppufile.putbyte(byte(Alignment));
         ppufile.putbyte(ord(Size));
         ppufile.putaint(IntSize);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -401,6 +416,11 @@ implementation
         ppufile.putbyte(byte(composite));
 {$endif}
 >>>>>>> graemeg/cpstrnew
+=======
+{$ifdef powerpc}
+        ppufile.putbyte(byte(composite));
+{$endif}
+>>>>>>> origin/cpstrnew
 =======
 {$ifdef powerpc}
         ppufile.putbyte(byte(composite));
@@ -436,6 +456,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   ppufile.putbyte(hparaloc^.shiftval);
 =======
 {$ifdef powerpc64}
@@ -452,6 +473,11 @@ implementation
                   ppufile.putbyte(hparaloc^.shiftval);
 {$endif}
 >>>>>>> graemeg/cpstrnew
+=======
+{$ifdef powerpc64}
+                  ppufile.putbyte(hparaloc^.shiftval);
+{$endif}
+>>>>>>> origin/cpstrnew
 =======
 {$ifdef powerpc64}
                   ppufile.putbyte(hparaloc^.shiftval);
@@ -486,6 +512,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         ppufile.getderef(defderef);
 =======
 {$ifdef powerpc}
@@ -502,6 +529,11 @@ implementation
         composite:=boolean(ppufile.getbyte);
 {$endif}
 >>>>>>> graemeg/cpstrnew
+=======
+{$ifdef powerpc}
+        composite:=boolean(ppufile.getbyte);
+{$endif}
+>>>>>>> origin/cpstrnew
 =======
 {$ifdef powerpc}
         composite:=boolean(ppufile.getbyte);
@@ -530,6 +562,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   hparaloc^.shiftval:=ppufile.getbyte;
 =======
 {$ifdef powerpc64}
@@ -546,6 +579,11 @@ implementation
                   hparaloc^.shiftval:=ppufile.getbyte;
 {$endif}
 >>>>>>> graemeg/cpstrnew
+=======
+{$ifdef powerpc64}
+                  hparaloc^.shiftval:=ppufile.getbyte;
+{$endif}
+>>>>>>> origin/cpstrnew
 =======
 {$ifdef powerpc64}
                   hparaloc^.shiftval:=ppufile.getbyte;

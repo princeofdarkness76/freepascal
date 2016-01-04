@@ -12,6 +12,7 @@ type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   generic CGenericCollection<_T> = class(TInterfacedObject, specialize IGenericCollection<_T>)
 =======
   generic CGenericCollection<_T> = class( IGenericCollection)
@@ -19,6 +20,9 @@ type
 =======
   generic CGenericCollection<_T> = class( IGenericCollection)
 >>>>>>> origin/fixes_2_2
+=======
+  generic CGenericCollection<_T> = class(TInterfacedObject, specialize IGenericCollection<_T>)
+>>>>>>> origin/cpstrnew
   end;
 
 implementation

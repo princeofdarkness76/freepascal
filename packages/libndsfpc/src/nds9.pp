@@ -1,5 +1,8 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 (*---------------------------------------------------------------------------------
 
 	libnds Copyright (C) 2005
@@ -31,10 +34,13 @@
    Free Pascal porting by Francesco Lombardi.
 ---------------------------------------------------------------------------------*)
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 unit nds9;
 {$mode objfpc} 
 {$apptype arm9}
@@ -64,6 +70,9 @@ uses
 {$linklib gcc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {$linklib g}
 {$linklib sysbase}
 

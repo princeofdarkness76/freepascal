@@ -63,6 +63,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   HaltOnNotReleased:=true;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -70,6 +71,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   s1 := 'string1';

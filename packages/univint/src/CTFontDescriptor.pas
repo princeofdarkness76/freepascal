@@ -7,6 +7,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  Copyright (c) 2006-2012 Apple Inc. All rights reserved.
  *
  }
@@ -22,10 +23,13 @@
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  Copyright (c) 2006-2008 Apple Inc. All rights reserved.
  *
  }
 {       Initial Pascal Translation:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -39,6 +43,8 @@
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -98,6 +104,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
@@ -113,6 +120,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -136,6 +145,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -166,6 +176,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/fixes_2.4
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
@@ -177,6 +192,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -207,6 +223,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/fixes_2.4
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -218,6 +239,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -229,6 +251,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -238,6 +262,7 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -254,6 +279,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -265,6 +292,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -301,6 +329,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/fixes_2.4
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -312,15 +345,19 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
@@ -367,6 +404,10 @@ interface
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 >>>>>>> origin/fixes_2.4
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> origin/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -417,6 +458,7 @@ uses MacTypes,CTFontTraits,CFBase,CFArray,CFCharacterSet,CFData,CFDictionary,CFN
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$ifc TARGET_OS_MAC}
 
@@ -437,6 +479,10 @@ uses MacTypes,CTFontTraits,CFBase,CFArray,CFCharacterSet,CFData,CFDictionary,CFN
 {$ifc TARGET_OS_MAC}
 
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc TARGET_OS_MAC}
+
+>>>>>>> origin/cpstrnew
 {$ALIGN POWER}
 
 
@@ -464,6 +510,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CTFontDescriptorRef = ^__CTFontDescriptor; { an opaque type }
 	__CTFontDescriptor = record end;
 =======
@@ -481,6 +528,9 @@ type
 =======
 	CTFontDescriptorRef = ^SInt32; { an opaque type }
 >>>>>>> origin/fixes_2.4
+=======
+	CTFontDescriptorRef = ^SInt32; { an opaque type }
+>>>>>>> origin/cpstrnew
 	CTFontDescriptorRefPtr = ^CTFontDescriptorRef;
 
 {!
@@ -490,6 +540,7 @@ type
     @result     The identifier for the opaque type CTFontDescriptorRef.
 }
 function CTFontDescriptorGetTypeID: CFTypeID; external name '_CTFontDescriptorGetTypeID';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -511,6 +562,9 @@ function CTFontDescriptorGetTypeID: CFTypeID; external name '_CTFontDescriptorGe
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 {! --------------------------------------------------------------------------
     @group Descriptor Constants
@@ -522,6 +576,7 @@ function CTFontDescriptorGetTypeID: CFTypeID; external name '_CTFontDescriptorGe
     @discussion This is the key for accessing the font URL from the font descriptor. The value associated with this key is a CFURLRef.
 }
 var kCTFontURLAttribute: CFStringRef; external name '_kCTFontURLAttribute'; (* attribute const *)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -544,6 +599,8 @@ var kCTFontNameAttribute: CFStringRef; external name '_kCTFontNameAttribute'; (*
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
 {!
     @defined    kCTFontNameAttribute
@@ -556,6 +613,7 @@ var kCTFontNameAttribute: CFStringRef; external name '_kCTFontNameAttribute'; (*
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -565,6 +623,8 @@ var kCTFontNameAttribute: CFStringRef; external name '_kCTFontNameAttribute'; (*
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {!
     @defined    kCTFontDisplayNameAttribute
     @abstract   The display name.
@@ -576,6 +636,7 @@ var kCTFontDisplayNameAttribute: CFStringRef; external name '_kCTFontDisplayName
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -592,6 +653,9 @@ var kCTFontDisplayNameAttribute: CFStringRef; external name '_kCTFontDisplayName
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 {!
     @defined    kCTFontFamilyNameAttribute
     @abstract   The family name.
@@ -603,6 +667,7 @@ var kCTFontFamilyNameAttribute: CFStringRef; external name '_kCTFontFamilyNameAt
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -619,6 +684,9 @@ var kCTFontFamilyNameAttribute: CFStringRef; external name '_kCTFontFamilyNameAt
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 {!
     @defined    kCTFontStyleNameAttribute
     @abstract   The style name.
@@ -630,6 +698,7 @@ var kCTFontStyleNameAttribute: CFStringRef; external name '_kCTFontStyleNameAttr
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -646,6 +715,9 @@ var kCTFontStyleNameAttribute: CFStringRef; external name '_kCTFontStyleNameAttr
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 {!
     @defined    kCTFontTraitsAttribute
     @abstract   The font traits dictionary.
@@ -657,6 +729,7 @@ var kCTFontTraitsAttribute: CFStringRef; external name '_kCTFontTraitsAttribute'
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -673,6 +746,9 @@ var kCTFontTraitsAttribute: CFStringRef; external name '_kCTFontTraitsAttribute'
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 {!
     @defined    kCTFontVariationAttribute
     @abstract   The font variation dictionary.
@@ -684,6 +760,7 @@ var kCTFontVariationAttribute: CFStringRef; external name '_kCTFontVariationAttr
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -700,6 +777,9 @@ var kCTFontVariationAttribute: CFStringRef; external name '_kCTFontVariationAttr
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 {!
     @defined    kCTFontSizeAttribute
     @abstract   The font point size.
@@ -711,6 +791,7 @@ var kCTFontSizeAttribute: CFStringRef; external name '_kCTFontSizeAttribute'; (*
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -727,6 +808,9 @@ var kCTFontSizeAttribute: CFStringRef; external name '_kCTFontSizeAttribute'; (*
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 {!
     @defined    kCTFontMatrixAttribute
     @abstract   The font transformation matrix.
@@ -738,6 +822,7 @@ var kCTFontMatrixAttribute: CFStringRef; external name '_kCTFontMatrixAttribute'
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -754,6 +839,9 @@ var kCTFontMatrixAttribute: CFStringRef; external name '_kCTFontMatrixAttribute'
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 {!
     @defined    kCTFontCascadeListAttribute
     @abstract   The font cascade list.
@@ -765,6 +853,7 @@ var kCTFontCascadeListAttribute: CFStringRef; external name '_kCTFontCascadeList
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -781,6 +870,9 @@ var kCTFontCascadeListAttribute: CFStringRef; external name '_kCTFontCascadeList
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 {!
     @defined    kCTFontCharacterSetAttribute
     @abstract   The font unicode character coverage set.
@@ -792,6 +884,7 @@ var kCTFontCharacterSetAttribute: CFStringRef; external name '_kCTFontCharacterS
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -808,6 +901,9 @@ var kCTFontCharacterSetAttribute: CFStringRef; external name '_kCTFontCharacterS
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 {!
     @defined    kCTFontLanguagesAttribute
     @abstract   The list of supported languages.
@@ -819,6 +915,7 @@ var kCTFontLanguagesAttribute: CFStringRef; external name '_kCTFontLanguagesAttr
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -835,6 +932,9 @@ var kCTFontLanguagesAttribute: CFStringRef; external name '_kCTFontLanguagesAttr
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 {!
     @defined    kCTFontBaselineAdjustAttribute
     @abstract   The baseline adjustment to apply to font metrics.
@@ -846,6 +946,7 @@ var kCTFontBaselineAdjustAttribute: CFStringRef; external name '_kCTFontBaseline
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -862,6 +963,9 @@ var kCTFontBaselineAdjustAttribute: CFStringRef; external name '_kCTFontBaseline
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 {!
     @defined    kCTFontMacintoshEncodingsAttribute
     @abstract   The macintosh encodings attribute.
@@ -873,6 +977,7 @@ var kCTFontMacintoshEncodingsAttribute: CFStringRef; external name '_kCTFontMaci
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -889,6 +994,9 @@ var kCTFontMacintoshEncodingsAttribute: CFStringRef; external name '_kCTFontMaci
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 {!
     @defined    kCTFontFeaturesAttribute
     @abstract   The array of font features.
@@ -900,6 +1008,7 @@ var kCTFontFeaturesAttribute: CFStringRef; external name '_kCTFontFeaturesAttrib
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -916,6 +1025,9 @@ var kCTFontFeaturesAttribute: CFStringRef; external name '_kCTFontFeaturesAttrib
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 {!
     @defined    kCTFontFeatureSettingsAttribute
     @abstract   The array of font settings.
@@ -927,6 +1039,7 @@ var kCTFontFeatureSettingsAttribute: CFStringRef; external name '_kCTFontFeature
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -943,6 +1056,9 @@ var kCTFontFeatureSettingsAttribute: CFStringRef; external name '_kCTFontFeature
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 {!
     @defined    kCTFontFixedAdvanceAttribute
     @abstract   Specifies advance width.
@@ -954,6 +1070,7 @@ var kCTFontFixedAdvanceAttribute: CFStringRef; external name '_kCTFontFixedAdvan
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -970,6 +1087,9 @@ var kCTFontFixedAdvanceAttribute: CFStringRef; external name '_kCTFontFixedAdvan
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 {!
     @defined    kCTFontOrientationAttribute
     @abstract   The orientation attribute.
@@ -981,6 +1101,7 @@ var kCTFontOrientationAttribute: CFStringRef; external name '_kCTFontOrientation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -997,12 +1118,16 @@ var kCTFontOrientationAttribute: CFStringRef; external name '_kCTFontOrientation
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 {!
     @enum       CTFontOrientation
     @abstract   Specifies the intended rendering orientation of the font for obtaining glyph metrics.
 }
 const
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1040,6 +1165,11 @@ const
 	kCTFontHorizontalOrientation = 1;
 	kCTFontVerticalOrientation = 2;
 >>>>>>> origin/fixes_2.4
+=======
+	kCTFontDefaultOrientation = 0;
+	kCTFontHorizontalOrientation = 1;
+	kCTFontVerticalOrientation = 2;
+>>>>>>> origin/cpstrnew
 type
 	CTFontOrientation = UInt32;
 
@@ -1049,6 +1179,7 @@ type
     @discussion The attribute is used to specify or obtain the format of the font. The returned value is a CFNumber containing one of the constants defined below.
 }
 var kCTFontFormatAttribute: CFStringRef; external name '_kCTFontFormatAttribute'; (* attribute const *)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1070,6 +1201,9 @@ var kCTFontFormatAttribute: CFStringRef; external name '_kCTFontFormatAttribute'
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 {!
     @constant   kCTFontFormatUnrecognized
@@ -1077,6 +1211,7 @@ var kCTFontFormatAttribute: CFStringRef; external name '_kCTFontFormatAttribute'
     @constant   kCTFontFormatOpenTypePostScript
                 The font is an OpenType format containing PostScript data
     @constant   kCTFontFormatOpenTypeTrueType
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1098,6 +1233,9 @@ var kCTFontFormatAttribute: CFStringRef; external name '_kCTFontFormatAttribute'
 =======
     			The font is an OpenType format containing TrueType data
 >>>>>>> origin/fixes_2.4
+=======
+    			The font is an OpenType format containing TrueType data
+>>>>>>> origin/cpstrnew
     @constant   kCTFontFormatTrueType
                 The font is a recognized TrueType format
     @constant   kCTFontFormatPostScript
@@ -1126,6 +1264,7 @@ var kCTFontRegistrationScopeAttribute: CFStringRef; external name '_kCTFontRegis
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_6, __IPHONE_3_2) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
@@ -1142,6 +1281,9 @@ var kCTFontRegistrationScopeAttribute: CFStringRef; external name '_kCTFontRegis
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
+>>>>>>> origin/cpstrnew
 {!
     @defined    kCTFontPriorityAttribute
     @abstract   The font descriptors priority when resolving duplicates and sorting match results.
@@ -1153,6 +1295,7 @@ var kCTFontPriorityAttribute: CFStringRef; external name '_kCTFontPriorityAttrib
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_6, __IPHONE_3_2) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
@@ -1169,6 +1312,9 @@ var kCTFontPriorityAttribute: CFStringRef; external name '_kCTFontPriorityAttrib
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 {!
     @constant   kCTFontPrioritySystem
@@ -1179,6 +1325,7 @@ var kCTFontPriorityAttribute: CFStringRef; external name '_kCTFontPriorityAttrib
                 Priority of computer local fonts (located in /Library/Fonts).
     @constant   kCTFontPriorityUser
                 Priority of local fonts (located in user's Library/Fonts).
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1200,6 +1347,9 @@ var kCTFontPriorityAttribute: CFStringRef; external name '_kCTFontPriorityAttrib
 =======
     @constant   kCTFontPrioritySession
 >>>>>>> origin/fixes_2.4
+=======
+    @constant   kCTFontPrioritySession
+>>>>>>> origin/cpstrnew
                 Priority of fonts registered dynamically, not located in a standard location (either kCTFontManagerScopeUser, or kCTFontManagerScopeSession).
     @constant   kCTFontPriorityProcess
                 Priority of fonts registered for the process (kCTFontManagerScopeProcess).
@@ -1220,6 +1370,7 @@ type
     @discussion This key is used to obtain the font state. The returned value is a CFNumberRef representing a boolean value. Unregistered font descriptors will return NULL, which is equivalent to false.
 }
 var kCTFontEnabledAttribute: CFStringRef; external name '_kCTFontEnabledAttribute'; (* attribute const *)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1259,6 +1410,9 @@ var kCTFontDownloadedAttribute: CFStringRef; external name '_kCTFontDownloadedAt
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 {! --------------------------------------------------------------------------
     @group Descriptor Creation
@@ -1282,6 +1436,7 @@ function CTFontDescriptorCreateWithNameAndSize( name: CFStringRef; size: CGFloat
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -1298,6 +1453,9 @@ function CTFontDescriptorCreateWithNameAndSize( name: CFStringRef; size: CGFloat
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 {!
     @function   CTFontDescriptorCreateWithAttributes
@@ -1314,6 +1472,7 @@ function CTFontDescriptorCreateWithAttributes( attributes: CFDictionaryRef ): CT
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -1330,6 +1489,9 @@ function CTFontDescriptorCreateWithAttributes( attributes: CFDictionaryRef ): CT
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 {!
     @function   CTFontDescriptorCreateCopyWithAttributes
@@ -1344,6 +1506,7 @@ function CTFontDescriptorCreateWithAttributes( attributes: CFDictionaryRef ): CT
     @result     This function creates a new copy of the original font descriptor with attributes augmented by those specified. If there are conflicts between attributes, the new attributes will replace existing ones, except for kCTFontVariationAttribute and kCTFontFeatureSettingsAttribute which will be merged.
 }
 function CTFontDescriptorCreateCopyWithAttributes( original: CTFontDescriptorRef; attributes: CFDictionaryRef ): CTFontDescriptorRef; external name '_CTFontDescriptorCreateCopyWithAttributes';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1396,11 +1559,14 @@ function CTFontDescriptorCreateCopyWithSymbolicTraits( original: CTFontDescripto
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 
 {!
     @function   CTFontDescriptorCreateCopyWithVariation
     @abstract   Creates a copy of the original font descriptor with a new  variation instance.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1414,6 +1580,8 @@ function CTFontDescriptorCreateCopyWithSymbolicTraits( original: CTFontDescripto
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
     @param      original
                 The original font descriptor reference.
@@ -1427,6 +1595,7 @@ function CTFontDescriptorCreateCopyWithSymbolicTraits( original: CTFontDescripto
     @result     This function returns a copy of the original font descriptor with a new variation instance. This is a convenience method for easily creating new variation font instances.
 }
 function CTFontDescriptorCreateCopyWithVariation( original: CTFontDescriptorRef; variationIdentifier: CFNumberRef; variationValue: CGFloat ): CTFontDescriptorRef; external name '_CTFontDescriptorCreateCopyWithVariation';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1448,6 +1617,9 @@ function CTFontDescriptorCreateCopyWithVariation( original: CTFontDescriptorRef;
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 {!
     @function   CTFontDescriptorCreateCopyWithFeature
@@ -1472,6 +1644,7 @@ function CTFontDescriptorCreateCopyWithFeature( original: CTFontDescriptorRef; f
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -1488,6 +1661,9 @@ function CTFontDescriptorCreateCopyWithFeature( original: CTFontDescriptorRef; f
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 {!
     @function   CTFontDescriptorCreateMatchingFontDescriptors
@@ -1507,6 +1683,7 @@ function CTFontDescriptorCreateMatchingFontDescriptors( descriptor: CTFontDescri
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -1523,6 +1700,9 @@ function CTFontDescriptorCreateMatchingFontDescriptors( descriptor: CTFontDescri
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 {!
     @function   CTFontDescriptorCreateMatchingFontDescriptor
@@ -1537,6 +1717,7 @@ function CTFontDescriptorCreateMatchingFontDescriptors( descriptor: CTFontDescri
     @result     This function returns a retained normalized font descriptor matching the attributes present in descriptor. The original descriptor may be returned in normalized form.
 }
 function CTFontDescriptorCreateMatchingFontDescriptor( descriptor: CTFontDescriptorRef; mandatoryAttributes: CFSetRef ): CTFontDescriptorRef; external name '_CTFontDescriptorCreateMatchingFontDescriptor';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1615,6 +1796,9 @@ var kCTFontDescriptorMatchingError: CFStringRef; external name '_kCTFontDescript
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 {! --------------------------------------------------------------------------
     @group Descriptor Accessors
@@ -1635,6 +1819,7 @@ function CTFontDescriptorCopyAttributes( descriptor: CTFontDescriptorRef ): CFDi
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -1651,6 +1836,9 @@ function CTFontDescriptorCopyAttributes( descriptor: CTFontDescriptorRef ): CFDi
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 {!
     @function   CTFontDescriptorCopyAttribute
@@ -1670,6 +1858,7 @@ function CTFontDescriptorCopyAttribute( descriptor: CTFontDescriptorRef; attribu
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -1686,6 +1875,9 @@ function CTFontDescriptorCopyAttribute( descriptor: CTFontDescriptorRef; attribu
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 {!
     function    CTFontDescriptorCopyLocalizedAttribute
@@ -1710,6 +1902,7 @@ function CTFontDescriptorCopyLocalizedAttribute( descriptor: CTFontDescriptorRef
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -1736,6 +1929,11 @@ function CTFontDescriptorCopyLocalizedAttribute( descriptor: CTFontDescriptorRef
 
 {$endc} {TARGET_OS_MAC}
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+{$endc} {TARGET_OS_MAC}
+>>>>>>> origin/cpstrnew
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.

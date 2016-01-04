@@ -257,12 +257,17 @@ Const
     MOD_MAPPER = 5;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     MOD_WAVETABLE =  6;  { hardware wavetable synth }
     MOD_SWSYNTH   =  7;  { software synth }
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    MOD_WAVETABLE =  6;  { hardware wavetable synth }
+    MOD_SWSYNTH   =  7;  { software synth }
+>>>>>>> origin/cpstrnew
     MIDICAPS_VOLUME = 1;
     MIDICAPS_LRVOLUME = 2;
     MIDICAPS_CACHE = 4;
@@ -1175,6 +1180,7 @@ Type
  LPHMIDIIN = ^HMIDIIN;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  PHMIDIIN = LPHMIDIIN;
  LPHMIDIOUT = ^HMIDIOUT;
  PHMIDIOUT =  LPHMIDIOUT;
@@ -1184,6 +1190,11 @@ Type
 =======
  LPHMIDIOUT = ^HMIDIOUT;
 >>>>>>> origin/fixes_2_2
+=======
+ PHMIDIIN = LPHMIDIIN;
+ LPHMIDIOUT = ^HMIDIOUT;
+ PHMIDIOUT =  LPHMIDIOUT;
+>>>>>>> origin/cpstrnew
  LPHMIDISTRM = ^HMIDISTRM;
  LPMIDICALLBACK = PDRVCALLBACK;
 
@@ -1275,11 +1286,15 @@ Type
  TMIDIINCAPS  = MIDIINCAPS;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  TMIDIOUTCAPS = MIDIOUTCAPS;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ TMIDIOUTCAPS = MIDIOUTCAPS;
+>>>>>>> origin/cpstrnew
 
  PMIDIHDR = ^_midihdr;
  _midihdr = packed Record

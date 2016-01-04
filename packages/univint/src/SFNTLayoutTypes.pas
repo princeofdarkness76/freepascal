@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       ATS/SFNTLayoutTypes.h
  
      Contains:   SFNT file layout structures and constants.
@@ -117,6 +118,9 @@
 =======
      File:       ATS/SFNTLayoutTypes.h
 >>>>>>> origin/fixes_2.4
+=======
+     File:       ATS/SFNTLayoutTypes.h
+>>>>>>> origin/cpstrnew
  
      Contains:   SFNT file layout structures and constants.
  
@@ -149,12 +153,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -166,6 +174,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -180,6 +189,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -195,6 +208,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -205,6 +219,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -212,13 +229,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -226,6 +247,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -234,8 +257,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -246,6 +272,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -266,6 +293,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -274,12 +303,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -287,6 +319,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -551,12 +584,27 @@ interface
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
+=======
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -601,6 +649,7 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc TARGET_CPU_PPC_64 := FALSE}
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -608,6 +657,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -636,6 +687,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -644,6 +696,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -654,6 +708,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -711,6 +766,14 @@ uses MacTypes;
 
 //#pragma pack(push, 2)
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+
+
+{$ifc TARGET_OS_MAC}
+
+//#pragma pack(push, 2)
+>>>>>>> origin/cpstrnew
 {$ALIGN MAC68K}
 
 { ----------------------------------------------------------------------------------------- }
@@ -737,6 +800,7 @@ uses MacTypes;
  *  Summary:
  *    Feature types
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -912,6 +976,8 @@ const
 
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 const
 	kAllTypographicFeaturesType = 0;
 	kLigaturesType = 1;
@@ -1006,6 +1072,7 @@ const
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{
 	 *  Summary:
 	 *    Selectors for feature type kVerticalSubstitutionType
@@ -1015,12 +1082,17 @@ const
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 {
  *  Summary:
  *    Selectors for feature type kVerticalSubstitutionType
  }
 const
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	kSubstituteVerticalFormsOnSelector = 0;
 	kSubstituteVerticalFormsOffSelector = 1;
 
@@ -1028,13 +1100,17 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  Summary:
  *    Selectors for feature type kLinguisticRearrangementType
  }
 const
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
@@ -1049,6 +1125,8 @@ const
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	kLinguisticRearrangementOnSelector = 0;
 	kLinguisticRearrangementOffSelector = 1;
 
@@ -1056,8 +1134,11 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  Summary:
  *    Selectors for feature type kNumberSpacingType
@@ -1065,6 +1146,9 @@ const
 const
 	kMonospacedNumbersSelector = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 	kProportionalNumbersSelector = 1;
 	kThirdWidthNumbersSelector = 2;
 	kQuarterWidthNumbersSelector = 3;
@@ -1110,6 +1194,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kScientificInferiorsSelector = 4;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1117,6 +1202,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -1155,6 +1242,7 @@ const
 	kFormInterrobangOffSelector = 7;
 	kSmartQuotesOnSelector = 8;
 	kSmartQuotesOffSelector = 9;
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -1290,6 +1378,8 @@ const
 	kSmartQuotesOnSelector = 8;
 	kSmartQuotesOffSelector = 9;
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	kPeriodsToEllipsisOnSelector = 10;
 	kPeriodsToEllipsisOffSelector = 11;
 
@@ -1297,8 +1387,11 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  Summary:
  *    Selectors for feature type kMathematicalExtrasType
@@ -1306,6 +1399,7 @@ const
 const
 	kHyphenToMinusOnSelector = 0;
 	kHyphenToMinusOffSelector = 1;
+<<<<<<< HEAD
 	kAsteriskToMultiplyOnSelector = 2;
 	kAsteriskToMultiplyOffSelector = 3;
 	kSlashToDivideOnSelector = 4;
@@ -1469,26 +1563,30 @@ const
 	 	}
 	kHyphenToMinusOnSelector	= 0;
 	kHyphenToMinusOffSelector	= 1;
+=======
+>>>>>>> origin/cpstrnew
 	kAsteriskToMultiplyOnSelector = 2;
 	kAsteriskToMultiplyOffSelector = 3;
-	kSlashToDivideOnSelector	= 4;
-	kSlashToDivideOffSelector	= 5;
+	kSlashToDivideOnSelector = 4;
+	kSlashToDivideOffSelector = 5;
 	kInequalityLigaturesOnSelector = 6;
 	kInequalityLigaturesOffSelector = 7;
-	kExponentsOnSelector		= 8;
-	kExponentsOffSelector		= 9;
+	kExponentsOnSelector = 8;
+	kExponentsOffSelector = 9;
 
 
-	{
-	 *  Summary:
-	 *    Selectors for feature type kOrnamentSetsType
-	 	}
-	kNoOrnamentsSelector		= 0;
-	kDingbatsSelector			= 1;
-	kPiCharactersSelector		= 2;
-	kFleuronsSelector			= 3;
-	kDecorativeBordersSelector	= 4;
+{
+ *  Summary:
+ *    Selectors for feature type kOrnamentSetsType
+ }
+const
+	kNoOrnamentsSelector = 0;
+	kDingbatsSelector = 1;
+	kPiCharactersSelector = 2;
+	kFleuronsSelector = 3;
+	kDecorativeBordersSelector = 4;
 	kInternationalSymbolsSelector = 5;
+<<<<<<< HEAD
 	kMathSymbolsSelector		= 6;
 
 
@@ -1528,6 +1626,49 @@ const
 	 	}
 =======
 >>>>>>> origin/fixes_2.4
+=======
+	kMathSymbolsSelector = 6;
+
+
+{
+ *  Summary:
+ *    Selectors for feature type kCharacterAlternativesType
+ }
+const
+	kNoAlternatesSelector = 0;
+
+
+{
+ *  Summary:
+ *    Selectors for feature type kDesignComplexityType
+ }
+const
+	kDesignLevel1Selector = 0;
+	kDesignLevel2Selector = 1;
+	kDesignLevel3Selector = 2;
+	kDesignLevel4Selector = 3;
+	kDesignLevel5Selector = 4;
+
+
+{
+ *  Summary:
+ *    Selectors for feature type kStyleOptionsType
+ }
+const
+	kNoStyleOptionsSelector = 0;
+	kDisplayTextSelector = 1;
+	kEngravedTextSelector = 2;
+	kIlluminatedCapsSelector = 3;
+	kTitlingCapsSelector = 4;
+	kTallCapsSelector = 5;
+
+
+{
+ *  Summary:
+ *    Selectors for feature type kCharacterShapeType
+ }
+const
+>>>>>>> origin/cpstrnew
 	kTraditionalCharactersSelector = 0;
 	kSimplifiedCharactersSelector = 1;
 	kJIS1978CharactersSelector = 2;
@@ -1536,6 +1677,7 @@ const
 	kTraditionalAltOneSelector = 5;
 	kTraditionalAltTwoSelector = 6;
 	kTraditionalAltThreeSelector = 7;
+<<<<<<< HEAD
 <<<<<<< HEAD
 	kTraditionalAltFourSelector	= 8;
 	kTraditionalAltFiveSelector	= 9;
@@ -1574,6 +1716,8 @@ const
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 	kTraditionalAltFourSelector = 8;
 	kTraditionalAltFiveSelector = 9;
 	kExpertCharactersSelector = 10;
@@ -1608,7 +1752,10 @@ const
 	kHiraganaToKatakanaSelector = 2;
 	kKatakanaToHiraganaSelector = 3;
 	kKanaToRomanizationSelector = 4;
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	kRomanizationToHiraganaSelector = 5;
 	kRomanizationToKatakanaSelector = 6;
 	kHanjaToHangulAltOneSelector = 7;
@@ -1619,8 +1766,11 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  Summary:
  *    Selectors for feature type kAnnotationType
@@ -1628,6 +1778,7 @@ const
 const
 	kNoAnnotationSelector = 0;
 	kBoxAnnotationSelector = 1;
+<<<<<<< HEAD
 <<<<<<< HEAD
 	kRoundedBoxAnnotationSelector = 2;
 	kCircleAnnotationSelector = 3;
@@ -1647,12 +1798,15 @@ const
 	kBoxAnnotationSelector		= 1;
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	kRoundedBoxAnnotationSelector = 2;
 	kCircleAnnotationSelector = 3;
 	kInvertedCircleAnnotationSelector = 4;
 	kParenthesisAnnotationSelector = 5;
 	kPeriodAnnotationSelector = 6;
 	kRomanNumeralAnnotationSelector = 7;
+<<<<<<< HEAD
 <<<<<<< HEAD
 	kDiamondAnnotationSelector	= 8;
 <<<<<<< HEAD
@@ -1662,6 +1816,9 @@ const
 =======
 	kDiamondAnnotationSelector = 8;
 >>>>>>> origin/fixes_2.4
+=======
+	kDiamondAnnotationSelector = 8;
+>>>>>>> origin/cpstrnew
 	kInvertedBoxAnnotationSelector = 9;
 	kInvertedRoundedBoxAnnotationSelector = 10;
 
@@ -1669,8 +1826,11 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  Summary:
  *    Selectors for feature type kKanaSpacingType
@@ -1678,6 +1838,7 @@ const
 const
 	kFullWidthKanaSelector = 0;
 	kProportionalKanaSelector = 1;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 
@@ -1708,12 +1869,19 @@ const
 =======
 
 
+=======
+
+
+>>>>>>> origin/cpstrnew
 {
  *  Summary:
  *    Selectors for feature type kIdeographicSpacingType
  }
 const
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	kFullWidthIdeographsSelector = 0;
 	kProportionalIdeographsSelector = 1;
 	kHalfWidthIdeographsSelector = 2;
@@ -1722,13 +1890,17 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  Summary:
  *    Selectors for feature type kUnicodeDecompositionType
  }
 const
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
@@ -1743,6 +1915,8 @@ const
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	kCanonicalCompositionOnSelector = 0;
 	kCanonicalCompositionOffSelector = 1;
 	kCompatibilityCompositionOnSelector = 2;
@@ -1754,8 +1928,11 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  Summary:
  *    Selectors for feature type kRubyKanaType
@@ -1765,6 +1942,7 @@ const
 	kRubyKanaSelector = 1;    { deprecated - use kRubyKanaOnSelector instead }
 	kRubyKanaOnSelector = 2;
 	kRubyKanaOffSelector = 3;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 
@@ -1810,6 +1988,8 @@ const
 	kRubyKanaSelector			= 1;
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1839,6 +2019,7 @@ const
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{
 	 *  Summary:
 	 *    Selectors for feature type kCJKVerticalRomanPlacementType
@@ -1848,12 +2029,17 @@ const
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 {
  *  Summary:
  *    Selectors for feature type kCJKVerticalRomanPlacementType
  }
 const
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	kCJKVerticalRomanCenteredSelector = 0;
 	kCJKVerticalRomanHBaselineSelector = 1;
 
@@ -1861,8 +2047,11 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  Summary:
  *    Selectors for feature type kItalicCJKRomanType
@@ -1877,10 +2066,14 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 
 
 {
  *  Summary:
+<<<<<<< HEAD
  *    Selectors for feature type kCaseSensitiveLayoutType
  }
 const
@@ -2023,6 +2216,27 @@ const
 	kSFNTLookupSingleTable = 6;    { sorted list of glyph, value pairs }
 	kSFNTLookupTrimmedArray = 8;     { a simple trimmed array indexed by glyph code }
 
+=======
+ *    Selectors for feature type kCJKRomanSpacingType
+ }
+const
+	kHalfWidthCJKRomanSelector = 0;
+	kProportionalCJKRomanSelector = 1;
+	kDefaultCJKRomanSelector = 2;
+	kFullWidthCJKRomanSelector = 3;
+
+{ --------------------------------------------------------------------------- }
+{ ---------------- Table Specific Typedefs and Constants -------------------- }
+{ --------------------------------------------------------------------------- }
+{ FORMATS FOR TABLE: lookup tables - used within various other tables }
+const
+	kSFNTLookupSimpleArray = 0;    { a simple array indexed by glyph code }
+	kSFNTLookupSegmentSingle = 2;    { segment mapping to single value }
+	kSFNTLookupSegmentArray = 4;    { segment mapping to lookup array }
+	kSFNTLookupSingleTable = 6;    { sorted list of glyph, value pairs }
+	kSFNTLookupTrimmedArray = 8;     { a simple trimmed array indexed by glyph code }
+
+>>>>>>> origin/cpstrnew
 type
 	SFNTLookupTableFormat = UInt16;
 	SFNTLookupValue = UInt16;
@@ -2048,6 +2262,7 @@ type
 	SFNTLookupArrayHeaderPtr = ^SFNTLookupArrayHeader;
 	SFNTLookupArrayHeader = record
 		lookupValues : array[0..0] of SFNTLookupValue;
+<<<<<<< HEAD
 	end;
 { A format 8 lookup table maps some range of glyphs in the font to lookup values }
 type
@@ -2153,6 +2368,9 @@ type
 	SFNTLookupArrayHeader = record
 		lookupValues : array[0..0] of SFNTLookupValue;
 	end;
+=======
+	end;
+>>>>>>> origin/cpstrnew
 { A format 8 lookup table maps some range of glyphs in the font to lookup values }
 type
 	SFNTLookupTrimmedArrayHeaderPtr = ^SFNTLookupTrimmedArrayHeader;
@@ -2161,6 +2379,7 @@ type
 		count: UInt16;
 		valueArray : array[0..0] of SFNTLookupValue;
 	end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 	{	
@@ -2175,32 +2394,50 @@ type
 		firstGlyph:				UInt16;
 <<<<<<< HEAD
 		value:					array [0..0] of UInt16;
+=======
+{
+    Format 2 and format 4 lookup tables map ranges of glyphs to either single lookup
+    values (format 2), or per-glyph lookup values (format 4). Since both formats
+    use the same kind of data, only one unified set of segment-related structures
+    is defined.
+}
+type
+	SFNTLookupSegmentPtr = ^SFNTLookupSegment;
+	SFNTLookupSegment = record
+		lastGlyph: UInt16;
+		firstGlyph: UInt16;
+		value: array[0..0] of UInt16;
+>>>>>>> origin/cpstrnew
 	end;
-
+type
 	SFNTLookupSegmentHeaderPtr = ^SFNTLookupSegmentHeader;
 	SFNTLookupSegmentHeader = record
-		binSearch:				SFNTLookupBinarySearchHeader;
-		segments:				array [0..0] of SFNTLookupSegment;
+		binSearch: SFNTLookupBinarySearchHeader;
+		segments: array[0..0] of SFNTLookupSegment;
 	end;
-
-	{	 A format 6 lookup table maps single glyphs to lookup values. 	}
+{ A format 6 lookup table maps single glyphs to lookup values. }
+type
 	SFNTLookupSinglePtr = ^SFNTLookupSingle;
 	SFNTLookupSingle = record
-		glyph:					UInt16;
-		value:					array [0..0] of UInt16;
+		glyph: UInt16;
+		value: array[0..0] of UInt16;
 	end;
-
+type
 	SFNTLookupSingleHeaderPtr = ^SFNTLookupSingleHeader;
 	SFNTLookupSingleHeader = record
-		binSearch:				SFNTLookupBinarySearchHeader;
-		entries:				array [0..0] of SFNTLookupSingle;
+		binSearch: SFNTLookupBinarySearchHeader;
+		entries: array[0..0] of SFNTLookupSingle;
 	end;
-
-	{	 The format-specific part of the subtable header 	}
+{ The format-specific part of the subtable header }
 	SFNTLookupFormatSpecificHeaderPtr = ^SFNTLookupFormatSpecificHeader;
+<<<<<<< HEAD
 	SFNTLookupFormatSpecificHeader = record
 		case SInt16 of
 >>>>>>> graemeg/fixes_2_2
+=======
+ 	SFNTLookupFormatSpecificHeader = record
+ 		case SInt16 of
+>>>>>>> origin/cpstrnew
 		0: (
 			theArray:			SFNTLookupArrayHeader;
 			);
@@ -2216,6 +2453,9 @@ type
 	end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 { The overall subtable header }
 type
 	SFNTLookupTable = record
@@ -2386,8 +2626,11 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 	end;
@@ -2403,6 +2646,7 @@ type
 type
 	JustPCConditionalAddActionPtr = ^JustPCConditionalAddAction;
 	JustPCConditionalAddAction = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2438,6 +2682,12 @@ type
 		substGlyph: UInt16;
 	end;
 >>>>>>> graemeg/cpstrnew
+=======
+		substThreshhold: Fixed;        { threshhold of growth factor at which subst occurs }
+		addGlyph: UInt16;
+		substGlyph: UInt16;
+	end;
+>>>>>>> origin/cpstrnew
 =======
 		substThreshhold: Fixed;        { threshhold of growth factor at which subst occurs }
 		addGlyph: UInt16;
@@ -2523,6 +2773,7 @@ type
 		format: UInt16;
 		horizHeaderOffset: UInt16;
 		vertHeaderOffset: UInt16;
+<<<<<<< HEAD
 	end;
 { --------------------------------------------------------------------------- }
 { FORMATS FOR TABLE: 'opbd' }
@@ -2955,6 +3206,21 @@ const
 { TYPES }
 
 type
+=======
+	end;
+{ --------------------------------------------------------------------------- }
+{ FORMATS FOR TABLE: 'opbd' }
+{ CONSTANTS }
+const
+	kOPBDTag = $6F706264; { 'opbd' }
+	kOPBDCurrentVersion = $00010000;
+	kOPBDDistanceFormat = 0;
+	kOPBDControlPointFormat = 1;
+
+{ TYPES }
+
+type
+>>>>>>> origin/cpstrnew
 	OpbdTableFormat = UInt16;
 {
     The OpbdSideValues struct is the lookup result from the FindSingle call for the
@@ -3037,6 +3303,7 @@ type
 	MortRearrangementSubtablePtr = ^MortRearrangementSubtable;
 	MortRearrangementSubtable = record
 <<<<<<< HEAD
+<<<<<<< HEAD
 		header:					STHeader;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -3045,6 +3312,9 @@ type
 =======
 		header: STHeader;
 >>>>>>> origin/fixes_2.4
+=======
+		header: STHeader;
+>>>>>>> origin/cpstrnew
 	end;
 
 	MortContextualSubtablePtr = ^MortContextualSubtable;
@@ -3052,6 +3322,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		header: STHeader;
 =======
 		header:					STHeader;
@@ -3062,11 +3333,15 @@ type
 =======
 		header: STHeader;
 >>>>>>> origin/fixes_2.4
+=======
+		header: STHeader;
+>>>>>>> origin/cpstrnew
 		substitutionTableOffset: UInt16;
 	end;
 
 	MortLigatureSubtablePtr = ^MortLigatureSubtable;
 	MortLigatureSubtable = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3086,6 +3361,9 @@ type
 =======
 		header: STHeader;
 >>>>>>> origin/fixes_2.4
+=======
+		header: STHeader;
+>>>>>>> origin/cpstrnew
 		ligatureActionTableOffset: UInt16;
 		componentTableOffset: UInt16;
 		ligatureTableOffset: UInt16;
@@ -3093,6 +3371,7 @@ type
 	
 	MortSwashSubtablePtr = ^MortSwashSubtable;
 	MortSwashSubtable = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		lookup:					SFNTLookupTable;
 <<<<<<< HEAD
@@ -3102,10 +3381,14 @@ type
 =======
 		lookup: SFNTLookupTable;
 >>>>>>> origin/fixes_2.4
+=======
+		lookup: SFNTLookupTable;
+>>>>>>> origin/cpstrnew
 	end;
 
 	MortInsertionSubtablePtr = ^MortInsertionSubtable;
 	MortInsertionSubtable = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3127,6 +3410,11 @@ type
 	end;
 	
 >>>>>>> origin/fixes_2.4
+=======
+		header: STHeader;
+	end;
+	
+>>>>>>> origin/cpstrnew
 	MortSpecificSubtablePtr = ^MortSpecificSubtable;
 	MortSpecificSubtable = record
 		case SInt16 of
@@ -3152,12 +3440,16 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 		length: UInt16;
 		coverage: UInt16;
 		flags: MortSubtableMaskFlags;
 		u: MortSpecificSubtable;
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
@@ -3172,6 +3464,8 @@ type
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	end;
 
 	MortFeatureEntryPtr = ^MortFeatureEntry;
@@ -3179,12 +3473,16 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 		featureType: UInt16;
 		featureSelector: UInt16;
 		enableFlags: MortSubtableMaskFlags;
 		disableFlags: MortSubtableMaskFlags;
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
@@ -3199,6 +3497,8 @@ type
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	end;
 
 	MortChainPtr = ^MortChain;
@@ -3206,14 +3506,18 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 		defaultFlags: MortSubtableMaskFlags;        { default flags for this chain }
 		length: UInt32;                 { byte length of this chain }
 		nFeatures: UInt16;              { number of feature entries }
 		nSubtables: UInt16;             { number of subtables }
 		featureEntries: array[0..0] of MortFeatureEntry;
                                               { the subtables follow }
+<<<<<<< HEAD
 <<<<<<< HEAD
 	end;
 	
@@ -3251,6 +3555,8 @@ type
 																		{  the subtables follow  }
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	end;
 	
 	MortTablePtr = ^MortTable;
@@ -3276,6 +3582,7 @@ type
 	MorxRearrangementSubtablePtr = ^MorxRearrangementSubtable;
 	MorxRearrangementSubtable = record
 <<<<<<< HEAD
+<<<<<<< HEAD
 		header:					STXHeader;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -3284,6 +3591,9 @@ type
 =======
 		header: STXHeader;
 >>>>>>> origin/fixes_2.4
+=======
+		header: STXHeader;
+>>>>>>> origin/cpstrnew
 	end;
 
 	MorxContextualSubtablePtr = ^MorxContextualSubtable;
@@ -3291,6 +3601,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		header: STXHeader;
 =======
 		header:					STXHeader;
@@ -3301,11 +3612,15 @@ type
 =======
 		header: STXHeader;
 >>>>>>> origin/fixes_2.4
+=======
+		header: STXHeader;
+>>>>>>> origin/cpstrnew
 		substitutionTableOffset: UInt32;
 	end;
 
 	MorxLigatureSubtablePtr = ^MorxLigatureSubtable;
 	MorxLigatureSubtable = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3330,10 +3645,17 @@ type
 		componentTableOffset: UInt32;
 		ligatureTableOffset: UInt32;
 >>>>>>> origin/fixes_2.4
+=======
+		header: STXHeader;
+		ligatureActionTableOffset: UInt32;
+		componentTableOffset: UInt32;
+		ligatureTableOffset: UInt32;
+>>>>>>> origin/cpstrnew
 	end;
 
 	MorxInsertionSubtablePtr = ^MorxInsertionSubtable;
 	MorxInsertionSubtable = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3358,6 +3680,12 @@ type
 	end;
 	
 >>>>>>> origin/fixes_2.4
+=======
+		header: STXHeader;
+		insertionGlyphTableOffset: UInt32;
+	end;
+	
+>>>>>>> origin/cpstrnew
 	MorxSpecificSubtablePtr = ^MorxSpecificSubtable;
 	MorxSpecificSubtable = record
 		case SInt16 of
@@ -3383,12 +3711,16 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 		length: UInt32;
 		coverage: UInt32;
 		flags: MortSubtableMaskFlags;
 		u: MorxSpecificSubtable;
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
@@ -3403,6 +3735,8 @@ type
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	end;
 
 	MorxChainPtr = ^MorxChain;
@@ -3410,14 +3744,18 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 		defaultFlags: MortSubtableMaskFlags;        { default flags for this chain }
 		length: UInt32;                 { byte length of this chain }
 		nFeatures: UInt32;              { number of feature entries }
 		nSubtables: UInt32;             { number of subtables }
 		featureEntries: array[0..0] of MortFeatureEntry;
                                               { the subtables follow }
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
@@ -3434,10 +3772,13 @@ type
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	end;
 
 	MorxTablePtr = ^MorxTable;
 	MorxTable = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3544,6 +3885,11 @@ type
 		nChains: UInt32;
 		chains: array[0..0] of MorxChain;
 >>>>>>> origin/fixes_2.4
+=======
+		version: Fixed;
+		nChains: UInt32;
+		chains: array[0..0] of MorxChain;
+>>>>>>> origin/cpstrnew
 	end;
 { --------------------------------------------------------------------------- }
 { FORMATS FOR TABLE: 'prop' }
@@ -3593,6 +3939,7 @@ type
 	PropTablePtr = ^PropTable;
 	PropTable = record
 <<<<<<< HEAD
+<<<<<<< HEAD
 		version:				Fixed;
 		format:					UInt16;
 		defaultProps:			PropCharProperties;
@@ -3602,15 +3949,21 @@ type
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 		version: Fixed;
 		format: UInt16;
 		defaultProps: PropCharProperties;
 		lookup: SFNTLookupTable;
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	end;
 
 	PropLookupSegmentPtr = ^PropLookupSegment;
 	PropLookupSegment = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3632,6 +3985,11 @@ type
 		firstGlyph: UInt16;
 		value: UInt16;
 >>>>>>> origin/fixes_2.4
+=======
+		lastGlyph: UInt16;
+		firstGlyph: UInt16;
+		value: UInt16;
+>>>>>>> origin/cpstrnew
 	end;
 
 	PropLookupSinglePtr = ^PropLookupSingle;
@@ -3639,12 +3997,16 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 		glyph: UInt16;
 		props: PropCharProperties;
 	end;
 { --------------------------------------------------------------------------- }
 { FORMATS FOR TABLE: 'trak' }
 { CONSTANTS }
+<<<<<<< HEAD
 const
 	kTRAKTag = $7472616B; { 'trak' }
 	kTRAKCurrentVersion = $00010000; { current version number for 'trak' table }
@@ -3672,6 +4034,8 @@ type
 { --------------------------------------------------------------------------- }
 { FORMATS FOR TABLE: 'trak' }
 { CONSTANTS }
+=======
+>>>>>>> origin/cpstrnew
 const
 	kTRAKTag = $7472616B; { 'trak' }
 	kTRAKCurrentVersion = $00010000; { current version number for 'trak' table }
@@ -3683,6 +4047,7 @@ type
 	TrakValue = SInt16;
 	TrakTableEntryPtr = ^TrakTableEntry;
 	TrakTableEntry = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 		track:					Fixed;
 		nameTableIndex:			UInt16;
@@ -3696,6 +4061,11 @@ type
 		nameTableIndex: UInt16;
 		sizesOffset: UInt16;            { offset to array of TrackingValues }
 >>>>>>> origin/fixes_2.4
+=======
+		track: Fixed;
+		nameTableIndex: UInt16;
+		sizesOffset: UInt16;            { offset to array of TrackingValues }
+>>>>>>> origin/cpstrnew
 	end;
 
 	TrakTableDataPtr = ^TrakTableData;
@@ -3703,12 +4073,16 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 		nTracks: UInt16;
 		nSizes: UInt16;
 		sizeTableOffset: UInt32;
 		trakTable: array[0..0] of TrakTableEntry;
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
@@ -3723,6 +4097,8 @@ type
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	end;
 
 	TrakTablePtr = ^TrakTable;
@@ -3730,12 +4106,16 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 		version: Fixed;
 		format: UInt16;
 		horizOffset: UInt16;
 		vertOffset: UInt16;
+<<<<<<< HEAD
 <<<<<<< HEAD
 	end;
 { --------------------------------------------------------------------------- }
@@ -3837,10 +4217,13 @@ type
 		vertOffset:				UInt16;
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	end;
 { --------------------------------------------------------------------------- }
 { FORMATS FOR TABLE: 'kern' }
 { CONSTANTS }
+<<<<<<< HEAD
 const
 	kKERNTag = $6B65726E; { 'kern' }
 	kKERNCurrentVersion = $00010000;
@@ -3859,6 +4242,26 @@ const
 
 { Message Type Flags }
 const
+=======
+const
+	kKERNTag = $6B65726E; { 'kern' }
+	kKERNCurrentVersion = $00010000;
+	kKERNVertical = $8000; { set if this table has vertical kerning information }
+	kKERNResetCrossStream = $8000; { this value in a cross-stream table means reset to zero }
+	kKERNCrossStream = $4000; { set if this table contains cross-stream kerning values }
+	kKERNVariation = $2000; { set if this table contains variation kerning values }
+	kKERNUnusedBits = $1F00; { UNUSED, MUST BE ZERO }
+	kKERNFormatMask = $00FF; { format of this subtable }
+
+const
+	kKERNOrderedList = 0;    { ordered list of kerning pairs }
+	kKERNStateTable = 1;    { state table for n-way contextual kerning }
+	kKERNSimpleArray = 2;    { simple n X m array of kerning values }
+	kKERNIndexArray = 3;     { modifed version of SimpleArray }
+
+{ Message Type Flags }
+const
+>>>>>>> origin/cpstrnew
 	kKERNLineStart = $00000001; { Array of glyphs starts a line }
 	kKERNLineEndKerning = $00000002; { Array of glyphs ends a line }
 	kKERNNoCrossKerning = $00000004; { Prohibit cross kerning }
@@ -3926,6 +4329,7 @@ type
 	KernStateHeaderPtr = ^KernStateHeader;
 	KernStateHeader = record
 <<<<<<< HEAD
+<<<<<<< HEAD
 		header:					STHeader;								{  state table header  }
 		valueTable:				UInt16;									{  offset to kerning value table  }
 		firstTable:				SInt8;									{  first table starts here  }
@@ -3938,10 +4342,16 @@ type
 		valueTable: UInt16;             { offset to kerning value table }
 		firstTable: array[0..0] of UInt8;          { first table starts here }
 >>>>>>> origin/fixes_2.4
+=======
+		header: STHeader;                 { state table header }
+		valueTable: UInt16;             { offset to kerning value table }
+		firstTable: array[0..0] of UInt8;          { first table starts here }
+>>>>>>> origin/cpstrnew
 	end;
 
 	KernStateEntryPtr = ^KernStateEntry;
 	KernStateEntry = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4013,6 +4423,10 @@ type
 		newState: UInt16;
 		flags: UInt16;                  { flags per above enum }
 >>>>>>> origin/fixes_2.4
+=======
+		newState: UInt16;
+		flags: UInt16;                  { flags per above enum }
+>>>>>>> origin/cpstrnew
 	end;
 {
     Kern offset table header.
@@ -4060,6 +4474,7 @@ type
 	KernIndexArrayHeaderPtr = ^KernIndexArrayHeader;
 	KernIndexArrayHeader = record
 <<<<<<< HEAD
+<<<<<<< HEAD
 		glyphCount:				UInt16;
 		kernValueCount:			SInt8;
 		leftClassCount:			SInt8;
@@ -4077,6 +4492,8 @@ type
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 		glyphCount: UInt16;
 		kernValueCount: UInt8;
 		leftClassCount: UInt8;
@@ -4088,7 +4505,10 @@ type
 		kernIndex: array[0..0] of UInt8;           { contains indicies into kernValue }
 	end;
 { format specific part of subtable header }
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	KernFormatSpecificHeaderPtr = ^KernFormatSpecificHeader;
 	KernFormatSpecificHeader = record
 		case SInt16 of
@@ -4108,6 +4528,9 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 { version 0 subtable header }
 
 	KernVersion0SubtableHeaderPtr = ^KernVersion0SubtableHeader;
@@ -4122,12 +4545,15 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 	KernSubtableHeaderPtr = ^KernSubtableHeader;
@@ -4376,7 +4802,10 @@ const
 { CONSTANTS }
 const
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 	kBSLNTag = $62736C6E; { 'bsln' }
@@ -4398,6 +4827,7 @@ const
 	kBSLNNoBaselineOverride = 255;
 
 { TYPES }
+<<<<<<< HEAD
 type
 	BslnBaselineClass = UInt32;
 	BslnBaselineClassPtr = ^BslnBaselineClass;
@@ -4490,6 +4920,8 @@ const
 	kBSLNNoBaselineOverride = 255;
 
 { TYPES }
+=======
+>>>>>>> origin/cpstrnew
 type
 	BslnBaselineClass = UInt32;
 	BslnBaselineClassPtr = ^BslnBaselineClass;
@@ -4536,6 +4968,7 @@ type
 		mappingData: SFNTLookupTable;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 	{	 The BslnFormatUnion is a union containing the format-specific parts of the baseline table. 	}
 <<<<<<< HEAD
@@ -4545,6 +4978,9 @@ type
 =======
 { The BslnFormatUnion is a union containing the format-specific parts of the baseline table. }
 >>>>>>> origin/fixes_2.4
+=======
+{ The BslnFormatUnion is a union containing the format-specific parts of the baseline table. }
+>>>>>>> origin/cpstrnew
 	BslnFormatUnionPtr = ^BslnFormatUnion;
 	BslnFormatUnion = record
 		case SInt16 of
@@ -4562,6 +4998,7 @@ type
 			);
 	end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4820,10 +5257,72 @@ end.
 	end;
 { --------------------------------------------------------------------------- }
 
+=======
+{ The table format used in BaselineTable }
+
+	BslnTableFormat = UInt16;
+{ BaselineTable defines the top-level format of the baseline table in the font. }
+
+	BslnTablePtr = ^BslnTable;
+	BslnTable = record
+		version: Fixed;
+		format: BslnTableFormat;
+		defaultBaseline: UInt16;
+		parts: BslnFormatUnion;
+	end;
+
+{ --------------------------------------------------------------------------- }
+{ FORMATS FOR TABLE: 'ALMX' }
+{ TYPES }
+	ALMXHeaderPtr = ^ALMXHeader;
+	ALMXHeader = record
+		Version: Fixed;                { 16.16 format 1.0 by default }
+		Flags: UInt16;
+		NMasters: UInt16;
+		FirstGlyph: UInt16;
+		LastGlyph: UInt16;
+
+		lookup: SFNTLookupTable;                 { lookup table }
+	end;
+
+	ALMXGlyphEntryPtr = ^ALMXGlyphEntry;
+	ALMXGlyphEntry = record
+{ lookup data for ALMX table }
+		GlyphIndexOffset: SInt16;
+		HorizontalAdvance: SInt16;
+		XOffsetToHOrigin: SInt16;
+		VerticalAdvance: SInt16;
+		YOffsetToVOrigin: SInt16;
+	end;
+{ --------------------------------------------------------------------------- }
+{ FORMATS FOR TABLE: 'ROTA' }
+{ TYPES }
+	ROTAHeaderPtr = ^ROTAHeader;
+	ROTAHeader = record
+		Version: Fixed;                { 16.16 format 1.0 by default }
+		Flags: UInt16;
+		NMasters: UInt16;
+		FirstGlyph: UInt16;
+		LastGlyph: UInt16;
+
+		lookup: SFNTLookupTable;                 { lookup table }
+	end;
+
+	ROTAGlyphEntryPtr = ^ROTAGlyphEntry;
+	ROTAGlyphEntry = record
+{ lookup data for ROTA table }
+		GlyphIndexOffset: SInt16;
+		HBaselineOffset: SInt16;        { y offset to the rotated horizontal baseline }
+		VBaselineOffset: SInt16;        { x offset to the rotated vertical baseline }
+	end;
+{ --------------------------------------------------------------------------- }
+
+>>>>>>> origin/cpstrnew
 {$endc} {TARGET_OS_MAC}
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -4832,3 +5331,6 @@ end.
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

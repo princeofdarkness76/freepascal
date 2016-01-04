@@ -66,11 +66,15 @@ It's highly recommended to use Detect (0 constant) for grDriver and grmode: init
  //Detect      =0;     is in the graphh.inc
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
  //CGA           =1;   is in graphh.inc
  //MCGA	       =2;   is in graphh.inc
  //EGA           =3;   is in graphh.inc
  //EGA64         =4;   is in graphh.inc
  //EGAMono       =5;   is in graphh.inc
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -83,6 +87,8 @@ It's highly recommended to use Detect (0 constant) for grDriver and grmode: init
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
  IBM8514       =6;
  //HercMono      =7;   is in the graphh.inc
  ATT400        =8;
@@ -92,11 +98,15 @@ It's highly recommended to use Detect (0 constant) for grDriver and grmode: init
 {Graphics Modes for Each Driver}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
  //CGAC0         =0;   is in graphh.inc
  //CGAC          =1;   is in graphh.inc
  //CGAC2         =2;   is in graphh.inc
  //CGAC3         =3;   is in graphh.inc
  //CGAHi         =4;   is in graphh.inc
+<<<<<<< HEAD
  
  //MCGAC0        =0;   is in graphh.inc
  //MCGAC         =1;   is in graphh.inc
@@ -114,19 +124,25 @@ It's highly recommended to use Detect (0 constant) for grDriver and grmode: init
  CGAC2         =2;
  CGAC3         =3;
  CGAHi         =4;
+=======
+>>>>>>> origin/cpstrnew
  
- MCGAC0        =0;
- MCGAC         =1;
- MCGAC2        =2;
- MCGAC3        =3;
- MCGAMed       =4;
- MCGAHi        =5;
+ //MCGAC0        =0;   is in graphh.inc
+ //MCGAC         =1;   is in graphh.inc
+ //MCGAC2        =2;   is in graphh.inc
+ //MCGAC3        =3;   is in graphh.inc
+ //MCGAMed       =4;   is in graphh.inc
+ //MCGAHi        =5;   is in graphh.inc
  
+<<<<<<< HEAD
  EGAMonoHi     =3;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ //EGAMonoHi     =3;   is in graphh.inc
+>>>>>>> origin/cpstrnew
  //HercMonoHi    =0;      is in the graphh.inc
  //VGALo         =0;      is in the graphh.inc
  //VGAMed        =1;      is in the graphh.inc
@@ -134,10 +150,14 @@ It's highly recommended to use Detect (0 constant) for grDriver and grmode: init
  
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
  //EGALo         =0;   is in graphh.inc
  //EGAHi         =1;   is in graphh.inc
  //EGA64Lo       =0;   is in graphh.inc
  //EGA64Hi       =1;   is in graphh.inc
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -149,6 +169,8 @@ It's highly recommended to use Detect (0 constant) for grDriver and grmode: init
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
  
  ATT400C0      =0;
  ATT400C1      =1;

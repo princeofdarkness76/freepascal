@@ -33,6 +33,7 @@ interface
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 uses SysUtils, Classes, SAX, DOM, DOM_HTML,htmldefs,xmlutils;
 =======
 uses SysUtils, Classes, SAX, DOM, DOM_HTML,htmldefs;
@@ -40,6 +41,9 @@ uses SysUtils, Classes, SAX, DOM, DOM_HTML,htmldefs;
 =======
 uses SysUtils, Classes, SAX, DOM, DOM_HTML,htmldefs;
 >>>>>>> origin/fixes_2_2
+=======
+uses SysUtils, Classes, SAX, DOM, DOM_HTML,htmldefs,xmlutils;
+>>>>>>> origin/cpstrnew
 
 type
 
@@ -295,6 +299,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 if CheckForName(FRawTokenText) then   { <-- ansi to wide conversion here }
                   EnterNewScannerContext(scUnknown)   // assume unclosed tag
                 else if (FRawTokenText <> '') and (FRawTokenText[1] <> '!') then
@@ -307,11 +312,14 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                 if CheckForName(FTokenText) then
                   EnterNewScannerContext(scUnknown)   // assume unclosed tag
                 else if (FTokenText <> '') and (FTokenText[1] <> '!') then
                 begin
                   Insert('<', FTokenText, 1);         // assume plaintext
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -322,11 +330,14 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                   FScannerContext := scText;
                   EnterNewScannerContext(scUnknown);
                 end
                 else
                 begin  // in comment, ignore
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -344,10 +355,14 @@ begin
 =======
                   FTokenText := FTokenText + Buffer[BufferPos];
 >>>>>>> origin/cpstrnew
+=======
+                  FTokenText := FTokenText + Buffer[BufferPos];
+>>>>>>> origin/cpstrnew
                   Inc(BufferPos);
                 end;
               end;
           else
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -362,6 +377,9 @@ begin
 =======
             FTokenText := FTokenText + Buffer[BufferPos];
 >>>>>>> graemeg/cpstrnew
+=======
+            FTokenText := FTokenText + Buffer[BufferPos];
+>>>>>>> origin/cpstrnew
 =======
             FTokenText := FTokenText + Buffer[BufferPos];
 >>>>>>> origin/cpstrnew

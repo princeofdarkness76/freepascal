@@ -23,6 +23,7 @@ Resourcestring
   SErrNoPackageAvailable     = 'Package %s %s is not available';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   SErrOnlyLocalDir           = 'The specified command "%s" works only on current dir, not on a (remote) package';
 =======
   SErrOnlyLocalDir           = 'The speficied command "%s" works only on current dir, not on a (remote) package';
@@ -30,6 +31,9 @@ Resourcestring
 =======
   SErrOnlyLocalDir           = 'The speficied command "%s" works only on current dir, not on a (remote) package';
 >>>>>>> origin/fixes_2_2
+=======
+  SErrOnlyLocalDir           = 'The specified command "%s" works only on current dir, not on a (remote) package';
+>>>>>>> origin/cpstrnew
   SErrExecutionFPMake        = 'Execution of FPMake %s failed';
   SErrException              = 'The FPC Package tool encountered the following error:';
   SErrActionAlreadyRegistered= 'Action "%s" is already registered';
@@ -75,6 +79,7 @@ Resourcestring
   SLogDetectedCompiler       = 'Detected compiler "%s" (version %s for %s)';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   SLogDetectedPrefix         = 'Detected %s prefix "%s"';
   SLogFPCDirEnv              = 'FPCDIR from environment setting "%s"';
 =======
@@ -83,10 +88,15 @@ Resourcestring
 =======
   SLogDetectedFPCDIR         = 'Detected %s FPCDIR "%s"';
 >>>>>>> origin/fixes_2_2
+=======
+  SLogDetectedPrefix         = 'Detected %s prefix "%s"';
+  SLogFPCDirEnv              = 'FPCDIR from environment setting "%s"';
+>>>>>>> origin/cpstrnew
   SLogGeneratingCompilerConfig  = 'Generating default compiler configuration in "%s"';
   SLogLoadingPackagesFile    = 'Loading available packages from "%s"';
   SLogLoadingMirrorsFile     = 'Loading available mirrors from "%s"';
   SLogFindInstalledPackages  = 'Finding installed packages in "%s"';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   SLogFoundFPMakeAddin       = 'Found FPMake-AddIn "%s"';
@@ -94,6 +104,9 @@ Resourcestring
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  SLogFoundFPMakeAddin       = 'Found FPMake-AddIn "%s"';
+>>>>>>> origin/cpstrnew
   SLogSavingStatusFile       = 'Saving local status to "%s"';
   SLogFPMKUnitDepVersion     = 'Checking for %s %s, installed %s, available %s';
   SLogFPMKUnitDepTooOld      = 'Minimum version of %s is not installed, using internal fpmkunit with limited functionality';
@@ -101,6 +114,7 @@ Resourcestring
   SLogUpgradingConfig        = 'Configuration file "%s" is updated with new configuration settings';
   SLogPackageDependency      = 'Dependency on package %s %s, installed %s, available %s  (%s)';
   SLogPackageChecksumChanged = 'Package %s needs to be rebuild, dependency %s is modified';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   SLogCheckBrokenDependenvies= 'Checking for broken dependencies';
@@ -127,15 +141,19 @@ Resourcestring
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  SLogCheckBrokenDependenvies= 'Checking for broken dependencies';
+>>>>>>> origin/cpstrnew
 
-  SLogGlobalCfgHeader        = 'Using global configuration:';
-  SLogGlobalCfgRemoteMirrorsURL = ' RemoteMirrorsURL: "%s"';
-  SLogGlobalCfgRemoteRepository = ' RemoteRepository: "%s"';
-  SLogGlobalCfgLocalRepository = ' LocalRepository: "%s"';
-  SLogGlobalCfgBuildDir      = ' BuildDir: "%s"';
-  SLogGlobalCfgArchivesDir   = ' ArchivesDir: "%s"';
-  SLogGlobalCfgCompilerConfigDir = ' CompilerConfigDir: "%s"';
+  SLogGlobalCfgHeader                = 'Using global configuration from file "%s":';
+  SLogGlobalCfgRemoteMirrorsURL      = ' RemoteMirrorsURL:      %s';
+  SLogGlobalCfgRemoteRepository      = ' RemoteRepository:      %s';
+  SLogGlobalCfgLocalRepository       = ' LocalRepository:       "%s" -> "%s"';
+  SLogGlobalCfgBuildDir              = ' BuildDir:              "%s" -> "%s"';
+  SLogGlobalCfgArchivesDir           = ' ArchivesDir:           "%s" -> "%s"';
+  SLogGlobalCfgCompilerConfigDir     = ' CompilerConfigDir:     "%s" -> "%s"';
   SLogGlobalCfgDefaultCompilerConfig = ' DefaultCompilerConfig: "%s"';
+<<<<<<< HEAD
   SLogGlobalCfgFPMakeCompilerConfig = ' FPMakeCompilerConfig: "%s"';
   SLogGlobalCfgDownloader    = ' Downloader: "%s"';
   SLogCompilerCfgHeader      = 'Using %scompiler configuration:';
@@ -148,6 +166,19 @@ Resourcestring
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  SLogGlobalCfgFPMakeCompilerConfig  = ' FPMakeCompilerConfig:  "%s"';
+  SLogGlobalCfgDownloader            = ' Downloader:            %s';
+  SLogCompilerCfgHeader           = 'Using %scompiler configuration file "%s":';
+  SLogCompilerCfgCompiler         = ' Compiler:         "%s"';
+  SLogCompilerCfgTarget           = ' Target:           %s';
+  SLogCompilerCfgOptions          = ' Options:          "%s"';
+  SLogCompilerCfgVersion          = ' Version:          %s';
+  SLogCompilerCfgGlobalInstallDir = ' GlobalInstallDir: "%s" -> "%S"';
+  SLogCompilerCfgLocalInstallDir  = ' LocalInstallDir:  "%s" -> "%s"';
+  SLogCompilerCfgGlobalPrefix     = ' GlobalPrefix:     "%s" -> "%s"';
+  SLogCompilerCfgLocalPrefix      = ' LocalPrefix:      "%s" -> "%s"';
+>>>>>>> origin/cpstrnew
 
   SDbgFound                  = 'Found';
   SDbgNotFound               = 'Not Found';

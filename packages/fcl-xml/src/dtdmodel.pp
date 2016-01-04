@@ -75,6 +75,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FIndex: Cardinal;
     FIsNamespaceDecl: Boolean;
     FEnumeration: array of XMLString;
@@ -98,10 +99,16 @@ type
     FIsNamespaceDecl: Boolean;
     FEnumeration: array of WideString;
 >>>>>>> origin/cpstrnew
+=======
+    FTag: Cardinal;
+    FIsNamespaceDecl: Boolean;
+    FEnumeration: array of WideString;
+>>>>>>> origin/cpstrnew
   public
     constructor Create(aName: PHashItem; aColonPos: Integer);
     destructor Destroy; override;
     function AddEnumToken(Buf: PWideChar; Len: Integer): Boolean;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -119,6 +126,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     function HasEnumToken(const aValue: WideString): Boolean;
     property Data: PNodeData read FData;
     property Default: TAttrDefault read FDefault write FDefault;
@@ -127,11 +136,14 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     property IsNamespaceDecl: Boolean read FIsNamespaceDecl;
@@ -153,6 +165,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FHasRequiredAtts: Boolean;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -160,6 +173,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     function GetAttrDefCount: Integer;
@@ -179,6 +194,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     property HasRequiredAtts: Boolean read FHasRequiredAtts;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -188,10 +204,13 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   end;
 
   TEntityDecl = class(TDTDObject)
   public
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -211,6 +230,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     FName: WideString;   // TODO: change to PHashItem
     FInputEncoding: WideString;
     FXMLEncoding: WideString;
@@ -222,11 +243,14 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     FXMLVersion: TXMLVersion;
@@ -241,6 +265,7 @@ type
 
   TNotationDecl = class(TDTDObject)
   public
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -264,6 +289,11 @@ type
     FPublicID: WideString;
     FSystemID: WideString;
 >>>>>>> graemeg/cpstrnew
+=======
+    FName: WideString;
+    FPublicID: WideString;
+    FSystemID: WideString;
+>>>>>>> origin/cpstrnew
 =======
     FName: WideString;
     FPublicID: WideString;
@@ -284,6 +314,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FName: XMLString;
     FSystemID: XMLString;
     FPublicID: XMLString;
@@ -295,6 +326,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     FName: WideString;
     FSystemID: WideString;
     FPublicID: WideString;
@@ -302,11 +335,14 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     constructor Create(aNameTable: THashTable);
@@ -535,6 +571,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   aDef.FIndex := FAttrDefs.Add(aDef);
   if aDef.Default in [adRequired, adDefault, adFixed] then
     FNeedsDefaultPass := True;
@@ -560,6 +597,11 @@ begin
   if aDef.Default in [adRequired, adDefault, adFixed] then
     FNeedsDefaultPass := True;
 >>>>>>> origin/cpstrnew
+=======
+  FAttrDefs.Add(aDef);
+  if aDef.Default in [adRequired, adDefault, adFixed] then
+    FNeedsDefaultPass := True;
+>>>>>>> origin/cpstrnew
 end;
 
 { TAttributeDef }
@@ -577,6 +619,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     (Pos(XMLString('xmlns'), aName^.Key) = 1);
 =======
     (Pos(WideString('xmlns'), aName^.Key) = 1);
@@ -587,6 +630,9 @@ begin
 =======
     (Pos(WideString('xmlns'), aName^.Key) = 1);
 >>>>>>> graemeg/cpstrnew
+=======
+    (Pos(WideString('xmlns'), aName^.Key) = 1);
+>>>>>>> origin/cpstrnew
 =======
     (Pos(WideString('xmlns'), aName^.Key) = 1);
 >>>>>>> origin/cpstrnew
@@ -628,6 +674,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TAttributeDef.HasEnumToken(const aValue: XMLString): Boolean;
 =======
 function TAttributeDef.HasEnumToken(const aValue: WideString): Boolean;
@@ -638,6 +685,9 @@ function TAttributeDef.HasEnumToken(const aValue: WideString): Boolean;
 =======
 function TAttributeDef.HasEnumToken(const aValue: WideString): Boolean;
 >>>>>>> graemeg/cpstrnew
+=======
+function TAttributeDef.HasEnumToken(const aValue: WideString): Boolean;
+>>>>>>> origin/cpstrnew
 =======
 function TAttributeDef.HasEnumToken(const aValue: WideString): Boolean;
 >>>>>>> origin/cpstrnew
@@ -655,6 +705,7 @@ begin
   Result := False;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -681,6 +732,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 end.

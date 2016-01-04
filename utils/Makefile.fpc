@@ -10,6 +10,7 @@ packages=rtl fpmkunit fcl-json
 name=utils
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 version=2.5.1
 
 [target]
@@ -25,6 +26,12 @@ dirs=fppkg fpcm tply h2pas fprcp dxegen fpdoc
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+version=2.5.1
+
+[target]
+dirs=fppkg fpcm tply h2pas fprcp dxegen fpdoc fpcmkcfg
+>>>>>>> origin/cpstrnew
 programs=ppdep ptop rstconv data2inc delp bin2obj postw32 rmcvsdir
 programs_linux=grab_vcsa
 dirs_win32=fpmc fpcres rmwait

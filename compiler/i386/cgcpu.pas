@@ -43,6 +43,7 @@ unit cgcpu;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         procedure a_load_const_cgpara(list : TAsmList;size : tcgsize;a : tcgint;const cgpara : tcgpara);override;
 =======
         procedure a_load_const_cgpara(list : TAsmList;size : tcgsize;a : aint;const cgpara : tcgpara);override;
@@ -53,6 +54,9 @@ unit cgcpu;
 =======
         procedure a_load_const_cgpara(list : TAsmList;size : tcgsize;a : aint;const cgpara : tcgpara);override;
 >>>>>>> graemeg/cpstrnew
+=======
+        procedure a_load_const_cgpara(list : TAsmList;size : tcgsize;a : aint;const cgpara : tcgpara);override;
+>>>>>>> origin/cpstrnew
 =======
         procedure a_load_const_cgpara(list : TAsmList;size : tcgsize;a : aint;const cgpara : tcgpara);override;
 >>>>>>> origin/cpstrnew
@@ -92,12 +96,15 @@ unit cgcpu;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     procedure create_codegen;
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -126,6 +133,7 @@ unit cgcpu;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (cs_useebp in current_settings.optimizerswitches) and assigned(current_procinfo) and (current_procinfo.framepointer<>NR_EBP) then
           rg[R_INTREGISTER]:=trgcpu.create(R_INTREGISTER,R_SUBWHOLE,[RS_EAX,RS_EDX,RS_ECX,RS_EBX,RS_ESI,RS_EDI,RS_EBP],first_int_imreg,[])
 =======
@@ -142,6 +150,9 @@ unit cgcpu;
 =======
         if (target_info.system<>system_i386_darwin) and
 >>>>>>> origin/fixes_2_2
+=======
+        if not(target_info.system in [system_i386_darwin,system_i386_iphonesim]) and
+>>>>>>> origin/cpstrnew
            (cs_create_pic in current_settings.moduleswitches) then
           rg[R_INTREGISTER]:=trgcpu.create(R_INTREGISTER,R_SUBWHOLE,[RS_EAX,RS_EDX,RS_ECX,RS_ESI,RS_EDI],first_int_imreg,[RS_EBP])
 >>>>>>> graemeg/cpstrnew
@@ -163,6 +174,7 @@ unit cgcpu;
               include(rg[R_INTREGISTER].used_in_proc,getsupreg(current_procinfo.got));
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             { ebx is currently always used (do to getiepasebx call) }
             include(rg[R_INTREGISTER].used_in_proc,RS_EBX);
@@ -171,6 +183,8 @@ unit cgcpu;
             { ebx is currently always used (do to getiepasebx call) }
             include(rg[R_INTREGISTER].used_in_proc,RS_EBX);
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
           end;
         inherited do_register_allocation(list,headertai);
       end;
@@ -179,11 +193,14 @@ unit cgcpu;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     procedure tcg386.a_load_reg_cgpara(list : TAsmList;size : tcgsize;r : tregister;const cgpara : tcgpara);
@@ -209,6 +226,7 @@ unit cgcpu;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure tcg386.a_load_const_cgpara(list : TAsmList;size : tcgsize;a : tcgint;const cgpara : tcgpara);
 =======
     procedure tcg386.a_load_const_cgpara(list : TAsmList;size : tcgsize;a : aint;const cgpara : tcgpara);
@@ -219,6 +237,9 @@ unit cgcpu;
 =======
     procedure tcg386.a_load_const_cgpara(list : TAsmList;size : tcgsize;a : aint;const cgpara : tcgpara);
 >>>>>>> graemeg/cpstrnew
+=======
+    procedure tcg386.a_load_const_cgpara(list : TAsmList;size : tcgsize;a : aint;const cgpara : tcgpara);
+>>>>>>> origin/cpstrnew
 =======
     procedure tcg386.a_load_const_cgpara(list : TAsmList;size : tcgsize;a : aint;const cgpara : tcgpara);
 >>>>>>> origin/cpstrnew
@@ -459,6 +480,7 @@ unit cgcpu;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
            (target_info.stackalign=4) then
 =======
            not(target_info.system in [system_i386_darwin,system_i386_iphonesim]) then
@@ -469,6 +491,9 @@ unit cgcpu;
 =======
            not(target_info.system in [system_i386_darwin,system_i386_iphonesim]) then
 >>>>>>> graemeg/cpstrnew
+=======
+           not(target_info.system in [system_i386_darwin,system_i386_iphonesim]) then
+>>>>>>> origin/cpstrnew
 =======
            not(target_info.system in [system_i386_darwin,system_i386_iphonesim]) then
 >>>>>>> origin/cpstrnew
@@ -517,6 +542,7 @@ unit cgcpu;
            { but not on win32 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
            { and not for safecall with hidden exceptions, because the result }
            { wich contains the exception is passed in EAX }
 <<<<<<< HEAD
@@ -544,7 +570,13 @@ unit cgcpu;
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+           { and not for safecall with hidden exceptions, because the result }
+           { wich contains the exception is passed in EAX }
+>>>>>>> origin/cpstrnew
            if (target_info.system <> system_i386_win32) and
+              not ((current_procinfo.procdef.proccalloption = pocall_safecall) and
+               (tf_safecall_exceptions in target_info.flags)) and
               paramanager.ret_in_param(current_procinfo.procdef.returndef,
                                        current_procinfo.procdef.proccalloption) then
 >>>>>>> graemeg/fixes_2_2
@@ -577,11 +609,14 @@ unit cgcpu;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         if paramanager.use_fixed_stack then
@@ -595,6 +630,7 @@ unit cgcpu;
         getcpuregister(list,NR_EDI);
         a_load_loc_reg(list,OS_INT,lenloc,NR_EDI);
         list.concat(Taicpu.op_reg(A_INC,S_L,NR_EDI));
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -629,6 +665,11 @@ unit cgcpu;
         getcpuregister(list,NR_ECX);
         list.concat(Taicpu.op_reg_reg(A_MOV,S_L,NR_EDI,NR_ECX));
 >>>>>>> graemeg/cpstrnew
+=======
+        { Now EDI contains (high+1). Copy it to ECX for later use. }
+        getcpuregister(list,NR_ECX);
+        list.concat(Taicpu.op_reg_reg(A_MOV,S_L,NR_EDI,NR_ECX));
+>>>>>>> origin/cpstrnew
 =======
         { Now EDI contains (high+1). Copy it to ECX for later use. }
         getcpuregister(list,NR_ECX);
@@ -716,6 +757,7 @@ unit cgcpu;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if ts_cld in current_settings.targetswitches then
           list.concat(Taicpu.op_none(A_CLD,S_NO));
 =======
@@ -723,6 +765,8 @@ unit cgcpu;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         if len>1 then
@@ -757,6 +801,7 @@ unit cgcpu;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
@@ -768,6 +813,9 @@ unit cgcpu;
 =======
         if use_fixed_stack then
 >>>>>>> graemeg/fixes_2_2
+=======
+        if paramanager.use_fixed_stack then
+>>>>>>> origin/cpstrnew
           begin
             inherited g_releasevaluepara_openarray(list,l);
             exit;
@@ -836,6 +884,7 @@ unit cgcpu;
     procedure tcg386.g_maybe_got_init(list: TAsmList);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       var
         notdarwin: boolean;
 <<<<<<< HEAD
@@ -852,12 +901,17 @@ unit cgcpu;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+      var
+        notdarwin: boolean;
+>>>>>>> origin/cpstrnew
       begin
         { allocate PIC register }
         if (cs_create_pic in current_settings.moduleswitches) and
            (tf_pic_uses_got in target_info.flags) and
            (pi_needs_got in current_procinfo.flags) then
           begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -906,6 +960,8 @@ unit cgcpu;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
             notdarwin:=not(target_info.system in [system_i386_darwin,system_i386_iphonesim]);
             { on darwin, the got register is virtual (and allocated earlier
               already) }
@@ -916,6 +972,7 @@ unit cgcpu;
             if notdarwin { needs testing before it can be enabled for non-darwin platforms
                 and
                (current_settings.optimizecputype in [cpu_Pentium2,cpu_Pentium3,cpu_Pentium4]) } then
+<<<<<<< HEAD
               begin
                 current_module.requires_ebx_pic_helper:=true;
                 cg.a_call_name_static(list,'fpc_geteipasebx');
@@ -969,21 +1026,21 @@ unit cgcpu;
 =======
 >>>>>>> origin/fixes_2_2
             if (target_info.system<>system_i386_darwin) then
+=======
+>>>>>>> origin/cpstrnew
               begin
                 current_module.requires_ebx_pic_helper:=true;
                 cg.a_call_name_static(list,'fpc_geteipasebx');
-                list.concat(taicpu.op_sym_ofs_reg(A_ADD,S_L,current_asmdata.RefAsmSymbol('_GLOBAL_OFFSET_TABLE_'),0,NR_PIC_OFFSET_REG));
-                list.concat(tai_regalloc.alloc(NR_PIC_OFFSET_REG,nil));
-                { ecx could be used in leaf procedures }
-                current_procinfo.got:=NR_EBX;
               end
             else
               begin
-                { can't use ecx, since that one may overwrite a parameter }
-                current_module.requires_ebx_pic_helper:=true;
-                cg.a_call_name_static(list,'fpc_geteipasebx');
-                list.concat(tai_regalloc.alloc(NR_EBX,nil));
+                { call/pop is faster than call/ret/mov on Core Solo and later
+                  according to Apple's benchmarking -- and all Intel Macs
+                  have at least a Core Solo (furthermore, the i386 - Pentium 1
+                  don't have a return stack buffer) }
+                a_call_name_static(list,current_procinfo.CurrGOTLabel.name);
                 a_label(list,current_procinfo.CurrGotLabel);
+<<<<<<< HEAD
                 { got is already set by ti386procinfo.allocate_got_register }
                 list.concat(tai_regalloc.dealloc(NR_EBX,nil));
                 a_load_reg_reg(list,OS_ADDR,OS_ADDR,NR_EBX,current_procinfo.got);
@@ -991,6 +1048,14 @@ unit cgcpu;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+                list.concat(taicpu.op_reg(A_POP,S_L,current_procinfo.got))
+              end;
+            if notdarwin then
+              begin
+                list.concat(taicpu.op_sym_ofs_reg(A_ADD,S_L,current_asmdata.RefAsmSymbol('_GLOBAL_OFFSET_TABLE_'),0,NR_PIC_OFFSET_REG));
+                list.concat(tai_regalloc.alloc(NR_PIC_OFFSET_REG,nil));
+>>>>>>> origin/cpstrnew
               end;
           end;
       end;
@@ -1305,6 +1370,7 @@ unit cgcpu;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
       
@@ -1315,6 +1381,9 @@ unit cgcpu;
 =======
       
 >>>>>>> graemeg/cpstrnew
+=======
+      
+>>>>>>> origin/cpstrnew
 =======
       
 >>>>>>> origin/cpstrnew

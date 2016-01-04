@@ -254,6 +254,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 diff -ur org/src/appkit/NSEvent.inc src/appkit/NSEvent.inc
 --- org/src/appkit/NSEvent.inc	2011-08-06 19:42:46.000000000 +0200
 +++ cocoa-skel/src/appkit/NSEvent.inc	2011-08-06 19:50:06.000000000 +0200
@@ -386,5 +387,7 @@ diff -ur org/src/foundation/NSIndexSet.inc src/foundation/NSIndexSet.inc
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew

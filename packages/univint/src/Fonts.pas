@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       QD/Fonts.h
  
      Contains:   Public interface to the Font Manager.
@@ -32,11 +33,15 @@
 =======
      File:       QD/Fonts.h
 >>>>>>> origin/fixes_2.4
+=======
+     File:       QD/Fonts.h
+>>>>>>> origin/cpstrnew
  
      Contains:   Public interface to the Font Manager.
  
      Version:    Quickdraw-262~1
  
+<<<<<<< HEAD
 <<<<<<< HEAD
      Copyright:  © 1985-2002 by Apple Computer, Inc., all rights reserved
 <<<<<<< HEAD
@@ -46,6 +51,9 @@
 =======
      Copyright:  © 1985-2008 by Apple Inc. all rights reserved.
 >>>>>>> origin/fixes_2.4
+=======
+     Copyright:  © 1985-2008 by Apple Inc. all rights reserved.
+>>>>>>> origin/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -55,6 +63,7 @@
                      http://bugs.freepascal.org
  
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -86,6 +95,8 @@
                      http://www.freepascal.org/bugs.html
  
 }
+=======
+>>>>>>> origin/cpstrnew
 {   Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {
     Modified for use with Free Pascal
@@ -95,12 +106,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -112,6 +127,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -126,6 +142,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -141,6 +161,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -151,6 +172,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -158,13 +182,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -172,6 +200,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -180,8 +210,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -192,6 +225,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -212,6 +246,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -220,12 +256,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -233,6 +272,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -451,6 +491,8 @@ interface
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
@@ -461,7 +503,10 @@ interface
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -478,6 +523,7 @@ interface
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -519,6 +565,41 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -547,6 +628,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -555,6 +637,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -564,6 +648,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -584,13 +669,11 @@ uses MacTypes,QuickdrawText,ATSTypes,Files,MacErrors,QuickdrawTypes,TextCommon,C
 
 >>>>>>> graemeg/cpstrnew
 =======
-
-
->>>>>>> graemeg/cpstrnew
 =======
+uses MacTypes,QuickdrawText,ATSTypes,Files,MacErrors,QuickdrawTypes,TextCommon,CGFont;
+{$endc} {not MACOSALLINCLUDE}
 
 
->>>>>>> origin/cpstrnew
 {$ifc TARGET_OS_MAC}
 
 {$ALIGN MAC68K}
@@ -619,9 +702,6 @@ uses MacTypes,QuickdrawText,ATSTypes,Files,MacErrors,QuickdrawTypes,TextCommon,C
  }
 function FMGetATSFontRefFromFont( iFont: FMFont ): ATSFontRef; external name '_FMGetATSFontRefFromFont';
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 
 
 {
@@ -680,6 +760,261 @@ function FMGetFontFromATSFontRef( iFont: ATSFontRef ): FMFont; external name '_F
  *      found, the function returns a value of kFMInvalidFontErr.
  *  
  *  Availability:
+ *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework [32-bit only]
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function FMFontGetCGFontRefFromFontFamilyInstance( iFontFamily: FMFontFamily; iStyle: FMFontStyle; var oFont: CGFontRef; var oStyle: FMFontStyle ): OSStatus; external name '_FMFontGetCGFontRefFromFontFamilyInstance';
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+
+
+{
+ *  The remaining functions in this file have all been deprecated on Mac OS X 10.4. There are other
+ *  solutions that are recommended that provide better compatibility with the rest of the operating
+ *  system.
+ *  
+ *  Instead of using the QuickDraw functions, you should consider the following:
+ *
+ *  1.  For drawing and measuring text, you can use the Appearance Manager API in HITheme.h or the
+ *      ATSUI API in ATSUnicode.h to render text directly through a Quartz graphics context. Alternatively
+ *      use CoreText on Mac OS X 10.5 or later.
+ *
+ *  2.  For accessing information on fonts tracked by the operating system, please refer to the
+ *      functions described in ATSFont.h. Alternatively use CoreText on Mac OS X 10.5 or later.
+ *  
+ *  3.  For accessing and modifying information on fonts in a Quartz graphics context, please refer
+ *      to the functions described in CoreGraphics.h.
+ }
+{$endc} {not TARGET_CPU_64}
+
+const
+	systemFont = 0;
+	applFont = 1;
+
+const
+	kFMDefaultOptions = kNilOptions;
+
+{ Activation contexts }
+const
+	kFMDefaultActivationContext = kFMDefaultOptions;
+	kFMGlobalActivationContext = $00000001;
+	kFMLocalActivationContext = kFMDefaultActivationContext;
+
+{ Iteration scopes }
+const
+	kFMDefaultIterationScope = kFMDefaultOptions;
+	kFMGlobalIterationScope = $00000001;
+	kFMLocalIterationScope = kFMDefaultIterationScope;
+
+{ kPlatformDefaultGuiFontID is used in QuickTime 3.0. }
+const
+	kPlatformDefaultGuiFontID = applFont;
+>>>>>>> origin/cpstrnew
+
+const
+	commandMark = 17;
+	checkMark = 18;
+	diamondMark = 19;
+	appleMark = 20;
+
+const
+	propFont = 36864;
+	prpFntH = 36865;
+	prpFntW = 36866;
+	prpFntHW = 36867;
+	fixedFont = 45056;
+	fxdFntH = 45057;
+	fxdFntW = 45058;
+	fxdFntHW = 45059;
+	fontWid = 44208;
+
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
+
+
+>>>>>>> origin/cpstrnew
+{$ifc TARGET_OS_MAC}
+
+{$ALIGN MAC68K}
+=======
+type
+	FMInputPtr = ^FMInput;
+	FMInput = record
+		family: SInt16;
+		size: SInt16;
+		face: Style;
+		needBits: Boolean;
+		device: SInt16;
+		numer: Point;
+		denom: Point;
+	end;
+type
+	FMOutput = record
+		errNum: SInt16;
+		fontHandle: Handle;
+		boldPixels: UInt8;
+		italicPixels: UInt8;
+		ulOffset: UInt8;
+		ulShadow: UInt8;
+		ulThick: UInt8;
+		shadowPixels: UInt8;
+		extra: SInt8;
+		ascent: UInt8;
+		descent: UInt8;
+		widMax: UInt8;
+		leading: SInt8;
+		curStyle: SInt8;
+		numer: Point;
+		denom: Point;
+	end;
+	FMOutputPtr = ^FMOutput;
+type
+	FMOutPtr = FMOutputPtr;
+	FMetricRec = record
+		ascent: Fixed;                 {base line to top}
+		descent: Fixed;                {base line to bottom}
+		leading: Fixed;                {leading between lines}
+		widMax: Fixed;                 {maximum character width}
+		wTabHandle: Handle;             {handle to font width table}
+	end;
+	FMetricRecPtr = ^FMetricRec;
+type
+	FMetricRecHandle = ^FMetricRecPtr;
+{$ifc not TARGET_CPU_64}
+{
+ *  InitFonts()
+ *  
+ *  Availability:
+ *    Mac OS X:         not available [32-bit only]
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+
+>>>>>>> origin/cpstrnew
+
+{$ifc not TARGET_CPU_64}
+{
+<<<<<<< HEAD
+ *  FMGetATSFontRefFromFont()
+ *  
+ *  Summary:
+ *    Obtains the ATS font reference associated with a QuickDraw font
+ *    reference.
+ *  
+ *  Parameters:
+ *    
+ *    iFont:
+ *      A QuickDraw font reference.
+ *    
+ *    Result:
+ *      The ATS font reference associated with the specified QuickDraw
+ *      font reference.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework [32-bit only]
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.1 and later
+ *    Non-Carbon CFM:   not available
+ }
+function FMGetATSFontRefFromFont( iFont: FMFont ): ATSFontRef; external name '_FMGetATSFontRefFromFont';
+(* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+
+{
+ *  FMGetFontFromATSFontRef()
+ *  
+ *  Summary:
+ *    Obtains the QuickDraw font reference associated with an ATS font
+ *    reference.
+ *  
+ *  Parameters:
+ *    
+ *    iFont:
+ *      An ATS font reference.
+ *    
+ *    Result:
+ *      The QuickDraw font reference associated with the specified ATS
+ *      font reference.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework [32-bit only]
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.1 and later
+ *    Non-Carbon CFM:   not available
+ }
+function FMGetFontFromATSFontRef( iFont: ATSFontRef ): FMFont; external name '_FMGetFontFromATSFontRef';
+(* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
+=======
+ *  GetFontName()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure GetFontName( familyID: SInt16; var name: Str255 ); external name '_GetFontName';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  GetFNum()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure GetFNum( const (*var*) name: Str255; var familyID: SInt16 ); external name '_GetFNum';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  RealFont()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function RealFont( fontNum: SInt16; size: SInt16 ): Boolean; external name '_RealFont';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> origin/cpstrnew
+
+
+{
+ *  FMFontGetCGFontRefFromFontFamilyInstance()
+ *  
+ *  Summary:
+ *    Obtains the Quartz font reference associated with a typeface from
+ *    a QuickDraw font family reference.
+ *  
+ *  Parameters:
+ *    
+ *    iFontFamily:
+ *      A QuickDraw font family reference.
+ *    
+ *    iStyle:
+ *      A QuickDraw font style.
+ *    
+ *    oFont:
+ *      A pointer to a Quartz font reference. On output, points to the
+ *      font reference for the specified font family and style. You are
+ *      responsible for allocating the memory for the font reference.
+ *    
+ *    oStyle:
+ *      On output, a pointer to an intrinsic font style. If a font
+ *      reference isn’t found that matches the font family reference
+ *      and font style you specify, the function returns the QuickDraw
+ *      style that matches most closely.
+ *    
+ *    Result:
+ *      A result code. If a font reference and intrinsic style are not
+ *      found, the function returns a value of kFMInvalidFontErr.
+ *  
+ *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework [32-bit only]
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
@@ -1715,9 +2050,52 @@ procedure SetFScaleDisable(fscaleDisable: boolean); external name '_SetFScaleDis
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
+=======
+ *    Mac OS X:         not available [32-bit only]
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
-procedure FontMetrics(theMetrics: FMetricRecPtr); external name '_FontMetrics';
+
+
 {
+ *  FMSwapFont()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function FMSwapFont( const (*var*) inRec: FMInput ): FMOutPtr; external name '_FMSwapFont';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  SetFScaleDisable()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure SetFScaleDisable( fscaleDisable: Boolean ); external name '_SetFScaleDisable';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  FontMetrics()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+>>>>>>> origin/cpstrnew
+ }
+procedure FontMetrics( theMetrics: FMetricRecPtr ); external name '_FontMetrics';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+<<<<<<< HEAD
  *  SetFractEnable()
  *  
  *  Availability:
@@ -2877,15 +3255,25 @@ type
  *  GetFontName()   *** DEPRECATED ***
  *  
  *  Availability:
+=======
+ *  SetFractEnable()   *** DEPRECATED ***
+ *  
+ *  Availability:
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
 procedure GetFontName( familyID: SInt16; var name: Str255 ); external name '_GetFontName';
+=======
+procedure SetFractEnable( fractEnable: Boolean ); external name '_SetFractEnable';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  GetFNum()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -2906,10 +3294,21 @@ procedure GetFNum( const (*var*) name: Str255; var familyID: SInt16 ); external 
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function RealFont( fontNum: SInt16; size: SInt16 ): Boolean; external name '_RealFont';
+=======
+ *  GetDefFontSize()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function GetDefFontSize: SInt16; external name '_GetDefFontSize';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  SetFontLock()
  *  
  *  Availability:
@@ -2940,10 +3339,21 @@ function FMSwapFont( const (*var*) inRec: FMInput ): FMOutPtr; external name '_F
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure SetFScaleDisable( fscaleDisable: Boolean ); external name '_SetFScaleDisable';
+=======
+ *  IsOutline()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function IsOutline( numer: Point; denom: Point ): Boolean; external name '_IsOutline';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  FontMetrics()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -2964,10 +3374,21 @@ procedure FontMetrics( theMetrics: FMetricRecPtr ); external name '_FontMetrics'
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure SetFractEnable( fractEnable: Boolean ); external name '_SetFractEnable';
+=======
+ *  SetOutlinePreferred()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure SetOutlinePreferred( outlinePreferred: Boolean ); external name '_SetOutlinePreferred';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  GetDefFontSize()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -2988,10 +3409,21 @@ function GetDefFontSize: SInt16; external name '_GetDefFontSize';
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function IsOutline( numer: Point; denom: Point ): Boolean; external name '_IsOutline';
+=======
+ *  GetOutlinePreferred()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function GetOutlinePreferred: Boolean; external name '_GetOutlinePreferred';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  SetOutlinePreferred()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -3020,6 +3452,12 @@ function GetOutlinePreferred: Boolean; external name '_GetOutlinePreferred';
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+=======
+ *  OutlineMetrics()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -3058,11 +3496,14 @@ function GetPreserveGlyph: Boolean; external name '_GetPreserveGlyph';
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    CarbonLib:        not available
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -3164,8 +3605,13 @@ procedure QDTextBounds( byteCount: SInt16; textAddr: {const} UnivPtr; var bounds
  }
 function FetchFontInfo( fontID: SInt16; fontSize: SInt16; fontStyle: SInt16; var info: FontInfo ): OSErr; external name '_FetchFontInfo';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+<<<<<<< HEAD
 
 
+=======
+
+
+>>>>>>> origin/cpstrnew
 { Font access and data management functions (available only with Mac OS 9.0 or later). }
 {
  *  FMCreateFontFamilyIterator()   *** DEPRECATED ***
@@ -3613,8 +4059,13 @@ function FMActivateFonts( const (*var*) iFontContainer: FSSpec; {const} iFilter:
  }
 function FMDeactivateFonts( const (*var*) iFontContainer: FSSpec; {const} iFilter: FMFilterPtr { can be NULL }; iRefCon: UnivPtr; iOptions: OptionBits ): OSStatus; external name '_FMDeactivateFonts';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+<<<<<<< HEAD
 
 
+=======
+
+
+>>>>>>> origin/cpstrnew
 { Use ATSGetGeneration instead of FMGetGeneration }
 {
  *  FMGetGeneration()   *** DEPRECATED ***
@@ -3849,9 +4300,13 @@ const
 end.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

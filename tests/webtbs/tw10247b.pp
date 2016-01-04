@@ -2,6 +2,7 @@
 type
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   generic TNode<T> = class
   public
     type
@@ -18,6 +19,11 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+  generic TNode<T> = class
+  public
+    type
+>>>>>>> origin/cpstrnew
       PT = T;
   private
     var
@@ -30,6 +36,7 @@ type
   TTNodeLongint = specialize TNode<Longint>;
 
   TTNodeString = specialize TNode<String>;
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -50,6 +57,8 @@ type
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 
 constructor TNode.Create;
 begin
@@ -57,6 +66,7 @@ end;
 
 destructor TNode.Destroy;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   inherited Destroy;
@@ -70,21 +80,29 @@ begin
 =======
 >>>>>>> origin/fixes_2_2
         inherited Destroy;
+=======
+  inherited Destroy;
+>>>>>>> origin/cpstrnew
 end;
 
 
 function GetIntNode: TTNodeLongint.T;
 begin
+<<<<<<< HEAD
         result := 10;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  result := 10;
+>>>>>>> origin/cpstrnew
 end;
 
 
 function GetStringNode: TTNodeString.PT;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   result := 'abc';
@@ -94,6 +112,9 @@ begin
 =======
         result := 'abc';
 >>>>>>> origin/fixes_2_2
+=======
+  result := 'abc';
+>>>>>>> origin/cpstrnew
 end;
 
 begin

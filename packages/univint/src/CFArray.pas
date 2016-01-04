@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	Copyright (c) 1998-2013, Apple Inc. All rights reserved.
 }
 =======
@@ -43,6 +44,9 @@
 =======
 	Copyright (c) 1998-2009, Apple, Inc. All rights reserved.
 >>>>>>> origin/fixes_2.4
+=======
+	Copyright (c) 1998-2009, Apple, Inc. All rights reserved.
+>>>>>>> origin/cpstrnew
 }
 {       Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, September 2005 }
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
@@ -54,12 +58,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -71,6 +79,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -85,6 +94,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -100,6 +113,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -110,6 +124,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -117,13 +134,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -131,6 +152,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -139,8 +162,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -151,6 +177,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -171,6 +198,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -179,12 +208,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -192,6 +224,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -491,6 +524,18 @@ interface
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
 >>>>>>> origin/fixes_2.4
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -511,6 +556,7 @@ interface
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 {$endc}
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -548,6 +594,37 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -576,6 +653,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -584,6 +662,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -597,6 +677,7 @@ uses MacTypes,CFBase;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
 =======
@@ -607,6 +688,10 @@ uses MacTypes,CFBase;
 {$endc} {not MACOSALLINCLUDE}
 
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+
+>>>>>>> origin/cpstrnew
 {$ALIGN POWER}
 
 
@@ -629,6 +714,7 @@ uses MacTypes,CFBase;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 #if MAC_OS_X_VERSION_MIN_REQUIRED <= MAC_OS_X_VERSION_10_4
 =======
@@ -639,6 +725,10 @@ uses MacTypes,CFBase;
 
 #if MAC_OS_X_VERSION_MIN_REQUIRED <= MAC_OS_X_VERSION_10_4
 >>>>>>> origin/fixes_2.4
+=======
+
+#if MAC_OS_X_VERSION_MIN_REQUIRED <= MAC_OS_X_VERSION_10_4
+>>>>>>> origin/cpstrnew
 	Mutable arrays have two subflavors, fixed-capacity, for which there
 	is a maximum number set at creation time of values which can be put
 	into the array, and variable capacity, which can have an unlimited
@@ -650,13 +740,17 @@ uses MacTypes,CFBase;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 #else
 	Mutable arrays can have an unlimited number of values (or rather,
 	limited only by constraints external to CFArray, like the amount
 	of available memory).
 #endif
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -664,6 +758,8 @@ uses MacTypes,CFBase;
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 	As with all CoreFoundation collection types, arrays maintain hard
 	references on the values you put in them, but the retaining and
@@ -853,6 +949,7 @@ function CFArrayCreateCopy( allocator: CFAllocatorRef; theArray: CFArrayRef ): C
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if MAC_OS_X_VERSION_MIN_REQUIRED <= MAC_OS_X_VERSION_10_4
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -861,6 +958,9 @@ function CFArrayCreateCopy( allocator: CFAllocatorRef; theArray: CFArrayRef ): C
 =======
 #if MAC_OS_X_VERSION_MIN_REQUIRED <= MAC_OS_X_VERSION_10_4
 >>>>>>> origin/fixes_2.4
+=======
+#if MAC_OS_X_VERSION_MIN_REQUIRED <= MAC_OS_X_VERSION_10_4
+>>>>>>> origin/cpstrnew
 	@param capacity The maximum number of values that can be contained
 		by the CFArray. The array starts empty, and can grow to this
 		number of values (and it can have less). If this parameter
@@ -871,8 +971,11 @@ function CFArrayCreateCopy( allocator: CFAllocatorRef; theArray: CFArrayRef ): C
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 #else
 	@param capacity A hint about the number of values that will be held
 		by the CFArray. Pass 0 for no hint. The implementation may
@@ -882,12 +985,15 @@ function CFArrayCreateCopy( allocator: CFAllocatorRef; theArray: CFArrayRef ): C
 		parameter is negative, the behavior is undefined.
 #endif
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	@param callBacks A pointer to a CFArrayCallBacks structure
 		initialized with the callbacks for the array to use on each
 		value in the array. A copy of the contents of the
@@ -902,6 +1008,7 @@ function CFArrayCreateCopy( allocator: CFAllocatorRef; theArray: CFArrayRef ): C
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		to remove the array's retain (if any) on the values when the
 =======
 		to remove the arrays retain (if any) on the values when the
@@ -912,6 +1019,9 @@ function CFArrayCreateCopy( allocator: CFAllocatorRef; theArray: CFArrayRef ): C
 =======
 		to remove the array's retain (if any) on the values when the
 >>>>>>> origin/fixes_2.4
+=======
+		to remove the array's retain (if any) on the values when the
+>>>>>>> origin/cpstrnew
 		array is destroyed. If the copyDescription field is NULL,
 		the array will create a simple description for the value. If
 		the equal field is NULL, the array will use pointer equality
@@ -940,6 +1050,7 @@ function CFArrayCreateMutable( allocator: CFAllocatorRef; capacity: CFIndex; {co
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if MAC_OS_X_VERSION_MIN_REQUIRED <= MAC_OS_X_VERSION_10_4
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -948,6 +1059,9 @@ function CFArrayCreateMutable( allocator: CFAllocatorRef; capacity: CFIndex; {co
 =======
 #if MAC_OS_X_VERSION_MIN_REQUIRED <= MAC_OS_X_VERSION_10_4
 >>>>>>> origin/fixes_2.4
+=======
+#if MAC_OS_X_VERSION_MIN_REQUIRED <= MAC_OS_X_VERSION_10_4
+>>>>>>> origin/cpstrnew
 	@param capacity The maximum number of values that can be contained
 		by the CFArray. The array starts empty, and can grow to this
 		number of values (and it can have less). If this parameter
@@ -960,8 +1074,11 @@ function CFArrayCreateMutable( allocator: CFAllocatorRef; capacity: CFIndex; {co
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 #else
   @param capacity A hint about the number of values that will be held
     by the CFArray. Pass 0 for no hint. The implementation may
@@ -974,12 +1091,15 @@ function CFArrayCreateMutable( allocator: CFAllocatorRef; capacity: CFIndex; {co
 		behavior is undefined.
 #endif
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	@param theArray The array which is to be copied. The values from the
 		array are copied as pointers into the new array (that is,
 		the values themselves are copied, not that which the values
@@ -1198,6 +1318,7 @@ function CFArrayBSearchValues( theArray: CFArrayRef; range: CFRange; value: {con
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		undefined.
 #if MAC_OS_X_VERSION_MIN_REQUIRED <= MAC_OS_X_VERSION_10_4
 		If the array is a fixed-capacity array and it
@@ -1218,6 +1339,13 @@ function CFArrayBSearchValues( theArray: CFArrayRef; range: CFRange; value: {con
 		is full before this operation, the behavior is undefined.
 #endif
 >>>>>>> origin/fixes_2.4
+=======
+		undefined.
+#if MAC_OS_X_VERSION_MIN_REQUIRED <= MAC_OS_X_VERSION_10_4
+		If the array is a fixed-capacity array and it
+		is full before this operation, the behavior is undefined.
+#endif
+>>>>>>> origin/cpstrnew
 	@param value The value to add to the array. The value is retained by
 		the array using the retain callback provided when the array
 		was created. If the value is not of the sort expected by the
@@ -1235,6 +1363,7 @@ procedure CFArrayAppendValue( theArray: CFMutableArrayRef; value: {const} UnivPt
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		undefined.
 #if MAC_OS_X_VERSION_MIN_REQUIRED <= MAC_OS_X_VERSION_10_4
 		If the array is a fixed-capacity array and it
@@ -1255,6 +1384,13 @@ procedure CFArrayAppendValue( theArray: CFMutableArrayRef; value: {const} UnivPt
 		is full before this operation, the behavior is undefined.
 #endif
 >>>>>>> origin/fixes_2.4
+=======
+		undefined.
+#if MAC_OS_X_VERSION_MIN_REQUIRED <= MAC_OS_X_VERSION_10_4
+		If the array is a fixed-capacity array and it
+		is full before this operation, the behavior is undefined.
+#endif
+>>>>>>> origin/cpstrnew
 	@param idx The index to which to add the new value. If the index is
 		outside the index space of the array (0 to N inclusive,
 		where N is the count of the array before the operation), the
@@ -1277,6 +1413,7 @@ procedure CFArrayInsertValueAtIndex( theArray: CFMutableArrayRef; idx: CFIndex; 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		undefined.
 #if MAC_OS_X_VERSION_MIN_REQUIRED <= MAC_OS_X_VERSION_10_4
 		If the array is a fixed-capacity array and it
@@ -1301,6 +1438,14 @@ procedure CFArrayInsertValueAtIndex( theArray: CFMutableArrayRef; idx: CFIndex; 
 		N, the behavior is undefined.
 #endif
 >>>>>>> origin/fixes_2.4
+=======
+		undefined.
+#if MAC_OS_X_VERSION_MIN_REQUIRED <= MAC_OS_X_VERSION_10_4
+		If the array is a fixed-capacity array and it
+		is full before this operation and the index is the same as
+		N, the behavior is undefined.
+#endif
+>>>>>>> origin/cpstrnew
 	@param idx The index to which to set the new value. If the index is
 		outside the index space of the array (0 to N inclusive,
 		where N is the count of the array before the operation), the
@@ -1424,6 +1569,7 @@ procedure CFArraySortValues( theArray: CFMutableArrayRef; range: CFRange; compar
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		the behavior is undefined.
 #if MAC_OS_X_VERSION_MIN_REQUIRED <= MAC_OS_X_VERSION_10_4
 		If the array is a fixed-capacity
@@ -1451,6 +1597,15 @@ procedure CFArraySortValues( theArray: CFMutableArrayRef; range: CFRange; compar
 		undefined.
 #endif
 >>>>>>> origin/fixes_2.4
+=======
+		the behavior is undefined.
+#if MAC_OS_X_VERSION_MIN_REQUIRED <= MAC_OS_X_VERSION_10_4
+		If the array is a fixed-capacity
+		array and adding range.length values from the otherArray
+		exceeds the capacity of the array, the behavior is
+		undefined.
+#endif
+>>>>>>> origin/cpstrnew
 	@param otherArray The array providing the values to be added to the
 		array. If this parameter is not a valid CFArray, the
 		behavior is undefined.
@@ -1474,6 +1629,7 @@ procedure CFArrayAppendArray( theArray: CFMutableArrayRef; otherArray: CFArrayRe
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
@@ -1487,8 +1643,13 @@ end.
 end.
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew

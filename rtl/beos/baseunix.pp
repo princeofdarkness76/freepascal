@@ -17,6 +17,9 @@ Unit BaseUnix;
 Interface
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {$modeswitch out}
 {$inline on}
 Uses UnixType;

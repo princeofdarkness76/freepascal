@@ -49,6 +49,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __indexSetFlags: record
       case byte of
        0: (_anonbitfield_NSIndexSet0: NSUInteger);
@@ -60,10 +61,13 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     __indexSetFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSIndexSet0: NSUInteger);
        1: (
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -74,10 +78,13 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         _isEmpty: 0..1;
         _hasSingleRange: 0..1;
         _cacheValid: 0..1;
         _reservedArrayBinderController: 0..((1 shl 29)-1);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -100,11 +107,14 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       );
       end;
     __singleRange: record
         _range: NSRange;
       end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -115,10 +125,13 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     __multipleRanges: record
         _data: Pointer; {garbage collector: __strong }
         _reserved: Pointer;
       end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -137,6 +150,10 @@
     __internal: record
       end;
 >>>>>>> graemeg/cpstrnew
+=======
+    __internal: record
+      end;
+>>>>>>> origin/cpstrnew
 =======
     __internal: record
       end;

@@ -85,11 +85,14 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
          function  size:asizeint;virtual;abstract;
@@ -137,6 +140,7 @@ interface
          visibility : tvisibility;
          isdbgwritten : boolean;
          symoptions : tsymoptions;
+<<<<<<< HEAD
          refs       : longint;
          reflist    : TLinkedList;
          { deprecated optionally can have a message }
@@ -172,10 +176,18 @@ interface
          reflist    : TLinkedList;
          visibility : tvisibility;
 >>>>>>> origin/fixes_2.4
+=======
+         refs       : longint;
+         reflist    : TLinkedList;
+         visibility : tvisibility;
+         { deprecated optionally can have a message }
+         deprecatedmsg: pshortstring;
+>>>>>>> origin/cpstrnew
          isdbgwritten : boolean;
          constructor create(st:tsymtyp;const aname:string);
          destructor  destroy;override;
          function  mangledname:string; virtual;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -189,6 +201,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
          function  prettyname:string; virtual;
          procedure buildderef;virtual;
          procedure deref;virtual;
@@ -354,6 +368,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -374,6 +389,8 @@ implementation
         result:=fullownerhierarchyname;
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         if assigned(typesym) and
            not(typ in [procvardef,procdef]) and
            (typesym.realname[1]<>'$') then
@@ -381,12 +398,15 @@ implementation
         else
           result:=result+GetTypeName;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       end;
@@ -411,6 +431,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> graemeg/cpstrnew
@@ -418,6 +439,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     function tdef.mangledparaname:string;
@@ -478,6 +501,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function tdef.structalignment: shortint;
 =======
     function tdef.packedbitsize:asizeint;
@@ -488,6 +512,9 @@ implementation
 =======
     function tdef.packedbitsize:asizeint;
 >>>>>>> graemeg/cpstrnew
+=======
+    function tdef.packedbitsize:asizeint;
+>>>>>>> origin/cpstrnew
 =======
     function tdef.packedbitsize:asizeint;
 >>>>>>> origin/cpstrnew
@@ -579,6 +606,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          symid:=symid_not_registered;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -586,6 +614,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       end;

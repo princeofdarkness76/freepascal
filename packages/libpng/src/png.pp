@@ -108,6 +108,7 @@ type
    png_fixed_point_pp = PPpng_fixed_point;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    png_doublepp = PPdouble;
 =======
    PPDouble = ^PDouble;
@@ -119,6 +120,9 @@ type
    png_doublepp = PPdouble;
    PPPChar = ^PPCHar;
 >>>>>>> origin/fixes_2_2
+=======
+   png_doublepp = PPdouble;
+>>>>>>> origin/cpstrnew
    png_charppp = PPPchar;
    Pcharf = Pchar;
    PPcharf = ^Pcharf;

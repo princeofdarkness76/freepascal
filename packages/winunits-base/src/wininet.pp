@@ -32,16 +32,22 @@ Uses Windows;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {$ifdef win64}
   {$packrecords 8}
 {$else}
   {$packrecords 4}
 {$endif}
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 //
 // Internet APIs
 //
@@ -1421,6 +1427,7 @@ Type
 	
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      INTERNET_ASYNC_RESULT = record
 =======
      INTERNET_ASYNC_RESULT = packed record
@@ -1428,6 +1435,9 @@ Type
 =======
      INTERNET_ASYNC_RESULT = packed record
 >>>>>>> origin/fixes_2_2
+=======
+     INTERNET_ASYNC_RESULT = record
+>>>>>>> origin/cpstrnew
           dwResult : DWORD_PTR;
           dwError : DWORD;
        end;
@@ -1441,6 +1451,7 @@ Type
   { INTERNET_DIAGNOSTIC_SOCKET_INFO - info about the socket in use }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      INTERNET_DIAGNOSTIC_SOCKET_INFO = record
 =======
      INTERNET_DIAGNOSTIC_SOCKET_INFO =packed  record
@@ -1448,6 +1459,9 @@ Type
 =======
      INTERNET_DIAGNOSTIC_SOCKET_INFO =packed  record
 >>>>>>> origin/fixes_2_2
+=======
+     INTERNET_DIAGNOSTIC_SOCKET_INFO = record
+>>>>>>> origin/cpstrnew
           Socket : DWORD_PTR;
           SourcePort : DWORD;
           DestPort : DWORD;
@@ -1459,6 +1473,7 @@ Type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     INTERNET_PREFETCH_STATUS = record
 =======
     INTERNET_PREFETCH_STATUS = packed record
@@ -1466,6 +1481,9 @@ Type
 =======
     INTERNET_PREFETCH_STATUS = packed record
 >>>>>>> origin/fixes_2_2
+=======
+    INTERNET_PREFETCH_STATUS = record
+>>>>>>> origin/cpstrnew
     			dwStatus,
 			dwSize : DWord;
                         end;
@@ -1478,6 +1496,7 @@ Type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      INTERNET_PROXY_INFO =  record
 =======
      INTERNET_PROXY_INFO = packed record
@@ -1485,6 +1504,9 @@ Type
 =======
      INTERNET_PROXY_INFO = packed record
 >>>>>>> origin/fixes_2_2
+=======
+     INTERNET_PROXY_INFO =  record
+>>>>>>> origin/cpstrnew
           dwAccessType : DWORD;
           lpszProxy : LPCTSTR;
           lpszProxyBypass : LPCTSTR;
@@ -1968,6 +1990,7 @@ Type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      _INTERNET_CACHE_ENTRY_INFOA = record
 =======
      _INTERNET_CACHE_ENTRY_INFOA = packed record
@@ -1975,6 +1998,9 @@ Type
 =======
      _INTERNET_CACHE_ENTRY_INFOA = packed record
 >>>>>>> origin/fixes_2_2
+=======
+     _INTERNET_CACHE_ENTRY_INFOA = record
+>>>>>>> origin/cpstrnew
           dwStructSize : DWORD;
           lpszSourceUrlName : LPSTR;
           lpszLocalFileName : LPSTR;
@@ -2002,6 +2028,7 @@ Type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      _INTERNET_CACHE_ENTRY_INFOW = record
 =======
      _INTERNET_CACHE_ENTRY_INFOW = packed record
@@ -2009,6 +2036,9 @@ Type
 =======
      _INTERNET_CACHE_ENTRY_INFOW = packed record
 >>>>>>> origin/fixes_2_2
+=======
+     _INTERNET_CACHE_ENTRY_INFOW = record
+>>>>>>> origin/cpstrnew
           dwStructSize : DWORD;
           lpszSourceUrlName : LPWSTR;
           lpszLocalFileName : LPWSTR;
@@ -2135,6 +2165,7 @@ Type
   PAutoProxyHelperVtbl = ^AutoProxyHelperVtbl;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   AutoProxyHelperVtbl =  record
 =======
   AutoProxyHelperVtbl = packed record
@@ -2142,6 +2173,9 @@ Type
 =======
   AutoProxyHelperVtbl = packed record
 >>>>>>> origin/fixes_2_2
+=======
+  AutoProxyHelperVtbl =  record
+>>>>>>> origin/cpstrnew
           IsResolvable                : TIsResolvable;
           GetIPAddress                : TGetIPAddress;
           ResolveHostName             : TResolveHostName;

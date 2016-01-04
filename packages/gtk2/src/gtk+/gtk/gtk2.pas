@@ -114,6 +114,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       {$linklib gthread-2.0}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -135,6 +136,9 @@ const
 =======
       {$linklib gthread-2.0}
 >>>>>>> origin/fixes_2.4
+=======
+      {$linklib gthread-2.0}
+>>>>>>> origin/cpstrnew
     {$else}
       {$ifdef UseCustomLibs}
       gtklib = '';

@@ -16,6 +16,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { This is not true anyore at least for OpenBSD 4.9 PM 2011-10-10 }
 { Also false for new NetBSD targets PM 2012-02-12 }
 =======
@@ -26,11 +27,14 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifdef bsd}
   {$ifdef cpui386}
     {$ifndef freebsd}
       {$define FPC_HAS_UNDERSCORE_PREFIX}
     {$endif}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -47,6 +51,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   {$endif}

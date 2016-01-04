@@ -107,6 +107,7 @@ type
 =======
     FTopics  : TList;
     FImgExt : String;
+    procedure ConvertURL(AContext: TPasElement; El: TDOMElement);
     
   protected
 >>>>>>> origin/fixes_2_2
@@ -771,6 +772,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TFPDocWriter.DoLog(const Msg: String);
 begin
   If Assigned(FEngine.OnLog) then
@@ -788,6 +790,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 function TFPDocWriter.ConvertExtShort(AContext: TPasElement;

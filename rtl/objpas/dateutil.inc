@@ -1990,23 +1990,30 @@ var
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   DecodeDate ( AValue, year, month, day );
   a := (14-month) div 12;
   y := year + 4800 - a;
   m := month + (12*a) - 3;
   result := day + ((153*m+2) div 5) + (365*y) + (y div 4) - (y div 100) + (y div 400) - 32045;
   result := result - 0.5;
+<<<<<<< HEAD
 =======
   DateTimeToJulianDate := AValue - JulianEpoch;
 >>>>>>> graemeg/fixes_2_2
 =======
   DateTimeToJulianDate := AValue - JulianEpoch;
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 
 Function JulianDateToDateTime(const AValue: Double): TDateTime;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   if not TryJulianDateToDateTime(AValue, Result) then
@@ -2052,10 +2059,33 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  if not TryJulianDateToDateTime(AValue, Result) then
+    raise EConvertError.CreateFmt(SInvalidJulianDate, [AValue]);
+end;
+
+
+Function TryJulianDateToDateTime(const AValue: Double; out ADateTime: TDateTime): Boolean;
+var
+  a,b,c,d,e,m:integer;
+  day,month,year: word;
+begin
+  a := trunc(AValue + 32044.5);
+  b := (4*a + 3) div 146097;
+  c := a - (146097*b div 4);
+  d := (4*c + 3) div 1461;
+  e := c - (1461*d div 4);
+  m := (5*e+2) div 153;
+  day := e - ((153*m + 2) div 5) + 1;
+  month := m + 3 - 12 *  ( m div 10 );
+  year := (100*b) + d - 4800 + ( m div 10 );
+  result := TryEncodeDate ( Year, Month, Day, ADateTime );
+>>>>>>> origin/cpstrnew
 end;
 
 Function DateTimeToModifiedJulianDate(const AValue: TDateTime): Double;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   result := DateTimeToJulianDate(AValue) - 2400000.5;
@@ -2065,11 +2095,15 @@ begin
   Result:=0;
   NotYetImplemented('DateTimeToModifiedJulianDate');
 >>>>>>> graemeg/fixes_2_2
+=======
+  result := DateTimeToJulianDate(AValue) - 2400000.5;
+>>>>>>> origin/cpstrnew
 end;
 
 
 Function ModifiedJulianDateToDateTime(const AValue: Double): TDateTime;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   result := JulianDateToDateTime(AValue + 2400000.5);
@@ -2084,14 +2118,21 @@ begin
 >>>>>>> origin/fixes_2_2
   Result:=0;
   NotYetImplemented('ModifiedJulianDateToDateTime');
+=======
+  result := JulianDateToDateTime(AValue + 2400000.5);
+>>>>>>> origin/cpstrnew
 end;
 
 
-Function TryModifiedJulianDateToDateTime(const AValue: Double; var ADateTime: TDateTime): Boolean;
+Function TryModifiedJulianDateToDateTime(const AValue: Double; out ADateTime: TDateTime): Boolean;
 begin
+<<<<<<< HEAD
   Result:=False;
   NotYetImplemented('TryModifiedJulianDateToDateTime');
 >>>>>>> graemeg/fixes_2_2
+=======
+  Result:=TryJulianDateToDateTime(AValue + 2400000.5, ADateTime);
+>>>>>>> origin/cpstrnew
 end;
 
 {$ifdef RangeCheckWasOn}

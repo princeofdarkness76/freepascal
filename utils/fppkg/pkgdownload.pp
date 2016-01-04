@@ -171,11 +171,15 @@ begin
       Log(vlCommands,SLogDownloading,[PackageRemoteArchive(P),PackageLocalArchive(P)]);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       pkgglobals.Log(vlProgres,SProgrDownloadPackage,[P.Name, P.Version.AsString]);
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+      pkgglobals.Log(vlProgres,SProgrDownloadPackage,[P.Name, P.Version.AsString]);
+>>>>>>> origin/cpstrnew
       Download(PackageRemoteArchive(P),PackageLocalArchive(P));
     finally
       Free;

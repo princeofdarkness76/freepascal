@@ -27,6 +27,7 @@ Uses
 
 {$i osdefs.inc}       { Compile time defines }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 Uses BaseUnix,UnixType;
 >>>>>>> graemeg/fixes_2_2
@@ -35,6 +36,8 @@ Uses BaseUnix,UnixType;
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 { ----------------------------------------------------------------------
   General IPC stuff
@@ -99,6 +102,9 @@ type
   PIPC_Perm = ^TIPC_Perm;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {$ifdef darwin}
 {$packrecords 4}
 {$endif}
@@ -118,6 +124,7 @@ type
         seq   : cushort;  { sequence # (to generate unique msg/sem/shm id) }
         key   : key_t;    { user specified msg/sem/shm key }
   End;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$ifdef darwin}
@@ -148,10 +155,23 @@ type
         seq       : cushort;
 {$endif}
 =======
+=======
+{$ifdef darwin}
+{$packrecords c}
+{$endif}
+>>>>>>> origin/cpstrnew
 {$else} // linux
-{$ifdef cpux86_64}
+
+{$ifdef cpu32}
+  {$ifndef linux_ipc64}
+    {$define linux_ipc32}
+  {$endif}
+{$endif}
+
+{$if not defined(linux_ipc32) and not defined(FPC_USE_LIBC)}
   TIPC_Perm = record
         key   : TKey;
+<<<<<<< HEAD
 =======
 {$else} // linux
 {$ifdef cpux86_64}
@@ -169,10 +189,26 @@ type
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+        uid   : kernel_uid_t;
+        gid   : kernel_gid_t;
+        cuid  : kernel_uid_t;
+        cgid  : kernel_gid_t;
+        mode  : kernel_mode_t;
+{$if sizeof(kernel_mode_t) < 4}
+        __pad1    : array[1..4-sizeof(mode_t)];
+{$endif}
+{$ifdef cpupowerpc}
+        seq       : cuint;
+{$else}
+        seq       : cushort;
+{$endif}
+>>>>>>> origin/cpstrnew
         __pad2    : cushort;
         __unused1 : culong;
         __unused2 : culong;
   End;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$else not(linux_ipc32) and not(FPC_USE_LIBC)}
@@ -193,16 +229,19 @@ type
 Function ftok (Path : pchar;  ID : cint) : TKey; {$ifdef FPC_USE_LIBC} cdecl; external clib name 'ftok'; {$endif}
 =======
 {$else cpux86_64}  
+=======
+{$else not(linux_ipc32) and not(FPC_USE_LIBC)}
+>>>>>>> origin/cpstrnew
   TIPC_Perm = record
         key   : TKey;
-        uid   : uid_t;
-        gid   : gid_t;
-        cuid  : uid_t;
-        cgid  : gid_t;
-        mode  : mode_t;
+        uid   : kernel_uid_t;
+        gid   : kernel_gid_t;
+        cuid  : kernel_uid_t;
+        cgid  : kernel_gid_t;
+        mode  : kernel_mode_t;
         seq   : cushort;
   End;
-{$endif cpux86_64}
+{$endif not(linux_ipc32) and not(FPC_USE_LIBC)}
 {$endif}
 
 { Function to generate a IPC key. }
@@ -250,6 +289,7 @@ Type
 
 {$ifdef Darwin}
 {$packrecords 4}
+<<<<<<< HEAD
 =======
 {$ifdef linux}
 {$ifdef cpux86_64}
@@ -300,6 +340,8 @@ Type
 {$endif cpux86_64}  
 {$else} // FreeBSD checked
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
   TShmid_ds = record
     shm_perm  : TIPC_Perm;
     shm_segsz : size_t;
@@ -629,6 +671,7 @@ type
     sem_perm : tipc_perm;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     sem_otime : time_t;   // kernel
 =======
     sem_otime : time_t;
@@ -636,6 +679,9 @@ type
 =======
     sem_otime : time_t;
 >>>>>>> origin/fixes_2_2
+=======
+    sem_otime : time_t;   // kernel
+>>>>>>> origin/cpstrnew
     sem_ctime : time_t;
     sem_base         : pointer;
     sem_pending      : pointer;
@@ -735,6 +781,7 @@ Function semctl(semid:cint; semnum:cint; cmd:cint; var arg: tsemun): cint;
 {$ifdef linux}
 Function semtimedop(semid:cint; sops: psembuf; nsops: cuint; timeOut: ptimespec): cint; platform; {$ifdef FPC_USE_LIBC} cdecl; external name 'semtimedop'; {$endif}
 {$endif}
+<<<<<<< HEAD
 =======
 Function semget(key:Tkey; nsems:cint; semflg:cint): cint; {$ifdef FPC_USE_LIBC} cdecl; external name 'semget'; {$endif}
 Function semop(semid:cint; sops: psembuf; nsops: cuint): cint; {$ifdef FPC_USE_LIBC} cdecl; external name 'semop'; {$endif}
@@ -745,6 +792,8 @@ Function semget(key:Tkey; nsems:cint; semflg:cint): cint; {$ifdef FPC_USE_LIBC} 
 Function semop(semid:cint; sops: psembuf; nsops: cuint): cint; {$ifdef FPC_USE_LIBC} cdecl; external name 'semop'; {$endif}
 Function semctl(semid:cint; semnum:cint; cmd:cint; var arg: tsemun): cint; {$ifdef FPC_USE_LIBC} cdecl; external name 'semctl'; {$endif}
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 
 implementation
 

@@ -395,6 +395,7 @@ function Is_Prefetch (P: pointer): boolean;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     RC := DosQueryMem (P, MemSize, MemAttrs);
     if RC <> 0 then
      OSErrorWatch (RC)
@@ -423,6 +424,10 @@ function Is_Prefetch (P: pointer): boolean;
     DosQueryMem (P, MemSize, MemAttrs);
     if (MemAttrs and (mfPag_Free or mfPag_Commit) <> 0)
 >>>>>>> origin/fixes_2_2
+=======
+    if (DosQueryMem (P, MemSize, MemAttrs) = 0) and
+            (MemAttrs and (mfPag_Free or mfPag_Commit) <> 0)
+>>>>>>> origin/cpstrnew
                                                and (MemSize >= SizeOf (A)) then
      Move (P^, A [0], SizeOf (A))
     else
@@ -789,16 +794,22 @@ begin
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
    if (Err <> 0) and (ExceptLevel < MaxExceptionLevel) 
 (* TH: The following line is necessary to avoid an endless loop *)
                  and (Report^.Exception_Num < Xcpt_Process_Terminate)
                                                                     then
+<<<<<<< HEAD
 =======
    if (Err <> 0) and (ExceptLevel < MaxExceptionLevel) then
 >>>>>>> graemeg/fixes_2_2
 =======
    if (Err <> 0) and (ExceptLevel < MaxExceptionLevel) then
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
     begin
      ExceptEIP [ExceptLevel] := Context^.Reg_EIP;
      ExceptError [ExceptLevel] := Err;

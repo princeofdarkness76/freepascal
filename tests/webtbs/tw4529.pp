@@ -5,6 +5,7 @@ program Project1;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$mode objfpc}{$H+}
 =======
 {$mode objfpc}{$H+}{$static on}
@@ -12,6 +13,9 @@ program Project1;
 =======
 {$mode objfpc}{$H+}{$static on}
 >>>>>>> origin/fixes_2_2
+=======
+{$mode objfpc}{$H+}
+>>>>>>> origin/cpstrnew
 
 uses
   Classes

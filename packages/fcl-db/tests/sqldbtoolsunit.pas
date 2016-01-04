@@ -33,6 +33,7 @@ const
   db,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   sqldb, ibconnection, mysql40conn, mysql41conn, mysql50conn, mysql51conn, pqconnection,odbcconn,oracleconnection,sqlite3conn;
 
 type TSQLDBTypes = (mysql40,mysql41,mysql50,mysql51,postgresql,interbase,odbc,oracle,sqlite3);
@@ -44,16 +45,23 @@ const MySQLdbTypes = [mysql40,mysql41,mysql50];
 =======
 >>>>>>> origin/fixes_2_2
   sqldb, ibconnection, mysql40conn, mysql41conn, mysql50conn, pqconnection,odbcconn,oracleconnection,sqlite3conn;
+=======
+  sqldb, ibconnection, mysql40conn, mysql41conn, mysql50conn, mysql51conn, pqconnection,odbcconn,oracleconnection,sqlite3conn;
+>>>>>>> origin/cpstrnew
 
-type TSQLDBTypes = (mysql40,mysql41,mysql50,postgresql,interbase,odbc,oracle,sqlite3);
+type TSQLDBTypes = (mysql40,mysql41,mysql50,mysql51,postgresql,interbase,odbc,oracle,sqlite3);
 
 const MySQLdbTypes = [mysql40,mysql41,mysql50];
       DBTypesNames : Array [TSQLDBTypes] of String[19] =
+<<<<<<< HEAD
              ('MYSQL40','MYSQL41','MYSQL50','POSTGRESQL','INTERBASE','ODBC','ORACLE','SQLITE3');
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+             ('MYSQL40','MYSQL41','MYSQL50','MYSQL51','POSTGRESQL','INTERBASE','ODBC','ORACLE','SQLITE3');
+>>>>>>> origin/cpstrnew
              
       FieldtypeDefinitionsConst : Array [TFieldType] of String[15] =
         (
@@ -69,6 +77,7 @@ const MySQLdbTypes = [mysql40,mysql41,mysql50];
           'DATE',
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           'TIME',
 =======
           'TIMESTAMP',
@@ -76,6 +85,9 @@ const MySQLdbTypes = [mysql40,mysql41,mysql50];
 =======
           'TIMESTAMP',
 >>>>>>> origin/fixes_2_2
+=======
+          'TIME',
+>>>>>>> origin/cpstrnew
           'TIMESTAMP',
           '',
           '',
@@ -92,6 +104,7 @@ const MySQLdbTypes = [mysql40,mysql41,mysql50];
           '',
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           'BIGINT',
 =======
           '',
@@ -99,6 +112,9 @@ const MySQLdbTypes = [mysql40,mysql41,mysql50];
 =======
           '',
 >>>>>>> origin/fixes_2_2
+=======
+          'BIGINT',
+>>>>>>> origin/cpstrnew
           '',
           '',
           '',
@@ -110,6 +126,7 @@ const MySQLdbTypes = [mysql40,mysql41,mysql50];
           '',
           '',
           'TIMESTAMP',
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
           'NUMERIC(18,6)',
@@ -124,6 +141,9 @@ const MySQLdbTypes = [mysql40,mysql41,mysql50];
 =======
 >>>>>>> origin/fixes_2_2
           '',
+=======
+          'NUMERIC(18,6)',
+>>>>>>> origin/cpstrnew
           '',
           ''
         );
@@ -321,8 +341,7 @@ begin
       testStringValues[t] := TrimRight(testStringValues[t]);
     end;
   if SQLDbType = MYSQL50 then Fconnection := tMySQL50Connection.Create(nil);
-  if SQLDbType in MySQLdbTypes then
-    FieldtypeDefinitions[ftLargeint] := 'BIGINT';
+  if SQLDbType = MYSQL51 then Fconnection := tMySQL51Connection.Create(nil);
   if SQLDbType = sqlite3 then
     begin
     Fconnection := TSQLite3Connection.Create(nil);
@@ -340,7 +359,6 @@ begin
   if SQLDbType = INTERBASE then
     begin
     Fconnection := tIBConnection.Create(nil);
-    FieldtypeDefinitions[ftLargeint] := 'BIGINT';
     end;
   if SQLDbType = ODBC then Fconnection := tODBCConnection.Create(nil);
   if SQLDbType = ORACLE then Fconnection := TOracleConnection.Create(nil);
@@ -610,6 +628,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
@@ -618,6 +637,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 procedure TSQLDBConnector.SetTestUniDirectional(const AValue: boolean);
@@ -886,11 +907,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     UniDirectional:=TestUniDirectional;
@@ -908,6 +932,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     UniDirectional:=TestUniDirectional;
 =======
     tsqlquery(Result).UniDirectional:=TestUniDirectional;
@@ -918,6 +943,9 @@ begin
 =======
     tsqlquery(Result).UniDirectional:=TestUniDirectional;
 >>>>>>> graemeg/cpstrnew
+=======
+    tsqlquery(Result).UniDirectional:=TestUniDirectional;
+>>>>>>> origin/cpstrnew
 =======
     tsqlquery(Result).UniDirectional:=TestUniDirectional;
 >>>>>>> origin/cpstrnew

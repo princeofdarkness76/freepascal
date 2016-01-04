@@ -88,6 +88,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    in_default_x         = 76;
    in_box_x             = 77; { managed platforms: wrap in class instance }
    in_unbox_x_y         = 78; { manage platforms: extract from class instance }
@@ -106,6 +107,8 @@ const
    in_rol_x_x           = 68;
 
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 { Internal constant functions }
    in_const_sqr        = 100;

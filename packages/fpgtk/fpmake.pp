@@ -32,6 +32,7 @@ begin
     P.NeedLibC:= True;
 
     P.Dependencies.Add('gtk1');
+<<<<<<< HEAD
     P.SourcePath.Add('src');
 
     T:=P.Targets.AddUnit('fpglib.pp');
@@ -53,12 +54,20 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    P.SourcePath.Add('src');
+
+    T:=P.Targets.AddUnit('fpglib.pp');
+>>>>>>> origin/cpstrnew
     T:=P.Targets.AddUnit('fpgtkext.pp');
       with T.Dependencies do
         begin
           AddUnit('fpgtk');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
         end;
     T.ResourceStrings := True;
     T:=P.Targets.AddUnit('fpgtk.pp');

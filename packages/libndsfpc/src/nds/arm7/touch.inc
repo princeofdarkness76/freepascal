@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef ARM7}
   {$error Touch screen is only available on the ARM7}
 =======
@@ -51,6 +52,10 @@
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$ifndef ARM7}
+  {$error Touch screen is only available on the ARM7}
+>>>>>>> origin/cpstrnew
 {$endif ARM7}
 
 {$ifdef NDS_INTERFACE}
@@ -77,6 +82,7 @@ function touchRead(command: cuint32): cuint16; cdecl; external;
 function touchReadTemperature(t1: pcint; t2: pcint): cuint32;  cdecl; external;
 
 function touchPenDown(): cbool; cdecl; external;
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -89,4 +95,6 @@ function touchReadTemperature(t1: pcint; t2: pcint): cuint32;  cdecl; external;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 {$endif NDS_INTERFACE}

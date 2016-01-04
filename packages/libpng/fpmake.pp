@@ -27,6 +27,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -59,6 +60,12 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    P.Dependencies.Add('zlib');
+    P.SourcePath.Add('src');
+
+    T:=P.Targets.AddUnit('png.pp');
+>>>>>>> origin/cpstrnew
 {$ifndef ALLPACKAGES}
     Run;
     end;

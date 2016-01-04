@@ -230,11 +230,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       (Pa [2] = DriveSeparator) and (DriveSeparator <> DirectorySeparator) then
@@ -675,6 +678,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    support makes it impossible to use otherwise possibly valid name
 =======
    support makes it impossible to use anotherwise possibly valid name
@@ -685,6 +689,9 @@ end;
 =======
    support makes it impossible to use anotherwise possibly valid name
 >>>>>>> graemeg/cpstrnew
+=======
+   support makes it impossible to use anotherwise possibly valid name
+>>>>>>> origin/cpstrnew
 =======
    support makes it impossible to use anotherwise possibly valid name
 >>>>>>> origin/cpstrnew

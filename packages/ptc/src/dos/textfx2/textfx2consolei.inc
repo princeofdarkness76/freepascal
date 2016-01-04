@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (C) 2001-2011 Nikolay Nikolov (nickysn@users.sourceforge.net)
 =======
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
@@ -14,6 +15,9 @@
 =======
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
+=======
+    Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> origin/cpstrnew
 =======
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> origin/cpstrnew
@@ -56,6 +60,7 @@ constructor TTextFX2Console.Create;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 begin
   inherited Create;
 
@@ -71,6 +76,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -94,6 +101,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -101,10 +109,13 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
   calcpal := @calcpal_colorbase;
   use_charset := @charset_b7asc;
   build_colormap(0);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -130,6 +141,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   m_copy := TPTCCopy.Create;
@@ -158,6 +171,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -165,10 +179,13 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   dispose_colormap;
   inherited Destroy;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -189,6 +206,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure TTextFX2Console.Configure(const AFileName: String);
 
 var
@@ -203,6 +222,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -210,10 +230,13 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   if IOResult <> 0 then
     exit;
   while not EoF(F) do
   begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -241,6 +264,11 @@ begin
     Readln(F, S);
     {$I+}
 >>>>>>> origin/cpstrnew
+=======
+    {$I-}
+    Readln(F, S);
+    {$I+}
+>>>>>>> origin/cpstrnew
     if IOResult <> 0 then
       Break;
     Option(S);
@@ -248,6 +276,7 @@ begin
   CloseFile(F);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -264,12 +293,15 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 function TTextFX2Console.option(const _option: String): Boolean;
 
 begin
   {...}
   Result := True;
   if _option = 'charset_b8ibm' then
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -280,10 +312,13 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   begin
     use_charset := @charset_b8ibm;
     exit;
   end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -301,10 +336,14 @@ begin
 =======
   if _option = 'charset_b7asc' then
 >>>>>>> origin/cpstrnew
+=======
+  if _option = 'charset_b7asc' then
+>>>>>>> origin/cpstrnew
   begin
     use_charset := @charset_b7asc;
     exit;
   end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -322,10 +361,14 @@ begin
 =======
   if _option = 'charset_b7sml' then
 >>>>>>> origin/cpstrnew
+=======
+  if _option = 'charset_b7sml' then
+>>>>>>> origin/cpstrnew
   begin
     use_charset := @charset_b7sml;
     exit;
   end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -343,10 +386,14 @@ begin
 =======
   if _option = 'charset_b8gry' then
 >>>>>>> origin/cpstrnew
+=======
+  if _option = 'charset_b8gry' then
+>>>>>>> origin/cpstrnew
   begin
     use_charset := @charset_b8gry;
     exit;
   end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -364,10 +411,14 @@ begin
 =======
   if _option = 'charset_b7nws' then
 >>>>>>> origin/cpstrnew
+=======
+  if _option = 'charset_b7nws' then
+>>>>>>> origin/cpstrnew
   begin
     use_charset := @charset_b7nws;
     exit;
   end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -385,11 +436,15 @@ begin
 =======
   if _option = 'calcpal_colorbase' then
 >>>>>>> origin/cpstrnew
+=======
+  if _option = 'calcpal_colorbase' then
+>>>>>>> origin/cpstrnew
   begin
     calcpal := @calcpal_colorbase;
     build_colormap(0);
     exit;
   end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -407,11 +462,15 @@ begin
 =======
   if _option = 'calcpal_lightbase' then
 >>>>>>> origin/cpstrnew
+=======
+  if _option = 'calcpal_lightbase' then
+>>>>>>> origin/cpstrnew
   begin
     calcpal := @calcpal_lightbase;
     build_colormap(0);
     exit;
   end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -429,11 +488,15 @@ begin
 =======
   if _option = 'calcpal_lightbase_g' then
 >>>>>>> origin/cpstrnew
+=======
+  if _option = 'calcpal_lightbase_g' then
+>>>>>>> origin/cpstrnew
   begin
     calcpal := @calcpal_lightbase_g;
     build_colormap(0);
     exit;
   end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -451,11 +514,15 @@ begin
 =======
   if _option = 'enable logging' then
 >>>>>>> origin/cpstrnew
+=======
+  if _option = 'enable logging' then
+>>>>>>> origin/cpstrnew
   begin
     LOG_enabled := True;
     Result := True;
     exit;
   end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -473,12 +540,16 @@ begin
 =======
   if _option = 'disable logging' then
 >>>>>>> origin/cpstrnew
+=======
+  if _option = 'disable logging' then
+>>>>>>> origin/cpstrnew
   begin
     LOG_enabled := False;
     Result := True;
     exit;
   end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -518,6 +589,8 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   Result := m_copy.option(_option);
@@ -567,11 +640,14 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 begin
@@ -591,6 +667,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TTextFX2Console.Close;
 begin
   if FOpen then
@@ -603,12 +680,15 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure TTextFX2Console.close;
 
 begin
   if m_open then
   begin
     if m_locked then
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -619,10 +699,13 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       raise TPTCError.Create('console is still locked');
     {flush all key presses}
     while KeyPressed do ReadKey;
     internal_close;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -640,6 +723,9 @@ begin
 =======
     m_open := False;
 >>>>>>> origin/cpstrnew
+=======
+    m_open := False;
+>>>>>>> origin/cpstrnew
   end;
 end;
 
@@ -648,6 +734,7 @@ procedure TTextFX2Console.flush;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -657,6 +744,9 @@ procedure TTextFX2Console.flush;
 =======
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 =======
 
 >>>>>>> origin/cpstrnew
@@ -670,6 +760,7 @@ procedure TTextFX2Console.finish;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -679,6 +770,9 @@ procedure TTextFX2Console.finish;
 =======
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 =======
 
 >>>>>>> origin/cpstrnew
@@ -692,6 +786,7 @@ procedure TTextFX2Console.update;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 var
   framebuffer: PInteger;
 =======
@@ -701,6 +796,8 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 var
   framebuffer: PInteger;
@@ -708,17 +805,21 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 begin
   check_open;
   check_unlocked;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -738,6 +839,8 @@ procedure TTextFX2Console.update(_area: IPTCArea);
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   m_primary.copy(m_160x100buffer);
   framebuffer := m_160x100buffer.lock;
   vrc;
@@ -750,6 +853,7 @@ procedure TTextFX2Console.update(const _area: TPTCArea);
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -757,10 +861,13 @@ procedure TTextFX2Console.update(const _area: TPTCArea);
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 begin
   update;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -775,6 +882,8 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure TTextFX2Console.copy(surface: TPTCBaseSurface);
 
 var
@@ -783,11 +892,14 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 begin
@@ -807,6 +919,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   end;
 end;
 
@@ -819,6 +932,8 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -834,11 +949,14 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 begin
@@ -854,6 +972,7 @@ begin
   except
     on error: TPTCError do
       raise TPTCError.Create('failed to copy console to surface', error);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -896,6 +1015,8 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
   end;
 end;
@@ -936,11 +1057,14 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 begin
@@ -951,6 +1075,7 @@ begin
     try
       console_pixels := lock;
       try
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -978,6 +1103,11 @@ begin
         m_copy.palette(_palette, palette);
         m_copy.copy(pixels, 0, 0, _width, _height, _pitch, console_pixels, 0, 0,
 >>>>>>> origin/cpstrnew
+=======
+        m_copy.request(_format, format);
+        m_copy.palette(_palette, palette);
+        m_copy.copy(pixels, 0, 0, _width, _height, _pitch, console_pixels, 0, 0,
+>>>>>>> origin/cpstrnew
                     width, height, pitch);
       finally
         unlock;
@@ -985,6 +1115,7 @@ begin
     except
       on error: TPTCError do
         raise TPTCError.Create('failed to load pixels to console', error);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -998,6 +1129,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -1015,6 +1148,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1022,10 +1156,13 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 procedure TTextFX2Console.load(const pixels: Pointer;
                                _width, _height, _pitch: Integer;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1054,6 +1191,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                                const _format: TPTCFormat;
@@ -1091,11 +1230,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     end;
@@ -1112,6 +1254,7 @@ procedure TTextFX2Console.save(pixels: Pointer;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                _format: IPTCFormat;
                                _palette: IPTCPalette);
 var
@@ -1123,12 +1266,15 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                                const _format: TPTCFormat;
                                const _palette: TPTCPalette);
 var
   Area_: TPTCArea;
   console_pixels: Pointer;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1139,6 +1285,8 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 begin
   check_open;
   check_unlocked;
@@ -1147,6 +1295,7 @@ begin
     try
       console_pixels := lock;
       try
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1174,6 +1323,11 @@ begin
         m_copy.palette(palette, _palette);
         m_copy.copy(console_pixels, 0, 0, width, height, pitch, pixels, 0, 0,
 >>>>>>> origin/cpstrnew
+=======
+        m_copy.request(format, _format);
+        m_copy.palette(palette, _palette);
+        m_copy.copy(console_pixels, 0, 0, width, height, pitch, pixels, 0, 0,
+>>>>>>> origin/cpstrnew
                     _width, _height, _pitch);
       finally
         unlock;
@@ -1181,6 +1335,7 @@ begin
     except
       on error: TPTCError do
         raise TPTCError.Create('failed to save console pixels', error);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1194,6 +1349,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -1211,6 +1368,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1218,10 +1376,13 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 procedure TTextFX2Console.save(pixels: Pointer;
                                _width, _height, _pitch: Integer;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1250,6 +1411,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                                const _format: TPTCFormat;
@@ -1287,11 +1450,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     end;
@@ -1302,6 +1468,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -1314,10 +1481,14 @@ begin
 =======
 
 >>>>>>> origin/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
   end;
 end;
 
 procedure TTextFX2Console.clear;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1331,10 +1502,13 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 var
   tmp: TPTCColor;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1345,10 +1519,13 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 begin
   check_open;
   check_unlocked;
   if format.direct then
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1376,6 +1553,8 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     tmp := TPTCColor.Create(0, 0, 0, 0)
@@ -1414,6 +1593,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1421,10 +1601,13 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 begin
   check_open;
   check_unlocked;
   try
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1443,6 +1626,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     clipped_area := nil;
     pixels := lock;
     try
@@ -1455,11 +1640,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     end;
@@ -1470,6 +1658,7 @@ begin
   end;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1540,6 +1729,8 @@ function TTextFX2Console.GetName: string;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 procedure TTextFX2Console.Palette(const _palette: TPTCPalette);
@@ -1617,6 +1808,7 @@ function TTextFX2Console.GetName: string;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1624,11 +1816,14 @@ function TTextFX2Console.GetName: string;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 begin
   Result := 'TextFX2';
 end;
 
 function TTextFX2Console.GetTitle: string;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1664,6 +1859,8 @@ procedure TTextFX2Console.internal_open_fullscreen_finish(_pages: Integer);
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -1709,6 +1906,7 @@ procedure TTextFX2Console.internal_open_fullscreen_finish(_pages: Integer);
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1716,10 +1914,13 @@ procedure TTextFX2Console.internal_open_fullscreen_finish(_pages: Integer);
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 begin
 end;
 
 procedure TTextFX2Console.internal_post_open_setup;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1750,6 +1951,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 begin
   FreeAndNil(m_keyboard);
@@ -1774,6 +1977,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1781,11 +1985,14 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   FreeAndNil(FMouse);
   FreeAndNil(FEventQueue);
 end;
 
 procedure TTextFX2Console.internal_close;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1801,11 +2008,14 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 begin
   FreeAndNil(m_primary);
   FreeAndNil(m_160x100buffer);
   FreeAndNil(m_keyboard);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1816,12 +2026,15 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   FreeAndNil(FMouse);
   FreeAndNil(FEventQueue);
   set80x25;
 end;
 
 procedure TTextFX2Console.HandleEvents;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1842,6 +2055,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 begin
   m_keyboard.GetPendingEvents(FEventQueue);
@@ -1857,11 +2072,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   repeat
@@ -1874,6 +2092,7 @@ begin
   Result := event <> nil;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1895,6 +2114,10 @@ function TTextFX2Console.PeekEvent(wait: Boolean; const EventMask: TPTCEventMask
 function TTextFX2Console.PeekEvent(wait: Boolean; const EventMask: TPTCEventMask): TPTCEvent;
 
 >>>>>>> origin/cpstrnew
+=======
+function TTextFX2Console.PeekEvent(wait: Boolean; const EventMask: TPTCEventMask): TPTCEvent;
+
+>>>>>>> origin/cpstrnew
 begin
   check_open;
 
@@ -1908,6 +2131,7 @@ begin
 end;
 
 procedure TTextFX2Console.check_open;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1934,10 +2158,16 @@ begin
 begin
   if not m_open then
 >>>>>>> origin/cpstrnew
+=======
+
+begin
+  if not m_open then
+>>>>>>> origin/cpstrnew
     raise TPTCError.Create('console is not open');
 end;
 
 procedure TTextFX2Console.check_unlocked;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1959,6 +2189,11 @@ begin
 begin
   if m_locked then
 >>>>>>> graemeg/cpstrnew
+=======
+
+begin
+  if m_locked then
+>>>>>>> origin/cpstrnew
 =======
 
 begin

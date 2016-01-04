@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       PrintCore/PMDefinitions.h
  
      Contains:   Carbon Printing Manager Interfaces.
@@ -29,6 +30,13 @@
  
      Copyright (c) 1998-2006,2008 by Apple Inc. All Rights Reserved.
 >>>>>>> origin/fixes_2.4
+=======
+     File:       PrintCore/PMDefinitions.h
+ 
+     Contains:   Carbon Printing Manager Interfaces.
+ 
+     Copyright (c) 1998-2006,2008 by Apple Inc. All Rights Reserved.
+>>>>>>> origin/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -38,6 +46,7 @@
                      http://bugs.freepascal.org
  
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -69,6 +78,8 @@
                      http://www.freepascal.org/bugs.html
  
 }
+=======
+>>>>>>> origin/cpstrnew
 {    Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {
     Modified for use with Free Pascal
@@ -78,12 +89,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -95,6 +110,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -109,6 +125,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -124,6 +144,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -134,6 +155,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -141,13 +165,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -155,6 +183,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -163,8 +193,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -175,6 +208,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -195,6 +229,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -203,12 +239,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -219,6 +258,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
@@ -277,12 +317,25 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+>>>>>>> origin/cpstrnew
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
@@ -293,12 +346,15 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -339,6 +395,8 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -347,6 +405,7 @@ interface
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
@@ -509,6 +568,37 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -537,6 +627,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -545,6 +636,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -558,11 +651,15 @@ uses MacTypes,MacErrors,CFString;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 
 =======
 >>>>>>> graemeg/cpstrnew
@@ -573,6 +670,7 @@ uses MacTypes,MacErrors,CFString;
 
 {$ifc TARGET_OS_MAC}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -594,6 +692,8 @@ uses MacTypes,MacErrors,CFString;
 {$ifc TARGET_OS_MAC}
 
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not TARGET_CPU_64}
 {$ALIGN MAC68K}
 {$elsec}
@@ -603,6 +703,7 @@ uses MacTypes,MacErrors,CFString;
 { Printing objects }
 type
 	PMObject = UnivPtr;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -634,6 +735,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	PMPrintSettings = ^SInt32; { an opaque type }
 	PMPrintSettingsPtr = ^PMPrintSettings; { when a var xx:PMPrintSettings parameter can be nil, it is changed to xx: PMPrintSettingsPtr }
 	PMPageFormat = ^SInt32; { an opaque type }
@@ -647,6 +750,7 @@ type
 	PMPreset = ^SInt32; { an opaque type }
 	PMPresetPtr = ^PMPreset; { when a var xx:PMPrinter parameter can be nil, it is changed to xx: PMPresetPtr }
 	PMPaper = ^SInt32; { an opaque type }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -751,6 +855,11 @@ type
 	PMPaperPtr = ^PMPaper; { when a var xx:PMPrinter parameter can be nil, it is changed to xx: PMPaperPtr }
 const
 	kPMCancel = $0080; { user hit cancel button in dialog }
+=======
+	PMPaperPtr = ^PMPaper; { when a var xx:PMPrinter parameter can be nil, it is changed to xx: PMPaperPtr }
+const
+	kPMCancel = $0080; { user hit cancel button in dialog }
+>>>>>>> origin/cpstrnew
 
 	kPMNoData = nil; { for general use }
 	kPMDontWantSize = nil; { for parameters which return size information }
@@ -771,6 +880,7 @@ type
 	PMDestinationType = UInt16;
 const
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kPMDestinationInvalid		= 0;
 	kPMDestinationPrinter		= 1;
 	kPMDestinationFile			= 2;
@@ -781,13 +891,18 @@ const
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 	kPMDestinationInvalid = 0;
 	kPMDestinationPrinter = 1;
 	kPMDestinationFile = 2;
 	kPMDestinationFax = 3;
 	kPMDestinationPreview = 4;
 	kPMDestinationProcessPDF = 5;
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 	kPMDestinationTypeDefault	= kPMDestinationPrinter;
 	
@@ -795,12 +910,16 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 	PMOrientation = UInt16;
 const
 	kPMPortrait = 1;
 	kPMLandscape = 2;
 	kPMReversePortrait = 3;    { will revert to kPortrait for current drivers }
 	kPMReverseLandscape = 4;     { will revert to kLandscape for current drivers }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -844,6 +963,8 @@ const
 	kPMQualityPhoto = $000B; { Optimize quality of photos on the page. Speed is not a concern }
 	kPMQualityBest = $000D; { Get best quality output for all objects and photos. }
 	kPMQualityHighest = $000F; { Absolute highest quality attained from a printers }
+=======
+>>>>>>> origin/cpstrnew
 
 =======
 	PMPrinterState = UInt16;
@@ -888,6 +1009,7 @@ const
 =======
 >>>>>>> origin/cpstrnew
 type
+<<<<<<< HEAD
 	PMQualityMode = UInt32;
 const
 	kPMQualityLowest = $0000; { Absolute lowest print quality }
@@ -940,9 +1062,17 @@ const
 	kPMDuplexTumble = $0003; { Print on both sides of the paper, tumbling on. }
 	kPMSimplexTumble = $0004; { Print on only one side of the paper, but tumble the images while printing. }
 	kPMDuplexDefault = kPMDuplexNone;
+=======
+	PMPrinterState = UInt16;
+const
+	kPMPrinterIdle = 3;
+	kPMPrinterProcessing = 4;
+	kPMPrinterStopped = 5;
+>>>>>>> origin/cpstrnew
 
 { Layout directions: }
 type
+<<<<<<< HEAD
 	PMLayoutDirection = UInt16;
 const
 { Horizontal-major directions: }
@@ -980,8 +1110,34 @@ const
 	kPMShowInlineOrientation = 1 shl 3; { show Orientation buttons in top portion of print dialog }
 	kPMShowInlineScale = 1 shl 7; { show Scaling edit text in top portion of print dialog }
 	kPMShowPageAttributesPDE = 1 shl 8; { add a PDE to the print dialog that contains the Page Setup information (paper size, orientation and scale) }
-
+=======
+	PMColorSpaceModel = UInt32;
+const
+	kPMUnknownColorSpaceModel = 0;
+	kPMGrayColorSpaceModel = 1;
+	kPMRGBColorSpaceModel = 2;
+	kPMCMYKColorSpaceModel = 3;
+	kPMDevNColorSpaceModel = 4;
+	
+	kPMColorSpaceModelCount = 4; { total number of color space models supported }
+	
+{ Print quality modes "standard options" }
 type
+	PMQualityMode = UInt32;
+const
+	kPMQualityLowest = $0000; { Absolute lowest print quality }
+	kPMQualityInkSaver = $0001; { Saves ink but may be slower }
+	kPMQualityDraft = $0004; { Print at highest speed, ink used is secondary consideration }
+	kPMQualityNormal = $0008; { Print in printers "general usage" mode for good balance between quality and speed }
+	kPMQualityPhoto = $000B; { Optimize quality of photos on the page. Speed is not a concern }
+	kPMQualityBest = $000D; { Get best quality output for all objects and photos. }
+	kPMQualityHighest = $000F; { Absolute highest quality attained from a printers }
+
+>>>>>>> origin/cpstrnew
+
+{ Constants for our "standard" paper types }
+type
+<<<<<<< HEAD
 	PMPPDDomain = UInt16;
 const
 	kAllPPDDomains = 1;
@@ -993,6 +1149,10 @@ const
 
 
 =======
+=======
+	PMPaperType = UInt32;
+const
+>>>>>>> origin/cpstrnew
 	kPMPaperTypeUnknown = $0000; { Not sure yet what paper type we have. }
 	kPMPaperTypePlain = $0001; { Plain paper }
 	kPMPaperTypeCoated = $0002; { Has a special coating for sharper images and text }
@@ -1002,6 +1162,7 @@ const
 	kPMPaperTypeTShirt = $0006; { Used to iron on t-shirts }
 
 { Scaling alignment: }
+<<<<<<< HEAD
 type
 	PMScalingAlignment = UInt16;
 const
@@ -1044,6 +1205,11 @@ const
 type
 	PMScalingAlignment = UInt16;
 const
+=======
+type
+	PMScalingAlignment = UInt16;
+const
+>>>>>>> origin/cpstrnew
 	kPMScalingPinTopLeft = 1;
 	kPMScalingPinTopRight = 2;
 	kPMScalingPinBottomLeft = 3;
@@ -1060,6 +1226,7 @@ const
 	kPMDuplexTumble = $0003; { Print on both sides of the paper, tumbling on. }
 	kPMSimplexTumble = $0004; { Print on only one side of the paper, but tumble the images while printing. }
 	kPMDuplexDefault = kPMDuplexNone;
+<<<<<<< HEAD
 
 { Layout directions: }
 type
@@ -1181,6 +1348,39 @@ const
 type
 	PMPrintDialogOptionFlags = OptionBits;
 const
+=======
+
+{ Layout directions: }
+type
+	PMLayoutDirection = UInt16;
+const
+{ Horizontal-major directions: }
+	kPMLayoutLeftRightTopBottom = 1;    { English reading direction. }
+	kPMLayoutLeftRightBottomTop = 2;
+	kPMLayoutRightLeftTopBottom = 3;
+	kPMLayoutRightLeftBottomTop = 4;    { Vertical-major directions: }
+	kPMLayoutTopBottomLeftRight = 5;
+	kPMLayoutTopBottomRightLeft = 6;
+	kPMLayoutBottomTopLeftRight = 7;
+	kPMLayoutBottomTopRightLeft = 8;
+
+{ Page borders: }
+type
+	PMBorderType = UInt16;
+const
+	kPMBorderSingleHairline = 1;
+	kPMBorderDoubleHairline = 2;
+	kPMBorderSingleThickline = 3;
+	kPMBorderDoubleThickline = 4;
+
+{ 
+ Options for which items to show inline in the print dialog
+ This is only meant to be used in Carbon environment
+ }
+type
+	PMPrintDialogOptionFlags = OptionBits;
+const
+>>>>>>> origin/cpstrnew
 	kPMHideInlineItems = 0 shl 0; { show nothing in the inline portion of print dialog }
 	kPMShowDefaultInlineItems = 1 shl 15; { show the default set of items (copies & pages) in the inline portion of print dialog }
 	kPMShowInlineCopies = 1 shl 0; { show Copies edit text, Collate check box and Two Sided check box (if printer supports it) in top portion of print dialog }
@@ -1202,6 +1402,7 @@ const
 	kCUPSPPDDomain = 6;
 
 
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 	PMPPDDomain = UInt16;
@@ -1349,10 +1550,13 @@ const
 	kCUPSPPDDomain = 6;
 
 
+=======
+>>>>>>> origin/cpstrnew
 { Description types }
 {$ifc USE_CFSTR_CONSTANT_MACROS}
 {$definec kPMPPDDescriptionType CFSTRP('PMPPDDescriptionType')}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{	 Document format strings 	}
 <<<<<<< HEAD
@@ -1362,6 +1566,9 @@ const
 =======
 { Document format strings }
 >>>>>>> origin/fixes_2.4
+=======
+{ Document format strings }
+>>>>>>> origin/cpstrnew
 {$ifc USE_CFSTR_CONSTANT_MACROS}
 {$definec kPMDocumentFormatDefault CFSTRP('com.apple.documentformat.default')}
 {$endc}
@@ -1369,6 +1576,7 @@ const
 {$definec kPMDocumentFormatPDF CFSTRP('application/pdf')}
 {$endc}
 {$ifc USE_CFSTR_CONSTANT_MACROS}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1389,6 +1597,11 @@ const
 {$definec kPDFWorkFlowItemURLKey CFSTRP('itemURL')}
 {$endc}
 =======
+{$endc}
+{ Graphic context strings }
+>>>>>>> origin/cpstrnew
+=======
+{$definec kPMDocumentFormatPostScript CFSTRP('application/postscript')}
 {$endc}
 { Graphic context strings }
 >>>>>>> origin/cpstrnew
@@ -1438,6 +1651,7 @@ const
 	kPMInvalidPreset = -30899;{ the preset is invalid }
 =======
 {$ifc USE_CFSTR_CONSTANT_MACROS}
+<<<<<<< HEAD
 {$definec kPDFWorkFlowItemURLKey CFSTRP('itemURL')}
 {$endc}
 {$ifc USE_CFSTR_CONSTANT_MACROS}
@@ -1527,6 +1741,11 @@ const
 {$definec kPMGraphicsContextCoreGraphics CFSTRP('com.apple.graphicscontext.coregraphics')}
 {$endc}
 { PDF Workflow Keys }
+=======
+{$definec kPMGraphicsContextCoreGraphics CFSTRP('com.apple.graphicscontext.coregraphics')}
+{$endc}
+{ PDF Workflow Keys }
+>>>>>>> origin/cpstrnew
 {$ifc USE_CFSTR_CONSTANT_MACROS}
 {$definec kPDFWorkFlowItemURLKey CFSTRP('itemURL')}
 {$endc}
@@ -1539,6 +1758,7 @@ const
 {$ifc USE_CFSTR_CONSTANT_MACROS}
 {$definec kPDFWorkflowItemsKey CFSTRP('items')}
 {$endc}
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1573,6 +1793,35 @@ const
 const
 	kPMUnlocked = false;
 >>>>>>> origin/fixes_2.4
+=======
+
+{ OSStatus return codes }
+const
+	kPMNoError = noErr;
+	kPMGeneralError = -30870;
+	kPMOutOfScope = -30871; { an API call is out of scope }
+	kPMInvalidParameter = paramErr; { a required parameter is missing or invalid }
+	kPMNoDefaultPrinter = -30872; { no default printer selected }
+	kPMNotImplemented = -30873; { this API call is not supported }
+	kPMNoSuchEntry = -30874; { no such entry }
+	kPMInvalidPrintSettings = -30875; { the printsettings reference is invalid }
+	kPMInvalidPageFormat = -30876; { the pageformat reference is invalid }
+	kPMValueOutOfRange = -30877; { a value passed in is out of range }
+	kPMLockIgnored = -30878; { the lock value was ignored }
+
+const
+	kPMInvalidPrintSession = -30879; { the print session is invalid }
+	kPMInvalidPrinter = -30880; { the printer reference is invalid }
+	kPMObjectInUse = -30881; { the object is in use }
+	kPMInvalidPreset = -30899;{ the preset is invalid }
+
+
+const
+	kPMPrintAllPages = -1;
+
+const
+	kPMUnlocked = false;
+>>>>>>> origin/cpstrnew
 
 type
 	PMRectPtr = ^PMRect;
@@ -1580,12 +1829,16 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 		top: Float64;
 		left: Float64;
 		bottom: Float64;
 		right: Float64;
+<<<<<<< HEAD
 <<<<<<< HEAD
 	end;
 type
@@ -1692,6 +1945,8 @@ end.
 		right:					Double;
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	end;
 type
 	PMResolutionPtr = ^PMResolution;
@@ -1789,9 +2044,13 @@ const
 end.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

@@ -281,6 +281,7 @@ Begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   initunicodestringmanager;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -288,6 +289,8 @@ Begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 

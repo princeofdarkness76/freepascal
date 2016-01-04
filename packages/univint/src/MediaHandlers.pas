@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       QuickTime/MediaHandlers.h
  
      Contains:   QuickTime Interfaces.
@@ -40,11 +41,15 @@
 =======
      File:       QuickTime/MediaHandlers.h
 >>>>>>> origin/fixes_2.4
+=======
+     File:       QuickTime/MediaHandlers.h
+>>>>>>> origin/cpstrnew
  
      Contains:   QuickTime Interfaces.
  
      Version:    QuickTime 7.6.3
  
+<<<<<<< HEAD
 <<<<<<< HEAD
      Copyright:  © 1990-2002 by Apple Computer, Inc., all rights reserved
 <<<<<<< HEAD
@@ -54,6 +59,9 @@
 =======
      Copyright:  © 1990-2008 by Apple Inc., all rights reserved
 >>>>>>> origin/fixes_2.4
+=======
+     Copyright:  © 1990-2008 by Apple Inc., all rights reserved
+>>>>>>> origin/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -63,6 +71,7 @@
                      http://bugs.freepascal.org
  
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -94,6 +103,8 @@
                      http://www.freepascal.org/bugs.html
  
 }
+=======
+>>>>>>> origin/cpstrnew
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {
     Modified for use with Free Pascal
@@ -103,12 +114,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -120,6 +135,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -134,6 +150,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -149,6 +169,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -159,6 +180,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -166,13 +190,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -180,6 +208,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -188,8 +218,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -200,6 +233,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -220,6 +254,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -228,12 +264,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -241,6 +280,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -487,12 +527,27 @@ interface
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
+=======
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -527,6 +582,7 @@ interface
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 {$endc}
@@ -544,6 +600,17 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -572,6 +639,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -580,6 +648,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -589,6 +659,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -610,6 +681,13 @@ uses MacTypes,Components,Events,ImageCompression,Movies,QuickdrawTypes,Sound;
 {$ifc TARGET_OS_MAC}
 >>>>>>> graemeg/cpstrnew
 =======
+
+
+{$ifc TARGET_OS_MAC}
+>>>>>>> origin/cpstrnew
+=======
+uses MacTypes,Components,Events,ImageCompression,Movies,QuickdrawTypes,Sound;
+{$endc} {not MACOSALLINCLUDE}
 
 
 {$ifc TARGET_OS_MAC}
@@ -662,6 +740,9 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -681,6 +762,7 @@ const
 	mOpaque = 1 shl 0;
 	mInvisible = 1 shl 1;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 =======
@@ -706,6 +788,9 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 =======
 
 >>>>>>> origin/cpstrnew
@@ -736,6 +821,7 @@ type
 		trackMatte: PixMapHandle;
 		inputMap: QTAtomContainer;
 		mediaContextID: QTMediaContextID;
+<<<<<<< HEAD
 	end;
 const
 	kMediaVideoParamBrightness = 1;
@@ -896,6 +982,10 @@ type
 		mediaContextID: QTMediaContextID;
 	end;
 const
+=======
+	end;
+const
+>>>>>>> origin/cpstrnew
 	kMediaVideoParamBrightness = 1;
 	kMediaVideoParamContrast = 2;
 	kMediaVideoParamHue = 3;
@@ -950,6 +1040,7 @@ type
  }
 function CallComponentExecuteWiredAction( ci: ComponentInstance; actionContainer: QTAtomContainer; actionAtom: QTAtom; target: QTCustomActionTargetPtr; event: QTEventRecordPtr ): ComponentResult; external name '_CallComponentExecuteWiredAction';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+<<<<<<< HEAD
 
 
 <<<<<<< HEAD
@@ -969,11 +1060,16 @@ function CallComponentExecuteWiredAction(ci: ComponentInstance; actionContainer:
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+
+
+>>>>>>> origin/cpstrnew
 { MediaCallRange2 }
 { These are unique to each type of media handler }
 { They are also included in the public interfaces }
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1022,10 +1118,17 @@ const
 	kEmptyPurgableChunksOverAllowance = 1;
 
 >>>>>>> origin/fixes_2.4
+=======
+{ Flags for MediaSetChunkManagementFlags}
+const
+	kEmptyPurgableChunksOverAllowance = 1;
+
+>>>>>>> origin/cpstrnew
 {
  *  MediaSetChunkManagementFlags()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1045,6 +1148,10 @@ function MediaGetChunkManagementFlags( mh: MediaHandler; var flags: UInt32 ): Co
  *    Mac OS X:         in version 10.2 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.6 and later
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.2 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.6 and later
+>>>>>>> origin/cpstrnew
  *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
  *    Windows:          in qtmlClient.lib 6.0 and later
  }
@@ -1062,17 +1169,23 @@ function MediaSetChunkManagementFlags( mh: MediaHandler; flags: UInt32; flagsMas
  *    Windows:          in qtmlClient.lib 6.0 and later
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 function MediaGetChunkManagementFlags(mh: MediaHandler; var flags: UInt32): ComponentResult; external name '_MediaGetChunkManagementFlags';
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaGetChunkManagementFlags( mh: MediaHandler; var flags: UInt32 ): ComponentResult; external name '_MediaGetChunkManagementFlags';
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaSetPurgeableChunkMemoryAllowance()
  *  
@@ -1080,6 +1193,7 @@ function MediaGetChunkManagementFlags( mh: MediaHandler; var flags: UInt32 ): Co
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.6 and later
  *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
@@ -1096,10 +1210,14 @@ function MediaSetPurgeableChunkMemoryAllowance( mh: MediaHandler; allowance: Siz
 =======
  *    Mac OS X:         in version 10.2 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.2 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.6 and later
  *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
  *    Windows:          in qtmlClient.lib 6.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaSetPurgeableChunkMemoryAllowance(mh: MediaHandler; allowance: Size): ComponentResult; external name '_MediaSetPurgeableChunkMemoryAllowance';
 <<<<<<< HEAD
@@ -1107,11 +1225,16 @@ function MediaSetPurgeableChunkMemoryAllowance(mh: MediaHandler; allowance: Size
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaSetPurgeableChunkMemoryAllowance( mh: MediaHandler; allowance: Size ): ComponentResult; external name '_MediaSetPurgeableChunkMemoryAllowance';
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaGetPurgeableChunkMemoryAllowance()
  *  
@@ -1119,6 +1242,7 @@ function MediaSetPurgeableChunkMemoryAllowance( mh: MediaHandler; allowance: Siz
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.6 and later
  *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
@@ -1135,10 +1259,14 @@ function MediaGetPurgeableChunkMemoryAllowance( mh: MediaHandler; var allowance:
 =======
  *    Mac OS X:         in version 10.2 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.2 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.6 and later
  *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
  *    Windows:          in qtmlClient.lib 6.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaGetPurgeableChunkMemoryAllowance(mh: MediaHandler; var allowance: Size): ComponentResult; external name '_MediaGetPurgeableChunkMemoryAllowance';
 <<<<<<< HEAD
@@ -1146,11 +1274,16 @@ function MediaGetPurgeableChunkMemoryAllowance(mh: MediaHandler; var allowance: 
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaGetPurgeableChunkMemoryAllowance( mh: MediaHandler; var allowance: Size ): ComponentResult; external name '_MediaGetPurgeableChunkMemoryAllowance';
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaEmptyAllPurgeableChunks()
  *  
@@ -1158,6 +1291,7 @@ function MediaGetPurgeableChunkMemoryAllowance( mh: MediaHandler; var allowance:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.6 and later
  *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
@@ -1174,10 +1308,14 @@ function MediaEmptyAllPurgeableChunks( mh: MediaHandler ): ComponentResult; exte
 =======
  *    Mac OS X:         in version 10.2 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.2 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.6 and later
  *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
  *    Windows:          in qtmlClient.lib 6.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaEmptyAllPurgeableChunks(mh: MediaHandler): ComponentResult; external name '_MediaEmptyAllPurgeableChunks';
 <<<<<<< HEAD
@@ -1185,11 +1323,16 @@ function MediaEmptyAllPurgeableChunks(mh: MediaHandler): ComponentResult; extern
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaEmptyAllPurgeableChunks( mh: MediaHandler ): ComponentResult; external name '_MediaEmptyAllPurgeableChunks';
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {**** These are the calls for dealing with the Generic media handler ****}
 {
  *  MediaInitialize()
@@ -1198,6 +1341,7 @@ function MediaEmptyAllPurgeableChunks( mh: MediaHandler ): ComponentResult; exte
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -1214,10 +1358,14 @@ function MediaInitialize( mh: MediaHandler; var gmc: GetMovieCompleteParams ): C
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaInitialize(mh: MediaHandler; var gmc: GetMovieCompleteParams): ComponentResult; external name '_MediaInitialize';
 <<<<<<< HEAD
@@ -1225,11 +1373,16 @@ function MediaInitialize(mh: MediaHandler; var gmc: GetMovieCompleteParams): Com
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaInitialize( mh: MediaHandler; var gmc: GetMovieCompleteParams ): ComponentResult; external name '_MediaInitialize';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaSetHandlerCapabilities()
  *  
@@ -1237,6 +1390,7 @@ function MediaInitialize( mh: MediaHandler; var gmc: GetMovieCompleteParams ): C
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -1253,10 +1407,14 @@ function MediaSetHandlerCapabilities( mh: MediaHandler; flags: SIGNEDLONG; flags
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaSetHandlerCapabilities(mh: MediaHandler; flags: SInt32; flagsMask: SInt32): ComponentResult; external name '_MediaSetHandlerCapabilities';
 <<<<<<< HEAD
@@ -1264,11 +1422,16 @@ function MediaSetHandlerCapabilities(mh: MediaHandler; flags: SInt32; flagsMask:
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaSetHandlerCapabilities( mh: MediaHandler; flags: SIGNEDLONG; flagsMask: SIGNEDLONG ): ComponentResult; external name '_MediaSetHandlerCapabilities';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaIdle()
  *  
@@ -1276,6 +1439,7 @@ function MediaSetHandlerCapabilities( mh: MediaHandler; flags: SIGNEDLONG; flags
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -1292,10 +1456,14 @@ function MediaIdle( mh: MediaHandler; atMediaTime: TimeValue; flagsIn: SIGNEDLON
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaIdle(mh: MediaHandler; atMediaTime: TimeValue; flagsIn: SInt32; var flagsOut: SInt32; const (*var*) movieTime: TimeRecord): ComponentResult; external name '_MediaIdle';
 <<<<<<< HEAD
@@ -1303,11 +1471,16 @@ function MediaIdle(mh: MediaHandler; atMediaTime: TimeValue; flagsIn: SInt32; va
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaIdle( mh: MediaHandler; atMediaTime: TimeValue; flagsIn: SIGNEDLONG; var flagsOut: SIGNEDLONG; const (*var*) movieTime: TimeRecord ): ComponentResult; external name '_MediaIdle';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaGetMediaInfo()
  *  
@@ -1315,6 +1488,7 @@ function MediaIdle( mh: MediaHandler; atMediaTime: TimeValue; flagsIn: SIGNEDLON
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -1331,10 +1505,14 @@ function MediaGetMediaInfo( mh: MediaHandler; h: Handle ): ComponentResult; exte
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaGetMediaInfo(mh: MediaHandler; h: Handle): ComponentResult; external name '_MediaGetMediaInfo';
 <<<<<<< HEAD
@@ -1342,11 +1520,16 @@ function MediaGetMediaInfo(mh: MediaHandler; h: Handle): ComponentResult; extern
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaGetMediaInfo( mh: MediaHandler; h: Handle ): ComponentResult; external name '_MediaGetMediaInfo';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaPutMediaInfo()
  *  
@@ -1354,6 +1537,7 @@ function MediaGetMediaInfo( mh: MediaHandler; h: Handle ): ComponentResult; exte
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -1370,10 +1554,14 @@ function MediaPutMediaInfo( mh: MediaHandler; h: Handle ): ComponentResult; exte
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaPutMediaInfo(mh: MediaHandler; h: Handle): ComponentResult; external name '_MediaPutMediaInfo';
 <<<<<<< HEAD
@@ -1381,11 +1569,16 @@ function MediaPutMediaInfo(mh: MediaHandler; h: Handle): ComponentResult; extern
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaPutMediaInfo( mh: MediaHandler; h: Handle ): ComponentResult; external name '_MediaPutMediaInfo';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaSetActive()
  *  
@@ -1393,6 +1586,7 @@ function MediaPutMediaInfo( mh: MediaHandler; h: Handle ): ComponentResult; exte
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -1409,10 +1603,14 @@ function MediaSetActive( mh: MediaHandler; enableMedia: Boolean ): ComponentResu
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaSetActive(mh: MediaHandler; enableMedia: boolean): ComponentResult; external name '_MediaSetActive';
 <<<<<<< HEAD
@@ -1420,11 +1618,16 @@ function MediaSetActive(mh: MediaHandler; enableMedia: boolean): ComponentResult
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaSetActive( mh: MediaHandler; enableMedia: Boolean ): ComponentResult; external name '_MediaSetActive';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaSetRate()
  *  
@@ -1432,6 +1635,7 @@ function MediaSetActive( mh: MediaHandler; enableMedia: Boolean ): ComponentResu
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -1448,10 +1652,14 @@ function MediaSetRate( mh: MediaHandler; rate: Fixed ): ComponentResult; externa
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaSetRate(mh: MediaHandler; rate: Fixed): ComponentResult; external name '_MediaSetRate';
 <<<<<<< HEAD
@@ -1459,11 +1667,16 @@ function MediaSetRate(mh: MediaHandler; rate: Fixed): ComponentResult; external 
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaSetRate( mh: MediaHandler; rate: Fixed ): ComponentResult; external name '_MediaSetRate';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaGGetStatus()
  *  
@@ -1471,6 +1684,7 @@ function MediaSetRate( mh: MediaHandler; rate: Fixed ): ComponentResult; externa
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -1487,10 +1701,14 @@ function MediaGGetStatus( mh: MediaHandler; var statusErr: ComponentResult ): Co
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaGGetStatus(mh: MediaHandler; var statusErr: ComponentResult): ComponentResult; external name '_MediaGGetStatus';
 <<<<<<< HEAD
@@ -1498,11 +1716,16 @@ function MediaGGetStatus(mh: MediaHandler; var statusErr: ComponentResult): Comp
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaGGetStatus( mh: MediaHandler; var statusErr: ComponentResult ): ComponentResult; external name '_MediaGGetStatus';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaTrackEdited()
  *  
@@ -1510,6 +1733,7 @@ function MediaGGetStatus( mh: MediaHandler; var statusErr: ComponentResult ): Co
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -1526,10 +1750,14 @@ function MediaTrackEdited( mh: MediaHandler ): ComponentResult; external name '_
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaTrackEdited(mh: MediaHandler): ComponentResult; external name '_MediaTrackEdited';
 <<<<<<< HEAD
@@ -1537,11 +1765,16 @@ function MediaTrackEdited(mh: MediaHandler): ComponentResult; external name '_Me
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaTrackEdited( mh: MediaHandler ): ComponentResult; external name '_MediaTrackEdited';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaSetMediaTimeScale()
  *  
@@ -1549,6 +1782,7 @@ function MediaTrackEdited( mh: MediaHandler ): ComponentResult; external name '_
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -1565,10 +1799,14 @@ function MediaSetMediaTimeScale( mh: MediaHandler; newTimeScale: TimeScale ): Co
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaSetMediaTimeScale(mh: MediaHandler; newTimeScale: TimeScale): ComponentResult; external name '_MediaSetMediaTimeScale';
 <<<<<<< HEAD
@@ -1576,11 +1814,16 @@ function MediaSetMediaTimeScale(mh: MediaHandler; newTimeScale: TimeScale): Comp
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaSetMediaTimeScale( mh: MediaHandler; newTimeScale: TimeScale ): ComponentResult; external name '_MediaSetMediaTimeScale';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaSetMovieTimeScale()
  *  
@@ -1588,6 +1831,7 @@ function MediaSetMediaTimeScale( mh: MediaHandler; newTimeScale: TimeScale ): Co
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -1604,10 +1848,14 @@ function MediaSetMovieTimeScale( mh: MediaHandler; newTimeScale: TimeScale ): Co
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaSetMovieTimeScale(mh: MediaHandler; newTimeScale: TimeScale): ComponentResult; external name '_MediaSetMovieTimeScale';
 <<<<<<< HEAD
@@ -1615,11 +1863,16 @@ function MediaSetMovieTimeScale(mh: MediaHandler; newTimeScale: TimeScale): Comp
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaSetMovieTimeScale( mh: MediaHandler; newTimeScale: TimeScale ): ComponentResult; external name '_MediaSetMovieTimeScale';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaSetGWorld()
  *  
@@ -1627,6 +1880,7 @@ function MediaSetMovieTimeScale( mh: MediaHandler; newTimeScale: TimeScale ): Co
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -1643,10 +1897,14 @@ function MediaSetGWorld( mh: MediaHandler; aPort: CGrafPtr; aGD: GDHandle ): Com
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaSetGWorld(mh: MediaHandler; aPort: CGrafPtr; aGD: GDHandle): ComponentResult; external name '_MediaSetGWorld';
 <<<<<<< HEAD
@@ -1654,15 +1912,21 @@ function MediaSetGWorld(mh: MediaHandler; aPort: CGrafPtr; aGD: GDHandle): Compo
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaSetGWorld( mh: MediaHandler; aPort: CGrafPtr; aGD: GDHandle ): ComponentResult; external name '_MediaSetGWorld';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaSetDimensions()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1682,10 +1946,14 @@ function MediaSetDimensions( mh: MediaHandler; width: Fixed; height: Fixed ): Co
 =======
 >>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function MediaSetDimensions(mh: MediaHandler; width: Fixed; height: Fixed): ComponentResult; external name '_MediaSetDimensions';
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -1693,6 +1961,12 @@ function MediaSetDimensions(mh: MediaHandler; width: Fixed; height: Fixed): Comp
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+function MediaSetDimensions( mh: MediaHandler; width: Fixed; height: Fixed ): ComponentResult; external name '_MediaSetDimensions';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
 {
  *  MediaSetClip()
  *  
@@ -1700,6 +1974,7 @@ function MediaSetDimensions(mh: MediaHandler; width: Fixed; height: Fixed): Comp
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -1716,10 +1991,14 @@ function MediaSetClip( mh: MediaHandler; theClip: RgnHandle ): ComponentResult; 
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaSetClip(mh: MediaHandler; theClip: RgnHandle): ComponentResult; external name '_MediaSetClip';
 <<<<<<< HEAD
@@ -1727,11 +2006,16 @@ function MediaSetClip(mh: MediaHandler; theClip: RgnHandle): ComponentResult; ex
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaSetClip( mh: MediaHandler; theClip: RgnHandle ): ComponentResult; external name '_MediaSetClip';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaSetMatrix()
  *  
@@ -1739,6 +2023,7 @@ function MediaSetClip( mh: MediaHandler; theClip: RgnHandle ): ComponentResult; 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -1755,10 +2040,14 @@ function MediaSetMatrix( mh: MediaHandler; var trackMovieMatrix: MatrixRecord ):
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaSetMatrix(mh: MediaHandler; var trackMovieMatrix: MatrixRecord): ComponentResult; external name '_MediaSetMatrix';
 <<<<<<< HEAD
@@ -1766,11 +2055,16 @@ function MediaSetMatrix(mh: MediaHandler; var trackMovieMatrix: MatrixRecord): C
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaSetMatrix( mh: MediaHandler; var trackMovieMatrix: MatrixRecord ): ComponentResult; external name '_MediaSetMatrix';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaGetTrackOpaque()
  *  
@@ -1778,6 +2072,7 @@ function MediaSetMatrix( mh: MediaHandler; var trackMovieMatrix: MatrixRecord ):
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -1794,10 +2089,14 @@ function MediaGetTrackOpaque( mh: MediaHandler; var trackIsOpaque: Boolean ): Co
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaGetTrackOpaque(mh: MediaHandler; var trackIsOpaque: boolean): ComponentResult; external name '_MediaGetTrackOpaque';
 <<<<<<< HEAD
@@ -1805,11 +2104,16 @@ function MediaGetTrackOpaque(mh: MediaHandler; var trackIsOpaque: boolean): Comp
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaGetTrackOpaque( mh: MediaHandler; var trackIsOpaque: Boolean ): ComponentResult; external name '_MediaGetTrackOpaque';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaSetGraphicsMode()
  *  
@@ -1817,6 +2121,7 @@ function MediaGetTrackOpaque( mh: MediaHandler; var trackIsOpaque: Boolean ): Co
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -1833,10 +2138,14 @@ function MediaSetGraphicsMode( mh: MediaHandler; mode: SIGNEDLONG; const (*var*)
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaSetGraphicsMode(mh: MediaHandler; mode: SInt32; const (*var*) opColor: RGBColor): ComponentResult; external name '_MediaSetGraphicsMode';
 <<<<<<< HEAD
@@ -1844,11 +2153,16 @@ function MediaSetGraphicsMode(mh: MediaHandler; mode: SInt32; const (*var*) opCo
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaSetGraphicsMode( mh: MediaHandler; mode: SIGNEDLONG; const (*var*) opColor: RGBColor ): ComponentResult; external name '_MediaSetGraphicsMode';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaGetGraphicsMode()
  *  
@@ -1856,6 +2170,7 @@ function MediaSetGraphicsMode( mh: MediaHandler; mode: SIGNEDLONG; const (*var*)
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -1872,10 +2187,14 @@ function MediaGetGraphicsMode( mh: MediaHandler; var mode: SIGNEDLONG; var opCol
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaGetGraphicsMode(mh: MediaHandler; var mode: SInt32; var opColor: RGBColor): ComponentResult; external name '_MediaGetGraphicsMode';
 <<<<<<< HEAD
@@ -1883,11 +2202,16 @@ function MediaGetGraphicsMode(mh: MediaHandler; var mode: SInt32; var opColor: R
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaGetGraphicsMode( mh: MediaHandler; var mode: SIGNEDLONG; var opColor: RGBColor ): ComponentResult; external name '_MediaGetGraphicsMode';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaGSetVolume()
  *  
@@ -1895,6 +2219,7 @@ function MediaGetGraphicsMode( mh: MediaHandler; var mode: SIGNEDLONG; var opCol
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -1911,10 +2236,14 @@ function MediaGSetVolume( mh: MediaHandler; volume: SInt16 ): ComponentResult; e
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaGSetVolume(mh: MediaHandler; volume: SInt16): ComponentResult; external name '_MediaGSetVolume';
 <<<<<<< HEAD
@@ -1922,11 +2251,16 @@ function MediaGSetVolume(mh: MediaHandler; volume: SInt16): ComponentResult; ext
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaGSetVolume( mh: MediaHandler; volume: SInt16 ): ComponentResult; external name '_MediaGSetVolume';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaSetSoundBalance()
  *  
@@ -1934,6 +2268,7 @@ function MediaGSetVolume( mh: MediaHandler; volume: SInt16 ): ComponentResult; e
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -1950,10 +2285,14 @@ function MediaSetSoundBalance( mh: MediaHandler; balance: SInt16 ): ComponentRes
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaSetSoundBalance(mh: MediaHandler; balance: SInt16): ComponentResult; external name '_MediaSetSoundBalance';
 <<<<<<< HEAD
@@ -1961,11 +2300,16 @@ function MediaSetSoundBalance(mh: MediaHandler; balance: SInt16): ComponentResul
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaSetSoundBalance( mh: MediaHandler; balance: SInt16 ): ComponentResult; external name '_MediaSetSoundBalance';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaGetSoundBalance()
  *  
@@ -1973,6 +2317,7 @@ function MediaSetSoundBalance( mh: MediaHandler; balance: SInt16 ): ComponentRes
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -1989,10 +2334,14 @@ function MediaGetSoundBalance( mh: MediaHandler; var balance: SInt16 ): Componen
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaGetSoundBalance(mh: MediaHandler; var balance: SInt16): ComponentResult; external name '_MediaGetSoundBalance';
 <<<<<<< HEAD
@@ -2000,11 +2349,16 @@ function MediaGetSoundBalance(mh: MediaHandler; var balance: SInt16): ComponentR
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaGetSoundBalance( mh: MediaHandler; var balance: SInt16 ): ComponentResult; external name '_MediaGetSoundBalance';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaGetNextBoundsChange()
  *  
@@ -2012,6 +2366,7 @@ function MediaGetSoundBalance( mh: MediaHandler; var balance: SInt16 ): Componen
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -2028,10 +2383,14 @@ function MediaGetNextBoundsChange( mh: MediaHandler; var when: TimeValue ): Comp
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaGetNextBoundsChange(mh: MediaHandler; var when: TimeValue): ComponentResult; external name '_MediaGetNextBoundsChange';
 <<<<<<< HEAD
@@ -2039,11 +2398,16 @@ function MediaGetNextBoundsChange(mh: MediaHandler; var when: TimeValue): Compon
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaGetNextBoundsChange( mh: MediaHandler; var when: TimeValue ): ComponentResult; external name '_MediaGetNextBoundsChange';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaGetSrcRgn()
  *  
@@ -2051,6 +2415,7 @@ function MediaGetNextBoundsChange( mh: MediaHandler; var when: TimeValue ): Comp
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -2067,10 +2432,14 @@ function MediaGetSrcRgn( mh: MediaHandler; rgn: RgnHandle; atMediaTime: TimeValu
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaGetSrcRgn(mh: MediaHandler; rgn: RgnHandle; atMediaTime: TimeValue): ComponentResult; external name '_MediaGetSrcRgn';
 <<<<<<< HEAD
@@ -2078,11 +2447,16 @@ function MediaGetSrcRgn(mh: MediaHandler; rgn: RgnHandle; atMediaTime: TimeValue
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaGetSrcRgn( mh: MediaHandler; rgn: RgnHandle; atMediaTime: TimeValue ): ComponentResult; external name '_MediaGetSrcRgn';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaPreroll()
  *  
@@ -2090,6 +2464,7 @@ function MediaGetSrcRgn( mh: MediaHandler; rgn: RgnHandle; atMediaTime: TimeValu
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -2106,10 +2481,14 @@ function MediaPreroll( mh: MediaHandler; time: TimeValue; rate: Fixed ): Compone
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaPreroll(mh: MediaHandler; time: TimeValue; rate: Fixed): ComponentResult; external name '_MediaPreroll';
 <<<<<<< HEAD
@@ -2117,11 +2496,16 @@ function MediaPreroll(mh: MediaHandler; time: TimeValue; rate: Fixed): Component
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaPreroll( mh: MediaHandler; time: TimeValue; rate: Fixed ): ComponentResult; external name '_MediaPreroll';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaSampleDescriptionChanged()
  *  
@@ -2129,6 +2513,7 @@ function MediaPreroll( mh: MediaHandler; time: TimeValue; rate: Fixed ): Compone
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -2145,10 +2530,14 @@ function MediaSampleDescriptionChanged( mh: MediaHandler; index: SIGNEDLONG ): C
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaSampleDescriptionChanged(mh: MediaHandler; index: SInt32): ComponentResult; external name '_MediaSampleDescriptionChanged';
 <<<<<<< HEAD
@@ -2156,11 +2545,16 @@ function MediaSampleDescriptionChanged(mh: MediaHandler; index: SInt32): Compone
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaSampleDescriptionChanged( mh: MediaHandler; index: SIGNEDLONG ): ComponentResult; external name '_MediaSampleDescriptionChanged';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaHasCharacteristic()
  *  
@@ -2168,6 +2562,7 @@ function MediaSampleDescriptionChanged( mh: MediaHandler; index: SIGNEDLONG ): C
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -2184,10 +2579,14 @@ function MediaHasCharacteristic( mh: MediaHandler; characteristic: OSType; var h
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaHasCharacteristic(mh: MediaHandler; characteristic: OSType; var hasIt: boolean): ComponentResult; external name '_MediaHasCharacteristic';
 <<<<<<< HEAD
@@ -2195,11 +2594,16 @@ function MediaHasCharacteristic(mh: MediaHandler; characteristic: OSType; var ha
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaHasCharacteristic( mh: MediaHandler; characteristic: OSType; var hasIt: Boolean ): ComponentResult; external name '_MediaHasCharacteristic';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaGetOffscreenBufferSize()
  *  
@@ -2207,6 +2611,7 @@ function MediaHasCharacteristic( mh: MediaHandler; characteristic: OSType; var h
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -2223,10 +2628,14 @@ function MediaGetOffscreenBufferSize( mh: MediaHandler; var bounds: Rect; depth:
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaGetOffscreenBufferSize(mh: MediaHandler; var bounds: Rect; depth: SInt16; ctab: CTabHandle): ComponentResult; external name '_MediaGetOffscreenBufferSize';
 <<<<<<< HEAD
@@ -2234,11 +2643,16 @@ function MediaGetOffscreenBufferSize(mh: MediaHandler; var bounds: Rect; depth: 
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaGetOffscreenBufferSize( mh: MediaHandler; var bounds: Rect; depth: SInt16; ctab: CTabHandle ): ComponentResult; external name '_MediaGetOffscreenBufferSize';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaSetHints()
  *  
@@ -2246,6 +2660,7 @@ function MediaGetOffscreenBufferSize( mh: MediaHandler; var bounds: Rect; depth:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -2262,10 +2677,14 @@ function MediaSetHints( mh: MediaHandler; hints: SIGNEDLONG ): ComponentResult; 
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaSetHints(mh: MediaHandler; hints: SInt32): ComponentResult; external name '_MediaSetHints';
 <<<<<<< HEAD
@@ -2273,11 +2692,16 @@ function MediaSetHints(mh: MediaHandler; hints: SInt32): ComponentResult; extern
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaSetHints( mh: MediaHandler; hints: SIGNEDLONG ): ComponentResult; external name '_MediaSetHints';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaGetName()
  *  
@@ -2285,6 +2709,7 @@ function MediaSetHints( mh: MediaHandler; hints: SIGNEDLONG ): ComponentResult; 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -2301,10 +2726,14 @@ function MediaGetName( mh: MediaHandler; var name: Str255; requestedLanguage: SI
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaGetName(mh: MediaHandler; var name: Str255; requestedLanguage: SInt32; var actualLanguage: SInt32): ComponentResult; external name '_MediaGetName';
 <<<<<<< HEAD
@@ -2312,11 +2741,16 @@ function MediaGetName(mh: MediaHandler; var name: Str255; requestedLanguage: SIn
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaGetName( mh: MediaHandler; var name: Str255; requestedLanguage: SIGNEDLONG; var actualLanguage: SIGNEDLONG ): ComponentResult; external name '_MediaGetName';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaForceUpdate()
  *  
@@ -2324,6 +2758,7 @@ function MediaGetName( mh: MediaHandler; var name: Str255; requestedLanguage: SI
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -2340,10 +2775,14 @@ function MediaForceUpdate( mh: MediaHandler; forceUpdateFlags: SIGNEDLONG ): Com
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaForceUpdate(mh: MediaHandler; forceUpdateFlags: SInt32): ComponentResult; external name '_MediaForceUpdate';
 <<<<<<< HEAD
@@ -2351,11 +2790,16 @@ function MediaForceUpdate(mh: MediaHandler; forceUpdateFlags: SInt32): Component
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaForceUpdate( mh: MediaHandler; forceUpdateFlags: SIGNEDLONG ): ComponentResult; external name '_MediaForceUpdate';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaGetDrawingRgn()
  *  
@@ -2363,6 +2807,7 @@ function MediaForceUpdate( mh: MediaHandler; forceUpdateFlags: SIGNEDLONG ): Com
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -2379,10 +2824,14 @@ function MediaGetDrawingRgn( mh: MediaHandler; var partialRgn: RgnHandle ): Comp
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaGetDrawingRgn(mh: MediaHandler; var partialRgn: RgnHandle): ComponentResult; external name '_MediaGetDrawingRgn';
 <<<<<<< HEAD
@@ -2390,11 +2839,16 @@ function MediaGetDrawingRgn(mh: MediaHandler; var partialRgn: RgnHandle): Compon
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaGetDrawingRgn( mh: MediaHandler; var partialRgn: RgnHandle ): ComponentResult; external name '_MediaGetDrawingRgn';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaGSetActiveSegment()
  *  
@@ -2402,6 +2856,7 @@ function MediaGetDrawingRgn( mh: MediaHandler; var partialRgn: RgnHandle ): Comp
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -2418,10 +2873,14 @@ function MediaGSetActiveSegment( mh: MediaHandler; activeStart: TimeValue; activ
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaGSetActiveSegment(mh: MediaHandler; activeStart: TimeValue; activeDuration: TimeValue): ComponentResult; external name '_MediaGSetActiveSegment';
 <<<<<<< HEAD
@@ -2429,11 +2888,16 @@ function MediaGSetActiveSegment(mh: MediaHandler; activeStart: TimeValue; active
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaGSetActiveSegment( mh: MediaHandler; activeStart: TimeValue; activeDuration: TimeValue ): ComponentResult; external name '_MediaGSetActiveSegment';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaInvalidateRegion()
  *  
@@ -2441,6 +2905,7 @@ function MediaGSetActiveSegment( mh: MediaHandler; activeStart: TimeValue; activ
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -2457,10 +2922,14 @@ function MediaInvalidateRegion( mh: MediaHandler; invalRgn: RgnHandle ): Compone
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaInvalidateRegion(mh: MediaHandler; invalRgn: RgnHandle): ComponentResult; external name '_MediaInvalidateRegion';
 <<<<<<< HEAD
@@ -2468,11 +2937,16 @@ function MediaInvalidateRegion(mh: MediaHandler; invalRgn: RgnHandle): Component
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaInvalidateRegion( mh: MediaHandler; invalRgn: RgnHandle ): ComponentResult; external name '_MediaInvalidateRegion';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaGetNextStepTime()
  *  
@@ -2480,6 +2954,7 @@ function MediaInvalidateRegion( mh: MediaHandler; invalRgn: RgnHandle ): Compone
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -2496,10 +2971,14 @@ function MediaGetNextStepTime( mh: MediaHandler; flags: SInt16; mediaTimeIn: Tim
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaGetNextStepTime(mh: MediaHandler; flags: SInt16; mediaTimeIn: TimeValue; var mediaTimeOut: TimeValue; rate: Fixed): ComponentResult; external name '_MediaGetNextStepTime';
 <<<<<<< HEAD
@@ -2507,11 +2986,16 @@ function MediaGetNextStepTime(mh: MediaHandler; flags: SInt16; mediaTimeIn: Time
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaGetNextStepTime( mh: MediaHandler; flags: SInt16; mediaTimeIn: TimeValue; var mediaTimeOut: TimeValue; rate: Fixed ): ComponentResult; external name '_MediaGetNextStepTime';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaSetNonPrimarySourceData()
  *  
@@ -2519,6 +3003,7 @@ function MediaGetNextStepTime( mh: MediaHandler; flags: SInt16; mediaTimeIn: Tim
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -2535,10 +3020,14 @@ function MediaSetNonPrimarySourceData( mh: MediaHandler; inputIndex: SIGNEDLONG;
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaSetNonPrimarySourceData(mh: MediaHandler; inputIndex: SInt32; dataDescriptionSeed: SInt32; dataDescription: Handle; data: UnivPtr; dataSize: SInt32; asyncCompletionProc: ICMCompletionProcRecordPtr; transferProc: ICMConvertDataFormatUPP; refCon: UnivPtr): ComponentResult; external name '_MediaSetNonPrimarySourceData';
 <<<<<<< HEAD
@@ -2546,11 +3035,16 @@ function MediaSetNonPrimarySourceData(mh: MediaHandler; inputIndex: SInt32; data
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaSetNonPrimarySourceData( mh: MediaHandler; inputIndex: SIGNEDLONG; dataDescriptionSeed: SIGNEDLONG; dataDescription: Handle; data: UnivPtr; dataSize: SIGNEDLONG; asyncCompletionProc: ICMCompletionProcRecordPtr; transferProc: ICMConvertDataFormatUPP; refCon: UnivPtr ): ComponentResult; external name '_MediaSetNonPrimarySourceData';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaChangedNonPrimarySource()
  *  
@@ -2558,6 +3052,7 @@ function MediaSetNonPrimarySourceData( mh: MediaHandler; inputIndex: SIGNEDLONG;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -2574,10 +3069,14 @@ function MediaChangedNonPrimarySource( mh: MediaHandler; inputIndex: SIGNEDLONG 
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaChangedNonPrimarySource(mh: MediaHandler; inputIndex: SInt32): ComponentResult; external name '_MediaChangedNonPrimarySource';
 <<<<<<< HEAD
@@ -2585,11 +3084,16 @@ function MediaChangedNonPrimarySource(mh: MediaHandler; inputIndex: SInt32): Com
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaChangedNonPrimarySource( mh: MediaHandler; inputIndex: SIGNEDLONG ): ComponentResult; external name '_MediaChangedNonPrimarySource';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaTrackReferencesChanged()
  *  
@@ -2597,6 +3101,7 @@ function MediaChangedNonPrimarySource( mh: MediaHandler; inputIndex: SIGNEDLONG 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -2613,10 +3118,14 @@ function MediaTrackReferencesChanged( mh: MediaHandler ): ComponentResult; exter
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaTrackReferencesChanged(mh: MediaHandler): ComponentResult; external name '_MediaTrackReferencesChanged';
 <<<<<<< HEAD
@@ -2624,11 +3133,16 @@ function MediaTrackReferencesChanged(mh: MediaHandler): ComponentResult; externa
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaTrackReferencesChanged( mh: MediaHandler ): ComponentResult; external name '_MediaTrackReferencesChanged';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaGetSampleDataPointer()
  *  
@@ -2636,6 +3150,7 @@ function MediaTrackReferencesChanged( mh: MediaHandler ): ComponentResult; exter
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -2652,10 +3167,14 @@ function MediaGetSampleDataPointer( mh: MediaHandler; sampleNum: SIGNEDLONG; var
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaGetSampleDataPointer(mh: MediaHandler; sampleNum: SInt32; var dataPtr: Ptr; var dataSize: SInt32; var sampleDescIndex: SInt32): ComponentResult; external name '_MediaGetSampleDataPointer';
 <<<<<<< HEAD
@@ -2663,11 +3182,16 @@ function MediaGetSampleDataPointer(mh: MediaHandler; sampleNum: SInt32; var data
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaGetSampleDataPointer( mh: MediaHandler; sampleNum: SIGNEDLONG; var dataPtr: Ptr; var dataSize: SIGNEDLONG; var sampleDescIndex: SIGNEDLONG ): ComponentResult; external name '_MediaGetSampleDataPointer';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaReleaseSampleDataPointer()
  *  
@@ -2675,6 +3199,7 @@ function MediaGetSampleDataPointer( mh: MediaHandler; sampleNum: SIGNEDLONG; var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -2691,10 +3216,14 @@ function MediaReleaseSampleDataPointer( mh: MediaHandler; sampleNum: SIGNEDLONG 
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaReleaseSampleDataPointer(mh: MediaHandler; sampleNum: SInt32): ComponentResult; external name '_MediaReleaseSampleDataPointer';
 <<<<<<< HEAD
@@ -2702,11 +3231,16 @@ function MediaReleaseSampleDataPointer(mh: MediaHandler; sampleNum: SInt32): Com
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaReleaseSampleDataPointer( mh: MediaHandler; sampleNum: SIGNEDLONG ): ComponentResult; external name '_MediaReleaseSampleDataPointer';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaTrackPropertyAtomChanged()
  *  
@@ -2714,6 +3248,7 @@ function MediaReleaseSampleDataPointer( mh: MediaHandler; sampleNum: SIGNEDLONG 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -2730,10 +3265,14 @@ function MediaTrackPropertyAtomChanged( mh: MediaHandler ): ComponentResult; ext
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaTrackPropertyAtomChanged(mh: MediaHandler): ComponentResult; external name '_MediaTrackPropertyAtomChanged';
 <<<<<<< HEAD
@@ -2741,11 +3280,16 @@ function MediaTrackPropertyAtomChanged(mh: MediaHandler): ComponentResult; exter
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaTrackPropertyAtomChanged( mh: MediaHandler ): ComponentResult; external name '_MediaTrackPropertyAtomChanged';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaSetTrackInputMapReference()
  *  
@@ -2753,6 +3297,7 @@ function MediaTrackPropertyAtomChanged( mh: MediaHandler ): ComponentResult; ext
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -2769,10 +3314,14 @@ function MediaSetTrackInputMapReference( mh: MediaHandler; inputMap: QTAtomConta
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaSetTrackInputMapReference(mh: MediaHandler; inputMap: QTAtomContainer): ComponentResult; external name '_MediaSetTrackInputMapReference';
 <<<<<<< HEAD
@@ -2780,11 +3329,16 @@ function MediaSetTrackInputMapReference(mh: MediaHandler; inputMap: QTAtomContai
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaSetTrackInputMapReference( mh: MediaHandler; inputMap: QTAtomContainer ): ComponentResult; external name '_MediaSetTrackInputMapReference';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaSetVideoParam()
  *  
@@ -2792,6 +3346,7 @@ function MediaSetTrackInputMapReference( mh: MediaHandler; inputMap: QTAtomConta
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -2808,10 +3363,14 @@ function MediaSetVideoParam( mh: MediaHandler; whichParam: SIGNEDLONG; var value
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaSetVideoParam(mh: MediaHandler; whichParam: SInt32; var value: UInt16): ComponentResult; external name '_MediaSetVideoParam';
 <<<<<<< HEAD
@@ -2819,11 +3378,16 @@ function MediaSetVideoParam(mh: MediaHandler; whichParam: SInt32; var value: UIn
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaSetVideoParam( mh: MediaHandler; whichParam: SIGNEDLONG; var value: UInt16 ): ComponentResult; external name '_MediaSetVideoParam';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaGetVideoParam()
  *  
@@ -2831,6 +3395,7 @@ function MediaSetVideoParam( mh: MediaHandler; whichParam: SIGNEDLONG; var value
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -2847,10 +3412,14 @@ function MediaGetVideoParam( mh: MediaHandler; whichParam: SIGNEDLONG; var value
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaGetVideoParam(mh: MediaHandler; whichParam: SInt32; var value: UInt16): ComponentResult; external name '_MediaGetVideoParam';
 <<<<<<< HEAD
@@ -2858,11 +3427,16 @@ function MediaGetVideoParam(mh: MediaHandler; whichParam: SInt32; var value: UIn
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaGetVideoParam( mh: MediaHandler; whichParam: SIGNEDLONG; var value: UInt16 ): ComponentResult; external name '_MediaGetVideoParam';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaCompare()
  *  
@@ -2870,6 +3444,7 @@ function MediaGetVideoParam( mh: MediaHandler; whichParam: SIGNEDLONG; var value
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -2886,10 +3461,14 @@ function MediaCompare( mh: MediaHandler; var isOK: Boolean; srcMedia: Media; src
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaCompare(mh: MediaHandler; var isOK: boolean; srcMedia: Media; srcMediaComponent: ComponentInstance): ComponentResult; external name '_MediaCompare';
 <<<<<<< HEAD
@@ -2897,11 +3476,16 @@ function MediaCompare(mh: MediaHandler; var isOK: boolean; srcMedia: Media; srcM
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaCompare( mh: MediaHandler; var isOK: Boolean; srcMedia: Media; srcMediaComponent: ComponentInstance ): ComponentResult; external name '_MediaCompare';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaGetClock()
  *  
@@ -2909,6 +3493,7 @@ function MediaCompare( mh: MediaHandler; var isOK: Boolean; srcMedia: Media; src
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -2925,10 +3510,14 @@ function MediaGetClock( mh: MediaHandler; var clock: ComponentInstance ): Compon
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaGetClock(mh: MediaHandler; var clock: ComponentInstance): ComponentResult; external name '_MediaGetClock';
 <<<<<<< HEAD
@@ -2936,11 +3525,16 @@ function MediaGetClock(mh: MediaHandler; var clock: ComponentInstance): Componen
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaGetClock( mh: MediaHandler; var clock: ComponentInstance ): ComponentResult; external name '_MediaGetClock';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaSetSoundOutputComponent()
  *  
@@ -2948,6 +3542,7 @@ function MediaGetClock( mh: MediaHandler; var clock: ComponentInstance ): Compon
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -2964,10 +3559,14 @@ function MediaSetSoundOutputComponent( mh: MediaHandler; outputComponent: Compon
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaSetSoundOutputComponent(mh: MediaHandler; outputComponent: Component): ComponentResult; external name '_MediaSetSoundOutputComponent';
 <<<<<<< HEAD
@@ -2975,11 +3574,16 @@ function MediaSetSoundOutputComponent(mh: MediaHandler; outputComponent: Compone
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaSetSoundOutputComponent( mh: MediaHandler; outputComponent: Component ): ComponentResult; external name '_MediaSetSoundOutputComponent';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaGetSoundOutputComponent()
  *  
@@ -2987,6 +3591,7 @@ function MediaSetSoundOutputComponent( mh: MediaHandler; outputComponent: Compon
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -3003,10 +3608,14 @@ function MediaGetSoundOutputComponent( mh: MediaHandler; var outputComponent: Co
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaGetSoundOutputComponent(mh: MediaHandler; var outputComponent: Component): ComponentResult; external name '_MediaGetSoundOutputComponent';
 <<<<<<< HEAD
@@ -3014,11 +3623,16 @@ function MediaGetSoundOutputComponent(mh: MediaHandler; var outputComponent: Com
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaGetSoundOutputComponent( mh: MediaHandler; var outputComponent: Component ): ComponentResult; external name '_MediaGetSoundOutputComponent';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaSetSoundLocalizationData()
  *  
@@ -3026,6 +3640,7 @@ function MediaGetSoundOutputComponent( mh: MediaHandler; var outputComponent: Co
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
@@ -3042,10 +3657,14 @@ function MediaSetSoundLocalizationData( mh: MediaHandler; data: Handle ): Compon
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaSetSoundLocalizationData(mh: MediaHandler; data: Handle): ComponentResult; external name '_MediaSetSoundLocalizationData';
 <<<<<<< HEAD
@@ -3053,11 +3672,16 @@ function MediaSetSoundLocalizationData(mh: MediaHandler; data: Handle): Componen
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaSetSoundLocalizationData( mh: MediaHandler; data: Handle ): ComponentResult; external name '_MediaSetSoundLocalizationData';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaGetInvalidRegion()
  *  
@@ -3065,6 +3689,7 @@ function MediaSetSoundLocalizationData( mh: MediaHandler; data: Handle ): Compon
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
@@ -3081,10 +3706,14 @@ function MediaGetInvalidRegion( mh: MediaHandler; rgn: RgnHandle ): ComponentRes
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaGetInvalidRegion(mh: MediaHandler; rgn: RgnHandle): ComponentResult; external name '_MediaGetInvalidRegion';
 <<<<<<< HEAD
@@ -3092,11 +3721,16 @@ function MediaGetInvalidRegion(mh: MediaHandler; rgn: RgnHandle): ComponentResul
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaGetInvalidRegion( mh: MediaHandler; rgn: RgnHandle ): ComponentResult; external name '_MediaGetInvalidRegion';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaSampleDescriptionB2N()
  *  
@@ -3104,6 +3738,7 @@ function MediaGetInvalidRegion( mh: MediaHandler; rgn: RgnHandle ): ComponentRes
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
@@ -3120,10 +3755,14 @@ function MediaSampleDescriptionB2N( mh: MediaHandler; sampleDescriptionH: Sample
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaSampleDescriptionB2N(mh: MediaHandler; sampleDescriptionH: SampleDescriptionHandle): ComponentResult; external name '_MediaSampleDescriptionB2N';
 <<<<<<< HEAD
@@ -3131,11 +3770,16 @@ function MediaSampleDescriptionB2N(mh: MediaHandler; sampleDescriptionH: SampleD
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaSampleDescriptionB2N( mh: MediaHandler; sampleDescriptionH: SampleDescriptionHandle ): ComponentResult; external name '_MediaSampleDescriptionB2N';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaSampleDescriptionN2B()
  *  
@@ -3143,6 +3787,7 @@ function MediaSampleDescriptionB2N( mh: MediaHandler; sampleDescriptionH: Sample
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
@@ -3159,10 +3804,14 @@ function MediaSampleDescriptionN2B( mh: MediaHandler; sampleDescriptionH: Sample
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaSampleDescriptionN2B(mh: MediaHandler; sampleDescriptionH: SampleDescriptionHandle): ComponentResult; external name '_MediaSampleDescriptionN2B';
 <<<<<<< HEAD
@@ -3170,11 +3819,16 @@ function MediaSampleDescriptionN2B(mh: MediaHandler; sampleDescriptionH: SampleD
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaSampleDescriptionN2B( mh: MediaHandler; sampleDescriptionH: SampleDescriptionHandle ): ComponentResult; external name '_MediaSampleDescriptionN2B';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaQueueNonPrimarySourceData()
  *  
@@ -3182,6 +3836,7 @@ function MediaSampleDescriptionN2B( mh: MediaHandler; sampleDescriptionH: Sample
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
@@ -3198,10 +3853,14 @@ function MediaQueueNonPrimarySourceData( mh: MediaHandler; inputIndex: SIGNEDLON
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaQueueNonPrimarySourceData(mh: MediaHandler; inputIndex: SInt32; dataDescriptionSeed: SInt32; dataDescription: Handle; data: UnivPtr; dataSize: SInt32; asyncCompletionProc: ICMCompletionProcRecordPtr; const (*var*) frameTime: ICMFrameTimeRecord; transferProc: ICMConvertDataFormatUPP; refCon: UnivPtr): ComponentResult; external name '_MediaQueueNonPrimarySourceData';
 <<<<<<< HEAD
@@ -3209,11 +3868,16 @@ function MediaQueueNonPrimarySourceData(mh: MediaHandler; inputIndex: SInt32; da
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaQueueNonPrimarySourceData( mh: MediaHandler; inputIndex: SIGNEDLONG; dataDescriptionSeed: SIGNEDLONG; dataDescription: Handle; data: UnivPtr; dataSize: SIGNEDLONG; asyncCompletionProc: ICMCompletionProcRecordPtr; const (*var*) frameTime: ICMFrameTimeRecord; transferProc: ICMConvertDataFormatUPP; refCon: UnivPtr ): ComponentResult; external name '_MediaQueueNonPrimarySourceData';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaFlushNonPrimarySourceData()
  *  
@@ -3221,6 +3885,9 @@ function MediaQueueNonPrimarySourceData( mh: MediaHandler; inputIndex: SIGNEDLON
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
@@ -3230,6 +3897,7 @@ function MediaFlushNonPrimarySourceData( mh: MediaHandler; inputIndex: SIGNEDLON
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -3253,6 +3921,8 @@ function MediaFlushNonPrimarySourceData( mh: MediaHandler; inputIndex: SIGNEDLON
 
 
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaGetURLLink()
  *  
@@ -3260,6 +3930,7 @@ function MediaFlushNonPrimarySourceData( mh: MediaHandler; inputIndex: SIGNEDLON
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
@@ -3276,10 +3947,14 @@ function MediaGetURLLink( mh: MediaHandler; displayWhere: Point; var urlLink: Ha
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaGetURLLink(mh: MediaHandler; displayWhere: Point; var urlLink: Handle): ComponentResult; external name '_MediaGetURLLink';
 <<<<<<< HEAD
@@ -3287,15 +3962,21 @@ function MediaGetURLLink(mh: MediaHandler; displayWhere: Point; var urlLink: Han
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaGetURLLink( mh: MediaHandler; displayWhere: Point; var urlLink: Handle ): ComponentResult; external name '_MediaGetURLLink';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaMakeMediaTimeTable()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3312,10 +3993,14 @@ function MediaMakeMediaTimeTable( mh: MediaHandler; var offsets: SIGNEDLONGPtr; 
 =======
 >>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function MediaMakeMediaTimeTable(mh: MediaHandler; var offsets: SInt32Ptr; startTime: TimeValue; endTime: TimeValue; timeIncrement: TimeValue; firstDataRefIndex: SInt16; lastDataRefIndex: SInt16; var retDataRefSkew: SInt32): ComponentResult; external name '_MediaMakeMediaTimeTable';
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -3327,11 +4012,16 @@ function MediaMakeMediaTimeTable(mh: MediaHandler; var offsets: SInt32Ptr; start
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+=======
+>>>>>>> origin/cpstrnew
 function MediaMakeMediaTimeTable( mh: MediaHandler; var offsets: SIGNEDLONGPtr; startTime: TimeValue; endTime: TimeValue; timeIncrement: TimeValue; firstDataRefIndex: SInt16; lastDataRefIndex: SInt16; var retDataRefSkew: SIGNEDLONG ): ComponentResult; external name '_MediaMakeMediaTimeTable';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaHitTestForTargetRefCon()
  *  
@@ -3339,6 +4029,7 @@ function MediaMakeMediaTimeTable( mh: MediaHandler; var offsets: SIGNEDLONGPtr; 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
@@ -3355,10 +4046,14 @@ function MediaHitTestForTargetRefCon( mh: MediaHandler; flags: SIGNEDLONG; loc: 
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaHitTestForTargetRefCon(mh: MediaHandler; flags: SInt32; loc: Point; var targetRefCon: SInt32): ComponentResult; external name '_MediaHitTestForTargetRefCon';
 <<<<<<< HEAD
@@ -3366,11 +4061,16 @@ function MediaHitTestForTargetRefCon(mh: MediaHandler; flags: SInt32; loc: Point
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaHitTestForTargetRefCon( mh: MediaHandler; flags: SIGNEDLONG; loc: Point; var targetRefCon: SIGNEDLONG ): ComponentResult; external name '_MediaHitTestForTargetRefCon';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaHitTestTargetRefCon()
  *  
@@ -3378,6 +4078,7 @@ function MediaHitTestForTargetRefCon( mh: MediaHandler; flags: SIGNEDLONG; loc: 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
@@ -3394,10 +4095,14 @@ function MediaHitTestTargetRefCon( mh: MediaHandler; targetRefCon: SIGNEDLONG; f
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaHitTestTargetRefCon(mh: MediaHandler; targetRefCon: SInt32; flags: SInt32; loc: Point; var wasHit: boolean): ComponentResult; external name '_MediaHitTestTargetRefCon';
 <<<<<<< HEAD
@@ -3405,11 +4110,16 @@ function MediaHitTestTargetRefCon(mh: MediaHandler; targetRefCon: SInt32; flags:
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaHitTestTargetRefCon( mh: MediaHandler; targetRefCon: SIGNEDLONG; flags: SIGNEDLONG; loc: Point; var wasHit: Boolean ): ComponentResult; external name '_MediaHitTestTargetRefCon';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaGetActionsForQTEvent()
  *  
@@ -3417,6 +4127,7 @@ function MediaHitTestTargetRefCon( mh: MediaHandler; targetRefCon: SIGNEDLONG; f
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
@@ -3433,10 +4144,14 @@ function MediaGetActionsForQTEvent( mh: MediaHandler; event: QTEventRecordPtr; t
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaGetActionsForQTEvent(mh: MediaHandler; event: QTEventRecordPtr; targetRefCon: SInt32; var container: QTAtomContainer; var atom: QTAtom): ComponentResult; external name '_MediaGetActionsForQTEvent';
 <<<<<<< HEAD
@@ -3444,11 +4159,16 @@ function MediaGetActionsForQTEvent(mh: MediaHandler; event: QTEventRecordPtr; ta
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaGetActionsForQTEvent( mh: MediaHandler; event: QTEventRecordPtr; targetRefCon: SIGNEDLONG; var container: QTAtomContainer; var atom: QTAtom ): ComponentResult; external name '_MediaGetActionsForQTEvent';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaDisposeTargetRefCon()
  *  
@@ -3456,6 +4176,7 @@ function MediaGetActionsForQTEvent( mh: MediaHandler; event: QTEventRecordPtr; t
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
@@ -3472,10 +4193,14 @@ function MediaDisposeTargetRefCon( mh: MediaHandler; targetRefCon: SIGNEDLONG ):
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaDisposeTargetRefCon(mh: MediaHandler; targetRefCon: SInt32): ComponentResult; external name '_MediaDisposeTargetRefCon';
 <<<<<<< HEAD
@@ -3483,11 +4208,16 @@ function MediaDisposeTargetRefCon(mh: MediaHandler; targetRefCon: SInt32): Compo
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaDisposeTargetRefCon( mh: MediaHandler; targetRefCon: SIGNEDLONG ): ComponentResult; external name '_MediaDisposeTargetRefCon';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaTargetRefConsEqual()
  *  
@@ -3495,6 +4225,7 @@ function MediaDisposeTargetRefCon( mh: MediaHandler; targetRefCon: SIGNEDLONG ):
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
@@ -3511,10 +4242,14 @@ function MediaTargetRefConsEqual( mh: MediaHandler; firstRefCon: SIGNEDLONG; sec
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaTargetRefConsEqual(mh: MediaHandler; firstRefCon: SInt32; secondRefCon: SInt32; var equal: boolean): ComponentResult; external name '_MediaTargetRefConsEqual';
 <<<<<<< HEAD
@@ -3522,11 +4257,16 @@ function MediaTargetRefConsEqual(mh: MediaHandler; firstRefCon: SInt32; secondRe
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaTargetRefConsEqual( mh: MediaHandler; firstRefCon: SIGNEDLONG; secondRefCon: SIGNEDLONG; var equal: Boolean ): ComponentResult; external name '_MediaTargetRefConsEqual';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaSetActionsCallback()
  *  
@@ -3534,6 +4274,7 @@ function MediaTargetRefConsEqual( mh: MediaHandler; firstRefCon: SIGNEDLONG; sec
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
@@ -3550,10 +4291,14 @@ function MediaSetActionsCallback( mh: MediaHandler; actionsCallbackProc: Actions
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaSetActionsCallback(mh: MediaHandler; actionsCallbackProc: ActionsUPP; refcon: UnivPtr): ComponentResult; external name '_MediaSetActionsCallback';
 <<<<<<< HEAD
@@ -3561,11 +4306,16 @@ function MediaSetActionsCallback(mh: MediaHandler; actionsCallbackProc: ActionsU
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaSetActionsCallback( mh: MediaHandler; actionsCallbackProc: ActionsUPP; refcon: UnivPtr ): ComponentResult; external name '_MediaSetActionsCallback';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaPrePrerollBegin()
  *  
@@ -3573,6 +4323,7 @@ function MediaSetActionsCallback( mh: MediaHandler; actionsCallbackProc: Actions
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
@@ -3589,10 +4340,14 @@ function MediaPrePrerollBegin( mh: MediaHandler; time: TimeValue; rate: Fixed; c
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaPrePrerollBegin(mh: MediaHandler; time: TimeValue; rate: Fixed; completeProc: PrePrerollCompleteUPP; refcon: UnivPtr): ComponentResult; external name '_MediaPrePrerollBegin';
 <<<<<<< HEAD
@@ -3600,11 +4355,16 @@ function MediaPrePrerollBegin(mh: MediaHandler; time: TimeValue; rate: Fixed; co
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaPrePrerollBegin( mh: MediaHandler; time: TimeValue; rate: Fixed; completeProc: PrePrerollCompleteUPP; refcon: UnivPtr ): ComponentResult; external name '_MediaPrePrerollBegin';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaPrePrerollCancel()
  *  
@@ -3612,6 +4372,7 @@ function MediaPrePrerollBegin( mh: MediaHandler; time: TimeValue; rate: Fixed; c
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
@@ -3628,10 +4389,14 @@ function MediaPrePrerollCancel( mh: MediaHandler; refcon: UnivPtr ): ComponentRe
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaPrePrerollCancel(mh: MediaHandler; refcon: UnivPtr): ComponentResult; external name '_MediaPrePrerollCancel';
 <<<<<<< HEAD
@@ -3639,11 +4404,16 @@ function MediaPrePrerollCancel(mh: MediaHandler; refcon: UnivPtr): ComponentResu
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaPrePrerollCancel( mh: MediaHandler; refcon: UnivPtr ): ComponentResult; external name '_MediaPrePrerollCancel';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaEnterEmptyEdit()
  *  
@@ -3651,6 +4421,7 @@ function MediaPrePrerollCancel( mh: MediaHandler; refcon: UnivPtr ): ComponentRe
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
@@ -3667,10 +4438,14 @@ function MediaEnterEmptyEdit( mh: MediaHandler ): ComponentResult; external name
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaEnterEmptyEdit(mh: MediaHandler): ComponentResult; external name '_MediaEnterEmptyEdit';
 <<<<<<< HEAD
@@ -3678,11 +4453,16 @@ function MediaEnterEmptyEdit(mh: MediaHandler): ComponentResult; external name '
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaEnterEmptyEdit( mh: MediaHandler ): ComponentResult; external name '_MediaEnterEmptyEdit';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaCurrentMediaQueuedData()
  *  
@@ -3690,6 +4470,7 @@ function MediaEnterEmptyEdit( mh: MediaHandler ): ComponentResult; external name
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
@@ -3706,10 +4487,14 @@ function MediaCurrentMediaQueuedData( mh: MediaHandler; var milliSecs: SIGNEDLON
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaCurrentMediaQueuedData(mh: MediaHandler; var milliSecs: SInt32): ComponentResult; external name '_MediaCurrentMediaQueuedData';
 <<<<<<< HEAD
@@ -3717,11 +4502,16 @@ function MediaCurrentMediaQueuedData(mh: MediaHandler; var milliSecs: SInt32): C
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaCurrentMediaQueuedData( mh: MediaHandler; var milliSecs: SIGNEDLONG ): ComponentResult; external name '_MediaCurrentMediaQueuedData';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaGetEffectiveVolume()
  *  
@@ -3729,6 +4519,7 @@ function MediaCurrentMediaQueuedData( mh: MediaHandler; var milliSecs: SIGNEDLON
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
@@ -3745,10 +4536,14 @@ function MediaGetEffectiveVolume( mh: MediaHandler; var volume: SInt16 ): Compon
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaGetEffectiveVolume(mh: MediaHandler; var volume: SInt16): ComponentResult; external name '_MediaGetEffectiveVolume';
 <<<<<<< HEAD
@@ -3756,11 +4551,16 @@ function MediaGetEffectiveVolume(mh: MediaHandler; var volume: SInt16): Componen
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaGetEffectiveVolume( mh: MediaHandler; var volume: SInt16 ): ComponentResult; external name '_MediaGetEffectiveVolume';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaResolveTargetRefCon()
  *  
@@ -3768,6 +4568,7 @@ function MediaGetEffectiveVolume( mh: MediaHandler; var volume: SInt16 ): Compon
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
@@ -3784,10 +4585,14 @@ function MediaResolveTargetRefCon( mh: MediaHandler; container: QTAtomContainer;
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaResolveTargetRefCon(mh: MediaHandler; container: QTAtomContainer; atom: QTAtom; var targetRefCon: SInt32): ComponentResult; external name '_MediaResolveTargetRefCon';
 <<<<<<< HEAD
@@ -3795,11 +4600,16 @@ function MediaResolveTargetRefCon(mh: MediaHandler; container: QTAtomContainer; 
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaResolveTargetRefCon( mh: MediaHandler; container: QTAtomContainer; atom: QTAtom; var targetRefCon: SIGNEDLONG ): ComponentResult; external name '_MediaResolveTargetRefCon';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaGetSoundLevelMeteringEnabled()
  *  
@@ -3807,6 +4617,7 @@ function MediaResolveTargetRefCon( mh: MediaHandler; container: QTAtomContainer;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
@@ -3823,10 +4634,14 @@ function MediaGetSoundLevelMeteringEnabled( mh: MediaHandler; var enabled: Boole
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaGetSoundLevelMeteringEnabled(mh: MediaHandler; var enabled: boolean): ComponentResult; external name '_MediaGetSoundLevelMeteringEnabled';
 <<<<<<< HEAD
@@ -3834,11 +4649,16 @@ function MediaGetSoundLevelMeteringEnabled(mh: MediaHandler; var enabled: boolea
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaGetSoundLevelMeteringEnabled( mh: MediaHandler; var enabled: Boolean ): ComponentResult; external name '_MediaGetSoundLevelMeteringEnabled';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaSetSoundLevelMeteringEnabled()
  *  
@@ -3846,6 +4666,7 @@ function MediaGetSoundLevelMeteringEnabled( mh: MediaHandler; var enabled: Boole
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
@@ -3862,10 +4683,14 @@ function MediaSetSoundLevelMeteringEnabled( mh: MediaHandler; enable: Boolean ):
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaSetSoundLevelMeteringEnabled(mh: MediaHandler; enable: boolean): ComponentResult; external name '_MediaSetSoundLevelMeteringEnabled';
 <<<<<<< HEAD
@@ -3873,11 +4698,16 @@ function MediaSetSoundLevelMeteringEnabled(mh: MediaHandler; enable: boolean): C
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaSetSoundLevelMeteringEnabled( mh: MediaHandler; enable: Boolean ): ComponentResult; external name '_MediaSetSoundLevelMeteringEnabled';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaGetSoundLevelMeterInfo()
  *  
@@ -3885,6 +4715,7 @@ function MediaSetSoundLevelMeteringEnabled( mh: MediaHandler; enable: Boolean ):
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
@@ -3901,10 +4732,14 @@ function MediaGetSoundLevelMeterInfo( mh: MediaHandler; levelInfo: LevelMeterInf
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaGetSoundLevelMeterInfo(mh: MediaHandler; levelInfo: LevelMeterInfoPtr): ComponentResult; external name '_MediaGetSoundLevelMeterInfo';
 <<<<<<< HEAD
@@ -3912,11 +4747,16 @@ function MediaGetSoundLevelMeterInfo(mh: MediaHandler; levelInfo: LevelMeterInfo
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaGetSoundLevelMeterInfo( mh: MediaHandler; levelInfo: LevelMeterInfoPtr ): ComponentResult; external name '_MediaGetSoundLevelMeterInfo';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaGetEffectiveSoundBalance()
  *  
@@ -3924,6 +4764,7 @@ function MediaGetSoundLevelMeterInfo( mh: MediaHandler; levelInfo: LevelMeterInf
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
@@ -3940,10 +4781,14 @@ function MediaGetEffectiveSoundBalance( mh: MediaHandler; var balance: SInt16 ):
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaGetEffectiveSoundBalance(mh: MediaHandler; var balance: SInt16): ComponentResult; external name '_MediaGetEffectiveSoundBalance';
 <<<<<<< HEAD
@@ -3951,11 +4796,16 @@ function MediaGetEffectiveSoundBalance(mh: MediaHandler; var balance: SInt16): C
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaGetEffectiveSoundBalance( mh: MediaHandler; var balance: SInt16 ): ComponentResult; external name '_MediaGetEffectiveSoundBalance';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaSetScreenLock()
  *  
@@ -3963,6 +4813,7 @@ function MediaGetEffectiveSoundBalance( mh: MediaHandler; var balance: SInt16 ):
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
@@ -3979,10 +4830,14 @@ function MediaSetScreenLock( mh: MediaHandler; lockIt: Boolean ): ComponentResul
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaSetScreenLock(mh: MediaHandler; lockIt: boolean): ComponentResult; external name '_MediaSetScreenLock';
 <<<<<<< HEAD
@@ -3990,11 +4845,16 @@ function MediaSetScreenLock(mh: MediaHandler; lockIt: boolean): ComponentResult;
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaSetScreenLock( mh: MediaHandler; lockIt: Boolean ): ComponentResult; external name '_MediaSetScreenLock';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaSetDoMCActionCallback()
  *  
@@ -4002,6 +4862,7 @@ function MediaSetScreenLock( mh: MediaHandler; lockIt: Boolean ): ComponentResul
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
@@ -4018,10 +4879,14 @@ function MediaSetDoMCActionCallback( mh: MediaHandler; doMCActionCallbackProc: D
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaSetDoMCActionCallback(mh: MediaHandler; doMCActionCallbackProc: DoMCActionUPP; refcon: UnivPtr): ComponentResult; external name '_MediaSetDoMCActionCallback';
 <<<<<<< HEAD
@@ -4029,11 +4894,16 @@ function MediaSetDoMCActionCallback(mh: MediaHandler; doMCActionCallbackProc: Do
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaSetDoMCActionCallback( mh: MediaHandler; doMCActionCallbackProc: DoMCActionUPP; refcon: UnivPtr ): ComponentResult; external name '_MediaSetDoMCActionCallback';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaGetErrorString()
  *  
@@ -4041,6 +4911,7 @@ function MediaSetDoMCActionCallback( mh: MediaHandler; doMCActionCallbackProc: D
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
@@ -4057,10 +4928,14 @@ function MediaGetErrorString( mh: MediaHandler; theError: ComponentResult; var e
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaGetErrorString(mh: MediaHandler; theError: ComponentResult; var errorString: Str255): ComponentResult; external name '_MediaGetErrorString';
 <<<<<<< HEAD
@@ -4068,11 +4943,16 @@ function MediaGetErrorString(mh: MediaHandler; theError: ComponentResult; var er
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaGetErrorString( mh: MediaHandler; theError: ComponentResult; var errorString: Str255 ): ComponentResult; external name '_MediaGetErrorString';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaGetSoundEqualizerBands()
  *  
@@ -4080,6 +4960,7 @@ function MediaGetErrorString( mh: MediaHandler; theError: ComponentResult; var e
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
@@ -4096,10 +4977,14 @@ function MediaGetSoundEqualizerBands( mh: MediaHandler; spectrumInfo: MediaEQSpe
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaGetSoundEqualizerBands(mh: MediaHandler; spectrumInfo: MediaEQSpectrumBandsRecordPtr): ComponentResult; external name '_MediaGetSoundEqualizerBands';
 <<<<<<< HEAD
@@ -4107,11 +4992,16 @@ function MediaGetSoundEqualizerBands(mh: MediaHandler; spectrumInfo: MediaEQSpec
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaGetSoundEqualizerBands( mh: MediaHandler; spectrumInfo: MediaEQSpectrumBandsRecordPtr ): ComponentResult; external name '_MediaGetSoundEqualizerBands';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaSetSoundEqualizerBands()
  *  
@@ -4119,6 +5009,7 @@ function MediaGetSoundEqualizerBands( mh: MediaHandler; spectrumInfo: MediaEQSpe
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
@@ -4135,10 +5026,14 @@ function MediaSetSoundEqualizerBands( mh: MediaHandler; spectrumInfo: MediaEQSpe
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaSetSoundEqualizerBands(mh: MediaHandler; spectrumInfo: MediaEQSpectrumBandsRecordPtr): ComponentResult; external name '_MediaSetSoundEqualizerBands';
 <<<<<<< HEAD
@@ -4146,11 +5041,16 @@ function MediaSetSoundEqualizerBands(mh: MediaHandler; spectrumInfo: MediaEQSpec
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaSetSoundEqualizerBands( mh: MediaHandler; spectrumInfo: MediaEQSpectrumBandsRecordPtr ): ComponentResult; external name '_MediaSetSoundEqualizerBands';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaGetSoundEqualizerBandLevels()
  *  
@@ -4158,6 +5058,7 @@ function MediaSetSoundEqualizerBands( mh: MediaHandler; spectrumInfo: MediaEQSpe
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
@@ -4174,10 +5075,14 @@ function MediaGetSoundEqualizerBandLevels( mh: MediaHandler; var bandLevels: UIn
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaGetSoundEqualizerBandLevels(mh: MediaHandler; var bandLevels: UInt8): ComponentResult; external name '_MediaGetSoundEqualizerBandLevels';
 <<<<<<< HEAD
@@ -4185,11 +5090,16 @@ function MediaGetSoundEqualizerBandLevels(mh: MediaHandler; var bandLevels: UInt
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaGetSoundEqualizerBandLevels( mh: MediaHandler; var bandLevels: UInt8 ): ComponentResult; external name '_MediaGetSoundEqualizerBandLevels';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaDoIdleActions()
  *  
@@ -4197,6 +5107,9 @@ function MediaGetSoundEqualizerBandLevels( mh: MediaHandler; var bandLevels: UIn
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
@@ -4206,6 +5119,7 @@ function MediaDoIdleActions( mh: MediaHandler ): ComponentResult; external name 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -4229,6 +5143,8 @@ function MediaDoIdleActions( mh: MediaHandler ): ComponentResult; external name 
 
 
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaSetSoundBassAndTreble()
  *  
@@ -4236,6 +5152,7 @@ function MediaDoIdleActions( mh: MediaHandler ): ComponentResult; external name 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
@@ -4252,10 +5169,14 @@ function MediaSetSoundBassAndTreble( mh: MediaHandler; bass: SInt16; treble: SIn
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaSetSoundBassAndTreble(mh: MediaHandler; bass: SInt16; treble: SInt16): ComponentResult; external name '_MediaSetSoundBassAndTreble';
 <<<<<<< HEAD
@@ -4263,11 +5184,16 @@ function MediaSetSoundBassAndTreble(mh: MediaHandler; bass: SInt16; treble: SInt
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaSetSoundBassAndTreble( mh: MediaHandler; bass: SInt16; treble: SInt16 ): ComponentResult; external name '_MediaSetSoundBassAndTreble';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaGetSoundBassAndTreble()
  *  
@@ -4275,6 +5201,7 @@ function MediaSetSoundBassAndTreble( mh: MediaHandler; bass: SInt16; treble: SIn
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
@@ -4291,10 +5218,14 @@ function MediaGetSoundBassAndTreble( mh: MediaHandler; var bass: SInt16; var tre
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaGetSoundBassAndTreble(mh: MediaHandler; var bass: SInt16; var treble: SInt16): ComponentResult; external name '_MediaGetSoundBassAndTreble';
 <<<<<<< HEAD
@@ -4302,11 +5233,16 @@ function MediaGetSoundBassAndTreble(mh: MediaHandler; var bass: SInt16; var treb
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaGetSoundBassAndTreble( mh: MediaHandler; var bass: SInt16; var treble: SInt16 ): ComponentResult; external name '_MediaGetSoundBassAndTreble';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaTimeBaseChanged()
  *  
@@ -4314,6 +5250,7 @@ function MediaGetSoundBassAndTreble( mh: MediaHandler; var bass: SInt16; var tre
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
@@ -4330,10 +5267,14 @@ function MediaTimeBaseChanged( mh: MediaHandler ): ComponentResult; external nam
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaTimeBaseChanged(mh: MediaHandler): ComponentResult; external name '_MediaTimeBaseChanged';
 <<<<<<< HEAD
@@ -4341,11 +5282,16 @@ function MediaTimeBaseChanged(mh: MediaHandler): ComponentResult; external name 
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaTimeBaseChanged( mh: MediaHandler ): ComponentResult; external name '_MediaTimeBaseChanged';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaMCIsPlayerEvent()
  *  
@@ -4353,6 +5299,7 @@ function MediaTimeBaseChanged( mh: MediaHandler ): ComponentResult; external nam
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.1 and later
@@ -4369,10 +5316,14 @@ function MediaMCIsPlayerEvent( mh: MediaHandler; const (*var*) e: EventRecord; v
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.1 and later
  *    Windows:          in qtmlClient.lib 4.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaMCIsPlayerEvent(mh: MediaHandler; const (*var*) e: EventRecord; var handledIt: boolean): ComponentResult; external name '_MediaMCIsPlayerEvent';
 <<<<<<< HEAD
@@ -4380,11 +5331,16 @@ function MediaMCIsPlayerEvent(mh: MediaHandler; const (*var*) e: EventRecord; va
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaMCIsPlayerEvent( mh: MediaHandler; const (*var*) e: EventRecord; var handledIt: Boolean ): ComponentResult; external name '_MediaMCIsPlayerEvent';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaGetMediaLoadState()
  *  
@@ -4392,6 +5348,7 @@ function MediaMCIsPlayerEvent( mh: MediaHandler; const (*var*) e: EventRecord; v
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.1 and later
@@ -4408,10 +5365,14 @@ function MediaGetMediaLoadState( mh: MediaHandler; var mediaLoadState: SIGNEDLON
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.1 and later
  *    Windows:          in qtmlClient.lib 4.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaGetMediaLoadState(mh: MediaHandler; var mediaLoadState: SInt32): ComponentResult; external name '_MediaGetMediaLoadState';
 <<<<<<< HEAD
@@ -4419,11 +5380,16 @@ function MediaGetMediaLoadState(mh: MediaHandler; var mediaLoadState: SInt32): C
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaGetMediaLoadState( mh: MediaHandler; var mediaLoadState: SIGNEDLONG ): ComponentResult; external name '_MediaGetMediaLoadState';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaVideoOutputChanged()
  *  
@@ -4431,6 +5397,7 @@ function MediaGetMediaLoadState( mh: MediaHandler; var mediaLoadState: SIGNEDLON
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
@@ -4447,10 +5414,14 @@ function MediaVideoOutputChanged( mh: MediaHandler; vout: ComponentInstance ): C
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
  *    Windows:          in qtmlClient.lib 5.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaVideoOutputChanged(mh: MediaHandler; vout: ComponentInstance): ComponentResult; external name '_MediaVideoOutputChanged';
 <<<<<<< HEAD
@@ -4458,11 +5429,16 @@ function MediaVideoOutputChanged(mh: MediaHandler; vout: ComponentInstance): Com
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaVideoOutputChanged( mh: MediaHandler; vout: ComponentInstance ): ComponentResult; external name '_MediaVideoOutputChanged';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaEmptySampleCache()
  *  
@@ -4470,6 +5446,7 @@ function MediaVideoOutputChanged( mh: MediaHandler; vout: ComponentInstance ): C
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
@@ -4486,10 +5463,14 @@ function MediaEmptySampleCache( mh: MediaHandler; sampleNum: SIGNEDLONG; sampleC
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
  *    Windows:          in qtmlClient.lib 5.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaEmptySampleCache(mh: MediaHandler; sampleNum: SInt32; sampleCount: SInt32): ComponentResult; external name '_MediaEmptySampleCache';
 <<<<<<< HEAD
@@ -4497,11 +5478,16 @@ function MediaEmptySampleCache(mh: MediaHandler; sampleNum: SInt32; sampleCount:
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaEmptySampleCache( mh: MediaHandler; sampleNum: SIGNEDLONG; sampleCount: SIGNEDLONG ): ComponentResult; external name '_MediaEmptySampleCache';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaGetPublicInfo()
  *  
@@ -4509,6 +5495,7 @@ function MediaEmptySampleCache( mh: MediaHandler; sampleNum: SIGNEDLONG; sampleC
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
@@ -4525,10 +5512,14 @@ function MediaGetPublicInfo( mh: MediaHandler; infoSelector: OSType; infoDataPtr
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
  *    Windows:          in qtmlClient.lib 5.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaGetPublicInfo(mh: MediaHandler; infoSelector: OSType; infoDataPtr: UnivPtr; var ioDataSize: Size): ComponentResult; external name '_MediaGetPublicInfo';
 <<<<<<< HEAD
@@ -4536,11 +5527,16 @@ function MediaGetPublicInfo(mh: MediaHandler; infoSelector: OSType; infoDataPtr:
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaGetPublicInfo( mh: MediaHandler; infoSelector: OSType; infoDataPtr: UnivPtr; var ioDataSize: Size ): ComponentResult; external name '_MediaGetPublicInfo';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaSetPublicInfo()
  *  
@@ -4548,6 +5544,7 @@ function MediaGetPublicInfo( mh: MediaHandler; infoSelector: OSType; infoDataPtr
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
@@ -4564,10 +5561,14 @@ function MediaSetPublicInfo( mh: MediaHandler; infoSelector: OSType; infoDataPtr
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
  *    Windows:          in qtmlClient.lib 5.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaSetPublicInfo(mh: MediaHandler; infoSelector: OSType; infoDataPtr: UnivPtr; dataSize: Size): ComponentResult; external name '_MediaSetPublicInfo';
 <<<<<<< HEAD
@@ -4575,11 +5576,16 @@ function MediaSetPublicInfo(mh: MediaHandler; infoSelector: OSType; infoDataPtr:
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaSetPublicInfo( mh: MediaHandler; infoSelector: OSType; infoDataPtr: UnivPtr; dataSize: Size ): ComponentResult; external name '_MediaSetPublicInfo';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaGetUserPreferredCodecs()
  *  
@@ -4587,6 +5593,7 @@ function MediaSetPublicInfo( mh: MediaHandler; infoSelector: OSType; infoDataPtr
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
@@ -4603,10 +5610,14 @@ function MediaGetUserPreferredCodecs( mh: MediaHandler; var userPreferredCodecs:
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
  *    Windows:          in qtmlClient.lib 5.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaGetUserPreferredCodecs(mh: MediaHandler; var userPreferredCodecs: CodecComponentHandle): ComponentResult; external name '_MediaGetUserPreferredCodecs';
 <<<<<<< HEAD
@@ -4614,15 +5625,21 @@ function MediaGetUserPreferredCodecs(mh: MediaHandler; var userPreferredCodecs: 
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaGetUserPreferredCodecs( mh: MediaHandler; var userPreferredCodecs: CodecComponentHandle ): ComponentResult; external name '_MediaGetUserPreferredCodecs';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaSetUserPreferredCodecs()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4643,10 +5660,14 @@ function MediaSetUserPreferredCodecs( mh: MediaHandler; userPreferredCodecs: Cod
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
  *    Windows:          in qtmlClient.lib 5.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaSetUserPreferredCodecs(mh: MediaHandler; userPreferredCodecs: CodecComponentHandle): ComponentResult; external name '_MediaSetUserPreferredCodecs';
 {  Keyboard Focus Support }
@@ -4655,12 +5676,17 @@ function MediaSetUserPreferredCodecs(mh: MediaHandler; userPreferredCodecs: Code
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaSetUserPreferredCodecs( mh: MediaHandler; userPreferredCodecs: CodecComponentHandle ): ComponentResult; external name '_MediaSetUserPreferredCodecs';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
 { Keyboard Focus Support}
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {
  *  MediaRefConSetProperty()
@@ -4669,6 +5695,7 @@ function MediaSetUserPreferredCodecs( mh: MediaHandler; userPreferredCodecs: Cod
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.6 and later
  *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
@@ -4685,10 +5712,14 @@ function MediaRefConSetProperty( mh: MediaHandler; refCon: SIGNEDLONG; propertyT
 =======
  *    Mac OS X:         in version 10.2 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.2 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.6 and later
  *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
  *    Windows:          in qtmlClient.lib 6.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaRefConSetProperty(mh: MediaHandler; refCon: SInt32; propertyType: SInt32; propertyValue: UnivPtr): ComponentResult; external name '_MediaRefConSetProperty';
 <<<<<<< HEAD
@@ -4696,11 +5727,16 @@ function MediaRefConSetProperty(mh: MediaHandler; refCon: SInt32; propertyType: 
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaRefConSetProperty( mh: MediaHandler; refCon: SIGNEDLONG; propertyType: SIGNEDLONG; propertyValue: UnivPtr ): ComponentResult; external name '_MediaRefConSetProperty';
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaRefConGetProperty()
  *  
@@ -4708,6 +5744,7 @@ function MediaRefConSetProperty( mh: MediaHandler; refCon: SIGNEDLONG; propertyT
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.6 and later
  *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
@@ -4724,10 +5761,14 @@ function MediaRefConGetProperty( mh: MediaHandler; refCon: SIGNEDLONG; propertyT
 =======
  *    Mac OS X:         in version 10.2 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.2 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.6 and later
  *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
  *    Windows:          in qtmlClient.lib 6.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaRefConGetProperty(mh: MediaHandler; refCon: SInt32; propertyType: SInt32; propertyValue: UnivPtr): ComponentResult; external name '_MediaRefConGetProperty';
 <<<<<<< HEAD
@@ -4735,11 +5776,16 @@ function MediaRefConGetProperty(mh: MediaHandler; refCon: SInt32; propertyType: 
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaRefConGetProperty( mh: MediaHandler; refCon: SIGNEDLONG; propertyType: SIGNEDLONG; propertyValue: UnivPtr ): ComponentResult; external name '_MediaRefConGetProperty';
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaNavigateTargetRefCon()
  *  
@@ -4747,6 +5793,7 @@ function MediaRefConGetProperty( mh: MediaHandler; refCon: SIGNEDLONG; propertyT
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.6 and later
  *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
@@ -4763,10 +5810,14 @@ function MediaNavigateTargetRefCon( mh: MediaHandler; navigation: SIGNEDLONG; va
 =======
  *    Mac OS X:         in version 10.2 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.2 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.6 and later
  *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
  *    Windows:          in qtmlClient.lib 6.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaNavigateTargetRefCon(mh: MediaHandler; navigation: SInt32; var refCon: SInt32): ComponentResult; external name '_MediaNavigateTargetRefCon';
 <<<<<<< HEAD
@@ -4774,11 +5825,16 @@ function MediaNavigateTargetRefCon(mh: MediaHandler; navigation: SInt32; var ref
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaNavigateTargetRefCon( mh: MediaHandler; navigation: SIGNEDLONG; var refCon: SIGNEDLONG ): ComponentResult; external name '_MediaNavigateTargetRefCon';
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaGGetIdleManager()
  *  
@@ -4786,6 +5842,7 @@ function MediaNavigateTargetRefCon( mh: MediaHandler; navigation: SIGNEDLONG; va
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.6 and later
  *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
@@ -4802,10 +5859,14 @@ function MediaGGetIdleManager( mh: MediaHandler; var pim: IdleManager ): Compone
 =======
  *    Mac OS X:         in version 10.2 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.2 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.6 and later
  *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
  *    Windows:          in qtmlClient.lib 6.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function MediaGGetIdleManager(mh: MediaHandler; var pim: IdleManager): ComponentResult; external name '_MediaGGetIdleManager';
 <<<<<<< HEAD
@@ -4813,15 +5874,21 @@ function MediaGGetIdleManager(mh: MediaHandler; var pim: IdleManager): Component
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MediaGGetIdleManager( mh: MediaHandler; var pim: IdleManager ): ComponentResult; external name '_MediaGGetIdleManager';
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  MediaGSetIdleManager()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5099,6 +6166,9 @@ function NewPrePrerollCompleteUPP( userRoutine: PrePrerollCompleteProcPtr ): Pre
 =======
  *    Mac OS X:         in version 10.2 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.2 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.6 and later
  *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
  *    Windows:          in qtmlClient.lib 6.0 and later
@@ -5249,6 +6319,7 @@ function MediaGenerateApertureModeDimensions( mh: MediaHandler ): ComponentResul
 
 { selectors for component calls }
 const
+<<<<<<< HEAD
 <<<<<<< HEAD
 	uppPrePrerollCompleteProcInfo = $00000EC0;
 {$ifc CALL_NOT_IN_CARBON}
@@ -5266,6 +6337,8 @@ function NewPrePrerollCompleteUPP(userRoutine: PrePrerollCompleteProcPtr): PrePr
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 	kCallComponentExecuteWiredActionSelect = -9;
 	kMediaSetChunkManagementFlagsSelect = $0415;
 	kMediaGetChunkManagementFlagsSelect = $0416;
@@ -5382,11 +6455,15 @@ function NewPrePrerollCompleteUPP(userRoutine: PrePrerollCompleteProcPtr): PrePr
 function NewPrePrerollCompleteUPP( userRoutine: PrePrerollCompleteProcPtr ): PrePrerollCompleteUPP; external name '_NewPrePrerollCompleteUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  DisposePrePrerollCompleteUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5417,6 +6494,15 @@ procedure DisposePrePrerollCompleteUPP( userUPP: PrePrerollCompleteUPP ); extern
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposePrePrerollCompleteUPP( userUPP: PrePrerollCompleteUPP ); external name '_DisposePrePrerollCompleteUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  InvokePrePrerollCompleteUPP()
  *  
@@ -5424,6 +6510,9 @@ procedure DisposePrePrerollCompleteUPP( userUPP: PrePrerollCompleteUPP ); extern
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   available as macro/inline
@@ -5437,6 +6526,7 @@ procedure InvokePrePrerollCompleteUPP( mh: MediaHandler; err: OSErr; refcon: Uni
 {$endc} {TARGET_OS_MAC}
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+<<<<<<< HEAD
 
 end.
 {$endc} {not MACOSALLINCLUDE}
@@ -5468,3 +6558,8 @@ end.
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+
+end.
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

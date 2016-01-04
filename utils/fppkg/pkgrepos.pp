@@ -17,6 +17,7 @@ function LoadManifestFromFile(const AManifestFN:string):TFPPackage;
 procedure FindInstalledPackages(ACompilerOptions:TCompilerOptions;showdups:boolean=true);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure AddFPMakeAddIn(APackage: TFPPackage);
 function  PackageIsBroken(APackage:TFPPackage; MarkForReInstall: boolean):boolean;
 function  FindBrokenPackages(SL:TStrings):Boolean;
@@ -30,16 +31,25 @@ procedure ListPackages(const ShowGlobalAndLocal: boolean);
 =======
 >>>>>>> origin/fixes_2_2
 function  PackageIsBroken(APackage:TFPPackage):boolean;
+=======
+Procedure AddFPMakeAddIn(APackage: TFPPackage);
+function  PackageIsBroken(APackage:TFPPackage; MarkForReInstall: boolean):boolean;
+>>>>>>> origin/cpstrnew
 function  FindBrokenPackages(SL:TStrings):Boolean;
 procedure CheckFPMakeDependencies;
-function  PackageInstalledVersionStr(const AName:String):string;
+function  PackageInstalledVersionStr(const AName:String;const ShowUsed: boolean = false;const Local: boolean = false):string;
+function  PackageInstalledStateStr(const AName:String):string;
 function  PackageAvailableVersionStr(const AName:String):string;
 procedure ListAvailablePackages;
+<<<<<<< HEAD
 procedure ListPackages;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+procedure ListPackages(const ShowGlobalAndLocal: boolean);
+>>>>>>> origin/cpstrnew
 
 procedure ListRemoteRepository;
 procedure RebuildRemoteRepository;
@@ -234,6 +244,7 @@ begin
     APackage.Version.AsString:=V;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     APackage.IsFPMakeAddIn:=Upcase(L.Values['FPMakeAddIn'])='Y';
     APackage.SourcePath:=L.Values['SourcePath'];
     APackage.FPMakeOptionsString:=L.Values['FPMakeOptions'];
@@ -241,6 +252,11 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    APackage.IsFPMakeAddIn:=Upcase(L.Values['FPMakeAddIn'])='Y';
+    APackage.SourcePath:=L.Values['SourcePath'];
+    APackage.FPMakeOptionsString:=L.Values['FPMakeOptions'];
+>>>>>>> origin/cpstrnew
     V:=L.Values['checksum'];
     if V<>'' then
       APackage.Checksum:=StrToInt(V)
@@ -284,6 +300,7 @@ procedure FindInstalledPackages(ACompilerOptions:TCompilerOptions;showdups:boole
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   function AddInstalledPackage(const AName,AFileName: String; const Local: boolean):TFPPackage;
 =======
   function AddInstalledPackage(const AName,AFileName: String):TFPPackage;
@@ -291,6 +308,9 @@ procedure FindInstalledPackages(ACompilerOptions:TCompilerOptions;showdups:boole
 =======
   function AddInstalledPackage(const AName,AFileName: String):TFPPackage;
 >>>>>>> origin/fixes_2_2
+=======
+  function AddInstalledPackage(const AName,AFileName: String; const Local: boolean):TFPPackage;
+>>>>>>> origin/cpstrnew
   begin
     result:=InstalledRepository.FindPackage(AName);
     if not assigned(result) then
@@ -299,15 +319,20 @@ procedure FindInstalledPackages(ACompilerOptions:TCompilerOptions;showdups:boole
       begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         result.UnusedVersion:=result.Version;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+        result.UnusedVersion:=result.Version;
+>>>>>>> origin/cpstrnew
         // Log packages found in multiple locations (local and global) ?
         if showdups then
           Log(vlDebug,SDbgPackageMultipleLocations,[result.Name,ExtractFilePath(AFileName)]);
       end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     result.InstalledLocally:=Local;
@@ -315,6 +340,9 @@ procedure FindInstalledPackages(ACompilerOptions:TCompilerOptions;showdups:boole
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    result.InstalledLocally:=Local;
+>>>>>>> origin/cpstrnew
   end;
 
   procedure LoadPackagefpcFromFile(APackage:TFPPackage;const AFileName: String);
@@ -334,6 +362,7 @@ procedure FindInstalledPackages(ACompilerOptions:TCompilerOptions;showdups:boole
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   function CheckUnitDir(const AUnitDir:string; const Local: boolean):boolean;
 =======
   function CheckUnitDir(const AUnitDir:string):boolean;
@@ -341,6 +370,9 @@ procedure FindInstalledPackages(ACompilerOptions:TCompilerOptions;showdups:boole
 =======
   function CheckUnitDir(const AUnitDir:string):boolean;
 >>>>>>> origin/fixes_2_2
+=======
+  function CheckUnitDir(const AUnitDir:string; const Local: boolean):boolean;
+>>>>>>> origin/cpstrnew
   var
     SR : TSearchRec;
     P  : TFPPackage;
@@ -360,10 +392,14 @@ procedure FindInstalledPackages(ACompilerOptions:TCompilerOptions;showdups:boole
                 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
                   P:=AddInstalledPackage(SR.Name,UF,Local);
                   LoadUnitConfigFromFile(P,UF);
                   if P.IsFPMakeAddIn then
                     AddFPMakeAddIn(P);
+<<<<<<< HEAD
 =======
                   P:=AddInstalledPackage(SR.Name,UF);
                   LoadUnitConfigFromFile(P,UF)
@@ -372,6 +408,8 @@ procedure FindInstalledPackages(ACompilerOptions:TCompilerOptions;showdups:boole
                   P:=AddInstalledPackage(SR.Name,UF);
                   LoadUnitConfigFromFile(P,UF)
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
                 end
               else
                 begin
@@ -381,6 +419,7 @@ procedure FindInstalledPackages(ACompilerOptions:TCompilerOptions;showdups:boole
                     begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                       P:=AddInstalledPackage(SR.Name,UF,Local);
 =======
                       P:=AddInstalledPackage(SR.Name,UF);
@@ -388,6 +427,9 @@ procedure FindInstalledPackages(ACompilerOptions:TCompilerOptions;showdups:boole
 =======
                       P:=AddInstalledPackage(SR.Name,UF);
 >>>>>>> origin/fixes_2_2
+=======
+                      P:=AddInstalledPackage(SR.Name,UF,Local);
+>>>>>>> origin/cpstrnew
                       LoadPackagefpcFromFile(P,UF);
                     end;
                 end;
@@ -403,6 +445,7 @@ begin
   // First scan the global directory
   // The local directory will overwrite the versions
   if ACompilerOptions.GlobalUnitDir<>'' then
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     CheckUnitDir(ACompilerOptions.GlobalUnitDir, False);
@@ -427,20 +470,39 @@ function PackageIsBroken(APackage:TFPPackage; MarkForReInstall: boolean):boolean
 =======
 >>>>>>> origin/fixes_2_2
     CheckUnitDir(ACompilerOptions.GlobalUnitDir);
+=======
+    CheckUnitDir(ACompilerOptions.GlobalUnitDir, False);
+>>>>>>> origin/cpstrnew
   if ACompilerOptions.LocalUnitDir<>'' then
-    CheckUnitDir(ACompilerOptions.LocalUnitDir);
+    CheckUnitDir(ACompilerOptions.LocalUnitDir, True);
 end;
 
 
+<<<<<<< HEAD
 function PackageIsBroken(APackage:TFPPackage):boolean;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+Procedure AddFPMakeAddIn(APackage: TFPPackage);
+begin
+  Log(vlDebug,SLogFoundFPMakeAddin,[APackage.Name]);
+  setlength(FPMKUnitDeps,length(FPMKUnitDeps)+1);
+  FPMKUnitDeps[high(FPMKUnitDeps)].package:=APackage.Name;
+  FPMKUnitDeps[high(FPMKUnitDeps)].reqver:=APackage.Version.AsString;
+  FPMKUnitDeps[high(FPMKUnitDeps)].def:='HAS_PACKAGE_'+APackage.Name;
+  FPMKUnitDeps[high(FPMKUnitDeps)].available:=true;
+end;
+
+
+function PackageIsBroken(APackage:TFPPackage; MarkForReInstall: boolean):boolean;
+>>>>>>> origin/cpstrnew
 var
   j : integer;
   D : TFPDependency;
   DepPackage : TFPPackage;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   AvailP: TFPPackage;
@@ -448,6 +510,9 @@ var
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  AvailP: TFPPackage;
+>>>>>>> origin/cpstrnew
 begin
   result:=false;
   for j:=0 to APackage.Dependencies.Count-1 do
@@ -466,6 +531,9 @@ begin
                   result:=true;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
                   if MarkForReInstall then
                     begin
                       // When the package is re-installed, use the same fpmake-options and sourcepath
@@ -489,10 +557,13 @@ begin
                       if (AvailP.SourcePath<>'') and not FileExists(IncludeTrailingPathDelimiter(APackage.SourcePath)+'fpmake.pp') then
                         AvailP.SourcePath:='';
                     end;
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
                   exit;
                 end;
             end
@@ -514,10 +585,14 @@ begin
       P:=InstalledRepository.Packages[i];
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
       if PackageIsBroken(P,True) then
         begin
           SL.Add(P.Name);
         end;
+<<<<<<< HEAD
 =======
       if PackageIsBroken(P) then
         SL.Add(P.Name);
@@ -526,6 +601,8 @@ begin
       if PackageIsBroken(P) then
         SL.Add(P.Name);
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
     end;
   Result:=(SL.Count>0);
 end;
@@ -541,6 +618,7 @@ begin
   // Reset availability
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   for i:=0 to high(FPMKUnitDeps) do
     FPMKUnitDeps[i].available:=false;
 =======
@@ -551,11 +629,16 @@ begin
   for i:=1 to FPMKUnitDepCount do
     FPMKUnitDepAvailable[i]:=false;
 >>>>>>> origin/fixes_2_2
+=======
+  for i:=0 to high(FPMKUnitDeps) do
+    FPMKUnitDeps[i].available:=false;
+>>>>>>> origin/cpstrnew
   // Not version check needed in Recovery mode, we always need to use
   // the internal bootstrap procedure
   if GlobalOptions.RecoveryMode then
     exit;
   // Check for fpmkunit dependencies
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   for i:=0 to high(FPMKUnitDeps) do
@@ -565,6 +648,9 @@ begin
 =======
   for i:=1 to FPMKUnitDepCount do
 >>>>>>> origin/fixes_2_2
+=======
+  for i:=0 to high(FPMKUnitDeps) do
+>>>>>>> origin/cpstrnew
     begin
       P:=InstalledRepository.FindPackage(FPMKUnitDeps[i].package);
       if P<>nil then
@@ -580,6 +666,7 @@ begin
           if ReqVer.CompareVersion(P.Version)<=0 then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             FPMKUnitDeps[i].available:=true
 =======
             FPMKUnitDepAvailable[i]:=true
@@ -587,6 +674,9 @@ begin
 =======
             FPMKUnitDepAvailable[i]:=true
 >>>>>>> origin/fixes_2_2
+=======
+            FPMKUnitDeps[i].available:=true
+>>>>>>> origin/cpstrnew
           else
             Log(vlDebug,SLogFPMKUnitDepTooOld,[FPMKUnitDeps[i].package]);
         end
@@ -645,6 +735,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function PackageInstalledVersionStr(const AName:String;const ShowUsed: boolean = false;const Local: boolean = false):string;
 =======
 function PackageInstalledVersionStr(const AName:String):string;
@@ -652,6 +743,9 @@ function PackageInstalledVersionStr(const AName:String):string;
 =======
 function PackageInstalledVersionStr(const AName:String):string;
 >>>>>>> origin/fixes_2_2
+=======
+function PackageInstalledVersionStr(const AName:String;const ShowUsed: boolean = false;const Local: boolean = false):string;
+>>>>>>> origin/cpstrnew
 var
   P : TFPPackage;
 begin
@@ -659,6 +753,9 @@ begin
   if P<>nil then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
     begin
       if not ShowUsed then
         result:=P.Version.AsString
@@ -669,12 +766,15 @@ begin
       else
         result:='-';
     end
+<<<<<<< HEAD
 =======
     result:=P.Version.AsString
 >>>>>>> graemeg/fixes_2_2
 =======
     result:=P.Version.AsString
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
   else
     result:='-';
 end;
@@ -682,6 +782,9 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 function PackageInstalledStateStr(const AName:String):string;
 var
   P : TFPPackage;
@@ -692,10 +795,13 @@ begin
     result:='B';
 end;
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 
 procedure ListAvailablePackages;
 var
@@ -723,6 +829,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure ListPackages(const ShowGlobalAndLocal: boolean);
 =======
 procedure ListPackages;
@@ -730,6 +837,9 @@ procedure ListPackages;
 =======
 procedure ListPackages;
 >>>>>>> origin/fixes_2_2
+=======
+procedure ListPackages(const ShowGlobalAndLocal: boolean);
+>>>>>>> origin/cpstrnew
 var
   i : integer;
   SL : TStringList;
@@ -744,34 +854,46 @@ begin
     SL.Add(InstalledRepository.Packages[i].Name);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   if ShowGlobalAndLocal then
     Writeln(Format('%-20s %-14s %-14s %-3s %-12s',['Name','Installed (G)','Installed (L)','','Available']))
   else
     Writeln(Format('%-20s %-12s %-3s %-12s',['Name','Installed','','Available']));
+<<<<<<< HEAD
 =======
   Writeln(Format('%-20s %-12s %-12s',['Name','Installed','Available']));
 >>>>>>> graemeg/fixes_2_2
 =======
   Writeln(Format('%-20s %-12s %-12s',['Name','Installed','Available']));
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
   for i:=0 to SL.Count-1 do
     begin
       PackageName:=SL[i];
       if (PackageName<>CmdLinePackageName) and (PackageName<>CurrentDirPackageName) then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
         begin
           if ShowGlobalAndLocal then
             Writeln(Format('%-20s %-14s %-14s %-3s %-12s',[PackageName,PackageInstalledVersionStr(PackageName,True,False),PackageInstalledVersionStr(PackageName,True,True),PackageInstalledStateStr(PackageName),PackageAvailableVersionStr(PackageName)]))
           else
             Writeln(Format('%-20s %-12s %-3s %-12s',[PackageName,PackageInstalledVersionStr(PackageName),PackageInstalledStateStr(PackageName),PackageAvailableVersionStr(PackageName)]));
         end;
+<<<<<<< HEAD
 =======
         Writeln(Format('%-20s %-12s %-12s',[PackageName,PackageInstalledVersionStr(PackageName),PackageAvailableVersionStr(PackageName)]));
 >>>>>>> graemeg/fixes_2_2
 =======
         Writeln(Format('%-20s %-12s %-12s',[PackageName,PackageInstalledVersionStr(PackageName),PackageAvailableVersionStr(PackageName)]));
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
     end;
   FreeAndNil(SL);
 end;

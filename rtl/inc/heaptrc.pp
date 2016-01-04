@@ -522,6 +522,7 @@ begin
     begin
 <<<<<<< HEAD
       pl:=pointer(pp)+allocsize-pp^.extra_info_size-sizeof(ptruint);
+<<<<<<< HEAD
       unaligned(pl^):=$DEADBEEF;
 =======
       pl:=pointer(pp)+allocsize-pp^.extra_info_size-sizeof(ptrint);
@@ -534,6 +535,9 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+      unaligned(pl^):=$DEADBEEF;
+>>>>>>> origin/cpstrnew
     end;
   { clear the memory }
   fillchar(p^,size,#255);
@@ -928,6 +932,7 @@ begin
     begin
 <<<<<<< HEAD
       pl:=pointer(pp)+allocsize-pp^.extra_info_size-sizeof(ptruint);
+<<<<<<< HEAD
       unaligned(pl^):=$DEADBEEF;
 =======
       pl:=pointer(pp)+allocsize-pp^.extra_info_size-sizeof(ptrint);
@@ -940,6 +945,9 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+      unaligned(pl^):=$DEADBEEF;
+>>>>>>> origin/cpstrnew
     end;
   { adjust like a freemem and then a getmem, so you get correct
     results in the summary display }
@@ -1503,6 +1511,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     TraceRelocateHeap;
 =======
     initcriticalsection(todo_lock);
@@ -1513,6 +1522,9 @@ begin
 =======
     initcriticalsection(todo_lock);
 >>>>>>> graemeg/cpstrnew
+=======
+    initcriticalsection(todo_lock);
+>>>>>>> origin/cpstrnew
 =======
     initcriticalsection(todo_lock);
 >>>>>>> origin/cpstrnew

@@ -127,6 +127,7 @@
   {$else}
       Result:=-1;
   {$endif}
+<<<<<<< HEAD
   end;
 
 
@@ -148,6 +149,8 @@
   {$else}
       Result:=-1;
   {$endif}
+=======
+>>>>>>> origin/cpstrnew
   end;
   {$endif}
 
@@ -930,6 +933,9 @@ begin
 end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 
 { Beep support }
 
@@ -938,6 +944,7 @@ begin
   If Assigned(OnBeep) then
     OnBeep;
 end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -955,3 +962,5 @@ end;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew

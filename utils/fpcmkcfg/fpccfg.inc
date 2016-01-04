@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 const DefaultConfig : array[0..30] of string[240]=(
 {$else Delphi}
 const DefaultConfig : array[0..30,1..240] of char=(
@@ -21,6 +22,11 @@ const DefaultConfig : array[0..25] of string[240]=(
 {$else Delphi}
 const DefaultConfig : array[0..25,1..240] of char=(
 >>>>>>> graemeg/cpstrnew
+=======
+const DefaultConfig : array[0..25] of string[240]=(
+{$else Delphi}
+const DefaultConfig : array[0..25,1..240] of char=(
+>>>>>>> origin/cpstrnew
 =======
 const DefaultConfig : array[0..25] of string[240]=(
 {$else Delphi}
@@ -73,6 +79,7 @@ const DefaultConfig : array[0..25,1..240] of char=(
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '# path to Xcode 4.3+ utilities (no problem if it doesn'#039't exist)'#010+
   '-FD/Applications/Xcode.app/Contents/Developer/usr/bin'#010+
   '#endif'#010+
@@ -98,11 +105,17 @@ const DefaultConfig : array[0..25,1..240] of char=(
   #010+
   '# ----------------'#010+
 >>>>>>> origin/cpstrnew
+=======
+  '#endif'#010+
+  #010+
+  '# ----------------'#010+
+>>>>>>> origin/cpstrnew
   '# Parsing switches'#010+
   '# ----------------'#010+
   #010+
   '# Pascal language mode'#010+
   '#      -Mfpc      free pascal dialect (default)'#010+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -120,12 +133,15 @@ const DefaultConfig : array[0..25,1..240] of char=(
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   '#      ','-Mobjfpc   switch some Delphi 2 extensions on'#010+
   '#      -Mdelphi   tries to be Delphi compatible'#010+
   '#      -Mtp       tries to be TP/BP 7.0 compatible'#010+
   '#      -Mgpc      tries to be gpc compatible'#010+
   '#      -Mmacpas   tries to be compatible to the ma','cintosh pascal dia'+
   'lects'#010+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -136,11 +152,14 @@ const DefaultConfig : array[0..25,1..240] of char=(
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   '#'#010+
   '# Turn on Object Pascal extensions by default'#010+
   '#-Mobjfpc'#010+
   #010+
   '# Assembler reader mode'#010+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -157,11 +176,14 @@ const DefaultConfig : array[0..25,1..240] of char=(
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   '#      -Rdefault  use default assembler'#010+
   '#      -Ratt      read AT&T style assembler'#010+
   '#      -Rintel    read Intel style assembler'#010+
   '#'#010+
   '# ','All assembler blocks are AT&T styled by default'#010+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -172,10 +194,13 @@ const DefaultConfig : array[0..25,1..240] of char=(
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   '#-Ratt'#010+
   #010+
   '# Semantic checking'#010+
   '#      -S2        same as -Mobjfpc'#010+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -210,6 +235,8 @@ const DefaultConfig : array[0..25,1..240] of char=(
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   '#      -Sc        supports operators like C (*=,+=,/= and -=)'#010+
   '#      -Sa        include assertion code.'#010+
   '#      -Sd        same as',' -Mdelphi'#010+
@@ -236,11 +263,14 @@ const DefaultConfig : array[0..25,1..240] of char=(
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   '#'#010+
@@ -249,6 +279,7 @@ const DefaultConfig : array[0..25,1..240] of char=(
   #010+
   '# ---------------'#010+
   '# Code generation'#010+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -265,11 +296,14 @@ const DefaultConfig : array[0..25,1..240] of char=(
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   '# ---------------'#010,
   #010+
   '# Uncomment the next line if you always want static/dynamic units by d'+
   'efault'#010+
   '# (can be overruled with -CD, -CS at the commandline)'#010+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -280,12 +314,15 @@ const DefaultConfig : array[0..25,1..240] of char=(
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   '#-CS'#010+
   '#-CD'#010+
   #010+
   '# Set the default heapsize to 8Mb'#010+
   '#-Ch8000000'#010+
   #010+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -307,6 +344,10 @@ const DefaultConfig : array[0..25,1..240] of char=(
   '# Set default codegeneration checks (iocheck, over','flow, range, stack'+
   ')'#010+
 >>>>>>> origin/cpstrnew
+=======
+  '# Set default codegeneration checks (iocheck, over','flow, range, stack'+
+  ')'#010+
+>>>>>>> origin/cpstrnew
   '#-Ci'#010+
   '#-Co'#010+
   '#-Cr'#010+
@@ -314,6 +355,7 @@ const DefaultConfig : array[0..25,1..240] of char=(
   #010+
   '# Optimizer switches'#010+
   '# -Os        generate smaller code'#010+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -337,6 +379,8 @@ const DefaultConfig : array[0..25,1..240] of char=(
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   '# -Oa=N      set alignment to N'#010+
   '# -O1        level 1 optimizations (quick optimizations, debuggable)'#010+
   '# -O2        level 2 optimizations (-O1 + ','optimizations which make d'+
@@ -352,11 +396,14 @@ const DefaultConfig : array[0..25,1..240] of char=(
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   #010+
@@ -371,6 +418,7 @@ const DefaultConfig : array[0..25,1..240] of char=(
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '# -----------------------'#010+
 =======
   '# -----------------------',#010+
@@ -384,11 +432,15 @@ const DefaultConfig : array[0..25,1..240] of char=(
 =======
   '# -----------------------',#010+
 >>>>>>> origin/cpstrnew
+=======
+  '# -----------------------',#010+
+>>>>>>> origin/cpstrnew
   '# Set Filenames and Paths'#010+
   '# -----------------------'#010+
   #010+
   '# Both slashes and backslashes are allowed in paths'#010+
   #010+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -405,11 +457,14 @@ const DefaultConfig : array[0..25,1..240] of char=(
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   '# path to the messagefile, not necessary anymore but can be used to ov'+
   'erride'#010+
   '# the default language'#010+
   '#-Fr%basepath%/msg/errore.msg'#010+
   '#-F','r%basepath%/msg/errorn.msg'#010+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -420,10 +475,13 @@ const DefaultConfig : array[0..25,1..240] of char=(
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   '#-Fr%basepath%/msg/errores.msg'#010+
   '#-Fr%basepath%/msg/errord.msg'#010+
   '#-Fr%basepath%/msg/errorr.msg'#010+
   #010+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -451,6 +509,8 @@ const DefaultConfig : array[0..25,1..240] of char=(
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   '# searchpath for units and other system dependent things'#010+
   '-Fu%basepath%/units/$fpctarget'#010+
   '-Fu%basepath%/units/$fpctarget/*'#010,
@@ -458,11 +518,14 @@ const DefaultConfig : array[0..25,1..240] of char=(
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   #010+
@@ -476,6 +539,7 @@ const DefaultConfig : array[0..25,1..240] of char=(
   '#ENDIF'#010+
   '#ENDIF'#010+
   #010+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -498,6 +562,10 @@ const DefaultConfig : array[0..25,1..240] of char=(
   '# searchpath for ','fppkg user-specific packages'#010+
   '-Fu%localbasepath%/units/$FPCTARGET/*'#010+
 >>>>>>> origin/cpstrnew
+=======
+  '# searchpath for ','fppkg user-specific packages'#010+
+  '-Fu%localbasepath%/units/$FPCTARGET/*'#010+
+>>>>>>> origin/cpstrnew
   #010+
   '# path to the gcclib'#010+
   '%gcclibpath%'#010+
@@ -505,6 +573,7 @@ const DefaultConfig : array[0..25,1..240] of char=(
   '# searchpath for libraries'#010+
   '#-Fl%basepath%/lib'#010+
   '#-Fl/lib;/usr/lib'#010+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -518,10 +587,13 @@ const DefaultConfig : array[0..25,1..240] of char=(
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   #010+
   '# searchpath for tools'#010+
   '-FD%basepath%/bin/$FPCTARGET'#010+
   #010+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -562,6 +634,9 @@ const DefaultConfig : array[0..25,1..240] of char=(
 =======
   '%NEEDCROSSBINUTILSI','FDEF%'#010+
 >>>>>>> origin/cpstrnew
+=======
+  '%NEEDCROSSBINUTILSI','FDEF%'#010+
+>>>>>>> origin/cpstrnew
   #010+
   '# binutils prefix for cross compiling'#010+
   '#IFDEF FPC_CROSSCOMPILING'#010+
@@ -575,6 +650,7 @@ const DefaultConfig : array[0..25,1..240] of char=(
   '# Linking'#010+
   '# -------------'#010+
   #010+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -597,11 +673,16 @@ const DefaultConfig : array[0..25,1..240] of char=(
   '# generate always debugging information for GDB (slows down the comp','i'+
   'ling'#010+
 >>>>>>> origin/cpstrnew
+=======
+  '# generate always debugging information for GDB (slows down the comp','i'+
+  'ling'#010+
+>>>>>>> origin/cpstrnew
   '# process)'#010+
   '#      -gc        generate checks for pointers'#010+
   '#      -gd        use dbx'#010+
   '#      -gg        use gsym'#010+
   '#      -gh        use heap trace unit (for memory leak debugging)'#010+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -619,6 +700,9 @@ const DefaultConfig : array[0..25,1..240] of char=(
 =======
   '#      -gl        use line info unit to show more info fo','r backtrace'+
 >>>>>>> origin/cpstrnew
+=======
+  '#      -gl        use line info unit to show more info fo','r backtrace'+
+>>>>>>> origin/cpstrnew
   's'#010+
   '#      -gv        generates programs tracable with valgrind'#010+
   '#      -gw        generate dwarf debugging info'#010+
@@ -626,6 +710,7 @@ const DefaultConfig : array[0..25,1..240] of char=(
   '# Enable debuginfo and use the line info unit by default'#010+
   '#-gl'#010+
   #010+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -655,6 +740,8 @@ const DefaultConfig : array[0..25,1..240] of char=(
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   '# always pass an option to the linker'#010+
   '#-k-s'#010+
   #010+
@@ -668,11 +755,14 @@ const DefaultConfig : array[0..25,1..240] of char=(
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   #010+
@@ -681,6 +771,7 @@ const DefaultConfig : array[0..25,1..240] of char=(
   #010+
   '# Verbosity'#010+
   '#      e : Show errors (default)       d : Show debug info'#010+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -705,6 +796,8 @@ const DefaultConfig : array[0..25,1..240] of char=(
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   '#      w : Show warnings               u',' : Show unit info'#010+
   '#      n : Show notes                  t : Show tried/used files'#010+
   '#      h : Show hints                  s : Show time stamps'#010+
@@ -721,11 +814,14 @@ const DefaultConfig : array[0..25,1..240] of char=(
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   '#          lots of debugging info'#010+

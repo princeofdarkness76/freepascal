@@ -353,6 +353,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   { don't use getparaencoding(), we have to know
                     when the result is rawbytestring }
 =======
@@ -361,6 +362,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                   tstringdef(p.resultdef).encoding,
@@ -384,6 +387,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       { initialize the temp, since it will be passed to a
         var-parameter (and finalization, which is performed by the
         ttempcreate node and which takes care of the initialization
@@ -402,6 +406,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       para:=ccallparanode.create(
               arrp,
               ccallparanode.create(ctemprefnode.create(tempnode),nil)
@@ -409,6 +415,7 @@ begin
       if is_ansistring(p.resultdef) then
         para:=ccallparanode.create(
                 cordconstnode.create(
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -421,6 +428,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                   tstringdef(p.resultdef).encoding,

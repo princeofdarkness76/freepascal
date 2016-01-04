@@ -1152,6 +1152,9 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 // winuserm.h
 // Mobile extensions to winuser.h
 
@@ -1201,10 +1204,13 @@ const
 
 // End-of-winuserm.h
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 Type
 {$ifdef MESSAGESUNIT}
 

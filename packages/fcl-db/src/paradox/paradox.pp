@@ -16,6 +16,9 @@
   TParadox : Dataset wich can handle paradox files, based on PXLib.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   pxlib is an open source C library for handling paradox files. It
   is available from sourceforge:
   http://pxlib.sourceforge.net/
@@ -24,10 +27,13 @@
   Pascal Packages.
   
   The TParadox component was implemented by Michael Van Canneyt
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 }
 
 unit paradox;
@@ -602,11 +608,15 @@ Var
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   FieldDefs.Clear;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  FieldDefs.Clear;
+>>>>>>> origin/cpstrnew
   pxf:=PX_get_fields(FDoc);
   ACount:= PX_get_num_fields(FDoc);
   ReallocMem(FOffsets,ACount*SizeOf(Integer));
@@ -674,6 +684,7 @@ begin
     begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     //Writeln('opening blib file',bfn);
 =======
     Writeln('opening blib file',bfn);
@@ -681,6 +692,9 @@ begin
 =======
     Writeln('opening blib file',bfn);
 >>>>>>> origin/fixes_2_2
+=======
+    //Writeln('opening blib file',bfn);
+>>>>>>> origin/cpstrnew
     if PX_set_blob_file(FDoc,PChar(BFN))<>0 then
       RaiseError(SErrInvalidBlobFile,[BFN]);
     FBlobFileName:=BFN;
@@ -878,11 +892,15 @@ var
   No,pft,flen : integer;
   pxf          : PPx_field;
   Value        : Pchar;
+<<<<<<< HEAD
   Y,M,D        : cint;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  D            : clong;
+>>>>>>> origin/cpstrnew
   longv        : Clong;
   R            : Double;
   c            : Char;
@@ -917,11 +935,17 @@ begin
         If result then
           begin
           Move(Value^,Buffer^,flen);
+<<<<<<< HEAD
           doc^.free(doc,value);
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+          If (Flen<=Field.DataSize) then
+            Pchar(Buffer)[flen]:=#0;
+          FDoc^.free(FDoc,value);
+>>>>>>> origin/cpstrnew
           end;
         end;
       pxfDate:
@@ -942,12 +966,20 @@ begin
         Result:=PX_get_data_long(FDoc,Buf,flen,@longv)>0;
         If Result then
           begin
+<<<<<<< HEAD
           PX_SdnToGregorian(longv+1721425,@Y,@M,@D);
           PDateTime(Buffer)^:=EncodeDate(Y,M,D);
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+          // 1721425 is the number of the days between the start of the
+          // julian calendar (4714 BC) and jan-00-0000 (Paradox base date)
+          // 2415019 is the number of the days between the start of the
+          // julian calendar (4714 BC) and dec-30-1899 (TDateTime base date)
+          PDateTime(Buffer)^:=Longv+1721425-2415019;
+>>>>>>> origin/cpstrnew
           end;
         end;
       pxfShort:
@@ -1010,7 +1042,7 @@ begin
 >>>>>>> origin/fixes_2_2
         Result:=(PX_get_data_byte(FDoc,Buf,flen,@C)>0);
         If result then
-          PBoolean(Buffer)^:=(C<>#0);
+          PWordBool(Buffer)^:=(C<>#0);
         end;
       pxfBytes:
         begin
@@ -1083,13 +1115,17 @@ begin
           begin
           R:=R/1000.0;
           longv:=trunc(R /86400);
-          PX_SdnToGregorian(longv+1721425,@Y,@M,@D);
+          D:=Longv+1721425-2415019;
           longv:=(Trunc(r) mod 86400);
+<<<<<<< HEAD
           PDateTime(Buffer)^:=EncodeDate(Y,M,d)+(Longv/MSecsPerday);
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+          PDateTime(Buffer)^:=D+(Longv/MSecsPerday);
+>>>>>>> origin/cpstrnew
           end;
         end;
       pxfBCD:
@@ -1171,6 +1207,7 @@ begin
         if (Field.DataType=ftGraphic) then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           begin
           Result.WriteAnsiString('bmp');
           Result.WriteBuffer(V2^,D-SizeOf(TGraphicHeader));
@@ -1185,6 +1222,14 @@ begin
           Result.WriteAnsiString('bmp');
         Result.WriteBuffer(V2^,D-SizeOf(TGraphicHeader));
 >>>>>>> origin/fixes_2_2
+=======
+          begin
+          Result.WriteAnsiString('bmp');
+          Result.WriteBuffer(V2^,D-SizeOf(TGraphicHeader));
+          end
+        else
+          Result.WriteBuffer(V2^,D);
+>>>>>>> origin/cpstrnew
         Result.Position:=0;
         FDoc^.free(FDoc,Value);
         end;

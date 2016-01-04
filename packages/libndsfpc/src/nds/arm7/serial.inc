@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef ARM7}
   {$error Serial header is for ARM7 only}
 =======
@@ -51,6 +52,10 @@
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$ifndef ARM7}
+  {$error Serial header is for ARM7 only}
+>>>>>>> origin/cpstrnew
 {$endif ARM7}
 
 {$ifdef NDS_INTERFACE}
@@ -183,6 +188,7 @@ procedure SerialWaitBusy(); inline;
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   while (REG_SPICNT^ and SPI_BUSY) <> 0 do; 
 end;
 {$endif NDS_IMPLEMENTATION}
@@ -191,6 +197,9 @@ end;
 >>>>>>> origin/fixes_2_2
   while (REG_SPICNT^ and SPI_BUSY) <> 0 do 
     swiDelay(1); 
+=======
+  while (REG_SPICNT^ and SPI_BUSY) <> 0 do; 
+>>>>>>> origin/cpstrnew
 end;
 {$endif NDS_IMPLEMENTATION}
 

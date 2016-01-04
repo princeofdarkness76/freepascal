@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       QD/Video.h
  
      Contains:   Video Driver Interfaces.
@@ -16,11 +17,15 @@
 =======
      File:       QD/Video.h
 >>>>>>> origin/fixes_2.4
+=======
+     File:       QD/Video.h
+>>>>>>> origin/cpstrnew
  
      Contains:   Video Driver Interfaces.
  
      Version:    Quickdraw-262~1
  
+<<<<<<< HEAD
 <<<<<<< HEAD
      Copyright:  © 1986-2002 by Apple Computer, Inc., all rights reserved
 <<<<<<< HEAD
@@ -30,6 +35,9 @@
 =======
      Copyright:  © 1986-2008 by Apple Computer, Inc., all rights reserved
 >>>>>>> origin/fixes_2.4
+=======
+     Copyright:  © 1986-2008 by Apple Computer, Inc., all rights reserved
+>>>>>>> origin/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -40,6 +48,7 @@
  
 }
 {   Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+<<<<<<< HEAD
 {
     Modified for use with Free Pascal
     Version 308
@@ -54,6 +63,8 @@
  
 }
 {   Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+=======
+>>>>>>> origin/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -62,12 +73,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -79,6 +94,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -93,6 +109,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -108,6 +128,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -118,6 +139,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -125,13 +149,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -139,6 +167,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -147,8 +177,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -159,6 +192,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -179,6 +213,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -187,12 +223,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -200,6 +239,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -449,6 +489,20 @@ interface
 >>>>>>> origin/fixes_2.4
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -463,6 +517,7 @@ interface
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -504,6 +559,41 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -532,6 +622,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -540,6 +631,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -549,6 +642,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -582,6 +676,13 @@ uses MacTypes,QuickdrawTypes;
 
 {$ifc TARGET_OS_MAC}
 >>>>>>> origin/fixes_2.4
+=======
+uses MacTypes,QuickdrawTypes;
+{$endc} {not MACOSALLINCLUDE}
+
+
+{$ifc TARGET_OS_MAC}
+>>>>>>> origin/cpstrnew
 
 {$ALIGN MAC68K}
 
@@ -589,8 +690,11 @@ uses MacTypes,QuickdrawTypes;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {******************* DEPRECATION NOTICE *********************
  *
  * All declarations in this file are deprecated; their use 
@@ -628,6 +732,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 const
 	sixteenBitMode = 132;  {Id of SixteenBitMode Parameter list.}
 	thirtyTwoBitMode = 133;  {Id of ThirtyTwoBitMode Parameter list.}
@@ -1016,6 +1121,9 @@ const
 <<<<<<< HEAD
 =======
 const
+=======
+const
+>>>>>>> origin/cpstrnew
 	sixteenBitMode = 132;  {Id of SixteenBitMode Parameter list.}
 	thirtyTwoBitMode = 133;  {Id of ThirtyTwoBitMode Parameter list.}
 	firstVidMode = 128;  {The new, better way to do the above. }
@@ -1183,7 +1291,10 @@ const
 
 { csTimingFlags values in VDTimingInfoRec }
 const
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 	kModeValid = 0;    { Says that this mode should NOT be trimmed. }
@@ -1207,9 +1318,12 @@ const
 const
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 	kResolutionHasMultipleDepthSizes = 0;  { Says that this mode has different csHorizontalPixels, csVerticalLines at different depths (usually slightly larger at lower depths) }
@@ -1441,6 +1555,7 @@ type
 	end;
 type
 	VDDisplayConnectInfoPtr = VDDisplayConnectInfoRecPtr;
+<<<<<<< HEAD
 	VDMultiConnectInfoRecPtr = ^VDMultiConnectInfoRec;
 	VDMultiConnectInfoRec = record
 		csDisplayCountOrNumber: UNSIGNEDLONG; { For GetMultiConnect, returns count n of 1..n connections; otherwise, indicates the ith connection.}
@@ -2125,6 +2240,8 @@ type
 	end;
 type
 	VDDisplayConnectInfoPtr = VDDisplayConnectInfoRecPtr;
+=======
+>>>>>>> origin/cpstrnew
 	VDMultiConnectInfoRecPtr = ^VDMultiConnectInfoRec;
 	VDMultiConnectInfoRec = record
 		csDisplayCountOrNumber: UNSIGNEDLONG; { For GetMultiConnect, returns count n of 1..n connections; otherwise, indicates the ith connection.}
@@ -2170,6 +2287,7 @@ const
         ¥ Drive sense line 'C' low and read the values of 'A' and 'B'.
 
     In this way, a six-bit number of the form BC/AC/AB is generated. 
+<<<<<<< HEAD
 
     IMPORTANT Note: 
     When the 'kTaggingInfoNonStandard' bit of 'csConnectFlags' is FALSE, then these constants 
@@ -2234,6 +2352,60 @@ const
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+
+    IMPORTANT Note: 
+    When the 'kTaggingInfoNonStandard' bit of 'csConnectFlags' is FALSE, then these constants 
+    are valid 'csConnectTaggedData' values in 'VDDisplayConnectInfo' 
+
+}
+type
+	ExtendedSenseCode = UInt8;
+const
+	kESCZero21Inch = $00; { 21" RGB                     }
+	kESCOnePortraitMono = $14; { Portrait Monochrome              }
+	kESCTwo12Inch = $21; { 12" RGB                    }
+	kESCThree21InchRadius = $31; { 21" RGB (Radius)               }
+	kESCThree21InchMonoRadius = $34; { 21" Monochrome (Radius)           }
+	kESCThree21InchMono = $35; { 21" Monochrome               }
+	kESCFourNTSC = $0A; { NTSC                     }
+	kESCFivePortrait = $1E; { Portrait RGB              }
+	kESCSixMSB1 = $03; { MultiScan Band-1 (12" thru 1Six")  }
+	kESCSixMSB2 = $0B; { MultiScan Band-2 (13" thru 19")       }
+	kESCSixMSB3 = $23; { MultiScan Band-3 (13" thru 21")       }
+	kESCSixStandard = $2B; { 13"/14" RGB or 12" Monochrome   }
+	kESCSevenPAL = $00; { PAL                        }
+	kESCSevenNTSC = $14; { NTSC                     }
+	kESCSevenVGA = $17; { VGA                        }
+	kESCSeven16Inch = $2D; { 16" RGB (GoldFish)               }
+	kESCSevenPALAlternate = $30; { PAL (Alternate)                }
+	kESCSeven19Inch = $3A; { Third-Party 19Ó                 }
+	kESCSevenDDC = $3E; { DDC display                   }
+	kESCSevenNoDisplay = $3F;  { No display connected           }
+
+{ DepthMode
+    This abstract data type is used to to reference RELATIVE pixel depths.
+    Its definition is largely derived from its past usage, analogous to 'xxxVidMode'
+
+    Bits per pixel DOES NOT directly map to 'DepthMode'  For example, on some
+    graphics hardware, 'kDepthMode1' may represent 1 BPP, whereas on other
+    hardware, 'kDepthMode1' may represent 8BPP.
+
+    DepthMode IS considered to be ordinal, i.e., operations such as <, >, ==, etc.
+    behave as expected.  The values of the constants which comprise the set are such
+    that 'kDepthMode4 < kDepthMode6' behaves as expected.
+}
+type
+	DepthMode = UInt16;
+const
+	kDepthMode1 = 128;
+	kDepthMode2 = 129;
+	kDepthMode3 = 130;
+	kDepthMode4 = 131;
+	kDepthMode5 = 132;
+	kDepthMode6 = 133;
+
+>>>>>>> origin/cpstrnew
 const
 	kFirstDepthMode = 128;  { These constants are obsolete, and just included    }
 	kSecondDepthMode = 129;  { for clients that have converted to the above     }
@@ -2241,7 +2413,10 @@ const
 	kFourthDepthMode = 131;
 	kFifthDepthMode = 132;
 	kSixthDepthMode = 133;
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 
 type
@@ -2250,12 +2425,16 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 		csMode: SInt16;                 {(word) mode within device}
 		csData: SIGNEDLONG;                 {(long) data supplied by driver}
 		csPage: SInt16;                 {(word) page to switch in}
 		csBaseAddr: Ptr;             {(long) base address of page}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	end;
 type
@@ -2365,6 +2544,8 @@ const
 		csBaseAddr:				Ptr;									{ (long) base address of page }
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	end;
 type
 	VDPgInfoPtr = VDPageInfoPtr;
@@ -2462,6 +2643,7 @@ const
 	kVideoDDCciReplyType = 2;     { DDC/ci message (with imbedded length)}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{  VDCommunicationRec.csCommFlags and VDCommunicationInfoRec.csSupportedCommFlags }
 	kVideoReplyMicroSecDelayMask = $01;							{  If set, the driver should delay csMinReplyDelay micro seconds between send and recieve }
 <<<<<<< HEAD
@@ -2473,6 +2655,11 @@ const
 const
 	kVideoReplyMicroSecDelayMask = 1 shl 0; { If set, the driver should delay csMinReplyDelay micro seconds between send and recieve}
 >>>>>>> origin/fixes_2.4
+=======
+{ VDCommunicationRec.csCommFlags and VDCommunicationInfoRec.csSupportedCommFlags}
+const
+	kVideoReplyMicroSecDelayMask = 1 shl 0; { If set, the driver should delay csMinReplyDelay micro seconds between send and recieve}
+>>>>>>> origin/cpstrnew
 
 
 type
@@ -2481,8 +2668,11 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 		csPreviousDisplayModeID: DisplayModeID; { ID of the previous resolution in a chain }
 		csDisplayModeID: DisplayModeID;        { ID of the next resolution }
 		csHorizontalPixels: UNSIGNEDLONG;     { # of pixels in a horizontal line at the max depth }
@@ -2491,6 +2681,7 @@ type
 		csMaxDepthMode: DepthMode;         { 0x80-based number representing max bit depth }
 		csResolutionFlags: UNSIGNEDLONG;      { Reserved - flag bits }
 		csReserved: UNSIGNEDLONG;             { Reserved }
+<<<<<<< HEAD
 <<<<<<< HEAD
 	end;
 type
@@ -2654,6 +2845,8 @@ const
 		csReserved:				UInt32;									{  Reserved  }
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	end;
 type
 	VDResolutionInfoPtr = VDResolutionInfoRecPtr;
@@ -2790,6 +2983,7 @@ type
 
 const
 <<<<<<< HEAD
+<<<<<<< HEAD
 																{  timingSyncConfiguration }
 	kSyncInterlaceMask			= $80;
 	kSyncAnalogCompositeMask	= 0;
@@ -2809,6 +3003,8 @@ const
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 { timingSyncConfiguration}
 	kSyncInterlaceMask = 1 shl 7;
 	kSyncAnalogCompositeMask = 0;
@@ -2823,7 +3019,10 @@ const
 	kSyncDigitalSeperateMask = (1 shl 4) + (1 shl 3);
 	kSyncDigitalVSyncPositiveMask = 1 shl 2;
 	kSyncDigitalHSyncPositiveMask = 1 shl 1;
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 
 type
@@ -2832,8 +3031,11 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 		csRangeSize: UInt32;            { Init to sizeof(VDDisplayTimingRangeRec) }
 		csRangeType: UInt32;            { Init to 0 }
 		csRangeVersion: UInt32;         { Init to 0 }
@@ -2849,6 +3051,7 @@ type
 
 		csMaxPixelError: UInt32;        { Max dot clock error }
 		csTimingRangeSyncFlags: UInt32;
+<<<<<<< HEAD
 <<<<<<< HEAD
 		csTimingRangeSignalLevels: UInt32;
 		csReserved0: UInt32;
@@ -2941,6 +3144,9 @@ type
 >>>>>>> origin/fixes_2_2
 =======
 		csTimingRangeSignalLevels: UInt32;
+=======
+		csTimingRangeSignalLevels: UInt32;
+>>>>>>> origin/cpstrnew
 		csReserved0: UInt32;
 
 		csMinFrameRate: UInt32;         { Hz }
@@ -2981,7 +3187,10 @@ type
 		csCharSizeReserved1: UInt16;    { Reserved (Init to 0) }
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 		csMinHorizontalActiveClocks: UInt32;
 		csMaxHorizontalActiveClocks: UInt32;
 		csMinHorizontalBlankingClocks: UInt32;
@@ -2989,6 +3198,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -2997,6 +3207,9 @@ type
 =======
 
 >>>>>>> origin/fixes_2.4
+=======
+
+>>>>>>> origin/cpstrnew
 		csMinHorizontalSyncOffsetClocks: UInt32;
 		csMaxHorizontalSyncOffsetClocks: UInt32;
 		csMinHorizontalPulseWidthClocks: UInt32;
@@ -3004,6 +3217,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -3012,6 +3226,9 @@ type
 =======
 
 >>>>>>> origin/fixes_2.4
+=======
+
+>>>>>>> origin/cpstrnew
 		csMinVerticalActiveClocks: UInt32;
 		csMaxVerticalActiveClocks: UInt32;
 		csMinVerticalBlankingClocks: UInt32;
@@ -3019,6 +3236,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -3027,6 +3245,9 @@ type
 =======
 
 >>>>>>> origin/fixes_2.4
+=======
+
+>>>>>>> origin/cpstrnew
 		csMinVerticalSyncOffsetClocks: UInt32;
 		csMaxVerticalSyncOffsetClocks: UInt32;
 		csMinVerticalPulseWidthClocks: UInt32;
@@ -3034,6 +3255,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
@@ -3044,10 +3266,15 @@ type
 
 
 >>>>>>> origin/fixes_2.4
+=======
+
+
+>>>>>>> origin/cpstrnew
 		csMinHorizontalBorderLeft: UInt32;
 		csMaxHorizontalBorderLeft: UInt32;
 		csMinHorizontalBorderRight: UInt32;
 		csMaxHorizontalBorderRight: UInt32;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3099,6 +3326,11 @@ const
 		csMinVerticalBorderTop: UInt32;
 		csMaxVerticalBorderTop: UInt32;
 >>>>>>> origin/fixes_2.4
+=======
+
+		csMinVerticalBorderTop: UInt32;
+		csMaxVerticalBorderTop: UInt32;
+>>>>>>> origin/cpstrnew
 		csMinVerticalBorderBottom: UInt32;
 		csMaxVerticalBorderBottom: UInt32;
 
@@ -3133,6 +3365,7 @@ const
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 																{  csTimingRangeSignalLevels }
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -3142,6 +3375,10 @@ const
 const
 { csTimingRangeSignalLevels}
 >>>>>>> origin/fixes_2.4
+=======
+const
+{ csTimingRangeSignalLevels}
+>>>>>>> origin/cpstrnew
 	kRangeSupportsSignal_0700_0300_Bit = 0;
 	kRangeSupportsSignal_0714_0286_Bit = 1;
 	kRangeSupportsSignal_1000_0400_Bit = 2;
@@ -3149,12 +3386,16 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	kRangeSupportsSignal_0700_0300_Mask = 1 shl kRangeSupportsSignal_0700_0300_Bit;
 	kRangeSupportsSignal_0714_0286_Mask = 1 shl kRangeSupportsSignal_0714_0286_Bit;
 	kRangeSupportsSignal_1000_0400_Mask = 1 shl kRangeSupportsSignal_1000_0400_Bit;
 	kRangeSupportsSignal_0700_0000_Mask = 1 shl kRangeSupportsSignal_0700_0000_Bit;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 
@@ -3177,6 +3418,8 @@ const
 	kRangeSupportsSignal_0700_0000_Mask = $08;
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 
 const
@@ -3188,6 +3431,7 @@ const
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 																{  csSignalLevels for analog }
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -3197,12 +3441,17 @@ const
 const
 { csSignalLevels for analog}
 >>>>>>> origin/fixes_2.4
+=======
+const
+{ csSignalLevels for analog}
+>>>>>>> origin/cpstrnew
 	kAnalogSignalLevel_0700_0300 = 0;
 	kAnalogSignalLevel_0714_0286 = 1;
 	kAnalogSignalLevel_1000_0400 = 2;
 	kAnalogSignalLevel_0700_0000 = 3;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3218,6 +3467,10 @@ const
 const
 { csTimingRangeSyncFlags}
 >>>>>>> origin/fixes_2.4
+=======
+const
+{ csTimingRangeSyncFlags}
+>>>>>>> origin/cpstrnew
 	kRangeSupportsSeperateSyncsBit = 0;
 	kRangeSupportsSyncOnGreenBit = 1;
 	kRangeSupportsCompositeSyncBit = 2;
@@ -3225,12 +3478,16 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	kRangeSupportsSeperateSyncsMask = 1 shl kRangeSupportsSeperateSyncsBit;
 	kRangeSupportsSyncOnGreenMask = 1 shl kRangeSupportsSyncOnGreenBit;
 	kRangeSupportsCompositeSyncMask = 1 shl kRangeSupportsCompositeSyncBit;
 	kRangeSupportsVSyncSerrationMask = 1 shl kRangeSupportsVSyncSerrationBit;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3331,6 +3588,8 @@ const
 	kRangeSupportsVSyncSerrationMask = $08;
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 
 const
@@ -3398,6 +3657,7 @@ type
 	VDClutBehaviorPtr = ^VDClutBehavior;
 const
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kSetClutAtSetEntries		= 0;							{  SetEntries behavior is to update clut during SetEntries call }
 	kSetClutAtVBL				= 1;							{  SetEntries behavior is to upate clut at next vbl }
 <<<<<<< HEAD
@@ -3408,6 +3668,10 @@ const
 	kSetClutAtSetEntries = 0;    { SetEntries behavior is to update clut during SetEntries call}
 	kSetClutAtVBL = 1;     { SetEntries behavior is to upate clut at next vbl}
 >>>>>>> origin/fixes_2.4
+=======
+	kSetClutAtSetEntries = 0;    { SetEntries behavior is to update clut during SetEntries call}
+	kSetClutAtVBL = 1;     { SetEntries behavior is to upate clut at next vbl}
+>>>>>>> origin/cpstrnew
 
 
 type
@@ -3416,8 +3680,11 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 		csBusID: SInt32;                { kVideoDefaultBus for single headed cards.}
 		csCommFlags: UInt32;            { Always zero}
 		csMinReplyDelay: UInt32;        { Minimum delay between send and reply transactions (units depend on csCommFlags)}
@@ -3437,6 +3704,7 @@ type
 		csReserved4: UInt32;
 		csReserved5: UInt32;            { Always zero}
 		csReserved6: UInt32;            { Always zero}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	end;
 type
@@ -3487,6 +3755,8 @@ end.
 		csReserved6:			UInt32;									{  Always zero }
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	end;
 type
 	VDCommunicationPtr = VDCommunicationRecPtr;
@@ -3516,9 +3786,13 @@ type
 end.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

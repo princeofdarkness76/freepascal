@@ -188,6 +188,7 @@ Type  PINTRTLEvent = ^TINTRTLEvent;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         { Restore tlskey value as it may already have been set to null,
           in which case
             a) DoneThread can't release the memory
@@ -203,6 +204,8 @@ Type  PINTRTLEvent = ^TINTRTLEvent;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         { clean up }
         DoneThread;
         { the pthread routine that calls us is supposed to do this, but doesn't
@@ -212,7 +215,10 @@ Type  PINTRTLEvent = ^TINTRTLEvent;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         pthread_setspecific(tlskey,nil);
+=======
+>>>>>>> origin/cpstrnew
       end;
 
 
@@ -224,6 +230,7 @@ Type  PINTRTLEvent = ^TINTRTLEvent;
         { we cannot know the stack size of the current thread, so pretend it
           is really large to prevent spurious stack overflow errors }
         InitThread(1000000000);
+<<<<<<< HEAD
         { instruct the pthreads system to clean up this thread when it exits.
           Use current tlskey as value so that if tlskey is cleared before
           CleanupKey is called, we still know its value (the order in which
@@ -275,6 +282,12 @@ Type  PINTRTLEvent = ^TINTRTLEvent;
 =======
 >>>>>>> graemeg/cpstrnew
 =======
+>>>>>>> origin/cpstrnew
+=======
+        { instruct the pthreads system to clean up this thread when it exits }
+        pthread_setspecific(CleanupKey,pointer(1));
+      end;
+
 >>>>>>> origin/cpstrnew
 
     function CRelocateThreadvar(offset : dword) : pointer;
@@ -456,11 +469,14 @@ Type  PINTRTLEvent = ^TINTRTLEvent;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       pthread_attr_setinheritsched(@thread_attr, PTHREAD_INHERIT_SCHED);
@@ -471,12 +487,15 @@ Type  PINTRTLEvent = ^TINTRTLEvent;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       {$ifend}
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       {$endif}
@@ -528,11 +547,15 @@ Type  PINTRTLEvent = ^TINTRTLEvent;
 //      result := pthread_kill(threadHandle,SIGSTOP);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       result:=dword(-1);
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+      result:=dword(-1);
+>>>>>>> origin/cpstrnew
     end;
 
 
@@ -556,10 +579,14 @@ Type  PINTRTLEvent = ^TINTRTLEvent;
       result:=dword(-1);
 =======
 //      result := pthread_kill(threadHandle,SIGCONT);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 //      result := pthread_kill(threadHandle,SIGCONT);
 >>>>>>> origin/fixes_2_2
+=======
+      result:=dword(-1);
+>>>>>>> origin/cpstrnew
     end;
 
 
@@ -663,6 +690,14 @@ Type  PINTRTLEvent = ^TINTRTLEvent;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+      end;
+
+    function CTryEnterCriticalSection(var CS):longint;
+      begin
+         if pthread_mutex_Trylock(@CS)=0 then
+           result:=1  // succes
+         else
+           result:=0; // failure
       end;
 
     procedure CLeaveCriticalSection(var CS);

@@ -42,6 +42,7 @@ uses
 const
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Version   = 'Version 2.5.1';
   Title     = 'PPU-Analyser';
   Copyright = 'Copyright (c) 1998-2010 by the Free Pascal Development Team';
@@ -55,6 +56,11 @@ const
   Title     = 'PPU-Analyser';
   Copyright = 'Copyright (c) 1998-2007 by the Free Pascal Development Team';
 >>>>>>> origin/fixes_2_2
+=======
+  Version   = 'Version 2.5.1';
+  Title     = 'PPU-Analyser';
+  Copyright = 'Copyright (c) 1998-2010 by the Free Pascal Development Team';
+>>>>>>> origin/cpstrnew
 
 { verbosity }
   v_none           = $0;
@@ -308,12 +314,15 @@ const
   { 67 }  'Linux-MIPSel',
   { 68 }  'NativeNT-i386',
   { 69 }  'iPhoneSim-i386'
+<<<<<<< HEAD
 =======
   { 63 }  'Haiku-i386'        
 >>>>>>> graemeg/fixes_2_2
 =======
   { 63 }  'Haiku-i386'        
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
   );
 begin
   if w<=ord(high(ttarget)) then
@@ -930,12 +939,15 @@ const
   );
 var
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   defoptions : tdefoptions;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
   defstates  : tdefstates;
   i      : longint;
   first  : boolean;
@@ -1492,6 +1504,7 @@ const
      (mask:oo_is_forward;         str:'IsForward'),
      (mask:oo_is_abstract;        str:'IsAbstract'),
      (mask:oo_is_sealed;          str:'IsSealed'),
+<<<<<<< HEAD
 =======
   symopts=14;
   symopt : array[1..symopts] of tsymopt=(
@@ -1500,6 +1513,8 @@ const
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
      (mask:oo_has_virtual;        str:'HasVirtual'),
      (mask:oo_has_private;        str:'HasPrivate'),
      (mask:oo_has_protected;      str:'HasProtected'),
@@ -2272,6 +2287,7 @@ begin
            begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
              readcommondef('Generic definition (void-typ)',defoptions);
 =======
              readcommondef('Generic definition (void-typ)');
@@ -2279,6 +2295,9 @@ begin
 =======
              readcommondef('Generic definition (void-typ)');
 >>>>>>> origin/fixes_2_2
+=======
+             readcommondef('Generic definition (void-typ)',defoptions);
+>>>>>>> origin/cpstrnew
              writeln(space,'         Is Typed : ',(getbyte<>0));
            end;
 

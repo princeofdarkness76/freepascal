@@ -15,6 +15,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    function _addref: longint; virtual; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
    function _release: longint; virtual; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
 =======
@@ -29,6 +30,10 @@ type
    function _addref: integer; virtual; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
    function _release: integer; virtual; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
 >>>>>>> graemeg/cpstrnew
+=======
+   function _addref: integer; virtual; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
+   function _release: integer; virtual; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
+>>>>>>> origin/cpstrnew
 =======
    function _addref: integer; virtual; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
    function _release: integer; virtual; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
@@ -59,6 +64,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function timpclass._addref: longint; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
 =======
 function timpclass._addref: integer; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
@@ -72,10 +78,14 @@ function timpclass._addref: integer; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF
 =======
 function timpclass._addref: integer; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
 >>>>>>> origin/cpstrnew
+=======
+function timpclass._addref: integer; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
+>>>>>>> origin/cpstrnew
 begin
  result:= -1;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -93,6 +103,9 @@ function timpclass._release: integer;  {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$END
 =======
 function timpclass._release: integer;  {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
 >>>>>>> origin/cpstrnew
+=======
+function timpclass._release: integer;  {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
+>>>>>>> origin/cpstrnew
 begin
  result:= -1;
 end;
@@ -107,6 +120,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   result:= HResult(e_nointerface);
 =======
   result:= integer(e_nointerface);
@@ -117,6 +131,9 @@ begin
 =======
   result:= integer(e_nointerface);
 >>>>>>> graemeg/cpstrnew
+=======
+  result:= integer(e_nointerface);
+>>>>>>> origin/cpstrnew
 =======
   result:= integer(e_nointerface);
 >>>>>>> origin/cpstrnew

@@ -8,6 +8,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  ,{$ifdef darwin}iosxwstr{$else}cwstring{$endif}
 =======
  ,cwstring
@@ -18,6 +19,9 @@ uses
 =======
  ,cwstring
 >>>>>>> graemeg/cpstrnew
+=======
+ ,cwstring
+>>>>>>> origin/cpstrnew
 =======
  ,cwstring
 >>>>>>> origin/cpstrnew

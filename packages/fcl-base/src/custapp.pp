@@ -148,9 +148,13 @@ Type
     Procedure GetEnvironmentList(List : TStrings;NamesOnly : Boolean);
     Procedure GetEnvironmentList(List : TStrings);
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    Procedure Log(EventType : TEventType; const Msg : String); virtual;
+>>>>>>> origin/cpstrnew
     // Delphi properties
     property ExeName: string read GetExeName;
     property HelpFile: string read FHelpFile write FHelpFile;
@@ -200,8 +204,11 @@ function TCustomApplication.GetExeName: string;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$if defined(darwin)}
 var
   mainBundle: CFBundleRef;
@@ -431,6 +438,12 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+  // Do nothing. Override in descendent classes.
+end;
+
+Procedure TCustomApplication.Log(EventType : TEventType; const Msg : String);
+
+begin
   // Do nothing. Override in descendent classes.
 end;
 
@@ -964,6 +977,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           HaveArg:=(I<ParamCount) and (Length(ParamStr(I+1))>0) and (ParamStr(I+1)[1]<>FOptionChar);
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -987,6 +1001,9 @@ begin
 =======
           HaveArg:=(I<ParamCount) and (Length(ParamStr(I+1))>0) and (ParamStr(I+1)[1]<>FOptionChar);
 >>>>>>> origin/fixes_2.4
+=======
+          HaveArg:=(I<ParamCount) and (Length(ParamStr(I+1))>0) and (ParamStr(I+1)[1]<>FOptionChar);
+>>>>>>> origin/cpstrnew
           If HaveArg then
             OV:=Paramstr(I+1);
           If Not CaseSensitiveOptions then

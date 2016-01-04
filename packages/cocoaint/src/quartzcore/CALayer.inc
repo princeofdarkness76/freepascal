@@ -94,6 +94,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         slots: array[0..(3)-1] of culong;
 =======
             slots: array[0..2] of culong;
@@ -104,6 +105,9 @@ var
 =======
             slots: array[0..2] of culong;
 >>>>>>> graemeg/cpstrnew
+=======
+            slots: array[0..2] of culong;
+>>>>>>> origin/cpstrnew
 =======
             slots: array[0..2] of culong;
 >>>>>>> origin/cpstrnew

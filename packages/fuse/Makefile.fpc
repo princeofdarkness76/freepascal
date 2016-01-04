@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
 =======
 #   Makefile.fpc for FUSE bindings
@@ -16,10 +17,14 @@
 =======
 #   Makefile.fpc for FUSE bindings
 >>>>>>> origin/cpstrnew
+=======
+#   Makefile.fpc for FUSE bindings
+>>>>>>> origin/cpstrnew
 #
 
 [package]
 name=fuse
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -35,12 +40,15 @@ packages=rtl fpmkunit
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 version=2.5.1
 
 [target]
 units=fuse
 
 [require]
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -51,10 +59,13 @@ units=fuse
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 [install]
 fpcpackage=y
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -154,6 +165,8 @@ endif
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 [compiler]
 includedir=src
 sourcedir=src 
@@ -166,10 +179,13 @@ fpcdir=../..
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew

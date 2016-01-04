@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Copyright (c) 2003-2006, 2008-2010 Apple Inc. All rights reserved.
 =======
  * Copyright (c) 2003-2006, 2008, 2009 Apple Inc. All rights reserved.
@@ -28,6 +29,9 @@
 =======
  * Copyright (c) 2003-2006, 2008, 2009 Apple Inc. All rights reserved.
 >>>>>>> origin/fixes_2.4
+=======
+ * Copyright (c) 2003-2006, 2008, 2009 Apple Inc. All rights reserved.
+>>>>>>> origin/cpstrnew
  *
  * @APPLE_LICENSE_HEADER_START@
  * 
@@ -39,6 +43,7 @@
  * file.
  * 
  * The Original Code and all software distributed under the License are
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -60,6 +65,11 @@
  * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
  * INCLUDING WITHOUT LIMITATION, ANY WARRANTIES OF MERCHANTABILITY,
 >>>>>>> origin/fixes_2.4
+=======
+ * distributed on an 'AS IS' basis, WITHOUT WARRANTY OF ANY KIND, EITHER
+ * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
+ * INCLUDING WITHOUT LIMITATION, ANY WARRANTIES OF MERCHANTABILITY,
+>>>>>>> origin/cpstrnew
  * FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT.
  * Please see the License for the specific language governing rights and
  * limitations under the License.
@@ -75,6 +85,7 @@
 =======
 {	  Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2004 }
 {   Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -97,6 +108,8 @@
 >>>>>>> origin/fixes_2_2
 {	  Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2004 }
 {   Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+=======
+>>>>>>> origin/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -105,12 +118,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -122,6 +139,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -136,6 +154,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -151,6 +173,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -161,6 +184,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -168,13 +194,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -182,6 +212,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -190,8 +222,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -202,6 +237,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -222,6 +258,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -230,12 +268,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -243,6 +284,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -486,6 +528,9 @@ interface
 =======
 	{$setc TARGET_CPU_PPC64 := FALSE}
 >>>>>>> origin/fixes_2.4
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -511,6 +556,7 @@ interface
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -552,6 +598,41 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -580,6 +661,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -588,6 +670,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -600,12 +684,16 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 uses MacTypes,MacOSXPosix,CFBase,CFDictionary,CFRunLoop;
 {$endc} {not MACOSALLINCLUDE}
 
 {$ALIGN POWER}
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 {!
@@ -627,6 +715,8 @@ uses MacTypes,CFBase,CFDictionary,CFRunLoop;
 {$ALIGN MAC68K}
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {!
 	@header SCNetworkConnection
@@ -640,6 +730,7 @@ uses MacTypes,CFBase,CFDictionary,CFRunLoop;
 		should use the SCNetworkConfiguration API instead.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	Note: Currently only PPP services can be controlled.
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -648,11 +739,15 @@ uses MacTypes,CFBase,CFDictionary,CFRunLoop;
 =======
 		Note: Currently, only PPP services can be controlled.
 >>>>>>> origin/fixes_2.4
+=======
+		Note: Currently, only PPP services can be controlled.
+>>>>>>> origin/cpstrnew
  }
 
 
 {!
 	@typedef SCNetworkConnectionRef
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -694,6 +789,12 @@ type
 type
 	SCNetworkConnectionRef = ^SInt32; { an opaque type }
 >>>>>>> origin/fixes_2.4
+=======
+	@discussion This is the handle to manage a connection-oriented service.
+ }
+type
+	SCNetworkConnectionRef = ^SInt32; { an opaque type }
+>>>>>>> origin/cpstrnew
 
 
 {!
@@ -701,8 +802,11 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	@discussion Structure containing user-specified data and callbacks
 		for a SCNetworkConnection.
 	@field version The version number of the structure type being passed
@@ -719,12 +823,15 @@ type
 	@field copyDescription The callback used to provide a description of
 		the info field.
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  }
 // AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
 type SCNetworkConnectionContext = record
@@ -733,6 +840,7 @@ type SCNetworkConnectionContext = record
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		retain: function( info: UnivPtr ): UnivPtr;
 		release: procedure( info: UnivPtr );
 		copyDescription: function( info: UnivPtr ): CFStringRef;
@@ -751,6 +859,11 @@ type SCNetworkConnectionContext = record
 		release: procedure( info: UnivPtr );
 		copyDescription: function( info: UnivPtr ): CFStringRef;
 >>>>>>> origin/fixes_2.4
+=======
+		retain: function( info: UnivPtr ): UnivPtr;
+		release: procedure( info: UnivPtr );
+		copyDescription: function( info: UnivPtr ): CFStringRef;
+>>>>>>> origin/cpstrnew
 	end;
 	SCNetworkConnectionContextPtr = ^SCNetworkConnectionContext;
 
@@ -765,6 +878,9 @@ type SCNetworkConnectionContext = record
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 	@constant kSCNetworkConnectionInvalid
 		The network connection refers to an invalid service.
 	@constant kSCNetworkConnectionDisconnected
@@ -773,6 +889,7 @@ type SCNetworkConnectionContext = record
 		The network connection is connecting.
 	@constant kSCNetworkConnectionConnected
 		The network connection is connected.
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -795,6 +912,8 @@ type SCNetworkConnectionContext = record
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	@constant kSCNetworkConnectionDisconnecting
 		The network connection is disconnecting.
  }
@@ -802,14 +921,18 @@ type SCNetworkConnectionContext = record
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 const
 	kSCNetworkConnectionInvalid = -1;
 	kSCNetworkConnectionDisconnected = 0;
 	kSCNetworkConnectionConnecting = 1;
 	kSCNetworkConnectionConnected = 2;
 	kSCNetworkConnectionDisconnecting = 3;
+<<<<<<< HEAD
 <<<<<<< HEAD
 type
 	SCNetworkConnectionStatus = SInt32;
@@ -832,10 +955,15 @@ const
 type
 	SCNetworkConnectionStatus = SInt32;
 >>>>>>> origin/fixes_2.4
+=======
+type
+	SCNetworkConnectionStatus = SInt32;
+>>>>>>> origin/cpstrnew
 
 
 {!
 	@enum SCNetworkConnectionPPPStatus
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -887,6 +1015,10 @@ type
 	@discussion PPP-specific status of the network connection.
 		This status is returned as part of the extended information
 >>>>>>> origin/fixes_2.4
+=======
+	@discussion PPP-specific status of the network connection.
+		This status is returned as part of the extended information
+>>>>>>> origin/cpstrnew
 		for a PPP service.
 		Note: additional status might be returned in the future.
 		Your application should be prepared to receive an unknown value.
@@ -923,6 +1055,7 @@ type
 		PPP is disconnected and maintaining the link temporarily off.
 	@constant kSCNetworkConnectionPPPSuspended
 <<<<<<< HEAD
+<<<<<<< HEAD
 		PPP is suspended as a result of the suspend command (for example, when a V92 Modem is On Hold).
 
 <<<<<<< HEAD
@@ -933,6 +1066,10 @@ type
 		PPP is suspended as a result of the suspend command (for
 		example, when a V.92 Modem is On Hold).
 >>>>>>> origin/fixes_2.4
+=======
+		PPP is suspended as a result of the suspend command (for
+		example, when a V.92 Modem is On Hold).
+>>>>>>> origin/cpstrnew
 	@constant kSCNetworkConnectionPPPWaitingForRedial
 		PPP has found a busy server and is waiting for redial.
  }
@@ -940,8 +1077,11 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 const
 	kSCNetworkConnectionPPPDisconnected = 0;
 	kSCNetworkConnectionPPPInitializing = 1;
@@ -957,6 +1097,7 @@ const
 	kSCNetworkConnectionPPPHoldingLinkOff = 11;
 	kSCNetworkConnectionPPPSuspended = 12;
 	kSCNetworkConnectionPPPWaitingForRedial = 13;
+<<<<<<< HEAD
 <<<<<<< HEAD
 type
 	SCNetworkConnectionPPPStatus = SInt32;
@@ -988,6 +1129,10 @@ const
 type
 	SCNetworkConnectionPPPStatus = SInt32;
 >>>>>>> origin/fixes_2.4
+=======
+type
+	SCNetworkConnectionPPPStatus = SInt32;
+>>>>>>> origin/cpstrnew
 
 
 {!
@@ -996,6 +1141,7 @@ type
 		status event is delivered.
 	@param status The connection status.
 	@param connection The connection reference.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1022,6 +1168,13 @@ type
   // AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
 	SCNetworkConnectionCallBack = procedure( connection: SCNetworkConnectionRef; status: SCNetworkConnectionStatus; info: UnivPtr );
 >>>>>>> origin/fixes_2.4
+=======
+	@param info Application-specific information.
+ }
+type
+  // AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+	SCNetworkConnectionCallBack = procedure( connection: SCNetworkConnectionRef; status: SCNetworkConnectionStatus; info: UnivPtr );
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1051,8 +1204,11 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  Keys for the SCNetworkConnectionCopyUserPreferences() "selectionOptions"
  dictionary
@@ -1060,6 +1216,9 @@ type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {!
 	@define kSCNetworkConnectionSelectionOptionOnDemandHostName
 	@discussion A host name that will be used to select the
@@ -1074,6 +1233,7 @@ type
 // #endif
 
 {!
+<<<<<<< HEAD
 =======
 {!
 	@define kSCNetworkConnectionSelectionOptionOnDemandHostName
@@ -1089,6 +1249,8 @@ type
 // #endif
 
 {!
+>>>>>>> origin/cpstrnew
+=======
 >>>>>>> origin/cpstrnew
 	@define kSCNetworkConnectionSelectionOptionOnDemandRetry
 	@discussion A boolean value used to indicate whether a DNS query has
@@ -1128,6 +1290,7 @@ function SCNetworkConnectionGetTypeID: CFTypeID; external name '_SCNetworkConnec
 		connections, this will be returned by the function.
 	@result Returns TRUE if there is a valid service to dial;
 		FALSE if the function was unable to retrieve a service to dial.
+<<<<<<< HEAD
  }
 function SCNetworkConnectionCopyUserPreferences( selectionOptions: CFDictionaryRef; var serviceID: CFStringRef; var userOptions: CFDictionaryRef ): Boolean; external name '_SCNetworkConnectionCopyUserPreferences';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_NA) *)
@@ -1198,6 +1361,11 @@ function SCNetworkConnectionCopyUserPreferences( selectionOptions: CFDictionaryR
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_NA) *)
 >>>>>>> origin/fixes_2.4
+=======
+ }
+function SCNetworkConnectionCopyUserPreferences( selectionOptions: CFDictionaryRef; var serviceID: CFStringRef; var userOptions: CFDictionaryRef ): Boolean; external name '_SCNetworkConnectionCopyUserPreferences';
+(* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_NA) *)
+>>>>>>> origin/cpstrnew
 
 
 {!
@@ -1205,8 +1373,11 @@ function SCNetworkConnectionCopyUserPreferences( selectionOptions: CFDictionaryR
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	@discussion Creates a new connection reference to use for getting
 		the status or for connecting or disconnecting the associated
 		service.
@@ -1215,6 +1386,7 @@ function SCNetworkConnectionCopyUserPreferences( selectionOptions: CFDictionaryR
 		NULL in which case the current default CFAllocator is used.
 		If this reference is not a valid CFAllocator, the behavior
 		is undefined.
+<<<<<<< HEAD
 <<<<<<< HEAD
 	@param serviceID A string that defines the service identifier
 		of the connection.  Service identifiers uniquely identify
@@ -1251,6 +1423,8 @@ function SCNetworkConnectionCopyServiceID( connection: SCNetworkConnectionRef ):
 		a valid CFAllocator, the behavior is undefined.
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	@param serviceID A string that defines the service identifier
 		of the connection.  Service identifiers uniquely identify
 		services in the system configuration database.
@@ -1275,12 +1449,16 @@ function SCNetworkConnectionCreateWithServiceID( allocator: CFAllocatorRef; serv
 function SCNetworkConnectionCopyServiceID( connection: SCNetworkConnectionRef ): CFStringRef; external name '_SCNetworkConnectionCopyServiceID';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_NA) *)
 >>>>>>> origin/fixes_2.4
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_NA) *)
+>>>>>>> origin/cpstrnew
 
 
 {!
@@ -1289,8 +1467,11 @@ function SCNetworkConnectionCopyServiceID( connection: SCNetworkConnectionRef ):
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 		A status is one of the following values:
 <pre>
 @textblock
@@ -1302,6 +1483,7 @@ function SCNetworkConnectionCopyServiceID( connection: SCNetworkConnectionRef ):
 	kSCNetworkConnectionConnected
 @/textblock
 </pre>
+<<<<<<< HEAD
 <<<<<<< HEAD
 	@param connection The SCNetworkConnection to obtain status from.
 	@result Returns the status value.
@@ -1320,10 +1502,13 @@ function SCNetworkConnectionGetStatus( connection: SCNetworkConnectionRef ): SCN
 
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	@param connection The SCNetworkConnection to obtain status from.
 	@result Returns the status value.
 }
 function SCNetworkConnectionGetStatus( connection: SCNetworkConnectionRef ): SCNetworkConnectionStatus; external name '_SCNetworkConnectionGetStatus';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -1332,6 +1517,9 @@ function SCNetworkConnectionGetStatus( connection: SCNetworkConnectionRef ): SCN
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_NA) *)
 >>>>>>> origin/fixes_2.4
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_NA) *)
+>>>>>>> origin/cpstrnew
 
 
 {!
@@ -1343,8 +1531,11 @@ function SCNetworkConnectionGetStatus( connection: SCNetworkConnectionRef ): SCN
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 		For example, a status dictionary will contain the following
 		sub-dictionaries, keys, and values:
 <pre>
@@ -1378,6 +1569,7 @@ function SCNetworkConnectionGetStatus( connection: SCNetworkConnectionRef ): SCN
 		The status dictionary may be extended in the future to contain
 		additional information.
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@param connection The SCNetworkConnection to obtain status from.
 	@result Returns the status dictionary.
 		If NULL is returned, the error can be retrieved using the SCError function.
@@ -1409,11 +1601,14 @@ function SCNetworkConnectionCopyExtendedStatus( connection: SCNetworkConnectionR
 
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	@param connection The SCNetworkConnection to obtain status from.
 	@result Returns the status dictionary.
 		If NULL is returned, the error can be retrieved using the SCError function.
  }
 function SCNetworkConnectionCopyExtendedStatus( connection: SCNetworkConnectionRef ): CFDictionaryRef; external name '_SCNetworkConnectionCopyExtendedStatus';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -1422,6 +1617,9 @@ function SCNetworkConnectionCopyExtendedStatus( connection: SCNetworkConnectionR
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_NA) *)
 >>>>>>> origin/fixes_2.4
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_NA) *)
+>>>>>>> origin/cpstrnew
 
 
 {!
@@ -1431,8 +1629,11 @@ function SCNetworkConnectionCopyExtendedStatus( connection: SCNetworkConnectionR
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 		with statistics for each subcomponent of the service.
 
 		For example, a statistics dictionary will contain the following
@@ -1462,6 +1663,7 @@ function SCNetworkConnectionCopyExtendedStatus( connection: SCNetworkConnectionR
 		The statistics dictionary may be extended in the future to
 		contain additional information.
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@param connection The SCNetworkConnection to obtained statistics from.
 	@result Returns the statistics dictionary.
 		If NULL is returned, the error can be retrieved using the SCError function.
@@ -1487,11 +1689,14 @@ function SCNetworkConnectionCopyStatistics( connection: SCNetworkConnectionRef )
 
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	@param connection The SCNetworkConnection to obtained statistics from.
 	@result Returns the statistics dictionary.
 		If NULL is returned, the error can be retrieved using the SCError function.
  }
 function SCNetworkConnectionCopyStatistics( connection: SCNetworkConnectionRef ): CFDictionaryRef; external name '_SCNetworkConnectionCopyStatistics';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -1500,10 +1705,14 @@ function SCNetworkConnectionCopyStatistics( connection: SCNetworkConnectionRef )
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_NA) *)
 >>>>>>> origin/fixes_2.4
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_NA) *)
+>>>>>>> origin/cpstrnew
 
 
 {!
 	@function SCNetworkConnectionStart
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1558,6 +1767,9 @@ function SCNetworkConnectionStart( connection: SCNetworkConnectionRef; userOptio
 =======
 	@discussion Starts the connection for the SCNetworkConnection.
 >>>>>>> origin/fixes_2.4
+=======
+	@discussion Starts the connection for the SCNetworkConnection.
+>>>>>>> origin/cpstrnew
 		The connection process is asynchronous and the function will
 		return immediately.  The connection status can be obtained
 		by polling or by callback.  The connection is made with the
@@ -1602,12 +1814,16 @@ function SCNetworkConnectionStart( connection: SCNetworkConnectionRef; userOptio
 function SCNetworkConnectionStart( connection: SCNetworkConnectionRef; userOptions: CFDictionaryRef; linger: Boolean ): Boolean; external name '_SCNetworkConnectionStart';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_NA) *)
 >>>>>>> origin/fixes_2.4
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_NA) *)
+>>>>>>> origin/cpstrnew
 
 
 {!
@@ -1615,8 +1831,11 @@ function SCNetworkConnectionStart( connection: SCNetworkConnectionRef; userOptio
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	@discussion Stops the connection for the SCNetworkConnection.
 		The disconnection process is asynchronous and the function
 		will return immediately.  The connection status can be
@@ -1629,6 +1848,7 @@ function SCNetworkConnectionStart( connection: SCNetworkConnectionRef; userOptio
 
 		In certain cases, you might want to stop the connection anyway.
 		In these cases, you set the forceDisconnect argument to TRUE.
+<<<<<<< HEAD
 <<<<<<< HEAD
 	@param connection The SCNetworkConnection to stop.
 	@result Returns TRUE if the disconnection request succeeded;
@@ -1668,6 +1888,8 @@ function SCNetworkConnectionCopyUserOptions( connection: SCNetworkConnectionRef 
 
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	@param connection The SCNetworkConnection to stop.
 	@result Returns TRUE if the disconnection request succeeded;
 		FALSE if the disconnection request failed.
@@ -1690,16 +1912,21 @@ function SCNetworkConnectionStop( connection: SCNetworkConnectionRef; forceDisco
 function SCNetworkConnectionCopyUserOptions( connection: SCNetworkConnectionRef ): CFDictionaryRef; external name '_SCNetworkConnectionCopyUserOptions';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_NA) *)
 >>>>>>> origin/fixes_2.4
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_NA) *)
+>>>>>>> origin/cpstrnew
 
 
 {!
 	@function SCNetworkConnectionScheduleWithRunLoop
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1720,6 +1947,9 @@ function SCNetworkConnectionScheduleWithRunLoop( connection: SCNetworkConnection
 =======
 	@discussion Schedules a connection with the run loop.
 >>>>>>> origin/fixes_2.4
+=======
+	@discussion Schedules a connection with the run loop.
+>>>>>>> origin/cpstrnew
 	@param connection The SCNetworkConnection to schedule.
 	@param runLoop The run loop to schedule with.
 	@param runLoopMode The run loop mode.
@@ -1730,16 +1960,21 @@ function SCNetworkConnectionScheduleWithRunLoop( connection: SCNetworkConnection
 function SCNetworkConnectionScheduleWithRunLoop( connection: SCNetworkConnectionRef; runLoop: CFRunLoopRef; runLoopMode: CFStringRef ): Boolean; external name '_SCNetworkConnectionScheduleWithRunLoop';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_NA) *)
 >>>>>>> origin/fixes_2.4
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_NA) *)
+>>>>>>> origin/cpstrnew
 
 
 {!
 	@function SCNetworkConnectionUnscheduleFromRunLoop
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1812,6 +2047,9 @@ end.
 =======
 	@discussion Unschedules a connection from the run loop.
 >>>>>>> origin/fixes_2.4
+=======
+	@discussion Unschedules a connection from the run loop.
+>>>>>>> origin/cpstrnew
 	@param connection The SCNetworkConnection to unschedule.
 	@param runLoop The run loop to unschedule from.
 	@param runLoopMode The run loop mode.
@@ -1844,9 +2082,13 @@ function SCNetworkConnectionSetDispatchQueue( connection: SCNetworkConnectionRef
 end.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

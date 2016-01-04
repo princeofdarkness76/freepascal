@@ -50,6 +50,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        scanner,pbase,pexpr,psystem,psub,pdecsub,ncgvmt,ncgrtti,
 =======
        scanner,pbase,pexpr,psystem,psub,pdecsub,ptype,
@@ -60,6 +61,9 @@ implementation
 =======
        scanner,pbase,pexpr,psystem,psub,pdecsub,ptype,
 >>>>>>> graemeg/cpstrnew
+=======
+       scanner,pbase,pexpr,psystem,psub,pdecsub,ptype,
+>>>>>>> origin/cpstrnew
 =======
        scanner,pbase,pexpr,psystem,psub,pdecsub,ptype,
 >>>>>>> origin/cpstrnew
@@ -263,6 +267,9 @@ implementation
       end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
     procedure InsertWideInits;
       var
         s: string;
@@ -270,6 +277,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       begin
         item:=TTCInitItem(current_asmdata.WideInits.First);
         if item=nil then
@@ -330,6 +338,8 @@ implementation
         current_asmdata.asmlists[al_globals].concat(Tai_symbol_end.Createname(s));
         current_module.flags:=current_module.flags or uf_wideinits;
 =======
+=======
+>>>>>>> origin/cpstrnew
       begin
         item:=TTCInitItem(current_asmdata.WideInits.First);
         if item=nil then
@@ -384,6 +394,9 @@ implementation
         current_asmdata.asmlists[al_globals].concatlist(lwiTables);
         current_asmdata.asmlists[al_globals].concat(Tai_symbol_end.Createname('FPC_WIDEINITTABLES'));
         lwiTables.free;
+<<<<<<< HEAD
+>>>>>>> origin/cpstrnew
+=======
 >>>>>>> origin/cpstrnew
       end;
 
@@ -896,15 +909,22 @@ implementation
           AddUnit('objpas');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 
         { Macpas unit? }
         if m_mac in current_settings.modeswitches then
           AddUnit('macpas');
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 
         if m_iso in current_settings.modeswitches then
           AddUnit('iso7185');
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -932,6 +952,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         { Objective-C support unit? }
         if (m_objectivec1 in current_settings.modeswitches) then
           begin
@@ -943,6 +965,7 @@ implementation
                (current_module.modulename^<>'OBJCBASE') then
               AddUnit('objcbase');
           end;
+<<<<<<< HEAD
 =======
         { Macpas unit? }
         if m_mac in current_settings.modeswitches then
@@ -955,6 +978,8 @@ implementation
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
         { Profile unit? Needed for go32v2 only }
         if (cs_profile in current_settings.moduleswitches) and
            (target_info.system in [system_i386_go32v2,system_i386_watcom]) then
@@ -970,6 +995,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if ControllerSupport and (target_info.system in systems_embedded) and
           (current_settings.controllertype<>ct_none) and
           (embedded_controllers[current_settings.controllertype].controllerunitstr<>'') then
@@ -979,6 +1005,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$if defined(ARM) or defined(AVR)}
@@ -1114,6 +1142,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                pu.check_hints;
 =======
                pu.u.check_hints;
@@ -1124,6 +1153,9 @@ implementation
 =======
                pu.u.check_hints;
 >>>>>>> graemeg/cpstrnew
+=======
+               pu.u.check_hints;
+>>>>>>> origin/cpstrnew
 =======
                pu.u.check_hints;
 >>>>>>> origin/cpstrnew
@@ -1253,6 +1285,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$if defined(i386) or defined (sparc)}
        var
          gotvarsym : tstaticvarsym;
@@ -1266,12 +1299,15 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifdef i386}
        var
          gotvarsym : tstaticvarsym;
 {$endif i386}
       begin
 {$ifdef i386}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1282,10 +1318,13 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
          if (cs_create_pic in current_settings.moduleswitches) and
             (tf_pic_uses_got in target_info.flags) then
            begin
              { insert symbol for got access in assembler code}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1308,12 +1347,17 @@ implementation
              gotvarsym:=tstaticvarsym.create('_GLOBAL_OFFSET_TABLE_',
                           vs_value,voidpointertype,[vo_is_external]);
 >>>>>>> origin/cpstrnew
+=======
+             gotvarsym:=tstaticvarsym.create('_GLOBAL_OFFSET_TABLE_',
+                          vs_value,voidpointertype,[vo_is_external]);
+>>>>>>> origin/cpstrnew
              gotvarsym.set_mangledname('_GLOBAL_OFFSET_TABLE_');
              current_module.localsymtable.insert(gotvarsym);
              { avoid unnecessary warnings }
              gotvarsym.varstate:=vs_read;
              gotvarsym.refs:=1;
            end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1328,6 +1372,9 @@ implementation
 =======
 {$endif i386}
 >>>>>>> graemeg/cpstrnew
+=======
+{$endif i386}
+>>>>>>> origin/cpstrnew
 =======
 {$endif i386}
 >>>>>>> origin/cpstrnew
@@ -1366,11 +1413,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       var
@@ -1528,6 +1578,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1537,6 +1588,8 @@ type
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
          s1,s2  : ^string; {Saves stack space}
          init_procinfo : tcgprocinfo;
          unitname : ansistring;
@@ -1628,11 +1681,14 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
          { parse hint directives }
@@ -1705,6 +1761,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          { consume the semicolon after maps have been updated else conditional compiling expressions
            might cause internal errors, see tw8611 }
          if consume_semicolon_after_uses then
@@ -1720,6 +1777,8 @@ type
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
          { create whole program optimisation information (may already be
            updated in the interface, e.g., in case of classrefdef typed
            constants }
@@ -1801,11 +1860,14 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -1965,6 +2027,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1977,6 +2040,11 @@ type
                 wasn't empty }
 
 >>>>>>> graemeg/cpstrnew
+=======
+              { the uf_finalize flag is only set after we checked that it
+                wasn't empty }
+
+>>>>>>> origin/cpstrnew
 =======
               { the uf_finalize flag is only set after we checked that it
                 wasn't empty }
@@ -2058,6 +2126,9 @@ type
           end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
          { if an Objective-C module, generate rtti and module info }
          MaybeGenerateObjectiveCImageInfo(current_module.globalsymtable,current_module.localsymtable);
 
@@ -2085,6 +2156,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          cnodeutils.InsertThreadvars;
 =======
          InsertThreadvars;
@@ -2098,11 +2170,15 @@ type
 =======
          InsertThreadvars;
 >>>>>>> origin/cpstrnew
+=======
+         InsertThreadvars;
+>>>>>>> origin/cpstrnew
 
          { Resource strings }
          GenerateResourceStrings;
 
          { Widestring typed constants }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2120,6 +2196,9 @@ type
 =======
          InsertWideInits;
 >>>>>>> graemeg/cpstrnew
+=======
+         InsertWideInits;
+>>>>>>> origin/cpstrnew
 =======
          InsertWideInits;
 >>>>>>> origin/cpstrnew
@@ -2168,6 +2247,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                Message1(unit_u_interface_crc_changed,current_module.ppufilename);
              if store_indirect_crc<>current_module.indirect_crc then
                Message1(unit_u_indirect_crc_changed,current_module.ppufilename);
@@ -2196,6 +2276,11 @@ type
              if store_indirect_crc<>current_module.indirect_crc then
                Message1(unit_u_indirect_crc_changed,current_module.ppufilename^);
 >>>>>>> origin/fixes_2.4
+=======
+               Message1(unit_u_interface_crc_changed,current_module.ppufilename^);
+             if store_indirect_crc<>current_module.indirect_crc then
+               Message1(unit_u_indirect_crc_changed,current_module.ppufilename^);
+>>>>>>> origin/cpstrnew
            end;
 {$ifdef EXTDEBUG}
          if not(cs_compilesystem in current_settings.moduleswitches) then
@@ -2916,6 +3001,7 @@ type
          if RelocSection and
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             (target_info.system in systems_all_windows+[system_i386_wdosx]) and
 =======
             (target_info.system in system_all_windows+[system_i386_wdosx]) and
@@ -2923,6 +3009,9 @@ type
 =======
             (target_info.system in system_all_windows+[system_i386_wdosx]) and
 >>>>>>> origin/fixes_2_2
+=======
+            (target_info.system in systems_all_windows+[system_i386_wdosx]) and
+>>>>>>> origin/cpstrnew
             (cs_link_extern in current_settings.globalswitches) then
            begin
               include(current_settings.globalswitches,cs_link_strip);
@@ -3026,6 +3115,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          else
            begin
              if (target_info.system in systems_unit_program_exports) then
@@ -3039,6 +3129,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
          else if (target_info.system in systems_unit_program_exports) then
@@ -3099,6 +3191,9 @@ type
          if token=_USES then
            loadunits;
 
+<<<<<<< HEAD
+>>>>>>> origin/cpstrnew
+=======
 >>>>>>> origin/cpstrnew
          { All units are read, now give them a number }
          current_module.updatemaps;
@@ -3120,6 +3215,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef jvm}
          { fake classdef to represent the class corresponding to the unit }
          addmoduleclass;
@@ -3131,6 +3227,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
          { Insert _GLOBAL_OFFSET_TABLE_ symbol if system uses it }
@@ -3220,6 +3318,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
               { the uf_finalize flag is only set after we checked that it
                 wasn't empty }
@@ -3235,6 +3334,11 @@ type
                 wasn't empty }
 
 >>>>>>> graemeg/cpstrnew
+=======
+              { the uf_finalize flag is only set after we checked that it
+                wasn't empty }
+
+>>>>>>> origin/cpstrnew
 =======
               { the uf_finalize flag is only set after we checked that it
                 wasn't empty }
@@ -3369,16 +3473,22 @@ type
          { if an Objective-C module, generate rtti and module info }
          MaybeGenerateObjectiveCImageInfo(nil,current_module.localsymtable);
 
+         { if an Objective-C module, generate rtti and module info }
+         MaybeGenerateObjectiveCImageInfo(nil,current_module.localsymtable);
+
          { generate wrappers for interfaces }
          gen_intf_wrappers(current_asmdata.asmlists[al_procedures],current_module.localsymtable,false);
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -3401,6 +3511,7 @@ type
          GenerateResourceStrings;
 
          { Windows widestring needing initialization }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3430,6 +3541,11 @@ type
 
          { insert Tables and StackLength }
 >>>>>>> origin/cpstrnew
+=======
+         InsertWideInits;
+
+         { insert Tables and StackLength }
+>>>>>>> origin/cpstrnew
          InsertInitFinalTable;
          InsertThreadvarTablesTable;
          InsertResourceTablesTable;
@@ -3441,11 +3557,14 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 

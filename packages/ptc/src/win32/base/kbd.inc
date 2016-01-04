@@ -8,6 +8,9 @@
     License as published by the Free Software Foundation; either
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
     version 2.1 of the License, or (at your option) any later version
     with the following modification:
 
@@ -21,12 +24,15 @@
     this library, you may extend this exception to your version of the library,
     but you are not obligated to do so. If you do not wish to do so, delete this
     exception statement from your version.
+<<<<<<< HEAD
 =======
     version 2.1 of the License, or (at your option) any later version.
 >>>>>>> graemeg/fixes_2_2
 =======
     version 2.1 of the License, or (at your option) any later version.
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 
     This library is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -40,6 +46,9 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 constructor TWin32Keyboard.Create(AWindow: HWND; AThread: DWord; AMultithreaded: Boolean; AEventQueue: TEventQueue);
 begin
   FMonitor := nil;
@@ -47,6 +56,7 @@ begin
   inherited Create(AWindow, AThread);
   FMonitor := TWin32Monitor.Create;
   FEvent := TWin32Event.Create;
+<<<<<<< HEAD
 
   { setup defaults }
   FAlt := False;
@@ -188,220 +198,138 @@ Begin
   Inherited Create(window, thread);
   m_monitor := TWin32Monitor.Create;
   m_event := TWin32Event.Create;
+=======
+>>>>>>> origin/cpstrnew
 
   { setup defaults }
-  m_alt := False;
-  m_shift := False;
-  m_control := False;
+  FAlt := False;
+  FShift := False;
+  FControl := False;
 
   { setup data }
-  FEventQueue := EventQueue;
-  m_multithreaded := multithreaded;
+  FEventQueue := AEventQueue;
+  FMultithreaded := AMultithreaded;
 
   { enable buffering }
-  m_enabled := True;
-End;
+  FEnabled := True;
+end;
 
-Destructor TWin32Keyboard.Destroy;
+destructor TWin32Keyboard.Destroy;
+begin
+  FEvent.Free;
+  FMonitor.Free;
+  inherited Destroy;
+end;
 
-Begin
-  m_event.Free;
-  m_monitor.Free;
-  Inherited Destroy;
-End;
-
-(*Function TWin32Keyboard.internal_PeekKey(window : TWin32Window; k : TPTCKeyEvent) : Boolean;
-
-Begin
-  { check enabled flag }
-  If Not m_enabled Then
-  Begin
-    Result := False;
-    Exit;
-  End;
-
-  { enter monitor if multithreaded }
-  If m_multithreaded Then
-    m_monitor.enter;
-
-  { update window }
-  window.update;
-
-  { is a key ready? }
-  Result := ready;
-
-  If Result = True Then
-    k.Assign(m_buffer[m_tail]);
-
-  { leave monitor if multithreaded }
-  If m_multithreaded Then
-    m_monitor.leave;
-End;
-
-Procedure TWin32Keyboard.internal_ReadKey(window : TWin32Window; k : TPTCKeyEvent);
-
-Var
-  read : TPTCKeyEvent;
-
-Begin
-  read := Nil;
-
-  Try
-    { check enabled flag }
-    If Not m_enabled Then
-    Begin
-      read := TPTCKeyEvent.Create;
-      Exit;
-    End;
-
-    { check if multithreaded }
-    If m_multithreaded Then
-    Begin
-      { check if ready }
-      If Not ready Then
-      Begin
-        { wait for key event }
-        m_event.wait;
-
-        { reset event }
-        m_event.reset;
-      End;
-
-      { enter monitor }
-      m_monitor.enter;
-
-      { remove key }
-      read := remove;
-
-      { leave monitor }
-      m_monitor.leave;
-    End
-    Else
-    Begin
-      { update until ready }
-      While Not ready Do
-        { update window }
-        window.update;
-
-      { remove key }
-      read := remove;
-    End;
-  Finally
-    If Assigned(read) Then
-      k.Assign(read);
-    read.Free;
-  End;
-End;*)
-
-Procedure TWin32Keyboard.enable;
-
-Begin
+procedure TWin32Keyboard.Enable;
+begin
   { enable buffering }
-  m_enabled := True;
-End;
+  FEnabled := True;
+end;
 
-Procedure TWin32Keyboard.disable;
-
-Begin
+procedure TWin32Keyboard.Disable;
+begin
   { disable buffering }
-  m_enabled := False;
-End;
+  FEnabled := False;
+end;
 
-Function TWin32Keyboard.WndProc(hWnd : HWND; message : DWord; wParam : WPARAM; lParam : LPARAM) : LRESULT;
-
-Var
-  i : Integer;
-  scancode : Integer;
-  KeyStateArray : Array[0..255] Of Byte;
-  AsciiBuf : Word;
-  press : Boolean;
-  uni : Integer;
-  tmp : Integer;
-
-Begin
-  WndProc := 0;
+function TWin32Keyboard.WndProc(hWnd: HWND; message: DWord; wParam: WPARAM; lParam: LPARAM): LRESULT;
+var
+  i: Integer;
+  scancode: Integer;
+  KeyStateArray: array [0..255] of Byte;
+  AsciiBuf: Word;
+  press: Boolean;
+  uni: Integer;
+  TranslatedCharacters, TranslatedWideCharacters: Integer;
+  WideStr: WideString;
+  KeyCode: Integer;
+begin
+  Result := 0;
   { check enabled flag }
-  If Not m_enabled Then
-    Exit;
+  if not FEnabled then
+    exit;
 
   { process key message }
-  If (message = WM_KEYDOWN) Or (message = WM_KEYUP) {Or ((message = WM_SYSKEYDOWN) And ((lParam And (1 Shl 29)) <> 0))} Then
-  Begin
-    If message = WM_KEYUP Then
+  if (message = WM_KEYDOWN) or (message = WM_KEYUP) {Or ((message = WM_SYSKEYDOWN) and ((lParam and (1 shl 29)) <> 0))} then
+  begin
+    if message = WM_KEYUP then
       press := False
-    Else
+    else
       press := True;
 
     { update modifiers }
-    If wParam = VK_MENU Then
+    if wParam = VK_MENU then
       { alt }
-      m_alt := press
-    Else
-      If wParam = VK_SHIFT Then
+      FAlt := press
+    else
+      if wParam = VK_SHIFT then
         { shift }
-        m_shift := press
-      Else
-        If wParam = VK_CONTROL Then
+        FShift := press
+      else
+        if wParam = VK_CONTROL then
           { control }
-          m_control := press;
+          FControl := press;
 
     { enter monitor if multithreaded }
-    If m_multithreaded Then
-      m_monitor.enter;
+    if FMultithreaded then
+      FMonitor.Enter;
 
     uni := -1;
 
-    If GetKeyboardState(@KeyStateArray) Then
-    Begin
-      scancode := (lParam Shr 16) And $FF;
+    if GetKeyboardState(@KeyStateArray) then
+    begin
+      scancode := (lParam shr 16) and $FF;
       {todo: ToUnicode (Windows NT)}
-      tmp := ToAscii(wParam, scancode, @KeyStateArray, @AsciiBuf, 0);
-      If (tmp = 1) Or (tmp = 2) Then
-      Begin
-        If tmp = 2 Then
-        Begin
-//          Writeln('[', AsciiBuf, ']'); {???? todo: dead keys ????}
-        End
-        Else
-        Begin
-//          Write(Chr(AsciiBuf));
-          {todo: codepage -> unicode}
-          If AsciiBuf <= 126 Then
-            uni := AsciiBuf;
-        End;
+      TranslatedCharacters := ToAscii(wParam, scancode, @KeyStateArray, @AsciiBuf, 0);
+      if (TranslatedCharacters = 1) or (TranslatedCharacters = 2) then
+      begin
+        TranslatedWideCharacters := MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, @AsciiBuf, TranslatedCharacters, nil, 0);
+        if TranslatedWideCharacters <> 0 then
+        begin
+          SetLength(WideStr, TranslatedWideCharacters);
+          MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, @AsciiBuf, TranslatedCharacters, @WideStr[1], TranslatedWideCharacters);
 
-      End;
-    End;
+          if Length(WideStr) = 1 then
+            uni := Ord(WideStr[1]);
+        end;
+      end;
+    end;
+
+    KeyCode := wParam;
+    if wParam = VK_RETURN then
+      KeyCode := PTCKEY_ENTER;
 
     { handle key repeat count }
-    For i := 1 To lParam And $FFFF Do
+    for i := 1 to lParam and $FFFF do
       { create and insert key object }
-      FEventQueue.AddEvent(TPTCKeyEvent.Create(wParam, uni, m_alt, m_shift, m_control, press));
+      FEventQueue.AddEvent(TPTCKeyEvent.Create(KeyCode, uni, FAlt, FShift, FControl, press));
 
     { check multithreaded flag }
-    If m_multithreaded Then
-    Begin
+    if FMultithreaded then
+    begin
       { set event }
-      m_event._set;
+      FEvent.SetEvent;
 
       { leave monitor }
-      m_monitor.leave;
-    End;
-  End;
-(*  Else
-    If message = WM_KEYUP Then
+      FMonitor.Leave;
+    end;
+  end;
+(*  else
+    if message = WM_KEYUP then
       { update modifiers }
-      If wParam = VK_MENU Then
+      if wParam = VK_MENU then
         { alt up }
         m_alt := False
-      Else
-        If wParam = VK_SHIFT Then
+      else
+        if wParam = VK_SHIFT then
           { shift up }
           m_shift := False
-        Else
-          If wParam = VK_CONTROL Then
+        else
+          if wParam = VK_CONTROL then
             { control up }
             m_control := False;*)
+<<<<<<< HEAD
 End;
 
 (*Procedure TWin32Keyboard.insert(_key : TPTCKeyEvent);
@@ -447,3 +375,6 @@ End;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+end;
+>>>>>>> origin/cpstrnew

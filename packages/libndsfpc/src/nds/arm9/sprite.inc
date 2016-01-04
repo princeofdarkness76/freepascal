@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -49,6 +50,8 @@
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 {$ifndef ARM9}
   {$error Sprites are only available on the ARM9}
 {$endif ARM9}
@@ -350,6 +353,7 @@ type
     filler2: array [0..2] of cuint16;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     vdx: cint16;
     filler3: array [0..2] of cuint16;
     hdy: cint16;
@@ -363,6 +367,11 @@ type
     filler3: array [0..2] of cuint16;
     vdx: cint16;
 >>>>>>> origin/fixes_2_2
+=======
+    vdx: cint16;
+    filler3: array [0..2] of cuint16;
+    hdy: cint16;
+>>>>>>> origin/cpstrnew
     filler4: array [0..2] of cuint16;
     vdy: cint16;
   end;
@@ -538,6 +547,7 @@ end;
 procedure oamSetMosaic(dx, dy: cuint); inline;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   sassert((dx < 16) and (dy < 16), 'Mosaic range must be 0 to 15');
 =======
   sassert((dx < 16) and (dy < 16), 'Mosaic range is 0 to 15');
@@ -558,6 +568,20 @@ begin
 end;
 
 <<<<<<< HEAD
+=======
+  sassert((dx < 16) and (dy < 16), 'Mosaic range must be 0 to 15');
+  mosaicShadow := ( mosaicShadow and $00ff) or (dx shl 8) or (dy shl 12);
+  REG_MOSAIC^ := mosaicShadow;
+end;
+
+procedure oamSetMosaicSub(dx, dy: cuint); inline;
+begin
+  sassert((dx < 16) and (dy < 16), 'Mosaic range must be 0 to 15');
+  mosaicShadowSub := (mosaicShadowSub and $00ff) or (dx shl 8) or (dy shl 12);
+  REG_MOSAIC_SUB^ := mosaicShadowSub;
+end;
+
+>>>>>>> origin/cpstrnew
 procedure oamClearSprite(var oam: OamState; index: cint); inline;
 begin
   sassert( (index >= 0) and (index < SPRITE_COUNT), 'oamClearSprite() index is out of bounds, must be 0-127');
@@ -571,6 +595,7 @@ begin
   oam.oamRotationMemory[rotId].vdx := vdx;
   oam.oamRotationMemory[rotId].hdy := hdy;
   oam.oamRotationMemory[rotId].vdy := vdy;
+<<<<<<< HEAD
 =======
 procedure oamAffineTransformation(var oam: OamState; rotId, hdx, hdy, vdx, vdy: cint); inline;
 begin
@@ -580,6 +605,8 @@ begin
   oam.oamRotationMemory[rotId].vdx := vdx shr 12;
   oam.oamRotationMemory[rotId].vdy := vdy shr 12;
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 

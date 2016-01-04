@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
     This file is part of the PTCPas framebuffer library
 <<<<<<< HEAD
@@ -17,6 +18,11 @@
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
 =======
+    Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> origin/cpstrnew
+=======
+{
+    This file is part of the PTCPas framebuffer library
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> origin/cpstrnew
     Original C++ version by Christian Nentwich (c.nentwich@cs.ucl.ac.uk)
@@ -49,6 +55,7 @@
 }
 
 type
+<<<<<<< HEAD
   TX11FlagsEnum = (PTC_X11_FULLSCREEN,
                    PTC_X11_LEAVE_DISPLAY,
                    PTC_X11_LEAVE_WINDOW,
@@ -66,11 +73,19 @@ Type
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  TX11FlagsEnum = (PTC_X11_FULLSCREEN,
+                   PTC_X11_LEAVE_DISPLAY,
+                   PTC_X11_LEAVE_WINDOW,
+                   PTC_X11_TRY_DGA1,
+                   PTC_X11_TRY_DGA2,
+>>>>>>> origin/cpstrnew
                    PTC_X11_TRY_XF86VIDMODE,
                    PTC_X11_TRY_XRANDR,
                    PTC_X11_TRY_XSHM,
                    PTC_X11_DITHER,
                    PTC_X11_FULLSCREEN_CURSOR_VISIBLE,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                    PTC_X11_WINDOWED_CURSOR_INVISIBLE,
@@ -461,113 +476,127 @@ type
 >>>>>>> origin/fixes_2_2
                    PTC_X11_WINDOWED_CURSOR_INVISIBLE);
   TX11Flags = Set Of TX11FlagsEnum;
+=======
+                   PTC_X11_WINDOWED_CURSOR_INVISIBLE,
+                   PTC_X11_GRAB_MOUSE);
+  TX11Flags = set of TX11FlagsEnum;
+>>>>>>> origin/cpstrnew
 
-Type
-  TX11Display = Class(TObject)
-  Protected
-    Function NextEvent(Var AEvent : TPTCEvent; AWait : Boolean; Const AEventMask : TPTCEventMask) : Boolean; Virtual; Abstract;
-    Function PeekEvent(AWait : Boolean; Const AEventMask : TPTCEventMask) : TPTCEvent; Virtual; Abstract;
+type
+  TX11Display = class
+  protected
+    { Conversion object }
+    FCopy: TPTCCopy;
+    FClear: TPTCClear;
+    FPalette: TPTCPalette;
 
-    Function GetX11Format(Const AFormat : TPTCFormat) : TPTCFormat;
+    FArea: TPTCArea;
+    FClip: TPTCArea;
+
+    FEventQueue: TEventQueue;
+
+    FFlags: TX11Flags;
+    FWidth, FHeight: Integer;
+    FFormat: TPTCFormat;
+
+    FDisplay: PDisplay;
+    FScreen: Integer;
+
+    FCMap: TColormap;
+    FColours: PXColor;
+
+    FFunctionKeys: PInteger;
+    FNormalKeys: PInteger;
+
+    function NextEvent(var AEvent: TPTCEvent; AWait: Boolean; const AEventMask: TPTCEventMask): Boolean; virtual; abstract;
+    function PeekEvent(AWait: Boolean; const AEventMask: TPTCEventMask): TPTCEvent; virtual; abstract;
+
+    function GetX11DirectFormat(ABitsPerPixel: Integer;
+                                AR, AG, AB: DWord;
+                                AByteOrder: cint): TPTCFormat;
+    function GetX11Format(const AFormat: TPTCFormat): TPTCFormat;
 
     { initialise the keyboard mapping table }
-    Procedure SetKeyMapping;
+    procedure SetKeyMapping;
 
     { Data access }
-    Function GetWidth : Integer;
-    Function GetHeight : Integer;
-    Function GetPitch : Integer; Virtual; Abstract;
-    Function GetFormat : TPTCFormat;
-    Function GetArea : TPTCArea;
+    function GetWidth: Integer;
+    function GetHeight: Integer;
+    function GetPitch: Integer; virtual; abstract;
+    function GetFormat: TPTCFormat;
+    function GetArea: TPTCArea;
+  public
+    constructor Create(ADisplay: PDisplay; AScreen: Integer; const AFlags: TX11Flags); virtual;
+    destructor Destroy; override;
 
-    { Conversion object }
-    FCopy : TPTCCopy;
-    FClear : TPTCClear;
-    FPalette : TPTCPalette;
-
-    FArea : TPTCArea;
-    FClip : TPTCArea;
-
-    FEventQueue : TEventQueue;
-
-    FFlags : TX11Flags;
-    FWidth, FHeight : DWord;
-    FFormat : TPTCFormat;
-
-    FDisplay : PDisplay;
-    FScreen : Integer;
-
-    FCMap : TColormap;
-    FColours : PXColor;
-
-    FFunctionKeys : PInteger;
-    FNormalKeys : PInteger;
-
-    {m_thread : pthread_t;}
-  Public
-    Constructor Create(ADisplay : PDisplay; AScreen : Integer; Const AFlags : TX11Flags); Virtual;
-    Destructor Destroy; Override;
-
-    Procedure Open(ATitle : String; AWidth, AHeight : Integer; Const AFormat : TPTCFormat); Virtual; Abstract;
+    procedure Open(ATitle: string; AWidth, AHeight: Integer; const AFormat: TPTCFormat); virtual; abstract;
 
     { This will always return a windowed console. The first version
       fills the whole window, the second one has a custom size }
-    Procedure Open(AWindow : TWindow; Const AFormat : TPTCFormat); Virtual; Abstract;
-    Procedure Open(AWindow : TWindow; Const AFormat : TPTCFormat; AX, AY, AWidth, AHeight : Integer); Virtual; Abstract;
+    procedure Open(AWindow: TWindow; const AFormat: TPTCFormat); virtual; abstract;
+    procedure Open(AWindow: TWindow; const AFormat: TPTCFormat; AX, AY, AWidth, AHeight: Integer); virtual; abstract;
 
-    Procedure Close; Virtual; Abstract;
+    procedure Close; virtual; abstract;
 
-    Procedure Update; Virtual; Abstract;
-    Procedure Update(Const AArea : TPTCArea); Virtual; Abstract;
+    procedure Update; virtual; abstract;
+    procedure Update(const AArea: TPTCArea); virtual; abstract;
 
-    Function Lock : Pointer; Virtual; Abstract;
-    Procedure Unlock; Virtual; Abstract;
+    function Lock: Pointer; virtual; abstract;
+    procedure Unlock; virtual; abstract;
 
     { load pixels to console }
-    Procedure Load(Const APixels : Pointer; AWidth, AHeight, APitch : Integer;
-                   Const AFormat : TPTCFormat; Const APalette : TPTCPalette); Virtual;
-    Procedure Load(Const APixels : Pointer; AWidth, AHeight, APitch : Integer;
-                   Const AFormat : TPTCFormat; Const APalette : TPTCPalette;
-                   Const ASource, ADestination : TPTCArea); Virtual;
+    procedure Load(const APixels: Pointer; AWidth, AHeight, APitch: Integer;
+                   const AFormat: TPTCFormat; const APalette: TPTCPalette); virtual;
+    procedure Load(const APixels: Pointer; AWidth, AHeight, APitch: Integer;
+                   const AFormat: TPTCFormat; const APalette: TPTCPalette;
+                   const ASource, ADestination: TPTCArea); virtual;
 
     { save console pixels }
-    Procedure Save(APixels : Pointer; AWidth, AHeight, APitch : Integer;
-                   Const AFormat : TPTCFormat; Const APalette : TPTCPalette); Virtual;
-    Procedure Save(APixels : Pointer; AWidth, AHeight, APitch : Integer;
-                   Const AFormat : TPTCFormat; Const APalette : TPTCPalette;
-                   Const ASource, ADestination : TPTCArea); Virtual;
+    procedure Save(APixels: Pointer; AWidth, AHeight, APitch: Integer;
+                   const AFormat: TPTCFormat; const APalette: TPTCPalette); virtual;
+    procedure Save(APixels: Pointer; AWidth, AHeight, APitch: Integer;
+                   const AFormat: TPTCFormat; const APalette: TPTCPalette;
+                   const ASource, ADestination: TPTCArea); virtual;
 
     { clear surface }
-    Procedure Clear(Const AColor : TPTCColor); Virtual;
-    Procedure Clear(Const AColor : TPTCColor; Const AArea : TPTCArea); Virtual;
+    procedure Clear(const AColor: TPTCColor); virtual;
+    procedure Clear(const AColor: TPTCColor; const AArea: TPTCArea); virtual;
 
     { Console palette }
-    Procedure Palette(Const APalette : TPTCPalette); Virtual; Abstract;
-    Function Palette : TPTCPalette; Virtual;
+    procedure Palette(const APalette: TPTCPalette); virtual; abstract;
+    function Palette: TPTCPalette; virtual;
 
     { console clip area }
-    Procedure Clip(Const AArea : TPTCArea);
+    procedure Clip(const AArea: TPTCArea);
 
     { cursor control }
-    Procedure SetCursor(AVisible : Boolean); Virtual; Abstract;
+    procedure SetCursor(AVisible: Boolean); virtual; abstract;
+
+    { mouse grab control }
+    procedure SetMouseGrab(AGrabMouse: Boolean); virtual; abstract;
 
     { Data access }
-    Function Clip : TPTCArea;
+    function Clip: TPTCArea;
 
-    Function IsFullScreen : Boolean; Virtual; Abstract;
+    function IsFullScreen: Boolean; virtual; abstract;
 
-    { Set flags (only used internally now!) }
-    Procedure SetFlags(AFlags : TX11Flags);
+    { set flags (only used internally now!) }
+    procedure SetFlags(AFlags: TX11Flags);
 
+<<<<<<< HEAD
     Procedure GetModes(Var AModes : TPTCModeDynArray); Virtual; Abstract;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    procedure GetModes(var AModes: TPTCModeDynArray); virtual; abstract;
+>>>>>>> origin/cpstrnew
 
     { X11 helper functions for your enjoyment }
 
     { return the display we are using }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     function GetX11Display: PDisplay;
@@ -612,11 +641,15 @@ Type
 =======
 >>>>>>> origin/fixes_2_2
     Function GetX11Display : PDisplay;
+=======
+    function GetX11Display: PDisplay;
+>>>>>>> origin/cpstrnew
 
     { return the screen we are using }
-    Function GetX11Screen : Integer;
+    function GetX11Screen: Integer;
 
     { return our window (0 if DGA) }
+<<<<<<< HEAD
     Function GetX11Window : TWindow; Virtual; Abstract;
 
     Property Width : Integer Read GetWidth;
@@ -629,3 +662,13 @@ Type
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    function GetX11Window: TWindow; virtual; abstract;
+
+    property Width: Integer read GetWidth;
+    property Height: Integer read GetHeight;
+    property Pitch: Integer read GetPitch;
+    property Area: TPTCArea read GetArea;
+    property Format: TPTCFormat read GetFormat;
+  end;
+>>>>>>> origin/cpstrnew

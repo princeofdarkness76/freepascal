@@ -6,6 +6,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Str_cp = type AnsiString(1251);
   Str_cp850 = type AnsiString(850);
 =======
@@ -20,6 +21,10 @@ type
   Str_cp = string<1251>;
   Str_cp850 = string<850>;
 >>>>>>> graemeg/cpstrnew
+=======
+  Str_cp = string<1251>;
+  Str_cp850 = string<850>;
+>>>>>>> origin/cpstrnew
 =======
   Str_cp = string<1251>;
   Str_cp850 = string<850>;

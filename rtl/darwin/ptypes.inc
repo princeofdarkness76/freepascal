@@ -148,6 +148,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$if defined(cpuarm) or defined(cpuaarch64) or defined(iphonesim)}
 =======
 {$ifdef cpuarm}
@@ -158,6 +159,9 @@ type
 =======
 {$ifdef cpuarm}
 >>>>>>> graemeg/cpstrnew
+=======
+{$ifdef cpuarm}
+>>>>>>> origin/cpstrnew
 =======
 {$ifdef cpuarm}
 >>>>>>> origin/cpstrnew

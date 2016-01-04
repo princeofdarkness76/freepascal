@@ -76,6 +76,7 @@ valuePtr = ^value;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     _reserved: array[0..(15)-1] of cuint8;
 =======
         _reserved: array[0..14] of cuint8;
@@ -86,6 +87,9 @@ valuePtr = ^value;
 =======
         _reserved: array[0..14] of cuint8;
 >>>>>>> graemeg/cpstrnew
+=======
+        _reserved: array[0..14] of cuint8;
+>>>>>>> origin/cpstrnew
 =======
         _reserved: array[0..14] of cuint8;
 >>>>>>> origin/cpstrnew

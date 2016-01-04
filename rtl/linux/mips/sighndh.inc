@@ -29,6 +29,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* MIPS OABI32 structure 
 struct sigcontext {
   unsigned int sc_regmask;
@@ -103,6 +104,8 @@ typedef struct ucontext
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   PSigContext = ^TSigContext;
   TSigContext = record
     sigc_onstack,      { state to restore }
@@ -123,11 +126,14 @@ typedef struct ucontext
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   end;

@@ -205,6 +205,7 @@ Implementation
         bufsize:=64*1024;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	      fs:=CFileStreamClass.Create(fn,fmOpenRead or fmShareDenyNone);
 =======
 	      fs:=TCFileStream.Create(fn,fmOpenRead or fmShareDenyNone);
@@ -212,6 +213,9 @@ Implementation
 =======
 	      fs:=TCFileStream.Create(fn,fmOpenRead or fmShareDenyNone);
 >>>>>>> origin/fixes_2_2
+=======
+	      fs:=CFileStreamClass.Create(fn,fmOpenRead or fmShareDenyNone);
+>>>>>>> origin/cpstrnew
 	      if CStreamError<>0 then
 	        begin
 	          fs.Free;
@@ -802,6 +806,7 @@ Implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         function GetNextFiles(const maxCmdLength : Longint; var item : TCmdStrListItem; const addfilecmd : string) : TCmdStr;
 =======
         function GetNextFiles(const maxCmdLength : Longint; var item : TCmdStrListItem) : TCmdStr;
@@ -812,6 +817,9 @@ Implementation
 =======
         function GetNextFiles(const maxCmdLength : Longint; var item : TCmdStrListItem) : TCmdStr;
 >>>>>>> graemeg/cpstrnew
+=======
+        function GetNextFiles(const maxCmdLength : Longint; var item : TCmdStrListItem) : TCmdStr;
+>>>>>>> origin/cpstrnew
 =======
         function GetNextFiles(const maxCmdLength : Longint; var item : TCmdStrListItem) : TCmdStr;
 >>>>>>> origin/cpstrnew

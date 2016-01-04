@@ -213,6 +213,9 @@ begin
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
     P.Sources.AddDoc('README.txt');
     P.Sources.AddDoc('units.txt');
 

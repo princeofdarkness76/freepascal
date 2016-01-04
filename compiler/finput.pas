@@ -30,6 +30,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       cutils,globtype,cclasses,cstreams;
 =======
       cutils,cclasses,cstreams;
@@ -40,6 +41,9 @@ interface
 =======
       cutils,cclasses,cstreams;
 >>>>>>> graemeg/cpstrnew
+=======
+      cutils,cclasses,cstreams;
+>>>>>>> origin/cpstrnew
 =======
       cutils,cclasses,cstreams;
 >>>>>>> origin/cpstrnew
@@ -482,6 +486,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           fileopen:=CStreamError=0;
 =======
           fileopen:=true;
@@ -492,6 +497,9 @@ uses
 =======
           fileopen:=true;
 >>>>>>> graemeg/cpstrnew
+=======
+          fileopen:=true;
+>>>>>>> origin/cpstrnew
 =======
           fileopen:=true;
 >>>>>>> origin/cpstrnew

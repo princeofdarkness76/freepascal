@@ -55,6 +55,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function SqliteExec(ASQL: PAnsiChar; ACallback: TSqliteCdeclCallback; Data: Pointer): Integer; override;
 =======
     function SqliteExec(ASQL: PChar; ACallback: TSqliteCdeclCallback; Data: Pointer): Integer; override;
@@ -65,6 +66,9 @@ type
 =======
     function SqliteExec(ASQL: PChar; ACallback: TSqliteCdeclCallback; Data: Pointer): Integer; override;
 >>>>>>> graemeg/cpstrnew
+=======
+    function SqliteExec(ASQL: PChar; ACallback: TSqliteCdeclCallback; Data: Pointer): Integer; override;
+>>>>>>> origin/cpstrnew
 =======
     function SqliteExec(ASQL: PChar; ACallback: TSqliteCdeclCallback; Data: Pointer): Integer; override;
 >>>>>>> origin/cpstrnew
@@ -237,6 +241,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   FReturnCode := sqlite3_prepare_v2(FSqliteHandle, PAnsiChar(FEffectiveSQL), -1, @vm, nil);
 =======
   FReturnCode := sqlite3_prepare(FSqliteHandle, PChar(FEffectiveSQL), -1, @vm, nil);
@@ -256,6 +261,9 @@ begin
 =======
   FReturnCode := sqlite3_prepare(FSqliteHandle, PChar(FSql), -1, @vm, nil);
 >>>>>>> origin/fixes_2_2
+=======
+  FReturnCode := sqlite3_prepare(FSqliteHandle, PChar(FEffectiveSQL), -1, @vm, nil);
+>>>>>>> origin/cpstrnew
   if FReturnCode <> SQLITE_OK then
     DatabaseError(ReturnString, Self);
   sqlite3_step(vm);
@@ -335,6 +343,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         begin
           AType := ftString;
           DataSize := DefaultStringSize;
@@ -346,10 +355,13 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	    begin
           AType := ftString;
 		  DataSize := DefaultStringSize;
 		end;  		
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -360,10 +372,13 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       end;
     end else
     begin
       AType := ftString;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -378,6 +393,9 @@ begin
 =======
 	  DataSize := DefaultStringSize;
 >>>>>>> graemeg/cpstrnew
+=======
+	  DataSize := DefaultStringSize;
+>>>>>>> origin/cpstrnew
 =======
 	  DataSize := DefaultStringSize;
 >>>>>>> origin/cpstrnew
@@ -514,6 +532,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   FReturnCode := sqlite3_prepare_v2(FSqliteHandle, PAnsiChar(FEffectiveSQL), -1, @vm, nil);
 =======
   FReturnCode := sqlite3_prepare(FSqliteHandle, PChar(FEffectiveSQL), -1, @vm, nil);
@@ -524,6 +543,9 @@ begin
 =======
   FReturnCode := sqlite3_prepare(FSqliteHandle, PChar(FEffectiveSQL), -1, @vm, nil);
 >>>>>>> graemeg/cpstrnew
+=======
+  FReturnCode := sqlite3_prepare(FSqliteHandle, PChar(FEffectiveSQL), -1, @vm, nil);
+>>>>>>> origin/cpstrnew
 =======
   FReturnCode := sqlite3_prepare(FSqliteHandle, PChar(FEffectiveSQL), -1, @vm, nil);
 >>>>>>> origin/cpstrnew

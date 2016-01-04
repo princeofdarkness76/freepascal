@@ -4,6 +4,7 @@ type
   generic GList<_T> = class
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     private
       var
         i : integer;
@@ -15,6 +16,11 @@ type
     var private
       i : integer;
 >>>>>>> origin/fixes_2_2
+=======
+    private
+      var
+        i : integer;
+>>>>>>> origin/cpstrnew
     function some_func(): integer;
   end;
 

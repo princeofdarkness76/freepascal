@@ -39,6 +39,7 @@ interface
         { definitions }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         { collect all defs in one list so we can reset them easily }
         defnumberlist      : TFPObjectList;
         deftowritelist     : TFPObjectList;
@@ -46,6 +47,11 @@ interface
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+        { collect all defs in one list so we can reset them easily }
+        defnumberlist      : TFPObjectList;
+        deftowritelist     : TFPObjectList;
+>>>>>>> origin/cpstrnew
         procedure appenddef(list:TAsmList;def:tdef);
         procedure beforeappenddef(list:TAsmList;def:tdef);virtual;
         procedure afterappenddef(list:TAsmList;def:tdef);virtual;
@@ -73,11 +79,15 @@ interface
         procedure appendprocdef(list:TAsmList;def:tprocdef);virtual;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         procedure write_remaining_defs_to_write(list:TAsmList);
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+        procedure write_remaining_defs_to_write(list:TAsmList);
+>>>>>>> origin/cpstrnew
         { symbols }
         procedure appendsym(list:TAsmList;sym:tsym);
         procedure beforeappendsym(list:TAsmList;sym:tsym);virtual;
@@ -95,11 +105,15 @@ interface
         { symtable }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         procedure write_symtable_parasyms(list:TAsmList;paras: tparalist);
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+        procedure write_symtable_parasyms(list:TAsmList;paras: tparalist);
+>>>>>>> origin/cpstrnew
         procedure write_symtable_syms(list:TAsmList;st:TSymtable);
         procedure write_symtable_defs(list:TAsmList;st:TSymtable);
         procedure write_symtable_procdefs(list:TAsmList;st:TSymtable);
@@ -432,6 +446,9 @@ implementation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
     procedure TDebugInfo.write_remaining_defs_to_write(list:TAsmList);
       var
         n       : integer;
@@ -456,6 +473,7 @@ implementation
                     internalerror(200610053);
                   dbg_state_used:
                     appenddef(list,def);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -502,6 +520,10 @@ implementation
                 else
                   internalerror(200610054);
 >>>>>>> origin/cpstrnew
+=======
+                else
+                  internalerror(200610054);
+>>>>>>> origin/cpstrnew
                 end;
               end;
             looplist.clear;
@@ -512,6 +534,7 @@ implementation
       end;
 
 
+<<<<<<< HEAD
 {**************************************
           Symbols
 **************************************}
@@ -676,6 +699,8 @@ implementation
                 sym.isdbgwritten:=false;
               end;
 =======
+=======
+>>>>>>> origin/cpstrnew
 {**************************************
           Symbols
 **************************************}
@@ -789,6 +814,7 @@ implementation
       var
         def : tdef;
         i   : longint;
+        nonewadded : boolean;
       begin
         case st.symtabletype of
           staticsymtable :
@@ -796,18 +822,44 @@ implementation
           globalsymtable :
             list.concat(tai_comment.Create(strpnew('Defs - Begin unit '+st.name^+' has index '+tostr(st.moduleid))));
         end;
-        for i:=0 to st.DefList.Count-1 do
-          begin
-            def:=tdef(st.DefList[i]);
-            if (def.dbg_state in [dbg_state_used,dbg_state_queued]) then
-              appenddef(list,def);
-          end;
+        repeat
+          nonewadded:=true;
+          for i:=0 to st.DefList.Count-1 do
+            begin
+              def:=tdef(st.DefList[i]);
+              if (def.dbg_state in [dbg_state_used,dbg_state_queued]) then
+                begin
+                  appenddef(list,def);
+                  nonewadded:=false;
+                end;
+            end;
+        until nonewadded;
         case st.symtabletype of
           staticsymtable :
             list.concat(tai_comment.Create(strpnew('Defs - End Staticsymtable')));
           globalsymtable :
             list.concat(tai_comment.Create(strpnew('Defs - End unit '+st.name^+' has index '+tostr(st.moduleid))));
         end;
+      end;
+
+
+    procedure TDebugInfo.write_symtable_parasyms(list:TAsmList;paras: tparalist);
+      var
+        i   : longint;
+        sym : tsym;
+      begin
+        for i:=0 to paras.Count-1 do
+          begin
+            sym:=tsym(paras[i]);
+            if (sym.visibility<>vis_hidden) then
+              begin
+                appendsym(list,sym);
+                { if we ever write this procdef again for some reason (this
+                  can happen with DWARF), then we want to write all the
+                  parasyms again as well. }
+                sym.isdbgwritten:=false;
+              end;
+          end;
       end;
 
 
@@ -1022,9 +1074,9 @@ implementation
                   if assigned(tprocdef(def).localst) then
                     write_symtable_procdefs(list,tprocdef(def).localst);
                 end;
-              objectdef :
+              objectdef,recorddef :
                 begin
-                  write_symtable_procdefs(list,tobjectdef(def).symtable);
+                  write_symtable_procdefs(list,tabstractrecorddef(def).symtable);
                 end;
             end;
 <<<<<<< HEAD

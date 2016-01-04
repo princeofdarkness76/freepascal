@@ -4,6 +4,7 @@ type
    generic TList<_T>=class(TObject)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    public
      var
        data : _T;
@@ -13,6 +14,11 @@ type
    var public
      data : _T;
 >>>>>>> graemeg/fixes_2_2
+=======
+   public
+     var
+       data : _T;
+>>>>>>> origin/cpstrnew
      procedure Add(item: _T);
      procedure Assign(Source: specialize TList<_T>);
    end;

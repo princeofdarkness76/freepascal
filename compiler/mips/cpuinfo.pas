@@ -39,6 +39,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        cpu_mips1,
        cpu_mips2,
        cpu_mips3,
@@ -85,6 +86,12 @@ Type
 
    tfputype =(fpu_none,fpu_soft,fpu_mips2,fpu_mips3);
 >>>>>>> origin/cpstrnew
+=======
+       cpu_mips32
+      );
+
+   tfputype =(fpu_none,fpu_soft,fpu_mips2,fpu_mips3);
+>>>>>>> origin/cpstrnew
 
 Const
    {# Size of native extended floating point type }
@@ -102,11 +109,14 @@ Const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
    { calling conventions supported by the code generator }
@@ -165,11 +175,14 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
    );
@@ -306,6 +319,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    supported_optimizerswitches = [cs_opt_regvar,cs_opt_loopunroll,cs_opt_nodecse,
                                   cs_opt_reorder_fields,cs_opt_fastmath];
 
@@ -325,6 +339,11 @@ const
 
    level1optimizerswitches = [];
 >>>>>>> graemeg/cpstrnew
+=======
+   supported_optimizerswitches = [cs_opt_regvar,cs_opt_loopunroll,cs_opt_nodecse];
+
+   level1optimizerswitches = [];
+>>>>>>> origin/cpstrnew
 =======
    supported_optimizerswitches = [cs_opt_regvar,cs_opt_loopunroll,cs_opt_nodecse];
 

@@ -280,6 +280,7 @@ begin
         end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      p.Sources.Adddoc('README.txt');
 =======
 
@@ -287,6 +288,9 @@ begin
 =======
 
 >>>>>>> origin/fixes_2_2
+=======
+     p.Sources.Adddoc('README.txt');
+>>>>>>> origin/cpstrnew
 
 {$ifndef ALLPACKAGES}
     Run;

@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -9,6 +10,9 @@
 =======
 {
 >>>>>>> origin/fixes_2.4
+=======
+{
+>>>>>>> origin/cpstrnew
 //
 //  ABPeoplePickerC.h
 //  AddressBook Framework
@@ -16,11 +20,15 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 //  Copyright (c) 2003-2007 Apple Inc.  All rights reserved.
 //
 }
 {	  Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2004 }
 {	  Pascal Translation Updated:  Gorazd Krosl, <gorazd_1957@yahoo.ca>, November 2009 }
+<<<<<<< HEAD
 
 {
     Modified for use with Free Pascal
@@ -40,6 +48,8 @@
 }
 {	  Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2004 }
 {	  Pascal Translation Updated:  Gorazd Krosl, <gorazd_1957@yahoo.ca>, November 2009 }
+=======
+>>>>>>> origin/cpstrnew
 
 {
     Modified for use with Free Pascal
@@ -49,12 +59,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -66,6 +80,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -80,6 +95,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -95,6 +114,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -105,6 +125,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -112,13 +135,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -126,6 +153,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -134,8 +163,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -146,6 +178,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -166,6 +199,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -174,12 +209,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -187,6 +225,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -261,12 +300,31 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/cpstrnew
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -280,6 +338,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -288,14 +348,18 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -464,6 +528,37 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -492,6 +587,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -500,6 +596,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -512,8 +610,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 uses MacTypes,ABAddressBook,CFBase,CFArray,CGGeometry,HIGeometry,CarbonEventsCore;
 {$endc} {not MACOSALLINCLUDE}
 
@@ -522,6 +623,7 @@ uses MacTypes,ABAddressBook,CFBase,CFArray,CGGeometry,HIGeometry,CarbonEventsCor
 
 {$ALIGN POWER}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 type
@@ -545,6 +647,12 @@ type
 	ABPickerRef = ^OpaqueABPicker; { an opaque type }
 	OpaqueABPicker = record end;
 >>>>>>> origin/fixes_2.4
+=======
+
+type
+	ABPickerRef = ^OpaqueABPicker; { an opaque type }
+	OpaqueABPicker = record end;
+>>>>>>> origin/cpstrnew
 
 {
  * Picker creation and manipulation
@@ -555,12 +663,16 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 function ABPickerCreate: ABPickerRef; external name '_ABPickerCreate';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 
 // Change the structural frame of the window.
 procedure ABPickerSetFrame( inPicker: ABPickerRef; const (*var*) inFrame: HIRect ); external name '_ABPickerSetFrame';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+<<<<<<< HEAD
 procedure ABPickerGetFrame( inPicker: ABPickerRef; var outFrame: HIRect ); external name '_ABPickerGetFrame';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 
@@ -593,17 +705,26 @@ function ABPickerIsVisible( inPicker: ABPickerRef ): Boolean; external name '_AB
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+procedure ABPickerGetFrame( inPicker: ABPickerRef; var outFrame: HIRect ); external name '_ABPickerGetFrame';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 procedure ABPickerSetVisibility( inPicker: ABPickerRef; visible: CBool ); external name '_ABPickerSetVisibility';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 function ABPickerIsVisible( inPicker: ABPickerRef ): CBool; external name '_ABPickerIsVisible';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {
  * Look and Feel
  }
 
 const
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -634,6 +755,9 @@ procedure ABPickerChangeAttributes( inPicker: ABPickerRef; inAttributesToSet: AB
 =======
 // Choose the selection behavior for the value column. If multiple behaviors are selected,
 >>>>>>> origin/fixes_2.4
+=======
+// Choose the selection behavior for the value column. If multiple behaviors are selected,
+>>>>>>> origin/cpstrnew
     // the most restrictive behavior will be used. Defaults to kABPickerSingleValueSelection set
     // to TRUE.
 	kABPickerSingleValueSelection = 1 shl 0; // Allow user to choose a single value for a person.
@@ -654,12 +778,16 @@ function ABPickerGetAttributes( inPicker: ABPickerRef ): ABPickerAttributes; ext
 procedure ABPickerChangeAttributes( inPicker: ABPickerRef; inAttributesToSet: ABPickerAttributes; inAttributesToClear: ABPickerAttributes ); external name '_ABPickerChangeAttributes';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 {
  * Value column
@@ -672,6 +800,9 @@ procedure ABPickerChangeAttributes( inPicker: ABPickerRef; inAttributesToSet: AB
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 procedure ABPickerAddProperty( inPicker: ABPickerRef; inProperty: CFStringRef ); external name '_ABPickerAddProperty';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 procedure ABPickerRemoveProperty( inPicker: ABPickerRef; inProperty: CFStringRef ); external name '_ABPickerRemoveProperty';
@@ -689,6 +820,7 @@ function ABPickerCopyColumnTitle( inPicker: ABPickerRef; inProperty: CFStringRef
     // Display one of the properties added above in the values column.
 procedure ABPickerSetDisplayedProperty( inPicker: ABPickerRef; inProperty: CFStringRef ); external name '_ABPickerSetDisplayedProperty';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+<<<<<<< HEAD
 function ABPickerCopyDisplayedProperty( inPicker: ABPickerRef ): CFStringRef; external name '_ABPickerCopyDisplayedProperty';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 =======
@@ -723,6 +855,10 @@ function ABPickerCopyDisplayedProperty( inPicker: ABPickerRef ): CFStringRef; ex
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+function ABPickerCopyDisplayedProperty( inPicker: ABPickerRef ): CFStringRef; external name '_ABPickerCopyDisplayedProperty';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 {
  * Selection
@@ -732,6 +868,9 @@ function ABPickerCopyDisplayedProperty( inPicker: ABPickerRef ): CFStringRef; ex
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 function ABPickerCopySelectedGroups( inPicker: ABPickerRef ): CFArrayRef; external name '_ABPickerCopySelectedGroups';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 
@@ -765,6 +904,7 @@ procedure ABPickerDeselectRecord( inPicker: ABPickerRef; inRecord: ABRecordRef )
 procedure ABPickerDeselectIdentifier( inPicker: ABPickerRef; inPerson: ABPersonRef; inIdentifier: CFStringRef ); external name '_ABPickerDeselectIdentifier';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 
+<<<<<<< HEAD
 procedure ABPickerDeselectAll( inPicker: ABPickerRef ); external name '_ABPickerDeselectAll';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 =======
@@ -815,6 +955,10 @@ procedure ABPickerDeselectAll( inPicker: ABPickerRef ); external name '_ABPicker
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+procedure ABPickerDeselectAll( inPicker: ABPickerRef ); external name '_ABPickerDeselectAll';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 {
  * Events and Actions
@@ -833,6 +977,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 // Carbon Event class for People Picker
 	kEventClassABPeoplePicker = FourCharCode('abpp');
 =======
@@ -847,6 +992,10 @@ const
 // Carbon Event class for People Picker
 	kEventClassABPeoplePicker = FourCharCode('abpp');
 >>>>>>> origin/fixes_2.4
+=======
+// Carbon Event class for People Picker
+	kEventClassABPeoplePicker = FourCharCode('abpp');
+>>>>>>> origin/cpstrnew
 
 const
     // Carbon Event kinds for People Picker
@@ -859,6 +1008,7 @@ const
     kEventABPeoplePickerNameDoubleClicked         = 6;
 
 const
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -895,6 +1045,10 @@ end.
 // Carbon Event parameter name
 	kEventParamABPickerRef = FourCharCode('abpp');
 >>>>>>> origin/fixes_2.4
+=======
+// Carbon Event parameter name
+	kEventParamABPickerRef = FourCharCode('abpp');
+>>>>>>> origin/cpstrnew
 
     // Set the event handler for People Picker events.
 procedure ABPickerSetDelegate( inPicker: ABPickerRef; inDelegate: EventTargetRef ); external name '_ABPickerSetDelegate';
@@ -918,9 +1072,13 @@ procedure ABPickerSelectInAddressBook( inPicker: ABPickerRef ); external name '_
 end.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

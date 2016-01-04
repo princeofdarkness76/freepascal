@@ -40,6 +40,7 @@ unit i_win;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             flags        : [tf_files_case_aware,tf_has_dllscanner
 =======
             flags        : [tf_files_case_aware,tf_has_dllscanner,tf_smartlink_library
@@ -53,10 +54,14 @@ unit i_win;
 =======
             flags        : [tf_files_case_aware,tf_has_dllscanner,tf_smartlink_library
 >>>>>>> origin/cpstrnew
+=======
+            flags        : [tf_files_case_aware,tf_has_dllscanner,tf_smartlink_library
+>>>>>>> origin/cpstrnew
                             ,tf_smartlink_sections{,tf_section_threadvars}{,tf_needs_dwarf_cfi},
                             tf_winlikewidestring,tf_no_pic_supported,
                             tf_no_generic_stackcheck,tf_has_winlike_resources,
                             tf_dwarf_only_local_labels,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -85,6 +90,9 @@ unit i_win;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+                            tf_safecall_exceptions];
+>>>>>>> origin/cpstrnew
             cpu          : cpu_i386;
             unit_env     : 'WIN32UNITS';
             extradefines : 'MSWINDOWS;WINDOWS';
@@ -155,6 +163,7 @@ unit i_win;
             shortname    : 'Win64';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             flags        : [tf_files_case_aware,tf_has_dllscanner,
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -172,10 +181,14 @@ unit i_win;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+            flags        : [tf_files_case_aware,tf_has_dllscanner,
+>>>>>>> origin/cpstrnew
                             tf_smartlink_sections,tf_smartlink_library,
                             tf_winlikewidestring,tf_no_pic_supported,
                             tf_dwarf_only_local_labels,
                             tf_no_generic_stackcheck,tf_has_winlike_resources];
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
             flags        : [tf_files_case_aware,tf_has_dllscanner,tf_use_function_relative_addresses,
@@ -187,6 +200,8 @@ unit i_win;
                             tf_smartlink_sections,tf_smartlink_library,tf_winlikewidestring,tf_no_pic_supported,
                             tf_no_generic_stackcheck];
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
             cpu          : cpu_x86_64;
             unit_env     : 'WIN64UNITS';
             extradefines : 'MSWINDOWS;WINDOWS';
@@ -265,6 +280,9 @@ unit i_win;
             shortname    : 'WinCE';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
             flags        : [tf_files_case_aware{,tf_winlikewidestring},
                             tf_smartlink_sections,tf_requires_proper_alignment,tf_no_pic_supported,
                             tf_has_winlike_resources,
@@ -341,6 +359,9 @@ unit i_win;
             shortname    : 'WinCE';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
             flags        : [tf_files_case_aware
                             {,tf_winlikewidestring},tf_smartlink_sections,tf_no_pic_supported,
                             tf_has_winlike_resources,

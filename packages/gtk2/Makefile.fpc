@@ -18,6 +18,7 @@ name=gtk2
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 version=3.1.1
 
 [require]
@@ -27,6 +28,8 @@ packages=rtl fpmkunit
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 version=2.5.1
@@ -56,11 +59,15 @@ packages_netbsd=x11
 packages_darwin=x11
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 packages_iphonesim=x11
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+packages_iphonesim=x11
+>>>>>>> origin/cpstrnew
 
 [target]
 units=src/buildgtk2 
@@ -101,6 +108,7 @@ build=n
 fpcdir=../..
 
 [prerules]
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -207,6 +215,9 @@ endif
 =======
 >>>>>>> origin/fixes_2_2
 ifneq ($(findstring $(OS_TARGET),linux freebsd netbsd openbsd solaris darwin beos ),)
+=======
+ifneq ($(findstring $(OS_TARGET),linux freebsd netbsd openbsd solaris darwin iphonesim beos haiku ),)
+>>>>>>> origin/cpstrnew
 GDK2X=gdk2x
 GTK2X11=gtk2x11
 GTK2X11INCLUDE=src/gtk2x11/include

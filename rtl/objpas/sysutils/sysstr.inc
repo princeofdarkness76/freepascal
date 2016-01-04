@@ -1272,6 +1272,9 @@ Var
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   function RemoveLeadingNegativeSign(var AValue: String): Boolean;
   // removes negative sign in case when result is zero eg. -0.00
   var
@@ -1295,10 +1298,13 @@ Var
       Delete(AValue, 1, 1);
   end;
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 Begin
   DS:=FormatSettings.DecimalSeparator;
   Case format Of
@@ -1341,6 +1347,7 @@ Begin
             Exponent := Exponent*10 + Ord(Result[Q])-Ord('0');
             Inc(Q);
           end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1407,6 +1414,8 @@ Begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
           Negative := Result[1] = '-';
@@ -1883,12 +1892,15 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 function AnsiDequotedStr(const S: string; AQuote: Char): string;
 >>>>>>> graemeg/fixes_2_2
 =======
 function AnsiDequotedStr(const S: string; AQuote: Char): string;
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 
 Function CurrToStr(Value: Currency; Const FormatSettings: TFormatSettings): string;
 begin
@@ -1924,6 +1936,13 @@ begin
 =======
   if not TextToFloat(PChar(pointer(S)), Result, fvCurrency) then
 >>>>>>> origin/fixes_2_2
+    Raise EConvertError.createfmt(SInValidFLoat,[S]);
+end;
+
+
+function StrToCurr(const S: string; Const FormatSettings: TFormatSettings): Currency; 
+begin
+  if not TextToFloat(PChar(pointer(S)), Result, fvCurrency,FormatSettings) then
     Raise EConvertError.createfmt(SInValidFLoat,[S]);
 end;
 
@@ -2479,12 +2498,15 @@ Var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   If thousand And (Not (Digits[N] in [' ','-'])) Then
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                   If thousand And (Digits[N]<>'-') Then
@@ -3105,6 +3127,7 @@ function sscanf(const s: string; const fmt : string;const Pointers : array of Po
       while (Length(s) >= n) and
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             (s[n] in ['0'..'9', '+', '-', FormatSettings.DecimalSeparator, 'e', 'E']) do
 =======
             (s[n] in ['0'..'9', '+', '-', '.', 'e', 'E']) do
@@ -3112,6 +3135,9 @@ function sscanf(const s: string; const fmt : string;const Pointers : array of Po
 =======
             (s[n] in ['0'..'9', '+', '-', '.', 'e', 'E']) do
 >>>>>>> origin/fixes_2_2
+=======
+            (s[n] in ['0'..'9', '+', '-', FormatSettings.DecimalSeparator, 'e', 'E']) do
+>>>>>>> origin/cpstrnew
         begin
           s1 := s1+s[n];
           inc(n);

@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 0.99.14
  - added new unit ptcmouse for use with ptcgraph & ptccrt applications. It is
    similar to the winmouse and msmouse units.
@@ -49,6 +50,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 0.99.11

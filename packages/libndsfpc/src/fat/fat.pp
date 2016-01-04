@@ -34,8 +34,11 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 { $include fathelper.inc}
 {$include ../nds/disc_io.inc}
 =======
@@ -50,8 +53,11 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 { $include fathelper.inc}
 {$include ../nds/disc_io.inc}
 {$include fat.inc}

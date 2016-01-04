@@ -18,6 +18,7 @@ name=hermes
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 version=3.1.1
 
 [require]
@@ -49,16 +50,28 @@ options_i386_beos=-dI386_ASSEMBLER
 =======
 >>>>>>> origin/fixes_2_2
 version=2.2.5
+=======
+version=2.5.1
+>>>>>>> origin/cpstrnew
 
 [target]
 units=hermes
-loaders=$(CPU_LOADERS)
 
 [compiler]
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+options_i386_linux=-dI386_ASSEMBLER
+options_i386_win32=-dI386_ASSEMBLER
+options_i386_go32v2=-dI386_ASSEMBLER
+options_i386_freebsd=-dI386_ASSEMBLER
+options_i386_haiku=-dI386_ASSEMBLER
+options_i386_beos=-dI386_ASSEMBLER
+
+>>>>>>> origin/cpstrnew
 unitdir=
 targetdir=.
 includedir=src
@@ -182,11 +195,15 @@ endif
 >>>>>>> graemeg/cpstrnew
 =======
 
+[install]
+fpcpackage=y
+
 [default]
 fpcdir=../..
 
 [rules]
 .NOTPARALLEL:
+<<<<<<< HEAD
 >>>>>>> origin/cpstrnew
 =======
 =======
@@ -222,3 +239,5 @@ endif
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew

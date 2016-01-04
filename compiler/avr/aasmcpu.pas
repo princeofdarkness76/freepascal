@@ -110,6 +110,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     { replaces cond. branches by rjmp/jmp and the inverse cond. branch if needed
       and transforms special instructions to valid instruction encodings }
     procedure finalizeavrcode(list : TAsmList);
@@ -120,6 +121,8 @@ uses
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 implementation
@@ -384,6 +387,11 @@ implementation
 =======
           R_ADDRESSREGISTER :
             result:=taicpu.op_ref_reg(A_LD,ref,r);
+<<<<<<< HEAD
+>>>>>>> origin/cpstrnew
+=======
+          R_ADDRESSREGISTER :
+            result:=taicpu.op_ref_reg(A_LD,ref,r);
 >>>>>>> origin/cpstrnew
           else
             internalerror(200401041);
@@ -412,6 +420,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
           R_ADDRESSREGISTER :
@@ -419,6 +428,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
           else
@@ -444,6 +455,7 @@ implementation
       end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -536,6 +548,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 begin

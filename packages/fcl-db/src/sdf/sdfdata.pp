@@ -202,9 +202,13 @@ type
     FSaveChanges        :Boolean;
     FDefaultRecordLength:Cardinal;
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    FDataOffset         : Integer;
+>>>>>>> origin/cpstrnew
   protected
     function AllocRecordBuffer: TRecordBuffer; override;
     procedure FreeRecordBuffer(var Buffer: TRecordBuffer); override;
@@ -561,6 +565,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if (FData.Count <= FDataOffset) then
 =======
   if (FData.Count < (1+FDataOffset)) then
@@ -571,6 +576,9 @@ begin
 =======
   if (FData.Count < (1+FDataOffset)) then
 >>>>>>> graemeg/cpstrnew
+=======
+  if (FData.Count < (1+FDataOffset)) then
+>>>>>>> origin/cpstrnew
 =======
   if (FData.Count < (1+FDataOffset)) then
 >>>>>>> origin/cpstrnew

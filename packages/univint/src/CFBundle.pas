@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	Copyright (c) 1999-2013, Apple Inc.  All rights reserved.
 }
 =======
@@ -43,6 +44,9 @@
 =======
 	Copyright (c) 1999-2009, Apple Inc. All rights reserved.
 >>>>>>> origin/fixes_2.4
+=======
+	Copyright (c) 1999-2009, Apple Inc. All rights reserved.
+>>>>>>> origin/cpstrnew
 }
 {       Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, September 2005 }
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
@@ -54,12 +58,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -71,6 +79,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -85,6 +94,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -100,6 +113,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -110,6 +124,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -117,13 +134,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -131,6 +152,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -139,8 +162,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -151,6 +177,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -171,6 +198,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -179,12 +208,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -192,6 +224,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -231,6 +264,9 @@ interface
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -246,6 +282,7 @@ interface
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
@@ -271,6 +308,8 @@ interface
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
+=======
 >>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -282,15 +321,19 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -490,6 +533,41 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -518,6 +596,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -526,6 +605,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -538,6 +619,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 uses MacTypes,CFBase,CFArray,CFDictionary,CFError,CFString,CFURL;
 {$endc} {not MACOSALLINCLUDE}
 
@@ -552,10 +634,16 @@ uses MacTypes,CFBase,CFArray,CFDictionary,CFError,CFString,CFURL;
 {$endc} {not MACOSALLINCLUDE}
 
 >>>>>>> origin/fixes_2.4
+=======
+uses MacTypes,CFBase,CFArray,CFDictionary,CFError,CFString,CFURL;
+{$endc} {not MACOSALLINCLUDE}
+
+>>>>>>> origin/cpstrnew
 {$ALIGN POWER}
 
 
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -602,12 +690,18 @@ type
 	CFBundleRefPtr = ^CFBundleRef;
 	CFPlugInRef = ^SInt32; { an opaque type }
 >>>>>>> origin/fixes_2.4
+=======
+	CFBundleRef = ^SInt32; { an opaque type }
+	CFBundleRefPtr = ^CFBundleRef;
+	CFPlugInRef = ^SInt32; { an opaque type }
+>>>>>>> origin/cpstrnew
 	CFPlugInRefPtr = ^CFPlugInRef;
 
 { ===================== Standard Info.plist keys ===================== }
 var kCFBundleInfoDictionaryVersionKey: CFStringRef; external name '_kCFBundleInfoDictionaryVersionKey'; (* attribute const *)
     { The version of the Info.plist format }
 var kCFBundleExecutableKey: CFStringRef; external name '_kCFBundleExecutableKey'; (* attribute const *)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -625,6 +719,9 @@ var kCFBundleVersionKey: CFStringRef; external name '_kCFBundleVersionKey'; (* a
 =======
     { The name of the executable in this bundle, if any }
 >>>>>>> origin/fixes_2.4
+=======
+    { The name of the executable in this bundle, if any }
+>>>>>>> origin/cpstrnew
 var kCFBundleIdentifierKey: CFStringRef; external name '_kCFBundleIdentifierKey'; (* attribute const *)
     { The bundle identifier (for CFBundleGetBundleWithIdentifier()) }
 var kCFBundleVersionKey: CFStringRef; external name '_kCFBundleVersionKey'; (* attribute const *)
@@ -658,6 +755,7 @@ function CFBundleGetAllBundles: CFArrayRef; external name '_CFBundleGetAllBundle
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     { This is potentially expensive, and not thread-safe.  Use with care. }
     { Best used for debuggging or other diagnostic purposes. }
 
@@ -684,11 +782,20 @@ function CFBundleGetTypeID: UInt32; external name '_CFBundleGetTypeID';
 
 function CFBundleGetTypeID: CFTypeID; external name '_CFBundleGetTypeID';
 >>>>>>> origin/fixes_2.4
+=======
+    { This is potentially expensive, and not thread-safe.  Use with care. }
+    { Best used for debuggging or other diagnostic purposes. }
+
+{ ===================== Creating Bundles ===================== }
+
+function CFBundleGetTypeID: CFTypeID; external name '_CFBundleGetTypeID';
+>>>>>>> origin/cpstrnew
 
 function CFBundleCreate( allocator: CFAllocatorRef; bundleURL: CFURLRef ): CFBundleRef; external name '_CFBundleCreate';
     { Might return an existing instance with the ref-count bumped. }
 
 function CFBundleCreateBundlesFromDirectory( allocator: CFAllocatorRef; directoryURL: CFURLRef; bundleType: CFStringRef ): CFArrayRef; external name '_CFBundleCreateBundlesFromDirectory';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -706,6 +813,10 @@ function CFBundleCreateBundlesFromDirectory( allocator: CFAllocatorRef; director
     { Create instances for all bundles in the given directory matching the given type }
     { (or all of them if bundleType is NULL).  Instances are created using CFBundleCreate() and are not released. }
 >>>>>>> origin/fixes_2.4
+=======
+    { Create instances for all bundles in the given directory matching the given type }
+    { (or all of them if bundleType is NULL).  Instances are created using CFBundleCreate() and are not released. }
+>>>>>>> origin/cpstrnew
 
 { ==================== Basic Bundle Info ==================== }
 
@@ -753,6 +864,7 @@ function CFBundleGetPackageInfoInDirectory( url: CFURLRef; var packageType: UInt
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
     
@@ -763,6 +875,9 @@ function CFBundleGetPackageInfoInDirectory( url: CFURLRef; var packageType: UInt
 =======
 
 >>>>>>> origin/fixes_2.4
+=======
+
+>>>>>>> origin/cpstrnew
 { ==================== Resource Handling API ==================== }
 
 function CFBundleCopyResourceURL( bundle: CFBundleRef; resourceName: CFStringRef; resourceType: CFStringRef; subDirName: CFStringRef ): CFURLRef; external name '_CFBundleCopyResourceURL';
@@ -840,13 +955,17 @@ function CFBundleCopyResourceURLsOfTypeForLocalization( bundle: CFBundleRef; res
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
     { The localizationName argument to CFBundleCopyResourceURLForLocalization() or }
     { CFBundleCopyResourceURLsOfTypeForLocalization() must be identical to one of the }
     { localizations in the bundle, as returned by CFBundleCopyBundleLocalizations(). }
     { It is recommended that either CFBundleCopyPreferredLocalizationsFromArray() or }
     { CFBundleCopyLocalizationsForPreferences() be used to select the localization. }
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -854,6 +973,8 @@ function CFBundleCopyResourceURLsOfTypeForLocalization( bundle: CFBundleRef; res
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {#if MAC_OS_X_VERSION_10_2 <= MAC_OS_X_VERSION_MAX_ALLOWED}
 { =================== Unbundled application info ===================== }
@@ -941,17 +1062,23 @@ function CFBundleCopyLocalizationsForURL( url: CFURLRef ): CFArrayRef; external 
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function CFBundleCopyExecutableArchitecturesForURL( url: CFURLRef ): CFArrayRef; external name '_CFBundleCopyExecutableArchitecturesForURL';
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
     { For a directory URL, this is equivalent to calling CFBundleCopyExecutableArchitectures() }
     { on the corresponding bundle.  For a plain file URL representing an unbundled executable, }
     { this will return the architectures it provides, if it is a Mach-o file, or NULL otherwise. }
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 { ==================== Primitive Code Loading API ==================== }
 { This API abstracts the various different executable formats supported on }
 { various platforms.  It can load DYLD, CFM, or DLL shared libraries (on their }
@@ -965,8 +1092,11 @@ function CFBundleCopyExecutableURL( bundle: CFBundleRef ): CFURLRef; external na
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {#if MAC_OS_X_VERSION_10_5 <= MAC_OS_X_VERSION_MAX_ALLOWED}
 const
 	kCFBundleExecutableArchitectureI386 = $00000007;
@@ -981,6 +1111,7 @@ function CFBundleCopyExecutableArchitectures( bundle: CFBundleRef ): CFArrayRef;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CF_AVAILABLE_STARTING(10_5, 2_0) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -997,6 +1128,9 @@ function CFBundleCopyExecutableArchitectures( bundle: CFBundleRef ): CFArrayRef;
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
     { If the bundle's executable exists and is a Mach-o file, this function will return an array }
     { of CFNumbers whose values are integers representing the architectures the file provides. }
     { The values currently in use are those listed in the enum above, but others may be added }
@@ -1008,6 +1142,7 @@ function CFBundlePreflightExecutable( bundle: CFBundleRef; var error: CFErrorRef
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CF_AVAILABLE_STARTING(10_5, 2_0) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -1024,6 +1159,9 @@ function CFBundlePreflightExecutable( bundle: CFBundleRef; var error: CFErrorRef
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
     { This function will return true if the bundle is loaded, or if the bundle appears to be }
     { loadable upon inspection.  This does not mean that the bundle is definitively loadable, }
     { since it may fail to load due to link errors or other problems not readily detectable. }
@@ -1036,6 +1174,7 @@ function CFBundleLoadExecutableAndReturnError( bundle: CFBundleRef; var error: C
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CF_AVAILABLE_STARTING(10_5, 2_0) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -1052,10 +1191,14 @@ function CFBundleLoadExecutableAndReturnError( bundle: CFBundleRef; var error: C
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
     { If the bundle is already loaded, this function will return true.  Otherwise, it will attempt }
     { to load the bundle, and it will return true if that attempt succeeds.  If the bundle fails }
     { to load, this function will return false, and it will return a CFError by reference.  }
     { It is the responsibility of the caller to release the CFError. }
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 function CFBundleLoadExecutable( bundle: CFBundleRef ): Boolean; external name '_CFBundleLoadExecutable';
@@ -1080,6 +1223,13 @@ function CFBundleLoadExecutable( bundle: CFBundleRef ): Boolean; external name '
 function CFBundleIsExecutableLoaded( bundle: CFBundleRef ): Boolean; external name '_CFBundleIsExecutableLoaded';
 
 >>>>>>> origin/fixes_2.4
+=======
+
+function CFBundleLoadExecutable( bundle: CFBundleRef ): Boolean; external name '_CFBundleLoadExecutable';
+
+function CFBundleIsExecutableLoaded( bundle: CFBundleRef ): Boolean; external name '_CFBundleIsExecutableLoaded';
+
+>>>>>>> origin/cpstrnew
 procedure CFBundleUnloadExecutable( bundle: CFBundleRef ); external name '_CFBundleUnloadExecutable';
 
 function CFBundleGetFunctionPointerForName( bundle: CFBundleRef; functionName: CFStringRef ): UnivPtr; external name '_CFBundleGetFunctionPointerForName';
@@ -1108,8 +1258,11 @@ function CFBundleGetPlugIn( bundle: CFBundleRef ): CFPlugInRef; external name '_
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc TARGET_CPU_64}
 type
 	CFBundleRefNum = SInt32;
@@ -1120,6 +1273,7 @@ type
 
 function CFBundleOpenBundleResourceMap( bundle: CFBundleRef ): CFBundleRefNum; external name '_CFBundleOpenBundleResourceMap';
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 function CFBundleOpenBundleResourceMap( bundle: CFBundleRef ): SInt16; external name '_CFBundleOpenBundleResourceMap';
 >>>>>>> graemeg/fixes_2_2
@@ -1128,12 +1282,15 @@ function CFBundleOpenBundleResourceMap( bundle: CFBundleRef ): SInt16; external 
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
    { This function opens the non-localized and the localized resource files }
    { (if any) for the bundle, creates and makes current a single read-only }
    { resource map combining both, and returns a reference number for it. }
    { If it is called multiple times, it opens the files multiple times, }
    { and returns distinct reference numbers.  }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1154,11 +1311,16 @@ function CFBundleOpenBundleResourceFiles( bundle: CFBundleRef; var refNum: SInt1
 function CFBundleOpenBundleResourceFiles( bundle: CFBundleRef; var refNum: CFBundleRefNum; var localizedRefNum: CFBundleRefNum ): SInt32; external name '_CFBundleOpenBundleResourceFiles';
    { Similar to CFBundleOpenBundleResourceMap(), except that it creates two }
 >>>>>>> origin/fixes_2.4
+=======
+function CFBundleOpenBundleResourceFiles( bundle: CFBundleRef; var refNum: CFBundleRefNum; var localizedRefNum: CFBundleRefNum ): SInt32; external name '_CFBundleOpenBundleResourceFiles';
+   { Similar to CFBundleOpenBundleResourceMap(), except that it creates two }
+>>>>>>> origin/cpstrnew
    { separate resource maps and returns reference numbers for both. }
 
 procedure CFBundleCloseBundleResourceMap( bundle: CFBundleRef; refNum: CFBundleRefNum ); external name '_CFBundleCloseBundleResourceMap';
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -1167,6 +1329,9 @@ procedure CFBundleCloseBundleResourceMap( bundle: CFBundleRef; refNum: CFBundleR
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 implementation
 
 
@@ -1197,6 +1362,7 @@ end.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 {$endc} {not MACOSALLINCLUDE}
 =======
@@ -1207,3 +1373,7 @@ end.
 
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Contains:   Text Services Manager for TextEdit Interfaces. All TextEdit functions as well all functions in
  
 <<<<<<< HEAD
@@ -44,6 +45,13 @@
 =======
      Copyright:  © 1991-2008 by Apple Computer, Inc., all rights reserved
 >>>>>>> origin/fixes_2.4
+=======
+     Contains:   Text Services Manager for TextEdit Interfaces. All TextEdit functions as well all functions in
+ 
+     Version:    HIToolbox-437~1
+ 
+     Copyright:  © 1991-2008 by Apple Computer, Inc., all rights reserved
+>>>>>>> origin/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -91,12 +99,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -108,6 +120,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -122,6 +135,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -137,6 +154,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -147,6 +165,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -154,13 +175,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -168,6 +193,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -176,8 +203,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -188,6 +218,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -208,6 +239,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -216,12 +249,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -229,6 +265,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -499,6 +536,10 @@ interface
 	{$setc TARGET_CPU_PPC64 := FALSE}
 >>>>>>> origin/fixes_2.4
 	{$setc TARGET_CPU_X86 := FALSE}
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
@@ -547,6 +588,7 @@ interface
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 {$endc}
@@ -564,6 +606,17 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -592,6 +645,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -600,6 +654,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -613,6 +669,7 @@ uses MacTypes,TextEdit,Dialogs,AppleEvents,TextServices;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
 =======
@@ -623,6 +680,10 @@ uses MacTypes,TextEdit,Dialogs,AppleEvents,TextServices;
 {$endc} {not MACOSALLINCLUDE}
 
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+
+>>>>>>> origin/cpstrnew
 
 {****************************************************************************************************************
     
@@ -635,6 +696,7 @@ uses MacTypes,TextEdit,Dialogs,AppleEvents,TextServices;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc TARGET_OS_MAC}
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -643,6 +705,9 @@ uses MacTypes,TextEdit,Dialogs,AppleEvents,TextServices;
 =======
 {$ifc TARGET_OS_MAC}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc TARGET_OS_MAC}
+>>>>>>> origin/cpstrnew
 
 {$ALIGN MAC68K}
 
@@ -669,6 +734,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	TSMTEPreUpdateProcPtr = procedure( textH: TEHandle; refCon: SIGNEDLONG );
 	TSMTEPostUpdateProcPtr = procedure( textH: TEHandle; fixLen: SIGNEDLONG; inputAreaStart: SIGNEDLONG; inputAreaEnd: SIGNEDLONG; pinStart: SIGNEDLONG; pinEnd: SIGNEDLONG; refCon: SIGNEDLONG );
 	TSMTEPreUpdateUPP = TSMTEPreUpdateProcPtr;
@@ -692,12 +758,19 @@ type
 	TSMTEPreUpdateUPP = TSMTEPreUpdateProcPtr;
 	TSMTEPostUpdateUPP = TSMTEPostUpdateProcPtr;
 >>>>>>> origin/fixes_2.4
+=======
+	TSMTEPreUpdateProcPtr = procedure( textH: TEHandle; refCon: SIGNEDLONG );
+	TSMTEPostUpdateProcPtr = procedure( textH: TEHandle; fixLen: SIGNEDLONG; inputAreaStart: SIGNEDLONG; inputAreaEnd: SIGNEDLONG; pinStart: SIGNEDLONG; pinEnd: SIGNEDLONG; refCon: SIGNEDLONG );
+	TSMTEPreUpdateUPP = TSMTEPreUpdateProcPtr;
+	TSMTEPostUpdateUPP = TSMTEPostUpdateProcPtr;
+>>>>>>> origin/cpstrnew
 { data types}
 type
 	TSMTERec = record
 		textH: TEHandle;
 		preUpdateProc: TSMTEPreUpdateUPP;
 		postUpdateProc: TSMTEPostUpdateUPP;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -716,10 +789,15 @@ type
 		updateFlag: SIGNEDLONG;
 		refCon: SIGNEDLONG;
 >>>>>>> origin/fixes_2.4
+=======
+		updateFlag: SIGNEDLONG;
+		refCon: SIGNEDLONG;
+>>>>>>> origin/cpstrnew
 	end;
 	TSMTERecPtr = ^TSMTERec;
 type
 	TSMTERecHandle = ^TSMTERecPtr;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 <<<<<<< HEAD
@@ -728,6 +806,8 @@ type
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  NewTSMTEPreUpdateUPP()
  *  
@@ -783,6 +863,7 @@ procedure DisposeTSMTEPostUpdateUPP( userUPP: TSMTEPostUpdateUPP ); external nam
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure InvokeTSMTEPreUpdateUPP( textH: TEHandle; refCon: SIGNEDLONG; userUPP: TSMTEPreUpdateUPP ); external name '_InvokeTSMTEPreUpdateUPP';
 =======
 procedure InvokeTSMTEPreUpdateUPP( textH: TEHandle; refCon: SInt32; userUPP: TSMTEPreUpdateUPP ); external name '_InvokeTSMTEPreUpdateUPP';
@@ -793,6 +874,9 @@ procedure InvokeTSMTEPreUpdateUPP( textH: TEHandle; refCon: SInt32; userUPP: TSM
 =======
 procedure InvokeTSMTEPreUpdateUPP( textH: TEHandle; refCon: SIGNEDLONG; userUPP: TSMTEPreUpdateUPP ); external name '_InvokeTSMTEPreUpdateUPP';
 >>>>>>> origin/fixes_2.4
+=======
+procedure InvokeTSMTEPreUpdateUPP( textH: TEHandle; refCon: SIGNEDLONG; userUPP: TSMTEPreUpdateUPP ); external name '_InvokeTSMTEPreUpdateUPP';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 {
@@ -806,6 +890,7 @@ procedure InvokeTSMTEPreUpdateUPP( textH: TEHandle; refCon: SIGNEDLONG; userUPP:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure InvokeTSMTEPostUpdateUPP( textH: TEHandle; fixLen: SIGNEDLONG; inputAreaStart: SIGNEDLONG; inputAreaEnd: SIGNEDLONG; pinStart: SIGNEDLONG; pinEnd: SIGNEDLONG; refCon: SIGNEDLONG; userUPP: TSMTEPostUpdateUPP ); external name '_InvokeTSMTEPostUpdateUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
@@ -826,6 +911,12 @@ procedure InvokeTSMTEPostUpdateUPP( textH: TEHandle; fixLen: SIGNEDLONG; inputAr
 
 {$ifc not TARGET_CPU_64}
 >>>>>>> origin/fixes_2.4
+=======
+procedure InvokeTSMTEPostUpdateUPP( textH: TEHandle; fixLen: SIGNEDLONG; inputAreaStart: SIGNEDLONG; inputAreaEnd: SIGNEDLONG; pinStart: SIGNEDLONG; pinEnd: SIGNEDLONG; refCon: SIGNEDLONG; userUPP: TSMTEPostUpdateUPP ); external name '_InvokeTSMTEPostUpdateUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+{$ifc not TARGET_CPU_64}
+>>>>>>> origin/cpstrnew
 {
  *  IsTSMTEDialog()   *** DEPRECATED ***
  *  
@@ -836,6 +927,7 @@ procedure InvokeTSMTEPostUpdateUPP( textH: TEHandle; fixLen: SIGNEDLONG; inputAr
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
@@ -846,6 +938,9 @@ procedure InvokeTSMTEPostUpdateUPP( textH: TEHandle; fixLen: SIGNEDLONG; inputAr
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.4
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in CarbonAccessors.o 1.0.2 and later
  }
@@ -864,6 +959,7 @@ function IsTSMTEDialog( dialog: DialogRef ): Boolean; external name '_IsTSMTEDia
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
@@ -874,6 +970,9 @@ function IsTSMTEDialog( dialog: DialogRef ): Boolean; external name '_IsTSMTEDia
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.4
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in CarbonAccessors.o 1.0.2 and later
  }
@@ -891,6 +990,7 @@ function GetTSMTEDialogDocumentID( dialog: DialogRef ): TSMDocumentID; external 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
@@ -901,6 +1001,9 @@ function GetTSMTEDialogDocumentID( dialog: DialogRef ): TSMDocumentID; external 
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.4
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in CarbonAccessors.o 1.0.2 and later
  }
@@ -919,6 +1022,7 @@ function GetTSMTEDialogTSMTERecHandle( dialog: DialogRef ): TSMTERecHandle; exte
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
@@ -929,6 +1033,9 @@ function GetTSMTEDialogTSMTERecHandle( dialog: DialogRef ): TSMTERecHandle; exte
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.4
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in CarbonAccessors.o 1.0.2 and later
  }
@@ -946,6 +1053,7 @@ procedure SetTSMTEDialogDocumentID( dialog: DialogRef; documentID: TSMDocumentID
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
@@ -956,6 +1064,9 @@ procedure SetTSMTEDialogDocumentID( dialog: DialogRef; documentID: TSMDocumentID
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.4
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in CarbonAccessors.o 1.0.2 and later
  }
@@ -966,6 +1077,7 @@ procedure SetTSMTEDialogTSMTERecHandle( dialog: DialogRef; tsmteRecHandle_: TSMT
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not TARGET_CPU_64}
 
 {$endc} {TARGET_OS_MAC}
@@ -982,13 +1094,20 @@ end.
 =======
 {$endc} {not TARGET_CPU_64}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not TARGET_CPU_64}
+>>>>>>> origin/cpstrnew
 
 {$endc} {TARGET_OS_MAC}
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2_2
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

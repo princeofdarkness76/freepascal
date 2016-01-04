@@ -11,6 +11,7 @@ name=fpc
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 version=3.1.1
 =======
 version=2.5.1
@@ -33,6 +34,9 @@ version=2.2.5
 =======
 version=2.4.1
 >>>>>>> origin/fixes_2.4
+=======
+version=2.5.1
+>>>>>>> origin/cpstrnew
 
 [target]
 dirs=compiler rtl utils packages ide installer
@@ -233,6 +237,7 @@ ifneq ($(wildcard ide),)
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 IDETARGETS=go32v2 win32 win64 linux freebsd os2 emx beos haiku
 =======
 IDETARGETS=go32v2 win32 win64 linux freebsd os2 emx beos haiku 
@@ -252,6 +257,9 @@ IDETARGETS=go32v2 win32 linux freebsd os2 emx beos
 =======
 IDETARGETS=go32v2 win32 linux freebsd os2 emx beos
 >>>>>>> origin/fixes_2_2
+=======
+IDETARGETS=go32v2 win32 win64 linux freebsd os2 emx beos haiku 
+>>>>>>> origin/cpstrnew
 ifneq ($(findstring $(OS_TARGET),$(IDETARGETS)),)
 IDE=1
 endif

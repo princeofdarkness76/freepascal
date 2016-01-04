@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 %{
 program h2pas;
 <<<<<<< HEAD
@@ -24,6 +25,11 @@ program h2pas;
 program h2pas;
 
 >>>>>>> origin/fixes_2.4
+=======
+%{
+program h2pas;
+
+>>>>>>> origin/cpstrnew
 (*
     Copyright (c) 1998-2000 by Florian Klaempfl
 
@@ -268,9 +274,12 @@ program h2pas;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
     function TypeName(const s:string):string;
       var
         i : longint;
@@ -342,10 +351,14 @@ program h2pas;
          writeln(outfile);
          writeln(outfile,aktspace,'const');
 <<<<<<< HEAD
+<<<<<<< HEAD
          shift(2);
 =======
          shift(3);
 >>>>>>> origin/fixes_2.4
+=======
+         shift(2);
+>>>>>>> origin/cpstrnew
          while not eof(tempfile) do
            begin
               readln(tempfile,line);
@@ -389,10 +402,14 @@ program h2pas;
                         writeln(implemfile,';');
                         writeln(implemfile,aktspace,'begin');
 <<<<<<< HEAD
+<<<<<<< HEAD
                         shift(2);
 =======
                         shift(3);
 >>>>>>> origin/fixes_2.4
+=======
+                        shift(2);
+>>>>>>> origin/cpstrnew
                         write(implemfile,aktspace,name,':=(a.flag',flag_index);
                         writeln(implemfile,' and bm_',ph,'_',name,') shr bp_',ph,'_',name,';');
                         popshift;
@@ -416,10 +433,14 @@ program h2pas;
                         writeln(implemfile,');');
                         writeln(implemfile,aktspace,'begin');
 <<<<<<< HEAD
+<<<<<<< HEAD
                         shift(2);
 =======
                         shift(3);
 >>>>>>> origin/fixes_2.4
+=======
+                        shift(2);
+>>>>>>> origin/cpstrnew
                         write(implemfile,aktspace,'a.flag',flag_index,':=');
                         write(implemfile,'a.flag',flag_index,' or ');
                         writeln(implemfile,'((__',name,' shl bp_',ph,'_',name,') and bm_',ph,'_',name,');');
@@ -598,10 +619,13 @@ program h2pas;
              t_funcname :
                begin
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
                   if not compactmode then
                    shift(2);
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
                   if if_nb>0 then
                     begin
                        writeln(outfile,aktspace,'var');
@@ -619,10 +643,14 @@ program h2pas;
                     end;
                   writeln(outfile,aktspace,'begin');
 <<<<<<< HEAD
+<<<<<<< HEAD
                   shift(2);
 =======
                   shift(3);
 >>>>>>> origin/fixes_2.4
+=======
+                  shift(2);
+>>>>>>> origin/cpstrnew
                   write(outfile,aktspace);
                   write_all_ifexpr(outfile,p^.p2);
                   write_expr(outfile,p^.p1);
@@ -668,9 +696,13 @@ program h2pas;
        in_args : boolean = false;
        typedef_level : longint = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
        old_in_args : boolean = false;
 =======
 >>>>>>> origin/fixes_2.4
+=======
+       old_in_args : boolean = false;
+>>>>>>> origin/cpstrnew
 
     (* writes an argument list, where p is t_arglist *)
 
@@ -804,10 +836,14 @@ program h2pas;
          pointerwritten,
          constant : boolean;
 <<<<<<< HEAD
+<<<<<<< HEAD
          old_in_args : boolean;
 =======
 
 >>>>>>> origin/fixes_2.4
+=======
+         old_in_args : boolean;
+>>>>>>> origin/cpstrnew
       begin
          if not(assigned(p)) then
            begin
@@ -816,6 +852,9 @@ program h2pas;
            end;
          case p^.typ of
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
             t_pointerdef :
               begin
                 (* procedure variable ? *)
@@ -926,6 +965,7 @@ program h2pas;
                 flush(outfile);
                 write_p_a_def(outfile,p^.p1,simple_type);
               end;
+<<<<<<< HEAD
 =======
             t_pointerdef : begin
                               (* procedure variable ? *)
@@ -1031,6 +1071,8 @@ program h2pas;
                              write_p_a_def(outfile,p^.p1,simple_type);
                           end;
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
             else internalerror(1);
          end;
       end;
@@ -1098,16 +1140,22 @@ program h2pas;
                     if in_args then
                     begin
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
                       if UseCTypesUnit and IsACType(p^.p1^.p) then
                         write(outfile,'p')
                       else
                         write(outfile,'P');
+<<<<<<< HEAD
 =======
                       if UseCTypesUnit and (IsACType(p^.p1^.p)=False) then
                         write(outfile,'P')
                       else
                         write(outfile,'p');
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
                       pointerprefix:=true;
                     end
                     else
@@ -1229,10 +1277,14 @@ program h2pas;
                       else
                         writeln(outfile,'record');
 <<<<<<< HEAD
+<<<<<<< HEAD
                       shift(2);
 =======
                       shift(3);
 >>>>>>> origin/fixes_2.4
+=======
+                      shift(2);
+>>>>>>> origin/cpstrnew
                       hp1:=p^.p1;
 
                       (* walk through all members *)
@@ -1244,6 +1296,7 @@ program h2pas;
                            hp3:=hp2^.p2;
                            while assigned(hp3) do
                              begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1272,6 +1325,10 @@ program h2pas;
                                 if not assigned(hp3^.p1^.p3) or
                                    (hp3^.p1^.p3^.typ <> t_size_specifier) then
 >>>>>>> origin/fixes_2.4
+=======
+                                if not assigned(hp3^.p1^.p3) or
+                                   (hp3^.p1^.p3^.typ <> t_size_specifier) then
+>>>>>>> origin/cpstrnew
                                   begin
                                      if is_sized then
                                        begin
@@ -1296,6 +1353,7 @@ program h2pas;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 if assigned(hp3^.p1) and
                                    assigned(hp3^.p1^.p3) then
 =======
@@ -1313,6 +1371,9 @@ program h2pas;
 =======
                                 if assigned(hp3^.p1^.p3) then
 >>>>>>> origin/fixes_2.4
+=======
+                                if assigned(hp3^.p1^.p3) then
+>>>>>>> origin/cpstrnew
                                   begin
                                      { we could use mask to implement this }
                                      { because we need to respect the positions }
@@ -1368,6 +1429,7 @@ program h2pas;
                                        begin
                                           if not no_pop then
 <<<<<<< HEAD
+<<<<<<< HEAD
                                             write(outfile,';cdecl');
 =======
                                             begin
@@ -1375,6 +1437,9 @@ program h2pas;
                                                no_pop:=true;
                                             end;
 >>>>>>> origin/fixes_2.4
+=======
+                                            write(outfile,';cdecl');
+>>>>>>> origin/cpstrnew
                                           is_procvar:=false;
                                        end;
                                      writeln(outfile,';');
@@ -1417,10 +1482,14 @@ program h2pas;
                       shift(2);
                       writeln(outfile,aktspace,'case longint of');
 <<<<<<< HEAD
+<<<<<<< HEAD
                       shift(2);
 =======
                       shift(3);
 >>>>>>> origin/fixes_2.4
+=======
+                      shift(2);
+>>>>>>> origin/cpstrnew
                       l:=0;
                       hp1:=p^.p1;
 
@@ -1514,9 +1583,13 @@ program h2pas;
       end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> origin/fixes_2.4
+=======
+
+>>>>>>> origin/cpstrnew
 %}
 
 %token _WHILE _FOR _DO _GOTO _CONTINUE _BREAK
@@ -1720,14 +1793,20 @@ declaration :
                     write_args(outfile,$4^.p1^.p1^.p2);
                   write(outfile,':');
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
                   old_in_args:=in_args;
                   (* write pointers as P.... instead of ^.... *)
                   in_args:=true;
                   write_p_a_def(outfile,$4^.p1^.p1^.p1,$2);
                   in_args:=old_in_args;
+<<<<<<< HEAD
 =======
                   write_p_a_def(outfile,$4^.p1^.p1^.p1,$2);
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
                   if createdynlib then
                     begin
                       loaddynlibproc.add('pointer('+$4^.p1^.p2^.p+'):=GetProcAddress(hlib,'''+$4^.p1^.p2^.p+''');');
@@ -1738,6 +1817,9 @@ declaration :
                      write(implemfile,'function ',$4^.p1^.p2^.p);
                      if assigned($4^.p1^.p1^.p2) then
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
                        write_args(implemfile,$4^.p1^.p1^.p2);
                      write(implemfile,':');
 
@@ -1746,11 +1828,14 @@ declaration :
                      in_args:=true;
                      write_p_a_def(implemfile,$4^.p1^.p1^.p1,$2);
                      in_args:=old_in_args;
+<<<<<<< HEAD
 =======
                       write_args(implemfile,$4^.p1^.p1^.p2);
                      write(implemfile,':');
                      write_p_a_def(implemfile,$4^.p1^.p1^.p1,$2);
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
                    end;
                end;
              (* No CDECL in interface for Uselib *)
@@ -1801,10 +1886,14 @@ declaration :
              block_type:=bt_var;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
              shift(2);
 =======
              shift(3);
 >>>>>>> origin/fixes_2.4
+=======
+             shift(2);
+>>>>>>> origin/cpstrnew
 
              IsExtern:=assigned($1)and($1^.str='extern');
              (* walk through all declarations *)
@@ -1937,15 +2026,21 @@ declaration :
                       write_args(implemfile,$4^.p1^.p1^.p2);
                      write(implemfile,':');
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 
                      old_in_args:=in_args;
                      (* write pointers as P.... instead of ^.... *)
                      in_args:=true;
                      write_p_a_def(implemfile,$4^.p1^.p1^.p1,$2);
                      in_args:=old_in_args;
+<<<<<<< HEAD
 =======
                      write_p_a_def(implemfile,$4^.p1^.p1^.p1,$2);
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
                    end;
                end;
              if assigned($5) then
@@ -1997,10 +2092,14 @@ declaration :
              block_type:=bt_var;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
              shift(2);
 =======
              shift(3);
 >>>>>>> origin/fixes_2.4
+=======
+             shift(2);
+>>>>>>> origin/cpstrnew
 
              IsExtern:=assigned($1)and($1^.str='extern');
              (* walk through all declarations *)
@@ -2042,10 +2141,14 @@ declaration :
             block_type:=bt_type;
          end;
 <<<<<<< HEAD
+<<<<<<< HEAD
        shift(2);
 =======
        shift(3);
 >>>>>>> origin/fixes_2.4
+=======
+       shift(2);
+>>>>>>> origin/cpstrnew
        if ( yyv[yysp-1]^.p2  <> nil ) then
          begin
            (* write new type name *)
@@ -2101,10 +2204,14 @@ declaration :
        if Uppercase(tn)<>Uppercase(pn) then
         begin
 <<<<<<< HEAD
+<<<<<<< HEAD
           shift(2);
 =======
           shift(3);
 >>>>>>> origin/fixes_2.4
+=======
+          shift(2);
+>>>>>>> origin/cpstrnew
           writeln(outfile,aktspace,PN,' = ',TN,';');
           popshift;
         end;
@@ -2125,10 +2232,14 @@ declaration :
          end;
        no_pop:=assigned($4) and ($4^.str='no_pop');
 <<<<<<< HEAD
+<<<<<<< HEAD
        shift(2);
 =======
        shift(3);
 >>>>>>> origin/fixes_2.4
+=======
+       shift(2);
+>>>>>>> origin/cpstrnew
        (* walk through all declarations *)
        hp:=$5;
        if assigned(hp) then
@@ -2176,10 +2287,14 @@ declaration :
          writeln(outfile);
        no_pop:=assigned($3) and ($3^.str='no_pop');
 <<<<<<< HEAD
+<<<<<<< HEAD
        shift(2);
 =======
        shift(3);
 >>>>>>> origin/fixes_2.4
+=======
+       shift(2);
+>>>>>>> origin/cpstrnew
        (* Get the name to write the type definition for, try
           to use the tag name first *)
        if assigned($2^.p2) then
@@ -2256,10 +2371,14 @@ declaration :
        else
          writeln(outfile);
 <<<<<<< HEAD
+<<<<<<< HEAD
        shift(2);
 =======
        shift(3);
 >>>>>>> origin/fixes_2.4
+=======
+       shift(2);
+>>>>>>> origin/cpstrnew
        (* write as pointer *)
        writeln(outfile,'(* generic typedef  *)');
        writeln(outfile,aktspace,$2^.p,' = pointer;');
@@ -2300,11 +2419,17 @@ define_dec :
            end;
         end;
 <<<<<<< HEAD
+<<<<<<< HEAD
        if block_type<>bt_func then
          writeln(outfile);
 
 =======
 >>>>>>> origin/fixes_2.4
+=======
+       if block_type<>bt_func then
+         writeln(outfile);
+
+>>>>>>> origin/cpstrnew
        block_type:=bt_func;
        write(outfile,aktspace,'function ',$2^.p);
        write(implemfile,aktspace,'function ',$2^.p);
@@ -2371,12 +2496,16 @@ define_dec :
             if block_type<>bt_const then
               begin
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
                 if block_type<>bt_func then
                   writeln(outfile);
                 writeln(outfile,aktspace,'const');
               end;
             block_type:=bt_const;
             shift(2);
+<<<<<<< HEAD
 =======
                  writeln(outfile);
                  writeln(outfile,aktspace,'const');
@@ -2384,6 +2513,8 @@ define_dec :
             block_type:=bt_const;
             shift(3);
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
             write(outfile,aktspace,$2^.p);
             write(outfile,' = ');
             flush(outfile);
@@ -2398,10 +2529,15 @@ define_dec :
        else
          begin
 <<<<<<< HEAD
+<<<<<<< HEAD
             if block_type<>bt_func then
               writeln(outfile);
 =======
 >>>>>>> origin/fixes_2.4
+=======
+            if block_type<>bt_func then
+              writeln(outfile);
+>>>>>>> origin/cpstrnew
             if not stripinfo then
              begin
                writeln (outfile,aktspace,'{ was #define dname def_expr }');
@@ -2414,6 +2550,7 @@ define_dec :
             if not assigned($4^.p3) then
               begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                  writeln(outfile,' : longint; { return type might be wrong }');
                  flush(outfile);
                  writeln(implemfile,' : longint; { return type might be wrong }');
@@ -2424,6 +2561,11 @@ define_dec :
                  writeln(implemfile,' : longint;');
                  writeln(implemfile,aktspace,'  { return type might be wrong }');
 >>>>>>> origin/fixes_2.4
+=======
+                 writeln(outfile,' : longint; { return type might be wrong }');
+                 flush(outfile);
+                 writeln(implemfile,' : longint; { return type might be wrong }');
+>>>>>>> origin/cpstrnew
               end
             else
               begin
@@ -2733,6 +2875,7 @@ special_type_name :
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        $$:=new(presobject,init_id(cshort_STR))
 =======
        $$:=new(presobject,init_id(csint_STR))
@@ -2749,6 +2892,9 @@ special_type_name :
 =======
        $$:=new(presobject,init_id(csint_STR))
 >>>>>>> origin/fixes_2.4
+=======
+       $$:=new(presobject,init_id(csint_STR))
+>>>>>>> origin/cpstrnew
      else
        $$:=new(presobject,init_intid(SMALL_STR));
      } |
@@ -2976,10 +3122,14 @@ declarator :
        while assigned(hp^.p1) do
          hp:=hp^.p1;
 <<<<<<< HEAD
+<<<<<<< HEAD
        hp^.p1:=new(presobject,init_one(t_pointerdef,nil));
 =======
        hp^.p1:=new(presobject,init_two(t_arraydef,nil,nil));
 >>>>>>> origin/fixes_2.4
+=======
+       hp^.p1:=new(presobject,init_one(t_pointerdef,nil));
+>>>>>>> origin/cpstrnew
      } |
      LKLAMMER declarator RKLAMMER
      {
@@ -3048,10 +3198,14 @@ abstract_declarator :
        while assigned(hp^.p1) do
          hp:=hp^.p1;
 <<<<<<< HEAD
+<<<<<<< HEAD
        hp^.p1:=new(presobject,init_one(t_pointerdef,nil));
 =======
        hp^.p1:=new(presobject,init_two(t_arraydef,nil,nil));
 >>>>>>> origin/fixes_2.4
+=======
+       hp^.p1:=new(presobject,init_one(t_pointerdef,nil));
+>>>>>>> origin/cpstrnew
      } |
      LKLAMMER abstract_declarator RKLAMMER
      {
@@ -3514,6 +3668,7 @@ begin
   freedynlibproc.free;
   loaddynlibproc.free;
 end.
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 %{
@@ -6683,3 +6838,5 @@ end.
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew

@@ -16,16 +16,22 @@
   ImageMagick MagickWand API.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 }
 {
   Based on ImageMagick 6.2
 
+<<<<<<< HEAD
 =======
   
 >>>>>>> graemeg/fixes_2_2
 =======
   
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
   Converted from c by: Felipe Monteiro de Carvalho Dez/2005
 
 	Bug-fixed by Ángel Eduardo García Hernández

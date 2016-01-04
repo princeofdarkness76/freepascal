@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef NDS_INTERFACE}
 type
   IRQ_MASK = cuint;
@@ -47,6 +48,8 @@ type
 *)
 
 
+=======
+>>>>>>> origin/cpstrnew
 {$ifdef NDS_INTERFACE}
 type
   IRQ_MASKS = cuint;
@@ -75,6 +78,9 @@ const
   IRQ_FIFO_NOT_EMPTY	: IRQ_MASK =	(1 shl 18);	  (* Receive FIFO empty interrupt mask *)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   IRQ_CARD			      : IRQ_MASK =	(1 shl 19);	  (* interrupt mask DS Card Slot *)
   IRQ_CARD_LINE		    : IRQ_MASK =	(1 shl 20);	  (* interrupt mask *)
   IRQ_GEOMETRY_FIFO   : IRQ_MASK =	(1 shl 21);	  (* geometry FIFO interrupt mask *)
@@ -91,6 +97,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   IRQ_I2C   : IRQ_MASKSAUX = (1 shl 6); (* Power Button interrupt mask (DSi ARM7) *)
  	IRQ_SDMMC : IRQ_MASKSAUX = (1 shl 8); (* Sdmmc interrupt mask (DSi ARM7) *)
 =======
@@ -102,6 +109,9 @@ const
 =======
   IRQ_I2C: IRQ_MASKSAUX = (1 shl 6); (* Power Button interrupt mask (DSi ARM7) *)
 >>>>>>> graemeg/cpstrnew
+=======
+  IRQ_I2C: IRQ_MASKSAUX = (1 shl 6); (* Power Button interrupt mask (DSi ARM7) *)
+>>>>>>> origin/cpstrnew
 =======
   IRQ_I2C: IRQ_MASKSAUX = (1 shl 6); (* Power Button interrupt mask (DSi ARM7) *)
 >>>>>>> origin/cpstrnew
@@ -130,11 +140,15 @@ const
 const
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   REG_IE	 : pcuint32 = pointer($04000210);
   REG_AUXIE: pcuint32 = pointer($04000218);
   REG_IF	 : pcuint32 = pointer($04000214);
   REG_AUXIF: pcuint32 = pointer($0400021C);
   REG_IME	 : pcuint32 = pointer($04000208);
+<<<<<<< HEAD
 =======
   REG_IE	: pcuint32 = pointer($04000210);
   REG_IF	: pcuint32 = pointer($04000214);
@@ -145,6 +159,8 @@ const
   REG_IF	: pcuint32 = pointer($04000214);
   REG_IME	: pcuint16 = pointer($04000208);
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 
 type
   IME_VALUE = integer;
@@ -176,6 +192,7 @@ var
   __irq_vector: Pointer; external name '__irq_vector';
   __irq_flags: pcuint32; external name '__irq_flags';
   __irq_flagsaux: pcuint32; external name '__irq_flagsaux';
+<<<<<<< HEAD
 
 
 {$define INTR_WAIT_FLAGS := __irq_flags}
@@ -193,6 +210,12 @@ var
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+
+
+{$define INTR_WAIT_FLAGS := __irq_flags}
+{$define INTR_WAIT_FLAGSAUX := __irq_flagsaux}
+>>>>>>> origin/cpstrnew
 {$define IRQ_HANDLER := __irq_vector}
 
 type
@@ -204,6 +227,9 @@ type
 procedure irqInit(); cdecl; external;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 procedure irqSet(irq: cuint32; handler: TVoidFn); cdecl; external;
 procedure irqSet(irq: cuint32; handler: pointer); cdecl; external;
 procedure irqSetAUX(irq: cuint32; handler: TVoidFn); cdecl; external;
@@ -216,6 +242,9 @@ procedure irqEnable(irq: cuint32); cdecl; external;
 procedure irqEnableAUX(irq: cuint32); cdecl; external;
 procedure irqDisable(irq: cuint32); cdecl; external;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 procedure irqDisableAUX(irq: cuint32); cdecl; external;
 
 procedure swiIntrWait(waitForSet: cuint32; flags: cuint32); cdecl; external;
@@ -223,11 +252,14 @@ procedure swiWaitForVBlank(); cdecl; external;
 
 function setPowerButtonCB(CB: TVoidFn): TVoidFn; cdecl; external;
 
+<<<<<<< HEAD
 =======
 
 procedure swiIntrWait(waitForSet: cint; flags: cuint32); cdecl; external;
 procedure swiWaitForVBlank(); cdecl; external;
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 function enterCriticalSection(): cint; inline;
 procedure leaveCriticalSection(oldIME: cint); inline;
 {$endif NDS_INTERFACE}

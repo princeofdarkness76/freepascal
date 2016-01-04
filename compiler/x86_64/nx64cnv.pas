@@ -82,6 +82,7 @@ implementation
         result:=nil;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if use_vectorfpu(resultdef) and
 =======
         if use_sse(resultdef) and
@@ -89,6 +90,9 @@ implementation
 =======
         if use_sse(resultdef) and
 >>>>>>> origin/fixes_2_2
+=======
+        if use_vectorfpu(resultdef) and
+>>>>>>> origin/cpstrnew
            (torddef(left.resultdef).ordtype=u32bit) then
           begin
             inserttypeconv(left,s64inttype);
@@ -98,6 +102,7 @@ implementation
           result:=inherited first_int_to_real;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        if use_vectorfpu(resultdef) then
 =======
        if use_sse(resultdef) then
@@ -105,6 +110,9 @@ implementation
 =======
        if use_sse(resultdef) then
 >>>>>>> origin/fixes_2_2
+=======
+       if use_vectorfpu(resultdef) then
+>>>>>>> origin/cpstrnew
          expectloc:=LOC_MMREGISTER;
       end;
 
@@ -117,6 +125,7 @@ implementation
       begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if use_vectorfpu(resultdef) then
 =======
         if use_sse(resultdef) then
@@ -124,6 +133,9 @@ implementation
 =======
         if use_sse(resultdef) then
 >>>>>>> origin/fixes_2_2
+=======
+        if use_vectorfpu(resultdef) then
+>>>>>>> origin/cpstrnew
           begin
             if is_double(resultdef) then
               op:=A_CVTSI2SD
@@ -174,12 +186,16 @@ implementation
                        begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
                          href:=left.location.reference;
                          tcgx86(cg).make_simple_ref(current_asmdata.CurrAsmList,href);
                          inc(href.offset,4);
                          emit_const_ref(A_BT,S_L,31,href);
                          dec(href.offset,4);
                          current_asmdata.CurrAsmList.concat(taicpu.op_ref_reg(op,S_Q,href,location.register));
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -191,6 +207,8 @@ implementation
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
                        end;
                      else
                        internalerror(200710181);
@@ -204,6 +222,7 @@ implementation
                    reference_reset_symbol(href,l1,0,4);
                    { simplify for PIC }
                    tcgx86(cg).make_simple_ref(current_asmdata.CurrAsmList,href);
+<<<<<<< HEAD
 =======
                    current_asmdata.asmlists[al_typedconsts].concat(Tai_label.Create(l1));
                    reference_reset_symbol(href,l1,0);
@@ -212,6 +231,8 @@ implementation
                    current_asmdata.asmlists[al_typedconsts].concat(Tai_label.Create(l1));
                    reference_reset_symbol(href,l1,0);
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 
                    { I got these constant from a test program (FK) }
                    if is_double(resultdef) then
@@ -221,12 +242,15 @@ implementation
                        current_asmdata.asmlists[al_typedconsts].concat(Tai_const.Create_32bit($43f00000));
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
                        { simplify for PIC }
 >>>>>>> graemeg/fixes_2_2
 =======
                        { simplify for PIC }
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
                        tcgx86(cg).make_simple_ref(current_asmdata.CurrAsmList,href);
                        current_asmdata.CurrAsmList.concat(taicpu.op_ref_reg(A_ADDSD,S_NO,href,location.register));
                      end
@@ -236,6 +260,7 @@ implementation
                        current_asmdata.asmlists[al_typedconsts].concat(Tai_const.Create_32bit($5f800000));
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
                        { simplify for PIC }
                        tcgx86(cg).make_simple_ref(current_asmdata.CurrAsmList,href);
@@ -244,6 +269,8 @@ implementation
                        { simplify for PIC }
                        tcgx86(cg).make_simple_ref(current_asmdata.CurrAsmList,href);
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
                        current_asmdata.CurrAsmList.concat(taicpu.op_ref_reg(A_ADDSS,S_NO,href,location.register));
                      end
                    else

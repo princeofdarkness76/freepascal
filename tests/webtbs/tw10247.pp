@@ -3,6 +3,7 @@ uses classes, sysutils;
 type
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   generic TNode<T> = class
   public
     type
@@ -19,6 +20,11 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+  generic TNode<T> = class
+  public
+    type
+>>>>>>> origin/cpstrnew
       PT = ^T;
   private
     var
@@ -27,6 +33,7 @@ type
     constructor Create;
     destructor Destroy; override;
   end;
+<<<<<<< HEAD
 
   generic TContainer<T> = class
   public
@@ -70,17 +77,21 @@ type
                 constructor Create;
                 destructor Destroy; override;
         end;
+=======
+>>>>>>> origin/cpstrnew
 
-        generic TContainer<T> = class
-        type public
-                TTNode = specialize TNode<T>;
-        var
-        private
-                Data: TTNode;
-        public
-                constructor Create;
-                destructor Destroy; override;
+  generic TContainer<T> = class
+  public
+    type
+      TTNode = specialize TNode<T>;
+  private
+    var
+      Data: TTNode;
+  public
+    constructor Create;
+    destructor Destroy; override;
 
+<<<<<<< HEAD
                 function GetAddr: TTNode.PT;
                 procedure SetV(v: TTNode.T);
         end;
@@ -88,6 +99,11 @@ type
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    function GetAddr: TTNode.PT;
+    procedure SetV(v: TTNode.T);
+  end;
+>>>>>>> origin/cpstrnew
 
 constructor TNode.Create;
 begin
@@ -97,6 +113,7 @@ destructor TNode.Destroy;
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   inherited Destroy;
 =======
         inherited Destroy;
@@ -104,6 +121,9 @@ begin
 =======
         inherited Destroy;
 >>>>>>> origin/fixes_2_2
+=======
+  inherited Destroy;
+>>>>>>> origin/cpstrnew
 end;
 
 constructor TContainer.Create;
@@ -144,6 +164,7 @@ begin
   c:=TStringContainer.Create;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   c.SetV('abc');
   Writeln(HexStr(c.GetAddr));
 =======
@@ -154,4 +175,8 @@ begin
   c.Set('abc');
   Writeln(HexStr(c.Get));
 >>>>>>> origin/fixes_2_2
+=======
+  c.SetV('abc');
+  Writeln(HexStr(c.GetAddr));
+>>>>>>> origin/cpstrnew
 end.

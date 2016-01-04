@@ -68,6 +68,7 @@ type
   IFilter = Pointer;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   IUnknown = Pointer;
 =======
   IUnkown = Pointer;
@@ -75,6 +76,9 @@ type
 =======
   IUnkown = Pointer;
 >>>>>>> origin/fixes_2_2
+=======
+  IUnknown = Pointer;
+>>>>>>> origin/cpstrnew
   ICommand = Pointer;
   {$IFNDEF JWA_INCLUDEMODE}
   PPWCHAR = ^PWCHAR;
@@ -125,6 +129,7 @@ function BindIFilterFromStorage(pStg: IStorage; pUnkOuter: IUnknown; out ppIUnk:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function BindIFilterFromStream(pStm: IStream; pUnkOuter: IUnknown; out ppIUnk: IFilter): HRESULT; stdcall;
 =======
 function BindIFilterFromStream(pStm: IStream; pUnkOuter: IUnkown; out ppIUnk: IFilter): HRESULT; stdcall;
@@ -132,6 +137,9 @@ function BindIFilterFromStream(pStm: IStream; pUnkOuter: IUnkown; out ppIUnk: IF
 =======
 function BindIFilterFromStream(pStm: IStream; pUnkOuter: IUnkown; out ppIUnk: IFilter): HRESULT; stdcall;
 >>>>>>> origin/fixes_2_2
+=======
+function BindIFilterFromStream(pStm: IStream; pUnkOuter: IUnknown; out ppIUnk: IFilter): HRESULT; stdcall;
+>>>>>>> origin/cpstrnew
 {$EXTERNALSYM BindIFilterFromStream}
 
 function LocateCatalogsW(pwszScope: PWCHAR; iBmk: ULONG; pwszMachine: PWCHAR;

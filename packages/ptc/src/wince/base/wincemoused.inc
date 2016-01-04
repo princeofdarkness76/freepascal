@@ -19,6 +19,9 @@
     License as published by the Free Software Foundation; either
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
     version 2.1 of the License, or (at your option) any later version
     with the following modification:
 
@@ -32,12 +35,15 @@
     this library, you may extend this exception to your version of the library,
     but you are not obligated to do so. If you do not wish to do so, delete this
     exception statement from your version.
+<<<<<<< HEAD
 =======
     version 2.1 of the License, or (at your option) any later version.
 >>>>>>> graemeg/fixes_2_2
 =======
     version 2.1 of the License, or (at your option) any later version.
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 
     This library is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -49,6 +55,7 @@
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 type
@@ -64,22 +71,30 @@ type
 =======
 >>>>>>> origin/fixes_2_2
 Type
+=======
+type
+>>>>>>> origin/cpstrnew
   TWinCEMouse = Class(TObject)
-  Private
-    FEventQueue : TEventQueue;
+  private
+    FEventQueue: TEventQueue;
 
-    FFullScreen : Boolean;
+    FFullScreen: Boolean;
 
     { the actual image area, inside the window (top left and bottom right corner) }
+<<<<<<< HEAD
     FWindowX1, FWindowY1, FWindowX2, FWindowY2 : Integer;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    FWindowX1, FWindowY1, FWindowX2, FWindowY2: Integer;
+>>>>>>> origin/cpstrnew
 
     { console resolution
       - mouse cursor position as seen by the user must always be in range:
         [0..FConsoleWidth-1, 0..FConsoleHeight-1] }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     FConsoleWidth, FConsoleHeight: Integer;
@@ -108,24 +123,28 @@ Type
 =======
 >>>>>>> origin/fixes_2_2
     FConsoleWidth, FConsoleHeight : Integer;
+=======
+    FConsoleWidth, FConsoleHeight: Integer;
+>>>>>>> origin/cpstrnew
 
-    FPreviousMouseButtonState : TPTCMouseButtonState;
-    FPreviousMouseX, FPreviousMouseY : Integer; { for calculating the deltas }
-    FPreviousMousePositionSaved : Boolean; { true, if FPreviousMouseX,
+    FPreviousMouseButtonState: TPTCMouseButtonState;
+    FPreviousMouseX, FPreviousMouseY: Integer; { for calculating the deltas }
+    FPreviousMousePositionSaved: Boolean; { true, if FPreviousMouseX,
            FPreviousMouseY and FPreviousMouseButtonState contain valid values }
 
     { flag data }
-    FEnabled : Boolean;
-  Public
+    FEnabled: Boolean;
+  public
     { setup }
-    Constructor Create(EventQueue : TEventQueue; FullScreen : Boolean; ConsoleWidth, ConsoleHeight : Integer);
+    constructor Create(EventQueue: TEventQueue; FullScreen: Boolean; ConsoleWidth, ConsoleHeight: Integer);
 
     { window procedure }
-    Function WndProc(hWnd : HWND; message : DWord; wParam : WPARAM; lParam : LPARAM) : LRESULT;
+    function WndProc(hWnd: HWND; message: DWord; wParam: WPARAM; lParam: LPARAM): LRESULT;
 
-    Procedure SetWindowArea(WindowX1, WindowY1, WindowX2, WindowY2 : Integer);
+    procedure SetWindowArea(WindowX1, WindowY1, WindowX2, WindowY2: Integer);
 
     { control }
+<<<<<<< HEAD
     Procedure enable;
     Procedure disable;
   End;
@@ -133,3 +152,8 @@ Type
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    procedure enable;
+    procedure disable;
+  end;
+>>>>>>> origin/cpstrnew

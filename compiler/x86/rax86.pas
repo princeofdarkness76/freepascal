@@ -228,6 +228,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   else if gas_needsuffix[opcode]=AttSufMM then
   begin
     if (opr.typ=OPR_Reference) then
@@ -244,6 +245,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   else
@@ -347,14 +350,24 @@ begin
 =======
 >>>>>>> origin/fixes_2_2
          not assigned(opr.ref.relsymbol) and
-         (opr.ref.refaddr<>addr_pic) then
+         not(opr.ref.refaddr in [addr_pic,addr_pic_no_got]) then
         begin
+<<<<<<< HEAD
           message(asmr_e_need_pic_ref);
           result:=false;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+          if (opr.ref.symbol.name <> '_GLOBAL_OFFSET_TABLE_') then
+            begin
+              message(asmr_e_need_pic_ref);
+              result:=false;
+            end
+          else
+            opr.ref.refaddr:=addr_pic;
+>>>>>>> origin/cpstrnew
         end;
     end;
 end;
@@ -1310,6 +1323,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1317,6 +1331,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                        if gas_needsuffix[opcode] in [attsufFPU,attsufFPUint] then
@@ -1345,7 +1361,7 @@ begin
  { Condition ? }
   if condition<>C_None then
    ai.SetCondition(condition);
-  
+
   { Set is_jmp, it enables asmwriter to emit short jumps if appropriate }
   if (opcode=A_JMP) or (opcode=A_JCC) then
     ai.is_jmp := True;

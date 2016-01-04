@@ -68,6 +68,7 @@ function luaL_checkudata(L: Plua_State; ud: Integer; const tname: PChar): Pointe
 procedure luaL_where(L: Plua_State; lvl: Integer); cdecl;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function luaL_error(L: Plua_State; const fmt: PChar; args: array of const): Integer; cdecl; external LUA_LIB_NAME; // note: C's ... to array of const conversion is not portable to Delphi
 =======
 function luaL_error(L: Plua_State; const fmt: PChar; args: array of const): Integer; cdecl; // note: C's ... to array of const conversion is not portable to Delphi
@@ -75,6 +76,9 @@ function luaL_error(L: Plua_State; const fmt: PChar; args: array of const): Inte
 =======
 function luaL_error(L: Plua_State; const fmt: PChar; args: array of const): Integer; cdecl; // note: C's ... to array of const conversion is not portable to Delphi
 >>>>>>> origin/fixes_2_2
+=======
+function luaL_error(L: Plua_State; const fmt: PChar; args: array of const): Integer; cdecl; external LUA_LIB_NAME; // note: C's ... to array of const conversion is not portable to Delphi
+>>>>>>> origin/cpstrnew
 
 function luaL_checkoption(L: Plua_State; narg: Integer; def: PChar; lst: PPChar): Integer; cdecl;
 
@@ -216,6 +220,7 @@ function luaL_checkudata(L: Plua_State; ud: Integer; const tname: PChar): Pointe
 procedure luaL_where(L: Plua_State; lvl: Integer); cdecl; external LUA_LIB_NAME;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 // function luaL_error(L: Plua_State; const fmt: PChar; args: array of const): Integer; cdecl; external LUA_LIB_NAME;
 =======
 function luaL_error(L: Plua_State; const fmt: PChar; args: array of const): Integer; cdecl; external LUA_LIB_NAME;
@@ -223,6 +228,9 @@ function luaL_error(L: Plua_State; const fmt: PChar; args: array of const): Inte
 =======
 function luaL_error(L: Plua_State; const fmt: PChar; args: array of const): Integer; cdecl; external LUA_LIB_NAME;
 >>>>>>> origin/fixes_2_2
+=======
+// function luaL_error(L: Plua_State; const fmt: PChar; args: array of const): Integer; cdecl; external LUA_LIB_NAME;
+>>>>>>> origin/cpstrnew
 
 function luaL_checkoption(L: Plua_State; narg: Integer; def: PChar; lst: PPChar): Integer; cdecl; external LUA_LIB_NAME;
 

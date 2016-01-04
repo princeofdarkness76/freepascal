@@ -9,6 +9,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Classes, SysUtils, db, dbf, fpwebdata;
 =======
   Classes, SysUtils, FileUtil, LResources, db, dbf,
@@ -22,6 +23,10 @@ uses
   Classes, SysUtils, FileUtil, LResources, db, dbf,
   fpwebdata;
 >>>>>>> graemeg/cpstrnew
+=======
+  Classes, SysUtils, FileUtil, LResources, db, dbf,
+  fpwebdata;
+>>>>>>> origin/cpstrnew
 =======
   Classes, SysUtils, FileUtil, LResources, db, dbf,
   fpwebdata;
@@ -51,6 +56,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$R *.lfm}
 
 =======
@@ -65,6 +71,9 @@ uses dbugintf;
 =======
 uses dbugintf;
 >>>>>>> origin/cpstrnew
+=======
+uses dbugintf;
+>>>>>>> origin/cpstrnew
 { TDataModule1 }
 
 procedure TDataModule1.DataModuleCreate(Sender: TObject);
@@ -73,6 +82,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   senddebug('Creating datamodule 1 '+InTToStr(Ord(WebDataProviderManager.Registering)));
 >>>>>>> graemeg/cpstrnew
@@ -82,6 +92,9 @@ begin
 =======
   senddebug('Creating datamodule 1 '+InTToStr(Ord(WebDataProviderManager.Registering)));
 >>>>>>> graemeg/cpstrnew
+=======
+  senddebug('Creating datamodule 1 '+InTToStr(Ord(WebDataProviderManager.Registering)));
+>>>>>>> origin/cpstrnew
 =======
   senddebug('Creating datamodule 1 '+InTToStr(Ord(WebDataProviderManager.Registering)));
 >>>>>>> origin/cpstrnew
@@ -100,6 +113,7 @@ initialization
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   {$I dmusers.lrs}
 >>>>>>> graemeg/cpstrnew
@@ -109,6 +123,9 @@ initialization
 =======
   {$I dmusers.lrs}
 >>>>>>> graemeg/cpstrnew
+=======
+  {$I dmusers.lrs}
+>>>>>>> origin/cpstrnew
 =======
   {$I dmusers.lrs}
 >>>>>>> origin/cpstrnew

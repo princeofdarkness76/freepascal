@@ -7,6 +7,7 @@ type lesslli=specialize TLess<longint>;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 var data:maplli; i:longint; iterator:maplli.TIterator;
 =======
 var data:maplli; i:longint; iterator:maplli.TMSet.PNode;
@@ -20,6 +21,9 @@ var data:maplli; i:longint; iterator:maplli.TMSet.PNode;
 =======
 var data:maplli; i:longint; iterator:maplli.TMSet.PNode;
 >>>>>>> origin/cpstrnew
+=======
+var data:maplli; i:longint; iterator:maplli.TMSet.PNode;
+>>>>>>> origin/cpstrnew
 
 begin
   data:=maplli.Create;
@@ -27,6 +31,7 @@ begin
   for i:=0 to 10 do
     data[i]:=10*i;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -52,6 +57,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   {Iteration through elements}
   iterator:=data.Min;
   while iterator<>nil do begin
@@ -63,11 +70,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 

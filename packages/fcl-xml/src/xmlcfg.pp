@@ -306,6 +306,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     SetFilenameForce(Filename, true);              // Load the XML config file
 =======
     SetFilename(Filename, true);              // Load the XML config file
@@ -316,6 +317,9 @@ begin
 =======
     SetFilenameForce(Filename, true);              // Load the XML config file
 >>>>>>> origin/fixes_2.4
+=======
+    SetFilenameForce(Filename, true);              // Load the XML config file
+>>>>>>> origin/cpstrnew
 end;
 
 function TXMLConfig.FindNode(const APath: String;

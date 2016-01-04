@@ -18,6 +18,7 @@ name=chm
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 version=3.1.1
 =======
 =======
@@ -33,10 +34,14 @@ version=2.2.5
 =======
 version=2.2.5
 >>>>>>> origin/fixes_2_2
+=======
+version=2.5.1
+>>>>>>> origin/cpstrnew
 
 [target]
 units=fasthtmlparser htmlutil paslzx paslzxcomp paslznonslide chmbase chmtypes \
       chmspecialfiles chmsitemap chmwriter chmfilewriter chmreader htmlindexer \
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -54,6 +59,9 @@ packages=rtl fpmkunit
 =======
       chmfiftimain lzxcompressthread
 >>>>>>> origin/fixes_2.4
+=======
+      chmfiftimain lzxcompressthread itolitlstypes itsftransform itolitlsreader
+>>>>>>> origin/cpstrnew
 programs=chmcmd chmls
 examples=
 
@@ -188,6 +196,11 @@ cdmcmd$(EXEEXT): chmcmd.lpr
 
 chmls$(EXEEXT): chmls.lpr
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+
+
+>>>>>>> origin/cpstrnew

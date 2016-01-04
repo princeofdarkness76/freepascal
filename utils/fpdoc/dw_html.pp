@@ -156,8 +156,12 @@ type
 >>>>>>> graemeg/fixes_2_2
 =======
     function ResolveLinkID(const Name: String): DOMString;
+<<<<<<< HEAD
     function ResolveLinkIDInUnit(const Name,UnitName: String): DOMString;
 >>>>>>> origin/fixes_2_2
+=======
+    function ResolveLinkIDInUnit(const Name,AUnitName: String): DOMString;
+>>>>>>> origin/cpstrnew
     function ResolveLinkWithinPackage(AElement: TPasElement;
       ASubpageIndex: Integer): String;
 
@@ -916,6 +920,7 @@ begin
   Doc.AppendChild(Doc.Impl.CreateDocumentType(
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     'HTML', '-//W3C//DTD HTML 4.01 Transitional//EN',
     'http://www.w3.org/TR/html4/loose.dtd'));
 =======
@@ -924,6 +929,10 @@ begin
 =======
     'HTML', '-//W3C//DTD HTML 4.0 Transitional//EN', ''));
 >>>>>>> origin/fixes_2_2
+=======
+    'HTML', '-//W3C//DTD HTML 4.01 Transitional//EN',
+    'http://www.w3.org/TR/html4/loose.dtd'));
+>>>>>>> origin/cpstrnew
 
   HTMLEl := Doc.CreateHtmlElement;
   Doc.AppendChild(HTMLEl);
@@ -991,6 +1000,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   TempStream: TMemoryStream;
 >>>>>>> graemeg/cpstrnew
@@ -1000,6 +1010,9 @@ var
 =======
   TempStream: TMemoryStream;
 >>>>>>> graemeg/cpstrnew
+=======
+  TempStream: TMemoryStream;
+>>>>>>> origin/cpstrnew
 =======
   TempStream: TMemoryStream;
 >>>>>>> origin/cpstrnew
@@ -1024,6 +1037,7 @@ begin
         PageDoc.Free;
       end;
     end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1108,6 +1122,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   
   if FCSSFile <> '' then
   begin
@@ -1123,11 +1139,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     TempStream.Free;
@@ -1189,6 +1208,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function THTMLWriter.ResolveLinkIDInUnit(const Name,AUnitName: String): DOMString;
 
 begin
@@ -1225,11 +1245,14 @@ end;
 =======
 >>>>>>> origin/fixes_2_2
 function THTMLWriter.ResolveLinkIDInUnit(const Name,UnitName: String): DOMString;
+=======
+function THTMLWriter.ResolveLinkIDInUnit(const Name,AUnitName: String): DOMString;
+>>>>>>> origin/cpstrnew
 
 begin
   Result:=ResolveLinkID(Name);
-  If (Result='') and (UnitName<>'')  then
-    Result:=ResolveLinkID(UnitName+'.'+Name);
+  If (Result='') and (AUnitName<>'')  then
+    Result:=ResolveLinkID(AUnitName+'.'+Name);
 end;
 
 function THTMLWriter.ResolveLinkID(const Name: String): DOMString;
@@ -2770,6 +2793,7 @@ procedure THTMLWriter.CreateClassHierarchyPage(AList : TStringList; AddUnit : Bo
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Procedure AppendClass(E : TDomElement);
 =======
 	procedure THTMLWriter.CreateIndexPage(L : TStringList);
@@ -2780,6 +2804,9 @@ procedure THTMLWriter.CreateClassHierarchyPage(AList : TStringList; AddUnit : Bo
 =======
 	procedure THTMLWriter.CreateIndexPage(L : TStringList);
 >>>>>>> graemeg/cpstrnew
+=======
+	procedure THTMLWriter.CreateIndexPage(L : TStringList);
+>>>>>>> origin/cpstrnew
 =======
 	procedure THTMLWriter.CreateIndexPage(L : TStringList);
 >>>>>>> origin/cpstrnew
@@ -4039,11 +4066,14 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     ThisInterface,
@@ -4228,11 +4258,14 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         begin
@@ -4661,12 +4694,17 @@ begin
     FBaseImageURL  := Arg
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   else if Cmd = '--css-file' then
     FCSSFile := arg
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  else if Cmd = '--css-file' then
+    FCSSFile := arg
+>>>>>>> origin/cpstrnew
   else if Cmd = '--footer-date' then
     begin
     FIDF:=True;

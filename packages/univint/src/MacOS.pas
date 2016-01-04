@@ -37,13 +37,17 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
   AUComponent,
   AVLTree,
   AXActionConstants,
   AXAttributeConstants,
   AXConstants,
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
   AVLTree,
@@ -57,6 +61,8 @@ uses
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
   AXErrors,
   AXNotificationConstants,
   AXRoleConstants,
@@ -67,6 +73,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Accessibility,
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -75,12 +82,16 @@ uses
 =======
   Accessibility,
 >>>>>>> origin/fixes_2.4
+=======
+  Accessibility,
+>>>>>>> origin/cpstrnew
   Aliases,
   Appearance,
   AppleDiskPartitions,
   AppleEvents,
   AppleHelp,
   AppleScript,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -118,6 +129,10 @@ uses
   AudioCodecs,
   AudioComponents,
 >>>>>>> origin/fixes_2.4
+=======
+  AudioCodecs,
+  AudioComponents,
+>>>>>>> origin/cpstrnew
   AudioHardware,
   AudioOutputUnit,
   AudioUnitCarbonViews,
@@ -130,12 +145,16 @@ uses
   AuthorizationTags,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
   BackupCore,
 >>>>>>> origin/fixes_2.4
+=======
+  BackupCore,
+>>>>>>> origin/cpstrnew
   CFArray,
   CFAttributedString,
   CFBag,
@@ -150,6 +169,7 @@ uses
   CFDate,
   CFDateFormatter,
   CFDictionary,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -181,12 +201,18 @@ uses
   CFFTPStream,
   CFHTTPAuthentication,
 >>>>>>> origin/fixes_2.4
+=======
+  CFError,
+  CFFTPStream,
+  CFHTTPAuthentication,
+>>>>>>> origin/cpstrnew
   CFHTTPMessage,
   CFHTTPStream,
   CFHost,
   CFLocale,
   CFMachPort,
   CFMessagePort,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -204,6 +230,11 @@ uses
   CFNetServices,
   CFNetworkErrorss,
 >>>>>>> origin/fixes_2.4
+=======
+  CFNetDiagnostics,
+  CFNetServices,
+  CFNetworkErrorss,
+>>>>>>> origin/cpstrnew
   CFNotificationCenter,
   CFNumber,
   CFNumberFormatter,
@@ -214,6 +245,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   CFProxySupport,
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -222,6 +254,9 @@ uses
 =======
   CFProxySupport,
 >>>>>>> origin/fixes_2.4
+=======
+  CFProxySupport,
+>>>>>>> origin/cpstrnew
   CFRunLoop,
   CFSet,
   CFSocket,
@@ -231,11 +266,15 @@ uses
   CFStringEncodingExt,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   CFStringTokenizer,
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  CFStringTokenizer,
+>>>>>>> origin/cpstrnew
   CFTimeZone,
   CFTree,
   CFURL,
@@ -274,6 +313,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
   CGGradient,
@@ -291,16 +331,27 @@ uses
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  CGGradient,
+>>>>>>> origin/cpstrnew
   CGImage,
   CGImageDestination,
   CGImageProperties,
   CGImageSource,
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+  CGLCurrent,
+  CGLDevice,
+  CGLProfiler,
+  CGLProfilerFunctionEnums,
+  CGLRenderers,
+>>>>>>> origin/cpstrnew
   CGLTypes,
   CGLayer,
   CGPDFArray,
@@ -323,11 +374,15 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   CGWindow,
   CGWindowLevels,
   CMCalibrator,
   CSIdentity,
   CSIdentityAuthority,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -339,6 +394,8 @@ uses
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   CSIdentityQuery,
@@ -357,6 +414,7 @@ uses
   CTStringAttributes,
   CTTextTab,
   CTTypesetter,
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -396,6 +454,8 @@ uses
   CTTextTab,
   CTTypesetter,
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
   CVBase,
   CVBuffer,
   CVDisplayLink,
@@ -404,12 +464,16 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
   CVOpenGLBuffer,
   CVOpenGLBufferPool,
   CVOpenGLTexture,
   CVOpenGLTextureCache,
+<<<<<<< HEAD
 <<<<<<< HEAD
   CVPixelBuffer,
   CVPixelBufferIOSurface,
@@ -426,6 +490,8 @@ uses
   CVReturns,
 >>>>>>> graemeg/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
   CVPixelBuffer,
   CVPixelBufferPool,
   CVPixelFormatDescription,
@@ -439,13 +505,17 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
   ColorSyncCMM,
   ColorSyncDeprecated,
   ColorSyncDevice,
   ColorSyncProfile,
   ColorSyncTransform,
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -453,6 +523,8 @@ uses
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
   Components,
   ConditionalMacros,
   ControlDefinitions,
@@ -463,6 +535,9 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   CoreText,
   DADisk,
   DASession,
@@ -471,6 +546,7 @@ uses
   Debugging,
   Dialogs,
   Dictionary,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -484,6 +560,8 @@ uses
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   DigitalHubRegistry,
   Displays,
   Drag,
@@ -495,6 +573,7 @@ uses
   FSEvents,
   FileTypesAndCreators,
   Files,
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -527,6 +606,8 @@ uses
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
   Finder,
   FinderRegistry,
   FixMath,
@@ -534,6 +615,7 @@ uses
   FontPanel,
   FontSync,
   Fonts,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -578,6 +660,8 @@ uses
   GXTypes,
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
   GestaltEqu,
   HFSVolumes,
   HIAccessibility,
@@ -614,12 +698,16 @@ uses
   HIView,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
   HIWindowViews,
 >>>>>>> origin/fixes_2.4
+=======
+  HIWindowViews,
+>>>>>>> origin/cpstrnew
   HTMLRendering,
   HostTime,
   IBCarbonRuntime,
@@ -629,11 +717,15 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   IOKitReturn,
   IOSurfaceAPI,
   IconStorage,
   Icons,
   IconsCore,
+<<<<<<< HEAD
 =======
   Icons,
 >>>>>>> graemeg/fixes_2_2
@@ -645,6 +737,8 @@ uses
   Icons,
   IconsCore,
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
   ImageCodec,
   ImageCompression,
   InternetConfig,
@@ -652,6 +746,7 @@ uses
   Keyboards,
   KeychainCore,
   KeychainHI,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -674,10 +769,14 @@ uses
 =======
   KeyEvents,
 >>>>>>> origin/fixes_2.4
+=======
+  KeyEvents,
+>>>>>>> origin/cpstrnew
   LSInfo,
   LSOpen,
   LSQuarantine,
   LSSharedFileList,
+<<<<<<< HEAD
 <<<<<<< HEAD
   LanguageAnalysis,
   Lists,
@@ -706,6 +805,11 @@ uses
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+  LanguageAnalysis,
+  Lists,
+  LowMem,
+>>>>>>> origin/cpstrnew
   MDExternalDatastore,
   MDImporter,
   MDItem,
@@ -716,7 +820,10 @@ uses
   MIDIServices,
   MIDISetup,
   MIDIThruConnection,
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
   MacApplication,
   MacErrors,
   MacHelp,
@@ -726,6 +833,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   MacOpenGL,
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -734,6 +842,9 @@ uses
 =======
   MacOpenGL,
 >>>>>>> origin/fixes_2.4
+=======
+  MacOpenGL,
+>>>>>>> origin/cpstrnew
   MacTextEditor,
   MacTypes,
   MacWindows,
@@ -747,11 +858,15 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   MultiProcessingInfo,
   Multiprocessing,
   MusicDevice,
   NSL,
   NSLCore,
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -770,6 +885,8 @@ uses
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
   Navigation,
   Notification,
   NumberFormatting,
@@ -784,6 +901,7 @@ uses
   PEFBinaryFormat,
   PLStringFuncs,
   PMApplication,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -806,20 +924,31 @@ uses
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
+=======
+  PMApplicationDeprecated,
+>>>>>>> origin/cpstrnew
   PMCore,
+  PMCoreDeprecated,
   PMDefinitions,
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
   PMDefinitionsDeprecated,
   PMErrors,
   PMPrintAETypes,
   PMPrintSettingsKeys,
   PMPrintingDialogExtensions,
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
   Palettes,
   Pasteboard,
   PictUtils,
   Power,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -849,10 +978,13 @@ uses
   Printing,
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
   Processes,
   QDCMCommon,
   QDOffscreen,
   QDPictToCGContext,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -863,10 +995,16 @@ uses
   QLGenerator,
   QLThumbnailImage,
 >>>>>>> origin/fixes_2.4
+=======
+  QLBase,
+  QLGenerator,
+  QLThumbnailImage,
+>>>>>>> origin/cpstrnew
   QTML,
   QTSMovie,
   QTStreamingComponents,
   QuickTimeComponents,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -878,6 +1016,9 @@ uses
 =======
   QuickTimeErrors,
 >>>>>>> origin/fixes_2.4
+=======
+  QuickTimeErrors,
+>>>>>>> origin/cpstrnew
   QuickTimeMusic,
   QuickTimeStreaming,
   QuickTimeVR,
@@ -887,6 +1028,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   QuickdrawTypes,
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -895,6 +1037,9 @@ uses
 =======
   QuickdrawTypes,
 >>>>>>> origin/fixes_2.4
+=======
+  QuickdrawTypes,
+>>>>>>> origin/cpstrnew
   Resources,
   SCDynamicStore,
   SCDynamicStoreCopyDHCPInfos,
@@ -904,6 +1049,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   SCNetworkConfiguration,
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -912,6 +1058,9 @@ uses
 =======
   SCNetworkConfiguration,
 >>>>>>> origin/fixes_2.4
+=======
+  SCNetworkConfiguration,
+>>>>>>> origin/cpstrnew
   SCNetworkConnection,
   SCNetworkReachability,
   SCPreferences,
@@ -921,6 +1070,7 @@ uses
   SCSchemaDefinitions,
   SFNTLayoutTypes,
   SFNTTypes,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -959,6 +1109,13 @@ uses
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+  ScalerStreamTypes,
+  Scrap,
+  Script,
+  SecBase,
+  SecTrust,
+>>>>>>> origin/cpstrnew
   Sound,
   SpeechRecognition,
   SpeechSynthesis,
@@ -973,6 +1130,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   TextInputSources,
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -981,6 +1139,9 @@ uses
 =======
   TextInputSources,
 >>>>>>> origin/fixes_2.4
+=======
+  TextInputSources,
+>>>>>>> origin/cpstrnew
   TextServices,
   TextUtils,
   Threads,
@@ -994,6 +1155,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   USB,
 >>>>>>> graemeg/fixes_2_2
@@ -1002,6 +1164,8 @@ uses
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
   UTCUtils,
   UTCoreTypes,
   UTType,
@@ -1009,6 +1173,7 @@ uses
   UnicodeUtilities,
   UniversalAccess,
   Video,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1028,6 +1193,11 @@ uses
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+  WSMethodInvocation,
+  WSProtocolHandler,
+  WSTypes,
+>>>>>>> origin/cpstrnew
   cblas,
   certextensions,
   cssmapple,
@@ -1035,6 +1205,7 @@ uses
   cssmerr,
   cssmkrapi,
   cssmtype,
+<<<<<<< HEAD
   fenv,
   fp,
   gliContexts,
@@ -1058,11 +1229,14 @@ uses
   WSTypes,
   cblas,
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
   fenv,
   fp,
   gliContexts,
   gliDispatch,
   gluContext,
+<<<<<<< HEAD
   macgl,
   macglext,
   macglu,
@@ -1072,6 +1246,16 @@ uses
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  kern_return,
+  macgl,
+  macglext,
+  macglu,
+  mach_error,
+  vBLAS,
+  vDSP,
+  x509defs,
+>>>>>>> origin/cpstrnew
   xattr,
   GPCStrings;
 

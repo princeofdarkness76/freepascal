@@ -1,8 +1,11 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {%NORUN}
 {%FAIL}
 type
@@ -12,6 +15,7 @@ type
 
 begin
 end.
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
@@ -31,3 +35,5 @@ end.
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew

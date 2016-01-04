@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
     This file is part of the PTCPas framebuffer library
 <<<<<<< HEAD
@@ -17,6 +18,11 @@
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
 =======
+    Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> origin/cpstrnew
+=======
+{
+    This file is part of the PTCPas framebuffer library
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> origin/cpstrnew
     Original C++ version by Christian Nentwich (c.nentwich@cs.ucl.ac.uk)
@@ -51,6 +57,7 @@
 type
   TX11WindowDisplay = class(TX11Display)
   private
+<<<<<<< HEAD
     {eventHandler}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -264,23 +271,28 @@ Type
                          AFormat : TPTCFormat) : TX11Image; { Factory method }
     Function CreateModeSwitcher : TX11Modes; { Factory method }
     Procedure CreateColormap; { Register colour maps }
+=======
+>>>>>>> origin/cpstrnew
     {eventHandler}
-    FWindow : TWindow;
-    FPrimary : TX11Image;
-    FDestX, FDestY : Integer;
-    FGC : TGC;
-    FAtomClose : TAtom; { X Atom for close window button }
-    FCursorVisible : Boolean;
-    FX11InvisibleCursor : TCursor; { Blank cursor }
-    FFullScreen : Boolean; { Keeps a snapshot of the PTC_X11_FULLSCREEN option
+    FWindow: TWindow;
+    FPrimary: TX11Image;
+    FDestX, FDestY: Integer;
+    FGC: TGC;
+    FAtomClose: TAtom; { X Atom for close window button }
+    FCursorVisible: Boolean;
+    FGrabMouse: Boolean;
+    FMouseGrabbed: Boolean;
+    FX11InvisibleCursor: TCursor; { Blank cursor }
+    FFullScreen: Boolean; { Keeps a snapshot of the PTC_X11_FULLSCREEN option
                              taken at the time 'open' was called }
-    FFocus : Boolean;
-    FModeSwitcher : TX11Modes;
+    FFocus: Boolean;
+    FModeSwitcher: TX11Modes;
 
-    FPreviousMouseButtonState : TPTCMouseButtonState;
-    FPreviousMouseX, FPreviousMouseY : Integer; { for calculating the deltas }
-    FPreviousMousePositionSaved : Boolean; { true, if FPreviousMouseX,
+    FPreviousMouseButtonState: TPTCMouseButtonState;
+    FPreviousMouseX, FPreviousMouseY: Integer; { for calculating the deltas }
+    FPreviousMousePositionSaved: Boolean; { true, if FPreviousMouseX,
            FPreviousMouseY and FPreviousMouseButtonState contain valid values }
+<<<<<<< HEAD
   Public
     Constructor Create(ADisplay : PDisplay; AScreen : Integer; Const AFlags : TX11Flags); Override;
     Destructor Destroy; Override;
@@ -305,3 +317,41 @@ Type
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+
+    function NextEvent(var AEvent: TPTCEvent; AWait: Boolean; const AEventMask: TPTCEventMask): Boolean; override;
+    function PeekEvent(AWait: Boolean; const AEventMask: TPTCEventMask): TPTCEvent; override;
+
+    procedure EnterFullScreen;
+    procedure LeaveFullScreen;
+    procedure internal_ShowCursor(AVisible: Boolean);
+    procedure internal_GrabMouse(AGrabMouse: Boolean);
+    procedure HandleChangeFocus(ANewFocus: Boolean);
+    procedure HandleEvents;
+    procedure Draw;
+    function CreateImage(ADisplay: PDisplay; AScreen, AWidth, AHeight: Integer;
+                         AFormat: TPTCFormat): TX11Image; { Factory method }
+    function CreateModeSwitcher: TX11Modes; { Factory method }
+    procedure CreateColormap; { Register colour maps }
+  public
+    constructor Create(ADisplay: PDisplay; AScreen: Integer; const AFlags: TX11Flags); override;
+    destructor Destroy; override;
+
+    procedure Open(ATitle: string; AWidth, AHeight: Integer; const AFormat: TPTCFormat); override;
+    procedure Open(AWindow: TWindow; const AFormat: TPTCFormat); override;
+    procedure Open(AWindow: TWindow; const AFormat: TPTCFormat; AX, AY, AWidth, AHeight: Integer); override;
+    procedure Close; override;
+    procedure Update; override;
+    procedure Update(const AArea: TPTCArea); override;
+    function Lock: Pointer; override;
+    procedure Unlock; override;
+    procedure GetModes(var AModes: TPTCModeDynArray); override;
+    procedure Palette(const APalette: TPTCPalette); override;
+    function GetPitch: Integer; override;
+    function GetX11Window: TWindow; override;
+    function GetX11GC: TGC; virtual;
+    function IsFullScreen: Boolean; override;
+    procedure SetCursor(AVisible: Boolean); override;
+    procedure SetMouseGrab(AGrabMouse: Boolean); override;
+  end;
+>>>>>>> origin/cpstrnew

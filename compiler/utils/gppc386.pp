@@ -52,6 +52,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   GDBAltExeName = 'gdb';
 =======
 >>>>>>> graemeg/cpstrnew
@@ -61,12 +62,15 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   GDBIniName = '.gdbinit';
   DefaultCompilerName = 'ppc386';
   PathSep=':';
   DirSep = '/';
 {$else}
   GDBExeName : String = 'gdbpas.exe';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -80,6 +84,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   GDBIniName = 'gdb.ini';
   DefaultCompilerName = 'ppc386.exe';
   PathSep=';';
@@ -91,6 +97,7 @@ const
   { special tests in specific directories   PM     }
   FpcGDBIniName = 'gdb.fpc';
   GDBIniTempName : string = 'gdb4fpc.ini';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -114,6 +121,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 var
    fpcgdbini : text;
@@ -133,6 +142,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   CompilerName:=filesearch(CompilerName,Dir+PathSep+GetEnvironmentVariable('PATH'));
 =======
   CompilerName:=fsearch(CompilerName,Dir+PathSep+GetEnv('PATH'));
@@ -143,6 +153,9 @@ begin
 =======
   CompilerName:=fsearch(CompilerName,Dir+PathSep+GetEnv('PATH'));
 >>>>>>> graemeg/cpstrnew
+=======
+  CompilerName:=fsearch(CompilerName,Dir+PathSep+GetEnv('PATH'));
+>>>>>>> origin/cpstrnew
 =======
   CompilerName:=fsearch(CompilerName,Dir+PathSep+GetEnv('PATH'));
 >>>>>>> origin/cpstrnew
@@ -197,6 +210,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Writeln(fpcgdbini,'b GENERATEERROR');
 =======
 >>>>>>> graemeg/cpstrnew
@@ -204,6 +218,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   Writeln(fpcgdbini,'b HANDLEERRORADDRFRAME');
@@ -230,6 +246,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   GDBExeName:=filesearch(GDBExeName,Dir+PathSep+GetEnvironmentVariable('PATH'));
   if GDBExeName='' then
     GDBExeName:=filesearch(GDBAltExeName,Dir+PathSep+GetEnvironmentVariable('PATH'));
@@ -245,6 +262,9 @@ begin
 =======
   GDBExeName:=fsearch(GDBExeName,Dir+PathSep+GetEnv('PATH'));
 >>>>>>> graemeg/cpstrnew
+=======
+  GDBExeName:=fsearch(GDBExeName,Dir+PathSep+GetEnv('PATH'));
+>>>>>>> origin/cpstrnew
 =======
   GDBExeName:=fsearch(GDBExeName,Dir+PathSep+GetEnv('PATH'));
 >>>>>>> origin/cpstrnew

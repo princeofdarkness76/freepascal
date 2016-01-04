@@ -5,10 +5,14 @@ program test_varbyref;
 
 uses
 <<<<<<< HEAD
+<<<<<<< HEAD
   Variants;
 =======
   Variants, VarUtils;
 >>>>>>> origin/fixes_2.4
+=======
+  Variants;
+>>>>>>> origin/cpstrnew
 
 var
   V: Variant;
@@ -18,6 +22,9 @@ begin
   TVarData(V).vtype := varbyref or varinteger;
   TVarData(V).vpointer := @P;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   WriteLn(string(V));
   WriteLn(SmallInt(V));
   WriteLn(Longint(V));
@@ -33,6 +40,7 @@ begin
   WriteLn(QWord(V));
   WriteLn(WideString(V));
   WriteLn(ShortString(V));
+<<<<<<< HEAD
 =======
   WriteLn(VariantToAnsiString(TVarData(V)));
   WriteLn(VariantToSmallInt(TVarData(V)));
@@ -51,6 +59,8 @@ begin
   WriteLn(VariantToAnsiString(TVarData(V)));
   WriteLn(VariantToShortString(TVarData(V)));
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
   WriteLn(V);
   TVarData(V).vtype := varEmpty;
   TVarData(V).vpointer := nil;

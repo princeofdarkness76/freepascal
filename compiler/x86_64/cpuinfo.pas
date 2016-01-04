@@ -57,6 +57,9 @@ Type
      (fpu_none,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 //      fpu_soft,  { generic }
       fpu_sse64,
       fpu_sse3,
@@ -127,6 +130,9 @@ Const
    fputypestr : array[tfputype] of string[6] = ('',
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 //     'SOFT',
      'SSE64',
      'SSE3',
@@ -143,6 +149,7 @@ Const
 >>>>>>> graemeg/fixes_2_2
    );
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -167,6 +174,10 @@ Const
    sse_singlescalar : set of tfputype = [fpu_sse64,fpu_sse3];
    sse_doublescalar : set of tfputype = [fpu_sse64,fpu_sse3];
 >>>>>>> origin/cpstrnew
+=======
+   sse_singlescalar : set of tfputype = [fpu_sse64,fpu_sse3];
+   sse_doublescalar : set of tfputype = [fpu_sse64,fpu_sse3];
+>>>>>>> origin/cpstrnew
 
    { Supported optimizations, only used for information }
    supported_optimizerswitches = genericlevel1optimizerswitches+
@@ -174,6 +185,7 @@ Const
                                  genericlevel3optimizerswitches-
                                  { no need to write info about those }
                                  [cs_opt_level1,cs_opt_level2,cs_opt_level3]+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -192,6 +204,10 @@ Const
                                  [cs_opt_regvar,cs_opt_loopunroll,cs_opt_stackframe,
 								  cs_opt_tailrecursion,cs_opt_nodecse];
 >>>>>>> graemeg/cpstrnew
+=======
+                                 [cs_opt_regvar,cs_opt_loopunroll,cs_opt_stackframe,
+								  cs_opt_tailrecursion,cs_opt_nodecse];
+>>>>>>> origin/cpstrnew
 =======
                                  [cs_opt_regvar,cs_opt_loopunroll,cs_opt_stackframe,
 								  cs_opt_tailrecursion,cs_opt_nodecse];

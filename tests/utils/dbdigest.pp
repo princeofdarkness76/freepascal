@@ -147,6 +147,17 @@ TConfigAddOpt = (
 >>>>>>> graemeg/fixes_2_2
  );
 
+{ Additional options only for dbdigest.cfg file }
+
+TConfigAddOpt = (
+  coCompilerDate,
+  coCompilerFullVersion,
+  coSvnCompilerRevision,
+  coSvnTestsRevision,
+  coSvnRTLRevision,
+  coSvnPackagesRevision
+ );
+
 Const
 
 ConfigStrings : Array [TConfigOpt] of string = (
@@ -204,12 +215,15 @@ ConfigOpts : Array[TConfigOpt] of char =(
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 ConfigAddStrings : Array [TConfigAddOpt] of string = (
@@ -230,6 +244,7 @@ ConfigAddCols : Array [TConfigAddOpt] of string = (
   'TU_SVNPACKAGESREVISION'
  );
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -258,6 +273,10 @@ ConfigOpts : Array[TConfigOpt] of char
 =======
            = ('d','h','u','p','l','o','c','a','v','t','s','m','C','S','r','V');
 >>>>>>> origin/fixes_2_2
+=======
+ConfigOpts : Array[TConfigOpt] of char
+           = ('d','h','u','p','P','l','o','c','a','v','t','s','m','C','S','r','V');
+>>>>>>> origin/cpstrnew
 
 Var
   TestOS,
@@ -273,6 +292,7 @@ Var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   LongLogFileName,
 =======
 >>>>>>> graemeg/cpstrnew
@@ -280,6 +300,8 @@ Var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   LogFileName,
@@ -332,6 +354,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     coSQL          : DoSQL:=True;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -339,6 +362,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     coDate         :
@@ -649,6 +674,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   fullline,line,prevLine : string;
 =======
   line,prevLine : string;
@@ -659,6 +685,9 @@ var
 =======
   line,prevLine : string;
 >>>>>>> graemeg/cpstrnew
+=======
+  line,prevLine : string;
+>>>>>>> origin/cpstrnew
 =======
   line,prevLine : string;
 >>>>>>> origin/cpstrnew
@@ -719,11 +748,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
             as the same }
@@ -743,6 +775,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
           end;
         end
@@ -750,10 +783,13 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
               
           end;
         end
       else  
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
@@ -767,6 +803,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         begin
@@ -779,6 +817,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
  
@@ -789,6 +828,9 @@ begin
 =======
  
 >>>>>>> graemeg/cpstrnew
+=======
+ 
+>>>>>>> origin/cpstrnew
 =======
  
 >>>>>>> origin/cpstrnew
@@ -817,6 +859,7 @@ procedure UpdateTestRun;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       qry:=qry+format('%s=''%s'', ',[ConfigAddCols[coCompilerDate],EscapeSQL(TestCompilerDate)]);
     if TestCompilerFullVersion<>'' then
       qry:=qry+format('%s=''%s'', ',[ConfigAddCols[coCompilerFullVersion],EscapeSQL(TestCompilerFullVersion)]);
@@ -835,6 +878,8 @@ procedure UpdateTestRun;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       qry:=qry+format('%s="%s", ',[ConfigAddCols[coCompilerDate],EscapeSQL(TestCompilerDate)]);
@@ -981,6 +1026,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     if LongLogFileName<>'' then
       begin
 {$I-}
@@ -999,6 +1045,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     GetIDs;

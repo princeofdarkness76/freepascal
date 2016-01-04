@@ -13,6 +13,7 @@ loaders= prt0
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 units=$(SYSTEMUNIT) uuchar ctypes objpas macpas iso7185 extpas strings \
 =======
 units=$(SYSTEMUNIT) ctypes objpas macpas iso7185 strings \
@@ -32,6 +33,9 @@ units=$(SYSTEMUNIT) ctypes objpas macpas strings \
 =======
 units=$(SYSTEMUNIT) ctypes objpas macpas strings \
 >>>>>>> origin/fixes_2_2
+=======
+units=$(SYSTEMUNIT) ctypes objpas macpas iso7185 strings \
+>>>>>>> origin/cpstrnew
       lnfodwrf lineinfo heaptrc \
       windows messages dynlibs \
       dos objects \
@@ -228,6 +232,7 @@ libsclean : clean
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
@@ -248,3 +253,6 @@ libsclean : clean
 =======
 
 >>>>>>> origin/fixes_2_2
+=======
+
+>>>>>>> origin/cpstrnew

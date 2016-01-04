@@ -843,6 +843,7 @@ begin
     end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Sock:=FpSocket(PF_INET,SOCK_DGRAM,0);
 =======
   Sock:=Socket(PF_INET,SOCK_DGRAM,0);
@@ -850,6 +851,9 @@ begin
 =======
   Sock:=Socket(PF_INET,SOCK_DGRAM,0);
 >>>>>>> origin/fixes_2_2
+=======
+  Sock:=FpSocket(PF_INET,SOCK_DGRAM,0);
+>>>>>>> origin/cpstrnew
   If Sock=-1 then 
     exit;
   With SA do
@@ -868,11 +872,15 @@ begin
     port:=htons(DNSport);
     addr:=cardinal(DNSServers[Resolver]); // dnsservers already in net order
     end;
+<<<<<<< HEAD
   sendto(sock,qry,qrylen+12,0,SA,SizeOf(SA));
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  fpsendto(sock,@qry,qrylen+12,0,@SA,SizeOf(SA));
+>>>>>>> origin/cpstrnew
   // Wait for answer.
   RTO:=TimeOutS*1000+TimeOutMS;
   fpFD_ZERO(ReadFDS);
@@ -885,6 +893,7 @@ begin
   AL:=SizeOf(SA);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   L:=fprecvfrom(Sock,@ans,SizeOf(Ans),0,@SA,@AL);
 =======
   L:=recvfrom(Sock,ans,SizeOf(Ans),0,SA,AL);
@@ -892,6 +901,9 @@ begin
 =======
   L:=recvfrom(Sock,ans,SizeOf(Ans),0,SA,AL);
 >>>>>>> origin/fixes_2_2
+=======
+  L:=fprecvfrom(Sock,@ans,SizeOf(Ans),0,@SA,@AL);
+>>>>>>> origin/cpstrnew
   fpclose(Sock);
   // Check lenght answer and fields in header data.
   If (L<12) or not CheckAnswer(Qry,Ans) Then

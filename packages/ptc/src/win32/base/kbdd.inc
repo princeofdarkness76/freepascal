@@ -8,6 +8,9 @@
     License as published by the Free Software Foundation; either
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
     version 2.1 of the License, or (at your option) any later version
     with the following modification:
 
@@ -21,12 +24,15 @@
     this library, you may extend this exception to your version of the library,
     but you are not obligated to do so. If you do not wish to do so, delete this
     exception statement from your version.
+<<<<<<< HEAD
 =======
     version 2.1 of the License, or (at your option) any later version.
 >>>>>>> graemeg/fixes_2_2
 =======
     version 2.1 of the License, or (at your option) any later version.
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 
     This library is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -38,6 +44,7 @@
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 type
@@ -82,35 +89,34 @@ Type
     Function remove : TPTCKeyEvent;
     Function ready : Boolean;}
 
+=======
+type
+  TWin32Keyboard = class(TWin32Hook)
+  private
+>>>>>>> origin/cpstrnew
     { data }
-{    m_key : Boolean;}
-    m_multithreaded : Boolean;
-    m_event : TWin32Event;
-    m_monitor : TWin32Monitor;
-    FEventQueue : TEventQueue;
+    FMultithreaded: Boolean;
+    FEvent: TWin32Event;
+    FMonitor: TWin32Monitor;
+    FEventQueue: TEventQueue;
 
     { flag data }
-    m_enabled : Boolean;
+    FEnabled: Boolean;
 
     { modifiers }
-    m_alt : Boolean;
-    m_shift : Boolean;
-    m_control : Boolean;
+    FAlt: Boolean;
+    FShift: Boolean;
+    FControl: Boolean;
 
-    { key buffer }
-{    m_head : Integer;
-    m_tail : Integer;
-    m_buffer : Array[0..1023] Of TPTCKeyEvent;}
-  Public
+    { window procedure }
+    function WndProc(hWnd: HWND; message: DWord; wParam: WPARAM; lParam: LPARAM): LRESULT; override;
+  public
     { setup }
-    Constructor Create(window : HWND; thread : DWord; multithreaded : Boolean; EventQueue : TEventQueue);
-    Destructor Destroy; Override;
-
-    { input }
-{    Function internal_PeekKey(window : TWin32Window; k : TPTCKeyEvent) : Boolean;
-    Procedure internal_ReadKey(window : TWin32Window; k : TPTCKeyEvent);}
+    constructor Create(AWindow: HWND; AThread: DWord; AMultithreaded: Boolean; AEventQueue: TEventQueue);
+    destructor Destroy; override;
 
     { control }
+<<<<<<< HEAD
     Procedure enable;
     Procedure disable;
   End;
@@ -118,3 +124,8 @@ Type
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    procedure Enable;
+    procedure Disable;
+  end;
+>>>>>>> origin/cpstrnew

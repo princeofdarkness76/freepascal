@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (C) 2001-2003, 2006, 2007, 2009-2011  Nikolay Nikolov (nickysn@users.sourceforge.net)
 =======
     Copyright (C) 2001-2003  Nikolay Nikolov (nickysn@users.sourceforge.net)
@@ -14,6 +15,9 @@
 =======
     Copyright (C) 2001-2003  Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
+=======
+    Copyright (C) 2001-2003  Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> origin/cpstrnew
 =======
     Copyright (C) 2001-2003  Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> origin/cpstrnew
@@ -46,6 +50,7 @@
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -95,6 +100,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 constructor TPTCPalette.Create;
 var
   zero: array [0..255] of Uint32;
@@ -124,6 +131,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 constructor TPTCPalette.Create(APalette: IPTCPalette);
 =======
 constructor TPTCPalette.Create(const APalette: TPTCPalette);
@@ -134,6 +142,9 @@ constructor TPTCPalette.Create(const APalette: TPTCPalette);
 =======
 constructor TPTCPalette.Create(const APalette: TPTCPalette);
 >>>>>>> graemeg/cpstrnew
+=======
+constructor TPTCPalette.Create(const APalette: TPTCPalette);
+>>>>>>> origin/cpstrnew
 =======
 constructor TPTCPalette.Create(const APalette: TPTCPalette);
 >>>>>>> origin/cpstrnew
@@ -148,6 +159,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Hermes_PaletteSet(FHandle, Hermes_PaletteGet(APalette.GetHermesPaletteHandle));
 =======
   Assign(APalette);
@@ -158,6 +170,9 @@ begin
 =======
   Assign(APalette);
 >>>>>>> graemeg/cpstrnew
+=======
+  Assign(APalette);
+>>>>>>> origin/cpstrnew
 =======
   Assign(APalette);
 >>>>>>> origin/cpstrnew
@@ -176,6 +191,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {procedure TPTCPalette.Assign(const APalette: TPTCPalette);
 =======
 procedure TPTCPalette.Assign(const APalette: TPTCPalette);
@@ -186,6 +202,9 @@ procedure TPTCPalette.Assign(const APalette: TPTCPalette);
 =======
 procedure TPTCPalette.Assign(const APalette: TPTCPalette);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TPTCPalette.Assign(const APalette: TPTCPalette);
+>>>>>>> origin/cpstrnew
 =======
 procedure TPTCPalette.Assign(const APalette: TPTCPalette);
 >>>>>>> origin/cpstrnew
@@ -204,6 +223,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
 
@@ -214,6 +234,9 @@ end;
 =======
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 =======
 
 >>>>>>> origin/cpstrnew
@@ -260,6 +283,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 function TPTCPalette.GetHermesPaletteHandle: THermesPaletteHandle;
 begin
@@ -271,5 +295,7 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew

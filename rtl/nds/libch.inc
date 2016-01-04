@@ -7,6 +7,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     libc unit for Nintendo DS
 =======
     BIOS functions unit for Nintendo DS
@@ -23,6 +24,9 @@
 =======
     BIOS functions unit for Nintendo DS
 >>>>>>> origin/fixes_2.4
+=======
+    BIOS functions unit for Nintendo DS
+>>>>>>> origin/cpstrnew
     Copyright (c) 2006 by Francesco Lombardi
 
     See the file COPYING.FPC, included in this distribution,
@@ -82,6 +86,7 @@ procedure qsort(__base: pointer; __nmemb: integer; __size: integer; __compar: TS
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 var
   errno: plongint; external name '__errno'; 
 
@@ -112,6 +117,11 @@ function __errno: plongint; cdecl; export;
 
 type
 >>>>>>> origin/fixes_2.4
+=======
+function __errno: plongint; cdecl; export;
+
+type
+>>>>>>> origin/cpstrnew
   _FILE = record
     firstCluster: longword;
     length: longword;
@@ -131,6 +141,7 @@ type
     dirEntOffset: integer;                // The offset within the directory sector
   end;
   P_FILE = ^_FILE;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -161,10 +172,14 @@ type
 =======
 
 >>>>>>> origin/fixes_2.4
+=======
+
+>>>>>>> origin/cpstrnew
 const
   SEEK_SET = 0;
   SEEK_CUR = 1;
   SEEK_END = 2;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -191,6 +206,8 @@ const
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 (*
   ------------------------------------------------------------------------------
@@ -204,6 +221,7 @@ type
   end;
   PDIR_ITER = ^DIR_ITER;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -225,6 +243,9 @@ type
 =======
   stat = packed record
 >>>>>>> origin/fixes_2.4
+=======
+  stat = packed record
+>>>>>>> origin/cpstrnew
     st_dev: longint;
     st_ino: longword;
     st_mode : longword;
@@ -302,6 +323,7 @@ function telldir(dirp: PDIR): longint; cdecl; external;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -317,6 +339,9 @@ function telldir(dirp: PDIR): longint; cdecl; external;
 =======
 
 >>>>>>> origin/fixes_2.4
+=======
+
+>>>>>>> origin/cpstrnew
 function diropen(const path: pchar): PDIR_ITER; cdecl; external;
 function dirreset(dirState: PDIR_ITER): longint; cdecl; external;
 function dirnext(dirState: PDIR_ITER; filename: pchar; filestat: Pstat): longint; cdecl; external;
@@ -339,6 +364,7 @@ function fileno(para1: P_FILE): longint; cdecl; external;
 function fileno(var para1: _FILE): longint; cdecl; external;
 function fstat(fildes: longint; buf: PStat): longint; cdecl; external;
 function fstat(fildes: longint; var buf: TStat): longint; cdecl; external;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -564,10 +590,13 @@ Sys_ERROR_MAX = $fff;
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 function _stat(__file:Pchar; var __buf:Tstat):longint; cdecl; external name 'stat';
 function ftruncate(fildes: longint; len: longint): longint; cdecl; external;
 function unlink(path: Pchar): longint; cdecl; external;
 function rename(para1: Pchar; para2: Pchar): longint; cdecl; external;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -581,3 +610,5 @@ function rename(para1: Pchar; para2: Pchar): longint; cdecl; external;
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew

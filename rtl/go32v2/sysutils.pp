@@ -154,6 +154,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function FileCreate (Const FileName : RawByteString; Rights:longint) : Longint;
 begin
   FileCreate:=FileCreate(FileName);
@@ -166,6 +167,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 Function FileRead (Handle : Longint; Out Buffer; Count : longint) : Longint;

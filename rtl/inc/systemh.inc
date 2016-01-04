@@ -95,6 +95,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { bootstrapping, the starting compiler cannot be a downstripped compiler without unicodestring support }
 {$ifdef VER2_6}
 {$define FPC_HAS_FEATURE_UNICODESTRINGS}
@@ -106,6 +107,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {****************************************************************************
@@ -508,6 +511,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   UTF8String          = type AnsiString(CP_UTF8);
 =======
   UTF8String          = String<65001>;
@@ -521,12 +525,16 @@ Type
 =======
   UTF8String          = String<65001>;
 >>>>>>> origin/cpstrnew
+=======
+  UTF8String          = String<65001>;
+>>>>>>> origin/cpstrnew
 {$else FPC_HAS_CPSTRING}
   UTF8String          = type ansistring;
 {$endif FPC_HAS_CPSTRING}
   PUTF8String         = ^UTF8String;
 
 {$ifdef FPC_HAS_CPSTRING}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -541,6 +549,9 @@ Type
 =======
   RawByteString       = String<$ffff>;
 >>>>>>> graemeg/cpstrnew
+=======
+  RawByteString       = String<$ffff>;
+>>>>>>> origin/cpstrnew
 =======
   RawByteString       = String<$ffff>;
 >>>>>>> origin/cpstrnew
@@ -600,6 +611,9 @@ Type
   PPByte              = ^PByte;
   PPLongint           = ^PLongint;
 
+  PPByte              = ^PByte;
+  PPLongint           = ^PLongint;
+
   PPointer            = ^Pointer;
   PPPointer           = ^PPointer;
 
@@ -628,6 +642,9 @@ Type
   PDate               = ^TDateTime;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   PDateTime           = ^TDateTime;
 {$endif}
 =======
@@ -658,6 +675,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef VER2_6}
   { the size of textrec/filerec is hardcoded in the 2.6 compiler binary }
   {$define FPC_ANSI_TEXTFILEREC}
@@ -670,6 +688,8 @@ Type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   { Needed for fpc_get_output }
@@ -849,6 +869,11 @@ var
   { the code page to use to return file names from single byte file system calls
     in the RTL that return ansistrings (by default, same as a above) }
   DefaultRTLFileSystemCodePage,
+  UTF8CompareLocale : TSystemCodePage;
+
+
+  DefaultSystemCodePage,
+  DefaultUnicodeCodePage,
   UTF8CompareLocale : TSystemCodePage;
 
 
@@ -1147,6 +1172,7 @@ function RolQWord(Const AValue : QWord;const Dist : Byte): QWord;{$ifdef SYSTEMI
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$if defined(cpux86_64) or defined(cpui386) or defined(mips) or defined(mipsel) or defined(sparc)}
 {$define FPC_HAS_INTERNAL_SAR_BYTE}
 {$define FPC_HAS_INTERNAL_SAR_WORD}
@@ -1167,6 +1193,8 @@ function RolQWord(Const AValue : QWord;const Dist : Byte): QWord;{$ifdef SYSTEMI
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$if defined(cpux86_64) or defined(cpui386)}
 {$define FPC_HAS_INTERNAL_SAR_BYTE}
 {$define FPC_HAS_INTERNAL_SAR_WORD}
@@ -1183,11 +1211,14 @@ function RolQWord(Const AValue : QWord;const Dist : Byte): QWord;{$ifdef SYSTEMI
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -1197,6 +1228,7 @@ function RolQWord(Const AValue : QWord;const Dist : Byte): QWord;{$ifdef SYSTEMI
 function SarShortint(Const AValue : Shortint): Shortint;[internproc:fpc_in_sar_x];
 function SarShortint(Const AValue : Shortint;Shift : Byte): Shortint;[internproc:fpc_in_sar_x_y];
 {$else FPC_HAS_INTERNAL_ROX_BYTE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1214,12 +1246,16 @@ function SarShortint(Const AValue : Shortint;Shift : Byte = 1): Shortint;
 =======
 function SarShortint(Const AValue : Shortint;Shift : Byte = 1): Shortint;
 >>>>>>> origin/cpstrnew
+=======
+function SarShortint(Const AValue : Shortint;Shift : Byte = 1): Shortint;
+>>>>>>> origin/cpstrnew
 {$endif FPC_HAS_INTERNAL_ROX_BYTE}
 
 {$ifdef FPC_HAS_INTERNAL_SAR_WORD}
 function SarSmallint(Const AValue : Smallint): Smallint;[internproc:fpc_in_sar_x];
 function SarSmallint(Const AValue : Smallint;Shift : Byte): Smallint;[internproc:fpc_in_sar_x_y];
 {$else FPC_HAS_INTERNAL_SAR_WORD}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1237,12 +1273,16 @@ function SarSmallint(Const AValue : Smallint;Shift : Byte = 1): Smallint;
 =======
 function SarSmallint(Const AValue : Smallint;Shift : Byte = 1): Smallint;
 >>>>>>> origin/cpstrnew
+=======
+function SarSmallint(Const AValue : Smallint;Shift : Byte = 1): Smallint;
+>>>>>>> origin/cpstrnew
 {$endif FPC_HAS_INTERNAL_SAR_WORD}
 
 {$ifdef FPC_HAS_INTERNAL_SAR_DWORD}
 function SarLongint(Const AValue : Longint): Longint;[internproc:fpc_in_sar_x];
 function SarLongint(Const AValue : Longint;Shift : Byte): Longint;[internproc:fpc_in_sar_x_y];
 {$else FPC_HAS_INTERNAL_SAR_DWORD}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1334,6 +1374,8 @@ function PopCnt(Const AValue : QWord): QWord;[internproc:fpc_in_popcnt_x];
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 function SarLongint(Const AValue : Longint;Shift : Byte = 1): Longint;
 {$endif FPC_HAS_INTERNAL_SAR_DWORD}
 
@@ -1389,11 +1431,14 @@ function BsrQWord(Const AValue : QWord): cardinal;{$ifdef SYSTEMINLINE}inline;{$
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -1446,6 +1491,7 @@ Function  Pos(C:Char;const s:shortstring; Offset: Sizeint = 1):SizeInt;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function  Pos(const Substr : ShortString; const Source : RawByteString; Offset: Sizeint = 1) : SizeInt;
 
 {$ifdef FPC_HAS_CPSTRING}
@@ -1470,6 +1516,11 @@ Function  Pos (const Substr : ShortString; const Source : RawByteString) : SizeI
 Procedure SetString (out S : AnsiString; Buf : PChar; Len : SizeInt);
 Procedure SetString (out S : AnsiString; Buf : PWideChar; Len : SizeInt);
 >>>>>>> graemeg/cpstrnew
+=======
+Function  Pos (const Substr : ShortString; const Source : RawByteString) : SizeInt;
+Procedure SetString (out S : AnsiString; Buf : PChar; Len : SizeInt);
+Procedure SetString (out S : AnsiString; Buf : PWideChar; Len : SizeInt);
+>>>>>>> origin/cpstrnew
 =======
 Function  Pos (const Substr : ShortString; const Source : RawByteString) : SizeInt;
 Procedure SetString (out S : AnsiString; Buf : PChar; Len : SizeInt);
@@ -1550,6 +1601,7 @@ procedure SetMultiByteConversionCodePage(CodePage: TSystemCodePage);
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure SetMultiByteFileSystemCodePage(CodePage: TSystemCodePage);
 procedure SetMultiByteRTLFileSystemCodePage(CodePage: TSystemCodePage);
 =======
@@ -1558,6 +1610,8 @@ procedure SetMultiByteRTLFileSystemCodePage(CodePage: TSystemCodePage);
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$endif FPC_HAS_FEATURE_ANSISTRINGS}
@@ -1687,6 +1741,7 @@ procedure SetTextCodePage(var T: Text; CodePage: TSystemCodePage);
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure chdir(const s:shortstring); overload;
 Procedure mkdir(const s:shortstring); overload;
 Procedure rmdir(const s:shortstring); overload;
@@ -1696,6 +1751,8 @@ Procedure getdir(drivenr:byte;var dir:shortstring);overload;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 Procedure chdir(const s:string); overload;
@@ -1725,6 +1782,7 @@ Procedure getdir(drivenr:byte;var dir: unicodestring);overload;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
@@ -1733,6 +1791,8 @@ Procedure getdir(drivenr:byte;var dir: unicodestring);overload;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {*****************************************************************************

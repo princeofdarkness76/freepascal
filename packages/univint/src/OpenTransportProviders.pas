@@ -40,6 +40,7 @@
      Version:    OpenTransport-110~114
  
 <<<<<<< HEAD
+<<<<<<< HEAD
      Copyright:  © 1993-2005 by Apple Computer, Inc. and Mentat Inc., all rights reserved.
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -48,6 +49,9 @@
 =======
      Copyright:  © 1993-2008 by Apple Computer, Inc. and Mentat Inc., all rights reserved.
 >>>>>>> origin/fixes_2.4
+=======
+     Copyright:  © 1993-2008 by Apple Computer, Inc. and Mentat Inc., all rights reserved.
+>>>>>>> origin/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -95,12 +99,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -112,6 +120,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -126,6 +135,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -141,6 +154,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -151,6 +165,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -158,13 +175,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -172,6 +193,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -180,8 +203,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -192,6 +218,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -212,6 +239,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -220,12 +249,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -233,6 +265,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -297,12 +330,25 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+>>>>>>> origin/cpstrnew
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
@@ -318,6 +364,8 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
@@ -330,6 +378,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -339,10 +388,13 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -544,6 +596,41 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -572,6 +659,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -580,6 +668,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -590,6 +680,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,OpenTransport;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -622,6 +713,9 @@ uses MacTypes,OpenTransport;
   not support i386
 }
 {$ifc TARGET_OS_MAC and TARGET_CPU_PPC}
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 
 { this header is only supported on Mac OS X < 10.4, and Mac OS X < 10.4 does
   not support i386
@@ -633,6 +727,11 @@ uses MacTypes,OpenTransport;
 =======
 
 >>>>>>> origin/fixes_2_2
+
+{ this header is only supported on Mac OS X < 10.4, and Mac OS X < 10.4 does
+  not support i386
+}
+{$ifc TARGET_OS_MAC and TARGET_CPU_PPC}
 
 { this header is only supported on Mac OS X < 10.4, and Mac OS X < 10.4 does
   not support i386
@@ -668,6 +767,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kOTAnyInetAddress = 0;     { Wildcard}
 =======
 	kOTAnyInetAddress = 0;     { Wildcard }
@@ -678,6 +778,9 @@ const
 =======
 	kOTAnyInetAddress = 0;     { Wildcard}
 >>>>>>> origin/fixes_2.4
+=======
+	kOTAnyInetAddress = 0;     { Wildcard}
+>>>>>>> origin/cpstrnew
 
 {
    Define the InetSvcRef type.  This type needs special
@@ -690,6 +793,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	InetSvcRef = ProviderRef; { an opaque type }
 =======
 	InetSvcRef = ProviderRef; { an opaque 32-bit type }
@@ -700,6 +804,9 @@ type
 =======
 	InetSvcRef = ProviderRef; { an opaque type }
 >>>>>>> origin/fixes_2.4
+=======
+	InetSvcRef = ProviderRef; { an opaque type }
+>>>>>>> origin/cpstrnew
 	InetSvcRefPtr = ^InetSvcRef;
 
 const
@@ -878,6 +985,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		resourceData: packed array [0..3] of char;        { size varies}
 =======
 		resourceData: packed array [0..3] of char;			{  size varies }
@@ -888,6 +996,9 @@ type
 =======
 		resourceData: packed array [0..3] of char;        { size varies}
 >>>>>>> origin/fixes_2.4
+=======
+		resourceData: packed array [0..3] of char;        { size varies}
+>>>>>>> origin/cpstrnew
 	end;
 { DNSAddress}
 {
@@ -943,6 +1054,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		fOptionTag: UInt8;
 		fOptionLen: UInt8;
 		fOptionValue: UInt8;
@@ -961,6 +1073,11 @@ type
 		fOptionLen: UInt8;
 		fOptionValue: UInt8;
 >>>>>>> origin/fixes_2.4
+=======
+		fOptionTag: UInt8;
+		fOptionLen: UInt8;
+		fOptionValue: UInt8;
+>>>>>>> origin/cpstrnew
 		pad: SInt8
 	end;
 { TCP/IP Utility Routines}
@@ -968,6 +1085,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -976,6 +1094,9 @@ type
 =======
 {$ifc not TARGET_CPU_64}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not TARGET_CPU_64}
+>>>>>>> origin/cpstrnew
 {
  *  OTInitInetAddress()   *** DEPRECATED ***
  *  
@@ -983,6 +1104,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
@@ -993,6 +1115,9 @@ type
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1015,6 +1140,7 @@ procedure OTInitInetAddress( var addr: InetAddress; port: InetPort; host: InetHo
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
@@ -1025,6 +1151,9 @@ procedure OTInitInetAddress( var addr: InetAddress; port: InetPort; host: InetHo
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1047,6 +1176,7 @@ function OTInitDNSAddress( var addr: DNSAddress; str: CStringPtr ): OTByteCount;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
@@ -1057,6 +1187,9 @@ function OTInitDNSAddress( var addr: DNSAddress; str: CStringPtr ): OTByteCount;
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1079,6 +1212,7 @@ function OTInetStringToHost( str: ConstCStringPtr; var host: InetHost ): OSStatu
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
@@ -1089,6 +1223,9 @@ function OTInetStringToHost( str: ConstCStringPtr; var host: InetHost ): OSStatu
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1111,6 +1248,7 @@ procedure OTInetHostToString( host: InetHost; str: CStringPtr ); external name '
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
@@ -1121,6 +1259,9 @@ procedure OTInetHostToString( host: InetHost; str: CStringPtr ); external name '
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1143,6 +1284,7 @@ function OTInetGetInterfaceInfo( var info: InetInterfaceInfo; val: SInt32 ): OSS
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
@@ -1153,6 +1295,9 @@ function OTInetGetInterfaceInfo( var info: InetInterfaceInfo; val: SInt32 ): OSS
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1182,6 +1327,8 @@ function OTInetGetSecondaryAddresses( var addr: InetHost; var count: UInt32; val
 
 {$endc} {not TARGET_CPU_64}
 
+{$endc} {not TARGET_CPU_64}
+
 {
  *  OTInetGetDHCPConfigInfo()
  *  
@@ -1203,6 +1350,7 @@ function OTInetGetSecondaryAddresses( var addr: InetHost; var count: UInt32; val
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -1211,6 +1359,9 @@ function OTInetGetSecondaryAddresses( var addr: InetHost; var count: UInt32; val
 =======
 {$ifc not TARGET_CPU_64}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not TARGET_CPU_64}
+>>>>>>> origin/cpstrnew
 {
  *  OTOpenInternetServicesInContext()   *** DEPRECATED ***
  *  
@@ -1218,6 +1369,7 @@ function OTInetGetSecondaryAddresses( var addr: InetHost; var count: UInt32; val
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
@@ -1228,6 +1380,9 @@ function OTInetGetSecondaryAddresses( var addr: InetHost; var count: UInt32; val
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1250,6 +1405,7 @@ function OTOpenInternetServicesInContext( cfig: OTConfigurationRef; oflag: OTOpe
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
@@ -1260,6 +1416,9 @@ function OTOpenInternetServicesInContext( cfig: OTConfigurationRef; oflag: OTOpe
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1282,6 +1441,8 @@ function OTAsyncOpenInternetServicesInContext( cfig: OTConfigurationRef; oflag: 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 >>>>>>> origin/fixes_2_2
+
+{$endc} {not TARGET_CPU_64}
 
 {$endc} {not TARGET_CPU_64}
 
@@ -1312,6 +1473,7 @@ function OTAsyncOpenInternetServicesInContext( cfig: OTConfigurationRef; oflag: 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -1320,6 +1482,9 @@ function OTAsyncOpenInternetServicesInContext( cfig: OTConfigurationRef; oflag: 
 =======
 {$ifc not TARGET_CPU_64}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not TARGET_CPU_64}
+>>>>>>> origin/cpstrnew
 {
  *  OTInetStringToAddress()   *** DEPRECATED ***
  *  
@@ -1327,6 +1492,7 @@ function OTAsyncOpenInternetServicesInContext( cfig: OTConfigurationRef; oflag: 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
@@ -1337,6 +1503,9 @@ function OTAsyncOpenInternetServicesInContext( cfig: OTConfigurationRef; oflag: 
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1359,6 +1528,7 @@ function OTInetStringToAddress( ref: InetSvcRef; name: CStringPtr; var hinfo: In
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
@@ -1369,6 +1539,9 @@ function OTInetStringToAddress( ref: InetSvcRef; name: CStringPtr; var hinfo: In
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1391,6 +1564,7 @@ function OTInetAddressToName( ref: InetSvcRef; addr: InetHost; var name: InetDom
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
@@ -1401,6 +1575,9 @@ function OTInetAddressToName( ref: InetSvcRef; addr: InetHost; var name: InetDom
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1423,6 +1600,7 @@ function OTInetSysInfo( ref: InetSvcRef; name: CStringPtr; var sysinfo: InetSysI
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
@@ -1433,6 +1611,9 @@ function OTInetSysInfo( ref: InetSvcRef; name: CStringPtr; var sysinfo: InetSysI
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1455,6 +1636,7 @@ function OTInetMailExchange( ref: InetSvcRef; name: CStringPtr; var num: UInt16;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
@@ -1465,6 +1647,9 @@ function OTInetMailExchange( ref: InetSvcRef; name: CStringPtr; var num: UInt16;
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1491,6 +1676,8 @@ function OTInetQuery( ref: InetSvcRef; name: CStringPtr; qClass: UInt16; qType: 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 >>>>>>> origin/fixes_2_2
+
+{$endc} {not TARGET_CPU_64}
 
 {$endc} {not TARGET_CPU_64}
 
@@ -1662,6 +1849,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	ATSvcRef = ^SInt32; { an opaque type }
 =======
 	ATSvcRef = ^SInt32; { an opaque 32-bit type }
@@ -1672,6 +1860,9 @@ type
 =======
 	ATSvcRef = ^SInt32; { an opaque type }
 >>>>>>> origin/fixes_2.4
+=======
+	ATSvcRef = ^SInt32; { an opaque type }
+>>>>>>> origin/cpstrnew
 	ATSvcRefPtr = ^ATSvcRef;
 
 const
@@ -1684,6 +1875,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -1692,6 +1884,9 @@ const
 =======
 {$ifc not TARGET_CPU_64}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not TARGET_CPU_64}
+>>>>>>> origin/cpstrnew
 {
  *  OTAsyncOpenAppleTalkServicesInContext()   *** DEPRECATED ***
  *  
@@ -1699,6 +1894,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
@@ -1709,6 +1905,9 @@ const
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1731,6 +1930,7 @@ function OTAsyncOpenAppleTalkServicesInContext( cfig: OTConfigurationRef; flags:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
@@ -1741,6 +1941,9 @@ function OTAsyncOpenAppleTalkServicesInContext( cfig: OTConfigurationRef; flags:
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1767,11 +1970,16 @@ function OTOpenAppleTalkServicesInContext( cfig: OTConfigurationRef; flags: OTOp
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2_2
 =======
 {$endc} {not TARGET_CPU_64}
 
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not TARGET_CPU_64}
+
+>>>>>>> origin/cpstrnew
 {
  *  OTAsyncOpenAppleTalkServices()
  *  
@@ -1800,6 +2008,7 @@ function OTOpenAppleTalkServicesInContext( cfig: OTConfigurationRef; flags: OTOp
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -1808,6 +2017,9 @@ function OTOpenAppleTalkServicesInContext( cfig: OTConfigurationRef; flags: OTOp
 =======
 {$ifc not TARGET_CPU_64}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not TARGET_CPU_64}
+>>>>>>> origin/cpstrnew
 {
  *  OTATalkGetMyZone()   *** DEPRECATED ***
  *  
@@ -1815,6 +2027,7 @@ function OTOpenAppleTalkServicesInContext( cfig: OTConfigurationRef; flags: OTOp
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
@@ -1825,6 +2038,9 @@ function OTOpenAppleTalkServicesInContext( cfig: OTConfigurationRef; flags: OTOp
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1851,6 +2067,7 @@ function OTATalkGetMyZone( ref: ATSvcRef; var zone: TNetbuf ): OSStatus; externa
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
@@ -1861,6 +2078,9 @@ function OTATalkGetMyZone( ref: ATSvcRef; var zone: TNetbuf ): OSStatus; externa
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1884,6 +2104,7 @@ function OTATalkGetLocalZones( ref: ATSvcRef; var zones: TNetbuf ): OSStatus; ex
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
@@ -1894,6 +2115,9 @@ function OTATalkGetLocalZones( ref: ATSvcRef; var zones: TNetbuf ): OSStatus; ex
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1917,6 +2141,7 @@ function OTATalkGetZoneList( ref: ATSvcRef; var zones: TNetbuf ): OSStatus; exte
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
@@ -1927,6 +2152,9 @@ function OTATalkGetZoneList( ref: ATSvcRef; var zones: TNetbuf ): OSStatus; exte
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1953,6 +2181,8 @@ function OTATalkGetInfo( ref: ATSvcRef; var info: TNetbuf ): OSStatus; external 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 >>>>>>> origin/fixes_2_2
+
+{$endc} {not TARGET_CPU_64}
 
 {$endc} {not TARGET_CPU_64}
 
@@ -1993,12 +2223,16 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 		fNodeID: UInt8;
 		fSocket: UInt8;
 		fDDPType: UInt8;
 		fPad: UInt8;
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
@@ -2013,6 +2247,8 @@ type
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	end;
 type
 	NBPAddressPtr = ^NBPAddress;
@@ -2028,12 +2264,16 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 		fNodeID: UInt8;
 		fSocket: UInt8;
 		fDDPType: UInt8;
 		fPad: UInt8;
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
@@ -2048,6 +2288,8 @@ type
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 		fNBPNameBuffer: packed array [0..104] of UInt8;
 	end;
 { These are some utility routines for dealing with NBP and DDP addresses. }
@@ -2056,6 +2298,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -2064,6 +2307,9 @@ type
 =======
 {$ifc not TARGET_CPU_64}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not TARGET_CPU_64}
+>>>>>>> origin/cpstrnew
 {
  *  OTInitDDPAddress()   *** DEPRECATED ***
  *  
@@ -2071,6 +2317,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
@@ -2081,6 +2328,9 @@ type
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2103,6 +2353,7 @@ procedure OTInitDDPAddress( var addr: DDPAddress; net: UInt16; node: ByteParamet
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
@@ -2113,6 +2364,9 @@ procedure OTInitDDPAddress( var addr: DDPAddress; net: UInt16; node: ByteParamet
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2135,6 +2389,7 @@ function OTInitNBPAddress( var addr: NBPAddress; name: ConstCStringPtr ): OTByte
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
@@ -2145,6 +2400,9 @@ function OTInitNBPAddress( var addr: NBPAddress; name: ConstCStringPtr ): OTByte
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2168,6 +2426,7 @@ function OTInitDDPNBPAddress( var addr: DDPNBPAddress; name: ConstCStringPtr; ne
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
@@ -2178,6 +2437,9 @@ function OTInitDDPNBPAddress( var addr: DDPNBPAddress; name: ConstCStringPtr; ne
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2201,6 +2463,7 @@ function OTCompareDDPAddresses( const (*var*) addr1: DDPAddress; const (*var*) a
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
@@ -2211,6 +2474,9 @@ function OTCompareDDPAddresses( const (*var*) addr1: DDPAddress; const (*var*) a
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2234,6 +2500,7 @@ procedure OTInitNBPEntity( var entity: NBPEntity ); external name '_OTInitNBPEnt
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
@@ -2244,6 +2511,9 @@ procedure OTInitNBPEntity( var entity: NBPEntity ); external name '_OTInitNBPEnt
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2267,6 +2537,7 @@ function OTGetNBPEntityLengthAsAddress( const (*var*) entity: NBPEntity ): OTByt
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
@@ -2277,6 +2548,9 @@ function OTGetNBPEntityLengthAsAddress( const (*var*) entity: NBPEntity ): OTByt
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2300,6 +2574,7 @@ function OTSetAddressFromNBPEntity( nameBuf: UInt8Ptr; const (*var*) entity: NBP
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
@@ -2310,6 +2585,9 @@ function OTSetAddressFromNBPEntity( nameBuf: UInt8Ptr; const (*var*) entity: NBP
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2336,6 +2614,7 @@ function OTSetAddressFromNBPString( addrBuf: UInt8Ptr; name: ConstCStringPtr; le
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
@@ -2346,6 +2625,9 @@ function OTSetAddressFromNBPString( addrBuf: UInt8Ptr; name: ConstCStringPtr; le
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2369,6 +2651,7 @@ function OTSetNBPEntityFromAddress( var entity: NBPEntity; addrBuf: UInt8Ptr; le
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
@@ -2379,6 +2662,9 @@ function OTSetNBPEntityFromAddress( var entity: NBPEntity; addrBuf: UInt8Ptr; le
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2401,6 +2687,7 @@ function OTSetNBPName( var entity: NBPEntity; name: ConstCStringPtr ): Boolean; 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
@@ -2411,6 +2698,9 @@ function OTSetNBPName( var entity: NBPEntity; name: ConstCStringPtr ): Boolean; 
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2433,6 +2723,7 @@ function OTSetNBPType( var entity: NBPEntity; typeVal: ConstCStringPtr ): Boolea
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
@@ -2443,6 +2734,9 @@ function OTSetNBPType( var entity: NBPEntity; typeVal: ConstCStringPtr ): Boolea
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2466,6 +2760,7 @@ function OTSetNBPZone( var entity: NBPEntity; zone: ConstCStringPtr ): Boolean; 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
@@ -2476,6 +2771,9 @@ function OTSetNBPZone( var entity: NBPEntity; zone: ConstCStringPtr ): Boolean; 
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2498,6 +2796,7 @@ procedure OTExtractNBPName( const (*var*) entity: NBPEntity; name: CStringPtr );
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
@@ -2508,6 +2807,9 @@ procedure OTExtractNBPName( const (*var*) entity: NBPEntity; name: CStringPtr );
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2530,6 +2832,7 @@ procedure OTExtractNBPType( const (*var*) entity: NBPEntity; typeVal: CStringPtr
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
@@ -2540,6 +2843,9 @@ procedure OTExtractNBPType( const (*var*) entity: NBPEntity; typeVal: CStringPtr
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2560,6 +2866,7 @@ procedure OTExtractNBPZone( const (*var*) entity: NBPEntity; zone: CStringPtr );
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not TARGET_CPU_64}
 
 =======
@@ -2570,6 +2877,10 @@ procedure OTExtractNBPZone( const (*var*) entity: NBPEntity; zone: CStringPtr );
 {$endc} {not TARGET_CPU_64}
 
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not TARGET_CPU_64}
+
+>>>>>>> origin/cpstrnew
 type
 	AppleTalkInfoPtr = ^AppleTalkInfo;
 	AppleTalkInfo = record
@@ -2787,6 +3098,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		fDSAP: UInt8;
 		fSSAP: UInt8;
 		fCtrl: UInt8;
@@ -2805,6 +3117,11 @@ type
 		fSSAP: UInt8;
 		fCtrl: UInt8;
 >>>>>>> origin/fixes_2.4
+=======
+		fDSAP: UInt8;
+		fSSAP: UInt8;
+		fCtrl: UInt8;
+>>>>>>> origin/cpstrnew
 		pad: SInt8
 	end;
 type
@@ -2813,8 +3130,11 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 		fDSAP: UInt8;
 		fSSAP: UInt8;
 		fCtrl: UInt8;
@@ -2823,6 +3143,7 @@ type
 		fSNAP2: UInt8;
 		fSNAP3: UInt8;
 		fSNAP4: UInt8;
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
@@ -2841,6 +3162,8 @@ type
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	end;
 type
 	T8022FullPacketHeaderPtr = ^T8022FullPacketHeader;
@@ -3357,6 +3680,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {TARGET_OS_MAC and TARGET_CPU_PPC}
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
@@ -3373,9 +3697,14 @@ end.
 end.
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 {$endc} {TARGET_OS_MAC and TARGET_CPU_PPC}
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew

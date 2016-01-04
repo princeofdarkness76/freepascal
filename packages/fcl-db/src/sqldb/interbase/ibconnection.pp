@@ -100,11 +100,15 @@ type
     procedure ConnectFB;
     function GetDialect: integer;
     procedure AllocSQLDA(var aSQLDA : PXSQLDA;Count : integer);
+<<<<<<< HEAD
     procedure TranslateFldType(SQLType, SQLLen, SQLScale : integer;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    procedure TranslateFldType(SQLType, SQLSubType, SQLLen, SQLScale : integer;
+>>>>>>> origin/cpstrnew
       var TrType : TFieldType; var TrLen : word);
 >>>>>>> graemeg/cpstrnew
     // conversion methods
@@ -203,6 +207,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   StrUtils, FmtBCD;
 
 const
@@ -218,6 +223,9 @@ const
 =======
   strutils;
 >>>>>>> graemeg/cpstrnew
+=======
+  strutils;
+>>>>>>> origin/cpstrnew
 =======
   strutils;
 >>>>>>> origin/cpstrnew
@@ -279,6 +287,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   FConnOptions := FConnOptions + [sqSupportParams, sqEscapeRepeat, sqSupportReturning];
   FBlobSegmentSize := 65535; //Shows we're using the maximum segment size
   FDialect := INVALID_DATA;
@@ -300,6 +309,10 @@ begin
 =======
 >>>>>>> origin/fixes_2_2
   FConnOptions := FConnOptions + [sqSupportParams] + [sqEscapeRepeat] + [sqQuoteFieldnames];
+=======
+  FConnOptions := FConnOptions + [sqSupportParams] + [sqEscapeRepeat];
+  FieldNameQuoteChars:=DoubleQuotes;
+>>>>>>> origin/cpstrnew
   FBLobSegmentSize := 80;
   FDialect := -1;
   FDBDialect := -1;
@@ -786,6 +799,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TIBConnection.TranslateFldType(SQLType, SQLSubType, SQLLen, SQLScale : integer;
            var TrType : TFieldType; var TrLen : word);
 begin
@@ -796,6 +810,9 @@ begin
     if (TrLen <= MaxBCDScale) then //Note: NUMERIC(18,3) or (17,2) must be mapped to ftFmtBCD, but we do not know Precision
 =======
 procedure TIBConnection.TranslateFldType(SQLType, SQLLen, SQLScale : integer;
+=======
+procedure TIBConnection.TranslateFldType(SQLType, SQLSubType, SQLLen, SQLScale : integer;
+>>>>>>> origin/cpstrnew
            var TrType : TFieldType; var TrLen : word);
 begin
 =======
@@ -846,6 +863,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         TrType := ftDate;
 =======
       TrType := ftDate;
@@ -856,6 +874,9 @@ begin
 =======
       TrType := ftDate;
 >>>>>>> graemeg/cpstrnew
+=======
+      TrType := ftDate;
+>>>>>>> origin/cpstrnew
 =======
       TrType := ftDate;
 >>>>>>> origin/cpstrnew
@@ -876,6 +897,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if SQLSubType = isc_blob_text then
           TrType := ftMemo
         else
@@ -887,10 +909,13 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         if SQLSubType = 1 then
            TrType := ftMemo
         else
            TrType := ftBlob;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -907,6 +932,8 @@ begin
 =======
         TrType := ftBlob;
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
         TrLen := SQLLen;
       end;
     SQL_SHORT :
@@ -1008,6 +1035,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         // that a database trigger takes care of inserting null values, so
         // it should always be possible to pass null parameters. If that fails,
         // the database server will generate the appropriate error.
@@ -1026,6 +1054,11 @@ begin
         // it should always be possible to pass null-parameters. If that fails,
         // the database-server will generate the appropiate error.
 >>>>>>> graemeg/cpstrnew
+=======
+        // that a database-trigger takes care of inserting null-values, so
+        // it should always be possible to pass null-parameters. If that fails,
+        // the database-server will generate the appropiate error.
+>>>>>>> origin/cpstrnew
 =======
         // that a database-trigger takes care of inserting null-values, so
         // it should always be possible to pass null-parameters. If that fails,
@@ -1204,6 +1237,7 @@ begin
     for x := 0 to SQLDA^.SQLD - 1 do
       begin
 <<<<<<< HEAD
+<<<<<<< HEAD
       TranslateFldType(SQLDA^.SQLVar[x].SQLType, SQLDA^.SQLVar[x].sqlsubtype, SQLDA^.SQLVar[x].SQLLen, SQLDA^.SQLVar[x].SQLScale,
         TransType, TransLen);
 
@@ -1216,6 +1250,9 @@ begin
           SQL_DOUBLE,
 =======
       TranslateFldType(SQLDA^.SQLVar[x].SQLType, SQLDA^.SQLVar[x].SQLLen, SQLDA^.SQLVar[x].SQLScale,
+=======
+      TranslateFldType(SQLDA^.SQLVar[x].SQLType, SQLDA^.SQLVar[x].sqlsubtype, SQLDA^.SQLVar[x].SQLLen, SQLDA^.SQLVar[x].SQLScale,
+>>>>>>> origin/cpstrnew
         TransType, TransLen);
 
       FD := TFieldDef.Create(FieldDefs, FieldDefs.MakeNameUnique(SQLDA^.SQLVar[x].AliasName), TransType,
@@ -1430,6 +1467,7 @@ begin
     VSQLVar := @in_sqlda^.SQLvar[SQLVarNr];
     if AParams[ParNr].IsNull then
 <<<<<<< HEAD
+<<<<<<< HEAD
       VSQLVar^.SQLInd^ := -1
     else
       begin
@@ -1451,9 +1489,12 @@ begin
       If Assigned(VSQLVar^.SQLInd) then
         VSQLVar^.SQLInd^ := -1;
       end
+=======
+      VSQLVar^.SQLInd^ := -1
+>>>>>>> origin/cpstrnew
     else
       begin
-      if assigned(VSQLVar^.SQLInd) then VSQLVar^.SQLInd^ := 0;
+      VSQLVar^.SQLInd^ := 0;
 
       case (VSQLVar^.sqltype and not 1) of
         SQL_LONG :
@@ -1669,11 +1710,15 @@ begin
             case SQLDA^.SQLVar[x].SQLLen of
               2 : begin
                   Move(CurrBuff^, smalli, 2);
+<<<<<<< HEAD
                   c := longi*intpower(10,SQLDA^.SQLVar[x].SQLScale);
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+                  c := smalli*intpower(10,SQLDA^.SQLVar[x].SQLScale);
+>>>>>>> origin/cpstrnew
                   end;
               4 : begin
                   Move(CurrBuff^, longi, 4);
@@ -1765,8 +1810,14 @@ begin
 =======
 >>>>>>> origin/fixes_2_2
           GetFloat(CurrBuff, Buffer, SQLDA^.SQLVar[x].SQLLen);
+<<<<<<< HEAD
         ftBlob : begin  // load the BlobIb in field's buffer
 >>>>>>> graemeg/fixes_2_2
+=======
+        ftBlob,
+        ftMemo :
+          begin  // load the BlobIb in field's buffer
+>>>>>>> origin/cpstrnew
             FillByte(buffer^,sizeof(TBufBlobField),0);
 <<<<<<< HEAD
             Move(CurrBuff^, Buffer^, VSQLVar^.SQLLen);

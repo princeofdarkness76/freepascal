@@ -76,6 +76,7 @@ main_stub:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     lis     11,__stkptr@ha
     stw      1,__stkptr@l(11);
 =======
@@ -86,6 +87,10 @@ main_stub:
     lis 	11,__stkptr@ha
 	stw 	1,__stkptr@l(11);
 >>>>>>> origin/fixes_2_2
+=======
+    lis     11,__stkptr@ha
+    stw      1,__stkptr@l(11);
+>>>>>>> origin/cpstrnew
 
     lis     11, ___fpc_ret@ha
     stw     1, ___fpc_ret@l(11)
@@ -122,6 +127,9 @@ ___fpc_ret:                            /* return address to libc */
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
     .section ".bss"
     .type __stkptr, @object
     .size __stkptr, 8
@@ -139,6 +147,7 @@ operatingsystem_parameters:
     .set operatingsystem_parameter_argc, operatingsystem_parameters+0
     .set operatingsystem_parameter_argv, operatingsystem_parameters+4
     .set operatingsystem_parameter_envp, operatingsystem_parameters+8
+<<<<<<< HEAD
 
 .section .note.GNU-stack,"",%progbits
 =======
@@ -150,6 +159,8 @@ operatingsystem_parameters:
     .comm operatingsystem_parameter_envp, 4
     .comm operatingsystem_parameter_argc, 4
     .comm operatingsystem_parameter_argv, 4
+=======
+>>>>>>> origin/cpstrnew
 
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2

@@ -36,6 +36,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 uses Classes,SysUtils,Variants,FmtBCD,MaskUtils;
 =======
 uses Classes,Sysutils,Variants,FmtBCD,MaskUtils;
@@ -55,6 +56,9 @@ uses Classes,Sysutils,Variants,FmtBCD;
 =======
 uses Classes,Sysutils,Variants,FmtBCD;
 >>>>>>> origin/fixes_2_2
+=======
+uses Classes,Sysutils,Variants,FmtBCD,MaskUtils;
+>>>>>>> origin/cpstrnew
 
 const
 
@@ -454,6 +458,7 @@ type
     FDisplayWidth : Longint;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FEditMask: TEditMask;
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -472,6 +477,9 @@ type
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    FEditMask: TEditMask;
+>>>>>>> origin/cpstrnew
     FFieldKind : TFieldKind;
     FFieldName : String;
     FFieldNo : Longint;
@@ -675,6 +683,7 @@ type
     property DisplayText: String read GetDisplayText;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     property EditMask: TEditMask read FEditMask write FEditMask;
     property EditMaskPtr: TEditMask read FEditMask;
     property FieldNo: Longint read FFieldNo;
@@ -684,6 +693,10 @@ type
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    property EditMask: TEditMask read FEditMask write FEditMask;
+    property EditMaskPtr: TEditMask read FEditMask;
+>>>>>>> origin/cpstrnew
     property FieldNo: Longint read FFieldNo;
     property IsIndexField: Boolean read FIsIndexField;
     property IsNull: Boolean read GetIsNull;
@@ -809,11 +822,15 @@ type
   published
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     property EditMask;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    property EditMask;
+>>>>>>> origin/cpstrnew
     property Size default 20;
   end;
 
@@ -860,6 +877,7 @@ type
     constructor Create(aOwner: TComponent); override;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure SetFieldType(AValue: TFieldType); override;
     property Value: WideString read GetAsWideString write SetAsWideString;
   end;
@@ -869,6 +887,9 @@ type
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    procedure SetFieldType(AValue: TFieldType); override;
+>>>>>>> origin/cpstrnew
     property Value: WideString read GetAsWideString write SetAsWideString;
   end;
 
@@ -1183,15 +1204,20 @@ type
     function GetAsVariant: variant; override;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function GetAsInteger: Longint; override;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    function GetAsInteger: Longint; override;
+>>>>>>> origin/cpstrnew
     function GetDataSize: Integer; override;
     function GetDefaultWidth: Longint; override;
     procedure SetAsBoolean(AValue: Boolean); override;
     procedure SetAsString(const AValue: string); override;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1215,6 +1241,9 @@ type
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    procedure SetAsInteger(AValue: Integer); override;
+>>>>>>> origin/cpstrnew
     procedure SetVarValue(const AValue: Variant); override;
   public
     constructor Create(AOwner: TComponent); override;
@@ -1247,11 +1276,15 @@ type
     property DisplayFormat: string read FDisplayFormat write SetDisplayFormat;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     property EditMask;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    property EditMask;
+>>>>>>> origin/cpstrnew
   end;
 
 { TDateField }
@@ -1380,6 +1413,9 @@ type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 { TFMTBCDField }
 
   TFMTBCDField = class(TNumericField)
@@ -1401,6 +1437,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function GetAsLargeInt: LargeInt; override;
     function GetAsInteger: Longint; override;
 =======
@@ -1415,6 +1452,9 @@ type
 =======
     function GetAsLongint: Longint; override;
 >>>>>>> origin/cpstrnew
+=======
+    function GetAsLongint: Longint; override;
+>>>>>>> origin/cpstrnew
     function GetAsString: string; override;
     function GetAsVariant: variant; override;
     function GetDataSize: Integer; override;
@@ -1422,6 +1462,7 @@ type
     procedure GetText(var TheText: string; ADisplayText: Boolean); override;
     procedure SetAsBCD(const AValue: TBCD); override;
     procedure SetAsFloat(AValue: Double); override;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1440,6 +1481,9 @@ type
 =======
     procedure SetAsLongint(AValue: Longint); override;
 >>>>>>> origin/cpstrnew
+=======
+    procedure SetAsLongint(AValue: Longint); override;
+>>>>>>> origin/cpstrnew
     procedure SetAsString(const AValue: string); override;
     procedure SetAsCurrency(AValue: Currency); override;
     procedure SetVarValue(const AValue: Variant); override;
@@ -1448,6 +1492,7 @@ type
     function CheckRange(AValue : TBCD) : Boolean;
     property Value: TBCD read GetAsBCD write SetAsBCD;
   published
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1465,6 +1510,9 @@ type
 =======
     property Precision: Longint read FPrecision write FPrecision default 15;
 >>>>>>> origin/cpstrnew
+=======
+    property Precision: Longint read FPrecision write FPrecision default 15;
+>>>>>>> origin/cpstrnew
     property Currency: Boolean read FCurrency write FCurrency;
     property MaxValue: string read GetMaxValue write SetMaxValue;
     property MinValue: string read GetMinValue write SetMinValue;
@@ -1472,6 +1520,7 @@ type
   end;
 
 
+<<<<<<< HEAD
 { TBlobField }
   TBlobStreamMode = (bmRead, bmWrite, bmReadWrite);
   // This type is needed for compatibility. While it should contain only blob
@@ -1505,6 +1554,8 @@ type
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 { TBlobField }
   TBlobStreamMode = (bmRead, bmWrite, bmReadWrite);
   TBlobType = ftBlob..ftWideMemo;
@@ -1781,6 +1832,9 @@ type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   { TFieldsEnumerator }
 
   TFieldsEnumerator = class
@@ -1794,6 +1848,7 @@ type
     property Current: TField read GetCurrent;
   end;
 
+<<<<<<< HEAD
 { TFields }
 
   TFields = Class(TObject)
@@ -1811,6 +1866,8 @@ type
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 { TFields }
 
   Tfields = Class(TObject)
@@ -1844,11 +1901,15 @@ type
       Function FieldByNumber(FieldNo : Integer) : TField;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       Function GetEnumerator: TFieldsEnumerator;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+      Function GetEnumerator: TFieldsEnumerator;
+>>>>>>> origin/cpstrnew
       Procedure GetFieldNames (Values : TStrings);
       Function IndexOf(Field : TField) : Longint;
       procedure Remove(Value : TField);
@@ -3103,6 +3164,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure SetParams(AValue: TStrings);
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -3111,6 +3173,9 @@ type
 =======
     procedure SetParams(AValue: TStrings);
 >>>>>>> origin/fixes_2.4
+=======
+    procedure SetParams(AValue: TStrings);
+>>>>>>> origin/cpstrnew
   protected
     Procedure CheckConnected;
     Procedure CheckDisConnected;
@@ -3140,6 +3205,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     property Params : TStrings read FParams Write SetParams;
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3155,6 +3221,9 @@ type
 =======
     property Params : TStrings read FParams Write SetParams;
 >>>>>>> origin/fixes_2.4
+=======
+    property Params : TStrings read FParams Write SetParams;
+>>>>>>> origin/cpstrnew
   end;
 
 
@@ -3378,6 +3447,7 @@ const
     varOleStr, varOleStr, varVariant, varUnknown, varDispatch, varOleStr,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     varOleStr, varDouble, varOleStr,varOleStr);
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3395,6 +3465,9 @@ const
 =======
     varOleStr,varOleStr, varOleStr,varOleStr);
 >>>>>>> origin/fixes_2_2
+=======
+    varOleStr, varDouble, varOleStr,varOleStr);
+>>>>>>> origin/cpstrnew
 
 
 Const
@@ -3561,6 +3634,7 @@ const
       { ftTimeStamp} Nil,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       { ftFMTBcd} TFMTBCDField,
 =======
       { ftFMTBcd} Nil,
@@ -3568,6 +3642,9 @@ const
 =======
       { ftFMTBcd} Nil,
 >>>>>>> origin/fixes_2_2
+=======
+      { ftFMTBcd} TFMTBCDField,
+>>>>>>> origin/cpstrnew
       { ftFixedWideString} TWideStringField,
       { ftWideMemo} TWideMemoField
     );

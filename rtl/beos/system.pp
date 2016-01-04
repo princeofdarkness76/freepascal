@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Unit System;
 =======
 Unit system;
@@ -7,6 +8,9 @@ Unit system;
 =======
 Unit system;
 >>>>>>> origin/fixes_2_2
+=======
+Unit System;
+>>>>>>> origin/cpstrnew
 
 interface
 
@@ -529,12 +533,16 @@ begin
   { Set up signals handlers }
   InstallSignals;
 
+<<<<<<< HEAD
   SysInitStdIO;
 { Setup heap }
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  { Setup heap }
+>>>>>>> origin/cpstrnew
   myheapsize:=4096*1;// $ 20000;
   myheaprealsize:=4096*1;// $ 20000;
   heapstart:=nil;

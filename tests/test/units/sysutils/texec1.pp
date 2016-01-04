@@ -1,11 +1,15 @@
 { %result=1 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { %NEEDEDAFTER }
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{ %NEEDEDAFTER }
+>>>>>>> origin/cpstrnew
 { this test fails when it isn't called by execansi }
   uses
     sysutils;

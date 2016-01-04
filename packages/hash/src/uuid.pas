@@ -23,6 +23,7 @@ interface
 uses
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   SysUtils, DateUtils, md5, sha1;
 =======
   SysUtils, DateUtils, md5;
@@ -30,6 +31,9 @@ uses
 =======
   SysUtils, DateUtils, md5;
 >>>>>>> origin/fixes_2_2
+=======
+  SysUtils, DateUtils, md5, sha1;
+>>>>>>> origin/cpstrnew
 
 
 
@@ -97,6 +101,7 @@ procedure uuid_initialize(const state: uuid_state);
 { uuid_create -- generator a UUID }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function uuid_create(out uuid: uuid_t): boolean;
 
 { uuid_finalize -- returns the current state }
@@ -111,19 +116,26 @@ procedure uuid_create_sha1_from_name(out uuid: uuid_t; const nsid: uuid_t; const
 =======
 >>>>>>> origin/fixes_2_2
 function uuid_create(var uuid: uuid_t): boolean;
+=======
+function uuid_create(out uuid: uuid_t): boolean;
+>>>>>>> origin/cpstrnew
 
 { uuid_finalize -- returns the current state }
-procedure uuid_finalize(var state: uuid_state);
+procedure uuid_finalize(out state: uuid_state);
 
 { uuid_create_md5_from_name -- create a version 3 (MD5) UUID using a "name" from a "name space" }
-procedure uuid_create_md5_from_name(var uuid: uuid_t; const nsid: uuid_t; const name: string);
+procedure uuid_create_md5_from_name(out uuid: uuid_t; const nsid: uuid_t; const name: string);
 
 { uuid_create_sha1_from_name -- create a version 5 (SHA-1) UUID using a "name" from a "name space" }
+<<<<<<< HEAD
 procedure uuid_create_sha1_from_name(var uuid: uuid_t; const nsid: uuid_t; const name: string);
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+procedure uuid_create_sha1_from_name(out uuid: uuid_t; const nsid: uuid_t; const name: string);
+>>>>>>> origin/cpstrnew
 
 { uuid_compare --  Compare two UUID's "lexically" }
 function uuid_compare(const u1, u2: uuid_t): integer;
@@ -137,6 +149,7 @@ function uuid_compare(const u1, u2: uuid_t): integer;
 { read_state -- read UUID generator state from non-volatile store }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function read_state(out clockseq: unsigned16; out timestamp: uuid_time_t; out node: uuid_node_t): boolean;
 =======
 function read_state(var clockseq: unsigned16; var timestamp: uuid_time_t; var node: uuid_node_t): boolean;
@@ -144,11 +157,15 @@ function read_state(var clockseq: unsigned16; var timestamp: uuid_time_t; var no
 =======
 function read_state(var clockseq: unsigned16; var timestamp: uuid_time_t; var node: uuid_node_t): boolean;
 >>>>>>> origin/fixes_2_2
+=======
+function read_state(out clockseq: unsigned16; out timestamp: uuid_time_t; out node: uuid_node_t): boolean;
+>>>>>>> origin/cpstrnew
 
 { write_state -- save UUID generator state back to non-volatile storage }
 procedure write_state(var clockseq: unsigned16; const timestamp: uuid_time_t; const node: uuid_node_t);
 
 { format_uuid_v1 -- make a UUID from the timestamp, clockseq, and node ID }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 procedure format_uuid_v1(out uuid: uuid_t; const clockseq: unsigned16; const timestamp: uuid_time_t; const node: uuid_node_t);
@@ -162,16 +179,23 @@ procedure get_current_time(out timestamp: uuid_time_t);
 =======
 >>>>>>> origin/fixes_2_2
 procedure format_uuid_v1(var uuid: uuid_t; const clockseq: unsigned16; const timestamp: uuid_time_t; const node: uuid_node_t);
+=======
+procedure format_uuid_v1(out uuid: uuid_t; const clockseq: unsigned16; const timestamp: uuid_time_t; const node: uuid_node_t);
+>>>>>>> origin/cpstrnew
 
 { format_uuid_v3or5 -- make a UUID from a (pseudo)random 128-bit number }
-procedure format_uuid_v3or5(var uuid: uuid_t; const hash: pointer; const v: integer);
+procedure format_uuid_v3or5(out uuid: uuid_t; const hash: pointer; const v: integer);
 
 { get_current_time -- get time as 60-bit 100ns ticks since UUID epoch. Compensate for the fact that real clock resolution is less than 100ns. }
+<<<<<<< HEAD
 procedure get_current_time(var timestamp: uuid_time_t);
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+procedure get_current_time(out timestamp: uuid_time_t);
+>>>>>>> origin/cpstrnew
 
 
 
@@ -182,6 +206,7 @@ procedure get_current_time(var timestamp: uuid_time_t);
 { get_system_time -- system dependent call to get the current system time. Returned as 100ns ticks since UUID epoch, but resolution may be less than 100ns. }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure get_system_time(out timestamp: uuid_time_t);
 =======
 procedure get_system_time(var timestamp: uuid_time_t);
@@ -189,6 +214,9 @@ procedure get_system_time(var timestamp: uuid_time_t);
 =======
 procedure get_system_time(var timestamp: uuid_time_t);
 >>>>>>> origin/fixes_2_2
+=======
+procedure get_system_time(out timestamp: uuid_time_t);
+>>>>>>> origin/cpstrnew
 
 { true_random -- generate a crypto-quality random number. }
 function true_random: unsigned16;
@@ -219,6 +247,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure uuid_finalize(out state: uuid_state);
 =======
 procedure uuid_finalize(var state: uuid_state);
@@ -226,6 +255,9 @@ procedure uuid_finalize(var state: uuid_state);
 =======
 procedure uuid_finalize(var state: uuid_state);
 >>>>>>> origin/fixes_2_2
+=======
+procedure uuid_finalize(out state: uuid_state);
+>>>>>>> origin/cpstrnew
 begin
   state := current_state;
 end;
@@ -235,6 +267,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function uuid_create(out uuid: uuid_t): boolean;
 =======
 function uuid_create(var uuid: uuid_t): boolean;
@@ -242,6 +275,9 @@ function uuid_create(var uuid: uuid_t): boolean;
 =======
 function uuid_create(var uuid: uuid_t): boolean;
 >>>>>>> origin/fixes_2_2
+=======
+function uuid_create(out uuid: uuid_t): boolean;
+>>>>>>> origin/cpstrnew
 var
   timestamp: uuid_time_t;
   last_time: uuid_time_t;
@@ -279,6 +315,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure uuid_create_md5_from_name(out uuid: uuid_t; const nsid: uuid_t; const name: string);
 =======
 procedure uuid_create_md5_from_name(var uuid: uuid_t; const nsid: uuid_t; const name: string);
@@ -286,6 +323,9 @@ procedure uuid_create_md5_from_name(var uuid: uuid_t; const nsid: uuid_t; const 
 =======
 procedure uuid_create_md5_from_name(var uuid: uuid_t; const nsid: uuid_t; const name: string);
 >>>>>>> origin/fixes_2_2
+=======
+procedure uuid_create_md5_from_name(out uuid: uuid_t; const nsid: uuid_t; const name: string);
+>>>>>>> origin/cpstrnew
 var
   net_nsid: uuid_t;
   c: TMDContext;
@@ -312,6 +352,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure uuid_create_sha1_from_name(out uuid: uuid_t; const nsid: uuid_t; const name: string);
 var
   net_nsid: uuid_t;
@@ -329,6 +370,13 @@ var
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+procedure uuid_create_sha1_from_name(out uuid: uuid_t; const nsid: uuid_t; const name: string);
+var
+  net_nsid: uuid_t;
+  c: TSHA1Context;
+  hash: TSHA1Digest;
+>>>>>>> origin/cpstrnew
 begin
   (* put name space ID in network byte order so it hashes the same
      no matter what endian machine we're on *)
@@ -339,10 +387,14 @@ begin
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   SHA1Init(c);
   SHA1Update(c, net_nsid, sizeof(net_nsid));
   SHA1Update(c, pchar(name)^, Length(name));
   SHA1Final(c, hash);
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -354,6 +406,8 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 
   (* the hash is in network byte order at this point *)
   format_uuid_v3or5(uuid, @hash, UUID_VERSION_5);
@@ -378,6 +432,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function read_state(out clockseq: unsigned16; out timestamp: uuid_time_t; out node: uuid_node_t): boolean;
 =======
 function read_state(var clockseq: unsigned16; var timestamp: uuid_time_t; var node: uuid_node_t): boolean;
@@ -385,6 +440,9 @@ function read_state(var clockseq: unsigned16; var timestamp: uuid_time_t; var no
 =======
 function read_state(var clockseq: unsigned16; var timestamp: uuid_time_t; var node: uuid_node_t): boolean;
 >>>>>>> origin/fixes_2_2
+=======
+function read_state(out clockseq: unsigned16; out timestamp: uuid_time_t; out node: uuid_node_t): boolean;
+>>>>>>> origin/cpstrnew
 begin
   clockseq := current_state.cs;
   timestamp := current_state.ts;
@@ -408,6 +466,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure format_uuid_v1(out uuid: uuid_t; const clockseq: unsigned16; const timestamp: uuid_time_t; const node: uuid_node_t);
 =======
 procedure format_uuid_v1(var uuid: uuid_t; const clockseq: unsigned16; const timestamp: uuid_time_t; const node: uuid_node_t);
@@ -415,6 +474,9 @@ procedure format_uuid_v1(var uuid: uuid_t; const clockseq: unsigned16; const tim
 =======
 procedure format_uuid_v1(var uuid: uuid_t; const clockseq: unsigned16; const timestamp: uuid_time_t; const node: uuid_node_t);
 >>>>>>> origin/fixes_2_2
+=======
+procedure format_uuid_v1(out uuid: uuid_t; const clockseq: unsigned16; const timestamp: uuid_time_t; const node: uuid_node_t);
+>>>>>>> origin/cpstrnew
 begin
   uuid.time_low := timestamp and $FFFFFFFF;
   uuid.time_mid := (timestamp shr 32) and $FFFF;
@@ -431,6 +493,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure format_uuid_v3or5(out uuid: uuid_t; const hash: pointer; const v: integer);
 =======
 procedure format_uuid_v3or5(var uuid: uuid_t; const hash: pointer; const v: integer);
@@ -438,6 +501,9 @@ procedure format_uuid_v3or5(var uuid: uuid_t; const hash: pointer; const v: inte
 =======
 procedure format_uuid_v3or5(var uuid: uuid_t; const hash: pointer; const v: integer);
 >>>>>>> origin/fixes_2_2
+=======
+procedure format_uuid_v3or5(out uuid: uuid_t; const hash: pointer; const v: integer);
+>>>>>>> origin/cpstrnew
 begin
   (* convert UUID to local byte order *)
   move(hash^, uuid, sizeof(uuid));
@@ -461,6 +527,7 @@ var
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure get_current_time(out timestamp: uuid_time_t);
 =======
 procedure get_current_time(var timestamp: uuid_time_t);
@@ -468,6 +535,9 @@ procedure get_current_time(var timestamp: uuid_time_t);
 =======
 procedure get_current_time(var timestamp: uuid_time_t);
 >>>>>>> origin/fixes_2_2
+=======
+procedure get_current_time(out timestamp: uuid_time_t);
+>>>>>>> origin/cpstrnew
 var
   time_now: uuid_time_t;
 begin
@@ -502,6 +572,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure get_system_time(out timestamp: uuid_time_t);
 =======
 procedure get_system_time(var timestamp: uuid_time_t);
@@ -509,6 +580,9 @@ procedure get_system_time(var timestamp: uuid_time_t);
 =======
 procedure get_system_time(var timestamp: uuid_time_t);
 >>>>>>> origin/fixes_2_2
+=======
+procedure get_system_time(out timestamp: uuid_time_t);
+>>>>>>> origin/cpstrnew
 var
   Epoch:TDateTime;
 begin

@@ -126,6 +126,7 @@ const
      TSemaphore         = sem_t;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      PSemaphore   = psem_t;
 =======
      PSemaphore   = ^TSemaphore;
@@ -133,6 +134,9 @@ const
 =======
      PSemaphore   = ^TSemaphore;
 >>>>>>> origin/fixes_2_2
+=======
+     PSemaphore   = psem_t;
+>>>>>>> origin/cpstrnew
 
     {
      Primitive system data type definitions required by P1003.1c.

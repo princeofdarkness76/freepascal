@@ -197,6 +197,7 @@ function ThreadProc(ThreadObjPtr: Pointer): PtrInt;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       if not Thread.Terminated then begin
         CurrentThreadVar := Thread;
         Thread.Execute;
@@ -213,6 +214,10 @@ function ThreadProc(ThreadObjPtr: Pointer): PtrInt;
       if not Thread.Terminated then
         Thread.Execute;
 >>>>>>> graemeg/cpstrnew
+=======
+      if not Thread.Terminated then
+        Thread.Execute;
+>>>>>>> origin/cpstrnew
 =======
       if not Thread.Terminated then
         Thread.Execute;
@@ -240,6 +245,7 @@ begin
     what this method is for. }
   Resume;
 end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -283,6 +289,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 function TThread.GetSuspended: Boolean;
 begin
@@ -296,6 +304,7 @@ begin
 // enable for all platforms once http://bugs.freepascal.org/view.php?id=16884
 // is fixed for all platforms (in case the fix for non-unix platforms also
 // requires this field at least)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -314,6 +323,10 @@ begin
 {$if defined(unix) or defined(windows)}
   if not FInitialSuspended then
 >>>>>>> graemeg/cpstrnew
+=======
+{$if defined(unix) or defined(windows)}
+  if not FInitialSuspended then
+>>>>>>> origin/cpstrnew
 =======
 {$if defined(unix) or defined(windows)}
   if not FInitialSuspended then
@@ -1534,8 +1547,8 @@ procedure ObjectBinaryToText(Input, Output: TStream; Encoding: TObjectTextEncodi
 >>>>>>> graemeg/fixes_2_2
 =======
         end 
-      else if (Ord(w) >= 32) and (Ord(w) < 127) then 
-        begin //printable ascii
+      else if (Ord(w) >= 32) and ((Ord(w) < 127) or (UseBytes and (Ord(w)<256))) then
+        begin //printable ascii or bytes
         if not InString then
           NewInString := True;
         NewStr := char(w);

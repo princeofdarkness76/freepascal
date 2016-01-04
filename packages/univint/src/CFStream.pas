@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	Copyright (c) 2000-2013, Apple Inc. All rights reserved.
 }
 =======
@@ -47,6 +48,9 @@
 =======
 	Copyright (c) 2000-2009, Apple Inc. All rights reserved.
 >>>>>>> origin/fixes_2.4
+=======
+	Copyright (c) 2000-2009, Apple Inc. All rights reserved.
+>>>>>>> origin/cpstrnew
 }
 {	  Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2004 }
 {	  Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, November 2005 }
@@ -62,12 +66,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -79,6 +87,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -93,6 +102,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -108,6 +121,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -118,6 +132,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -125,13 +142,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -139,6 +160,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -147,8 +170,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -159,6 +185,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -179,6 +206,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -187,12 +216,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -200,6 +232,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -437,6 +470,10 @@ interface
 	{$setc TARGET_CPU_PPC64 := FALSE}
 >>>>>>> origin/fixes_2.4
 	{$setc TARGET_CPU_X86 := FALSE}
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
@@ -461,6 +498,7 @@ interface
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -502,6 +540,41 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -530,6 +603,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -538,6 +612,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -547,6 +623,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -564,6 +641,8 @@ uses MacTypes,CFBase,CFString,CFDictionary,CFURL,CFRunLoop,CFSocket,CFError;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 uses MacTypes,CFBase,CFString,CFDictionary,CFURL,CFRunLoop,CFSocket,CFError;
 {$endc} {not MACOSALLINCLUDE}
 
@@ -575,11 +654,14 @@ uses MacTypes,CFBase,CFString,CFDictionary,CFURL,CFRunLoop,CFSocket,CFError;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 const
@@ -594,6 +676,7 @@ const
 type
 	CFStreamStatus = CFIndex;
 
+<<<<<<< HEAD
 const
 	kCFStreamEventNone = 0;
 	kCFStreamEventOpenCompleted = 1;
@@ -640,6 +723,9 @@ const
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+const
+>>>>>>> origin/cpstrnew
 	kCFStreamEventNone = 0;
 	kCFStreamEventOpenCompleted = 1;
 	kCFStreamEventHasBytesAvailable = 2;
@@ -648,7 +734,10 @@ const
 	kCFStreamEventEndEncountered = 16;
 type
 	CFStreamEventType = CFOptionFlags;
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 type
 	CFStreamClientContext = record
@@ -660,6 +749,7 @@ type
 	end;
 
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -700,6 +790,9 @@ type
 =======
 	CFReadStreamRef = ^SInt32; { an opaque type }
 >>>>>>> origin/fixes_2.4
+=======
+	CFReadStreamRef = ^SInt32; { an opaque type }
+>>>>>>> origin/cpstrnew
 	CFReadStreamRefPtr = ^CFReadStreamRef;
 	CFWriteStreamRef = ^SInt32; { an opaque type }
 	CFWriteStreamRefPtr = ^CFWriteStreamRef;
@@ -739,6 +832,7 @@ function CFWriteStreamCreateWithFile( alloc: CFAllocatorRef; fileURL: CFURLRef )
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { CF_IMPLICIT_BRIDGING_DISABLED }
 procedure CFStreamCreateBoundPair( alloc: CFAllocatorRef; var readStream: CFReadStreamRef; var writeStream: CFWriteStreamRef; transferBufferSize: CFIndex ); external name '_CFStreamCreateBoundPair';
 { CF_IMPLICIT_BRIDGING_ENABLED }
@@ -761,12 +855,16 @@ procedure CFStreamCreateBoundPair( alloc: CFAllocatorRef; var readStream: CFRead
 =======
 procedure CFStreamCreateBoundPair( alloc: CFAllocatorRef; var readStream: CFReadStreamRef; var writeStream: CFWriteStreamRef; transferBufferSize: CFIndex ); external name '_CFStreamCreateBoundPair';
 >>>>>>> origin/fixes_2.4
+=======
+procedure CFStreamCreateBoundPair( alloc: CFAllocatorRef; var readStream: CFReadStreamRef; var writeStream: CFWriteStreamRef; transferBufferSize: CFIndex ); external name '_CFStreamCreateBoundPair';
+>>>>>>> origin/cpstrnew
 
 {#if MAC_OS_X_VERSION_10_2 <= MAC_OS_X_VERSION_MAX_ALLOWED}
 { Property for file write streams; value should be a CFBoolean.  Set to TRUE to append to a file, rather than to replace its contents }
 var kCFStreamPropertyAppendToFile: CFStringRef; external name '_kCFStreamPropertyAppendToFile'; (* attribute const *)
 {#endif}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -778,6 +876,9 @@ var kCFStreamPropertyAppendToFile: CFStringRef; external name '_kCFStreamPropert
 =======
 // Value is a CFNumber
 >>>>>>> origin/fixes_2.4
+=======
+// Value is a CFNumber
+>>>>>>> origin/cpstrnew
 var kCFStreamPropertyFileCurrentOffset: CFStringRef; external name '_kCFStreamPropertyFileCurrentOffset'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 
@@ -818,6 +919,7 @@ procedure CFStreamCreatePairWithPeerSocketSignature( alloc: CFAllocatorRef; cons
 function CFReadStreamGetStatus( stream: CFReadStreamRef ): CFStreamStatus; external name '_CFReadStreamGetStatus';
 function CFWriteStreamGetStatus( stream: CFWriteStreamRef ): CFStreamStatus; external name '_CFWriteStreamGetStatus';
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -863,12 +965,17 @@ function CFWriteStreamGetError( stream: CFWriteStreamRef ): CFStreamError; exter
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 { Returns NULL if no error has occurred; otherwise returns the error. }
 function CFReadStreamCopyError( stream: CFReadStreamRef ): CFErrorRef; external name '_CFReadStreamCopyError';
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 function CFWriteStreamCopyError( stream: CFWriteStreamRef ): CFErrorRef; external name '_CFWriteStreamCopyError';
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 { Returns success/failure.  Opening a stream causes it to reserve all the system
    resources it requires.  If the stream can open non-blocking, this will always 
@@ -988,6 +1095,7 @@ function CFWriteStreamSetProperty( stream: CFWriteStreamRef; propertyName: CFStr
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -995,11 +1103,14 @@ function CFWriteStreamSetProperty( stream: CFWriteStreamRef; propertyName: CFStr
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
    NOTE: Unlike other CoreFoundation APIs, pasing a NULL clientContext here will remove
    the client.  If you do not care about the client context (i.e. your only concern
    is that your callback be called), you should pass in a valid context where every
    entry is 0 or NULL.
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1023,6 +1134,8 @@ function CFWriteStreamSetProperty( stream: CFWriteStreamRef; propertyName: CFStr
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 }
 
 function CFReadStreamSetClient( stream: CFReadStreamRef; streamEvents: CFOptionFlags; clientCB: CFReadStreamClientCallBack; var clientContext: CFStreamClientContext ): Boolean; external name '_CFReadStreamSetClient';
@@ -1200,9 +1313,35 @@ function CFReadStreamGetError( stream: CFReadStreamRef ): CFStreamError; externa
 function CFWriteStreamGetError( stream: CFWriteStreamRef ): CFStreamError; external name '_CFWriteStreamGetError';
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
+{ The following API is deprecated starting in 10.5; please use CFRead/WriteStreamCopyError(), above, instead }
+const
+	kCFStreamErrorDomainCustom = -1;      { custom to the kind of stream in question }
+	kCFStreamErrorDomainPOSIX = 1;        { POSIX errno; interpret using <sys/errno.h> }
+	kCFStreamErrorDomainMacOSStatus = 2;      { OSStatus type from Carbon APIs; interpret using <MacTypes.h> }
+type
+	CFStreamErrorDomain = CFIndex;
+
+type
+	CFStreamError = record
+		domain: CFIndex; 
+		error: SInt32;
+	end;
+	CFStreamErrorPtr = ^CFStreamError;
+
+{ 0 is returned if no error has occurred.  errorDomain specifies the domain
+   in which the error code should be interpretted; pass NULL if you are not 
+   interested. }
+function CFReadStreamGetError( stream: CFReadStreamRef ): CFStreamError; external name '_CFReadStreamGetError';
+function CFWriteStreamGetError( stream: CFWriteStreamRef ): CFStreamError; external name '_CFWriteStreamGetError';
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+
 end.
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> origin/fixes_2_2
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

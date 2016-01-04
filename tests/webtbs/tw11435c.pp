@@ -8,12 +8,16 @@ type
   generic TList<_T>=class(TObject)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
     public
       type
         TCompareFunc = function(const Item1, Item2: _T): Integer;
     public
       var
         data : _T;
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -25,6 +29,8 @@ type
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
     procedure Add(item: _T);
     procedure Sort(compare: TCompareFunc);
   end;

@@ -20,6 +20,9 @@ interface
 {$MODE objfpc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {$MODESWITCH OUT}
 { force ansistrings }
 {$H+}
@@ -259,6 +262,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function FileRead (Handle : THandle; Out Buffer; Count : longint) : Longint;
 =======
 Function FileRead (Handle : THandle; Var Buffer; Count : longint) : Longint;
@@ -266,6 +270,9 @@ Function FileRead (Handle : THandle; Var Buffer; Count : longint) : Longint;
 =======
 Function FileRead (Handle : THandle; Var Buffer; Count : longint) : Longint;
 >>>>>>> origin/fixes_2_2
+=======
+Function FileRead (Handle : THandle; Out Buffer; Count : longint) : Longint;
+>>>>>>> origin/cpstrnew
 Var
   res : dword;
 begin
@@ -697,6 +704,7 @@ end;
 Procedure GetLocalTime(var SystemTime: TSystemTime);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 begin
   windows.Getlocaltime(SystemTime);
 end;
@@ -721,15 +729,10 @@ end;
 >>>>>>> origin/fixes_2_2
 Var
   Syst : Windows.TSystemtime;
+=======
+>>>>>>> origin/cpstrnew
 begin
-  windows.Getlocaltime(@syst);
-  SystemTime.year:=syst.wYear;
-  SystemTime.month:=syst.wMonth;
-  SystemTime.day:=syst.wDay;
-  SystemTime.hour:=syst.wHour;
-  SystemTime.minute:=syst.wMinute;
-  SystemTime.second:=syst.wSecond;
-  SystemTime.millisecond:=syst.wMilliSeconds;
+  windows.Getlocaltime(SystemTime);
 end;
 
 <<<<<<< HEAD
@@ -743,6 +746,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure SysBeep;
 =======
 procedure Beep;
@@ -750,6 +754,9 @@ procedure Beep;
 =======
 procedure Beep;
 >>>>>>> origin/fixes_2_2
+=======
+procedure SysBeep;
+>>>>>>> origin/cpstrnew
 begin
   MessageBeep(0);
 end;
@@ -954,6 +961,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function ExecuteProcess(Const Path: AnsiString; Const ComLine: AnsiString;Flags:TExecuteFlags=[]):integer;
 =======
 function ExecuteProcess(Const Path: AnsiString; Const ComLine: AnsiString):integer;
@@ -961,6 +969,9 @@ function ExecuteProcess(Const Path: AnsiString; Const ComLine: AnsiString):integ
 =======
 function ExecuteProcess(Const Path: AnsiString; Const ComLine: AnsiString):integer;
 >>>>>>> origin/fixes_2_2
+=======
+function ExecuteProcess(Const Path: AnsiString; Const ComLine: AnsiString;Flags:TExecuteFlags=[]):integer;
+>>>>>>> origin/cpstrnew
 var
   PI: TProcessInformation;
   Proc : THandle;
@@ -995,6 +1006,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function ExecuteProcess(Const Path: AnsiString; Const ComLine: Array of AnsiString;Flags:TExecuteFlags=[]):integer;
 =======
 function ExecuteProcess(Const Path: AnsiString; Const ComLine: Array of AnsiString):integer;
@@ -1002,6 +1014,9 @@ function ExecuteProcess(Const Path: AnsiString; Const ComLine: Array of AnsiStri
 =======
 function ExecuteProcess(Const Path: AnsiString; Const ComLine: Array of AnsiString):integer;
 >>>>>>> origin/fixes_2_2
+=======
+function ExecuteProcess(Const Path: AnsiString; Const ComLine: Array of AnsiString;Flags:TExecuteFlags=[]):integer;
+>>>>>>> origin/cpstrnew
 
 var
   CommandLine: AnsiString;
@@ -1341,11 +1356,15 @@ Initialization
   LoadVersionInfo;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   OnBeep:=@SysBeep;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  OnBeep:=@SysBeep;
+>>>>>>> origin/cpstrnew
   SysConfigDir:='\Windows';
 
 Finalization

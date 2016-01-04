@@ -7,6 +7,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   DSWIFI_REVISION = 16;
   DSWIFI_VERSION  = '0.3.16';
 =======
@@ -29,4 +30,8 @@ const
   DSWIFI_REVISION = 11;
   DSWIFI_VERSION  = '0.3.11';
 >>>>>>> origin/fixes_2.4
+=======
+  DSWIFI_REVISION = 12;
+  DSWIFI_VERSION  = '0.3.12';
+>>>>>>> origin/cpstrnew
 {$endif NDS_INTERFACE}

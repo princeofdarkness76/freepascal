@@ -11,6 +11,7 @@
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
  **********************************************************************}
+{$IFDEF FPC}
 {$mode objfpc}
 {$H+}
 {$ENDIF}
@@ -43,6 +44,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$i memdsdelphi.inc} // should set ptrint is longint|intptr
 		       // & trecordbuffer ( if <2009)
   {$ENDIF}
@@ -51,6 +53,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   ptrint = Integer;
@@ -111,6 +115,7 @@ type
     ffieldsizes: PInteger;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function GetCharPointer(p:PChar; Pos:Integer):PChar;
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -128,6 +133,11 @@ type
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    function GetCharPointer(p:PChar; Pos:Integer):PChar;
+    function GetIntegerPointer(p:PInteger; Pos:Integer):PInteger;
+
+>>>>>>> origin/cpstrnew
     procedure calcrecordlayout;
     function  MDSGetRecordOffset(ARecNo: integer): longint;
     function  MDSGetFieldOffset(FieldNo: integer): integer;
@@ -226,6 +236,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Procedure Clear(ClearDefs : Boolean);{$IFNDEF FPC} overload; {$ENDIF}
     Procedure Clear;{$IFNDEF FPC} overload; {$ENDIF}
 =======
@@ -243,6 +254,11 @@ type
     procedure Clear(ClearDefs : Boolean);{$IFNDEF FPC} overload; {$ENDIF}
     procedure Clear;{$IFNDEF FPC} overload; {$ENDIF}
 >>>>>>> graemeg/cpstrnew
+=======
+
+    procedure Clear(ClearDefs : Boolean);{$IFNDEF FPC} overload; {$ENDIF}
+    procedure Clear;{$IFNDEF FPC} overload; {$ENDIF}
+>>>>>>> origin/cpstrnew
 =======
 
     procedure Clear(ClearDefs : Boolean);{$IFNDEF FPC} overload; {$ENDIF}
@@ -597,6 +613,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:= getIntegerPointer(ffieldoffsets, fieldno-1)^;
 =======
  result:= getIntegerpointer(ffieldoffsets, fieldno-1)^;
@@ -616,6 +633,9 @@ begin
 =======
  result:= ffieldoffsets[fieldno-1];
 >>>>>>> origin/fixes_2_2
+=======
+ result:= getIntegerpointer(ffieldoffsets, fieldno-1)^;
+>>>>>>> origin/cpstrnew
 end;
 
 procedure TMemDataset.RaiseError(Fmt: String; Args: array of const);
@@ -667,6 +687,7 @@ begin
  dt1:= FieldDefs.Items[FieldNo-1].Datatype;
  case dt1 of
   ftString:   result:=FieldDefs.Items[FieldNo-1].Size+1;
+  ftFixedChar:result:=FieldDefs.Items[FieldNo-1].Size+1;
   ftBoolean:  result:=SizeOf(Wordbool);
   ftFloat:    result:=SizeOf(Double);
   ftLargeInt: result:=SizeOf(int64);
@@ -1194,11 +1215,15 @@ begin
           not getfieldisnull(pointer(srcbuffer),I);
  if result and (buffer <> nil) then 
    begin
+<<<<<<< HEAD
    Move((SrcBuffer+ffieldoffsets[I])^, Buffer^,FFieldSizes[I]);
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+   Move(getcharpointer(SrcBuffer,getintegerpointer(ffieldoffsets,I)^)^, Buffer^,GetIntegerPointer(FFieldSizes, I)^);
+>>>>>>> origin/cpstrnew
    end;
 end;
 
@@ -1251,6 +1276,7 @@ begin
      unsetfieldisnull(pointer(destbuffer),I);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      J:=GetIntegerPointer(FFieldSizes, I)^;
      if Field.DataType=ftString then
        Dec(J); // Do not move terminating 0, which is in the size.
@@ -1273,9 +1299,12 @@ begin
 =======
 >>>>>>> origin/fixes_2_2
      J:=FFieldSizes[I];
+=======
+     J:=GetIntegerPointer(FFieldSizes, I)^;
+>>>>>>> origin/cpstrnew
      if Field.DataType=ftString then
        Dec(J); // Do not move terminating 0, which is in the size.
-     Move(Buffer^,(DestBuffer+FFieldOffsets[I])^,J);
+     Move(Buffer^,GetCharPointer(DestBuffer, getIntegerPointer(FFieldOffsets, I)^)^,J);
      dataevent(defieldchange,ptrint(field));
      end;
    end;
@@ -1487,18 +1516,22 @@ begin
  // Avoid mem-leak if CreateTable is called twice
  FreeMem(ffieldoffsets);
  Freemem(ffieldsizes);
-
+ {$IFDEF FPC}
  FFieldOffsets:=getmem(Count*sizeof(integer));
  FFieldSizes:=getmem(Count*sizeof(integer));
+ {$ELSE}
+ getmem(FFieldOffsets, Count*sizeof(integer));
+ getmem(FFieldSizes, Count*sizeof(integer));
+ {$ENDIF}
  FRecSize:= (Count+7) div 8; //null mask
 {$IFDEF FPC_REQUIRES_PROPER_ALIGNMENT}
  FRecSize:=Align(FRecSize,4);
 {$ENDIF}
  for i:= 0 to Count-1 do
    begin
-   ffieldoffsets[i] := frecsize;
-   ffieldsizes[i] := MDSGetbufferSize(i+1);
-   FRecSize:= FRecSize+FFieldSizes[i];
+   GetIntegerPointer(ffieldoffsets, i)^ := frecsize;
+   GetIntegerPointer(ffieldsizes,   i)^ := MDSGetbufferSize(i+1);
+   FRecSize:= FRecSize+GetIntegerPointeR(FFieldSizes, i)^;
    end;
 end;
 
@@ -1661,6 +1694,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 else         F1.AsString:=F2.AsString;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1668,6 +1702,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
               end;
@@ -1820,6 +1856,18 @@ begin
   end
   else
     Result:=Null;
+end;
+
+function TMemDataset.GetCharPointer(p:PChar; Pos:Integer):PChar;
+begin
+  Result:=p;
+  inc(Result, Pos);
+end;
+
+function TMemDataset.GetIntegerPointer(p:PInteger; Pos:Integer):PInteger;
+begin
+  Result:=p;
+  inc(Result, Pos);
 end;
 
 function TMemDataset.GetCharPointer(p:PChar; Pos:Integer):PChar;

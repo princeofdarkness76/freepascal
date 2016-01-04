@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
     This file is part of the PTCPas framebuffer library
 <<<<<<< HEAD
@@ -17,6 +18,11 @@
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
 =======
+    Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> origin/cpstrnew
+=======
+{
+    This file is part of the PTCPas framebuffer library
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> origin/cpstrnew
     Original C++ version by Christian Nentwich (c.nentwich@cs.ucl.ac.uk)
@@ -48,6 +54,7 @@
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -110,30 +117,36 @@ Const
 Constructor TX11Image.Create(ADisplay : PDisplay; AScreen, AWidth, AHeight : Integer; AFormat : TPTCFormat);
 
 Begin
+=======
+constructor TX11Image.Create(ADisplay: PDisplay; AScreen, AWidth, AHeight: Integer; AFormat: TPTCFormat);
+begin
+>>>>>>> origin/cpstrnew
   FWidth := AWidth;
   FHeight := AHeight;
   FDisplay := ADisplay;
-End;
+end;
 
-Constructor TX11NormalImage.Create(ADisplay : PDisplay; AScreen, AWidth, AHeight : Integer; AFormat : TPTCFormat);
-
-Var
-  xpad, xpitch : Integer;
-  tmp_FPixels : PChar;
-
-Begin
-  Inherited;
+constructor TX11NormalImage.Create(ADisplay: PDisplay; AScreen, AWidth, AHeight: Integer; AFormat: TPTCFormat);
+var
+  xpad, xpitch: Integer;
+  tmp_FPixels: PChar;
+begin
+  inherited;
 
   xpad := AFormat.Bits;
-  If AFormat.Bits = 24 Then
+  if AFormat.Bits = 24 then
     xpad := 32;
-  xpitch := AWidth * AFormat.Bits Div 8;
+  xpitch := AWidth * AFormat.Bits div 8;
   Inc(xpitch, 3);
+<<<<<<< HEAD
   xpitch := xpitch And (Not 3);
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  xpitch := xpitch and (not 3);
+>>>>>>> origin/cpstrnew
   FPixels := GetMem(xpitch * AHeight);
   Pointer(tmp_FPixels) := Pointer(FPixels);
   FImage := XCreateImage(ADisplay, DefaultVisual(ADisplay, AScreen),
@@ -142,6 +155,9 @@ Begin
                          AWidth, AHeight, xpad, 0);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   if FImage = nil then
     raise TPTCError.Create('cannot create XImage');
 end;
@@ -150,6 +166,7 @@ destructor TX11NormalImage.Destroy;
 begin
   if FImage <> nil then
   begin
+<<<<<<< HEAD
     { Restore XImage's buffer pointer }
     FImage^.data := nil;
     XDestroyImage(FImage);
@@ -237,82 +254,83 @@ Destructor TX11NormalImage.Destroy;
 Begin
   If FImage <> Nil Then
   Begin
+=======
+>>>>>>> origin/cpstrnew
     { Restore XImage's buffer pointer }
-    FImage^.data := Nil;
+    FImage^.data := nil;
     XDestroyImage(FImage);
-  End;
+  end;
 
-  If FPixels <> Nil Then
+  if FPixels <> nil then
     FreeMem(FPixels);
 
-  Inherited Destroy;
-End;
+  inherited Destroy;
+end;
 
-Procedure TX11NormalImage.Put(AWindow : TWindow; AGC : TGC; AX, AY : Integer);
-
-Begin
+procedure TX11NormalImage.Put(AWindow: TWindow; AGC: TGC; AX, AY: Integer);
+begin
   XPutImage(FDisplay, AWindow, AGC, FImage, 0, 0, AX, AY, FWidth, FHeight);
   XSync(FDisplay, False);
-End;
+end;
 
-Procedure TX11NormalImage.Put(AWindow : TWindow; AGC : TGC; ASX, ASY, ADX, ADY,
-                    AWidth, AHeight : Integer);
-
-Begin
+procedure TX11NormalImage.Put(AWindow: TWindow; AGC: TGC; ASX, ASY, ADX, ADY,
+                    AWidth, AHeight: Integer);
+begin
   XPutImage(FDisplay, AWindow, AGC, FImage, ASX, ASY, ADX, ADY, AWidth, AHeight);
   XSync(FDisplay, False);
-End;
+end;
 
-Function TX11NormalImage.Lock : Pointer;
-
-Begin
+function TX11NormalImage.Lock: Pointer;
+begin
   Result := FPixels;
-End;
+end;
 
-Function TX11NormalImage.Pitch : Integer;
-
-Begin
+function TX11NormalImage.Pitch: Integer;
+begin
   Result := FImage^.bytes_per_line;
-End;
+end;
 
-Function TX11NormalImage.Name : String;
-
-Begin
+function TX11NormalImage.Name: string;
+begin
   Result := 'XImage';
-End;
+end;
 
 {$IFDEF ENABLE_X11_EXTENSION_XSHM}
 
-Var
-  Fshm_error : Boolean;
-  Fshm_oldhandler : Function(disp : PDisplay; xev : PXErrorEvent) : Integer; CDecl;
+var
+  Fshm_error: Boolean;
+  Fshm_oldhandler: Function(disp: PDisplay; xev: PXErrorEvent): Integer; cdecl;
 
-Function Fshm_errorhandler(disp : PDisplay; xev : PXErrorEvent) : Integer; CDecl;
-
-Begin
-  If xev^.error_code=BadAccess Then
-  Begin
+function Fshm_errorhandler(disp: PDisplay; xev: PXErrorEvent): Integer; cdecl;
+begin
+  if xev^.error_code=BadAccess then
+  begin
     Fshm_error := True;
     Result := 0;
-  End
-  Else
+  end
+  else
     Result := Fshm_oldhandler(disp, xev);
-End;
+end;
 
-Constructor TX11ShmImage.Create(ADisplay : PDisplay; AScreen, AWidth, AHeight : Integer; AFormat : TPTCFormat);
-
+<<<<<<< HEAD
 Begin
   Inherited;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+constructor TX11ShmImage.Create(ADisplay: PDisplay; AScreen, AWidth, AHeight: Integer; AFormat: TPTCFormat);
+begin
+  inherited;
+>>>>>>> origin/cpstrnew
 
   FShmInfo.shmid := -1;
   FShmInfo.shmaddr := Pointer(-1);
   FImage := XShmCreateImage(ADisplay, DefaultVisual(ADisplay, AScreen),
                             DefaultDepth(ADisplay, AScreen),
                             ZPixmap, Nil, @FShmInfo, AWidth, AHeight);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   if FImage = nil then
@@ -396,88 +414,90 @@ end;
 >>>>>>> origin/fixes_2_2
   If FImage = Nil Then
     Raise TPTCError.Create('cannot create SHM image');
+=======
+  if FImage = nil then
+    raise TPTCError.Create('cannot create SHM image');
+>>>>>>> origin/cpstrnew
 
   FShmInfo.shmid := shmget(IPC_PRIVATE, FImage^.bytes_per_line * FImage^.height,
-                           IPC_CREAT Or &777);
-  If FShmInfo.shmid = -1 Then
-    Raise TPTCError.Create('cannot get shared memory segment');
+                           IPC_CREAT or &777);
+  if FShmInfo.shmid = -1 then
+    raise TPTCError.Create('cannot get shared memory segment');
 
   FShmInfo.shmaddr := shmat(FShmInfo.shmid, Nil, 0);
-  FShmInfo.readOnly := False;
+  FShmInfo.readOnly := Ord(False);
   FImage^.data := FShmInfo.shmaddr;
 
-  If Pointer(FShmInfo.shmaddr) = Pointer(-1) Then
-    Raise TPTCError.Create('cannot allocate shared memory');
+  if Pointer(FShmInfo.shmaddr) = Pointer(-1) then
+    raise TPTCError.Create('cannot allocate shared memory');
 
-  // Try and attach the segment to the server. Bugfix: Have to catch
+  // try and attach the segment to the server. Bugfix: Have to catch
   // bad access errors in case it runs over the net.
   Fshm_error := False;
   Fshm_oldhandler := XSetErrorHandler(@Fshm_errorhandler);
-  Try
-    If XShmAttach(ADisplay, @FShmInfo) = 0 Then
-      Raise TPTCError.Create('cannot attach shared memory segment to display');
+  try
+    if XShmAttach(ADisplay, @FShmInfo) = 0 then
+      raise TPTCError.Create('cannot attach shared memory segment to display');
 
     XSync(ADisplay, False);
-    If Fshm_error Then
-      Raise TPTCError.Create('cannot attach shared memory segment to display');
+    if Fshm_error then
+      raise TPTCError.Create('cannot attach shared memory segment to display');
     FShmAttached := True;
-  Finally
+  finally
     XSetErrorHandler(Fshm_oldhandler);
-  End;
-End;
+  end;
+end;
 
-Destructor TX11ShmImage.Destroy;
-
-Begin
-  If FShmAttached Then
-  Begin
+destructor TX11ShmImage.Destroy;
+begin
+  if FShmAttached then
+  begin
     XShmDetach(FDisplay, @FShmInfo);
     XSync(FDisplay, False);
-  End;
-  If FImage <> Nil Then
+  end;
+  if FImage <> nil then
     XDestroyImage(FImage);
-  If Pointer(FShmInfo.shmaddr) <> Pointer(-1) Then
+  if Pointer(FShmInfo.shmaddr) <> Pointer(-1) then
     shmdt(FShmInfo.shmaddr);
-  If FShmInfo.shmid <> -1 Then
+  if FShmInfo.shmid <> -1 then
     shmctl(FShmInfo.shmid, IPC_RMID, Nil);
 
-  Inherited Destroy;
-End;
+  inherited Destroy;
+end;
 
-Procedure TX11ShmImage.Put(AWindow : TWindow; AGC : TGC; AX, AY : Integer);
-
-Begin
+procedure TX11ShmImage.Put(AWindow: TWindow; AGC: TGC; AX, AY: Integer);
+begin
   XShmPutImage(FDisplay, AWindow, AGC, FImage, 0, 0, AX, AY, FWidth, FHeight, False);
   XSync(FDisplay, False);
-End;
+end;
 
-Procedure TX11ShmImage.Put(AWindow : TWindow; AGC : TGC; ASX, ASY, ADX, ADY,
-                    AWidth, AHeight : Integer);
-
-Begin
+procedure TX11ShmImage.Put(AWindow: TWindow; AGC: TGC; ASX, ASY, ADX, ADY,
+                    AWidth, AHeight: Integer);
+begin
   XShmPutImage(FDisplay, AWindow, AGC, FImage, ASX, ASY, ADX, ADY, FWidth, FHeight, False);
   XSync(FDisplay, False);
-End;
+end;
 
-Function TX11ShmImage.Lock : Pointer;
-
-Begin
+function TX11ShmImage.Lock: Pointer;
+begin
   Result := Pointer(FShmInfo.shmaddr);
-End;
+end;
 
-Function TX11ShmImage.Pitch : Integer;
-
-Begin
+function TX11ShmImage.Pitch: Integer;
+begin
   Result := FImage^.bytes_per_line;
-End;
+end;
 
-Function TX11ShmImage.Name : String;
-
-Begin
+function TX11ShmImage.Name: string;
+begin
   Result := 'MIT-Shm';
+<<<<<<< HEAD
 End;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+end;
+>>>>>>> origin/cpstrnew
 {$ENDIF ENABLE_X11_EXTENSION_XSHM}

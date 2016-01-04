@@ -1,5 +1,8 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {$ifdef NDS_INTERFACE}
 type
   bg_scroll = record
@@ -287,6 +290,7 @@ procedure bgSetAffineMatrixScroll(id, hdx, vdx, hdy, vdy, scrollx, scrolly: cint
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 procedure bgExtPaletteEnable(); inline; 
 procedure bgExtPaletteEnableSub(); inline; 
@@ -298,6 +302,8 @@ procedure bgExtPaletteDisableSub(); inline;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -624,6 +630,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure bgExtPaletteEnable(); inline; 
 begin 
   REG_DISPCNT^ := REG_DISPCNT^ or DISPLAY_BG_EXT_PALETTE; 
@@ -731,6 +738,10 @@ function SCREEN_BASE_BLOCK_SUB(n: cint): cint; inline;
 begin	
   SCREEN_BASE_BLOCK_SUB := (n * $800) + $06200000;
 end;
+=======
+
+
+>>>>>>> origin/cpstrnew
 {$endif NDS_IMPLEMENTATION}
 
 {$ifdef NDS_INTERFACE}

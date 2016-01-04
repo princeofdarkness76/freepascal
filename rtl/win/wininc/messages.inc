@@ -1304,6 +1304,7 @@
     TWMUndo             = Windows.TWMUndo;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     TWMWindowPosChanged = TWMWindowPosMsg;
     TWMWindowPosChanging= TWMWindowPosMsg;
 
@@ -1322,6 +1323,14 @@
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    TWMWindowPosChanged = TWMWindowPosMsg;
+    TWMWindowPosChanging= TWMWindowPosMsg;
+
+    TWMPaste            = Windows.TWMPaste;
+    TWMCut              = Windows.TWMCut;
+    TWMCopy             = Windows.TWMCopy;
+>>>>>>> origin/cpstrnew
 {$else}
 
      HALFLRESULT   = WORD;     // in win64, these remain 16-bit. the extra room is unused.

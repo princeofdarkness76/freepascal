@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       OSServices/Power.h
  
      Contains:   *** DEPRECATED *** Power Manager Interfaces.
@@ -33,14 +34,20 @@
 >>>>>>> origin/cpstrnew
 =======
      File:       Power.p
+=======
+     File:       OSServices/Power.h
+>>>>>>> origin/cpstrnew
  
      Contains:   Power Manager Interfaces.
  
-     Version:    Technology: Mac OS 9
-                 Release:    Universal Interfaces 3.4.2
+     Version:    OSServices-352~2
  
+<<<<<<< HEAD
      Copyright:  © 1990-2002 by Apple Computer, Inc.  All rights reserved
 >>>>>>> graemeg/fixes_2_2
+=======
+     Copyright:  © 1990-2008 by Apple Computer, Inc.  All rights reserved
+>>>>>>> origin/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -76,15 +83,18 @@
                      http://www.freepascal.org/bugs.html
  
 }
-
-
+{      Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {
     Modified for use with Free Pascal
-    Version 210
+    Version 308
     Please report any bugs to <gpc@microbizz.nl>
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -94,12 +104,17 @@
 unit Power;
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -113,28 +128,41 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -145,6 +173,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -162,6 +191,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -169,8 +200,11 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -178,6 +212,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -413,15 +448,72 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+>>>>>>> origin/cpstrnew
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+{$ifc defined(iphonesim)}
+ 	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
 {$elsec}
-	{$error Neither __ppc__ nor __i386__ is defined.}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+<<<<<<< HEAD
 {$setc TARGET_CPU_PPC_64 := FALSE}
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -448,9 +540,12 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -460,6 +555,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 uses MacTypes,Multiprocessing,MacErrors;
 {$endc} {not MACOSALLINCLUDE}
@@ -478,9 +574,14 @@ uses MacTypes,Multiprocessing,MacErrors;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+uses MacTypes,Multiprocessing,MacErrors;
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 
 {$ALIGN MAC68K}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -521,6 +622,11 @@ const
 	noRequest = 2;
 	slpQType = 16;
 	sleepQType = 16;
+=======
+{$ifc TARGET_OS_MAC}
+
+{$ALIGN MAC68K}
+>>>>>>> origin/cpstrnew
 
 { System Activity Selectors }
 { Notes:  The IdleActivity selector is not available unless the hasAggressiveIdling PMFeatures bit is set.     }
@@ -529,6 +635,7 @@ const
 { IdleActivity unless hasAggressiveIdling is set; when hasAggressiveIdling is not set, the use of IdleActivity }
 { is undefined, and well do different things depending on which Power Manager is currently running.            }
 const
+<<<<<<< HEAD
 	OverallAct = 0;    { Delays idle sleep by small amount                          }
 	UsrActivity = 1;    { Delays idle sleep and dimming by timeout time              }
 	NetActivity = 2;    { Delays idle sleep and power cycling by small amount        }
@@ -614,6 +721,38 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+{ commands to SleepQRec sleepQProc }
+	kSleepRequest = 1;
+	kSleepDemand = 2;
+	kSleepWakeUp = 3;
+	kSleepRevoke = 4;
+	kSleepUnlock = 4;
+	kSleepDeny = 5;    { A non-zero value clients can use to deny requests}
+	kSleepNow = 6;
+	kDozeDemand = 7;
+	kDozeWakeUp = 8;
+	kDozeRequest = 9;    { additional messages for Power Mgr 2.0}
+	kEnterStandby = 10;   { Idle Queue Only}
+	kEnterRun = 11;   { Idle Queue Only}
+	kSuspendRequest = 12;
+	kSuspendDemand = 13;
+	kSuspendRevoke = 14;
+	kSuspendWakeUp = 15;
+	kGetPowerLevel = 16;
+	kSetPowerLevel = 17;
+	kDeviceInitiatedWake = 18;
+	kWakeToDoze = 19;
+	kDozeToFullWakeUp = 20;
+	kGetPowerInfo = 21;
+	kGetWakeOnNetInfo = 22;
+	kSuspendWakeToDoze = 23;
+	kEnterIdle = 24;   { Idle Queue Only}
+	kStillIdle = 25;   { Idle Queue Only}
+	kExitIdle = 26;    { Idle Queue Only}
+
+const
+>>>>>>> origin/cpstrnew
 { SleepQRec.sleepQFlags }
 	noCalls = 1;
 	noRequest = 2;
@@ -627,6 +766,7 @@ const
 {         hasAggressiveIdling is set.  Don't use IdleActivity unless hasAggressiveIdling is set; when      }
 {         hasAggressiveIdling is not set, the use of IdleActivity is undefined, and well do different      }
 {         things depending on which Power Manager is currently running.                                    }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 const
@@ -687,6 +827,9 @@ const
 =======
 const
 >>>>>>> origin/cpstrnew
+=======
+const
+>>>>>>> origin/cpstrnew
 	OverallAct = 0;    { Delays idle sleep by small amount                 }
 	UsrActivity = 1;    { Delays idle sleep and dimming by timeout time          }
 	NetActivity = 2;    { Delays idle sleep and power cycling by small amount         }
@@ -695,11 +838,14 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -713,6 +859,7 @@ type
 		sleepQProc: SleepQUPP;             { pointer to sleep universal proc ptr         }
 		sleepQFlags: SInt16;            { flags                       }
 	end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {
@@ -763,6 +910,7 @@ function InvokeSleepQUPP( message: SIGNEDLONG; qRecPtr: SleepQRecPtr; userUPP: S
 =======
  *  NewSleepQUPP()
 =======
+=======
 {
  *  NewSleepQUPP()
  *  
@@ -787,15 +935,11 @@ procedure DisposeSleepQUPP( userUPP: SleepQUPP ); external name '_DisposeSleepQU
 
 {
  *  InvokeSleepQUPP()
->>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   available as macro/inline
-<<<<<<< HEAD
-=======
-=======
  }
 function InvokeSleepQUPP( message: SIGNEDLONG; qRecPtr: SleepQRecPtr; userUPP: SleepQUPP ): SIGNEDLONG; external name '_InvokeSleepQUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -809,7 +953,6 @@ function InvokeSleepQUPP( message: SIGNEDLONG; qRecPtr: SleepQRecPtr; userUPP: S
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   available as macro/inline
->>>>>>> graemeg/cpstrnew
  }
 function NewSleepQUPP( userRoutine: SleepQProcPtr ): SleepQUPP; external name '_NewSleepQUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -817,6 +960,84 @@ function NewSleepQUPP( userRoutine: SleepQProcPtr ): SleepQUPP; external name '_
 {
  *  DisposeSleepQUPP()
  *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeSleepQUPP( userUPP: SleepQUPP ); external name '_DisposeSleepQUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+{
+ *  InvokeSleepQUPP()
+>>>>>>> origin/cpstrnew
+=======
+ *  Discussion:
+ *    GetCPUSpeed() returns the current effective clock speed of the
+ *    CPU in megahertz.
+ *  
+ *  Result:
+ *    the current effective clock speed of the CPU in megahertz.
+>>>>>>> origin/cpstrnew
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
+ *    Non-Carbon CFM:   available as macro/inline
+<<<<<<< HEAD
+=======
+=======
+ }
+function InvokeSleepQUPP( message: SIGNEDLONG; qRecPtr: SleepQRecPtr; userUPP: SleepQUPP ): SIGNEDLONG; external name '_InvokeSleepQUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function GetCPUSpeed: SIGNEDLONG; external name '_GetCPUSpeed';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
+{
+ *  NewSleepQUPP()
+ *  
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+>>>>>>> graemeg/cpstrnew
+ }
+function NewSleepQUPP( userRoutine: SleepQProcPtr ): SleepQUPP; external name '_NewSleepQUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+=======
+ *  Discussion:
+ *    Adds an entry to the sleep queue.
+ *  
+ *  Parameters:
+ *    
+ *    qRecPtr:
+ *      A pointer to a sleep queue record to be installed.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure SleepQInstall( qRecPtr: SleepQRecPtr ); external name '_SleepQInstall';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
+{
+ *  DisposeSleepQUPP()
+ *  
+<<<<<<< HEAD
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1096,10 +1317,37 @@ procedure SleepQRemove( qRecPtr: SleepQRecPtr ); external name '_SleepQRemove';
  *    of the CPU in megahertz.
  *  
 >>>>>>> origin/cpstrnew
+=======
+ *  Discussion:
+ *    Remove an entry from the sleep queue.
+ *  
+ *  Parameters:
+ *    
+ *    qRecPtr:
+ *      A pointer to a sleep queue record to be removed.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure SleepQRemove( qRecPtr: SleepQRecPtr ); external name '_SleepQRemove';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  MaximumProcessorSpeed()
+ *  
+ *  Discussion:
+ *    MaximumProcessorSpeed() returns the maximum effective clock speed
+ *    of the CPU in megahertz.
+ *  
+>>>>>>> origin/cpstrnew
  *  Result:
  *    the maximum effective clock speed of the CPU in megahertz.
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.8
 =======
@@ -1355,10 +1603,17 @@ procedure SleepQRemove( qRecPtr: SleepQRecPtr ); external name '_SleepQRemove';
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in PowerMgrLib 1.0 and later
  }
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in PowerMgrLib 1.0 and later
+ }
+>>>>>>> origin/cpstrnew
 function MaximumProcessorSpeed: SInt16; external name '_MaximumProcessorSpeed';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 {
  *  MinimumProcessorSpeed()
  *  
@@ -6668,6 +6923,20 @@ function MaximumProcessorSpeed: SInt16; external name '_MaximumProcessorSpeed';
  *    the minimum effective clock speed of the CPU in megahertz.
  *  
  *  Availability:
+=======
+{
+ *  MinimumProcessorSpeed()
+ *  
+ *  Discussion:
+ *    MinimumProcessorSpeed() returns the minimum effective clock speed
+ *    of the CPU in megahertz. Before Mac OS X 10.4, this function
+ *    always returns the maximum cpu speed, not the minimum as expected.
+ *  
+ *  Result:
+ *    the minimum effective clock speed of the CPU in megahertz.
+ *  
+ *  Availability:
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         in version 10.1 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in PowerMgrLib 1.0 and later
@@ -6718,6 +6987,7 @@ function BatteryCount: SInt16; external name '_BatteryCount';
 
 {
  *  UpdateSystemActivity()
+<<<<<<< HEAD
  *  
  *  Summary:
  *    You can use the UpdateSystemActivity function to notify the Power
@@ -6754,6 +7024,44 @@ function BatteryCount: SInt16; external name '_BatteryCount';
  *    activity:
  *      The type of activity which has occurred.
  *  
+=======
+ *  
+ *  Summary:
+ *    You can use the UpdateSystemActivity function to notify the Power
+ *    Manager that activity has taken place .
+ *  
+ *  Discussion:
+ *    The UpdateSystemActivity function is used to notify the Power
+ *    Manager that activity has taken place and the timers used to
+ *    measure idle time should be updated to the time of this call.
+ *    This function can be used by device drivers to prevent the
+ *    computer from entering a low-power mode while critical activity
+ *    is taking place on a particular device. The function is passed a
+ *    parameter indicating the type of activity that has
+ *    occurred.
+ *    
+ *    This function is slightly different from DelaySystemIdle, which
+ *    should be used to prevent sleep or idle during a critical
+ *    section. UpdateSystemActivity simply updates the tick count for
+ *    the activity type selected. Conversely, DelaySystemIdle actually
+ *    moves the counter to some number of ticks into the future, which
+ *    allows the caller to go off and do somethingwithout fear of
+ *    idling.
+ *    
+ *    The valid types of activity are:
+ *    Value Name       Value        Description
+ *    OverallAct       0            general type of activity
+ *     UsrActivity      1            user activity (i.e.keyboard or
+ *    mouse)
+ *    NetActivity      2            interaction with network(s)
+ *     HDActivity       3            hard disk or storage device in use
+ *  
+ *  Parameters:
+ *    
+ *    activity:
+ *      The type of activity which has occurred.
+ *  
+>>>>>>> origin/cpstrnew
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -7821,6 +8129,7 @@ procedure SetDimSuspendState( dimSuspendState: Boolean ); external name '_SetDim
 {$endc} {TARGET_CPU_64}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 const
 	uppSleepQProcInfo = $00131832;
@@ -7841,10 +8150,13 @@ function NewSleepQUPP(userRoutine: SleepQProcPtr): SleepQUPP; external name '_Ne
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  NewHDSpindownUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -7898,10 +8210,13 @@ function NewPMgrStateChangeUPP( userRoutine: PMgrStateChangeProcPtr ): PMgrState
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   available as macro/inline
  }
+<<<<<<< HEAD
 procedure DisposeHDSpindownUPP( userUPP: HDSpindownUPP ); external name '_DisposeHDSpindownUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 <<<<<<< HEAD
@@ -7909,6 +8224,9 @@ procedure DisposeHDSpindownUPP( userUPP: HDSpindownUPP ); external name '_Dispos
 =======
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+function NewHDSpindownUPP( userRoutine: HDSpindownProcPtr ): HDSpindownUPP; external name '_NewHDSpindownUPP';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 {
@@ -7916,6 +8234,7 @@ procedure DisposeHDSpindownUPP( userUPP: HDSpindownUPP ); external name '_Dispos
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   available as macro/inline
  }
@@ -8006,11 +8325,19 @@ procedure DisposePMgrStateChangeUPP( userUPP: PMgrStateChangeUPP ); external nam
 procedure DisposePMgrStateChangeUPP( userUPP: PMgrStateChangeUPP ); external name '_DisposePMgrStateChangeUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function NewPMgrStateChangeUPP( userRoutine: PMgrStateChangeProcPtr ): PMgrStateChangeUPP; external name '_NewPMgrStateChangeUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 {
  *  InvokeHDSpindownUPP()   *** DEPRECATED ***
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -8029,10 +8356,13 @@ procedure InvokeHDSpindownUPP( var theElement: HDQueueElement; userUPP: HDSpindo
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   available as macro/inline
  }
+<<<<<<< HEAD
 procedure InvokeHDSpindownUPP( theElement: HDQueueElementPtr; userUPP: HDSpindownUPP ); external name '_InvokeHDSpindownUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 <<<<<<< HEAD
@@ -8045,11 +8375,16 @@ procedure InvokeHDSpindownUPP( theElement: HDQueueElementPtr; userUPP: HDSpindow
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+procedure DisposeHDSpindownUPP( userUPP: HDSpindownUPP ); external name '_DisposeHDSpindownUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 {
  *  InvokePMgrStateChangeUPP()   *** DEPRECATED ***
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -8136,6 +8471,11 @@ procedure DisposeHDSpindownUPP( userUPP: HDSpindownUPP ); external name '_Dispos
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   available as macro/inline
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+>>>>>>> origin/cpstrnew
  }
 procedure DisposePMgrStateChangeUPP( userUPP: PMgrStateChangeUPP ); external name '_DisposePMgrStateChangeUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -8168,9 +8508,13 @@ procedure InvokePMgrStateChangeUPP( var theElement: PMgrQueueElement; stateBits:
 end.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

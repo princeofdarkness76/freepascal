@@ -91,11 +91,14 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 type
@@ -145,12 +148,15 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   TDLL_Entry_Hook = procedure (dllparam : PtrInt);
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   TDLL_Entry_Hook = procedure (dllparam : longint);
@@ -185,6 +191,13 @@ Const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+
+Const
+  { it can be discussed whether fmShareDenyNone means read and write or read, write and delete, see
+    also http://bugs.freepascal.org/view.php?id=8898, this allows users to configure the used
+	value
+  }
+  fmShareDenyNoneFlags : DWord = 3;
 
 implementation
 
@@ -494,11 +507,14 @@ procedure Exe_entry;[public,alias:'_FPC_EXE_Entry'];
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         { allocate space for an exception frame }
@@ -525,11 +541,14 @@ procedure Exe_entry;[public,alias:'_FPC_EXE_Entry'];
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         xorq %rax,%rax
@@ -553,6 +572,7 @@ procedure Exe_entry;[public,alias:'_FPC_EXE_Entry'];
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -565,6 +585,8 @@ procedure Exe_entry;[public,alias:'_FPC_EXE_Entry'];
 >>>>>>> origin/fixes_2_2
         xorl %rbp,%rbp
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
         call PASCALMAIN
 {$endif FPC_USE_WIN64_SEH}
         movq %rsi,%rbp
@@ -874,6 +896,7 @@ function CharLowerBuff(lpsz:LPWSTR; cchLength:DWORD):DWORD;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 procedure Win32Wide2AnsiMove(source:pwidechar;var dest:ansistring;len:SizeInt);
   var
@@ -888,6 +911,8 @@ procedure Win32Wide2AnsiMove(source:pwidechar;var dest:ansistring;len:SizeInt);
   end;
 
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 procedure Win32Ansi2WideMove(source:pchar;var dest:widestring;len:SizeInt);
   var
     destlen: SizeInt;

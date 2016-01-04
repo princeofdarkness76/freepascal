@@ -108,6 +108,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   _IO_STATUS_BLOCK = record
     union1: record
 =======
@@ -122,6 +123,10 @@ type
   _IO_STATUS_BLOCK = packed record
     union1: packed record
 >>>>>>> graemeg/cpstrnew
+=======
+  _IO_STATUS_BLOCK = packed record
+    union1: packed record
+>>>>>>> origin/cpstrnew
 =======
   _IO_STATUS_BLOCK = packed record
     union1: packed record
@@ -142,6 +147,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   _FILE_BASIC_INFORMATION = record
 =======
   _FILE_BASIC_INFORMATION = packed record
@@ -155,6 +161,9 @@ type
 =======
   _FILE_BASIC_INFORMATION = packed record
 >>>>>>> origin/cpstrnew
+=======
+  _FILE_BASIC_INFORMATION = packed record
+>>>>>>> origin/cpstrnew
     CreationTime: LARGE_INTEGER;
     LastAccessTime: LARGE_INTEGER;
     LastWriteTime: LARGE_INTEGER;
@@ -162,6 +171,7 @@ type
     FileAttributes: ULONG;
   end;
   FILE_BASIC_INFORMATION = _FILE_BASIC_INFORMATION;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -189,6 +199,11 @@ type
 
   _FILE_STANDARD_INFORMATION = packed record
 >>>>>>> origin/cpstrnew
+=======
+  PFILE_BASIC_INFORMATION = FILE_BASIC_INFORMATION;
+
+  _FILE_STANDARD_INFORMATION = packed record
+>>>>>>> origin/cpstrnew
       AllocationSize: LARGE_INTEGER;
       EndOfFile: LARGE_INTEGER;
       NumberOfLinks: ULONG;
@@ -198,6 +213,7 @@ type
   FILE_STANDARD_INFORMATION = _FILE_STANDARD_INFORMATION;
   PFILE_STANDARD_INFORMATION = ^FILE_STANDARD_INFORMATION;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -212,6 +228,9 @@ type
 =======
   _FILE_NETWORK_OPEN_INFORMATION = packed record
 >>>>>>> graemeg/cpstrnew
+=======
+  _FILE_NETWORK_OPEN_INFORMATION = packed record
+>>>>>>> origin/cpstrnew
 =======
   _FILE_NETWORK_OPEN_INFORMATION = packed record
 >>>>>>> origin/cpstrnew
@@ -230,6 +249,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   _FILE_POSITION_INFORMATION = record
 =======
   _FILE_POSITION_INFORMATION = packed record
@@ -243,11 +263,15 @@ type
 =======
   _FILE_POSITION_INFORMATION = packed record
 >>>>>>> origin/cpstrnew
+=======
+  _FILE_POSITION_INFORMATION = packed record
+>>>>>>> origin/cpstrnew
     CurrentByteOffset: LARGE_INTEGER;
   end;
   FILE_POSITION_INFORMATION = _FILE_POSITION_INFORMATION;
   PFILE_POSITION_INFORMATION = ^FILE_POSITION_INFORMATION;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -265,11 +289,15 @@ type
 =======
   _FILE_DISPOSITION_INFORMATION = packed record
 >>>>>>> origin/cpstrnew
+=======
+  _FILE_DISPOSITION_INFORMATION = packed record
+>>>>>>> origin/cpstrnew
     DeleteFile: NT_BOOLEAN;
   end;
   FILE_DISPOSITION_INFORMATION = _FILE_DISPOSITION_INFORMATION;
   PFILE_DISPOSITION_INFORMATION = ^FILE_DISPOSITION_INFORMATION;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -287,6 +315,9 @@ type
 =======
   _FILE_RENAME_INFORMATION = packed record
 >>>>>>> origin/cpstrnew
+=======
+  _FILE_RENAME_INFORMATION = packed record
+>>>>>>> origin/cpstrnew
     ReplaceIfExists: NT_BOOLEAN;
     RootDirectory: HANDLE;
     FileNameLength: ULONG;
@@ -295,6 +326,7 @@ type
   FILE_RENAME_INFORMATION = _FILE_RENAME_INFORMATION;
   PFILE_RENAME_INFORMATION = ^FILE_RENAME_INFORMATION;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -338,11 +370,15 @@ type
 =======
   _FILE_ALLOCATION_INFORMATION = packed record
 >>>>>>> origin/cpstrnew
+=======
+  _FILE_ALLOCATION_INFORMATION = packed record
+>>>>>>> origin/cpstrnew
     AllocationSize: LARGE_INTEGER;
   end;
   FILE_ALLOCATION_INFORMATION = _FILE_ALLOCATION_INFORMATION;
   PFILE_ALLOCATION_INFORMATION = ^FILE_ALLOCATION_INFORMATION;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -360,11 +396,15 @@ type
 =======
   _FILE_END_OF_FILE_INFORMATION = packed record
 >>>>>>> origin/cpstrnew
+=======
+  _FILE_END_OF_FILE_INFORMATION = packed record
+>>>>>>> origin/cpstrnew
     EndOfFile: LARGE_INTEGER;
   end;
   FILE_END_OF_FILE_INFORMATION = _FILE_END_OF_FILE_INFORMATION;
   PFILE_END_OF_FILE_INFORMATION = ^FILE_END_OF_FILE_INFORMATION;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -398,6 +438,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 

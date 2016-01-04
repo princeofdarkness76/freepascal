@@ -56,12 +56,17 @@ unit JwaTlHelp32;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 // switch back to default (natural alignment), bug 16361
 {$ifdef FPC} {$ifdef cpu64}{$packrecords 8} {$endif} {$endif}
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+// switch back to default (natural alignment), bug 16361
+{$ifdef FPC} {$ifdef cpu64}{$packrecords 8} {$endif} {$endif}
+>>>>>>> origin/cpstrnew
 interface
 
 uses
@@ -69,6 +74,7 @@ uses
 {$ENDIF JWA_OMIT_SECTIONS}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 {$IFNDEF JWA_IMPLEMENTATIONSECTION}
@@ -82,6 +88,13 @@ uses
 {$IFNDEF JWA_IMPLEMENTATIONSECTION}
 
 >>>>>>> origin/fixes_2_2
+=======
+
+
+{$IFNDEF JWA_IMPLEMENTATIONSECTION}
+
+
+>>>>>>> origin/cpstrnew
 const
   MAX_MODULE_NAME32 = 255;
   {$EXTERNALSYM MAX_MODULE_NAME32}

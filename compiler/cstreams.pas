@@ -472,6 +472,11 @@ begin
 >>>>>>> origin/fixes_2_2
 end;
 
+function TCFileStream.EOF: boolean;
+begin
+  EOF:=system.eof(FHandle);
+end;
+
 
 {****************************************************************************}
 {*                             TCustomMemoryStream                          *}

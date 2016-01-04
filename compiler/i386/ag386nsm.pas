@@ -399,8 +399,7 @@ interface
                   if o.ref^.offset>0 then
                    asmwrite('+');
                   asmwrite(tostr(o.ref^.offset));
-
-                  end;
+                end;
             end;
           else
             internalerror(10001);
@@ -447,6 +446,7 @@ interface
 
     const
 <<<<<<< HEAD
+<<<<<<< HEAD
       ait_const2str : array[aitconst_128bit..aitconst_secrel32_symbol] of string[20]=(
         #9'FIXME_128BIT'#9,#9'FIXME_64BIT'#9,#9'DD'#9,#9'DW'#9,#9'DB'#9,
         #9'FIXME_SLEB128BIT'#9,#9'FIXME_ULEB128BIT'#9,
@@ -460,15 +460,25 @@ interface
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+      ait_const2str : array[aitconst_128bit..aitconst_secrel32_symbol] of string[20]=(
+        #9'FIXME_128BIT'#9,#9'FIXME_64BIT'#9,#9'DD'#9,#9'DW'#9,#9'DB'#9,
+        #9'FIXME_SLEB128BIT'#9,#9'FIXME_ULEB128BIT'#9,
+        #9'RVA'#9,#9'SECREL32'#9
+>>>>>>> origin/cpstrnew
       );
 
     procedure T386NasmAssembler.WriteSection(atype:TAsmSectiontype;const aname:string);
       const
 <<<<<<< HEAD
+<<<<<<< HEAD
         secnames : array[TAsmSectiontype] of string[length('__DATA, __datacoal_nt,coalesced')] = ('','',
 =======
         secnames : array[TAsmSectiontype] of string[17] = ('',
 >>>>>>> origin/fixes_2.4
+=======
+        secnames : array[TAsmSectiontype] of string[length('__DATA, __datacoal_nt,coalesced')] = ('','',
+>>>>>>> origin/cpstrnew
           '.text',
           '.data',
           '.data',
@@ -523,6 +533,7 @@ interface
           '.objc_catlist',
           '.obcj_nlcatlist',
           '.objc_protolist'
+<<<<<<< HEAD
 =======
           '.fini'
 >>>>>>> graemeg/fixes_2_2
@@ -532,6 +543,8 @@ interface
 =======
           '.fini'
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
         );
       begin
         AsmLn;
@@ -714,6 +727,7 @@ interface
                  aitconst_rva_symbol,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                  aitconst_secrel32_symbol :
 =======
 =======
@@ -721,6 +735,9 @@ interface
                  aitconst_secrel32_symbol,
                  aitconst_indirect_symbol :
 >>>>>>> graemeg/fixes_2_2
+=======
+                 aitconst_secrel32_symbol :
+>>>>>>> origin/cpstrnew
                    begin
                      AsmWrite(ait_const2str[tai_const(hp).consttype]);
                      l:=0;
@@ -776,12 +793,17 @@ interface
                 end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 for i:=11 to tai_real_80bit(hp).savesize do
                   AsmWrite(',0');
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+                for i:=11 to tai_real_80bit(hp).savesize do
+                  AsmWrite(',0');
+>>>>>>> origin/cpstrnew
                AsmLn;
              end;
 {$else cpuextended}

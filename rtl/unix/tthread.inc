@@ -91,11 +91,15 @@ var
   LThread: TThread;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   LFreeOnTerminate: boolean;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  LFreeOnTerminate: boolean;
+>>>>>>> origin/cpstrnew
 {$ifdef DEBUG_MT}
   lErrorAddr, lErrorBase: Pointer;
 {$endif}
@@ -145,6 +149,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          RtlEventWaitFor(LThread.FSuspendEvent);
          CurrentThreadVar := LThread;
 =======
@@ -156,6 +161,9 @@ begin
 =======
         CurrentTM.SemaphoreWait(LThread.FSem);
 >>>>>>> graemeg/cpstrnew
+=======
+        CurrentTM.SemaphoreWait(LThread.FSem);
+>>>>>>> origin/cpstrnew
 =======
         CurrentTM.SemaphoreWait(LThread.FSem);
 >>>>>>> origin/cpstrnew
@@ -239,12 +247,15 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   WRITE_DEBUG('creating thread, self = ',ptruint(self));
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   WRITE_DEBUG('creating thread, self = ',longint(self));
@@ -304,6 +315,7 @@ begin
           Terminate;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           if (FSuspendedInternal or FInitialSuspended) then
 =======
           if (FInitialSuspended) then
@@ -311,6 +323,9 @@ begin
 =======
           if (FInitialSuspended) then
 >>>>>>> origin/fixes_2_2
+=======
+          if (FSuspendedInternal or FInitialSuspended) then
+>>>>>>> origin/cpstrnew
             Resume;
           WaitFor;
         end;
@@ -378,6 +393,7 @@ procedure TThread.Resume;
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if FSuspendedInternal and (InterLockedExchange(longint(FSuspendedInternal),ord(false)) = longint(longbool(true))) then
     begin
       WRITE_DEBUG('resuming thread after TThread construction',ptruint(self));
@@ -404,6 +420,14 @@ begin
   else if (not FSuspendedExternal) then
 >>>>>>> graemeg/cpstrnew
 =======
+      CurrentTM.SemaphorePost(FSem);
+    end
+  else if (not FSuspendedExternal) then
+>>>>>>> origin/cpstrnew
+=======
+  if FSuspendedInternal and (InterLockedExchange(longint(FSuspendedInternal),ord(false)) = longint(longbool(true))) then
+    begin
+      WRITE_DEBUG('resuming thread after TThread construction',ptruint(self));
       CurrentTM.SemaphorePost(FSem);
     end
   else if (not FSuspendedExternal) then
@@ -453,6 +477,9 @@ begin
   WRITE_DEBUG('waiting for thread ',ptruint(FHandle));
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   If (MainThreadID=GetCurrentThreadID) then 
     {
      FFinished is set after DoTerminate, which does a synchronize of OnTerminate, 
@@ -461,10 +488,13 @@ begin
     }
     While not FFinished do  
       CheckSynchronize(100);
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
   WaitFor := WaitForThreadTerminate(FHandle, 0);
   { should actually check for errors in WaitForThreadTerminate, but no }
   { error api is defined for that function                             }

@@ -279,6 +279,7 @@ unit cp1251;
      unicodemap : tunicodemap = (
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        cpname : 'cp1251'; 
        cp : 1251;     
 =======
@@ -287,6 +288,10 @@ unit cp1251;
 =======
        cpname : 'cp1251';
 >>>>>>> origin/fixes_2_2
+=======
+       cpname : 'cp1251'; 
+       cp : 1251;     
+>>>>>>> origin/cpstrnew
        map : @map;
        lastchar : 255;
        next : nil;

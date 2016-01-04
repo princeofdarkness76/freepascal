@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (c) 1999-2012 by Peter Vreman, Michael Van Canneyt
 =======
     Copyright (c) 1999-2010 by Peter Vreman, Michael Van Canneyt
@@ -13,6 +14,9 @@
 =======
     Copyright (c) 1999-2010 by Peter Vreman, Michael Van Canneyt
 >>>>>>> graemeg/cpstrnew
+=======
+    Copyright (c) 1999-2010 by Peter Vreman, Michael Van Canneyt
+>>>>>>> origin/cpstrnew
 =======
     Copyright (c) 1999-2010 by Peter Vreman, Michael Van Canneyt
 >>>>>>> origin/cpstrnew
@@ -40,6 +44,7 @@ program Delp;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$mode ObjFPC}{$H+}
 
 =======
@@ -50,10 +55,13 @@ program Delp;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 uses
   Sysutils,getopts;
 
 const
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -72,6 +80,10 @@ const
   Version   = 'Version 1.2';
   Title     = 'DelPascal';
 >>>>>>> graemeg/cpstrnew
+=======
+  Version   = 'Version 1.2';
+  Title     = 'DelPascal';
+>>>>>>> origin/cpstrnew
 =======
   Version   = 'Version 1.2';
   Title     = 'DelPascal';
@@ -334,12 +346,16 @@ begin
   AddMask('*.log *.bak *.~pas *.~pp *.*~');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   AddMask('*.ppu *.o *.a *.s *.or *.compiled');
 =======
 =======
 >>>>>>> origin/fixes_2_2
   AddMask('*.ppu *.o *.a *.s');
 >>>>>>> graemeg/fixes_2_2
+=======
+  AddMask('*.ppu *.o *.a *.s *.or *.compiled');
+>>>>>>> origin/cpstrnew
   AddMask('*.pp1 *.o1 *.a1 *.s1');
   AddMask('*.ppo *.oo *.ao *.so');
   AddMask('*.rst *.rsj');
@@ -357,6 +373,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   While (I<=ParamCount) do
     begin
     BaseDir:=IncludeTrailingPathDelimiter(Paramstr(I));
@@ -370,6 +387,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   Total:=0;

@@ -36,12 +36,17 @@ Const
   NilHandle = 0;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 // these are for easier crossplatform construction of dll names in dynloading libs.
   SharedSuffix = 'dll';
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+// these are for easier crossplatform construction of dll names in dynloading libs.
+  SharedSuffix = 'dll';
+>>>>>>> origin/cpstrnew
 
 {$else}
 
@@ -53,6 +58,7 @@ Uses windows;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function LoadLibrary(const Name : AnsiString) : TlibHandle;
 =======
 Function LoadLibrary(Name : AnsiString) : TlibHandle;
@@ -60,6 +66,9 @@ Function LoadLibrary(Name : AnsiString) : TlibHandle;
 =======
 Function LoadLibrary(Name : AnsiString) : TlibHandle;
 >>>>>>> origin/fixes_2_2
+=======
+Function LoadLibrary(const Name : AnsiString) : TlibHandle;
+>>>>>>> origin/cpstrnew
 var
   ws: PWideChar;
 begin
@@ -70,6 +79,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function GetProcedureAddress(Lib : TLibHandle; const ProcName : AnsiString) : Pointer;
 =======
 Function GetProcedureAddress(Lib : TLibHandle; ProcName : AnsiString) : Pointer;
@@ -77,6 +87,9 @@ Function GetProcedureAddress(Lib : TLibHandle; ProcName : AnsiString) : Pointer;
 =======
 Function GetProcedureAddress(Lib : TLibHandle; ProcName : AnsiString) : Pointer;
 >>>>>>> origin/fixes_2_2
+=======
+Function GetProcedureAddress(Lib : TLibHandle; const ProcName : AnsiString) : Pointer;
+>>>>>>> origin/cpstrnew
 var
   ws: PWideChar;
 begin

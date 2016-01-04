@@ -117,6 +117,7 @@ const
 {$ifndef FPC_USE_LIBC}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function futex(uaddr:Pcint;op,val:cint;timeout:Ptimespec;addr2:Pcint;val3:cint):cint;{$ifdef SYSTEMINLINE}inline;{$endif}
 function futex(var uaddr;op,val:cint;timeout:Ptimespec;var addr2;val3:cint):cint;{$ifdef SYSTEMINLINE}inline;{$endif}
 function futex(var uaddr;op,val:cint;var timeout:Ttimespec;var addr2;val3:cint):cint;{$ifdef SYSTEMINLINE}inline;{$endif}
@@ -141,6 +142,11 @@ function futex(var uaddr;op,val:cint;var timeout:Ttimespec):cint;{$ifdef SYSTEMI
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+function futex(uaddr:Pcint;op,val:cint;timeout:Ptimespec;addr2:Pcint;val3:cint):cint;{$ifdef SYSTEMINLINE}inline;{$endif}
+function futex(var uaddr;op,val:cint;timeout:Ptimespec;var addr2;val3:cint):cint;{$ifdef SYSTEMINLINE}inline;{$endif}
+function futex(var uaddr;op,val:cint;var timeout:Ttimespec;var addr2;val3:cint):cint;{$ifdef SYSTEMINLINE}inline;{$endif}
+>>>>>>> origin/cpstrnew
 {$else}
 function futex(uaddr:Pcint;op,val:cint;timeout:Ptimespec;addr2:Pcint;val3:cint):cint; cdecl; external name 'futex';
 function futex(var uaddr;op,val:cint;timeout:Ptimespec;var addr2;val3:cint):cint; cdecl; external name 'futex';
@@ -149,6 +155,7 @@ function futex(var uaddr;op,val:cint;var timeout:Ttimespec;var addr2;val3:cint):
 function futex(uaddr:Pcint;op,val:cint;timeout:Ptimespec):cint;{$ifdef SYSTEMINLINE}inline;{$endif}
 function futex(var uaddr;op,val:cint;timeout:Ptimespec):cint;{$ifdef SYSTEMINLINE}inline;{$endif}
 function futex(var uaddr;op,val:cint;var timeout:Ttimespec):cint;{$ifdef SYSTEMINLINE}inline;{$endif}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -165,6 +172,10 @@ function futex(var uaddr;op,val:cint;var timeout:Ttimespec):cint;{$ifdef SYSTEMI
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+
+{$ifndef FPC_USE_LIBC}
+>>>>>>> origin/cpstrnew
 function futex_op(op, oparg, cmp, cmparg: cint): cint; {$ifdef SYSTEMINLINE}inline;{$endif}
 {$endif}
 
@@ -268,6 +279,7 @@ type
   {$define clone_implemented}
 {$endif}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$ifdef cpum68k}
   {$define clone_implemented}
@@ -275,6 +287,8 @@ type
 >>>>>>> graemeg/fixes_2_2
 
 =======
+=======
+>>>>>>> origin/cpstrnew
 
 type
   TCloneFunc = function(args:pointer):longint;cdecl;
@@ -297,6 +311,7 @@ function clone(func:TCloneFunc;sp:pointer;flags:longint;args:pointer):longint; {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef FPC_USE_LIBC}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -311,6 +326,9 @@ function clone(func:TCloneFunc;sp:pointer;flags:longint;args:pointer):longint; {
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$if defined(cpui386) or defined(cpux86_64)}
+>>>>>>> origin/cpstrnew
 const
   MODIFY_LDT_CONTENTS_DATA       = 0;
   MODIFY_LDT_CONTENTS_STACK      = 1;
@@ -350,6 +368,7 @@ type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function modify_ldt(func:cint;p:pointer;bytecount:culong):cint;
 {$endif cpui386 or cpux86_64}
 <<<<<<< HEAD
@@ -364,6 +383,10 @@ function modify_ldt(func:cint;p:pointer;bytecount:culong):cint;
 =======
 >>>>>>> graemeg/cpstrnew
 =======
+>>>>>>> origin/cpstrnew
+=======
+function modify_ldt(func:cint;p:pointer;bytecount:culong):cint;
+{$endif cpui386 or cpux86_64}
 >>>>>>> origin/cpstrnew
 
 procedure sched_yield; {$ifdef FPC_USE_LIBC} cdecl; external name 'sched_yield'; {$endif}
@@ -633,6 +656,7 @@ implementation
 implementation
 
 
+<<<<<<< HEAD
 {$ifndef FPC_USE_LIBC}
 >>>>>>> graemeg/fixes_2_2
 Uses Syscall;
@@ -645,6 +669,14 @@ Uses Syscall;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$if not defined(FPC_USE_LIBC) or defined(cpui386) or defined(cpux86_64)}
+{ needed for modify_ldt on x86 }
+Uses Syscall;
+{$endif not defined(FPC_USE_LIBC) or defined(cpui386) or defined(cpux86_64)}
+
+{$ifndef FPC_USE_LIBC}
+>>>>>>> origin/cpstrnew
 function Sysinfo(Info: PSysinfo): cInt;
 begin
   Sysinfo := do_SysCall(SysCall_nr_Sysinfo, TSysParam(info));
@@ -695,6 +727,7 @@ end;
 {$endif}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 procedure sched_yield;
 
@@ -705,6 +738,14 @@ end;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+
+procedure sched_yield;
+
+begin
+  do_syscall(syscall_nr_sched_yield);
+end;
+>>>>>>> origin/cpstrnew
 
 function epoll_create(size: cint): cint;
 begin
@@ -883,6 +924,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (*
 =======
 
@@ -896,6 +938,9 @@ end;
 =======
 
 >>>>>>> origin/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 function futex(uaddr:Pcint;op,val:cint;timeout:Ptimespec):cint;{$ifdef SYSTEMINLINE}inline;{$endif}
 
 begin
@@ -906,6 +951,7 @@ function futex(var uaddr;op,val:cint;timeout:Ptimespec):cint;{$ifdef SYSTEMINLIN
 
 begin
   futex:=futex(@uaddr,op,val,nil,nil,0);
+<<<<<<< HEAD
 =======
 {$endif} // non-libc
 
@@ -914,6 +960,8 @@ function FUTEX_OP(op, oparg, cmp, cmparg: cint): cint; {$ifdef SYSTEMINLINE}inli
 begin
   FUTEX_OP := ((op and $F) shl 28) or ((cmp and $F) shl 24) or ((oparg and $FFF) shl 12) or (cmparg and $FFF);
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 function futex(var uaddr;op,val:cint;var timeout:Ttimespec):cint;{$ifdef SYSTEMINLINE}inline;{$endif}
@@ -921,6 +969,7 @@ function futex(var uaddr;op,val:cint;var timeout:Ttimespec):cint;{$ifdef SYSTEMI
 begin
   futex:=futex(@uaddr,op,val,@timeout,nil,0);
 end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -949,6 +998,11 @@ end;
 {$endif} // non-libc
 
 >>>>>>> origin/cpstrnew
+=======
+
+{$endif} // non-libc
+
+>>>>>>> origin/cpstrnew
 {$if defined(cpui386) or defined(cpux86_64)}
 { does not exist as a wrapper in glibc, and exists only for x86 }
 function modify_ldt(func:cint;p:pointer;bytecount:culong):cint;
@@ -959,6 +1013,7 @@ begin
                                                Tsysparam(bytecount));
 end;
 {$endif}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -977,6 +1032,9 @@ end;
 {$endif} // non-libc
 
 >>>>>>> graemeg/fixes_2_2
+=======
+
+>>>>>>> origin/cpstrnew
 { FUTEX_OP is a macro, doesn't exist in libC as function}
 function FUTEX_OP(op, oparg, cmp, cmparg: cint): cint; {$ifdef SYSTEMINLINE}inline;{$endif}
 begin

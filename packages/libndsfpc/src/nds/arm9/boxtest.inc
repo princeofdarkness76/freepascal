@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef NDS_INTERFACE}
 function BoxTest(x, y, z, width, height, depth: v16): cint; cdecl; external;
 
@@ -50,6 +51,8 @@ procedure BoxTest_Asynch(x, y, z, width, height, depth: v16); cdecl; external;
 *)
 
 
+=======
+>>>>>>> origin/cpstrnew
 {$ifdef NDS_INTERFACE}
 function BoxTest(x, y, z, width, height, depth: {v16}cuint16): cint; cdecl; external;
 

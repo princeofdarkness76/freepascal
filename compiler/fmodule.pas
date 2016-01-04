@@ -183,6 +183,7 @@ interface
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         moduleoptions: tmoduleoptions;
         deprecatedmsg: pshortstring;
 
@@ -232,6 +233,11 @@ interface
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+        moduleoptions: tmoduleoptions;
+        deprecatedmsg: pshortstring;
+
+>>>>>>> origin/cpstrnew
         {create creates a new module which name is stored in 's'. LoadedFrom
         points to the module calling it. It is nil for the first compiled
         module. This allow inheritence of all path lists. MUST pay attention
@@ -336,6 +342,7 @@ implementation
           begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             if (hp.moduleid=st.moduleid) then
 =======
             if (hp.globalsymtable=st) or
@@ -345,6 +352,9 @@ implementation
             if (hp.globalsymtable=st) or
                (hp.localsymtable=st) then
 >>>>>>> origin/fixes_2_2
+=======
+            if (hp.moduleid=st.moduleid) then
+>>>>>>> origin/cpstrnew
               begin
                 result:=hp;
                 exit;
@@ -676,6 +686,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         namespace:=nil;
         tcinitcode:=nil;
 =======
@@ -684,6 +695,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         _exports:=TLinkedList.Create;
@@ -708,6 +721,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         current_debuginfo_reset : boolean;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -715,6 +729,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       begin
@@ -779,6 +795,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         stringdispose(namespace);
         tcinitcode.free;
 =======
@@ -787,6 +804,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         localunitsearchpath.Free;
@@ -976,6 +995,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         stringdispose(namespace);
         tcinitcode.free;
         tcinitcode:=nil;
@@ -985,6 +1005,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         moduleoptions:=[];
@@ -1117,11 +1139,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 

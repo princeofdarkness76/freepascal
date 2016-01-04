@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { Tests passing of different records by value to C methods.
  One type of these records has one field which is a simple array of bytes,
  the other consists of a few fields of atomic size.
@@ -13,6 +14,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 { Tests passing of different records by value to C methods. 
  One type of these records has one field which is a simple array of bytes,
  the other consists of a few fields of atomic size.
@@ -20,11 +23,14 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
  Note that it does not only test a single field of these records, but all
@@ -43,6 +49,7 @@ program calext6;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$if defined(CPUARMEL) and defined(FPUSOFT)}
 =======
 {$ifdef CPUARMEL}
@@ -56,10 +63,14 @@ program calext6;
 =======
 {$ifdef CPUARMEL}
 >>>>>>> origin/cpstrnew
+=======
+{$ifdef CPUARMEL}
+>>>>>>> origin/cpstrnew
 { for softfloat calls in the C code }
 {$linklib gcc}
 {$endif}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -80,6 +91,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 type
   int8_t = shortint;
   pint8_t = ^int8_t;
@@ -89,6 +102,7 @@ type
 
 var
   success : boolean;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -158,6 +172,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {$packrecords c}
 
@@ -194,6 +210,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
   
@@ -204,6 +221,9 @@ type
 =======
   
 >>>>>>> graemeg/cpstrnew
+=======
+  
+>>>>>>> origin/cpstrnew
 =======
   
 >>>>>>> origin/cpstrnew
@@ -255,6 +275,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   struct15 = record
 =======
@@ -269,6 +290,10 @@ type
   
   struct15 = record 
 >>>>>>> graemeg/cpstrnew
+=======
+  
+  struct15 = record 
+>>>>>>> origin/cpstrnew
 =======
   
   struct15 = record 
@@ -331,6 +356,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$if defined(FPC_HAS_TYPE_EXTENDED) and (sizeof(double)<>sizeof(cextended))}
 =======
 {$ifdef FPC_HAS_TYPE_EXTENDED}
@@ -341,6 +367,9 @@ end;
 =======
 {$ifdef FPC_HAS_TYPE_EXTENDED}
 >>>>>>> graemeg/cpstrnew
+=======
+{$ifdef FPC_HAS_TYPE_EXTENDED}
+>>>>>>> origin/cpstrnew
 =======
 {$ifdef FPC_HAS_TYPE_EXTENDED}
 >>>>>>> origin/cpstrnew
@@ -498,6 +527,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$ifdef TestFPUStack }
   i : longint;
   {$endif TestFPUStack }
@@ -507,6 +537,8 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   s1, s1a: struct1;
@@ -531,6 +563,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
   
@@ -541,6 +574,9 @@ var
 =======
   
 >>>>>>> graemeg/cpstrnew
+=======
+  
+>>>>>>> origin/cpstrnew
 =======
   
 >>>>>>> origin/cpstrnew
@@ -557,6 +593,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   s3.v1:=4.5;
   s3.v2:=5.125;
@@ -609,6 +646,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   
   s3.v1:=4.5;
   s3.v2:=5.125;
@@ -657,11 +696,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   s16.v1:=26.5;
@@ -671,6 +713,7 @@ begin
 
   s17.v1:=31.25;
   s17.v2:=32.125;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1169,6 +1212,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   
   s31.v1:=32.625;
   s31.v2:=33.5;
@@ -1287,11 +1332,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$endif}

@@ -7,6 +7,7 @@ var
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   ps:='';
   if paramcount>0 then
     begin
@@ -15,6 +16,9 @@ begin
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  ps:='';
+>>>>>>> origin/cpstrnew
   if paramcount>0 then
     begin
       for i:=2 to paramcount do

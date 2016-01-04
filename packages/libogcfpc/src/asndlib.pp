@@ -25,6 +25,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   VOICE_MONO_8BIT       = 0;
   VOICE_MONO_16BIT      = 1;
@@ -44,6 +45,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   VOICE_MONO_8BIT = 0;
   VOICE_MONO_16BIT = 1;
   VOICE_STEREO_8BIT = 2;
@@ -51,11 +54,14 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   MIN_VOLUME = 0;

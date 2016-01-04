@@ -80,6 +80,7 @@ type
     currentcolumn : longint;  { current line and column }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     currentmodulestate : string[20];
 =======
 		currentmodulestate : string[20];
@@ -87,6 +88,9 @@ type
 =======
 		currentmodulestate : string[20];
 >>>>>>> origin/fixes_2_2
+=======
+    currentmodulestate : string[20];
+>>>>>>> origin/cpstrnew
   { Total Status }
     compiledlines : longint;  { the number of lines which are compiled }
     errorcount,               { this field should never be increased directly,

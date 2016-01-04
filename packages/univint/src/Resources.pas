@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       CarbonCore/Resources.h
  
      Contains:   Resource Manager Interfaces.
@@ -31,11 +32,15 @@
 =======
      File:       CarbonCore/Resources.h
 >>>>>>> origin/fixes_2.4
+=======
+     File:       CarbonCore/Resources.h
+>>>>>>> origin/cpstrnew
  
      Contains:   Resource Manager Interfaces.
  
      Version:    CarbonCore-859.2~1
  
+<<<<<<< HEAD
 <<<<<<< HEAD
      Copyright:  © 1985-2002 by Apple Computer, Inc., all rights reserved
 <<<<<<< HEAD
@@ -45,6 +50,9 @@
 =======
      Copyright:  © 1985-2008 by Apple Computer, Inc., all rights reserved
 >>>>>>> origin/fixes_2.4
+=======
+     Copyright:  © 1985-2008 by Apple Computer, Inc., all rights reserved
+>>>>>>> origin/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -52,6 +60,7 @@
                      http://www.freepascal.org/bugs.html
  
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -81,6 +90,9 @@
 =======
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 >>>>>>> origin/fixes_2.4
+=======
+{       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> origin/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -89,12 +101,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -106,6 +122,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -120,6 +137,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -135,6 +156,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -145,6 +167,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -152,13 +177,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -166,6 +195,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -174,8 +205,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -186,6 +220,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -206,6 +241,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -214,12 +251,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -227,6 +267,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -288,6 +329,9 @@ interface
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -296,10 +340,22 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
+>>>>>>> origin/cpstrnew
+=======
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -311,6 +367,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -318,6 +375,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
@@ -333,6 +392,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -340,6 +400,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
@@ -352,6 +414,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -383,12 +446,18 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -416,10 +485,13 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
@@ -534,6 +606,17 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -562,6 +645,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -570,6 +654,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -582,6 +668,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 uses MacTypes,Files;
 {$endc} {not MACOSALLINCLUDE}
 <<<<<<< HEAD
@@ -590,6 +677,15 @@ uses MacTypes,Files;
 >>>>>>> origin/cpstrnew
 
 {$ifc TARGET_OS_MAC}
+=======
+uses MacTypes,Files;
+{$endc} {not MACOSALLINCLUDE}
+
+
+{$ifc TARGET_OS_MAC}
+
+{$ALIGN POWER}
+>>>>>>> origin/cpstrnew
 
 <<<<<<< HEAD
 {$ifc TARGET_OS_MAC}
@@ -597,6 +693,7 @@ uses MacTypes,Files;
 {$ALIGN POWER}
 >>>>>>> origin/cpstrnew
 
+<<<<<<< HEAD
 {$ALIGN POWER}
 
 <<<<<<< HEAD
@@ -646,6 +743,51 @@ const
 
 { Resource File Ref Num constants}
 const
+=======
+{
+    These typedefs were originally created for the Copland Resource Mangager
+}
+type
+	ResID = SInt16;
+	ResAttributes = SInt16;
+	ResFileAttributes = SInt16;
+	ResourceCount = SInt16;
+	ResourceIndex = SInt16;
+	ResFileRefNum = FSIORefNum;
+{ Resource Attribute Bits }
+const
+	resSysRefBit = 7;    {reference to system/local reference}
+	resSysHeapBit = 6;    {In system/in application heap}
+	resPurgeableBit = 5;    {Purgeable/not purgeable}
+	resLockedBit = 4;    {Locked/not locked}
+	resProtectedBit = 3;    {Protected/not protected}
+	resPreloadBit = 2;    {Read in at OpenResource?}
+	resChangedBit = 1;     {Existing resource changed since last update}
+
+{ Resource Attribute Masks}
+const
+	resSysHeap = 64;   {System or application heap?}
+	resPurgeable = 32;   {Purgeable resource?}
+	resLocked = 16;   {Load it in locked?}
+	resProtected = 8;    {Protected?}
+	resPreload = 4;    {Load in on OpenResFile?}
+	resChanged = 2;     {Resource changed?}
+
+{ Resource Fork Attribute Bits}
+const
+	mapReadOnlyBit = 7;    {is this file read-only?}
+	mapCompactBit = 6;    {Is a compact necessary?}
+	mapChangedBit = 5;     {Is it necessary to write map?}
+
+{ Resource Fork Attribute Masks}
+const
+	mapReadOnly = 128;  {Resource file read-only}
+	mapCompact = 64;   {Compact resource file}
+	mapChanged = 32;    {Write map out at update}
+
+{ Resource File Ref Num constants}
+const
+>>>>>>> origin/cpstrnew
 	kResFileNotOpened = -1;   {ref num return as error when opening a resource file}
 	kSystemResFile = 0;     {this is the default ref num to the system file}
 
@@ -666,6 +808,7 @@ function NewResErrUPP( userRoutine: ResErrProcPtr ): ResErrUPP; external name '_
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -676,6 +819,9 @@ function NewResErrUPP( userRoutine: ResErrProcPtr ): ResErrUPP; external name '_
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
@@ -693,6 +839,7 @@ procedure DisposeResErrUPP( userUPP: ResErrUPP ); external name '_DisposeResErrU
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -703,6 +850,9 @@ procedure DisposeResErrUPP( userUPP: ResErrUPP ); external name '_DisposeResErrU
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
@@ -720,6 +870,7 @@ procedure InvokeResErrUPP( thErr: OSErr; userUPP: ResErrUPP ); external name '_I
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -730,6 +881,9 @@ procedure InvokeResErrUPP( thErr: OSErr; userUPP: ResErrUPP ); external name '_I
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
@@ -753,6 +907,7 @@ procedure CloseResFile( refNum: ResFileRefNum ); external name '_CloseResFile';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -763,6 +918,9 @@ procedure CloseResFile( refNum: ResFileRefNum ); external name '_CloseResFile';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
@@ -784,6 +942,7 @@ function ResError: OSErr; external name '_ResError';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -797,6 +956,9 @@ function ResError: OSErr; external name '_ResError';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -804,6 +966,7 @@ function ResError: OSErr; external name '_ResError';
  *  
  *  Mac OS X threading:
  *    Not thread safe
+<<<<<<< HEAD
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
@@ -832,6 +995,8 @@ function CurResFile: ResFileRefNum; external name '_CurResFile';
 
 {
  *  HomeResFile()
+=======
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -840,6 +1005,7 @@ function CurResFile: ResFileRefNum; external name '_CurResFile';
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+<<<<<<< HEAD
  }
 function HomeResFile( theResource: Handle ): ResFileRefNum; external name '_HomeResFile';
 <<<<<<< HEAD
@@ -938,69 +1104,7 @@ function NewResErrUPP( userRoutine: ResErrProcPtr ): ResErrUPP; external name '_
 
 {
  *  DisposeResErrUPP()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in CoreServices.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   available as macro/inline
- }
-procedure DisposeResErrUPP( userUPP: ResErrUPP ); external name '_DisposeResErrUPP';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-{
- *  InvokeResErrUPP()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in CoreServices.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   available as macro/inline
- }
-procedure InvokeResErrUPP( thErr: OSErr; userUPP: ResErrUPP ); external name '_InvokeResErrUPP';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-{ QuickTime 3.0}
-type
-	ResourceEndianFilterPtr = function( theResource: Handle; currentlyNativeEndian: Boolean ): OSErr;
-{
- *  CloseResFile()
- *  
- *  Mac OS X threading:
- *    Not thread safe
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in CoreServices.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
- }
-procedure CloseResFile( refNum: ResFileRefNum ); external name '_CloseResFile';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  ResError()
- *  
- *  Mac OS X threading:
- *    Not thread safe
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in CoreServices.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
- }
-function ResError: OSErr; external name '_ResError';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  CurResFile()
- *  
- *  Mac OS X threading:
- *    Not thread safe
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in CoreServices.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+=======
  }
 function CurResFile: ResFileRefNum; external name '_CurResFile';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -1011,12 +1115,131 @@ function CurResFile: ResFileRefNum; external name '_CurResFile';
  *  
  *  Mac OS X threading:
  *    Not thread safe
+>>>>>>> origin/cpstrnew
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeResErrUPP( userUPP: ResErrUPP ); external name '_DisposeResErrUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function HomeResFile( theResource: Handle ): ResFileRefNum; external name '_HomeResFile';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
+
+{
+ *  InvokeResErrUPP()
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure InvokeResErrUPP( thErr: OSErr; userUPP: ResErrUPP ); external name '_InvokeResErrUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+{ QuickTime 3.0}
+type
+	ResourceEndianFilterPtr = function( theResource: Handle; currentlyNativeEndian: Boolean ): OSErr;
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure UseResFile( refNum: ResFileRefNum ); external name '_UseResFile';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
+{
+ *  CloseResFile()
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
+procedure CloseResFile( refNum: ResFileRefNum ); external name '_CloseResFile';
+=======
+function CountTypes: ResourceCount; external name '_CountTypes';
+>>>>>>> origin/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  ResError()
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+<<<<<<< HEAD
+function ResError: OSErr; external name '_ResError';
+=======
+function Count1Types: ResourceCount; external name '_Count1Types';
+>>>>>>> origin/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  CurResFile()
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+<<<<<<< HEAD
+function CurResFile: ResFileRefNum; external name '_CurResFile';
+=======
+procedure GetIndType( var theType: ResType; itemIndex: ResourceIndex ); external name '_GetIndType';
+>>>>>>> origin/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  HomeResFile()
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function OpenResFile(const (*var*) fileName: Str255): SInt16; external name '_OpenResFile';
 {$endc}  {CALL_NOT_IN_CARBON}
@@ -1029,6 +1252,11 @@ function HomeResFile( theResource: Handle ): ResFileRefNum; external name '_Home
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+procedure Get1IndType( var theType: ResType; itemIndex: ResourceIndex ); external name '_Get1IndType';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  UseResFile()
@@ -1041,11 +1269,15 @@ function HomeResFile( theResource: Handle ): ResFileRefNum; external name '_Home
  *  Mac OS X threading:
  *    Not thread safe
  *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
 procedure UseResFile( refNum: ResFileRefNum ); external name '_UseResFile';
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1068,10 +1300,17 @@ procedure UseResFile( refNum: ResFileRefNum ); external name '_UseResFile';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+procedure SetResLoad( load: Boolean ); external name '_SetResLoad';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
  *  CountTypes()
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -1081,6 +1320,7 @@ procedure UseResFile( refNum: ResFileRefNum ); external name '_UseResFile';
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
 function CountTypes: ResourceCount; external name '_CountTypes';
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1103,10 +1343,17 @@ function CountTypes: ResourceCount; external name '_CountTypes';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+function CountResources( theType: ResType ): ResourceCount; external name '_CountResources';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
  *  Count1Types()
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -1116,6 +1363,7 @@ function CountTypes: ResourceCount; external name '_CountTypes';
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
 function Count1Types: ResourceCount; external name '_Count1Types';
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1138,6 +1386,10 @@ function Count1Types: ResourceCount; external name '_Count1Types';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+function Count1Resources( theType: ResType ): ResourceCount; external name '_Count1Resources';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1146,8 +1398,12 @@ function Count1Types: ResourceCount; external name '_Count1Types';
  *  Mac OS X threading:
  *    Not thread safe
  *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -1208,6 +1464,13 @@ procedure Get1IndType( var theType: ResType; itemIndex: ResourceIndex ); externa
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function GetIndResource( theType: ResType; itemIndex: ResourceIndex ): Handle; external name '_GetIndResource';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1216,8 +1479,12 @@ procedure Get1IndType( var theType: ResType; itemIndex: ResourceIndex ); externa
  *  Mac OS X threading:
  *    Not thread safe
  *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -1278,6 +1545,13 @@ function CountResources( theType: ResType ): ResourceCount; external name '_Coun
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function Get1IndResource( theType: ResType; itemIndex: ResourceIndex ): Handle; external name '_Get1IndResource';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1321,8 +1595,12 @@ function Count1Resources( theType: ResType ): ResourceCount; external name '_Cou
  *  Mac OS X threading:
  *    Not thread safe
  *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -1383,6 +1661,13 @@ function Get1IndResource( theType: ResType; itemIndex: ResourceIndex ): Handle; 
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function GetResource( theType: ResType; theID: ResID ): Handle; external name '_GetResource';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1391,8 +1676,12 @@ function Get1IndResource( theType: ResType; itemIndex: ResourceIndex ): Handle; 
  *  Mac OS X threading:
  *    Not thread safe
  *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -1428,10 +1717,13 @@ function GetResource( theType: ResType; theID: ResID ): Handle; external name '_
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+=======
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function Get1Resource( theType: ResType; theID: ResID ): Handle; external name '_Get1Resource';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1453,6 +1745,9 @@ function Get1Resource( theType: ResType; theID: ResID ): Handle; external name '
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1472,6 +1767,7 @@ function GetNamedResource( theType: ResType; const (*var*) name: Str255 ): Handl
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -1488,6 +1784,9 @@ function GetNamedResource( theType: ResType; const (*var*) name: Str255 ): Handl
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1507,6 +1806,7 @@ function Get1NamedResource( theType: ResType; const (*var*) name: Str255 ): Hand
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -1523,6 +1823,9 @@ function Get1NamedResource( theType: ResType; const (*var*) name: Str255 ): Hand
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1542,6 +1845,7 @@ procedure MacLoadResource( theResource: Handle ); external name '_MacLoadResourc
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -1558,6 +1862,9 @@ procedure MacLoadResource( theResource: Handle ); external name '_MacLoadResourc
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1577,6 +1884,7 @@ procedure ReleaseResource( theResource: Handle ); external name '_ReleaseResourc
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -1593,6 +1901,9 @@ procedure ReleaseResource( theResource: Handle ); external name '_ReleaseResourc
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1602,12 +1913,16 @@ procedure ReleaseResource( theResource: Handle ); external name '_ReleaseResourc
  *    Not thread safe
  *  
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure DetachResource( theResource: Handle ); external name '_DetachResource';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1622,6 +1937,9 @@ procedure DetachResource( theResource: Handle ); external name '_DetachResource'
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
@@ -1643,6 +1961,7 @@ function UniqueID( theType: ResType ): ResID; external name '_UniqueID';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -1653,6 +1972,9 @@ function UniqueID( theType: ResType ): ResID; external name '_UniqueID';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
@@ -1674,6 +1996,7 @@ function Unique1ID( theType: ResType ): ResID; external name '_Unique1ID';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -1684,6 +2007,9 @@ function Unique1ID( theType: ResType ): ResID; external name '_Unique1ID';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
@@ -1705,6 +2031,7 @@ function GetResAttrs( theResource: Handle ): ResAttributes; external name '_GetR
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -1715,6 +2042,9 @@ function GetResAttrs( theResource: Handle ): ResAttributes; external name '_GetR
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
@@ -1736,6 +2066,7 @@ procedure GetResInfo( theResource: Handle; var theID: ResID; var theType: ResTyp
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -1746,6 +2077,9 @@ procedure GetResInfo( theResource: Handle; var theID: ResID; var theType: ResTyp
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
@@ -1767,6 +2101,7 @@ procedure SetResInfo( theResource: Handle; theID: ResID; const (*var*) name: Str
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -1777,6 +2112,9 @@ procedure SetResInfo( theResource: Handle; theID: ResID; const (*var*) name: Str
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
@@ -1798,6 +2136,7 @@ procedure AddResource( theData: Handle; theType: ResType; theID: ResID; const (*
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -1808,6 +2147,9 @@ procedure AddResource( theData: Handle; theType: ResType; theID: ResID; const (*
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
@@ -1829,6 +2171,7 @@ function GetResourceSizeOnDisk( theResource: Handle ): SIGNEDLONG; external name
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -1842,6 +2185,9 @@ function GetResourceSizeOnDisk( theResource: Handle ): SIGNEDLONG; external name
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1849,6 +2195,7 @@ function GetResourceSizeOnDisk( theResource: Handle ): SIGNEDLONG; external name
  *  
  *  Mac OS X threading:
  *    Not thread safe
+<<<<<<< HEAD
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
@@ -1896,6 +2243,8 @@ procedure DetachResource( theResource: Handle ); external name '_DetachResource'
  *  
  *  Mac OS X threading:
  *    Not thread safe
+=======
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
@@ -1903,9 +2252,13 @@ procedure DetachResource( theResource: Handle ); external name '_DetachResource'
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 function CountTypes: SInt16; external name '_CountTypes';
 =======
 function UniqueID( theType: ResType ): ResID; external name '_UniqueID';
+=======
+function GetMaxResourceSize( theResource: Handle ): SIGNEDLONG; external name '_GetMaxResourceSize';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -1916,11 +2269,15 @@ function UniqueID( theType: ResType ): ResID; external name '_UniqueID';
  *  Mac OS X threading:
  *    Not thread safe
  *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function Count1Types: SInt16; external name '_Count1Types';
 =======
@@ -1929,8 +2286,17 @@ function Unique1ID( theType: ResType ): ResID; external name '_Unique1ID';
 
 
 >>>>>>> origin/fixes_2.4
+=======
+procedure SetResAttrs( theResource: Handle; attrs: ResAttributes ); external name '_SetResAttrs';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
 {
  *  GetIndType()
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -1940,6 +2306,7 @@ function Unique1ID( theType: ResType ): ResID; external name '_Unique1ID';
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure GetIndType(var theType: ResType; index: SInt16); external name '_GetIndType';
 =======
@@ -1948,8 +2315,17 @@ function GetResAttrs( theResource: Handle ): ResAttributes; external name '_GetR
 
 
 >>>>>>> origin/fixes_2.4
+=======
+procedure ChangedResource( theResource: Handle ); external name '_ChangedResource';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
 {
  *  Get1IndType()
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -1959,6 +2335,7 @@ function GetResAttrs( theResource: Handle ): ResAttributes; external name '_GetR
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure Get1IndType(var theType: ResType; index: SInt16); external name '_Get1IndType';
 =======
@@ -1967,8 +2344,17 @@ procedure GetResInfo( theResource: Handle; var theID: ResID; var theType: ResTyp
 
 
 >>>>>>> origin/fixes_2.4
+=======
+procedure RemoveResource( theResource: Handle ); external name '_RemoveResource';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
 {
  *  SetResLoad()
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -1978,6 +2364,7 @@ procedure GetResInfo( theResource: Handle; var theID: ResID; var theType: ResTyp
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure SetResLoad(load: boolean); external name '_SetResLoad';
 =======
@@ -1986,8 +2373,17 @@ procedure SetResInfo( theResource: Handle; theID: ResID; const (*var*) name: Str
 
 
 >>>>>>> origin/fixes_2.4
+=======
+procedure UpdateResFile( refNum: ResFileRefNum ); external name '_UpdateResFile';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
 {
  *  CountResources()
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -1997,6 +2393,7 @@ procedure SetResInfo( theResource: Handle; theID: ResID; const (*var*) name: Str
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function CountResources(theType: ResType): SInt16; external name '_CountResources';
 =======
@@ -2005,8 +2402,17 @@ procedure AddResource( theData: Handle; theType: ResType; theID: ResID; const (*
 
 
 >>>>>>> origin/fixes_2.4
+=======
+procedure WriteResource( theResource: Handle ); external name '_WriteResource';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
 {
  *  Count1Resources()
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -2017,6 +2423,7 @@ procedure AddResource( theData: Handle; theType: ResType; theID: ResID; const (*
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 function Count1Resources(theType: ResType): SInt16; external name '_Count1Resources';
 =======
 function GetResourceSizeOnDisk( theResource: Handle ): SIGNEDLONG; external name '_GetResourceSizeOnDisk';
@@ -2024,16 +2431,35 @@ function GetResourceSizeOnDisk( theResource: Handle ): SIGNEDLONG; external name
 
 
 >>>>>>> origin/fixes_2.4
+=======
+procedure SetResPurge( install: Boolean ); external name '_SetResPurge';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
 {
  *  GetIndResource()
  *  
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+>>>>>>> origin/cpstrnew
  *  Availability:
- *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
 function GetIndResource(theType: ResType; index: SInt16): Handle; external name '_GetIndResource';
+=======
+function GetResFileAttrs( refNum: ResFileRefNum ): ResFileAttributes; external name '_GetResFileAttrs';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
 {
  *  Get1IndResource()
 =======
@@ -2041,6 +2467,7 @@ function GetIndResource(theType: ResType; index: SInt16): Handle; external name 
  *    Not thread safe
 >>>>>>> origin/fixes_2.4
  *  
+<<<<<<< HEAD
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -2060,12 +2487,15 @@ function GetMaxResourceSize( theResource: Handle ): SIGNEDLONG; external name '_
 {
  *  GetResource()
  *  
+=======
+>>>>>>> origin/cpstrnew
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 <<<<<<< HEAD
@@ -2092,10 +2522,18 @@ function Get1Resource(theType: ResType; theID: SInt16): Handle; external name '_
 =======
 procedure ChangedResource( theResource: Handle ); external name '_ChangedResource';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure SetResFileAttrs( refNum: ResFileRefNum; attrs: ResFileAttributes ); external name '_SetResFileAttrs';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 
 >>>>>>> origin/fixes_2.4
 {
+<<<<<<< HEAD
  *  GetNamedResource()
  *  
  *  Mac OS X threading:
@@ -2117,6 +2555,10 @@ procedure RemoveResource( theResource: Handle ); external name '_RemoveResource'
 {
  *  Get1NamedResource()
  *  
+=======
+ *  ReadPartialResource()
+ *  
+>>>>>>> origin/cpstrnew
  *  Mac OS X threading:
  *    Not thread safe
  *  
@@ -2124,6 +2566,7 @@ procedure RemoveResource( theResource: Handle ); external name '_RemoveResource'
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+<<<<<<< HEAD
  }
 <<<<<<< HEAD
 function Get1NamedResource(theType: ResType; const (*var*) name: Str255): Handle; external name '_Get1NamedResource';
@@ -2174,12 +2617,23 @@ procedure SetResPurge( install: Boolean ); external name '_SetResPurge';
 {
  *  DetachResource()
  *  
+=======
+ }
+procedure ReadPartialResource( theResource: Handle; offset: SIGNEDLONG; buffer: UnivPtr; count: SIGNEDLONG ); external name '_ReadPartialResource';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  WritePartialResource()
+ *  
+>>>>>>> origin/cpstrnew
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 <<<<<<< HEAD
@@ -2195,11 +2649,18 @@ function GetResFileAttrs( refNum: ResFileRefNum ): ResFileAttributes; external n
  *  
 <<<<<<< HEAD
  *  Availability:
+=======
+>>>>>>> origin/cpstrnew
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
  }
+<<<<<<< HEAD
 function UniqueID(theType: ResType): SInt16; external name '_UniqueID';
+=======
+procedure WritePartialResource( theResource: Handle; offset: SIGNEDLONG; buffer: {const} UnivPtr; count: SIGNEDLONG ); external name '_WritePartialResource';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
 {
  *  Unique1ID()
 =======
@@ -2207,26 +2668,50 @@ function UniqueID(theType: ResType): SInt16; external name '_UniqueID';
  *    Not thread safe
 >>>>>>> origin/fixes_2.4
  *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  }
 function Unique1ID(theType: ResType): SInt16; external name '_Unique1ID';
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure SetResourceSize( theResource: Handle; newSize: SIGNEDLONG ); external name '_SetResourceSize';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
 {
  *  GetResAttrs()
  *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
  *  Availability:
- *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
 function GetResAttrs(theResource: Handle): SInt16; external name '_GetResAttrs';
+=======
+function GetNextFOND( fondHandle: Handle ): Handle; external name '_GetNextFOND';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ QuickTime 3.0}
+>>>>>>> origin/cpstrnew
 {
  *  GetResInfo()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
@@ -2247,10 +2732,44 @@ procedure SetResFileAttrs( refNum: ResFileRefNum; attrs: ResFileAttributes ); ex
  *  Mac OS X threading:
  *    Not thread safe
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         not available
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+
+
+{
+  _________________________________________________________________________________________________________
+      
+   ¥ RESOURCE CHAIN LOCATION - for use with the Resource Manager chain manipulation routines under Carbon.
+  _________________________________________________________________________________________________________
+}
+
+type
+	RsrcChainLocation = SInt16;
+const
+	kRsrcChainBelowSystemMap = 0;    { Below the system's resource map}
+	kRsrcChainBelowApplicationMap = 1;    { Below the application's resource map}
+	kRsrcChainAboveApplicationMap = 2;    { Above the application's resource map}
+	kRsrcChainAboveAllMaps = 4;     { Above all resource maps}
+
+{
+   If the file is already in the resource chain, it is removed and re-inserted at the specified location
+   If the file has been detached, it is added to the resource chain at the specified location
+   Returns resFNotFound if it's not currently open.
+}
+{
+ *  InsertResourceFile()
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later
  }
@@ -2270,10 +2789,37 @@ procedure AddResource(theData: Handle; theType: ResType; theID: SInt16; const (*
  *  
  *  Availability:
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
+=======
+ *    Non-Carbon CFM:   not available
  }
+function InsertResourceFile( refNum: ResFileRefNum; where: RsrcChainLocation ): OSErr; external name '_InsertResourceFile';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+   If the file is not currently in the resource chain, this returns resNotFound
+   Otherwise, the resource file is removed from the resource chain.
+}
+{
+ *  DetachResourceFile()
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   not available
+ }
+<<<<<<< HEAD
 function GetResourceSizeOnDisk(theResource: Handle): SInt32; external name '_GetResourceSizeOnDisk';
+=======
+function DetachResourceFile( refNum: ResFileRefNum ): OSErr; external name '_DetachResourceFile';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
 {
  *  GetMaxResourceSize()
 =======
@@ -2286,6 +2832,7 @@ procedure ReadPartialResource( theResource: Handle; offset: SIGNEDLONG; buffer: 
  *  
  *  Mac OS X threading:
  *    Not thread safe
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
  *  
 >>>>>>> origin/fixes_2_2
@@ -2297,10 +2844,32 @@ procedure ReadPartialResource( theResource: Handle; offset: SIGNEDLONG; buffer: 
  }
 <<<<<<< HEAD
 procedure UseResFile(refNum: SInt16); external name '_UseResFile';
+=======
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   not available
+ }
+function GetTopResourceFile( var refNum: ResFileRefNum ): OSErr; external name '_GetTopResourceFile';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+   GetNextResourceFile can be used to iterate over resource files in the resource chain. By passing a
+   valid refNum in curRefNum it will return in nextRefNum the refNum of the next file in 
+   the chain. If curRefNum is not found in the resource chain, GetNextResourceFile returns resFNotFound.
+   When the end of the chain is reached GetNextResourceFile will return noErr and nextRefNum will be NIL.
+}
+>>>>>>> origin/cpstrnew
 {
  *  CountTypes()
  *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -3603,6 +4172,69 @@ procedure SetResourceSize( theResource: Handle; newSize: SIGNEDLONG ); external 
 
 
 {
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   not available
+ }
+function GetNextResourceFile( curRefNum: ResFileRefNum; var nextRefNum: ResFileRefNum ): OSErr; external name '_GetNextResourceFile';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  FSOpenResFile()
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in InterfaceLib 9.1 and later
+ }
+function FSOpenResFile( const (*var*) ref: FSRef; permission: SInt8 ): ResFileRefNum; external name '_FSOpenResFile';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  FSCreateResFile()
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in InterfaceLib 9.1 and later
+ }
+procedure FSCreateResFile( const (*var*) parentRef: FSRef; nameLength: UniCharCount; name: UniCharPtr; whichInfo: FSCatalogInfoBitmap; {const} catalogInfo: FSCatalogInfoPtr { can be NULL }; newRef: FSRefPtr { can be NULL }; newSpec: FSSpecPtr { can be NULL } ); external name '_FSCreateResFile';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+   Returns true if the resource file is already open and known by the Resource Manager (i.e., it is
+   either in the current resource chain or it's a detached resource file.)  If it's in the resource 
+   chain, the inChain Boolean is set to true on exit and true is returned.  If it's an open file, but
+   the file is currently detached, inChain is set to false and true is returned.  If the file is open,
+   the refNum to the file is returned.
+}
+{
+ *  FSResourceFileAlreadyOpen()
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in InterfaceLib 9.1 and later
+ }
+function FSResourceFileAlreadyOpen( const (*var*) resourceFileRef: FSRef; var inChain: Boolean; var refNum: ResFileRefNum ): Boolean; external name '_FSResourceFileAlreadyOpen';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+>>>>>>> origin/cpstrnew
    FSOpenOrphanResFile should be used to open a resource file that is persistent across all contexts,
    because using OpenResFile normally loads a map and all preloaded resources into the application
    context.  FSOpenOrphanResFile loads everything into the system context and detaches the file 
@@ -3617,6 +4249,7 @@ procedure SetResourceSize( theResource: Handle; newSize: SIGNEDLONG ); external 
  *  Mac OS X threading:
  *    Not thread safe
  *  
+<<<<<<< HEAD
  *  Mac OS X threading:
  *    Not thread safe
  *  
@@ -3838,10 +4471,14 @@ function FSResourceFileAlreadyOpen( const (*var*) resourceFileRef: FSRef; var in
  *    Not thread safe
  *  
  *  Availability:
+=======
+ *  Availability:
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.5 and later
  *    Non-Carbon CFM:   not available
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function FSResourceFileAlreadyOpen(const (*var*) resourceFileRef: FSRef; var inChain: boolean; var refNum: SInt16): boolean; external name '_FSResourceFileAlreadyOpen';
 <<<<<<< HEAD
@@ -3849,10 +4486,13 @@ function FSResourceFileAlreadyOpen(const (*var*) resourceFileRef: FSRef; var inC
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function FSOpenOrphanResFile( const (*var*) ref: FSRef; permission: SignedByte; var refNum: ResFileRefNum ): OSErr; external name '_FSOpenOrphanResFile';
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
 {
  *  FSCreateResourceFile()
@@ -4093,6 +4733,65 @@ function FSCreateResourceFile( const (*var*) parentRef: FSRef; nameLength: UniCh
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+>>>>>>> origin/cpstrnew
+{
+ *  FSCreateResourceFork()
+ *  
+ *  Summary:
+ *    Creates the named forked and initializes it as an empty resource
+ *    fork.
+ *  
+ *  Discussion:
+ *    This function allows a resource fork to be added to an existing
+ *    file.  Passing in a null forkname will result in the data fork
+ *    being used.  If the named fork already exists this function does
+ *    nothing and returns errFSForkExists.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    ref:
+ *      The file to add the fork to
+ *    
+ *    forkNameLength:
+ *      The length of the fork name (in Unicode characters)
+ *    
+ *    forkName:
+ *      The name of the fork to open (in Unicode); may be NULL
+ *    
+<<<<<<< HEAD
+ *    flags:
+ *      Pass in zero
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.2 and later in CoreServices.framework
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
+ *    Non-Carbon CFM:   not available
+ }
+function FSCreateResourceFork( const (*var*) ref: FSRef; forkNameLength: UniCharCount; {const} forkName: UniCharPtr { can be NULL }; flags: UInt32 ): OSErr; external name '_FSCreateResourceFork';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+>>>>>>> origin/fixes_2.4
+=======
+ *    newSpec:
+ *      A pointer to the FSSpec for the new directory; may be NULL. 
+ *      Ignored on 64 bit.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.3 and later
+ *    Non-Carbon CFM:   not available
+ }
+function FSCreateResourceFile( const (*var*) parentRef: FSRef; nameLength: UniCharCount; name: UniCharPtr; whichInfo: FSCatalogInfoBitmap; {const} catalogInfo: FSCatalogInfoPtr { can be NULL }; forkNameLength: UniCharCount; {const} forkName: UniCharPtr { can be NULL }; newRef: FSRefPtr { can be NULL }; newSpec: FSSpecPtr { can be NULL } ): OSErr; external name '_FSCreateResourceFile';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
 {
  *  FSCreateResourceFork()
  *  
@@ -4131,7 +4830,7 @@ function FSCreateResourceFile( const (*var*) parentRef: FSRef; nameLength: UniCh
 function FSCreateResourceFork( const (*var*) ref: FSRef; forkNameLength: UniCharCount; {const} forkName: UniCharPtr { can be NULL }; flags: UInt32 ): OSErr; external name '_FSCreateResourceFork';
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 
->>>>>>> origin/fixes_2.4
+>>>>>>> origin/cpstrnew
 
 {
  *  FSOpenResourceFile()
@@ -4147,6 +4846,7 @@ function FSCreateResourceFork( const (*var*) ref: FSRef; forkNameLength: UniChar
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  Mac OS X threading:
  *    Not thread safe
  *  
@@ -4159,6 +4859,11 @@ function FSCreateResourceFork( const (*var*) ref: FSRef; forkNameLength: UniChar
  *    Not thread safe
  *  
 >>>>>>> origin/fixes_2.4
+=======
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+>>>>>>> origin/cpstrnew
  *  Parameters:
  *    
  *    ref:
@@ -4177,6 +4882,7 @@ function FSCreateResourceFork( const (*var*) ref: FSRef; forkNameLength: UniChar
  *      On exit the reference number for accessing the open fork
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4576,6 +5282,21 @@ function FSOpenResourceFile( const (*var*) ref: FSRef; forkNameLength: UniCharCo
 {$ifc not TARGET_CPU_64}
 {
  *  OpenRFPerm()   *** DEPRECATED ***
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.3 and later
+ *    Non-Carbon CFM:   not available
+ }
+function FSOpenResourceFile( const (*var*) ref: FSRef; forkNameLength: UniCharCount; {const} forkName: UniCharPtr { can be NULL }; permissions: SInt8; var refNum: ResFileRefNum ): OSErr; external name '_FSOpenResourceFile';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ Deprecated Functions -------------------------------------------------------}
+
+{ use FSOpenResourceFile instead}
+{$ifc not TARGET_CPU_64}
+{
+ *  OpenRFPerm()   *** DEPRECATED ***
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -4585,6 +5306,24 @@ function FSOpenResourceFile( const (*var*) ref: FSRef; forkNameLength: UniCharCo
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+function OpenRFPerm( const (*var*) fileName: Str255; vRefNum: FSVolumeRefNum; permission: SInt8 ): ResFileRefNum; external name '_OpenRFPerm';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{ use FSOpenResourceFile instead}
+{
+ *  HOpenResFile()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+<<<<<<< HEAD
 function OpenRFPerm( const (*var*) fileName: Str255; vRefNum: FSVolumeRefNum; permission: SInt8 ): ResFileRefNum; external name '_OpenRFPerm';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
@@ -4605,6 +5344,12 @@ function HOpenResFile( vRefNum: FSVolumeRefNum; dirID: SIGNEDLONG; const (*var*)
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
+=======
+function HOpenResFile( vRefNum: FSVolumeRefNum; dirID: SIGNEDLONG; const (*var*) fileName: Str255; permission: SInt8 ): ResFileRefNum; external name '_HOpenResFile';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+>>>>>>> origin/cpstrnew
 { use FSCreateResourceFile instead}
 {
  *  HCreateResFile()   *** DEPRECATED ***
@@ -4693,9 +5438,13 @@ function FSpOpenOrphanResFile( const (*var*) spec: FSSpec; permission: SignedByt
 end.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

@@ -232,6 +232,7 @@ implementation
                     p.free;
                     { switch to new node }
 <<<<<<< HEAD
+<<<<<<< HEAD
                     p := hp;
                     { run firstpass }
                     firstpass(p);
@@ -241,11 +242,17 @@ implementation
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+                    p := hp;
+                    { run firstpass }
+                    firstpass(p);
+>>>>>>> origin/cpstrnew
                   end
                  else
                    begin
                      { inlining happens in pass_1 and can cause new }
                      { simplify opportunities                       }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                      hp:=p.simplify(true);
@@ -267,6 +274,14 @@ implementation
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+                     hp:=p.simplify(true);
+                     if assigned(hp) then
+                       begin
+                         p.free;
+                         p := hp;
+                         firstpass(p);
+>>>>>>> origin/cpstrnew
                        end;
                    end;
                  if codegenerror then

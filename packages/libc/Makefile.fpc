@@ -18,6 +18,7 @@ name=libc
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 version=3.1.1
 =======
 =======
@@ -38,6 +39,9 @@ packages=rtl fpmkunit
 =======
 >>>>>>> origin/fixes_2_2
 version=2.2.5
+=======
+version=2.5.1
+>>>>>>> origin/cpstrnew
 
 [target]
 units=kerneldefs kernelioctl libc

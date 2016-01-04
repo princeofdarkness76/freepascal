@@ -9,6 +9,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Classes, SysUtils, fpdocproj, dom, fptemplate;
 
 Type
@@ -23,6 +24,8 @@ Type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   Classes, SysUtils, fpdocproj, dom;
 
 Type
@@ -35,11 +38,14 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   Protected
@@ -48,6 +54,7 @@ Type
     Procedure LoadPackage(APackage : TFPDocPackage; E : TDOMElement); virtual;
     Procedure LoadPackages(Packages : TFPDocPackages; E : TDOMElement);
     Procedure LoadEngineOptions(Options : TEngineOptions; E : TDOMElement); virtual;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -85,6 +92,8 @@ Uses XMLRead, XMLWrite;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   Public
     Procedure LoadOptionsFromFile(AProject : TFPDocProject; Const AFileName : String);
     Procedure LoadFromXML(AProject : TFPDocProject; XML : TXMLDocument); virtual;
@@ -97,11 +106,14 @@ Uses XMLRead;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -114,6 +126,7 @@ Resourcestring
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   SErrNoImportFile = 'Import tag without file attribute';
   SErrNoImportPrefix = 'Import tag without prefix attribute';
 =======
@@ -122,6 +135,8 @@ Resourcestring
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -140,6 +155,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> graemeg/cpstrnew
@@ -147,6 +163,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 procedure TXMLFPDocOptions.Error(Const Msg: String);
@@ -183,6 +201,7 @@ procedure TXMLFPDocOptions.LoadPackage(APackage: TFPDocPackage; E: TDOMElement);
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   begin
     Result:=I['file'];
     If (Result='') then
@@ -210,6 +229,8 @@ procedure TXMLFPDocOptions.LoadPackage(APackage: TFPDocPackage; E: TDOMElement);
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   Var
     S : String;
 
@@ -226,11 +247,14 @@ Const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 Var
@@ -240,6 +264,7 @@ Var
 begin
   APackage.Name:=E['name'];
   APackage.output:=E['output'];
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -254,6 +279,9 @@ begin
 =======
   APackage.ContentFile:=E['contentfile'];
 >>>>>>> graemeg/cpstrnew
+=======
+  APackage.ContentFile:=E['contentfile'];
+>>>>>>> origin/cpstrnew
 =======
   APackage.ContentFile:=E['contentfile'];
 >>>>>>> origin/cpstrnew
@@ -287,6 +315,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       else If (O.NodeName='imports') then
         begin
         S:=O.FirstChild;
@@ -303,6 +332,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       end;
@@ -340,11 +371,14 @@ procedure TXMLFPDocOptions.LoadEngineOptions(Options: TEngineOptions;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 Const
@@ -357,11 +391,14 @@ Const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -381,6 +418,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       Case IndexOfString(N,OptionNames) of
 =======
       Case IndexOfString(N,ONames) of
@@ -391,6 +429,9 @@ begin
 =======
       Case IndexOfString(N,ONames) of
 >>>>>>> graemeg/cpstrnew
+=======
+      Case IndexOfString(N,ONames) of
+>>>>>>> origin/cpstrnew
 =======
       Case IndexOfString(N,ONames) of
 >>>>>>> origin/cpstrnew
@@ -409,6 +450,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         11 : Options.DontTrim:=TrueValue(V);
         12 : Options.EmitNotes:=TrueValue(V);
 =======
@@ -417,6 +459,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       else
@@ -428,6 +472,7 @@ begin
     end;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -582,11 +627,16 @@ procedure TXMLFPDocOptions.LoadOptionsFromFile(AProject: TFPDocProject;
 procedure TXMLFPDocOptions.LoadOptionsFromFile(AProject: TFPDocProject;
   const AFileName: String);
 >>>>>>> origin/cpstrnew
+=======
+procedure TXMLFPDocOptions.LoadOptionsFromFile(AProject: TFPDocProject;
+  const AFileName: String);
+>>>>>>> origin/cpstrnew
 
 Var
   XML : TXMLDocument;
 
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -604,6 +654,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
    XMLRead.ReadXMLFile(XML,AFileName);
    try
      LoadFromXML(AProject,XML);
@@ -613,11 +665,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 end;
@@ -646,6 +701,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure TXMLFPDocOptions.SaveOptionsToFile(AProject: TFPDocProject; const AFileName: String);
 
 Var
@@ -667,6 +723,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 end.

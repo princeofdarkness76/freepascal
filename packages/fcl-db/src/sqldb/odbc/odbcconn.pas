@@ -122,6 +122,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function RefreshLastInsertID(Query : TCustomSQLQuery; Field : TField): boolean; override;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -129,6 +130,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     // - Result retrieving
@@ -488,6 +491,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   NumericVal: SQL_NUMERIC_STRUCT;
   ColumnSize: SQLULEN;
   BufferLength, StrLenOrInd: SQLLEN;
@@ -496,6 +500,8 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   ColumnSize, BufferLength, StrLenOrInd: SQLINTEGER;
@@ -564,6 +570,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       ftString, ftFixedChar, ftBlob, ftMemo, ftGuid,
       ftBytes, ftVarBytes:
 =======
@@ -575,6 +582,9 @@ begin
 =======
       ftString, ftFixedChar, ftBlob, ftMemo:
 >>>>>>> graemeg/cpstrnew
+=======
+      ftString, ftFixedChar, ftBlob, ftMemo:
+>>>>>>> origin/cpstrnew
 =======
       ftString, ftFixedChar, ftBlob, ftMemo:
 >>>>>>> origin/cpstrnew
@@ -596,6 +606,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             ftBytes, ftVarBytes:
               begin
               CType:=SQL_C_BINARY;
@@ -607,6 +618,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
             ftBlob:
@@ -625,6 +638,7 @@ begin
               SqlType:=SQL_VARCHAR;
               end;
           end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -654,6 +668,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         end;
@@ -1384,6 +1400,19 @@ begin
     Result:=-1;
 end;
 
+function TODBCConnection.RowsAffected(cursor: TSQLCursor): TRowsCount;
+var
+  RowCount: SQLINTEGER;
+begin
+  if assigned(cursor) then
+    if ODBCSucces( SQLRowCount((cursor as TODBCCursor).FSTMTHandle, RowCount) ) then
+       Result:=RowCount
+    else
+       Result:=-1
+  else
+    Result:=-1;
+end;
+
 function TODBCConnection.Fetch(cursor: TSQLCursor): boolean;
 var
   ODBCCursor:TODBCCursor;
@@ -1458,6 +1487,7 @@ begin
       Res:=SQLGetData(ODBCCursor.FSTMTHandle, FieldDef.Index+1, SQL_C_WCHAR, buffer, FieldDef.Size+sizeof(WideChar), @StrLenOrInd); //buffer must contain space for the null-termination character
     ftGuid, ftFixedChar,ftString: // are mapped to a TStringField (including TGuidField)
       Res:=SQLGetData(ODBCCursor.FSTMTHandle, FieldDef.Index+1, SQL_C_CHAR, buffer, FieldDef.Size+1, @StrLenOrInd);
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -1484,6 +1514,11 @@ begin
     ftInteger,ftWord,ftAutoInc:     // mapped to TLongintField
 >>>>>>> graemeg/cpstrnew
 =======
+    ftInteger,ftWord,ftAutoInc:     // mapped to TLongintField
+>>>>>>> origin/cpstrnew
+=======
+    ftSmallint:           // mapped to TSmallintField
+      Res:=SQLGetData(ODBCCursor.FSTMTHandle, FieldDef.Index+1, SQL_C_SSHORT, buffer, SizeOf(Smallint), @StrLenOrInd);
     ftInteger,ftWord,ftAutoInc:     // mapped to TLongintField
 >>>>>>> origin/cpstrnew
       Res:=SQLGetData(ODBCCursor.FSTMTHandle, FieldDef.Index+1, SQL_C_SLONG, buffer, SizeOf(Longint), @StrLenOrInd);
@@ -2022,6 +2057,7 @@ begin
     // NOTE: I made some guesses here after I found only limited information about TFieldType; please report any problems
     case DataType of
 <<<<<<< HEAD
+<<<<<<< HEAD
       SQL_CHAR:          begin FieldType:=ftFixedChar;  FieldSize:=ColumnSize; end;
       SQL_VARCHAR:       begin FieldType:=ftString;     FieldSize:=ColumnSize; end;
       SQL_LONGVARCHAR:   begin FieldType:=ftMemo;       FieldSize:=BLOB_BUF_SIZE; end; // is a blob
@@ -2039,6 +2075,14 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+      SQL_CHAR:          begin FieldType:=ftFixedChar;  FieldSize:=ColumnSize; end;
+      SQL_VARCHAR:       begin FieldType:=ftString;     FieldSize:=ColumnSize; end;
+      SQL_LONGVARCHAR:   begin FieldType:=ftMemo;       FieldSize:=BLOB_BUF_SIZE; end; // is a blob
+{$IF (FPC_VERSION>=2) AND (FPC_RELEASE>=1)}
+      SQL_WCHAR:         begin FieldType:=ftFixedWideChar; FieldSize:=ColumnSize*sizeof(Widechar); end;
+      SQL_WVARCHAR:      begin FieldType:=ftWideString; FieldSize:=ColumnSize*sizeof(Widechar); end;
+>>>>>>> origin/cpstrnew
       SQL_WLONGVARCHAR:  begin FieldType:=ftWideMemo;   FieldSize:=BLOB_BUF_SIZE; end; // is a blob
 {$ENDIF}
       SQL_DECIMAL:       begin FieldType:=ftFloat;      FieldSize:=0; end;
@@ -2075,6 +2119,7 @@ begin
 {$IF (FPC_VERSION>=2) AND (FPC_RELEASE>=1)}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       SQL_GUID:          begin FieldType:=ftGuid;       FieldSize:=ColumnSize; end;
 =======
       SQL_GUID:          begin FieldType:=ftGuid;       FieldSize:=ColumnSize+1; end;
@@ -2082,6 +2127,9 @@ begin
 =======
       SQL_GUID:          begin FieldType:=ftGuid;       FieldSize:=ColumnSize+1; end;
 >>>>>>> origin/fixes_2_2
+=======
+      SQL_GUID:          begin FieldType:=ftGuid;       FieldSize:=ColumnSize; end;
+>>>>>>> origin/cpstrnew
 {$ENDIF}
     else
       begin FieldType:=ftUnknown; FieldSize:=ColumnSize; end
@@ -2315,6 +2363,7 @@ begin
         StmtHandle,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         nil, 0, // catalog unknown; request for all catalogs
         nil, 0, // schema unknown; request for all schemas
 =======
@@ -2325,6 +2374,10 @@ begin
         nil, 0, // catalog unkown; request for all catalogs
         nil, 0, // schema unkown; request for all schemas
 >>>>>>> origin/fixes_2_2
+=======
+        nil, 0, // catalog unknown; request for all catalogs
+        nil, 0, // schema unknown; request for all schemas
+>>>>>>> origin/cpstrnew
         PChar(TableName), Length(TableName), // request information for TableName
         SQL_INDEX_ALL,
         SQL_QUICK

@@ -111,11 +111,15 @@ function SDL_ShowCursor(toggle : LongInt) : LongInt; syscall basesysv PowerSDLBa
 function SDL_GetAppState : Byte; syscall basesysv PowerSDLBase 664;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure SDL_SetError(fmt: PChar); syscall basesysv PowerSDLBase 670;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+procedure SDL_SetError(fmt: PChar); syscall basesysv PowerSDLBase 670;
+>>>>>>> origin/cpstrnew
 function SDL_GetError : pChar; syscall basesysv PowerSDLBase 676;
 procedure SDL_ClearError; syscall basesysv PowerSDLBase 682;
 function SDL_AudioInit(const driver_name : pChar) : LongInt; syscall basesysv PowerSDLBase 688;

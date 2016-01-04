@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (c) 2010-2014 by the Free Pascal development team
 =======
     Copyright (c) 2010 by the Free Pascal development team
@@ -14,6 +15,9 @@
 =======
     Copyright (c) 2010 by the Free Pascal development team
 >>>>>>> graemeg/cpstrnew
+=======
+    Copyright (c) 2010 by the Free Pascal development team
+>>>>>>> origin/cpstrnew
 =======
     Copyright (c) 2010 by the Free Pascal development team
 >>>>>>> origin/cpstrnew
@@ -49,6 +53,7 @@ resourcestring
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   SInvalidHexadecimalNumber = 'Invalid hexadecimal number';
 =======
   SInvalidHexadecimalNumber = 'Invalid decimal number';
@@ -62,6 +67,9 @@ resourcestring
 =======
   SInvalidHexadecimalNumber = 'Invalid decimal number';
 >>>>>>> origin/cpstrnew
+=======
+  SInvalidHexadecimalNumber = 'Invalid decimal number';
+>>>>>>> origin/cpstrnew
   SErrInvalidNonEqual = 'SyntaxError: != or !== expected';
   SBarExpected = '| character expected';
 
@@ -69,6 +77,7 @@ type
 
    TSQLToken = (tsqlUnknown,
    // Specials
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -96,6 +105,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
    tsqlEOF,tsqlWhiteSpace,tsqlString, tsqlIdentifier,tsqlIntegerNumber, tsqlFloatNumber, tsqlComment,
    tsqlBraceOpen,tsqlBraceClose,tsqlSquareBraceOpen,tsqlSquareBraceClose,
    tsqlPlaceHolder,tsqlCOMMA,tsqlCOLON, tsqlDOT,tsqlSEMICOLON, tsqlGT,tsqlLT,
@@ -109,11 +120,14 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
    tsqlESCAPE, tsqlEXISTS, tsqlELSE, tsqlException,   tsqlExternal, tsqlExecute, tsqlEnd,tsqlExit,tsqlEntrypoint,tsqlExtract,
@@ -130,6 +144,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    tsqlOFF {not an FB reserved word; used in isql scripts}, tsqlON, tsqlOR, tsqlORDER, tsqlOUTER, tsqlOption,
    tsqlPrecision, tsqlPRIMARY,  tsqlProcedure, tsqlPosition, tsqlPlan, tsqlPassword, tsqlPage,tsqlPages,tsqlPageSize,tsqlPostEvent,tsqlPrivileges,tsqlPublic,
    tsqlRIGHT, tsqlROLE, tsqlReferences, tsqlRollBack, tsqlRelease,  tsqlretain,  tsqlReturningValues,tsqlReturns, tsqlrevoke,
@@ -142,6 +157,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
    tsqlON, tsqlOR, tsqlORDER, tsqlOUTER, tsqlOption,
    tsqlPRIMARY,  tsqlProcedure, tsqlPosition, tsqlPlan, tsqlPassword, tsqlPage,tsqlPages,tsqlPageSize,tsqlPostEvent,tsqlPrivileges,tsqlPublic,
    tsqlRIGHT, tsqlROLE, tsqlReferences, tsqlRollBack, tsqlRelease,  tsqlretain,  tsqlReturningValues,tsqlReturns, tsqlrevoke,
@@ -150,11 +167,14 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
    tsqlUNION, tsqlUPDATE, tsqlUPPER,  tsqlUNIQUE, tsqlUSER,
@@ -166,6 +186,7 @@ type
 const
   FirstKeyword = tsqlAll;
   LastKeyWord = tsqlWhen;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -189,6 +210,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   sqlComparisons = [tsqleq,tsqlGE,tsqlLE,tsqlNE,tsqlGT,tsqlLT,tsqlIn, tsqlis,
                     tsqlbetween,tsqlLike,tsqlContaining,tsqlStarting,tsqlnot];
   sqlInvertableComparisons = [tsqlLike,tsqlContaining,tsqlStarting,tsqlin,tsqlis, tsqlbetween];
@@ -199,6 +222,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -206,10 +230,13 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
        '(',')', '[',']',
        '?',',',':','.',';','>','<',
        '+','-','*','/','||',
        '=','>=','<=','<>',
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -226,6 +253,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
        // Identifiers last
        'ALL', 'AND', 'ANY', 'ASC', 'ASCENDING', 'AVG', 'ALTER', 'ADD','ACTIVE','ACTION', 'AS', 'AT', 'AUTO', 'AFTER', 'ADMIN',
        'BETWEEN', 'BY', 'BLOB','BEGIN', 'BEFORE',
@@ -234,11 +263,14 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
        'ESCAPE', 'EXISTS', 'ELSE', 'EXCEPTION', 'EXTERNAL','EXECUTE', 'END','EXIT','ENTRY_POINT','EXTRACT',
@@ -255,6 +287,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        'OFF', 'ON', 'OR', 'ORDER', 'OUTER', 'OPTION',
        'PRECISION', 'PRIMARY', 'PROCEDURE','POSITION','PLAN', 'PASSWORD','PAGE','PAGES','PAGE_SIZE','POST_EVENT','PRIVILEGES','PUBLIC',
        'RIGHT', 'ROLE', 'REFERENCES', 'ROLLBACK','RELEASE', 'RETAIN', 'RETURNING_VALUES', 'RETURNS','REVOKE',
@@ -267,6 +300,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
        'ON', 'OR', 'ORDER', 'OUTER', 'OPTION',
        'PRIMARY', 'PROCEDURE','POSITION','PLAN', 'PASSWORD','PAGE','PAGES','PAGE_SIZE','POST_EVENT','PRIVILEGES','PUBLIC',
        'RIGHT', 'ROLE', 'REFERENCES', 'ROLLBACK','RELEASE', 'RETAIN', 'RETURNING_VALUES', 'RETURNS','REVOKE',
@@ -275,11 +310,14 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
        'UNION', 'UPDATE', 'UPPER', 'UNIQUE', 'USER',
@@ -354,6 +392,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     // Used to parse out an identifier/name and store it in the list of identifiers
     function DoIdentifier : TSQLToken;
     // Used to parse out a string containing symbols
@@ -370,11 +409,15 @@ Type
 =======
     function DoIdentifier : TSQLToken;
 >>>>>>> origin/cpstrnew
+=======
+    function DoIdentifier : TSQLToken;
+>>>>>>> origin/cpstrnew
     function DoMultiLineComment: TSQLToken;
     function DoNumericLiteral: TSQLToken;
     function DoSingleLineComment: TSQLToken;
     function DoStringLiteral: TSQLToken;
     function DoWhiteSpace: TSQLToken;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -387,6 +430,8 @@ Type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     function FetchLine: Boolean;
@@ -426,6 +471,7 @@ Var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   // Keeps track of identifiers used
 =======
 >>>>>>> graemeg/cpstrnew
@@ -435,10 +481,13 @@ Var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   IdentifierTokens : array[FirstKeyword..LastKeyWord] of TSQLToken;
   IdentifierTokensOK : Boolean;
 
 Resourcestring
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -453,6 +502,9 @@ Resourcestring
 =======
   SErrUNknownToken = 'Unknown token: %s';
 >>>>>>> graemeg/cpstrnew
+=======
+  SErrUNknownToken = 'Unknown token: %s';
+>>>>>>> origin/cpstrnew
 =======
   SErrUNknownToken = 'Unknown token: %s';
 >>>>>>> origin/cpstrnew
@@ -560,6 +612,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         begin
         FCurToken := Result;
         exit;
@@ -571,6 +624,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
        begin
        FCurToken := Result;
        exit;
@@ -578,11 +633,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   until not (TokenStr[0] in [#9, ' ']);
@@ -723,6 +781,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (not Assigned(FExclude)) or (FExclude.IndexOf(TokenInfos[I])=-1) then
 =======
     if (not Assigned(FExclude)) or (FExclude.INdexOf(TokenInfos[I])=-1) then
@@ -733,6 +792,9 @@ begin
 =======
     if (not Assigned(FExclude)) or (FExclude.INdexOf(TokenInfos[I])=-1) then
 >>>>>>> graemeg/cpstrnew
+=======
+    if (not Assigned(FExclude)) or (FExclude.INdexOf(TokenInfos[I])=-1) then
+>>>>>>> origin/cpstrnew
 =======
     if (not Assigned(FExclude)) or (FExclude.INdexOf(TokenInfos[I])=-1) then
 >>>>>>> origin/cpstrnew
@@ -901,6 +963,7 @@ Var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   {I : TSQLToken;}
 =======
   I : TSQLToken;
@@ -911,6 +974,9 @@ Var
 =======
   I : TSQLToken;
 >>>>>>> graemeg/cpstrnew
+=======
+  I : TSQLToken;
+>>>>>>> origin/cpstrnew
 =======
   I : TSQLToken;
 >>>>>>> origin/cpstrnew
@@ -934,6 +1000,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   // to do: Optimize this!
 =======
   // !!!: Optimize this!
@@ -947,10 +1014,14 @@ begin
 =======
   // !!!: Optimize this!
 >>>>>>> origin/cpstrnew
+=======
+  // !!!: Optimize this!
+>>>>>>> origin/cpstrnew
   If FKeyWords.Count=0 then
     BuildKeyWords;
   P:=FKeyWords.Find(S);
   If (P<>Nil) then
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -968,6 +1039,9 @@ begin
 =======
     Result:=P^;
 >>>>>>> origin/cpstrnew
+=======
+    Result:=P^;
+>>>>>>> origin/cpstrnew
   { I:=FirstKeyword;
   While (Result=tsqlIdentifier) and (I<=Lastkeyword) do
     begin
@@ -981,6 +1055,7 @@ begin
     end;}
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1022,6 +1097,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 function TSQLScanner.FetchToken: TSQLToken;
@@ -1195,6 +1272,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	      begin
 =======
 	begin
@@ -1205,6 +1283,9 @@ begin
 =======
 	begin
 >>>>>>> graemeg/cpstrnew
+=======
+	begin
+>>>>>>> origin/cpstrnew
 =======
 	begin
 >>>>>>> origin/cpstrnew
@@ -1222,6 +1303,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      // Symbol of some sort
      Result:=DoSymbolString;
      //Error(SErrUnknownToken,[TokenStr[0]]);
@@ -1234,6 +1316,9 @@ begin
 =======
      Error(SErrUnknownToken,[TokenStr[0]]);
 >>>>>>> graemeg/cpstrnew
+=======
+     Error(SErrUnknownToken,[TokenStr[0]]);
+>>>>>>> origin/cpstrnew
 =======
      Error(SErrUnknownToken,[TokenStr[0]]);
 >>>>>>> origin/cpstrnew

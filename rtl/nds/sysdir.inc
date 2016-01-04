@@ -23,6 +23,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure do_mkdir(const s: rawbytestring);
 begin
 
@@ -51,6 +52,10 @@ begin
 procedure mkdir(s: pchar; len: sizeuint);[IOCheck, public, alias : 'FPC_SYS_MKDIR'];
 begin
 >>>>>>> origin/cpstrnew
+=======
+procedure mkdir(s: pchar; len: sizeuint);[IOCheck, public, alias : 'FPC_SYS_MKDIR'];
+begin
+>>>>>>> origin/cpstrnew
   if not assigned(s) or (len=0) or (InOutRes<>0) then exit;
   if FileIODevice.DirIO.DoMkdir <> nil then
     FileIODevice.DirIO.DoMkdir(strpas(s));
@@ -71,11 +76,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 end;

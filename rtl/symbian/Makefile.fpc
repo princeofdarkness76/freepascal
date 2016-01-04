@@ -12,6 +12,7 @@ main=rtl
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 units=system uuchar objpas macpas iso7185 extpas buildrtl
 =======
 units=system objpas macpas iso7185 buildrtl
@@ -31,6 +32,9 @@ units=system objpas macpas buildrtl
 =======
 units=system objpas macpas buildrtl
 >>>>>>> origin/fixes_2_2
+=======
+units=system objpas macpas iso7185 buildrtl
+>>>>>>> origin/cpstrnew
 implicitunits=ctypes strings \
       symbian
 

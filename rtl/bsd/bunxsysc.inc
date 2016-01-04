@@ -102,6 +102,18 @@ begin
                              Tsysparam(timeout));
 end;
 
+<<<<<<< HEAD
+=======
+function fpsigtimedwait(const sigset:TSigSet;info:Psiginfo;timeout:Ptimespec):cint;
+
+begin
+  FpSigTimedWait:=do_syscall(syscall_nr_sigtimedwait,
+                             Tsysparam(@sigset),
+                             Tsysparam(info),
+                             Tsysparam(timeout));
+end;
+
+>>>>>>> origin/cpstrnew
 
 Type // implementation side for now. Should move to BSD unit.
   ITimerVal= Record

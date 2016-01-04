@@ -60,6 +60,7 @@ implementation
       line_length = 70;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
       secnames : array[TAsmSectiontype] of string[4] = ('','',
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -77,6 +78,9 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
       secnames : array[TAsmSectiontype] of string[4] = ('',
+=======
+      secnames : array[TAsmSectiontype] of string[4] = ('','',
+>>>>>>> origin/cpstrnew
         'CODE','DATA','DATA','DATA','BSS','',
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -134,6 +138,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         '',
         '',
 =======
@@ -167,10 +172,16 @@ implementation
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+        '',
+        '',
+        '',
+        '',
+>>>>>>> origin/cpstrnew
         ''
       );
 
-      secnamesml64 : array[TAsmSectiontype] of string[7] = ('',
+      secnamesml64 : array[TAsmSectiontype] of string[7] = ('','',
         '_TEXT','_DATE','_DATA','_DATA','_BSS','',
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -230,6 +241,7 @@ implementation
 <<<<<<< HEAD
         '',
         '',
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -244,6 +256,17 @@ implementation
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+>>>>>>> origin/cpstrnew
         ''
       );
 
@@ -396,6 +419,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             writer.AsmWrite(tostr(o.val));
 =======
             AsmWrite(tostr(o.val));
@@ -406,6 +430,9 @@ implementation
 =======
             AsmWrite(tostr(o.val));
 >>>>>>> graemeg/cpstrnew
+=======
+            AsmWrite(tostr(o.val));
+>>>>>>> origin/cpstrnew
 =======
             AsmWrite(tostr(o.val));
 >>>>>>> origin/cpstrnew
@@ -496,6 +523,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           writer.AsmWrite(tostr(o.val));
 =======
           AsmWrite(tostr(o.val));
@@ -506,6 +534,9 @@ implementation
 =======
           AsmWrite(tostr(o.val));
 >>>>>>> graemeg/cpstrnew
+=======
+          AsmWrite(tostr(o.val));
+>>>>>>> origin/cpstrnew
 =======
           AsmWrite(tostr(o.val));
 >>>>>>> origin/cpstrnew
@@ -548,6 +579,7 @@ implementation
         #9'FIXMESLEB',#9'FIXEMEULEB',
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         #9'DD RVA'#9,#9'DD SECREL32'#9
 =======
         #9'DD RVA'#9,#9'DD SECREL32'#9,#9'FIXMEINDIRECT'#9
@@ -555,6 +587,9 @@ implementation
 =======
         #9'DD RVA'#9,#9'DD SECREL32'#9,#9'FIXMEINDIRECT'#9
 >>>>>>> origin/fixes_2_2
+=======
+        #9'DD RVA'#9,#9'DD SECREL32'#9
+>>>>>>> origin/cpstrnew
       );
 
     Function PadTabs(const p:string;addch:char):string;
@@ -732,6 +767,7 @@ implementation
                  aitconst_rva_symbol,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                  aitconst_secrel32_symbol :
 =======
 =======
@@ -739,6 +775,9 @@ implementation
                  aitconst_secrel32_symbol,
                  aitconst_indirect_symbol :
 >>>>>>> graemeg/fixes_2_2
+=======
+                 aitconst_secrel32_symbol :
+>>>>>>> origin/cpstrnew
                    begin
                      writer.AsmWrite(ait_const2str[consttype]);
                      l:=0;
@@ -1177,6 +1216,7 @@ implementation
         al_const which does not have leading ait_section and thus goes out of segment }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1206,6 +1246,9 @@ implementation
 =======
 >>>>>>> origin/fixes_2_2
         
+=======
+
+>>>>>>> origin/cpstrnew
       { TODO: probably ml64 needs 'closing' last section, too }
       if LastSecType <> sec_none then
         AsmWriteLn('_'+secnames[LasTSecType]+#9#9'ENDS');

@@ -112,12 +112,15 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  FileNameCasePreserving = true;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
  FileNameCaseSensitive = true;
@@ -296,6 +299,9 @@ begin
  GetDir (0, CurDir);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {$IFDEF DIRECT}
  {$IFNDEF FPC_FEXPAND_DRIVES}
  I := Pos (System.DriveSeparator, CurDir);
@@ -303,10 +309,13 @@ begin
   Delete (CurDir, 1, I);
  {$ENDIF FPC_FEXPAND_DRIVES}
 {$ENDIF DIRECT}
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 {$IFNDEF NODRIVEC}
  GetDir (3, CDir);
 {$ENDIF NODRIVEC}

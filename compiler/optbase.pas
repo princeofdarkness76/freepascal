@@ -53,6 +53,7 @@ unit optbase;
         life : tdfaset;
         defsum : tdfaset;
         avail : tdfaset;
+<<<<<<< HEAD
 =======
         defined_nodes : tdfaset;
         used_nodes : tdfaset;
@@ -61,6 +62,8 @@ unit optbase;
         defined_nodes : tdfaset;
         used_nodes : tdfaset;
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
       end;
 
       poptinfo = ^toptinfo;

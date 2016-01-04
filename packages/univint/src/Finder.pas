@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       CarbonCore/Finder.h
  
      Contains:   Finder flags and container types.
@@ -30,11 +31,15 @@
 =======
      File:       CarbonCore/Finder.h
 >>>>>>> origin/fixes_2.4
+=======
+     File:       CarbonCore/Finder.h
+>>>>>>> origin/cpstrnew
  
      Contains:   Finder flags and container types.
  
      Version:    CarbonCore-859.2~1
  
+<<<<<<< HEAD
 <<<<<<< HEAD
      Copyright:  © 1990-2002 by Apple Computer, Inc., all rights reserved
 <<<<<<< HEAD
@@ -44,6 +49,9 @@
 =======
      Copyright:  © 1990-2008 by Apple Computer, Inc., all rights reserved
 >>>>>>> origin/fixes_2.4
+=======
+     Copyright:  © 1990-2008 by Apple Computer, Inc., all rights reserved
+>>>>>>> origin/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -51,6 +59,7 @@
                      http://www.freepascal.org/bugs.html
  
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -80,6 +89,9 @@
 =======
 {    Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 >>>>>>> origin/fixes_2.4
+=======
+{    Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> origin/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -88,12 +100,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -105,6 +121,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -119,6 +136,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -134,6 +155,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -144,6 +166,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -151,13 +176,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -165,6 +194,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -173,8 +204,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -185,6 +219,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -205,6 +240,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -213,12 +250,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -226,6 +266,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -276,12 +317,25 @@ interface
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
 >>>>>>> graemeg/cpstrnew
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+>>>>>>> origin/cpstrnew
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$elifc defined __ppc64__ and __ppc64__}
@@ -315,12 +369,15 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -332,6 +389,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
@@ -347,6 +406,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -354,6 +414,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
@@ -366,6 +428,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -387,12 +450,18 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
@@ -413,10 +482,13 @@ interface
 	{$setc TARGET_CPU_ARM64 := TRUE}
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
@@ -556,6 +628,17 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -584,6 +667,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -592,6 +676,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -605,6 +691,7 @@ uses MacTypes;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 <<<<<<< HEAD
 =======
@@ -622,7 +709,12 @@ uses MacTypes;
 >>>>>>> origin/fixes_2_2
 =======
 {$endc} {not MACOSALLINCLUDE}
+=======
+{$endc} {not MACOSALLINCLUDE}
 
+>>>>>>> origin/cpstrnew
+
+{$ifc TARGET_OS_MAC}
 
 {$ifc TARGET_OS_MAC}
 >>>>>>> origin/fixes_2.4
@@ -633,8 +725,11 @@ uses MacTypes;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 const
 	kClippingCreator = FourCharCode('drag');
 	kClippingPictureType = FourCharCode('clpp');
@@ -647,6 +742,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/cpstrnew
 
@@ -703,6 +799,11 @@ const
 <<<<<<< HEAD
 	kCustomIconResource = -16455; { Custom icon family resource ID }
 =======
+=======
+
+{ Creator and type of Internet Location files }
+const
+>>>>>>> origin/cpstrnew
 	kInternetLocationCreator = FourCharCode('drag');
 	kInternetLocationHTTP = FourCharCode('ilht');
 	kInternetLocationFTP = FourCharCode('ilft');
@@ -713,6 +814,7 @@ const
 	kInternetLocationAppleTalk = FourCharCode('ilat');
 	kInternetLocationNSL = FourCharCode('ilns');
 	kInternetLocationGeneric = FourCharCode('ilge');
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 
 { In order to specify any of the information described in the }
@@ -760,6 +862,21 @@ const
 	kCustomBadgeResourceVersion = 0;
 
 <<<<<<< HEAD
+const
+	kCustomIconResource = -16455; { Custom icon family resource ID }
+=======
+>>>>>>> origin/cpstrnew
+
+{ In order to specify any of the information described in the }
+{ CustomBadgeResource data structure you must clear the kExtendedFlagsAreInvalid }
+{ and set kExtendedFlagHasCustomBadge of the FXInfo.fdXFlags or DXInfo.frXFlags field, }
+{ and add a resource of type kCustomBadgeResourceType and ID kCustomBadgeResourceID to }
+{ the file or to the "Icon/n" file for a folder }
+const
+	kCustomBadgeResourceType = FourCharCode('badg');
+	kCustomBadgeResourceID = kCustomIconResource;
+	kCustomBadgeResourceVersion = 0;
+
 const
 	kCustomIconResource = -16455; { Custom icon family resource ID }
 
@@ -774,6 +891,7 @@ const
 	kCustomBadgeResourceVersion = 0;
 
 type
+<<<<<<< HEAD
 	CustomBadgeResource = record
 		version: SInt16;                { This is version kCustomBadgeResourceVersion}
 		customBadgeResourceID: SInt16;  { If not 0, the ID of a resource to use on top}
@@ -803,6 +921,8 @@ type
 const
 =======
 type
+=======
+>>>>>>> origin/cpstrnew
 	CustomBadgeResource = record
 		version: SInt16;                { This is version kCustomBadgeResourceVersion}
 		customBadgeResourceID: SInt16;  { If not 0, the ID of a resource to use on top}
@@ -829,6 +949,7 @@ type
     The only target folder currently supported is the system folder, 
     kSystemFolderType = 'macs'.
 }
+<<<<<<< HEAD
 const
 >>>>>>> origin/cpstrnew
 	kRoutingResourceType = FourCharCode('rout');
@@ -906,6 +1027,11 @@ const
 	kRoutingResourceType = FourCharCode('rout');
 	kRoutingResourceID = 0;
 >>>>>>> origin/fixes_2.4
+=======
+const
+	kRoutingResourceType = FourCharCode('rout');
+	kRoutingResourceID = 0;
+>>>>>>> origin/cpstrnew
 
 type
 	RoutingResourceEntryPtr = ^RoutingResourceEntry;
@@ -913,13 +1039,17 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 		creator: OSType;                { Use '****' or 0 to match any creator }
 		fileType: OSType;               { Use '****' or 0 to match any file type }
 		targetFolder: OSType;           { Folder ID of the folder this file was dropped onto }
 		destinationFolder: OSType;      { Folder that the source will be routed to }
 		reservedField: OSType;          { Set to 0 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 	end;
 type
@@ -1071,10 +1201,13 @@ const
 		reservedField:			OSType;									{  Set to 0  }
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	end;
 type
 	RoutingResourcePtr = RoutingResourceEntryPtr;
 	RoutingResourceHandle = ^RoutingResourcePtr;
+<<<<<<< HEAD
 
 { Types for special container aliases }
 const
@@ -1092,6 +1225,25 @@ const
 	kPackageAliasType = FourCharCode('fpka'); { type for plain package alias }
 	kAppPackageAliasType = FourCharCode('fapa'); { type for application package alias }
 
+=======
+
+{ Types for special container aliases }
+const
+	kContainerFolderAliasType = FourCharCode('fdrp'); { type for folder aliases }
+	kContainerTrashAliasType = FourCharCode('trsh'); { type for trash folder aliases }
+	kContainerHardDiskAliasType = FourCharCode('hdsk'); { type for hard disk aliases }
+	kContainerFloppyAliasType = FourCharCode('flpy'); { type for floppy aliases }
+	kContainerServerAliasType = FourCharCode('srvr'); { type for server aliases }
+	kApplicationAliasType = FourCharCode('adrp'); { type for application aliases }
+	kContainerAliasType = FourCharCode('drop'); { type for all other containers }
+	kDesktopPrinterAliasType = FourCharCode('dtpa'); { type for Desktop Printer alias }
+	kContainerCDROMAliasType = FourCharCode('cddr'); { type for CD-ROM alias }
+	kApplicationCPAliasType = FourCharCode('acdp'); { type for application control panel alias }
+	kApplicationDAAliasType = FourCharCode('addp'); { type for application DA alias }
+	kPackageAliasType = FourCharCode('fpka'); { type for plain package alias }
+	kAppPackageAliasType = FourCharCode('fapa'); { type for application package alias }
+
+>>>>>>> origin/cpstrnew
 { Types for Special folder aliases }
 const
 	kSystemFolderAliasType = FourCharCode('fasy');
@@ -1163,6 +1315,7 @@ const
 	kExtendedFlagHasCustomBadge = $0100; { Set if the file or folder has a badge resource }
 	kExtendedFlagObjectIsBusy = $0080; { Set if the object is marked as busy/incomplete }
 	kExtendedFlagHasRoutingInfo = $0004; { Set if the file contains routing info resource }
+<<<<<<< HEAD
 
 
 { Use a filetype in this range to indicate that a file is temporarily busy }
@@ -1190,6 +1343,29 @@ const
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+
+
+{ Use a filetype in this range to indicate that a file is temporarily busy }
+{ (while it is being downloaded or installed, for example).  This prevents }
+{ Finder 8.5 and later from trying to change the item's attributes before it }
+{ is fully created. -- If you provide a series of 'BNDL' icons for your creator }
+{ and some of these filetypes, you can achieve limited icon animation while }
+{ the file creation progresses. }
+const
+	kFirstMagicBusyFiletype = FourCharCode('bzy ');
+	kLastMagicBusyFiletype = FourCharCode('bzy?');
+
+{ Use this date as a file's or folder's creation date to indicate that it is }
+{ temporarily busy (while it is being downloaded or installed, for example). }
+{ This prevents Finder from trying to change the item's attributes before it }
+{ is fully created (Finder 8.5 and 8.6 check file creation dates; later Finders }
+{ may check folder creation dates as well). }
+const
+	kMagicBusyCreationDate = $4F3AFDB0;
+
+
+>>>>>>> origin/cpstrnew
 {------------------------------------------------------------------------}
 {
    The following data structures are binary compatible with FInfo, DInfo,
@@ -1197,7 +1373,10 @@ const
    Use these data structures preferably to FInfo, etc...
 }
 {------------------------------------------------------------------------}
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 type
 	FileInfoPtr = ^FileInfo;
@@ -1205,14 +1384,18 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 		fileType: OSType;               { The type of the file }
 		fileCreator: OSType;            { The file's creator }
 		finderFlags: UInt16;            { ex: kHasBundle, kIsInvisible... }
 		location: Point;               { File's location in the folder }
                                               { If set to (0, 0), the Finder will place the item automatically }
 		reservedField: UInt16;          { (set to 0) }
+<<<<<<< HEAD
 <<<<<<< HEAD
 	end;
 type
@@ -1342,6 +1525,8 @@ end.
 		reservedField:			UInt16;									{  (set to 0)  }
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	end;
 type
 	FolderInfoPtr = ^FolderInfo;
@@ -1447,9 +1632,13 @@ type
 end.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

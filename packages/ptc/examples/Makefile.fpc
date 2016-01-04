@@ -10,6 +10,7 @@ name=ptc-examples
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 version=3.1.1
 
 [target]
@@ -60,16 +61,23 @@ programs=area buffer clear clip con_info console fire  \
 =======
 >>>>>>> origin/fixes_2_2
 version=2.2.5
+=======
+version=2.5.1
+>>>>>>> origin/cpstrnew
 
 [target]
 programs=area buffer clear clip con_info console fire  \
-         flower hicolor image keyboard keybrd2 land \
+         flower hicolor image keyboard keyboard2 land \
          lights modes mojo palette pixel random save \
+<<<<<<< HEAD
          stretch texwarp timer tunnel3d tunnel  
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+         stretch texwarp timer tunnel3d tunnel
+>>>>>>> origin/cpstrnew
 
 [compiler]
 unitdir=../$(UNITTARGETDIRPREFIX)

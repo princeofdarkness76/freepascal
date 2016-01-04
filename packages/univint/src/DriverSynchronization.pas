@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       CarbonCore/DriverSynchronization.h
  
      Contains:   Driver Synchronization Interfaces.
@@ -31,11 +32,15 @@
 =======
      File:       CarbonCore/DriverSynchronization.h
 >>>>>>> origin/fixes_2.4
+=======
+     File:       CarbonCore/DriverSynchronization.h
+>>>>>>> origin/cpstrnew
  
      Contains:   Driver Synchronization Interfaces.
  
      Version:    CarbonCore-859.2~1
  
+<<<<<<< HEAD
 <<<<<<< HEAD
      Copyright:  © 1985-2002 by Apple Computer, Inc., all rights reserved
 <<<<<<< HEAD
@@ -45,6 +50,9 @@
 =======
      Copyright:  © 1985-2008 by Apple Computer, Inc., all rights reserved
 >>>>>>> origin/fixes_2.4
+=======
+     Copyright:  © 1985-2008 by Apple Computer, Inc., all rights reserved
+>>>>>>> origin/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -52,6 +60,7 @@
                      http://www.freepascal.org/bugs.html
  
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -81,6 +90,9 @@
 =======
 {   Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 >>>>>>> origin/fixes_2.4
+=======
+{   Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> origin/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -89,12 +101,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -106,6 +122,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -120,6 +137,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -135,6 +156,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -145,6 +167,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -152,13 +177,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -166,6 +195,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -174,8 +205,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -186,6 +220,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -206,6 +241,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -214,12 +251,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -227,6 +267,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -267,12 +308,25 @@ interface
 	{$setc TARGET_CPU_PPC64 := TRUE}
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+>>>>>>> origin/cpstrnew
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
@@ -308,6 +362,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
@@ -320,6 +376,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -329,16 +386,22 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -349,12 +412,15 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -568,6 +634,30 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -596,6 +686,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -604,6 +695,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -613,6 +706,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -656,6 +750,16 @@ procedure SynchronizeIO; external name '_SynchronizeIO';
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+uses MacTypes;
+{$endc} {not MACOSALLINCLUDE}
+
+
+{$ifc TARGET_OS_MAC}
+
+{$ALIGN POWER}
+
+>>>>>>> origin/cpstrnew
 
 {
  *  CompareAndSwap()
@@ -663,8 +767,11 @@ procedure SynchronizeIO; external name '_SynchronizeIO';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  Summary:
  *    Compare and swap operation, performed atomically with respect to
  *    all devices that participate in the coherency architecture of the
@@ -695,6 +802,7 @@ procedure SynchronizeIO; external name '_SynchronizeIO';
  *  Result:
  *    true if newValue was written to the address.
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
@@ -741,6 +849,16 @@ function CompareAndSwap( oldValue: UInt32; newValue: UInt32; var address: UInt32
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ }
+function CompareAndSwap( oldValue: UInt32; newValue: UInt32; var address: UInt32 ): Boolean; external name '_CompareAndSwap';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  TestAndClear()
@@ -748,8 +866,11 @@ function CompareAndSwap( oldValue: UInt32; newValue: UInt32; var address: UInt32
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  Summary:
  *    Bit test and clear operation, performed atomically with respect
  *    to all devices that participate in the coherency architecture of
@@ -785,6 +906,7 @@ function CompareAndSwap( oldValue: UInt32; newValue: UInt32; var address: UInt32
  *  Result:
  *    true if the bit was already clear, false otherwise.
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
@@ -831,6 +953,16 @@ function TestAndClear( bit: UInt32; address: UnivPtr ): Boolean; external name '
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ }
+function TestAndClear( bit: UInt32; address: UnivPtr ): Boolean; external name '_TestAndClear';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  TestAndSet()
@@ -838,8 +970,11 @@ function TestAndClear( bit: UInt32; address: UnivPtr ): Boolean; external name '
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  Summary:
  *    Bit test and set operation, performed atomically with respect to
  *    all devices that participate in the coherency architecture of the
@@ -865,6 +1000,7 @@ function TestAndClear( bit: UInt32; address: UnivPtr ): Boolean; external name '
  *  Result:
  *    true if the bit was already set, false otherwise.
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
@@ -911,6 +1047,16 @@ function TestAndSet( bit: UInt32; address: UnivPtr ): Boolean; external name '_T
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ }
+function TestAndSet( bit: UInt32; address: UnivPtr ): Boolean; external name '_TestAndSet';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  IncrementAtomic8()
@@ -918,8 +1064,11 @@ function TestAndSet( bit: UInt32; address: UnivPtr ): Boolean; external name '_T
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  Summary:
  *    8-bit increment operation, performed atomically with respect to
  *    all devices that participate in the coherency architecture of the
@@ -941,6 +1090,7 @@ function TestAndSet( bit: UInt32; address: UnivPtr ): Boolean; external name '_T
  *  Result:
  *    The value before the increment.
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
@@ -987,6 +1137,16 @@ function IncrementAtomic8( var address: SInt8 ): SInt8; external name '_Incremen
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ }
+function IncrementAtomic8( var address: SInt8 ): SInt8; external name '_IncrementAtomic8';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  DecrementAtomic8()
@@ -994,8 +1154,11 @@ function IncrementAtomic8( var address: SInt8 ): SInt8; external name '_Incremen
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  Summary:
  *    8-bit decrement operation, performed atomically with respect to
  *    all devices that participate in the coherency architecture of the
@@ -1017,6 +1180,7 @@ function IncrementAtomic8( var address: SInt8 ): SInt8; external name '_Incremen
  *  Result:
  *    The value before the decrement.
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
@@ -1063,6 +1227,16 @@ function DecrementAtomic8( var address: SInt8 ): SInt8; external name '_Decremen
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ }
+function DecrementAtomic8( var address: SInt8 ): SInt8; external name '_DecrementAtomic8';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  AddAtomic8()
@@ -1070,8 +1244,11 @@ function DecrementAtomic8( var address: SInt8 ): SInt8; external name '_Decremen
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  Summary:
  *    8-bit add operation, performed atomically with respect to all
  *    devices that participate in the coherency architecture of the
@@ -1096,6 +1273,7 @@ function DecrementAtomic8( var address: SInt8 ): SInt8; external name '_Decremen
  *  Result:
  *    The value before the addition
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
@@ -1142,6 +1320,16 @@ function AddAtomic8( amount: SInt32; var address: SInt8 ): SInt8; external name 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ }
+function AddAtomic8( amount: SInt32; var address: SInt8 ): SInt8; external name '_AddAtomic8';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  BitAndAtomic8()
@@ -1149,8 +1337,11 @@ function AddAtomic8( amount: SInt32; var address: SInt8 ): SInt8; external name 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  Summary:
  *    8-bit logical and operation, performed atomically with respect to
  *    all devices that participate in the coherency architecture of the
@@ -1176,6 +1367,7 @@ function AddAtomic8( amount: SInt32; var address: SInt8 ): SInt8; external name 
  *  Result:
  *    The value before the bitwise operation.
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
@@ -1222,6 +1414,16 @@ function BitAndAtomic8( mask: UInt32; var address: UInt8 ): UInt8; external name
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ }
+function BitAndAtomic8( mask: UInt32; var address: UInt8 ): UInt8; external name '_BitAndAtomic8';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  BitOrAtomic8()
@@ -1229,8 +1431,11 @@ function BitAndAtomic8( mask: UInt32; var address: UInt8 ): UInt8; external name
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  Summary:
  *    8-bit logical or operation, performed atomically with respect to
  *    all devices that participate in the coherency architecture of the
@@ -1256,6 +1461,7 @@ function BitAndAtomic8( mask: UInt32; var address: UInt8 ): UInt8; external name
  *  Result:
  *    The value before the bitwise operation.
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
@@ -1302,6 +1508,16 @@ function BitOrAtomic8( mask: UInt32; var address: UInt8 ): UInt8; external name 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ }
+function BitOrAtomic8( mask: UInt32; var address: UInt8 ): UInt8; external name '_BitOrAtomic8';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  BitXorAtomic8()
@@ -1309,8 +1525,11 @@ function BitOrAtomic8( mask: UInt32; var address: UInt8 ): UInt8; external name 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  Summary:
  *    8-bit logical xor operation, performed atomically with respect to
  *    all devices that participate in the coherency architecture of the
@@ -1336,6 +1555,7 @@ function BitOrAtomic8( mask: UInt32; var address: UInt8 ): UInt8; external name 
  *  Result:
  *    The value before the bitwise operation.
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
@@ -1382,6 +1602,16 @@ function BitXorAtomic8( mask: UInt32; var address: UInt8 ): UInt8; external name
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ }
+function BitXorAtomic8( mask: UInt32; var address: UInt8 ): UInt8; external name '_BitXorAtomic8';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  IncrementAtomic16()
@@ -1389,8 +1619,11 @@ function BitXorAtomic8( mask: UInt32; var address: UInt8 ): UInt8; external name
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  Summary:
  *    16-bit increment operation, performed atomically with respect to
  *    all devices that participate in the coherency architecture of the
@@ -1412,6 +1645,7 @@ function BitXorAtomic8( mask: UInt32; var address: UInt8 ): UInt8; external name
  *  Result:
  *    The value before the increment.
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
@@ -1458,6 +1692,16 @@ function IncrementAtomic16( var address: SInt16 ): SInt16; external name '_Incre
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ }
+function IncrementAtomic16( var address: SInt16 ): SInt16; external name '_IncrementAtomic16';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  DecrementAtomic16()
@@ -1465,8 +1709,11 @@ function IncrementAtomic16( var address: SInt16 ): SInt16; external name '_Incre
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  Summary:
  *    16-bit decrement operation, performed atomically with respect to
  *    all devices that participate in the coherency architecture of the
@@ -1488,6 +1735,7 @@ function IncrementAtomic16( var address: SInt16 ): SInt16; external name '_Incre
  *  Result:
  *    The value before the decrement.
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
@@ -1534,6 +1782,16 @@ function DecrementAtomic16( var address: SInt16 ): SInt16; external name '_Decre
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ }
+function DecrementAtomic16( var address: SInt16 ): SInt16; external name '_DecrementAtomic16';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  AddAtomic16()
@@ -1541,8 +1799,11 @@ function DecrementAtomic16( var address: SInt16 ): SInt16; external name '_Decre
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  Summary:
  *    16-bit add operation, performed atomically with respect to all
  *    devices that participate in the coherency architecture of the
@@ -1567,6 +1828,7 @@ function DecrementAtomic16( var address: SInt16 ): SInt16; external name '_Decre
  *  Result:
  *    The value before the addition
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
@@ -1613,6 +1875,16 @@ function AddAtomic16( amount: SInt32; var address: SInt16 ): SInt16; external na
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ }
+function AddAtomic16( amount: SInt32; var address: SInt16 ): SInt16; external name '_AddAtomic16';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  BitAndAtomic16()
@@ -1620,8 +1892,11 @@ function AddAtomic16( amount: SInt32; var address: SInt16 ): SInt16; external na
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  Summary:
  *    16-bit logical and operation, performed atomically with respect
  *    to all devices that participate in the coherency architecture of
@@ -1647,6 +1922,7 @@ function AddAtomic16( amount: SInt32; var address: SInt16 ): SInt16; external na
  *  Result:
  *    The value before the bitwise operation.
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
@@ -1693,6 +1969,16 @@ function BitAndAtomic16( mask: UInt32; var address: UInt16 ): UInt16; external n
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ }
+function BitAndAtomic16( mask: UInt32; var address: UInt16 ): UInt16; external name '_BitAndAtomic16';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  BitOrAtomic16()
@@ -1700,8 +1986,11 @@ function BitAndAtomic16( mask: UInt32; var address: UInt16 ): UInt16; external n
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  Summary:
  *    16-bit logical or operation, performed atomically with respect to
  *    all devices that participate in the coherency architecture of the
@@ -1727,6 +2016,7 @@ function BitAndAtomic16( mask: UInt32; var address: UInt16 ): UInt16; external n
  *  Result:
  *    The value before the bitwise operation.
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
@@ -1773,6 +2063,16 @@ function BitOrAtomic16( mask: UInt32; var address: UInt16 ): UInt16; external na
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ }
+function BitOrAtomic16( mask: UInt32; var address: UInt16 ): UInt16; external name '_BitOrAtomic16';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  BitXorAtomic16()
@@ -1780,8 +2080,11 @@ function BitOrAtomic16( mask: UInt32; var address: UInt16 ): UInt16; external na
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  Summary:
  *    16-bit logical xor operation, performed atomically with respect
  *    to all devices that participate in the coherency architecture of
@@ -1807,6 +2110,7 @@ function BitOrAtomic16( mask: UInt32; var address: UInt16 ): UInt16; external na
  *  Result:
  *    The value before the bitwise operation.
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
@@ -1853,6 +2157,16 @@ function BitXorAtomic16( mask: UInt32; var address: UInt16 ): UInt16; external n
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ }
+function BitXorAtomic16( mask: UInt32; var address: UInt16 ): UInt16; external name '_BitXorAtomic16';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  IncrementAtomic()
@@ -1860,8 +2174,11 @@ function BitXorAtomic16( mask: UInt32; var address: UInt16 ): UInt16; external n
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  Summary:
  *    32-bit increment operation, performed atomically with respect to
  *    all devices that participate in the coherency architecture of the
@@ -1883,6 +2200,7 @@ function BitXorAtomic16( mask: UInt32; var address: UInt16 ): UInt16; external n
  *  Result:
  *    The value before the increment.
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
@@ -1929,6 +2247,16 @@ function IncrementAtomic( var address: SInt32 ): SInt32; external name '_Increme
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ }
+function IncrementAtomic( var address: SInt32 ): SInt32; external name '_IncrementAtomic';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  DecrementAtomic()
@@ -1936,8 +2264,11 @@ function IncrementAtomic( var address: SInt32 ): SInt32; external name '_Increme
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  Summary:
  *    32-bit decrement operation, performed atomically with respect to
  *    all devices that participate in the coherency architecture of the
@@ -1959,6 +2290,7 @@ function IncrementAtomic( var address: SInt32 ): SInt32; external name '_Increme
  *  Result:
  *    The value before the decrement.
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
@@ -2005,6 +2337,16 @@ function DecrementAtomic( var address: SInt32 ): SInt32; external name '_Decreme
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ }
+function DecrementAtomic( var address: SInt32 ): SInt32; external name '_DecrementAtomic';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  AddAtomic()
@@ -2012,8 +2354,11 @@ function DecrementAtomic( var address: SInt32 ): SInt32; external name '_Decreme
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  Summary:
  *    32-bit add operation, performed atomically with respect to all
  *    devices that participate in the coherency architecture of the
@@ -2038,6 +2383,7 @@ function DecrementAtomic( var address: SInt32 ): SInt32; external name '_Decreme
  *  Result:
  *    The value before the addition
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
@@ -2084,6 +2430,16 @@ function AddAtomic( amount: SInt32; var address: SInt32 ): SInt32; external name
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ }
+function AddAtomic( amount: SInt32; var address: SInt32 ): SInt32; external name '_AddAtomic';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  BitAndAtomic()
@@ -2091,8 +2447,11 @@ function AddAtomic( amount: SInt32; var address: SInt32 ): SInt32; external name
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  Summary:
  *    32-bit logical and operation, performed atomically with respect
  *    to all devices that participate in the coherency architecture of
@@ -2118,6 +2477,7 @@ function AddAtomic( amount: SInt32; var address: SInt32 ): SInt32; external name
  *  Result:
  *    The value before the bitwise operation
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
@@ -2164,6 +2524,16 @@ function BitAndAtomic( mask: UInt32; var address: UInt32 ): UInt32; external nam
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ }
+function BitAndAtomic( mask: UInt32; var address: UInt32 ): UInt32; external name '_BitAndAtomic';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  BitOrAtomic()
@@ -2171,8 +2541,11 @@ function BitAndAtomic( mask: UInt32; var address: UInt32 ): UInt32; external nam
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  Summary:
  *    32-bit logical or operation, performed atomically with respect to
  *    all devices that participate in the coherency architecture of the
@@ -2198,6 +2571,7 @@ function BitAndAtomic( mask: UInt32; var address: UInt32 ): UInt32; external nam
  *  Result:
  *    The value before the bitwise operation.
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
@@ -2244,6 +2618,16 @@ function BitOrAtomic( mask: UInt32; var address: UInt32 ): UInt32; external name
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ }
+function BitOrAtomic( mask: UInt32; var address: UInt32 ): UInt32; external name '_BitOrAtomic';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  BitXorAtomic()
@@ -2251,8 +2635,11 @@ function BitOrAtomic( mask: UInt32; var address: UInt32 ): UInt32; external name
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  Summary:
  *    32-bit logical xor operation, performed atomically with respect
  *    to all devices that participate in the coherency architecture of
@@ -2279,12 +2666,16 @@ function BitOrAtomic( mask: UInt32; var address: UInt32 ): UInt32; external name
  *    The value before the bitwise operation.
  *  
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
  }
 function BitXorAtomic( mask: UInt32; var address: UInt32 ): UInt32; external name '_BitXorAtomic';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2319,6 +2710,8 @@ end.
  *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
  }
 function BitXorAtomic( mask: UInt32; var address: UInt32 ): UInt32; external name '_BitXorAtomic';
+=======
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 {$endc} {TARGET_OS_MAC}
@@ -2327,9 +2720,13 @@ function BitXorAtomic( mask: UInt32; var address: UInt32 ): UInt32; external nam
 end.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

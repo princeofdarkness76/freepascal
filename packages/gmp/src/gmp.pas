@@ -5,6 +5,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (c) 2009 by Jan Mercl
 =======
     Copyright (c) 2009 by the Free Pascal development team
@@ -21,6 +22,9 @@
 =======
     Copyright (c) 2009 by the Free Pascal development team
 >>>>>>> origin/fixes_2.4
+=======
+    Copyright (c) 2009 by the Free Pascal development team
+>>>>>>> origin/cpstrnew
 
     An header for the GMP library
 
@@ -150,6 +154,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     ['{390336B5-6B78-47E0-BB0B-48F3AF9D5CCC}']
 =======
 >>>>>>> graemeg/cpstrnew
@@ -161,10 +166,13 @@ type
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
     function refs: longint;
   end;
 
   MPInteger = interface(IMPBase)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -181,10 +189,13 @@ type
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
     function ptr: mpz_ptr;
   end;
 
   MPFloat = interface(IMPBase)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -201,10 +212,13 @@ type
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
     function ptr: mpf_ptr;
   end;
 
   MPRational = interface(IMPBase)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -221,10 +235,13 @@ type
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
     function ptr: mpq_ptr;
   end;
 
   MPRandState = interface(IMPBase)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -241,6 +258,8 @@ type
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
     function ptr: randstate_ptr;
   end;
 

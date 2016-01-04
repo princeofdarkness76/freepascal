@@ -27,6 +27,7 @@ packages=fcl-image
 #packages_win32=
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
@@ -34,12 +35,17 @@ packages=fcl-image
 packages_beos=x11
 packages_haiku=x11
 >>>>>>> origin/fixes_2.4
+=======
+packages_beos=x11
+packages_haiku=x11
+>>>>>>> origin/cpstrnew
 packages_linux=x11
 packages_freebsd=x11
 packages_netbsd=x11
 packages_openbsd=x11
 packages_solaris=x11
 packages_darwin=x11
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 packages_iphonesim=x11
@@ -58,10 +64,18 @@ version=2.2.5
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+packages_iphonesim=x11
+
+[package]
+name=cairo
+version=2.5.1
+>>>>>>> origin/cpstrnew
 
 [target]
 units=cairo cairoft
 units_win32=cairowin32
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -75,12 +89,17 @@ units_haiku=cairoxlib
 units_beos=cairoxlib
 units_haiku=cairoxlib
 >>>>>>> origin/fixes_2.4
+=======
+units_beos=cairoxlib
+units_haiku=cairoxlib
+>>>>>>> origin/cpstrnew
 units_linux=cairoxlib
 units_freebsd=cairoxlib
 units_netbsd=cairoxlib
 units_openbsd=cairoxlib
 units_solaris=cairoxlib
 units_darwin=cairoxlib
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 units_iphonesim=cairoxlib
@@ -98,6 +117,9 @@ units_iphonesim=cairoxlib
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+units_iphonesim=cairoxlib
+>>>>>>> origin/cpstrnew
 
 [install]
 fpcpackage=y

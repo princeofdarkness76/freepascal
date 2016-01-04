@@ -40,6 +40,7 @@ Const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    IID_IShellExtInit   : TGUID ='{000214E8-0000-0000-C000-000000000046}';
 =======
    IID_IShellExtInit    ='{000214E8-0000-0000-C000-000000000046}';
@@ -57,6 +58,9 @@ Const
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+   IID_IShellExtInit    ='{000214E8-0000-0000-C000-000000000046}';
+>>>>>>> origin/cpstrnew
    IID_IShellFolder    : TGUID ='{000214E6-0000-0000-C000-000000000046}';
    IID_IEnumList       : TGUID ='{000214F2-0000-0000-C000-000000000046}';
    IID_IAutoComplete   : TGUID ='{00bb2762-6a77-11d0-a535-00c04fd7d062}';
@@ -251,6 +255,7 @@ Const
    CLSID_InternetShortcut              : TGUID = '{fbf23b40-e3f0-101b-8488-00aa003e56f8}';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    CLSID_ShellItem                     : TGUID = '{9ac9fbe1-e0a2-4ad6-b4ee-e212013ea917}';
    CLSID_FileOpenDialog                : TGUID = '{DC1C5A9C-E88A-4dde-A5A1-60F82A20AEF7}';
    CLSID_FileSaveDialog                : TGUID = '{C0B4E2F3-BA21-4773-8DBA-335EC946EB8B}';
@@ -258,6 +263,11 @@ Const
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+   CLSID_ShellItem                     : TGUID = '{9ac9fbe1-e0a2-4ad6-b4ee-e212013ea917}';
+   CLSID_FileOpenDialog                : TGUID = '{DC1C5A9C-E88A-4dde-A5A1-60F82A20AEF7}';
+   CLSID_FileSaveDialog                : TGUID = '{C0B4E2F3-BA21-4773-8DBA-335EC946EB8B}';
+>>>>>>> origin/cpstrnew
 
 Const
   SV2GV_CURRENTVIEW  = DWORD(-1);
@@ -616,6 +626,9 @@ Const
   QIF_DONTEXPANDFOLDER= $00000002;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   SHARD_PIDL            = DWord($00000001);
   SHARD_PATHA           = DWord($00000002);
   SHARD_PATHW           = DWord($00000003);
@@ -624,6 +637,7 @@ Const
   SHARD_LINK            = DWord($00000006);
   SHARD_APPIDINFOLINK   = DWord($00000007);
   SHARD_SHELLITEM       = DWord($00000008);
+<<<<<<< HEAD
 =======
   SHARD_PIDL          = DWord($00000001);
   SHARD_PATHA         = DWord($00000002);
@@ -634,6 +648,8 @@ Const
   SHARD_PATHA         = DWord($00000002);
   SHARD_PATHW         = DWord($00000003);
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
   PRF_VERIFYEXISTS            = $0001;
   PRF_TRYPROGRAMEXTENSIONS    = ($0002 or PRF_VERIFYEXISTS);
   PRF_FIRSTDIRDEF             = $0004;
@@ -956,6 +972,9 @@ Const
   SMINV_ID                = $00000008;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   FDEOR_DEFAULT           = 0;
   FDEOR_ACCEPT	          = 1;
   FDEOR_REFUSE            = 2;
@@ -985,6 +1004,7 @@ Const
   FOS_FORCESHOWHIDDEN     = $10000000;
   FOS_DEFAULTNOMINIMODE	  = $20000000;
   FOS_FORCEPREVIEWPANEON  = $40000000;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1077,14 +1097,31 @@ Type
 =======
 >>>>>>> origin/fixes_2_2
 
+=======
+   
+>>>>>>> origin/cpstrnew
 Type
-      SFGAOF = ULONG;
+      SFGAOF  = ULONG;
       TSFGAOF = SFGAOF;
       PSFGAOF = ^SFGAOF;
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+      SHCONTF    = longint;
+      TSHCONTF   = SHCONTF;
+      PSHCONTF   = ^SHCONTF;
+      SIGDN      = longint;
+      TSIGDN     = SIGDN;
+      PSIGDN     = ^SIGDN;
+      SICHINTF   = longint;
+      TSICHINTF  = SICHINTF;
+      PSICHINTF  = ^SICHINTF; 
+
+
+>>>>>>> origin/cpstrnew
       PROPERTYUI_NAME_FLAGS = DWord; // enum
       PROPERTYUI_FORMAT_FLAGS = DWord;
       PROPERTYUI_FLAGS = Dword;
@@ -2077,6 +2114,9 @@ Type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
    FDE_OVERWRITE_RESPONSE       = longint;
    TFDE_OVERWRITE_RESPONSE      = FDE_OVERWRITE_RESPONSE;
    PFDE_OVERWRITE_RESPONSE      = ^longint;
@@ -2099,12 +2139,15 @@ Type
    PCOMDLG_FILTERSPEC = ^_COMDLG_FILTERSPEC;
 
 	
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/fixes_2_2
 =======
 
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
    IPersistFolder = Interface(IPersist)
         ['{000214EA-0000-0000-C000-000000000046}']
         function Initialize (pild : LPCITEMIDLIST): HResult; StdCall;
@@ -2366,6 +2409,9 @@ Type
         end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 
     ITaskbarList = interface(IUnknown)
       ['{56FDF342-FD6D-11d0-958A-006097C9A090}']
@@ -2495,10 +2541,13 @@ type
       function GetCount(out pcElem: UINT): HResult; stdcall;
       function GetAt(iElem: UINT; const riid: REFIID; out ppv): HResult; stdcall;
     end;
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
  
     IShellLinkA  = Interface(IUnknown)
         ['{000214EE-0000-0000-C000-000000000046}']
@@ -2547,6 +2596,9 @@ type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
     PIShellItem= ^IShellItem;
     IShellItem = interface(IUnknown)
                ['{43826d1e-e718-42ee-bc55-a1e261c37bfe}']
@@ -2724,6 +2776,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          ['{000214E8-0000-0000-C000-000000000046}']
          function Initialize(pidlfolder: LPCITEMIDLIST; pdtobj : IDataObject;hkeyProgID : HKEY):HResult; stdcall;
          end;
@@ -2740,10 +2793,13 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           [IID_IShellExtInit]
          function Initialize(pidlfolder: LPCITEMIDLIST; pdtobj : IDataObject;hkeyProgID : HKEY):HResult; stdcall;
          end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2768,6 +2824,8 @@ function SHGetDesktopFolder(out ppshf:IShellFolder):HResult;StdCall; external 's
 function  SHOpenFolderAndSelectItems(pidlFolder:LPCITEMIDLIST;cidl:UINT;var  apidl: LPCITEMIDLIST; dwflags: DWORD):HResult;StdCall; external 'shell32' name 'SHOpenFolderAndSelectItems';
 >>>>>>> graemeg/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function SHGetMalloc(out ppmalloc: IMalloc):HResult;StdCall; external 'shell32' name 'SHGetMalloc';
 function SHGetDesktopFolder(out ppshf:IShellFolder):HResult;StdCall; external 'shell32' name 'SHGetDesktopFolder';
 
@@ -3149,10 +3207,15 @@ Const External_Library = 'shell32';
 implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+
+
+>>>>>>> origin/cpstrnew
 end.

@@ -115,6 +115,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     { we try to provide a useful equivalent for ATEXIT if it is
 =======
     { we try to provide a usefull equivalent for ATEXIT if it is
@@ -122,6 +123,9 @@
 =======
     { we try to provide a usefull equivalent for ATEXIT if it is
 >>>>>>> origin/fixes_2_2
+=======
+    { we try to provide a useful equivalent for ATEXIT if it is
+>>>>>>> origin/cpstrnew
        not defined, but use is actually abandoned. people should
        use g_atexit() instead.
       }

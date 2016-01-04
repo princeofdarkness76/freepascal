@@ -91,12 +91,18 @@ unit i_linux;
 {$ifdef segment_threadvars}
                             tf_section_threadvars,
 {$endif segment_threadvars}
+<<<<<<< HEAD
                             tf_needs_symbol_type,tf_files_case_sensitive,tf_use_function_relative_addresses,
                             tf_smartlink_library,tf_needs_dwarf_cfi];
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+                            tf_needs_symbol_type,tf_files_case_sensitive,
+                            tf_smartlink_library,tf_needs_dwarf_cfi,tf_has_winlike_resources,
+                            tf_safecall_exceptions, tf_safecall_clearstack];
+>>>>>>> origin/cpstrnew
             cpu          : cpu_i386;
             unit_env     : 'LINUXUNITS';
             extradefines : 'UNIX;HASUNIX';
@@ -167,6 +173,7 @@ unit i_linux;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                             tf_pic_uses_got,tf_smartlink_sections,
                             tf_has_winlike_resources];
 =======
@@ -174,6 +181,8 @@ unit i_linux;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                             tf_pic_uses_got{,tf_smartlink_sections},
@@ -254,6 +263,7 @@ unit i_linux;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                             tf_smartlink_sections,
                             tf_requires_proper_alignment, { Coldfire seems to need this at least (KB) }
                             tf_has_winlike_resources];
@@ -262,6 +272,8 @@ unit i_linux;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                             tf_smartlink_library,tf_has_winlike_resources];
@@ -423,12 +435,15 @@ unit i_linux;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                             tf_requires_proper_alignment,tf_smartlink_sections,tf_has_winlike_resources];
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                             tf_requires_proper_alignment,tf_smartlink_library,tf_has_winlike_resources];
@@ -521,6 +536,7 @@ unit i_linux;
 =======
             flags        : [tf_needs_symbol_size,tf_needs_symbol_type,tf_files_case_sensitive,
                             tf_smartlink_library,tf_has_winlike_resources];
+<<<<<<< HEAD
 =======
             flags        : [tf_needs_symbol_size,tf_needs_symbol_type,tf_files_case_sensitive,
                             tf_use_function_relative_addresses,tf_smartlink_library];
@@ -529,6 +545,8 @@ unit i_linux;
             flags        : [tf_needs_symbol_size,tf_needs_symbol_type,tf_files_case_sensitive,
                             tf_use_function_relative_addresses,tf_smartlink_library];
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
             cpu          : cpu_alpha;
 >>>>>>> graemeg/cpstrnew
             unit_env     : 'LINUXUNITS';
@@ -604,10 +622,13 @@ unit i_linux;
             flags        : [tf_needs_symbol_size,tf_needs_dwarf_cfi,tf_smartlink_library,
                             tf_library_needs_pic,tf_needs_symbol_type,tf_files_case_sensitive,
                             tf_has_winlike_resources];
+<<<<<<< HEAD
 =======
             flags        : [tf_needs_symbol_size,tf_needs_dwarf_cfi,tf_smartlink_library,
                             tf_library_needs_pic,tf_needs_symbol_type,tf_files_case_sensitive,tf_use_function_relative_addresses];
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
             cpu          : cpu_x86_64;
 >>>>>>> graemeg/cpstrnew
             unit_env     : 'LINUXUNITS';
@@ -660,6 +681,7 @@ unit i_linux;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 recordalignmax  : 8;
                 maxCrecordalign : 8
 =======
@@ -674,6 +696,10 @@ unit i_linux;
                 recordalignmax  : 16;
                 maxCrecordalign : 16
 >>>>>>> graemeg/cpstrnew
+=======
+                recordalignmax  : 16;
+                maxCrecordalign : 16
+>>>>>>> origin/cpstrnew
 =======
                 recordalignmax  : 16;
                 maxCrecordalign : 16
@@ -703,11 +729,14 @@ unit i_linux;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                             tf_has_winlike_resources];
@@ -782,6 +811,7 @@ unit i_linux;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                             tf_smartlink_sections,tf_pic_uses_got,
                             tf_has_winlike_resources];
 =======
@@ -789,6 +819,8 @@ unit i_linux;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                             tf_smartlink_sections,tf_smartlink_library,tf_has_winlike_resources];
@@ -873,6 +905,7 @@ unit i_linux;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                             tf_smartlink_sections,tf_pic_uses_got,
                             tf_has_winlike_resources];
 =======
@@ -880,6 +913,8 @@ unit i_linux;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                             tf_smartlink_sections,tf_smartlink_library,tf_has_winlike_resources];
@@ -1064,6 +1099,7 @@ unit i_linux;
             flags        : [tf_needs_symbol_size,tf_needs_symbol_type,tf_files_case_sensitive,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                             tf_requires_proper_alignment,
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1076,6 +1112,9 @@ unit i_linux;
 =======
 >>>>>>> graemeg/cpstrnew
 =======
+>>>>>>> origin/cpstrnew
+=======
+                            tf_requires_proper_alignment,
 >>>>>>> origin/cpstrnew
                             tf_smartlink_sections,tf_smartlink_library,tf_has_winlike_resources];
 >>>>>>> graemeg/cpstrnew
@@ -1153,6 +1192,7 @@ unit i_linux;
 {$endif FPC_ARMEL}
 >>>>>>> origin/fixes_2_2
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
        system_aarch64_linux_info  : tsysteminfo =
@@ -1489,6 +1529,8 @@ unit i_linux;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
        system_mips_linux_info : tsysteminfo =
           (
             system       : system_mips_LINUX;
@@ -1622,10 +1664,14 @@ unit i_linux;
 initialization
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef CPUI386}
 =======
 {$ifdef CPU86}
 >>>>>>> graemeg/cpstrnew
+=======
+{$ifdef CPU86}
+>>>>>>> origin/cpstrnew
 =======
 {$ifdef CPU86}
 >>>>>>> origin/cpstrnew
@@ -1637,10 +1683,14 @@ initialization
   {$endif}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif CPUI386}
 =======
 {$endif CPU86}
 >>>>>>> graemeg/cpstrnew
+=======
+{$endif CPU86}
+>>>>>>> origin/cpstrnew
 =======
 {$endif CPU86}
 >>>>>>> origin/cpstrnew
@@ -1656,7 +1706,10 @@ initialization
 {$endif CPUX86_64}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$ifdef CPUALPHA}
@@ -1703,6 +1756,7 @@ initialization
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef cpuaarch64}
   {$ifdef linux}
     set_source_info(system_aarch64_linux_info);
@@ -1725,11 +1779,14 @@ initialization
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifdef CPUMIPS}
   {$ifdef linux}
     set_source_info(system_mipsel_linux_info);
   {$endif linux}
 {$endif CPUMIPS}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1740,5 +1797,6 @@ initialization
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end.
-

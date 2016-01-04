@@ -67,6 +67,7 @@ asm
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         movl    %esp,%ebp               { Points to the arguments }
         movl    %ecx,%esi               
 =======
@@ -81,6 +82,10 @@ asm
         movl    %esp,_ebx               { Points to the arguments }
         movl    %ecx,_ecx               
 >>>>>>> graemeg/cpstrnew
+=======
+        movl    %esp,_ebx               { Points to the arguments }
+        movl    %ecx,_ecx               
+>>>>>>> origin/cpstrnew
 =======
         movl    %esp,_ebx               { Points to the arguments }
         movl    %ecx,_ecx               
@@ -107,6 +112,7 @@ asm
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         movl  %esi,%eax
         movl  %eax,(%ecx)
         movl  operatingsystem_parameter_argv@GOT(%ebx),%ecx
@@ -118,10 +124,13 @@ asm
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         movl  _ecx,%eax
         movl  %eax,(%ecx)
         movl  operatingsystem_parameter_argv@GOT(%ebx),%ecx
         movl  _ebx,%eax
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -132,10 +141,13 @@ asm
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         movl  %eax,(%ecx)
 	popl  %eax
 
         popl  %ecx
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -150,6 +162,9 @@ asm
 =======
         movl  _ebx,%ebx
 >>>>>>> graemeg/cpstrnew
+=======
+        movl  _ebx,%ebx
+>>>>>>> origin/cpstrnew
 =======
         movl  _ebx,%ebx
 >>>>>>> origin/cpstrnew
@@ -177,6 +192,7 @@ asm
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	movl  (%ecx),%edi
 =======
 	movl  (%ecx),%ecx
@@ -190,6 +206,10 @@ asm
 	movl  (%ecx),%ecx
 	movl  %ecx,_libc_init_proc
 >>>>>>> graemeg/cpstrnew
+=======
+	movl  (%ecx),%ecx
+	movl  %ecx,_libc_init_proc
+>>>>>>> origin/cpstrnew
 =======
 	movl  (%ecx),%ecx
 	movl  %ecx,_libc_init_proc
@@ -213,6 +233,7 @@ asm
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	call    *%edi
 =======
 	call    _libc_init_proc
@@ -223,6 +244,9 @@ asm
 =======
 	call    _libc_init_proc
 >>>>>>> graemeg/cpstrnew
+=======
+	call    _libc_init_proc
+>>>>>>> origin/cpstrnew
 =======
 	call    _libc_init_proc
 >>>>>>> origin/cpstrnew
@@ -258,12 +282,15 @@ asm
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   pushl   e
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -289,11 +316,14 @@ asm
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   call    libc_exit

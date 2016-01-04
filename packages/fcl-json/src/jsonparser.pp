@@ -34,6 +34,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function GetO(AIndex: TJSONOption): Boolean;
     function GetOptions: TJSONOptions;
     function ParseNumber: TJSONNumber;
@@ -62,8 +63,13 @@ Type
   Protected
     procedure DoError(const Msg: String);
 =======
+=======
+    FStrict: Boolean;
+>>>>>>> origin/cpstrnew
     function ParseNumber: TJSONNumber;
+    procedure SetStrict(const AValue: Boolean);
   Protected
+<<<<<<< HEAD
     procedure DoError(Msg: String);
 >>>>>>> graemeg/fixes_2_2
 =======
@@ -71,6 +77,9 @@ Type
   Protected
     procedure DoError(Msg: String);
 >>>>>>> origin/fixes_2_2
+=======
+    procedure DoError(const Msg: String);
+>>>>>>> origin/cpstrnew
     function DoParse(AtCurrent,AllowEOF: Boolean): TJSONData;
     function GetNextToken: TJSONToken;
     function CurrentTokenString: String;
@@ -120,6 +129,8 @@ Type
     Constructor Create(Source : TStream); overload;
     Constructor Create(Source : TJSONStringType); overload;
     destructor Destroy();override;
+    // Use strict JSON: " for strings, object members are strings, not identifiers
+    Property Strict : Boolean Read FStrict Write SetStrict;
   end;
   
   EJSONScanner = Class(Exception);
@@ -231,11 +242,15 @@ begin
 Function TJSONParser.CurrentTokenString : String;
 
 begin
+<<<<<<< HEAD
   If CurrentToken in [tkString,tkNumber] then
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  If CurrentToken in [tkString,tkIdentifier,tkNumber] then
+>>>>>>> origin/cpstrnew
     Result:=FScanner.CurTokenString
   else
     Result:=TokenInfos[CurrentToken];
@@ -294,6 +309,7 @@ begin
   except
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FreeAndNil(Result);
 =======
     if assigned(Result) then
@@ -303,6 +319,9 @@ begin
     if assigned(Result) then
       FreeAndNil(Result);
 >>>>>>> origin/fixes_2_2
+=======
+    FreeAndNil(Result);
+>>>>>>> origin/cpstrnew
     Raise;
   end;
 end;
@@ -444,6 +463,15 @@ function TJSONParser.ParseObject: TJSONObject;
     end;
 end;
 
+procedure TJSONParser.SetStrict(const AValue: Boolean);
+begin
+  if (FStrict=AValue) then
+     exit;
+  FStrict:=AValue;
+  If Assigned(FScanner) then
+    FScanner.Strict:=Fstrict;
+end;
+
 // Current token is {, on exit current token is }
 Function TJSONParser.ParseObject : TJSONObject;
 <<<<<<< HEAD
@@ -472,6 +500,7 @@ begin
       begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       If (T<>tkString) and (T<>tkIdentifier) then
 =======
       If T<>tkString then
@@ -479,6 +508,9 @@ begin
 =======
       If T<>tkString then
 >>>>>>> origin/fixes_2_2
+=======
+      If (T<>tkString) and (T<>tkIdentifier) then
+>>>>>>> origin/cpstrnew
         DoError(SErrExpectedElementName);
       N:=CurrentTokenString;
       T:=GetNextToken;
@@ -591,11 +623,15 @@ Procedure TJSONParser.DoError(const Msg : String);
   Until (Result<>tkWhiteSpace);
 end;
 
+<<<<<<< HEAD
 Procedure TJSONParser.DoError(Msg : String);
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+Procedure TJSONParser.DoError(const Msg : String);
+>>>>>>> origin/cpstrnew
 
 Var
   S : String;

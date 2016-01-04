@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
 =======
 #   Makefile.fpc for Javascript Parser
@@ -16,10 +17,14 @@
 =======
 #   Makefile.fpc for Javascript Parser
 >>>>>>> origin/cpstrnew
+=======
+#   Makefile.fpc for Javascript Parser
+>>>>>>> origin/cpstrnew
 #
 
 [package]
 name=fcl-js
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -35,10 +40,13 @@ packages=rtl fpmkunit
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 version=2.5.1
 
 [target]
 units=jsbase jstree jsscanner jsparser
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -49,6 +57,8 @@ units=jsbase jstree jsscanner jsparser
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 [install]
 fpcpackage=y
@@ -56,6 +66,7 @@ fpcpackage=y
 [default]
 fpcdir=../..
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -152,6 +163,8 @@ endif
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 [compiler]
 includedir=src
 sourcedir=src
@@ -164,10 +177,13 @@ build=n
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew

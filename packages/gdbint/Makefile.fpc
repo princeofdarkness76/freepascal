@@ -32,7 +32,11 @@ examples=examples/testgdb examples/symify
 
 [package]
 name=gdbint
+<<<<<<< HEAD
 version=2.2.5
+=======
+version=2.5.1
+>>>>>>> origin/cpstrnew
 
 [target]
 units=gdbint gdbcon
@@ -47,6 +51,7 @@ objectdir=$(GDBLIBDIR)
 librarydir=$(GDBLIBDIR)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 includedir=$(GDBLIBDIR) src
 sourcedir=src tests
 >>>>>>> graemeg/cpstrnew
@@ -57,6 +62,9 @@ packages=rtl fpmkunit
 =======
 >>>>>>> origin/fixes_2_2
 includedir=src
+=======
+includedir=$(GDBLIBDIR) src
+>>>>>>> origin/cpstrnew
 sourcedir=src tests
 
 [require]
@@ -124,6 +132,9 @@ else
 GDBFOUND=1
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 # Detect if gdblib.inc is available
 override LIBGDBINC:=$(firstword $(wildcard $(addsuffix /gdblib.inc,$(GDBLIBDIR))))
 ifeq ($(LIBGDBINC),)
@@ -135,14 +146,18 @@ GDBLIBINCCOND=-dUSE_GDBLIBINC
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 =======
+=======
+>>>>>>> origin/cpstrnew
 endif
 ifdef NO_GDBLIBINC
 GDBLIBINCFOUND=0
 GDBLIBINCCOND=
 endif
+<<<<<<< HEAD
 >>>>>>> origin/cpstrnew
 endif
 ifdef NO_GDBLIBINC
@@ -206,6 +221,8 @@ clean:
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 endif
 
 
@@ -244,6 +261,7 @@ gdbver.inc: gdbver$(EXEEXT)
 gdbint$(PPUEXT): gdbint.pp gdbver.inc
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # MingW?
 ifeq ($(wildcard $(GDBLIBDIR)/libmingw32.a),)
 	@$(ECHO) Using GDB $(GDBVER)
@@ -270,8 +288,16 @@ else
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+# MingW?
+ifeq ($(wildcard $(GDBLIBDIR)/libmingw32.a),)
+>>>>>>> origin/cpstrnew
 	@$(ECHO) Using GDB $(GDBVER)
-	$(COMPILER) -d$(GDBVER) -Fisrc -Fusrc src/gdbint.pp
+        $(COMPILER) -d$(GDBVER) $(GDBLIBINCCOND) -Fisrc -Fusrc src/gdbint.pp
+else
+	@$(ECHO) Using GDB $(GDBVER) \(MingW\)
+	$(COMPILER) -d$(GDBVER) $(GDBLIBINCCOND) -dUSE_MINGW_GDB -Fisrc -Fusrc src/gdbint.pp
+endif
 	$(DEL) gdbver$(EXEEXT) gdbver$(OEXT)
 endif
 
@@ -286,6 +312,7 @@ gdbver.inc:
         $(CPPROG) src/gdbver_nogdb.inc src/gdbver.inc
 gdbint$(PPUEXT): gdbint.pp gdbver.inc
 	@$(ECHO) libgdb.a not found, using default GDB $(GDBVER)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	$(COMPILER) -d$(GDBVER) $(GDBLIBINCCOND)  -Fisrc -Fusrc src/gdbint.pp
@@ -321,6 +348,10 @@ ifdef UNIXHier
 =======
 >>>>>>> origin/fixes_2_2
 	$(COMPILER) -d$(GDBVER) -Fisrc -Fusrc src/gdbint.pp
+=======
+	$(COMPILER) -d$(GDBVER) $(GDBLIBINCCOND)  -Fisrc -Fusrc src/gdbint.pp
+        $(DEL) src/gdbver.inc
+>>>>>>> origin/cpstrnew
 endif
 
 else
@@ -334,6 +365,7 @@ gdbver.inc:
         $(CPPROG) src/gdbver_nogdb.inc src/gdbver.inc
 gdbint$(PPUEXT): gdbint.pp gdbver.inc
 	@$(ECHO) Different target os or cpu, using default GDB $(GDBVER)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	$(COMPILER) -d$(GDBVER) $(GDBLIBINCCOND)  -Fisrc -Fusrc src/gdbint.pp
@@ -369,9 +401,18 @@ endif
 =======
 >>>>>>> origin/fixes_2_2
 	$(COMPILER) -d$(GDBVER) -Fisrc -Fusrc src/gdbint.pp
+=======
+	$(COMPILER) -d$(GDBVER) $(GDBLIBINCCOND)  -Fisrc -Fusrc src/gdbint.pp
+>>>>>>> origin/cpstrnew
 endif
 
 gdbcon$(PPUEXT): gdbcon.pp gdbint$(PPUEXT)
+ifeq ($(wildcard $(GDBLIBDIR)/libmingw32.a),)
+        $(COMPILER) src/gdbcon.pp
+else
+        $(COMPILER) -dUSE_MINGW_GDB src/gdbcon.pp
+endif
+	$(EXECPPAS)
 
 ifeq ($(OS_TARGET),go32v2)
 DBGCOM=dbgcom$(OEXT)
@@ -401,6 +442,9 @@ simple: $(DBGCOM)
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 examples/testgdb$(EXEEXT): examples/testgdb.pp gdbint$(PPUEXT) gdbcon$(PPUEXT) $(DBGCOM)
 ifeq ($(wildcard $(GDBLIBDIR)/libmingw32.a),)
 	$(COMPILER) -FEexamples  examples/testgdb.pp
@@ -416,12 +460,15 @@ else
         $(COMPILER) -FEexamples -dUSE_MINGW_GDB examples/symify.pp
 endif
 	$(EXECPPAS)
+<<<<<<< HEAD
 =======
 testgdb$(EXEEXT): testgdb.pp gdbint$(PPUEXT) gdbcon$(PPUEXT) $(DBGCOM)
 >>>>>>> graemeg/fixes_2_2
 =======
 testgdb$(EXEEXT): testgdb.pp gdbint$(PPUEXT) gdbcon$(PPUEXT) $(DBGCOM)
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 
 # Allow test for example
 .PHONY: test

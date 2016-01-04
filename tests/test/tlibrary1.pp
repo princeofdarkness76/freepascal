@@ -1,5 +1,6 @@
 { %NORUN }
 { %SKIPTARGET=macos,go32v2 }
+<<<<<<< HEAD
 
 {$ifdef darwin}
 {$PIC+}
@@ -8,6 +9,8 @@
 {$ifdef darwin}
 {$PIC+}
 {$endif darwin}
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifdef darwin}
 {$PIC+}
@@ -50,10 +53,13 @@ procedure Test;export;
      halt(1);
    if not moduleislib then
      halt(2);
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
    writeln('Hoi');
  end;
 

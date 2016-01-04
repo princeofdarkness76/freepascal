@@ -18,6 +18,9 @@ packages=fcl-base
 =======
 >>>>>>> origin/fixes_2_2
 
+[require]
+packages=fcl-base
+
 [compiler]
 options=-S2 -Sh
 

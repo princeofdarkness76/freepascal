@@ -156,6 +156,7 @@ implementation
 {$endif defined(x86) or defined(arm)}
         systemunit.insert(tsyssym.create('Unaligned',in_unaligned_x));
 <<<<<<< HEAD
+<<<<<<< HEAD
         systemunit.insert(tsyssym.create('ObjCSelector',in_objc_selector_x)); { objc only }
         systemunit.insert(tsyssym.create('ObjCEncode',in_objc_encode_x)); { objc only }
 <<<<<<< HEAD
@@ -171,6 +172,10 @@ implementation
 =======
 {$endif SUPPORT_UNALIGNED}
 >>>>>>> origin/fixes_2.4
+=======
+        systemunit.insert(tsyssym.create('ObjCSelector',in_objc_selector_x)); { objc only }
+        systemunit.insert(tsyssym.create('ObjCEncode',in_objc_encode_x)); { objc only }
+>>>>>>> origin/cpstrnew
       end;
 
 
@@ -277,11 +282,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
             end else begin
@@ -432,11 +440,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         { some other definitions }
@@ -501,6 +512,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             if target_info.system in systems_android then
               { Android has "long double"="double" even for x86 }
               addtype('CExtended',s64floattype)
@@ -516,6 +528,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
             if tfloatdef(pbestrealtype^).floattype=s80real then
               addtype('CExtended',sc80floattype)
             else
@@ -523,11 +537,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
           end;
@@ -735,11 +752,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         addtype('$methodpointer',methodpointertype);
@@ -988,6 +1008,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         aiclass[ait_symbolpair]:=tai_symbolpair;
         aiclass[ait_weak]:=tai_weak;
 =======
@@ -1005,6 +1026,11 @@ implementation
         aiclass[ait_thumb_func]:=tai_thumb_func;
 {$endif arm}
 >>>>>>> graemeg/cpstrnew
+=======
+{$ifdef arm}
+        aiclass[ait_thumb_func]:=tai_thumb_func;
+{$endif arm}
+>>>>>>> origin/cpstrnew
 =======
 {$ifdef arm}
         aiclass[ait_thumb_func]:=tai_thumb_func;

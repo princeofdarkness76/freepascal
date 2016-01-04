@@ -40,6 +40,7 @@ unit i_go32v2;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             flags        : [tf_use_8_3,tf_smartlink_sections];
 =======
             flags        : [tf_use_8_3,tf_smartlink_library];
@@ -59,6 +60,9 @@ unit i_go32v2;
 =======
             flags        : [tf_use_8_3,tf_use_function_relative_addresses,tf_smartlink_library];
 >>>>>>> origin/fixes_2_2
+=======
+            flags        : [tf_use_8_3,tf_smartlink_library];
+>>>>>>> origin/cpstrnew
             cpu          : cpu_i386;
             unit_env     : 'GO32V2UNITS';
             extradefines : 'DPMI';

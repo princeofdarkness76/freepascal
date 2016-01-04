@@ -10,6 +10,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    Quickdraw-285~150
 =======
      Version:    Quickdraw-262~1
@@ -40,6 +41,11 @@
  
      Copyright:  © 2002-2008 by Apple Inc. all rights reserved.
 >>>>>>> origin/fixes_2.4
+=======
+     Version:    Quickdraw-262~1
+ 
+     Copyright:  © 2002-2008 by Apple Inc. all rights reserved.
+>>>>>>> origin/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -56,6 +62,7 @@
 =======
 {	  Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2004 }
 {	  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -81,6 +88,8 @@
 }
 {	  Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2004 }
 {	  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+=======
+>>>>>>> origin/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -89,12 +98,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -106,6 +119,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -120,6 +134,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -135,6 +153,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -145,6 +164,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -152,13 +174,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -166,6 +192,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -174,8 +202,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -186,6 +217,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -206,6 +238,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -214,12 +248,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -227,6 +264,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -277,6 +315,12 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 >>>>>>> origin/cpstrnew
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
@@ -291,6 +335,7 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
@@ -299,6 +344,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
@@ -311,6 +358,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -320,10 +368,13 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -557,6 +608,41 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -585,6 +671,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -593,6 +680,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -606,8 +695,11 @@ uses MacTypes,ATSLayoutTypes,ATSUnicodeTypes,TextCommon;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$endc} {not MACOSALLINCLUDE}
 
 
@@ -616,6 +708,7 @@ uses MacTypes,ATSLayoutTypes,ATSUnicodeTypes,TextCommon;
 {$ALIGN POWER}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$ALIGN MAC68K}
 >>>>>>> graemeg/fixes_2_2
@@ -624,6 +717,8 @@ uses MacTypes,ATSLayoutTypes,ATSUnicodeTypes,TextCommon;
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 { ---------------------------------------------------------------------------- }
 { Constants                                                                    }
@@ -632,6 +727,7 @@ uses MacTypes,ATSLayoutTypes,ATSUnicodeTypes,TextCommon;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -640,6 +736,9 @@ uses MacTypes,ATSLayoutTypes,ATSUnicodeTypes,TextCommon;
 =======
 
 >>>>>>> origin/fixes_2.4
+=======
+
+>>>>>>> origin/cpstrnew
 {
  *  ATSUDirectDataSelector
  *  
@@ -648,6 +747,7 @@ uses MacTypes,ATSLayoutTypes,ATSUnicodeTypes,TextCommon;
  *    ATSUDirectGetLayoutDataArrayPtr function to get the needed layout
  *    data array pointer.
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -672,6 +772,12 @@ type
 const
 {
 >>>>>>> origin/fixes_2.4
+=======
+type
+	ATSUDirectDataSelector = UInt32;
+const
+{
+>>>>>>> origin/cpstrnew
    * Returns the parallel advance delta (delta X) array. (Array Type):
    * Fixed (Return Time): Constant, unless creation is necessary, or
    * unless requested by ATSUDirectGetLayoutDataArrayPtrFromTextLayout.
@@ -680,6 +786,7 @@ const
    * had not been previously allocated it will be allocated and
    * zero-filled when iCreate is set to true.
    }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -693,6 +800,9 @@ const
 =======
 	kATSUDirectDataAdvanceDeltaFixedArray = 0;
 >>>>>>> origin/fixes_2.4
+=======
+	kATSUDirectDataAdvanceDeltaFixedArray = 0;
+>>>>>>> origin/cpstrnew
 
   {
    * Returns the parallel baseline delta (delta Y) array. (Array Type):
@@ -706,6 +816,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kATSUDirectDataBaselineDeltaFixedArray = 1;
 =======
   kATSUDirectDataBaselineDeltaFixedArray = 1;
@@ -716,6 +827,9 @@ const
 =======
 	kATSUDirectDataBaselineDeltaFixedArray = 1;
 >>>>>>> origin/fixes_2.4
+=======
+	kATSUDirectDataBaselineDeltaFixedArray = 1;
+>>>>>>> origin/cpstrnew
 
   {
    * Returns the parallel device delta array for device- specific
@@ -733,6 +847,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kATSUDirectDataDeviceDeltaSInt16Array = 2;
 =======
   kATSUDirectDataDeviceDeltaSInt16Array = 2;
@@ -743,6 +858,9 @@ const
 =======
 	kATSUDirectDataDeviceDeltaSInt16Array = 2;
 >>>>>>> origin/fixes_2.4
+=======
+	kATSUDirectDataDeviceDeltaSInt16Array = 2;
+>>>>>>> origin/cpstrnew
 
   {
    * Returns the parallel style index array. The indexes setting in the
@@ -760,6 +878,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kATSUDirectDataStyleIndexUInt16Array = 3;
 =======
   kATSUDirectDataStyleIndexUInt16Array = 3;
@@ -770,6 +889,9 @@ const
 =======
 	kATSUDirectDataStyleIndexUInt16Array = 3;
 >>>>>>> origin/fixes_2.4
+=======
+	kATSUDirectDataStyleIndexUInt16Array = 3;
+>>>>>>> origin/cpstrnew
 
   {
    * Returns the style setting ref array. (Array Type):
@@ -781,6 +903,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kATSUDirectDataStyleSettingATSUStyleSettingRefArray = 4;
 =======
   kATSUDirectDataStyleSettingATSUStyleSettingRefArray = 4;
@@ -791,6 +914,9 @@ const
 =======
 	kATSUDirectDataStyleSettingATSUStyleSettingRefArray = 4;
 >>>>>>> origin/fixes_2.4
+=======
+	kATSUDirectDataStyleSettingATSUStyleSettingRefArray = 4;
+>>>>>>> origin/cpstrnew
 
   {
    * Returns the ATSLayoutRecord, version 1 array. This should not be
@@ -809,6 +935,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kATSUDirectDataLayoutRecordATSLayoutRecordVersion1 = 100;
 =======
   kATSUDirectDataLayoutRecordATSLayoutRecordVersion1 = 100;
@@ -819,6 +946,9 @@ const
 =======
 	kATSUDirectDataLayoutRecordATSLayoutRecordVersion1 = 100;
 >>>>>>> origin/fixes_2.4
+=======
+	kATSUDirectDataLayoutRecordATSLayoutRecordVersion1 = 100;
+>>>>>>> origin/cpstrnew
 
   {
    * Returns the ATSLayoutRecord. This will return the most current
@@ -834,6 +964,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kATSUDirectDataLayoutRecordATSLayoutRecordCurrent = kATSUDirectDataLayoutRecordATSLayoutRecordVersion1;
 =======
   kATSUDirectDataLayoutRecordATSLayoutRecordCurrent = kATSUDirectDataLayoutRecordATSLayoutRecordVersion1;
@@ -844,6 +975,9 @@ const
 =======
 	kATSUDirectDataLayoutRecordATSLayoutRecordCurrent = kATSUDirectDataLayoutRecordATSLayoutRecordVersion1;
 >>>>>>> origin/fixes_2.4
+=======
+	kATSUDirectDataLayoutRecordATSLayoutRecordCurrent = kATSUDirectDataLayoutRecordATSLayoutRecordVersion1;
+>>>>>>> origin/cpstrnew
 
 { ---------------------------------------------------------------------------- }
 { Data Types                                                                   }
@@ -857,6 +991,7 @@ const
  *    ATSUStyle plus any cached/set information about that style.
  }
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -887,6 +1022,9 @@ type
 =======
 	ATSUStyleSettingRef = ^SInt32; { an opaque type }
 >>>>>>> origin/fixes_2.4
+=======
+	ATSUStyleSettingRef = ^SInt32; { an opaque type }
+>>>>>>> origin/cpstrnew
 { ---------------------------------------------------------------------------- }
 { Direct Accessors                                                             }
 { ---------------------------------------------------------------------------- }
@@ -894,12 +1032,16 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  ATSUDirectGetLayoutDataArrayPtrFromLineRef()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    Use CTRunGetGlyphsPtr or CTRunGetPositionsPtr instead.
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
  *  ATSUDirectGetLayoutDataArrayPtrFromLineRef()
@@ -909,6 +1051,8 @@ type
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  
  *  Summary:
  *    Returns the data pointer specified by iDataSelector and
@@ -968,6 +1112,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *      if only a count of the entries is needed.
 =======
  *      if only a count of the entries is needed. can be NULL
@@ -978,12 +1123,16 @@ type
 =======
  *      if only a count of the entries is needed.
 >>>>>>> origin/fixes_2.4
+=======
+ *      if only a count of the entries is needed.
+>>>>>>> origin/cpstrnew
  *    
  *    oLayoutDataCount:
  *      Upon sucessful return, this parameter will contain a count of
  *      the entries in the array returned in oLayoutDataArray.
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1009,6 +1158,9 @@ function ATSUDirectGetLayoutDataArrayPtrFromLineRef( iLineRef: ATSULineRef; iDat
 =======
  *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework but deprecated in 10.6
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework but deprecated in 10.6
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1020,17 +1172,23 @@ function ATSUDirectGetLayoutDataArrayPtrFromLineRef( iLineRef: ATSULineRef; iDat
 {$ifc not TARGET_CPU_64}
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  ATSUDirectGetLayoutDataArrayPtrFromTextLayout()
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
  *  ATSUDirectGetLayoutDataArrayPtrFromTextLayout()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    Use CTRunGetGlyphs or CTRunGetPositions instead.
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  
  *  Summary:
  *    Returns the data pointer specified by iDataSelector and
@@ -1091,6 +1249,7 @@ function ATSUDirectGetLayoutDataArrayPtrFromLineRef( iLineRef: ATSULineRef; iDat
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *      count of the entries is needed.
 =======
  *      count of the entries is needed. can be NULL
@@ -1101,12 +1260,16 @@ function ATSUDirectGetLayoutDataArrayPtrFromLineRef( iLineRef: ATSULineRef; iDat
 =======
  *      count of the entries is needed.
 >>>>>>> origin/fixes_2.4
+=======
+ *      count of the entries is needed.
+>>>>>>> origin/cpstrnew
  *    
  *    oLayoutDataCount:
  *      Upon sucessful return, this parameter will contain a count of
  *      the entries in the array returned in oLayoutDataArray.
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1133,6 +1296,9 @@ function ATSUDirectGetLayoutDataArrayPtrFromTextLayout( iTextLayout: ATSUTextLay
 =======
  *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1145,17 +1311,23 @@ function ATSUDirectGetLayoutDataArrayPtrFromTextLayout( iTextLayout: ATSUTextLay
 
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  ATSUDirectReleaseLayoutDataArrayPtr()
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
  *  ATSUDirectReleaseLayoutDataArrayPtr()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    Use CoreText API instead.
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  
  *  Summary:
  *    Properly releases of an array pointer returned by
@@ -1178,6 +1350,7 @@ function ATSUDirectGetLayoutDataArrayPtrFromTextLayout( iTextLayout: ATSUTextLay
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *      then set this to NULL.
 =======
  *      then set this to NULL. can be NULL
@@ -1188,6 +1361,9 @@ function ATSUDirectGetLayoutDataArrayPtrFromTextLayout( iTextLayout: ATSUTextLay
 =======
  *      then set this to NULL.
 >>>>>>> origin/fixes_2.4
+=======
+ *      then set this to NULL.
+>>>>>>> origin/cpstrnew
  *    
  *    iDataSelector:
  *      The selector for which iLayoutDataArrayPtr was obtained.
@@ -1196,6 +1372,7 @@ function ATSUDirectGetLayoutDataArrayPtrFromTextLayout( iTextLayout: ATSUTextLay
  *      A pointer to the layout data array which is to be disposed of.
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1221,6 +1398,9 @@ function ATSUDirectReleaseLayoutDataArrayPtr( iLineRef: ATSULineRef { can be NUL
 =======
  *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework but deprecated in 10.6
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework but deprecated in 10.6
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1232,17 +1412,23 @@ function ATSUDirectReleaseLayoutDataArrayPtr( iLineRef: ATSULineRef { can be NUL
 {$ifc not TARGET_CPU_64}
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  ATSUDirectAddStyleSettingRef()
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
  *  ATSUDirectAddStyleSettingRef()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    Use CTRunGetGlyphsPtr or CTRunGetGlyphs instead.
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  
  *  Summary:
  *    This function will fetch a style index for the
@@ -1283,6 +1469,7 @@ function ATSUDirectReleaseLayoutDataArrayPtr( iLineRef: ATSULineRef { can be NUL
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
@@ -1305,6 +1492,9 @@ end.
 =======
  *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1320,9 +1510,13 @@ function ATSUDirectAddStyleSettingRef( iLineRef: ATSULineRef; iStyleSettingRef: 
 end.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

@@ -120,12 +120,15 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   TDLL_Entry_Hook = procedure (dllparam : PtrInt);
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   TDLL_Entry_Hook = procedure (dllparam : longint);
@@ -138,19 +141,27 @@ const
 
 Const
 <<<<<<< HEAD
+<<<<<<< HEAD
   { it can be discussed whether fmShareDenyNone means read and write or read, write and delete, see
 =======
   { it can be discussed whether fmShareDenyNone means read and write or read, write and delete, see 
 >>>>>>> origin/fixes_2.4
+=======
+  { it can be discussed whether fmShareDenyNone means read and write or read, write and delete, see
+>>>>>>> origin/cpstrnew
     also http://bugs.freepascal.org/view.php?id=8898, this allows users to configure the used
 	value
   }
   fmShareDenyNoneFlags : DWord = 3;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
   
 >>>>>>> origin/fixes_2.4
+=======
+
+>>>>>>> origin/cpstrnew
 implementation
 
 var
@@ -877,6 +888,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef FPC_SECTION_THREADVARS}
 function fpc_tls_add(addr: pointer): pointer; assembler; nostackframe;
   [public,alias: 'FPC_TLS_ADD']; compilerproc;
@@ -1040,6 +1052,8 @@ function CheckInitialStkLen(stklen : SizeUInt) : SizeUInt;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {******************************************************************************}

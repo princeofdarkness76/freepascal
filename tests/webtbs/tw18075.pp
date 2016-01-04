@@ -31,6 +31,7 @@ Begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   n:=pos(WideString('狃狄'),cad2); //Is correct position 3
 =======
   n:=pos('狃狄',cad2); //Is correct position 3
@@ -41,6 +42,9 @@ Begin
 =======
   n:=pos('狃狄',cad2); //Is correct position 3
 >>>>>>> graemeg/cpstrnew
+=======
+  n:=pos('狃狄',cad2); //Is correct position 3
+>>>>>>> origin/cpstrnew
 =======
   n:=pos('狃狄',cad2); //Is correct position 3
 >>>>>>> origin/cpstrnew

@@ -543,11 +543,15 @@ const
    $00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   knownexts : array[1..4] of string[4] = ('.lfm', '.dfm', '.xfm', '.tlb');
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  knownexts : array[1..4] of string[4] = ('.lfm', '.dfm', '.xfm', '.tlb');
+>>>>>>> origin/cpstrnew
 var
   f : file;
   oldfmode : byte;
@@ -801,6 +805,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   dst:=CFileStreamClass.Create(current_module.outputpath+outf,fmCreate);
 =======
   dst:=CFileStreamClass.Create(current_module.outputpath^+outf,fmCreate);
@@ -811,6 +816,9 @@ begin
 =======
   dst:=CFileStreamClass.Create(current_module.outputpath^+outf,fmCreate);
 >>>>>>> graemeg/cpstrnew
+=======
+  dst:=CFileStreamClass.Create(current_module.outputpath^+outf,fmCreate);
+>>>>>>> origin/cpstrnew
 =======
   dst:=CFileStreamClass.Create(current_module.outputpath^+outf,fmCreate);
 >>>>>>> origin/cpstrnew

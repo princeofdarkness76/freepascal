@@ -86,11 +86,14 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     Class Function FileNameExtension : String; override;
@@ -654,6 +657,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TTXTWriter.WriteOverviewMember(const ALabel, AName, Access,
   ADescr: String);
 =======
@@ -668,11 +672,15 @@ procedure TTxtWriter.WriteOverviewMember(const ALabel,AName,Access,ADescr : Stri
 =======
 procedure TTxtWriter.WriteOverviewMember(const ALabel,AName,Access,ADescr : String);
 >>>>>>> origin/cpstrnew
+=======
+procedure TTxtWriter.WriteOverviewMember(const ALabel,AName,Access,ADescr : String);
+>>>>>>> origin/cpstrnew
 
 begin
   WriteLnF('%.30s %.10s  %s',[AName,Access,ADescr]);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -687,6 +695,9 @@ procedure TTxtWriter.WriteOverviewMember(const ALabel,AName,ADescr : String);
 =======
 procedure TTxtWriter.WriteOverviewMember(const ALabel,AName,ADescr : String);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TTxtWriter.WriteOverviewMember(const ALabel,AName,ADescr : String);
+>>>>>>> origin/cpstrnew
 =======
 procedure TTxtWriter.WriteOverviewMember(const ALabel,AName,ADescr : String);
 >>>>>>> origin/cpstrnew

@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Copyright (c) 2003-2005, 2008-2010 Apple Inc. All rights reserved.
 =======
  * Copyright (c) 2003-2005, 2008, 2009 Apple Inc. All rights reserved.
@@ -28,6 +29,9 @@
 =======
  * Copyright (c) 2003-2005, 2008, 2009 Apple Inc. All rights reserved.
 >>>>>>> origin/fixes_2.4
+=======
+ * Copyright (c) 2003-2005, 2008, 2009 Apple Inc. All rights reserved.
+>>>>>>> origin/cpstrnew
  *
  * @APPLE_LICENSE_HEADER_START@
  * 
@@ -39,6 +43,7 @@
  * file.
  * 
  * The Original Code and all software distributed under the License are
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -60,6 +65,11 @@
  * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
  * INCLUDING WITHOUT LIMITATION, ANY WARRANTIES OF MERCHANTABILITY,
 >>>>>>> origin/fixes_2.4
+=======
+ * distributed on an 'AS IS' basis, WITHOUT WARRANTY OF ANY KIND, EITHER
+ * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
+ * INCLUDING WITHOUT LIMITATION, ANY WARRANTIES OF MERCHANTABILITY,
+>>>>>>> origin/cpstrnew
  * FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT.
  * Please see the License for the specific language governing rights and
  * limitations under the License.
@@ -75,6 +85,7 @@
 =======
 {	  Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2004 }
 {   Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -97,6 +108,8 @@
 >>>>>>> origin/fixes_2_2
 {	  Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2004 }
 {   Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+=======
+>>>>>>> origin/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -105,12 +118,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -122,6 +139,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -136,6 +154,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -151,6 +173,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -161,6 +184,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -168,13 +194,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -182,6 +212,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -190,8 +222,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -202,6 +237,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -222,6 +258,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -230,12 +268,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -243,6 +284,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -304,6 +346,9 @@ interface
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -311,8 +356,20 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
+>>>>>>> origin/cpstrnew
+=======
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -324,6 +381,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -333,10 +391,13 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -551,6 +612,41 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -579,6 +675,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -587,6 +684,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -597,6 +696,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,CFBase,SCNetwork,MacOSXPosix,CFRunLoop;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -645,6 +745,14 @@ uses MacTypes,CFBase,SCNetwork,MacOSXPosix,CFRunLoop;
 
 {!
 	@header SCNetworkReachability
+=======
+{$endc} {not MACOSALLINCLUDE}
+
+{$ALIGN POWER}
+
+{!
+	@header SCNetworkReachability
+>>>>>>> origin/cpstrnew
 	@discussion The SCNetworkReachability API allows an application to
 		determine the status of a system's current network
 		configuration and the reachability of a target host.
@@ -656,11 +764,15 @@ uses MacTypes,CFBase,SCNetwork,MacOSXPosix,CFRunLoop;
 		computer.
 		Note that reachability does <i>not</i> guarantee that the data
 		packet will actually be received by the host.
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  }
 
 {!
 	@typedef SCNetworkReachabilityRef
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -702,6 +814,12 @@ type
 type
 	SCNetworkReachabilityRef = ^SInt32; { an opaque type }
 >>>>>>> origin/fixes_2.4
+=======
+	@discussion This is the handle to a network address or name.
+ }
+type
+	SCNetworkReachabilityRef = ^SInt32; { an opaque type }
+>>>>>>> origin/cpstrnew
 
 
 {!
@@ -709,8 +827,11 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	Structure containing user-specified data and callbacks for SCNetworkReachability.
 	@field version The version number of the structure type being passed
 		in as a parameter to the SCDynamicStore creation function.
@@ -726,12 +847,15 @@ type
 	@field copyDescription The callback used to provide a description of
 		the info field.
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  }
 // AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
 type
@@ -740,12 +864,16 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
     info: UnivPtr;
 		retain: function( info: UnivPtr ): UnivPtr;
 		release: procedure( info: UnivPtr );
 		copyDescription: function( info: UnivPtr ): CFStringRef;
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
@@ -760,6 +888,8 @@ type
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	end;
 	SCNetworkReachabilityContextPtr = ^SCNetworkReachabilityContext;
 
@@ -767,8 +897,11 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	@enum SCNetworkReachabilityFlags
 	@discussion Flags that indicate whether the specified network
 		nodename or address is reachable, whether a connection is
@@ -854,6 +987,7 @@ type
 
 {!
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@typedef SCNetworkReachabilityCallBack
 	@discussion Type of the callback function used when the
 		reachability of a network address or name changes.
@@ -870,6 +1004,8 @@ type SCNetworkReachabilityCallBack = procedure( target: SCNetworkReachabilityRef
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	@typedef SCNetworkReachabilityCallBack
 	@discussion Type of the callback function used when the
 		reachability of a network address or name changes.
@@ -880,6 +1016,7 @@ type SCNetworkReachabilityCallBack = procedure( target: SCNetworkReachabilityRef
 	@param info A C pointer to a user-specified block of data.
  }
 // AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+<<<<<<< HEAD
 <<<<<<< HEAD
 type SCNetworkReachabilityCallBack = procedure( target: SCNetworkReachabilityRef; flags: SCNetworkConnectionFlags; info: UnivPtr );
 <<<<<<< HEAD
@@ -889,10 +1026,14 @@ type SCNetworkReachabilityCallBack = procedure( target: SCNetworkReachabilityRef
 =======
 type SCNetworkReachabilityCallBack = procedure( target: SCNetworkReachabilityRef; flags: SCNetworkReachabilityFlags; info: UnivPtr );
 >>>>>>> origin/fixes_2.4
+=======
+type SCNetworkReachabilityCallBack = procedure( target: SCNetworkReachabilityRef; flags: SCNetworkReachabilityFlags; info: UnivPtr );
+>>>>>>> origin/cpstrnew
 
 {!
 	@function SCNetworkReachabilityCreateWithAddress
 	@discussion Creates a reference to the specified network
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -914,11 +1055,16 @@ function SCNetworkReachabilityCreateWithAddress( allocator: CFAllocatorRef;  add
 		address.  This reference can be used later to monitor the
 		reachability of the target host.
 >>>>>>> origin/fixes_2.4
+=======
+		address.  This reference can be used later to monitor the
+		reachability of the target host.
+>>>>>>> origin/cpstrnew
 	@param address The address of the desired host.
 	@result Returns a reference to the new immutable SCNetworkReachabilityRef.
 
 		 You must release the returned value.
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 // AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
 function SCNetworkReachabilityCreateWithAddress( allocator: CFAllocatorRef; address: sockaddr_ptr ): SCNetworkReachabilityRef; external name '_SCNetworkReachabilityCreateWithAddress';
@@ -930,10 +1076,15 @@ function SCNetworkReachabilityCreateWithAddress( allocator: CFAllocatorRef; addr
 function SCNetworkReachabilityCreateWithAddress( allocator: CFAllocatorRef;  address: sockaddr_ptr ): SCNetworkReachabilityRef; external name '_SCNetworkReachabilityCreateWithAddress';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+function SCNetworkReachabilityCreateWithAddress( allocator: CFAllocatorRef;  address: sockaddr_ptr ): SCNetworkReachabilityRef; external name '_SCNetworkReachabilityCreateWithAddress';
+(* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 {!
 	@function SCNetworkReachabilityCreateWithAddressPair
 	@discussion Creates a reference to the specified network
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -951,6 +1102,10 @@ function SCNetworkReachabilityCreateWithAddress( allocator: CFAllocatorRef;  add
 		address.  This reference can be used later to monitor the
 		reachability of the target host.
 >>>>>>> origin/fixes_2.4
+=======
+		address.  This reference can be used later to monitor the
+		reachability of the target host.
+>>>>>>> origin/cpstrnew
 	@param localAddress The local address associated with a network
 		connection.  If NULL, only the remote address is of interest.
 	@param remoteAddress The remote address associated with a network
@@ -958,6 +1113,9 @@ function SCNetworkReachabilityCreateWithAddress( allocator: CFAllocatorRef;  add
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 	@result Returns a reference to the new immutable SCNetworkReachabilityRef.
 
 		 You must release the returned value.
@@ -974,6 +1132,7 @@ function SCNetworkReachabilityCreateWithAddressPair( allocator: CFAllocatorRef; 
 		This name would be the same as that passed to the
 		gethostbyname(3) or getaddrinfo(3) functions.
 	@result Returns a reference to the new immutable SCNetworkReachabilityRef.
+<<<<<<< HEAD
 
 		You must release the returned value.
  }
@@ -1009,6 +1168,8 @@ function SCNetworkReachabilityCreateWithAddressPair( allocator: CFAllocatorRef; 
 		This name would be the same as that passed to the
 		gethostbyname(3) or getaddrinfo(3) functions.
 	@result Returns a reference to the new immutable SCNetworkReachabilityRef.
+=======
+>>>>>>> origin/cpstrnew
 
 		You must release the returned value.
  }
@@ -1023,18 +1184,23 @@ function SCNetworkReachabilityCreateWithName( allocator: CFAllocatorRef; nodenam
 function SCNetworkReachabilityGetTypeID: CFTypeID; external name '_SCNetworkReachabilityGetTypeID';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 
 {!
 	@function SCNetworkReachabilityGetFlags
 	@discussion Determines if the given target is reachable using the
 		current network configuration.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1055,6 +1221,9 @@ function SCNetworkReachabilityGetFlags( target: SCNetworkReachabilityRef; var fl
 =======
 	@param target The network reference associated with the address or name
 >>>>>>> origin/fixes_2.4
+=======
+	@param target The network reference associated with the address or name
+>>>>>>> origin/cpstrnew
 		to be checked for reachability.
 	@param flags A pointer to memory that will be filled with the
 		SCNetworkReachabilityFlags detailing the reachability
@@ -1062,6 +1231,7 @@ function SCNetworkReachabilityGetFlags( target: SCNetworkReachabilityRef; var fl
 	@result Returns TRUE if the network connection flags are valid;
 		FALSE if the status could not be determined.
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 // AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
 function SCNetworkReachabilityGetFlags( target: SCNetworkReachabilityRef; var flags: SCNetworkConnectionFlags ): Boolean; external name '_SCNetworkReachabilityGetFlags';
@@ -1073,11 +1243,16 @@ function SCNetworkReachabilityGetFlags( target: SCNetworkReachabilityRef; var fl
 function SCNetworkReachabilityGetFlags( target: SCNetworkReachabilityRef; var flags: SCNetworkReachabilityFlags ): Boolean; external name '_SCNetworkReachabilityGetFlags';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+function SCNetworkReachabilityGetFlags( target: SCNetworkReachabilityRef; var flags: SCNetworkReachabilityFlags ): Boolean; external name '_SCNetworkReachabilityGetFlags';
+(* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 {!
 	@function SCNetworkReachabilitySetCallback
 	@discussion Assigns a client to a target, which receives callbacks
 		when the reachability of the target changes.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1186,6 +1361,11 @@ end.
 		name to be checked for reachability.
 	@param callout The function to be called when the reachability of the
 >>>>>>> origin/fixes_2.4
+=======
+	@param target The network reference associated with the address or
+		name to be checked for reachability.
+	@param callout The function to be called when the reachability of the
+>>>>>>> origin/cpstrnew
 		target changes.  If NULL, the current client for the target
 		is removed.
 	@param context The SCNetworkReachabilityContext associated with
@@ -1246,9 +1426,13 @@ function SCNetworkReachabilitySetDispatchQueue( target: SCNetworkReachabilityRef
 end.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

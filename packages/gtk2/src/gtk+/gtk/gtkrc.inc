@@ -43,6 +43,7 @@
     }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { Combine RC style data from src into dest. If overridden, this
 =======
 { Combine RC style data from src into dest. If overriden, this
@@ -50,6 +51,9 @@
 =======
 { Combine RC style data from src into dest. If overriden, this
 >>>>>>> origin/fixes_2_2
+=======
+{ Combine RC style data from src into dest. If overridden, this
+>>>>>>> origin/cpstrnew
      function should chain to the parent.
     }
 { Create an empty style suitable to this RC style

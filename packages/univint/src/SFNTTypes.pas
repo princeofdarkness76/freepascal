@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       ATS/SFNTTypes.h
  
      Contains:   Font file structures.
@@ -120,6 +121,9 @@
 =======
      File:       ATS/SFNTTypes.h
 >>>>>>> origin/fixes_2.4
+=======
+     File:       ATS/SFNTTypes.h
+>>>>>>> origin/cpstrnew
  
      Contains:   Font file structures.
  
@@ -152,12 +156,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -169,6 +177,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -183,6 +192,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -198,6 +211,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -208,6 +222,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -215,13 +232,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -229,6 +250,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -237,8 +260,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -249,6 +275,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -269,6 +296,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -277,12 +306,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -290,6 +322,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -530,6 +563,9 @@ interface
 =======
 	{$setc TARGET_CPU_PPC64 := FALSE}
 >>>>>>> origin/fixes_2.4
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -555,6 +591,7 @@ interface
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -596,6 +633,41 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -624,6 +696,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -632,6 +705,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -645,11 +720,15 @@ uses MacTypes;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {$endc} {not MACOSALLINCLUDE}
 
 
 {$ifc TARGET_OS_MAC}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -685,6 +764,9 @@ uses MacTypes;
 =======
 {$ALIGN POWER}
 >>>>>>> origin/fixes_2.4
+=======
+{$ALIGN POWER}
+>>>>>>> origin/cpstrnew
 
 type
 	sfntDirectoryEntryPtr = ^sfntDirectoryEntry;
@@ -1128,7 +1210,136 @@ const
 	kFontMicrosoftSymbolScript = 0;
 	kFontMicrosoftStandardScript = 1;
 	kFontMicrosoftUCS4Script = 10;
+<<<<<<< HEAD
+=======
 
+>>>>>>> origin/cpstrnew
+
+const
+	kFontCustom8BitScript = 0;
+	kFontCustom816BitScript = 1;
+	kFontCustom16BitScript = 2;
+
+{ Language codes are zero based everywhere but within a 'cmap' table }
+const
+	kFontEnglishLanguage = 0;
+	kFontFrenchLanguage = 1;
+	kFontGermanLanguage = 2;
+	kFontItalianLanguage = 3;
+	kFontDutchLanguage = 4;
+	kFontSwedishLanguage = 5;
+	kFontSpanishLanguage = 6;
+	kFontDanishLanguage = 7;
+	kFontPortugueseLanguage = 8;
+	kFontNorwegianLanguage = 9;
+	kFontHebrewLanguage = 10;
+	kFontJapaneseLanguage = 11;
+	kFontArabicLanguage = 12;
+	kFontFinnishLanguage = 13;
+	kFontGreekLanguage = 14;
+	kFontIcelandicLanguage = 15;
+	kFontMalteseLanguage = 16;
+	kFontTurkishLanguage = 17;
+	kFontCroatianLanguage = 18;
+	kFontTradChineseLanguage = 19;
+	kFontUrduLanguage = 20;
+	kFontHindiLanguage = 21;
+	kFontThaiLanguage = 22;
+	kFontKoreanLanguage = 23;
+	kFontLithuanianLanguage = 24;
+	kFontPolishLanguage = 25;
+	kFontHungarianLanguage = 26;
+	kFontEstonianLanguage = 27;
+	kFontLettishLanguage = 28;
+	kFontLatvianLanguage = kFontLettishLanguage;
+	kFontSaamiskLanguage = 29;
+	kFontLappishLanguage = kFontSaamiskLanguage;
+	kFontFaeroeseLanguage = 30;
+	kFontFarsiLanguage = 31;
+	kFontPersianLanguage = kFontFarsiLanguage;
+	kFontRussianLanguage = 32;
+	kFontSimpChineseLanguage = 33;
+	kFontFlemishLanguage = 34;
+	kFontIrishLanguage = 35;
+	kFontAlbanianLanguage = 36;
+	kFontRomanianLanguage = 37;
+	kFontCzechLanguage = 38;
+	kFontSlovakLanguage = 39;
+	kFontSlovenianLanguage = 40;
+	kFontYiddishLanguage = 41;
+	kFontSerbianLanguage = 42;
+	kFontMacedonianLanguage = 43;
+	kFontBulgarianLanguage = 44;
+	kFontUkrainianLanguage = 45;
+	kFontByelorussianLanguage = 46;
+	kFontUzbekLanguage = 47;
+	kFontKazakhLanguage = 48;
+	kFontAzerbaijaniLanguage = 49;
+	kFontAzerbaijanArLanguage = 50;
+	kFontArmenianLanguage = 51;
+	kFontGeorgianLanguage = 52;
+	kFontMoldavianLanguage = 53;
+	kFontKirghizLanguage = 54;
+	kFontTajikiLanguage = 55;
+	kFontTurkmenLanguage = 56;
+	kFontMongolianLanguage = 57;
+	kFontMongolianCyrLanguage = 58;
+	kFontPashtoLanguage = 59;
+	kFontKurdishLanguage = 60;
+	kFontKashmiriLanguage = 61;
+	kFontSindhiLanguage = 62;
+	kFontTibetanLanguage = 63;
+	kFontNepaliLanguage = 64;
+	kFontSanskritLanguage = 65;
+	kFontMarathiLanguage = 66;
+	kFontBengaliLanguage = 67;
+	kFontAssameseLanguage = 68;
+	kFontGujaratiLanguage = 69;
+	kFontPunjabiLanguage = 70;
+	kFontOriyaLanguage = 71;
+	kFontMalayalamLanguage = 72;
+	kFontKannadaLanguage = 73;
+	kFontTamilLanguage = 74;
+	kFontTeluguLanguage = 75;
+	kFontSinhaleseLanguage = 76;
+	kFontBurmeseLanguage = 77;
+	kFontKhmerLanguage = 78;
+	kFontLaoLanguage = 79;
+	kFontVietnameseLanguage = 80;
+	kFontIndonesianLanguage = 81;
+	kFontTagalogLanguage = 82;
+	kFontMalayRomanLanguage = 83;
+	kFontMalayArabicLanguage = 84;
+	kFontAmharicLanguage = 85;
+	kFontTigrinyaLanguage = 86;
+	kFontGallaLanguage = 87;
+	kFontOromoLanguage = kFontGallaLanguage;
+	kFontSomaliLanguage = 88;
+	kFontSwahiliLanguage = 89;
+	kFontRuandaLanguage = 90;
+	kFontRundiLanguage = 91;
+	kFontChewaLanguage = 92;
+	kFontMalagasyLanguage = 93;
+	kFontEsperantoLanguage = 94;
+	kFontWelshLanguage = 128;
+	kFontBasqueLanguage = 129;
+	kFontCatalanLanguage = 130;
+	kFontLatinLanguage = 131;
+	kFontQuechuaLanguage = 132;
+	kFontGuaraniLanguage = 133;
+	kFontAymaraLanguage = 134;
+	kFontTatarLanguage = 135;
+	kFontUighurLanguage = 136;
+	kFontDzongkhaLanguage = 137;
+	kFontJavaneseRomLanguage = 138;
+	kFontSundaneseRomLanguage = 139;
+
+{ The following are special "don't care" values to be used in interfaces }
+
+const
+	kFontNoPlatformCode = $FFFFFFFF;
+	kFontNoScriptCode = $FFFFFFFF;
+	kFontNoLanguageCode = $FFFFFFFF;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1296,10 +1507,13 @@ const
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 type
 	sfntCMapExtendedSubHeader = record
 		format: UInt16;
@@ -1309,7 +1523,10 @@ type
 	end;
 const
 	sizeof_sfntCMapExtendedSubHeader = 12;
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 type
 	sfntCMapEncodingPtr = ^sfntCMapEncoding;
@@ -1331,6 +1548,7 @@ const
 	end;
 const
 <<<<<<< HEAD
+<<<<<<< HEAD
 	sizeof_sfntCMapEncoding		= 8;
 
 <<<<<<< HEAD
@@ -1340,6 +1558,9 @@ const
 =======
 	sizeof_sfntCMapEncoding = 8;
 >>>>>>> origin/fixes_2.4
+=======
+	sizeof_sfntCMapEncoding = 8;
+>>>>>>> origin/cpstrnew
 
 type
 	sfntCMapHeaderPtr = ^sfntCMapHeader;
@@ -1347,6 +1568,9 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 		version: UInt16;
 		numTables: UInt16;
 		encoding: array[0..0] of sfntCMapEncoding;
@@ -1355,10 +1579,17 @@ const
 	sizeof_sfntCMapHeader = 4;
 
 { Name table }
+<<<<<<< HEAD
 const
 	nameFontTableTag = FourCharCode('name');
 
 const
+=======
+const
+	nameFontTableTag = FourCharCode('name');
+
+const
+>>>>>>> origin/cpstrnew
 	kFontCopyrightName = 0;
 	kFontFamilyName = 1;
 	kFontStyleName = 2;
@@ -1382,6 +1613,7 @@ const
 	kFontLastReservedName = 255;
 
 { The following is a special "don't care" value to be used in interfaces }
+<<<<<<< HEAD
 
 const
 	kFontNoNameCode = $FFFFFFFF;
@@ -1438,6 +1670,11 @@ const
 const
 	kFontNoNameCode = $FFFFFFFF;
 >>>>>>> origin/fixes_2.4
+=======
+
+const
+	kFontNoNameCode = $FFFFFFFF;
+>>>>>>> origin/cpstrnew
 
 type
 	sfntNameRecordPtr = ^sfntNameRecord;
@@ -1445,14 +1682,18 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 		platformID: UInt16;             { base-0 }
 		scriptID: UInt16;               { base-0 }
 		languageID: UInt16;             { base-0 }
 		nameID: UInt16;                 { base-0 }
 		length: UInt16;
 		offset: UInt16;
+<<<<<<< HEAD
 <<<<<<< HEAD
 	end;
 const
@@ -1480,6 +1721,11 @@ const
 =======
 	sizeof_sfntNameRecord = 12;
 >>>>>>> origin/fixes_2.4
+=======
+	end;
+const
+	sizeof_sfntNameRecord = 12;
+>>>>>>> origin/cpstrnew
 
 type
 	sfntNameHeaderPtr = ^sfntNameHeader;
@@ -1563,6 +1809,7 @@ type
 	end;
 const
 <<<<<<< HEAD
+<<<<<<< HEAD
 	sizeof_sfntInstance			= 4;
 
 <<<<<<< HEAD
@@ -1572,6 +1819,9 @@ const
 =======
 	sizeof_sfntInstance = 4;
 >>>>>>> origin/fixes_2.4
+=======
+	sizeof_sfntInstance = 4;
+>>>>>>> origin/cpstrnew
 
 type
 	sfntVariationHeaderPtr = ^sfntVariationHeader;
@@ -1614,6 +1864,7 @@ const
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
@@ -1622,10 +1873,16 @@ const
 const
 	descriptorFontTableTag = FourCharCode('fdsc');
 >>>>>>> origin/fixes_2.4
+=======
+{ Fdsc table - font descriptor }
+const
+	descriptorFontTableTag = FourCharCode('fdsc');
+>>>>>>> origin/cpstrnew
 
 type
 	sfntFontDescriptorPtr = ^sfntFontDescriptor;
 	sfntFontDescriptor = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1643,6 +1900,10 @@ type
 		name: FourCharCode;
 		value: Fixed;
 >>>>>>> origin/fixes_2.4
+=======
+		name: FourCharCode;
+		value: Fixed;
+>>>>>>> origin/cpstrnew
 	end;
 
 	sfntDescriptorHeaderPtr = ^sfntDescriptorHeader;
@@ -1671,6 +1932,7 @@ const
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
@@ -1679,6 +1941,11 @@ const
 const
 	featureFontTableTag = FourCharCode('feat');
 >>>>>>> origin/fixes_2.4
+=======
+{ Feat Table - layout feature table }
+const
+	featureFontTableTag = FourCharCode('feat');
+>>>>>>> origin/cpstrnew
 
 type
 	sfntFeatureNamePtr = ^sfntFeatureName;
@@ -1709,6 +1976,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		setting: UInt16;
 		nameID: UInt16;
 =======
@@ -1723,6 +1991,10 @@ type
 		setting: UInt16;
 		nameID: UInt16;
 >>>>>>> origin/fixes_2.4
+=======
+		setting: UInt16;
+		nameID: UInt16;
+>>>>>>> origin/cpstrnew
 	end;
 
 	sfntFontRunFeaturePtr = ^sfntFontRunFeature;
@@ -1730,6 +2002,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		featureType: UInt16;
 		setting: UInt16;
 =======
@@ -1744,6 +2017,10 @@ type
 		featureType: UInt16;
 		setting: UInt16;
 >>>>>>> origin/fixes_2.4
+=======
+		featureType: UInt16;
+		setting: UInt16;
+>>>>>>> origin/cpstrnew
 	end;
 
 	sfntFeatureHeaderPtr = ^sfntFeatureHeader;
@@ -1860,6 +2137,7 @@ const
 {  Special invalid glyph ID value, useful as a sentinel value, for example }
 const
 	nonGlyphID = 65535;
+<<<<<<< HEAD
 
 
 {   Deprecated "don't care" values - use kFontNoPlatformCode, kFontNoScriptCode, 
@@ -1874,6 +2152,22 @@ const
 
 {  Data type used to access names from font name table }
 
+=======
+
+
+{   Deprecated "don't care" values - use kFontNoPlatformCode, kFontNoScriptCode, 
+     kFontNoLanguageCode, kFontNoName instead
+}
+
+
+	kFontNoPlatform = $FFFFFFFF;
+	kFontNoScript = $FFFFFFFF;
+	kFontNoLanguage = $FFFFFFFF;
+	kFontNoName = $FFFFFFFF;
+
+{  Data type used to access names from font name table }
+
+>>>>>>> origin/cpstrnew
 
 type
 	FontNameCode = UInt32;
@@ -1905,9 +2199,13 @@ type
 end.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

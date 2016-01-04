@@ -250,6 +250,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    {$ifdef FPC_UNICODE_RTLx}
    { command line/environment functions }
 =======
@@ -267,6 +268,9 @@ type
    function GetCommandLine : pwidechar;
      stdcall;external KernelDLL name 'GetCommandLineW';
    {$else}
+=======
+   { command line/environment functions }
+>>>>>>> origin/cpstrnew
    function GetCommandLine : pchar;
      stdcall;external KernelDLL name 'GetCommandLineA';
    {$endif}
@@ -379,6 +383,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -386,11 +391,14 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
    { Console functions needed for WriteFile fix for bug 17550 }
    function GetConsoleMode(hConsoleHandle:thandle; lpMode:LPDWORD):BOOL;
      stdcall;external KernelDLL name 'GetConsoleMode';
    function GetConsoleOutputCP : UINT;
      stdcall; external KernelDLL name 'GetConsoleOutputCP';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -413,6 +421,9 @@ type
 =======
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 =======
 
 >>>>>>> origin/cpstrnew
@@ -475,11 +486,29 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
+>>>>>>> origin/cpstrnew
+=======
+    end;
+
+
+  Function NewWideString(Len : SizeInt) : Pointer;forward;
+
+
+  function StringToOleStr(const source : UnicodeString) : PWideChar;inline;
+    begin
+      if source<>'' then
+        begin
+          result:=NewWideString(Length(source));
+          move(source[1],result^,Length(source));
+        end
+      else
+        result:=nil;
 >>>>>>> origin/cpstrnew
     end;
 

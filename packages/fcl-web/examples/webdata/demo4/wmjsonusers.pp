@@ -9,6 +9,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Classes, SysUtils, HTTPDefs, websession, fpHTTP, fpWeb, 
 =======
   Classes, SysUtils, FileUtil, LResources, HTTPDefs, websession, fpHTTP, fpWeb, 
@@ -19,6 +20,9 @@ uses
 =======
   Classes, SysUtils, FileUtil, LResources, HTTPDefs, websession, fpHTTP, fpWeb, 
 >>>>>>> graemeg/cpstrnew
+=======
+  Classes, SysUtils, FileUtil, LResources, HTTPDefs, websession, fpHTTP, fpWeb, 
+>>>>>>> origin/cpstrnew
 =======
   Classes, SysUtils, FileUtil, LResources, HTTPDefs, websession, fpHTTP, fpWeb, 
 >>>>>>> origin/cpstrnew
@@ -46,6 +50,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$R *.lfm}
 
 initialization
@@ -64,6 +69,11 @@ initialization
   {$I wmjsonusers.lrs}
 
 >>>>>>> graemeg/cpstrnew
+=======
+initialization
+  {$I wmjsonusers.lrs}
+
+>>>>>>> origin/cpstrnew
 =======
 initialization
   {$I wmjsonusers.lrs}

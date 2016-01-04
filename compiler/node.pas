@@ -124,6 +124,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           objcprotocoln,    { node for an Objective-C @protocol() expression (returns metaclass associated with protocol) }
           specializen       { parser-only node to handle Delphi-mode inline specializations }
 =======
@@ -141,6 +142,9 @@ interface
 =======
           dataconstn        { node storing some binary data }
 >>>>>>> origin/fixes_2.4
+=======
+          objcprotocoln     { node for an Objective-C @protocol() expression (returns metaclass associated with protocol) }
+>>>>>>> origin/cpstrnew
        );
 
        tnodetypeset = set of tnodetype;
@@ -229,6 +233,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           'objcprotocoln',
           'specializen');
 
@@ -254,6 +259,9 @@ interface
 =======
           'dataconstn');
 >>>>>>> origin/fixes_2.4
+=======
+          'objcprotocoln');
+>>>>>>> origin/cpstrnew
 
     type
        { all boolean field of ttree are now collected in flags }
@@ -443,6 +451,7 @@ interface
            node has been created }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          function simplify(forinline : boolean) : tnode;virtual;
 =======
          function simplify : tnode;virtual;
@@ -450,6 +459,9 @@ interface
 =======
          function simplify : tnode;virtual;
 >>>>>>> origin/fixes_2_2
+=======
+         function simplify(forinline : boolean) : tnode;virtual;
+>>>>>>> origin/cpstrnew
 {$ifdef state_tracking}
          { Does optimizations by keeping track of the variable states
            in a procedure }

@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
 #
 
@@ -19,11 +20,14 @@ packages=rtl fpmkunit
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 #   Makefile.fpc for Free Pascal Utils
 #
 
 [target]
 programs=rmwait
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -34,6 +38,8 @@ programs=rmwait
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 [install]
 fpcpackage=y
@@ -41,6 +47,7 @@ fpcpackage=y
 [default]
 fpcdir=../..
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -142,6 +149,10 @@ rmwait$(EXEEXT): rmwait.pas
 [rules]
 rmwait$(EXEEXT): rmwait.pas
 >>>>>>> graemeg/cpstrnew
+=======
+[rules]
+rmwait$(EXEEXT): rmwait.pas
+>>>>>>> origin/cpstrnew
 =======
 [rules]
 rmwait$(EXEEXT): rmwait.pas

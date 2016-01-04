@@ -710,11 +710,15 @@ procedure set_sense_key(var a : Trequest_sense; __sense_key : Tu8);
   ---------------------------------------------------------------------}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 type
   TCDSearchRec = record
     Name: String;
     i,j: Integer;
   end;
+<<<<<<< HEAD
 
 Function IsCDDevice(Device : String) : Boolean;
 Function FindFirstCD(var ACDSearchRec: TCDSearchRec): Boolean;
@@ -727,6 +731,12 @@ Function IsCDDevice(Device : String) : Boolean;
 
 Function IsCDDevice(Device : String) : Boolean;
 >>>>>>> origin/fixes_2_2
+=======
+
+Function IsCDDevice(Device : String) : Boolean;
+Function FindFirstCD(var ACDSearchRec: TCDSearchRec): Boolean;
+Function FindNextCD(var ACDSearchRec: TCDSearchRec): Boolean;
+>>>>>>> origin/cpstrnew
 Function DetectCd : String;
 
 implementation
@@ -1117,6 +1127,9 @@ Const
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 function FindFirstCD(var ACDSearchRec: TCDSearchRec): Boolean;
 begin
   Result := False;
@@ -1172,10 +1185,13 @@ begin
   ACDSearchRec.Name:=FoundDev;
 end;
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 Function DetectCD : String;
 
 Var
@@ -1243,6 +1259,9 @@ begin
   DeviceMajor:=info.st_rdev shr 8;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   {$ifdef debug}
   Writeln('Device major : ',DeviceMajor);
   {$endif}

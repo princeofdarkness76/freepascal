@@ -10,6 +10,7 @@ name=fcl-image
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 version=3.1.1
 =======
 =======
@@ -25,6 +26,9 @@ version=2.2.5
 =======
 version=2.2.5
 >>>>>>> origin/fixes_2_2
+=======
+version=2.5.1
+>>>>>>> origin/cpstrnew
 
 [target]
 units=fpimgcmn fpimage pngcomn fpreadpng fpwritepng fpreadxpm fpwritexpm \
@@ -35,9 +39,13 @@ units=fpimgcmn fpimage pngcomn fpreadpng fpwritepng fpreadxpm fpwritexpm \
       extinterpolation fpreadgif fpreadpsd xwdfile fpreadxwd
 units_win32=freetypeh freetype ftfont
 <<<<<<< HEAD
+<<<<<<< HEAD
 units_win64=freetypeh freetype ftfont
 =======
 >>>>>>> origin/fixes_2.4
+=======
+units_win64=freetypeh freetype ftfont
+>>>>>>> origin/cpstrnew
 units_beos=freetypeh freetype ftfont
 units_haiku=freetypeh freetype ftfont
 units_linux=freetypeh freetype ftfont
@@ -45,6 +53,9 @@ units_freebsd=freetypeh freetype ftfont
 units_darwin=freetypeh freetype ftfont
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 units_iphonesim=freetypeh freetype ftfont
 units_solaris=freetypeh freetype ftfont
 rsts=pscanvas

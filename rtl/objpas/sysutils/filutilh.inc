@@ -166,11 +166,14 @@ Function FileCreate (Const FileName : String; Mode : Integer) : THandle;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 Function FileRead (Handle : THandle; out Buffer; Count : longint) : Longint;

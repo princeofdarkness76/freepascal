@@ -7,6 +7,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Startup code for shared libraries, PowerPC64 version.
 =======
  * Startup code for normal programs, PowerPC64 version.
@@ -17,6 +18,9 @@
 =======
  * Startup code for normal programs, PowerPC64 version.
 >>>>>>> graemeg/cpstrnew
+=======
+ * Startup code for normal programs, PowerPC64 version.
+>>>>>>> origin/cpstrnew
 =======
  * Startup code for normal programs, PowerPC64 version.
 >>>>>>> origin/cpstrnew
@@ -76,6 +80,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     ld      11, 16(11)
 =======
     ld      11, 8(11)
@@ -86,6 +91,9 @@
 =======
     ld      11, 8(11)
 >>>>>>> graemeg/cpstrnew
+=======
+    ld      11, 8(11)
+>>>>>>> origin/cpstrnew
 =======
     ld      11, 8(11)
 >>>>>>> origin/cpstrnew
@@ -322,6 +330,9 @@ _savevr_31: addi r12,r0,-16
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 */
@@ -356,6 +367,7 @@ _restvr_30: addi r12,r0,-32
 _restvr_31: addi r12,r0,-16
     lvx v31,r12,r0
     blr
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
@@ -510,6 +522,10 @@ operatingsystem_parameters:
 <<<<<<< HEAD
 
 <<<<<<< HEAD
+=======
+*/
+
+>>>>>>> origin/cpstrnew
 /*
  * Main program entry point label (function), called by the loader
  */
@@ -586,6 +602,7 @@ operatingsystem_parameters:
     .set operatingsystem_parameter_argc, operatingsystem_parameters+0
     .set operatingsystem_parameter_argv, operatingsystem_parameters+8
     .set operatingsystem_parameter_envp, operatingsystem_parameters+16
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 <<<<<<< HEAD
@@ -675,6 +692,9 @@ operatingsystem_parameters:
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 =======
 
 >>>>>>> origin/cpstrnew

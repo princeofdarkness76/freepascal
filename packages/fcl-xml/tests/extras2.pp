@@ -89,6 +89,7 @@ var
   length: Integer;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   FParser.Options.CanonicalForm := True;
 =======
 // canonical form: PreserveWhitespace, Namespaces, NamespaceDeclarations = True;
@@ -96,6 +97,9 @@ begin
   FParser.Options.PreserveWhitespace := True;
   FParser.Options.Namespaces := True;
 >>>>>>> origin/fixes_2.4
+=======
+  FParser.Options.CanonicalForm := True;
+>>>>>>> origin/cpstrnew
   LoadStringData(doc, canonicform01);
   begin
     node := TDOMNode(doc).firstChild;
@@ -128,6 +132,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     assertEqualsW('trailingPIData', '', nodeValue);
 =======
     assertEquals('trailingPIData', '', nodeValue);
@@ -144,6 +149,9 @@ begin
 =======
     assertEquals('trailingPIData', '', nodeValue);
 >>>>>>> origin/fixes_2.4
+=======
+    assertEquals('trailingPIData', '', nodeValue);
+>>>>>>> origin/cpstrnew
     node := node.nextSibling;
     nodeType := node.nodeType;
     assertEquals('TextisSixthChild', 3, nodeType);
@@ -177,6 +185,7 @@ var
   length: Integer;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   FParser.Options.CanonicalForm := True;
 =======
 // canonical form: PreserveWhitespace, Namespaces, NamespaceDeclarations = True;
@@ -184,6 +193,9 @@ begin
   FParser.Options.PreserveWhitespace := True;
   FParser.Options.Namespaces := True;
 >>>>>>> origin/fixes_2.4
+=======
+  FParser.Options.CanonicalForm := True;
+>>>>>>> origin/cpstrnew
   FParser.Options.IgnoreComments := True;
   LoadStringData(doc, canonicform01);
   begin
@@ -217,6 +229,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     assertEqualsW('trailingPIData', '', nodeValue);
 =======
     assertEquals('trailingPIData', '', nodeValue);
@@ -233,6 +246,9 @@ begin
 =======
     assertEquals('trailingPIData', '', nodeValue);
 >>>>>>> origin/fixes_2.4
+=======
+    assertEquals('trailingPIData', '', nodeValue);
+>>>>>>> origin/cpstrnew
     node := node.nextSibling;
     assertNull('SixthIsNull', node);
   end;
@@ -247,11 +263,15 @@ var
   node: TDOMNode;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   FParser.Options.CanonicalForm := True;
 =======
   FParser.Options.PreserveWhitespace := True;
   FParser.Options.Namespaces := True;
 >>>>>>> origin/fixes_2.4
+=======
+  FParser.Options.CanonicalForm := True;
+>>>>>>> origin/cpstrnew
   LoadStringData(doc, canonicform03);
 
   divList := doc.getElementsByTagName('div');
@@ -273,11 +293,15 @@ var
   attrValue: DOMString;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   FParser.Options.CanonicalForm := True;
 =======
   FParser.Options.PreserveWhitespace := True;
   FParser.Options.Namespaces := True;
 >>>>>>> origin/fixes_2.4
+=======
+  FParser.Options.CanonicalForm := True;
+>>>>>>> origin/cpstrnew
   LoadStringData(doc, canonicform03);
 
   elemList := doc.getElementsByTagName('acronym');
@@ -287,6 +311,7 @@ begin
   attrSpecified := attr.specified;
   assertTrue('titleSpecified', attrSpecified);
   attrValue := attr.nodeValue;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -308,6 +333,9 @@ begin
 =======
   assertEquals('titleValue', 'default', attrValue);
 >>>>>>> origin/fixes_2.4
+=======
+  assertEquals('titleValue', 'default', attrValue);
+>>>>>>> origin/cpstrnew
 end;
 
 { tests that namespace fixup is done while serializing }
@@ -329,9 +357,13 @@ begin
   domImpl := GetImplementation;
   origDoc := domImpl.createDocument(namespaceURI, 'test', nil);
 <<<<<<< HEAD
+<<<<<<< HEAD
   GC(origDoc);
 =======
 >>>>>>> origin/fixes_2.4
+=======
+  GC(origDoc);
+>>>>>>> origin/cpstrnew
   docElem := origDoc.documentElement;
   docElem.setAttributeNS(namespaceURI, 'attr', 'test value');
 
@@ -343,6 +375,7 @@ begin
 
   docElem := parsedDoc.documentElement;
   docElemLocalName := docElem.localName;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -362,11 +395,14 @@ begin
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
   assertEquals('docElemLocalName', 'test', docElemLocalName);
   docElemNS := TDOMNode(docElem).namespaceURI;
   assertEquals('docElemNS', namespaceURI, docElemNS);
   attrValue := docElem.getAttributeNS(namespaceURI, 'attr');
   assertEquals('properNSAttrValue', 'test value', attrValue);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -380,6 +416,8 @@ begin
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 { tests that namespace fixup is done while serializing }
@@ -401,9 +439,13 @@ begin
   domImpl := GetImplementation;
   origDoc := domImpl.createDocument(namespaceURI, 'test', nil);
 <<<<<<< HEAD
+<<<<<<< HEAD
   GC(origDoc);
 =======
 >>>>>>> origin/fixes_2.4
+=======
+  GC(origDoc);
+>>>>>>> origin/cpstrnew
   docElem := origDoc.documentElement;
   docElem.setAttributeNS(namespaceURI, 'test:attr', 'test value');
 
@@ -415,6 +457,7 @@ begin
 
   docElem := parsedDoc.documentElement;
   docElemLocalName := docElem.localName;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -434,11 +477,14 @@ begin
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
   assertEquals('docElemLocalName', 'test', docElemLocalName);
   docElemNS := TDOMNode(docElem).namespaceURI;
   assertEquals('docElemNS', namespaceURI, docElemNS);
   attrValue := docElem.getAttributeNS(namespaceURI, 'attr');
   assertEquals('properNSAttrValue', 'test value', attrValue);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -452,6 +498,8 @@ begin
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 initialization

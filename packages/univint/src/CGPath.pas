@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    Copyright (c) 2001-2011 Apple Inc.
    All rights reserved. }
 {       Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
@@ -53,6 +54,10 @@
  * Copyright (c) 2001-2008 Apple Inc.
  * All rights reserved. }
 >>>>>>> origin/fixes_2.4
+=======
+ * Copyright (c) 2001-2008 Apple Inc.
+ * All rights reserved. }
+>>>>>>> origin/cpstrnew
 {       Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {
@@ -63,12 +68,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -80,6 +89,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -94,6 +104,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -109,6 +123,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -119,6 +134,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -126,13 +144,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -140,6 +162,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -148,8 +172,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -160,6 +187,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -180,6 +208,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -188,12 +218,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -201,6 +234,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -442,6 +476,18 @@ interface
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
 >>>>>>> origin/fixes_2.4
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -462,6 +508,7 @@ interface
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 {$endc}
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -499,6 +546,37 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -527,6 +605,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -535,6 +614,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -548,6 +629,7 @@ uses MacTypes,CGBase,CGAffineTransforms,CFBase,CGGeometry;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
 =======
@@ -558,10 +640,15 @@ uses MacTypes,CGBase,CGAffineTransforms,CFBase,CGGeometry;
 {$endc} {not MACOSALLINCLUDE}
 
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+
+>>>>>>> origin/cpstrnew
 {$ALIGN POWER}
 
 
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -810,6 +897,9 @@ procedure CGPathCloseSubpath( path: CGMutablePathRef ); external name '_CGPathCl
 =======
 	CGMutablePathRef = ^SInt32; { an opaque type }
 >>>>>>> origin/fixes_2.4
+=======
+	CGMutablePathRef = ^SInt32; { an opaque type }
+>>>>>>> origin/cpstrnew
 type
 	CGPathRef = ^SInt32; { an opaque type }
 
@@ -856,21 +946,33 @@ function CGPathEqualToPath( path1: CGPathRef; path2: CGPathRef ): CBool; externa
 { Move the current point to `(x, y)' in `path' and begin a new subpath. If
    `m' is non-NULL, then transform `(x, y)' by `m' first. }
 
+<<<<<<< HEAD
 procedure CGPathMoveToPoint( path: CGMutablePathRef; const (*var*) m: CGAffineTransform; x: CGFloat; y: CGFloat ); external name '_CGPathMoveToPoint';
+=======
+procedure CGPathMoveToPoint( path: CGMutablePathRef; m: CGAffineTransformPtr; x: CGFloat; y: CGFloat ); external name '_CGPathMoveToPoint';
+>>>>>>> origin/cpstrnew
 (* CG_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_2_0) *)
 
 { Append a straight line segment from the current point to `(x, y)' in
    `path' and move the current point to `(x, y)'. If `m' is non-NULL, then
    transform `(x, y)' by `m' first. }
 
+<<<<<<< HEAD
 procedure CGPathAddLineToPoint( path: CGMutablePathRef; const (*var*) m: CGAffineTransform; x: CGFloat; y: CGFloat ); external name '_CGPathAddLineToPoint';
+=======
+procedure CGPathAddLineToPoint( path: CGMutablePathRef; m: CGAffineTransformPtr; x: CGFloat; y: CGFloat ); external name '_CGPathAddLineToPoint';
+>>>>>>> origin/cpstrnew
 (* CG_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_2_0) *)
 
 { Append a quadratic curve from the current point to `(x, y)' with control
    point `(cpx, cpy)' in `path' and move the current point to `(x, y)'. If
    `m' is non-NULL, then transform all points by `m' first. }
 
+<<<<<<< HEAD
 procedure CGPathAddQuadCurveToPoint( path: CGMutablePathRef; const (*var*) m: CGAffineTransform; cpx: CGFloat; cpy: CGFloat; x: CGFloat; y: CGFloat ); external name '_CGPathAddQuadCurveToPoint';
+=======
+procedure CGPathAddQuadCurveToPoint( path: CGMutablePathRef; m: CGAffineTransformPtr; cpx: CGFloat; cpy: CGFloat; x: CGFloat; y: CGFloat ); external name '_CGPathAddQuadCurveToPoint';
+>>>>>>> origin/cpstrnew
 (* CG_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_2_0) *)
 
 { Append a cubic BŽzier curve from the current point to `(x,y)' with
@@ -878,12 +980,17 @@ procedure CGPathAddQuadCurveToPoint( path: CGMutablePathRef; const (*var*) m: CG
    current point to `(x, y)'. If `m' is non-NULL, then transform all points
    by `m' first. }
 
+<<<<<<< HEAD
 procedure CGPathAddCurveToPoint( path: CGMutablePathRef; const (*var*) m: CGAffineTransform; cp1x: CGFloat; cp1y: CGFloat; cp2x: CGFloat; cp2y: CGFloat; x: CGFloat; y: CGFloat ); external name '_CGPathAddCurveToPoint';
+=======
+procedure CGPathAddCurveToPoint( path: CGMutablePathRef; m: CGAffineTransformPtr; cp1x: CGFloat; cp1y: CGFloat; cp2x: CGFloat; cp2y: CGFloat; x: CGFloat; y: CGFloat ); external name '_CGPathAddCurveToPoint';
+>>>>>>> origin/cpstrnew
 (* CG_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_2_0) *)
 
 { Append a line from the current point to the starting point of the current
    subpath of `path' and end the subpath. }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure CGPathCloseSubpath( path: CGMutablePathRef ); external name '_CGPathCloseSubpath'; (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 <<<<<<< HEAD
@@ -894,6 +1001,10 @@ procedure CGPathCloseSubpath( path: CGMutablePathRef ); external name '_CGPathCl
 procedure CGPathCloseSubpath( path: CGMutablePathRef ); external name '_CGPathCloseSubpath';
 (* CG_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+procedure CGPathCloseSubpath( path: CGMutablePathRef ); external name '_CGPathCloseSubpath';
+(* CG_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 {** Path construction convenience functions. **}
 
@@ -901,6 +1012,9 @@ procedure CGPathCloseSubpath( path: CGMutablePathRef ); external name '_CGPathCl
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
    `m' before adding it to `path'. }
 
 procedure CGPathAddRect( path: CGMutablePathRef; m: CGAffineTransformPtr; rect: CGRect ); external name '_CGPathAddRect';
@@ -925,6 +1039,7 @@ procedure CGPathAddLines( path: CGMutablePathRef; m: CGAffineTransformPtr; {cons
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    approximated by a sequence of BÃ©zier curves. The center of the ellipse is
 =======
    approximated by a sequence of BŽzier curves. The center of the ellipse is
@@ -938,12 +1053,16 @@ procedure CGPathAddLines( path: CGMutablePathRef; m: CGAffineTransformPtr; {cons
 =======
    approximated by a sequence of BŽzier curves. The center of the ellipse is
 >>>>>>> origin/cpstrnew
+=======
+   approximated by a sequence of BŽzier curves. The center of the ellipse is
+>>>>>>> origin/cpstrnew
    the midpoint of `rect'. If `rect' is square, then the ellipse will be
    circular with radius equal to one-half the width (equivalently, one-half
    the height) of `rect'. If `rect' is rectangular, then the major- and
    minor-axes will be the `width' and `height' of rect. The ellipse forms a
    complete subpath of `path' --- that is, it begins with a "move to" and
    ends with a "close subpath" --- oriented in the clockwise direction. If
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -961,10 +1080,14 @@ procedure CGPathAddLines( path: CGMutablePathRef; m: CGAffineTransformPtr; {cons
 =======
    `m' is non-NULL, then the constructed BŽzier curves representing the
 >>>>>>> origin/cpstrnew
+=======
+   `m' is non-NULL, then the constructed BŽzier curves representing the
+>>>>>>> origin/cpstrnew
    ellipse will be transformed by `m' before they are added to `path'. }
 
 procedure CGPathAddEllipseInRect( path: CGMutablePathRef; m: CGAffineTransformPtr; rect: CGRect ); external name '_CGPathAddEllipseInRect';
 (* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_2_0) *)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -1133,6 +1256,10 @@ procedure CGPathAddEllipseInRect( path: CGMutablePathRef; const (*var*) m: CGAff
 (* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_2_0) *)
 
 { Add an arc of a circle to `path', possibly preceded by a straight line
+=======
+
+{ Add an arc of a circle to `path', possibly preceded by a straight line
+>>>>>>> origin/cpstrnew
    segment. The arc is approximated by a sequence of BŽzier curves. `(x, y)'
    is the center of the arc; `radius' is its radius; `startAngle' is the
    angle to the first endpoint of the arc; `endAngle' is the angle to the
@@ -1142,7 +1269,11 @@ procedure CGPathAddEllipseInRect( path: CGMutablePathRef; const (*var*) m: CGAff
    curves representing the arc will be transformed by `m' before they are
    added to `path'. }
 
+<<<<<<< HEAD
 procedure CGPathAddArc( path: CGMutablePathRef; const (*var*) m: CGAffineTransform; x: CGFloat; y: CGFloat; radius: CGFloat; startAngle: CGFloat; endAngle: CGFloat; clockwise: CBool ); external name '_CGPathAddArc';
+=======
+procedure CGPathAddArc( path: CGMutablePathRef; m: CGAffineTransformPtr; x: CGFloat; y: CGFloat; radius: CGFloat; startAngle: CGFloat; endAngle: CGFloat; clockwise: CBool ); external name '_CGPathAddArc';
+>>>>>>> origin/cpstrnew
 (* CG_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_2_0) *)
 
 { Add an arc of a circle to `path', possibly preceded by a straight line
@@ -1153,12 +1284,17 @@ procedure CGPathAddArc( path: CGMutablePathRef; const (*var*) m: CGAffineTransfo
    representing the arc will be transformed by `m' before they are added to
    `path'. }
 
+<<<<<<< HEAD
 procedure CGPathAddArcToPoint( path: CGMutablePathRef; const (*var*) m: CGAffineTransform; x1: CGFloat; y1: CGFloat; x2: CGFloat; y2: CGFloat; radius: CGFloat ); external name '_CGPathAddArcToPoint';
+=======
+procedure CGPathAddArcToPoint( path: CGMutablePathRef; m: CGAffineTransformPtr; x1: CGFloat; y1: CGFloat; x2: CGFloat; y2: CGFloat; radius: CGFloat ); external name '_CGPathAddArcToPoint';
+>>>>>>> origin/cpstrnew
 (* CG_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_2_0) *)
 
 { Add `path2' to `path1'. If `m' is non-NULL, then the points in `path2'
    will be transformed by `m' before they are added to `path1'. }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure CGPathAddPath( path1: CGMutablePathRef; const (*var*) m: CGAffineTransform; path2: CGPathRef ); external name '_CGPathAddPath'; (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 <<<<<<< HEAD
@@ -1169,11 +1305,16 @@ procedure CGPathAddPath( path1: CGMutablePathRef; const (*var*) m: CGAffineTrans
 procedure CGPathAddPath( path1: CGMutablePathRef; const (*var*) m: CGAffineTransform; path2: CGPathRef ); external name '_CGPathAddPath';
 (* CG_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+procedure CGPathAddPath( path1: CGMutablePathRef; m: CGAffineTransformPtr; path2: CGPathRef ); external name '_CGPathAddPath';
+(* CG_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 {** Path information functions. **}
 
 { Return true if `path' contains no elements, false otherwise. }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1328,6 +1469,10 @@ function CGPathIsEmpty( path: CGPathRef ): CBool; external name '_CGPathIsEmpty'
 function CGPathIsEmpty( path: CGPathRef ): CBool; external name '_CGPathIsEmpty';
 (* CG_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+function CGPathIsEmpty( path: CGPathRef ): CBool; external name '_CGPathIsEmpty';
+(* CG_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 { Return true if `path' represents a rectangle, false otherwise. }
 
@@ -1336,6 +1481,7 @@ function CGPathIsRect( path: CGPathRef; var rect: CGRect ): CBool; external name
 
 { Return the current point of the current subpath of `path'. If there is no
    current point, then return CGPointZero. }
+<<<<<<< HEAD
 
 function CGPathGetCurrentPoint( path: CGPathRef ): CGPoint; external name '_CGPathGetCurrentPoint';
 (* CG_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_2_0) *)
@@ -1375,6 +1521,39 @@ function CGPathContainsPoint( path: CGPathRef; const (*var*) m: CGAffineTransfor
 =======
 { The types of path elements returned by `CGPathApply'. }
 >>>>>>> origin/fixes_2.4
+=======
+
+function CGPathGetCurrentPoint( path: CGPathRef ): CGPoint; external name '_CGPathGetCurrentPoint';
+(* CG_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_2_0) *)
+
+{ Return the bounding box of `path'. The bounding box is the smallest
+   rectangle completely enclosing all points in the path, including control
+   points for BŽzier cubic and quadratic curves. If the path is empty, then
+   return `CGRectNull'. }
+
+function CGPathGetBoundingBox( path: CGPathRef ): CGRect; external name '_CGPathGetBoundingBox';
+(* CG_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_2_0) *)
+
+{ Return the path bounding box of `path'. The path bounding box is the
+   smallest rectangle completely enclosing all points in the path, *not*
+   including control points for BŽzier cubic and quadratic curves. If the
+   path is empty, then return `CGRectNull'. }
+
+function CGPathGetPathBoundingBox( path: CGPathRef ): CGRect; external name '_CGPathGetPathBoundingBox';
+(* CG_AVAILABLE_STARTING(__MAC_10_6, __IPHONE_NA) *)
+
+{ Return true if `point' is contained in `path'; false otherwise. A point
+   is contained in a path if it is inside the painted region when the path
+   is filled; if `eoFill' is true, then the even-odd fill rule is used to
+   evaluate the painted region of the path, otherwise, the winding-number
+   fill rule is used. If `m' is non-NULL, then the point is transformed by
+   `m' before determining whether the path contains it. }
+
+function CGPathContainsPoint( path: CGPathRef; m: CGAffineTransformPtr; point: CGPoint; eoFill: CBool ): CBool; external name '_CGPathContainsPoint';
+(* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_2_0) *)
+
+{ The types of path elements returned by `CGPathApply'. }
+>>>>>>> origin/cpstrnew
 
 type
 	CGPathElementType = SInt32;
@@ -1388,6 +1567,9 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 { An element of a path returned by `CGPathApply'. }
 
 type
@@ -1409,6 +1591,7 @@ type
 
 procedure CGPathApply( path: CGPathRef; info: UnivPtr; func: CGPathApplierFunction ); external name '_CGPathApply';
 (* CG_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_2_0) *)
+<<<<<<< HEAD
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
@@ -1440,10 +1623,13 @@ type
 
 procedure CGPathApply( path: CGPathRef; info: UnivPtr; func: CGPathApplierFunction ); external name '_CGPathApply';
 (* CG_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_2_0) *)
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -1452,3 +1638,6 @@ end.
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

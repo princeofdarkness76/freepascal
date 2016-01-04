@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       DrawSprocket/DrawSprocket.h
  
      Contains:   Games Sprockets: DrawSprocket interfaces
@@ -16,11 +17,15 @@
 =======
      File:       DrawSprocket/DrawSprocket.h
 >>>>>>> origin/fixes_2.4
+=======
+     File:       DrawSprocket/DrawSprocket.h
+>>>>>>> origin/cpstrnew
  
      Contains:   Games Sprockets: DrawSprocket interfaces
  
      Version:    DrawSprocket-2.0.85~65
  
+<<<<<<< HEAD
 <<<<<<< HEAD
      Copyright:  © 1996-2002 by Apple Computer, Inc., all rights reserved.
 <<<<<<< HEAD
@@ -30,6 +35,9 @@
 =======
      Copyright:  © 1999-2008 by Apple Computer, Inc., all rights reserved.
 >>>>>>> origin/fixes_2.4
+=======
+     Copyright:  © 1999-2008 by Apple Computer, Inc., all rights reserved.
+>>>>>>> origin/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -40,6 +48,7 @@
  
 }
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+<<<<<<< HEAD
 {
     Modified for use with Free Pascal
     Version 308
@@ -54,6 +63,8 @@
  
 }
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+=======
+>>>>>>> origin/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -62,12 +73,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -79,6 +94,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -93,6 +109,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -108,6 +128,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -118,6 +139,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -125,13 +149,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -139,6 +167,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -147,8 +177,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -159,6 +192,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -179,6 +213,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -187,12 +223,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -200,6 +239,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -431,12 +471,27 @@ interface
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
+=======
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -471,6 +526,7 @@ interface
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 {$endc}
@@ -488,6 +544,17 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -516,6 +583,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -524,6 +592,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -536,13 +606,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 uses MacTypes,Video,Events,QuickdrawTypes,QDOffscreen,Displays,MacErrors;
 {$endc} {not MACOSALLINCLUDE}
 
 
 {$ifc TARGET_OS_MAC}
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 {$ALIGN POWER}
@@ -571,6 +645,11 @@ uses MacTypes,Video,Events,Quickdraw,QDOffscreen,Displays,MacErrors;
 
 {$ALIGN POWER}
 
+=======
+
+{$ALIGN POWER}
+
+>>>>>>> origin/cpstrnew
 
 {******************* DEPRECATION NOTICE *********************
  *
@@ -580,12 +659,16 @@ uses MacTypes,Video,Events,Quickdraw,QDOffscreen,Displays,MacErrors;
  *
  ************************************************************}
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
 ********************************************************************************
 ** constants
 ********************************************************************************
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -613,9 +696,22 @@ const
 	kDSpContextState_Active = 0;
 	kDSpContextState_Paused = 1;
 	kDSpContextState_Inactive = 2;
+=======
+type
+	DSpDepthMask = SInt32;
+const
+	kDSpDepthMask_1 = 1 shl 0;
+	kDSpDepthMask_2 = 1 shl 1;
+	kDSpDepthMask_4 = 1 shl 2;
+	kDSpDepthMask_8 = 1 shl 3;
+	kDSpDepthMask_16 = 1 shl 4;
+	kDSpDepthMask_32 = 1 shl 5;
+	kDSpDepthMask_All = -1;
+>>>>>>> origin/cpstrnew
 
 { kDSpContextOption_QD3DAccel not yet implemented }
 type
+<<<<<<< HEAD
 	DSpContextOption = SInt32;
 const
 {    kDSpContextOption_QD3DAccel       = 1<<0,}
@@ -701,9 +797,38 @@ const
 	kDSpContextState_Active = 0;
 	kDSpContextState_Paused = 1;
 	kDSpContextState_Inactive = 2;
+=======
+	DSpColorNeeds = SInt32;
+const
+	kDSpColorNeeds_DontCare = 0;
+	kDSpColorNeeds_Request = 1;
+	kDSpColorNeeds_Require = 2;
+
+type
+	DSpContextState = SInt32;
+const
+	kDSpContextState_Active = 0;
+	kDSpContextState_Paused = 1;
+	kDSpContextState_Inactive = 2;
 
 { kDSpContextOption_QD3DAccel not yet implemented }
 type
+	DSpContextOption = SInt32;
+const
+{    kDSpContextOption_QD3DAccel       = 1<<0,}
+	kDSpContextOption_PageFlip = 1 shl 1;
+	kDSpContextOption_DontSyncVBL = 1 shl 2;
+	kDSpContextOption_Stereoscopic = 1 shl 3;
+
+type
+	DSpAltBufferOption = SInt32;
+const
+	kDSpAltBufferOption_RowBytesEqualsWidth = 1 shl 0;
+>>>>>>> origin/cpstrnew
+
+{ kDSpContextOption_QD3DAccel not yet implemented }
+type
+<<<<<<< HEAD
 	DSpContextOption = SInt32;
 const
 {    kDSpContextOption_QD3DAccel       = 1<<0,}
@@ -724,6 +849,15 @@ const
 type
 	DSpBlitMode = SInt32;
 const
+=======
+	DSpBufferKind = SInt32;
+const
+	kDSpBufferKind_Normal = 0;
+
+type
+	DSpBlitMode = SInt32;
+const
+>>>>>>> origin/cpstrnew
 	kDSpBlitMode_Plain = 0;
 	kDSpBlitMode_SrcKey = 1 shl 0;
 	kDSpBlitMode_DstKey = 1 shl 1;
@@ -759,6 +893,7 @@ type
  *    Non-Carbon CFM:   available as macro/inline
  }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 const
 	uppDSpEventProcInfo = $000000D1;
@@ -779,10 +914,13 @@ function NewDSpEventUPP(userRoutine: DSpEventProcPtr): DSpEventUPP; external nam
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  NewDSpCallbackUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -798,10 +936,13 @@ function NewDSpEventUPP(userRoutine: DSpEventProcPtr): DSpEventUPP; external nam
  *    CarbonLib:        not available
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   available as macro/inline
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function NewDSpCallbackUPP(userRoutine: DSpCallbackProcPtr): DSpCallbackUPP; external name '_NewDSpCallbackUPP';
 <<<<<<< HEAD
@@ -811,10 +952,14 @@ function NewDSpCallbackUPP(userRoutine: DSpCallbackProcPtr): DSpCallbackUPP; ext
 =======
 
 >>>>>>> origin/fixes_2.4
+=======
+
+>>>>>>> origin/cpstrnew
 {
  *  DisposeDSpEventUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -830,10 +975,13 @@ function NewDSpCallbackUPP(userRoutine: DSpCallbackProcPtr): DSpCallbackUPP; ext
  *    CarbonLib:        not available
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   available as macro/inline
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure DisposeDSpEventUPP(userUPP: DSpEventUPP); external name '_DisposeDSpEventUPP';
 <<<<<<< HEAD
@@ -843,10 +991,14 @@ procedure DisposeDSpEventUPP(userUPP: DSpEventUPP); external name '_DisposeDSpEv
 =======
 
 >>>>>>> origin/fixes_2.4
+=======
+
+>>>>>>> origin/cpstrnew
 {
  *  DisposeDSpCallbackUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -862,10 +1014,13 @@ procedure DisposeDSpEventUPP(userUPP: DSpEventUPP); external name '_DisposeDSpEv
  *    CarbonLib:        not available
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   available as macro/inline
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure DisposeDSpCallbackUPP(userUPP: DSpCallbackUPP); external name '_DisposeDSpCallbackUPP';
 <<<<<<< HEAD
@@ -875,10 +1030,14 @@ procedure DisposeDSpCallbackUPP(userUPP: DSpCallbackUPP); external name '_Dispos
 =======
 
 >>>>>>> origin/fixes_2.4
+=======
+
+>>>>>>> origin/cpstrnew
 {
  *  InvokeDSpEventUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -894,10 +1053,13 @@ procedure DisposeDSpCallbackUPP(userUPP: DSpCallbackUPP); external name '_Dispos
  *    CarbonLib:        not available
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   available as macro/inline
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function InvokeDSpEventUPP(var inEvent: EventRecord; userRoutine: DSpEventUPP): boolean; external name '_InvokeDSpEventUPP';
 <<<<<<< HEAD
@@ -907,10 +1069,14 @@ function InvokeDSpEventUPP(var inEvent: EventRecord; userRoutine: DSpEventUPP): 
 =======
 
 >>>>>>> origin/fixes_2.4
+=======
+
+>>>>>>> origin/cpstrnew
 {
  *  InvokeDSpCallbackUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -925,10 +1091,13 @@ function InvokeDSpEventUPP(var inEvent: EventRecord; userRoutine: DSpEventUPP): 
  *    CarbonLib:        not available
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   available as macro/inline
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function InvokeDSpCallbackUPP(inContext: DSpContextReference; inRefCon: UnivPtr; userRoutine: DSpCallbackUPP): boolean; external name '_InvokeDSpCallbackUPP';
 {$endc}  {CALL_NOT_IN_CARBON}
@@ -939,6 +1108,8 @@ function InvokeDSpCallbackUPP(inContext: DSpContextReference; inRefCon: UnivPtr;
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 type
 	DSpContextAttributesPtr = ^DSpContextAttributes;
@@ -946,8 +1117,11 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 		frequency: Fixed;
 		displayWidth: UInt32;
 		displayHeight: UInt32;
@@ -965,6 +1139,9 @@ type
 		gameMustConfirmSwitch: Boolean;
 		reserved3: array [0..4-1] of UInt32;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 	end;
 type
 	DSpAltBufferAttributesPtr = ^DSpAltBufferAttributes;
@@ -1000,6 +1177,13 @@ type
 ********************************************************************************
 }
 
+<<<<<<< HEAD
+{
+** global operations
+}
+{
+ *  DSpStartup()   *** DEPRECATED ***
+=======
 {
 ** global operations
 }
@@ -1017,73 +1201,148 @@ function DSpStartup: OSStatus; external name '_DSpStartup';
 
 {
  *  DSpShutdown()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in DrawSprocket.framework but deprecated in 10.4
  *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
+ }
+<<<<<<< HEAD
+function DSpStartup: OSStatus; external name '_DSpStartup';
+=======
+function DSpShutdown: OSStatus; external name '_DSpShutdown';
+>>>>>>> origin/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+<<<<<<< HEAD
+ *  DSpShutdown()   *** DEPRECATED ***
+=======
+ *  DSpGetVersion()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in DrawSprocket.framework but deprecated in 10.4
+ *    CarbonLib:        not available
+<<<<<<< HEAD
  *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
  }
 function DSpShutdown: OSStatus; external name '_DSpShutdown';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
-
-
-{
- *  DSpGetVersion()   *** DEPRECATED ***
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in DrawSprocket.framework but deprecated in 10.4
- *    CarbonLib:        not available
+=======
  *    Non-Carbon CFM:   in DrawSprocketLib 1.7 and later
  }
 function DSpGetVersion: NumVersion; external name '_DSpGetVersion';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
+ *  DSpGetVersion()   *** DEPRECATED ***
+=======
  *  DSpGetFirstContext()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in DrawSprocket.framework but deprecated in 10.4
  *    CarbonLib:        not available
+<<<<<<< HEAD
+ *    Non-Carbon CFM:   in DrawSprocketLib 1.7 and later
+ }
+function DSpGetVersion: NumVersion; external name '_DSpGetVersion';
+=======
  *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
  }
 function DSpGetFirstContext( inDisplayID: DisplayIDType; var outContext: DSpContextReference ): OSStatus; external name '_DSpGetFirstContext';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
+ *  DSpGetFirstContext()   *** DEPRECATED ***
+=======
  *  DSpGetNextContext()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in DrawSprocket.framework but deprecated in 10.4
  *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
+ }
+<<<<<<< HEAD
+function DSpGetFirstContext( inDisplayID: DisplayIDType; var outContext: DSpContextReference ): OSStatus; external name '_DSpGetFirstContext';
+=======
+function DSpGetNextContext( inCurrentContext: DSpContextReference; var outContext: DSpContextReference ): OSStatus; external name '_DSpGetNextContext';
+>>>>>>> origin/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+<<<<<<< HEAD
+ *  DSpGetNextContext()   *** DEPRECATED ***
+=======
+ *  DSpGetCurrentContext()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in DrawSprocket.framework but deprecated in 10.4
+ *    CarbonLib:        not available
+<<<<<<< HEAD
  *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
  }
 function DSpGetNextContext( inCurrentContext: DSpContextReference; var outContext: DSpContextReference ): OSStatus; external name '_DSpGetNextContext';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
-
-
-{
- *  DSpGetCurrentContext()   *** DEPRECATED ***
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in DrawSprocket.framework but deprecated in 10.4
- *    CarbonLib:        not available
+=======
  *    Non-Carbon CFM:   in DrawSprocketLib 1.7 and later
  }
 function DSpGetCurrentContext( inDisplayID: DisplayIDType; var outContext: DSpContextReference ): OSStatus; external name '_DSpGetCurrentContext';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
+ *  DSpGetCurrentContext()   *** DEPRECATED ***
+=======
  *  DSpFindBestContext()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in DrawSprocket.framework but deprecated in 10.4
  *    CarbonLib:        not available
+<<<<<<< HEAD
+ *    Non-Carbon CFM:   in DrawSprocketLib 1.7 and later
+ }
+function DSpGetCurrentContext( inDisplayID: DisplayIDType; var outContext: DSpContextReference ): OSStatus; external name '_DSpGetCurrentContext';
+=======
  *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
  }
 function DSpFindBestContext( inDesiredAttributes: DSpContextAttributesPtr; var outContext: DSpContextReference ): OSStatus; external name '_DSpFindBestContext';
+>>>>>>> origin/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+<<<<<<< HEAD
+ *  DSpFindBestContext()   *** DEPRECATED ***
+=======
+ *  DSpFindBestContextOnDisplayID()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in DrawSprocket.framework but deprecated in 10.4
+ *    CarbonLib:        not available
+<<<<<<< HEAD
+ *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
+ }
+function DSpFindBestContext( inDesiredAttributes: DSpContextAttributesPtr; var outContext: DSpContextReference ): OSStatus; external name '_DSpFindBestContext';
+=======
+ *    Non-Carbon CFM:   in DrawSprocketLib 1.7 and later
+ }
+function DSpFindBestContextOnDisplayID( inDesiredAttributes: DSpContextAttributesPtr; var outContext: DSpContextReference; inDisplayID: DisplayIDType ): OSStatus; external name '_DSpFindBestContextOnDisplayID';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
@@ -1091,12 +1350,20 @@ function DSpFindBestContext( inDesiredAttributes: DSpContextAttributesPtr; var o
  *  DSpFindBestContextOnDisplayID()   *** DEPRECATED ***
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in DrawSprocket.framework but deprecated in 10.4
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in DrawSprocketLib 1.7 and later
  }
 function DSpFindBestContextOnDisplayID( inDesiredAttributes: DSpContextAttributesPtr; var outContext: DSpContextReference; inDisplayID: DisplayIDType ): OSStatus; external name '_DSpFindBestContextOnDisplayID';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+=======
+ *    Mac OS X:         not available
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
+ }
+
+>>>>>>> origin/cpstrnew
 
 
 =======
@@ -1426,6 +1693,7 @@ function DSpFindContextFromPoint(inGlobalPoint: Point; var outContext: DSpContex
  *  DSpGetMouse()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
  *    CarbonLib:        not available
  *    Mac OS X:         in version 10.0 and later
@@ -1435,66 +1703,83 @@ function DSpGetMouse(var outGlobalPoint: Point): OSStatus; external name '_DSpGe
 =======
  *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
  *    CarbonLib:        not available
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         not available
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
  }
-function DSpUserSelectContext(inDesiredAttributes: DSpContextAttributesPtr; inDialogDisplayLocation: DisplayIDType; inEventProc: DSpEventUPP; var outContext: DSpContextReference): OSStatus; external name '_DSpUserSelectContext';
 
-{$endc}  {CALL_NOT_IN_CARBON}
 
 {
- *  DSpProcessEvent()
+ *  DSpProcessEvent()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later in DrawSprocket.framework but deprecated in 10.4
  *    CarbonLib:        not available
- *    Mac OS X:         in version 10.0 and later
+ *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
  }
-function DSpProcessEvent(var inEvent: EventRecord; var outEventWasProcessed: boolean): OSStatus; external name '_DSpProcessEvent';
+function DSpProcessEvent( var inEvent: EventRecord; var outEventWasProcessed: Boolean ): OSStatus; external name '_DSpProcessEvent';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
 
 {
- *  DSpSetBlankingColor()
+ *  DSpSetBlankingColor()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later in DrawSprocket.framework but deprecated in 10.4
  *    CarbonLib:        not available
- *    Mac OS X:         in version 10.0 and later
+ *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
  }
-function DSpSetBlankingColor(const (*var*) inRGBColor: RGBColor): OSStatus; external name '_DSpSetBlankingColor';
+function DSpSetBlankingColor( const (*var*) inRGBColor: RGBColor ): OSStatus; external name '_DSpSetBlankingColor';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
 
 {
- *  DSpSetDebugMode()
+ *  DSpSetDebugMode()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later in DrawSprocket.framework but deprecated in 10.4
  *    CarbonLib:        not available
- *    Mac OS X:         in version 10.0 and later
+ *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
  }
-function DSpSetDebugMode(inDebugMode: boolean): OSStatus; external name '_DSpSetDebugMode';
+function DSpSetDebugMode( inDebugMode: Boolean ): OSStatus; external name '_DSpSetDebugMode';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
 
 {
- *  DSpFindContextFromPoint()
+ *  DSpFindContextFromPoint()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later in DrawSprocket.framework but deprecated in 10.4
  *    CarbonLib:        not available
- *    Mac OS X:         in version 10.0 and later
+ *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
  }
-function DSpFindContextFromPoint(inGlobalPoint: Point; var outContext: DSpContextReference): OSStatus; external name '_DSpFindContextFromPoint';
+function DSpFindContextFromPoint( inGlobalPoint: Point; var outContext: DSpContextReference ): OSStatus; external name '_DSpFindContextFromPoint';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
 
 {
- *  DSpGetMouse()
+ *  DSpGetMouse()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later in DrawSprocket.framework but deprecated in 10.4
  *    CarbonLib:        not available
- *    Mac OS X:         in version 10.0 and later
+ *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
  }
+<<<<<<< HEAD
 function DSpGetMouse(var outGlobalPoint: Point): OSStatus; external name '_DSpGetMouse';
 >>>>>>> origin/fixes_2_2
+=======
+function DSpGetMouse( var outGlobalPoint: Point ): OSStatus; external name '_DSpGetMouse';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+>>>>>>> origin/cpstrnew
 
 {
 ** alternate buffer operations
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1506,10 +1791,13 @@ function DSpGetMouse(var outGlobalPoint: Point): OSStatus; external name '_DSpGe
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  DSpAltBuffer_New()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2007,6 +2295,8 @@ function DSpContext_GetMonitorFrequency( inContext: DSpContextReferenceConst; va
  *    CarbonLib:        not available
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
@@ -2017,12 +2307,19 @@ function DSpContext_GetMonitorFrequency( inContext: DSpContextReferenceConst; va
  *  DSpContext_GetMonitorFrequency()   *** DEPRECATED ***
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in DrawSprocket.framework but deprecated in 10.4
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
  }
 function DSpContext_GetMonitorFrequency( inContext: DSpContextReferenceConst; var outFrequency: Fixed ): OSStatus; external name '_DSpContext_GetMonitorFrequency';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+=======
+ *    Mac OS X:         not available
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
+ }
+>>>>>>> origin/cpstrnew
 
 
 <<<<<<< HEAD
@@ -2040,10 +2337,14 @@ function DSpContext_GetMonitorFrequency( inContext: DSpContextReferenceConst; va
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
  }
+<<<<<<< HEAD
 
 =======
 =======
@@ -2052,10 +2353,19 @@ function DSpContext_GetMonitorFrequency( inContext: DSpContextReferenceConst; va
  *    CarbonLib:        not available
 =======
 >>>>>>> origin/fixes_2.4
+=======
+
+
+{
+ *  DSpAltBuffer_GetCGrafPtr()
+ *  
+ *  Availability:
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function DSpContext_SetMaxFrameRate(inContext: DSpContextReference; inMaxFPS: UInt32): OSStatus; external name '_DSpContext_SetMaxFrameRate';
 <<<<<<< HEAD
@@ -2081,34 +2391,75 @@ function DSpContext_SetMaxFrameRate(inContext: DSpContextReference; inMaxFPS: UI
 
 {
  *  DSpContext_SetState()   *** DEPRECATED ***
+=======
+
+
+{
+** context operations
+}
+{ general }
+{
+ *  DSpContext_GetAttributes()   *** DEPRECATED ***
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in DrawSprocket.framework but deprecated in 10.4
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
  }
-function DSpContext_SetState( inContext: DSpContextReference; inState: DSpContextState ): OSStatus; external name '_DSpContext_SetState';
+function DSpContext_GetAttributes( inContext: DSpContextReferenceConst; outAttributes: DSpContextAttributesPtr ): OSStatus; external name '_DSpContext_GetAttributes';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
- *  DSpContext_GetState()   *** DEPRECATED ***
+ *  DSpContext_Reserve()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in DrawSprocket.framework but deprecated in 10.4
  *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
+ }
+<<<<<<< HEAD
+function DSpContext_SetState( inContext: DSpContextReference; inState: DSpContextState ): OSStatus; external name '_DSpContext_SetState';
+=======
+function DSpContext_Reserve( inContext: DSpContextReference; inDesiredAttributes: DSpContextAttributesPtr ): OSStatus; external name '_DSpContext_Reserve';
+>>>>>>> origin/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+<<<<<<< HEAD
+ *  DSpContext_GetState()   *** DEPRECATED ***
+=======
+ *  DSpContext_Queue()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in DrawSprocket.framework but deprecated in 10.4
+ *    CarbonLib:        not available
+<<<<<<< HEAD
  *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
  }
 function DSpContext_GetState( inContext: DSpContextReferenceConst; var outState: DSpContextState ): OSStatus; external name '_DSpContext_GetState';
+=======
+ *    Non-Carbon CFM:   in DrawSprocketLib 1.7 and later
+ }
+function DSpContext_Queue( inParentContext: DSpContextReference; inChildContext: DSpContextReference; inDesiredAttributes: DSpContextAttributesPtr ): OSStatus; external name '_DSpContext_Queue';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  DSpContext_IsBusy()   *** DEPRECATED ***
+=======
+ *  DSpContext_Switch()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in DrawSprocket.framework but deprecated in 10.4
  *    CarbonLib:        not available
+<<<<<<< HEAD
  *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
  }
 function DSpContext_IsBusy( inContext: DSpContextReferenceConst; var outBusyFlag: Boolean ): OSStatus; external name '_DSpContext_IsBusy';
@@ -2131,37 +2482,81 @@ function DSpContext_IsBusy( inContext: DSpContextReferenceConst; var outBusyFlag
 
 {
  *  DSpContext_SetState()   *** DEPRECATED ***
+=======
+ *    Non-Carbon CFM:   in DrawSprocketLib 1.7 and later
+ }
+function DSpContext_Switch( inOldContext: DSpContextReference; inNewContext: DSpContextReference ): OSStatus; external name '_DSpContext_Switch';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  DSpContext_Release()   *** DEPRECATED ***
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in DrawSprocket.framework but deprecated in 10.4
  *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
+ }
+function DSpContext_Release( inContext: DSpContextReference ): OSStatus; external name '_DSpContext_Release';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  DSpContext_Dispose()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in DrawSprocket.framework but deprecated in 10.4
+ *    CarbonLib:        not available
+<<<<<<< HEAD
  *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
  }
 function DSpContext_SetState( inContext: DSpContextReference; inState: DSpContextState ): OSStatus; external name '_DSpContext_SetState';
+=======
+ *    Non-Carbon CFM:   not available
+ }
+function DSpContext_Dispose( inContext: DSpContextReference ): OSStatus; external name '_DSpContext_Dispose';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  DSpContext_GetState()   *** DEPRECATED ***
+=======
+ *  DSpContext_GetDisplayID()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in DrawSprocket.framework but deprecated in 10.4
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
  }
+<<<<<<< HEAD
 function DSpContext_GetState( inContext: DSpContextReferenceConst; var outState: DSpContextState ): OSStatus; external name '_DSpContext_GetState';
+=======
+function DSpContext_GetDisplayID( inContext: DSpContextReferenceConst; var outDisplayID: DisplayIDType ): OSStatus; external name '_DSpContext_GetDisplayID';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  DSpContext_IsBusy()   *** DEPRECATED ***
+=======
+ *  DSpContext_GlobalToLocal()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in DrawSprocket.framework but deprecated in 10.4
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
  }
+<<<<<<< HEAD
 function DSpContext_IsBusy( inContext: DSpContextReferenceConst; var outBusyFlag: Boolean ): OSStatus; external name '_DSpContext_IsBusy';
+=======
+function DSpContext_GlobalToLocal( inContext: DSpContextReferenceConst; var ioPoint: Point ): OSStatus; external name '_DSpContext_GlobalToLocal';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
@@ -2175,6 +2570,7 @@ function DSpContext_IsBusy( inContext: DSpContextReferenceConst; var outBusyFlag
 =======
 >>>>>>> origin/fixes_2.4
 {
+<<<<<<< HEAD
  *  DSpContext_SetDirtyRectGridSize()
  *  
  *  Availability:
@@ -2193,10 +2589,28 @@ function DSpContext_IsBusy( inContext: DSpContextReferenceConst; var outBusyFlag
  *    CarbonLib:        not available
 =======
 >>>>>>> origin/fixes_2.4
+=======
+ *  DSpContext_LocalToGlobal()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in DrawSprocket.framework but deprecated in 10.4
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
+ }
+function DSpContext_LocalToGlobal( inContext: DSpContextReferenceConst; var ioPoint: Point ): OSStatus; external name '_DSpContext_LocalToGlobal';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  DSpContext_SetVBLProc()
+ *  
+ *  Availability:
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function DSpContext_SetDirtyRectGridSize(inContext: DSpContextReference; inCellPixelWidth: UInt32; inCellPixelHeight: UInt32): OSStatus; external name '_DSpContext_SetDirtyRectGridSize';
 <<<<<<< HEAD
@@ -2206,6 +2620,9 @@ function DSpContext_SetDirtyRectGridSize(inContext: DSpContextReference; inCellP
 =======
 
 >>>>>>> origin/fixes_2.4
+=======
+
+>>>>>>> origin/cpstrnew
 
 {
  *  DSpContext_GetDirtyRectGridSize()
@@ -2214,10 +2631,14 @@ function DSpContext_SetDirtyRectGridSize(inContext: DSpContextReference; inCellP
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
  }
+<<<<<<< HEAD
 
 =======
 =======
@@ -2226,10 +2647,19 @@ function DSpContext_SetDirtyRectGridSize(inContext: DSpContextReference; inCellP
  *    CarbonLib:        not available
 =======
 >>>>>>> origin/fixes_2.4
+=======
+
+
+{
+ *  DSpContext_Flatten()
+ *  
+ *  Availability:
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function DSpContext_GetDirtyRectGridSize(inContext: DSpContextReferenceConst; var outCellPixelWidth: UInt32; var outCellPixelHeight: UInt32): OSStatus; external name '_DSpContext_GetDirtyRectGridSize';
 <<<<<<< HEAD
@@ -2239,11 +2669,15 @@ function DSpContext_GetDirtyRectGridSize(inContext: DSpContextReferenceConst; va
 =======
 
 >>>>>>> origin/fixes_2.4
+=======
+
+>>>>>>> origin/cpstrnew
 
 {
  *  DSpContext_GetDirtyRectGridUnits()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2259,10 +2693,13 @@ function DSpContext_GetDirtyRectGridSize(inContext: DSpContextReferenceConst; va
  *    CarbonLib:        not available
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function DSpContext_GetDirtyRectGridUnits(inContext: DSpContextReferenceConst; var outCellPixelWidth: UInt32; var outCellPixelHeight: UInt32): OSStatus; external name '_DSpContext_GetDirtyRectGridUnits';
 <<<<<<< HEAD
@@ -2292,10 +2729,31 @@ function DSpContext_GetDirtyRectGridUnits(inContext: DSpContextReferenceConst; v
  *    CarbonLib:        not available
 =======
 >>>>>>> origin/fixes_2.4
+=======
+
+
+{
+ *  DSpContext_GetMonitorFrequency()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in DrawSprocket.framework but deprecated in 10.4
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
+ }
+function DSpContext_GetMonitorFrequency( inContext: DSpContextReferenceConst; var outFrequency: Fixed ): OSStatus; external name '_DSpContext_GetMonitorFrequency';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  DSpContext_SetMaxFrameRate()
+ *  
+ *  Availability:
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function DSpContext_InvalBackBufferRect(inContext: DSpContextReference; const (*var*) inRect: Rect): OSStatus; external name '_DSpContext_InvalBackBufferRect';
 <<<<<<< HEAD
@@ -2303,6 +2761,9 @@ function DSpContext_InvalBackBufferRect(inContext: DSpContextReference; const (*
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+
+>>>>>>> origin/cpstrnew
 
 >>>>>>> origin/fixes_2.4
 
@@ -2314,6 +2775,7 @@ function DSpContext_InvalBackBufferRect(inContext: DSpContextReference; const (*
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
@@ -2326,10 +2788,13 @@ function DSpContext_InvalBackBufferRect(inContext: DSpContextReference; const (*
  *    CarbonLib:        not available
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function DSpContext_SetUnderlayAltBuffer(inContext: DSpContextReference; inNewUnderlay: DSpAltBufferReference): OSStatus; external name '_DSpContext_SetUnderlayAltBuffer';
 <<<<<<< HEAD
@@ -2351,43 +2816,85 @@ function DSpContext_SetUnderlayAltBuffer(inContext: DSpContextReference; inNewUn
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
  }
+=======
+
+
+{
+ *  DSpContext_SetState()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in DrawSprocket.framework but deprecated in 10.4
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
+ }
+function DSpContext_SetState( inContext: DSpContextReference; inState: DSpContextState ): OSStatus; external name '_DSpContext_SetState';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+>>>>>>> origin/cpstrnew
 
 
 { gamma }
 {
+<<<<<<< HEAD
  *  DSpContext_FadeGammaOut()   *** DEPRECATED ***
+=======
+ *  DSpContext_GetState()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in DrawSprocket.framework but deprecated in 10.4
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
  }
+<<<<<<< HEAD
 function DSpContext_FadeGammaOut( inContext: DSpContextReference; var inZeroIntensityColor: RGBColor ): OSStatus; external name '_DSpContext_FadeGammaOut';
+=======
+function DSpContext_GetState( inContext: DSpContextReferenceConst; var outState: DSpContextState ): OSStatus; external name '_DSpContext_GetState';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  DSpContext_FadeGammaIn()   *** DEPRECATED ***
+=======
+ *  DSpContext_IsBusy()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in DrawSprocket.framework but deprecated in 10.4
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
  }
+<<<<<<< HEAD
 function DSpContext_FadeGammaIn( inContext: DSpContextReference; var inZeroIntensityColor: RGBColor ): OSStatus; external name '_DSpContext_FadeGammaIn';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
+=======
+function DSpContext_IsBusy( inContext: DSpContextReferenceConst; var outBusyFlag: Boolean ): OSStatus; external name '_DSpContext_IsBusy';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{ dirty rectangles }
+>>>>>>> origin/cpstrnew
 {
  *  DSpContext_FadeGamma()   *** DEPRECATED ***
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in DrawSprocket.framework but deprecated in 10.4
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
  }
 function DSpContext_FadeGamma( inContext: DSpContextReference; inPercentOfOriginalIntensity: SInt32; var inZeroIntensityColor: RGBColor ): OSStatus; external name '_DSpContext_FadeGamma';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+=======
+ *    Mac OS X:         not available
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
+ }
+>>>>>>> origin/cpstrnew
 
 
 { buffering }
@@ -2395,36 +2902,58 @@ function DSpContext_FadeGamma( inContext: DSpContextReference; inPercentOfOrigin
  *  DSpContext_SwapBuffers()   *** DEPRECATED ***
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in DrawSprocket.framework but deprecated in 10.4
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
  }
 function DSpContext_SwapBuffers( inContext: DSpContextReference; inBusyProc: DSpCallbackUPP; inUserRefCon: UnivPtr ): OSStatus; external name '_DSpContext_SwapBuffers';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+=======
+ *    Mac OS X:         not available
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
+ }
+>>>>>>> origin/cpstrnew
 
 
 {
  *  DSpContext_GetBackBuffer()   *** DEPRECATED ***
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in DrawSprocket.framework but deprecated in 10.4
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
  }
 function DSpContext_GetBackBuffer( inContext: DSpContextReference; inBufferKind: DSpBufferKind; var outBackBuffer: CGrafPtr ): OSStatus; external name '_DSpContext_GetBackBuffer';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+=======
+ *    Mac OS X:         not available
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
+ }
+>>>>>>> origin/cpstrnew
 
 
 {
  *  DSpContext_GetFrontBuffer()   *** DEPRECATED ***
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in DrawSprocket.framework but deprecated in 10.4
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in DrawSprocketLib 1.1 and later
  }
 function DSpContext_GetFrontBuffer( inContext: DSpContextReferenceConst; var outFrontBuffer: CGrafPtr ): OSStatus; external name '_DSpContext_GetFrontBuffer';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+=======
+ *    Mac OS X:         not available
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
+ }
+
+>>>>>>> origin/cpstrnew
 
 
 { clut operations }
@@ -2432,18 +2961,26 @@ function DSpContext_GetFrontBuffer( inContext: DSpContextReferenceConst; var out
  *  DSpContext_SetCLUTEntries()   *** DEPRECATED ***
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in DrawSprocket.framework but deprecated in 10.4
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
  }
 function DSpContext_SetCLUTEntries( inContext: DSpContextReference; const (*var*) inEntries: ColorSpec; inStartingEntry: UInt16; inLastEntry: UInt16 ): OSStatus; external name '_DSpContext_SetCLUTEntries';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+=======
+ *    Mac OS X:         not available
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
+ }
+>>>>>>> origin/cpstrnew
 
 
 {
  *  DSpContext_GetCLUTEntries()   *** DEPRECATED ***
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in DrawSprocket.framework but deprecated in 10.4
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
@@ -2460,6 +2997,8 @@ function DSpContext_GetCLUTEntries( inContext: DSpContextReferenceConst; var out
  *    CarbonLib:        not available
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in DrawSprocketLib 1.0 and later
@@ -2566,6 +3105,7 @@ function DSpContext_GetCLUTEntries( inContext: DSpContextReferenceConst; var out
 
 
 { blit operations }
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifc CALL_NOT_IN_CARBON}
 <<<<<<< HEAD
@@ -2574,10 +3114,13 @@ function DSpContext_GetCLUTEntries( inContext: DSpContextReferenceConst; var out
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  DSpBlit_Faster()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2593,10 +3136,13 @@ function DSpContext_GetCLUTEntries( inContext: DSpContextReferenceConst; var out
  *    CarbonLib:        not available
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in DrawSprocketLib 1.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function DSpBlit_Faster(inBlitInfo: DSpBlitInfoPtr; inAsyncFlag: boolean): OSStatus; external name '_DSpBlit_Faster';
 <<<<<<< HEAD
@@ -2606,6 +3152,9 @@ function DSpBlit_Faster(inBlitInfo: DSpBlitInfoPtr; inAsyncFlag: boolean): OSSta
 =======
 
 >>>>>>> origin/fixes_2.4
+=======
+
+>>>>>>> origin/cpstrnew
 
 {
  *  DSpBlit_Fastest()
@@ -2614,10 +3163,14 @@ function DSpBlit_Faster(inBlitInfo: DSpBlitInfoPtr; inAsyncFlag: boolean): OSSta
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in DrawSprocketLib 1.1 and later
  }
+<<<<<<< HEAD
 
 
 {$endc} {TARGET_OS_MAC}
@@ -2636,12 +3189,15 @@ end.
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in DrawSprocketLib 1.1 and later
  }
+=======
+>>>>>>> origin/cpstrnew
 
 
 {$endc} {TARGET_OS_MAC}
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -2650,3 +3206,6 @@ end.
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

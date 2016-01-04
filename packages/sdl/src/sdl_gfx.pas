@@ -25,6 +25,7 @@ interface
 uses
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$IFDEF MORPHOS}
   exec,
 {$ENDIF}
@@ -32,6 +33,11 @@ uses
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$IFDEF MORPHOS}
+  exec,
+{$ENDIF}
+>>>>>>> origin/cpstrnew
   sdl;
 
 const
@@ -53,14 +59,20 @@ const
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {$IFDEF MORPHOS}
   SDLgfxLibName = 'powersdl_gfx.library';
 {$ENDIF}
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
   // Some rates in Hz
   FPS_UPPER_LIMIT	= 200;
   FPS_LOWER_LIMIT	= 1;
@@ -98,14 +110,20 @@ type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {$IFDEF MORPHOS}
 {$INCLUDE powersdl_gfx.inc}
 {$ELSE MORPHOS}
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 {
 
  SDL_framerate: framerate manager
@@ -717,12 +735,17 @@ cdecl; external {$IFDEF __GPC__}name 'zoomSurfaceSize'{$ELSE} SDLgfxLibName{$END
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ENDIF MORPHOS}
 
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$ENDIF MORPHOS}
+
+>>>>>>> origin/cpstrnew
 implementation
 
 end.

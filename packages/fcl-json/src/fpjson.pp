@@ -33,6 +33,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   TJSONInstanceType = (jitUnknown, jitNumberInteger,jitNumberInt64,jitNumberQWord,jitNumberFloat,
                        jitString, jitBoolean, jitNull, jitArray, jitObject);
   TJSONFloat = Double;
@@ -45,6 +46,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   TJSONFloat = Double;
   TJSONStringType = AnsiString;
 >>>>>>> graemeg/cpstrnew
@@ -53,6 +56,7 @@ type
   TFormatOption = (foSingleLineArray,   // Array without CR/LF : all on one line
                    foSingleLineObject,  // Object without CR/LF : all on one line
                    foDoNotQuoteMembers, // Do not quote object member names.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -71,12 +75,16 @@ type
 =======
                    foUseTabchar);       // Use tab characters instead of spaces.
 >>>>>>> origin/cpstrnew
+=======
+                   foUseTabchar);       // Use tab characters instead of spaces.
+>>>>>>> origin/cpstrnew
   TFormatOptions = set of TFormatOption;
 
 Const
   DefaultIndentSize = 2;
   DefaultFormat     = [];
   AsJSONFormat      = [foSingleLineArray,foSingleLineObject]; // These options make FormatJSON behave as AsJSON
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -122,6 +130,11 @@ Type
 Type
 
 >>>>>>> graemeg/cpstrnew
+=======
+  
+Type
+
+>>>>>>> origin/cpstrnew
 =======
   
 Type
@@ -193,6 +206,7 @@ Type
     procedure SetItem(Index : Integer; const AValue: TJSONData); virtual;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Function DoFormatJSON(Options : TFormatOptions; CurrentIndent, Indent : Integer) : TJSONStringType; virtual;
     function GetCount: Integer; virtual;
   Public
@@ -223,15 +237,23 @@ Type
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    Function DoFormatJSON(Options : TFormatOptions; CurrentIndent, Indent : Integer) : TJSONStringType; virtual;
+>>>>>>> origin/cpstrnew
     function GetCount: Integer; virtual;
   public
     Constructor Create; virtual;
     Class function JSONType: TJSONType; virtual;
     Procedure Clear;  virtual; Abstract;
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    Function Clone : TJSONData; virtual; abstract;
+    Function FormatJSON(Options : TFormatOptions = DefaultFormat; Indentsize : Integer = DefaultIndentSize) : TJSONStringType; 
+>>>>>>> origin/cpstrnew
     property Count: Integer read GetCount;
     property Items[Index: Integer]: TJSONData read GetItem write SetItem;
     property Value: variant read GetValue write SetValue;
@@ -314,6 +336,7 @@ Type
     class function NumberType : TJSONNumberType; override;
     Procedure Clear;  override;
     Function Clone : TJSONData; override;
+<<<<<<< HEAD
   end;
   TJSONFloatNumberClass = Class of TJSONFloatNumber;
 
@@ -323,6 +346,8 @@ Type
     Constructor Create(AValue : TJSONFloat);
     class function NumberType : TJSONNumberType; override;
     Procedure Clear;  override;
+=======
+>>>>>>> origin/cpstrnew
   end;
   
 <<<<<<< HEAD
@@ -390,6 +415,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   end;
   TJSONInt64NumberClass = Class of TJSONInt64Number;
 
@@ -448,6 +474,8 @@ Type
     Constructor Create(AValue : Integer);
     class function NumberType : TJSONNumberType; override;
     Procedure Clear;  override;
+=======
+>>>>>>> origin/cpstrnew
   end;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -490,6 +518,7 @@ Type
   public
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Constructor Create(const AValue : TJSONStringType); reintroduce;
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -513,8 +542,12 @@ Type
 =======
 >>>>>>> origin/fixes_2_2
     Constructor Create(AValue : TJSONStringType);
+=======
+    Constructor Create(const AValue : TJSONStringType); reintroduce;
+>>>>>>> origin/cpstrnew
     class function JSONType: TJSONType; override;
     Procedure Clear;  override;
+    Function Clone : TJSONData; override;
   end;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -564,6 +597,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Function  Clone : TJSONData; override;
 =======
     Function Clone : TJSONData; override;
@@ -585,6 +619,9 @@ Type
     Constructor Create(AValue : Boolean);
     class function JSONType: TJSONType; override;
     Procedure Clear;  override;
+=======
+    Function Clone : TJSONData; override;
+>>>>>>> origin/cpstrnew
   end;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -629,10 +666,14 @@ Type
     Procedure Clear;  override;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Function Clone : TJSONData; override;
   end;
   TJSONNullClass = Class of TJSONNull;
 =======
+=======
+    Function Clone : TJSONData; override;
+>>>>>>> origin/cpstrnew
   end;
 >>>>>>> graemeg/fixes_2_2
 =======
@@ -726,6 +767,9 @@ Type
     procedure SetItem(Index : Integer; const AValue: TJSONData); override;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
     Function DoFormatJSON(Options : TFormatOptions; CurrentIndent, Indent : Integer) : TJSONStringType; override;
   public
     Constructor Create; overload; reintroduce;
@@ -733,6 +777,7 @@ Type
     Destructor Destroy; override;
     class function JSONType: TJSONType; override;
     Function Clone : TJSONData; override;
+<<<<<<< HEAD
     // Examine
     procedure Iterate(Iterator : TJSONArrayIterator; Data: TObject);
     function IndexOf(obj: TJSONData): Integer;
@@ -745,6 +790,8 @@ Type
     Constructor Create(const Elements : Array of Const); overload;
     Destructor Destroy; override;
     class function JSONType: TJSONType; override;
+=======
+>>>>>>> origin/cpstrnew
     // Examine
     procedure Iterate(Iterator : TJSONArrayIterator; Data: TObject);
     function IndexOf(obj: TJSONData): Integer;
@@ -759,6 +806,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
     function Add(I : Int64): Int64;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -784,6 +832,9 @@ Type
 =======
     function Add(S : String): Integer;
 >>>>>>> origin/fixes_2_2
+=======
+    function Add(const S : String): Integer;
+>>>>>>> origin/cpstrnew
     function Add: Integer;
     function Add(F : TJSONFloat): Integer;
     function Add(B : Boolean): Integer;
@@ -928,6 +979,7 @@ Type
 =======
 >>>>>>> origin/fixes_2_2
     FHash : TFPHashObjectList; // Careful : Names limited to 255 chars.
+<<<<<<< HEAD
     function GetArrays(AName : String): TJSONArray;
     function GetBooleans(AName : String): Boolean;
     function GetElements(AName: string): TJSONData;
@@ -946,6 +998,28 @@ Type
     procedure SetIsNull(AName : String; const AValue: Boolean);
     procedure SetObjects(AName : String; const AValue: TJSONObject);
     procedure SetStrings(AName : String; const AValue: TJSONStringType);
+=======
+    function GetArrays(const AName : String): TJSONArray;
+    function GetBooleans(const AName : String): Boolean;
+    function GetElements(const AName: string): TJSONData;
+    function GetFloats(const AName : String): TJSONFloat;
+    function GetIntegers(const AName : String): Integer;
+    function GetInt64s(const AName : String): Int64;
+    function GetIsNull(const AName : String): Boolean; reintroduce;
+    function GetNameOf(Index : Integer): TJSONStringType;
+    function GetObjects(const AName : String): TJSONObject;
+    function GetStrings(const AName : String): TJSONStringType;
+    function GetTypes(const AName : String): TJSONType;
+    procedure SetArrays(const AName : String; const AValue: TJSONArray);
+    procedure SetBooleans(const AName : String; const AValue: Boolean);
+    procedure SetElements(const AName: string; const AValue: TJSONData);
+    procedure SetFloats(const AName : String; const AValue: TJSONFloat);
+    procedure SetIntegers(const AName : String; const AValue: Integer);
+    procedure SetInt64s(const AName : String; const AValue: Int64);
+    procedure SetIsNull(const AName : String; const AValue: Boolean);
+    procedure SetObjects(const AName : String; const AValue: TJSONObject);
+    procedure SetStrings(const AName : String; const AValue: TJSONStringType);
+>>>>>>> origin/cpstrnew
   protected
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -984,12 +1058,16 @@ Type
     procedure SetItem(Index : Integer; const AValue: TJSONData); override;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
     Function DoFormatJSON(Options : TFormatOptions; CurrentIndent, Indent : Integer) : TJSONStringType; override;
   public
     constructor Create; reintroduce;
     Constructor Create(const Elements : Array of Const); overload;
     destructor Destroy; override;
     class function JSONType: TJSONType; override;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1053,11 +1131,19 @@ Type
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    Function Clone : TJSONData; override;
+    // Examine
+    procedure Iterate(Iterator : TJSONObjectIterator; Data: TObject);
+    function IndexOf(Item: TJSONData): Integer;
+    Function IndexOfName(const AName: TJSONStringType; CaseInsensitive : Boolean = False): Integer;
+>>>>>>> origin/cpstrnew
     // Manipulate
     Procedure Clear;  override;
     function Add(const AName: TJSONStringType; AValue: TJSONData): Integer; overload;
     function Add(const AName: TJSONStringType; AValue: Boolean): Integer; overload;
     function Add(const AName: TJSONStringType; AValue: TJSONFloat): Integer; overload;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     function Add(const AName, AValue: TJSONStringType): Integer; overload;
@@ -1073,6 +1159,9 @@ Type
 =======
 >>>>>>> graemeg/cpstrnew
 =======
+>>>>>>> origin/cpstrnew
+=======
+    function Add(const AName, AValue: TJSONStringType): Integer; overload;
 >>>>>>> origin/cpstrnew
     function Add(const AName: TJSONStringType; Avalue: Integer): Integer; overload;
     function Add(const AName: TJSONStringType; Avalue: Int64): Integer; overload;
@@ -1106,9 +1195,13 @@ Type
     procedure Delete(Index : Integer);
     procedure Remove(Item : TJSONData);
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    Function Extract(Index : Integer) : TJSONData;
+>>>>>>> origin/cpstrnew
 
     // Easy access properties.
     property Names[Index : Integer] : TJSONStringType read GetNameOf;
@@ -1196,9 +1289,9 @@ Uses typinfo;
 
   EJSON = Class(Exception);
   
-Function StringToJSONString(S : TJSONStringType) : TJSONStringType;
-Function JSONStringToString(S : TJSONStringType) : TJSONStringType;
-
+Function StringToJSONString(const S : TJSONStringType) : TJSONStringType;
+Function JSONStringToString(const S : TJSONStringType) : TJSONStringType;
+Function JSONTypeName(JSONType : TJSONType) : String;
 
 
 implementation
@@ -1206,6 +1299,8 @@ implementation
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+
+Uses typinfo;
 
 Resourcestring
   SErrCannotConvertFromNull = 'Cannot convert data from Null value';
@@ -1224,6 +1319,7 @@ Resourcestring
   SErrPointerNotNil = 'Cannot add non-nil pointer to JSON%s';
   SErrOddNumber = 'TJSONObject must be constructed with name,value pairs';
   SErrNameMustBeString = 'TJSONObject constructor element name at pos %d is not a string';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   SErrNonexistentElement = 'Unknown object member: "%s"';
@@ -1275,6 +1371,11 @@ Function StringToJSONString(const S : TJSONStringType) : TJSONStringType;
 Function StringToJSONString(const S : TJSONStringType) : TJSONStringType;
 >>>>>>> graemeg/cpstrnew
 =======
+  
+Function StringToJSONString(const S : TJSONStringType) : TJSONStringType;
+>>>>>>> origin/cpstrnew
+=======
+  SErrNonexistentElement = 'Unknown object member: "%s"';
   
 Function StringToJSONString(const S : TJSONStringType) : TJSONStringType;
 >>>>>>> origin/cpstrnew
@@ -1345,6 +1446,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function JSONStringToString(const S: TJSONStringType): TJSONStringType;
 =======
 Function JSONStringToString(const S : TJSONStringType) : TJSONStringType;
@@ -1355,6 +1457,9 @@ Function JSONStringToString(const S : TJSONStringType) : TJSONStringType;
 =======
 Function JSONStringToString(const S : TJSONStringType) : TJSONStringType;
 >>>>>>> graemeg/cpstrnew
+=======
+Function JSONStringToString(const S : TJSONStringType) : TJSONStringType;
+>>>>>>> origin/cpstrnew
 =======
 Function JSONStringToString(const S : TJSONStringType) : TJSONStringType;
 >>>>>>> origin/cpstrnew
@@ -1433,6 +1538,9 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 function JSONTypeName(JSONType: TJSONType): String;
 begin
   Result:=GetEnumName(TypeInfo(TJSONType),Ord(JSONType));
@@ -1441,9 +1549,13 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 =======
+=======
+
+>>>>>>> origin/cpstrnew
 =======
 
 >>>>>>> origin/cpstrnew
@@ -1487,7 +1599,10 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function CreateJSON(Data: TJSONStringType): TJSONString;
+=======
+Function TJSONData.FormatJSON(Options : TFormatOptions = DefaultFormat; IndentSize : Integer = DefaultIndentSize) : TJSONStringType;
 =======
 Function TJSONData.FormatJSON(Options : TFormatOptions = DefaultFormat; IndentSize : Integer = DefaultIndentSize) : TJSONStringType;
 =======
@@ -1508,6 +1623,29 @@ end;
 { TJSONnumber }
 >>>>>>> origin/cpstrnew
 
+begin
+  Result:=DoFormatJSON(Options,0,IndentSize);
+end;
+
+Function TJSONData.DoFormatJSON(Options : TFormatOptions; CurrentIndent, Indent : Integer) : TJSONStringType; 
+
+begin
+  Result:=AsJSON;
+end;
+
+{ TJSONnumber }
+>>>>>>> origin/cpstrnew
+
+<<<<<<< HEAD
+=======
+function TJSONString.Clone: TJSONData;
+
+begin
+  Result:=TJSONString.Create(Self.FValue);
+end;
+
+function TJSONstring.GetValue: Variant;
+>>>>>>> origin/cpstrnew
 begin
   Result:=DoFormatJSON(Options,0,IndentSize);
 end;
@@ -1592,10 +1730,14 @@ begin
   Result:=AsJSON;
 end;
 
+<<<<<<< HEAD
 { TJSONnumber }
 >>>>>>> graemeg/cpstrnew
 
 function CreateJSONObject(Data: array of const): TJSONObject;
+=======
+constructor TJSONstring.Create(const AValue: TJSONStringType);
+>>>>>>> origin/cpstrnew
 begin
   Result:=TJSONObjectCLass(DefaultJSONInstanceTypes[jitObject]).Create(Data);
 end;
@@ -1635,8 +1777,18 @@ begin
   Result:=TJSONString.Create(Self.FValue);
 end;
 
+<<<<<<< HEAD
 function TJSONstring.GetValue: Variant;
 >>>>>>> graemeg/cpstrnew
+=======
+function TJSONBoolean.Clone: TJSONData;
+begin
+  Result:=TJSONBoolean.Create(Self.Fvalue);
+end;
+
+
+procedure TJSONboolean.SetValue(const AValue: Variant);
+>>>>>>> origin/cpstrnew
 begin
   Result:=JPH;
   JPH:=AHandler;
@@ -1745,12 +1897,23 @@ end;
 
 function TJSONQWordNumber.GetAsQWord: QWord;
 begin
+<<<<<<< HEAD
   Result := FValue;
+=======
+  If FValue then
+    Result:='true'
+  else
+    Result:='false';
+>>>>>>> origin/cpstrnew
 end;
 
 procedure TJSONQWordNumber.SetAsBoolean(const AValue: Boolean);
 begin
+<<<<<<< HEAD
   FValue:=Ord(AValue);
+=======
+  Result:=BoolToStr(FValue, True);
+>>>>>>> origin/cpstrnew
 end;
 
 procedure TJSONQWordNumber.SetAsFloat(const AValue: TJSONFloat);
@@ -1849,7 +2012,11 @@ end;
 
 procedure TJSONQWordNumber.Clear;
 begin
+<<<<<<< HEAD
   FValue:=0;
+=======
+  Result:='null';
+>>>>>>> origin/cpstrnew
 end;
 
 function TJSONQWordNumber.Clone: TJSONData;
@@ -1890,6 +2057,16 @@ begin
   Result.Key:=IntToStr(FCurrent);
   Result.Value:=FData.Items[FCurrent];
 end;
+<<<<<<< HEAD
+=======
+
+function TJSONNull.Clone: TJSONData;
+begin
+  Result:=TJSONNull.Create;
+end;
+
+{$warnings on}
+>>>>>>> origin/cpstrnew
 
 function TJSONArrayEnumerator.MoveNext: Boolean;
 begin
@@ -2057,6 +2234,16 @@ end;
 
 class procedure TJSONData.SetCompressedJSON(AValue: Boolean); static;
 
+<<<<<<< HEAD
+=======
+function TJSONFloatNumber.Clone: TJSONData;
+
+begin
+  Result:=TJSONFloatNumber.Create(Self.FValue);
+end;
+
+{ TJSONIntegerNumber }
+>>>>>>> origin/cpstrnew
 
 begin
   if AValue=FCompressedJSON then exit;
@@ -3824,10 +4011,20 @@ begin
   FValue:=AValue;
 end;
 
+<<<<<<< HEAD
 constructor TJSONstring.Create(AValue: TJSONStringType);
 begin
   FValue:=AValue;
 end;
+=======
+function TJSONIntegerNumber.Clone: TJSONData;
+
+begin
+  Result:=TJSONIntegerNumber.Create(Self.FValue);
+end;
+
+{ TJSONInt64Number }
+>>>>>>> origin/cpstrnew
 
 { TJSONboolean }
 
@@ -4139,6 +4336,14 @@ begin
   FValue:=0;
 end;
 
+<<<<<<< HEAD
+=======
+function TJSONInt64Number.Clone: TJSONData;
+
+begin
+  Result:=TJSONInt64Number.Create(Self.FValue);
+end;
+>>>>>>> origin/cpstrnew
 
 { TJSONArray }
 
@@ -4269,9 +4474,51 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$warnings off}
+
+Function IndentString(Options : TFormatOptions; Indent : Integer) : TJSONStringType;
+
+begin
+  If (foUseTabChar in Options) then
+    Result:=StringofChar(#9,Indent)
+  else
+    Result:=StringOfChar(' ',Indent);  
+end;
+
+Function TJSONArray.DoFormatJSON(Options : TFormatOptions; CurrentIndent, Indent : Integer) : TJSONStringType; 
+
+Var
+  I : Integer;
+  
+begin
+  Result:='[';
+  if not (foSingleLineArray in Options) then
+    Result:=Result+sLineBreak;
+  For I:=0 to Count-1 do
+    begin
+    if not (foSingleLineArray in Options) then
+      Result:=Result+IndentString(Options, CurrentIndent+Indent);
+    Result:=Result+Items[i].DoFormatJSON(Options,CurrentIndent+Indent,Indent);
+    If (I<Count-1) then
+      if (foSingleLineArray in Options) then
+        Result:=Result+', '
+      else
+        Result:=Result+',';
+    if not (foSingleLineArray in Options) then
+      Result:=Result+sLineBreak
+    end;
+ if not (foSingleLineArray in Options) then
+    Result:=Result+IndentString(Options, CurrentIndent);
+  Result:=Result+']';
+end;
+
+
+>>>>>>> origin/cpstrnew
 function TJSONArray.GetAsString: TJSONStringType;
 begin
   ConvertError(True);
@@ -4642,7 +4889,7 @@ begin
   Flist:=TFPObjectList.Create(True);
 end;
 
-Function VarRecToJSON(Const Element : TVarRec; SourceType : String) : TJSONData;
+Function VarRecToJSON(Const Element : TVarRec; const SourceType : String) : TJSONData;
 
 begin
   Result:=Nil;
@@ -4665,7 +4912,7 @@ begin
       vtObject     : if (VObject is TJSONData) then
                        Result:=TJSONData(VObject)
                      else
-                       Raise EJSON.CreateFmt(SErrNotJSONData,[SourceType,VObject.ClassName]);
+                       Raise EJSON.CreateFmt(SErrNotJSONData,[VObject.ClassName,SourceType]);
       //vtVariant    :
     else
       Raise EJSON.CreateFmt(SErrUnknownTypeInConstructor,[SourceType,VType])
@@ -4696,6 +4943,24 @@ end;
 class function TJSONArray.JSONType: TJSONType;
 begin
   Result:=jtArray;
+end;
+
+function TJSONArray.Clone: TJSONData;
+
+Var
+  A : TJSONArray;
+  I : Integer;
+
+begin
+  A:=TJSONArray.Create;
+  try
+    For I:=0 to Count-1 do
+      A.Add(Self.Items[I].Clone);
+    Result:=A;
+  except
+    A.Free;
+    Raise;
+  end;
 end;
 
 procedure TJSONArray.Iterate(Iterator: TJSONArrayIterator; Data: TObject);
@@ -4734,7 +4999,16 @@ begin
   Result:=Add(TJSONIntegerNumber.Create(I));
 end;
 
+<<<<<<< HEAD
 function TJSONArray.Add(S: String): Integer;
+=======
+function TJSONArray.Add(I: Int64): Int64;
+begin
+  Result:=Add(TJSONInt64Number.Create(I));
+end;
+
+function TJSONArray.Add(const S: String): Integer;
+>>>>>>> origin/cpstrnew
 begin
   Result:=Add(TJSONString.Create(S));
 end;
@@ -4816,12 +5090,17 @@ function TJSONObject.GetArrays(AName : String): TJSONArray;
 =======
 { TJSONObject }
 
+<<<<<<< HEAD
 function TJSONObject.GetArrays(AName : String): TJSONArray;
 >>>>>>> origin/fixes_2_2
+=======
+function TJSONObject.GetArrays(Const AName : String): TJSONArray;
+>>>>>>> origin/cpstrnew
 begin
   Result:=GetElements(AName) as TJSONArray;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4847,10 +5126,14 @@ function TJSONObject.GetBooleans(AName : String): Boolean;
 =======
 function TJSONObject.GetBooleans(AName : String): Boolean;
 >>>>>>> origin/fixes_2_2
+=======
+function TJSONObject.GetBooleans(Const AName : String): Boolean;
+>>>>>>> origin/cpstrnew
 begin
   Result:=GetElements(AName).AsBoolean;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4899,19 +5182,29 @@ function TJSONObject.GetFloats(Const AName : String): TJSONFloat;
 =======
 >>>>>>> origin/fixes_2_2
 function TJSONObject.GetElements(AName: string): TJSONData;
+=======
+function TJSONObject.GetElements(Const AName: string): TJSONData;
+>>>>>>> origin/cpstrnew
 begin
   Result:=TJSONData(FHash.Find(AName));
+  If (Result=Nil) then
+    Raise EJSON.CreateFmt(SErrNonexistentElement,[AName]);
 end;
 
+<<<<<<< HEAD
 function TJSONObject.GetFloats(AName : String): TJSONFloat;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+function TJSONObject.GetFloats(Const AName : String): TJSONFloat;
+>>>>>>> origin/cpstrnew
 begin
   Result:=GetElements(AName).AsFloat;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4937,10 +5230,14 @@ function TJSONObject.GetIntegers(AName : String): Integer;
 =======
 function TJSONObject.GetIntegers(AName : String): Integer;
 >>>>>>> origin/fixes_2_2
+=======
+function TJSONObject.GetIntegers(Const AName : String): Integer;
+>>>>>>> origin/cpstrnew
 begin
   Result:=GetElements(AName).AsInteger;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4960,10 +5257,14 @@ function TJSONObject.GetInt64s(Const AName : String): Int64;
 =======
 function TJSONObject.GetInt64s(Const AName : String): Int64;
 >>>>>>> origin/cpstrnew
+=======
+function TJSONObject.GetInt64s(Const AName : String): Int64;
+>>>>>>> origin/cpstrnew
 begin
   Result:=GetElements(AName).AsInt64;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4987,6 +5288,9 @@ function TJSONObject.GetIsNull(AName : String): Boolean;
 =======
 function TJSONObject.GetIsNull(AName : String): Boolean;
 >>>>>>> origin/fixes_2_2
+=======
+function TJSONObject.GetIsNull(Const AName : String): Boolean;
+>>>>>>> origin/cpstrnew
 begin
   Result:=GetElements(AName).IsNull;
 end;
@@ -4998,6 +5302,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TJSONObject.GetObjects(const AName : String): TJSONObject;
 =======
 function TJSONObject.GetObjects(AName : String): TJSONObject;
@@ -5005,10 +5310,14 @@ function TJSONObject.GetObjects(AName : String): TJSONObject;
 =======
 function TJSONObject.GetObjects(AName : String): TJSONObject;
 >>>>>>> origin/fixes_2_2
+=======
+function TJSONObject.GetObjects(const AName : String): TJSONObject;
+>>>>>>> origin/cpstrnew
 begin
   Result:=GetElements(AName) as TJSONObject;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5035,10 +5344,14 @@ function TJSONObject.GetStrings(AName : String): TJSONStringType;
 =======
 function TJSONObject.GetStrings(AName : String): TJSONStringType;
 >>>>>>> origin/fixes_2_2
+=======
+function TJSONObject.GetStrings(const AName : String): TJSONStringType;
+>>>>>>> origin/cpstrnew
 begin
   Result:=GetElements(AName).AsString;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5066,10 +5379,14 @@ function TJSONObject.GetTypes(AName : String): TJSONType;
 =======
 function TJSONObject.GetTypes(AName : String): TJSONType;
 >>>>>>> origin/fixes_2_2
+=======
+function TJSONObject.GetTypes(const AName : String): TJSONType;
+>>>>>>> origin/cpstrnew
 begin
   Result:=Getelements(Aname).JSONType;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5096,11 +5413,15 @@ procedure TJSONObject.SetArrays(AName : String; const AValue: TJSONArray);
 =======
 procedure TJSONObject.SetArrays(AName : String; const AValue: TJSONArray);
 >>>>>>> origin/fixes_2_2
+=======
+procedure TJSONObject.SetArrays(const AName : String; const AValue: TJSONArray);
+>>>>>>> origin/cpstrnew
 
 begin
   SetElements(AName,AVAlue);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 procedure TJSONObject.SetBooleans(const AName : String; const AValue: Boolean);
@@ -5113,15 +5434,22 @@ procedure TJSONObject.SetElements(const AName: string; const AValue: TJSONData);
 =======
 >>>>>>> origin/fixes_2_2
 procedure TJSONObject.SetBooleans(AName : String; const AValue: Boolean);
+=======
+procedure TJSONObject.SetBooleans(const AName : String; const AValue: Boolean);
+>>>>>>> origin/cpstrnew
 begin
   SetElements(AName,TJSONBoolean.Create(AVAlue));
 end;
 
+<<<<<<< HEAD
 procedure TJSONObject.SetElements(AName: string; const AValue: TJSONData);
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+procedure TJSONObject.SetElements(const AName: string; const AValue: TJSONData);
+>>>>>>> origin/cpstrnew
 Var
   Index : Integer;
 
@@ -5133,6 +5461,7 @@ begin
     FHash.Items[Index]:=AValue; // Will free the previous value.
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 procedure TJSONObject.SetFloats(const AName : String; const AValue: TJSONFloat);
@@ -5162,31 +5491,48 @@ procedure TJSONObject.SetObjects(const AName : String; const AValue: TJSONObject
 =======
 >>>>>>> origin/fixes_2_2
 procedure TJSONObject.SetFloats(AName : String; const AValue: TJSONFloat);
+=======
+procedure TJSONObject.SetFloats(const AName : String; const AValue: TJSONFloat);
+>>>>>>> origin/cpstrnew
 begin
   SetElements(AName,TJSONFloatNumber.Create(AVAlue));
 end;
 
-procedure TJSONObject.SetIntegers(AName : String; const AValue: Integer);
+procedure TJSONObject.SetIntegers(const AName : String; const AValue: Integer);
 begin
   SetElements(AName,TJSONIntegerNumber.Create(AVAlue));
 end;
 
+<<<<<<< HEAD
 procedure TJSONObject.SetIsNull(AName : String; const AValue: Boolean);
+=======
+procedure TJSONObject.SetInt64s(const AName : String; const AValue: Int64);
+begin
+  SetElements(AName,TJSONInt64Number.Create(AVAlue));
+end;
+
+procedure TJSONObject.SetIsNull(const AName : String; const AValue: Boolean);
+>>>>>>> origin/cpstrnew
 begin
   If Not AValue then
     Raise EJSON.Create(SErrCannotSetNotIsNull);
   SetElements(AName,TJSONNull.Create);
 end;
 
+<<<<<<< HEAD
 procedure TJSONObject.SetObjects(AName : String; const AValue: TJSONObject);
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+procedure TJSONObject.SetObjects(const AName : String; const AValue: TJSONObject);
+>>>>>>> origin/cpstrnew
 begin
   SetElements(AName,AValue);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5275,6 +5621,9 @@ begin
      end;
 =======
 procedure TJSONObject.SetStrings(AName : String; const AValue: TJSONStringType);
+=======
+procedure TJSONObject.SetStrings(const AName : String; const AValue: TJSONStringType);
+>>>>>>> origin/cpstrnew
 begin
   SetElements(AName,TJSONString.Create(AVAlue));
 >>>>>>> graemeg/fixes_2_2
@@ -5548,11 +5897,15 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 function TJSONObject.Clone: TJSONData;
 
 Var
   O : TJSONObject;
   I: Integer;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5567,6 +5920,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   N : TJSONStringType;
 
 begin
@@ -5574,11 +5929,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   try
@@ -5591,6 +5949,7 @@ begin
   end;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5619,10 +5978,15 @@ Function TJSONObject.DoFormatJSON(Options : TFormatOptions; CurrentIndent, Inden
 
 Function TJSONObject.DoFormatJSON(Options : TFormatOptions; CurrentIndent, Indent : Integer) : TJSONStringType; 
 >>>>>>> origin/cpstrnew
+=======
+
+Function TJSONObject.DoFormatJSON(Options : TFormatOptions; CurrentIndent, Indent : Integer) : TJSONStringType; 
+>>>>>>> origin/cpstrnew
 
 Var
   i : Integer;
   S : TJSONStringType;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5670,6 +6034,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 
 begin
@@ -5699,6 +6065,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -5706,15 +6073,20 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     end
   else
     Result:='{}';
 end;
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 procedure TJSONObject.Iterate(Iterator: TJSONObjectIterator; Data: TObject);
 
 Var
@@ -5738,6 +6110,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TJSONObject.IndexOfName(const AName: TJSONStringType; CaseInsensitive : Boolean = False): Integer;
 
 begin
@@ -5758,6 +6131,18 @@ function TJSONObject.IndexOfName(const AName: TJSONStringType): Integer;
 begin
   Result:=FHash.FindIndexOf(AName);
 >>>>>>> origin/fixes_2_2
+=======
+function TJSONObject.IndexOfName(const AName: TJSONStringType; CaseInsensitive : Boolean = False): Integer;
+
+begin
+  Result:=FHash.FindIndexOf(AName);
+  if (Result=-1) and CaseInsensitive then
+    begin
+    Result:=Count-1;
+    While (Result>=0) and (CompareText(Names[Result],AName)<>0) do
+      Dec(Result);
+    end;
+>>>>>>> origin/cpstrnew
 end;
 
 procedure TJSONObject.Clear;
@@ -5819,7 +6204,7 @@ begin
   Result:=Add(AName,TJSONFloatNumber.Create(AValue));
 end;
 
-function TJSONObject.Add(const AName: TJSONStringType; AValue: TJSONStringType): Integer;
+function TJSONObject.Add(const AName, AValue: TJSONStringType): Integer;
 begin
   Result:=Add(AName,TJSONString.Create(AValue));
 <<<<<<< HEAD
@@ -5899,12 +6284,16 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 function TJSONObject.Extract(Index: Integer): TJSONData;
 begin
   Result:=Items[Index];
   FHash.Extract(Result);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -6087,5 +6476,7 @@ initialization
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 end.
 

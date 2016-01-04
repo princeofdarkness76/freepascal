@@ -56,6 +56,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          cnf_unit_specified,     { the unit in which the procedure has to be searched has been specified }
          cnf_call_never_returns, { information for the dfa that a subroutine never returns }
          cnf_call_self_node_done { the call_self_node has been generated if necessary
@@ -69,6 +70,9 @@ interface
 =======
          cnf_unit_specified      { the unit in which the procedure has to be searched has been specified }
 >>>>>>> graemeg/cpstrnew
+=======
+         cnf_unit_specified      { the unit in which the procedure has to be searched has been specified }
+>>>>>>> origin/cpstrnew
 =======
          cnf_unit_specified      { the unit in which the procedure has to be searched has been specified }
 >>>>>>> origin/cpstrnew
@@ -90,6 +94,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           function  gen_procvar_context_tree_self:tnode;
           function  gen_procvar_context_tree_parentfp:tnode;
 =======
@@ -101,6 +106,9 @@ interface
 =======
           function  gen_procvar_context_tree:tnode;
 >>>>>>> graemeg/cpstrnew
+=======
+          function  gen_procvar_context_tree:tnode;
+>>>>>>> origin/cpstrnew
 =======
           function  gen_procvar_context_tree:tnode;
 >>>>>>> origin/cpstrnew
@@ -131,6 +139,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           function safe_call_self_node: tnode;
           procedure gen_vmt_entry_load; virtual;
           procedure gen_syscall_para(para: tcallparanode); virtual;
@@ -142,6 +151,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
           procedure objc_convert_to_message_send;virtual;
@@ -175,6 +186,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             to ppu, is set while processing the node). Also used on the JVM
             target for calling virtual methods, as this is name-based and not
             based on VMT entry locations }
@@ -196,6 +208,10 @@ interface
             to ppu, is set while processing the node) }
           fobjcforcedprocname: pshortstring;
 >>>>>>> graemeg/cpstrnew
+=======
+            to ppu, is set while processing the node) }
+          fobjcforcedprocname: pshortstring;
+>>>>>>> origin/cpstrnew
 =======
             to ppu, is set while processing the node) }
           fobjcforcedprocname: pshortstring;
@@ -310,6 +326,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        protected
           { in case of copy-out parameters: initialization code, and the code to
             copy back the parameter value after the call (including any required
@@ -327,6 +344,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
        public
@@ -379,6 +398,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           property paracopyback: tnode read fparacopyback;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -386,6 +406,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
        end;
@@ -398,6 +420,7 @@ interface
        );
 
     function reverseparameters(p: tcallparanode): tcallparanode;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -424,6 +447,9 @@ interface
 =======
     function translate_disp_call(selfnode,parametersnode,putvalue : tnode;methodname : ansistring = '';dispid : longint = 0;useresult : boolean = false) : tnode;
 >>>>>>> origin/fixes_2_2
+=======
+    function translate_disp_call(selfnode,parametersnode: tnode; calltype: tdispcalltype; const methodname : ansistring;dispid : longint;resultdef : tdef) : tnode;
+>>>>>>> origin/cpstrnew
 
     var
       ccallnode : tcallnodeclass = tcallnode;
@@ -449,6 +475,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       ngenutil,objcutil,
       procinfo,cpuinfo,
       wpobase;
@@ -457,6 +484,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       objcutil,
@@ -499,6 +528,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function translate_disp_call(selfnode,parametersnode: tnode; calltype: tdispcalltype; const methodname : ansistring;
       dispid : longint;resultdef : tdef) : tnode;
 =======
@@ -521,6 +551,9 @@ implementation
 
     function translate_disp_call(selfnode,parametersnode,putvalue : tnode;methodname : ansistring = '';dispid : longint = 0;useresult : boolean = false) : tnode;
 >>>>>>> origin/fixes_2_2
+=======
+    function translate_disp_call(selfnode,parametersnode: tnode; calltype: tdispcalltype; const methodname : ansistring;dispid : longint;resultdef : tdef) : tnode;
+>>>>>>> origin/cpstrnew
       const
         DISPATCH_METHOD = $1;
         DISPATCH_PROPERTYGET = $2;
@@ -550,6 +583,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         selftemp: ttempcreatenode;
         selfpara: tnode;
 =======
@@ -558,6 +592,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -597,6 +633,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               if def_is_related(tobjectdef(sourcedef),interface_idispatch) then
 =======
               if tobjectdef(sourcedef).is_related(tobjectdef(search_system_type('IDISPATCH').typedef)) then
@@ -607,6 +644,9 @@ implementation
 =======
               if tobjectdef(sourcedef).is_related(tobjectdef(search_system_type('IDISPATCH').typedef)) then
 >>>>>>> graemeg/cpstrnew
+=======
+              if tobjectdef(sourcedef).is_related(tobjectdef(search_system_type('IDISPATCH').typedef)) then
+>>>>>>> origin/cpstrnew
 =======
               if tobjectdef(sourcedef).is_related(tobjectdef(search_system_type('IDISPATCH').typedef)) then
 >>>>>>> origin/cpstrnew
@@ -621,6 +661,7 @@ implementation
       begin
         variantdispatch:=selfnode.resultdef.typ=variantdef;
         result:=internalstatements(statements);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -646,6 +687,10 @@ implementation
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+
+        useresult := assigned(resultdef) and not is_void(resultdef);
+>>>>>>> origin/cpstrnew
         if useresult then
           begin
             { get temp for the result }
@@ -687,6 +732,7 @@ implementation
 <<<<<<< HEAD
             else if is_boolean(para.left.resultdef) then
               inserttypeconv_internal(para.left,bool16type)
+<<<<<<< HEAD
 =======
             else if is_boolean(para.value.resultdef) then
               begin
@@ -745,12 +791,24 @@ implementation
               inserttypeconv_internal(para.left,cwidestringtype)
 
 >>>>>>> origin/cpstrnew
+=======
+
+            { force automatable float type }
+            else if is_extended(para.left.resultdef)
+                and (current_settings.fputype<>fpu_none) then
+              inserttypeconv_internal(para.left,s64floattype)
+
+            else if is_shortstring(para.left.resultdef) then
+              inserttypeconv_internal(para.left,cwidestringtype)
+
+>>>>>>> origin/cpstrnew
             { skip this check if we've already typecasted to automatable type }
             else if (para.left.nodetype<>nothingn) and (not is_automatable(para.left.resultdef)) then
               CGMessagePos1(para.left.fileinfo,type_e_not_automatable,para.left.resultdef.typename);
 
             para:=tcallparanode(para.nextpara);
           end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -784,6 +842,11 @@ implementation
         { allocate space }
         params:=ctempcreatenode.create(voidtype,paramssize,tt_persistent,true);
 >>>>>>> graemeg/fixes_2_2
+=======
+
+        { create a temp to store parameter values }
+        params:=ctempcreatenode.create(voidtype,0,tt_persistent,true);
+>>>>>>> origin/cpstrnew
         addstatement(statements,params);
 
         calldescnode:=cdataconstnode.create;
@@ -828,6 +891,7 @@ implementation
                   internalerror(200611041);
               end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             restype:=getvardef(para.left.resultdef);
@@ -901,6 +965,25 @@ implementation
             if is_ansistring(para.value.resultdef) then
               calldesc.argtypes[currargpos]:=varStrArg
 >>>>>>> graemeg/fixes_2_2
+=======
+            restype:=getvardef(para.left.resultdef);
+            if is_byref_para(assignmenttype) then
+              restype:=restype or $80;
+
+            { assign the argument/parameter to the temporary location }
+            { for Variants, we always pass a pointer, RTL helpers must handle it
+              depending on byref bit }
+
+            if assignmenttype=voidpointertype then
+              begin
+                addstatement(statements,cassignmentnode.create(
+                  ctypeconvnode.create_internal(cderefnode.create(caddnode.create(addn,
+                      caddrnode.create(ctemprefnode.create(params)),
+                    cordconstnode.create(qword(paramssize),ptruinttype,false)
+                  )),voidpointertype),
+                  ctypeconvnode.create_internal(caddrnode.create_internal(para.left),voidpointertype)));
+              end
+>>>>>>> origin/cpstrnew
             else
               addstatement(statements,cassignmentnode.create(
                 ctypeconvnode.create_internal(cderefnode.create(caddnode.create(addn,
@@ -910,11 +993,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                 ctypeconvnode.create_internal(para.left,assignmenttype)));
@@ -989,11 +1075,15 @@ implementation
           end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         addstatement(statements,ctempdeletenode.create(params));
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+        addstatement(statements,ctempdeletenode.create(params));
+>>>>>>> origin/cpstrnew
         if useresult then
           begin
             { clean up }
@@ -1340,6 +1430,7 @@ implementation
          initcopy: tnode;
       begin
 <<<<<<< HEAD
+<<<<<<< HEAD
          initcopy:=nil;
          { must be done before calling inherited getcopy, because can create
            tempcreatenodes for values used in left }
@@ -1352,6 +1443,20 @@ implementation
          if assigned(fparacopyback) then
            n.fparacopyback:=fparacopyback.getcopy;
          result:=n;
+=======
+         if assigned(right) then
+          tcallparanode(right).get_paratype;
+         old_array_constructor:=allow_array_constructor;
+         allow_array_constructor:=true;
+         typecheckpass(left);
+         if assigned(third) then
+           typecheckpass(third);
+         allow_array_constructor:=old_array_constructor;
+         if codegenerror then
+          resultdef:=generrordef
+         else
+          resultdef:=left.resultdef;
+>>>>>>> origin/cpstrnew
       end;
 =======
         len:=-1;
@@ -1392,6 +1497,7 @@ implementation
 <<<<<<< HEAD
     procedure tcallparanode.insertintolist(l : tnodelist);
       begin
+<<<<<<< HEAD
 =======
                         typecheckpass(hightree);
                       end
@@ -1414,6 +1520,59 @@ implementation
                       {Typecheckpass can only be performed *after* the l.getcopy since it
                        can modify the tree, and l is in the hightree.}
                       typecheckpass(hightree);
+=======
+        if assigned(right) then
+          tcallparanode(right).firstcallparan;
+        if not assigned(left.resultdef) then
+          get_paratype;
+        firstpass(left);
+        if assigned(third) then
+          firstpass(third);
+        expectloc:=left.expectloc;
+      end;
+
+
+    procedure tcallparanode.insert_typeconv;
+      var
+        olddef  : tdef;
+        hp      : tnode;
+        block : tblocknode;
+        statements : tstatementnode;
+        temp : ttempcreatenode;
+        owningprocdef: tprocdef;
+      begin
+         { Be sure to have the resultdef }
+         if not assigned(left.resultdef) then
+           typecheckpass(left);
+
+         if (left.nodetype<>nothingn) then
+           begin
+             { convert loads of the function result variable into procvars
+               representing the current function in case the formal parameter is
+               a procvar (CodeWarrior Pascal contains the same kind of
+               automatic disambiguation; you can use the function name in both
+               meanings, so we cannot statically pick either the function result
+               or the function definition in pexpr) }
+             if (m_mac in current_settings.modeswitches) and
+                (parasym.vardef.typ=procvardef) and
+                is_ambiguous_funcret_load(left,owningprocdef) then
+               begin
+                 hp:=cloadnode.create_procvar(owningprocdef.procsym,owningprocdef,owningprocdef.procsym.owner);
+                 typecheckpass(hp);
+                 left.free;
+                 left:=hp;
+               end;
+
+             { Convert tp procvars, this is needs to be done
+               here to make the change permanent. in the overload
+               choosing the changes are only made temporarily }
+             if (left.resultdef.typ=procvardef) and
+                not(parasym.vardef.typ in [procvardef,formaldef]) then
+               begin
+                 if maybe_call_procvar(left,true) then
+                   resultdef:=left.resultdef
+               end;
+>>>>>>> origin/cpstrnew
 
                       with Trangenode(temp) do
                         begin
@@ -1868,6 +2027,7 @@ implementation
                 { This happens e.g. on x86_64 for small strings               }
                  if is_shortstring(left.resultdef) and
                     is_shortstring(parasym.vardef) and
+<<<<<<< HEAD
                     (parasym.varspez=vs_value) and
                     not paramanager.push_addr_param(parasym.varspez,parasym.vardef,
                           aktcallnode.procdefinition.proccalloption) and
@@ -1901,6 +2061,36 @@ implementation
 =======
                      CGMessagePos(left.fileinfo,type_e_strict_var_string_violation);
 >>>>>>> origin/fixes_2.4
+=======
+                    (parasym.varspez in [vs_out,vs_var,vs_constref]) and
+                    not(is_open_string(parasym.vardef)) and
+                    not(equal_defs(left.resultdef,parasym.vardef)) then
+                   begin
+                     CGMessagePos(left.fileinfo,type_e_strict_var_string_violation);
+                   end;
+
+                 { passing a value to an "univ" parameter implies an explicit
+                   typecast to the parameter type. Must be done before the
+                   valid_for_var() check, since the typecast can result in
+                   an invalid lvalue in case of var/out parameters. }
+                 if (parasym.univpara) then
+                   begin
+                     { load procvar if a procedure is passed }
+                     if ((m_tp_procvar in current_settings.modeswitches) or
+                         (m_mac_procvar in current_settings.modeswitches)) and
+                        (left.nodetype=calln) and
+                        (is_void(left.resultdef)) then
+                       begin
+                         load_procvar_from_calln(left);
+                         { load_procvar_from_calln() creates a loadn for a
+                           a procedure, which means that the type conversion
+                           below will type convert the first instruction
+                           bytes of the procedure -> convert to a procvar }
+                         left:=ctypeconvnode.create_proc_to_procvar(left);
+                         typecheckpass(left);
+                       end;
+                     inserttypeconv_explicit(left,parasym.vardef);
+>>>>>>> origin/cpstrnew
                    end;
 
                 { truncate shortstring value parameters at the caller side if }
@@ -2024,6 +2214,7 @@ implementation
                    passed, and make_not_regable always needs to called for
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                    the ra_addr_taken info for non-invisble parameters) }
 =======
                    the ra_addr_taken info for non-invisble parameters }
@@ -2031,6 +2222,9 @@ implementation
 =======
                    the ra_addr_taken info for non-invisble parameters }
 >>>>>>> origin/fixes_2_2
+=======
+                   the ra_addr_taken info for non-invisble parameters) }
+>>>>>>> origin/cpstrnew
                  if (
                      not(
                          (vo_is_hidden_para in parasym.varoptions) and
@@ -2097,6 +2291,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2105,6 +2300,10 @@ implementation
                     vs_var,
                     vs_constref:
 =======
+>>>>>>> origin/cpstrnew
+=======
+                    vs_var,
+                    vs_constref:
 >>>>>>> origin/cpstrnew
                       set_varstate(left,vs_readwritten,[vsf_must_be_valid,vsf_use_hints]);
 >>>>>>> graemeg/cpstrnew
@@ -2135,6 +2334,7 @@ implementation
             { refcounted type into a non-refcounted type     }
             if not is_managed_type(n.resultdef) and
                is_managed_type(ttypeconvnode(n).left.resultdef) then
+<<<<<<< HEAD
               exit;
             n:=ttypeconvnode(n).left;
           end;
@@ -2220,6 +2420,8 @@ implementation
                 is_class(n.resultdef)) and
                (ttypeconvnode(n).left.resultdef.needs_inittable and
                 not is_class(ttypeconvnode(n).left.resultdef)) then
+=======
+>>>>>>> origin/cpstrnew
               exit;
             n:=ttypeconvnode(n).left;
           end;
@@ -2238,8 +2440,28 @@ implementation
       end;
 
 
+<<<<<<< HEAD
     procedure tcallparanode.firstcallparan;
 >>>>>>> graemeg/fixes_2_2
+=======
+    function check_contains_stack_tainting_call(var n: tnode; arg: pointer): foreachnoderesult;
+      begin
+        if (n.nodetype=calln) and
+           tcallnode(n).procdefinition.stack_tainting_parameter(callerside) then
+          result:=fen_norecurse_true
+        else
+          result:=fen_false;
+      end;
+
+
+    function tcallparanode.contains_stack_tainting_call: boolean;
+      begin
+        result:=foreachnodestatic(pm_postprocess,left,@check_contains_stack_tainting_call,nil);
+      end;
+
+
+    procedure tcallparanode.init_contains_stack_tainting_call_cache;
+>>>>>>> origin/cpstrnew
       begin
         fcontains_stack_tainting_call_cached:=contains_stack_tainting_call;
       end;
@@ -2380,6 +2602,18 @@ implementation
        end;
 
 
+     constructor tcallnode.createinternfromunit(const fromunit, procname: string; params: tnode);
+       var
+         srsym: tsym;
+         srsymtable: tsymtable;
+       begin
+         if not searchsym_in_named_module(fromunit,procname,srsym,srsymtable) or
+            (srsym.typ<>procsym) then
+           Message1(cg_f_unknown_compilerproc,fromunit+'.'+procname);
+         create(params,tprocsym(srsym),srsymtable,nil,[]);
+       end;
+
+
     constructor tcallnode.createinternres(const name: string; params: tnode; res:tdef);
       var
         pd : tprocdef;
@@ -2389,8 +2623,11 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         include(callnodeflags,cnf_typedefset);
@@ -2399,6 +2636,7 @@ implementation
         { parameter or not, but no mixing (JM)                                      }
         if paramanager.ret_in_param(typedef,pd.proccalloption) xor
           paramanager.ret_in_param(pd.returndef,pd.proccalloption) then
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
           internalerror(2001082911);
@@ -2407,6 +2645,9 @@ implementation
 >>>>>>> origin/fixes_2_2
           internalerror(200108291);
 >>>>>>> graemeg/fixes_2_2
+=======
+          internalerror(2001082911);
+>>>>>>> origin/cpstrnew
       end;
 
 
@@ -2416,6 +2657,7 @@ implementation
       begin
         createinternfromunit(fromunit,procname,params);
         typedef:=res;
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
@@ -2437,6 +2679,8 @@ implementation
         createinternfromunit(fromunit,procname,params);
         typedef:=res;
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         include(callnodeflags,cnf_typedefset);
         pd:=tprocdef(symtableprocentry.ProcdefList[0]);
         { both the normal and specified resultdef either have to be returned via a }
@@ -2513,6 +2757,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          call_self_node.free;
          call_vmt_node.free;
          vmt_entry.free;
@@ -2528,6 +2773,9 @@ implementation
 =======
          stringdispose(fobjcforcedprocname);
 >>>>>>> graemeg/cpstrnew
+=======
+         stringdispose(fobjcforcedprocname);
+>>>>>>> origin/cpstrnew
 =======
          stringdispose(fobjcforcedprocname);
 >>>>>>> origin/cpstrnew
@@ -2902,6 +3150,9 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 
     function tcallnode.getforcedprocname: TSymStr;
       begin
@@ -3250,6 +3501,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function tcallnode.gen_procvar_context_tree_self:tnode;
       begin
         { Load tmehodpointer(right).self }
@@ -3286,6 +3538,14 @@ implementation
           right.getcopy,methodpointertype),
           'self');
 >>>>>>> graemeg/cpstrnew
+=======
+    function tcallnode.gen_procvar_context_tree:tnode;
+      begin
+        { Load tmehodpointer(right).self (either self or parentfp) }
+        result:=genloadfield(ctypeconvnode.create_internal(
+          right.getcopy,methodpointertype),
+          'self');
+>>>>>>> origin/cpstrnew
 =======
     function tcallnode.gen_procvar_context_tree:tnode;
       begin
@@ -3390,6 +3650,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               { if the method belongs to a helper then we need to use the
                 extended type for references to Self }
               if is_objectpascal_helper(tprocdef(procdefinition).struct) then
@@ -3409,6 +3670,9 @@ implementation
 =======
               if (oo_has_vmt in tprocdef(procdefinition).struct.objectoptions) then
 >>>>>>> graemeg/cpstrnew
+=======
+              if (oo_has_vmt in tprocdef(procdefinition).struct.objectoptions) then
+>>>>>>> origin/cpstrnew
 =======
               if (oo_has_vmt in tprocdef(procdefinition).struct.objectoptions) then
 >>>>>>> origin/cpstrnew
@@ -3619,6 +3883,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         else if (realresdef.typ=floatdef) and
           not(cs_fp_emulation in current_settings.moduleswitches) then
 =======
@@ -3633,6 +3898,9 @@ implementation
 =======
         else if realresdef.is_fpuregable then
 >>>>>>> origin/cpstrnew
+=======
+        else if realresdef.is_fpuregable then
+>>>>>>> origin/cpstrnew
           if use_vectorfpu(realresdef) then
             result:=LOC_MMREGISTER
           else
@@ -3642,6 +3910,7 @@ implementation
       end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3702,6 +3971,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     procedure tcallnode.objc_convert_to_message_send;
       var
         block,
@@ -3738,6 +4009,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         { make sure the methodpointer doesn't get translated into a call
           as well (endless loop) }
         if methodpointer.nodetype=loadvmtaddrn then
@@ -3756,6 +4028,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         { A) set the appropriate objc_msgSend* variant to call }
 
         { record returned via implicit pointer }
@@ -3763,11 +4037,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
           begin
@@ -3790,6 +4067,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif i386}
         { default }
         else
@@ -3804,6 +4082,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$endif}
         { default }
         else if not(cnf_inherited in callnodeflags) then
@@ -3812,11 +4092,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         else if (target_info.system in systems_objc_nfabi) then
@@ -3830,6 +4113,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         srsym:=nil;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -3839,10 +4123,13 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         if not searchsym_in_named_module('OBJC',msgsendname,srsym,srsymtable) or
            (srsym.typ<>procsym) or
            (tprocsym(srsym).ProcdefList.count<>1) then
           Message1(cg_f_unknown_compilerproc,'objc.'+msgsendname);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3861,6 +4148,9 @@ implementation
 =======
         fobjcforcedprocname:=stringdup(tprocdef(tprocsym(srsym).ProcdefList[0]).mangledname);
 >>>>>>> graemeg/cpstrnew
+=======
+        fobjcforcedprocname:=stringdup(tprocdef(tprocsym(srsym).ProcdefList[0]).mangledname);
+>>>>>>> origin/cpstrnew
 =======
         fobjcforcedprocname:=stringdup(tprocdef(tprocsym(srsym).ProcdefList[0]).mangledname);
 >>>>>>> origin/cpstrnew
@@ -3883,6 +4173,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
              selftree:=safe_call_self_node.getcopy;
 =======
              selftree:=load_self_node;
@@ -3893,6 +4184,9 @@ implementation
 =======
              selftree:=load_self_node;
 >>>>>>> graemeg/cpstrnew
+=======
+             selftree:=load_self_node;
+>>>>>>> origin/cpstrnew
 =======
              selftree:=load_self_node;
 >>>>>>> origin/cpstrnew
@@ -3908,6 +4202,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                  { since we're in a class method of the current class, its
                    information has already been initialized (and that of all of
                    its parent classes too) }
@@ -3918,6 +4213,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                  typecheckpass(selftree);
@@ -3967,6 +4264,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 { no need to obtain the class ref by calling class(), sending
                   this message will initialize it if necessary }
                 tloadvmtaddrnode(methodpointer).forcall:=true;
@@ -3976,6 +4274,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                 firstpass(methodpointer);
@@ -4263,12 +4563,15 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
              paramanager.ret_in_param(resultdef,procdefinition)
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
              paramanager.ret_in_param(resultdef,procdefinition.proccalloption)
@@ -4354,6 +4657,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                        para.left:=gen_procvar_context_tree_self
 =======
                        para.left:=gen_procvar_context_tree
@@ -4364,6 +4668,9 @@ implementation
 =======
                        para.left:=gen_procvar_context_tree
 >>>>>>> graemeg/cpstrnew
+=======
+                       para.left:=gen_procvar_context_tree
+>>>>>>> origin/cpstrnew
 =======
                        para.left:=gen_procvar_context_tree
 >>>>>>> origin/cpstrnew
@@ -4419,11 +4726,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                    end
@@ -4795,11 +5105,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       label
@@ -5104,6 +5417,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -5129,6 +5443,8 @@ implementation
                   if not(vo_is_hidden_para in tparavarsym(procdefinition.paras[paraidx]).varoptions) then
                     inc(i);
 =======
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -5229,6 +5545,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                  assigned(methodpointer) and
                  assigned(methodpointer.resultdef) and
                  (methodpointer.resultdef.typ=classrefdef) then
@@ -5249,6 +5566,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                  is_class(tprocdef(procdefinition).struct) and
@@ -5489,15 +5808,20 @@ implementation
                  addstatement(statements,converted_result_data);
                  addstatement(statements,cassignmentnode.create(ctemprefnode.create(converted_result_data),
 <<<<<<< HEAD
+<<<<<<< HEAD
                    ctypeconvnode.create_internal(translate_disp_call(methodpointer,parameters,calltype,'',tprocdef(procdefinition).dispid,procdefinition.returndef),
 =======
                    ctypeconvnode.create_internal(translate_disp_call(methodpointer,parameters,nil,'',tprocdef(procdefinition).dispid,true),
 >>>>>>> graemeg/fixes_2_2
+=======
+                   ctypeconvnode.create_internal(translate_disp_call(methodpointer,parameters,calltype,'',tprocdef(procdefinition).dispid,procdefinition.returndef),
+>>>>>>> origin/cpstrnew
                    procdefinition.returndef)));
                  addstatement(statements,ctempdeletenode.create_normal_temp(converted_result_data));
                  addstatement(statements,ctemprefnode.create(converted_result_data));
                end
              else
+<<<<<<< HEAD
 <<<<<<< HEAD
                result:=translate_disp_call(methodpointer,parameters,calltype,'',tprocdef(procdefinition).dispid,voidtype);
 <<<<<<< HEAD
@@ -5547,6 +5871,9 @@ implementation
              end;
 =======
                result:=translate_disp_call(methodpointer,parameters,nil,'',tprocdef(procdefinition).dispid,false);
+=======
+               result:=translate_disp_call(methodpointer,parameters,calltype,'',tprocdef(procdefinition).dispid,voidtype);
+>>>>>>> origin/cpstrnew
 
              { don't free reused nodes }
              methodpointer:=nil;
@@ -5564,6 +5891,14 @@ implementation
         currloc : tcgloc;
       begin
         hpfirst:=nil;
+        hpcurr:=tcallparanode(left);
+        { cache all info about parameters containing stack tainting calls,
+          since we will need it a lot below and calculting it can be expensive }
+        while assigned(hpcurr) do
+          begin
+            hpcurr.init_contains_stack_tainting_call_cache;
+            hpcurr:=tcallparanode(hpcurr.right);
+          end;
         hpcurr:=tcallparanode(left);
         while assigned(hpcurr) do
           begin
@@ -6183,6 +6518,7 @@ implementation
           again inside the args or itself }
         exclude(procdefinition.procoptions,po_inline);
 
+<<<<<<< HEAD
         typecheckpass(createblock);
         dosimplify(createblock);
         firstpass(createblock);
@@ -6208,6 +6544,107 @@ implementation
         printnode(output,result);
 {$endif DEBUGINLINE}
 >>>>>>> graemeg/fixes_2_2
+=======
+              Similarly, for the register parameters we first want to
+              evaluate the calls, because otherwise the already loaded
+              register parameters will have to be saved so the intermediate
+              call can be evaluated (JM) }
+            if not assigned(hpcurr.parasym.paraloc[callerside].location) then
+              internalerror(200412152);
+            currloc:=hpcurr.parasym.paraloc[callerside].location^.loc;
+            hpprev:=nil;
+            hp:=hpfirst;
+            { on fixed_stack targets, always evaluate parameters containing
+              a call with stack parameters before all other parameters,
+              because they will prevent any other parameters from being put
+              in their final place; if both the current and the next para
+              contain a stack tainting call, don't do anything to prevent
+              them from keeping on chasing eachother's tail }
+            while assigned(hp) do
+              begin
+                if paramanager.use_fixed_stack and
+                   hpcurr.contains_stack_tainting_call_cached then
+                  break;
+                case currloc of
+                  LOC_REFERENCE :
+                    begin
+                      case hp.parasym.paraloc[callerside].location^.loc of
+                        LOC_REFERENCE :
+                          begin
+                            { Offset is calculated like:
+                               sub esp,12
+                               mov [esp+8],para3
+                               mov [esp+4],para2
+                               mov [esp],para1
+                               call function
+                              That means the for pushes the para with the
+                              highest offset (see para3) needs to be pushed first
+                            }
+{$ifdef i386}
+                            { the i386 code generator expects all reference }
+                            { parameter to be in this order so it can use   }
+                            { pushes in case of no fixed stack              }
+                            if (not paramanager.use_fixed_stack and
+                                (hpcurr.parasym.paraloc[callerside].location^.reference.offset>hp.parasym.paraloc[callerside].location^.reference.offset)) or
+                               (paramanager.use_fixed_stack and
+                                (node_complexity(hpcurr)<node_complexity(hp))) then
+{$else i386}
+                            if (node_complexity(hpcurr)<node_complexity(hp)) then
+{$endif i386}
+                              break;
+                          end;
+                        LOC_MMREGISTER,
+                        LOC_REGISTER,
+                        LOC_FPUREGISTER :
+                          break;
+                      end;
+                    end;
+                  LOC_MMREGISTER,
+                  LOC_FPUREGISTER,
+                  LOC_REGISTER :
+                    begin
+                      if (hp.parasym.paraloc[callerside].location^.loc<>LOC_REFERENCE) and
+                         (node_complexity(hpcurr)>node_complexity(hp)) then
+                        break;
+                    end;
+                end;
+                hpprev:=hp;
+                hp:=tcallparanode(hp.right);
+              end;
+            hpcurr.right:=hp;
+            if assigned(hpprev) then
+              hpprev.right:=hpcurr
+            else
+              hpfirst:=hpcurr;
+            { next }
+            hpcurr:=hpnext;
+          end;
+        left:=hpfirst;
+        { now mark each parameter that is followed by a stack-tainting call,
+          to determine on use_fixed_stack targets which ones can immediately be
+          put in their final destination. Unforunately we can never put register
+          parameters immediately in their final destination (even on register-
+          rich architectures such as the PowerPC), because the code generator
+          can still insert extra calls that only make use of register
+          parameters (fpc_move() etc. }
+        hpcurr:=hpfirst;
+        while assigned(hpcurr) do
+          begin
+            if hpcurr.contains_stack_tainting_call_cached then
+              begin
+                { all parameters before this one are followed by a stack
+                  tainting call }
+                hp:=hpfirst;
+                while hp<>hpcurr do
+                  begin
+                    hp.ffollowed_by_stack_tainting_call_cached:=true;
+                    hp:=tcallparanode(hp.right);
+                  end;
+                hpfirst:=hpcurr;
+              end;
+            hpcurr:=tcallparanode(hpcurr.right);
+          end;
+>>>>>>> origin/cpstrnew
       end;
 
 
@@ -6412,6 +6849,7 @@ implementation
       begin
          result:=nil;
 
+<<<<<<< HEAD
          { Check if the call can be inlined, sets the cnf_do_inline flag }
          check_inlining;
 
@@ -6436,6 +6874,38 @@ implementation
                  parameters in this case }
                exit;
              end;
+=======
+         { convert Objective-C calls into a message call }
+         if (procdefinition.typ=procdef) and
+            (po_objc in tprocdef(procdefinition).procoptions) then
+           begin
+             if not(cnf_objc_processed in callnodeflags) then
+               objc_convert_to_message_send;
+           end
+         else
+           begin
+             { The following don't apply to obj-c: obj-c methods can never be
+               inlined because they're always virtual and the destination can
+               change at run, and for the same reason we also can't perform
+               WPO on them (+ they have no constructors) }
+
+             { Check if the call can be inlined, sets the cnf_do_inline flag }
+             check_inlining;
+
+             { must be called before maybe_load_in_temp(methodpointer), because
+               it converts the methodpointer into a temp in case it's a call
+               (and we want to know the original call)
+             }
+             register_created_object_types;
+           end;
+
+         { Maybe optimize the loading of the methodpointer using a temp. When the methodpointer
+           is a calln this is even required to not execute the calln twice.
+           This needs to be done after the resulttype pass, because in the resulttype we can still convert the
+           calln to a loadn (PFV) }
+         if assigned(methodpointer) then
+           maybe_load_in_temp(methodpointer);
+>>>>>>> origin/cpstrnew
 
            { can we get rid of the call? }
            if (cs_opt_remove_emtpy_proc in current_settings.optimizerswitches) and
@@ -7116,11 +7586,20 @@ implementation
                    )
                   ) then
                   begin
+<<<<<<< HEAD
                     tempnode:=nil;
 
 {$ifdef reuse_existing_para_temp}
                     { Try to reuse existing result tempnode from a parameter }
                     if para.left.nodetype=blockn then
+=======
+                    { don't create a new temp unnecessarily, but make sure we
+                      do create a new one if the old one could be a regvar and
+                      the new one cannot be one }
+                    if (para.left.nodetype<>temprefn) or
+                       (((tparavarsym(para.parasym).varregable in [vr_none,vr_addr])) and
+                        (ti_may_be_in_reg in ttemprefnode(para.left).tempinfo^.flags)) then
+>>>>>>> origin/cpstrnew
                       begin
                         n:=tstatementnode(tblocknode(para.left).left);
                         while assigned(n) and assigned(tstatementnode(n).right) do

@@ -62,6 +62,7 @@ implementation
          current_procinfo:=nil;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          current_structdef:=nil;
          current_genericdef:=nil;
          current_specializedef:=nil;
@@ -69,6 +70,11 @@ implementation
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+         current_structdef:=nil;
+         current_genericdef:=nil;
+         current_specializedef:=nil;
+>>>>>>> origin/cpstrnew
 
          loaded_units:=TLinkedList.Create;
 
@@ -186,6 +192,7 @@ implementation
          current_asmdata:=nil;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          current_structdef:=nil;
          current_genericdef:=nil;
          current_specializedef:=nil;
@@ -193,6 +200,11 @@ implementation
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+         current_structdef:=nil;
+         current_genericdef:=nil;
+         current_specializedef:=nil;
+>>>>>>> origin/cpstrnew
 
          { unload units }
          if assigned(loaded_units) then

@@ -118,6 +118,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	'Not supported'                        { ENOTSUP }
 //      'Must be equal to largest errno'       { ELAST }
 =======
@@ -132,6 +133,10 @@ const
 	'Not supported',                       { ENOTSUP }
 //	'Must be equal to largest errno'       { ELAST }
 >>>>>>> graemeg/cpstrnew
+=======
+	'Not supported',                       { ENOTSUP }
+//	'Must be equal to largest errno'       { ELAST }
+>>>>>>> origin/cpstrnew
 =======
 	'Not supported',                       { ENOTSUP }
 //	'Must be equal to largest errno'       { ELAST }

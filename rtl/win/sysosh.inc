@@ -60,6 +60,7 @@ const
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function OleStrToString(source: PWideChar) : UnicodeString;inline;
 procedure OleStrToStrVar(source : PWideChar;var dest : UnicodeString);inline;
 procedure OleStrToStrVar(source : PWideChar;var dest : AnsiString);inline;
@@ -109,6 +110,13 @@ function OleStrToString(source: PWideChar) : ansistring;inline;
 procedure OleStrToStrVar(source : PWideChar;var dest : ansistring);inline;
 function StringToOleStr(const source : ansistring) : PWideChar;inline;
 >>>>>>> origin/fixes_2_2
+=======
+function OleStrToString(source: PWideChar) : UnicodeString;inline;
+procedure OleStrToStrVar(source : PWideChar;var dest : UnicodeString);inline;
+procedure OleStrToStrVar(source : PWideChar;var dest : AnsiString);inline;
+function StringToOleStr(const source : ansistring) : PWideChar;inline;
+function StringToOleStr(const source : UnicodeString) : PWideChar;inline;
+>>>>>>> origin/cpstrnew
 
 { package stuff }
 type

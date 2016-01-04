@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Copyright (c) 2000, 2001, 2004, 2005, 2007-2010 Apple Inc. All rights reserved.
 =======
  * Copyright (c) 2000, 2001, 2004, 2005, 2007-2009 Apple Inc. All rights reserved.
@@ -28,6 +29,9 @@
 =======
  * Copyright (c) 2000, 2001, 2004, 2005, 2007-2009 Apple Inc. All rights reserved.
 >>>>>>> origin/fixes_2.4
+=======
+ * Copyright (c) 2000, 2001, 2004, 2005, 2007-2009 Apple Inc. All rights reserved.
+>>>>>>> origin/cpstrnew
  *
  * @APPLE_LICENSE_HEADER_START@
  * 
@@ -39,6 +43,7 @@
  * file.
  * 
  * The Original Code and all software distributed under the License are
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -60,6 +65,11 @@
  * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
  * INCLUDING WITHOUT LIMITATION, ANY WARRANTIES OF MERCHANTABILITY,
 >>>>>>> origin/fixes_2.4
+=======
+ * distributed on an 'AS IS' basis, WITHOUT WARRANTY OF ANY KIND, EITHER
+ * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
+ * INCLUDING WITHOUT LIMITATION, ANY WARRANTIES OF MERCHANTABILITY,
+>>>>>>> origin/cpstrnew
  * FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT.
  * Please see the License for the specific language governing rights and
  * limitations under the License.
@@ -75,6 +85,7 @@
 =======
 {	  Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2004 }
 {   Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -97,6 +108,8 @@
 >>>>>>> origin/fixes_2_2
 {	  Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2004 }
 {   Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+=======
+>>>>>>> origin/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -105,12 +118,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -122,6 +139,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -136,6 +154,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -151,6 +173,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -161,6 +184,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -168,13 +194,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -182,6 +212,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -190,8 +222,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -202,6 +237,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -222,6 +258,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -230,12 +268,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -243,6 +284,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -305,6 +347,9 @@ interface
 =======
 	{$setc TARGET_CPU_PPC64 := FALSE}
 >>>>>>> origin/fixes_2.4
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -314,6 +359,7 @@ interface
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
@@ -486,6 +532,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -528,6 +576,7 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+<<<<<<< HEAD
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -543,6 +592,15 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -571,6 +629,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -579,6 +638,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -591,8 +652,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 uses MacTypes,MacOSXPosix,CFBase,SCDynamicStore,CFDate,CFPropertyList,CFArray,CFData,CFRunLoop,Authorization;
 {$endc} {not MACOSALLINCLUDE}
 
@@ -604,6 +668,7 @@ type
 	AuthorizationOpaqueRef = record end;
 	AuthorizationRef = ^AuthorizationOpaqueRef;
 {$endc} {not TARGET_OS_IPHONE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 {!
@@ -657,6 +722,11 @@ uses MacTypes,CFBase,SCDynamicStore,CFDate,CFPropertyList,CFArray,CFData;
 
 {!
 	@header SCPreferences
+=======
+
+{!
+	@header SCPreferences
+>>>>>>> origin/cpstrnew
 	@discussion The SCPreferences API allows an application to load and
 		store XML configuration data in a controlled manner and provide
 		the necessary notifications to other applications that need to
@@ -677,12 +747,16 @@ uses MacTypes,CFBase,SCDynamicStore,CFDate,CFPropertyList,CFArray,CFData;
 
 		When you are finished with the preferences session, use
 		CFRelease to close it.
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  }
 
 
 {!
 	@typedef SCPreferencesRef
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -807,6 +881,9 @@ function SCPreferencesGetTypeID: CFTypeID; external name '_SCPreferencesGetTypeI
 =======
 	@discussion This is the handle to an open preferences session for
 >>>>>>> origin/fixes_2.4
+=======
+	@discussion This is the handle to an open preferences session for
+>>>>>>> origin/cpstrnew
 		accessing system configuration preferences.
  }
 type
@@ -879,6 +956,7 @@ type
  }
 function SCPreferencesGetTypeID: CFTypeID; external name '_SCPreferencesGetTypeID';
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -887,6 +965,9 @@ function SCPreferencesGetTypeID: CFTypeID; external name '_SCPreferencesGetTypeI
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_NA) *)
 >>>>>>> origin/fixes_2.4
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_NA) *)
+>>>>>>> origin/cpstrnew
 
 {!
 	@function SCPreferencesCreate
@@ -895,14 +976,18 @@ function SCPreferencesGetTypeID: CFTypeID; external name '_SCPreferencesGetTypeI
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	@param allocator The CFAllocator that should be used to allocate
 		memory for this preferences session.
 		This parameter may be NULL in which case the current
 		default CFAllocator is used.
 		If this reference is not a valid CFAllocator, the behavior
 		is undefined.
+<<<<<<< HEAD
 <<<<<<< HEAD
 	@param name A string that describes the name of the calling
 		process.
@@ -943,6 +1028,8 @@ function SCPreferencesCreateWithAuthorization( allocator: CFAllocatorRef; name: 
 	@param allocator ...
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	@param name A string that describes the name of the calling
 		process.
 	@param prefsID A string that identifies the name of the
@@ -953,10 +1040,13 @@ function SCPreferencesCreateWithAuthorization( allocator: CFAllocatorRef; name: 
 function SCPreferencesCreate( allocator: CFAllocatorRef; name: CFStringRef; prefsID: CFStringRef ): SCPreferencesRef; external name '_SCPreferencesCreate';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_NA) *)
 
 
@@ -982,7 +1072,10 @@ function SCPreferencesCreate( allocator: CFAllocatorRef; name: CFStringRef; pref
  }
 function SCPreferencesCreateWithAuthorization( allocator: CFAllocatorRef; name: CFStringRef; prefsID: CFStringRef; authorization: AuthorizationRef ): SCPreferencesRef; external name '_SCPreferencesCreateWithAuthorization';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_NA) *)
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {!
 	@function SCPreferencesLock
@@ -991,13 +1084,17 @@ function SCPreferencesCreateWithAuthorization( allocator: CFAllocatorRef; name: 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 		This function obtains exclusive access to the configuration
 		preferences.  Clients attempting to obtain exclusive access
 		to the preferences will either receive a kSCStatusPrefsBusy
 		error or block waiting for the lock to be released.
 	@param prefs The preferences session.
+<<<<<<< HEAD
 <<<<<<< HEAD
 	@param wait A boolean flag indicating whether the calling process
 		should block waiting for another process to complete its update
@@ -1019,12 +1116,15 @@ function SCPreferencesLock( prefs: SCPreferencesRef; wait: Boolean ): Boolean; e
 		all API calls.
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	@param wait A boolean flag indicating whether the calling process
 		should block waiting for another process to complete its update
 		operation and release its lock.
 	@result Returns TRUE if the lock was obtained;
 		FALSE if an error occurred.
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function SCPreferencesLock( session: SCPreferencesRef; wait: Boolean ): Boolean; external name '_SCPreferencesLock';
 <<<<<<< HEAD
@@ -1035,6 +1135,10 @@ function SCPreferencesLock( session: SCPreferencesRef; wait: Boolean ): Boolean;
 function SCPreferencesLock( prefs: SCPreferencesRef; wait: Boolean ): Boolean; external name '_SCPreferencesLock';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_NA) *)
 >>>>>>> origin/fixes_2.4
+=======
+function SCPreferencesLock( prefs: SCPreferencesRef; wait: Boolean ): Boolean; external name '_SCPreferencesLock';
+(* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_NA) *)
+>>>>>>> origin/cpstrnew
 
 {!
 	@function SCPreferencesCommitChanges
@@ -1042,8 +1146,11 @@ function SCPreferencesLock( prefs: SCPreferencesRef; wait: Boolean ): Boolean; e
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 		persistent storage.
 
 		This function commits any changes to permanent storage.
@@ -1057,6 +1164,7 @@ function SCPreferencesLock( prefs: SCPreferencesRef; wait: Boolean ): Boolean; e
 	@param prefs The preferences session.
 	@result Returns TRUE if the lock was obtained;
 		FALSE if an error occurred.
+<<<<<<< HEAD
 <<<<<<< HEAD
  }
 function SCPreferencesCommitChanges( prefs: SCPreferencesRef ): Boolean; external name '_SCPreferencesCommitChanges';
@@ -1087,11 +1195,17 @@ function SCPreferencesCommitChanges( session: SCPreferencesRef ): Boolean; exter
 function SCPreferencesCommitChanges( prefs: SCPreferencesRef ): Boolean; external name '_SCPreferencesCommitChanges';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_NA) *)
 >>>>>>> origin/fixes_2.4
+=======
+ }
+function SCPreferencesCommitChanges( prefs: SCPreferencesRef ): Boolean; external name '_SCPreferencesCommitChanges';
+(* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_NA) *)
+>>>>>>> origin/cpstrnew
 
 {!
 	@function SCPreferencesApplyChanges
 	@discussion Requests that the currently stored configuration
 		preferences be applied to the active configuration.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1121,6 +1235,14 @@ function SCPreferencesApplyChanges( session: SCPreferencesRef ): Boolean; extern
 function SCPreferencesApplyChanges( prefs: SCPreferencesRef ): Boolean; external name '_SCPreferencesApplyChanges';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_NA) *)
 >>>>>>> origin/fixes_2.4
+=======
+	@param prefs The preferences session.
+	@result Returns TRUE if the lock was obtained;
+		FALSE if an error occurred.
+ }
+function SCPreferencesApplyChanges( prefs: SCPreferencesRef ): Boolean; external name '_SCPreferencesApplyChanges';
+(* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_NA) *)
+>>>>>>> origin/cpstrnew
 
 {!
 	@function SCPreferencesUnlock
@@ -1129,14 +1251,18 @@ function SCPreferencesApplyChanges( prefs: SCPreferencesRef ): Boolean; external
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 		This function releases the exclusive access lock to the
 		preferences.  Other clients will be now be able to establish
 		exclusive access to the preferences.
 	@param prefs The preferences session.
 	@result Returns TRUE if the lock was obtained;
 		FALSE if an error occurred.
+<<<<<<< HEAD
 <<<<<<< HEAD
  }
 function SCPreferencesUnlock( prefs: SCPreferencesRef ): Boolean; external name '_SCPreferencesUnlock';
@@ -1161,11 +1287,17 @@ function SCPreferencesUnlock( session: SCPreferencesRef ): Boolean; external nam
 function SCPreferencesUnlock( prefs: SCPreferencesRef ): Boolean; external name '_SCPreferencesUnlock';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_NA) *)
 >>>>>>> origin/fixes_2.4
+=======
+ }
+function SCPreferencesUnlock( prefs: SCPreferencesRef ): Boolean; external name '_SCPreferencesUnlock';
+(* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_NA) *)
+>>>>>>> origin/cpstrnew
 
 {!
 	@function SCPreferencesGetSignature
 	@discussion Returns a sequence of bytes that can be used to determine
 		if the saved configuration preferences have changed.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1199,10 +1331,19 @@ function SCPreferencesGetSignature( session: SCPreferencesRef ): CFDataRef; exte
 function SCPreferencesGetSignature( prefs: SCPreferencesRef ): CFDataRef; external name '_SCPreferencesGetSignature';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_NA) *)
 >>>>>>> origin/fixes_2.4
+=======
+	@param prefs The preferences session.
+	@result Returns a CFDataRef that reflects the signature of the configuration
+		preferences at the time of the call to the SCPreferencesCreate function.
+ }
+function SCPreferencesGetSignature( prefs: SCPreferencesRef ): CFDataRef; external name '_SCPreferencesGetSignature';
+(* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_NA) *)
+>>>>>>> origin/cpstrnew
 
 {!
 	@function SCPreferencesCopyKeyList
 	@discussion Returns an array of currently defined preference keys.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1232,11 +1373,20 @@ function SCPreferencesCopyKeyList( session: SCPreferencesRef ): CFArrayRef; exte
 function SCPreferencesCopyKeyList( prefs: SCPreferencesRef ): CFArrayRef; external name '_SCPreferencesCopyKeyList';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_NA) *)
 >>>>>>> origin/fixes_2.4
+=======
+	@param prefs The preferences session.
+	@result Returns the list of keys.
+		You must release the returned value.
+ }
+function SCPreferencesCopyKeyList( prefs: SCPreferencesRef ): CFArrayRef; external name '_SCPreferencesCopyKeyList';
+(* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_NA) *)
+>>>>>>> origin/cpstrnew
 
 {!
 	@function SCPreferencesGetValue
 	@discussion Returns the data associated with a preference key.
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1260,6 +1410,10 @@ function SCPreferencesGetValue( prefs: SCPreferencesRef; key: CFStringRef ): CFP
 		This function retrieves data associated with the specified
 		key.
 >>>>>>> origin/fixes_2.4
+=======
+		This function retrieves data associated with the specified
+		key.
+>>>>>>> origin/cpstrnew
 
 		Note: To avoid inadvertantly reading stale data, first call
 		the SCPreferencesLock function.
@@ -1268,6 +1422,7 @@ function SCPreferencesGetValue( prefs: SCPreferencesRef; key: CFStringRef ): CFP
 	@result Returns the value associated with the specified preference key;
 		NULL if no value was located.
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function SCPreferencesGetValue( session: SCPreferencesRef; key: CFStringRef ): CFPropertyListRef; external name '_SCPreferencesGetValue';
 <<<<<<< HEAD
@@ -1278,6 +1433,10 @@ function SCPreferencesGetValue( session: SCPreferencesRef; key: CFStringRef ): C
 function SCPreferencesGetValue( prefs: SCPreferencesRef; key: CFStringRef ): CFPropertyListRef; external name '_SCPreferencesGetValue';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_NA) *)
 >>>>>>> origin/fixes_2.4
+=======
+function SCPreferencesGetValue( prefs: SCPreferencesRef; key: CFStringRef ): CFPropertyListRef; external name '_SCPreferencesGetValue';
+(* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_NA) *)
+>>>>>>> origin/cpstrnew
 
 {!
 	@function SCPreferencesAddValue
@@ -1286,12 +1445,16 @@ function SCPreferencesGetValue( prefs: SCPreferencesRef; key: CFStringRef ): CFP
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 		This function associates new data with the specified key.
 		To commit these changes to permanent storage, a call must
 		be made to the SCPreferencesCommitChanges function.
 	@param prefs The preferences session.
+<<<<<<< HEAD
 <<<<<<< HEAD
 	@param key The preference key to be updated.
 	@param value The CFPropertyListRef object containing the
@@ -1312,6 +1475,8 @@ function SCPreferencesAddValue( prefs: SCPreferencesRef; key: CFStringRef; value
 		communicate with the APIs.
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	@param key The preference key to be updated.
 	@param value The CFPropertyListRef object containing the
 		value to be associated with the specified preference key.
@@ -1319,6 +1484,7 @@ function SCPreferencesAddValue( prefs: SCPreferencesRef; key: CFStringRef; value
 		FALSE if the key already exists or
 		if an error occurred.
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function SCPreferencesAddValue( session: SCPreferencesRef; key: CFStringRef; value: CFPropertyListRef ): Boolean; external name '_SCPreferencesAddValue';
 <<<<<<< HEAD
@@ -1329,6 +1495,10 @@ function SCPreferencesAddValue( session: SCPreferencesRef; key: CFStringRef; val
 function SCPreferencesAddValue( prefs: SCPreferencesRef; key: CFStringRef; value: CFPropertyListRef ): Boolean; external name '_SCPreferencesAddValue';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_NA) *)
 >>>>>>> origin/fixes_2.4
+=======
+function SCPreferencesAddValue( prefs: SCPreferencesRef; key: CFStringRef; value: CFPropertyListRef ): Boolean; external name '_SCPreferencesAddValue';
+(* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_NA) *)
+>>>>>>> origin/cpstrnew
 
 {!
 	@function SCPreferencesSetValue
@@ -1337,12 +1507,16 @@ function SCPreferencesAddValue( prefs: SCPreferencesRef; key: CFStringRef; value
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 		This function adds or replaces the value associated with the
 		specified key.  To commit these changes to permanent storage
 		a call must be made to the SCPreferencesCommitChanges function.
 	@param prefs The preferences session.
+<<<<<<< HEAD
 <<<<<<< HEAD
 	@param key The preference key to be updated.
 	@param value The CFPropertyListRef object containing the
@@ -1362,12 +1536,15 @@ function SCPreferencesSetValue( prefs: SCPreferencesRef; key: CFStringRef; value
 		communicate with the APIs.
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	@param key The preference key to be updated.
 	@param value The CFPropertyListRef object containing the
 		data to be associated with the specified preference key.
 	@result Returns TRUE if the value was set;
 		FALSE if an error occurred.
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function SCPreferencesSetValue( session: SCPreferencesRef; key: CFStringRef; value: CFPropertyListRef ): Boolean; external name '_SCPreferencesSetValue';
 <<<<<<< HEAD
@@ -1378,6 +1555,10 @@ function SCPreferencesSetValue( session: SCPreferencesRef; key: CFStringRef; val
 function SCPreferencesSetValue( prefs: SCPreferencesRef; key: CFStringRef; value: CFPropertyListRef ): Boolean; external name '_SCPreferencesSetValue';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_NA) *)
 >>>>>>> origin/fixes_2.4
+=======
+function SCPreferencesSetValue( prefs: SCPreferencesRef; key: CFStringRef; value: CFPropertyListRef ): Boolean; external name '_SCPreferencesSetValue';
+(* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_NA) *)
+>>>>>>> origin/cpstrnew
 
 {!
 	@function SCPreferencesRemoveValue
@@ -1386,12 +1567,16 @@ function SCPreferencesSetValue( prefs: SCPreferencesRef; key: CFStringRef; value
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 		This function removes the data associated with the specified
 		key.  To commit these changes to permanent storage a call must
 		be made to the SCPreferencesCommitChanges function.
 	@param prefs The preferences session.
+<<<<<<< HEAD
 <<<<<<< HEAD
 	@param key The preference key to be removed.
 	@result Returns TRUE if the value was removed;
@@ -1651,6 +1836,8 @@ end.
 		communicate with the APIs.
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	@param key The preference key to be removed.
 	@result Returns TRUE if the value was removed;
 		FALSE if the key did not exist or if an error occurred.
@@ -1740,9 +1927,13 @@ procedure SCPreferencesSynchronize( prefs: SCPreferencesRef ); external name '_S
 end.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

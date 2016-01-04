@@ -16,6 +16,9 @@
     License as published by the Free Software Foundation; either
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
     version 2.1 of the License, or (at your option) any later version
     with the following modification:
 
@@ -29,12 +32,15 @@
     this library, you may extend this exception to your version of the library,
     but you are not obligated to do so. If you do not wish to do so, delete this
     exception statement from your version.
+<<<<<<< HEAD
 =======
     version 2.1 of the License, or (at your option) any later version.
 >>>>>>> graemeg/fixes_2_2
 =======
     version 2.1 of the License, or (at your option) any later version.
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 
     This library is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -76,6 +82,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 unit ptc;
 
 interface
@@ -109,22 +116,29 @@ type
 =======
 >>>>>>> origin/fixes_2_2
 Unit ptc;
+=======
+unit ptc;
+>>>>>>> origin/cpstrnew
 
-Interface
+interface
 
 {$IFNDEF FPDOC}
-Uses
+uses
   Hermes;
 {$ENDIF FPDOC}
 
-Const
-  PTCPAS_VERSION = 'PTCPas 0.99.7';
+const
+  PTCPAS_VERSION = 'PTCPas 0.99.11';
 
+<<<<<<< HEAD
 Type
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+type
+>>>>>>> origin/cpstrnew
   PUint8  = ^Uint8;
   PUint16 = ^Uint16;
   PUint32 = ^Uint32;
@@ -144,6 +158,7 @@ Type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$INCLUDE core/coreinterface.inc}
 =======
 {$INCLUDE coreinterface.inc}
@@ -151,12 +166,18 @@ Type
 =======
 {$INCLUDE coreinterface.inc}
 >>>>>>> origin/fixes_2_2
+=======
+{$INCLUDE core/coreinterface.inc}
+>>>>>>> origin/cpstrnew
 
 {$IFNDEF FPDOC}
 
 {$IFDEF ENABLE_C_API}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {$INCLUDE c_api/capi_index.inc}
 {$INCLUDE c_api/capi_errord.inc}
 {$INCLUDE c_api/capi_exceptd.inc}
@@ -172,6 +193,7 @@ Type
 {$INCLUDE c_api/capi_consoled.inc}
 {$INCLUDE c_api/capi_moded.inc}
 {$INCLUDE c_api/capi_timerd.inc}
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -194,10 +216,13 @@ Type
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 {$ENDIF ENABLE_C_API}
 
 {$ENDIF FPDOC}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 implementation
@@ -234,27 +259,35 @@ uses
 =======
 >>>>>>> origin/fixes_2_2
 Implementation
+=======
+implementation
+>>>>>>> origin/cpstrnew
 
 {$IFDEF GO32V2}
-Uses
-  textfx2, vesa, vga, cga, timeunit, crt, go32, mouse33h;
+uses
+  textfx2, vesa, vga, cga, timeunit, crt, go32fix, mouse33h;
 {$ENDIF GO32V2}
 
-{$IFDEF Win32}
-Uses
+{$IF defined(WIN32) OR defined(WIN64)}
+uses
   Windows, p_ddraw;
-{$ENDIF Win32}
+{$ENDIF defined(WIN32) OR defined(WIN64)}
 
 {$IFDEF WinCE}
+<<<<<<< HEAD
 Uses
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+uses
+>>>>>>> origin/cpstrnew
   Windows, p_gx;
 {$ENDIF WinCE}
 
 {$IFDEF UNIX}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 uses
@@ -274,6 +307,9 @@ uses
 >>>>>>> graemeg/cpstrnew
 =======
 Uses
+=======
+uses
+>>>>>>> origin/cpstrnew
   BaseUnix, Unix, ctypes, x, xlib, xutil, xatom, keysym
 >>>>>>> graemeg/fixes_2_2
 =======
@@ -308,10 +344,14 @@ Uses
   unit :) }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 procedure FreeAndNil(var q);
 var
   tmp: TObject;
 begin
+<<<<<<< HEAD
   tmp := TObject(q);
   Pointer(q) := nil;
   tmp.Free;
@@ -378,42 +418,41 @@ Var
   tmp : TObject;
 
 Begin
+=======
+>>>>>>> origin/cpstrnew
   tmp := TObject(q);
-  Pointer(q) := Nil;
+  Pointer(q) := nil;
   tmp.Free;
-End;
+end;
 
-Procedure FreeMemAndNil(Var q);
-
-Var
-  tmp : Pointer;
-
-Begin
+procedure FreeMemAndNil(var q);
+var
+  tmp: Pointer;
+begin
   tmp := Pointer(q);
-  Pointer(q) := Nil;
-  If tmp <> Nil Then
+  Pointer(q) := nil;
+  if tmp <> nil then
     FreeMem(tmp);
-End;
+end;
 
-Function IntToStr(Value : Integer) : String;
-
-Begin
+function IntToStr(Value: Integer): string;
+begin
   System.Str(Value, Result);
-End;
+end;
 
-Function IntToStr(Value : Int64) : String;
-
-Begin
+function IntToStr(Value: Int64): string;
+begin
   System.Str(Value, Result);
-End;
+end;
 
-Function IntToStr(Value : QWord) : String;
-Begin
+function IntToStr(Value: QWord): string;
+begin
   System.Str(Value, Result);
-End;
+end;
 
-{$INCLUDE log.inc}
+{$INCLUDE core/log.inc}
 
+<<<<<<< HEAD
 {$IFDEF WIN32}
 {$INCLUDE win32/base/cursor.inc}
 {$ENDIF WIN32}
@@ -423,11 +462,15 @@ End;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$INCLUDE core/coreimplementation.inc}
+>>>>>>> origin/cpstrnew
 
 {$IFDEF GO32V2}
 {$INCLUDE dos/includes.inc}
 {$ENDIF GO32V2}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$IF defined(Win32) OR defined(Win64)}
@@ -490,6 +533,11 @@ End;
 =======
 {$IFDEF Win32}
 >>>>>>> origin/fixes_2_2
+=======
+{$IF defined(Win32) OR defined(Win64)}
+{$INCLUDE win32/base/cursord.inc}
+{$INCLUDE win32/base/cursormoded.inc}
+>>>>>>> origin/cpstrnew
 {$INCLUDE win32/base/monitord.inc}
 {$INCLUDE win32/base/eventd.inc}
 {$INCLUDE win32/base/windowd.inc}
@@ -506,11 +554,15 @@ End;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$INCLUDE win32/base/cursor.inc}
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$INCLUDE win32/base/cursor.inc}
+>>>>>>> origin/cpstrnew
 {$INCLUDE win32/base/monitor.inc}
 {$INCLUDE win32/base/event.inc}
 {$INCLUDE win32/base/window.inc}
@@ -531,6 +583,7 @@ End;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -545,6 +598,9 @@ End;
 =======
 {$ENDIF Win32}
 >>>>>>> origin/fixes_2_2
+=======
+{$ENDIF defined(Win32) OR defined(Win64)}
+>>>>>>> origin/cpstrnew
 
 {$IFDEF WinCE}
 {$INCLUDE wince/includes.inc}
@@ -563,11 +619,15 @@ End;
 {$INCLUDE x11/includes.inc}
 {$ENDIF UNIX}
 
+<<<<<<< HEAD
 {$INCLUDE consolei.inc}
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$INCLUDE core/consolei.inc}
+>>>>>>> origin/cpstrnew
 
 {$IFDEF ENABLE_C_API}
 {$INCLUDE c_api/except.pp}
@@ -586,6 +646,7 @@ End;
 {$INCLUDE c_api/timer.pp}
 {$ENDIF ENABLE_C_API}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 initialization
@@ -608,24 +669,27 @@ end.
 Initialization
 
 Begin
+=======
+initialization
+>>>>>>> origin/cpstrnew
   {$IFDEF ENABLE_C_API}
   ptc_error_handler_function := @ptc_error_handler_default;
   {$ENDIF ENABLE_C_API}
-  {$IFDEF WIN32}
-  TWin32Hook_m_monitor := TWin32Monitor.Create;
-  {$ENDIF WIN32}
-End;
+  {$IF defined(WIN32) OR defined(WIN64)}
+  TWin32Hook_Monitor := TWin32Monitor.Create;
+  {$ENDIF defined(WIN32) OR defined(WIN64)}
 
-Finalization
+finalization
+  {$IF defined(WIN32) OR defined(WIN64)}
+  FreeAndNil(TWin32Hook_Monitor);
+  {$ENDIF defined(WIN32) OR defined(WIN64)}
 
-Begin
-  {$IFDEF WIN32}
-  FreeAndNil(TWin32Hook_m_monitor);
-  {$ENDIF WIN32}
-End;
-
+<<<<<<< HEAD
 End.
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+end.
+>>>>>>> origin/cpstrnew

@@ -119,6 +119,7 @@ begin
   Str2UnixSockAddr(addr,UnixAddr,AddrLen);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Bind := fpBind(Sock, @UnixAddr, AddrLen)=0; // what the flying fuck were you thinking?
 =======
   Bind := Bind(Sock, UnixAddr, AddrLen); // what the flying fuck were you thinking?
@@ -126,6 +127,9 @@ begin
 =======
   Bind := Bind(Sock, UnixAddr, AddrLen); // what the flying fuck were you thinking?
 >>>>>>> origin/fixes_2_2
+=======
+  Bind := fpBind(Sock, @UnixAddr, AddrLen)=0; // what the flying fuck were you thinking?
+>>>>>>> origin/cpstrnew
 end;
 
 

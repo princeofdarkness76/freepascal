@@ -1,8 +1,11 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
     This file is part of the Free Pascal run time library.
     Copyright (c) 2007 by contributors of the Free Pascal Compiler
@@ -42,6 +45,7 @@ implementation
 
 end.
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
@@ -91,3 +95,5 @@ end.
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew

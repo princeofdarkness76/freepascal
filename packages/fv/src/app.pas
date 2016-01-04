@@ -808,6 +808,7 @@ BEGIN
   }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Drivers.DetectVideo;
 =======
 {  Drivers.InitVideo;}
@@ -815,6 +816,9 @@ BEGIN
 =======
 {  Drivers.InitVideo;}
 >>>>>>> origin/fixes_2_2
+=======
+  Drivers.DetectVideo;
+>>>>>>> origin/cpstrnew
   if (ScreenMode.Col div ScreenMode.Row<2) then
     ShadowSize.X := 1
   else
@@ -910,10 +914,14 @@ begin
   InitMemory;}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {  InitScreen;
    Warning: InitScreen calls DetectVideo which
     resets ScreenMode to old value, call it after
     video mode was changed instead of before }
+<<<<<<< HEAD
   Video.SetVideoMode(Mode);
 
   { Update ScreenMode to new value }
@@ -926,6 +934,12 @@ begin
   InitScreen;
   Video.SetVideoMode(Mode);
 >>>>>>> origin/fixes_2_2
+=======
+  Video.SetVideoMode(Mode);
+
+  { Update ScreenMode to new value }
+  InitScreen;
+>>>>>>> origin/cpstrnew
   ScreenWidth:=Video.ScreenWidth;
   ScreenHeight:=Video.ScreenHeight;
   Buffer := Views.PVideoBuf(VideoBuf);

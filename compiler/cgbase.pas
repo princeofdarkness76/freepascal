@@ -70,6 +70,7 @@ interface
          addr_full,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          addr_pic,
          addr_pic_no_got
          {$IF defined(POWERPC) or defined(POWERPC64) or defined(SPARC) or defined(MIPS)}
@@ -81,6 +82,11 @@ interface
          addr_pic
          {$IF defined(POWERPC) or defined(POWERPC64) or defined(SPARC)}
 >>>>>>> origin/fixes_2_2
+=======
+         addr_pic,
+         addr_pic_no_got
+         {$IF defined(POWERPC) or defined(POWERPC64) or defined(SPARC) or defined(MIPS)}
+>>>>>>> origin/cpstrnew
          ,
          addr_low,         // bits 48-63
          addr_high,        // bits 32-47
@@ -140,6 +146,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -153,6 +160,12 @@ interface
 =======
          {$ENDIF}
 >>>>>>> origin/fixes_2_2
+=======
+         {$IFDEF AVR}
+         ,addr_lo8
+         ,addr_hi8
+         {$ENDIF}
+>>>>>>> origin/cpstrnew
          );
 
 
@@ -438,6 +451,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     function tcgsize2str(cgsize: tcgsize):string;
 =======
@@ -446,6 +460,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 

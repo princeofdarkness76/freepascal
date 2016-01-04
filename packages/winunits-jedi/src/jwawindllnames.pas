@@ -120,6 +120,7 @@ const
   winfax = 'winfax.dll';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   winspool32 = 'winspool.drv';
 =======
   winspool32 = 'winspool32.drv';
@@ -127,6 +128,9 @@ const
 =======
   winspool32 = 'winspool32.drv';
 >>>>>>> origin/fixes_2_2
+=======
+  winspool32 = 'winspool.drv';
+>>>>>>> origin/cpstrnew
   winstaDLL = 'winsta.dll';
   winternl_lib = 'ntdll.dll';
   wow16lib = 'kernel32.dll';

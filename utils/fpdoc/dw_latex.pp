@@ -83,11 +83,14 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     Class Function FileNameExtension : String; override;
@@ -631,12 +634,15 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TLaTeXWriter.StartAccess;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 Procedure TLatexWriter.StartAccess;
@@ -700,6 +706,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TLaTeXWriter.WriteOverviewMember(const ALabel, AName, Access,
   ADescr: String);
 =======
@@ -720,11 +727,15 @@ procedure TLatexWriter.WriteOverviewMember(ALabel,AName,Access,ADescr : String);
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+procedure TLatexWriter.WriteOverviewMember(const ALabel,AName,Access,ADescr : String);
+>>>>>>> origin/cpstrnew
 
 begin
   WriteLnF('\pageref{%s} & %s & %s & %s \\',[ALabel,EscapeText(AName),Access,ADescr]);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -749,6 +760,9 @@ procedure TLatexWriter.WriteOverviewMember(const ALabel,AName,ADescr : String);
 >>>>>>> origin/fixes_2_2
 procedure TLatexWriter.WriteOverviewMember(ALabel,AName,ADescr : String);
 >>>>>>> graemeg/fixes_2_2
+=======
+procedure TLatexWriter.WriteOverviewMember(const ALabel,AName,ADescr : String);
+>>>>>>> origin/cpstrnew
 
 begin
   WriteLnF('\pageref{%s} & %s  & %s \\',[ALabel,EscapeText(AName),ADescr]);

@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (C) 2001-2003, 2006, 2007, 2009-2011  Nikolay Nikolov (nickysn@users.sourceforge.net)
 =======
     Copyright (C) 2001-2003  Nikolay Nikolov (nickysn@users.sourceforge.net)
@@ -14,6 +15,9 @@
 =======
     Copyright (C) 2001-2003  Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
+=======
+    Copyright (C) 2001-2003  Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> origin/cpstrnew
 =======
     Copyright (C) 2001-2003  Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> origin/cpstrnew
@@ -56,6 +60,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   TPTCEvent = class(TInterfacedObject, IPTCEvent)
   protected
     function GetEventType: TPTCEventType; virtual; abstract;
@@ -90,6 +95,11 @@ type
   TEventLinkedList = record
     Event: TPTCEvent;
 >>>>>>> origin/cpstrnew
+=======
+  PEventLinkedList = ^TEventLinkedList;
+  TEventLinkedList = record
+    Event: TPTCEvent;
+>>>>>>> origin/cpstrnew
     Next: PEventLinkedList;
   end;
   TEventQueue = class
@@ -98,6 +108,7 @@ type
   public
     constructor Create;
     destructor Destroy; override;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -125,6 +136,11 @@ type
     function PeekEvent(const EventMask: TPTCEventMask): TPTCEvent;
     function NextEvent(const EventMask: TPTCEventMask): TPTCEvent;
 >>>>>>> origin/cpstrnew
+=======
+    procedure AddEvent(event: TPTCEvent);
+    function PeekEvent(const EventMask: TPTCEventMask): TPTCEvent;
+    function NextEvent(const EventMask: TPTCEventMask): TPTCEvent;
+>>>>>>> origin/cpstrnew
   end;
 
 constructor TEventQueue.Create;
@@ -144,6 +160,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     p^.Event := nil;
 =======
     FreeAndNil(p^.Event);
@@ -154,6 +171,9 @@ begin
 =======
     FreeAndNil(p^.Event);
 >>>>>>> graemeg/cpstrnew
+=======
+    FreeAndNil(p^.Event);
+>>>>>>> origin/cpstrnew
 =======
     FreeAndNil(p^.Event);
 >>>>>>> origin/cpstrnew
@@ -168,6 +188,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TEventQueue.AddEvent(const event: IPTCEvent);
 =======
 procedure TEventQueue.AddEvent(event: TPTCEvent);
@@ -178,6 +199,9 @@ procedure TEventQueue.AddEvent(event: TPTCEvent);
 =======
 procedure TEventQueue.AddEvent(event: TPTCEvent);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TEventQueue.AddEvent(event: TPTCEvent);
+>>>>>>> origin/cpstrnew
 =======
 procedure TEventQueue.AddEvent(event: TPTCEvent);
 >>>>>>> origin/cpstrnew
@@ -205,6 +229,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TEventQueue.PeekEvent(const EventMask: TPTCEventMask): IPTCEvent;
 =======
 function TEventQueue.PeekEvent(const EventMask: TPTCEventMask): TPTCEvent;
@@ -215,6 +240,9 @@ function TEventQueue.PeekEvent(const EventMask: TPTCEventMask): TPTCEvent;
 =======
 function TEventQueue.PeekEvent(const EventMask: TPTCEventMask): TPTCEvent;
 >>>>>>> graemeg/cpstrnew
+=======
+function TEventQueue.PeekEvent(const EventMask: TPTCEventMask): TPTCEvent;
+>>>>>>> origin/cpstrnew
 =======
 function TEventQueue.PeekEvent(const EventMask: TPTCEventMask): TPTCEvent;
 >>>>>>> origin/cpstrnew
@@ -239,6 +267,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TEventQueue.NextEvent(const EventMask: TPTCEventMask): IPTCEvent;
 =======
 function TEventQueue.NextEvent(const EventMask: TPTCEventMask): TPTCEvent;
@@ -249,6 +278,9 @@ function TEventQueue.NextEvent(const EventMask: TPTCEventMask): TPTCEvent;
 =======
 function TEventQueue.NextEvent(const EventMask: TPTCEventMask): TPTCEvent;
 >>>>>>> graemeg/cpstrnew
+=======
+function TEventQueue.NextEvent(const EventMask: TPTCEventMask): TPTCEvent;
+>>>>>>> origin/cpstrnew
 =======
 function TEventQueue.NextEvent(const EventMask: TPTCEventMask): TPTCEvent;
 >>>>>>> origin/cpstrnew
@@ -266,6 +298,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       p^.Event := nil;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -273,6 +306,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 

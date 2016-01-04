@@ -763,6 +763,7 @@ parser_e_void_function=03080_E_Prosedur tidak mengembalikan nilai
 % melakukan ini dengan prosedur. Prosedure tidak bisa mengembalikan nilai.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 parser_e_only_methods_allowed=03081_E_konstruktor, destruktor dan class operator harus sebuah metode
 % Anda mendeklarasikan sebuah procedure sebagai destruktor, konstructor atau class operator, ketika
 =======
@@ -773,6 +774,10 @@ parser_e_constructors_always_objects=03081_E_konstruktor dan destruktor harus se
 parser_e_constructors_always_objects=03081_E_konstruktor dan destruktor harus sebuah metode
 % Anda mendeklarasikan sebuah procedure sebagai destruktor atau konstruktor, ketika
 >>>>>>> origin/fixes_2_2
+=======
+parser_e_only_methods_allowed=03081_E_konstruktor, destruktor dan class operator harus sebuah metode
+% Anda mendeklarasikan sebuah procedure sebagai destruktor, konstructor atau class operator, ketika
+>>>>>>> origin/cpstrnew
 % prosedure bukan metode kelas.
 parser_e_operator_not_overloaded=03082_E_Operator tidak di-overload
 % Anda mencoba untuk menggunakan operator yang di-overload saat ia bukan tipe
@@ -3817,6 +3822,7 @@ Hak Cipta (c) 1993-2011 oleh Florian Klaempfl
 =======
 option_logo=11023_[
 Free Pascal Compiler versi $FPCFULLVERSION [$FPCDATE] untuk $FPCCPU
+<<<<<<< HEAD
 Hak Cipta (c) 1993-2008 oleh Florian Klaempfl
 >>>>>>> graemeg/fixes_2_2
 =======
@@ -3824,6 +3830,9 @@ option_logo=11023_[
 Free Pascal Compiler versi $FPCFULLVERSION [$FPCDATE] untuk $FPCCPU
 Hak Cipta (c) 1993-2008 oleh Florian Klaempfl
 >>>>>>> origin/fixes_2_2
+=======
+Hak Cipta (c) 1993-2011 oleh Florian Klaempfl
+>>>>>>> origin/cpstrnew
 ]
 
 #
@@ -4043,12 +4052,15 @@ S*2Aas_Rangkai menggunakan GNU AS
 **2Ss_Nama konstruktor harus init (destruktor harus done)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 **2St_Ijinkan kata kunci static dalam obyek
 >>>>>>> graemeg/fixes_2_2
 =======
 **2St_Ijinkan kata kunci static dalam obyek
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 **2Sx_Hidupkan kata kunci exception (standar dalam mode Delphi/ObjFPC)
 **1s_Jangan panggil assembler dan linker
 **2sh_Hasilkan naskah untuk me-link pada host

@@ -65,6 +65,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   published
     property OnGetURL;
 =======
@@ -73,6 +74,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   end;
@@ -107,6 +110,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     property WebModule: TFPWebModule read FWebModule;
 >>>>>>> graemeg/cpstrnew
@@ -116,6 +120,9 @@ type
 =======
     property WebModule: TFPWebModule read FWebModule;
 >>>>>>> graemeg/cpstrnew
+=======
+    property WebModule: TFPWebModule read FWebModule;
+>>>>>>> origin/cpstrnew
 =======
     property WebModule: TFPWebModule read FWebModule;
 >>>>>>> origin/cpstrnew
@@ -147,6 +154,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     property WebModule: TFPWebModule read FWebModule;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -154,6 +162,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   published
@@ -172,6 +182,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 uses typinfo, strutils;
 =======
 uses rtlconsts, typinfo, XMLWrite, strutils;
@@ -182,6 +193,9 @@ uses rtlconsts, typinfo, XMLWrite, strutils;
 =======
 uses rtlconsts, typinfo, XMLWrite, strutils;
 >>>>>>> graemeg/cpstrnew
+=======
+uses rtlconsts, typinfo, XMLWrite, strutils;
+>>>>>>> origin/cpstrnew
 =======
 uses rtlconsts, typinfo, XMLWrite, strutils;
 >>>>>>> origin/cpstrnew
@@ -325,6 +339,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 AComponent := AComponent.FindComponent(copy(CompName,1,i-1));
 =======
                 AComponent := FindComponent(copy(CompName,1,i-1));
@@ -335,6 +350,9 @@ begin
 =======
                 AComponent := FindComponent(copy(CompName,1,i-1));
 >>>>>>> graemeg/cpstrnew
+=======
+                AComponent := FindComponent(copy(CompName,1,i-1));
+>>>>>>> origin/cpstrnew
 =======
                 AComponent := FindComponent(copy(CompName,1,i-1));
 >>>>>>> origin/cpstrnew
@@ -355,6 +373,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   webcontroller.ResetIterationLevel;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -362,6 +381,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                   end;
@@ -463,6 +484,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     raise EHTTP.create('No webcontroller available');
 =======
     raise exception.create('No webcontroller available');
@@ -473,6 +495,9 @@ begin
 =======
     raise exception.create('No webcontroller available');
 >>>>>>> graemeg/cpstrnew
+=======
+    raise exception.create('No webcontroller available');
+>>>>>>> origin/cpstrnew
 =======
     raise exception.create('No webcontroller available');
 >>>>>>> origin/cpstrnew
@@ -718,6 +743,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     result := result + ConnectChar + p;
   if assigned(OnGetURL) then
     OnGetURL(ParamNames, ParamValues, KeepParams, Action, Result);
@@ -730,6 +756,9 @@ begin
 =======
     result := result + ConnectChar + p
 >>>>>>> graemeg/cpstrnew
+=======
+    result := result + ConnectChar + p
+>>>>>>> origin/cpstrnew
 =======
     result := result + ConnectChar + p
 >>>>>>> origin/cpstrnew

@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       OSServices/SCSI.h
  
      Contains:   SCSI Family Interfaces.
@@ -16,11 +17,15 @@
 =======
      File:       OSServices/SCSI.h
 >>>>>>> origin/fixes_2.4
+=======
+     File:       OSServices/SCSI.h
+>>>>>>> origin/cpstrnew
  
      Contains:   SCSI Family Interfaces.
  
      Version:    OSServices-352~2
  
+<<<<<<< HEAD
 <<<<<<< HEAD
      Copyright:  © 1986-2002 by Apple Computer, Inc., all rights reserved
 <<<<<<< HEAD
@@ -30,6 +35,9 @@
 =======
      Copyright:  © 1986-2008 by Apple Computer, Inc., all rights reserved
 >>>>>>> origin/fixes_2.4
+=======
+     Copyright:  © 1986-2008 by Apple Computer, Inc., all rights reserved
+>>>>>>> origin/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -40,6 +48,7 @@
  
 }
 {      Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+<<<<<<< HEAD
 {
     Modified for use with Free Pascal
     Version 308
@@ -54,6 +63,8 @@
  
 }
 {      Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+=======
+>>>>>>> origin/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -62,12 +73,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -79,6 +94,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -93,6 +109,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -108,6 +128,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -118,6 +139,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -125,13 +149,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -139,6 +167,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -147,8 +177,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -159,6 +192,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -179,6 +213,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -187,12 +223,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -200,6 +239,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -485,12 +525,27 @@ interface
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
+=======
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -535,6 +590,7 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc TARGET_CPU_PPC_64 := FALSE}
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -542,6 +598,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -570,6 +628,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -578,6 +637,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -591,6 +652,9 @@ uses MacTypes,MixedMode,AppleDiskPartitions;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {$endc} {not MACOSALLINCLUDE}
 
 
@@ -617,6 +681,7 @@ type
 		scParam1: SIGNEDLONG;
 		scParam2: SIGNEDLONG;
 	end;
+<<<<<<< HEAD
 {
  *  SCSIReset()
  *  
@@ -627,13 +692,16 @@ type
  }
 
 
+=======
+>>>>>>> origin/cpstrnew
 {
- *  SCSIGet()
+ *  SCSIReset()
  *  
  *  Availability:
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+<<<<<<< HEAD
  }
 
 
@@ -654,16 +722,19 @@ type
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+=======
+>>>>>>> origin/cpstrnew
  }
 
 
 {
- *  SCSIRead()
+ *  SCSIGet()
  *  
  *  Availability:
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+<<<<<<< HEAD
  }
 
 
@@ -684,16 +755,19 @@ type
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+=======
+>>>>>>> origin/cpstrnew
  }
 
 
 {
- *  SCSIWBlind()
+ *  SCSISelect()
  *  
  *  Availability:
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+<<<<<<< HEAD
  }
 
 
@@ -714,16 +788,19 @@ type
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+=======
+>>>>>>> origin/cpstrnew
  }
 
 
 {
- *  SCSISelAtn()
+ *  SCSICmd()
  *  
  *  Availability:
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+<<<<<<< HEAD
  }
 
 
@@ -812,11 +889,19 @@ type
 	end;
 {
  *  SCSIReset()
+=======
+ }
+
+
+{
+ *  SCSIRead()
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+<<<<<<< HEAD
  }
 
 
@@ -827,11 +912,17 @@ type
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+=======
+>>>>>>> origin/cpstrnew
  }
 
 
 {
+<<<<<<< HEAD
  *  SCSISelect()
+=======
+ *  SCSIRBlind()
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         not available
@@ -841,6 +932,7 @@ type
 
 
 {
+<<<<<<< HEAD
  *  SCSICmd()
  *  
  *  Availability:
@@ -852,26 +944,9 @@ type
 
 {
  *  SCSIRead()
- *  
- *  Availability:
- *    Mac OS X:         not available
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
- }
-
-
-{
- *  SCSIRBlind()
- *  
- *  Availability:
- *    Mac OS X:         not available
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
- }
-
-
-{
+=======
  *  SCSIWrite()
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         not available
@@ -881,7 +956,11 @@ type
 
 
 {
+<<<<<<< HEAD
+ *  SCSIRBlind()
+=======
  *  SCSIWBlind()
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         not available
@@ -891,7 +970,11 @@ type
 
 
 {
+<<<<<<< HEAD
+ *  SCSIWrite()
+=======
  *  SCSIComplete()
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         not available
@@ -901,7 +984,11 @@ type
 
 
 {
+<<<<<<< HEAD
+ *  SCSIWBlind()
+=======
  *  SCSIStat()
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         not available
@@ -911,7 +998,11 @@ type
 
 
 {
+<<<<<<< HEAD
+ *  SCSIComplete()
+=======
  *  SCSISelAtn()
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         not available
@@ -920,6 +1011,35 @@ type
  }
 
 
+{
+<<<<<<< HEAD
+ *  SCSIStat()
+=======
+ *  SCSIMsgIn()
+>>>>>>> origin/cpstrnew
+ *  
+ *  Availability:
+ *    Mac OS X:         not available
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+
+
+{
+<<<<<<< HEAD
+ *  SCSISelAtn()
+=======
+ *  SCSIMsgOut()
+>>>>>>> origin/cpstrnew
+ *  
+ *  Availability:
+ *    Mac OS X:         not available
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+
+
+<<<<<<< HEAD
 {
  *  SCSIMsgIn()
  *  
@@ -962,6 +1082,30 @@ function NewSCSICallbackUPP( userRoutine: SCSICallbackProcPtr ): SCSICallbackUPP
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_2 *)
 
 {
+=======
+const
+	scsiVERSION = 43;
+
+
+{
+ * SCSI Completion routine callback for SCSIAction.
+ }
+type
+	SCSICallbackProcPtr = procedure( scsiPB: UnivPtr );
+	SCSICallbackUPP = SCSICallbackProcPtr;
+{
+ *  NewSCSICallbackUPP()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.3 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function NewSCSICallbackUPP( userRoutine: SCSICallbackProcPtr ): SCSICallbackUPP; external name '_NewSCSICallbackUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_2 *)
+
+{
+>>>>>>> origin/cpstrnew
  *  DisposeSCSICallbackUPP()
  *  
  *  Availability:
@@ -969,6 +1113,7 @@ function NewSCSICallbackUPP( userRoutine: SCSICallbackProcPtr ): SCSICallbackUPP
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   available as macro/inline
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure DisposeSCSICallbackUPP(userUPP: SCSICallbackUPP); external name '_DisposeSCSICallbackUPP';
 <<<<<<< HEAD
@@ -980,6 +1125,11 @@ procedure DisposeSCSICallbackUPP( userUPP: SCSICallbackUPP ); external name '_Di
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_2 *)
 
 >>>>>>> origin/fixes_2.4
+=======
+procedure DisposeSCSICallbackUPP( userUPP: SCSICallbackUPP ); external name '_DisposeSCSICallbackUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_2 *)
+
+>>>>>>> origin/cpstrnew
 {
  *  InvokeSCSICallbackUPP()
  *  
@@ -987,6 +1137,9 @@ procedure DisposeSCSICallbackUPP( userUPP: SCSICallbackUPP ); external name '_Di
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   available as macro/inline
@@ -1000,6 +1153,9 @@ procedure InvokeSCSICallbackUPP( scsiPB: UnivPtr; userUPP: SCSICallbackUPP ); ex
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 const
@@ -1013,15 +1169,19 @@ const
 	SCSITerminateIO = $13;  { Terminate any pending IO                    }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 const
 	vendorUnique = $C0;  { 0xC0 thru 0xFF }
 =======
 >>>>>>> graemeg/cpstrnew
 
+=======
+>>>>>>> origin/cpstrnew
 
 { Allocation length defines for some of the fields }
 const
+<<<<<<< HEAD
 <<<<<<< HEAD
 	handshakeDataLength = 8;    { Handshake data length }
 	maxCDBLength = 16;   { Space for the CDB bytes/pointer }
@@ -1041,6 +1201,17 @@ const
 =======
 
 const
+	vendorUnique = $C0;  { 0xC0 thru 0xFF }
+
+
+{ Allocation length defines for some of the fields }
+const
+	handshakeDataLength = 8;    { Handshake data length }
+	maxCDBLength = 16;   { Space for the CDB bytes/pointer }
+	vendorIDLength = 16;    { ASCII string len for Vendor ID  }
+
+>>>>>>> origin/cpstrnew
+=======
 	vendorUnique = $C0;  { 0xC0 thru 0xFF }
 
 
@@ -1067,6 +1238,7 @@ type
 { constants are pretty much deprecated.  Let me     }
 { know if you see any.                              }
 <<<<<<< HEAD
+<<<<<<< HEAD
 const
 =======
 const
@@ -1106,6 +1278,9 @@ type
 { know if you see any.                              }
 const
 >>>>>>> graemeg/cpstrnew
+=======
+const
+>>>>>>> origin/cpstrnew
 =======
 const
 >>>>>>> origin/cpstrnew
@@ -1124,6 +1299,7 @@ type
 		busNum: UInt8;
 		devNum: UInt8;
 		diReserved2: UInt8;
+<<<<<<< HEAD
 	end;
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1298,10 +1474,18 @@ type
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+	end;
+
+
+{ Command Descriptor Block structure }
+type
+>>>>>>> origin/cpstrnew
 	CDBPtr = ^CDB;
 	CDB = record
 		case SInt16 of
 		0: (
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1326,6 +1510,9 @@ type
 =======
 			cdbPtr: BytePtr;                 { pointer to the CDB, or }
 >>>>>>> origin/fixes_2.4
+=======
+			cdbPtr: BytePtr;                 { pointer to the CDB, or }
+>>>>>>> origin/cpstrnew
 			);
 		1: (
 			cdbBytes: packed array [0..15] of UInt8;           { the actual CDB to send }
@@ -1338,6 +1525,7 @@ type
 	SGRecordPtr = ^SGRecord;
 	SGRecord = record
 <<<<<<< HEAD
+<<<<<<< HEAD
 		SGAddr:					Ptr;
 		SGCount:				UInt32;
 <<<<<<< HEAD
@@ -1348,6 +1536,10 @@ type
 		SGAddr: Ptr;
 		SGCount: UInt32;
 >>>>>>> origin/fixes_2.4
+=======
+		SGAddr: Ptr;
+		SGCount: UInt32;
+>>>>>>> origin/cpstrnew
 	end;
 
 	SCSIHdrPtr = ^SCSIHdr;
@@ -1355,8 +1547,11 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 		qLink: SCSIHdrPtr;								{  (internal use, must be nil on entry)    }
 		scsiReserved1: SInt16;          { ->     reserved for input          }
 		scsiPBLength: UInt16;           { -> Length of the entire PB        }
@@ -1370,6 +1565,9 @@ type
 		scsiXPTprivate: Ptr;         { private field for use in XPT      }
 		scsiReserved3: SIGNEDLONG;          { reserved                    }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 	end;
 type
 	SCSI_PBPtr = ^SCSI_PB;
@@ -1386,6 +1584,7 @@ type
 		scsiDriverStorage: BytePtr;      { <> Ptr for driver private use   }
 		scsiXPTprivate: Ptr;         { private field for use in XPT      }
 		scsiReserved3: SIGNEDLONG;          { reserved                    }
+<<<<<<< HEAD
 	end;
 type
 	SCSI_IOPtr = ^SCSI_IO;
@@ -1538,6 +1737,12 @@ type
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+	end;
+type
+	SCSI_IOPtr = ^SCSI_IO;
+	SCSI_IO = record
+>>>>>>> origin/cpstrnew
 		qLink: SCSIHdrPtr;                  { (internal use, must be nil on entry)   }
 		scsiReserved1: SInt16;          { ->     reserved for input          }
 		scsiPBLength: UInt16;           { -> Length of the entire PB        }
@@ -1592,7 +1797,10 @@ type
 		scsiSCSImessage: UInt8;        { <- Returned scsi device message (for SCSIComplete)}
 		XPTprivateFlags: UInt8;        { <> various flags                       }
 		XPTextras: packed array [0..11] of UInt8;          {                              }
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	end;
 
 	SCSIExecIOPB						= SCSI_IO;
@@ -1603,8 +1811,11 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 		qLink: SCSIHdrPtr;                  { (internal use, must be nil on entry)   }
 		scsiReserved1: SInt16;          { ->     reserved for input          }
 		scsiPBLength: UInt16;           { -> Length of the entire PB        }
@@ -1664,6 +1875,7 @@ type
 
 		scsiBIReserved3: UInt16;        { <-                               }
 		scsiAdditionalLength: UInt16;   { <- additional BusInquiry PB len              }
+<<<<<<< HEAD
 <<<<<<< HEAD
 	end;
 { Abort SIM Request PB }
@@ -2826,6 +3038,8 @@ function SCSIAction( var parameterBlock: SCSI_PB ): OSErr; external name '_SCSIA
 		scsiAdditionalLength:	UInt16;									{  <- additional BusInquiry PB len               }
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	end;
 { Abort SIM Request PB }
 type
@@ -2982,6 +3196,7 @@ const
 
 const
 	scsiErrorBase = -7936;
+<<<<<<< HEAD
 
 const
 	scsiRequestInProgress = 1;    { 1   = PB request is in progress          }
@@ -3077,6 +3292,103 @@ const
 	scsiNotExecutedErrors = scsiTooManyBuses;
 	scsiParameterErrors = scsiPBLengthError;
 
+=======
+
+const
+	scsiRequestInProgress = 1;    { 1   = PB request is in progress          }
+                                        { Execution failed  00-2F }
+	scsiRequestAborted = scsiErrorBase + 2; { -7934 = PB request aborted by the host        }
+	scsiUnableToAbort = scsiErrorBase + 3; { -7933 = Unable to Abort PB request          }
+	scsiNonZeroStatus = scsiErrorBase + 4; { -7932 = PB request completed with an err   }
+	scsiUnused05 = scsiErrorBase + 5; { -7931 =                        }
+	scsiUnused06 = scsiErrorBase + 6; { -7930 =                        }
+	scsiUnused07 = scsiErrorBase + 7; { -7929 =                        }
+	scsiUnused08 = scsiErrorBase + 8; { -7928 =                        }
+	scsiUnableToTerminate = scsiErrorBase + 9; { -7927 = Unable to Terminate I/O PB req        }
+	scsiSelectTimeout = scsiErrorBase + 10; { -7926 = Target selection timeout        }
+	scsiCommandTimeout = scsiErrorBase + 11; { -7925 = Command timeout              }
+	scsiIdentifyMessageRejected = scsiErrorBase + 12; { -7924 =                        }
+	scsiMessageRejectReceived = scsiErrorBase + 13; { -7923 = Message reject received           }
+	scsiSCSIBusReset = scsiErrorBase + 14; { -7922 = SCSI bus reset sent/received    }
+	scsiParityError = scsiErrorBase + 15; { -7921 = Uncorrectable parity error occured     }
+	scsiAutosenseFailed = scsiErrorBase + 16; { -7920 = Autosense: Request sense cmd fail  }
+	scsiUnused11 = scsiErrorBase + 17; { -7919 =                        }
+	scsiDataRunError = scsiErrorBase + 18; { -7918 = Data overrun/underrun error     }
+	scsiUnexpectedBusFree = scsiErrorBase + 19; { -7917 = Unexpected BUS free              }
+	scsiSequenceFailed = scsiErrorBase + 20; { -7916 = Target bus phase sequence failure  }
+	scsiWrongDirection = scsiErrorBase + 21; { -7915 = Data phase was in wrong direction  }
+	scsiUnused16 = scsiErrorBase + 22; { -7914 =                        }
+	scsiBDRsent = scsiErrorBase + 23; { -7913 = A SCSI BDR msg was sent to target  }
+	scsiTerminated = scsiErrorBase + 24; { -7912 = PB request terminated by the host  }
+	scsiNoNexus = scsiErrorBase + 25; { -7911 = Nexus is not established        }
+	scsiCDBReceived = scsiErrorBase + 26; { -7910 = The SCSI CDB has been received        }
+                                        { Couldn't begin execution  30-3F }
+	scsiTooManyBuses = scsiErrorBase + 48; { -7888 = Register failed because we're full }
+	scsiBusy = scsiErrorBase + 49; { -7887 = SCSI subsystem is busy           }
+	scsiProvideFail = scsiErrorBase + 50; { -7886 = Unable to provide requ. capability }
+	scsiDeviceNotThere = scsiErrorBase + 51; { -7885 = SCSI device not installed/there    }
+	scsiNoHBA = scsiErrorBase + 52; { -7884 = No HBA detected Error           }
+	scsiDeviceConflict = scsiErrorBase + 53; { -7883 = sorry, max 1 refNum per DeviceIdent    }
+	scsiNoSuchXref = scsiErrorBase + 54; { -7882 = no such RefNum xref              }
+	scsiQLinkInvalid = scsiErrorBase + 55; { -7881 = pre-linked PBs not supported      }
+                                        {   (The QLink field was nonzero)          }
+                                        { Parameter errors  40-7F }
+	scsiPBLengthError = scsiErrorBase + 64; { -7872 = (scsiPBLength is insuf'ct/invalid  }
+	scsiFunctionNotAvailable = scsiErrorBase + 65; { -7871 = The requ. func is not available    }
+	scsiRequestInvalid = scsiErrorBase + 66; { -7870 = PB request is invalid           }
+	scsiBusInvalid = scsiErrorBase + 67; { -7869 = Bus ID supplied is invalid        }
+	scsiTIDInvalid = scsiErrorBase + 68; { -7868 = Target ID supplied is invalid      }
+	scsiLUNInvalid = scsiErrorBase + 69; { -7867 = LUN supplied is invalid         }
+	scsiIDInvalid = scsiErrorBase + 70; { -7866 = The initiator ID is invalid     }
+	scsiDataTypeInvalid = scsiErrorBase + 71; { -7865 = scsiDataType requested not supported }
+	scsiTransferTypeInvalid = scsiErrorBase + 72; { -7864 = scsiTransferType field is too high     }
+	scsiCDBLengthInvalid = scsiErrorBase + 73; { -7863 = scsiCDBLength field is too big        }
+
+{ New errors for SCSI Family         }
+const
+	scsiUnused74 = scsiErrorBase + 74; { -7862 =                          }
+	scsiUnused75 = scsiErrorBase + 75; { -7861 =                          }
+	scsiBadDataLength = scsiErrorBase + 76; { -7860 = a zero data length in PB        }
+	scsiPartialPrepared = scsiErrorBase + 77; { -7859 = could not do full prepare mem for I/O}
+	scsiInvalidMsgType = scsiErrorBase + 78; { -7858 = Invalid message type (internal)       }
+	scsiUnused79 = scsiErrorBase + 79; { -7857 =                              }
+	scsiBadConnID = scsiErrorBase + 80; { -7856 = Bad Connection ID                }
+	scsiUnused81 = scsiErrorBase + 81; { -7855 =                          }
+	scsiIOInProgress = scsiErrorBase + 82; { -7854 = Can't close conn, IO in prog      }
+	scsiTargetReserved = scsiErrorBase + 83; { -7853 = Target already reserved          }
+	scsiUnused84 = scsiErrorBase + 84; { -7852 =                          }
+	scsiUnused85 = scsiErrorBase + 85; { -7851 =                          }
+	scsiBadConnType = scsiErrorBase + 86; { -7850 = Bad connection type              }
+	scsiCannotLoadPlugin = scsiErrorBase + 87; { -7849 = No matching service category      }
+
+{ +++ }
+{
+ * scsiFamilyInternalError and scsiPluginInternalError are intended to handle consistency check failures.
+ * For example, if the family stores a record on a lookaside queue, but does not find that record
+ * it can use this error to report this failure. SCSI Manager 4.3 uses dsIOCoreErr in a few places,
+ * but this is probably not the best error. In general, internal errors should be reported as bugs.
+ *
+ * The following range of errors is provided for third-party (non-Apple) SCSI SIM and device driver vendors.
+ * In general, they would be used for error conditions that are not covered by the standardized errors.
+ * They should not normally be conveyed to normal applications, but might be used for communication between
+ * a plug-in and a vendor-provided device driver (for example, to manage RAID hot-swapping).
+ *
+ * Note: I don't know how many SCSI errors are reserved in the error code architecture. Don't assume that
+ * we'll actually get sixteen, but we should reserve at least one.
+ }
+const
+	scsiFamilyInternalError = scsiErrorBase + 87; { -7849 = Internal consistency check failed  }
+	scsiPluginInternalError = scsiErrorBase + 88; { -7848 = Internal consistency check failed  }
+	scsiVendorSpecificErrorBase = scsiErrorBase + 128; { ??    = Start of third-party error range     }
+	scsiVendorSpecificErrorCount = 16;    { Number of third-party errors             }
+
+{ --- }
+const
+	scsiExecutionErrors = scsiErrorBase;
+	scsiNotExecutedErrors = scsiTooManyBuses;
+	scsiParameterErrors = scsiPBLengthError;
+
+>>>>>>> origin/cpstrnew
 { Defines for the scsiResultFlags field }
 const
 	scsiSIMQFrozen = $0001; { The SIM queue is frozen w/this err        }
@@ -3143,6 +3455,7 @@ const
 	scsiFlagReserved8 = $00000100; {                           }
 
 { bit masks for the scsiIOFlags field in SCSIExecIOPB }
+<<<<<<< HEAD
 const
 	scsiNoParityCheck = $0002; { disable parity checking                 }
 	scsiDisableSelectWAtn = $0004; { disable select w/Atn                    }
@@ -3233,6 +3546,34 @@ function SCSIAction(var parameterBlock: SCSI_PB): OSErr; external name '_SCSIAct
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+const
+	scsiNoParityCheck = $0002; { disable parity checking                 }
+	scsiDisableSelectWAtn = $0004; { disable select w/Atn                    }
+	scsiSavePtrOnDisconnect = $0008; { do SaveDataPointer upon Disconnect msg          }
+	scsiNoBucketIn = $0010; { donÕt bit bucket in during this I/O           }
+	scsiNoBucketOut = $0020; { donÕt bit bucket out during this I/O        }
+	scsiDisableWide = $0040; { disable wide transfer negotiation           }
+	scsiInitiateWide = $0080; { initiate wide transfer negotiation           }
+	scsiRenegotiateSense = $0100; { renegotiate sync/wide before issuing autosense     }
+	scsiDisableDiscipline = $0200; { disable parameter checking on SCSIExecIO calls }
+	scsiIOFlagReserved0080 = $0080; {                                }
+	scsiIOFlagReserved8000 = $8000; {                                  }
+
+{ Defines for the Bus Inquiry PB fields. }
+{ scsiHBAInquiry field bits }
+const
+	scsiBusMDP = $80; { Supports Modify Data Pointer message               }
+	scsiBusWide32 = $40; { Supports 32 bit wide SCSI                    }
+	scsiBusWide16 = $20; { Supports 16 bit wide SCSI                    }
+	scsiBusSDTR = $10; { Supports Sync Data Transfer Req message              }
+	scsiBusLinkedCDB = $08; { Supports linked CDBs                         }
+	scsiBusTagQ = $02; { Supports tag queue message                    }
+	scsiBusSoftReset = $01;  { Supports soft reset                           }
+
+{ Defines for the scsiDataType field }
+const
+>>>>>>> origin/cpstrnew
 	scsiDataBuffer = 0;    { single contiguous buffer supplied            }
 	scsiDataTIB = 1;    { TIB supplied (ptr in scsiDataPtr)           }
 	scsiDataSG = 2;    { scatter/gather list supplied             }
@@ -3296,7 +3637,10 @@ const
 	scsiDeviceSensitive = $0001; { Only driver should access this device          }
 	scsiDeviceNoOldCallAccess = $0002; { no old call access to this device            }
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  * SCSI bus status. These values are returned by the SCSI target in the status phase.
  * They are not related to Macintosh status values (except that values other than
@@ -3354,6 +3698,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in InterfaceLib 7.5 and later
@@ -3367,6 +3712,10 @@ const
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.2
  *    CarbonLib:        in CarbonLib 1.0 and later
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.2
+ *    CarbonLib:        in CarbonLib 1.0 and later
+>>>>>>> origin/cpstrnew
  *    Non-Carbon CFM:   in InterfaceLib 7.5 and later
  }
 function SCSIAction( var parameterBlock: SCSI_PB ): OSErr; external name '_SCSIAction';
@@ -3384,6 +3733,7 @@ function SCSIAction( var parameterBlock: SCSI_PB ): OSErr; external name '_SCSIA
  *    Non-Carbon CFM:   in InterfaceLib 7.5 and later
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 function SCSIRegisterBus(var parameterBlock: SIMInitInfo): OSErr; external name '_SCSIRegisterBus';
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -3393,10 +3743,15 @@ function SCSIRegisterBus(var parameterBlock: SIMInitInfo): OSErr; external name 
 
 
 >>>>>>> origin/fixes_2.4
+=======
+
+
+>>>>>>> origin/cpstrnew
 {
  *  SCSIDeregisterBus()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3413,10 +3768,13 @@ function SCSIRegisterBus(var parameterBlock: SIMInitInfo): OSErr; external name 
  *    CarbonLib:        not available
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in InterfaceLib 7.5 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function SCSIDeregisterBus(var parameterBlock: SCSI_PB): OSErr; external name '_SCSIDeregisterBus';
 <<<<<<< HEAD
@@ -3427,10 +3785,15 @@ function SCSIDeregisterBus(var parameterBlock: SCSI_PB): OSErr; external name '_
 
 
 >>>>>>> origin/fixes_2.4
+=======
+
+
+>>>>>>> origin/cpstrnew
 {
  *  SCSIReregisterBus()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3447,10 +3810,13 @@ function SCSIDeregisterBus(var parameterBlock: SCSI_PB): OSErr; external name '_
  *    CarbonLib:        not available
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in InterfaceLib 7.5 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function SCSIReregisterBus(var parameterBlock: SIMInitInfo): OSErr; external name '_SCSIReregisterBus';
 <<<<<<< HEAD
@@ -3461,10 +3827,15 @@ function SCSIReregisterBus(var parameterBlock: SIMInitInfo): OSErr; external nam
 
 
 >>>>>>> origin/fixes_2.4
+=======
+
+
+>>>>>>> origin/cpstrnew
 {
  *  SCSIKillXPT()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3486,6 +3857,8 @@ end.
  *    CarbonLib:        not available
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in InterfaceLib 7.5 and later
@@ -3496,6 +3869,7 @@ end.
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -3504,3 +3878,6 @@ end.
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

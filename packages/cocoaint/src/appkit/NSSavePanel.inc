@@ -23,6 +23,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   __SPFlags = record
     case byte of
     0: (_anonbitfield_NSSavePanel0: cuint);
@@ -34,6 +35,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   __SPFlags = bitpacked record
     case byte of
     0: (_anonbitfield_NSSavePanel0: cuint);
@@ -41,11 +44,14 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
           saveMode: 0..1;
@@ -67,6 +73,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          end;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -74,6 +81,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
        );
@@ -144,6 +153,7 @@ __SPFlagsPtr = ^__SPFlags;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     _reserved: array[0..(5)-1] of char;
 =======
         _reserved: array[0..4] of char;
@@ -154,6 +164,9 @@ __SPFlagsPtr = ^__SPFlags;
 =======
         _reserved: array[0..4] of char;
 >>>>>>> graemeg/cpstrnew
+=======
+        _reserved: array[0..4] of char;
+>>>>>>> origin/cpstrnew
 =======
         _reserved: array[0..4] of char;
 >>>>>>> origin/cpstrnew

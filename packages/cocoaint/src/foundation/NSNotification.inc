@@ -64,6 +64,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     _callback_block: array[0..(4)-1] of Pointer;
     _pad: array[0..(8)-1] of Pointer;
 =======
@@ -78,6 +79,10 @@
         _callback_block: array[0..3] of Pointer;
         _pad: array[0..7] of Pointer;
 >>>>>>> graemeg/cpstrnew
+=======
+        _callback_block: array[0..3] of Pointer;
+        _pad: array[0..7] of Pointer;
+>>>>>>> origin/cpstrnew
 =======
         _callback_block: array[0..3] of Pointer;
         _pad: array[0..7] of Pointer;

@@ -88,6 +88,7 @@ type
     property Last: Pointer read GetLast write SetLast;
   end;
 
+<<<<<<< HEAD
 const
 {$ifdef cpu16}
   MaxGListSize = {MaxInt div} 1024;
@@ -112,12 +113,26 @@ const
 
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/cpstrnew
 const
   MaxGListSize = MaxInt div 1024;
 
 >>>>>>> origin/fixes_2_2
 type
+  generic TFPGListEnumerator<T> = class(TObject)
+  protected
+    FList: TFPSList;
+    FPosition: Integer;
+    function GetCurrent: T;
+  public
+    constructor Create(AList: TFPSList);
+    function MoveNext: Boolean;
+    property Current: T read GetCurrent;
+  end;
+
   generic TFPGList<T> = class(TFPSList)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -136,6 +151,9 @@ type
 =======
   public
 >>>>>>> origin/cpstrnew
+=======
+  public
+>>>>>>> origin/cpstrnew
     type
       TCompareFunc = function(const Item1, Item2: T): Integer;
       TTypeList = array[0..MaxGListSize] of T;
@@ -144,6 +162,7 @@ type
       TFPGListEnumeratorSpec = specialize TFPGListEnumerator<T>;
   {$ifndef OldSyntax}protected var{$else}var protected{$endif}
       FOnCompare: TCompareFunc;
+<<<<<<< HEAD
 =======
   type public
     TCompareFunc = function(const Item1, Item2: T): Integer;
@@ -153,6 +172,8 @@ type
   var protected
     FOnCompare: TCompareFunc;
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
     procedure CopyItem(Src, Dest: Pointer); override;
     procedure Deref(Item: Pointer); override;
     function  Get(Index: Integer): T; {$ifdef CLASSESINLINE} inline; {$endif}
@@ -182,11 +203,14 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$ifndef VER2_4}
@@ -203,6 +227,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   private
 =======
   public
@@ -213,6 +238,9 @@ type
 =======
   public
 >>>>>>> graemeg/cpstrnew
+=======
+  public
+>>>>>>> origin/cpstrnew
 =======
   public
 >>>>>>> origin/cpstrnew
@@ -256,6 +284,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -272,6 +301,11 @@ type
     {$info FIXME: bug #10479: implement TFPGList<T>.Assign(TFPGList) to work somehow}
     {procedure Assign(Source: TFPGList);}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifndef VER2_4}
+    procedure Assign(Source: TFPGObjectList);
+{$endif VER2_4}
+>>>>>>> origin/cpstrnew
     function Remove(const Item: T): Integer; {$ifdef CLASSESINLINE} inline; {$endif}
     procedure Sort(Compare: TCompareFunc);
     property Items[Index: Integer]: T read Get write Put; default;
@@ -290,6 +324,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   private
 =======
   public
@@ -300,6 +335,9 @@ type
 =======
   public
 >>>>>>> graemeg/cpstrnew
+=======
+  public
+>>>>>>> origin/cpstrnew
 =======
   public
 >>>>>>> origin/cpstrnew
@@ -340,11 +378,14 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$ifndef VER2_4}
@@ -378,12 +419,15 @@ type
     function GetData(Index: Integer): Pointer;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     procedure InitOnPtrCompare; virtual;
 >>>>>>> graemeg/fixes_2_2
 =======
     procedure InitOnPtrCompare; virtual;
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
     function LinearIndexOf(AKey: Pointer): Integer;
     procedure PutKey(Index: Integer; AKey: Pointer);
     procedure PutKeyData(AKey: Pointer; NewData: Pointer);
@@ -420,6 +464,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   private
 =======
   public
@@ -433,10 +478,14 @@ type
 =======
   public
 >>>>>>> origin/cpstrnew
+=======
+  public
+>>>>>>> origin/cpstrnew
     type
       TKeyCompareFunc = function(const Key1, Key2: TKey): Integer;
       TDataCompareFunc = function(const Data1, Data2: TData): Integer;
       PKey = ^TKey;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -467,6 +516,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       PData = ^TData;
   {$ifndef OldSyntax}protected var{$else}var protected{$endif}
       FOnKeyCompare: TKeyCompareFunc;
@@ -476,6 +527,7 @@ type
       procedure CopyData(Src, Dest: Pointer); override;
       procedure Deref(Item: Pointer); override;
       procedure InitOnPtrCompare; override;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -490,11 +542,14 @@ type
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
     function GetKey(Index: Integer): TKey; {$ifdef CLASSESINLINE} inline; {$endif}
     function GetKeyData(const AKey: TKey): TData; {$ifdef CLASSESINLINE} inline; {$endif}
     function GetData(Index: Integer): TData; {$ifdef CLASSESINLINE} inline; {$endif}
     function KeyCompare(Key1, Key2: Pointer): Integer;
     function KeyCustomCompare(Key1, Key2: Pointer): Integer;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     //function DataCompare(Data1, Data2: Pointer): Integer;
@@ -503,6 +558,10 @@ type
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    //function DataCompare(Data1, Data2: Pointer): Integer;
+    function DataCustomCompare(Data1, Data2: Pointer): Integer;
+>>>>>>> origin/cpstrnew
     procedure PutKey(Index: Integer; const NewKey: TKey); {$ifdef CLASSESINLINE} inline; {$endif}
     procedure PutKeyData(const AKey: TKey; const NewData: TData); {$ifdef CLASSESINLINE} inline; {$endif}
     procedure PutData(Index: Integer; const NewData: TData); {$ifdef CLASSESINLINE} inline; {$endif}
@@ -531,6 +590,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   private
 =======
   public
@@ -544,10 +604,14 @@ type
 =======
   public
 >>>>>>> origin/cpstrnew
+=======
+  public
+>>>>>>> origin/cpstrnew
     type
       TKeyCompareFunc = function(const Key1, Key2: TKey): Integer;
       TDataCompareFunc = function(const Data1, Data2: TData): Integer;
       PKey = ^TKey;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -568,6 +632,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       PData = ^TData;
   {$ifndef OldSyntax}protected var{$else}var protected{$endif}
       FOnKeyCompare: TKeyCompareFunc;
@@ -580,11 +646,14 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     function GetKey(Index: Integer): TKey; {$ifdef CLASSESINLINE} inline; {$endif}
@@ -720,6 +789,7 @@ begin
   if NewCount > FCount then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FillByte(InternalItems[FCount]^, (NewCount-FCount) * FItemSize, 0)
   else if NewCount < FCount then
     Deref(NewCount, FCount-1);
@@ -738,6 +808,11 @@ begin
   else if NewCount < FCount then
     Deref(NewCount, FCount-1);
 >>>>>>> origin/fixes_2.4
+=======
+    FillByte(InternalItems[FCount]^, (NewCount-FCount) * FItemSize, 0)
+  else if NewCount < FCount then
+    Deref(NewCount, FCount-1);
+>>>>>>> origin/cpstrnew
   FCount := NewCount;
 end;
 
@@ -1100,7 +1175,10 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 end;
@@ -1122,6 +1200,11 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+end;
+
+function TFPGList.GetEnumerator: TFPGListEnumeratorSpec;
+begin
+  Result := TFPGListEnumeratorSpec.Create(Self);
 end;
 
 function TFPGList.GetEnumerator: TFPGListEnumeratorSpec;
@@ -1172,6 +1255,17 @@ end;
 
 =======
 >>>>>>> graemeg/cpstrnew
+{$ifndef VER2_4}
+procedure TFPGList.Assign(Source: TFPGList);
+var
+  i: Integer;
+begin
+  Clear;
+  for I := 0 to Source.Count - 1 do
+    Add(Source[i]);
+end;
+{$endif VER2_4}
+
 {$ifndef VER2_4}
 procedure TFPGList.Assign(Source: TFPGList);
 var
@@ -1291,6 +1385,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
   I := IndexOf(AKey);
@@ -1320,6 +1415,8 @@ end;
 procedure TFPGObjectList.SetFirst(const Value: T);
 begin
   inherited SetFirst(@Value);
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 function TFPGObjectList.GetEnumerator: TFPGListEnumeratorSpec;
@@ -1331,6 +1428,7 @@ end;
 
 function TFPGObjectList.GetEnumerator: TFPGListEnumeratorSpec;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   Result := TFPGListEnumeratorSpec.Create(Self);
@@ -1377,6 +1475,11 @@ begin
 end;
 
 <<<<<<< HEAD
+=======
+  Result := TFPGListEnumeratorSpec.Create(Self);
+end;
+
+>>>>>>> origin/cpstrnew
 function TFPGObjectList.IndexOf(const Item: T): Integer;
 =======
 function TFPSMap.Find(AKey: Pointer; var Index: Integer): Boolean;
@@ -1457,6 +1560,17 @@ begin
 end;
 {$endif VER2_4}
 
+{$ifndef VER2_4}
+procedure TFPGObjectList.Assign(Source: TFPGObjectList);
+var
+  i: Integer;
+begin
+  Clear;
+  for I := 0 to Source.Count - 1 do
+    Add(Source[i]);
+end;
+{$endif VER2_4}
+
 function TFPGObjectList.Remove(const Item: T): Integer;
 begin
   Result := IndexOf(Item);
@@ -1488,12 +1602,15 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Pointer(Dest^) := Pointer(Src^);
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   T(Dest^) := T(Src^);
@@ -1546,6 +1663,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1578,6 +1696,13 @@ end;
 function TFPGInterfacedObjectList.GetEnumerator: TFPGListEnumeratorSpec;
 begin
   Result := TFPGListEnumeratorSpec.Create(Self);
+end;
+
+function TFPGInterfacedObjectList.GetEnumerator: TFPGListEnumeratorSpec;
+begin
+  Result := TFPGListEnumeratorSpec.Create(Self);
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 function TFPGInterfacedObjectList.GetEnumerator: TFPGListEnumeratorSpec;
@@ -1628,6 +1753,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef VER2_4}
 procedure TFPGInterfacedObjectList.Assign(Source: TFPGInterfacedObjectList);
 var
@@ -1655,6 +1781,8 @@ end;
 {$endif VER2_4}
 
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 function TFPGInterfacedObjectList.Remove(const Item: T): Integer;
@@ -1724,6 +1852,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result := CompareByte(Data1^, Data2^, FDataSize);
 =======
   Result := CompareByte(Data1^, Data1^, FDataSize);
@@ -1734,6 +1863,9 @@ begin
 =======
   Result := CompareByte(Data1^, Data1^, FDataSize);
 >>>>>>> graemeg/cpstrnew
+=======
+  Result := CompareByte(Data1^, Data1^, FDataSize);
+>>>>>>> origin/cpstrnew
 =======
   Result := CompareByte(Data1^, Data1^, FDataSize);
 >>>>>>> origin/cpstrnew
@@ -1843,8 +1975,12 @@ begin
     Dir := FOnKeyPtrCompare(Items[I], AKey);
 =======
     I := (L+R) div 2;
+<<<<<<< HEAD
     Dir := FOnPtrCompare(Items[I], AKey);
 >>>>>>> origin/fixes_2_2
+=======
+    Dir := FOnKeyPtrCompare(Items[I], AKey);
+>>>>>>> origin/cpstrnew
     if Dir < 0 then
       L := I+1
     else begin
@@ -1985,6 +2121,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 procedure TFPGMap.InitOnPtrCompare;
 =======
@@ -2010,6 +2147,8 @@ begin
 end;
 
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 function TFPGMap.KeyCompare(Key1, Key2: Pointer): Integer;
 begin
   if PKey(Key1)^ < PKey(Key2)^ then
@@ -2021,6 +2160,9 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {function TFPGMap.DataCompare(Data1, Data2: Pointer): Integer;
 begin
   if PData(Data1)^ < PData(Data2)^ then
@@ -2060,9 +2202,12 @@ begin
 end;
 
 procedure TFPGMap.InitOnPtrCompare;
+<<<<<<< HEAD
 =======
 function TFPGMap.KeyCustomCompare(Key1, Key2: Pointer): Integer;
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 begin
   SetOnKeyCompare(nil);
   SetOnDataCompare(nil);
@@ -2084,6 +2229,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 procedure TFPGMap.SetOnCompare(NewCompare: TCompareFunc);
 begin
@@ -2095,6 +2241,8 @@ begin
 end;
 
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 function TFPGMap.Add(const AKey: TKey): Integer;
 begin
   Result := inherited Add(@AKey);

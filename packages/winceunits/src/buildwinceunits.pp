@@ -33,6 +33,7 @@ interface
 uses
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   aygshell, commctrl, commdlg, iphlpapi, notify, oleauto, power, shellapi, simmgr, tapi,
   gpsapi, todaycmn, windbase, cesync, gx, winioctl, msgqueue, pm, service, htmlctrl,
   sipapi, cpl, bt_api, bt_sdp, bthapi, bthutil, pimstore, ril, sms, ws2bth,
@@ -51,6 +52,14 @@ uses
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  aygshell, commctrl, commdlg, iphlpapi, notify, oleauto, power, shellapi, simmgr, tapi,
+  gpsapi, todaycmn, windbase, cesync, gx, winioctl, msgqueue, pm, service, htmlctrl,
+  sipapi, cpl, bt_api, bt_sdp, bthapi, bthutil, pimstore, ril, sms, ws2bth,
+  keybd, nled, phone, connmgr, devload, devmgmt, mmreg, mmsystem, msacm,
+  wininet, ras, raserror, sip, projects, wap, tsp, extapi, imm, rapitypes,
+  storemgr, pnp, tlhelp32;
+>>>>>>> origin/cpstrnew
 
 implementation
 

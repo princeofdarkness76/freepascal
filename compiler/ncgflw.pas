@@ -460,6 +460,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         secondpass(t1);
         if t1.location.loc in [LOC_FLAGS,LOC_JUMP] then
           hlcg.location_force_reg(current_asmdata.CurrAsmList,t1.location,t1.resultdef,t1.resultdef,false);
@@ -468,6 +469,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         isjump:=(t1.expectloc=LOC_JUMP);
@@ -489,11 +492,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
          { calculate pointer value and check if changeable and if so }
@@ -535,12 +541,15 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
            hlcg.location_force_reg(current_asmdata.CurrAsmList,right.location,right.resultdef,right.resultdef,false);
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
            location_force_reg(current_asmdata.CurrAsmList,right.location,def_cgsize(right.resultdef),false);
@@ -552,6 +561,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -560,6 +570,8 @@ implementation
 
          hlcg.maybe_change_load_node_reg(current_asmdata.CurrAsmList,left,false);
 =======
+=======
+>>>>>>> origin/cpstrnew
 
          maybechangeloadnodereg(current_asmdata.CurrAsmList,left,false);
 >>>>>>> origin/cpstrnew
@@ -1254,6 +1266,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          hlcg.a_label(current_asmdata.CurrAsmList,exceptlabel);
 =======
 =======
@@ -1262,12 +1275,17 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
          cg.a_label(current_asmdata.CurrAsmList,exceptlabel);
 >>>>>>> graemeg/cpstrnew
 
          free_exception(current_asmdata.CurrAsmList, excepttemps, 0, endexceptlabel, false);
 
          hlcg.a_label(current_asmdata.CurrAsmList,doexceptlabel);
+
+         { end cleanup }
+         current_asmdata.CurrAsmList.concat(tai_marker.create(mark_NoLineInfoEnd));
 
          { end cleanup }
          current_asmdata.CurrAsmList.concat(tai_marker.create(mark_NoLineInfoEnd));
@@ -1305,12 +1323,15 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          hlcg.a_label(current_asmdata.CurrAsmList,lastonlabel);
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
          cg.a_label(current_asmdata.CurrAsmList,lastonlabel);
@@ -1475,6 +1496,9 @@ implementation
          { end cleanup }
          current_asmdata.CurrAsmList.concat(tai_marker.create(mark_NoLineInfoEnd));
 
+         { end cleanup }
+         current_asmdata.CurrAsmList.concat(tai_marker.create(mark_NoLineInfoEnd));
+
        errorexit:
          { restore all saved labels }
          endexceptlabel:=oldendexceptlabel;
@@ -1594,6 +1618,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          handle_nested_exception(current_asmdata.CurrAsmList,excepttemps,doobjectdestroyandreraise);
 
 =======
@@ -1601,6 +1626,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
          { don't generate lineinfo for internal cleanup }
@@ -1726,6 +1753,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          reasonreg : tregister;
 =======
          retsym: tlocalvarsym;
@@ -1736,6 +1764,9 @@ implementation
 =======
          retsym: tlocalvarsym;
 >>>>>>> graemeg/cpstrnew
+=======
+         retsym: tlocalvarsym;
+>>>>>>> origin/cpstrnew
 =======
          retsym: tlocalvarsym;
 >>>>>>> origin/cpstrnew
@@ -1799,12 +1830,15 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          hlcg.a_label(current_asmdata.CurrAsmList,finallylabel);
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
          cg.a_label(current_asmdata.CurrAsmList,finallylabel);
@@ -1855,12 +1889,22 @@ implementation
 {$if defined(x86) or defined(arm)}
              if current_procinfo.procdef.proccalloption=pocall_safecall then
                begin
+<<<<<<< HEAD
                  { Remove and destroy the last exception object }
                  cg.a_call_name(current_asmdata.CurrAsmList,'FPC_POPOBJECTSTACK');
                  cg.a_call_name(current_asmdata.CurrAsmList,'FPC_DESTROYEXCEPTION');
                  { Set return value of safecall procedure to indicate exception.       }
                  { Exception will be raised after procedure exit based on return value }
                  cg.a_load_const_reg(current_asmdata.CurrAsmList,OS_ADDR,aint($8000FFFF),NR_FUNCTION_RETURN_REG);
+=======
+                 { find safe_result variable we created in the generate_except_block }
+                 retsym:=tlocalvarsym(current_procinfo.procdef.localst.Find('safe_result'));
+                 { Set return value of safecall procedure to indicate exception.       }
+                 { Exception will be raised after procedure exit based on return value }
+                 cg.a_reg_alloc(current_asmdata.CurrAsmList,NR_FUNCTION_RESULT_REG);
+                 cg.a_load_loc_reg(current_asmdata.CurrAsmList,OS_INT,retsym.localloc,NR_FUNCTION_RESULT_REG);
+                 cg.a_reg_dealloc(current_asmdata.CurrAsmList,NR_FUNCTION_RESULT_REG);
+>>>>>>> origin/cpstrnew
                end
              else
 {$endif}
@@ -1936,6 +1980,9 @@ implementation
            end;
          unget_exception_temps(current_asmdata.CurrAsmList,excepttemps);
          hlcg.a_label(current_asmdata.CurrAsmList,endfinallylabel);
+
+         { end cleanup }
+         current_asmdata.CurrAsmList.concat(tai_marker.create(mark_NoLineInfoEnd));
 
          { end cleanup }
          current_asmdata.CurrAsmList.concat(tai_marker.create(mark_NoLineInfoEnd));

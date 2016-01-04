@@ -307,6 +307,7 @@
      LPRECT = ^RECT;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      LPCRECT = ^RECT;
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -323,6 +324,9 @@
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+     LPCRECT = ^RECT;
+>>>>>>> origin/cpstrnew
      _RECT = RECT;
      TRECT = RECT;
      PRECT = ^RECT;
@@ -5417,11 +5421,15 @@
      PGUID = ^GUID;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      REFGUID = ^GUID;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+     REFGUID = ^GUID;
+>>>>>>> origin/cpstrnew
 
      CLSID = GUID;
      LPCLSID = ^CLSID;
@@ -5429,16 +5437,22 @@
      PCLSID = ^CLSID;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
      REFCLSID = ^CLSID;
 
      FMTID = GUID;
      LPFMTID = ^FMTID;
      REFFMTID = ^FMTID;
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 
      SERVICE_INFO = record
           lpServiceType : LPGUID;
@@ -7810,6 +7824,9 @@ type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 
 // For EnumDisplayMonitors
 type
@@ -7850,10 +7867,13 @@ type
      PDISPLAY_DEVICE = ^_DISPLAY_DEVICE;
      LPDISPLAY_DEVICE = ^_DISPLAY_DEVICE;
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 {$endif read_interface}
 
 

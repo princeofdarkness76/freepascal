@@ -9,6 +9,7 @@ name=libgbafpc
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 version=3.1.1
 
 [require]
@@ -22,6 +23,8 @@ packages=rtl fpmkunit
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 version=2.4.0
 
 [target]

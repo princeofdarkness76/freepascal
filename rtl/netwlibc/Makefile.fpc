@@ -11,6 +11,7 @@ loaders=nwplibc nwl_main nwl_dlle
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 units=$(SYSTEMUNIT) uuchar objpas macpas iso7185 extpas strings \
       lineinfo lnfodwrf  heaptrc \
       nwsnut libc dos sysconst \
@@ -26,6 +27,8 @@ units=$(SYSTEMUNIT) uuchar objpas macpas iso7185 extpas strings \
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 units=$(SYSTEMUNIT) objpas macpas iso7185 strings \
       lineinfo lnfodwrf winsock heaptrc matrix \
       nwsnut libc dos crt objects sysconst \
@@ -35,6 +38,7 @@ units=$(SYSTEMUNIT) objpas macpas iso7185 strings \
       charset ucomplex variants \
       rtlconsts math varutils freebidi utf8bidi \
       mouse video keyboard dynlibs cmem sockets ctypes
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -49,6 +53,8 @@ implicitunits=exeinfo \
       cp1250 cp1251 cp1252 cp1253 cp1254 cp1255 cp1256 cp1257 cp1258 \
       cp437 cp646 cp850 cp856 cp866 cp874 cp8859_1 cp8859_5 cp8859_2 cp852
 =======
+=======
+>>>>>>> origin/cpstrnew
 
 rsts=math varutils variants convutils typinfo classes dateutils sysconst rtlconsts system
 implicitunits=exeinfo

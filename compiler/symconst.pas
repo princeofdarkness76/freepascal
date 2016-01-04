@@ -68,6 +68,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   tkHelper   = 26;
   tkFile     = 27;
   tkClassRef = 28;
@@ -81,6 +82,9 @@ const
 =======
   tkFile     = 26;
 >>>>>>> graemeg/cpstrnew
+=======
+  tkFile     = 26;
+>>>>>>> origin/cpstrnew
 =======
   tkFile     = 26;
 >>>>>>> origin/cpstrnew
@@ -160,8 +164,11 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
+=======
+>>>>>>> origin/cpstrnew
 
   { the implicit parameters for Objective-C methods need to come
     after the hidden result parameter }
@@ -177,6 +184,7 @@ const
 
   { prefix for names of class helper procsyms added to regular symtables }
   class_helper_prefix = 'CH$';
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
@@ -197,6 +205,8 @@ const
 
   { prefix for names of class helper procsyms added to regular symtables }
   class_helper_prefix = 'CH$';
+>>>>>>> origin/cpstrnew
+=======
 >>>>>>> origin/cpstrnew
 
   { prefix for names of class helper procsyms added to regular symtables }
@@ -296,6 +306,7 @@ type
 =======
     sp_hidden,
     sp_hint_experimental,
+<<<<<<< HEAD
     sp_generic_para
 >>>>>>> graemeg/fixes_2_2
 =======
@@ -303,6 +314,10 @@ type
     sp_hint_experimental,
     sp_generic_para
 >>>>>>> origin/fixes_2_2
+=======
+    sp_generic_para,
+    sp_has_deprecated_msg
+>>>>>>> origin/cpstrnew
   );
   tsymoptions=set of tsymoption;
 
@@ -417,6 +432,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     potype_propsetter,
     potype_exceptfilter,      { SEH exception filter or termination handler }
     potype_mainstub           { "main" function that calls through to FPC_SYSTEMMAIN }
@@ -429,6 +445,9 @@ type
 =======
     potype_propsetter
 >>>>>>> graemeg/cpstrnew
+=======
+    potype_propsetter
+>>>>>>> origin/cpstrnew
 =======
     potype_propsetter
 >>>>>>> origin/cpstrnew
@@ -481,6 +500,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     { Used to record the fact that a symbol is asociated to this syscall }
     po_syscall_has_libsym,
 =======
@@ -489,6 +509,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     { Procedure can be inlined }
@@ -516,6 +538,7 @@ type
       (when calling a regular procedure using the above convention, it will
        simply not see the frame pointer parameter, and since the caller cleans
        up the stack will also remain balanced) }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -560,6 +583,9 @@ type
 =======
     po_weakexternal
 >>>>>>> origin/fixes_2.4
+=======
+    po_delphi_nested_cc
+>>>>>>> origin/cpstrnew
   );
   tprocoptions=set of tprocoption;
 
@@ -625,6 +651,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     odt_objccategory, { note that these are changed into odt_class afterwards }
     odt_helper,
     odt_javaclass,
@@ -645,6 +672,9 @@ type
 =======
     odt_objccategory { note that these are changed into odt_class afterwards }
 >>>>>>> graemeg/cpstrnew
+=======
+    odt_objccategory { note that these are changed into odt_class afterwards }
+>>>>>>> origin/cpstrnew
 =======
     odt_objccategory { note that these are changed into odt_class afterwards }
 >>>>>>> origin/cpstrnew
@@ -681,6 +711,9 @@ type
     oo_has_default_property,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
     oo_has_valid_guid,
     oo_has_enumerator_movenext,
     oo_has_enumerator_current,
@@ -688,6 +721,7 @@ type
     oo_is_formal,         { the class is only formally defined in this module (x = objcclass; external [name 'x'];) }
     oo_is_classhelper,    { objcclasses that represent categories, and Delpi-style class helpers, are marked like this }
     oo_has_class_constructor, { the object/class has a class constructor }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -713,6 +747,9 @@ type
 =======
     oo_has_valid_guid
 >>>>>>> origin/fixes_2_2
+=======
+    oo_has_class_destructor   { the object/class has a class destructor  }
+>>>>>>> origin/cpstrnew
   );
   tobjectoptions=set of tobjectoption;
 
@@ -745,11 +782,14 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     ppo_dispid_write              { no longer used }
@@ -789,6 +829,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     vo_has_section,
     { variable contains a winlike WideString which should be finalized
       even in $J- state }
@@ -805,6 +846,9 @@ type
 =======
     vo_has_section
 >>>>>>> graemeg/cpstrnew
+=======
+    vo_has_section
+>>>>>>> origin/cpstrnew
 =======
     vo_has_section
 >>>>>>> origin/cpstrnew
@@ -892,6 +936,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   tvarspez = (vs_value,vs_const,vs_var,vs_out,vs_constref,vs_final);
 =======
   tvarspez = (vs_value,vs_const,vs_var,vs_out,vs_constref);
@@ -902,6 +947,9 @@ type
 =======
   tvarspez = (vs_value,vs_const,vs_var,vs_out,vs_constref);
 >>>>>>> graemeg/cpstrnew
+=======
+  tvarspez = (vs_value,vs_const,vs_var,vs_out,vs_constref);
+>>>>>>> origin/cpstrnew
 =======
   tvarspez = (vs_value,vs_const,vs_var,vs_out,vs_constref);
 >>>>>>> origin/cpstrnew
@@ -920,6 +968,7 @@ type
     { Objective-C }
     objcmetartti,objcmetarortti,
     objcclassrtti,objcclassrortti
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -956,6 +1005,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   );
@@ -1013,6 +1064,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   tx86pointertyp = (x86pt_near, x86pt_near_cs, x86pt_near_ds, x86pt_near_ss,
     x86pt_near_es, x86pt_near_fs, x86pt_near_gs, x86pt_far, x86pt_huge);
 
@@ -1022,6 +1074,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 var
@@ -1034,6 +1088,7 @@ const
 <<<<<<< HEAD
                 oo_has_strictprotected,oo_has_strictprivate,oo_has_constructor,oo_has_destructor,
                 oo_can_have_published];
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1058,6 +1113,8 @@ inherited_objectoptions : tobjectoptions = [oo_has_virtual,oo_has_private,oo_has
      pocall_cdecl,pocall_cppdecl,pocall_syscall,pocall_mwpascal
    ];
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifdef i386}
    { we only take this into account on i386, on other platforms we always
@@ -1107,6 +1164,7 @@ inherited_objectoptions : tobjectoptions = [oo_has_virtual,oo_has_private,oo_has
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      internaltypeprefixName : array[tinternaltypeprefix] of TSymStr = (
        '$1byte$',
        '$emptyrec',
@@ -1147,6 +1205,9 @@ inherited_objectoptions : tobjectoptions = [oo_has_virtual,oo_has_private,oo_has
 
 =======
 >>>>>>> origin/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 { !! Be sure to keep these in sync with ones in rtl/inc/varianth.inc }
       varempty = 0;
       varnull = 1;
@@ -1186,6 +1247,7 @@ inherited_objectoptions : tobjectoptions = [oo_has_virtual,oo_has_private,oo_has
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       { blocks-related constants }
       blocks_procvar_invoke_type_name = '__FPC_invoke_pvtype';
 
@@ -1195,6 +1257,8 @@ inherited_objectoptions : tobjectoptions = [oo_has_virtual,oo_has_private,oo_has
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 implementation

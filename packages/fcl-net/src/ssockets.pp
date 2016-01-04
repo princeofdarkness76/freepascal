@@ -615,11 +615,15 @@ Var
 
 begin
   Flags:=0;
+<<<<<<< HEAD
   Result:=recv(handle,Buffer,count,flags);
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  Result:=fprecv(handle,@Buffer,count,flags);
+>>>>>>> origin/cpstrnew
 end;
 
 Function TSocketStream.Write (Const Buffer; Count : Longint) :Longint;
@@ -650,11 +654,15 @@ Var
 
 begin
   Flags:=0;
+<<<<<<< HEAD
   Result:=send(handle,Buffer,count,flags);
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  Result:=fpsend(handle,@Buffer,count,flags);
+>>>>>>> origin/cpstrnew
 end;
 
 function TSocketStream.GetLocalAddress: TSockAddr;
@@ -664,6 +672,7 @@ begin
   len := SizeOf(TSockAddr);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if fpGetSockName(Handle, @Result, @len) <> 0 then
 =======
   if GetSocketName(Handle, Result, len) <> 0 then
@@ -671,6 +680,9 @@ begin
 =======
   if GetSocketName(Handle, Result, len) <> 0 then
 >>>>>>> origin/fixes_2_2
+=======
+  if fpGetSockName(Handle, @Result, @len) <> 0 then
+>>>>>>> origin/cpstrnew
     FillChar(Result, SizeOf(Result), 0);
 end;
 
@@ -681,6 +693,7 @@ begin
   len := SizeOf(TSockAddr);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if fpGetPeerName(Handle, @Result, @len) <> 0 then
 =======
   if GetPeerName(Handle, Result, len) <> 0 then
@@ -688,6 +701,9 @@ begin
 =======
   if GetPeerName(Handle, Result, len) <> 0 then
 >>>>>>> origin/fixes_2_2
+=======
+  if fpGetPeerName(Handle, @Result, @len) <> 0 then
+>>>>>>> origin/cpstrnew
     FillChar(Result, SizeOf(Result), 0);
 end;
 
@@ -783,6 +799,7 @@ begin
     Bind;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   If  Sockets.FpListen(FSocket,FQueueSize)<>0 then
     Raise ESocketError.Create(seListenFailed,[FSocket,SocketError]);
 end;
@@ -835,6 +852,9 @@ Var
 =======
 >>>>>>> origin/fixes_2_2
   If Not Sockets.Listen(FSocket,FQueueSize) then
+=======
+  If  Sockets.FpListen(FSocket,FQueueSize)<>0 then
+>>>>>>> origin/cpstrnew
     Raise ESocketError.Create(seListenFailed,[FSocket,SocketError]);
 end;
 
@@ -853,11 +873,15 @@ begin
   FAccepting := True;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   NoConnections := 0;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  NoConnections := 0;
+>>>>>>> origin/cpstrnew
   Listen;
   Repeat
     Repeat
@@ -889,11 +913,15 @@ begin
         If NewSocket>=0 then
           begin
           Inc (NoConnections);
+<<<<<<< HEAD
           If DoConnectQuery(NewSocket) Then
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+          If FAccepting and DoConnectQuery(NewSocket) Then
+>>>>>>> origin/cpstrnew
             begin
             Stream:=SockToStream(NewSocket);
             DoConnect(Stream);
@@ -1114,6 +1142,7 @@ begin
   FPort:=APort;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   S:=Sockets.FpSocket(AF_INET,SOCK_STREAM,0);
   If S=-1 Then
     Raise ESocketError.Create(seCreationFailed,[Format('%d',[APort])]);
@@ -1122,6 +1151,9 @@ begin
 =======
 >>>>>>> origin/fixes_2_2
   S:=Sockets.Socket(AF_INET,SOCK_STREAM,0);
+=======
+  S:=Sockets.FpSocket(AF_INET,SOCK_STREAM,0);
+>>>>>>> origin/cpstrnew
   If S=-1 Then
     Raise ESocketError.Create(seCreationFailed,[Format('%d',[APort])]);
   Inherited Create(S);
@@ -1161,11 +1193,15 @@ begin
   Faddr.family := AF_INET;
   Faddr.port := ShortHostToNet(FPort);
   Faddr.addr := LongWord(StrToNetAddr(FHost));
+<<<<<<< HEAD
   if not Sockets.Bind(FSocket, FAddr, Sizeof(FAddr)) then
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  if  Sockets.fpBind(FSocket, @FAddr, Sizeof(FAddr))<>0 then
+>>>>>>> origin/cpstrnew
     raise ESocketError.Create(seBindFailed, [IntToStr(FPort)]);
   FBound:=True;
 end;
@@ -1226,7 +1262,7 @@ Var l : longint;
 
 begin
   L:=SizeOf(FAddr);
-  Result:=Sockets.Accept(Socket,Faddr,L);
+  Result:=Sockets.fpAccept(Socket,@Faddr,@L);
   If Result<0 then
 {$ifdef Unix}
     If SocketError=ESysEWOULDBLOCK then
@@ -1260,6 +1296,7 @@ begin
   FFileName:=AFileName;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   S:=Sockets.fpSocket(AF_UNIX,SOCK_STREAM,0);
   If S=-1 then
     Raise ESocketError.Create(seCreationFailed,[AFileName])
@@ -1269,6 +1306,9 @@ begin
 =======
 >>>>>>> origin/fixes_2_2
   S:=Sockets.Socket(AF_UNIX,SOCK_STREAM,0);
+=======
+  S:=Sockets.fpSocket(AF_UNIX,SOCK_STREAM,0);
+>>>>>>> origin/cpstrnew
   If S=-1 then
     Raise ESocketError.Create(seCreationFailed,[AFileName])
   else
@@ -1294,6 +1334,7 @@ begin
   Str2UnixSockAddr(FFilename,FUnixAddr,AddrLen);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   If  Sockets.FpBind(Socket,@FUnixAddr,AddrLen)<>0 then
 =======
   If Not Sockets.Bind(Socket,FUnixAddr,AddrLen) then
@@ -1301,6 +1342,9 @@ begin
 =======
   If Not Sockets.Bind(Socket,FUnixAddr,AddrLen) then
 >>>>>>> origin/fixes_2_2
+=======
+  If  Sockets.FpBind(Socket,@FUnixAddr,AddrLen)<>0 then
+>>>>>>> origin/cpstrnew
     Raise ESocketError.Create(seBindFailed,[FFileName]);
   FBound:=True;
 end;
@@ -1313,6 +1357,7 @@ begin
   L:=Length(FFileName);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:=Sockets.fpAccept(Socket,@FUnixAddr,@L);
 =======
   Result:=Sockets.Accept(Socket,FUnixAddr,L);
@@ -1320,6 +1365,9 @@ begin
 =======
   Result:=Sockets.Accept(Socket,FUnixAddr,L);
 >>>>>>> origin/fixes_2_2
+=======
+  Result:=Sockets.fpAccept(Socket,@FUnixAddr,@L);
+>>>>>>> origin/cpstrnew
   If Result<0 then
     If SocketError=ESysEWOULDBLOCK then
       Raise ESocketError.Create(seAcceptWouldBlock,[socket])
@@ -1366,6 +1414,7 @@ begin
   FPort:=APort;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   S:=fpSocket(AF_INET,SOCK_STREAM,0);
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1396,6 +1445,9 @@ Var
 =======
 >>>>>>> origin/fixes_2_2
   S:=Socket(AF_INET,SOCK_STREAM,0);
+=======
+  S:=fpSocket(AF_INET,SOCK_STREAM,0);
+>>>>>>> origin/cpstrnew
   DoConnect(S);
   Inherited Create(S);
 end;
@@ -1454,9 +1506,9 @@ begin
 >>>>>>> origin/fixes_2_2
   addr.family := AF_INET;
   addr.port := ShortHostToNet(FPort);
-  addr.addr := a.s_addr;
+  addr.addr := HostToNet(a.s_addr);
 
-  If not Sockets.Connect(ASocket, addr, sizeof(addr)) then
+  If  Sockets.fpConnect(ASocket, @addr, sizeof(addr))<>0 then
     raise ESocketError.Create(seConnectFailed, [Format('%s:%d',[FHost, FPort])]);
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -1482,6 +1534,7 @@ begin
   FFileName:=AFileName;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   S:=FpSocket(AF_UNIX,SOCK_STREAM,0);
 =======
   S:=Socket(AF_UNIX,SOCK_STREAM,0);
@@ -1489,6 +1542,9 @@ begin
 =======
   S:=Socket(AF_UNIX,SOCK_STREAM,0);
 >>>>>>> origin/fixes_2_2
+=======
+  S:=FpSocket(AF_UNIX,SOCK_STREAM,0);
+>>>>>>> origin/cpstrnew
   DoConnect(S);
   Inherited Create(S);
 end;
@@ -1502,6 +1558,7 @@ begin
   Str2UnixSockAddr(FFilename,UnixAddr,AddrLen);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   If  FpConnect(ASocket,@UnixAddr,AddrLen)<>0 then
 =======
   If Not Connect(ASocket,UnixAddr,AddrLen) then
@@ -1509,6 +1566,9 @@ begin
 =======
   If Not Connect(ASocket,UnixAddr,AddrLen) then
 >>>>>>> origin/fixes_2_2
+=======
+  If  FpConnect(ASocket,@UnixAddr,AddrLen)<>0 then
+>>>>>>> origin/cpstrnew
     Raise ESocketError.Create(seConnectFailed,[FFilename]);
 end;
 {$endif}

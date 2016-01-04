@@ -75,12 +75,15 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       cgbase,cgobj,hlcgobj,
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       cgbase,cgobj,
@@ -223,6 +226,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 LOC_FPUREGISTER,
                 LOC_MMXREGISTER,
                 LOC_MMREGISTER :
@@ -257,6 +261,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                 LOC_MMREGISTER :
                   begin
                     if getoffset then
@@ -272,11 +278,14 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                   end;
@@ -514,12 +523,17 @@ interface
         include(tempinfo^.flags,ti_valid);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if assigned(tempinfo^.tempinitcode) then
           include(tempinfo^.flags,ti_executeinitialisation);
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+        if assigned(tempinfo^.tempinitcode) then
+          include(tempinfo^.flags,ti_executeinitialisation);
+>>>>>>> origin/cpstrnew
       end;
 
 
@@ -534,6 +548,7 @@ interface
             { avoid recursion }
             exclude(tempinfo^.flags, ti_executeinitialisation);
             secondpass(tempinfo^.tempinitcode);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -565,6 +580,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
           end;

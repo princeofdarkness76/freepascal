@@ -41,6 +41,7 @@ const
 {$if not(defined(wince)) and not(defined(gba)) and not(defined(nds)) and not(defined(FPUSOFT)) and not(defined(FPULIBGCC))}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 {$define FPC_SYSTEM_HAS_SYSINITFPU}
 <<<<<<< HEAD
@@ -66,6 +67,11 @@ const
 =======
 {$define FPC_SYSTEM_HAS_SYSINITFPU}
 >>>>>>> origin/fixes_2_2
+=======
+
+{$define FPC_SYSTEM_HAS_SYSINITFPU}
+{$if not defined(darwin) and not defined(FPUVFPV2) and not defined(FPUVFPV3)}
+>>>>>>> origin/cpstrnew
 Procedure SysInitFPU;{$ifdef SYSTEMINLINE}inline;{$endif}
 begin
   { Enable FPU exceptions, but disable INEXACT, UNDERFLOW, DENORMAL }
@@ -78,6 +84,9 @@ begin
 end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {$else}
 Procedure SysInitFPU;{$ifdef SYSTEMINLINE}inline;{$endif}
 begin
@@ -89,6 +98,7 @@ begin
     // mask "exception happened" and overflow flags
     and  r0,r0,#0xffffff20
     // mask exception flags
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -106,6 +116,9 @@ begin
 =======
     and  r0,r0,#0xffff40ff    
 >>>>>>> origin/cpstrnew
+=======
+    and  r0,r0,#0xffff40ff    
+>>>>>>> origin/cpstrnew
 {$ifndef darwin}
     // Floating point exceptions cause kernel panics on iPhoneOS 2.2.1...
 
@@ -118,12 +131,16 @@ begin
   end;
 end;
 {$endif}
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 {$endif}
 
 procedure fpc_cpuinit;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   { don't let libraries influence the FPU cw set by the host program }
   if not IsLibrary then
@@ -138,6 +155,11 @@ procedure fpc_cpuinit;
 begin
   SysInitFPU;
 >>>>>>> origin/fixes_2_2
+=======
+  { don't let libraries influence the FPU cw set by the host program }
+  if not IsLibrary then
+    SysInitFPU;
+>>>>>>> origin/cpstrnew
 end;
 
 {$ifdef wince}
@@ -268,11 +290,14 @@ asm
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$endif}
@@ -379,11 +404,14 @@ asm
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 end;
@@ -489,11 +517,14 @@ asm
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 .Ldwordloop:
@@ -527,11 +558,14 @@ asm
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$endif}
@@ -540,6 +574,7 @@ asm
   ldrb r3,[r0],#1
   strb r3,[r1],#1
   bne .Lbyteloop
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -561,11 +596,14 @@ asm
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$if defined(cpuarmv3) or defined(cpuarmv4) or defined(cpuarmv5)}
   mov pc,lr
 {$else}
   bx  lr
 {$endif}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -576,6 +614,8 @@ asm
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 {$ifndef CPUARM_HAS_EDSP}
@@ -583,6 +623,7 @@ procedure Move_blended(const source;var dest;count:longint);assembler;nostackfra
 asm
   // count <=0 ?
   cmp r2,#0
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -605,6 +646,10 @@ asm
 {$if defined(cpuarmv3) or defined(cpuarmv4) or defined(cpuarmv5)}
   movle pc,lr
 >>>>>>> graemeg/cpstrnew
+=======
+{$if defined(cpuarmv3) or defined(cpuarmv4) or defined(cpuarmv5)}
+  movle pc,lr
+>>>>>>> origin/cpstrnew
 =======
 {$if defined(cpuarmv3) or defined(cpuarmv4) or defined(cpuarmv5)}
   movle pc,lr
@@ -670,11 +715,14 @@ asm
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$endif}
@@ -683,6 +731,7 @@ asm
   ldrb r3,[r0],#1
   strb r3,[r1],#1
   bne .Lbyteloop
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -707,11 +756,14 @@ asm
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$if defined(cpuarmv3) or defined(cpuarmv4) or defined(cpuarmv5)}
   mov pc,lr
 {$else}
   bx  lr
 {$endif}
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
@@ -722,6 +774,8 @@ asm
 {$else}
   bx  lr
 {$endif}
+>>>>>>> origin/cpstrnew
+=======
 >>>>>>> origin/cpstrnew
 end;
 
@@ -943,6 +997,7 @@ asm
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef CPUARM_HAS_BX}
     bx  lr
 {$else}
@@ -964,10 +1019,13 @@ asm
 =======
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/cpstrnew
 {$if defined(cpuarmv3) or defined(cpuarmv4) or defined(cpuarmv5)}
     mov pc,lr
 {$else}
     bx  lr
+<<<<<<< HEAD
 >>>>>>> origin/cpstrnew
 {$endif}
 =======
@@ -976,6 +1034,9 @@ asm
 =======
     mov pc,lr
 >>>>>>> origin/fixes_2_2
+=======
+{$endif}
+>>>>>>> origin/cpstrnew
 .L01010101:
     .long 0x01010101
 end;
@@ -1085,6 +1146,7 @@ asm
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef CPUARM_HAS_LDREX}
 =======
 {$if defined(cpuarmv6) or defined(cpuarmv7m) or defined(cpucortexm3)}
@@ -1098,12 +1160,16 @@ asm
 =======
 {$if defined(cpuarmv6) or defined(cpuarmv7m) or defined(cpucortexm3)}
 >>>>>>> origin/cpstrnew
+=======
+{$if defined(cpuarmv6) or defined(cpuarmv7m) or defined(cpucortexm3)}
+>>>>>>> origin/cpstrnew
 .Lloop:
   ldrex r1, [r0]
   sub   r1, r1, #1
   strex r2, r1, [r0]
   cmp r2, #0
   bne .Lloop
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1166,6 +1232,11 @@ asm
   bx  lr
 {$else}
 >>>>>>> origin/cpstrnew
+=======
+  mov r0, r1
+  bx  lr
+{$else}
+>>>>>>> origin/cpstrnew
 // lock
   {$ifdef FPC_PIC}
     push {r0,lr}
@@ -1195,6 +1266,7 @@ asm
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef CPUARM_HAS_BX}
   bx  lr
 {$else}
@@ -1212,10 +1284,14 @@ asm
 =======
   bx  lr
 >>>>>>> origin/cpstrnew
+=======
+  bx  lr
+>>>>>>> origin/cpstrnew
 
 {$ifndef FPC_PIC}
 .Lfpc_system_lock:
   .long fpc_system_lock
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1228,6 +1304,8 @@ asm
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$endif}
 end;
 >>>>>>> graemeg/cpstrnew
@@ -1238,6 +1316,7 @@ end;
 
 function InterLockedIncrement (var Target: longint) : longint; assembler; nostackframe;
 asm
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1255,6 +1334,9 @@ asm
 =======
 {$if defined(cpuarmv6) or defined(cpuarmv7m) or defined(cpucortexm3)}
 >>>>>>> origin/cpstrnew
+=======
+{$if defined(cpuarmv6) or defined(cpuarmv7m) or defined(cpucortexm3)}
+>>>>>>> origin/cpstrnew
 .Lloop:
   ldrex r1, [r0]
   add   r1, r1, #1
@@ -1264,6 +1346,7 @@ asm
   mov r0, r1
   bx  lr
 {$else}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1309,6 +1392,8 @@ asm
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 // lock
   {$ifdef FPC_PIC}
     push {r0,lr}
@@ -1338,6 +1423,7 @@ asm
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef CPUARM_HAS_BX}
   bx  lr
 {$else}
@@ -1355,10 +1441,14 @@ asm
 =======
   bx  lr
 >>>>>>> origin/cpstrnew
+=======
+  bx  lr
+>>>>>>> origin/cpstrnew
 
 {$ifndef FPC_PIC}
 .Lfpc_system_lock:
   .long fpc_system_lock
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1371,6 +1461,8 @@ asm
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$endif}
 end;
 >>>>>>> graemeg/cpstrnew
@@ -1381,6 +1473,7 @@ end;
 
 function InterLockedExchange (var Target: longint;Source : longint) : longint; assembler; nostackframe;
 asm
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1398,6 +1491,9 @@ asm
 =======
 {$if defined(cpuarmv6) or defined(cpuarmv7m) or defined(cpucortexm3)}
 >>>>>>> origin/cpstrnew
+=======
+{$if defined(cpuarmv6) or defined(cpuarmv7m) or defined(cpucortexm3)}
+>>>>>>> origin/cpstrnew
 // swp is deprecated on ARMv6 and above
 .Lloop:
   ldrex r2, [r0]
@@ -1407,6 +1503,7 @@ asm
   mov r0, r2
   bx  lr
 {$else}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1497,11 +1594,16 @@ asm
   swp r1, r1, [r0]
   mov r0,r1
 >>>>>>> origin/cpstrnew
+=======
+  swp r1, r1, [r0]
+  mov r0,r1
+>>>>>>> origin/cpstrnew
 {$endif}
 end;
 
 function InterLockedExchangeAdd (var Target: longint;Source : longint) : longint; assembler; nostackframe;
 asm
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1519,6 +1621,9 @@ asm
 =======
 {$if defined(cpuarmv6) or defined(cpuarmv7m) or defined(cpucortexm3)}
 >>>>>>> origin/cpstrnew
+=======
+{$if defined(cpuarmv6) or defined(cpuarmv7m) or defined(cpucortexm3)}
+>>>>>>> origin/cpstrnew
 .Lloop:
   ldrex r2, [r0]
   add   r12, r1, r2
@@ -1528,6 +1633,7 @@ asm
   mov  r0, r2
   bx  lr
 {$else}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1578,6 +1684,8 @@ asm
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 // lock
   {$ifdef FPC_PIC}
     push {r0,r1,lr}
@@ -1608,6 +1716,7 @@ asm
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef CPUARM_HAS_BX}
   bx  lr
 {$else}
@@ -1625,10 +1734,14 @@ asm
 =======
   bx  lr
 >>>>>>> origin/cpstrnew
+=======
+  bx  lr
+>>>>>>> origin/cpstrnew
 
 {$ifndef FPC_PIC}
 .Lfpc_system_lock:
   .long fpc_system_lock
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1644,12 +1757,15 @@ asm
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$endif}
 end;
 
 
 function InterlockedCompareExchange(var Target: longint; NewValue: longint; Comperand: longint): longint; assembler; nostackframe;
 asm
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1667,6 +1783,9 @@ asm
 =======
 {$if defined(cpuarmv6) or defined(cpuarmv7m) or defined(cpucortexm3)}
 >>>>>>> origin/cpstrnew
+=======
+{$if defined(cpuarmv6) or defined(cpuarmv7m) or defined(cpucortexm3)}
+>>>>>>> origin/cpstrnew
 .Lloop:
   ldrex    r3, [r0]
   mov      r12, #0
@@ -1677,6 +1796,7 @@ asm
   mov      r0, r3
   bx       lr
 {$else}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1727,6 +1847,8 @@ asm
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 // lock
   {$ifdef FPC_PIC}
     push {r0,r1,r2,lr}
@@ -1757,6 +1879,7 @@ asm
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef CPUARM_HAS_BX}
   bx  lr
 {$else}
@@ -1774,10 +1897,14 @@ asm
 =======
   bx  lr
 >>>>>>> origin/cpstrnew
+=======
+  bx  lr
+>>>>>>> origin/cpstrnew
 
 {$ifndef FPC_PIC}
 .Lfpc_system_lock:
   .long fpc_system_lock
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1791,6 +1918,8 @@ asm
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$endif}

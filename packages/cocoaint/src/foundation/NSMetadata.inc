@@ -69,6 +69,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     _private: array[0..(11)-1] of id;
 =======
         _private: array[0..10] of id;
@@ -79,6 +80,9 @@ var
 =======
         _private: array[0..10] of id;
 >>>>>>> graemeg/cpstrnew
+=======
+        _private: array[0..10] of id;
+>>>>>>> origin/cpstrnew
 =======
         _private: array[0..10] of id;
 >>>>>>> origin/cpstrnew
@@ -149,6 +153,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     _private: array[0..(9)-1] of id;
     _private2: array[0..(1)-1] of NSUInteger;
 =======
@@ -163,6 +168,10 @@ var
         _private: array[0..8] of id;
     _private2: NSUInteger;
 >>>>>>> graemeg/cpstrnew
+=======
+        _private: array[0..8] of id;
+    _private2: NSUInteger;
+>>>>>>> origin/cpstrnew
 =======
         _private: array[0..8] of id;
     _private2: NSUInteger;

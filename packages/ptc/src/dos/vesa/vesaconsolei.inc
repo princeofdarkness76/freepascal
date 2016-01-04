@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (C) 2001-2011 Nikolay Nikolov (nickysn@users.sourceforge.net)
 =======
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
@@ -14,6 +15,9 @@
 =======
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
+=======
+    Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> origin/cpstrnew
 =======
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> origin/cpstrnew
@@ -93,6 +97,7 @@ destructor TVESAConsole.Destroy;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 begin
   Close;
   
@@ -101,6 +106,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 var
@@ -116,11 +123,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   FKeyboard.Free;
@@ -131,11 +141,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   FDefaultFormat.Free;
@@ -145,11 +158,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   inherited Destroy;
@@ -164,12 +180,15 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   tmp: TPTCFormat;
@@ -179,11 +198,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   SetLength(FModes, 0);
@@ -221,6 +243,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           if FTryWindowed and SupportsWindowed then
           begin
 =======
@@ -239,6 +262,10 @@ begin
 	  if FTryWindowed and SupportsWindowed then
 	  begin
 >>>>>>> origin/cpstrnew
+=======
+	  if FTryWindowed and SupportsWindowed then
+	  begin
+>>>>>>> origin/cpstrnew
             Inc(J);
             r := MakeMask(WindowedRedMaskSize, WindowedRedFieldPosition);
             g := MakeMask(WindowedGreenMaskSize, WindowedGreenFieldPosition);
@@ -249,6 +276,7 @@ begin
               tmpbpp := 16
             else
               tmpbpp := BitsPerPixel;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -266,6 +294,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
             tmp := TPTCFormat.Create(tmpbpp, r, g, b, a);
             try
 	      SetLength(FModes, J + 1);
@@ -280,11 +310,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 	  
@@ -318,6 +351,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               SetLength(FModes, J + 1);
               SetLength(FModesN, J + 1);
               FModes[J] := TPTCMode.Create(XResolution, YResolution, TPTCFormat.Create(tmpbpp, r, g, b, a));
@@ -328,6 +362,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
               tmp := TPTCFormat.Create(tmpbpp, r, g, b, a);
@@ -343,11 +379,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 	    end;
@@ -358,6 +397,7 @@ begin
           if (MemoryModel = vmmmPackedPixel) and (BitsPerPixel = 8) then
           begin
             Inc(J);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -382,6 +422,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
             tmp := TPTCFormat.Create(8);
@@ -410,6 +452,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -417,10 +460,13 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {           Inc(FModesLast, 2);}
           end;
 
   FModesLast := J;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -435,11 +481,14 @@ procedure TVESAConsole.Configure(const AFileName: string);
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   SetLength(FModes, FModesLast + 2);
   FModes[FModesLast + 1] := TPTCMode.Create; {mark end of list!}
 end;
 
 procedure TVESAConsole.Configure(const AFileName: String);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -450,11 +499,14 @@ procedure TVESAConsole.Configure(const AFileName: String);
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 var
   F: TextFile;
   S: string;
 begin
   AssignFile(F, AFileName);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -482,10 +534,16 @@ begin
   Reset(F);
   {$I+}
 >>>>>>> origin/cpstrnew
+=======
+  {$I-}
+  Reset(F);
+  {$I+}
+>>>>>>> origin/cpstrnew
   if IOResult <> 0 then
     exit;
   while not EoF(F) do
   begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -508,6 +566,11 @@ begin
     Readln(F, S);
     {$I+}
 >>>>>>> graemeg/cpstrnew
+=======
+    {$I-}
+    Readln(F, S);
+    {$I+}
+>>>>>>> origin/cpstrnew
 =======
     {$I-}
     Readln(F, S);
@@ -662,6 +725,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TVESAConsole.Modes: TPTCModeList;
 begin
   Result := FModes;
@@ -675,6 +739,8 @@ function TVESAConsole.FindBestMode(const AMode: IPTCMode): Integer;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 function TVESAConsole.Modes: PPTCMode;
 begin
   Result := @FModes[0];
@@ -684,11 +750,14 @@ function TVESAConsole.FindBestMode(const AMode: TPTCMode): Integer;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 var
@@ -786,6 +855,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TVESAConsole.Open(const ATitle: string; AFormat: IPTCFormat;
 =======
 procedure TVESAConsole.Open(const ATitle: string; const AFormat: TPTCFormat;
@@ -799,12 +869,16 @@ procedure TVESAConsole.Open(const ATitle: string; const AFormat: TPTCFormat;
 =======
 procedure TVESAConsole.Open(const ATitle: string; const AFormat: TPTCFormat;
 >>>>>>> origin/cpstrnew
+=======
+procedure TVESAConsole.Open(const ATitle: string; const AFormat: TPTCFormat;
+>>>>>>> origin/cpstrnew
                             APages: Integer); overload;
 begin
   Open(ATitle, FDefaultWidth, FDefaultHeight, AFormat, APages);
 end;
 
 procedure TVESAConsole.Open(const ATitle: string; AWidth, AHeight: Integer;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -820,6 +894,8 @@ procedure TVESAConsole.Open(const ATitle: string; AMode: IPTCMode;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                             const AFormat: TPTCFormat; APages: Integer); overload;
@@ -838,11 +914,14 @@ procedure TVESAConsole.Open(const ATitle: string; const AMode: TPTCMode;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                             APages: Integer); overload;
@@ -894,6 +973,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   tmpa: TPTCArea;
 >>>>>>> graemeg/cpstrnew
@@ -903,6 +983,9 @@ var
 =======
   tmpa: TPTCArea;
 >>>>>>> graemeg/cpstrnew
+=======
+  tmpa: TPTCArea;
+>>>>>>> origin/cpstrnew
 =======
   tmpa: TPTCArea;
 >>>>>>> origin/cpstrnew
@@ -945,6 +1028,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   with FModes[FCurrentMode].Format do
 =======
   with FModes[FCurrentMode].FFormat do
@@ -955,6 +1039,9 @@ begin
 =======
   with FModes[FCurrentMode].FFormat do
 >>>>>>> graemeg/cpstrnew
+=======
+  with FModes[FCurrentMode].FFormat do
+>>>>>>> origin/cpstrnew
 =======
   with FModes[FCurrentMode].FFormat do
 >>>>>>> origin/cpstrnew
@@ -991,6 +1078,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   FArea := TPTCArea.Create(0, 0, FWidth, FHeight);
   FClip := FArea;
 =======
@@ -998,6 +1086,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   tmpa := TPTCArea.Create(0, 0, FWidth, FHeight);
@@ -1010,11 +1100,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -1102,6 +1195,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TVESAConsole.Update(AArea: IPTCArea);
 =======
 procedure TVESAConsole.Update(const AArea: TPTCArea);
@@ -1115,10 +1209,14 @@ procedure TVESAConsole.Update(const AArea: TPTCArea);
 =======
 procedure TVESAConsole.Update(const AArea: TPTCArea);
 >>>>>>> origin/cpstrnew
+=======
+procedure TVESAConsole.Update(const AArea: TPTCArea);
+>>>>>>> origin/cpstrnew
 begin
   Update;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1133,6 +1231,9 @@ procedure TVESAConsole.Copy(ASurface: TPTCBaseSurface);
 =======
 procedure TVESAConsole.Copy(ASurface: TPTCBaseSurface);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TVESAConsole.Copy(ASurface: TPTCBaseSurface);
+>>>>>>> origin/cpstrnew
 =======
 procedure TVESAConsole.Copy(ASurface: TPTCBaseSurface);
 >>>>>>> origin/cpstrnew
@@ -1158,6 +1259,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TVESAConsole.Copy(ASurface: IPTCSurface;
                             ASource, ADestination: IPTCArea);
 =======
@@ -1172,6 +1274,10 @@ procedure TVESAConsole.Copy(ASurface: TPTCBaseSurface;
 procedure TVESAConsole.Copy(ASurface: TPTCBaseSurface;
                             const ASource, ADestination: TPTCArea);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TVESAConsole.Copy(ASurface: TPTCBaseSurface;
+                            const ASource, ADestination: TPTCArea);
+>>>>>>> origin/cpstrnew
 =======
 procedure TVESAConsole.Copy(ASurface: TPTCBaseSurface;
                             const ASource, ADestination: TPTCArea);
@@ -1224,6 +1330,7 @@ procedure TVESAConsole.Load(const APixels: Pointer;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                             AFormat: IPTCFormat;
                             APalette: IPTCPalette);
 var
@@ -1234,6 +1341,8 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                             const AFormat: TPTCFormat;
                             const APalette: TPTCPalette);
 var
@@ -1241,11 +1350,14 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   ConsolePixels: Pointer;
@@ -1276,12 +1388,15 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Load(APixels, AWidth, AHeight, APitch, AFormat, APalette, TPTCArea.Create(0, 0, Width, Height), Area);
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   begin
@@ -1295,6 +1410,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1302,10 +1418,13 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 procedure TVESAConsole.Load(const APixels: Pointer;
                             AWidth, AHeight, APitch: Integer;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1340,6 +1459,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                             const AFormat: TPTCFormat;
@@ -1384,6 +1505,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1391,11 +1513,14 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   end;
 end;
 
 procedure TVESAConsole.Save(APixels: Pointer;
                             AWidth, AHeight, APitch: Integer;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1410,6 +1535,8 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                             const AFormat: TPTCFormat;
                             const APalette: TPTCPalette);
 var
@@ -1417,11 +1544,14 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   ConsolePixels: Pointer;
@@ -1452,12 +1582,15 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Save(APixels, AWidth, AHeight, APitch, AFormat, APalette, Area, TPTCArea.Create(0, 0, Width, Height));
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   begin
@@ -1471,6 +1604,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1478,10 +1612,13 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 procedure TVESAConsole.Save(APixels: Pointer;
                             AWidth, AHeight, APitch: Integer;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1516,6 +1653,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                             const AFormat: TPTCFormat;
@@ -1560,6 +1699,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1567,11 +1707,14 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   end;
 end;
 
 procedure TVESAConsole.Clear;
 var
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1589,10 +1732,14 @@ var
 =======
   tmp: TPTCColor;
 >>>>>>> origin/cpstrnew
+=======
+  tmp: TPTCColor;
+>>>>>>> origin/cpstrnew
 begin
   check_open;
   check_unlocked;
   if Format.Direct then
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1611,6 +1758,8 @@ procedure TVESAConsole.Clear(AColor: IPTCColor);
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     tmp := TPTCColor.Create(0, 0, 0, 0)
   else
     tmp := TPTCColor.Create(0);
@@ -1625,6 +1774,7 @@ procedure TVESAConsole.Clear(const AColor: TPTCColor);
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1632,11 +1782,14 @@ procedure TVESAConsole.Clear(const AColor: TPTCColor);
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 var
   tmp: TPTCArea;
 begin
   check_open;
   check_unlocked;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1653,6 +1806,8 @@ procedure TVESAConsole.Clear(AColor: IPTCColor;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   tmp := TPTCArea.Create;
   try
     Clear(AColor, tmp);
@@ -1666,11 +1821,14 @@ procedure TVESAConsole.Clear(const AColor: TPTCColor;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 begin
@@ -1679,6 +1837,7 @@ begin
   {...}
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1696,6 +1855,9 @@ procedure TVESAConsole.Palette(const APalette: TPTCPalette);
 =======
 procedure TVESAConsole.Palette(const APalette: TPTCPalette);
 >>>>>>> origin/cpstrnew
+=======
+procedure TVESAConsole.Palette(const APalette: TPTCPalette);
+>>>>>>> origin/cpstrnew
 begin
   check_open;
 
@@ -1706,6 +1868,7 @@ begin
   end;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1723,11 +1886,15 @@ function TVESAConsole.Palette: TPTCPalette;
 =======
 function TVESAConsole.Palette: TPTCPalette;
 >>>>>>> origin/cpstrnew
+=======
+function TVESAConsole.Palette: TPTCPalette;
+>>>>>>> origin/cpstrnew
 begin
   check_open;
   Result := FPalette;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1745,10 +1912,14 @@ procedure TVESAConsole.Clip(const AArea: TPTCArea);
 =======
 procedure TVESAConsole.Clip(const AArea: TPTCArea);
 >>>>>>> origin/cpstrnew
+=======
+procedure TVESAConsole.Clip(const AArea: TPTCArea);
+>>>>>>> origin/cpstrnew
 var
   tmp: TPTCArea;
 begin
   check_open;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1761,6 +1932,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   tmp := TPTCClipper.Clip(AArea, FArea);
   try
     FClip.Assign(tmp);
@@ -1770,11 +1943,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 end;
@@ -1807,6 +1983,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TVESAConsole.GetArea: IPTCArea;
 =======
 function TVESAConsole.GetArea: TPTCArea;
@@ -1820,11 +1997,15 @@ function TVESAConsole.GetArea: TPTCArea;
 =======
 function TVESAConsole.GetArea: TPTCArea;
 >>>>>>> origin/cpstrnew
+=======
+function TVESAConsole.GetArea: TPTCArea;
+>>>>>>> origin/cpstrnew
 begin
   check_open;
   Result := FArea;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1842,11 +2023,15 @@ function TVESAConsole.Clip: TPTCArea;
 =======
 function TVESAConsole.Clip: TPTCArea;
 >>>>>>> origin/cpstrnew
+=======
+function TVESAConsole.Clip: TPTCArea;
+>>>>>>> origin/cpstrnew
 begin
   check_open;
   Result := FClip;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1861,6 +2046,9 @@ function TVESAConsole.GetFormat: TPTCFormat;
 =======
 function TVESAConsole.GetFormat: TPTCFormat;
 >>>>>>> graemeg/cpstrnew
+=======
+function TVESAConsole.GetFormat: TPTCFormat;
+>>>>>>> origin/cpstrnew
 =======
 function TVESAConsole.GetFormat: TPTCFormat;
 >>>>>>> origin/cpstrnew
@@ -1903,6 +2091,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TVESAConsole.NextEvent(out AEvent: IPTCEvent; AWait: Boolean; const AEventMask: TPTCEventMask): Boolean;
 begin
   check_open;
@@ -1914,6 +2103,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 function TVESAConsole.NextEvent(var AEvent: TPTCEvent; AWait: Boolean; const AEventMask: TPTCEventMask): Boolean;
 begin
   check_open;
@@ -1922,11 +2113,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   repeat
@@ -1943,6 +2137,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TVESAConsole.PeekEvent(AWait: Boolean; const AEventMask: TPTCEventMask): IPTCEvent;
 =======
 function TVESAConsole.PeekEvent(AWait: Boolean; const AEventMask: TPTCEventMask): TPTCEvent;
@@ -1953,6 +2148,9 @@ function TVESAConsole.PeekEvent(AWait: Boolean; const AEventMask: TPTCEventMask)
 =======
 function TVESAConsole.PeekEvent(AWait: Boolean; const AEventMask: TPTCEventMask): TPTCEvent;
 >>>>>>> graemeg/cpstrnew
+=======
+function TVESAConsole.PeekEvent(AWait: Boolean; const AEventMask: TPTCEventMask): TPTCEvent;
+>>>>>>> origin/cpstrnew
 =======
 function TVESAConsole.PeekEvent(AWait: Boolean; const AEventMask: TPTCEventMask): TPTCEvent;
 >>>>>>> origin/cpstrnew

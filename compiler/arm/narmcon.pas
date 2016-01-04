@@ -62,11 +62,14 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       var
@@ -115,6 +118,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   current_procinfo.aktlocaldata.concat(tai_realconst.create_s80real(value_real,tfloatdef(resultdef).size));
 =======
                   current_procinfo.aktlocaldata.concat(Tai_real_80bit.Create(value_real,tfloatdef(resultdef).size));
@@ -125,6 +129,9 @@ interface
 =======
                   current_procinfo.aktlocaldata.concat(Tai_real_80bit.Create(value_real,tfloatdef(resultdef).size));
 >>>>>>> graemeg/cpstrnew
+=======
+                  current_procinfo.aktlocaldata.concat(Tai_real_80bit.Create(value_real,tfloatdef(resultdef).size));
+>>>>>>> origin/cpstrnew
 =======
                   current_procinfo.aktlocaldata.concat(Tai_real_80bit.Create(value_real,tfloatdef(resultdef).size));
 >>>>>>> origin/cpstrnew

@@ -18,6 +18,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Uses nwserv;
 
 Function SysLoadLibraryA(const Name : RawByteString) : TlibHandle;
@@ -29,6 +30,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$ifdef readinterface}
@@ -60,6 +63,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -67,10 +71,13 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   args[1] := nil;
   Result:=spawnvp(P_NOWAIT,@args,nil);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -93,11 +100,15 @@ Function GetProcedureAddress(Lib : TLibHandle; const ProcName : AnsiString) : Po
 =======
 Function GetProcedureAddress(Lib : TLibHandle; const ProcName : AnsiString) : Pointer;
 >>>>>>> origin/cpstrnew
+=======
+Function GetProcedureAddress(Lib : TLibHandle; const ProcName : AnsiString) : Pointer;
+>>>>>>> origin/cpstrnew
 
 begin
   Result:=ImportSymbol(GetNlmHandle, pchar(ProcName));
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -115,11 +126,15 @@ Function UnloadLibrary(Lib : TLibHandle) : Boolean;
 =======
 Function UnloadLibrary(Lib : TLibHandle) : Boolean;
 >>>>>>> origin/cpstrnew
+=======
+Function UnloadLibrary(Lib : TLibHandle) : Boolean;
+>>>>>>> origin/cpstrnew
 
 begin
   Result:=false;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -155,6 +170,9 @@ end;
 =======
 {$endif}
 >>>>>>> graemeg/cpstrnew
+=======
+{$endif}
+>>>>>>> origin/cpstrnew
 =======
 {$endif}
 >>>>>>> origin/cpstrnew

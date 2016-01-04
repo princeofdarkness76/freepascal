@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       QD/QuickdrawText.h
  
      Contains:   Quickdraw Text Interfaces.
@@ -16,11 +17,15 @@
 =======
      File:       QD/QuickdrawText.h
 >>>>>>> origin/fixes_2.4
+=======
+     File:       QD/QuickdrawText.h
+>>>>>>> origin/cpstrnew
  
      Contains:   Quickdraw Text Interfaces.
  
      Version:    Quickdraw-262~1
  
+<<<<<<< HEAD
 <<<<<<< HEAD
      Copyright:  © 1983-2002 by Apple Computer, Inc., all rights reserved.
 <<<<<<< HEAD
@@ -30,6 +35,9 @@
 =======
      Copyright:  © 1983-2008 by Apple Inc. all rights reserved.
 >>>>>>> origin/fixes_2.4
+=======
+     Copyright:  © 1983-2008 by Apple Inc. all rights reserved.
+>>>>>>> origin/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -40,6 +48,7 @@
  
 }
 {   Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+<<<<<<< HEAD
 {
     Modified for use with Free Pascal
     Version 308
@@ -54,6 +63,8 @@
  
 }
 {   Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+=======
+>>>>>>> origin/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -62,12 +73,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -79,6 +94,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -93,6 +109,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -108,6 +128,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -118,6 +139,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -125,13 +149,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -139,6 +167,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -147,8 +177,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -159,6 +192,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -179,6 +213,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -187,12 +223,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -200,6 +239,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -403,6 +443,8 @@ interface
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
@@ -413,7 +455,10 @@ interface
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -430,6 +475,7 @@ interface
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -471,6 +517,41 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -499,6 +580,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -507,6 +589,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -517,6 +601,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,MixedMode,IntlResources;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -535,7 +620,12 @@ uses MacTypes,MixedMode,IntlResources;
 
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+{$endc} {not MACOSALLINCLUDE}
 
+>>>>>>> origin/cpstrnew
+
+{$ifc TARGET_OS_MAC}
 
 >>>>>>> origin/cpstrnew
 {$ifc TARGET_OS_MAC}
@@ -563,6 +653,7 @@ const
 	leftCaret = 0;    {Place caret for left block}
 	rightCaret = -1;   {Place caret for right block}
 	kHilite = 1;     {Direction is SysDirection}
+<<<<<<< HEAD
 
 const
 	smLeftCaret = 0;    {Place caret for left block - obsolete }
@@ -592,17 +683,38 @@ const
 	truncMiddle = $4000; { Truncate in middle }
 	smTruncEnd = 0;    { Truncate at end - obsolete }
 	smTruncMiddle = $4000; { Truncate in middle - obsolete }
+=======
+>>>>>>> origin/cpstrnew
 
 {  Constants for TruncString and TruncText results }
 const
+<<<<<<< HEAD
 	notTruncated = 0;    { No truncation was necessary }
 	truncated = 1;    { Truncation performed }
 	truncErr = -1;   { General error }
 	smNotTruncated = 0;    { No truncation was necessary - obsolete }
 	smTruncated = 1;    { Truncation performed   - obsolete }
 	smTruncErr = -1;    { General error - obsolete }
+=======
+	smLeftCaret = 0;    {Place caret for left block - obsolete }
+	smRightCaret = -1;   {Place caret for right block - obsolete }
+	smHilite = 1;     {Direction is TESysJust - obsolete }
+>>>>>>> origin/cpstrnew
 
+{ Constants for styleRunPosition argument in PortionLine, DrawJustified, MeasureJustified, CharToPixel, and PixelToChar. }
+const
+	onlyStyleRun = 0;    { This is the only style run on the line }
+	leftStyleRun = 1;    { This is leftmost of multiple style runs on the line }
+	rightStyleRun = 2;    { This is rightmost of multiple style runs on the line }
+	middleStyleRun = 3;    { There are multiple style runs on the line and this is neither the leftmost nor the rightmost. }
+	smOnlyStyleRun = 0;    { obsolete }
+	smLeftStyleRun = 1;    { obsolete }
+	smRightStyleRun = 2;    { obsolete }
+	smMiddleStyleRun = 3;     { obsolete }
+
+{  Type for styleRunPosition parameter in PixelToChar etc. }
 type
+<<<<<<< HEAD
 	StyledLineBreakCode = SInt8;
 const
 	smBreakWord = 0;
@@ -662,9 +774,31 @@ const
 	smLeftStyleRun = 1;    { obsolete }
 	smRightStyleRun = 2;    { obsolete }
 	smMiddleStyleRun = 3;     { obsolete }
+=======
+	JustStyleCode = SInt16;
+{  Type for truncWhere parameter in TruncString, TruncText }
+type
+	TruncCode = SInt16;
+{  Constants for truncWhere argument in TruncString and TruncText }
+const
+	truncEnd = 0;    { Truncate at end }
+	truncMiddle = $4000; { Truncate in middle }
+	smTruncEnd = 0;    { Truncate at end - obsolete }
+	smTruncMiddle = $4000; { Truncate in middle - obsolete }
+
+{  Constants for TruncString and TruncText results }
+const
+	notTruncated = 0;    { No truncation was necessary }
+	truncated = 1;    { Truncation performed }
+	truncErr = -1;   { General error }
+	smNotTruncated = 0;    { No truncation was necessary - obsolete }
+	smTruncated = 1;    { Truncation performed   - obsolete }
+	smTruncErr = -1;    { General error - obsolete }
+>>>>>>> origin/cpstrnew
 
 {  Type for styleRunPosition parameter in PixelToChar etc. }
 type
+<<<<<<< HEAD
 	JustStyleCode = SInt16;
 {  Type for truncWhere parameter in TruncString, TruncText }
 type
@@ -688,21 +822,31 @@ const
 type
 	StyledLineBreakCode = SInt8;
 const
+=======
+	StyledLineBreakCode = SInt8;
+const
+>>>>>>> origin/cpstrnew
 	smBreakWord = 0;
 	smBreakChar = 1;
 	smBreakOverflow = 2;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 { Constants for txFlags (which used to be the pad field after txFace) in QuickTime 3.0. }
 const
 	tfAntiAlias = 1 shl 0;
 	tfUnicode = 1 shl 1;
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 type
 	FontInfoPtr = ^FontInfo;
@@ -710,12 +854,16 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 		ascent: SInt16;
 		descent: SInt16;
 		widMax: SInt16;
 		leading: SInt16;
+<<<<<<< HEAD
 <<<<<<< HEAD
 	end;
 type
@@ -766,6 +914,8 @@ function NewStyleRunDirectionUPP( userRoutine: StyleRunDirectionProcPtr ): Style
 		leading:				SInt16;
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	end;
 type
 	FormatOrder = array [0..0] of SInt16;
@@ -793,6 +943,7 @@ function StandardGlyphs( dataStream: UnivPtr; size: ByteCount ): OSStatus; exter
 {$endc} {not TARGET_CPU_64}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 const
 	uppStyleRunDirectionProcInfo = $00000390;
 	{
@@ -813,10 +964,16 @@ type
 	StyleRunDirectionProcPtr = function( styleRunIndex: SInt16; dirParam: UnivPtr ): Boolean;
 	StyleRunDirectionUPP = StyleRunDirectionProcPtr;
 >>>>>>> origin/fixes_2.4
+=======
+type
+	StyleRunDirectionProcPtr = function( styleRunIndex: SInt16; dirParam: UnivPtr ): Boolean;
+	StyleRunDirectionUPP = StyleRunDirectionProcPtr;
+>>>>>>> origin/cpstrnew
 {
  *  NewStyleRunDirectionUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -834,6 +991,10 @@ procedure DisposeStyleRunDirectionUPP( userUPP: StyleRunDirectionUPP ); external
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+>>>>>>> origin/cpstrnew
  *    Non-Carbon CFM:   available as macro/inline
  }
 function NewStyleRunDirectionUPP( userRoutine: StyleRunDirectionProcPtr ): StyleRunDirectionUPP; external name '_NewStyleRunDirectionUPP';
@@ -848,6 +1009,7 @@ function NewStyleRunDirectionUPP( userRoutine: StyleRunDirectionProcPtr ): Style
  *    Non-Carbon CFM:   available as macro/inline
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure DisposeStyleRunDirectionUPP(userUPP: StyleRunDirectionUPP); external name '_DisposeStyleRunDirectionUPP';
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -858,10 +1020,16 @@ procedure DisposeStyleRunDirectionUPP( userUPP: StyleRunDirectionUPP ); external
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 >>>>>>> origin/fixes_2.4
+=======
+procedure DisposeStyleRunDirectionUPP( userUPP: StyleRunDirectionUPP ); external name '_DisposeStyleRunDirectionUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+>>>>>>> origin/cpstrnew
 {
  *  InvokeStyleRunDirectionUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -891,15 +1059,25 @@ function InvokeStyleRunDirectionUPP(styleRunIndex: SInt16; dirParam: UnivPtr; us
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+>>>>>>> origin/cpstrnew
 function InvokeStyleRunDirectionUPP( styleRunIndex: SInt16; dirParam: UnivPtr; userUPP: StyleRunDirectionUPP ): Boolean; external name '_InvokeStyleRunDirectionUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 {$ifc not TARGET_CPU_64}
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  Pixel2Char()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -929,6 +1107,14 @@ function Pixel2Char(textBuf: Ptr; textLen: SInt16; slop: SInt16; pixelWidth: SIn
 
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         not available [32-bit only]
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+
+
+>>>>>>> origin/cpstrnew
 {
  *  Char2Pixel()
  *  
@@ -936,6 +1122,9 @@ function Pixel2Char(textBuf: Ptr; textLen: SInt16; slop: SInt16; pixelWidth: SIn
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         not available [32-bit only]
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -1014,6 +1203,7 @@ procedure HiliteText( textPtr: Ptr; textLength: SInt16; firstOffset: SInt16; sec
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -1021,6 +1211,13 @@ procedure HiliteText( textPtr: Ptr; textLength: SInt16; firstOffset: SInt16; sec
 =======
  *    Mac OS X:         not available [32-bit only]
 >>>>>>> origin/fixes_2.4
+=======
+{
+ *  DrawJust()
+ *  
+ *  Availability:
+ *    Mac OS X:         not available [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -1030,18 +1227,26 @@ procedure HiliteText( textPtr: Ptr; textLength: SInt16; firstOffset: SInt16; sec
  *  PixelToChar()   *** DEPRECATED ***
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function PixelToChar( textBuf: Ptr; textLength: SIGNEDLONG; slop: Fixed; pixelWidth: Fixed; var leadingEdge: Boolean; var widthRemaining: Fixed; styleRunPosition: JustStyleCode; numer: Point; denom: Point ): SInt16; external name '_PixelToChar';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+=======
+ *    Mac OS X:         not available [32-bit only]
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+>>>>>>> origin/cpstrnew
 
 
 {
  *  CharToPixel()   *** DEPRECATED ***
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -1052,48 +1257,83 @@ function CharToPixel( textBuf: Ptr; textLength: SIGNEDLONG; slop: Fixed; offset:
 
 {
  *  DrawJustified()   *** DEPRECATED ***
+=======
+ *    Mac OS X:         not available [32-bit only]
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+
+
+{
+ *  VisibleLength()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
 procedure DrawJustified( textPtr: Ptr; textLength: SIGNEDLONG; slop: Fixed; styleRunPosition: JustStyleCode; numer: Point; denom: Point ); external name '_DrawJustified';
+=======
+function VisibleLength( textPtr: Ptr; textLength: SIGNEDLONG ): SIGNEDLONG; external name '_VisibleLength';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  MeasureJustified()   *** DEPRECATED ***
+=======
+ *  GetFormatOrder()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
 procedure MeasureJustified( textPtr: Ptr; textLength: SIGNEDLONG; slop: Fixed; charLocs: Ptr; styleRunPosition: JustStyleCode; numer: Point; denom: Point ); external name '_MeasureJustified';
+=======
+procedure GetFormatOrder( ordering: FormatOrderPtr; firstFormat: SInt16; lastFormat: SInt16; lineRight: Boolean; rlDirProc: StyleRunDirectionUPP; dirParam: Ptr ); external name '_GetFormatOrder';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  PortionLine()   *** DEPRECATED ***
+=======
+ *  TextFont()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
 function PortionLine( textPtr: Ptr; textLen: SIGNEDLONG; styleRunPosition: JustStyleCode; numer: Point; denom: Point ): Fixed; external name '_PortionLine';
+=======
+procedure TextFont( font: SInt16 ); external name '_TextFont';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  HiliteText()   *** DEPRECATED ***
+=======
+ *  TextFace()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure HiliteText(textPtr: Ptr; textLength: SInt16; firstOffset: SInt16; secondOffset: SInt16; var offsets: OffsetTable); external name '_HiliteText';
 {$ifc CALL_NOT_IN_CARBON}
@@ -1266,6 +1506,44 @@ procedure TextSize( size: SInt16 ); external name '_TextSize';
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+=======
+procedure TextFace( face: StyleParameter ); external name '_TextFace';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  TextMode()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure TextMode( mode: SInt16 ); external name '_TextMode';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  TextSize()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure TextSize( size: SInt16 ); external name '_TextSize';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  SpaceExtra()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+>>>>>>> origin/cpstrnew
 procedure SpaceExtra( extra: Fixed ); external name '_SpaceExtra';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
@@ -1273,6 +1551,7 @@ procedure SpaceExtra( extra: Fixed ); external name '_SpaceExtra';
 {
  *  DrawChar()   *** DEPRECATED ***
  *  
+<<<<<<< HEAD
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1390,10 +1669,19 @@ procedure CharExtra( extra: Fixed ); external name '_CharExtra';
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure StdText( count: SInt16; textAddr: {const} UnivPtr; numer: Point; denom: Point ); external name '_StdText';
+=======
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure DrawChar( ch: CharParameter ); external name '_DrawChar';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  StdTxMeas()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -1414,10 +1702,21 @@ function StdTxMeas( byteCount: SInt16; textAddr: {const} UnivPtr; var numer: Poi
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function StyledLineBreak( textPtr: Ptr; textLen: SInt32; textStart: SInt32; textEnd: SInt32; flags: SInt32; var textWidth: Fixed; var textOffset: SInt32 ): StyledLineBreakCode; external name '_StyledLineBreak';
+=======
+ *  DrawString()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure DrawString( const (*var*) s: Str255 ); external name '_DrawString';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  TruncString()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -1535,94 +1834,7 @@ function VisibleLength( textPtr: Ptr; textLength: SIGNEDLONG ): SIGNEDLONG; exte
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure GetFormatOrder( ordering: FormatOrderPtr; firstFormat: SInt16; lastFormat: SInt16; lineRight: Boolean; rlDirProc: StyleRunDirectionUPP; dirParam: Ptr ); external name '_GetFormatOrder';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
-
-
-{
- *  TextFont()   *** DEPRECATED ***
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
- }
-procedure TextFont( font: SInt16 ); external name '_TextFont';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
-
-
-{
- *  TextFace()   *** DEPRECATED ***
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
- }
-procedure TextFace( face: StyleParameter ); external name '_TextFace';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
-
-
-{
- *  TextMode()   *** DEPRECATED ***
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
- }
-procedure TextMode( mode: SInt16 ); external name '_TextMode';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
-
-
-{
- *  TextSize()   *** DEPRECATED ***
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
- }
-procedure TextSize( size: SInt16 ); external name '_TextSize';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
-
-
-{
- *  SpaceExtra()   *** DEPRECATED ***
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
- }
-procedure SpaceExtra( extra: Fixed ); external name '_SpaceExtra';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
-
-
-{
- *  DrawChar()   *** DEPRECATED ***
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
- }
-procedure DrawChar( ch: CharParameter ); external name '_DrawChar';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
-
-
-{
- *  DrawString()   *** DEPRECATED ***
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
- }
-procedure DrawString( const (*var*) s: Str255 ); external name '_DrawString';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
-
-
-{
+=======
  *  [Mac]DrawText()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -1658,10 +1870,190 @@ function CharWidth( ch: CharParameter ): SInt16; external name '_CharWidth';
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function StringWidth( const (*var*) s: Str255 ): SInt16; external name '_StringWidth';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
+ *  TextFont()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure TextFont( font: SInt16 ); external name '_TextFont';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  TextFace()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure TextFace( face: StyleParameter ); external name '_TextFace';
+=======
+ *  TextWidth()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function TextWidth( textBuf: {const} UnivPtr; firstByte: SInt16; byteCount: SInt16 ): SInt16; external name '_TextWidth';
+>>>>>>> origin/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+<<<<<<< HEAD
+ *  TextMode()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure TextMode( mode: SInt16 ); external name '_TextMode';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  TextSize()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure TextSize( size: SInt16 ); external name '_TextSize';
+=======
+ *  MeasureText()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure MeasureText( count: SInt16; textAddr: {const} UnivPtr; charLocs: UnivPtr ); external name '_MeasureText';
+>>>>>>> origin/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+<<<<<<< HEAD
+ *  SpaceExtra()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure SpaceExtra( extra: Fixed ); external name '_SpaceExtra';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  DrawChar()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure DrawChar( ch: CharParameter ); external name '_DrawChar';
+=======
+ *  GetFontInfo()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure GetFontInfo( var info: FontInfo ); external name '_GetFontInfo';
+>>>>>>> origin/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+<<<<<<< HEAD
+ *  DrawString()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure DrawString( const (*var*) s: Str255 ); external name '_DrawString';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  [Mac]DrawText()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure MacDrawText( textBuf: {const} UnivPtr; firstByte: SInt16; byteCount: SInt16 ); external name '_DrawText';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+procedure DrawText( textBuf: {const} UnivPtr; firstByte: SInt16; byteCount: SInt16 ); external name '_DrawText';
+=======
+ *  CharExtra()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure CharExtra( extra: Fixed ); external name '_CharExtra';
+>>>>>>> origin/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+<<<<<<< HEAD
+ *  CharWidth()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function CharWidth( ch: CharParameter ): SInt16; external name '_CharWidth';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  StringWidth()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function StringWidth( const (*var*) s: Str255 ): SInt16; external name '_StringWidth';
+=======
+ *  StdText()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure StdText( count: SInt16; textAddr: {const} UnivPtr; numer: Point; denom: Point ); external name '_StdText';
+>>>>>>> origin/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+<<<<<<< HEAD
  *  TextWidth()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -1682,10 +2074,21 @@ function TextWidth( textBuf: {const} UnivPtr; firstByte: SInt16; byteCount: SInt
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure MeasureText( count: SInt16; textAddr: {const} UnivPtr; charLocs: UnivPtr ); external name '_MeasureText';
+=======
+ *  StdTxMeas()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function StdTxMeas( byteCount: SInt16; textAddr: {const} UnivPtr; var numer: Point; var denom: Point; var info: FontInfo ): SInt16; external name '_StdTxMeas';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  GetFontInfo()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -1706,10 +2109,21 @@ procedure GetFontInfo( var info: FontInfo ); external name '_GetFontInfo';
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure CharExtra( extra: Fixed ); external name '_CharExtra';
+=======
+ *  StyledLineBreak()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function StyledLineBreak( textPtr: Ptr; textLen: SInt32; textStart: SInt32; textEnd: SInt32; flags: SInt32; var textWidth: Fixed; var textOffset: SInt32 ): StyledLineBreakCode; external name '_StyledLineBreak';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  StdText()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -1730,10 +2144,21 @@ procedure StdText( count: SInt16; textAddr: {const} UnivPtr; numer: Point; denom
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function StdTxMeas( byteCount: SInt16; textAddr: {const} UnivPtr; var numer: Point; var denom: Point; var info: FontInfo ): SInt16; external name '_StdTxMeas';
+=======
+ *  TruncString()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function TruncString( width: SInt16; var theString: Str255; truncWhere: TruncCode ): SInt16; external name '_TruncString';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  StyledLineBreak()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -1774,6 +2199,23 @@ function TruncText( width: SInt16; textPtr: Ptr; var length: SInt16; truncWhere:
 {$ifc not TARGET_CPU_64}
 {
  *  drawstring()
+=======
+ *  TruncText()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function TruncText( width: SInt16; textPtr: Ptr; var length: SInt16; truncWhere: TruncCode ): SInt16; external name '_TruncText';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{$endc} {not TARGET_CPU_64}
+
+{$ifc not TARGET_CPU_64}
+{
+ *  drawstring()
  *  
  *  Availability:
  *    Mac OS X:         not available [32-bit only]
@@ -1783,6 +2225,18 @@ function TruncText( width: SInt16; textPtr: Ptr; var length: SInt16; truncWhere:
 
 
 {
+ *  stringwidth()
+>>>>>>> origin/cpstrnew
+ *  
+ *  Availability:
+ *    Mac OS X:         not available [32-bit only]
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+
+
+{
+<<<<<<< HEAD
  *  stringwidth()
  *  
  *  Availability:
@@ -1811,6 +2265,26 @@ function TruncText( width: SInt16; textPtr: Ptr; var length: SInt16; truncWhere:
 {
  *  SwapQDTextFlags()   *** DEPRECATED ***
  *  
+=======
+ *  stdtext()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+// overloading not available
+// procedure stdtext( count: SInt16; textAddr: {const} UnivPtr; const (*var*) numer: Point; const (*var*) denom: Point );
+// AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4;
+
+
+{$endc} {not TARGET_CPU_64}
+
+{$ifc not TARGET_CPU_64}
+{
+ *  SwapQDTextFlags()   *** DEPRECATED ***
+ *  
+>>>>>>> origin/cpstrnew
  *  Discussion:
  *    Use QDSwapTextFlags instead (in Quickdraw.h).
  *  
@@ -1831,9 +2305,13 @@ function SwapQDTextFlags( newFlags: UInt32 ): UInt32; external name '_SwapQDText
 end.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

@@ -58,6 +58,7 @@
      MAKEINTRESOURCE = pwidechar;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      
      ATOM = word;                     //windef
 =======
@@ -66,6 +67,10 @@
 =======
 	 ATOM = word;                     //windef
 >>>>>>> origin/fixes_2_2
+=======
+     
+     ATOM = word;                     //windef
+>>>>>>> origin/cpstrnew
      TAtom = ATOM;
 
      WINBOOL = longbool;
@@ -521,6 +526,7 @@ type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 type
      LOBYTE = byte;
 (*
@@ -538,6 +544,15 @@ type
   { argument types are unknown }
   function LOBYTE(w : longint) : BYTE;      //windef
 >>>>>>> origin/fixes_2_2
+=======
+type
+     LOBYTE = byte;
+(*
+  { was #define dname(params) def_expr }
+  { argument types are unknown }
+  function LOBYTE(w : longint) : BYTE;      //windef
+*)
+>>>>>>> origin/cpstrnew
 
   { was #define dname(params) def_expr }
   { argument types are unknown }
@@ -584,6 +599,7 @@ type
   { argument types are unknown }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   function MAKEINTATOM(i : longint) : LPTSTR; 
 =======
   function MAKEINTATOM(i : longint) : LPTSTR;
@@ -593,6 +609,9 @@ type
   function MAKEINTATOM(i : longint) : LPTSTR;
 
 >>>>>>> origin/fixes_2_2
+=======
+  function MAKEINTATOM(i : longint) : LPTSTR; 
+>>>>>>> origin/cpstrnew
 
   { was #define dname(params) def_expr }
   { argument types are unknown }
@@ -912,17 +931,22 @@ type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (*
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+(*
+>>>>>>> origin/cpstrnew
   { was #define dname(params) def_expr }
   { argument types are unknown }
   function LOBYTE(w : longint) : BYTE;
     begin
        LOBYTE:=BYTE(w);
     end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 *)
@@ -941,6 +965,13 @@ type
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+*)
+
+  { was #define dname(params) def_expr }
+  { argument types are unknown }
+  function LOWORD(l : longint) : WORD; inline;
+>>>>>>> origin/cpstrnew
     begin
        LOWORD:=WORD(l);
     end;
@@ -1006,6 +1037,7 @@ type
   { argument types are unknown }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   function MAKEINTATOM(i : longint) : LPTSTR; inline;
 =======
   function MAKEINTATOM(i : longint) : LPTSTR;
@@ -1013,10 +1045,14 @@ type
 =======
   function MAKEINTATOM(i : longint) : LPTSTR;
 >>>>>>> origin/fixes_2_2
+=======
+  function MAKEINTATOM(i : longint) : LPTSTR; inline;
+>>>>>>> origin/cpstrnew
     begin
        MAKEINTATOM:=LPTSTR(DWORD(WORD(i)));
     end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -1025,6 +1061,8 @@ type
 =======
 
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
   { was #define dname(params) def_expr }
   { argument types are unknown }
   { return type might be wrong }

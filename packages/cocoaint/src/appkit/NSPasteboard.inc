@@ -123,6 +123,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     _reserved: array[0..(3)-1] of Pointer;
 =======
         _reserved: array[0..2] of Pointer;
@@ -133,6 +134,9 @@ var
 =======
         _reserved: array[0..2] of Pointer;
 >>>>>>> graemeg/cpstrnew
+=======
+        _reserved: array[0..2] of Pointer;
+>>>>>>> origin/cpstrnew
 =======
         _reserved: array[0..2] of Pointer;
 >>>>>>> origin/cpstrnew

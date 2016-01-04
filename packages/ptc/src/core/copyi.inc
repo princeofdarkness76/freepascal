@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (C) 2001-2003, 2006, 2007, 2009-2011  Nikolay Nikolov (nickysn@users.sourceforge.net)
 =======
     Copyright (C) 2001-2003  Nikolay Nikolov (nickysn@users.sourceforge.net)
@@ -14,6 +15,9 @@
 =======
     Copyright (C) 2001-2003  Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
+=======
+    Copyright (C) 2001-2003  Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> origin/cpstrnew
 =======
     Copyright (C) 2001-2003  Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> origin/cpstrnew
@@ -67,6 +71,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TPTCCopy.Request(ASource, ADestination: IPTCFormat);
 var
   hermes_source_format, hermes_destination_format: PHermesFormat;
@@ -80,12 +85,15 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure TPTCCopy.Request(const ASource, ADestination: TPTCFormat);
 var
   hermes_source_format, hermes_destination_format: PHermesFormat;
 begin
   hermes_source_format := @ASource.FFormat;
   hermes_destination_format := @ADestination.FFormat;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -96,11 +104,14 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   if not Hermes_ConverterRequest(FHandle, hermes_source_format,
      hermes_destination_format) then
     raise TPTCError.Create('unsupported hermes pixel format conversion');
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -120,6 +131,8 @@ procedure TPTCCopy.Copy(const ASourcePixels: Pointer; ASourceX, ASourceY,
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure TPTCCopy.Palette(const ASource, ADestination: TPTCPalette);
 begin
   if not Hermes_ConverterPalette(FHandle, ASource.FHandle,
@@ -131,11 +144,14 @@ procedure TPTCCopy.copy(const ASourcePixels: Pointer; ASourceX, ASourceY,
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                    ASourceWidth, ASourceHeight, ASourcePitch: Integer;

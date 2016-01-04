@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { CoreGraphics - CGEventTypes.h
    Copyright (c) 2004-2008 Apple Inc.
    All rights reserved. }
@@ -42,6 +43,11 @@
    Copyright (c) 2004-2008 Apple Inc.
    All rights reserved. }
 >>>>>>> origin/fixes_2.4
+=======
+{ CoreGraphics - CGEventTypes.h
+   Copyright (c) 2004-2008 Apple Inc.
+   All rights reserved. }
+>>>>>>> origin/cpstrnew
 {       Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {
@@ -52,12 +58,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -69,6 +79,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -83,6 +94,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -98,6 +113,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -108,6 +124,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -115,13 +134,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -129,6 +152,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -137,8 +162,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -149,6 +177,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -169,6 +198,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -177,12 +208,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -190,6 +224,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -231,6 +266,9 @@ interface
 =======
 =======
 >>>>>>> origin/cpstrnew
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -241,8 +279,11 @@ interface
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
@@ -253,6 +294,7 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 {$elifc defined __ppc64__ and __ppc64__}
@@ -265,6 +307,8 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
@@ -277,6 +321,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -284,6 +329,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
@@ -294,18 +341,25 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -317,17 +371,26 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> origin/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elifc defined __arm64__ and __arm64__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -526,6 +589,17 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -554,6 +628,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -562,6 +637,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -575,6 +652,9 @@ uses MacTypes,MacOSXPosix,CGRemoteOperation,CGBase;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {$endc} {not MACOSALLINCLUDE}
 
 {$ALIGN POWER}
@@ -586,6 +666,7 @@ uses MacTypes,MacOSXPosix,CGRemoteOperation,CGBase;
    A typical event in Mac OS X originates when the user manipulates an input
    device such as a mouse or a keyboard. The device driver associated with
    that device, through the I/O Kit, creates a low-level event, puts it in
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -650,6 +731,8 @@ type
    A typical event in Mac OS X originates when the user manipulates an input
    device such as a mouse or a keyboard. The device driver associated with
    that device, through the I/O Kit, creates a low-level event, puts it in
+=======
+>>>>>>> origin/cpstrnew
    the window server’s event queue, and notifies the window server. The
    window server creates a Quartz event, annotates the event, and dispatches
    the event to the appropriate run-loop port of the target process. There
@@ -663,6 +746,7 @@ type
 
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
 	_CGMouseButton = SInt32;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -673,6 +757,11 @@ type
 
 { Constants that specify buttons on a one, two, or three-button mouse. }
 >>>>>>> origin/fixes_2.4
+=======
+	CGEventRef = ^SInt32; { an opaque type }
+
+{ Constants that specify buttons on a one, two, or three-button mouse. }
+>>>>>>> origin/cpstrnew
 const
 	kCGMouseButtonLeft = 0;
 	kCGMouseButtonRight = 1;
@@ -683,12 +772,16 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 { Constants that specify the unit of measurement for a scrolling event. }
 const
 	kCGScrollEventUnitPixel = 0;
 	kCGScrollEventUnitLine = 1;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -765,13 +858,19 @@ type
 >>>>>>> origin/fixes_2_2
 =======
 type
+=======
+type
+>>>>>>> origin/cpstrnew
 	CGScrollEventUnit = UInt32;
 
 { Constants that indicate the modifier key state at the time an event is
    created, as well as other event-related states.
 
    Any bits not specified are reserved for future use. }
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 (*
 Uncomment when IOKit is translated
 
@@ -791,6 +890,7 @@ const { Masks for the bits in event flags }
 	kCGEventFlagMaskAlternate = NX_ALTERNATEMASK;
 	kCGEventFlagMaskCommand = NX_COMMANDMASK;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -822,6 +922,9 @@ type
 =======
   { Special key identifiers. }
 >>>>>>> origin/fixes_2.4
+=======
+  { Special key identifiers. }
+>>>>>>> origin/cpstrnew
 	kCGEventFlagMaskHelp = NX_HELPMASK;
 	kCGEventFlagMaskSecondaryFn = NX_SECONDARYFNMASK;
 
@@ -835,6 +938,7 @@ type
 	CGEventFlags = UInt64;	    { Flags for events }
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {
  *
@@ -855,6 +959,9 @@ type
 =======
 { Constants that specify the different types of input events. }
 >>>>>>> origin/fixes_2.4
+=======
+{ Constants that specify the different types of input events. }
+>>>>>>> origin/cpstrnew
 
 { Event types }
 type
@@ -901,6 +1008,9 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 { Event timestamp; roughly, nanoseconds since startup. }
 type
 	CGEventTimestamp = UInt64;
@@ -969,8 +1079,11 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -979,6 +1092,7 @@ const
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
   { This field is not used. }
@@ -987,6 +1101,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   { Key to access a field that contains scrolling data. The scrolling data
@@ -1026,6 +1142,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     
   {  }
 	kCGScrollWheelEventScrollPhase = 99;
@@ -1043,10 +1160,14 @@ const
 =======
 
 >>>>>>> origin/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
   { Key to access an integer field that indicates whether the event should
      be ignored by the Inkwell subsystem. If the value is non-zero, the
      event should be ignored. }
 	kCGScrollWheelEventInstantMouser = 14;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 =======
@@ -1057,6 +1178,9 @@ const
 	kCGScrollWheelEventInstantMouser = 14;
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 =======
 
 >>>>>>> origin/cpstrnew
@@ -1104,6 +1228,7 @@ const
 
   { Key to access an integer field that contains a vendor-specified value. }
 	kCGTabletEventVendor1 = 25;
+<<<<<<< HEAD
 
   { Key to access an integer field that contains a vendor-specified value. }
 	kCGTabletEventVendor2 = 26;
@@ -1371,6 +1496,15 @@ const
   { Key to access an integer field that contains a vendor-specified value. }
 	kCGTabletEventVendor3 = 27;
 
+=======
+
+  { Key to access an integer field that contains a vendor-specified value. }
+	kCGTabletEventVendor2 = 26;
+
+  { Key to access an integer field that contains a vendor-specified value. }
+	kCGTabletEventVendor3 = 27;
+
+>>>>>>> origin/cpstrnew
   { Key to access an integer field that contains the vendor-defined ID,
      typically the USB vendor ID. }
 	kCGTabletProximityEventVendorID = 28;
@@ -1450,6 +1584,7 @@ type
 	CGEventField = UInt32;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 { Values used with the kCGMouseEventSubtype }
 type
 	_CGEventMouseSubtype = SInt32;
@@ -1460,6 +1595,9 @@ type
 =======
 { Constants used with the `kCGMouseEventSubtype' event field. }
 >>>>>>> origin/fixes_2.4
+=======
+{ Constants used with the `kCGMouseEventSubtype' event field. }
+>>>>>>> origin/cpstrnew
 const
 	kCGEventMouseSubtypeDefault = 0;
 	kCGEventMouseSubtypeTabletPoint = 1;
@@ -1467,6 +1605,7 @@ const
 type
 	CGEventMouseSubtype = UInt32;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1520,6 +1659,9 @@ type
 =======
 { Constants that specify possible tapping points for events. }
 >>>>>>> origin/fixes_2.4
+=======
+{ Constants that specify possible tapping points for events. }
+>>>>>>> origin/cpstrnew
 const
 	kCGHIDEventTap = 0;
 	kCGSessionEventTap = 1;
@@ -1530,6 +1672,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { Constants that specify where a new event tap is inserted into the list of
    active event taps. }
 =======
@@ -1544,6 +1687,10 @@ type
 { Constants that specify where a new event tap is inserted into the list of
    active event taps. }
 >>>>>>> origin/fixes_2.4
+=======
+{ Constants that specify where a new event tap is inserted into the list of
+   active event taps. }
+>>>>>>> origin/cpstrnew
 const
 	kCGHeadInsertEventTap = 0;
 	kCGTailAppendEventTap = 1;
@@ -1553,6 +1700,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { Constants that specify whether a new event tap is an active filter or a
    passive listener. }
 const
@@ -1573,6 +1721,12 @@ const
 const
 	kCGEventTapOptionDefault = $00000000;
 >>>>>>> origin/fixes_2.4
+=======
+{ Constants that specify whether a new event tap is an active filter or a
+   passive listener. }
+const
+	kCGEventTapOptionDefault = $00000000;
+>>>>>>> origin/cpstrnew
 	kCGEventTapOptionListenOnly = $00000001;
 type
 	CGEventTapOptions = UInt32;
@@ -1580,6 +1734,9 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 { A mask that identifies the set of Quartz events to be observed in an
    event tap. }
 type
@@ -1590,6 +1747,7 @@ Generate an event mask for a single type of event.
 
 An event mask that represents all event types.
 #define kCGEventMaskForAllEvents	(~(CGEventMask)0)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1780,6 +1938,37 @@ type
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+}
+
+
+{ An opaque type that represents state within the client application that’s
+   associated with an event tap. }
+type
+	CGEventTapProxy = ^SInt32; { an opaque type }
+
+{ A client-supplied callback function that’s invoked whenever an associated
+   event tap receives a Quartz event.
+
+   The callback is passed a proxy for the tap, the event type, the incoming
+   event, and the user-defined data specified when the event tap was
+   created. The function should return the (possibly modified) passed-in
+   event, a newly constructed event, or NULL if the event is to be deleted.
+
+   The event passed to the callback is retained by the calling code, and is
+   released after the callback returns and the data is passed back to the
+   event system. If a different event is returned by the callback function,
+   then that event will be released by the calling code along with the
+   original event, after the event data has been passed back to the event
+   system. }
+
+type
+	CGEventTapCallBack = function( proxy: CGEventTapProxy; typ: CGEventType; event: CGEventRef; userInfo: UnivPtr ): CGEventRef;
+
+{ When an event tap is installed or released, a notification is posted. See
+   notify(3) and notify.h for details. }
+
+>>>>>>> origin/cpstrnew
 const
 	kCGNotifyEventTapAdded = 'com.apple.coregraphics.eventTapAdded';
 const
@@ -1807,12 +1996,16 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 		options: CGEventTapOptions;		{ Listener, filter }
 {$ifc TARGET_CPU_64}
     __alignment_dummy: UInt32;
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 		options: CGEventTapOptions;		{ Listener, Filter }
@@ -1822,6 +2015,8 @@ type
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 		eventsOfInterest: CGEventMask;	{ Mask of events being tapped }
 		tappingProcess: pid_t;		{ Process that is tapping events }
 		processBeingTapped: pid_t;	{ Zero if not a per-process tap }
@@ -1835,6 +2030,7 @@ type
 	__CGEventTapInformation = CGEventTapInformation;
 
 { An opaque type that represents the source of a Quartz event. }
+<<<<<<< HEAD
 type
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1871,10 +2067,14 @@ type
 
 { An opaque type that represents the source of a Quartz event. }
 type
+=======
+type
+>>>>>>> origin/cpstrnew
 	CGEventSourceRef = ^SInt32; { an opaque type }
 
 type
 	CGEventSourceStateID = UInt32;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -1883,6 +2083,9 @@ type
 =======
 { Constants that specify the possible source states of an event source. }
 >>>>>>> origin/fixes_2.4
+=======
+{ Constants that specify the possible source states of an event source. }
+>>>>>>> origin/cpstrnew
 const
 	kCGEventSourceStatePrivate = -1;
 	kCGEventSourceStateCombinedSessionState = 0;
@@ -1926,6 +2129,10 @@ end.
 >>>>>>> origin/fixes_2_2
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/cpstrnew
 { A code that represents the type of keyboard used with a specified event
    source. }
 type
@@ -1940,9 +2147,13 @@ const
 end.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

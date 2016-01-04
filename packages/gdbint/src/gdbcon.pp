@@ -23,6 +23,7 @@ type
     progname,
     progdir,
     progargs   : pchar;
+    start_break_number,
     in_command,
     init_count : longint;
     constructor Init;
@@ -243,6 +244,7 @@ end;
 procedure TGDBController.StartTrace;
 begin
   Command('tbreak PASCALMAIN');
+  start_break_number:=last_breakpoint_number;
   Run;
 end;
 
@@ -326,7 +328,7 @@ var p : pchar;
 begin
   p:=gdberrorbuf.buf;
   if (p^=#0) and got_error then
-    GetError:=pchar(longint(gdboutputbuf.buf)+gdboutputbuf.idx)
+    GetError:=pchar(ptrint(gdboutputbuf.buf)+gdboutputbuf.idx)
   else
     GetError:=p;
 end;

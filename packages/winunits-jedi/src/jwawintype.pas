@@ -1144,6 +1144,9 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   INT_PTR = PtrInt;
   {$EXTERNALSYM INT_PTR}
   PINT_PTR = ^INT_PTR;

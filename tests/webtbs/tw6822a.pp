@@ -12,6 +12,9 @@ library tw6822a;
 uses
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   popuperr,
   uw6822a;
 

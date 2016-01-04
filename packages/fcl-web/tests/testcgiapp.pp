@@ -119,6 +119,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     If (Method<>'POST') and (Method<>'GET') then
       Raise Exception.CreateFmt(SerrUnsupportedMethod,['METHOD']);
@@ -131,6 +132,10 @@ begin
     If (Method<>'POST') and (Method<>'GET') then
       Raise Exception.CreateFmt(SerrUnsupportedMethod,['METHOD']);
 >>>>>>> graemeg/cpstrnew
+=======
+    If (Method<>'POST') and (Method<>'GET') then
+      Raise Exception.CreateFmt(SerrUnsupportedMethod,['METHOD']);
+>>>>>>> origin/cpstrnew
 =======
     If (Method<>'POST') and (Method<>'GET') then
       Raise Exception.CreateFmt(SerrUnsupportedMethod,['METHOD']);

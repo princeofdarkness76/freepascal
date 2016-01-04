@@ -16,13 +16,14 @@
 >>>>>>> graemeg/fixes_2_2
 =======
 { %skiptarget=win32,win64,wince }
-{ This test is only usefull if the local codepage is utf-8 which
+{ This test is only useful if the local codepage is utf-8 which
   usually not the case on windows
 >>>>>>> origin/fixes_2_2
 }
 {$codepage utf-8}
 
 {$mode objfpc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -34,21 +35,29 @@ uses
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+
+>>>>>>> origin/cpstrnew
 uses
 {$ifdef unix}
   cwstring,
 {$endif}
+<<<<<<< HEAD
   sysutils;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  SysUtils;
+>>>>>>> origin/cpstrnew
 
 {$i+}
 
 var
   t: text;
   w: widestring;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   u: unicodestring;
@@ -60,6 +69,11 @@ var
 =======
   a: ansistring;
 >>>>>>> origin/fixes_2_2
+=======
+  u: unicodestring;
+  a: ansistring;
+  wc: widechar;
+>>>>>>> origin/cpstrnew
 
 begin
   assign(t,'twide3.txt');
@@ -69,6 +83,9 @@ begin
   reset(t);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   
   try
     read(t,wc);
@@ -81,16 +98,22 @@ begin
   end;
     
   reset(t);
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
   try
     readln(t,a);
     w:=a;
     if (w<>'łóżka') then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
       raise Exception.create('wrong ansistring read');
   except
     close(t);
@@ -114,18 +137,24 @@ begin
     readln(t,u);
     if (u<>'łóżka') then
       raise Exception.create('wrong unicodestring read');
+<<<<<<< HEAD
 =======
       raise Exception.create('wrong string read');
 >>>>>>> graemeg/fixes_2_2
 =======
       raise Exception.create('wrong string read');
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
   finally
     close(t);
     erase(t);
   end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 
   readstr(u,a);
   if u<>a then
@@ -133,8 +162,11 @@ begin
   readstr(w,a);
   if w<>u then
     raise Exception.create('wrong readstr(w,a)');
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 end.

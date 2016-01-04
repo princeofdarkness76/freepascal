@@ -149,6 +149,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                (tunarynode(n).left.resultdef.size<>tunarynode(n).resultdef.size) then
 =======
                (tsubscriptnode(n).left.resultdef.size <> tunarynode(n).resultdef.size) then
@@ -159,6 +160,9 @@ implementation
 =======
                (tsubscriptnode(n).left.resultdef.size <> tunarynode(n).resultdef.size) then
 >>>>>>> graemeg/cpstrnew
+=======
+               (tsubscriptnode(n).left.resultdef.size <> tunarynode(n).resultdef.size) then
+>>>>>>> origin/cpstrnew
 =======
                (tsubscriptnode(n).left.resultdef.size <> tunarynode(n).resultdef.size) then
 >>>>>>> origin/cpstrnew
@@ -646,6 +650,7 @@ implementation
                            tobjectdef(procdef.struct).register_vmt_call(procdef.extnumber);
             {$ifdef vtentry}
                          if not is_interface(procdef.struct) then
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -656,6 +661,8 @@ implementation
                          LOC_CREGISTER,
                          LOC_REGISTER:
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
                            begin
                              inc(current_asmdata.NextVTEntryNr);
                              current_asmdata.CurrAsmList.Concat(tai_symbol.CreateName('VTREF'+tostr(current_asmdata.NextVTEntryNr)+'_'+procdef._class.vmt_mangledname+'$$'+tostr(vmtoffset div sizeof(pint)),AT_FUNCTION,0));
@@ -861,6 +868,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             (node_complexity(right)>node_complexity(left)) then
          begin
            secondpass(right);
@@ -871,12 +879,15 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
            (is_managed_type(right.resultdef) or
             (node_complexity(right)>node_complexity(left))) then
          begin
            secondpass(right);
            { increment source reference counter, this is
              useless for constants }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
            if is_managed_type(right.resultdef) and
@@ -886,6 +897,9 @@ implementation
 =======
            if (right.resultdef.needs_inittable) and
 >>>>>>> origin/fixes_2_2
+=======
+           if is_managed_type(right.resultdef) and
+>>>>>>> origin/cpstrnew
               not is_constnode(right) then
             begin
               location_force_mem(current_asmdata.CurrAsmList,right.location);
@@ -1200,12 +1214,17 @@ implementation
                            not use_vectorfpu(right.resultdef) then
 =======
 {$ifdef x86}
+<<<<<<< HEAD
                         if not use_sse(right.resultdef) then
 >>>>>>> graemeg/fixes_2_2
 =======
 {$ifdef x86}
                         if not use_sse(right.resultdef) then
 >>>>>>> origin/fixes_2_2
+=======
+                        if (right.resultdef.typ=floatdef) and
+                           not use_vectorfpu(right.resultdef) then
+>>>>>>> origin/cpstrnew
                           begin
                             { perform size conversion if needed (the mm-code cannot }
                             { convert an extended into a double/single, since sse   }
@@ -1292,6 +1311,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                           hlcg.a_loadmm_reg_reg(current_asmdata.CurrAsmList,right.resultdef,left.resultdef,right.location.register,left.location.register,mms_movescalar);
                         LOC_REFERENCE,
                         LOC_CREFERENCE:
@@ -1303,6 +1323,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                           cg.a_loadmm_reg_reg(current_asmdata.CurrAsmList,right.location.size,left.location.size,right.location.register,left.location.register,mms_movescalar);
                         LOC_REFERENCE,
                         LOC_CREFERENCE:
@@ -1310,11 +1332,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                         else
@@ -1338,11 +1363,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                   { also OS_F64 in case of mmreg -> intreg }
@@ -1377,11 +1405,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                       if not use_vectorfpu(right.resultdef) then
@@ -1587,6 +1618,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
     procedure tcgarrayconstructornode.makearrayref(var ref: treference; eledef: tdef);
@@ -1606,6 +1638,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -1851,6 +1885,12 @@ implementation
                          begin
                            vtype:=vtUnicodeString;
                            varfield:=tfieldvarsym(search_struct_member_no_helper(trecorddef(eledef),'VUNICODESTRING'));
+                           freetemp:=false;
+                         end
+                       else
+                        if is_unicodestring(lt) then
+                         begin
+                           vtype:=vtUnicodeString;
                            freetemp:=false;
                          end
                        else

@@ -302,6 +302,7 @@ PROCEDURE SetTime (Hour, Minute, Second, Sec100: Word);
    {$ENDIF}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    {$IFDEF BIT_32_OR_MORE}                            { 32 BIT WINDOWS CODE }
    VAR DT: TSystemTime;
    BEGIN
@@ -313,16 +314,23 @@ PROCEDURE SetTime (Hour, Minute, Second, Sec100: Word);
 =======
 >>>>>>> origin/fixes_2_2
    {$IFDEF BIT_32}                                    { 32 BIT WINDOWS CODE }
+=======
+   {$IFDEF BIT_32_OR_MORE}                            { 32 BIT WINDOWS CODE }
+>>>>>>> origin/cpstrnew
    VAR DT: TSystemTime;
    BEGIN
      {$IFDEF PPC_FPC}                                 { FPC WINDOWS COMPILER }
-     GetLocalTime(@DT);                              { Get the date/time }
+     GetLocalTime(@DT);                               { Get the date/time }
      {$ELSE}                                          { OTHER COMPILERS }
+<<<<<<< HEAD
      GetLocalTime(DT);                               { Get the date/time }
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+     GetLocalTime(DT);                                { Get the date/time }
+>>>>>>> origin/cpstrnew
      {$ENDIF}
      DT.wHour := Hour;                                { Transfer hour }
      DT.wMinute := Minute;                            { Transfer minute }
@@ -449,6 +457,7 @@ PROCEDURE GetTime (Var Hour, Minute, Second, Sec100: Word);
    {$ENDIF}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    {$IFDEF BIT_32_OR_MORE}                            { 32 BIT WINDOWS CODE }
 =======
    {$IFDEF BIT_32}                                    { 32 BIT WINDOWS CODE }
@@ -456,6 +465,9 @@ PROCEDURE GetTime (Var Hour, Minute, Second, Sec100: Word);
 =======
    {$IFDEF BIT_32}                                    { 32 BIT WINDOWS CODE }
 >>>>>>> origin/fixes_2_2
+=======
+   {$IFDEF BIT_32_OR_MORE}                            { 32 BIT WINDOWS CODE }
+>>>>>>> origin/cpstrnew
    VAR DT: TSystemTime;
    BEGIN
      {$IFDEF PPC_FPC}                                 { FPC WINDOWS COMPILER }

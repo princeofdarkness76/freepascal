@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       IconsCore.h
  
      Contains:   Icon Utilities and Icon Services Interfaces.
@@ -18,6 +19,8 @@
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
      File:       LaunchServices/IconsCore.h
  
      Contains:   Icon Utilities and Icon Services Interfaces.
@@ -25,6 +28,7 @@
      Version:    LaunchServices-360.3~1
  
      Copyright:  © 1990-2008 by Apple Computer, Inc. All rights reserved
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -38,10 +42,13 @@
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -58,10 +65,13 @@
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
                      http://www.freepascal.org/bugs.html
  
 }
 {       Initial Pascal Translation:  Gorazd Krosl, <gorazd_1957@yahoo.ca>, October 2009 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -75,6 +85,8 @@
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -134,6 +146,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
@@ -149,6 +162,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -172,6 +187,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -202,6 +218,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/fixes_2.4
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
@@ -213,6 +234,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -243,6 +265,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/fixes_2.4
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -254,6 +281,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -265,6 +293,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -274,6 +304,7 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -290,6 +321,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -301,6 +334,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -337,6 +371,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/fixes_2.4
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -348,15 +387,19 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
@@ -403,6 +446,10 @@ interface
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 >>>>>>> origin/fixes_2.4
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> origin/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -546,6 +593,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { IconRefs identify cached icon data. IconRef 0 is invalid.}
 type
 	IconRef = ^OpaqueIconRef; { an opaque type }
@@ -575,6 +623,11 @@ type
 type
 	IconRef = ^SInt32; { an opaque type }
 >>>>>>> origin/fixes_2.4
+=======
+{ IconRefs are 32-bit values identifying cached icon data. IconRef 0 is invalid.}
+type
+	IconRef = ^SInt32; { an opaque type }
+>>>>>>> origin/cpstrnew
 	IconRef_fix = IconRef;	{ used as a type identifiers in records containing iconRef field }
 	IconRefPtr = ^IconRef;
 {
@@ -865,6 +918,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
@@ -881,10 +935,14 @@ const
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in IconServicesLib 8.5 and later
  }
 function GetIconRefOwners( theIconRef: IconRef; var owners: UInt16 ): OSErr; external name '_GetIconRefOwners';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -906,6 +964,9 @@ function GetIconRefOwners( theIconRef: IconRef; var owners: UInt16 ): OSErr; ext
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -925,6 +986,7 @@ function GetIconRefOwners( theIconRef: IconRef; var owners: UInt16 ): OSErr; ext
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
@@ -941,10 +1003,14 @@ function GetIconRefOwners( theIconRef: IconRef; var owners: UInt16 ): OSErr; ext
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in IconServicesLib 8.5 and later
  }
 function AcquireIconRef( theIconRef: IconRef ): OSErr; external name '_AcquireIconRef';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -966,6 +1032,9 @@ function AcquireIconRef( theIconRef: IconRef ): OSErr; external name '_AcquireIc
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -989,6 +1058,7 @@ function AcquireIconRef( theIconRef: IconRef ): OSErr; external name '_AcquireIc
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
@@ -1005,10 +1075,14 @@ function AcquireIconRef( theIconRef: IconRef ): OSErr; external name '_AcquireIc
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in IconServicesLib 8.5 and later
  }
 function ReleaseIconRef( theIconRef: IconRef ): OSErr; external name '_ReleaseIconRef';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1030,6 +1104,9 @@ function ReleaseIconRef( theIconRef: IconRef ): OSErr; external name '_ReleaseIc
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1069,6 +1146,7 @@ function ReleaseIconRef( theIconRef: IconRef ): OSErr; external name '_ReleaseIc
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
@@ -1085,10 +1163,14 @@ function ReleaseIconRef( theIconRef: IconRef ): OSErr; external name '_ReleaseIc
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in IconServicesLib 8.5 and later
  }
 function GetIconRefFromFile( const (*var*) theFile: FSSpec; var theIconRef: IconRef; var theLabel: SInt16 ): OSErr; external name '_GetIconRefFromFile';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1110,6 +1192,9 @@ function GetIconRefFromFile( const (*var*) theFile: FSSpec; var theIconRef: Icon
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> origin/cpstrnew
 
 {$endc}	{ not TARGET_CPU_64 }
 
@@ -1138,6 +1223,7 @@ function GetIconRefFromFile( const (*var*) theFile: FSSpec; var theIconRef: Icon
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
@@ -1154,10 +1240,14 @@ function GetIconRefFromFile( const (*var*) theFile: FSSpec; var theIconRef: Icon
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in IconServicesLib 8.5 and later
  }
 function GetIconRef( vRefNum: SInt16; creator: OSType; iconType: OSType; var theIconRef: IconRef ): OSErr; external name '_GetIconRef';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1179,6 +1269,9 @@ function GetIconRef( vRefNum: SInt16; creator: OSType; iconType: OSType; var the
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1205,6 +1298,7 @@ function GetIconRef( vRefNum: SInt16; creator: OSType; iconType: OSType; var the
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
@@ -1221,10 +1315,14 @@ function GetIconRef( vRefNum: SInt16; creator: OSType; iconType: OSType; var the
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in IconServicesLib 8.5 and later
  }
 function GetIconRefFromFolder( vRefNum: SInt16; parentFolderID: SInt32; folderID: SInt32; attributes: SInt8; accessPrivileges: SInt8; var theIconRef: IconRef ): OSErr; external name '_GetIconRefFromFolder';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1246,6 +1344,9 @@ function GetIconRefFromFolder( vRefNum: SInt16; parentFolderID: SInt32; folderID
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 { GetIconRefFromFileInfo}
@@ -1299,6 +1400,7 @@ function GetIconRefFromFolder( vRefNum: SInt16; parentFolderID: SInt32; folderID
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.1 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework
@@ -1315,10 +1417,14 @@ function GetIconRefFromFolder( vRefNum: SInt16; parentFolderID: SInt32; folderID
 =======
  *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.1 and later
  *    Non-Carbon CFM:   not available
  }
 function GetIconRefFromFileInfo( const (*var*) inRef: FSRef; inFileNameLength: UniCharCount; {const} inFileName: UniCharPtr { can be NULL }; inWhichInfo: FSCatalogInfoBitmap; {const} inCatalogInfo: FSCatalogInfoPtr { can be NULL }; inUsageFlags: IconServicesUsageFlags; var outIconRef: IconRef; outLabel: SInt16Ptr { can be NULL } ): OSStatus; external name '_GetIconRefFromFileInfo';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1340,6 +1446,9 @@ function GetIconRefFromFileInfo( const (*var*) inRef: FSRef; inFileNameLength: U
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 { GetIconRefFromTypeInfo}
@@ -1387,6 +1496,7 @@ function GetIconRefFromFileInfo( const (*var*) inRef: FSRef; inFileNameLength: U
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.3 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.3 and later in ApplicationServices.framework
@@ -1403,10 +1513,14 @@ function GetIconRefFromFileInfo( const (*var*) inRef: FSRef; inFileNameLength: U
 =======
  *    Mac OS X:         in version 10.3 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.3 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.3 and later
  *    Non-Carbon CFM:   not available
  }
 function GetIconRefFromTypeInfo( inCreator: OSType; inType: OSType; inExtension: CFStringRef; inMIMEType: CFStringRef; inUsageFlags: IconServicesUsageFlags; var outIconRef: IconRef ): OSErr; external name '_GetIconRefFromTypeInfo';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1428,6 +1542,9 @@ function GetIconRefFromTypeInfo( inCreator: OSType; inType: OSType; inExtension:
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 { GetIconRefFromIconFamilyPtr}
@@ -1460,6 +1577,7 @@ function GetIconRefFromTypeInfo( inCreator: OSType; inType: OSType; inExtension:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.3 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.3 and later in ApplicationServices.framework
@@ -1476,10 +1594,14 @@ function GetIconRefFromTypeInfo( inCreator: OSType; inType: OSType; inExtension:
 =======
  *    Mac OS X:         in version 10.3 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.3 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.3 and later
  *    Non-Carbon CFM:   not available
  }
 function GetIconRefFromIconFamilyPtr( const (*var*) inIconFamilyPtr: IconFamilyResource; inSize: Size; var outIconRef: IconRef ): OSStatus; external name '_GetIconRefFromIconFamilyPtr';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1501,6 +1623,9 @@ function GetIconRefFromIconFamilyPtr( const (*var*) inIconFamilyPtr: IconFamilyR
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 { GetIconRefFromComponent}
@@ -1532,6 +1657,7 @@ function GetIconRefFromIconFamilyPtr( const (*var*) inIconFamilyPtr: IconFamilyR
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
@@ -1548,10 +1674,14 @@ function GetIconRefFromIconFamilyPtr( const (*var*) inIconFamilyPtr: IconFamilyR
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.5 and later
  *    Non-Carbon CFM:   not available
  }
 function GetIconRefFromComponent( inComponent: Component; var outIconRef: IconRef ): OSStatus; external name '_GetIconRefFromComponent';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1573,6 +1703,9 @@ function GetIconRefFromComponent( inComponent: Component; var outIconRef: IconRe
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1606,6 +1739,7 @@ function GetIconRefFromComponent( inComponent: Component; var outIconRef: IconRe
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
@@ -1622,10 +1756,14 @@ function GetIconRefFromComponent( inComponent: Component; var outIconRef: IconRe
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in IconServicesLib 8.5 and later
  }
 function RegisterIconRefFromIconFamily( creator: OSType; iconType: OSType; iconFamily: IconFamilyHandle; var theIconRef: IconRef ): OSErr; external name '_RegisterIconRefFromIconFamily';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1647,6 +1785,9 @@ function RegisterIconRefFromIconFamily( creator: OSType; iconType: OSType; iconF
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1673,6 +1814,7 @@ function RegisterIconRefFromIconFamily( creator: OSType; iconType: OSType; iconF
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
@@ -1689,10 +1831,14 @@ function RegisterIconRefFromIconFamily( creator: OSType; iconType: OSType; iconF
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in IconServicesLib 8.5 and later
  }
 function RegisterIconRefFromResource( creator: OSType; iconType: OSType; const (*var*) resourceFile: FSSpec; resourceID: SInt16; var theIconRef: IconRef ): OSErr; external name '_RegisterIconRefFromResource';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1714,6 +1860,9 @@ function RegisterIconRefFromResource( creator: OSType; iconType: OSType; const (
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> origin/cpstrnew
 
 {$endc}	{ not TARGET_CPU_64 }
 
@@ -1749,6 +1898,7 @@ function RegisterIconRefFromResource( creator: OSType; iconType: OSType; const (
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.1 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework
@@ -1765,10 +1915,14 @@ function RegisterIconRefFromResource( creator: OSType; iconType: OSType; const (
 =======
  *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.1 and later
  *    Non-Carbon CFM:   not available
  }
 function RegisterIconRefFromFSRef( creator: OSType; iconType: OSType; const (*var*) iconFile: FSRef; var theIconRef: IconRef ): OSStatus; external name '_RegisterIconRefFromFSRef';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1790,6 +1944,9 @@ function RegisterIconRefFromFSRef( creator: OSType; iconType: OSType; const (*va
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1812,6 +1969,7 @@ function RegisterIconRefFromFSRef( creator: OSType; iconType: OSType; const (*va
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
@@ -1828,10 +1986,14 @@ function RegisterIconRefFromFSRef( creator: OSType; iconType: OSType; const (*va
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in IconServicesLib 8.5 and later
  }
 function UnregisterIconRef( creator: OSType; iconType: OSType ): OSErr; external name '_UnregisterIconRef';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1853,6 +2015,9 @@ function UnregisterIconRef( creator: OSType; iconType: OSType ): OSErr; external
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1879,6 +2044,7 @@ function UnregisterIconRef( creator: OSType; iconType: OSType ): OSErr; external
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
@@ -1895,10 +2061,14 @@ function UnregisterIconRef( creator: OSType; iconType: OSType ): OSErr; external
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in IconServicesLib 8.5 and later
  }
 function UpdateIconRef( theIconRef: IconRef ): OSErr; external name '_UpdateIconRef';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1920,6 +2090,9 @@ function UpdateIconRef( theIconRef: IconRef ): OSErr; external name '_UpdateIcon
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1942,6 +2115,7 @@ function UpdateIconRef( theIconRef: IconRef ): OSErr; external name '_UpdateIcon
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
@@ -1958,10 +2132,14 @@ function UpdateIconRef( theIconRef: IconRef ): OSErr; external name '_UpdateIcon
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in IconServicesLib 8.5 and later
  }
 function OverrideIconRefFromResource( theIconRef: IconRef; const (*var*) resourceFile: FSSpec; resourceID: SInt16 ): OSErr; external name '_OverrideIconRefFromResource';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1983,6 +2161,9 @@ function OverrideIconRefFromResource( theIconRef: IconRef; const (*var*) resourc
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> origin/cpstrnew
 
 {$endc}	{ not TARGET_CPU_64 }
 
@@ -2005,6 +2186,7 @@ function OverrideIconRefFromResource( theIconRef: IconRef; const (*var*) resourc
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
@@ -2021,10 +2203,14 @@ function OverrideIconRefFromResource( theIconRef: IconRef; const (*var*) resourc
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in IconServicesLib 8.5 and later
  }
 function OverrideIconRef( oldIconRef: IconRef; newIconRef: IconRef ): OSErr; external name '_OverrideIconRef';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2046,6 +2232,9 @@ function OverrideIconRef( oldIconRef: IconRef; newIconRef: IconRef ): OSErr; ext
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2066,6 +2255,7 @@ function OverrideIconRef( oldIconRef: IconRef; newIconRef: IconRef ): OSErr; ext
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
@@ -2082,10 +2272,14 @@ function OverrideIconRef( oldIconRef: IconRef; newIconRef: IconRef ): OSErr; ext
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in IconServicesLib 8.5 and later
  }
 function RemoveIconRefOverride( theIconRef: IconRef ): OSErr; external name '_RemoveIconRefOverride';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2107,6 +2301,9 @@ function RemoveIconRefOverride( theIconRef: IconRef ): OSErr; external name '_Re
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2134,6 +2331,7 @@ function RemoveIconRefOverride( theIconRef: IconRef ): OSErr; external name '_Re
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
@@ -2150,10 +2348,14 @@ function RemoveIconRefOverride( theIconRef: IconRef ): OSErr; external name '_Re
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in IconServicesLib 8.5 and later
  }
 function CompositeIconRef( backgroundIconRef: IconRef; foregroundIconRef: IconRef; var compositeIconRef: IconRef ): OSErr; external name '_CompositeIconRef';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2175,6 +2377,9 @@ function CompositeIconRef( backgroundIconRef: IconRef; foregroundIconRef: IconRe
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2195,6 +2400,7 @@ function CompositeIconRef( backgroundIconRef: IconRef; foregroundIconRef: IconRe
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
@@ -2211,10 +2417,14 @@ function CompositeIconRef( backgroundIconRef: IconRef; foregroundIconRef: IconRe
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in IconServicesLib 8.5 and later
  }
 function IsIconRefComposite( compositeIconRef: IconRef; var backgroundIconRef: IconRef; var foregroundIconRef: IconRef ): OSErr; external name '_IsIconRefComposite';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2236,6 +2446,9 @@ function IsIconRefComposite( compositeIconRef: IconRef; var backgroundIconRef: I
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2261,6 +2474,7 @@ function IsIconRefComposite( compositeIconRef: IconRef; var backgroundIconRef: I
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
@@ -2277,10 +2491,14 @@ function IsIconRefComposite( compositeIconRef: IconRef; var backgroundIconRef: I
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in IconServicesLib 8.5 and later
  }
 function IsValidIconRef( theIconRef: IconRef ): Boolean; external name '_IsValidIconRef';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2302,6 +2520,9 @@ function IsValidIconRef( theIconRef: IconRef ): Boolean; external name '_IsValid
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 { IsDataAvailableInIconRef}
@@ -2332,6 +2553,7 @@ function IsValidIconRef( theIconRef: IconRef ): Boolean; external name '_IsValid
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.3 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.3 and later in ApplicationServices.framework
@@ -2348,10 +2570,14 @@ function IsValidIconRef( theIconRef: IconRef ): Boolean; external name '_IsValid
 =======
  *    Mac OS X:         in version 10.3 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.3 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.3 and later
  *    Non-Carbon CFM:   not available
  }
 function IsDataAvailableInIconRef( inIconKind: OSType; inIconRef: IconRef ): Boolean; external name '_IsDataAvailableInIconRef';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2373,6 +2599,9 @@ function IsDataAvailableInIconRef( inIconKind: OSType; inIconRef: IconRef ): Boo
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2403,6 +2632,7 @@ function IsDataAvailableInIconRef( inIconKind: OSType; inIconRef: IconRef ): Boo
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.3
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.3
@@ -2419,10 +2649,14 @@ function IsDataAvailableInIconRef( inIconKind: OSType; inIconRef: IconRef ): Boo
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.3
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.3
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in IconServicesLib 8.5 and later
  }
 function FlushIconRefs( creator: OSType; iconType: OSType ): OSErr; external name '_FlushIconRefs';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2444,6 +2678,9 @@ function FlushIconRefs( creator: OSType; iconType: OSType ): OSErr; external nam
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2466,6 +2703,7 @@ function FlushIconRefs( creator: OSType; iconType: OSType ): OSErr; external nam
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.3
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.3
@@ -2482,10 +2720,14 @@ function FlushIconRefs( creator: OSType; iconType: OSType ): OSErr; external nam
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.3
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.3
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in IconServicesLib 8.5 and later
  }
 function FlushIconRefsByVolume( vRefNum: SInt16 ): OSErr; external name '_FlushIconRefsByVolume';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2507,6 +2749,9 @@ function FlushIconRefsByVolume( vRefNum: SInt16 ): OSErr; external name '_FlushI
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+>>>>>>> origin/cpstrnew
 
 {$endc}	{ not TARGET_CPU_64 }
 
@@ -2536,6 +2781,7 @@ function FlushIconRefsByVolume( vRefNum: SInt16 ): OSErr; external name '_FlushI
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
@@ -2552,10 +2798,14 @@ function FlushIconRefsByVolume( vRefNum: SInt16 ): OSErr; external name '_FlushI
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in IconServicesLib 8.5 and later
  }
 function SetCustomIconsEnabled( vRefNum: SInt16; enableCustomIcons: Boolean ): OSErr; external name '_SetCustomIconsEnabled';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2577,6 +2827,9 @@ function SetCustomIconsEnabled( vRefNum: SInt16; enableCustomIcons: Boolean ): O
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2597,6 +2850,7 @@ function SetCustomIconsEnabled( vRefNum: SInt16; enableCustomIcons: Boolean ): O
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
@@ -2613,10 +2867,14 @@ function SetCustomIconsEnabled( vRefNum: SInt16; enableCustomIcons: Boolean ): O
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in IconServicesLib 8.5 and later
  }
 function GetCustomIconsEnabled( vRefNum: SInt16; var customIconsEnabled: Boolean ): OSErr; external name '_GetCustomIconsEnabled';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2638,6 +2896,9 @@ function GetCustomIconsEnabled( vRefNum: SInt16; var customIconsEnabled: Boolean
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2672,6 +2933,7 @@ function GetCustomIconsEnabled( vRefNum: SInt16; var customIconsEnabled: Boolean
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
@@ -2688,10 +2950,14 @@ function GetCustomIconsEnabled( vRefNum: SInt16; var customIconsEnabled: Boolean
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in IconServicesLib 9.0 and later
  }
 function RegisterIconRefFromIconFile( creator: OSType; iconType: OSType; const (*var*) iconFile: FSSpec; var theIconRef: IconRef ): OSErr; external name '_RegisterIconRefFromIconFile';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2713,6 +2979,9 @@ function RegisterIconRefFromIconFile( creator: OSType; iconType: OSType; const (
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2733,6 +3002,7 @@ function RegisterIconRefFromIconFile( creator: OSType; iconType: OSType; const (
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
@@ -2749,10 +3019,14 @@ function RegisterIconRefFromIconFile( creator: OSType; iconType: OSType; const (
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in IconServicesLib 9.0 and later
  }
 function ReadIconFile( const (*var*) iconFile: FSSpec; var iconFamily: IconFamilyHandle ): OSErr; external name '_ReadIconFile';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2774,6 +3048,9 @@ function ReadIconFile( const (*var*) iconFile: FSSpec; var iconFamily: IconFamil
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2793,6 +3070,7 @@ function ReadIconFile( const (*var*) iconFile: FSSpec; var iconFamily: IconFamil
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
@@ -2809,10 +3087,14 @@ function ReadIconFile( const (*var*) iconFile: FSSpec; var iconFamily: IconFamil
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in IconServicesLib 9.0 and later
  }
 function WriteIconFile( iconFamily: IconFamilyHandle; const (*var*) iconFile: FSSpec ): OSErr; external name '_WriteIconFile';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2834,6 +3116,9 @@ function WriteIconFile( iconFamily: IconFamilyHandle; const (*var*) iconFile: FS
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> origin/cpstrnew
 
 {$endc}	{ not TARGET_CPU_64 }
 
@@ -2862,6 +3147,7 @@ function WriteIconFile( iconFamily: IconFamilyHandle; const (*var*) iconFile: FS
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.1 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework
@@ -2878,10 +3164,14 @@ function WriteIconFile( iconFamily: IconFamilyHandle; const (*var*) iconFile: FS
 =======
  *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.1 and later
  *    Non-Carbon CFM:   not available
  }
 function ReadIconFromFSRef( const (*var*) ref: FSRef; var iconFamily: IconFamilyHandle ): OSStatus; external name '_ReadIconFromFSRef';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2903,6 +3193,9 @@ function ReadIconFromFSRef( const (*var*) ref: FSRef; var iconFamily: IconFamily
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 {$endc} {TARGET_OS_MAC}
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}

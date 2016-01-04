@@ -6,6 +6,7 @@ type vectorlli = specialize TVector<longint>;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      sortlli = specialize 
          TOrderingArrayUtils<vectorlli, longint, lesslli>;
 =======
@@ -17,6 +18,9 @@ type vectorlli = specialize TVector<longint>;
 =======
      sortlli = specialize TOrderingArrayUtils<vectorlli, longint, lesslli>;
 >>>>>>> graemeg/cpstrnew
+=======
+     sortlli = specialize TOrderingArrayUtils<vectorlli, longint, lesslli>;
+>>>>>>> origin/cpstrnew
 =======
      sortlli = specialize TOrderingArrayUtils<vectorlli, longint, lesslli>;
 >>>>>>> origin/cpstrnew

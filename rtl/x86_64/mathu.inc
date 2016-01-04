@@ -27,6 +27,7 @@ function arctan2(y,x : float) : float;assembler;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 {$define FPC_MATH_HAS_TAN}
 function tan(x : float) : float;assembler;
@@ -115,11 +116,15 @@ procedure sincos(theta : single;out sinus,cosinus : single);assembler;
 =======
 {$endif FPC_HAS_TYPE_EXTENDED}
 >>>>>>> origin/cpstrnew
+=======
+{$endif FPC_HAS_TYPE_EXTENDED}
+>>>>>>> origin/cpstrnew
 
 {$asmmode gas}
 function GetRoundMode: TFPURoundingMode;
 begin
 {$ifndef FPC_HAS_TYPE_EXTENDED}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -130,6 +135,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   Result:=TFPURoundingMode((GetSSECSR shr 13) and $3);
@@ -176,12 +183,15 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:=TFPUExceptionMask(dword((GetMXCSR shr 7) and $3f));
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   Result:=TFPUExceptionMask((GetSSECSR shr 7) and $3f);

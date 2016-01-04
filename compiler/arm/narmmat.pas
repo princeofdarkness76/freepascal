@@ -403,6 +403,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         pf: TOpPostfix;
 =======
         op: tasmop;
@@ -416,6 +417,9 @@ implementation
 =======
         op: tasmop;
 >>>>>>> origin/cpstrnew
+=======
+        op: tasmop;
+>>>>>>> origin/cpstrnew
       begin
         secondpass(left);
         case current_settings.fputype of
@@ -423,6 +427,7 @@ implementation
           fpu_fpa10,
           fpu_fpa11:
             begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -440,12 +445,16 @@ implementation
 =======
               location_force_fpureg(current_asmdata.CurrAsmList,left.location,false);
 >>>>>>> origin/cpstrnew
+=======
+              location_force_fpureg(current_asmdata.CurrAsmList,left.location,false);
+>>>>>>> origin/cpstrnew
               location:=left.location;
               current_asmdata.CurrAsmList.concat(setoppostfix(taicpu.op_reg_reg_const(A_RSF,
                 location.register,left.location.register,0),
                 cgsize2fpuoppostfix[def_cgsize(resultdef)]));
             end;
           fpu_vfpv2,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -661,6 +670,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           fpu_vfpv3:
             begin
               location_force_mmregscalar(current_asmdata.CurrAsmList,left.location,true);
@@ -680,11 +691,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       end;

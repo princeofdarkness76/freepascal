@@ -2,6 +2,9 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 	 File:	   CFNetwork/CFHTTPStream.h
  
 	 Contains:   CoreFoundation Network HTTP streams header
@@ -11,6 +14,7 @@
 	 Bugs?:	  For bug reports, consult the following page on
 				 the World Wide Web:
  
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -30,12 +34,15 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 					 http://www.freepascal.org/bugs.html
  
 }
 {	  Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2004 }
 {   Pascal Translation Updated:  Gale R Paeper, <gpaeper@empirenet.com>, 2008 }
 {   Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -74,6 +81,8 @@
 {	  Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2004 }
 {   Pascal Translation Updated:  Gale R Paeper, <gpaeper@empirenet.com>, 2008 }
 {   Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+=======
+>>>>>>> origin/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -82,12 +91,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -99,6 +112,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -113,6 +127,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -128,6 +146,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -138,6 +157,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -145,13 +167,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -159,6 +185,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -167,8 +195,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -179,6 +210,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -199,6 +231,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -207,12 +241,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -220,6 +257,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -279,12 +317,25 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 <<<<<<< HEAD
 =======
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+>>>>>>> origin/cpstrnew
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 >>>>>>> origin/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -462,6 +513,8 @@ interface
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -476,6 +529,7 @@ interface
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 {$endc}
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -513,6 +567,37 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -541,6 +626,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -549,6 +635,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -562,6 +650,7 @@ uses MacTypes,CFStream,CFBase,CFHTTPMessage;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
 {$ALIGN POWER}
@@ -576,6 +665,11 @@ uses MacTypes,CFStream,CFBase,CFHTTPMessage;
 
 {$ALIGN POWER}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+
+{$ALIGN POWER}
+>>>>>>> origin/cpstrnew
 
 {
  *  kCFStreamErrorDomainHTTP
@@ -583,6 +677,9 @@ uses MacTypes,CFStream,CFBase,CFHTTPMessage;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
  *  Discussion:
  *	Result code returned by HTTP server
  *  
@@ -758,6 +855,7 @@ var kCFStreamPropertyHTTPSProxyPort: CFStringRef; external name '_kCFStreamPrope
  *  kCFStreamPropertyHTTPShouldAutoredirect
  *  
  *  Discussion:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -775,6 +873,9 @@ var kCFStreamPropertyHTTPSProxyPort: CFStringRef; external name '_kCFStreamPrope
 =======
  *	Proxy dictionary key. Value is a CFBoolean. Redirection is not
 >>>>>>> origin/cpstrnew
+=======
+ *	Proxy dictionary key. Value is a CFBoolean. Redirection is not
+>>>>>>> origin/cpstrnew
  *	performed by default.
  *  
  *  Availability:
@@ -794,6 +895,7 @@ var kCFStreamPropertyHTTPShouldAutoredirect: CFStringRef; external name '_kCFStr
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *	Stream property key. Value is a CFBoolean.  If this property is
 =======
  *	Proxy dictionary key. Value is a CFBoolean.  If this property is
@@ -804,6 +906,9 @@ var kCFStreamPropertyHTTPShouldAutoredirect: CFStringRef; external name '_kCFStr
 =======
  *	Proxy dictionary key. Value is a CFBoolean.  If this property is
 >>>>>>> graemeg/cpstrnew
+=======
+ *	Proxy dictionary key. Value is a CFBoolean.  If this property is
+>>>>>>> origin/cpstrnew
 =======
  *	Proxy dictionary key. Value is a CFBoolean.  If this property is
 >>>>>>> origin/cpstrnew
@@ -829,6 +934,7 @@ var kCFStreamPropertyHTTPAttemptPersistentConnection: CFStringRef; external name
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *	Stream property key. Value is a CFNumber. This property can only
 =======
  *	Proxy dictionary key. Value is a CFNumber. This property can only
@@ -839,6 +945,9 @@ var kCFStreamPropertyHTTPAttemptPersistentConnection: CFStringRef; external name
 =======
  *	Proxy dictionary key. Value is a CFNumber. This property can only
 >>>>>>> graemeg/cpstrnew
+=======
+ *	Proxy dictionary key. Value is a CFNumber. This property can only
+>>>>>>> origin/cpstrnew
 =======
  *	Proxy dictionary key. Value is a CFNumber. This property can only
 >>>>>>> origin/cpstrnew
@@ -944,6 +1053,7 @@ function CFReadStreamCreateForHTTPRequest( alloc: CFAllocatorRef; request: CFHTT
  }
 function CFReadStreamCreateForStreamedHTTPRequest( alloc: CFAllocatorRef; requestHeaders: CFHTTPMessageRef; requestBody: CFReadStreamRef ): CFReadStreamRef; external name '_CFReadStreamCreateForStreamedHTTPRequest';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_2_0) *)
+<<<<<<< HEAD
 
 {$ifc TARGET_OS_MAC}
 {
@@ -978,6 +1088,16 @@ procedure CFHTTPReadStreamSetRedirectsAutomatically( httpStream: CFReadStreamRef
  *  
  *  Deprecated:
  *	Use the kCFStreamPropertyHTTPProxy above instead.
+=======
+
+{$ifc TARGET_OS_MAC}
+{
+ *  CFHTTPReadStreamSetRedirectsAutomatically()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *	Use the kCFStreamPropertyHTTPShouldAutoredirect property above
+ *	instead.
+>>>>>>> origin/cpstrnew
  *  
  *  Discussion:
  *	Sets the redirection property on the http stream.
@@ -987,16 +1107,22 @@ procedure CFHTTPReadStreamSetRedirectsAutomatically( httpStream: CFReadStreamRef
  *	httpStream:
  *	  A pointer to the CFHTTPStream to be set.
  *	
+<<<<<<< HEAD
  *	proxyHost:
  *	  The proxy hostname. A CFString value.
  *	
  *	proxyPort:
  *	  The port number. A CFNumber value.
+=======
+ *	shouldAutoRedirect:
+ *	  A boolean indicating whether to redirect or not.
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *	Mac OS X:		 in version 10.1 and later in CoreServices.framework but deprecated in 10.3
  *	CarbonLib:		not available
  *	Non-Carbon CFM:   not available
+<<<<<<< HEAD
  }
 procedure CFHTTPReadStreamSetProxy( httpStream: CFReadStreamRef; proxyHost: CFStringRef; proxyPort: CFIndex ); external name '_CFHTTPReadStreamSetProxy';
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_1,__MAC_10_3,__IPHONE_NA,__IPHONE_NA) *)
@@ -1350,6 +1476,8 @@ function CFReadStreamCreateForStreamedHTTPRequest( alloc: CFAllocatorRef; reques
  *	Mac OS X:		 in version 10.1 and later in CoreServices.framework but deprecated in 10.3
  *	CarbonLib:		not available
  *	Non-Carbon CFM:   not available
+=======
+>>>>>>> origin/cpstrnew
  }
 procedure CFHTTPReadStreamSetRedirectsAutomatically( httpStream: CFReadStreamRef; shouldAutoRedirect: Boolean ); external name '_CFHTTPReadStreamSetRedirectsAutomatically';
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_1,__MAC_10_3,__IPHONE_NA,__IPHONE_NA) *)
@@ -1391,9 +1519,13 @@ procedure CFHTTPReadStreamSetProxy( httpStream: CFReadStreamRef; proxyHost: CFSt
 end.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

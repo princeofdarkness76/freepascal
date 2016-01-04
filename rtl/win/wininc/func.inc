@@ -383,11 +383,14 @@ function VirtualUnlock(lpAddress:LPVOID; dwSize:DWORD):WINBOOL; external 'kernel
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 function MapViewOfFileEx(hFileMappingObject:HANDLE; dwDesiredAccess:DWORD; dwFileOffsetHigh:DWORD; dwFileOffsetLow:DWORD; dwNumberOfBytesToMap:SIZE_T;lpBaseAddress:LPVOID):LPVOID; external 'kernel32' name 'MapViewOfFileEx';
@@ -1281,6 +1284,9 @@ function GetComboBoxInfo(hwndCombo:HWND;pcbi:PCOMBOBOXINFO):BOOL; external 'user
 function GetAncestor(HWnd: HWND; Flag: UINT): HWND; StdCall; External 'user32';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 
 // #if(WINVER >= 0x0500)
 function GetMenuInfo(_hmenu:HMENU; lpcmi:LPMENUINFO):BOOL; external 'user32' name 'GetMenuInfo';
@@ -1290,6 +1296,7 @@ function EndMenu:BOOL; external 'user32' name 'EndMenu';
 
 
 function GetMenuBarInfo(_hwnd:HWND; idObject:longint; idItem:longint; pmbi:LPMENUBARINFO):BOOL; external 'user32' name 'GetMenuBarInfo';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1308,6 +1315,9 @@ function IMAGE_FIRST_SECTION(ntheader : PIMAGE_NT_HEADERS):PIMAGE_SECTION_HEADER
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+
+>>>>>>> origin/cpstrnew
 {$endif read_interface}
 
 

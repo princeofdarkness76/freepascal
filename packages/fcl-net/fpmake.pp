@@ -28,6 +28,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     P.Dependencies.Add('fcl-async',[linux,freebsd,netbsd,openbsd,dragonfly]);
     P.Dependencies.Add('rtl-extra');
 =======
@@ -36,6 +37,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -129,7 +132,6 @@ begin
 >>>>>>> origin/fixes_2_2
 
     // HTTP Client
-    T:=P.Targets.AddUnit('servlets.pp');
     T:=P.Targets.AddUnit('fpsock.pp',AllUnixOSes);
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -139,6 +141,7 @@ begin
         begin
           AddUnit('resolve');
         end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -157,6 +160,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     P.ExamplePath.Add('examples');
     P.Targets.AddExampleProgram('examples/ip6test.pp');
     P.Targets.AddExampleProgram('examples/svrclass.pp');
@@ -167,6 +172,7 @@ begin
     P.Targets.AddExampleProgram('examples/testhst.pp');
     P.Targets.AddExampleProgram('examples/testuri.pp');
     P.Targets.AddExampleProgram('examples/testproto.pp');
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -198,6 +204,8 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifndef ALLPACKAGES}
     Run;

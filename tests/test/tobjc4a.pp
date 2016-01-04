@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { %cpu=powerpc,powerpc64,i386,x86_64,arm,aarch64 }
 =======
 { %cpu=powerpc,powerpc64,i386,x86_64,arm }
@@ -14,6 +15,9 @@
 =======
 { %cpu=powerpc,powerpc64,i386,x86_64,arm }
 >>>>>>> graemeg/cpstrnew
+=======
+{ %cpu=powerpc,powerpc64,i386,x86_64,arm }
+>>>>>>> origin/cpstrnew
 =======
 { %cpu=powerpc,powerpc64,i386,x86_64,arm }
 >>>>>>> origin/cpstrnew

@@ -39,6 +39,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Classes, SysUtils, Contnrs, chmbase, paslzx, chmFIftiMain, chmsitemap;
 
 type
@@ -61,11 +62,20 @@ type
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  Classes, SysUtils, Contnrs, chmbase, paslzx, chmFIftiMain, chmsitemap;
+
+type
+
+  TLZXResetTableArr = array of QWord;
+
+>>>>>>> origin/cpstrnew
   PContextItem = ^TContextItem;
   TContextItem = record
     Context: THelpContext;
     Url: String;
   end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -75,6 +85,9 @@ type
 =======
   
 >>>>>>> origin/fixes_2_2
+=======
+
+>>>>>>> origin/cpstrnew
   TContextList = class(TList)
   public
     procedure AddContext(Context: THelpContext; Url: String);
@@ -91,6 +104,7 @@ type
     fFreeStreamOnDestroy: Boolean;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     fITSFHeader: TITSFHeader;
 =======
     fChmHeader: TITSFHeader;
@@ -98,11 +112,15 @@ type
 =======
     fChmHeader: TITSFHeader;
 >>>>>>> origin/fixes_2_2
+=======
+    fITSFHeader: TITSFHeader;
+>>>>>>> origin/cpstrnew
     fHeaderSuffix: TITSFHeaderSuffix;
     fDirectoryHeader: TITSPHeader;
     fDirectoryHeaderPos: QWord;
     fDirectoryHeaderLength: QWord;
     fDirectoryEntriesStartPos: QWord;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     fCachedEntry: TPMGListChunkEntry; //contains the last entry found by ObjectExists
@@ -116,15 +134,24 @@ type
 =======
 >>>>>>> origin/fixes_2_2
     fDirectoryEntries: array of TPMGListChunkEntry;
+=======
+>>>>>>> origin/cpstrnew
     fCachedEntry: TPMGListChunkEntry; //contains the last entry found by ObjectExists
     fDirectoryEntriesCount: LongWord;
+    procedure ReadHeader; virtual;
+    procedure ReadHeaderEntries; virtual;
+    function  GetChunkType(Stream: TMemoryStream; ChunkIndex: LongInt): TDirChunkType;
+    procedure GetSections(out Sections: TStringList);
   private
+<<<<<<< HEAD
     procedure ReadHeader;
     function  GetChunkType(Stream: TMemoryStream; ChunkIndex: LongInt): TPMGchunktype;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
     function  GetDirectoryChunk(Index: Integer; OutStream: TStream): Integer;
     function  ReadPMGLchunkEntryFromStream(Stream: TMemoryStream; var PMGLEntry: TPMGListChunkEntry): Boolean;
     function  ReadPMGIchunkEntryFromStream(Stream: TMemoryStream; var PMGIEntry: TPMGIIndexChunkEntry): Boolean;
@@ -133,6 +160,7 @@ type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
     procedure GetSections(out Sections: TStringList);
@@ -140,6 +168,9 @@ type
 =======
     procedure GetSections(out Sections: TStringList);
 >>>>>>> origin/fixes_2_2
+=======
+
+>>>>>>> origin/cpstrnew
     function  GetBlockFromSection(SectionPrefix: String; StartPos: QWord; BlockLength: QWord): TMemoryStream;
     function  FindBlocksFromUnCompressedAddr(var ResetTableEntry: TPMGListChunkEntry;
        out CompressedSize: QWord; out UnCompressedSize: QWord; out LZXResetTable: TLZXResetTableArr): QWord;  // Returns the blocksize
@@ -149,6 +180,7 @@ type
   public
     ChmLastError: LongInt;
     function IsValidFile: Boolean;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     procedure GetCompleteFileList(ForEach: TFileEntryForEach; AIncludeInternalFiles: Boolean = True); virtual;
@@ -163,15 +195,23 @@ type
 >>>>>>> origin/fixes_2_2
     procedure GetCompleteFileList(ForEach: TFileEntryForEach);
     function ObjectExists(Name: String): QWord; // zero if no. otherwise it is the size of the object
+=======
+    procedure GetCompleteFileList(ForEach: TFileEntryForEach; AIncludeInternalFiles: Boolean = True); virtual;
+    function ObjectExists(Name: String): QWord; virtual; // zero if no. otherwise it is the size of the object
+>>>>>>> origin/cpstrnew
                                                 // NOTE directories will return zero size even if they exist
-    function GetObject(Name: String): TMemoryStream; // YOU must Free the stream
+    function GetObject(Name: String): TMemoryStream; virtual; // YOU must Free the stream
     property CachedEntry: TPMGListChunkEntry read fCachedEntry;
   end;
+<<<<<<< HEAD
   
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+
+>>>>>>> origin/cpstrnew
   { TChmReader }
 
   TChmReader = class(TITSFReader)
@@ -187,6 +227,7 @@ type
     fURLTBLStream,
     fStringsStream: TMemoryStream;
     fLocaleID: DWord;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     fWindowsList : TObjectList;
@@ -222,18 +263,28 @@ type
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    fWindowsList : TObjectList;
+    fDefaultWindow: String;
+>>>>>>> origin/cpstrnew
   private
     FSearchReader: TChmSearchReader;
     procedure ReadCommonData;
     function  ReadStringsEntry(APosition: DWord): String;
+    function  ReadStringsEntryFromStream ( strm:TStream ) : String;
     function  ReadURLSTR(APosition: DWord): String;
     function  CheckCommonStreams: Boolean;
+<<<<<<< HEAD
+=======
+    procedure ReadWindows(mem:TMemoryStream);
+>>>>>>> origin/cpstrnew
   public
     constructor Create(AStream: TStream; FreeStreamOnDestroy: Boolean); override;
     destructor Destroy; override;
   public
     function GetContextUrl(Context: THelpContext): String;
     function LookupTopicByID(ATopicID: Integer; out ATitle: String): String; // returns a url
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -243,6 +294,10 @@ type
     function GetTOCSitemap(ForceXML:boolean=false): TChmSiteMap;
     function GetIndexSitemap(ForceXML:boolean=false): TChmSiteMap;
 >>>>>>> origin/fixes_2.4
+=======
+    function GetTOCSitemap(ForceXML:boolean=false): TChmSiteMap;
+    function GetIndexSitemap(ForceXML:boolean=false): TChmSiteMap;
+>>>>>>> origin/cpstrnew
     function HasContextList: Boolean;
     property DefaultPage: String read fDefaultPage;
     property IndexFile: String read fIndexFile;
@@ -253,6 +308,7 @@ type
     property SearchReader: TChmSearchReader read FSearchReader write FSearchReader;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     property contextlist : tcontextlist read fcontextlist;
     property Windows : TObjectlist read fWindowsList;
     property DefaultWindow : string read fdefaultwindow;
@@ -260,6 +316,11 @@ type
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    property contextlist : tcontextlist read fcontextlist;
+    property Windows : TObjectlist read fWindowsList;
+    property DefaultWindow : string read fdefaultwindow;
+>>>>>>> origin/cpstrnew
   end;
 
   { TChmFileList }
@@ -299,6 +360,7 @@ type
   end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
   
@@ -306,6 +368,9 @@ type
 =======
   
 >>>>>>> origin/fixes_2_2
+=======
+
+>>>>>>> origin/cpstrnew
 //ErrorCodes
 const
   ERR_NO_ERR = 0;
@@ -313,6 +378,7 @@ const
   ERR_NOT_SUPPORTED_VERSION = 2;
   ERR_NOT_VALID_FILE = 3;
   ERR_UNKNOWN_ERROR = 10;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -335,6 +401,13 @@ implementation
 =======
 uses ChmTypes;
 >>>>>>> origin/fixes_2.4
+=======
+
+  function ChmErrorToStr(Error: Integer): String;
+
+implementation
+uses ChmTypes;
+>>>>>>> origin/cpstrnew
 
 function ChmErrorToStr(Error: Integer): String;
 begin
@@ -349,6 +422,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function ChunkType(Stream: TMemoryStream): TDirChunkType;
 =======
 function ChunkType(Stream: TMemoryStream): TPMGchunktype;
@@ -356,6 +430,9 @@ function ChunkType(Stream: TMemoryStream): TPMGchunktype;
 =======
 function ChunkType(Stream: TMemoryStream): TPMGchunktype;
 >>>>>>> origin/fixes_2_2
+=======
+function ChunkType(Stream: TMemoryStream): TDirChunkType;
+>>>>>>> origin/cpstrnew
 var
   ChunkID: array[0..3] of char;
 begin
@@ -363,6 +440,7 @@ begin
   if Stream.Size< 4 then exit;
   Move(Stream.Memory^, ChunkId[0], 4);
   if ChunkID = 'PMGL' then Result := ctPMGL
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   else if ChunkID = 'PMGI' then Result := ctPMGI
@@ -374,11 +452,17 @@ begin
 =======
   else if ChunkID = 'PMGI' then Result := ctPMGI;
 >>>>>>> origin/fixes_2_2
+=======
+  else if ChunkID = 'PMGI' then Result := ctPMGI
+  else if ChunkID = 'AOLL' then Result := ctAOLL
+  else if ChunkID = 'AOLI' then Result := ctAOLI;
+>>>>>>> origin/cpstrnew
 end;
 
 { TITSFReader }
 
 procedure TITSFReader.ReadHeader;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 begin
@@ -418,35 +502,48 @@ begin
 >>>>>>> origin/fixes_2_2
 var
 fHeaderEntries: array [0..1] of TITSFHeaderEntry;
+=======
+>>>>>>> origin/cpstrnew
 begin
-  fStream.Position := 0;
-  fStream.Read(fChmHeader,SizeOf(fChmHeader));
+  fStream.Read(fITSFHeader,SizeOf(fITSFHeader));
 
   // Fix endian issues
   {$IFDEF ENDIAN_BIG}
-  fChmHeader.Version := LEtoN(fChmHeader.Version);
-  fChmHeader.HeaderLength := LEtoN(fChmHeader.HeaderLength);
+  fITSFHeader.Version := LEtoN(fITSFHeader.Version);
+  fITSFHeader.HeaderLength := LEtoN(fITSFHeader.HeaderLength);
   //Unknown_1
-  fChmHeader.TimeStamp := BEtoN(fChmHeader.TimeStamp);//bigendian
-  fChmHeader.LanguageID := LEtoN(fChmHeader.LanguageID);
-  //Guid1
-  //Guid2
+  fITSFHeader.TimeStamp := BEtoN(fITSFHeader.TimeStamp);//bigendian
+  fITSFHeader.LanguageID := LEtoN(fITSFHeader.LanguageID);
   {$ENDIF}
-  
+
+  if fITSFHeader.Version < 4 then
+   fStream.Seek(SizeOf(TGuid)*2, soCurrent);
+
   if not IsValidFile then Exit;
-  
+
+  ReadHeaderEntries;
+end;
+
+procedure TITSFReader.ReadHeaderEntries;
+var
+fHeaderEntries: array [0..1] of TITSFHeaderEntry;
+begin
   // Copy EntryData into memory
   fStream.Read(fHeaderEntries[0], SizeOf(fHeaderEntries));
 
-  if fChmHeader.Version > 2 then
+  if fITSFHeader.Version = 3 then
     fStream.Read(fHeaderSuffix.Offset, SizeOf(QWord));
   fHeaderSuffix.Offset := LEtoN(fHeaderSuffix.Offset);
   // otherwise this is set in fill directory entries
+<<<<<<< HEAD
   
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+
+>>>>>>> origin/cpstrnew
   fStream.Position := LEtoN(fHeaderEntries[1].PosFromZero);
   fDirectoryHeaderPos := LEtoN(fHeaderEntries[1].PosFromZero);
   fStream.Read(fDirectoryHeader, SizeOf(fDirectoryHeader));
@@ -487,6 +584,7 @@ procedure TChmReader.ReadCommonData;
    // A little helper proc to make reading a null terminated string easier
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    function ReadString(const Stream: TStream; StartPos: DWord; FixURL: Boolean): String;
 =======
    function ReadString(const Stream: TStream): String;
@@ -494,10 +592,14 @@ procedure TChmReader.ReadCommonData;
 =======
    function ReadString(const Stream: TStream): String;
 >>>>>>> origin/fixes_2_2
+=======
+   function ReadString(const Stream: TStream; StartPos: DWord; FixURL: Boolean): String;
+>>>>>>> origin/cpstrnew
    var
      buf: array[0..49] of char;
    begin
      Result := '';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
      Stream.Position := StartPos;
@@ -527,11 +629,19 @@ procedure TChmReader.ReadCommonData;
      until Pos(#0, buf) > -1;
 >>>>>>> graemeg/fixes_2_2
 =======
+=======
+     Stream.Position := StartPos;
+>>>>>>> origin/cpstrnew
      repeat
        Stream.Read(buf, 50);
        Result := Result + buf;
      until Pos(#0, buf) > -1;
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2_2
+=======
+     if FixURL then
+       Result := StringReplace(Result, '\', '/', [rfReplaceAll]);
+>>>>>>> origin/cpstrnew
    end;
    procedure ReadFromSystem;
    var
@@ -630,12 +740,15 @@ procedure TChmReader.ReadCommonData;
      EntryStart: QWord;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
      StrPosition: DWord;
 >>>>>>> graemeg/fixes_2_2
 =======
      StrPosition: DWord;
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
      X: Integer;
      OffSet: QWord;
    begin
@@ -663,6 +776,7 @@ procedure TChmReader.ReadCommonData;
          fWindows.Position := EntryStart + $14;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          fTitle := '/'+ReadString(fStrings, LEtoN(fWindows.ReadDWord), False);
        end;
        if fTOCFile = '' then begin
@@ -685,30 +799,31 @@ procedure TChmReader.ReadCommonData;
          StrPosition := LEtoN(fWindows.ReadDWord);
          fStrings.Position := StrPosition;
          fTitle := '/'+ReadString(fStrings);
+=======
+         fTitle := '/'+ReadString(fStrings, LEtoN(fWindows.ReadDWord), False);
+>>>>>>> origin/cpstrnew
        end;
        if fTOCFile = '' then begin
          fWindows.Position := EntryStart + $60;
-         StrPosition := LEtoN(fWindows.ReadDWord);
-         fStrings.Position := StrPosition;
-         fTOCFile := '/'+ReadString(fStrings);
+         fTOCFile := '/'+ReadString(fStrings, LEtoN(fWindows.ReadDWord), True);
        end;
        if fIndexFile = '' then begin
          fWindows.Position := EntryStart + $64;
-         StrPosition := LEtoN(fWindows.ReadDWord);
-         fStrings.Position := StrPosition;
-         fIndexFile := '/'+ReadString(fStrings);
+         fIndexFile := '/'+ReadString(fStrings, LEtoN(fWindows.ReadDWord), True);
        end;
        if fDefaultPage = '' then begin
          fWindows.Position := EntryStart + $68;
-         StrPosition := LEtoN(fWindows.ReadDWord);
-         fStrings.Position := StrPosition;
-         fDefaultPage := '/'+ReadString(fStrings);
+         fDefaultPage := '/'+ReadString(fStrings, LEtoN(fWindows.ReadDWord), True);
        end;
      end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+     ReadWindows(FWindows);
+>>>>>>> origin/cpstrnew
    end;
    procedure ReadContextIds;
    var
@@ -721,6 +836,7 @@ procedure TChmReader.ReadCommonData;
    begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      fIVB := GetObject('/#IVB');
 =======
      fIVB := GetObject('/#IBV');
@@ -728,6 +844,9 @@ procedure TChmReader.ReadCommonData;
 =======
      fIVB := GetObject('/#IBV');
 >>>>>>> origin/fixes_2_2
+=======
+     fIVB := GetObject('/#IVB');
+>>>>>>> origin/cpstrnew
      if fIVB = nil then Exit;
      fStrings := GetObject('/#STRINGS');
      if fStrings = nil then begin
@@ -741,6 +860,7 @@ procedure TChmReader.ReadCommonData;
        OffSet := LEtoN(fIVB.ReadDWord);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        Str := '/'+ ReadString(fStrings, Offset, True);
 =======
        fStrings.Position := Offset;
@@ -750,6 +870,9 @@ procedure TChmReader.ReadCommonData;
        fStrings.Position := Offset;
        Str := '/'+ReadString(fStrings);
 >>>>>>> origin/fixes_2_2
+=======
+       Str := '/'+ ReadString(fStrings, Offset, True);
+>>>>>>> origin/cpstrnew
        fContextList.AddContext(Value, Str);
      end;
    end;
@@ -759,6 +882,7 @@ begin
    ReadContextIds;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    {$IFDEF CHM_DEBUG}
 =======
    {$IFDEF CHM_DEBUG}   
@@ -766,6 +890,9 @@ begin
 =======
    {$IFDEF CHM_DEBUG}   
 >>>>>>> origin/fixes_2_2
+=======
+   {$IFDEF CHM_DEBUG}
+>>>>>>> origin/cpstrnew
    WriteLn('TOC=',fTocfile);
    WriteLn('DefaultPage=',fDefaultPage);
    {$ENDIF}
@@ -786,6 +913,9 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 function TChmReader.ReadStringsEntryFromStream ( strm:TStream ) : String;
 var APosition : DWord;
 begin
@@ -793,10 +923,13 @@ begin
   result:=ReadStringsEntry(APosition);
 end;
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 function TChmReader.ReadURLSTR ( APosition: DWord ) : String;
 var
   URLStrURLOffset: DWord;
@@ -804,8 +937,11 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
   if not CheckCommonStreams then
     Exit;
 
@@ -817,10 +953,14 @@ begin
   fURLSTRStream.ReadDWord;
   if fURLSTRStream.Position < fURLSTRStream.Size-1 then
 <<<<<<< HEAD
+<<<<<<< HEAD
     Result := PChar(fURLSTRStream.Memory+fURLSTRStream.Position);
 =======
     Result := '/'+PChar(fURLSTRStream.Memory+fURLSTRStream.Position);
 >>>>>>> origin/fixes_2.4
+=======
+    Result := PChar(fURLSTRStream.Memory+fURLSTRStream.Position);
+>>>>>>> origin/cpstrnew
 end;
 
 function TChmReader.CheckCommonStreams: Boolean;
@@ -828,16 +968,20 @@ begin
   if fTOPICSStream = nil then
     fTOPICSStream := GetObject('/#TOPICS');
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
   if fURLSTRStream = nil then
     fURLSTRStream := GetObject('/#URLSTR');
   if fURLTBLStream = nil then
     fURLTBLStream := GetObject('/#URLTBL');
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -939,16 +1083,95 @@ begin
             and (fURLSTRStream <> nil)
             and (fURLTBLStream <> nil);
 >>>>>>> origin/fixes_2.4
+=======
+
+  Result :=     (fTOPICSStream <> nil)
+            and (fURLSTRStream <> nil)
+            and (fURLTBLStream <> nil);
+end;
+
+procedure TChmReader.ReadWindows(mem:TMemoryStream);
+
+var
+  i,cnt,
+  version   : integer;
+  x         : TChmWindow;
+begin
+ if not assigned(fwindowslist) then
+ fWindowsList.Clear;
+ mem.Position:=0;
+ cnt  := LEtoN(mem.ReadDWord);
+ version  := LEtoN(mem.ReadDWord);
+ while (cnt>0) do
+   begin
+     x:=TChmWindow.Create;
+     version            := LEtoN(mem.ReadDWord);                        //  0 size of entry.
+     mem.readDWord;                                                     //  4 unknown (bool Unicodestrings?)
+     x.window_type      :=ReadStringsEntryFromStream(mem);              //  8 Arg 0, name of window
+     x.flags            := TValidWindowFields(LEtoN(mem.ReadDWord));    //  C valid fields
+     x.nav_style        := LEtoN(mem.ReadDWord);                        // 10 arg 10 navigation pane style
+     x.title_bar_text   :=ReadStringsEntryFromStream(mem);              // 14 Arg 1,  title bar text
+     x.styleflags       := LEtoN(mem.ReadDWord);                        // 18 Arg 14, style flags
+     x.xtdstyleflags    := LEtoN(mem.ReadDWord);                        // 1C Arg 15, xtd style flags
+     x.left             := LEtoN(mem.ReadDWord);                        // 20 Arg 13, rect.left
+     x.right            := LEtoN(mem.ReadDWord);                        // 24 Arg 13, rect.top
+     x.top              := LEtoN(mem.ReadDWord);                        // 28 Arg 13, rect.right
+     x.bottom           := LEtoN(mem.ReadDWord);                        // 2C Arg 13, rect.bottom
+     x.window_show_state:= LEtoN(mem.ReadDWord);                        // 30 Arg 16, window show state
+     mem.readdword;                                                     // 34  -    , HWND hwndhelp                OUT: window handle"
+     mem.readdword;                                                     // 38  -    , HWND hwndcaller              OUT: who called this window"
+     mem.readdword;                                                     // 3C  -    , HH_INFO_TYPE paINFO_TYPES    IN: Pointer to an array of Information Types"
+     mem.readdword;                                                     // 40  -    , HWND hwndtoolbar             OUT: toolbar window in tri-pane window"
+     mem.readdword;                                                     // 44  -    , HWND hwndnavigation          OUT: navigation window in tri-pane window"
+     mem.readdword;                                                     // 48  -    , HWND hwndhtml                OUT: window displaying HTML in tri-pane window"
+     x.navpanewidth     := LEtoN(mem.ReadDWord);                        // 4C Arg 11, width of nav pane
+     mem.readdword;                                                     // 50  -    , rect.left,   OUT:Specifies the coordinates of the Topic pane
+     mem.readdword;                                                     // 54  -    , rect.top ,   OUT:Specifies the coordinates of the Topic pane
+     mem.readdword;                                                     // 58  -    , rect.right,  OUT:Specifies the coordinates of the Topic pane
+     mem.readdword;                                                     // 5C  -    , rect.bottom, OUT:Specifies the coordinates of the Topic pane
+     x.toc_file         :=ReadStringsEntryFromStream(mem);              // 60 Arg 2,  toc file
+     x.index_file       :=ReadStringsEntryFromStream(mem);              // 64 Arg 3,  index file
+     x.default_file     :=ReadStringsEntryFromStream(mem);              // 68 Arg 4,  default file
+     x.home_button_file :=ReadStringsEntryFromStream(mem);              // 6c Arg 5,  home button file.
+     x.buttons          := LEtoN(mem.ReadDWord);                        // 70 arg 12,
+     x.navpane_initially_closed    := LEtoN(mem.ReadDWord);             // 74 arg 17
+     x.navpane_default  := LEtoN(mem.ReadDWord);                        // 78 arg 18,
+     x.navpane_location := LEtoN(mem.ReadDWord);                        // 7C arg 19,
+     x.wm_notify_id     := LEtoN(mem.ReadDWord);                        // 80 arg 20,
+     for i:=0 to 4 do
+       mem.ReadDWord;                                                   // 84  -      byte[20] unknown -  "BYTE tabOrder[HH_MAX_TABS + 1]; // IN/OUT: tab order: Contents, Index, Search, History, Favorites, Reserved 1-5, Custom tabs"
+     mem.ReadDWord;                                                     // 94  -      int cHistory; // IN/OUT: number of history items to keep (default is 30)
+     x.jumpbutton_1_text:=ReadStringsEntryFromStream(mem);              // 9C Arg 7,  The text of the Jump 1 button.
+     x.jumpbutton_2_text:=ReadStringsEntryFromStream(mem);              // A0 Arg 9,  The text of the Jump 2 button.
+     x.jumpbutton_1_file:=ReadStringsEntryFromStream(mem);              // A4 Arg 6,  The file shown for Jump 1 button.
+     x.jumpbutton_2_file:=ReadStringsEntryFromStream(mem);              // A8 Arg 8,  The file shown for Jump 1 button.
+     for i:=0 to 3 do
+       mem.ReadDWord;
+     dec(version,188);                                              // 1.1 specific onesf
+     while (version>=4) do
+       begin
+         mem.readdword;
+         dec(version,4);
+       end;
+
+     fWindowslist.Add(x);
+     dec(cnt);
+   end;
+>>>>>>> origin/cpstrnew
 end;
 
 constructor TChmReader.Create(AStream: TStream; FreeStreamOnDestroy: Boolean);
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   fContextList := TContextList.Create;
   fWindowslist      := TObjectlist.Create(True);
   fDefaultWindow:='';
 
+<<<<<<< HEAD
   inherited Create(AStream, FreeStreamOnDestroy);
   if not IsValidFile then exit;
 
@@ -963,11 +1186,17 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  inherited Create(AStream, FreeStreamOnDestroy);
+  if not IsValidFile then exit;
+
+>>>>>>> origin/cpstrnew
   ReadCommonData;
 end;
 
 destructor TChmReader.Destroy;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   FreeAndNil(fContextList);
@@ -978,6 +1207,10 @@ begin
 =======
   fContextList.Free;
 >>>>>>> origin/fixes_2_2
+=======
+  FreeAndNil(fContextList);
+  FreeAndNil(FWindowslist);
+>>>>>>> origin/cpstrnew
   FreeAndNil(FSearchReader);
   FreeAndNil(fTOPICSStream);
   FreeAndNil(fURLSTRStream);
@@ -988,6 +1221,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TITSFReader.GetChunkType(Stream: TMemoryStream; ChunkIndex: LongInt): TDirChunkType;
 =======
 function TITSFReader.GetChunkType(Stream: TMemoryStream; ChunkIndex: LongInt): TPMGchunktype;
@@ -995,6 +1229,9 @@ function TITSFReader.GetChunkType(Stream: TMemoryStream; ChunkIndex: LongInt): T
 =======
 function TITSFReader.GetChunkType(Stream: TMemoryStream; ChunkIndex: LongInt): TPMGchunktype;
 >>>>>>> origin/fixes_2_2
+=======
+function TITSFReader.GetChunkType(Stream: TMemoryStream; ChunkIndex: LongInt): TDirChunkType;
+>>>>>>> origin/cpstrnew
 var
   Sig: array[0..3] of char;
 begin
@@ -1003,6 +1240,7 @@ begin
 
   Stream.Read(Sig, 4);
   if Sig = 'PMGL' then Result := ctPMGL
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   else if Sig = 'PMGI' then Result := ctPMGI
@@ -1014,6 +1252,11 @@ begin
 =======
   else if Sig = 'PMGI' then Result := ctPMGI;
 >>>>>>> origin/fixes_2_2
+=======
+  else if Sig = 'PMGI' then Result := ctPMGI
+  else if Sig = 'AOLL' then Result := ctAOLL
+  else if Sig = 'AOLI' then Result := ctAOLI;
+>>>>>>> origin/cpstrnew
 end;
 
 function TITSFReader.GetDirectoryChunk(Index: Integer; OutStream: TStream): Integer;
@@ -1087,6 +1330,7 @@ begin
   PMGIEntry.Name := buf;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
   
@@ -1094,6 +1338,9 @@ begin
 =======
   
 >>>>>>> origin/fixes_2_2
+=======
+
+>>>>>>> origin/cpstrnew
   PMGIEntry.ListingChunk := GetCompressedInteger(Stream);
   if NameLength = 0 then Exit; // failed GetCompressedInteger sanity check
   Result := True;
@@ -1104,11 +1351,15 @@ begin
   fStream := AStream;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   fStream.Position := 0;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  fStream.Position := 0;
+>>>>>>> origin/cpstrnew
   fFreeStreamOnDestroy := FreeStreamOnDestroy;
   ReadHeader;
   if not IsValidFile then Exit;
@@ -1118,12 +1369,15 @@ destructor TITSFReader.Destroy;
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   SetLength(fDirectoryEntries, 0);
 >>>>>>> graemeg/fixes_2_2
 =======
   SetLength(fDirectoryEntries, 0);
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
   if fFreeStreamOnDestroy then FreeAndNil(fStream);
 
   inherited Destroy;
@@ -1134,10 +1388,14 @@ begin
   if (fStream = nil) then ChmLastError := ERR_STREAM_NOT_ASSIGNED
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   else if (fITSFHeader.ITSFsig <> 'ITSF') then ChmLastError := ERR_NOT_VALID_FILE
   //else if (fITSFHeader.Version <> 2) and (fITSFHeader.Version <> 3)
   else if not (fITSFHeader.Version in [2..4])
   then
+<<<<<<< HEAD
 =======
   else if (fChmHeader.ITSFsig <> 'ITSF') then ChmLastError := ERR_NOT_VALID_FILE
   else if (fChmHeader.Version <> 2) and (fChmHeader.Version <> 3) then
@@ -1146,10 +1404,13 @@ begin
   else if (fChmHeader.ITSFsig <> 'ITSF') then ChmLastError := ERR_NOT_VALID_FILE
   else if (fChmHeader.Version <> 2) and (fChmHeader.Version <> 3) then
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
     ChmLastError := ERR_NOT_SUPPORTED_VERSION;
   Result := ChmLastError = ERR_NO_ERR;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 procedure TITSFReader.GetCompleteFileList(ForEach: TFileEntryForEach; AIncludeInternalFiles: Boolean = True);
@@ -1159,6 +1420,9 @@ procedure TITSFReader.GetCompleteFileList(ForEach: TFileEntryForEach);
 =======
 procedure TITSFReader.GetCompleteFileList(ForEach: TFileEntryForEach);
 >>>>>>> origin/fixes_2_2
+=======
+procedure TITSFReader.GetCompleteFileList(ForEach: TFileEntryForEach; AIncludeInternalFiles: Boolean = True);
+>>>>>>> origin/cpstrnew
 var
   ChunkStream: TMemoryStream;
   I : Integer;
@@ -1201,18 +1465,24 @@ begin
          fCachedEntry := Entry; // if the caller trys to get this data we already know where it is :)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
          if  (Length(Entry.Name) = 1)
          or (AIncludeInternalFiles
               or
              ((Length(Entry.Name) > 1) and (not(Entry.Name[2] in ['#','$',':']))))
          then
           ForEach(Entry.Name, Entry.ContentOffset, Entry.DecompressedLength, Entry.ContentSection);
+<<<<<<< HEAD
 =======
          ForEach(Entry.Name, Entry.ContentOffset, Entry.DecompressedLength, Entry.ContentSection);
 >>>>>>> graemeg/fixes_2_2
 =======
          ForEach(Entry.Name, Entry.ContentOffset, Entry.DecompressedLength, Entry.ContentSection);
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
        end;
      end;
     {$IFDEF CHM_DEBUG_CHUNKS}
@@ -1253,6 +1523,7 @@ var
     Posn := ChunkStream.Size-SizeOf(Word);
     ChunkStream.Position := Posn;
 
+<<<<<<< HEAD
 =======
     Posn := ChunkStream.Size-1-SizeOf(Word);
     ChunkStream.Position := Posn;
@@ -1263,6 +1534,8 @@ var
     ChunkStream.Position := Posn;
     
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
     ItemCount := LEToN(ChunkStream.ReadWord);
     //WriteLn('Max ITems for next block = ', ItemCount-1);
     QuickRefCount := ItemCount  div (1 + (1 shl fDirectoryHeader.Density));
@@ -1300,6 +1573,7 @@ var
   PMGIChunk: TPMGIIndexChunk;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   //ChunkStream: TMemoryStream; declared above
   Entry: TPMGListChunkEntry;
   NextIndex: Integer;
@@ -1315,6 +1589,12 @@ var
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  //ChunkStream: TMemoryStream; declared above
+  Entry: TPMGListChunkEntry;
+  NextIndex: Integer;
+  EntryName: String;
+>>>>>>> origin/cpstrnew
   CRes: Integer;
   I: Integer;
 begin
@@ -1332,6 +1612,7 @@ begin
   try
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   NextIndex := fDirectoryHeader.IndexOfRootChunk;
   if NextIndex < 0 then NextIndex := 0; // no PMGI chunks
@@ -1347,6 +1628,12 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+
+  NextIndex := fDirectoryHeader.IndexOfRootChunk;
+  if NextIndex < 0 then NextIndex := 0; // no PMGI chunks
+
+>>>>>>> origin/cpstrnew
   while NextIndex > -1  do begin
     GetDirectoryChunk(NextIndex, ChunkStream);
     NextIndex := -1;
@@ -1378,6 +1665,7 @@ begin
         begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           LookupPMGIchunk(ChunkStream, PMGIChunk);
 =======
           LookupPMGIchunk(ChunkStream, PMGIChunk);          
@@ -1385,6 +1673,9 @@ begin
 =======
           LookupPMGIchunk(ChunkStream, PMGIChunk);          
 >>>>>>> origin/fixes_2_2
+=======
+          LookupPMGIchunk(ChunkStream, PMGIChunk);
+>>>>>>> origin/cpstrnew
 
           //QuickRefIndex[0] := ChunkStream.Position;
 
@@ -1397,6 +1688,7 @@ begin
             if CRes = 0 then begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               // no more need of this block. onto the next!
 =======
               // no more need of this block. onto the next!              
@@ -1404,11 +1696,15 @@ begin
 =======
               // no more need of this block. onto the next!              
 >>>>>>> origin/fixes_2_2
+=======
+              // no more need of this block. onto the next!
+>>>>>>> origin/cpstrnew
               NextIndex := GetCompressedInteger(ChunkStream);
               Break;
             end;
             if  CRes < 0 then begin
               if I = 0 then Break; // File doesn't exist
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
               // file is in previous entry
@@ -1418,6 +1714,9 @@ begin
 =======
               // file is in previous entry              
 >>>>>>> origin/fixes_2_2
+=======
+              // file is in previous entry
+>>>>>>> origin/cpstrnew
               Break;
             end;
             NextIndex := GetCompressedInteger(ChunkStream);
@@ -1432,6 +1731,7 @@ begin
           while ChunkStream.Position <= ChunkStream.Size - PMGLChunk.UnusedSpace do begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             // we consume the entry by reading it
 =======
             // we consume the entry by reading it            
@@ -1439,6 +1739,9 @@ begin
 =======
             // we consume the entry by reading it            
 >>>>>>> origin/fixes_2_2
+=======
+            // we consume the entry by reading it
+>>>>>>> origin/cpstrnew
             Entry.Name := ReadString;
             if Entry.Name = '' then break;
             if ChunkStream.Position >= ChunkStream.Size - PMGLChunk.UnusedSpace then break;
@@ -1452,6 +1755,7 @@ begin
               fCachedEntry := Entry;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               Result := Entry.DecompressedLength;
 =======
               Result := Entry.DecompressedLength;              
@@ -1459,6 +1763,9 @@ begin
 =======
               Result := Entry.DecompressedLength;              
 >>>>>>> origin/fixes_2_2
+=======
+              Result := Entry.DecompressedLength;
+>>>>>>> origin/cpstrnew
               Break;
             end;
             Inc(I);
@@ -1493,6 +1800,7 @@ begin
     GetSections(SectionNames);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FmtStr(SectionName, '::DataSpace/Storage/%s/',[SectionNames[Entry.ContentSection]]);
 =======
     FmtStr(SectionName, '::DataSpace/Storage/%s/',[SectionNames[Entry.ContentSection-1]]);
@@ -1500,6 +1808,9 @@ begin
 =======
     FmtStr(SectionName, '::DataSpace/Storage/%s/',[SectionNames[Entry.ContentSection-1]]);
 >>>>>>> origin/fixes_2_2
+=======
+    FmtStr(SectionName, '::DataSpace/Storage/%s/',[SectionNames[Entry.ContentSection]]);
+>>>>>>> origin/cpstrnew
     Result := GetBlockFromSection(SectionName, Entry.ContentOffset, Entry.DecompressedLength);
     SectionNames.Free;
   end;
@@ -1523,6 +1834,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if not CheckCommonStreams then
 =======
   if fTOPICSStream = nil then
@@ -1537,6 +1849,9 @@ begin
 =======
   if not CheckCommonStreams then
 >>>>>>> origin/fixes_2.4
+=======
+  if not CheckCommonStreams then
+>>>>>>> origin/cpstrnew
     Exit;
   fTOPICSStream.Position := ATopicID * 16;
   if fTOPICSStream.Position = ATopicID * 16 then
@@ -1554,8 +1869,11 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 const DefBlockSize = 2048;
 
 function LoadBtreeHeader(m:TMemoryStream;var btreehdr:TBtreeHeader):boolean;
@@ -1607,10 +1925,14 @@ var Index   : TMemoryStream;
     sitemap : TChmSiteMap;
     Item    : TChmSiteMapItem;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
     
 >>>>>>> origin/fixes_2.4
+=======
+
+>>>>>>> origin/cpstrnew
 function  AbortAndTryTextual:tchmsitemap;
 
 begin
@@ -1662,10 +1984,14 @@ begin
          litem.text :=Title; // recursively split this? No examples.
        end;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
    end;
 end;
 
 procedure parselistingblock(p:pbyte);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1725,6 +2051,11 @@ var hdr:PBTreeBlockHeader;
     head,tail : pbyte;
     isseealso,
 >>>>>>> origin/fixes_2.4
+=======
+var hdr:PBTreeBlockHeader;
+    head,tail : pbyte;
+    isseealso,
+>>>>>>> origin/cpstrnew
     nrpairs : Integer;
     i : integer;
     PE : PBtreeBlockEntry;
@@ -1734,6 +2065,7 @@ var hdr:PBTreeBlockHeader;
     seealsostr,
     topic,
     Name : AnsiString;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1761,6 +2093,10 @@ begin
     item : TChmSiteMapItem;
 begin
 >>>>>>> origin/fixes_2.4
+=======
+    item : TChmSiteMapItem;
+begin
+>>>>>>> origin/cpstrnew
   hdr:=PBTreeBlockHeader(p);
   hdr^.Length          :=LEToN(hdr^.Length);
   hdr^.NumberOfEntries :=LEToN(hdr^.NumberOfEntries);
@@ -1769,6 +2105,7 @@ begin
 
   tail:=p+(2048-hdr^.length);
   head:=p+sizeof(TBtreeBlockHeader);
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 <<<<<<< HEAD
@@ -1787,10 +2124,14 @@ begin
 =======
   
 >>>>>>> origin/fixes_2.4
+=======
+
+>>>>>>> origin/cpstrnew
   {$ifdef binindex}
   writeln('previndex  : ',hdr^.IndexOfPrevBlock);
   writeln('nextindex  : ',hdr^.IndexOfNextBlock);
   {$endif}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1807,6 +2148,8 @@ begin
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
   while head<tail do
     begin
       if not ReadWCharString(Head,Tail,Name) Then
@@ -1819,6 +2162,7 @@ begin
       PE :=PBtreeBlockEntry(head);
       NrPairs  :=LEToN(PE^.nrpairs);
       IsSeealso:=LEToN(PE^.isseealso);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1841,6 +2185,8 @@ begin
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
       CharIndex:=LEToN(PE^.CharIndex);
       {$ifdef binindex}
         Writeln('seealso:     ',IsSeeAlso);
@@ -1848,6 +2194,7 @@ begin
         Writeln('charindex :  ',charindex );
         Writeln('Nrpairs   :  ',NrPairs);
         writeln('seealso data : ');
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1861,6 +2208,8 @@ begin
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
       {$endif}
 
       inc(head,sizeof(TBtreeBlockEntry));
@@ -1869,6 +2218,7 @@ begin
           if not ReadWCharString(Head,Tail,SeeAlsoStr) Then
             Break;
           // have to figure out first what to do with it.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1891,10 +2241,13 @@ begin
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
         end
       else
         begin
          if NrPairs>0 Then
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1915,6 +2268,8 @@ begin
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
             for i:=0 to nrpairs-1 do
               begin
                 if head<tail Then
@@ -1934,6 +2289,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          end;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1945,6 +2301,8 @@ begin
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
       if nrpairs<>0 Then
         createentry(Name,CharIndex,Topic,Title);
       inc(head,4); // always 1
@@ -1954,6 +2312,7 @@ begin
       {$endif}
       inc(head,4); // zero based index (13 higher than last
     end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1970,6 +2329,8 @@ begin
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 var TryTextual : boolean;
@@ -1991,6 +2352,7 @@ begin
      Exit;
    end;
    SiteMap:=TChmSitemap.Create(StIndex);
+<<<<<<< HEAD
 <<<<<<< HEAD
    Item   :=Nil;  // cached last created item, in case we need to make
                   // a child.
@@ -2031,6 +2393,14 @@ begin
    if LoadBtreeHeader(index,BHdr) and (BHdr.LastLstBlock>0) Then
     begin 
 >>>>>>> origin/fixes_2.4
+=======
+   Item   :=Nil;  // cached last created item, in case we need to make
+                  // a child.
+   TryTextual:=True;
+   BHdr.LastLstBlock:=0;
+   if LoadBtreeHeader(index,BHdr) and (BHdr.LastLstBlock>0) Then
+    begin
+>>>>>>> origin/cpstrnew
        if BHdr.BlockSize=defblocksize then
          begin
            for i:=0 to BHdr.lastlstblock do
@@ -2043,17 +2413,23 @@ begin
              end;
             trytextual:=false;
 <<<<<<< HEAD
+<<<<<<< HEAD
             result:=sitemap;
           end;
 =======
             result:=sitemap; 
           end;   
 >>>>>>> origin/fixes_2.4
+=======
+            result:=sitemap;
+          end;
+>>>>>>> origin/cpstrnew
     end;
   if trytextual then
     begin
       sitemap.free;
       Result:=AbortAndTryTextual;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2076,6 +2452,9 @@ begin
 =======
     end;
 >>>>>>> origin/fixes_2.4
+=======
+    end;
+>>>>>>> origin/cpstrnew
 end;
 
 function TChmReader.GetTOCSitemap(ForceXML:boolean=false): TChmSiteMap;
@@ -2156,6 +2535,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      // Binary Toc Exists
 =======
    // Binary Toc Exists
@@ -2172,6 +2552,9 @@ begin
 =======
    // Binary Toc Exists
 >>>>>>> origin/fixes_2.4
+=======
+   // Binary Toc Exists
+>>>>>>> origin/cpstrnew
    Result := TChmSiteMap.Create(stTOC);
 
    EntryInfoOffset := NtoLE(TOC.ReadDWord);
@@ -2179,6 +2562,7 @@ begin
    EntryCount      := NtoLE(TOC.ReadDWord);
    TOPICSOffset    := NtoLE(TOC.ReadDWord);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2200,10 +2584,13 @@ begin
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
    NextItem := EntryInfoOffset;
    repeat
      NextItem := AddTOCItem(Toc, NextItem, Result.Items);
    until NextItem = 0;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2228,6 +2615,10 @@ end;
 end;
 
 >>>>>>> origin/fixes_2.4
+=======
+end;
+
+>>>>>>> origin/cpstrnew
 function TChmReader.HasContextList: Boolean;
 begin
   Result := fContextList.Count > 0;
@@ -2254,6 +2645,7 @@ begin
   end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
   
@@ -2261,6 +2653,9 @@ begin
 =======
   
 >>>>>>> origin/fixes_2_2
+=======
+
+>>>>>>> origin/cpstrnew
   Stream.Position := 2;
   EntryCount := LEtoN(Stream.ReadWord);
   for X := 0 to EntryCount -1 do begin
@@ -2275,6 +2670,7 @@ begin
   end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   // the sections are sorted alphabetically, this way section indexes will jive
   Sections.Sort;
@@ -2283,6 +2679,8 @@ begin
   // the sections are sorted alphabetically, this way section indexes will jive
   Sections.Sort;
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
   Stream.Free;
 end;
 
@@ -2367,6 +2765,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     if FirstBlock and 1 = 1 then begin
 =======
     if (FirstBlock <> 0) and (FirstBlock mod 2 > 0) then begin
@@ -2377,6 +2776,9 @@ begin
 =======
     if FirstBlock and 1 = 1 then begin
 >>>>>>> origin/fixes_2.4
+=======
+    if FirstBlock and 1 = 1 then begin
+>>>>>>> origin/cpstrnew
       fStream.Position := fHeaderSuffix.Offset + fCachedEntry.ContentOffset + (ResetTable[FirstBLock-1]);
       ReadCount := ResetTable[FirstBlock] - ResetTable[FirstBlock-1];
       BlockWriteLength:=BlockSize;
@@ -2400,6 +2802,7 @@ begin
       BlockWriteLength := BlockSize;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
       
@@ -2407,6 +2810,9 @@ begin
 =======
       
 >>>>>>> origin/fixes_2_2
+=======
+
+>>>>>>> origin/cpstrnew
       if FirstBlock = LastBlock then begin
         WriteCount := BlockLength;
       end
@@ -2434,6 +2840,7 @@ begin
       end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
       // if the next block is an even numbered block we have to reset the decompressor state
       if (X < LastBlock) and (X and 1 = 1) then LZXreset(LZXState);
@@ -2451,6 +2858,11 @@ begin
 =======
       if (X < LastBlock) and (X and 1 = 1) then LZXreset(LZXState);
 >>>>>>> origin/fixes_2.4
+=======
+
+      // if the next block is an even numbered block we have to reset the decompressor state
+      if (X < LastBlock) and (X and 1 = 1) then LZXreset(LZXState);
+>>>>>>> origin/cpstrnew
 
     end;
     FreeMem(OutBuf);
@@ -2564,6 +2976,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   AStream := TFileStream.Create(AFileName, fmOpenRead or fmShareDenyWrite);
 =======
   AStream := TFileStream.Create(AFileName, fmOpenRead, fmShareDenyWrite);
@@ -2586,6 +2999,9 @@ begin
 =======
   AStream := TFileStream.Create(AFileName, fmOpenRead, fmShareDenyWrite);
 >>>>>>> origin/fixes_2.4
+=======
+  AStream := TFileStream.Create(AFileName, fmOpenRead, fmShareDenyWrite);
+>>>>>>> origin/cpstrnew
   AChm := TChmReader.Create(AStream, True);
   AIndex := AddObject(AFileName, AChm);
   fLastChm := AChm;
@@ -2598,6 +3014,7 @@ var
   X: Integer;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
   
@@ -2605,6 +3022,9 @@ var
 =======
   
 >>>>>>> origin/fixes_2_2
+=======
+
+>>>>>>> origin/cpstrnew
 begin
   Result := False;
   for X := 0 to Count-1 do begin

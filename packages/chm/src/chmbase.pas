@@ -55,6 +55,7 @@ type
     LanguageID: LongWord;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     Guid1: TGuid;
     Guid2: TGuid;
@@ -63,6 +64,8 @@ type
     Guid1: TGuid;
     Guid2: TGuid;
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
   end;
   TITSFHeaderEntry = record
     PosFromZero: QWord;
@@ -105,6 +108,7 @@ type
   
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   TDirChunkType = (ctPMGL, ctPMGI, ctAOLL, ctAOLI, ctUnknown);
 =======
   TPMGchunktype = (ctPMGL, ctPMGI, ctUnknown);
@@ -112,6 +116,9 @@ type
 =======
   TPMGchunktype = (ctPMGL, ctPMGI, ctUnknown);
 >>>>>>> origin/fixes_2_2
+=======
+  TDirChunkType = (ctPMGL, ctPMGI, ctAOLL, ctAOLI, ctUnknown);
+>>>>>>> origin/cpstrnew
   
   TPMGListChunk = record
     PMGLsig: array [0..3] of char;
@@ -212,6 +219,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$push}
 =======
 =======
@@ -220,10 +228,13 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   {$undef rangeon}
   {$ifopt R+}
      {$define rangeon}
   {$endif}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -239,11 +250,15 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  {$R-}
+>>>>>>> origin/cpstrnew
   while True do begin
     mask := $7f shl bit;
     if (bit = 0) or ((ANumber and mask)<>0) then break;
     Dec(bit, 7);
   end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -252,6 +267,8 @@ begin
 =======
 
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
   while True do begin
     buf^ := Byte(((ANumber shr bit)and $7f));
     if(bit = 0) then break;
@@ -260,6 +277,7 @@ begin
     Dec(bit, 7);
     Inc(TheEnd);
   end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -292,10 +310,17 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+
+  {$ifdef rangeon}
+    {$R+}
+  {$endif}
+>>>>>>> origin/cpstrnew
   
   buf := @Value;
   Result := TheEnd+1;
   Move(Value, Buffer^, Result);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   {$ifdef chm_debug}
@@ -307,6 +332,11 @@ begin
 =======
   if Result > 8 then WriteLn(' ', ANumber,' WRITE_COMPRESSED_INTEGER too big!: ', Result, ' ');
 >>>>>>> origin/fixes_2_2
+=======
+  {$ifdef chm_debug}
+  if Result > 8 then WriteLn(' ', ANumber,' WRITE_COMPRESSED_INTEGER too big!: ', Result, ' ');
+  {$endif}
+>>>>>>> origin/cpstrnew
 end;
 
 function ChmCompareText(S1, S2: String): Integer; inline;

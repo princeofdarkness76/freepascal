@@ -103,6 +103,7 @@ unit cg64f32;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        tgobj,hlcgobj;
 =======
        tgobj;
@@ -113,6 +114,9 @@ unit cg64f32;
 =======
        tgobj;
 >>>>>>> graemeg/cpstrnew
+=======
+       tgobj;
+>>>>>>> origin/cpstrnew
 =======
        tgobj;
 >>>>>>> origin/cpstrnew
@@ -802,11 +806,14 @@ unit cg64f32;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         tmploclo.done;
@@ -844,11 +851,14 @@ unit cg64f32;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         tmploclo.done;
@@ -892,11 +902,14 @@ unit cg64f32;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         tmploclo.done;

@@ -10,6 +10,7 @@ name=fcl-net
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 version=3.1.1
 
 [require]
@@ -38,14 +39,17 @@ units_haiku=netdb resolve ssockets
 =======
 >>>>>>> origin/fixes_2_2
 version=2.2.5
+=======
+version=2.5.1
+>>>>>>> origin/cpstrnew
 
 [target]
-units=servlets
-units_linux=netdb resolve ssockets fpsock httpbase httpclient httpsvlt xmlrpc
-units_freebsd=netdb resolve ssockets fpsock httpbase httpclient httpsvlt xmlrpc
-units_netbsd=netdb resolve ssockets fpsock httpbase httpclient httpsvlt xmlrpc
-units_openbsd=netdb resolve ssockets fpsock httpbase httpclient httpsvlt xmlrpc
+units_linux=netdb resolve ssockets fpsock cnetdb
+units_freebsd=netdb resolve ssockets fpsock cnetdb
+units_netbsd=netdb resolve ssockets fpsock 
+units_openbsd=netdb resolve ssockets fpsock
 units_darwin=netdb resolve ssockets 
+units_iphonesim=netdb resolve ssockets 
 units_solaris=netdb resolve ssockets 
 units_qnx=netdb resolve ssockets 
 units_beos=netdb resolve ssockets 
@@ -58,6 +62,7 @@ units_os2=resolve ssockets
 units_win32=resolve ssockets 
 units_win64=resolve ssockets 
 units_wince=resolve ssockets 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -78,6 +83,8 @@ rsts_openbsd=fpsock httpsvlt mkxmlrpc
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 
 [require]
 packages=fcl-base fcl-xml fcl-passrc fcl-async
@@ -90,11 +97,15 @@ includedir_freebsd=src/unix
 includedir_darwin=src/unix
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 includedir_iphonesim=src/unix
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+includedir_iphonesim=src/unix
+>>>>>>> origin/cpstrnew
 includedir_netbsd=src/unix
 includedir_openbsd=src/unix
 includedir_solaris=src/unix

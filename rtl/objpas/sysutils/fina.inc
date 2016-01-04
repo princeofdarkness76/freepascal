@@ -652,6 +652,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function IncludeLeadingPathDelimiter(Const Path : PathStr) : PathStr;
 =======
 function IncludeLeadingPathDelimiter(Const Path : String) : String;
@@ -665,6 +666,9 @@ function IncludeLeadingPathDelimiter(Const Path : String) : String;
 =======
 function IncludeLeadingPathDelimiter(Const Path : String) : String;
 >>>>>>> origin/cpstrnew
+=======
+function IncludeLeadingPathDelimiter(Const Path : String) : String;
+>>>>>>> origin/cpstrnew
 
 Var
   l : Integer;
@@ -672,6 +676,7 @@ Var
 begin
   Result:=Path;
   l:=Length(Result);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -697,6 +702,8 @@ Var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   If (L=0) or not(Result[1] in AllowDirectorySeparators) then
@@ -772,6 +779,7 @@ begin
 >>>>>>> origin/fixes_2_2
 end;
 
+<<<<<<< HEAD
 Function GetFileHandle(var f : File):THandle;
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -780,11 +788,28 @@ Function GetFileHandle(var f : File):THandle;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+function ConcatPaths(const Paths: array of String): String;
+var
+  I: Integer;
+begin
+  if Length(Paths) > 0 then
+  begin
+    Result := Paths[0];
+    for I := 1 to Length(Paths) - 1 do
+      Result := IncludeTrailingPathDelimiter(Result) + ExcludeLeadingPathDelimiter(Paths[I]);
+  end else
+    Result := '';
+end;
+
+Function GetFileHandle(var f : File):THandle;
+>>>>>>> origin/cpstrnew
 
 begin
   Result:=(Index>0) and (Index<=Length(Path)) and CharInSet(Path[Index],AllowDirectorySeparators);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -801,6 +826,9 @@ Function GetFileHandle(var f : Text):THandle;
 =======
 Function GetFileHandle(var f : Text):THandle;
 >>>>>>> graemeg/cpstrnew
+=======
+Function GetFileHandle(var f : Text):THandle;
+>>>>>>> origin/cpstrnew
 =======
 Function GetFileHandle(var f : Text):THandle;
 >>>>>>> origin/cpstrnew

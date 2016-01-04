@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
     This file is part of the PTCPas framebuffer library
 <<<<<<< HEAD
@@ -17,6 +18,11 @@
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
 =======
+    Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> origin/cpstrnew
+=======
+{
+    This file is part of the PTCPas framebuffer library
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> origin/cpstrnew
 
@@ -48,6 +54,7 @@
 }
 
 type
+<<<<<<< HEAD
   PWndProcRegEntry = ^TWndProcRegEntry;
   TWndProcRegEntry = record
     WindowHandle: HWND;
@@ -68,30 +75,37 @@ begin
 =======
 >>>>>>> origin/fixes_2_2
 Type
+=======
+>>>>>>> origin/cpstrnew
   PWndProcRegEntry = ^TWndProcRegEntry;
-  TWndProcRegEntry = Record
-    WindowHandle : HWND;
-    Handler : TWinCEWndProc;
-  End;
+  TWndProcRegEntry = record
+    WindowHandle: HWND;
+    Handler: TWinCEWndProc;
+  end;
 
 ThreadVar
-  WndProcRegistry : Array Of TWndProcRegEntry;
-  WndProcRegistryCache : Integer;
+  WndProcRegistry: array of TWndProcRegEntry;
+  WndProcRegistryCache: Integer;
 
-Procedure WndProcAdd(AWindowHandle : HWND; AHandler : TWinCEWndProc);
+procedure WndProcAdd(AWindowHandle: HWND; AHandler: TWinCEWndProc);
 
-Var
-  I : Integer;
+var
+  I: Integer;
 
+<<<<<<< HEAD
 Begin
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+begin
+>>>>>>> origin/cpstrnew
   I := Length(WndProcRegistry);
   SetLength(WndProcRegistry, I + 1);
   WndProcRegistry[I].WindowHandle := AWindowHandle;
   WndProcRegistry[I].Handler := AHandler;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 end;
@@ -174,85 +188,92 @@ begin
 =======
 >>>>>>> origin/fixes_2_2
 End;
+=======
+end;
+>>>>>>> origin/cpstrnew
 
-Procedure WndProcRemove(AWindowHandle : HWND);
+procedure WndProcRemove(AWindowHandle: HWND);
 
-Var
-  I, J : Integer;
+var
+  I, J: Integer;
 
-Begin
+begin
   J := 0;
-  For I := Low(WndProcRegistry) To High(WndProcRegistry) Do
-    If WndProcRegistry[I].WindowHandle <> AWindowHandle Then
-    Begin
+  for I := Low(WndProcRegistry) to High(WndProcRegistry) do
+    if WndProcRegistry[I].WindowHandle <> AWindowHandle then
+    begin
       WndProcRegistry[J] := WndProcRegistry[I];
       Inc(J);
-    End;
+    end;
   SetLength(WndProcRegistry, J);
-End;
+end;
 
-Function WndProcFind(AWindowHandle : HWND) : TWinCEWndProc;
+function WndProcFind(AWindowHandle: HWND): TWinCEWndProc;
 
-Var
-  I : Integer;
+var
+  I: Integer;
 
-Begin
-  If (WndProcRegistryCache >= Low(WndProcRegistry)) And
-     (WndProcRegistryCache <= High(WndProcRegistry)) And
-     (WndProcRegistry[WndProcRegistryCache].WindowHandle = AWindowHandle) Then
-  Begin
+begin
+  if (WndProcRegistryCache >= Low(WndProcRegistry)) and
+     (WndProcRegistryCache <= High(WndProcRegistry)) and
+     (WndProcRegistry[WndProcRegistryCache].WindowHandle = AWindowHandle) then
+  begin
     Result := WndProcRegistry[WndProcRegistryCache].Handler;
-    Exit;
-  End;
+    exit;
+  end;
 
-  For I := Low(WndProcRegistry) To High(WndProcRegistry) Do
-    If WndProcRegistry[I].WindowHandle = AWindowHandle Then
-    Begin
+  for I := Low(WndProcRegistry) to High(WndProcRegistry) do
+    if WndProcRegistry[I].WindowHandle = AWindowHandle then
+    begin
       Result := WndProcRegistry[I].Handler;
       WndProcRegistryCache := I;
-      Exit;
-    End;
-  Result := Nil;
-End;
+      exit;
+    end;
+  Result := nil;
+end;
 
-Function WinCEWindowProc(Ahwnd : HWND; AuMsg : UINT; AwParam : WPARAM; AlParam : LPARAM) : LRESULT; CDecl;
+function WinCEWindowProc(Ahwnd: HWND; AuMsg: UINT; AwParam: WPARAM; AlParam: LPARAM): LRESULT; cdecl;
 
-Var
-  Handler : TWinCEWndProc;
+var
+  Handler: TWinCEWndProc;
 
-Begin
+begin
   Handler := WndProcFind(Ahwnd);
-  If Handler <> Nil Then
+  if Handler <> nil then
     Result := Handler(Ahwnd, AuMsg, AwParam, AlParam)
-  Else
+  else
     Result := DefWindowProcW(Ahwnd, AuMsg, AwParam, AlParam);
-End;
+end;
 
-Constructor TWinCEWindow.Create(Const AClassName, ATitle : WideString;
-                                AExStyle, AStyle : DWord;
-				AShow, AX, AY, AWidth, AHeight : Integer;
-                                AWndProc : TWinCEWndProc;
-				AData : Pointer = Nil);
+constructor TWinCEWindow.Create(const AClassName, ATitle: WideString;
+                                AExStyle, AStyle: DWord;
+				AShow, AX, AY, AWidth, AHeight: Integer;
+                                AWndProc: TWinCEWndProc;
+				AData: Pointer = Nil);
 
-Var
-  ClassAtom : ATOM;
-  wc : WNDCLASSW;
-  ProgramInstance : HANDLE;
-  Rectangle : RECT;
-  X, Y, Width, Height : Integer;
+var
+  ClassAtom: ATOM;
+  wc: WNDCLASSW;
+  ProgramInstance: HANDLE;
+  Rectangle: RECT;
+  X, Y, Width, Height: Integer;
 
-Begin
+begin
   ProgramInstance := GetModuleHandleW(Nil);
-  If ProgramInstance = 0 Then
-    Raise TPTCError.Create('could not get module handle');
+  if ProgramInstance = 0 then
+    raise TPTCError.Create('could not get module handle');
 
   LOG('registering window class');
   FillChar(wc, SizeOf(wc), 0);
+<<<<<<< HEAD
   wc.style := CS_DBLCLKS{ Or CS_HREDRAW Or CS_VREDRAW};
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  wc.style := CS_DBLCLKS{ or CS_HREDRAW or CS_VREDRAW};
+>>>>>>> origin/cpstrnew
   wc.lpfnWndProc := @WinCEWindowProc;
   wc.cbClsExtra := 0;
   wc.cbWndExtra := 0;
@@ -260,6 +281,7 @@ Begin
   wc.hIcon := 0; { not supported by WinCE }
   wc.hCursor := 0;
   wc.hbrBackground := 0;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   wc.lpszMenuName := nil;
@@ -276,23 +298,32 @@ Begin
 =======
 >>>>>>> origin/fixes_2_2
   wc.lpszMenuName := Nil;
+=======
+  wc.lpszMenuName := nil;
+>>>>>>> origin/cpstrnew
   wc.lpszClassName := PWideChar(AClassName);
   ClassAtom := RegisterClassW(@wc);
-  If ClassAtom = 0 Then
-    Raise TPTCError.Create('could not register window class');
+  if ClassAtom = 0 then
+    raise TPTCError.Create('could not register window class');
   FClassName := AClassName;
   FClassHInstance := wc.hInstance;
 
+<<<<<<< HEAD
   With Rectangle Do
   Begin
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  With Rectangle do
+  begin
+>>>>>>> origin/cpstrnew
     left := 0;
     top := 0;
     right := AWidth;
     bottom := AHeight;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   end;
@@ -308,6 +339,11 @@ Begin
   If Not AdjustWindowRectEx(@Rectangle, AStyle, False, AExStyle) Then
     Raise TPTCError.Create('could not AdjustWindowRectEx');
 >>>>>>> origin/fixes_2_2
+=======
+  end;
+  if not AdjustWindowRectEx(@Rectangle, AStyle, False, AExStyle) then
+    raise TPTCError.Create('could not AdjustWindowRectEx');
+>>>>>>> origin/cpstrnew
 
   X := AX;
   Y := AY;
@@ -321,6 +357,7 @@ Begin
 			     X, Y, Width, Height,
 			     0, 0, 0,
 			     AData);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   if (FWindow = 0) or not IsWindow(FWindow) then
@@ -376,53 +413,62 @@ end;
 >>>>>>> origin/fixes_2_2
   If (FWindow = 0) Or Not IsWindow(FWindow) Then
     Raise TPTCError.Create('could not create window');
+=======
+  if (FWindow = 0) or not IsWindow(FWindow) then
+    raise TPTCError.Create('could not create window');
+>>>>>>> origin/cpstrnew
   LOG('installing window message handler');
   WndProcAdd(FWindow, AWndProc);
   ShowWindow(FWindow, AShow);
-  If SetFocus(FWindow) = 0 Then
-    Raise TPTCError.Create('could not set focus to the new window');
-  If SetActiveWindow(FWindow) = 0 Then
-    Raise TPTCError.Create('could not set active window');
-  If Not SetForegroundWindow(FWindow) Then
-    Raise TPTCError.Create('could not set foreground window');
+  if SetFocus(FWindow) = 0 then
+    raise TPTCError.Create('could not set focus to the new window');
+  if SetActiveWindow(FWindow) = 0 then
+    raise TPTCError.Create('could not set active window');
+  if not SetForegroundWindow(FWindow) then
+    raise TPTCError.Create('could not set foreground window');
   {...}
-End;
+end;
 
-Destructor TWinCEWindow.Destroy;
+destructor TWinCEWindow.Destroy;
 
-Begin
+begin
   Close;
-  Inherited Destroy;
-End;
+  inherited Destroy;
+end;
 
-Procedure TWinCEWindow.Close;
+procedure TWinCEWindow.Close;
 
-Begin
-  If (FWindow <> 0) And IsWindow(FWindow) Then
-  Begin
+begin
+  if (FWindow <> 0) and IsWindow(FWindow) then
+  begin
     WndProcRemove(FWindow);
     DestroyWindow(FWindow);
-  End;
+  end;
   FWindow := 0;
 
-  If FClassName <> '' Then
+  if FClassName <> '' then
     UnregisterClass(PWideChar(FClassName), FClassHInstance);
   FClassName := '';
-End;
+end;
 
-Procedure TWinCEWindow.Update;
+procedure TWinCEWindow.Update;
 
-Var
-  Message : MSG;
+var
+  Message: MSG;
 
-Begin
-  While PeekMessage(@Message, FWindow, 0, 0, PM_REMOVE) Do
-  Begin
+begin
+  while PeekMessage(@Message, FWindow, 0, 0, PM_REMOVE) do
+  begin
     TranslateMessage(@Message);
     DispatchMessage(@Message);
+<<<<<<< HEAD
   End;
 End;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  end;
+end;
+>>>>>>> origin/cpstrnew

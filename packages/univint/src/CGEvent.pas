@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { CoreGraphics - CGEvent.h
  * Copyright (c) 2004-2008 Apple Inc.
  * All rights reserved. }
@@ -42,6 +43,11 @@
  * Copyright (c) 2004-2008 Apple Inc.
  * All rights reserved. }
 >>>>>>> origin/fixes_2.4
+=======
+{ CoreGraphics - CGEvent.h
+ * Copyright (c) 2004-2008 Apple Inc.
+ * All rights reserved. }
+>>>>>>> origin/cpstrnew
 {       Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {
@@ -52,12 +58,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -69,6 +79,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -83,6 +94,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -98,6 +113,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -108,6 +124,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -115,13 +134,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -129,6 +152,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -137,8 +162,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -149,6 +177,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -169,6 +198,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -177,12 +208,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -190,6 +224,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -245,12 +280,18 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 =======
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
+>>>>>>> origin/cpstrnew
+=======
 >>>>>>> origin/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -262,9 +303,12 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
@@ -277,6 +321,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -286,10 +331,13 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -502,6 +550,41 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -530,6 +613,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -538,6 +622,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -551,11 +637,15 @@ uses MacTypes,CFBase,CFData,CFMachPort,CGBase,CGDirectDisplay,CGEventTypes,CGGeo
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {$endc} {not MACOSALLINCLUDE}
 
 {$ALIGN POWER}
 
 {$ifc TARGET_OS_MAC}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -831,6 +921,17 @@ function CGEventGetTypeID: CFTypeID; external name '_CGEventGetTypeID';
    the default source is used. }
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+{ Return the type identifier for the opaque type `CGEventRef'. }
+
+function CGEventGetTypeID: CFTypeID; external name '_CGEventGetTypeID';
+(* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+
+{ Return a new event using the event source `source'. If `source' is NULL,
+   the default source is used. }
+
+>>>>>>> origin/cpstrnew
 function CGEventCreate( source: CGEventSourceRef ): CGEventRef; external name '_CGEventCreate';
 (* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 
@@ -868,6 +969,9 @@ function CGEventCreateMouseEvent( source: CGEventSourceRef; mouseType: CGEventTy
    on the virtual key code values entered, the appropriate key down, key up,
    or flags changed events are generated.
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 
    All keystrokes needed to generate a character must be entered, including
    SHIFT, CONTROL, OPTION, and COMMAND keys. For example, to produce a 'Z',
@@ -902,6 +1006,7 @@ function CGEventCreateScrollWheelEvent( source: CGEventSourceRef; units: CGScrol
 (* CG_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
 
 { Return a copy of `event'. }
+<<<<<<< HEAD
 
 =======
 
@@ -1042,11 +1147,17 @@ function CGEventCreateCopy( event: CGEventRef ): CGEventRef; external name '_CGE
 function CGEventCreateCopy( event: CGEventRef ): CGEventRef; external name '_CGEventCreateCopy';
 (* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 >>>>>>> origin/fixes_2.4
+=======
+
+function CGEventCreateCopy( event: CGEventRef ): CGEventRef; external name '_CGEventCreateCopy';
+(* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> origin/cpstrnew
 { 
  * CFRetain() and CFRelease() may be used to retain and release CGEventRefs.
  }
 
 function CGEventGetSource( event: CGEventRef ): CGEventSourceRef; external name '_CGEventGetSource'; (* DEPRECATED_IN_MAC_OS_X_VERSION_10_4_AND_LATER *)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1510,6 +1621,8 @@ function CGEventCreateSourceFromEvent( event: CGEventRef ): CGEventSourceRef; ex
 procedure CGEventSetSource( event: CGEventRef; source: CGEventSourceRef ); external name '_CGEventSetSource'; (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 { Return an event source created from an existing event.
 
@@ -1575,6 +1688,7 @@ procedure CGEventSetFlags( event: CGEventRef; flags: CGEventFlags ); external na
 (* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 
 { Return the Unicode string associated with a keyboard event.
+<<<<<<< HEAD
 
    When you call this function with a NULL string or a maximum string length
    of 0, the function still returns the actual count of Unicode characters
@@ -1650,6 +1764,83 @@ procedure CGEventSetDoubleValueField( event: CGEventRef; field: CGEventField; va
    application. Taps may be inserted at a specified point at the head of
    pre-existing filters, or appended after any pre-existing filters.
 
+=======
+
+   When you call this function with a NULL string or a maximum string length
+   of 0, the function still returns the actual count of Unicode characters
+   in the event. }
+
+procedure CGEventKeyboardGetUnicodeString( event: CGEventRef; maxStringLength: UniCharCount; var actualStringLength: UniCharCount; unicodeString: {variable-size-array} UniCharPtr ); external name '_CGEventKeyboardGetUnicodeString';
+(* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+
+{ Set the Unicode string associated with a keyboard event.
+
+   By default, the system translates the virtual key code in a keyboard
+   event into a Unicode string based on the keyboard ID in the event source.
+   This function allows you to manually override this string. Note that
+   application frameworks may ignore the Unicode string in a keyboard event
+   and do their own translation based on the virtual keycode and perceived
+   event state. }
+
+procedure CGEventKeyboardSetUnicodeString( event: CGEventRef; stringLength: UniCharCount; {const} unicodeString: {variable-size-array} UniCharPtr ); external name '_CGEventKeyboardSetUnicodeString';
+(* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+
+{ Return the integer value of a field in an event. }
+
+function CGEventGetIntegerValueField( event: CGEventRef; field: CGEventField ): SInt64; external name '_CGEventGetIntegerValueField';
+(* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+
+{ Set the integer value of a field in an event.
+
+   Before calling this function, the event type must be set using a typed
+   event creation function such as `CGEventCreateMouseEvent', or by calling
+   `CGEventSetType'.
+
+   If you are creating a mouse event generated by a tablet, call this
+   function and specify the field `kCGMouseEventSubtype' with a value of
+   `kCGEventMouseSubtypeTabletPoint' or `kCGEventMouseSubtypeTabletProximity'
+   before setting other parameters. }
+
+procedure CGEventSetIntegerValueField( event: CGEventRef; field: CGEventField; value: SInt64 ); external name '_CGEventSetIntegerValueField';
+(* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+
+{ Return the floating-point value of a field in an event.
+
+   In cases where the field value is represented within the event by a fixed
+   point number or an integer, the result is scaled to the appropriate range
+   as part of creating the floating-point representation. }
+
+function CGEventGetDoubleValueField( event: CGEventRef; field: CGEventField ): Float64; external name '_CGEventGetDoubleValueField';
+(* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+
+{ Set the floating-point value of a field in an event.
+
+   Before calling this function, the event type must be set using a typed
+   event creation function such as `CGEventCreateMouseEvent', or by calling
+   `CGEventSetType'.
+
+   In cases where the fieldÕs value is represented within the event by a
+   fixed point number or integer, the value parameter is scaled as needed
+   and converted to the appropriate type. }
+
+procedure CGEventSetDoubleValueField( event: CGEventRef; field: CGEventField; value: Float64 ); external name '_CGEventSetDoubleValueField';
+(* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+
+{ Event taps.
+
+   A function registers an event tap, taking a pointer to the program's tap
+   function and an arbitrary reference to be passed to the tap function, and
+   returning a `CFMachPortRef' the program can add to the appropriate run
+   loop by creating a surce and using `CFRunLoopAddSource'.
+
+   Taps may be placed at the point where HIDSystem events enter the server,
+   at the point where HIDSystem and remote control events enter a session,
+   at the point where events have been annotated to flow to a specific
+   application, or at the point where events are delivered to the
+   application. Taps may be inserted at a specified point at the head of
+   pre-existing filters, or appended after any pre-existing filters.
+
+>>>>>>> origin/cpstrnew
    Taps may be passive event listeners, or active filters. An active filter
    may pass an event through unmodified, modify an event, or discard an
    event. When a tap is registered, it identifies the set of events to be
@@ -1767,9 +1958,13 @@ function CGGetEventTapList( maxNumberOfTaps: UInt32; tapList: {variable-size-arr
 end.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

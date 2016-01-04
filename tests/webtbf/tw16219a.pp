@@ -9,6 +9,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     #$ffffff' '
 =======
     #$ffff' '
@@ -19,6 +20,9 @@ const
 =======
     #$ffff' '
 >>>>>>> graemeg/cpstrnew
+=======
+    #$ffff' '
+>>>>>>> origin/cpstrnew
 =======
     #$ffff' '
 >>>>>>> origin/cpstrnew

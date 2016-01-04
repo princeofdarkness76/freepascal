@@ -10,6 +10,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    Quickdraw-285~150
 =======
      Version:    Quickdraw-262~1
@@ -40,6 +41,11 @@
  
      Copyright:  © 2003-2008 by Apple Inc. all rights reserved.
 >>>>>>> origin/fixes_2.4
+=======
+     Version:    Quickdraw-262~1
+ 
+     Copyright:  © 2003-2008 by Apple Inc. all rights reserved.
+>>>>>>> origin/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -56,6 +62,7 @@
 =======
 {	  Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2004 }
 {   Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -81,6 +88,8 @@
 }
 {	  Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2004 }
 {   Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+=======
+>>>>>>> origin/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -89,12 +98,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -106,6 +119,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -120,6 +134,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -135,6 +153,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -145,6 +164,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -152,13 +174,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -166,6 +192,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -174,8 +202,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -186,6 +217,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -206,6 +238,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -214,12 +248,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -227,6 +264,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -301,12 +339,31 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/cpstrnew
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -318,6 +375,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -326,6 +385,7 @@ interface
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -519,6 +579,37 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -547,6 +638,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -555,6 +647,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -567,8 +661,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 uses MacTypes,TextCommon,QuickdrawTypes,ATSLayoutTypes,ATSUnicodeTypes;
 {$endc} {not MACOSALLINCLUDE}
 
@@ -578,6 +675,7 @@ uses MacTypes,TextCommon,QuickdrawTypes,ATSLayoutTypes,ATSUnicodeTypes;
 {$ALIGN POWER}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 uses MacTypes,TextCommon,Quickdraw,ATSLayoutTypes,ATSUnicodeTypes;
 {$ALIGN MAC68K}
@@ -588,6 +686,8 @@ uses MacTypes,TextCommon,Quickdraw,ATSLayoutTypes,ATSUnicodeTypes;
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 { ---------------------------------------------------------------------------- }
 {  ATSUI drawing and measuring                                                 }
@@ -596,6 +696,7 @@ uses MacTypes,TextCommon,Quickdraw,ATSLayoutTypes,ATSUnicodeTypes;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 {
  *  ATSUDrawText()   *** DEPRECATED ***
@@ -613,11 +714,18 @@ uses MacTypes,TextCommon,Quickdraw,ATSLayoutTypes,ATSUnicodeTypes;
 =======
 
 {
+=======
+
+{
+>>>>>>> origin/cpstrnew
  *  ATSUDrawText()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    Use CTFrameDraw, CTLiineDraw, or CTRunDraw instead.
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  
  *  Summary:
  *    Draws a specified range of text in a QuickDraw graphics port or
@@ -698,6 +806,7 @@ uses MacTypes,TextCommon,Quickdraw,ATSLayoutTypes,ATSUnicodeTypes;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework but deprecated in 10.6
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
@@ -720,6 +829,9 @@ function ATSUDrawText( iTextLayout: ATSUTextLayout; iLineOffset: UniCharArrayOff
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework but deprecated in 10.6
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework but deprecated in 10.6
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
  }
@@ -730,18 +842,24 @@ function ATSUDrawText( iTextLayout: ATSUTextLayout; iLineOffset: UniCharArrayOff
 {$ifc not TARGET_CPU_64}
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  ATSUGetUnjustifiedBounds()
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
  *  ATSUGetUnjustifiedBounds()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    Use CTLineGetTypographicBounds or
  *    CTLineGetTrailingWhitespaceWidth instead.
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  
  *  Summary:
  *    Obtains the typographic bounding rectangle for a line of text
@@ -819,6 +937,7 @@ function ATSUDrawText( iTextLayout: ATSUTextLayout; iLineOffset: UniCharArrayOff
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
@@ -839,6 +958,9 @@ function ATSUGetUnjustifiedBounds( iTextLayout: ATSUTextLayout; iLineStart: UniC
 =======
  *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -848,17 +970,23 @@ function ATSUGetUnjustifiedBounds( iTextLayout: ATSUTextLayout; iLineStart: UniC
 
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  ATSUMeasureTextImage()
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
  *  ATSUMeasureTextImage()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    Use CTLineGetImageBounds or CTRunGetImageBounds instead.
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  
  *  Summary:
  *    Obtains the image bounding rectangle for a line of text after
@@ -931,6 +1059,7 @@ function ATSUGetUnjustifiedBounds( iTextLayout: ATSUTextLayout; iLineStart: UniC
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
@@ -973,6 +1102,9 @@ function ATSUMeasureTextImage( iTextLayout: ATSUTextLayout; iLineOffset: UniChar
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
  }
@@ -984,19 +1116,25 @@ function ATSUMeasureTextImage( iTextLayout: ATSUTextLayout; iLineOffset: UniChar
 
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  ATSUGetGlyphBounds()
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
  *  ATSUGetGlyphBounds()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    Use CTRunGetTypographicBounds, CTLineGetTypographicBounds,
  *    CTFontGetAscent, CTFontGetDescent, CTFontGetLeading, or
  *    CTFontGetUnitsPerEm instead.
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  
  *  Summary:
  *    Obtains the typographic bounds of a line of glyphs after final
@@ -1103,6 +1241,7 @@ function ATSUMeasureTextImage( iTextLayout: ATSUTextLayout; iLineOffset: UniChar
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *      for this array, see the Discussion.
 =======
  *      for this array, see the Discussion. can be NULL
@@ -1113,6 +1252,9 @@ function ATSUMeasureTextImage( iTextLayout: ATSUTextLayout; iLineOffset: UniChar
 =======
  *      for this array, see the Discussion.
 >>>>>>> origin/fixes_2.4
+=======
+ *      for this array, see the Discussion.
+>>>>>>> origin/cpstrnew
  *    
  *    oActualNumberOfBounds:
  *      On return, the value specifies the actual number of enclosing
@@ -1121,6 +1263,7 @@ function ATSUMeasureTextImage( iTextLayout: ATSUTextLayout; iLineOffset: UniChar
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *      parameter.
 =======
  *      parameter. can be NULL
@@ -1131,12 +1274,16 @@ function ATSUMeasureTextImage( iTextLayout: ATSUTextLayout; iLineOffset: UniChar
 =======
  *      parameter.
 >>>>>>> origin/fixes_2.4
+=======
+ *      parameter.
+>>>>>>> origin/cpstrnew
  *  
  *  Result:
  *    On success, noErr is returned. See MacErrors.h for possible error
  *    codes.
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1167,11 +1314,20 @@ function ATSUGetGlyphBounds( iTextLayout: ATSUTextLayout; iTextBasePointX: ATSUT
 function ATSUGetGlyphBounds( iTextLayout: ATSUTextLayout; iTextBasePointX: ATSUTextMeasurement; iTextBasePointY: ATSUTextMeasurement; iBoundsCharStart: UniCharArrayOffset; iBoundsCharLength: UniCharCount; iTypeOfBounds: UInt16; iMaxNumberOfBounds: ItemCount; oGlyphBounds: {variable-size-array} ATSTrapezoidPtr { can be NULL }; var oActualNumberOfBounds: ItemCount  ): OSStatus; external name '_ATSUGetGlyphBounds';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework but deprecated in 10.6
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in ATSUnicodeLib 8.6 and later
+ }
+function ATSUGetGlyphBounds( iTextLayout: ATSUTextLayout; iTextBasePointX: ATSUTextMeasurement; iTextBasePointY: ATSUTextMeasurement; iBoundsCharStart: UniCharArrayOffset; iBoundsCharLength: UniCharCount; iTypeOfBounds: UInt16; iMaxNumberOfBounds: ItemCount; oGlyphBounds: {variable-size-array} ATSTrapezoidPtr { can be NULL }; var oActualNumberOfBounds: ItemCount  ): OSStatus; external name '_ATSUGetGlyphBounds';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+>>>>>>> origin/cpstrnew
 
 
 { ---------------------------------------------------------------------------- }
 {  ATSUI line breaking                                                         }
 { ---------------------------------------------------------------------------- }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1194,13 +1350,20 @@ function ATSUGetGlyphBounds( iTextLayout: ATSUTextLayout; iTextBasePointX: ATSUT
 =======
 {$ifc not TARGET_CPU_64}
 {
+=======
+{$ifc not TARGET_CPU_64}
+{
+>>>>>>> origin/cpstrnew
  *  ATSUBatchBreakLines()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    Use CTTypesetterSuggestLineBreak,
  *    CTTypesetterSuggestClusterBreak, or CTTypesetterCreateLine
  *    instead.
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  
  *  Summary:
  *    Soft wraps a range of text in a layout to a constant line width.
@@ -1239,6 +1402,7 @@ function ATSUGetGlyphBounds( iTextLayout: ATSUTextLayout; iTextBasePointX: ATSUT
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *      calling ATSUGetSoftLineBreaks.
 =======
  *      calling ATSUGetSoftLineBreaks. can be NULL
@@ -1249,12 +1413,16 @@ function ATSUGetGlyphBounds( iTextLayout: ATSUTextLayout; iTextBasePointX: ATSUT
 =======
  *      calling ATSUGetSoftLineBreaks.
 >>>>>>> origin/fixes_2.4
+=======
+ *      calling ATSUGetSoftLineBreaks.
+>>>>>>> origin/cpstrnew
  *  
  *  Result:
  *    On success, noErr is returned. See MacErrors.h for possible error
  *    codes.
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1280,6 +1448,9 @@ function ATSUBatchBreakLines( iTextLayout: ATSUTextLayout; iRangeStart: UniCharA
 =======
  *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1289,19 +1460,25 @@ function ATSUBatchBreakLines( iTextLayout: ATSUTextLayout; iRangeStart: UniCharA
 
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  ATSUBreakLine()
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
  *  ATSUBreakLine()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    Use CTTypesetterSuggestLineBreak,
  *    CTTypesetterSuggestClusterBreak, or CTTypesetterCreateLine
  *    instead.
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  
  *  Summary:
  *    Soft wraps a single line of text within a layout.
@@ -1365,6 +1542,7 @@ function ATSUBatchBreakLines( iTextLayout: ATSUTextLayout; iRangeStart: UniCharA
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    for other possible error codes.
  *  
  *  Availability:
@@ -1390,6 +1568,9 @@ function ATSUBreakLine( iTextLayout: ATSUTextLayout; iLineStart: UniCharArrayOff
 =======
  *    for other possible error codes.
 >>>>>>> origin/fixes_2.4
+=======
+ *    for other possible error codes.
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
@@ -1402,19 +1583,25 @@ function ATSUBreakLine( iTextLayout: ATSUTextLayout; iLineStart: UniCharArrayOff
 
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  ATSUSetSoftLineBreak()
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
  *  ATSUSetSoftLineBreak()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    Use CTTypesetterSuggestLineBreak,
  *    CTTypesetterSuggestClusterBreak, or CTTypesetterCreateLine
  *    instead.
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  
  *  Summary:
  *    Sets a soft line break at the specified point in a text layout.
@@ -1446,6 +1633,7 @@ function ATSUBreakLine( iTextLayout: ATSUTextLayout; iLineStart: UniCharArrayOff
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
@@ -1468,6 +1656,9 @@ function ATSUSetSoftLineBreak( iTextLayout: ATSUTextLayout; iLineBreak: UniCharA
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
  }
@@ -1477,19 +1668,25 @@ function ATSUSetSoftLineBreak( iTextLayout: ATSUTextLayout; iLineBreak: UniCharA
 
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  ATSUGetSoftLineBreaks()
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
  *  ATSUGetSoftLineBreaks()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    Use CTTypesetterSuggestLineBreak,
  *    CTTypesetterSuggestClusterBreak, or CTTypesetterCreateLine
  *    instead.
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  
  *  Summary:
  *    Obtains the soft line breaks that are currently set in a given
@@ -1540,6 +1737,7 @@ function ATSUSetSoftLineBreak( iTextLayout: ATSUTextLayout; iLineBreak: UniCharA
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *      array, see the Discussion.
 =======
  *      array, see the Discussion. can be NULL
@@ -1550,6 +1748,9 @@ function ATSUSetSoftLineBreak( iTextLayout: ATSUTextLayout; iLineBreak: UniCharA
 =======
  *      array, see the Discussion.
 >>>>>>> origin/fixes_2.4
+=======
+ *      array, see the Discussion.
+>>>>>>> origin/cpstrnew
  *    
  *    oBreakCount:
  *      On return, the number of soft breaks set in iTextLayout. Note
@@ -1557,6 +1758,7 @@ function ATSUSetSoftLineBreak( iTextLayout: ATSUTextLayout; iLineBreak: UniCharA
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *      iMaximumBreaks.
 =======
  *      iMaximumBreaks. can be NULL
@@ -1567,12 +1769,16 @@ function ATSUSetSoftLineBreak( iTextLayout: ATSUTextLayout; iLineBreak: UniCharA
 =======
  *      iMaximumBreaks.
 >>>>>>> origin/fixes_2.4
+=======
+ *      iMaximumBreaks.
+>>>>>>> origin/cpstrnew
  *  
  *  Result:
  *    On success, noErr is returned. See MacErrors.h for possible error
  *    codes.
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1598,6 +1804,9 @@ function ATSUGetSoftLineBreaks( iTextLayout: ATSUTextLayout; iRangeStart: UniCha
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
  }
@@ -1607,19 +1816,25 @@ function ATSUGetSoftLineBreaks( iTextLayout: ATSUTextLayout; iRangeStart: UniCha
 
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  ATSUClearSoftLineBreaks()
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
  *  ATSUClearSoftLineBreaks()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    Use CTTypesetterSuggestLineBreak,
  *    CTTypesetterSuggestClusterBreak, or CTTypesetterCreateLine
  *    instead.
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  
  *  Summary:
  *    Unsets any currently set soft breaks in a range of text.
@@ -1655,6 +1870,7 @@ function ATSUGetSoftLineBreaks( iTextLayout: ATSUTextLayout; iRangeStart: UniCha
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
@@ -1668,10 +1884,14 @@ function ATSUClearSoftLineBreaks( iTextLayout: ATSUTextLayout; iRangeStart: UniC
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
  }
 function ATSUClearSoftLineBreaks( iTextLayout: ATSUTextLayout; iRangeStart: UniCharArrayOffset; iRangeLength: UniCharCount ): OSStatus; external name '_ATSUClearSoftLineBreaks';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -1680,6 +1900,9 @@ function ATSUClearSoftLineBreaks( iTextLayout: ATSUTextLayout; iRangeStart: UniC
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+>>>>>>> origin/cpstrnew
 
 
 { ---------------------------------------------------------------------------- }
@@ -1689,13 +1912,17 @@ function ATSUClearSoftLineBreaks( iTextLayout: ATSUTextLayout; iRangeStart: UniC
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  ATSUSetHighlightingMethod()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    Use CTLineGetOffsetForStringIndex,
  *    CTLineGetStringIndexForPosition instead.
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
  *  ATSUSetHighlightingMethod()
@@ -1705,6 +1932,8 @@ function ATSUClearSoftLineBreaks( iTextLayout: ATSUTextLayout; iRangeStart: UniC
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  
  *  Summary:
  *    Specifies the methods ATSUI will use for highlighting and
@@ -1754,6 +1983,7 @@ function ATSUClearSoftLineBreaks( iTextLayout: ATSUTextLayout; iRangeStart: UniC
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    RedrawBackgroundProcPtr for additional information.
 =======
  *    RedrawBackgroundProcPtr for additional information. 
@@ -1764,6 +1994,9 @@ function ATSUClearSoftLineBreaks( iTextLayout: ATSUTextLayout; iRangeStart: UniC
 =======
  *    RedrawBackgroundProcPtr for additional information.
 >>>>>>> origin/fixes_2.4
+=======
+ *    RedrawBackgroundProcPtr for additional information.
+>>>>>>> origin/cpstrnew
  *  
  *  Parameters:
  *    
@@ -1783,6 +2016,7 @@ function ATSUClearSoftLineBreaks( iTextLayout: ATSUTextLayout; iRangeStart: UniC
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *      Also see the Discussion for this function.
 =======
  *      Also see the Discussion for this function. can be NULL
@@ -1793,12 +2027,16 @@ function ATSUClearSoftLineBreaks( iTextLayout: ATSUTextLayout; iRangeStart: UniC
 =======
  *      Also see the Discussion for this function.
 >>>>>>> origin/fixes_2.4
+=======
+ *      Also see the Discussion for this function.
+>>>>>>> origin/cpstrnew
  *  
  *  Result:
  *    On success, noErr is returned. See MacErrors.h for possible error
  *    codes.
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1823,6 +2061,9 @@ function ATSUSetHighlightingMethod( iTextLayout: ATSUTextLayout; iMethod: ATSUHi
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1832,18 +2073,24 @@ function ATSUSetHighlightingMethod( iTextLayout: ATSUTextLayout; iMethod: ATSUHi
 
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  ATSUHighlightText()
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
  *  ATSUHighlightText()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    Use CTLineGetOffsetForStringIndex,
  *    CTLineGetStringIndexForPosition instead.
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  
  *  Summary:
  *    Renders a highlighted range of text at a specified location in a
@@ -1908,6 +2155,7 @@ function ATSUSetHighlightingMethod( iTextLayout: ATSUTextLayout; iMethod: ATSUHi
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
@@ -1929,6 +2177,9 @@ function ATSUHighlightText( iTextLayout: ATSUTextLayout; iTextBasePointX: ATSUTe
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
  }
@@ -1938,18 +2189,24 @@ function ATSUHighlightText( iTextLayout: ATSUTextLayout; iTextBasePointX: ATSUTe
 
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  ATSUUnhighlightText()
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
  *  ATSUUnhighlightText()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    Use CTLineGetOffsetForStringIndex,
  *    CTLineGetStringIndexForPosition instead.
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  
  *  Summary:
  *    Renders a previously highlighted range of text in an
@@ -2013,6 +2270,7 @@ function ATSUHighlightText( iTextLayout: ATSUTextLayout; iTextBasePointX: ATSUTe
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
@@ -2034,6 +2292,9 @@ function ATSUUnhighlightText( iTextLayout: ATSUTextLayout; iTextBasePointX: ATSU
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
  }
@@ -2043,18 +2304,24 @@ function ATSUUnhighlightText( iTextLayout: ATSUTextLayout; iTextBasePointX: ATSU
 
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  ATSUGetTextHighlight()
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
  *  ATSUGetTextHighlight()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    Use CTLineGetOffsetForStringIndex,
  *    CTLineGetStringIndexForPosition instead.
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  
  *  Summary:
  *    Obtains the highlight region for a range of text.
@@ -2116,6 +2383,7 @@ function ATSUUnhighlightText( iTextLayout: ATSUTextLayout; iTextBasePointX: ATSU
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
@@ -2137,6 +2405,9 @@ function ATSUGetTextHighlight( iTextLayout: ATSUTextLayout; iTextBasePointX: ATS
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
  }
@@ -2146,18 +2417,24 @@ function ATSUGetTextHighlight( iTextLayout: ATSUTextLayout; iTextBasePointX: ATS
 
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  ATSUHighlightInactiveText()
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
  *  ATSUHighlightInactiveText()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    Use CTLineGetOffsetForStringIndex,
  *    CTLineGetStringIndexForPosition  instead.
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  
  *  Summary:
  *    Highlights text using the standard Mac OS X UI convention for an
@@ -2212,6 +2489,7 @@ function ATSUGetTextHighlight( iTextLayout: ATSUTextLayout; iTextBasePointX: ATS
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
@@ -2225,10 +2503,14 @@ function ATSUHighlightInactiveText( iTextLayout: ATSUTextLayout; iTextBasePointX
 =======
  *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
 function ATSUHighlightInactiveText( iTextLayout: ATSUTextLayout; iTextBasePointX: ATSUTextMeasurement; iTextBasePointY: ATSUTextMeasurement; iHighlightStart: UniCharArrayOffset; iHighlightLength: UniCharCount ): OSStatus; external name '_ATSUHighlightInactiveText';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -2237,11 +2519,15 @@ function ATSUHighlightInactiveText( iTextLayout: ATSUTextLayout; iTextBasePointX
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+>>>>>>> origin/cpstrnew
 
 
 { ---------------------------------------------------------------------------- }
 {  ATSUI hit-testing                                                           }
 { ---------------------------------------------------------------------------- }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2264,11 +2550,19 @@ function ATSUHighlightInactiveText( iTextLayout: ATSUTextLayout; iTextBasePointX
 {$endc} {not TARGET_CPU_64}
 
 {
+=======
+{$endc} {not TARGET_CPU_64}
+
+{
+>>>>>>> origin/cpstrnew
  *  ATSUPositionToOffset()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    Use CTLineGetStringIndexForPosition instead.
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  
  *  Summary:
  *    Obtains the memory offset for the glyph edge nearest a mouse-down
@@ -2377,6 +2671,7 @@ function ATSUHighlightInactiveText( iTextLayout: ATSUTextLayout; iTextBasePointX
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework but deprecated in 10.6
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
@@ -2398,6 +2693,9 @@ function ATSUPositionToOffset( iTextLayout: ATSUTextLayout; iLocationX: ATSUText
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework but deprecated in 10.6
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework but deprecated in 10.6
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
  }
@@ -2408,17 +2706,23 @@ function ATSUPositionToOffset( iTextLayout: ATSUTextLayout; iLocationX: ATSUText
 {$ifc not TARGET_CPU_64}
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  ATSUOffsetToPosition()
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
  *  ATSUOffsetToPosition()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    Use CTLineGetStringIndexForPosition instead.
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  
  *  Summary:
  *    Obtains the caret position(s) corresponding to a memory offset.
@@ -2501,6 +2805,7 @@ function ATSUPositionToOffset( iTextLayout: ATSUTextLayout; iLocationX: ATSUText
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
@@ -2521,6 +2826,9 @@ function ATSUOffsetToPosition( iTextLayout: ATSUTextLayout; iOffset: UniCharArra
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
  }
@@ -2530,17 +2838,23 @@ function ATSUOffsetToPosition( iTextLayout: ATSUTextLayout; iOffset: UniCharArra
 
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  ATSUPositionToCursorOffset()
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
  *  ATSUPositionToCursorOffset()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    Use CTLineGetOffsetForStringIndex instead.
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  
  *  Summary:
  *    Obtains the memory offset for the glyph edge nearest a mouse-down
@@ -2615,6 +2929,7 @@ function ATSUOffsetToPosition( iTextLayout: ATSUTextLayout; iOffset: UniCharArra
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
  *    CarbonLib:        in CarbonLib 1.5 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 9.2.2 and later
@@ -2636,6 +2951,9 @@ function ATSUPositionToCursorOffset( iTextLayout: ATSUTextLayout; iLocationX: AT
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.5 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 9.2.2 and later
  }
@@ -2645,18 +2963,24 @@ function ATSUPositionToCursorOffset( iTextLayout: ATSUTextLayout; iLocationX: AT
 
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  ATSUOffsetToCursorPosition()
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
  *  ATSUOffsetToCursorPosition()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    Use CTLineGetOffsetForStringIndex,
  *    CTLineGetStringIndexForPosition instead.
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  
  *  Summary:
  *    Obtains the caret position(s) corresponding to a memory offset,
@@ -2723,6 +3047,7 @@ function ATSUPositionToCursorOffset( iTextLayout: ATSUTextLayout; iLocationX: AT
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
  *    CarbonLib:        in CarbonLib 1.5 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 9.2.2 and later
@@ -2736,10 +3061,14 @@ function ATSUOffsetToCursorPosition( iTextLayout: ATSUTextLayout; iOffset: UniCh
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.5 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 9.2.2 and later
  }
 function ATSUOffsetToCursorPosition( iTextLayout: ATSUTextLayout; iOffset: UniCharArrayOffset; iIsLeading: Boolean; iMovementType: ATSUCursorMovementType; var oMainCaret: ATSUCaret; var oSecondCaret: ATSUCaret; var oCaretIsSplit: Boolean ): OSStatus; external name '_ATSUOffsetToCursorPosition';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -2748,6 +3077,9 @@ function ATSUOffsetToCursorPosition( iTextLayout: ATSUTextLayout; iOffset: UniCh
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+>>>>>>> origin/cpstrnew
 
 
 { ---------------------------------------------------------------------------- }
@@ -2757,13 +3089,17 @@ function ATSUOffsetToCursorPosition( iTextLayout: ATSUTextLayout; iOffset: UniCh
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  ATSUNextCursorPosition()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    Use CTLineGetOffsetForStringIndex,
  *    CTLineGetStringIndexForPosition instead.
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
  *  ATSUNextCursorPosition()
@@ -2773,6 +3109,8 @@ function ATSUOffsetToCursorPosition( iTextLayout: ATSUTextLayout; iOffset: UniCh
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  
  *  Summary:
  *    Obtains the memory offset for the insertion point that follows
@@ -2811,6 +3149,7 @@ function ATSUOffsetToCursorPosition( iTextLayout: ATSUTextLayout; iOffset: UniCh
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
@@ -2832,6 +3171,9 @@ function ATSUNextCursorPosition( iTextLayout: ATSUTextLayout; iOldOffset: UniCha
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
  }
@@ -2841,18 +3183,24 @@ function ATSUNextCursorPosition( iTextLayout: ATSUTextLayout; iOldOffset: UniCha
 
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  ATSUPreviousCursorPosition()
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
  *  ATSUPreviousCursorPosition()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    Use CTLineGetOffsetForStringIndex,
  *    CTLineGetStringIndexForPosition instead.
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  
  *  Summary:
  *    Obtains the memory offset for the insertion point that preceeds
@@ -2891,6 +3239,7 @@ function ATSUNextCursorPosition( iTextLayout: ATSUTextLayout; iOldOffset: UniCha
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
@@ -2912,6 +3261,9 @@ function ATSUPreviousCursorPosition( iTextLayout: ATSUTextLayout; iOldOffset: Un
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
  }
@@ -2921,18 +3273,24 @@ function ATSUPreviousCursorPosition( iTextLayout: ATSUTextLayout; iOldOffset: Un
 
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  ATSURightwardCursorPosition()
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
  *  ATSURightwardCursorPosition()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    Use CTLineGetOffsetForStringIndex,
  *    CTLineGetStringIndexForPosition instead.
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  
  *  Summary:
  *    Obtains the memory offset for the insertion point that is to the
@@ -2978,6 +3336,7 @@ function ATSUPreviousCursorPosition( iTextLayout: ATSUTextLayout; iOldOffset: Un
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
@@ -2999,6 +3358,9 @@ function ATSURightwardCursorPosition( iTextLayout: ATSUTextLayout; iOldOffset: U
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
  }
@@ -3008,18 +3370,24 @@ function ATSURightwardCursorPosition( iTextLayout: ATSUTextLayout; iOldOffset: U
 
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  ATSULeftwardCursorPosition()
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
  *  ATSULeftwardCursorPosition()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    Use CTLineGetOffsetForStringIndex,
  *    CTLineGetStringIndexForPosition instead.
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  
  *  Summary:
  *    Obtains the memory offset for the insertion point that is to the
@@ -3065,6 +3433,7 @@ function ATSURightwardCursorPosition( iTextLayout: ATSUTextLayout; iOldOffset: U
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
@@ -3078,10 +3447,14 @@ function ATSULeftwardCursorPosition( iTextLayout: ATSUTextLayout; iOldOffset: Un
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.6
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
  }
 function ATSULeftwardCursorPosition( iTextLayout: ATSUTextLayout; iOldOffset: UniCharArrayOffset; iMovementType: ATSUCursorMovementType; var oNewOffset: UniCharArrayOffset ): OSStatus; external name '_ATSULeftwardCursorPosition';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -3090,6 +3463,9 @@ function ATSULeftwardCursorPosition( iTextLayout: ATSUTextLayout; iOldOffset: Un
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+>>>>>>> origin/cpstrnew
 
 
 { Functions listed beyond this point are either deprecated or not recommended }
@@ -3098,12 +3474,16 @@ function ATSULeftwardCursorPosition( iTextLayout: ATSUTextLayout; iOldOffset: Un
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  ATSUMeasureText()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    Use ATSUGetUnjustifiedBounds instead.
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
  *  ATSUMeasureText()
@@ -3113,6 +3493,8 @@ function ATSULeftwardCursorPosition( iTextLayout: ATSUTextLayout; iOldOffset: Un
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  
  *  Discussion:
  *    This function is no longer recommended. Please use
@@ -3122,6 +3504,7 @@ function ATSULeftwardCursorPosition( iTextLayout: ATSUTextLayout; iOldOffset: Un
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.3
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
@@ -3144,6 +3527,9 @@ end.
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.3
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.3
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ATSUnicodeLib 8.5 and later
  }
@@ -3159,9 +3545,13 @@ function ATSUMeasureText( iTextLayout: ATSUTextLayout; iLineStart: UniCharArrayO
 end.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       AE/AEDataModel.h
  
      Contains:   AppleEvent Data Model Interfaces.
@@ -32,11 +33,15 @@
 =======
      File:       AE/AEDataModel.h
 >>>>>>> origin/fixes_2.4
+=======
+     File:       AE/AEDataModel.h
+>>>>>>> origin/cpstrnew
  
      Contains:   AppleEvent Data Model Interfaces.
  
      Version:    AppleEvents-496~1
  
+<<<<<<< HEAD
 <<<<<<< HEAD
      Copyright:  © 1996-2002 by Apple Computer, Inc., all rights reserved
 <<<<<<< HEAD
@@ -46,6 +51,9 @@
 =======
      Copyright:  © 1996-2008 by Apple Computer, Inc., all rights reserved
 >>>>>>> origin/fixes_2.4
+=======
+     Copyright:  © 1996-2008 by Apple Computer, Inc., all rights reserved
+>>>>>>> origin/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -55,6 +63,7 @@
                      http://bugs.freepascal.org
  
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -84,6 +93,8 @@
                      http://www.freepascal.org/bugs.html
  
 }
+=======
+>>>>>>> origin/cpstrnew
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {
     Modified for use with Free Pascal
@@ -93,12 +104,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -110,6 +125,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -124,6 +140,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -139,6 +159,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -149,6 +170,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -156,13 +180,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -170,6 +198,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -178,8 +208,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -190,6 +223,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -210,6 +244,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -218,12 +254,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -231,6 +270,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -519,12 +559,27 @@ interface
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
+=======
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -569,6 +624,7 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc TARGET_CPU_PPC_64 := FALSE}
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -576,6 +632,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -604,6 +662,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -612,6 +671,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -625,6 +686,7 @@ uses MacTypes,MixedMode;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -661,6 +723,12 @@ uses MacTypes,MixedMode;
 =======
 
 >>>>>>> origin/fixes_2_2
+=======
+{$endc} {not MACOSALLINCLUDE}
+
+
+{$ifc TARGET_OS_MAC}
+>>>>>>> origin/cpstrnew
 
 {$ALIGN MAC68K}
 
@@ -668,6 +736,7 @@ uses MacTypes,MixedMode;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 const
 	typeBoolean = FourCharCode('bool');
 	typeChar = FourCharCode('TEXT'); { Deprecated, use typeUTF8Text instead. }
@@ -869,6 +938,23 @@ const
 	typeCString = FourCharCode('cstr'); { MacRoman characters followed by a NULL byte }
 	typePString = FourCharCode('pstr'); { Unsigned length byte followed by MacRoman characters }
 
+=======
+const
+	typeBoolean = FourCharCode('bool');
+	typeChar = FourCharCode('TEXT'); { Deprecated, use typeUTF8Text instead. }
+
+{
+ * The following descriptor types are deprecated due to their lack of
+ * explicit encoding or byte order definition.  Please use
+ * typeUTF16ExternalRepresentation or typeUTF8Text instead. }
+const
+	typeStyledUnicodeText = FourCharCode('sutx'); { Not implemented }
+	typeEncodedString = FourCharCode('encs'); { Not implemented }
+	typeUnicodeText = FourCharCode('utxt'); { native byte ordering, optional BOM }
+	typeCString = FourCharCode('cstr'); { MacRoman characters followed by a NULL byte }
+	typePString = FourCharCode('pstr'); { Unsigned length byte followed by MacRoman characters }
+
+>>>>>>> origin/cpstrnew
 {
  * The preferred unicode text types.  In both cases, there is no explicit null termination or length byte.
  }
@@ -897,6 +983,7 @@ const
 
     You should change your existing code to not use the following types, and use the more specific ones.  Check
     through your code to make sure that the datasize referenced by these types is the correct type.
+<<<<<<< HEAD
 
         type constant       change to                   data type should be
         -------------       ---------                   -------------------
@@ -921,6 +1008,25 @@ const
 }
 {$elsec} {TARGET_CPU_64}
 >>>>>>> origin/fixes_2.4
+=======
+
+        type constant       change to                   data type should be
+        -------------       ---------                   -------------------
+        typeSMInt           typeSInt16                  SInt16
+        typeShortInteger    typeSInt16                  SInt16
+        typeInteger         typeSInt32                  SInt32
+        typeLongInteger     typeSInt32                  SInt32
+        typeComp            typeSInt64                  SInt64 or Wide
+        typeSMFloat         typeIEEE32BitFloatingPoint  Float32
+        typeShortFloat      typeIEEE32BitFloatingPoint  Float32
+        typeLongFloat       typeIEEE64BitFloatingPoint  Float64
+
+    There is no good type on 64 bit to use for typeEntended; either change your code to pass typeIEEE64BitFloatingPoint
+    for typeExtended and live with the reduction in range or use type128BitFloatingPoint.
+
+}
+{$elsec} {TARGET_CPU_64}
+>>>>>>> origin/cpstrnew
 	{	 Non-preferred Apple event descriptor types 	}
 	typeSMInt					= FourCharCode('shor');
 	typeShortInteger			= FourCharCode('shor');
@@ -933,6 +1039,7 @@ const
 	typeFloat					= FourCharCode('doub');
 	typeLongFloat				= FourCharCode('doub');
 	typeExtended				= FourCharCode('exte');
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1246,6 +1353,47 @@ const
 =======
 >>>>>>> origin/fixes_2.4
 
+=======
+{$endc} {TARGET_CPU_64}
+
+{ More Apple event descriptor types }
+const
+	typeAEList = FourCharCode('list');
+	typeAERecord = FourCharCode('reco');
+	typeAppleEvent = FourCharCode('aevt');
+	typeEventRecord = FourCharCode('evrc');
+	typeTrue = FourCharCode('true');
+	typeFalse = FourCharCode('fals');
+	typeAlias = FourCharCode('alis'); { AliasPtr, from a valid AliasHandle }
+	typeEnumerated = FourCharCode('enum');
+	typeType = FourCharCode('type'); { OSType }
+	typeAppParameters = FourCharCode('appa');
+	typeProperty = FourCharCode('prop');
+	typeFSRef = FourCharCode('fsrf'); { FSRef }
+	typeFileURL = FourCharCode('furl');
+	typeBookmarkData = FourCharCode('bmrk');
+	typeKeyword = FourCharCode('keyw'); { OSType }
+	typeSectionH = FourCharCode('sect');
+	typeWildCard = FourCharCode('****');
+	typeApplSignature = FourCharCode('sign'); { OSType }
+	typeQDRectangle = FourCharCode('qdrt');
+	typeFixed = FourCharCode('fixd');
+	typeProcessSerialNumber = FourCharCode('psn '); { ProcessSerialNumber }
+	typeApplicationURL = FourCharCode('aprl');
+	typeNull = FourCharCode('null'); { null or nonexistent data }
+
+{$ifc not TARGET_CPU_64}
+{
+    FSSpecs are deprecated on Mac OS X, and their use in AppleEvents is discouraged.  You should change
+    your code to use FSRefs.  In __LP64__ code, coercions into typeFSS is not supported,
+    and coercion from typeFSS is not guaranteed to work correctly in all cases.
+}
+const
+	typeFSS = FourCharCode('fss '); { FSSpec }
+
+{$endc} {not TARGET_CPU_64}
+
+>>>>>>> origin/cpstrnew
 const
 	typeCFAttributedStringRef = FourCharCode('cfas');
 	typeCFMutableAttributedStringRef = FourCharCode('cfaa');
@@ -1311,6 +1459,7 @@ const
 	keyUserPasswordAttr = FourCharCode('pass'); { not sent with the event }
 	keyDisableAuthenticationAttr = FourCharCode('auth'); { When present and with a non zero value (that is, false, or integer 0), }
 <<<<<<< HEAD
+<<<<<<< HEAD
                                                            { AESend will not authenticate the user.  If not present, or with a non-zero}
                                                            { value, AESend will prompt for authentication information from the user if the interaction level allows. }
 	keyXMLDebuggingAttr         = FourCharCode('xdbg'); { a bitfield of specifying which XML debugging data is to be returned with the event }
@@ -1339,6 +1488,8 @@ const
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
                                         { AESend will not authenticate the user.  If not present, or with a non-zero}
                                         { value, AESend will prompt for authentication information from the user if the interaction level allows. }
 	keyXMLDebuggingAttr = FourCharCode('xdbg'); { a bitfield of specifying which XML debugging data is to be returned with the event }
@@ -1362,7 +1513,10 @@ const
 	keySOAPMethodNameSpace = FourCharCode('mspc'); { Optional namespace (defaults to m:) }
 	keySOAPMethodNameSpaceURI = FourCharCode('mspu'); { Required namespace URI }
 	keySOAPSchemaVersion = FourCharCode('ssch'); { Optional XML Schema version, defaults to kSOAP1999Schama }
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 { 
    When serializing AERecords as SOAP structures, it is possible
@@ -1382,13 +1536,17 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 const
 	keySOAPStructureMetaData = FourCharCode('/smd');
 	keySOAPSMDNamespace = FourCharCode('ssns'); { "myNamespace"}
 	keySOAPSMDNamespaceURI = FourCharCode('ssnu'); { "http://myUri.org/xsd"}
 	keySOAPSMDType = FourCharCode('sstp'); { "MyStructType"}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
@@ -1403,6 +1561,8 @@ const
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 { 
  * Web Services Proxy support.  Available only on Mac OS X 10.2 or later.
@@ -1412,14 +1572,18 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 const
 { Automatically configure the proxy based on System Configuration }
 	kAEUseHTTPProxyAttr = FourCharCode('xupr'); { a typeBoolean.  Defaults to true.}
                                         { manually specify the proxy host and port. }
 	kAEHTTPProxyPortAttr = FourCharCode('xhtp'); { a typeSInt32}
 	kAEHTTPProxyHostAttr = FourCharCode('xhth'); { a typeChar}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
@@ -1435,12 +1599,15 @@ const
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {
  * Web Services SOCKS support.  kAEUseSocksAttr is a boolean that
  * specifies whether to automatically configure SOCKS proxies by
  * querying System Configuration.
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1515,6 +1682,30 @@ const
 	kAEDescListFactorType = 4;
 	kAEDescListFactorTypeAndSize = 8;
 
+=======
+const
+	kAESocks4Protocol = 4;
+	kAESocks5Protocol = 5;
+
+const
+	kAEUseSocksAttr = FourCharCode('xscs'); { a typeBoolean.  Defaults to true.}
+                                        { This attribute specifies a specific SOCKS protocol to be used }
+	kAESocksProxyAttr = FourCharCode('xsok'); { a typeSInt32}
+                                        { if version >= 4 }
+	kAESocksHostAttr = FourCharCode('xshs'); { a typeChar}
+	kAESocksPortAttr = FourCharCode('xshp'); { a typeSInt32}
+	kAESocksUserAttr = FourCharCode('xshu'); { a typeChar}
+                                        { if version >= 5 }
+	kAESocksPasswordAttr = FourCharCode('xshw'); { a typeChar}
+
+
+{  Constants used for specifying the factoring of AEDescLists. }
+const
+	kAEDescListFactorNone = 0;
+	kAEDescListFactorType = 4;
+	kAEDescListFactorTypeAndSize = 8;
+
+>>>>>>> origin/cpstrnew
 { Constants used creating an AppleEvent }
 const
 { Constant for the returnID param of AECreateAppleEvent }
@@ -1524,18 +1715,23 @@ const
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 { Apple event manager data types }
 >>>>>>> origin/fixes_2.4
+=======
+{ Apple event manager data types }
+>>>>>>> origin/cpstrnew
 type
 	DescType							= ResType;
 	DescTypePtr					= ^DescType;
 	AEKeyword							= FourCharCode;
 	AEKeywordPtr					= ^AEKeyword;
 {$ifc OPAQUE_TOOLBOX_STRUCTS}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1566,6 +1762,9 @@ type
 =======
 	AEDataStorage    = ^SInt32; { an opaque type }
 >>>>>>> origin/fixes_2.4
+=======
+	AEDataStorage    = ^SInt32; { an opaque type }
+>>>>>>> origin/cpstrnew
 	AEDataStoragePtr = ^AEDataStorage;  { when a var xx:AEDataStorage parameter can be nil, it is changed to xx: AEDataStoragePtr }
 {$elsec}
 	AEDataStorage						= Handle;
@@ -1576,6 +1775,9 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 		descriptorType: DescType;
 		{ No alignment dummy here for 64 bit, also compiled with m68k alignment in C! }
 		dataHandle: AEDataStorage;
@@ -1599,11 +1801,16 @@ type
 =======
 { a list of AEDesc's is a special kind of AEDesc }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 { a list of AEDesc's is a special kind of AEDesc }
 
 >>>>>>> graemeg/cpstrnew
+=======
+{ a list of AEDesc's is a special kind of AEDesc }
+
+>>>>>>> origin/cpstrnew
 =======
 { a list of AEDesc's is a special kind of AEDesc }
 
@@ -1637,6 +1844,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
@@ -1653,6 +1861,12 @@ const
 
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+
+
+const
+	kAEHandleArray = 2;
+>>>>>>> origin/cpstrnew
 
 
 >>>>>>> origin/cpstrnew
@@ -1723,6 +1937,9 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 			kAEDataArray: array [0..0] of SInt16;
 			);
 		1: (
@@ -1754,6 +1971,7 @@ const
 
 type
 	AESendMode = SInt32;
+<<<<<<< HEAD
 const
 	kAENoReply = $00000001; { sender doesn't want a reply to event }
 	kAEQueueReply = $00000002; { sender wants a reply but won't wait }
@@ -1856,9 +2074,34 @@ type
 const
 	kAENormalPriority = $00000000; { post message at the end of the event queue }
 	kAEHighPriority = $00000001; { post message at the front of the event queue (same as nAttnMsg) }
+=======
+const
+	kAENoReply = $00000001; { sender doesn't want a reply to event }
+	kAEQueueReply = $00000002; { sender wants a reply but won't wait }
+	kAEWaitReply = $00000003; { sender wants a reply and will wait }
+	kAEDontReconnect = $00000080; { don't reconnect if there is a sessClosedErr from PPCToolbox }
+	kAEWantReceipt = $00000200; { (nReturnReceipt) sender wants a receipt of message }
+	kAENeverInteract = $00000010; { server should not interact with user }
+	kAECanInteract = $00000020; { server may try to interact with user }
+	kAEAlwaysInteract = $00000030; { server should always interact with user where appropriate }
+	kAECanSwitchLayer = $00000040; { interaction may switch layer }
+	kAEDontRecord = $00001000; { don't record this event - available only in vers 1.0.1 and greater }
+	kAEDontExecute = $00002000; { don't send the event for recording - available only in vers 1.0.1 and greater }
+	kAEProcessNonReplyEvents = $00008000; { allow processing of non-reply events while awaiting synchronous AppleEvent reply }
 
 
+{ Constants for timeout durations }
+const
+	kAEDefaultTimeout = -1;   { timeout value determined by AEM }
+	kNoTimeOut = -2;    { wait until reply comes back, however long it takes }
+>>>>>>> origin/cpstrnew
+
+
+{*************************************************************************
+  These calls are used to set up and modify the coercion dispatch table.
+*************************************************************************}
 type
+<<<<<<< HEAD
 	AESendMode = SInt32;
 const
 	kAENoReply = $00000001; { sender doesn't want a reply to event }
@@ -1885,6 +2128,8 @@ const
   These calls are used to set up and modify the coercion dispatch table.
 *************************************************************************}
 type
+=======
+>>>>>>> origin/cpstrnew
 	AECoerceDescProcPtr = function( const (*var*) fromDesc: AEDesc; toType: DescType; handlerRefcon: SRefCon; var toDesc: AEDesc ): OSErr;
 	AECoercePtrProcPtr = function( typeCode: DescType; dataPtr: {const} UnivPtr; dataSize: Size; toType: DescType; handlerRefcon: SRefCon; var result: AEDesc ): OSErr;
 	AECoerceDescUPP = UniversalProcPtr;
@@ -1900,6 +2145,7 @@ type
 function NewAECoerceDescUPP( userRoutine: AECoerceDescProcPtr ): AECoerceDescUPP; external name '_NewAECoerceDescUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 const
 	uppAECoerceDescProcInfo = $00003FE0;
@@ -1919,10 +2165,13 @@ function NewAECoerceDescUPP(userRoutine: AECoerceDescProcPtr): AECoerceDescUPP; 
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  NewAECoercePtrUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1970,10 +2219,20 @@ function NewAECoercePtrUPP( userRoutine: AECoercePtrProcPtr ): AECoercePtrUPP; e
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function NewAECoercePtrUPP( userRoutine: AECoercePtrProcPtr ): AECoercePtrUPP; external name '_NewAECoercePtrUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  DisposeAECoerceDescUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2021,10 +2280,20 @@ procedure DisposeAECoerceDescUPP( userUPP: AECoerceDescUPP ); external name '_Di
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeAECoerceDescUPP( userUPP: AECoerceDescUPP ); external name '_DisposeAECoerceDescUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  DisposeAECoercePtrUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2053,9 +2322,13 @@ procedure DisposeAECoercePtrUPP( userUPP: AECoercePtrUPP ); external name '_Disp
 
 =======
  *    Non-Carbon CFM:   available as macro/inline
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
  }
+<<<<<<< HEAD
 procedure DisposeAECoercePtrUPP(userUPP: AECoercePtrUPP); external name '_DisposeAECoercePtrUPP';
 >>>>>>> graemeg/fixes_2_2
 =======
@@ -2074,10 +2347,16 @@ procedure DisposeAECoercePtrUPP( userUPP: AECoercePtrUPP ); external name '_Disp
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+procedure DisposeAECoercePtrUPP( userUPP: AECoercePtrUPP ); external name '_DisposeAECoercePtrUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  InvokeAECoerceDescUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2125,10 +2404,20 @@ function InvokeAECoerceDescUPP( const (*var*) fromDesc: AEDesc; toType: DescType
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function InvokeAECoerceDescUPP( const (*var*) fromDesc: AEDesc; toType: DescType; handlerRefcon: SRefCon; var toDesc: AEDesc; userUPP: AECoerceDescUPP ): OSErr; external name '_InvokeAECoerceDescUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  InvokeAECoercePtrUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2176,6 +2465,15 @@ function InvokeAECoercePtrUPP( typeCode: DescType; dataPtr: {const} UnivPtr; dat
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function InvokeAECoercePtrUPP( typeCode: DescType; dataPtr: {const} UnivPtr; dataSize: Size; toType: DescType; handlerRefcon: SRefCon; var result: AEDesc; userUPP: AECoercePtrUPP ): OSErr; external name '_InvokeAECoercePtrUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 { a AECoercionHandlerUPP is by default a AECoerceDescUPP.  If you are registering a 
     Ptr based coercion handler you will have to add a cast to AECoerceDescUPP from 
     your AECoercePtrUPP type.  A future release of the interfaces will fix this by
@@ -2183,6 +2481,10 @@ function InvokeAECoercePtrUPP( typeCode: DescType; dataPtr: {const} UnivPtr; dat
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+type
+	AECoercionHandlerUPP = AECoerceDescUPP;
+=======
 type
 	AECoercionHandlerUPP = AECoerceDescUPP;
 {
@@ -2218,6 +2520,80 @@ type
  *    
  *    toType:
  *      The descriptor type of the resulting data.
+ *      If there was already an entry in the specified coercion handler
+ *      table for the same source descriptor type and result descriptor
+ *      type, the existing entry is replaced.
+ *    
+ *    handler:
+ *      A universal procedure pointer to the coercion handler function
+ *      to install.
+ *    
+ *    handlerRefcon:
+ *      A reference constant. The Apple Event Manager passes this value
+ *      to the handler each time it calls it. If your handler doesn't
+ *      require a reference constant, pass 0 for this parameter.
+ *    
+ *    fromTypeIsDesc:
+ *      Specifies the form of the data to coerce. Pass TRUE if the
+ *      coercion handler expects the data as a descriptor or FALSE if
+ *      the coercion handler expects a pointer to the data. The Apple
+ *      Event Manager can provide a pointer to data more efficiently
+ *      than it can provide a descriptor, so all coercion functions
+ *      should accept a pointer to data if possible.
+ *    
+ *    isSysHandler:
+ *      Specifies the coercion table to add the handler to. Pass TRUE
+ *      to add the handler to the system coercion table or FALSE to add
+ *      the handler to your application's coercion table. Use of the
+ *      system coercion table is not recommended.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function AEInstallCoercionHandler( fromType: DescType; toType: DescType; handler: AECoercionHandlerUPP; handlerRefcon: SRefCon; fromTypeIsDesc: Boolean; isSysHandler: Boolean ): OSErr; external name '_AEInstallCoercionHandler';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
+{
+ *  AEInstallCoercionHandler()
+ *  
+ *  Summary:
+ *    Installs a coercion handler in either the application or system
+ *    coercion handler dispatch table.
+ *  
+ *  Discussion:
+ *    Before using AEInstallCoercionHandler to install a handler for a
+ *    particular descriptor type, you can use the AEGetCoercionHandler
+ *    function to determine whether the table already contains a
+ *    coercion handler for that type. 
+ *    Version Notes
+ *    See the Version Notes section for the AECoercePtr function for
+ *    information on when to use descriptor-based versus pointer-based
+ *    coercion handlers starting in Mac OS X version 10.2.
+ *    Your application should not install a coercion handler in a
+ *    system coercion handler dispatch table with the goal that the
+ *    handler will get called when other applications perform coercions
+ *    - this won't work in Mac OS X. For more information, see "Writing
+ *    and Installing Coercion Handlers" in Apple Events Programming
+ *    Guide.
+ *  
+ *  Discussion:
+ *    Removes a coercion handler from a coercion handler dispatch table.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.2
+ *  
+ *  Parameters:
+ *    
+ *    fromType:
+ *      The descriptor type of the data coerced by the handler.
+ *    
+ *    toType:
+ *      The descriptor type of the resulting data.
+<<<<<<< HEAD
  *      If there was already an entry in the specified coercion handler
  *      table for the same source descriptor type and result descriptor
  *      type, the existing entry is replaced.
@@ -2303,10 +2679,30 @@ function AEInstallCoercionHandler( fromType: DescType; toType: DescType; handler
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+=======
+ *    
+ *    handler:
+ *      A universal procedure pointer to the coercion handler to
+ *      remove. Although the parameters fromType and toType are
+ *      sufficient to identify the handler, you can identify the
+ *      handler explicitly as a safeguard. If you pass NULL for this
+ *      parameter, the Apple Event Manager relies solely on the event
+ *      class and event ID to identify the handler.
+ *    
+ *    isSysHandler:
+ *      Specifies the coercion table to remove the handler from. Pass
+ *      TRUE to remove the handler from the system coercion table or
+ *      FALSE to remove the handler from your application's coercion
+ *      table. Use of the system coercion table is not recommended.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function AERemoveCoercionHandler( fromType: DescType; toType: DescType; handler: AECoercionHandlerUPP; isSysHandler: Boolean ): OSErr; external name '_AERemoveCoercionHandler';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2324,6 +2720,9 @@ function AERemoveCoercionHandler( fromType: DescType; toType: DescType; handler:
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2332,6 +2731,7 @@ function AERemoveCoercionHandler( fromType: DescType; toType: DescType; handler:
  *  Discussion:
  *    Gets the coercion handler for a specified descriptor type.
  *  
+<<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version 10.2
  *  
@@ -2476,6 +2876,8 @@ function AEInstallCoercionHandler( fromType: DescType; toType: DescType; handler
  *  Discussion:
  *    Removes a coercion handler from a coercion handler dispatch table.
  *  
+=======
+>>>>>>> origin/cpstrnew
  *  Mac OS X threading:
  *    Thread safe since version 10.2
  *  
@@ -2488,6 +2890,7 @@ function AEInstallCoercionHandler( fromType: DescType; toType: DescType; handler
  *      The descriptor type of the resulting data.
  *    
  *    handler:
+<<<<<<< HEAD
  *      A universal procedure pointer to the coercion handler to
  *      remove. Although the parameters fromType and toType are
  *      sufficient to identify the handler, you can identify the
@@ -2564,11 +2967,45 @@ function AEGetCoercionHandler(fromType: DescType; toType: DescType; var handler:
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+ *      A universal procedure pointer. On return, a pointer to the
+ *      specified handler, if a coercion table entry exists that
+ *      exactly matches the values supplied in the parameters fromType
+ *      and toType. See AECoercionHandlerUPP.
+ *    
+ *    handlerRefcon:
+ *      A pointer to a reference constant. On return, the reference
+ *      constant from the coercion table entry for the specified
+ *      coercion handler. The Apple Event Manager passes this reference
+ *      constant to the handler each time it calls the handler. The
+ *      reference constant may have a value of 0.
+ *    
+ *    fromTypeIsDesc:
+ *      A pointer to a Boolean value. The AEGetCoercionHandler function
+ *      returns a value of TRUE in this parameter if the coercion
+ *      handler expects the data as a descriptor or FALSE, if the
+ *      coercion handler expects a pointer to the data.
+ *    
+ *    isSysHandler:
+ *      Specifies the coercion table to get the handler from. Pass TRUE
+ *      to get the handler from the system coercion table or FALSE to
+ *      get the handler from your application's coercion table. Use of
+ *      the system coercion table is not recommended.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+>>>>>>> origin/cpstrnew
 function AEGetCoercionHandler( fromType: DescType; toType: DescType; var handler: AECoercionHandlerUPP; var handlerRefcon: SRefCon; var fromTypeIsDesc: Boolean; isSysHandler: Boolean ): OSErr; external name '_AEGetCoercionHandler';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {*************************************************************************
   The following calls provide for a coercion interface.
 *************************************************************************}
@@ -2578,13 +3015,19 @@ function AEGetCoercionHandler( fromType: DescType; toType: DescType; var handler
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  Discussion:
  *    Coerces data to a desired descriptor type and creates a
  *    descriptor containing the newly coerced data.
  *  
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
  *  Mac OS X threading:
  *    Thread safe since version 10.2
  *  
@@ -2620,6 +3063,7 @@ function AECoercePtr( typeCode: DescType; dataPtr: {const} UnivPtr; dataSize: Si
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -2630,6 +3074,9 @@ function AECoercePtr( typeCode: DescType; dataPtr: {const} UnivPtr; dataSize: Si
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
@@ -2663,6 +3110,7 @@ function AECoercePtr( typeCode: DescType; dataPtr: {const} UnivPtr; dataSize: Si
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -2763,11 +3211,19 @@ function AECoerceDesc(const (*var*) theAEDesc: AEDesc; toType: DescType; var res
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+>>>>>>> origin/cpstrnew
 function AECoerceDesc( const (*var*) theAEDesc: AEDesc; toType: DescType; var result: AEDesc ): OSErr; external name '_AECoerceDesc';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {*************************************************************************
  The following calls apply to any AEDesc. Every 'result' descriptor is
  created for you, so you will be responsible for memory management
@@ -2781,8 +3237,11 @@ function AECoerceDesc( const (*var*) theAEDesc: AEDesc; toType: DescType; var re
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  Discussion:
  *    The function sets the type of the descriptor to typeNull and sets
  *    the data handle to NULL. If you need to initialize a descriptor
@@ -2790,6 +3249,9 @@ function AECoerceDesc( const (*var*) theAEDesc: AEDesc; toType: DescType; var re
  *    the memory and initialize the descriptor.
  *  
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
  *  Mac OS X threading:
  *    Thread safe since version 10.2
  *  
@@ -2800,6 +3262,7 @@ function AECoerceDesc( const (*var*) theAEDesc: AEDesc; toType: DescType; var re
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2850,6 +3313,13 @@ procedure AEInitializeDesc(var desc: AEDesc); external name '_AEInitializeDesc';
 procedure AEInitializeDesc( var desc: AEDesc ); external name '_AEInitializeDesc';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+ *    CarbonLib:        in CarbonLib 1.4 and later
+ *    Non-Carbon CFM:   not available
+ }
+procedure AEInitializeDesc( var desc: AEDesc ); external name '_AEInitializeDesc';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 {
  *  AECreateDesc()
@@ -2857,8 +3327,11 @@ procedure AEInitializeDesc( var desc: AEDesc ); external name '_AEInitializeDesc
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  Summary:
  *    Creates a new descriptor that incorporates the specified data.
  *  
@@ -2871,6 +3344,9 @@ procedure AEInitializeDesc( var desc: AEDesc ); external name '_AEInitializeDesc
  *    AECreateAppleEvent, AECreateList, or AECreateDesc.
  *  
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
  *  Mac OS X threading:
  *    Thread safe since version 10.2
  *  
@@ -2906,6 +3382,7 @@ function AECreateDesc( typeCode: DescType; dataPtr: {const} UnivPtr; dataSize: S
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -2916,6 +3393,9 @@ function AECreateDesc( typeCode: DescType; dataPtr: {const} UnivPtr; dataSize: S
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
@@ -2960,6 +3440,7 @@ function AEDisposeDesc( var theAEDesc: AEDesc ): OSErr; external name '_AEDispos
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -2970,6 +3451,9 @@ function AEDisposeDesc( var theAEDesc: AEDesc ): OSErr; external name '_AEDispos
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
@@ -3012,6 +3496,7 @@ function AEDisposeDesc( var theAEDesc: AEDesc ): OSErr; external name '_AEDispos
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -3161,6 +3646,13 @@ function AEDuplicateDesc(const (*var*) theAEDesc: AEDesc; var result: AEDesc): O
 function AEDuplicateDesc( const (*var*) theAEDesc: AEDesc; var result: AEDesc ): OSErr; external name '_AEDuplicateDesc';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function AEDuplicateDesc( const (*var*) theAEDesc: AEDesc; var result: AEDesc ): OSErr; external name '_AEDuplicateDesc';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 {
  * Create an AEDesc with memory "borrowed" from the application. The
@@ -3173,6 +3665,7 @@ function AEDuplicateDesc( const (*var*) theAEDesc: AEDesc; var result: AEDesc ):
  * actual memory copy.
  }
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3260,6 +3753,10 @@ type
 	AEDisposeExternalProcPtr = procedure( dataPtr: {const} UnivPtr; dataLength: Size; refcon: SRefCon );
 	AEDisposeExternalUPP = AEDisposeExternalProcPtr;
 >>>>>>> origin/fixes_2.4
+=======
+	AEDisposeExternalProcPtr = procedure( dataPtr: {const} UnivPtr; dataLength: Size; refcon: SRefCon );
+	AEDisposeExternalUPP = AEDisposeExternalProcPtr;
+>>>>>>> origin/cpstrnew
 {
  *  AECreateDescFromExternalPtr()
  *  
@@ -3285,10 +3782,13 @@ type
  *  
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
  *  Parameters:
  *    
  *    descriptorType:
@@ -3333,12 +3833,16 @@ type
  *      function to dispose of the resulting descriptor after it has
  *      finished using it.
  *  
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  Availability:
  *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   not available
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3409,8 +3913,12 @@ function AECreateDescFromExternalPtr( descriptorType: OSType; dataPtr: {const} U
 >>>>>>> graemeg/fixes_2_2
 =======
 function AECreateDescFromExternalPtr( descriptorType: OSType; dataPtr: {const} UnivPtr; dataLength: Size; disposeCallback: AEDisposeExternalUPP; disposeRefcon: SInt32; var theDesc: AEDesc ): OSStatus; external name '_AECreateDescFromExternalPtr';
+=======
+function AECreateDescFromExternalPtr( descriptorType: OSType; dataPtr: {const} UnivPtr; dataLength: Size; disposeCallback: AEDisposeExternalUPP; disposeRefcon: SRefCon; var theDesc: AEDesc ): OSStatus; external name '_AECreateDescFromExternalPtr';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 >>>>>>> origin/fixes_2_2
+
 
 
 {*************************************************************************
@@ -3426,6 +3934,9 @@ function AECreateDescFromExternalPtr( descriptorType: OSType; dataPtr: {const} U
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
  *  Discussion:
  *    Creates an empty descriptor list or Apple event record.
  *  
@@ -3467,6 +3978,7 @@ function AECreateList( factoringPtr: {const} UnivPtr; factoredSize: Size; isReco
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -3477,6 +3989,9 @@ function AECreateList( factoringPtr: {const} UnivPtr; factoredSize: Size; isReco
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
@@ -3511,6 +4026,7 @@ function AECountItems( const (*var*) theAEDescList: AEDescList; var theCount: SI
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -3521,6 +4037,9 @@ function AECountItems( const (*var*) theAEDescList: AEDescList; var theCount: SI
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
@@ -3570,6 +4089,7 @@ function AEPutPtr( var theAEDescList: AEDescList; index: SIGNEDLONG; typeCode: D
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -3580,6 +4100,9 @@ function AEPutPtr( var theAEDescList: AEDescList; index: SIGNEDLONG; typeCode: D
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
@@ -3623,6 +4146,7 @@ function AEPutDesc( var theAEDescList: AEDescList; index: SIGNEDLONG; const (*va
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -3633,6 +4157,9 @@ function AEPutDesc( var theAEDescList: AEDescList; index: SIGNEDLONG; const (*va
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
@@ -3705,6 +4232,7 @@ function AEPutDesc( var theAEDescList: AEDescList; index: SIGNEDLONG; const (*va
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -4281,6 +4809,11 @@ function AEPutDesc( var theAEDescList: AEDescList; index: SIGNEDLONG; const (*va
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+>>>>>>> origin/cpstrnew
 function AEGetNthPtr( const (*var*) theAEDescList: AEDescList; index: SIGNEDLONG; desiredType: DescType; theAEKeyword: AEKeywordPtr { can be NULL }; typeCode: DescTypePtr { can be NULL }; dataPtr: UnivPtr; maximumSize: Size; actualSize: SizePtr { can be NULL } ): OSErr; external name '_AEGetNthPtr';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
@@ -4288,67 +4821,261 @@ function AEGetNthPtr( const (*var*) theAEDescList: AEDescList; index: SIGNEDLONG
 {
  *  AEGetNthDesc()
  *  
+ *  Discussion:
+ *    Copies a descriptor from a specified position in a descriptor
+ *    list into a specified descriptor; typically used when your
+ *    application needs to pass the extracted data to another function
+ *    as a descriptor.
+ *  
  *  Mac OS X threading:
  *    Thread safe since version 10.2
  *  
+ *  Parameters:
+ *    
+ *    theAEDescList:
+ *      A pointer to the descriptor list to add a descriptor to. See
+ *      AEDescList.
+ *    
+ *    index:
+ *      A one-based positive integer indicating the position in the
+ *      descriptor list of the descriptor to get the data from.
+ *      AEGetNthDesc returns an error if you pass zero, a negative
+ *      number, or a value that is out of range. Currently the upper
+ *      limit on index is 2^31 items.
+ *    
+ *    desiredType:
+ *      The desired descriptor type for the copied data. For a list of
+ *      AppleScript's predefined descriptor types.  If the descriptor
+ *      specified by the index parameter is not of the desired type,
+ *      AEGetNthDesc attempts to coerce the data to this type. If you
+ *      pass a value of typeWildCard, no coercion is performed, and the
+ *      descriptor type of the copied data is the same as the
+ *      descriptor type of the original descriptor.
+ *    
+ *    theAEKeyword:
+ *      A pointer to a keyword or NULL. On return, the keyword for the
+ *      specified descriptor, if you are getting data from a list of
+ *      keyword-specified descriptors; otherwise, AEGetNthDesc returns
+ *      the value typeWildCard.
+ *    
+ *    result:
+ *      A pointer to a descriptor. On successful return, a copy of the
+ *      descriptor specified by the index parameter, coerced, if
+ *      necessary, to the descriptor type specified by the desiredType
+ *      parameter. On error, a null descriptor. If the function returns
+ *      successfully, your application should call the AEDisposeDesc
+ *      function to dispose of the resulting descriptor after it has
+ *      finished using it.
+ *  
  *  Availability:
- *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
-function AEGetNthDesc(const (*var*) theAEDescList: AEDescList; index: SInt32; desiredType: DescType; theAEKeywordPtr: AEKeywordPtr; var result: AEDesc): OSErr; external name '_AEGetNthDesc';
+function AEGetNthDesc( const (*var*) theAEDescList: AEDescList; index: SIGNEDLONG; desiredType: DescType; theAEKeyword: AEKeywordPtr { can be NULL }; var result: AEDesc ): OSErr; external name '_AEGetNthDesc';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
 {
  *  AESizeOfNthItem()
  *  
+ *  Discussion:
+ *    Gets the data size and descriptor type of the descriptor at a
+ *    specified position in a descriptor list.
+ *  
  *  Mac OS X threading:
  *    Thread safe since version 10.2
  *  
+ *  Parameters:
+ *    
+ *    theAEDescList:
+ *      A pointer to the descriptor list to add a descriptor to. See
+ *      AEDescList.
+ *    
+ *    index:
+ *      A one-based positive integer indicating the position in the
+ *      descriptor list of the descriptor to get the data from.
+ *      AESizeOfNthItem returns an error if you pass zero, a negative
+ *      number, or a value that is out of range. Currently the upper
+ *      limit on index is 2^31 items.
+ *    
+ *    typeCode:
+ *      A pointer to a descriptor type or NULL. On return, specifies
+ *      the descriptor type of the descriptor.
+ *    
+ *    dataSize:
+ *      A pointer to a size variable or NULL. On return, the length (in
+ *      bytes) of the data in the descriptor.
+ *  
  *  Availability:
- *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
-function AESizeOfNthItem(const (*var*) theAEDescList: AEDescList; index: SInt32; typeCode: DescTypePtr; dataSize: SizePtr): OSErr; external name '_AESizeOfNthItem';
+function AESizeOfNthItem( const (*var*) theAEDescList: AEDescList; index: SIGNEDLONG; typeCode: DescTypePtr { can be NULL }; dataSize: SizePtr { can be NULL } ): OSErr; external name '_AESizeOfNthItem';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
 {
  *  AEGetArray()
  *  
+ *  Discussion:
+ *    Extracts data from an Apple event array created with the
+ *    AEPutArray function and stores it as a standard array of fixed
+ *    size items in the specified buffer.
+ *  
  *  Mac OS X threading:
  *    Thread safe since version 10.2
  *  
+ *  Parameters:
+ *    
+ *    theAEDescList:
+ *      A pointer to the descriptor list to add a descriptor to. See
+ *      AEDescList.
+ *    
+ *    arrayType:
+ *      The Apple event array type to convert. Pass one of the
+ *      constants:  kAEDataArray, kAEPackedArray, kAEDescArray,
+ *      kAEKeyDescArray
+ *    
+ *    arrayPtr:
+ *      A pointer to a buffer, allocated and disposed of by your
+ *      application, for storing the array. The size in bytes must be
+ *      at least as large as the value you pass in the maximumSize
+ *      parameter. On return, the buffer contains the array of
+ *      fixed-size items.
+ *    
+ *    maximumSize:
+ *      The maximum length, in bytes, of the expected data. The
+ *      AEGetArray function will not return more data than you specify
+ *      in this parameter.
+ *    
+ *    itemType:
+ *      A pointer to a descriptor type. On return, for arrays of type
+ *      kAEDataArray, kAEPackedArray, or kAEHandleArray, the descriptor
+ *      type of the items in the returned array. The AEGetArray
+ *      function doesn't supply a value in itemType for arrays of type
+ *      kAEDescArray and kAEKeyDescArray because they may contain
+ *      descriptors of different types.
+ *    
+ *    itemSize:
+ *      A pointer to a size variable. On return, for arrays of type
+ *      kAEDataArray or kAEPackedArray, the size (in bytes) of each
+ *      item in the returned array. You don't get an item size for
+ *      arrays of type kAEDescArray, kAEKeyDescArray, or kAEHandleArray
+ *      because descriptors and handles (though not the data they point
+ *      to) have a known size.
+ *    
+ *    itemCount:
+ *      A pointer to a size variable. On return, the number of items in
+ *      the returned array.  Currently the upper limit on the size of
+ *      an array is 2^31 items.
+ *  
  *  Availability:
- *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
-function AEGetArray(const (*var*) theAEDescList: AEDescList; arrayType: AEArrayType; arrayPtr: AEArrayDataPointer; maximumSize: Size; var itemType: DescType; var itemSize: Size; var itemCount: SInt32): OSErr; external name '_AEGetArray';
+function AEGetArray( const (*var*) theAEDescList: AEDescList; arrayType: AEArrayType; arrayPtr: AEArrayDataPointer; maximumSize: Size; var itemType: DescType; var itemSize: Size; var itemCount: SIGNEDLONG ): OSErr; external name '_AEGetArray';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
 {
  *  AEPutArray()
  *  
+ *  Discussion:
+ *    Extracts data from an Apple event array created with the
+ *    AEPutArray function and stores it as a standard array of fixed
+ *    size items in the specified buffer.
+ *  
  *  Mac OS X threading:
  *    Thread safe since version 10.2
  *  
+ *  Parameters:
+ *    
+ *    theAEDescList:
+ *      A pointer to the descriptor list to add a descriptor to. See
+ *      AEDescList.
+ *    
+ *    arrayType:
+ *      The Apple event array type to convert. Pass one of the
+ *      constants:  kAEDataArray, kAEPackedArray, kAEDescArray,
+ *      kAEKeyDescArray
+ *    
+ *    arrayPtr:
+ *      A pointer to a buffer, local variable, or other storage
+ *      location, created and disposed of by your application, that
+ *      contains the array to put into the descriptor list.
+ *    
+ *    itemType:
+ *      For arrays of type kAEDataArray, kAEPackedArray, or
+ *      kAEHandleArray, the descriptor type of the array items to
+ *      create. Use one of the constants such as typeLongInteger. You
+ *      don't need to specify an item type for arrays of type
+ *      kAEDescArray or kAEKeyDescArray because the data is already
+ *      stored in descriptors which contain a descriptor type.
+ *    
+ *    itemSize:
+ *      For arrays of type kAEDataArray or kAEPackedArray, the size (in
+ *      bytes) of the array items to create. You don't need to specify
+ *      an item size for arrays of type kAEDescArray, kAEKeyDescArray,
+ *      or kAEHandleArray because their descriptors (though not the
+ *      data they point to) have a known size.
+ *    
+ *    itemCount:
+ *      A pointer to a size variable. On return, the number of items in
+ *      the returned array.  Currently the upper limit on the size of
+ *      an array is 2^31 items.
+ *  
  *  Availability:
- *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
-function AEPutArray(var theAEDescList: AEDescList; arrayType: AEArrayType; const (*var*) arrayPtr: AEArrayData; itemType: DescType; itemSize: Size; itemCount: SInt32): OSErr; external name '_AEPutArray';
+function AEPutArray( var theAEDescList: AEDescList; arrayType: AEArrayType; const (*var*) arrayPtr: AEArrayData; itemType: DescType; itemSize: Size; itemCount: SIGNEDLONG ): OSErr; external name '_AEPutArray';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
 {
  *  AEDeleteItem()
  *  
+ *  Discussion:
+ *    Deletes a descriptor from a descriptor list, causing all
+ *    subsequent descriptors to move up one place.
+ *  
  *  Mac OS X threading:
  *    Thread safe since version 10.2
  *  
+ *  Parameters:
+ *    
+ *    theAEDescList:
+ *      A pointer to the descriptor list to add a descriptor to. See
+ *      AEDescList.
+ *    
+ *    index:
+ *      A one-based positive integer indicating the position in the
+ *      descriptor list of the descriptor to delete. AEDeleteItem
+ *      returns an error if you pass zero, a negative number, or a
+ *      value that is out of range. Currently the upper limit on index
+ *      is 2^31 items.
+ *  
  *  Availability:
- *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
 function AEDeleteItem(var theAEDescList: AEDescList; index: SInt32): OSErr; external name '_AEDeleteItem';
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+function AEDeleteItem( var theAEDescList: AEDescList; index: SIGNEDLONG ): OSErr; external name '_AEDeleteItem';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
 {*************************************************************************
  The following calls apply to AERecord. Since AERecord is a subtype of
  AEDescList, the calls in the previous sections can also be used for
@@ -4366,6 +5093,7 @@ function AEDeleteItem(var theAEDescList: AEDescList; index: SInt32): OSErr; exte
  *    Thread safe since version 10.2
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
@@ -4428,10 +5156,13 @@ function AEPutKeyDesc(var theAERecord: AERecord; theAEKeyword: AEKeyword; const 
  *  AEGetKeyPtr()
  *  
  *  Availability:
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.4 and later
+>>>>>>> origin/cpstrnew
  *    Non-Carbon CFM:   not available
- *    CarbonLib:        not available
- *    Mac OS X:         not available
  }
+<<<<<<< HEAD
 function AEGetKeyPtr(const (*var*) theAERecord: AERecord; theAEKeyword: AEKeyword; desiredType: DescType; var typeCode: DescType; dataPtr: UnivPtr; maximumSize: Size; var actualSize: Size): OSErr; external name '_AEGetKeyPtr';
 {
  *  AEGetKeyDesc()
@@ -4462,6 +5193,10 @@ function AESizeOfKeyDesc(const (*var*) theAERecord: AERecord; theAEKeyword: AEKe
 function AEDeleteKeyDesc(var theAERecord: AERecord; theAEKeyword: AEKeyword): OSErr; external name '_AEDeleteKeyDesc';
 {$endc}  {CALL_NOT_IN_CARBON}
 >>>>>>> graemeg/fixes_2_2
+=======
+function AECheckIsRecord( const (*var*) theDesc: AEDesc ): Boolean; external name '_AECheckIsRecord';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 {*************************************************************************
   The following calls create and manipulate the AppleEvent data type.
@@ -4470,6 +5205,9 @@ function AEDeleteKeyDesc(var theAERecord: AERecord; theAEKeyword: AEKeyword): OS
  *  AECreateAppleEvent()
  *  
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
  *  Summary:
  *    Creates an Apple event with several important attributes but no
  *    parameters.
@@ -4480,6 +5218,7 @@ function AEDeleteKeyDesc(var theAERecord: AERecord; theAEKeyword: AEKeyword): OS
  *    the functions described in "Adding Parameters and Attributes to
  *    an Apple Event".
  *  
+<<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe since version 10.2
  *  
@@ -5530,11 +6269,14 @@ function AEGetParamDesc( const (*var*) theAppleEvent: AppleEvent; theAEKeyword: 
  *    Gets the size and descriptor type of an Apple event parameter
  *    from a descriptor of type AERecord or AppleEvent.
  *  
+=======
+>>>>>>> origin/cpstrnew
  *  Mac OS X threading:
  *    Thread safe since version 10.2
  *  
  *  Parameters:
  *    
+<<<<<<< HEAD
  *    theAppleEvent:
  *      A pointer to the Apple event to get the parameter data from.
  *      See AppleEvent.
@@ -5549,16 +6291,78 @@ function AEGetParamDesc( const (*var*) theAppleEvent: AppleEvent; theAEKeyword: 
  *    dataSize:
  *      A pointer to a size variable. On return, the length, in bytes,
  *      of the data in the Apple event parameter.
+=======
+ *    theAEEventClass:
+ *      The event class of the Apple event to create. This parameter
+ *      becomes accessible through the keyEventClassAttr attribute of
+ *      the Apple event. Some event classes are described in "Event
+ *      Class Constants".
+ *    
+ *    theAEEventID:
+ *      The event ID of the Apple event to create. This parameter
+ *      becomes accessible through the keyEventIDAttr attribute of the
+ *      Apple event.
+ *    
+ *    target:
+ *      A pointer to an address descriptor. Before calling
+ *      AECreateAppleEvent, you set the descriptor to identify the
+ *      target (or server) application for the Apple event. This
+ *      parameter becomes accessible through the keyAddressAttr
+ *      attribute of the Apple event.
+ *    
+ *    returnID:
+ *      The return ID for the created Apple event. If you pass a value
+ *      of kAutoGenerateReturnID, the Apple Event Manager assigns the
+ *      created Apple event a return ID that is unique to the current
+ *      session. If you pass any other value, the Apple Event Manager
+ *      assigns that value for the ID. This parameter becomes
+ *      accessible through the keyReturnIDAttr attribute of the Apple
+ *      event. The return ID constant is described in "ID Constants for
+ *      the AECreateAppleEvent Function".
+ *    
+ *    transactionID:
+ *      The transaction ID for this Apple event. A transaction is a
+ *      sequence of Apple events that are sent back and forth between
+ *      the client and server applications, beginning with the client's
+ *      initial request for a service. All Apple events that are part
+ *      of a transaction must have the same transaction ID. You can
+ *      specify the kAnyTransactionID constant if the Apple event is
+ *      not one of a series of interdependent Apple events. This
+ *      parameter becomes accessible through the keyTransactionIDAttr
+ *      attribute of the Apple event.
+ *    
+ *    result:
+ *      A pointer to an Apple event. On successful return, the new
+ *      Apple event. On error, a null descriptor (one with descriptor
+ *      type typeNull). If the function returns successfully, your
+ *      application should call the AEDisposeDesc function to dispose
+ *      of the resulting Apple event after it has finished using it.
+ *      See the AppleEvent data type.
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
 function AESizeOfParam( const (*var*) theAppleEvent: AppleEvent; theAEKeyword: AEKeyword; typeCode: DescTypePtr { can be NULL }; dataSize: SizePtr { can be NULL } ): OSErr; external name '_AESizeOfParam';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+function AECreateAppleEvent( theAEEventClass: AEEventClass; theAEEventID: AEEventID; const (*var*) target: AEAddressDesc; returnID: AEReturnID; transactionID: AETransactionID; var result: AppleEvent ): OSErr; external name '_AECreateAppleEvent';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{*************************************************************************
+  The following calls are used to pack and unpack parameters from records
+  of type AppleEvent. Since AppleEvent is a subtype of AERecord, the calls
+  in the previous sections can also be used for variables of type
+  AppleEvent. The next six calls are in fact identical to the six calls
+  for AERecord.
+*************************************************************************}
+>>>>>>> origin/cpstrnew
 {
  *  AEDeleteParam()
  *  
@@ -5566,23 +6370,47 @@ function AESizeOfParam( const (*var*) theAppleEvent: AppleEvent; theAEKeyword: A
  *    Deletes a keyword-specified parameter from an Apple event or
  *    Apple event record.
  *  
+ *  Discussion:
+ *    Puts a pointer to data, a descriptor type, and a keyword into an
+ *    Apple event or Apple event record as an Apple event parameter.
+ *  
  *  Mac OS X threading:
  *    Thread safe since version 10.2
  *  
  *  Parameters:
  *    
  *    theAppleEvent:
+<<<<<<< HEAD
  *      A pointer to the Apple event or Apple event record to delete
  *      the parameter from.
  *    
  *    theAEKeyword:
  *      The keyword that specifies the parameter to delete.
+=======
+ *      A pointer to the Apple event to add a parameter to. See the
+ *      AppleEvent data type.
+ *    
+ *    theAEKeyword:
+ *      The keyword for the parameter to add. If the Apple event
+ *      already includes an parameter with this keyword, the parameter
+ *      is replaced.
+ *    
+ *    typeCode:
+ *      The descriptor type for the parameter to add.
+ *    
+ *    dataPtr:
+ *      A pointer to the data for the parameter to add.
+ *    
+ *    dataSize:
+ *      The length, in bytes, of the data for the parameter to add.
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function AEDeleteParam(var theAppleEvent: AppleEvent; theAEKeyword: AEKeyword): OSErr; external name '_AEDeleteParam';
 <<<<<<< HEAD
@@ -5605,6 +6433,12 @@ function AEDeleteParam( var theAppleEvent: AppleEvent; theAEKeyword: AEKeyword )
 <<<<<<< HEAD
 <<<<<<< HEAD
 
+=======
+function AEPutParamPtr( var theAppleEvent: AppleEvent; theAEKeyword: AEKeyword; typeCode: DescType; dataPtr: {const} UnivPtr; dataSize: Size ): OSErr; external name '_AEPutParamPtr';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
 {
  *  AEGetAttributePtr()
  *  
@@ -5624,12 +6458,17 @@ function AEDeleteParam( var theAppleEvent: AppleEvent; theAEKeyword: AEKeyword )
  *    desiredType parameter, AEGetAttributePtr may coerce the data,
  *    which may cause the size of the data to change.
  *  
+ *  Discussion:
+ *    Puts a descriptor and a keyword into an Apple event or Apple
+ *    event record as an Apple event parameter.
+ *  
  *  Mac OS X threading:
  *    Thread safe since version 10.2
  *  
  *  Parameters:
  *    
  *    theAppleEvent:
+<<<<<<< HEAD
  *      A pointer to the Apple event to get the attribute data from.
  *    
  *    theAEKeyword:
@@ -5674,12 +6513,25 @@ function AEDeleteParam( var theAppleEvent: AppleEvent; theAEKeyword: AEKeyword )
  *      AEGetAttributePtr does not write beyond the end of the buffer.
  *      If the buffer was too small, you can resize it and call
  *      AEGetAttributePtr again.
+=======
+ *      A pointer to the Apple event to add a parameter to.
+ *    
+ *    theAEKeyword:
+ *      The keyword specifying the parameter to add. If the Apple event
+ *      already has a parameter with this keyword, the parameter is
+ *      replaced.
+ *    
+ *    theAEDesc:
+ *      A pointer to the descriptor for the parameter to add. See
+ *      AEDesc.
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
 function AEGetAttributePtr( const (*var*) theAppleEvent: AppleEvent; theAEKeyword: AEKeyword; desiredType: DescType; typeCode: DescTypePtr { can be NULL }; dataPtr: UnivPtr; maximumSize: Size; actualSize: SizePtr { can be NULL } ): OSErr; external name '_AEGetAttributePtr';
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5698,6 +6550,10 @@ function AEGetAttributePtr( const (*var*) theAppleEvent: AppleEvent; theAEKeywor
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+function AEPutParamDesc( var theAppleEvent: AppleEvent; theAEKeyword: AEKeyword; const (*var*) theAEDesc: AEDesc ): OSErr; external name '_AEPutParamDesc';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -5714,21 +6570,59 @@ function AEGetAttributePtr( const (*var*) theAppleEvent: AppleEvent; theAEKeywor
  *    Apple event attribute to pass on to another Apple Event Manager
  *    routine, call AEGetAttributeDesc.
  *  
+ *  Summary:
+ *    Gets a copy of the data for a specified Apple event parameter
+ *    from an Apple event or an Apple event record (type AERecord);
+ *    typically used when your application needs to work with the
+ *    extracted data directly.
+ *  
+ *  Discussion:
+ *    You should use this function only to extract data from value
+ *    descriptors such as typeUTF8Text.
+ *    Because this function allows you to specify a desired type, it
+ *    can result in coercion. When used correctly, this has the
+ *    positive effect of returning the data in the desired format.
+ *    However, it can have side effects you may not be expecting, such
+ *    as the overhead of calls to coercion handlers. See also the
+ *    Version Notes section below for possible problems with
+ *    coercion.
+ *    To get Apple event parameter data for your application to use
+ *    directly, call AEGetParamPtr. To get a descriptor for an Apple
+ *    event parameter to pass on to another Apple Event Manager
+ *    routine, call AEGetParamDesc.
+ *    Before calling AEGetParamPtr, you can call the AESizeOfParam
+ *    function to determine a size for the dataPtr buffer. However,
+ *    unless you specify typeWildCard for the desiredType parameter,
+ *    AEGetParamPtr may coerce the data, which may cause the size of
+ *    the data to change.
+ *    In some cases, you may get improved efficiency extracting
+ *    information from an Apple event with the AEGetDescDataRange
+ *    function.
+ *  
  *  Mac OS X threading:
  *    Thread safe since version 10.2
  *  
  *  Parameters:
  *    
  *    theAppleEvent:
+<<<<<<< HEAD
  *      A pointer to the Apple event to get the attribute descriptor
  *      from. See AppleEvent.
  *    
  *    theAEKeyword:
  *      The keyword that specifies the desired attribute.
+=======
+ *      A pointer to the Apple event to get the parameter data from.
+ *      See AppleEvent.
+ *    
+ *    theAEKeyword:
+ *      The keyword that specifies the desired Apple event parameter.
+>>>>>>> origin/cpstrnew
  *    
  *    desiredType:
  *      The desired descriptor type for the copied data. If the
  *      descriptor specified by the theAEKeyword parameter is not of
+<<<<<<< HEAD
  *      the desired type, AEGetAttributePtr attempts to coerce the data
  *      to this type. However, if you pass a value of typeWildCard, no
  *      coercion is performed, and the descriptor type of the returned
@@ -5744,12 +6638,50 @@ function AEGetAttributePtr( const (*var*) theAppleEvent: AppleEvent; theAEKeywor
  *      application should call the AEDisposeDesc function to dispose
  *      of the resulting descriptor after it has finished using it. See
  *      AEDesc.
+=======
+ *      the desired type, AEGetParamPtr attempts to coerce the data to
+ *      this type. However, if the desired type is typeWildCard, no
+ *      coercion is performed. On return, you can determine the actual
+ *      descriptor type by examining the typeCode parameter.
+ *    
+ *    actualType:
+ *      A pointer to a descriptor type. On return, specifies the
+ *      descriptor type of the data pointed to by dataPtr. The returned
+ *      type is either the same as the type specified by the
+ *      desiredType parameter or, if the desired type was typeWildcard,
+ *      the true type of the descriptor. Specify NULL if you do not
+ *      care about this return value.
+ *    
+ *    dataPtr:
+ *      A pointer to a buffer, local variable, or other storage
+ *      location created and disposed of by your application. The size
+ *      in bytes must be at least as large as the value you pass in the
+ *      maximumSize parameter. On return, contains the parameter data.
+ *      Specify NULL if you do not care about this return value.
+ *    
+ *    maximumSize:
+ *      The maximum length, in bytes, of the expected Apple event
+ *      parameter data. The AEGetParamPtr function will not return more
+ *      data than you specify in this parameter.
+ *    
+ *    actualSize:
+ *      A pointer to a variable of type Size. On return, the length, in
+ *      bytes, of the data for the specified Apple event parameter. If
+ *      this value is larger than the value you passed in the
+ *      maximumSize parameter, the buffer pointed to by dataPtr was not
+ *      large enough to contain all of the data for the parameter,
+ *      though AEGetParamPtr does not write beyond the end of the
+ *      buffer. If the buffer was too small, you can resize it and call
+ *      AEGetParamPtr again. Specify NULL if you do not care about this
+ *      return value.
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
 function AEGetAttributeDesc( const (*var*) theAppleEvent: AppleEvent; theAEKeyword: AEKeyword; desiredType: DescType; var result: AEDesc ): OSErr; external name '_AEGetAttributeDesc';
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5768,6 +6700,10 @@ function AEGetAttributeDesc( const (*var*) theAppleEvent: AppleEvent; theAEKeywo
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+function AEGetParamPtr( const (*var*) theAppleEvent: AppleEvent; theAEKeyword: AEKeyword; desiredType: DescType; actualType: DescTypePtr { can be NULL }; dataPtr: UnivPtr; maximumSize: Size; actualSize: SizePtr { can be NULL } ): OSErr; external name '_AEGetParamPtr';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -5777,12 +6713,29 @@ function AEGetAttributeDesc( const (*var*) theAppleEvent: AppleEvent; theAEKeywo
  *    Gets the size and descriptor type of an Apple event attribute
  *    from a descriptor of type AppleEvent.
  *  
+ *  Summary:
+ *    Gets a copy of the descriptor for a keyword-specified Apple event
+ *    parameter from an Apple event or an Apple event record (type
+ *    AERecord); typically used when your application needs to pass the
+ *    extracted data to another function as a descriptor.
+ *  
+ *  Discussion:
+ *    To get Apple event parameter data for your application to use
+ *    directly, call AEGetParamPtr. To get a descriptor for an Apple
+ *    event parameter to pass on to another Apple Event Manager
+ *    routine, call AEGetParamDesc.
+ *    If the actual parameter you are getting with AEGetParamDesc is a
+ *    record, AEGetParamDesc will only allow you to request it as a
+ *    typeAERecord, typeAEList, or typeWildcard. For any other type, it
+ *    will return errAECoercionFail.
+ *  
  *  Mac OS X threading:
  *    Thread safe since version 10.2
  *  
  *  Parameters:
  *    
  *    theAppleEvent:
+<<<<<<< HEAD
  *      A pointer to the Apple event to get the attribute data from.
  *    
  *    theAEKeyword:
@@ -5795,12 +6748,38 @@ function AEGetAttributeDesc( const (*var*) theAppleEvent: AppleEvent; theAEKeywo
  *    dataSize:
  *      A pointer to a size variable. On return, the length, in bytes,
  *      of the data in the attribute. Can be NULL.
+=======
+ *      A pointer to the Apple event to get the parameter descriptor
+ *      from.
+ *    
+ *    theAEKeyword:
+ *      A keyword that specifies the desired Apple event parameter.
+ *    
+ *    desiredType:
+ *      The descriptor type for the desired Apple event parameter. If
+ *      the requested Apple event parameter is not of the desired type,
+ *      the Apple Event Manager attempts to coerce it to the desired
+ *      type. However, if you pass a value of typeWildCard, no coercion
+ *      is performed, and the descriptor type of the returned
+ *      descriptor is the same as the descriptor type of the Apple
+ *      event parameter.
+ *    
+ *    result:
+ *      A pointer to a descriptor. On successful return, a copy of the
+ *      descriptor for the specified Apple event parameter, coerced, if
+ *      necessary, to the descriptor type specified by the desiredType
+ *      parameter. On error, a null descriptor. If the function returns
+ *      successfully, your application should call the AEDisposeDesc
+ *      function to dispose of the resulting descriptor after it has
+ *      finished using it. See AEDesc.
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
 function AESizeOfAttribute( const (*var*) theAppleEvent: AppleEvent; theAEKeyword: AEKeyword; typeCode: DescTypePtr { can be NULL }; dataSize: SizePtr { can be NULL } ): OSErr; external name '_AESizeOfAttribute';
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5819,6 +6798,10 @@ function AESizeOfAttribute( const (*var*) theAppleEvent: AppleEvent; theAEKeywor
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+function AEGetParamDesc( const (*var*) theAppleEvent: AppleEvent; theAEKeyword: AEKeyword; desiredType: DescType; var result: AEDesc ): OSErr; external name '_AEGetParamDesc';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -5828,12 +6811,17 @@ function AESizeOfAttribute( const (*var*) theAppleEvent: AppleEvent; theAEKeywor
  *    Adds a pointer to data, a descriptor type, and a keyword to an
  *    Apple event as an attribute.
  *  
+ *  Discussion:
+ *    Gets the size and descriptor type of an Apple event parameter
+ *    from a descriptor of type AERecord or AppleEvent.
+ *  
  *  Mac OS X threading:
  *    Thread safe since version 10.2
  *  
  *  Parameters:
  *    
  *    theAppleEvent:
+<<<<<<< HEAD
  *      A pointer to the Apple event to add an attribute to. See the
  *      AppleEvent data type.
  *    
@@ -5850,12 +6838,28 @@ function AESizeOfAttribute( const (*var*) theAppleEvent: AppleEvent; theAEKeywor
  *    
  *    dataSize:
  *      The length, in bytes, of the data for the attribute to add.
+=======
+ *      A pointer to the Apple event to get the parameter data from.
+ *      See AppleEvent.
+ *    
+ *    theAEKeyword:
+ *      The keyword that specifies the desired parameter.
+ *    
+ *    typeCode:
+ *      A pointer to a descriptor type. On return, specifies the
+ *      descriptor type of the Apple event parameter.
+ *    
+ *    dataSize:
+ *      A pointer to a size variable. On return, the length, in bytes,
+ *      of the data in the Apple event parameter.
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
 function AEPutAttributePtr( var theAppleEvent: AppleEvent; theAEKeyword: AEKeyword; typeCode: DescType; dataPtr: {const} UnivPtr; dataSize: Size ): OSErr; external name '_AEPutAttributePtr';
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5872,6 +6876,10 @@ function AEPutAttributePtr( var theAppleEvent: AppleEvent; theAEKeyword: AEKeywo
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
 =======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
+=======
+function AESizeOfParam( const (*var*) theAppleEvent: AppleEvent; theAEKeyword: AEKeyword; typeCode: DescTypePtr { can be NULL }; dataSize: SizePtr { can be NULL } ): OSErr; external name '_AESizeOfParam';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
@@ -5892,12 +6900,17 @@ function AEPutAttributePtr( var theAppleEvent: AppleEvent; theAEKeyword: AEKeywo
  *    the data for an address attribute, thereby allowing applications
  *    to use their own address types.
  *  
+ *  Discussion:
+ *    Deletes a keyword-specified parameter from an Apple event or
+ *    Apple event record.
+ *  
  *  Mac OS X threading:
  *    Thread safe since version 10.2
  *  
  *  Parameters:
  *    
  *    theAppleEvent:
+<<<<<<< HEAD
  *      A pointer to the Apple event to add an attribute to. See the
  *      AppleEvent data type.
  *    
@@ -5910,12 +6923,20 @@ function AEPutAttributePtr( var theAppleEvent: AppleEvent; theAEKeyword: AEKeywo
  *      A pointer to the descriptor to assign to the attribute. The
  *      descriptor type of the specified descriptor should match the
  *      defined descriptor type for that attribute.
+=======
+ *      A pointer to the Apple event or Apple event record to delete
+ *      the parameter from.
+ *    
+ *    theAEKeyword:
+ *      The keyword that specifies the parameter to delete.
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
 function AEPutAttributeDesc( var theAppleEvent: AppleEvent; theAEKeyword: AEKeyword; const (*var*) theAEDesc: AEDesc ): OSErr; external name '_AEPutAttributeDesc';
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5942,6 +6963,19 @@ function AEPutAttributeDesc( var theAppleEvent: AppleEvent; theAEKeyword: AEKeyw
 =======
 
 >>>>>>> origin/fixes_2.4
+=======
+function AEDeleteParam( var theAppleEvent: AppleEvent; theAEKeyword: AEKeyword ): OSErr; external name '_AEDeleteParam';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{*************************************************************************
+ The following calls also apply to type AppleEvent. Message attributes are
+ far more restricted, and can only be accessed through the following 5
+ calls. The various list and record routines cannot be used to access the
+ attributes of an event. 
+*************************************************************************}
+
+>>>>>>> origin/cpstrnew
 {
  *  AEGetAttributePtr()
  *  
@@ -6189,6 +7223,7 @@ function AEPutAttributePtr( var theAppleEvent: AppleEvent; theAEKeyword: AEKeywo
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function AEPutAttributeDesc(var theAppleEvent: AppleEvent; theAEKeyword: AEKeyword; const (*var*) theAEDesc: AEDesc): OSErr; external name '_AEPutAttributeDesc';
 <<<<<<< HEAD
@@ -6196,11 +7231,16 @@ function AEPutAttributeDesc(var theAppleEvent: AppleEvent; theAEKeyword: AEKeywo
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function AEPutAttributeDesc( var theAppleEvent: AppleEvent; theAEKeyword: AEKeyword; const (*var*) theAEDesc: AEDesc ): OSErr; external name '_AEPutAttributeDesc';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {*************************************************************************
  AppleEvent Serialization Support
 
@@ -6213,6 +7253,7 @@ function AEPutAttributeDesc( var theAppleEvent: AppleEvent; theAEKeyword: AEKeyw
     themselves may not be reliably flattened for storage.
 *************************************************************************}
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -6267,6 +7308,8 @@ function AESizeOfFlattenedDesc( const (*var*) theAEDesc: AEDesc ): Size; externa
 {
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  AESizeOfFlattenedDesc()
  *  
  *  Discussion:
@@ -6291,6 +7334,7 @@ function AESizeOfFlattenedDesc( const (*var*) theAEDesc: AEDesc ): Size; externa
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
    AEFlattenDesc
    Fills a buffer with a flattened representation of the
@@ -6308,6 +7352,8 @@ function AESizeOfFlattenedDesc( const (*var*) theAEDesc: AEDesc ): Size; externa
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {
  *  AEFlattenDesc()
@@ -6315,8 +7361,11 @@ function AESizeOfFlattenedDesc( const (*var*) theAEDesc: AEDesc ): Size; externa
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  Discussion:
  *    Fills a buffer with a flattened representation of the AEDesc and
  *    returns the amount of buffer used in actualSize. If bufferSize
@@ -6327,6 +7376,9 @@ function AESizeOfFlattenedDesc( const (*var*) theAEDesc: AEDesc ): Size; externa
  *    fills in the actualSize field anyway.
  *  
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
  *  Mac OS X threading:
  *    Thread safe since version 10.2
  *  
@@ -6355,6 +7407,7 @@ function AESizeOfFlattenedDesc( const (*var*) theAEDesc: AEDesc ): Size; externa
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -6410,12 +7463,15 @@ function AEFlattenDesc( const (*var*) theAEDesc: AEDesc; buffer: Ptr; bufferSize
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+=======
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.4 and later
  *    Non-Carbon CFM:   not available
  }
 function AEFlattenDesc( const (*var*) theAEDesc: AEDesc; buffer: Ptr; bufferSize: Size; var actualSize: Size ): OSStatus; external name '_AEFlattenDesc';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {
    AEUnflattenDesc
@@ -6430,6 +7486,8 @@ function AEFlattenDesc( const (*var*) theAEDesc: AEDesc; buffer: Ptr; bufferSize
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {
  *  AEUnflattenDesc()
@@ -6437,8 +7495,11 @@ function AEFlattenDesc( const (*var*) theAEDesc: AEDesc; buffer: Ptr; bufferSize
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  Discussion:
  *    Allocates an AEDesc (given a Null Desc) given a flattened data
  *    buffer. It assumes it was given a good buffer filled in by
@@ -6446,6 +7507,9 @@ function AEFlattenDesc( const (*var*) theAEDesc: AEDesc; buffer: Ptr; bufferSize
  *    fishy about the buffer.
  *  
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
  *  Mac OS X threading:
  *    Thread safe since version 10.2
  *  
@@ -6463,6 +7527,7 @@ function AEFlattenDesc( const (*var*) theAEDesc: AEDesc; buffer: Ptr; bufferSize
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.4 and later
  *    Non-Carbon CFM:   not available
  }
@@ -6521,12 +7586,21 @@ function AEUnflattenDesc( buffer: {const} UnivPtr; var result: AEDesc ): OSStatu
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    CarbonLib:        in CarbonLib 1.4 and later
+ *    Non-Carbon CFM:   not available
+ }
+function AEUnflattenDesc( buffer: {const} UnivPtr; var result: AEDesc ): OSStatus; external name '_AEUnflattenDesc';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {*************************************************************************
  The following calls are necessary to deal with opaque data in AEDescs, because the
  traditional way of dealing with a basic AEDesc has been to dereference the dataHandle
  directly.  This is not supported under Carbon.
 *************************************************************************}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -6538,6 +7612,8 @@ function AEUnflattenDesc( buffer: {const} UnivPtr; var result: AEDesc ): OSStatu
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
         AEGetDescData no longer supports automatic coercion. If you'd like to
         coerce the descriptor use AECoerceDesc.
@@ -6548,14 +7624,20 @@ function AEUnflattenDesc( buffer: {const} UnivPtr; var result: AEDesc ): OSStatu
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  Discussion:
  *    Gets the data from the specified descriptor.  AEGetDescData no
  *    longer supports automatic coercion. If you'd like to coerce the
  *    descriptor use AECoerceDesc.
  *  
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
  *  Mac OS X threading:
  *    Thread safe since version 10.2
  *  
@@ -6579,6 +7661,7 @@ function AEUnflattenDesc( buffer: {const} UnivPtr; var result: AEDesc ): OSStatu
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in CarbonAccessors.o 1.0 and later
  }
@@ -6643,6 +7726,14 @@ function AEGetDescData( const (*var*) theAEDesc: AEDesc; dataPtr: UnivPtr; maxim
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in CarbonAccessors.o 1.0 and later
+ }
+function AEGetDescData( const (*var*) theAEDesc: AEDesc; dataPtr: UnivPtr; maximumSize: Size ): OSErr; external name '_AEGetDescData';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  AEGetDescDataSize()
@@ -6650,6 +7741,9 @@ function AEGetDescData( const (*var*) theAEDesc: AEDesc; dataPtr: UnivPtr; maxim
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
  *  Discussion:
  *    Gets the size, in bytes, of the data in the specified descriptor.
  *  
@@ -6664,6 +7758,7 @@ function AEGetDescData( const (*var*) theAEDesc: AEDesc; dataPtr: UnivPtr; maxim
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in CarbonAccessors.o 1.0 and later
  }
@@ -6719,6 +7814,14 @@ function AEGetDescDataSize( const (*var*) theAEDesc: AEDesc ): Size; external na
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in CarbonAccessors.o 1.0 and later
+ }
+function AEGetDescDataSize( const (*var*) theAEDesc: AEDesc ): Size; external name '_AEGetDescDataSize';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  AEReplaceDescData()
@@ -6726,13 +7829,19 @@ function AEGetDescDataSize( const (*var*) theAEDesc: AEDesc ): Size; external na
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  Discussion:
  *    Copies the specified data into the specified descriptor,
  *    replacing any previous data.
  *  
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
  *  Mac OS X threading:
  *    Thread safe since version 10.2
  *  
@@ -6757,6 +7866,7 @@ function AEGetDescDataSize( const (*var*) theAEDesc: AEDesc ): Size; external na
  *    Non-Carbon CFM:   in CarbonAccessors.o 1.0 and later
  }
 function AEReplaceDescData( typeCode: DescType; dataPtr: {const} UnivPtr; dataSize: Size; var theAEDesc: AEDesc ): OSErr; external name '_AEReplaceDescData';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -6841,6 +7951,12 @@ function AEReplaceDescData( typeCode: DescType; dataPtr: {const} UnivPtr; dataSi
 
 
 {
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+>>>>>>> origin/cpstrnew
  *  AEGetDescDataRange()
  *  
  *  Discussion:
@@ -6855,10 +7971,13 @@ function AEReplaceDescData( typeCode: DescType; dataPtr: {const} UnivPtr; dataSi
  *  
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
  *  Parameters:
  *    
  *    dataDesc:
@@ -6878,7 +7997,10 @@ function AEReplaceDescData( typeCode: DescType; dataPtr: {const} UnivPtr; dataSi
  *    length:
  *      The number of bytes of contiguous data to retrieve.
  *  
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  Availability:
  *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
@@ -6899,6 +8021,7 @@ function AEGetDescDataRange( const (*var*) dataDesc: AEDesc; buffer: UnivPtr; of
 {*************************************************************************
   A AEEventHandler is installed to process an AppleEvent 
 *************************************************************************}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -6934,6 +8057,11 @@ type
 	AEEventHandlerProcPtr = function( const (*var*) theAppleEvent: AppleEvent; var reply: AppleEvent; handlerRefcon: SRefCon ): OSErr;
 	AEEventHandlerUPP = AEEventHandlerProcPtr;
 >>>>>>> origin/fixes_2.4
+=======
+type
+	AEEventHandlerProcPtr = function( const (*var*) theAppleEvent: AppleEvent; var reply: AppleEvent; handlerRefcon: SRefCon ): OSErr;
+	AEEventHandlerUPP = AEEventHandlerProcPtr;
+>>>>>>> origin/cpstrnew
 {
  *  NewAEDisposeExternalUPP()
  *  
@@ -6979,6 +8107,7 @@ function NewAEEventHandlerUPP( userRoutine: AEEventHandlerProcPtr ): AEEventHand
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{
 	 *  NewAEEventHandlerUPP()
 	 *  
@@ -6993,6 +8122,8 @@ function NewAEEventHandlerUPP(userRoutine: AEEventHandlerProcPtr): AEEventHandle
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 {
  *  NewAEEventHandlerUPP()
  *  
@@ -7003,7 +8134,10 @@ function NewAEEventHandlerUPP(userRoutine: AEEventHandlerProcPtr): AEEventHandle
  }
 function NewAEEventHandlerUPP( userRoutine: AEEventHandlerProcPtr ): AEEventHandlerUPP; external name '_NewAEEventHandlerUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {
  *  DisposeAEDisposeExternalUPP()
@@ -7028,6 +8162,7 @@ procedure DisposeAEDisposeExternalUPP( userUPP: AEDisposeExternalUPP ); external
  *  DisposeAEEventHandlerUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -7073,6 +8208,14 @@ procedure DisposeAEEventHandlerUPP(userUPP: AEEventHandlerUPP); external name '_
 procedure DisposeAEEventHandlerUPP( userUPP: AEEventHandlerUPP ); external name '_DisposeAEEventHandlerUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeAEEventHandlerUPP( userUPP: AEEventHandlerUPP ); external name '_DisposeAEEventHandlerUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 {
  *  InvokeAEDisposeExternalUPP()
@@ -7082,6 +8225,7 @@ procedure DisposeAEEventHandlerUPP( userUPP: AEEventHandlerUPP ); external name 
  *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
  *    Non-Carbon CFM:   available as macro/inline
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -7109,6 +8253,9 @@ procedure InvokeAEDisposeExternalUPP( dataPtr: {const} UnivPtr; dataLength: Size
 =======
 procedure InvokeAEDisposeExternalUPP( dataPtr: {const} UnivPtr; dataLength: Size; refcon: SRefCon; userUPP: AEDisposeExternalUPP ); external name '_InvokeAEDisposeExternalUPP';
 >>>>>>> origin/fixes_2.4
+=======
+procedure InvokeAEDisposeExternalUPP( dataPtr: {const} UnivPtr; dataLength: Size; refcon: SRefCon; userUPP: AEDisposeExternalUPP ); external name '_InvokeAEDisposeExternalUPP';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 >>>>>>> origin/fixes_2_2
 
@@ -7116,6 +8263,7 @@ procedure InvokeAEDisposeExternalUPP( dataPtr: {const} UnivPtr; dataLength: Size
  *  InvokeAEEventHandlerUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -7155,6 +8303,9 @@ end.
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   available as macro/inline
  }
@@ -7168,9 +8319,13 @@ end.
 end.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

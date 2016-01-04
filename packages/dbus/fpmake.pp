@@ -61,6 +61,9 @@ begin
           AddInclude('dbus-threads.inc');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
           AddInclude('dbus-misc.inc');
         end;
 

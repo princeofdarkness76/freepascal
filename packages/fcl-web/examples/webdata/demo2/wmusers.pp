@@ -9,6 +9,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Classes, SysUtils, fpwebdata, extjsjson, extjsxml,
 =======
   Classes, SysUtils, FileUtil, LResources, fpwebdata, extjsjson, extjsxml,
@@ -19,6 +20,9 @@ uses
 =======
   Classes, SysUtils, FileUtil, LResources, fpwebdata, extjsjson, extjsxml,
 >>>>>>> graemeg/cpstrnew
+=======
+  Classes, SysUtils, FileUtil, LResources, fpwebdata, extjsjson, extjsxml,
+>>>>>>> origin/cpstrnew
 =======
   Classes, SysUtils, FileUtil, LResources, fpwebdata, extjsjson, extjsxml,
 >>>>>>> origin/cpstrnew
@@ -54,6 +58,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$R *.lfm}
 
 =======
@@ -62,6 +67,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 uses dbugintf;
@@ -114,6 +121,7 @@ initialization
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   {$I wmusers.lrs}
 >>>>>>> graemeg/cpstrnew
@@ -123,6 +131,9 @@ initialization
 =======
   {$I wmusers.lrs}
 >>>>>>> graemeg/cpstrnew
+=======
+  {$I wmusers.lrs}
+>>>>>>> origin/cpstrnew
 =======
   {$I wmusers.lrs}
 >>>>>>> origin/cpstrnew

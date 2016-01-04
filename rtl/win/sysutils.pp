@@ -73,6 +73,13 @@ var
 =======
 >>>>>>> origin/fixes_2.4
 
+const
+  MaxEraCount = 7;
+
+var
+  EraNames: array [1..MaxEraCount] of String;
+  EraYearOffsets: array [1..MaxEraCount] of Integer;
+
 { Compatibility with Delphi }
 function Win32Check(res:boolean):boolean;inline;
 function WinCheck(res:boolean):boolean;
@@ -85,11 +92,15 @@ function GetFileVersion(const AFileName: string): Cardinal;
 procedure GetFormatSettings;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure GetLocaleFormatSettings(LCID: Integer; var FormatSettings: TFormatSettings); platform;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+procedure GetLocaleFormatSettings(LCID: Integer; var FormatSettings: TFormatSettings); platform;
+>>>>>>> origin/cpstrnew
 
 implementation
 
@@ -177,6 +188,7 @@ function GetFileVersion(const AFileName:string):Cardinal;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -186,6 +198,9 @@ function GetFileVersion(const AFileName:string):Cardinal;
 =======
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 =======
 
 >>>>>>> origin/cpstrnew
@@ -265,11 +280,14 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 Function FileOpen (Const FileName : string; Mode : Integer) : THandle;
@@ -289,6 +307,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 Function FileOpen (Const FileName : unicodestring; Mode : Integer) : THandle;
@@ -303,6 +322,9 @@ begin
 =======
 begin
 >>>>>>> graemeg/cpstrnew
+=======
+begin
+>>>>>>> origin/cpstrnew
 =======
 begin
 >>>>>>> origin/cpstrnew
@@ -726,11 +748,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 end;
@@ -771,6 +796,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if GetLocaleInfoA(LID, LT, Buf, sizeof(buf)) > 0 then
 =======
   if GetLocaleInfo(LID, LT, Buf, sizeof(buf)) > 0 then
@@ -781,6 +807,9 @@ begin
 =======
   if GetLocaleInfo(LID, LT, Buf, sizeof(buf)) > 0 then
 >>>>>>> graemeg/cpstrnew
+=======
+  if GetLocaleInfo(LID, LT, Buf, sizeof(buf)) > 0 then
+>>>>>>> origin/cpstrnew
 =======
   if GetLocaleInfo(LID, LT, Buf, sizeof(buf)) > 0 then
 >>>>>>> origin/cpstrnew
@@ -806,6 +835,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if GetDateFormatA(ALCID , DATE_USE_ALT_CALENDAR
 =======
   if GetDateFormat(ALCID , DATE_USE_ALT_CALENDAR
@@ -816,6 +846,9 @@ begin
 =======
   if GetDateFormat(ALCID , DATE_USE_ALT_CALENDAR
 >>>>>>> graemeg/cpstrnew
+=======
+  if GetDateFormat(ALCID , DATE_USE_ALT_CALENDAR
+>>>>>>> origin/cpstrnew
 =======
   if GetDateFormat(ALCID , DATE_USE_ALT_CALENDAR
 >>>>>>> origin/cpstrnew
@@ -865,6 +898,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if GetDateFormatA(ALCID, DATE_USE_ALT_CALENDAR
 =======
   if GetDateFormat(ALCID, DATE_USE_ALT_CALENDAR
@@ -875,6 +909,9 @@ begin
 =======
   if GetDateFormat(ALCID, DATE_USE_ALT_CALENDAR
 >>>>>>> graemeg/cpstrnew
+=======
+  if GetDateFormat(ALCID, DATE_USE_ALT_CALENDAR
+>>>>>>> origin/cpstrnew
 =======
   if GetDateFormat(ALCID, DATE_USE_ALT_CALENDAR
 >>>>>>> origin/cpstrnew
@@ -943,6 +980,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if GetLocaleInfoA(ALCID , LOCALE_IOPTIONALCALENDAR, buf, sizeof(buf)) <= 0 then exit;
 =======
   if GetLocaleInfo(ALCID , LOCALE_IOPTIONALCALENDAR, buf, sizeof(buf)) <= 0 then exit;
@@ -953,6 +991,9 @@ begin
 =======
   if GetLocaleInfo(ALCID , LOCALE_IOPTIONALCALENDAR, buf, sizeof(buf)) <= 0 then exit;
 >>>>>>> graemeg/cpstrnew
+=======
+  if GetLocaleInfo(ALCID , LOCALE_IOPTIONALCALENDAR, buf, sizeof(buf)) <= 0 then exit;
+>>>>>>> origin/cpstrnew
 =======
   if GetLocaleInfo(ALCID , LOCALE_IOPTIONALCALENDAR, buf, sizeof(buf)) <= 0 then exit;
 >>>>>>> origin/cpstrnew
@@ -984,6 +1025,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure GetLocaleFormatSettings(LCID: Integer; var FormatSettings: TFormatSettings);
 =======
 procedure GetLocaleFormatSettings(LCID: Integer; var FormatSettings: TFormatSettings); 
@@ -994,6 +1036,9 @@ procedure GetLocaleFormatSettings(LCID: Integer; var FormatSettings: TFormatSett
 =======
 procedure GetLocaleFormatSettings(LCID: Integer; var FormatSettings: TFormatSettings); 
 >>>>>>> graemeg/cpstrnew
+=======
+procedure GetLocaleFormatSettings(LCID: Integer; var FormatSettings: TFormatSettings); 
+>>>>>>> origin/cpstrnew
 =======
 procedure GetLocaleFormatSettings(LCID: Integer; var FormatSettings: TFormatSettings); 
 >>>>>>> origin/cpstrnew
@@ -1043,6 +1088,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       ListSeparator := GetLocaleChar(LID, LOCALE_SLIST, ',');
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1050,6 +1096,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     end;
@@ -1281,6 +1329,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if not CreateProcessA(nil, pchar(CommandLine),
 =======
   if not CreateProcess(nil, pchar(CommandLine),
@@ -1291,6 +1340,9 @@ begin
 =======
   if not CreateProcess(nil, pchar(CommandLine),
 >>>>>>> graemeg/cpstrnew
+=======
+  if not CreateProcess(nil, pchar(CommandLine),
+>>>>>>> origin/cpstrnew
 =======
   if not CreateProcess(nil, pchar(CommandLine),
 >>>>>>> origin/cpstrnew
@@ -1333,6 +1385,7 @@ begin
     CommandLine := CommandLine + ' ' + Comline [I];
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   ExecuteProcess := ExecuteProcess (Path, CommandLine,Flags);
 =======
   ExecuteProcess := ExecuteProcess (Path, CommandLine);
@@ -1340,6 +1393,9 @@ begin
 =======
   ExecuteProcess := ExecuteProcess (Path, CommandLine);
 >>>>>>> origin/fixes_2_2
+=======
+  ExecuteProcess := ExecuteProcess (Path, CommandLine,Flags);
+>>>>>>> origin/cpstrnew
 end;
 
 Procedure Sleep(Milliseconds : Cardinal);
@@ -1368,12 +1424,15 @@ Var
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   kernel32dll:=0;
 >>>>>>> graemeg/fixes_2_2
 =======
   kernel32dll:=0;
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
   GetDiskFreeSpaceEx:=nil;
   versioninfo.dwOSVersionInfoSize:=sizeof(versioninfo);
   GetVersionEx(versioninfo);
@@ -1393,6 +1452,7 @@ begin
   If Global then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Result:=GetWindowsSpecialDir(CSIDL_COMMON_APPDATA)
   else
     Result:=GetWindowsSpecialDir(CSIDL_LOCAL_APPDATA);
@@ -1406,6 +1466,11 @@ begin
   else
     Result:=GetSpecialDir(CSIDL_LOCAL_APPDATA);
 >>>>>>> origin/fixes_2_2
+=======
+    Result:=GetWindowsSpecialDir(CSIDL_COMMON_APPDATA)
+  else
+    Result:=GetWindowsSpecialDir(CSIDL_LOCAL_APPDATA);
+>>>>>>> origin/cpstrnew
   If (Result<>'') then
     begin
       if VendorName<>'' then
@@ -1427,6 +1492,7 @@ Function GetUserDir : String;
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:=GetWindowsSpecialDir(CSIDL_PROFILE);
 =======
   Result:=GetSpecialDir(CSIDL_PROFILE);
@@ -1434,6 +1500,9 @@ begin
 =======
   Result:=GetSpecialDir(CSIDL_PROFILE);
 >>>>>>> origin/fixes_2_2
+=======
+  Result:=GetWindowsSpecialDir(CSIDL_PROFILE);
+>>>>>>> origin/cpstrnew
 end;
 
 Procedure InitSysConfigDir;
@@ -1465,11 +1534,14 @@ function DoCompareStringA(P1, P2: PWideChar; L1, L2: PtrUInt; Flags: DWORD): Ptr
   end;
 
 function DoCompareStringW(P1, P2: PWideChar; L1, L2: PtrUInt; Flags: DWORD): PtrInt;
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
 function Win32CompareWideString(const s1, s2 : WideString) : PtrInt;
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
   begin
     SetLastError(0);
     Result:=CompareStringW(LOCALE_USER_DEFAULT,Flags,P1,L1,P2,L2)-2;
@@ -1596,6 +1668,7 @@ function Win32AnsiStrUpper(Str: PChar): PChar;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function Win32CompareUnicodeString(const s1, s2 : UnicodeString; Options : TCompareOptions) : PtrInt;
 
 Var
@@ -1616,6 +1689,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 function Win32CompareUnicodeString(const s1, s2 : UnicodeString) : PtrInt;
   begin
     Result:=DoCompareStringW(PWideChar(s1), PWideChar(s2), Length(s1), Length(s2), 0);
@@ -1623,11 +1698,14 @@ function Win32CompareUnicodeString(const s1, s2 : UnicodeString) : PtrInt;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -1644,10 +1722,14 @@ procedure InitWin32Widestrings;
   begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
     { return value: number of code points in the string. Whenever an invalid
       code point is encountered, all characters part of this invalid code point
       are considered to form one "character" and the next character is
       considered to be the start of a new (possibly also invalid) code point }
+<<<<<<< HEAD
 //!!!    CharLengthPCharProc : function(const Str: PChar): PtrInt;
     { return value:
       -1 if incomplete or invalid code point
@@ -1660,6 +1742,14 @@ procedure InitWin32Widestrings;
 =======
 //!!!    CharLengthPCharProc : function(const Str: PChar): PtrInt;
 >>>>>>> origin/fixes_2_2
+=======
+//!!!    CharLengthPCharProc : function(const Str: PChar): PtrInt;
+    { return value:
+      -1 if incomplete or invalid code point
+      0 if NULL character,
+      > 0 if that's the length in bytes of the code point }
+//!!!!    CodePointLengthProc : function(const Str: PChar; MaxLookAead: PtrInt): Ptrint;
+>>>>>>> origin/cpstrnew
     widestringmanager.CompareWideStringProc:=@Win32CompareWideString;
     widestringmanager.UpperAnsiStringProc:=@Win32AnsiUpperCase;
     widestringmanager.LowerAnsiStringProc:=@Win32AnsiLowerCase;
@@ -1672,6 +1762,7 @@ procedure InitWin32Widestrings;
     widestringmanager.StrLowerAnsiStringProc:=@Win32AnsiStrLower;
     widestringmanager.StrUpperAnsiStringProc:=@Win32AnsiStrUpper;
     widestringmanager.CompareUnicodeStringProc:=@Win32CompareUnicodeString;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1709,6 +1800,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     widestringmanager.CompareTextUnicodeStringProc:=@Win32CompareTextUnicodeString;

@@ -34,6 +34,9 @@ begin
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
    { runtime error test }
     initok:=GenerateRegExprEngine('[o]{1,2}',[],r);
     if not initok then
@@ -44,15 +47,19 @@ begin
     // if it has bug, error  An unhandled exception when r.Free
     DestroyregExprEngine(r); // bug:Test for rcClear
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
    writeln('*** Searching tests ***');
    { basic tests }
 
    initok:=GenerateRegExprEngine('.*',[],r);
    if not initok then
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
      do_error(50);
@@ -94,6 +101,36 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+     do_error(50);
+   if not(RegExprPos(r,'CXXXX',index,len)) or
+     (index<>0) or (len<>5) then
+     do_error(51);
+   DestroyregExprEngine(r);
+
+   initok:=GenerateRegExprEngine('\t\t',[],r);
+   if not initok then
+     do_error(52);
+   if not(RegExprPos(r,'a'+#9+#9+'b'+'\t\t',index,len)) or
+     (index<>1) or (len<>2) then
+     do_error(52);
+   DestroyregExprEngine(r);
+
+   initok:=GenerateRegExprEngine('\t',[],r);
+   if not initok then
+     do_error(53);
+   if not(RegExprPos(r,'a'+#9+#9+'b'+'\t\t',index,len)) or
+     (index<>1) or (len<>1) then
+     do_error(53);
+   DestroyregExprEngine(r);
+
+   initok:=GenerateRegExprEngine('\w',[],r);
+   if not initok then
+     do_error(54);
+   if not(RegExprPos(r,'- abc \w',index,len)) or
+     (index<>2) or (len<>1) then
+     do_error(54);
+>>>>>>> origin/cpstrnew
    DestroyregExprEngine(r);
 
    { java package name }
@@ -427,6 +464,9 @@ begin
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
    initok:=GenerateRegExprEngine('o{2}',[],r);
    if not initok then
      do_error(719);
@@ -435,10 +475,13 @@ begin
      do_error(719);
    DestroyregExprEngine(r);
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
    (* {n,m} tests *)
    initok:=GenerateRegExprEngine('Cat(AZ){1,3}',[],r);
    if not initok then
@@ -489,6 +532,9 @@ begin
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
    initok:=GenerateRegExprEngine('o{2,2}',[],r);
    if not initok then
      do_error(730);
@@ -497,10 +543,13 @@ begin
      do_error(730);
    DestroyregExprEngine(r);
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 
    { ()* tests }
    initok:=GenerateRegExprEngine('(AZ)*',[],r);

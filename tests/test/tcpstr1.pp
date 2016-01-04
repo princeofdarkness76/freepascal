@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef unix}
 uses
   {$ifdef darwin}iosxwstr{$else}cwstring{$endif};
@@ -30,6 +31,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$CODEPAGE cp437}
 type
   tcpstr437 = string<437>;
@@ -49,6 +52,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -56,10 +60,13 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
   writeln('---');
 
   a3:=a1;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -82,10 +89,15 @@ begin
   if ord(a3[1])<>132 then
     halt(1);
 >>>>>>> origin/cpstrnew
+=======
+  if ord(a3[1])<>132 then
+    halt(1);
+>>>>>>> origin/cpstrnew
 
   writeln('---');
 
   u1:=a1;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -104,6 +116,10 @@ begin
   if ord(u1[1])<>228 then
     halt(1);
 >>>>>>> graemeg/cpstrnew
+=======
+  if ord(u1[1])<>228 then
+    halt(1);
+>>>>>>> origin/cpstrnew
 =======
   if ord(u1[1])<>228 then
     halt(1);

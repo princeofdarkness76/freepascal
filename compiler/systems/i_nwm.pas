@@ -40,6 +40,7 @@ unit i_nwm;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             flags        : [tf_smartlink_sections,tf_dwarf_only_local_labels];
 =======
             flags        : [tf_smartlink_library,tf_smartlink_sections,tf_dwarf_only_local_labels];
@@ -59,6 +60,9 @@ unit i_nwm;
 =======
             flags        : [tf_use_function_relative_addresses,tf_smartlink_library];
 >>>>>>> origin/fixes_2_2
+=======
+            flags        : [tf_smartlink_library,tf_smartlink_sections,tf_dwarf_only_local_labels];
+>>>>>>> origin/cpstrnew
             cpu          : cpu_i386;
             unit_env     : 'NETWAREUNITS';
             extradefines : 'NETWARE_CLIB';

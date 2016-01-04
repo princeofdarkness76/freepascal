@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$mode objfpc}{$h+}
 =======
 {$mode objfpc}
@@ -7,6 +8,9 @@
 =======
 {$mode objfpc}
 >>>>>>> origin/fixes_2_2
+=======
+{$mode objfpc}{$h+}
+>>>>>>> origin/cpstrnew
 
 {$ifdef BSD}
   {$linklib c}
@@ -39,6 +43,9 @@ uses
   DynLibs;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifdef darwin}
 {$linklib sqlite3}
@@ -62,6 +69,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
   Header converted from Sqlite version 3.7.9
   SOURCE_ID = '2011-11-01 00:52:41 c7c6050ef060877ebe77b41d959e9df13f8c9b5e'
@@ -72,6 +80,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 (*
@@ -1123,6 +1133,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function InitializeSqliteANSI(const LibraryName: AnsiString = ''): Integer; //needed as TLibraryLoadFunction
 function InitializeSqlite(const LibraryName: UnicodeString = ''): Integer;
 function TryInitializeSqlite(const LibraryName: Unicodestring = ''): Integer;
@@ -1138,12 +1149,15 @@ function InitialiseSQLite(const LibraryName: UnicodeString): Integer; deprecated
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 function InitializeSqlite(const LibraryName: String = ''): Integer;
 function TryInitializeSqlite(const LibraryName: string = ''): Integer;
 function ReleaseSqlite: Integer;
 
 function InitialiseSQLite: Integer; deprecated;
 function InitialiseSQLite(const LibraryName: String): Integer; deprecated;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1154,10 +1168,13 @@ function InitialiseSQLite(const LibraryName: String): Integer; deprecated;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 var
   SQLiteLibraryHandle: TLibHandle;
   SQLiteDefaultLibrary: String = Sqlite3Lib;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1558,6 +1575,8 @@ var
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 {$ENDIF LOAD_DYNAMICALLY}
 
 implementation
@@ -1883,6 +1902,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TryInitializeSqlite(const LibraryName: UnicodeString): Integer;
 
 Var
@@ -1909,10 +1929,15 @@ begin
 function TryInitializeSqlite(const LibraryName: string): Integer;
 begin
 >>>>>>> origin/cpstrnew
+=======
+function TryInitializeSqlite(const LibraryName: string): Integer;
+begin
+>>>>>>> origin/cpstrnew
   result:=InterlockedIncrement(RefCount);
   if result  = 1 then
   begin
     SQLiteLibraryHandle := LoadLibrary(LibraryName);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1923,11 +1948,14 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     if (SQLiteLibraryHandle = NilHandle) then
     begin
       RefCount := 0;
       Exit(-1);
     end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1940,6 +1968,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     LoadedLibrary := LibraryName;
 >>>>>>> graemeg/cpstrnew
     LoadAddresses(SQLiteLibraryHandle);
@@ -1947,6 +1977,7 @@ begin
 end;
 
 function InitialiseSQLite:integer;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1999,6 +2030,10 @@ begin
 begin
 >>>>>>> origin/cpstrnew
   result:=InitializeSqlite(SQLiteDefaultLibrary);
+=======
+begin
+  result:=InitializeSqlite(SQLiteDefaultLibrary);
+>>>>>>> origin/cpstrnew
 end;
 
 function  InitializeSQLite(const LibraryName: String) :integer;
@@ -2014,6 +2049,7 @@ end;
 
 function  InitialiseSQLite(const LibraryName: String):integer;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2145,12 +2181,29 @@ begin
     SQLITELibraryHandle := NilHandle;
     LoadedLibrary:='';
     end;
+=======
+  result:=InitializeSqlite(LibraryName);
+>>>>>>> origin/cpstrnew
 end;
 
-{$ENDIF}
+function  ReleaseSQLite:integer;
+begin
+  if InterlockedDecrement(RefCount) <= 0 then
+  begin
+    if SQLiteLibraryHandle <> NilHandle then
+      UnloadLibrary(SQLiteLibraryHandle);
+    SQLiteLibraryHandle := NilHandle;
+    LoadedLibrary := '';
+    RefCount := 0;
+  end;
+end;
 
+<<<<<<< HEAD
 end.
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$ENDIF}
+>>>>>>> origin/cpstrnew

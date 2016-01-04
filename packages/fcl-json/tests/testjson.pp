@@ -40,8 +40,12 @@ uses
 >>>>>>> graemeg/fixes_2_2
 =======
   Classes, consoletestrunner, testjsondata, testjsonparser,
+<<<<<<< HEAD
   fpcunitconsolerunner;
 >>>>>>> origin/fixes_2_2
+=======
+  fpcunitconsolerunner, testjsonrtti, fpjsonrtti;
+>>>>>>> origin/cpstrnew
 type
   { TLazTestRunner }
    TMyTestRunner = class(TTestRunner)

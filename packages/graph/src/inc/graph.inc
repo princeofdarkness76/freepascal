@@ -1012,6 +1012,7 @@ var
   procedure Rectangle(x1,y1,x2,y2:smallint);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    var
      tmp: smallint;
    begin
@@ -1035,6 +1036,23 @@ var
 
    begin
 >>>>>>> origin/fixes_2_2
+=======
+   var
+     tmp: smallint;
+   begin
+     if x1 > x2 then
+     begin
+       tmp := x1;
+       x1 := x2;
+       x2 := tmp;
+     end;
+     if y1 > y2 then
+     begin
+       tmp := y1;
+       y1 := y2;
+       y2 := tmp;
+     end;
+>>>>>>> origin/cpstrnew
      { Do not draw the end points }
      Line(x1,y1,x2-1,y1);
      Line(x1,y1+1,x1,y2);
@@ -1396,12 +1414,17 @@ end;
   procedure CircleDefault(X, Y: smallint; Radius:Word);forward;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   procedure SetBkColorDefault(ColorNum: Word);forward;
   function GetBkColorDefault: Word;forward;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  procedure SetBkColorDefault(ColorNum: Word);forward;
+  function GetBkColorDefault: Word;forward;
+>>>>>>> origin/cpstrnew
 
 {$i palette.inc}
 
@@ -1442,12 +1465,17 @@ end;
     Circle := {$ifdef fpc}@{$endif}CircleDefault;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     SetBkColor := {$ifdef fpc}@{$endif}SetBkColorDefault;
     GetBkColor := {$ifdef fpc}@{$endif}GetBkColorDefault;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    SetBkColor := {$ifdef fpc}@{$endif}SetBkColorDefault;
+    GetBkColor := {$ifdef fpc}@{$endif}GetBkColorDefault;
+>>>>>>> origin/cpstrnew
   end;
 
   Procedure InitVars;
@@ -1514,6 +1542,7 @@ end;
        CurrentWriteMode := NormalPut;}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      InternalEllipse(X,Y,Radius,(longint(Radius)*XAspect) div YAspect,StAngle,Endangle,{$ifdef fpc}@{$endif}DummyPatternLine);
 =======
      InternalEllipse(X,Y,Radius,Radius,StAngle,Endangle,{$ifdef fpc}@{$endif}DummyPatternLine);
@@ -1521,6 +1550,9 @@ end;
 =======
      InternalEllipse(X,Y,Radius,Radius,StAngle,Endangle,{$ifdef fpc}@{$endif}DummyPatternLine);
 >>>>>>> origin/fixes_2_2
+=======
+     InternalEllipse(X,Y,Radius,(longint(Radius)*XAspect) div YAspect,StAngle,Endangle,{$ifdef fpc}@{$endif}DummyPatternLine);
+>>>>>>> origin/cpstrnew
 {     CurrentWriteMode := OldWriteMode;}
    end;
 
@@ -1740,16 +1772,22 @@ end;
        end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
      if x1>x2 then
        begin
           y:=x1;
           x1:=x2;
           x2:=y;
        end;
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 
      { Always copy mode for Bars }
      origwritemode := CurrentWriteMode;
@@ -1794,6 +1832,9 @@ var
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   if x1 > x2 then
   begin
     OldX := x1;
@@ -1807,10 +1848,13 @@ begin
     y2 := OldY;
   end;
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
   origwritemode := CurrentWriteMode;
   CurrentWriteMode := CopyPut;
   Bar(x1,y1,x2,y2);
@@ -1864,6 +1908,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   function GetBkColorDefault: Word;
 
    Begin
@@ -1876,17 +1921,24 @@ end;
 =======
 >>>>>>> origin/fixes_2_2
   function GetBkColor: Word;
+=======
+  function GetBkColorDefault: Word;
+>>>>>>> origin/cpstrnew
 
    Begin
-     GetBkColor := CurrentBkColor;
+     GetBkColorDefault := CurrentBkColor;
    end;
 
 
+<<<<<<< HEAD
   procedure SetBkColor(ColorNum: Word);
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  procedure SetBkColorDefault(ColorNum: Word);
+>>>>>>> origin/cpstrnew
   { Background color means background screen color in this case, and it is  }
   { INDEPENDANT of the viewport settings, so we must clear the whole screen }
   { with the color.                                                         }
@@ -2056,6 +2108,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      {fix by nickysn: TP7 doesn't reset aspect ratio in GraphDefaults }
      {XAspect:=10000; YAspect:=10000;}
 =======
@@ -2064,6 +2117,10 @@ end;
 =======
      XAspect:=10000; YAspect:=10000;
 >>>>>>> origin/fixes_2_2
+=======
+     {fix by nickysn: TP7 doesn't reset aspect ratio in GraphDefaults }
+     {XAspect:=10000; YAspect:=10000;}
+>>>>>>> origin/cpstrnew
    end;
 
 
@@ -2147,14 +2204,19 @@ end;
 >>>>>>> origin/fixes_2_2
       pt = array[0..16000] of pointtype;
     var
-      i : longint;
+      i, j, LastPolygonStart: longint;
+      Closing: boolean;
     begin
       if numpoints < 2 then
         begin
-          _GraphResult := grError;
+          { nickysn: TP7 doesn't return error here }
+          {_GraphResult := grError;}
           exit;
         end;
+      Closing := false;
+      LastPolygonStart := 0;
       for i:=0 to numpoints-2 do
+<<<<<<< HEAD
         line(pt(polypoints)[i].x,
              pt(polypoints)[i].y,
              pt(polypoints)[i+1].x,
@@ -2163,11 +2225,37 @@ end;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+      begin
+        { skip an edge after each 'closing' edge }
+        if not Closing then
+          line(pt(polypoints)[i].x,
+               pt(polypoints)[i].y,
+               pt(polypoints)[i+1].x,
+               pt(polypoints)[i+1].y);
+
+        { check if the current edge is 'closing'. This means that it 'closes'
+          the polygon by going back to the first point of the polygon.
+          Also, 0-length edges are never considered 'closing'. }
+        if ((pt(polypoints)[i+1].x <> pt(polypoints)[i].x) or
+            (pt(polypoints)[i+1].y <> pt(polypoints)[i].y)) and
+            (LastPolygonStart < i) and
+           ((pt(polypoints)[i+1].x = pt(polypoints)[LastPolygonStart].x) and
+            (pt(polypoints)[i+1].y = pt(polypoints)[LastPolygonStart].y)) then
+        begin
+          Closing := true;
+          LastPolygonStart := i + 2;
+        end
+        else
+          Closing := false;
+      end;
+>>>>>>> origin/cpstrnew
     end;
 
 
   procedure PieSlice(X,Y,stangle,endAngle:smallint;Radius: Word);
   begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     Sector(x,y,stangle,endangle,radius,(longint(Radius)*XAspect) div YAspect);
@@ -2177,6 +2265,9 @@ end;
 =======
     Sector(x,y,stangle,endangle,radius,radius);
 >>>>>>> origin/fixes_2_2
+=======
+    Sector(x,y,stangle,endangle,radius,(longint(Radius)*XAspect) div YAspect);
+>>>>>>> origin/cpstrnew
   end;
 
 {$i fills.inc}

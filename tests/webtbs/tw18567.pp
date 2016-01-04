@@ -9,6 +9,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     class operator Explicit(a: TData) : TSomeRecord <TData>;
   end;
 
@@ -20,6 +21,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     class operator Explicit(a: TData) : TSomeRecord;
   end;
 
@@ -27,11 +30,14 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   begin
@@ -43,6 +49,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 end.
 =======
 end.
@@ -53,6 +60,9 @@ end.
 =======
 end.
 >>>>>>> graemeg/cpstrnew
+=======
+end.
+>>>>>>> origin/cpstrnew
 =======
 end.
 >>>>>>> origin/cpstrnew

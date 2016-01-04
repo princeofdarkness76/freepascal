@@ -609,6 +609,9 @@
 'lzcnt',
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 'pabsb',
 'pabsw',
 'pabsd',
@@ -645,6 +648,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 'phminposuw',
 'pinsrb',
 'pinsrd',
@@ -655,6 +659,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 'pextrq',
 'phminposuw',
 'pinsrb',
@@ -663,11 +669,14 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 'pmaxsb',
@@ -695,6 +704,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 'pmulld',
 =======
 >>>>>>> graemeg/cpstrnew
@@ -704,11 +714,14 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 'ptest',
 'roundps',
 'roundpd',
 'roundss',
 'roundsd',
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -722,6 +735,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 'pcmpestri',
 'pcmpestrm',
 'pcmpistri',
@@ -733,6 +748,7 @@
 'aesdec',
 'aesdeclast',
 'aesimc',
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1101,10 +1117,13 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 'aeskeygen',
 'stosq',
 'lodsq',
 'cmpsq'
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1121,4 +1140,6 @@
 =======
 'popcnt'
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 );

@@ -70,6 +70,7 @@ function DI_Identify(id: PDI_DriveID): cint; cdecl; external;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function DI_CheckDVDSupport(): cint; cdecl; external;
 =======
 
@@ -80,6 +81,9 @@ function DI_CheckDVDSupport(): cint; cdecl; external;
 =======
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 =======
 
 >>>>>>> origin/cpstrnew

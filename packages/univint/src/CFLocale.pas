@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	Copyright (c) 2002-2013, Apple Inc. All rights reserved.
 }
 =======
@@ -45,6 +46,9 @@
 =======
 	Copyright (c) 2002-2009, Apple Inc. All rights reserved.
 >>>>>>> origin/fixes_2.4
+=======
+	Copyright (c) 2002-2009, Apple Inc. All rights reserved.
+>>>>>>> origin/cpstrnew
 }
 {	  Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2004 }
 {	  Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, September 2005 }
@@ -58,12 +62,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -75,6 +83,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -89,6 +98,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -104,6 +117,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -114,6 +128,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -121,13 +138,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -135,6 +156,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -143,8 +166,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -155,6 +181,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -175,6 +202,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -183,12 +212,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -196,6 +228,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -217,6 +250,9 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -225,9 +261,12 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
@@ -236,6 +275,7 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -271,6 +311,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -286,6 +331,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -293,6 +339,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
@@ -308,6 +356,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -315,6 +364,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
@@ -327,6 +378,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -343,6 +395,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -350,11 +407,15 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> origin/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elifc defined __arm64__ and __arm64__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -377,10 +438,15 @@ interface
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 >>>>>>> graemeg/cpstrnew
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> origin/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
+<<<<<<< HEAD
 {$elsec}
 =======
 =======
@@ -488,6 +554,11 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -516,6 +587,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -524,6 +596,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -537,6 +611,7 @@ uses MacTypes,CFBase,CFArray,CFDictionary;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
 =======
@@ -547,6 +622,10 @@ uses MacTypes,CFBase,CFArray,CFDictionary;
 {$endc} {not MACOSALLINCLUDE}
 
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+
+>>>>>>> origin/cpstrnew
 {$ALIGN POWER}
 
 
@@ -554,6 +633,7 @@ uses MacTypes,CFBase,CFArray,CFDictionary;
 
 
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -584,6 +664,9 @@ type
 =======
 	CFLocaleRef = ^SInt32; { an opaque type }
 >>>>>>> origin/fixes_2.4
+=======
+	CFLocaleRef = ^SInt32; { an opaque type }
+>>>>>>> origin/cpstrnew
 
 function CFLocaleGetTypeID: CFTypeID; external name '_CFLocaleGetTypeID';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
@@ -626,12 +709,16 @@ function CFLocaleCopyISOCurrencyCodes: CFArrayRef; external name '_CFLocaleCopyI
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	// currency codes.  Note: some of these currencies may be obsolete, or
 	// represent other financial instruments.
 
 function CFLocaleCopyCommonISOCurrencyCodes: CFArrayRef; external name '_CFLocaleCopyCommonISOCurrencyCodes';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -653,10 +740,14 @@ function CFLocaleCopyCommonISOCurrencyCodes: CFArrayRef; external name '_CFLocal
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 	// Returns an array of CFStrings that represents ISO currency codes for
 	// currencies in common use.
 
 function CFLocaleCopyPreferredLanguages: CFArrayRef; external name '_CFLocaleCopyPreferredLanguages';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -704,6 +795,15 @@ function CFLocaleCreateCanonicalLanguageIdentifierFromString( allocator: CFAlloc
 	// Map an arbitrary language identification string (something close at
 	// least) to a canonical language identifier.
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+	// Returns the array of canonicalized CFString locale IDs that the user prefers.
+
+function CFLocaleCreateCanonicalLanguageIdentifierFromString( allocator: CFAllocatorRef; localeIdentifier: CFStringRef ): CFStringRef; external name '_CFLocaleCreateCanonicalLanguageIdentifierFromString';
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+	// Map an arbitrary language identification string (something close at
+	// least) to a canonical language identifier.
+>>>>>>> origin/cpstrnew
 
 function CFLocaleCreateCanonicalLocaleIdentifierFromString( allocator: CFAllocatorRef; localeIdentifier: CFStringRef ): CFStringRef; external name '_CFLocaleCreateCanonicalLocaleIdentifierFromString';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
@@ -714,6 +814,7 @@ function CFLocaleCreateCanonicalLocaleIdentifierFromScriptManagerCodes( allocato
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 	// Map a Mac OS LangCode and RegionCode to the canonical locale identifier.
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -741,6 +842,9 @@ type
 =======
 function CFLocaleCreateLocaleIdentifierFromWindowsLocaleCode( allocator: CFAllocatorRef; lcid: UInt32 ): CFStringRef; external name '_CFLocaleCreateLocaleIdentifierFromWindowsLocaleCode';
 >>>>>>> origin/fixes_2.4
+=======
+function CFLocaleCreateLocaleIdentifierFromWindowsLocaleCode( allocator: CFAllocatorRef; lcid: UInt32 ): CFStringRef; external name '_CFLocaleCreateLocaleIdentifierFromWindowsLocaleCode';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
 	// Map a Windows LCID to the canonical locale identifier.
 
@@ -754,6 +858,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -763,6 +868,8 @@ type
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 const
 	kCFLocaleLanguageDirectionUnknown = 0;
 	kCFLocaleLanguageDirectionLeftToRight = 1;
@@ -776,6 +883,7 @@ function CFLocaleGetLanguageCharacterDirection( isoLangCode: CFStringRef ): CFLo
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CF_AVAILABLE_STARTING(10_6, 4_0) *)
 
 function CFLocaleGetLanguageLineDirection( isoLangCode: CFStringRef ): CFLocaleLanguageDirection; external name '_CFLocaleGetLanguageLineDirection';
@@ -789,10 +897,13 @@ function CFLocaleGetLanguageLineDirection( isoLangCode: CFStringRef ): CFLocaleL
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
 
 function CFLocaleGetLanguageLineDirection( isoLangCode: CFStringRef ): CFLocaleLanguageDirection; external name '_CFLocaleGetLanguageLineDirection';
 (* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -812,6 +923,9 @@ function CFLocaleGetLanguageLineDirection( isoLangCode: CFStringRef ): CFLocaleL
 =======
 
 >>>>>>> origin/fixes_2.4
+=======
+
+>>>>>>> origin/cpstrnew
 function CFLocaleCreateComponentsFromLocaleIdentifier( allocator: CFAllocatorRef; localeID: CFStringRef ): CFDictionaryRef; external name '_CFLocaleCreateComponentsFromLocaleIdentifier';
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 	// Parses a locale ID consisting of language, script, country, variant,
@@ -860,6 +974,7 @@ function CFLocaleCopyDisplayNameForPropertyValue( displayLocale: CFLocaleRef; ke
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 var kCFLocaleCurrentLocaleDidChangeNotification: CFStringRef; external name '_kCFLocaleCurrentLocaleDidChangeNotification'; (* attribute const *)
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -885,11 +1000,16 @@ var kCFLocaleCurrentLocaleDidChangeNotification: CFStringRef; external name '_kC
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 var kCFLocaleCurrentLocaleDidChangeNotification: CFStringRef; external name '_kCFLocaleCurrentLocaleDidChangeNotification'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 // Locale Keys
 var kCFLocaleIdentifier: CFStringRef; external name '_kCFLocaleIdentifier'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
@@ -925,6 +1045,7 @@ var kCFLocaleCurrencyCode: CFStringRef; external name '_kCFLocaleCurrencyCode'; 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 var kCFLocaleCollatorIdentifier: CFStringRef; external name '_kCFLocaleCollatorIdentifier'; (* attribute const *)
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -949,6 +1070,9 @@ var kCFLocaleAlternateQuotationEndDelimiterKey: CFStringRef; external name '_kCF
 =======
 var kCFLocaleCollatorIdentifier: CFStringRef; external name '_kCFLocaleCollatorIdentifier'; (* attribute const *)
 >>>>>>> origin/fixes_2.4
+=======
+var kCFLocaleCollatorIdentifier: CFStringRef; external name '_kCFLocaleCollatorIdentifier'; (* attribute const *)
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
 var kCFLocaleQuotationBeginDelimiterKey: CFStringRef; external name '_kCFLocaleQuotationBeginDelimiterKey'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
@@ -958,6 +1082,7 @@ var kCFLocaleAlternateQuotationBeginDelimiterKey: CFStringRef; external name '_k
 (* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
 var kCFLocaleAlternateQuotationEndDelimiterKey: CFStringRef; external name '_kCFLocaleAlternateQuotationEndDelimiterKey'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -975,6 +1100,8 @@ var kCFLocaleAlternateQuotationEndDelimiterKey: CFStringRef; external name '_kCF
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 // Values for kCFLocaleCalendarIdentifier
 var kCFGregorianCalendar: CFStringRef; external name '_kCFGregorianCalendar'; (* attribute const *)
@@ -994,6 +1121,7 @@ var kCFJapaneseCalendar: CFStringRef; external name '_kCFJapaneseCalendar'; (* a
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 var kCFRepublicOfChinaCalendar: CFStringRef; external name '_kCFRepublicOfChinaCalendar'; (* attribute const *)
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1016,6 +1144,9 @@ var kCFISO8601Calendar: CFStringRef; external name '_kCFISO8601Calendar'; (* att
 =======
 var kCFRepublicOfChinaCalendar: CFStringRef; external name '_kCFRepublicOfChinaCalendar'; (* attribute const *)
 >>>>>>> origin/fixes_2.4
+=======
+var kCFRepublicOfChinaCalendar: CFStringRef; external name '_kCFRepublicOfChinaCalendar'; (* attribute const *)
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
 var kCFPersianCalendar: CFStringRef; external name '_kCFPersianCalendar'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
@@ -1023,6 +1154,7 @@ var kCFIndianCalendar: CFStringRef; external name '_kCFIndianCalendar'; (* attri
 (* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
 var kCFISO8601Calendar: CFStringRef; external name '_kCFISO8601Calendar'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1056,3 +1188,10 @@ end.
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+
+end.
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

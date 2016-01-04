@@ -1282,6 +1282,9 @@ begin
     pmc_next^.prev_fixed := nil;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   { statistics }
   with loc_freelists^.internal_status do
   begin
@@ -1295,6 +1298,7 @@ begin
     end;
   end;
   inc(poc^.used);
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -1312,6 +1316,8 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 function SysGetMem_Var(size: ptruint): pointer;
@@ -1341,6 +1347,7 @@ begin
   begin
     if (pcurr^.size>=size) then
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -1359,6 +1366,8 @@ begin
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
     begin
       if not assigned(pbest) or (pcurr^.size<pbest^.size) then
       begin
@@ -1499,6 +1508,9 @@ begin
   if loc_freelists = pocfreelists then
     begin
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
       { decrease used blocks count (well in advance of poc^.used check below,
         to avoid stalling due to a dependency) }
       dec(poc^.used);
@@ -1527,6 +1539,7 @@ begin
     begin
       { deallocated in wrong thread! add to to-be-freed list of correct thread }
       waitfree_fixed(pmc, poc);
+<<<<<<< HEAD
 =======
       { decrease used blocks count }
       if poc^.used=-1 then
@@ -1537,6 +1550,8 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
     end;
   result := chunksize;
 end;
@@ -1557,12 +1572,15 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   { insert the block in its freelist }
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   { insert the block in it's freelist }
@@ -1607,6 +1625,7 @@ begin
 {$endif}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   { loc_freelists is a threadvar, so it can be worth it to prefetch }
   loc_freelists := @freelists;
   prefetch(loc_freelists^.internal_status.currheapused);
@@ -1615,6 +1634,11 @@ begin
 >>>>>>> origin/fixes_2_2
   pmc := pmemchunk_fixed(p-sizeof(tmemchunk_fixed_hdr));
 >>>>>>> graemeg/fixes_2_2
+=======
+  { loc_freelists is a threadvar, so it can be worth it to prefetch }
+  loc_freelists := @freelists;
+  prefetch(loc_freelists^.internal_status.currheapused);
+>>>>>>> origin/cpstrnew
   { check if this is a fixed- or var-sized chunk }
   if (pmc^.size and fixedsizeflag) = 0 then
     result := sysfreemem_var(loc_freelists, pmemchunk_var(p-sizeof(tmemchunk_var_hdr)))

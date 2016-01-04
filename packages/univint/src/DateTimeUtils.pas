@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       CarbonCore/DateTimeUtils.h
  
      Contains:   International Date and Time Interfaces (previously in TextUtils)
@@ -38,11 +39,15 @@
 =======
      File:       CarbonCore/DateTimeUtils.h
 >>>>>>> origin/fixes_2.4
+=======
+     File:       CarbonCore/DateTimeUtils.h
+>>>>>>> origin/cpstrnew
  
      Contains:   International Date and Time Interfaces (previously in TextUtils)
  
      Version:    CarbonCore-859.2~1
  
+<<<<<<< HEAD
 <<<<<<< HEAD
      Copyright:  © 1994-2002 by Apple Computer, Inc., all rights reserved.
 <<<<<<< HEAD
@@ -52,6 +57,9 @@
 =======
      Copyright:  © 1994-2008 by Apple Computer, Inc., all rights reserved.
 >>>>>>> origin/fixes_2.4
+=======
+     Copyright:  © 1994-2008 by Apple Computer, Inc., all rights reserved.
+>>>>>>> origin/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -61,6 +69,7 @@
                      http://bugs.freepascal.org
  
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -90,6 +99,8 @@
                      http://www.freepascal.org/bugs.html
  
 }
+=======
+>>>>>>> origin/cpstrnew
 {    Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {
     Modified for use with Free Pascal
@@ -99,12 +110,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -116,6 +131,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -130,6 +146,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -145,6 +165,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -155,6 +176,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -162,13 +186,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -176,6 +204,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -184,8 +214,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -196,6 +229,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -216,6 +250,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -224,12 +260,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -240,6 +279,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
@@ -301,6 +341,9 @@ interface
 =======
 	{$setc TARGET_CPU_PPC64 := FALSE}
 >>>>>>> origin/fixes_2.4
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -310,6 +353,7 @@ interface
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
@@ -492,6 +536,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -532,6 +578,7 @@ interface
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 {$endc}
@@ -549,6 +596,17 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -577,6 +635,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -585,6 +644,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -594,6 +655,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -627,6 +689,13 @@ uses MacTypes,UTCUtils,CFDate;
 
 {$ifc TARGET_OS_MAC}
 >>>>>>> origin/fixes_2.4
+=======
+uses MacTypes,UTCUtils,CFDate;
+{$endc} {not MACOSALLINCLUDE}
+
+
+{$ifc TARGET_OS_MAC}
+>>>>>>> origin/cpstrnew
 
 {$ALIGN MAC68K}
 
@@ -664,6 +733,7 @@ uses MacTypes,UTCUtils,CFDate;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 type
 	ToggleResults = SInt16;
 <<<<<<< HEAD
@@ -846,6 +916,34 @@ const
 	validDateFields = -1;
 	maxDateField = 10;
 
+=======
+type
+	ToggleResults = SInt16;
+const
+{ Toggle results }
+	toggleUndefined = 0;
+	toggleOK = 1;
+	toggleBadField = 2;
+	toggleBadDelta = 3;
+	toggleBadChar = 4;
+	toggleUnknown = 5;
+	toggleBadNum = 6;
+	toggleOutOfRange = 7;    {synonym for toggleErr3}
+	toggleErr3 = 7;
+	toggleErr4 = 8;
+	toggleErr5 = 9;
+
+const
+{ Date equates }
+	smallDateBit = 31;   {Restrict valid date/time to range of Time global}
+	togChar12HourBit = 30;   {If toggling hour by char, accept hours 1..12 only}
+	togCharZCycleBit = 29;   {Modifier for togChar12HourBit: accept hours 0..11 only}
+	togDelta12HourBit = 28;   {If toggling hour up/down, restrict to 12-hour range (am/pm)}
+	genCdevRangeBit = 27;   {Restrict date/time to range used by genl CDEV}
+	validDateFields = -1;
+	maxDateField = 10;
+
+>>>>>>> origin/cpstrnew
 const
 	eraMask = $0001;
 	yearMask = $0002;
@@ -885,6 +983,9 @@ const
 	longDate = 1;
 	abbrevDate = 2;
 
+<<<<<<< HEAD
+>>>>>>> origin/cpstrnew
+=======
 >>>>>>> origin/cpstrnew
 const
 { StringToDate status values }
@@ -907,6 +1008,7 @@ type
 	DateCacheRecordPtr = ^DateCacheRecord;
 	DateCacheRecord = packed record
 		hidden: array [0..255] of SInt16;				{ only for temporary use }
+<<<<<<< HEAD
 	end;
 type
 	DateCachePtr = DateCacheRecordPtr;
@@ -1017,6 +1119,9 @@ type
 	DateCacheRecord = packed record
 		hidden: array [0..255] of SInt16;				{ only for temporary use }
 	end;
+=======
+	end;
+>>>>>>> origin/cpstrnew
 type
 	DateCachePtr = DateCacheRecordPtr;
 	DateTimeRecPtr = ^DateTimeRec;
@@ -1031,6 +1136,7 @@ type
 	end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	LongDateTime						= SInt64;
 	LongDateTimePtr 					= ^LongDateTime;
 <<<<<<< HEAD
@@ -1042,10 +1148,16 @@ type
 	LongDateTime = SInt64;
 	LongDateTimePtr = ^LongDateTime;
 >>>>>>> origin/fixes_2.4
+=======
+type
+	LongDateTime = SInt64;
+	LongDateTimePtr = ^LongDateTime;
+>>>>>>> origin/cpstrnew
 {$ifc TARGET_RT_BIG_ENDIAN}
 	LongDateCvt = record
 		case SInt16 of
 		0: (
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1073,6 +1185,13 @@ type
 			lHigh: UInt32;
 			lLow: UInt32;
 >>>>>>> origin/fixes_2.4
+=======
+			c: SInt64;
+			);
+		1: (
+			lHigh: UInt32;
+			lLow: UInt32;
+>>>>>>> origin/cpstrnew
 		   );
 	end;
 {$elsec}
@@ -1082,6 +1201,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 			c: SInt64;
 			);
 		1: (
@@ -1106,6 +1226,13 @@ type
 			lLow: UInt32;
 			lHigh: UInt32;
 >>>>>>> origin/fixes_2.4
+=======
+			c: SInt64;
+			);
+		1: (
+			lLow: UInt32;
+			lHigh: UInt32;
+>>>>>>> origin/cpstrnew
 		   );
 	end;
 {$endc}
@@ -1118,8 +1245,11 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 			era: SInt16;
 			year: SInt16;
 			month: SInt16;
@@ -1135,6 +1265,9 @@ type
 			res2: SInt16;
 			res3: SInt16;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 		   );
 		1: (
 			list: array [0..13] of SInt16;				{Index by LongDateField!}
@@ -1154,6 +1287,25 @@ type
 		pmChars: ResType;                {from 'itl0', but uppercased}
 		reserved: array [0..3] of SInt32;
 	end;
+<<<<<<< HEAD
+{
+    Conversion utilities between CF and Carbon time types. 
+}
+{
+ *  UCConvertUTCDateTimeToCFAbsoluteTime()
+ *  
+ *  Discussion:
+ *    Use UCConvertUTCDateTimeToCFAbsoluteTime to convert from a
+ *    UTCDDateTime to a CFAbsoluteTime. Remember that the epoch for
+ *    UTCDateTime is January 1, 1904 while the epoch for CFAbsoluteTime
+ *    is January 1, 2001.
+ *  
+ *  Parameters:
+ *    
+ *    iUTCDate:
+ *      A pointer to a UTCDateTime struct that represents the time you
+ *      wish to convert from.
+=======
 {
     Conversion utilities between CF and Carbon time types. 
 }
@@ -1185,6 +1337,39 @@ type
  *    Non-Carbon CFM:   not available
  }
 function UCConvertUTCDateTimeToCFAbsoluteTime( const (*var*) iUTCDate: UTCDateTime; var oCFTime: CFAbsoluteTime ): OSStatus; external name '_UCConvertUTCDateTimeToCFAbsoluteTime';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+
+{
+ *  UCConvertSecondsToCFAbsoluteTime()
+ *  
+ *  Discussion:
+ *    Use UCConvertSecondsToCFAbsoluteTime to convert from the normal
+ *    seconds representation of time to a CFAbsoluteTime. Remember that
+ *    the epoch for seconds is January 1, 1904 while the epoch for
+ *    CFAbsoluteTime is January 1, 2001.
+ *  
+ *  Parameters:
+ *    
+ *    iSeconds:
+ *      A UInt32 value that represents the time you wish to convert
+ *      from.
+>>>>>>> origin/cpstrnew
+ *    
+ *    oCFTime:
+ *      A pointer to a CFAbsoluteTime. On successful return, this will
+ *      contain the converted time from the input time type.
+ *  
+ *  Result:
+ *    A result code indicating whether or not conversion was successful.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.2 and later in CoreServices.framework
+ *    CarbonLib:        not available in CarbonLib 1.x
+ *    Non-Carbon CFM:   not available
+ }
+<<<<<<< HEAD
+function UCConvertUTCDateTimeToCFAbsoluteTime( const (*var*) iUTCDate: UTCDateTime; var oCFTime: CFAbsoluteTime ): OSStatus; external name '_UCConvertUTCDateTimeToCFAbsoluteTime';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1211,13 +1396,32 @@ function UCConvertUTCDateTimeToCFAbsoluteTime( const (*var*) iUTCDate: UTCDateTi
  *    Use UCConvertSecondsToCFAbsoluteTime to convert from the normal
  *    seconds representation of time to a CFAbsoluteTime. Remember that
  *    the epoch for seconds is January 1, 1904 while the epoch for
+=======
+function UCConvertSecondsToCFAbsoluteTime( iSeconds: UInt32; var oCFTime: CFAbsoluteTime ): OSStatus; external name '_UCConvertSecondsToCFAbsoluteTime';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+
+{
+ *  UCConvertLongDateTimeToCFAbsoluteTime()
+ *  
+ *  Discussion:
+ *    Use UCConvertLongDateTimeToCFAbsoluteTime to convert from a
+ *    LongDateTime to a CFAbsoluteTime. Remember that the epoch for
+ *    LongDateTime is January 1, 1904 while the epoch for
+>>>>>>> origin/cpstrnew
  *    CFAbsoluteTime is January 1, 2001.
  *  
  *  Parameters:
  *    
+<<<<<<< HEAD
  *    iSeconds:
  *      A UInt32 value that represents the time you wish to convert
  *      from.
+=======
+ *    iLongTime:
+ *      A LongDateTime value that represents the time you wish to
+ *      convert from.
+>>>>>>> origin/cpstrnew
  *    
  *    oCFTime:
  *      A pointer to a CFAbsoluteTime. On successful return, this will
@@ -1231,6 +1435,7 @@ function UCConvertUTCDateTimeToCFAbsoluteTime( const (*var*) iUTCDate: UTCDateTi
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
+<<<<<<< HEAD
 function UCConvertSecondsToCFAbsoluteTime( iSeconds: UInt32; var oCFTime: CFAbsoluteTime ): OSStatus; external name '_UCConvertSecondsToCFAbsoluteTime';
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1269,6 +1474,30 @@ function UCConvertSecondsToCFAbsoluteTime( iSeconds: UInt32; var oCFTime: CFAbso
  *    oCFTime:
  *      A pointer to a CFAbsoluteTime. On successful return, this will
  *      contain the converted time from the input time type.
+=======
+function UCConvertLongDateTimeToCFAbsoluteTime( iLongTime: LongDateTime; var oCFTime: CFAbsoluteTime ): OSStatus; external name '_UCConvertLongDateTimeToCFAbsoluteTime';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+
+{
+ *  UCConvertCFAbsoluteTimeToUTCDateTime()
+ *  
+ *  Discussion:
+ *    Use UCConvertCFAbsoluteTimeToUTCDateTime to convert from a
+ *    CFAbsoluteTime to a UTCDateTime. Remember that the epoch for
+ *    UTCDateTime is January 1, 1904 while the epoch for CFAbsoluteTime
+ *    is January 1, 2001.
+ *  
+ *  Parameters:
+ *    
+ *    iCFTime:
+ *      A CFAbsoluteTime value that represents the time you wish to
+ *      convert from.
+ *    
+ *    oUTCDate:
+ *      A pointer to a UTCDateTime. On successful return, this will
+ *      contain the converted time from the CFAbsoluteTime input.
+>>>>>>> origin/cpstrnew
  *  
  *  Result:
  *    A result code indicating whether or not conversion was successful.
@@ -1278,6 +1507,7 @@ function UCConvertSecondsToCFAbsoluteTime( iSeconds: UInt32; var oCFTime: CFAbso
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
+<<<<<<< HEAD
 function UCConvertLongDateTimeToCFAbsoluteTime( iLongTime: LongDateTime; var oCFTime: CFAbsoluteTime ): OSStatus; external name '_UCConvertLongDateTimeToCFAbsoluteTime';
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1499,10 +1729,190 @@ function UCConvertCFAbsoluteTimeToLongDateTime( iCFTime: CFAbsoluteTime; var oLo
  *  Discussion:
  *    This function is no longer recommended. Please use
  *    CFDateFormatterCreateStringWithDate instead.
+=======
+function UCConvertCFAbsoluteTimeToUTCDateTime( iCFTime: CFAbsoluteTime; var oUTCDate: UTCDateTime ): OSStatus; external name '_UCConvertCFAbsoluteTimeToUTCDateTime';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+
+{
+ *  UCConvertCFAbsoluteTimeToSeconds()
+ *  
+ *  Discussion:
+ *    Use UCConvertCFAbsoluteTimeToSeconds to convert from a
+ *    CFAbsoluteTime to a UInt32 representation of seconds. Remember
+ *    that the epoch for seconds is January 1, 1904 while the epoch for
+ *    CFAbsoluteTime is January 1, 2001.
+ *  
+ *  Parameters:
+ *    
+ *    iCFTime:
+ *      A CFAbsoluteTime value that represents the time you wish to
+ *      convert from.
+ *    
+ *    oSeconds:
+ *      A pointer to a UInt32. On successful return, this will contain
+ *      the converted time from the CFAbsoluteTime input.
+ *  
+ *  Result:
+ *    A result code indicating whether or not conversion was successful.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.2 and later in CoreServices.framework
+ *    CarbonLib:        not available in CarbonLib 1.x
+ *    Non-Carbon CFM:   not available
+ }
+function UCConvertCFAbsoluteTimeToSeconds( iCFTime: CFAbsoluteTime; var oSeconds: UInt32 ): OSStatus; external name '_UCConvertCFAbsoluteTimeToSeconds';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+
+{
+ *  UCConvertCFAbsoluteTimeToLongDateTime()
+ *  
+ *  Discussion:
+ *    Use UCConvertCFAbsoluteTimeToLongDateTime to convert from a
+ *    CFAbsoluteTime to a LongDateTime. Remember that the epoch for
+ *    LongDateTime is January 1, 1904 while the epoch for
+ *    CFAbsoluteTime is January 1, 2001.
+ *  
+ *  Parameters:
+ *    
+ *    iCFTime:
+ *      A CFAbsoluteTime value that represents the time you wish to
+ *      convert from.
+ *    
+ *    oLongDate:
+ *      A pointer to a LongDateTime. On successful return, this will
+ *      contain the converted time from the CFAbsoluteTime input.
+ *  
+ *  Result:
+ *    A result code indicating whether or not conversion was successful.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.2 and later in CoreServices.framework
+ *    CarbonLib:        not available in CarbonLib 1.x
+ *    Non-Carbon CFM:   not available
+ }
+function UCConvertCFAbsoluteTimeToLongDateTime( iCFTime: CFAbsoluteTime; var oLongDate: LongDateTime ): OSStatus; external name '_UCConvertCFAbsoluteTimeToLongDateTime';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+
+{$ifc not TARGET_CPU_64}
+{
+    These routine are available in Carbon with their new name
+}
+{$ifc not TARGET_CPU_64}
+{
+ *  DateString()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    use CFDateFormatterCreateStringWithDate instead
+ *  
+ *  Discussion:
+ *    This function is no longer recommended. Please use
+ *    CFDateFormatterCreateStringWithDate instead.
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.3
  *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   not available
+ }
+procedure DateString( dateTime: SInt32; longFlag: DateForm; var result: Str255; intlHandle: Handle ); external name '_DateString';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+
+
+{
+ *  TimeString()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    use CFDateFormatterCreateStringWithDate instead
+ *  
+ *  Discussion:
+ *    This function is no longer recommended. Please use
+ *    CFDateFormatterCreateStringWithDate instead.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.3
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   not available
+ }
+procedure TimeString( dateTime: SInt32; wantSeconds: Boolean; var result: Str255; intlHandle: Handle ); external name '_TimeString';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+
+
+{
+ *  LongDateString()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    use CFDateFormatterCreateStringWithDate instead
+ *  
+ *  Discussion:
+ *    This function is no longer recommended. Please use
+ *    CFDateFormatterCreateStringWithDate instead.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.3
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   not available
+ }
+procedure LongDateString( (*const*) var dateTime: LongDateTime; longFlag: DateForm; var result: Str255; intlHandle: Handle ); external name '_LongDateString';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+
+
+{
+ *  LongTimeString()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    use CFDateFormatterCreateStringWithDate instead
+ *  
+ *  Discussion:
+ *    This function is no longer recommended. Please use
+ *    CFDateFormatterCreateStringWithDate instead.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.3
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   not available
+ }
+procedure LongTimeString( (*const*) var dateTime: LongDateTime; wantSeconds: Boolean; var result: Str255; intlHandle: Handle ); external name '_LongTimeString';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+
+
+{
+    These routine are available in Carbon and InterfaceLib with their new name
+}
+{
+ *  InitDateCache()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    No longer needed on MacOS X.
+ *  
+ *  Discussion:
+ *    This function is obsolate.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.3
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function InitDateCache( theCache: DateCachePtr ): OSErr; external name '_InitDateCache';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+
+
+{
+ *  StringToDate()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    use CFDateFormatterCreateDateFromString instead
+ *  
+ *  Discussion:
+ *    This function is no longer recommended. Please use
+ *    CFDateFormatterCreateDateFromString instead.
+>>>>>>> origin/cpstrnew
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.3
+ *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
  *    Non-Carbon CFM:   not available
  }
 procedure DateString( dateTime: SInt32; longFlag: DateForm; var result: Str255; intlHandle: Handle ); external name '_DateString';
@@ -1534,10 +1944,28 @@ procedure DateString( dateTime: SInt32; longFlag: DateForm; var result: Str255; 
  *  Discussion:
  *    This function is no longer recommended. Please use
  *    CFDateFormatterCreateStringWithDate instead.
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function StringToDate( textPtr: Ptr; textLen: SInt32; theCache: DateCachePtr; var lengthUsed: SInt32; var dateTime: LongDateRec ): StringToDateStatus; external name '_StringToDate';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+
+
+{
+ *  StringToTime()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    use CFDateFormatterCreateDateFromString instead
+ *  
+ *  Discussion:
+ *    This function is no longer recommended. Please use
+ *    CFDateFormatterCreateDateFromString instead.
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.3
  *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
  *    Non-Carbon CFM:   not available
  }
 procedure TimeString( dateTime: SInt32; wantSeconds: Boolean; var result: Str255; intlHandle: Handle ); external name '_TimeString';
@@ -1569,10 +1997,28 @@ procedure TimeString( dateTime: SInt32; wantSeconds: Boolean; var result: Str255
  *  Discussion:
  *    This function is no longer recommended. Please use
  *    CFDateFormatterCreateStringWithDate instead.
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function StringToTime( textPtr: Ptr; textLen: SInt32; theCache: DateCachePtr; var lengthUsed: SInt32; var dateTime: LongDateRec ): StringToDateStatus; external name '_StringToTime';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+
+
+{
+ *  LongDateToSeconds()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    use CFCalendar instead.
+ *  
+ *  Discussion:
+ *    This function is no longer recommended. Please use CFCalendar
+ *    instead.
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.3
  *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
  *    Non-Carbon CFM:   not available
  }
 procedure LongDateString( (*const*) var dateTime: LongDateTime; longFlag: DateForm; var result: Str255; intlHandle: Handle ); external name '_LongDateString';
@@ -1792,6 +2238,15 @@ procedure LongDateToSeconds( const (*var*) lDate: LongDateRec; var lSecs: LongDa
 
 {
  *  LongSecondsToDate()   *** DEPRECATED ***
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure LongDateToSeconds( const (*var*) lDate: LongDateRec; var lSecs: LongDateTime ); external name '_LongDateToSeconds';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+
+
+{
+ *  LongSecondsToDate()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    use CFCalendar instead.
@@ -1802,6 +2257,27 @@ procedure LongDateToSeconds( const (*var*) lDate: LongDateRec; var lSecs: LongDa
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.3
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure LongSecondsToDate( (*const*) var lSecs: LongDateTime; var lDate: LongDateRec ); external name '_LongSecondsToDate';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+
+
+{
+ *  ToggleDate()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
+ *  
+ *  Deprecated:
+ *    use CFCalendar instead.
+ *  
+ *  Discussion:
+ *    This function is no longer recommended. Please use CFCalendar
+ *    instead.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.3
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -1837,10 +2313,13 @@ procedure LongSecondsToDate( (*const*) var lSecs: LongDateTime; var lDate: LongD
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.3
+=======
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function ToggleDate( var lSecs: LongDateTime; field: LongDateField; delta: DateDelta; ch: SInt16; const (*var*) params: TogglePB ): ToggleResults; external name '_ToggleDate';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1855,6 +2334,9 @@ function ToggleDate( var lSecs: LongDateTime; field: LongDateField; delta: DateD
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+>>>>>>> origin/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 >>>>>>> origin/cpstrnew
@@ -1880,6 +2362,7 @@ function ValidDate( const (*var*) vDate: LongDateRec; flags: SIGNEDLONG; var new
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_3, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
@@ -1890,6 +2373,9 @@ function ValidDate( const (*var*) vDate: LongDateRec; flags: SIGNEDLONG; var new
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+>>>>>>> origin/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 >>>>>>> origin/cpstrnew
@@ -1915,6 +2401,7 @@ function ReadDateTime( var datetime: UNSIGNEDLONG ): OSErr; external name '_Read
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_3, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
@@ -1925,6 +2412,9 @@ function ReadDateTime( var datetime: UNSIGNEDLONG ): OSErr; external name '_Read
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+>>>>>>> origin/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 >>>>>>> origin/cpstrnew
@@ -1950,6 +2440,7 @@ procedure GetDateTime( var secs: UNSIGNEDLONG ); external name '_GetDateTime';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_3, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
@@ -1960,6 +2451,9 @@ procedure GetDateTime( var secs: UNSIGNEDLONG ); external name '_GetDateTime';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+>>>>>>> origin/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 >>>>>>> origin/cpstrnew
@@ -1985,6 +2479,7 @@ function SetDateTime( datetime: UNSIGNEDLONG ): OSErr; external name '_SetDateTi
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_3, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
@@ -1995,6 +2490,9 @@ function SetDateTime( datetime: UNSIGNEDLONG ): OSErr; external name '_SetDateTi
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+>>>>>>> origin/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 >>>>>>> origin/cpstrnew
@@ -2020,6 +2518,7 @@ procedure SetTime( const (*var*) d: DateTimeRec ); external name '_SetTime';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_3, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
@@ -2030,6 +2529,9 @@ procedure SetTime( const (*var*) d: DateTimeRec ); external name '_SetTime';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+>>>>>>> origin/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 >>>>>>> origin/cpstrnew
@@ -2055,6 +2557,7 @@ procedure GetTime( var d: DateTimeRec ); external name '_GetTime';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_3, __IPHONE_NA, __IPHONE_NA) *)
 
 
@@ -2081,6 +2584,13 @@ procedure GetTime( var d: DateTimeRec ); external name '_GetTime';
 {$endc} {not TARGET_CPU_64}
 
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+
+
+{$endc} {not TARGET_CPU_64}
+
+>>>>>>> origin/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 
@@ -2109,6 +2619,7 @@ procedure DateToSeconds( const (*var*) d: DateTimeRec; var secs: UNSIGNEDLONG );
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_3, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
@@ -2119,6 +2630,9 @@ procedure DateToSeconds( const (*var*) d: DateTimeRec; var secs: UNSIGNEDLONG );
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+>>>>>>> origin/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 >>>>>>> origin/cpstrnew
@@ -2147,6 +2661,7 @@ procedure SecondsToDate( secs: UNSIGNEDLONG; var d: DateTimeRec ); external name
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_3, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
@@ -2157,6 +2672,9 @@ procedure SecondsToDate( secs: UNSIGNEDLONG; var d: DateTimeRec ); external name
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+>>>>>>> origin/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 >>>>>>> origin/cpstrnew
@@ -2234,6 +2752,7 @@ procedure SecondsToDate( secs: UNSIGNEDLONG; var d: DateTimeRec ); external name
  *  iudatestring()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -2244,6 +2763,8 @@ procedure SecondsToDate( secs: UNSIGNEDLONG; var d: DateTimeRec ); external name
  *  iudatepstring()
  *  
  *  Availability:
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -2251,6 +2772,7 @@ procedure SecondsToDate( secs: UNSIGNEDLONG; var d: DateTimeRec ); external name
 
 
 {
+<<<<<<< HEAD
  *  iutimestring()
  *  
  *  Availability:
@@ -2264,6 +2786,11 @@ procedure SecondsToDate( secs: UNSIGNEDLONG; var d: DateTimeRec ); external name
  *  iutimepstring()
  *  
  *  Availability:
+=======
+ *  iudatepstring()
+ *  
+ *  Availability:
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -2271,7 +2798,11 @@ procedure SecondsToDate( secs: UNSIGNEDLONG; var d: DateTimeRec ); external name
 
 
 {
+<<<<<<< HEAD
  *  iuldatestring()
+=======
+ *  iutimestring()
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         not available
@@ -2281,13 +2812,21 @@ procedure SecondsToDate( secs: UNSIGNEDLONG; var d: DateTimeRec ); external name
 
 
 {
+<<<<<<< HEAD
  *  iultimestring()
+=======
+ *  iutimepstring()
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         not available
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/cpstrnew
 
 
 {$endc} {not TARGET_CPU_64}
@@ -2337,6 +2876,7 @@ type
 		reserved: array [0..3] of SInt32;
 	end;
 {
+<<<<<<< HEAD
     Conversion utilities between CF and Carbon time types. 
 }
 {
@@ -3008,6 +3548,27 @@ procedure SecondsToDate( secs: UNSIGNEDLONG; var d: DateTimeRec ); external name
  }
 
 
+=======
+ *  iuldatestring()
+ *  
+ *  Availability:
+ *    Mac OS X:         not available
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+
+
+{
+ *  iultimestring()
+ *  
+ *  Availability:
+ *    Mac OS X:         not available
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+
+
+>>>>>>> origin/cpstrnew
 {$endc} {not TARGET_CPU_64}
 
 
@@ -3017,9 +3578,13 @@ procedure SecondsToDate( secs: UNSIGNEDLONG; var d: DateTimeRec ); external name
 end.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

@@ -53,6 +53,7 @@ unit raatt;
         AS_DB,AS_DW,AS_DD,AS_DQ,AS_GLOBAL,
         AS_ALIGN,AS_BALIGN,AS_P2ALIGN,AS_ASCII,
 <<<<<<< HEAD
+<<<<<<< HEAD
         AS_ASCIIZ,AS_LCOMM,AS_COMM,AS_SINGLE,AS_DOUBLE,AS_EXTENDED,AS_CEXTENDED,
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -71,6 +72,9 @@ unit raatt;
 >>>>>>> graemeg/cpstrnew
 =======
         AS_ASCIIZ,AS_LCOMM,AS_COMM,AS_SINGLE,AS_DOUBLE,AS_EXTENDED,
+=======
+        AS_ASCIIZ,AS_LCOMM,AS_COMM,AS_SINGLE,AS_DOUBLE,AS_EXTENDED,AS_CEXTENDED,
+>>>>>>> origin/cpstrnew
         AS_DATA,AS_TEXT,AS_INIT,AS_FINI,AS_END,
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -101,6 +105,7 @@ unit raatt;
         '.byte','.word','.long','.quad','.globl',
         '.align','.balign','.p2align','.ascii',
 <<<<<<< HEAD
+<<<<<<< HEAD
         '.asciz','.lcomm','.comm','.single','.double','.tfloat','.tcfloat',
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -123,6 +128,9 @@ unit raatt;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+        '.asciz','.lcomm','.comm','.single','.double','.tfloat','.tcfloat',
+>>>>>>> origin/cpstrnew
         '.data','.text','.init','.fini','END',
         'TYPE','SIZEOF','VMTOFFSET','%','<<','>>','!','&','|','^','~','@','lo','hi');
 >>>>>>> graemeg/cpstrnew
@@ -334,6 +342,7 @@ unit raatt;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
            {
              Thumb-2 instructions can have a .W postfix to indicate 32bit instructions,
              Also in unified syntax sizes and types are indicated with something like a .<dt> prefix for example
@@ -349,10 +358,14 @@ unit raatt;
 =======
            { Thumb-2 instructions can have a .W postfix to indicate 32bit instructions
 >>>>>>> origin/cpstrnew
+=======
+           { Thumb-2 instructions can have a .W postfix to indicate 32bit instructions
+>>>>>>> origin/cpstrnew
            }
            case c of
              '.':
                begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -380,6 +393,9 @@ unit raatt;
 =======
                  actasmpattern:=actasmpattern+c;
 >>>>>>> origin/cpstrnew
+=======
+                 actasmpattern:=actasmpattern+c;
+>>>>>>> origin/cpstrnew
                  c:=current_scanner.asmgetchar;
 
                  if upcase(c) = 'W' then
@@ -388,6 +404,7 @@ unit raatt;
                      c:=current_scanner.asmgetchar;
                    end
                  else
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -415,6 +432,8 @@ unit raatt;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                    internalerror(2010122301);
                end
            end;
@@ -422,11 +441,14 @@ unit raatt;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
            { Opcode ? }

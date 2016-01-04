@@ -22,7 +22,6 @@ type
   PExpressionRec = ^TExpressionRec;
   PDynamicType = ^TDynamicType;
   PDateTimeRec = ^TDateTimeRec;
-  PDouble = ^Double;
 {$ifdef SUPPORT_INT64}
   PLargeInt = ^Int64;
 {$endif}

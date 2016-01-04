@@ -64,11 +64,14 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
      FPCBreakErrorNumber : longint;
@@ -84,11 +87,14 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     procedure SetTBreak(tbreakstring : string);
@@ -380,6 +386,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   fpredir,
 =======
 
@@ -390,6 +397,9 @@ uses
 =======
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 =======
 
 >>>>>>> origin/cpstrnew
@@ -676,6 +686,7 @@ procedure UpdateDebugViews;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      if assigned(Debugger) and
         Debugger^.isRemoteDebugging then
 =======
@@ -687,6 +698,9 @@ procedure UpdateDebugViews;
 =======
      if isRemoteDebugging then
 >>>>>>> graemeg/cpstrnew
+=======
+     if isRemoteDebugging then
+>>>>>>> origin/cpstrnew
 =======
      if isRemoteDebugging then
 >>>>>>> origin/cpstrnew
@@ -711,6 +725,7 @@ procedure UpdateDebugViews;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      if assigned(Debugger) and
         Debugger^.isRemoteDebugging then
 =======
@@ -722,6 +737,9 @@ procedure UpdateDebugViews;
 =======
      if isRemoteDebugging then
 >>>>>>> graemeg/cpstrnew
+=======
+     if isRemoteDebugging then
+>>>>>>> origin/cpstrnew
 =======
      if isRemoteDebugging then
 >>>>>>> origin/cpstrnew
@@ -772,6 +790,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          [public,alias:'FPC_BREAK_ERROR'];}
       FPCBreakErrorNumber:=BreakpointInsert('FPC_BREAK_ERROR', []);
 =======
@@ -779,6 +798,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
          [public,alias:'FPC_BREAK_ERROR'];
@@ -817,11 +838,14 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -1047,11 +1071,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       PopStatus;
@@ -1232,6 +1259,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef GDB_RAW_OUTPUT}
       If StrLen(GetRaw)>0 then
         begin
@@ -1246,6 +1274,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       If StrLen(GetOutput)>0 then

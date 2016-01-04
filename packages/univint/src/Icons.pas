@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       HIServices/Icons.h
  
      Contains:   Icon Utilities and Icon Services Interfaces.
@@ -32,11 +33,15 @@
 =======
      File:       HIServices/Icons.h
 >>>>>>> origin/fixes_2.4
+=======
+     File:       HIServices/Icons.h
+>>>>>>> origin/cpstrnew
  
      Contains:   Icon Utilities and Icon Services Interfaces.
  
      Version:    HIServices-308~1
  
+<<<<<<< HEAD
 <<<<<<< HEAD
      Copyright:  © 1990-2002 by Apple Computer, Inc. All rights reserved
 <<<<<<< HEAD
@@ -46,6 +51,9 @@
 =======
      Copyright:  © 1990-2008 by Apple Computer, Inc. All rights reserved
 >>>>>>> origin/fixes_2.4
+=======
+     Copyright:  © 1990-2008 by Apple Computer, Inc. All rights reserved
+>>>>>>> origin/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -102,12 +110,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -119,6 +131,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -133,6 +146,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -148,6 +165,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -158,6 +176,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -165,13 +186,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -179,6 +204,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -187,8 +214,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -199,6 +229,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -219,6 +250,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -227,12 +260,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -240,6 +276,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -459,12 +496,25 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 	{$setc TARGET_CPU_PPC64 := FALSE}
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+>>>>>>> origin/cpstrnew
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
@@ -475,6 +525,8 @@ interface
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -509,6 +561,7 @@ interface
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 {$endc}
@@ -526,6 +579,17 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -554,6 +618,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -562,6 +627,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -574,6 +641,9 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 uses MacTypes,CFBase,CGGeometry,QuickdrawTypes,IconStorage,IconsCore,Files,CGContext,HIShape;
 {$endc} {not MACOSALLINCLUDE}
 
@@ -623,6 +693,7 @@ const
 type
 	IconAlignmentType = SInt16;
 { Transform type values. }
+<<<<<<< HEAD
 const
 	kTransformNone = $00;
 	kTransformDisabled = $01;
@@ -850,6 +921,76 @@ const
 	kSelectorAllAvailableData = $FFFFFFFF;
 
 type
+=======
+const
+	kTransformNone = $00;
+	kTransformDisabled = $01;
+	kTransformOffline = $02;
+	kTransformOpen = $03;
+	kTransformLabel1 = $0100;
+	kTransformLabel2 = $0200;
+	kTransformLabel3 = $0300;
+	kTransformLabel4 = $0400;
+	kTransformLabel5 = $0500;
+	kTransformLabel6 = $0600;
+	kTransformLabel7 = $0700;
+	kTransformSelected = $4000;
+	kTransformSelectedDisabled = kTransformSelected or kTransformDisabled;
+	kTransformSelectedOffline = kTransformSelected or kTransformOffline;
+	kTransformSelectedOpen = kTransformSelected or kTransformOpen;
+
+{ Obsolete. Use names defined above. }
+const
+	ttNone = kTransformNone;
+	ttDisabled = kTransformDisabled;
+	ttOffline = kTransformOffline;
+	ttOpen = kTransformOpen;
+	ttLabel1 = kTransformLabel1;
+	ttLabel2 = kTransformLabel2;
+	ttLabel3 = kTransformLabel3;
+	ttLabel4 = kTransformLabel4;
+	ttLabel5 = kTransformLabel5;
+	ttLabel6 = kTransformLabel6;
+	ttLabel7 = kTransformLabel7;
+	ttSelected = kTransformSelected;
+	ttSelectedDisabled = kTransformSelectedDisabled;
+	ttSelectedOffline = kTransformSelectedOffline;
+	ttSelectedOpen = kTransformSelectedOpen;
+
+type
+	IconTransformType = SInt16;
+{ Selector mask values. }
+const
+	kSelectorLarge1Bit = $00000001;
+	kSelectorLarge4Bit = $00000002;
+	kSelectorLarge8Bit = $00000004;
+	kSelectorLarge32Bit = $00000008;
+	kSelectorLarge8BitMask = $00000010;
+	kSelectorSmall1Bit = $00000100;
+	kSelectorSmall4Bit = $00000200;
+	kSelectorSmall8Bit = $00000400;
+	kSelectorSmall32Bit = $00000800;
+	kSelectorSmall8BitMask = $00001000;
+	kSelectorMini1Bit = $00010000;
+	kSelectorMini4Bit = $00020000;
+	kSelectorMini8Bit = $00040000;
+	kSelectorHuge1Bit = $01000000;
+	kSelectorHuge4Bit = $02000000;
+	kSelectorHuge8Bit = $04000000;
+	kSelectorHuge32Bit = $08000000;
+	kSelectorHuge8BitMask = $10000000;
+	kSelectorAllLargeData = $000000FF;
+	kSelectorAllSmallData = $0000FF00;
+	kSelectorAllMiniData = $00FF0000;
+	kSelectorAllHugeData = $FF000000;
+	kSelectorAll1BitData = kSelectorLarge1Bit or kSelectorSmall1Bit or kSelectorMini1Bit or kSelectorHuge1Bit;
+	kSelectorAll4BitData = kSelectorLarge4Bit or kSelectorSmall4Bit or kSelectorMini4Bit or kSelectorHuge4Bit;
+	kSelectorAll8BitData = kSelectorLarge8Bit or kSelectorSmall8Bit or kSelectorMini8Bit or kSelectorHuge8Bit;
+	kSelectorAll32BitData = kSelectorLarge32Bit or kSelectorSmall32Bit or kSelectorHuge32Bit;
+	kSelectorAllAvailableData = $FFFFFFFF;
+
+type
+>>>>>>> origin/cpstrnew
 	IconSelectorValue = UInt32;
 { Obsolete. Use names defined above. }
 const
@@ -887,6 +1028,7 @@ function NewIconActionUPP( userRoutine: IconActionProcPtr ): IconActionUPP; exte
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 const
 	uppIconActionProcInfo = $00000FE0;
 	uppIconGetterProcInfo = $000003F0;
@@ -905,10 +1047,13 @@ function NewIconActionUPP(userRoutine: IconActionProcPtr): IconActionUPP; extern
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  NewIconGetterUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -937,15 +1082,25 @@ function NewIconGetterUPP(userRoutine: IconGetterProcPtr): IconGetterUPP; extern
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+>>>>>>> origin/cpstrnew
  { old name was NewIconGetterProc }
  function NewIconGetterUPP( userRoutine: IconGetterProcPtr ): IconGetterUPP; external name '_NewIconGetterUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  DisposeIconActionUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -977,10 +1132,20 @@ procedure DisposeIconActionUPP( userUPP: IconActionUPP ); external name '_Dispos
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeIconActionUPP( userUPP: IconActionUPP ); external name '_DisposeIconActionUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  DisposeIconGetterUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1012,10 +1177,20 @@ procedure DisposeIconGetterUPP( userUPP: IconGetterUPP ); external name '_Dispos
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeIconGetterUPP( userUPP: IconGetterUPP ); external name '_DisposeIconGetterUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  InvokeIconActionUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1044,11 +1219,20 @@ function InvokeIconActionUPP(theType: ResType; var theIcon: Handle; yourDataPtr:
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+>>>>>>> origin/cpstrnew
  { old name was CallIconActionProc }
  function InvokeIconActionUPP( theType: ResType; var theIcon: Handle; yourDataPtr: UnivPtr; userUPP: IconActionUPP ): OSErr; external name '_InvokeIconActionUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  InvokeIconGetterUPP()
  *  
@@ -1056,8 +1240,11 @@ function InvokeIconActionUPP(theType: ResType; var theIcon: Handle; yourDataPtr:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   available as macro/inline
@@ -1080,10 +1267,14 @@ type
 	CIconPtr = ^CIcon;
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CIconHandle = ^CIconPtr;
 =======
 	CIconHandle = CIconPtr;
 >>>>>>> origin/fixes_2.4
+=======
+	CIconHandle = ^CIconPtr;
+>>>>>>> origin/cpstrnew
 	CIconHandle_fix = ^CIconPtr; { used as field type when a record declaration contains a CIconHandle field identifier }
 {
     Note:   IconSuiteRef and IconCacheRef should be an abstract types, 
@@ -1156,12 +1347,17 @@ procedure DisposeCIcon( theIcon: CIconHandle ); external name '_DisposeCIcon';
 function GetIcon( iconID: SInt16 ): Handle; external name '_GetIcon';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
 
 
 >>>>>>> origin/fixes_2.4
+=======
+
+
+>>>>>>> origin/cpstrnew
 {
  *  PlotIcon()   *** DEPRECATED ***
  *  
@@ -1194,6 +1390,9 @@ function PlotIconID( const (*var*) theRect: Rect; align: IconAlignmentType; tran
 
 {
  *  NewIconSuite()   *** DEPRECATED ***
+<<<<<<< HEAD
+ *  
+=======
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -1210,6 +1409,7 @@ function NewIconSuite( var theIconSuite: IconSuiteRef ): OSErr; external name '_
 {
  *  AddIconToSuite()   *** DEPRECATED ***
  *  
+>>>>>>> origin/cpstrnew
  *  Mac OS X threading:
  *    Not thread safe
  *  
@@ -1218,12 +1418,20 @@ function NewIconSuite( var theIconSuite: IconSuiteRef ): OSErr; external name '_
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
+function NewIconSuite( var theIconSuite: IconSuiteRef ): OSErr; external name '_NewIconSuite';
+=======
 function AddIconToSuite( theIconData: Handle; theSuite: IconSuiteRef; theType: ResType ): OSErr; external name '_AddIconToSuite';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
 {
+<<<<<<< HEAD
+ *  AddIconToSuite()   *** DEPRECATED ***
+=======
  *  GetIconFromSuite()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -1233,12 +1441,20 @@ function AddIconToSuite( theIconData: Handle; theSuite: IconSuiteRef; theType: R
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
+function AddIconToSuite( theIconData: Handle; theSuite: IconSuiteRef; theType: ResType ): OSErr; external name '_AddIconToSuite';
+=======
 function GetIconFromSuite( var theIconData: Handle; theSuite: IconSuiteRef; theType: ResType ): OSErr; external name '_GetIconFromSuite';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
 {
+<<<<<<< HEAD
+ *  GetIconFromSuite()   *** DEPRECATED ***
+=======
  *  ForEachIconDo()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -1248,28 +1464,44 @@ function GetIconFromSuite( var theIconData: Handle; theSuite: IconSuiteRef; theT
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
+function GetIconFromSuite( var theIconData: Handle; theSuite: IconSuiteRef; theType: ResType ): OSErr; external name '_GetIconFromSuite';
+=======
 function ForEachIconDo( theSuite: IconSuiteRef; selector: IconSelectorValue; action: IconActionUPP; yourDataPtr: UnivPtr ): OSErr; external name '_ForEachIconDo';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
 {
+<<<<<<< HEAD
+ *  ForEachIconDo()   *** DEPRECATED ***
+=======
+ *  GetIconSuite()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+<<<<<<< HEAD
+function ForEachIconDo( theSuite: IconSuiteRef; selector: IconSelectorValue; action: IconActionUPP; yourDataPtr: UnivPtr ): OSErr; external name '_ForEachIconDo';
+=======
+function GetIconSuite( var theIconSuite: IconSuiteRef; theResID: SInt16; selector: IconSelectorValue ): OSErr; external name '_GetIconSuite';
+>>>>>>> origin/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{
+<<<<<<< HEAD
  *  GetIconSuite()   *** DEPRECATED ***
 <<<<<<< HEAD
- *  
- *  Mac OS X threading:
- *    Not thread safe
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
- }
-function GetIconSuite( var theIconSuite: IconSuiteRef; theResID: SInt16; selector: IconSelectorValue ): OSErr; external name '_GetIconSuite';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
-
-
-{
+=======
  *  DisposeIconSuite()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -1279,12 +1511,20 @@ function GetIconSuite( var theIconSuite: IconSuiteRef; theResID: SInt16; selecto
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
+function GetIconSuite( var theIconSuite: IconSuiteRef; theResID: SInt16; selector: IconSelectorValue ): OSErr; external name '_GetIconSuite';
+=======
 function DisposeIconSuite( theIconSuite: IconSuiteRef; disposeData: Boolean ): OSErr; external name '_DisposeIconSuite';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
 {
+<<<<<<< HEAD
+ *  DisposeIconSuite()   *** DEPRECATED ***
+=======
  *  PlotIconSuite()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -1294,12 +1534,20 @@ function DisposeIconSuite( theIconSuite: IconSuiteRef; disposeData: Boolean ): O
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
+function DisposeIconSuite( theIconSuite: IconSuiteRef; disposeData: Boolean ): OSErr; external name '_DisposeIconSuite';
+=======
 function PlotIconSuite( const (*var*) theRect: Rect; align: IconAlignmentType; transform: IconTransformType; theIconSuite: IconSuiteRef ): OSErr; external name '_PlotIconSuite';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
 {
+<<<<<<< HEAD
+ *  PlotIconSuite()   *** DEPRECATED ***
+=======
  *  MakeIconCache()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -1309,12 +1557,20 @@ function PlotIconSuite( const (*var*) theRect: Rect; align: IconAlignmentType; t
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
+function PlotIconSuite( const (*var*) theRect: Rect; align: IconAlignmentType; transform: IconTransformType; theIconSuite: IconSuiteRef ): OSErr; external name '_PlotIconSuite';
+=======
 function MakeIconCache( var theCache: IconCacheRef; makeIcon: IconGetterUPP; yourDataPtr: UnivPtr ): OSErr; external name '_MakeIconCache';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
 {
+<<<<<<< HEAD
+ *  MakeIconCache()   *** DEPRECATED ***
+=======
  *  LoadIconCache()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -1324,57 +1580,95 @@ function MakeIconCache( var theCache: IconCacheRef; makeIcon: IconGetterUPP; you
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
+function MakeIconCache( var theCache: IconCacheRef; makeIcon: IconGetterUPP; yourDataPtr: UnivPtr ): OSErr; external name '_MakeIconCache';
+=======
 function LoadIconCache( const (*var*) theRect: Rect; align: IconAlignmentType; transform: IconTransformType; theIconCache: IconCacheRef ): OSErr; external name '_LoadIconCache';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
 {
+<<<<<<< HEAD
+ *  LoadIconCache()   *** DEPRECATED ***
+=======
+ *  PlotIconMethod()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+<<<<<<< HEAD
+function LoadIconCache( const (*var*) theRect: Rect; align: IconAlignmentType; transform: IconTransformType; theIconCache: IconCacheRef ): OSErr; external name '_LoadIconCache';
+=======
+function PlotIconMethod( const (*var*) theRect: Rect; align: IconAlignmentType; transform: IconTransformType; theMethod: IconGetterUPP; yourDataPtr: UnivPtr ): OSErr; external name '_PlotIconMethod';
+>>>>>>> origin/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{
+<<<<<<< HEAD
  *  PlotIconMethod()   *** DEPRECATED ***
  *  
  *  Mac OS X threading:
  *    Not thread safe
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
- }
-function PlotIconMethod( const (*var*) theRect: Rect; align: IconAlignmentType; transform: IconTransformType; theMethod: IconGetterUPP; yourDataPtr: UnivPtr ): OSErr; external name '_PlotIconMethod';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
-
-
-{
+=======
  *  GetLabel()   *** DEPRECATED ***
  *  
  *  Mac OS X threading:
  *    Thread safe since version 10.3
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
+function PlotIconMethod( const (*var*) theRect: Rect; align: IconAlignmentType; transform: IconTransformType; theMethod: IconGetterUPP; yourDataPtr: UnivPtr ): OSErr; external name '_PlotIconMethod';
+=======
 function GetLabel( labelNumber: SInt16; var labelColor: RGBColor; var labelString: Str255 ): OSErr; external name '_GetLabel';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
 {
+<<<<<<< HEAD
+ *  GetLabel()   *** DEPRECATED ***
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+=======
  *  PtInIconID()   *** DEPRECATED ***
  *  
  *  Mac OS X threading:
  *    Not thread safe
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
+function GetLabel( labelNumber: SInt16; var labelColor: RGBColor; var labelString: Str255 ): OSErr; external name '_GetLabel';
+=======
 function PtInIconID( testPt: Point; const (*var*) iconRect: Rect; align: IconAlignmentType; iconID: SInt16 ): Boolean; external name '_PtInIconID';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
 {
+<<<<<<< HEAD
+ *  PtInIconID()   *** DEPRECATED ***
+=======
  *  PtInIconSuite()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -1384,12 +1678,20 @@ function PtInIconID( testPt: Point; const (*var*) iconRect: Rect; align: IconAli
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
+function PtInIconID( testPt: Point; const (*var*) iconRect: Rect; align: IconAlignmentType; iconID: SInt16 ): Boolean; external name '_PtInIconID';
+=======
 function PtInIconSuite( testPt: Point; const (*var*) iconRect: Rect; align: IconAlignmentType; theIconSuite: IconSuiteRef ): Boolean; external name '_PtInIconSuite';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
 {
+<<<<<<< HEAD
+ *  PtInIconSuite()   *** DEPRECATED ***
+=======
  *  PtInIconMethod()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -1399,12 +1701,20 @@ function PtInIconSuite( testPt: Point; const (*var*) iconRect: Rect; align: Icon
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
+function PtInIconSuite( testPt: Point; const (*var*) iconRect: Rect; align: IconAlignmentType; theIconSuite: IconSuiteRef ): Boolean; external name '_PtInIconSuite';
+=======
 function PtInIconMethod( testPt: Point; const (*var*) iconRect: Rect; align: IconAlignmentType; theMethod: IconGetterUPP; yourDataPtr: UnivPtr ): Boolean; external name '_PtInIconMethod';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
 {
+<<<<<<< HEAD
+ *  PtInIconMethod()   *** DEPRECATED ***
+=======
  *  RectInIconID()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -1414,12 +1724,20 @@ function PtInIconMethod( testPt: Point; const (*var*) iconRect: Rect; align: Ico
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
+function PtInIconMethod( testPt: Point; const (*var*) iconRect: Rect; align: IconAlignmentType; theMethod: IconGetterUPP; yourDataPtr: UnivPtr ): Boolean; external name '_PtInIconMethod';
+=======
 function RectInIconID( const (*var*) testRect: Rect; const (*var*) iconRect: Rect; align: IconAlignmentType; iconID: SInt16 ): Boolean; external name '_RectInIconID';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
 {
+<<<<<<< HEAD
+ *  RectInIconID()   *** DEPRECATED ***
+=======
  *  RectInIconSuite()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -1429,12 +1747,20 @@ function RectInIconID( const (*var*) testRect: Rect; const (*var*) iconRect: Rec
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
+function RectInIconID( const (*var*) testRect: Rect; const (*var*) iconRect: Rect; align: IconAlignmentType; iconID: SInt16 ): Boolean; external name '_RectInIconID';
+=======
 function RectInIconSuite( const (*var*) testRect: Rect; const (*var*) iconRect: Rect; align: IconAlignmentType; theIconSuite: IconSuiteRef ): Boolean; external name '_RectInIconSuite';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
 {
+<<<<<<< HEAD
+ *  RectInIconSuite()   *** DEPRECATED ***
+=======
  *  RectInIconMethod()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -1444,12 +1770,20 @@ function RectInIconSuite( const (*var*) testRect: Rect; const (*var*) iconRect: 
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
+function RectInIconSuite( const (*var*) testRect: Rect; const (*var*) iconRect: Rect; align: IconAlignmentType; theIconSuite: IconSuiteRef ): Boolean; external name '_RectInIconSuite';
+=======
 function RectInIconMethod( const (*var*) testRect: Rect; const (*var*) iconRect: Rect; align: IconAlignmentType; theMethod: IconGetterUPP; yourDataPtr: UnivPtr ): Boolean; external name '_RectInIconMethod';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
 {
+<<<<<<< HEAD
+ *  RectInIconMethod()   *** DEPRECATED ***
+=======
  *  IconIDToRgn()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -1459,15 +1793,46 @@ function RectInIconMethod( const (*var*) testRect: Rect; const (*var*) iconRect:
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
+function RectInIconMethod( const (*var*) testRect: Rect; const (*var*) iconRect: Rect; align: IconAlignmentType; theMethod: IconGetterUPP; yourDataPtr: UnivPtr ): Boolean; external name '_RectInIconMethod';
+=======
 function IconIDToRgn( theRgn: RgnHandle; const (*var*) iconRect: Rect; align: IconAlignmentType; iconID: SInt16 ): OSErr; external name '_IconIDToRgn';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
 {
+<<<<<<< HEAD
+ *  IconIDToRgn()   *** DEPRECATED ***
+=======
+ *  IconSuiteToRgn()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+<<<<<<< HEAD
+function IconIDToRgn( theRgn: RgnHandle; const (*var*) iconRect: Rect; align: IconAlignmentType; iconID: SInt16 ): OSErr; external name '_IconIDToRgn';
+=======
+function IconSuiteToRgn( theRgn: RgnHandle; const (*var*) iconRect: Rect; align: IconAlignmentType; theIconSuite: IconSuiteRef ): OSErr; external name '_IconSuiteToRgn';
+>>>>>>> origin/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{
+<<<<<<< HEAD
  *  IconSuiteToRgn()   *** DEPRECATED ***
 <<<<<<< HEAD
  *  
 =======
+=======
+ *  IconMethodToRgn()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -1477,12 +1842,21 @@ function IconIDToRgn( theRgn: RgnHandle; const (*var*) iconRect: Rect; align: Ic
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
 function IconSuiteToRgn( theRgn: RgnHandle; const (*var*) iconRect: Rect; align: IconAlignmentType; theIconSuite: IconSuiteRef ): OSErr; external name '_IconSuiteToRgn';
+=======
+function IconMethodToRgn( theRgn: RgnHandle; const (*var*) iconRect: Rect; align: IconAlignmentType; theMethod: IconGetterUPP; yourDataPtr: UnivPtr ): OSErr; external name '_IconMethodToRgn';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
 {
+<<<<<<< HEAD
  *  IconMethodToRgn()   *** DEPRECATED ***
+ *  
+>>>>>>> origin/cpstrnew
+=======
+ *  SetSuiteLabel()   *** DEPRECATED ***
  *  
 >>>>>>> origin/cpstrnew
  *  Mac OS X threading:
@@ -1493,24 +1867,13 @@ function IconSuiteToRgn( theRgn: RgnHandle; const (*var*) iconRect: Rect; align:
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
 <<<<<<< HEAD
+<<<<<<< HEAD
  }
 function IconSuiteToRgn( theRgn: RgnHandle; const (*var*) iconRect: Rect; align: IconAlignmentType; theIconSuite: IconSuiteRef ): OSErr; external name '_IconSuiteToRgn';
 =======
  }
 function IconMethodToRgn( theRgn: RgnHandle; const (*var*) iconRect: Rect; align: IconAlignmentType; theMethod: IconGetterUPP; yourDataPtr: UnivPtr ): OSErr; external name '_IconMethodToRgn';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
-
-
-{
- *  SetSuiteLabel()   *** DEPRECATED ***
- *  
- *  Mac OS X threading:
- *    Not thread safe
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+=======
  }
 function SetSuiteLabel( theSuite: IconSuiteRef; theLabel: SInt16 ): OSErr; external name '_SetSuiteLabel';
 >>>>>>> origin/cpstrnew
@@ -1519,10 +1882,10 @@ function SetSuiteLabel( theSuite: IconSuiteRef; theLabel: SInt16 ): OSErr; exter
 
 {
 <<<<<<< HEAD
- *  IconMethodToRgn()   *** DEPRECATED ***
- *  
+ *  SetSuiteLabel()   *** DEPRECATED ***
 =======
  *  GetSuiteLabel()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -1532,12 +1895,49 @@ function SetSuiteLabel( theSuite: IconSuiteRef; theLabel: SInt16 ): OSErr; exter
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
+function SetSuiteLabel( theSuite: IconSuiteRef; theLabel: SInt16 ): OSErr; external name '_SetSuiteLabel';
+>>>>>>> origin/cpstrnew
+=======
 function GetSuiteLabel( theSuite: IconSuiteRef ): SInt16; external name '_GetSuiteLabel';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
 {
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *  IconMethodToRgn()   *** DEPRECATED ***
+ *  
+=======
+ *  GetSuiteLabel()   *** DEPRECATED ***
+=======
  *  GetIconCacheData()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+<<<<<<< HEAD
+function GetSuiteLabel( theSuite: IconSuiteRef ): SInt16; external name '_GetSuiteLabel';
+=======
+function GetIconCacheData( theCache: IconCacheRef; var theData: UnivPtr ): OSErr; external name '_GetIconCacheData';
+>>>>>>> origin/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{
+<<<<<<< HEAD
+ *  GetIconCacheData()   *** DEPRECATED ***
+ *  
+>>>>>>> origin/cpstrnew
+=======
+ *  SetIconCacheData()   *** DEPRECATED ***
  *  
 >>>>>>> origin/cpstrnew
  *  Mac OS X threading:
@@ -1548,24 +1948,13 @@ function GetSuiteLabel( theSuite: IconSuiteRef ): SInt16; external name '_GetSui
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
 <<<<<<< HEAD
+<<<<<<< HEAD
  }
 function IconMethodToRgn( theRgn: RgnHandle; const (*var*) iconRect: Rect; align: IconAlignmentType; theMethod: IconGetterUPP; yourDataPtr: UnivPtr ): OSErr; external name '_IconMethodToRgn';
 =======
  }
 function GetIconCacheData( theCache: IconCacheRef; var theData: UnivPtr ): OSErr; external name '_GetIconCacheData';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
-
-
-{
- *  SetIconCacheData()   *** DEPRECATED ***
- *  
- *  Mac OS X threading:
- *    Not thread safe
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+=======
  }
 function SetIconCacheData( theCache: IconCacheRef; theData: UnivPtr ): OSErr; external name '_SetIconCacheData';
 >>>>>>> origin/cpstrnew
@@ -1574,10 +1963,10 @@ function SetIconCacheData( theCache: IconCacheRef; theData: UnivPtr ): OSErr; ex
 
 {
 <<<<<<< HEAD
- *  SetSuiteLabel()   *** DEPRECATED ***
- *  
+ *  SetIconCacheData()   *** DEPRECATED ***
 =======
  *  GetIconCacheProc()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -1587,12 +1976,49 @@ function SetIconCacheData( theCache: IconCacheRef; theData: UnivPtr ): OSErr; ex
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
+function SetIconCacheData( theCache: IconCacheRef; theData: UnivPtr ): OSErr; external name '_SetIconCacheData';
+>>>>>>> origin/cpstrnew
+=======
 function GetIconCacheProc( theCache: IconCacheRef; var theProc: IconGetterUPP ): OSErr; external name '_GetIconCacheProc';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
 {
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *  SetSuiteLabel()   *** DEPRECATED ***
+ *  
+=======
+ *  GetIconCacheProc()   *** DEPRECATED ***
+=======
  *  SetIconCacheProc()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+<<<<<<< HEAD
+function GetIconCacheProc( theCache: IconCacheRef; var theProc: IconGetterUPP ): OSErr; external name '_GetIconCacheProc';
+=======
+function SetIconCacheProc( theCache: IconCacheRef; theProc: IconGetterUPP ): OSErr; external name '_SetIconCacheProc';
+>>>>>>> origin/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{
+<<<<<<< HEAD
+ *  SetIconCacheProc()   *** DEPRECATED ***
+ *  
+>>>>>>> origin/cpstrnew
+=======
+ *  PlotIconHandle()   *** DEPRECATED ***
  *  
 >>>>>>> origin/cpstrnew
  *  Mac OS X threading:
@@ -1602,6 +2028,7 @@ function GetIconCacheProc( theCache: IconCacheRef; var theProc: IconGetterUPP ):
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+<<<<<<< HEAD
 <<<<<<< HEAD
  }
 function SetSuiteLabel( theSuite: IconSuiteRef; theLabel: SInt16 ): OSErr; external name '_SetSuiteLabel';
@@ -3290,6 +3717,14 @@ function IconMethodToRgn( theRgn: RgnHandle; const (*var*) iconRect: Rect; align
 
 {
  *  SetSuiteLabel()   *** DEPRECATED ***
+=======
+ }
+function PlotIconHandle( const (*var*) theRect: Rect; align: IconAlignmentType; transform: IconTransformType; theIcon: Handle ): OSErr; external name '_PlotIconHandle';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{
+ *  PlotSICNHandle()   *** DEPRECATED ***
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -3299,6 +3734,23 @@ function IconMethodToRgn( theRgn: RgnHandle; const (*var*) iconRect: Rect; align
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+function PlotSICNHandle( const (*var*) theRect: Rect; align: IconAlignmentType; transform: IconTransformType; theSICN: Handle ): OSErr; external name '_PlotSICNHandle';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{
+ *  PlotCIconHandle()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+<<<<<<< HEAD
 function SetSuiteLabel( theSuite: IconSuiteRef; theLabel: SInt16 ): OSErr; external name '_SetSuiteLabel';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
@@ -3445,11 +3897,40 @@ const
    }
 	kPlotIconRefNoImage = 1 shl 1;
 
+=======
+function PlotCIconHandle( const (*var*) theRect: Rect; align: IconAlignmentType; transform: IconTransformType; theCIcon: CIconHandle ): OSErr; external name '_PlotCIconHandle';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{$endc} {not TARGET_CPU_64}
+
+
+{
+ *  PlotIconRefFlags
+ *  
+ *  Discussion:
+ *    Flags that can be passed to the PlotIconRefInContext routine.
+ }
+type
+	PlotIconRefFlags = UInt32;
+const
+{
+   * Draw the icon image and alpha channel.
+   }
+	kPlotIconRefNormalFlags = 0;
+
+  {
+   * Only draw the alpha channel.
+   }
+	kPlotIconRefNoImage = 1 shl 1;
+
+>>>>>>> origin/cpstrnew
   {
    * Only draw the image.
    }
 	kPlotIconRefNoMask = 1 shl 2;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {
  *  IconServicesTerminate()
@@ -3464,6 +3945,8 @@ procedure IconServicesTerminate; external name '_IconServicesTerminate';
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {
   ==============================================================================
@@ -3483,11 +3966,15 @@ procedure IconServicesTerminate; external name '_IconServicesTerminate';
  *  
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in IconServicesLib 8.5 and later
  }
@@ -3510,11 +3997,19 @@ function IconRefToIconFamily( theIconRef: IconRef; whichIcons: IconSelectorValue
 function IconRefToIconFamily(theIconRef: IconRef; whichIcons: IconSelectorValue; var iconFamily: IconFamilyHandle): OSErr; external name '_IconRefToIconFamily';
 >>>>>>> origin/fixes_2_2
 =======
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in IconServicesLib 8.5 and later
+ }
+>>>>>>> origin/cpstrnew
 function IconRefToIconFamily( theIconRef: IconRef; whichIcons: IconSelectorValue; var iconFamily: IconFamilyHandle ): OSErr; external name '_IconRefToIconFamily';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
    IconFamilyToIconSuite
    This routine transfers the data from an icon family handle into an icon suite.
@@ -3522,6 +4017,9 @@ function IconRefToIconFamily( theIconRef: IconRef; whichIcons: IconSelectorValue
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not TARGET_CPU_64}
 {
  *  IconFamilyToIconSuite()   *** DEPRECATED ***
@@ -3531,6 +4029,7 @@ function IconRefToIconFamily( theIconRef: IconRef; whichIcons: IconSelectorValue
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in IconServicesLib 8.5 and later
  }
@@ -3557,11 +4056,19 @@ function IconFamilyToIconSuite( iconFamily: IconFamilyHandle; whichIcons: IconSe
 function IconFamilyToIconSuite(iconFamily: IconFamilyHandle; whichIcons: IconSelectorValue; var iconSuite: IconSuiteRef): OSErr; external name '_IconFamilyToIconSuite';
 >>>>>>> origin/fixes_2_2
 =======
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in IconServicesLib 8.5 and later
+ }
+>>>>>>> origin/cpstrnew
 function IconFamilyToIconSuite( iconFamily: IconFamilyHandle; whichIcons: IconSelectorValue; var iconSuite: IconSuiteRef ): OSErr; external name '_IconFamilyToIconSuite';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
    IconSuiteToIconFamily
    This routine transfers the data in an icon suite into an icon family.
@@ -3570,12 +4077,16 @@ function IconFamilyToIconSuite( iconFamily: IconFamilyHandle; whichIcons: IconSe
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  IconSuiteToIconFamily()   *** DEPRECATED ***
  *  
  *  Mac OS X threading:
  *    Not thread safe
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  
  *  Availability:
@@ -3601,11 +4112,22 @@ function IconSuiteToIconFamily( iconSuite: IconSuiteRef; whichIcons: IconSelecto
 function IconSuiteToIconFamily(iconSuite: IconSuiteRef; whichIcons: IconSelectorValue; var iconFamily: IconFamilyHandle): OSErr; external name '_IconSuiteToIconFamily';
 >>>>>>> origin/fixes_2_2
 =======
+=======
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in IconServicesLib 8.5 and later
+ }
+>>>>>>> origin/cpstrnew
 function IconSuiteToIconFamily( iconSuite: IconSuiteRef; whichIcons: IconSelectorValue; var iconFamily: IconFamilyHandle ): OSErr; external name '_IconSuiteToIconFamily';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
    SetIconFamilyData
    Change the data of an icon family. The data is copied.
@@ -3615,6 +4137,9 @@ function IconSuiteToIconFamily( iconSuite: IconSuiteRef; whichIcons: IconSelecto
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {$endc} {not TARGET_CPU_64}
 
 {
@@ -3625,6 +4150,7 @@ function IconSuiteToIconFamily( iconSuite: IconSuiteRef; whichIcons: IconSelecto
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in IconServicesLib 8.5 and later
  }
@@ -3652,11 +4178,19 @@ function SetIconFamilyData( iconFamily: IconFamilyHandle; iconType: OSType; h: H
 function SetIconFamilyData(iconFamily: IconFamilyHandle; iconType: OSType; h: Handle): OSErr; external name '_SetIconFamilyData';
 >>>>>>> origin/fixes_2_2
 =======
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in IconServicesLib 8.5 and later
+ }
+>>>>>>> origin/cpstrnew
 function SetIconFamilyData( iconFamily: IconFamilyHandle; iconType: OSType; h: Handle ): OSErr; external name '_SetIconFamilyData';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
    GetIconFamilyData
    Return a copy of the data in the icon family.
@@ -3671,6 +4205,9 @@ function SetIconFamilyData( iconFamily: IconFamilyHandle; iconType: OSType; h: H
  *  
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
  *  Mac OS X threading:
  *    Not thread safe
  *  
@@ -3683,9 +4220,21 @@ function GetIconFamilyData( iconFamily: IconFamilyHandle; iconType: OSType; h: H
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 =======
-
+=======
 {
+   PlotIconRef
+   
+   This routine plots the IconRef.  It mostly takes the same parameters as 
+   PlotIconSuite. Pass kIconServicesNormalUsageFlag as a default value for 
+   IconServicesUsageFlags.
+}
+>>>>>>> origin/cpstrnew
+
+{$ifc not TARGET_CPU_64}
+{
+<<<<<<< HEAD
  *  GetIconFamilyData()
  *  
 =======
@@ -3716,6 +4265,10 @@ function GetIconFamilyData( iconFamily: IconFamilyHandle; iconType: OSType; h: H
 {
  *  PlotIconRef()   *** DEPRECATED ***
  *  
+=======
+ *  PlotIconRef()   *** DEPRECATED ***
+ *  
+>>>>>>> origin/cpstrnew
  *  Mac OS X threading:
  *    Not thread safe
  *  
@@ -3944,6 +4497,7 @@ function IconRefIntersectsCGRect( const (*var*) testRect: CGRect; const (*var*) 
  *    iconRect:
  *      A pointer to the rectangle defining the area that Icon Services
  *      uses as the bounding box of the region.
+<<<<<<< HEAD
  *    
  *    align:
  *      The value which determines how Icon Services aligns the region
@@ -3953,6 +4507,17 @@ function IconRefIntersectsCGRect( const (*var*) testRect: CGRect; const (*var*) 
  *      Reserved for future use. Pass the kIconServicesNormalUsageFlag
  *      constant in this parameter.
  *    
+=======
+ *    
+ *    align:
+ *      The value which determines how Icon Services aligns the region
+ *      within the rectangle.
+ *    
+ *    iconServicesUsageFlags:
+ *      Reserved for future use. Pass the kIconServicesNormalUsageFlag
+ *      constant in this parameter.
+ *    
+>>>>>>> origin/cpstrnew
  *    theIconRef:
  *      The icon to be tested.
  *  
@@ -3966,6 +4531,7 @@ function IconRefToHIShape( const (*var*) iconRect: CGRect; align: IconAlignmentT
 
 
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  RegisterIconRefFromIconFamily()
  *  
@@ -4704,6 +5270,8 @@ function GetIconSizesFromIconRef( iconSelectorInput: IconSelectorValue; var icon
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
    GetIconSizesFromIconRef
    
    This routine returns an IconSelectorValue indicating the depths and sizes of 
@@ -4724,6 +5292,9 @@ function GetIconSizesFromIconRef( iconSelectorInput: IconSelectorValue; var icon
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not TARGET_CPU_64}
 {
  *  GetIconSizesFromIconRef()   *** DEPRECATED ***
@@ -4736,6 +5307,9 @@ function GetIconSizesFromIconRef( iconSelectorInput: IconSelectorValue; var icon
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.3
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in IconServicesLib 8.5 and later
@@ -4743,6 +5317,7 @@ function GetIconSizesFromIconRef( iconSelectorInput: IconSelectorValue; var icon
 function GetIconSizesFromIconRef( iconSelectorInput: IconSelectorValue; var iconSelectorOutputPtr: IconSelectorValue; iconServicesUsageFlags_: IconServicesUsageFlags; theIconRef: IconRef ): OSErr; external name '_GetIconSizesFromIconRef';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -4782,6 +5357,10 @@ function IsIconRefMaskEmpty( iconRef_: IconRef ): Boolean; external name '_IsIco
 =======
 
 {
+=======
+
+{
+>>>>>>> origin/cpstrnew
    IsIconRefMaskEmpty
    Returns true if the mask for this icon is blank
 }
@@ -4790,6 +5369,7 @@ function IsIconRefMaskEmpty( iconRef_: IconRef ): Boolean; external name '_IsIco
 
 {
  *  IsIconRefMaskEmpty()
+<<<<<<< HEAD
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -4817,11 +5397,14 @@ function IsIconRefMaskEmpty( iconRef_: IconRef ): Boolean; external name '_IsIco
 >>>>>>> origin/fixes_2.4
 {
  *  GetIconSizesFromIconRef()   *** DEPRECATED ***
+=======
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.3
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in IconServicesLib 8.5 and later
@@ -4834,6 +5417,15 @@ function GetIconSizesFromIconRef( iconSelectorInput: IconSelectorValue; var icon
    IsIconRefMaskEmpty
    Returns true if the mask for this icon is blank
 }
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in IconServicesLib 8.5 and later
+ }
+function IsIconRefMaskEmpty( iconRef_: IconRef ): Boolean; external name '_IsIconRefMaskEmpty';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {$endc} {TARGET_CPU_64}
 
@@ -4853,6 +5445,7 @@ function IsIconRefMaskEmpty( iconRef_: IconRef ): Boolean; external name '_IsIco
 
 
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  FlushIconRefsByVolume()   *** DEPRECATED ***
  *  
@@ -4955,6 +5548,8 @@ function IsIconRefMaskEmpty(iconRef_: IconRef): boolean; external name '_IsIconR
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
    GetIconRefVariant
    Icon variants allows different images to be used with different icon state.
    For example, the 'open' variant for a folder could be represented with
@@ -4968,6 +5563,7 @@ function IsIconRefMaskEmpty(iconRef_: IconRef): boolean; external name '_IsIconR
 {
  *  GetIconRefVariant()
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5022,6 +5618,10 @@ function GetIconRefVariant(inIconRef: IconRef; inVariant: OSType; var outTransfo
  *  Mac OS X threading:
  *    Not thread safe
 >>>>>>> origin/fixes_2.4
+=======
+ *  Mac OS X threading:
+ *    Not thread safe
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
@@ -5038,9 +5638,13 @@ function GetIconRefVariant( inIconRef: IconRef; inVariant: OSType; var outTransf
 end.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       ATS/ATSTypes.h
  
      Contains:   Public interfaces for Apple Type Services components.
@@ -119,6 +120,9 @@
 =======
      File:       ATS/ATSTypes.h
 >>>>>>> origin/fixes_2.4
+=======
+     File:       ATS/ATSTypes.h
+>>>>>>> origin/cpstrnew
  
      Contains:   Public interfaces for Apple Type Services components.
  
@@ -151,12 +155,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -168,6 +176,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -182,6 +191,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -197,6 +210,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -207,6 +221,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -214,13 +231,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -228,6 +249,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -236,8 +259,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -248,6 +274,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -268,6 +295,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -276,12 +305,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -292,6 +324,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -339,6 +372,9 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -347,6 +383,7 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
@@ -354,6 +391,8 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
@@ -366,7 +405,10 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
@@ -375,6 +417,7 @@ interface
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -412,6 +455,8 @@ interface
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -420,6 +465,7 @@ interface
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 {$elifc defined __arm__ and __arm__}
@@ -603,6 +649,37 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -631,6 +708,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -639,6 +717,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -651,6 +731,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 uses MacTypes,Files,CGBase,CGGeometry;
 {$endc} {not MACOSALLINCLUDE}
 <<<<<<< HEAD
@@ -690,6 +771,13 @@ uses MacTypes,Files,CGBase,CGGeometry;
 
 {$ifc TARGET_OS_MAC}
 >>>>>>> origin/fixes_2.4
+=======
+uses MacTypes,Files,CGBase,CGGeometry;
+{$endc} {not MACOSALLINCLUDE}
+
+
+{$ifc TARGET_OS_MAC}
+>>>>>>> origin/cpstrnew
 
 {$ALIGN MAC68K}
 
@@ -697,12 +785,16 @@ uses MacTypes,Files,CGBase,CGGeometry;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 //#pragma pack(push, 2)
 
 
 {$ifc TARGET_CPU_64}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -779,6 +871,21 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 type
+=======
+type
+	ATSPoint = CGPoint;
+{$elsec}
+type
+	ATSPoint = Float32Point;
+{$endc}  { TARGET_CPU_64 }
+
+{$ifc TARGET_CPU_64}
+{
+   ATSFSSpec serves as a temporary place holder for the FSSpec data type which is deprecated for 64-bit. 
+   A 64-bit replacement for FSSpec based APIs will be introduced.  
+}
+type
+>>>>>>> origin/cpstrnew
 	ATSFSSpec = record
 		vRefNum: FSVolumeRefNum;
 		parID: SInt32;
@@ -786,6 +893,9 @@ type
 	end;
 {$elsec}
 type
+<<<<<<< HEAD
+>>>>>>> origin/cpstrnew
+=======
 >>>>>>> origin/cpstrnew
 	ATSFSSpec = FSSpec;
 {$endc}  { TARGET_CPU_64 }
@@ -874,6 +984,7 @@ type
 	FMFontCallbackFilterProcPtr = function( iFont: FMFont; iRefCon: UnivPtr ): OSStatus;
 	FMFontFamilyCallbackFilterUPP = FMFontFamilyCallbackFilterProcPtr;
 	FMFontCallbackFilterUPP = FMFontCallbackFilterProcPtr;
+<<<<<<< HEAD
 
 {
  *  NewFMFontFamilyCallbackFilterUPP()
@@ -1033,10 +1144,25 @@ function NewFMFontFamilyCallbackFilterUPP(userRoutine: FMFontFamilyCallbackFilte
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+
+{
+ *  NewFMFontFamilyCallbackFilterUPP()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function NewFMFontFamilyCallbackFilterUPP( userRoutine: FMFontFamilyCallbackFilterProcPtr ): FMFontFamilyCallbackFilterUPP; external name '_NewFMFontFamilyCallbackFilterUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  NewFMFontCallbackFilterUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1084,10 +1210,20 @@ function NewFMFontCallbackFilterUPP( userRoutine: FMFontCallbackFilterProcPtr ):
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function NewFMFontCallbackFilterUPP( userRoutine: FMFontCallbackFilterProcPtr ): FMFontCallbackFilterUPP; external name '_NewFMFontCallbackFilterUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  DisposeFMFontFamilyCallbackFilterUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1135,10 +1271,20 @@ procedure DisposeFMFontFamilyCallbackFilterUPP( userUPP: FMFontFamilyCallbackFil
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeFMFontFamilyCallbackFilterUPP( userUPP: FMFontFamilyCallbackFilterUPP ); external name '_DisposeFMFontFamilyCallbackFilterUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  DisposeFMFontCallbackFilterUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1186,10 +1332,20 @@ procedure DisposeFMFontCallbackFilterUPP( userUPP: FMFontCallbackFilterUPP ); ex
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeFMFontCallbackFilterUPP( userUPP: FMFontCallbackFilterUPP ); external name '_DisposeFMFontCallbackFilterUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  InvokeFMFontFamilyCallbackFilterUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1237,6 +1393,15 @@ function InvokeFMFontFamilyCallbackFilterUPP( iFontFamily: FMFontFamily; iRefCon
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function InvokeFMFontFamilyCallbackFilterUPP( iFontFamily: FMFontFamily; iRefCon: UnivPtr; userUPP: FMFontFamilyCallbackFilterUPP ): OSStatus; external name '_InvokeFMFontFamilyCallbackFilterUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  InvokeFMFontCallbackFilterUPP()
  *  
@@ -1244,11 +1409,15 @@ function InvokeFMFontFamilyCallbackFilterUPP( iFontFamily: FMFontFamily; iRefCon
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   available as macro/inline
  }
 function InvokeFMFontCallbackFilterUPP( iFont: FMFont; iRefCon: UnivPtr; userUPP: FMFontCallbackFilterUPP ): OSStatus; external name '_InvokeFMFontCallbackFilterUPP';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1263,6 +1432,9 @@ function InvokeFMFontCallbackFilterUPP( iFont: FMFont; iRefCon: UnivPtr; userUPP
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
@@ -1315,6 +1487,7 @@ type
 	
 	ATSFontRef = UInt32;
 	ATSFontRefPtr = ^ATSFontRef;
+<<<<<<< HEAD
 
 	ATSGlyphRef = UInt16;
 	ATSGlyphRefPtr = ^ATSGlyphRef;
@@ -1324,6 +1497,17 @@ type
 const
 	kATSFontFormatUnspecified = 0;
 
+=======
+
+	ATSGlyphRef = UInt16;
+	ATSGlyphRefPtr = ^ATSGlyphRef;
+	
+	ATSFontSize = CGFloat;
+	ATSFontFormat = UInt32;
+const
+	kATSFontFormatUnspecified = 0;
+
+>>>>>>> origin/cpstrnew
 
 	kATSGenerationUnspecified = 0;
 	kATSFontContainerRefUnspecified = 0;
@@ -1356,6 +1540,7 @@ type
 	end;
 	ATSFontMetricsPtr = ^ATSFontMetrics;
 	
+<<<<<<< HEAD
 const
 	kATSItalicQDSkew = (1 shl 16) / 4; { fixed value of 0.25 }
 	kATSBoldQDStretch = (1 shl 16) * 3 / 2; { fixed value of 1.50 }
@@ -1471,6 +1656,9 @@ type
 	ATSFontMetricsPtr = ^ATSFontMetrics;
 	
 const
+=======
+const
+>>>>>>> origin/cpstrnew
 	kATSItalicQDSkew = (1 shl 16) / 4; { fixed value of 0.25 }
 	kATSBoldQDStretch = (1 shl 16) * 3 / 2; { fixed value of 1.50 }
 	kATSRadiansFactor = 1144;  { fixed value of approx. pi/180 (0.0174560546875) }
@@ -1479,6 +1667,7 @@ const
 type
 	ATSCurveType = UInt16;
 const
+<<<<<<< HEAD
 <<<<<<< HEAD
 	kATSCubicCurveType			= $0001;
 	kATSQuadCurveType			= $0002;
@@ -1492,6 +1681,11 @@ const
 	kATSQuadCurveType = $0002;
 	kATSOtherCurveType = $0003;
 >>>>>>> origin/fixes_2.4
+=======
+	kATSCubicCurveType = $0001;
+	kATSQuadCurveType = $0002;
+	kATSOtherCurveType = $0003;
+>>>>>>> origin/cpstrnew
 
 { 
     This is what the ATSGlyphRef is set to when the glyph is deleted -
@@ -1501,6 +1695,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 	kATSDeletedGlyphcode = $FFFF;
 =======
@@ -1517,6 +1712,10 @@ const
 
 	kATSDeletedGlyphcode = $FFFF;
 >>>>>>> origin/fixes_2.4
+=======
+
+	kATSDeletedGlyphcode = $FFFF;
+>>>>>>> origin/cpstrnew
 
 type
 	ATSUCurvePathPtr = ^ATSUCurvePath;
@@ -1524,6 +1723,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		vectors: UInt32;
   		controlBits: array[0..0] of UInt32;
         vector: array[0..0] of ATSPoint;
@@ -1542,10 +1742,16 @@ type
   		controlBits: array[0..0] of UInt32;
         vector: array[0..0] of ATSPoint;
 >>>>>>> origin/fixes_2.4
+=======
+		vectors: UInt32;
+  		controlBits: array[0..0] of UInt32;
+        vector: array[0..0] of ATSPoint;
+>>>>>>> origin/cpstrnew
 	end;
 
 	ATSUCurvePathsPtr = ^ATSUCurvePaths;
 	ATSUCurvePaths = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1593,6 +1799,10 @@ end.
 		contours: UInt32;
         contour: array[0..0] of ATSUCurvePath;
 >>>>>>> origin/fixes_2.4
+=======
+		contours: UInt32;
+        contour: array[0..0] of ATSUCurvePath;
+>>>>>>> origin/cpstrnew
 	end;
 { Glyph ideal metrics }
 
@@ -1627,9 +1837,13 @@ end.
 end.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

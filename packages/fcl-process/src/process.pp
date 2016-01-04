@@ -43,6 +43,7 @@ Type
 Type
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$ifdef UNIX}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -77,6 +78,12 @@ Type
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  {$ifdef UNIX}
+  TProcessForkEvent = procedure;
+  {$endif UNIX}
+
+>>>>>>> origin/cpstrnew
   TProcess = Class (TComponent)
   Private
     FProcessOptions : TProcessOptions;
@@ -108,6 +115,7 @@ Type
     {$ifdef UNIX}
     FForkEvent : TProcessForkEvent;
     {$endif UNIX}
+<<<<<<< HEAD
 =======
     FShowWindow : TShowWindowOptions;
     FInherithandles : Boolean;
@@ -116,6 +124,8 @@ Type
     FShowWindow : TShowWindowOptions;
     FInherithandles : Boolean;
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
     FProcessPriority : TProcessPriority;
     dwXCountchars,
     dwXSize,
@@ -168,8 +178,12 @@ Type
 >>>>>>> graemeg/fixes_2_2
 =======
     function  PeekExitStatus: Boolean;
+<<<<<<< HEAD
   Protected  
 >>>>>>> origin/fixes_2_2
+=======
+  Protected
+>>>>>>> origin/cpstrnew
     FRunning : Boolean;
     FExitCode : Cardinal;
     FInputStream  : TOutputPipeStream;
@@ -224,6 +238,9 @@ Type
 =======
 >>>>>>> origin/fixes_2_2
     Property InheritHandles : Boolean Read FInheritHandles Write FInheritHandles;
+    {$ifdef UNIX}
+    property OnForkEvent : TProcessForkEvent Read FForkEvent Write FForkEvent;
+    {$endif UNIX}
   Published
     Property Active : Boolean Read GetRunning Write SetActive;
     Property ApplicationName : String Read FApplicationName Write SetApplicationName;
@@ -337,7 +354,7 @@ end;
 =======
 >>>>>>> origin/fixes_2_2
   end;
-  
+
   EProcess = Class(Exception);
 
 implementation
@@ -370,6 +387,7 @@ begin
   FInheritHandles:=True;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$ifdef UNIX}
   FForkEvent:=nil;
   {$endif UNIX}
@@ -389,6 +407,11 @@ begin
   FEnvironment:=TStringList.Create;
   FParameters:=TStringList.Create;
 =======
+=======
+  {$ifdef UNIX}
+  FForkEvent:=nil;
+  {$endif UNIX}
+>>>>>>> origin/cpstrnew
   FEnvironment:=TStringList.Create;
 >>>>>>> graemeg/fixes_2_2
 =======
@@ -417,6 +440,7 @@ begin
   If FStderrStream<>FOutputStream then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FreeStream(THandleStream(FStderrStream));
   FreeStream(THandleStream(FOutputStream));
   FreeStream(THandleStream(FInputStream));
@@ -430,12 +454,18 @@ begin
   FreeStream(FOutputStream);
   FreeStream(FInputStream);
 >>>>>>> origin/fixes_2_2
+=======
+    FreeStream(THandleStream(FStderrStream));
+  FreeStream(THandleStream(FOutputStream));
+  FreeStream(THandleStream(FInputStream));
+>>>>>>> origin/cpstrnew
 end;
 
 
 Function TProcess.GetExitStatus : Integer;
 
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   GetRunning;
@@ -457,6 +487,9 @@ end;
 >>>>>>> origin/fixes_2_2
   If FRunning then
     PeekExitStatus;
+=======
+  GetRunning;
+>>>>>>> origin/cpstrnew
   Result:=FExitCode;
 end;
 
@@ -511,15 +544,20 @@ end;
 
 procedure TProcess.CloseInput;
 begin
+<<<<<<< HEAD
   FreeStream(FInputStream);
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  FreeStream(THandleStream(FInputStream));
+>>>>>>> origin/cpstrnew
 end;
 
 procedure TProcess.CloseOutput;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   FreeStream(THandleStream(FOutputStream));
@@ -529,10 +567,14 @@ begin
 =======
   FreeStream(FOutputStream);
 >>>>>>> origin/fixes_2_2
+=======
+  FreeStream(THandleStream(FOutputStream));
+>>>>>>> origin/cpstrnew
 end;
 
 procedure TProcess.CloseStderr;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   FreeStream(THandleStream(FStderrStream));
@@ -542,6 +584,9 @@ begin
 =======
   FreeStream(FStderrStream);
 >>>>>>> origin/fixes_2_2
+=======
+  FreeStream(THandleStream(FStderrStream));
+>>>>>>> origin/cpstrnew
 end;
 
 Procedure TProcess.SetWindowColumns (Value : Cardinal);

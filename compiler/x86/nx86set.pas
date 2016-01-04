@@ -137,11 +137,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
           begin
@@ -875,6 +878,7 @@ implementation
                   location_force_reg(current_asmdata.CurrAsmList,left.location,opsize,false);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   register_maybe_adjust_setbase(current_asmdata.CurrAsmList,left.location,setbase);
                   if (right.location.loc in [LOC_REGISTER,LOC_CREGISTER]) then
                     location_force_reg(current_asmdata.CurrAsmList,right.location,opsize,true);
@@ -887,6 +891,11 @@ implementation
 =======
 >>>>>>> graemeg/cpstrnew
 =======
+>>>>>>> origin/cpstrnew
+=======
+                  register_maybe_adjust_setbase(current_asmdata.CurrAsmList,left.location,setbase);
+                  if (right.location.loc in [LOC_REGISTER,LOC_CREGISTER]) then
+                    location_force_reg(current_asmdata.CurrAsmList,right.location,opsize,true);
 >>>>>>> origin/cpstrnew
                   pleftreg:=left.location.register;
 

@@ -5,6 +5,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   DISPSTAT_CHK_VBLANK = (1 shl 0);
 >>>>>>> graemeg/cpstrnew
@@ -14,6 +15,9 @@ const
 =======
   DISPSTAT_CHK_VBLANK = (1 shl 0);
 >>>>>>> graemeg/cpstrnew
+=======
+  DISPSTAT_CHK_VBLANK = (1 shl 0);
+>>>>>>> origin/cpstrnew
 =======
   DISPSTAT_CHK_VBLANK = (1 shl 0);
 >>>>>>> origin/cpstrnew
@@ -75,6 +79,7 @@ procedure sdmmc_sdcard_readsector(sector_no: cuint32; _out: pointer); cdecl; ext
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure sdmmc_sdcard_readsectors(sector_no: cuint32; numsectors: cuint32; _out: pointer); cdecl; external;
 procedure sdmmc_sdcard_writesector(sector_no: cuint32; _in: pointer); cdecl; external;
 procedure sdmmc_sdcard_writesectors(sector_no: cuint32; numsectors: cuint32; _in: pointer); cdecl; external;
@@ -93,6 +98,11 @@ procedure sdmmc_sdcard_readsectors(sector_no: cuint32; int numsectors: cint; _ou
 procedure sdmmc_sdcard_writesector(sector_no: cuint32; _in: pointer); cdecl; external;
 procedure sdmmc_sdcard_writesectors(sector_no: cuint32; int numsectors: cint; _in: pointer); cdecl; external;
 >>>>>>> graemeg/cpstrnew
+=======
+procedure sdmmc_sdcard_readsectors(sector_no: cuint32; int numsectors: cint; _out: pointer); cdecl; external;
+procedure sdmmc_sdcard_writesector(sector_no: cuint32; _in: pointer); cdecl; external;
+procedure sdmmc_sdcard_writesectors(sector_no: cuint32; int numsectors: cint; _in: pointer); cdecl; external;
+>>>>>>> origin/cpstrnew
 =======
 procedure sdmmc_sdcard_readsectors(sector_no: cuint32; int numsectors: cint; _out: pointer); cdecl; external;
 procedure sdmmc_sdcard_writesector(sector_no: cuint32; _in: pointer); cdecl; external;

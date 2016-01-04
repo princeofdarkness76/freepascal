@@ -28,12 +28,15 @@ const
 type
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/fixes_2_2
 =======
 
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
   TMOFileHeader = packed record
     magic: LongWord;             // MOFileHeaderMagic
     revision: LongWord;          // 0
@@ -94,6 +97,9 @@ uses
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 procedure Endianfixmotable(p:PMOStringTable;n:integer);
 var I:integer;
 begin
@@ -115,14 +121,18 @@ begin
       end;
 end;
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 constructor TMOFile.Create(AStream: TStream);
 var
   header: TMOFileHeader;
   i: Integer;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   endianswap : boolean;
@@ -131,11 +141,16 @@ var
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  endianswap : boolean;
+
+>>>>>>> origin/cpstrnew
 begin
   inherited Create;
 
   AStream.Read(header, Sizeof(header));
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   if (header.magic <> MOFileHeaderMagic) and (swapendian(header.magic)<>MOFileHeaderMagic) then
@@ -165,6 +180,25 @@ begin
     raise EMOFileError.Create('Invalid magic - not a MO file?');
 
 >>>>>>> origin/fixes_2_2
+=======
+  if (header.magic <> MOFileHeaderMagic) and (swapendian(header.magic)<>MOFileHeaderMagic) then
+    raise EMOFileError.Create('Invalid magic - not a MO file?');
+
+  endianswap:=header.magic<>MOFileHeaderMagic;
+  If EndianSwap then 
+    begin
+     with header do
+       begin 
+          revision	:=SwapEndian(revision);
+          nstrings	:=SwapEndian(nstrings);
+          OrigTabOffset :=SwapEndian(OrigTabOffset);
+          TransTabOffset:=SwapEndian(TransTabOffset);
+          HashTabSize   :=SwapEndian(HashTabSize);
+          HashTabOffset :=SwapEndian(HashTabOffset);
+       end;
+    end;
+
+>>>>>>> origin/cpstrnew
   GetMem(OrigTable, header.nstrings * SizeOf(TMOStringInfo));
   GetMem(TranslTable, header.nstrings * SizeOf(TMOStringInfo));
   GetMem(OrigStrings, header.nstrings * SizeOf(PChar));
@@ -173,6 +207,7 @@ begin
 
   AStream.Position := header.OrigTabOffset;
   AStream.Read(OrigTable^, header.nstrings * SizeOf(TMOStringInfo));
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   if EndianSwap then 
@@ -192,6 +227,15 @@ begin
   AStream.Position := header.TransTabOffset;
   AStream.Read(TranslTable^, header.nstrings * SizeOf(TMOStringInfo));
 >>>>>>> origin/fixes_2_2
+=======
+  if EndianSwap then 
+    EndianFixmotable(OrigTable,Header.NStrings);
+
+  AStream.Position := header.TransTabOffset;
+  AStream.Read(TranslTable^, header.nstrings * SizeOf(TMOStringInfo));
+  if EndianSwap then 
+    EndianFixmotable(TranslTable,Header.NStrings);
+>>>>>>> origin/cpstrnew
 
   StringCount := header.nstrings;
 
@@ -225,12 +269,17 @@ begin
   AStream.Read(HashTable^, 4 * HashTableSize);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if EndianSwap then 
     EndianFixHashTable(hashtable,hashtablesize);
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  if EndianSwap then 
+    EndianFixHashTable(hashtable,hashtablesize);
+>>>>>>> origin/cpstrnew
 end;
 
 constructor TMOFile.Create(const AFilename: String);
@@ -269,13 +318,17 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
   if AHash = $FFFFFFFF then
   begin
     Result := '';
     exit;
   end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -283,6 +336,8 @@ begin
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
   idx := AHash mod HashTableSize;
   incr := 1 + (AHash mod (HashTableSize - 2));
   while True do
@@ -291,6 +346,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (nstr = 0) or (nstr > StringCount) then
 =======
     if nstr = 0 then
@@ -301,6 +357,9 @@ begin
 =======
     if (nstr = 0) or (nstr > StringCount) then
 >>>>>>> origin/fixes_2.4
+=======
+    if (nstr = 0) or (nstr > StringCount) then
+>>>>>>> origin/cpstrnew
     begin
       Result := '';
       exit;
@@ -337,6 +396,7 @@ end;
 function Translate (Name,Value : AnsiString; Hash : Longint; arg:pointer) : AnsiString;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 var contextempty : boolean;
 begin
   contextempty:=name='';
@@ -353,6 +413,16 @@ begin
 begin
   Result:=TMOFile(arg).Translate(Value,Hash);
 >>>>>>> origin/fixes_2_2
+=======
+var contextempty : boolean;
+begin
+  contextempty:=name='';
+  Result:='';
+  if not contextempty then
+    Result:=TMOFile(arg).Translate(Name+#4+Value);
+  if contextempty or (Result='') then
+    Result:=TMOFile(arg).Translate(Value,Hash);
+>>>>>>> origin/cpstrnew
 end;
 
 

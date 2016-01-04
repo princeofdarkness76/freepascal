@@ -1,7 +1,10 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 { Test for FloatToStr and CurrToStr functions. }
 
 uses sysutils;
@@ -13,6 +16,7 @@ const
 var
   ErrCount: longint;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -71,6 +75,8 @@ end;
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 procedure CheckResult(const s, ref: string);
 begin
   if s <> ref then
@@ -91,6 +97,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   i: Integer;
   tests: array [0..4] of Double = (123456789123456789., 1e20, 1.6e20, 5e20, 9e20);
 =======
@@ -103,6 +110,8 @@ var
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 begin
   e:=1234567890123.4;
   d:=12345.12345;
@@ -130,6 +139,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   for i := 0 to High(tests) do begin
     e := tests[i];
     CycleInc(e,1e20);
@@ -148,6 +158,8 @@ begin
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
   if ErrCount > 0 then
     begin
       writeln('Test failed. Errors: ', ErrCount);
@@ -156,6 +168,7 @@ begin
   else
     writeln('Test completed.');
 end.
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 { Test for FloatToStr and CurrToStr functions. }
@@ -217,3 +230,5 @@ end.
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew

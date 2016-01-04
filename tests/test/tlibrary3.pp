@@ -1,6 +1,7 @@
 { %NORUN }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { %SKIPTARGET=macos, go32v2, win64 }
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -21,6 +22,9 @@
 =======
 { %SKIPTARGET=macos, win64 }
 >>>>>>> origin/fixes_2_2
+=======
+{ %SKIPTARGET=macos, go32v2, win64 }
+>>>>>>> origin/cpstrnew
 
 {$ifdef darwin}
 {$PIC+}

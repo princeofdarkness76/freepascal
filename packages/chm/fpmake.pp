@@ -79,6 +79,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        begin
 =======
         begin
@@ -89,6 +90,9 @@ begin
 =======
        begin
 >>>>>>> origin/fixes_2.4
+=======
+       begin
+>>>>>>> origin/cpstrnew
           AddUnit('chmbase');
         end;
     T:=P.Targets.AddUnit('htmlindexer.pas');
@@ -143,6 +147,11 @@ begin
         begin
           AddUnit('paslzxcomp');
         end;
+    T:=P.Targets.AddUnit('lzxcompressthread.pas');
+      with T.Dependencies do
+        begin
+          AddUnit('paslzxcomp');
+        end;
     T:=P.Targets.AddUnit('fasthtmlparser.pas');
     T:=P.Targets.AddUnit('htmlutil.pas');
     T:=P.Targets.AddUnit('paslznonslide.pas');
@@ -159,6 +168,9 @@ begin
         end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
    T:=P.Targets.AddUnit('itolitlstypes.pas');
    T:=P.Targets.AddUnit('itsftransform.pas');
       with T.Dependencies do
@@ -168,6 +180,7 @@ begin
         end;
    T:=P.Targets.AddUnit('itolitlsreader.pas');
       with T.Dependencies do
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -182,6 +195,9 @@ begin
 =======
         begin  //chmreader, itolitlstypes, Sysutils, chmbase, itsftransform; 
 >>>>>>> graemeg/cpstrnew
+=======
+        begin  //chmreader, itolitlstypes, Sysutils, chmbase, itsftransform; 
+>>>>>>> origin/cpstrnew
 =======
         begin  //chmreader, itolitlstypes, Sysutils, chmbase, itsftransform; 
 >>>>>>> origin/cpstrnew

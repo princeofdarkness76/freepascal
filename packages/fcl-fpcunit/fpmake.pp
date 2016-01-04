@@ -62,11 +62,15 @@ begin
     T:=P.Targets.AddUnit('fpcunit.pp');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       T.ResourceStrings:=true;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+      T.ResourceStrings:=true;
+>>>>>>> origin/cpstrnew
       with T.Dependencies do
         begin
           AddInclude('DUnitCompatibleInterface.inc');

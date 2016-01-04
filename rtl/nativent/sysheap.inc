@@ -31,6 +31,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    function RtlAllocateHeap(hHeap : THandle; dwFlags : LongWord; Size : PtrUInt): Pointer;
 =======
    function RtlAllocateHeap(hHeap : THandle; dwFlags : LongWord; Size : Longword): Pointer;
@@ -41,6 +42,9 @@
 =======
    function RtlAllocateHeap(hHeap : THandle; dwFlags : LongWord; Size : Longword): Pointer;
 >>>>>>> graemeg/cpstrnew
+=======
+   function RtlAllocateHeap(hHeap : THandle; dwFlags : LongWord; Size : Longword): Pointer;
+>>>>>>> origin/cpstrnew
 =======
    function RtlAllocateHeap(hHeap : THandle; dwFlags : LongWord; Size : Longword): Pointer;
 >>>>>>> origin/cpstrnew

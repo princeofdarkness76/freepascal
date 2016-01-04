@@ -26,6 +26,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      add ecx, _GLOBAL_OFFSET_TABLE_+1
 =======
      add ecx, _GLOBAL_OFFSET_TABLE_
@@ -48,6 +49,10 @@ begin
      add ecx, @_GLOBAL_OFFSET_TABLE_
      mov [ecx].OFFSET test.l,5
 >>>>>>> origin/fixes_2_2
+=======
+     add ecx, _GLOBAL_OFFSET_TABLE_
+     mov [test.l + ecx],5
+>>>>>>> origin/cpstrnew
 {$endif darwin}
 {$endif FPC_PIC}
   end;

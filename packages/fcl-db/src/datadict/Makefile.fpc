@@ -12,11 +12,15 @@ packages_freebsd=ibase mysql oracle sqlite odbc postgres
 packages_darwin=ibase mysql oracle sqlite odbc postgres
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 packages_iphonesim=ibase mysql oracle sqlite odbc postgres
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+packages_iphonesim=ibase mysql oracle sqlite odbc postgres
+>>>>>>> origin/cpstrnew
 packages_netbsd=ibase mysql oracle sqlite odbc postgres
 packages_openbsd=ibase mysql oracle sqlite odbc postgres
 packages_win32=ibase mysql oracle sqlite odbc postgres
@@ -62,14 +66,19 @@ units_linux=fpddfb fpddmysql40 fpddmysql41 fpddmysql50 fpddodbc fpddpq fpddoracl
 units_freebsd=fpddfb fpddmysql40 fpddmysql41 fpddmysql50 fpddodbc fpddpq fpddoracle fpddsqlite3 fpddregstd
 units_darwin=fpddfb fpddmysql40 fpddmysql41 fpddmysql50 fpddodbc fpddpq fpddoracle fpddsqlite3 fpddregstd
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+units_iphonesim=fpddfb fpddmysql40 fpddmysql41 fpddmysql50 fpddodbc fpddpq fpddoracle fpddsqlite3 fpddregstd
+>>>>>>> origin/cpstrnew
 units_netbsd=fpddfb fpddmysql40 fpddmysql41 fpddmysql50 fpddodbc fpddpq fpddoracle fpddsqlite3 fpddregstd
 units_openbsd=fpddfb fpddmysql40 fpddmysql41 fpddmysql50 fpddodbc fpddpq fpddoracle fpddsqlite3 fpddregstd
 units_win32=fpddfb fpddmysql40 fpddmysql41 fpddmysql50 fpddodbc fpddpq fpddoracle fpddsqlite3 fpddregstd
 units_wince=fpddsqlite3
 units_win64=fpddodbc fpddsqlite3
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 rsts=fpdatadict fpddfb fpddsqldb fpdddiff
@@ -88,9 +97,13 @@ rsts_aix=fpddfb fpddmysql40 fpddmysql41 fpddmysql50 fpddodbc fpddpq fpddoracle f
 =======
 >>>>>>> origin/fixes_2_2
 rsts=fpdatadict fpddfb fpddsqldb
+=======
+rsts=fpdatadict fpddfb fpddsqldb fpdddiff
+>>>>>>> origin/cpstrnew
 rsts_linux=fpddfb fpddmysql40 fpddmysql41 fpddmysql50 fpddodbc fpddpq fpddoracle fpddsqlite3 fpddregstd
 rsts_freebsd=fpddfb fpddmysql40 fpddmysql41 fpddmysql50 fpddodbc fpddpq fpddoracle fpddsqlite3 fpddregstd
 rsts_darwin=fpddfb fpddmysql40 fpddmysql41 fpddmysql50 fpddodbc fpddpq fpddoracle fpddsqlite3 fpddregstd
+rsts_iphonesim=fpddfb fpddmysql40 fpddmysql41 fpddmysql50 fpddodbc fpddpq fpddoracle fpddsqlite3 fpddregstd
 rsts_netbsd=fpddfb fpddmysql40 fpddmysql41 fpddmysql50 fpddodbc fpddpq fpddoracle fpddsqlite3 fpddregstd
 rsts_openbsd=fpddfb fpddmysql40 fpddmysql41 fpddmysql50 fpddodbc fpddpq fpddoracle fpddsqlite3 fpddregstd
 rsts_win32=fpddfb fpddmysql40 fpddmysql41 fpddmysql50 fpddodbc fpddpq fpddoracle fpddsqlite3 fpddregstd

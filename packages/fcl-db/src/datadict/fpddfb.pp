@@ -461,6 +461,7 @@ Var
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   function ImportFieldDef(APosition : Integer) : boolean;
 =======
   function ImportFieldDef : boolean;
@@ -468,6 +469,9 @@ Var
 =======
   function ImportFieldDef : boolean;
 >>>>>>> origin/fixes_2_2
+=======
+  function ImportFieldDef(APosition : Integer) : boolean;
+>>>>>>> origin/cpstrnew
   var FD : TDDFieldDef;
       n, s : string;
   begin
@@ -507,6 +511,7 @@ Var
       FD.Required:=false;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FD.index := APosition;
 =======
     FD.index := FPosition.AsInteger;
@@ -514,6 +519,9 @@ Var
 =======
     FD.index := FPosition.AsInteger;
 >>>>>>> origin/fixes_2_2
+=======
+    FD.index := APosition;
+>>>>>>> origin/cpstrnew
     s := trim(FDomainName.asstring);
     if copy(s, 1, 4) <> 'RDB$' then
       FD.DomainName := s
@@ -531,6 +539,7 @@ Var
       begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       if ImportFieldDef(Result) then
 =======
       if ImportFieldDef then
@@ -538,6 +547,9 @@ Var
 =======
       if ImportFieldDef then
 >>>>>>> origin/fixes_2_2
+=======
+      if ImportFieldDef(Result) then
+>>>>>>> origin/cpstrnew
         inc (result);
       Q.Next;
       end;

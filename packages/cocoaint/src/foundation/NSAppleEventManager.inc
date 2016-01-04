@@ -61,6 +61,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     _padding: array[0..(3)-1] of char;
 =======
         _padding: array[0..2] of char;
@@ -71,6 +72,9 @@ var
 =======
         _padding: array[0..2] of char;
 >>>>>>> graemeg/cpstrnew
+=======
+        _padding: array[0..2] of char;
+>>>>>>> origin/cpstrnew
 =======
         _padding: array[0..2] of char;
 >>>>>>> origin/cpstrnew

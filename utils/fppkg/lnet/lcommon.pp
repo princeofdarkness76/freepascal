@@ -2,6 +2,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   CopyRight (C) 2004-2008 Ales Katona
 =======
   CopyRight (C) 2004-2007 Ales Katona
@@ -9,6 +10,9 @@
 =======
   CopyRight (C) 2004-2007 Ales Katona
 >>>>>>> origin/fixes_2_2
+=======
+  CopyRight (C) 2004-2008 Ales Katona
+>>>>>>> origin/cpstrnew
 
   This library is Free software; you can rediStribute it and/or modify it
   under the terms of the GNU Library General Public License as published by
@@ -147,6 +151,7 @@ type
   function NetAddrToStr(const Entry: Cardinal): string; inline;
   
 <<<<<<< HEAD
+<<<<<<< HEAD
   procedure FillAddressInfo(var aAddrInfo: TLSocketAddress; const aFamily: sa_family_t;
                             const Address: string; const aPort: Word);
 =======
@@ -156,10 +161,15 @@ type
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  procedure FillAddressInfo(var aAddrInfo: TLSocketAddress; const aFamily: sa_family_t;
+                            const Address: string; const aPort: Word);
+>>>>>>> origin/cpstrnew
                             
 implementation
 
 uses
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   StrUtils
@@ -169,10 +179,14 @@ uses
 =======
   StrUtils, lNet
 >>>>>>> origin/fixes_2_2
+=======
+  StrUtils
+>>>>>>> origin/cpstrnew
   
 {$IFNDEF UNIX}
 
 {$IFDEF WINDOWS}
+<<<<<<< HEAD
 <<<<<<< HEAD
   , Windows, lws2tcpip;
 =======
@@ -181,6 +195,9 @@ uses
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  , Windows, lws2tcpip;
+>>>>>>> origin/cpstrnew
   
 {$IFDEF WINCE}
 
@@ -396,6 +413,20 @@ begin
 >>>>>>> origin/fixes_2_2
 end;
 
+function IsNonFatalError(const anError: Integer): Boolean; inline;
+begin
+  Result := (anError = WSAEINVAL) or (anError = WSAEFAULT)
+         or (anError = WSAEOPNOTSUPP) or (anError = WSAEMSGSIZE)
+         or (anError = WSAEADDRNOTAVAIL) or (anError = WSAEAFNOSUPPORT)
+         or (anError = WSAEDESTADDRREQ);
+end;
+
+function IsPipeError(const anError: Integer): Boolean; inline;
+begin
+  {$WARNING check these ambiguous errors}
+  Result := anError = WSAECONNRESET;
+end;
+
 {$ELSE}
 
 // unix
@@ -467,6 +498,28 @@ begin
 >>>>>>> origin/fixes_2_2
 end;
 
+function GetHostName6(const Address: string): string;
+var
+  HE: THostEntry6;
+begin
+  Result := '';
+{  if GetHostByAddr(StrToHostAddr6(Address), HE) then
+    Result := HE.Name
+  else} if ResolveHostbyAddr6(StrToHostAddr6(Address), HE) then
+    Result := HE.Name;
+end;
+
+function GetHostIP6(const Name: string): string;
+var
+  HE: THostEntry6;
+begin
+  Result := '';
+{  if GetHostByName(Name, HE) then
+    Result := HostAddrToStr6(HE.Addr) // for localhost
+  else} if ResolveHostByName6(Name, HE) then
+    Result := NetAddrToStr6(HE.Addr);
+end;
+
 function SetBlocking(const aHandle: Integer; const aValue: Boolean): Boolean;
 var
   opt: cInt;
@@ -506,6 +559,18 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+end;
+
+function IsNonFatalError(const anError: Integer): Boolean; inline;
+begin
+  Result := (anError = ESysEINTR) or (anError = ESysEMSGSIZE)
+         or (anError = ESysEFAULT) or (anError = ESysEINVAL)
+         or (anError = ESysEOPNOTSUPP);
+end;
+
+function IsPipeError(const anError: Integer): Boolean; inline;
+begin
+  Result := anError = ESysEPIPE;
 end;
 
 function TZSeconds: Integer; inline;
@@ -554,6 +619,9 @@ var
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   Result := True;
   for i := 0 to High(aIP6.sin6_addr.u6_addr32) do
     if aIP6.sin6_addr.u6_addr32[i] <> 0 then
@@ -563,6 +631,7 @@ end;
 procedure FillAddressInfo(var aAddrInfo: TLSocketAddress; const aFamily: sa_family_t;
   const Address: string; const aPort: Word);
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -585,10 +654,15 @@ begin
   aAddrInfo.IPv4.family := aFamily;
   aAddrInfo.IPv4.Port := htons(aPort);
 >>>>>>> origin/cpstrnew
+=======
+  aAddrInfo.IPv4.family := aFamily;
+  aAddrInfo.IPv4.Port := htons(aPort);
+>>>>>>> origin/cpstrnew
 
   case aFamily of
     LAF_INET  :
       begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -616,6 +690,11 @@ begin
         if (Address <> LADDR_ANY) and (aAddrInfo.IPv4.Addr = 0) then
           aAddrInfo.IPv4.Addr := StrToNetAddr(GetHostIP(Address));
 >>>>>>> origin/cpstrnew
+=======
+        aAddrInfo.IPv4.Addr := StrToNetAddr(Address);
+        if (Address <> LADDR_ANY) and (aAddrInfo.IPv4.Addr = 0) then
+          aAddrInfo.IPv4.Addr := StrToNetAddr(GetHostIP(Address));
+>>>>>>> origin/cpstrnew
       end;
     LAF_INET6 :
       begin
@@ -624,6 +703,7 @@ begin
           aAddrInfo.IPv6.sin6_addr := StrToNetAddr6(GetHostIP6(Address));
       end;
   end;
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -637,6 +717,8 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 

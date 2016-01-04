@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Copyright (c) 2000-2004,2007 Apple Inc. All Rights Reserved.
  * 
  * @APPLE_LICENSE_HEADER_START@
@@ -69,6 +70,12 @@
  * 
  * @APPLE_LICENSE_HEADER_START@
  * 
+=======
+ * Copyright (c) 2000-2004,2007 Apple Inc. All Rights Reserved.
+ * 
+ * @APPLE_LICENSE_HEADER_START@
+ * 
+>>>>>>> origin/cpstrnew
  * This file contains Original Code and/or Modifications of Original Code
  * as defined in and that are subject to the Apple Public Source License
  * Version 2.0 (the 'License'). You may not use this file except in
@@ -97,12 +104,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -114,6 +125,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -128,6 +140,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -143,6 +159,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -153,6 +170,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -160,13 +180,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -174,6 +198,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -182,8 +208,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -194,6 +223,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -214,6 +244,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -222,12 +254,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -235,6 +270,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -311,6 +347,24 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
 =======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
@@ -325,6 +379,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -334,10 +389,13 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -415,12 +473,18 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 {$elsec}
+=======
+{$elsec}
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
@@ -444,6 +508,7 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
@@ -530,6 +595,15 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -558,6 +632,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -566,6 +641,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -579,8 +656,11 @@ uses MacTypes;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$endc} {not MACOSALLINCLUDE}
 
 
@@ -596,6 +676,7 @@ uses MacTypes;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$ALIGN MAC68K}
 >>>>>>> graemeg/fixes_2_2
@@ -604,6 +685,8 @@ uses MacTypes;
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {!
 	@header Authorization
 	Version 1.0 10/16/2000
@@ -638,6 +721,7 @@ const kAuthorizationEmptyEnvironment = nil;
     The comments must not be multi-line, and should be in a form meaningful to an end user. If
     a different or additional comment is needed, it can be put in the header doc format, or on a
     line that does not start with errZZZ.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -692,6 +776,13 @@ const
 }
 
 const
+=======
+
+    errAuthorizationSuccess can't include a string as it's also errSecSuccess in libsecurity_keychain/lib/SecBase.h
+}
+
+const
+>>>>>>> origin/cpstrnew
 	errAuthorizationSuccess = 0;
 	errAuthorizationInvalidSet = -60001; { The authorization rights are invalid. }
 	errAuthorizationInvalidRef = -60002; { The authorization reference is invalid. }
@@ -707,7 +798,10 @@ const
 	errAuthorizationToolExecuteFailure = -60031; { The specified program could not be executed. }
 	errAuthorizationToolEnvironmentError = -60032; { An invalid status was returned during execution of a privileged tool. }
 	errAuthorizationBadAddress = -60033; { The requested socket address is invalid (must be 0-1023 inclusive). }
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 
 {!
@@ -718,14 +812,18 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	kAuthorizationFlagDefaults = 0;
 	kAuthorizationFlagInteractionAllowed = 1 shl 0;
 	kAuthorizationFlagExtendRights = 1 shl 1;
 	kAuthorizationFlagPartialRights = 1 shl 2;
 	kAuthorizationFlagDestroyRights = 1 shl 3;
 	kAuthorizationFlagPreAuthorize = 1 shl 4;
+<<<<<<< HEAD
 <<<<<<< HEAD
 	
 	// private bits (do not use)
@@ -751,12 +849,18 @@ const
 	// private bits (do not use)
 	kAuthorizationFlagNoData = 1 shl 20;
 >>>>>>> origin/fixes_2.4
+=======
+	
+	// private bits (do not use)
+	kAuthorizationFlagNoData = 1 shl 20;
+>>>>>>> origin/cpstrnew
 
 
 {!
 	@typedef AuthorizationFlags
 	Optional flags passed in to AuthorizationCreate.
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -772,6 +876,10 @@ type AuthorizationFlags = UInt32;
 type
 	AuthorizationFlags = UInt32;
 >>>>>>> origin/fixes_2.4
+=======
+type
+	AuthorizationFlags = UInt32;
+>>>>>>> origin/cpstrnew
 
 
 {!
@@ -782,6 +890,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kAuthorizationFlagCanNotPreAuthorize = 1 shl 0;
 =======
 	kAuthorizationFlagCanNotPreAuthorize = (1 shl 0);
@@ -792,6 +901,9 @@ const
 =======
 	kAuthorizationFlagCanNotPreAuthorize = 1 shl 0;
 >>>>>>> origin/fixes_2.4
+=======
+	kAuthorizationFlagCanNotPreAuthorize = 1 shl 0;
+>>>>>>> origin/cpstrnew
 
 
 {!
@@ -799,6 +911,7 @@ const
 	Opaque reference to an authorization object.
 }
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -829,6 +942,9 @@ type
 =======
 	AuthorizationRef = ^SInt32;
 >>>>>>> origin/fixes_2.4
+=======
+	AuthorizationRef = ^SInt32;
+>>>>>>> origin/cpstrnew
 
 
 {!
@@ -836,6 +952,7 @@ type
 	A zero terminated string in UTF-8 encoding.
 }
 type AuthorizationString = CStringPtr;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -849,6 +966,9 @@ type AuthorizationString = CStringPtr;
 =======
 	 ConstAuthorizationString = ConstCStringPtr;	{ will need later in AuthorizationPlugin }
 >>>>>>> origin/fixes_2.4
+=======
+	 ConstAuthorizationString = ConstCStringPtr;	{ will need later in AuthorizationPlugin }
+>>>>>>> origin/cpstrnew
 
 {!
 	@struct AuthorizationItem
@@ -868,6 +988,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		valueLength: size_t;
 		value: UnivPtr;
 =======
@@ -882,6 +1003,10 @@ type
 		valueLength: size_t;
 		value: UnivPtr;
 >>>>>>> origin/fixes_2.4
+=======
+		valueLength: size_t;
+		value: UnivPtr;
+>>>>>>> origin/cpstrnew
 		flags: UInt32;
 	end;
 	AuthorizationItemPtr = ^AuthorizationItem;
@@ -915,6 +1040,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 const
 	kAuthorizationExternalFormLength = 32;
 =======
@@ -927,6 +1053,10 @@ const kAuthorizationExternalFormLength = 32;
 const
 	kAuthorizationExternalFormLength = 32;
 >>>>>>> origin/fixes_2.4
+=======
+const
+	kAuthorizationExternalFormLength = 32;
+>>>>>>> origin/cpstrnew
 
 type
 	AuthorizationExternalForm = record
@@ -986,6 +1116,7 @@ type AuthorizationEnvironmentPtr = ^AuthorizationEnvironment;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function AuthorizationCreate( rights: AuthorizationRightsPtr; environment: AuthorizationEnvironmentPtr; flags: AuthorizationFlags; var authorization: AuthorizationRef ): OSStatus; external name '_AuthorizationCreate';
 =======
 function AuthorizationCreate(rights: AuthorizationRightsPtr; environment: AuthorizationEnvironmentPtr; flags: AuthorizationFlags; var authorization: AuthorizationRef): OSStatus; external name '_AuthorizationCreate';
@@ -996,6 +1127,9 @@ function AuthorizationCreate(rights: AuthorizationRightsPtr; environment: Author
 =======
 function AuthorizationCreate( rights: AuthorizationRightsPtr; environment: AuthorizationEnvironmentPtr; flags: AuthorizationFlags; var authorization: AuthorizationRef ): OSStatus; external name '_AuthorizationCreate';
 >>>>>>> origin/fixes_2.4
+=======
+function AuthorizationCreate( rights: AuthorizationRightsPtr; environment: AuthorizationEnvironmentPtr; flags: AuthorizationFlags; var authorization: AuthorizationRef ): OSStatus; external name '_AuthorizationCreate';
+>>>>>>> origin/cpstrnew
 
 
 {!
@@ -1017,6 +1151,7 @@ function AuthorizationCreate( rights: AuthorizationRightsPtr; environment: Autho
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function AuthorizationFree( authorization: AuthorizationRef; flags: AuthorizationFlags ): OSStatus; external name '_AuthorizationFree';
 
 =======
@@ -1029,6 +1164,10 @@ function AuthorizationFree(authorization: AuthorizationRef;flags: AuthorizationF
 function AuthorizationFree( authorization: AuthorizationRef; flags: AuthorizationFlags ): OSStatus; external name '_AuthorizationFree';
 
 >>>>>>> origin/fixes_2.4
+=======
+function AuthorizationFree( authorization: AuthorizationRef; flags: AuthorizationFlags ): OSStatus; external name '_AuthorizationFree';
+
+>>>>>>> origin/cpstrnew
 
 {!
 	@function AuthorizationCopyRights
@@ -1066,6 +1205,7 @@ function AuthorizationFree( authorization: AuthorizationRef; flags: Authorizatio
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function AuthorizationCopyRights( authorization: AuthorizationRef; const (*var*) rights: AuthorizationRights; environment: AuthorizationEnvironmentPtr; flags: AuthorizationFlags; authorizedRights: AuthorizationRightsPtrPtr ): OSStatus; external name '_AuthorizationCopyRights';
 =======
 function AuthorizationCopyRights(authorization: AuthorizationRef; const (*var*) rights: AuthorizationRights; environment: AuthorizationEnvironmentPtr; flags: AuthorizationFlags; authorizedRights: AuthorizationRightsPtrPtr): OSStatus; external name '_AuthorizationCopyRights';
@@ -1076,6 +1216,9 @@ function AuthorizationCopyRights(authorization: AuthorizationRef; const (*var*) 
 =======
 function AuthorizationCopyRights( authorization: AuthorizationRef; const (*var*) rights: AuthorizationRights; environment: AuthorizationEnvironmentPtr; flags: AuthorizationFlags; authorizedRights: AuthorizationRightsPtrPtr ): OSStatus; external name '_AuthorizationCopyRights';
 >>>>>>> origin/fixes_2.4
+=======
+function AuthorizationCopyRights( authorization: AuthorizationRef; const (*var*) rights: AuthorizationRights; environment: AuthorizationEnvironmentPtr; flags: AuthorizationFlags; authorizedRights: AuthorizationRightsPtrPtr ): OSStatus; external name '_AuthorizationCopyRights';
+>>>>>>> origin/cpstrnew
 
 {!
 	@function AuthorizationCopyInfo
@@ -1097,6 +1240,7 @@ function AuthorizationCopyRights( authorization: AuthorizationRef; const (*var*)
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function AuthorizationCopyInfo( authorization: AuthorizationRef; tag: AuthorizationString; var info: AuthorizationItemSetPtr ): OSStatus; external name '_AuthorizationCopyInfo';
 =======
 function AuthorizationCopyInfo(authorization: AuthorizationRef; tag: AuthorizationString; var info: AuthorizationItemSetPtr): OSStatus; external name '_AuthorizationCopyInfo';
@@ -1107,6 +1251,9 @@ function AuthorizationCopyInfo(authorization: AuthorizationRef; tag: Authorizati
 =======
 function AuthorizationCopyInfo( authorization: AuthorizationRef; tag: AuthorizationString; var info: AuthorizationItemSetPtr ): OSStatus; external name '_AuthorizationCopyInfo';
 >>>>>>> origin/fixes_2.4
+=======
+function AuthorizationCopyInfo( authorization: AuthorizationRef; tag: AuthorizationString; var info: AuthorizationItemSetPtr ): OSStatus; external name '_AuthorizationCopyInfo';
+>>>>>>> origin/cpstrnew
 
 {!
 	@function AuthorizationMakeExternalForm
@@ -1130,6 +1277,7 @@ function AuthorizationCopyInfo( authorization: AuthorizationRef; tag: Authorizat
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function AuthorizationMakeExternalForm( authorization: AuthorizationRef; var extForm: AuthorizationExternalForm ): OSStatus; external name '_AuthorizationMakeExternalForm';
 =======
 function AuthorizationMakeExternalForm(authorization: AuthorizationRef; var extForm: AuthorizationExternalForm): OSStatus; external name '_AuthorizationMakeExternalForm';
@@ -1140,6 +1288,9 @@ function AuthorizationMakeExternalForm(authorization: AuthorizationRef; var extF
 =======
 function AuthorizationMakeExternalForm( authorization: AuthorizationRef; var extForm: AuthorizationExternalForm ): OSStatus; external name '_AuthorizationMakeExternalForm';
 >>>>>>> origin/fixes_2.4
+=======
+function AuthorizationMakeExternalForm( authorization: AuthorizationRef; var extForm: AuthorizationExternalForm ): OSStatus; external name '_AuthorizationMakeExternalForm';
+>>>>>>> origin/cpstrnew
 
 
 {!
@@ -1168,6 +1319,7 @@ function AuthorizationMakeExternalForm( authorization: AuthorizationRef; var ext
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function AuthorizationCreateFromExternalForm( const (*var*) extForm: AuthorizationExternalForm; var authorization: AuthorizationRef ): OSStatus; external name '_AuthorizationCreateFromExternalForm';
 =======
 function AuthorizationCreateFromExternalForm(const (*var*) extForm: AuthorizationExternalForm; var authorization: AuthorizationRef): OSStatus; external name '_AuthorizationCreateFromExternalForm';
@@ -1178,6 +1330,9 @@ function AuthorizationCreateFromExternalForm(const (*var*) extForm: Authorizatio
 =======
 function AuthorizationCreateFromExternalForm( const (*var*) extForm: AuthorizationExternalForm; var authorization: AuthorizationRef ): OSStatus; external name '_AuthorizationCreateFromExternalForm';
 >>>>>>> origin/fixes_2.4
+=======
+function AuthorizationCreateFromExternalForm( const (*var*) extForm: AuthorizationExternalForm; var authorization: AuthorizationRef ): OSStatus; external name '_AuthorizationCreateFromExternalForm';
+>>>>>>> origin/cpstrnew
 
 
 {!
@@ -1194,6 +1349,7 @@ function AuthorizationCreateFromExternalForm( const (*var*) extForm: Authorizati
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function AuthorizationFreeItemSet( var setx: AuthorizationItemSet ): OSStatus; external name '_AuthorizationFreeItemSet';
 =======
 function AuthorizationFreeItemSet(var setx: AuthorizationItemSet): OSStatus; external name '_AuthorizationFreeItemSet';
@@ -1204,6 +1360,9 @@ function AuthorizationFreeItemSet(var setx: AuthorizationItemSet): OSStatus; ext
 =======
 function AuthorizationFreeItemSet( var setx: AuthorizationItemSet ): OSStatus; external name '_AuthorizationFreeItemSet';
 >>>>>>> origin/fixes_2.4
+=======
+function AuthorizationFreeItemSet( var setx: AuthorizationItemSet ): OSStatus; external name '_AuthorizationFreeItemSet';
+>>>>>>> origin/cpstrnew
 
 
 {!
@@ -1239,6 +1398,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function AuthorizationExecuteWithPrivileges( authorization: AuthorizationRef; pathToTool: CStringPtr; options: AuthorizationFlags; arguments: Arg10000TypePtr; communicationsPipe: UnivPtr ): OSStatus; external name '_AuthorizationExecuteWithPrivileges';
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1262,6 +1422,9 @@ function AuthorizationExecuteWithPrivileges(authorization: AuthorizationRef; pat
 =======
 function AuthorizationExecuteWithPrivileges( authorization: AuthorizationRef; pathToTool: CStringPtr; options: AuthorizationFlags; arguments: Arg10000TypePtr; communicationsPipe: UnivPtr ): OSStatus; external name '_AuthorizationExecuteWithPrivileges';
 >>>>>>> origin/fixes_2.4
+=======
+function AuthorizationExecuteWithPrivileges( authorization: AuthorizationRef; pathToTool: CStringPtr; options: AuthorizationFlags; arguments: Arg10000TypePtr; communicationsPipe: UnivPtr ): OSStatus; external name '_AuthorizationExecuteWithPrivileges';
+>>>>>>> origin/cpstrnew
 // communicationsPipe not yet supported
 
 
@@ -1284,6 +1447,7 @@ function AuthorizationCopyPrivilegedReference( var authorization: AuthorizationR
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_1,__MAC_10_7,__IPHONE_NA,__IPHONE_NA) *)
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1305,6 +1469,8 @@ end.
 >>>>>>> origin/fixes_2_2
  }
 function AuthorizationCopyPrivilegedReference( var authorization: AuthorizationRef; flags: AuthorizationFlags ): OSStatus; external name '_AuthorizationCopyPrivilegedReference';
+=======
+>>>>>>> origin/cpstrnew
 
 
 {$endc} {TARGET_OS_MAC}
@@ -1313,9 +1479,13 @@ function AuthorizationCopyPrivilegedReference( var authorization: AuthorizationR
 end.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

@@ -566,6 +566,7 @@ unit regexpr;
                                    exit;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                   // currentpos is increased by parseOccurences
 =======
                                   inc(currentpos);
@@ -573,6 +574,9 @@ unit regexpr;
 =======
                                   inc(currentpos);
 >>>>>>> origin/fixes_2_2
+=======
+                                  // currentpos is increased by parseOccurences
+>>>>>>> origin/cpstrnew
                                   new(hp3);
                                   doregister(hp3);
                                   hp3^.typ:=ret_pattern;

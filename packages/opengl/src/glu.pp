@@ -91,6 +91,9 @@ Abstract:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 
 {******************************************************************************}
 {  									       }
@@ -105,6 +108,7 @@ Abstract:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -115,6 +119,8 @@ Abstract:
 {$MACRO ON}
 {$MODE OBJFPC}
 =======
+=======
+>>>>>>> origin/cpstrnew
 {$MACRO ON}
 {$MODE Delphi}
 >>>>>>> graemeg/fixes_2_2
@@ -1167,6 +1173,7 @@ initialization
   {$else}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$IFDEF haiku}
   LoadGLu('libGLU.so');
   {$ELSE}
@@ -1174,10 +1181,16 @@ initialization
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  {$IFDEF haiku}
+  LoadGLu('libGLU.so');
+  {$ELSE}
+>>>>>>> origin/cpstrnew
   {$ifndef MorphOS}
   LoadGLu('libGLU.so.1');
   {$endif}
   {$ENDIF}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   {$ENDIF}
@@ -1190,6 +1203,9 @@ finalization
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  {$ENDIF}
+>>>>>>> origin/cpstrnew
   {$endif}
 
 finalization

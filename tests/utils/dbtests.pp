@@ -52,11 +52,14 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 Function  ConnectToDatabase(DatabaseName,Host,User,Password,Port : String) : Boolean;
@@ -115,6 +118,7 @@ end;
 Procedure DisconnectDatabase;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 begin
   FreeAndNil(Connection);
 end;
@@ -134,6 +138,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 Function ConnectToDatabase(DatabaseName,Host,User,Password,Port : String) : Boolean;
@@ -264,10 +270,13 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/cpstrnew
 { No warning if it fails }
 Function RunSilentQuery (Qry : String; Var res : TQueryResult) : Boolean ;
 
@@ -280,6 +289,9 @@ begin
     Res:=Mysql_store_result(@connection);
 end;
 
+<<<<<<< HEAD
+>>>>>>> origin/cpstrnew
+=======
 >>>>>>> origin/cpstrnew
 
 Function GetResultField (Res : TQueryResult; Id : Integer) : String;
@@ -336,6 +348,7 @@ begin
     end;
 end;
 
+<<<<<<< HEAD
 Function EscapeSQL( S : String) : String;
 
 begin
@@ -350,6 +363,9 @@ begin
 =======
 begin
 >>>>>>> graemeg/cpstrnew
+=======
+begin
+>>>>>>> origin/cpstrnew
 =======
 begin
 >>>>>>> origin/cpstrnew
@@ -622,7 +638,7 @@ begin
   else if FileExists(FileName+'.pp') then
     FileName := FileName + '.pp'
   else exit;
-  
+
   Verbose(V_Debug,'Reading '+FileName);
   assign(t,FileName);
   {$I-}
@@ -740,6 +756,7 @@ Const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
              '(%d,%d,''%s'',''%s'',%d) RETURNING TR_ID';
   SSelectId='SELECT TR_ID FROM TESTRESULTS WHERE (TR_TEST_FK=%d) '+
             ' AND (TR_TESTRUN_FK=%d)';
@@ -756,6 +773,8 @@ Var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
              '(%d,%d,"%s","%s",%d) ';
   SSelectId='SELECT TR_ID FROM TESTRESULTS WHERE (TR_TEST_FK=%d) '+
             ' AND (TR_TESTRUN_FK=%d)';
@@ -768,6 +787,7 @@ Var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -775,11 +795,14 @@ Var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 begin
   updateValues:=false;
   Result:=-1;
   Qry:=Format(SInsertRes,
               [TestID,RunID,B[OK],B[Skipped],TestRes,EscapeSQL(Log)]);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -804,6 +827,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   If RunSilentQuery(Qry,Res) then
     Result:=mysql_insert_id(@connection)
   else
@@ -823,11 +848,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     end;

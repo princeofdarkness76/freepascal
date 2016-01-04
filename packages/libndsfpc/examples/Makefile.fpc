@@ -7,6 +7,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 dirs=audio card debugging ds_motion dswifi filesystem gl2d graphics hello_world input time
 =======
 dirs=audio card debugging ds_motion dswifi filesystem graphics hello_world input time
@@ -17,6 +18,9 @@ dirs=audio card debugging ds_motion dswifi filesystem graphics hello_world input
 =======
 dirs=audio card debugging ds_motion dswifi filesystem graphics hello_world input time
 >>>>>>> graemeg/cpstrnew
+=======
+dirs=audio card debugging ds_motion dswifi filesystem graphics hello_world input time
+>>>>>>> origin/cpstrnew
 =======
 dirs=audio card debugging ds_motion dswifi filesystem graphics hello_world input time
 >>>>>>> origin/cpstrnew

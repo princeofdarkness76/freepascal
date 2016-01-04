@@ -215,11 +215,14 @@ procedure DivMod(Dividend: Integer; Divisor: Integer; var Result, Remainder: Int
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -259,6 +262,7 @@ function IsZero(const A: Extended): Boolean;inline; overload;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function IsNan(const d : Single): Boolean; overload;
 {$ifdef FPC_HAS_TYPE_DOUBLE}
 function IsNan(const d : Double): Boolean; overload;
@@ -284,6 +288,9 @@ function IsNan(const d : Double): Boolean;
 =======
 function IsNan(const d : Double): Boolean;
 >>>>>>> origin/fixes_2_2
+=======
+function IsNan(const d : Double): Boolean; overload;
+>>>>>>> origin/cpstrnew
 function IsInfinite(const d : Double): Boolean;
 
 {$ifdef FPC_HAS_TYPE_EXTENDED}
@@ -681,6 +688,7 @@ function RandomFrom(const AValues: array of Int64): Int64; overload;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { cpu specific stuff }
 type
   TFPURoundingMode = system.TFPURoundingMode;
@@ -701,6 +709,8 @@ procedure ClearExceptions(RaisePending: Boolean =true);
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 { include cpu specific stuff }
@@ -1570,10 +1580,14 @@ begin
   m4 := reciprocalN * m4;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
   
+=======
+
+>>>>>>> origin/cpstrnew
   skew := m3 / (sqrt(m2)*m2);
   kurtosis := m4 / (m2 * m2);
 end;
@@ -1777,7 +1791,7 @@ end;
   m2 := reciprocalN * m2;
   m3 := reciprocalN * m3;
   m4 := reciprocalN * m4;
-  
+
   skew := m3 / (sqrt(m2)*m2);
   kurtosis := m4 / (m2 * m2);
 end;
@@ -1955,10 +1969,14 @@ begin
   m4 := reciprocalN * m4;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
   
+=======
+
+>>>>>>> origin/cpstrnew
   skew := m3 / (sqrt(m2)*m2);
   kurtosis := m4 / (m2 * m2);
 end;
@@ -2478,6 +2496,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure DivMod(Dividend: LongInt; Divisor: Word; var Result, Remainder: Word);
 =======
 procedure DivMod(Dividend: Integer; Divisor: Word; var Result, Remainder: Word);
@@ -2491,6 +2510,9 @@ procedure DivMod(Dividend: Integer; Divisor: Word; var Result, Remainder: Word);
 =======
 procedure DivMod(Dividend: Integer; Divisor: Word; var Result, Remainder: Word);
 >>>>>>> origin/cpstrnew
+=======
+procedure DivMod(Dividend: Integer; Divisor: Word; var Result, Remainder: Word);
+>>>>>>> origin/cpstrnew
 begin
   if Dividend < 0 then
     begin
@@ -2506,6 +2528,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     end
 =======
     end 
@@ -2513,6 +2536,7 @@ begin
 =======
     end 
 >>>>>>> graemeg/cpstrnew
+=======
 =======
 =======
     end 
@@ -2544,9 +2568,9 @@ begin
       Remainder:=Dividend-(Result*Divisor);
 	end;
 end;
-
-
 <<<<<<< HEAD
+
+
 procedure DivMod(Dividend: Integer; Divisor: Word; var Result, Remainder: SmallInt);
 begin
   if Dividend < 0 then
@@ -2559,14 +2583,53 @@ begin
         Result and Remainder, and all it's Ok. }
       Result:=-(Dividend Div Divisor);
       Remainder:=-(Dividend+(Result*Divisor));
+>>>>>>> origin/cpstrnew
     end 
->>>>>>> graemeg/cpstrnew
   else
     begin
 	  Result:=Dividend Div Divisor;
       Remainder:=Dividend-(Result*Divisor);
 	end;
 end;
+
+
+<<<<<<< HEAD
+procedure DivMod(Dividend: Integer; Divisor: Word; var Result, Remainder: SmallInt);
+=======
+
+
+procedure DivMod(Dividend: DWord; Divisor: DWord; var Result, Remainder: DWord);
+begin
+  Result:=Dividend Div Divisor;
+  Remainder:=Dividend-(Result*Divisor);
+end;
+
+
+procedure DivMod(Dividend: Integer; Divisor: Integer; var Result, Remainder: Integer);
+>>>>>>> origin/cpstrnew
+begin
+  if Dividend < 0 then
+    begin
+      { Use DivMod with >=0 dividend }
+	  Dividend:=-Dividend;
+      { The documented behavior of Pascal's div/mod operators and DivMod
+        on negative dividends is to return Result closer to zero and
+        a negative Remainder. Which means that we can just negate both
+        Result and Remainder, and all it's Ok. }
+      Result:=-(Dividend Div Divisor);
+      Remainder:=-(Dividend+(Result*Divisor));
+    end 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
+  else
+    begin
+	  Result:=Dividend Div Divisor;
+      Remainder:=Dividend-(Result*Divisor);
+	end;
+end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2730,6 +2793,8 @@ begin
       Remainder:=Dividend-(Result*Divisor);
 	end;
 end;
+=======
+>>>>>>> origin/cpstrnew
 {$endif FPC_MATH_HAS_DIVMOD}
 
 
@@ -2941,6 +3006,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function FutureValue(ARate: Float; NPeriods: Integer;
   APayment, APresentValue: Float; APaymentTime: TPaymentTime): Float;
 var
@@ -3051,6 +3117,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 

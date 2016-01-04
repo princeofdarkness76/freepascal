@@ -469,6 +469,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   WriteLn(f, ' ': lvl * 2 + 4, EscapeXml(obj.GetDeclaration(false)));
 =======
   WriteLn(f, ' ': lvl * 2 + 4, EscapeXml(obj.Value));
@@ -479,6 +480,9 @@ begin
 =======
   WriteLn(f, ' ': lvl * 2 + 4, EscapeXml(obj.Value));
 >>>>>>> graemeg/cpstrnew
+=======
+  WriteLn(f, ' ': lvl * 2 + 4, EscapeXml(obj.Value));
+>>>>>>> origin/cpstrnew
 =======
   WriteLn(f, ' ': lvl * 2 + 4, EscapeXml(obj.Value));
 >>>>>>> origin/cpstrnew

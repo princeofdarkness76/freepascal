@@ -36,12 +36,15 @@ Uses
    BaseUnix,
   {$ENDIF}
    SysUtils,Classes,zstream;
+<<<<<<< HEAD
 =======
    SysUtils,Classes,ZStream;
 >>>>>>> graemeg/fixes_2_2
 =======
    SysUtils,Classes,ZStream;
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 
 
 Const
@@ -524,6 +527,12 @@ Type
   Protected
     Property HdrPos : Longint Read FHeaderPos Write FheaderPos;
   Public
+<<<<<<< HEAD
+=======
+    constructor Create(ACollection: TCollection); override;
+    function IsDirectory: Boolean;
+    function IsLink: Boolean;
+>>>>>>> origin/cpstrnew
     Procedure Assign(Source : TPersistent); override;
     Property Stream : TStream Read FStream Write FStream;
   Published
@@ -727,6 +736,9 @@ Type
   Private
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
     FOnCloseInputStream: TCustomInputStreamEvent;
     FOnCreateStream: TOnCustomStreamEvent;
     FOnDoneStream: TOnCustomStreamEvent;
@@ -739,6 +751,7 @@ Type
     FEntries    : TFullZipFileEntries;
     FFiles      : TStrings;
     FZipStream  : TStream;     { I/O file variables                         }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -766,6 +779,8 @@ Type
     FFiles      : TStrings;
     FOutFile    : TFileStream;
     FZipFile     : TFileStream;     { I/O file variables                         }
+=======
+>>>>>>> origin/cpstrnew
     LocalHdr    : Local_File_Header_Type;
     CentralHdr  : Central_File_Header_Type;
     EndHdr      : End_of_Central_Dir_Type;
@@ -894,9 +909,14 @@ ResourceString
   SErrMissingArchiveName = 'Missing archive filename in streamed entry %d';
   SErrFileDoesNotExist = 'File "%s" does not exist.';
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  SErrNoFileName = 'No archive filename for examine operation.';
+  SErrNoStream = 'No stream is opened.';
+>>>>>>> origin/cpstrnew
 
 { ---------------------------------------------------------------------
     Auxiliary
@@ -1252,17 +1272,30 @@ Var
   Buf : PByte;
   I,Count,NewCount : Integer;
   C : TCompressionStream;
-
+  BytesNow : Integer;
+  NextMark : Integer;
+  OnBytes : Integer;
+  FSize    : Integer;
 begin
   CRC32Val:=$FFFFFFFF;
   Buf:=GetMem(FBufferSize);
+  if FOnPercent = 0 then 
+    FOnPercent := 1; 
+  OnBytes:=Round((FInFile.Size * FOnPercent) / 100);
+  BytesNow:=0; NextMark := OnBytes;
+  FSize:=FInfile.Size;
   Try
     C:=TCompressionStream.Create(FCompressionLevel,FOutFile,True);
     Try
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+      if assigned(FOnProgress) then
+        fOnProgress(self,0);
+>>>>>>> origin/cpstrnew
       Repeat
         Count:=FInFile.Read(Buf^,FBufferSize);
         For I:=0 to Count-1 do
@@ -1302,7 +1335,17 @@ begin
 =======
         While (NewCount>0) do
           NewCount:=NewCount-C.Write(Buf^,NewCount);
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2_2
+=======
+        inc(BytesNow,Count);
+        if BytesNow>NextMark Then
+          begin
+            if (FSize>0) and assigned(FOnProgress) Then
+              FOnProgress(self,100 * ( BytesNow / FSize));
+            inc(NextMark,OnBytes);
+          end;   
+>>>>>>> origin/cpstrnew
       Until (Count=0);
     Finally
       C.Free;
@@ -1312,12 +1355,17 @@ begin
   end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if assigned(FOnProgress) then
     fOnProgress(self,100.0);
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  if assigned(FOnProgress) then
+    fOnProgress(self,100.0);
+>>>>>>> origin/cpstrnew
   Crc32Val:=NOT Crc32Val;
 end;
 
@@ -1367,10 +1415,14 @@ Var
   C : TDeCompressionStream;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   BytesNow : Integer;
   NextMark : Integer;
   OnBytes  : Integer;
   FSize    : Integer;
+<<<<<<< HEAD
 
 begin
   CRC32Val:=$FFFFFFFF;
@@ -1393,6 +1445,20 @@ begin
 begin
   CRC32Val:=$FFFFFFFF;
 >>>>>>> origin/fixes_2_2
+=======
+
+begin
+  CRC32Val:=$FFFFFFFF;
+  if FOnPercent = 0 then
+    FOnPercent := 1;
+  OnBytes:=Round((FInFile.Size * FOnPercent) / 100);
+  BytesNow:=0; NextMark := OnBytes;
+  FSize:=FInfile.Size;
+
+  If Assigned(FOnProgress) then
+    fOnProgress(self,0);
+
+>>>>>>> origin/cpstrnew
   Buf:=GetMem(FBufferSize);
   Try
     C:=TDeCompressionStream.Create(FInFile,True);
@@ -1404,6 +1470,9 @@ begin
         FOutFile.Write(Buf^,Count);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
         inc(BytesNow,Count);
         if BytesNow>NextMark Then
            begin
@@ -1411,10 +1480,13 @@ begin
                FOnProgress(self,100 * ( BytesNow / FSize));
              inc(NextMark,OnBytes);
            end;
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
       Until (Count=0);
     Finally
       C.Free;
@@ -1424,12 +1496,17 @@ begin
   end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  if assigned(FOnProgress) then
    fOnProgress(self,100.0);
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ if assigned(FOnProgress) then
+   fOnProgress(self,100.0);
+>>>>>>> origin/cpstrnew
   Crc32Val:=NOT Crc32Val;
 end;
 
@@ -2800,6 +2877,7 @@ Procedure TUnZipper.OpenInput;
 Begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if Assigned(FOnOpenInputStream) then
     FOnOpenInputStream(Self, FZipStream);
   if FZipStream = nil then
@@ -2820,6 +2898,12 @@ Begin
 =======
     FZipStream:=TFileStream.Create(FFileName,fmOpenRead);
 >>>>>>> origin/cpstrnew
+=======
+  if Assigned(FOnOpenInputStream) then
+    FOnOpenInputStream(Self, FZipStream);
+  if FZipStream = nil then
+    FZipStream:=TFileStream.Create(FFileName,fmOpenRead);
+>>>>>>> origin/cpstrnew
 End;
 
 
@@ -2833,6 +2917,7 @@ Begin
     as directory separator. We don't want that behavior
     here, since 'abc\' is a valid file name under Unix.
 	
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2858,6 +2943,8 @@ Begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	(mantis 15836) On the other hand, many archives on 
 	 windows have '/' as pathseparator, even Windows 
 	 generated .odt files. So we disable this for windows.
@@ -2867,6 +2954,7 @@ Begin
   AllowDirectorySeparators:=[DirectorySeparator];
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2880,6 +2968,8 @@ Begin
   OldDirectorySeparators:=AllowDirectorySeparators;
   {$ifndef Windows}
   AllowDirectorySeparators:=[DirectorySeparator];
+>>>>>>> origin/cpstrnew
+=======
 >>>>>>> origin/cpstrnew
   {$endif}
   Path:=ExtractFilePath(OutFileName);
@@ -2948,6 +3038,9 @@ Procedure TUnZipper.CloseInput;
 Begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   if Assigned(FOnCloseInputStream) then
     FOnCloseInputStream(Self, FZipStream);
   FreeAndNil(FZipStream);
@@ -2965,6 +3058,7 @@ Begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   FZipStream.Seek(Item.HdrPos,soBeginning);
 =======
   FZipStream.Seek(Item.HdrPos,soFromBeginning);
@@ -2975,6 +3069,9 @@ Begin
 =======
   FZipStream.Seek(Item.HdrPos,soFromBeginning);
 >>>>>>> graemeg/cpstrnew
+=======
+  FZipStream.Seek(Item.HdrPos,soFromBeginning);
+>>>>>>> origin/cpstrnew
 =======
   FZipStream.Seek(Item.HdrPos,soFromBeginning);
 >>>>>>> origin/cpstrnew
@@ -2991,6 +3088,7 @@ Begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
       //SetLength(E,Extra_Field_Length);
       //FZipStream.ReadBuffer(E[1],Extra_Field_Length);
@@ -3006,6 +3104,11 @@ Begin
       //FZipStream.ReadBuffer(E[1],Extra_Field_Length);
       FZipStream.Seek(Extra_Field_Length,soCurrent);
 >>>>>>> graemeg/cpstrnew
+=======
+      //SetLength(E,Extra_Field_Length);
+      //FZipStream.ReadBuffer(E[1],Extra_Field_Length);
+      FZipStream.Seek(Extra_Field_Length,soCurrent);
+>>>>>>> origin/cpstrnew
 =======
       //SetLength(E,Extra_Field_Length);
       //FZipStream.ReadBuffer(E[1],Extra_Field_Length);
@@ -3240,6 +3343,7 @@ Begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   FindEndHeaders(EndHdr, EndHdrPos,
     EndZip64Hdr, EndZip64HdrPos);
   if EndHdrPos=0 then
@@ -3260,6 +3364,8 @@ Begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   EndHdrPos:=FZipStream.Size-SizeOf(EndHdr);
   if EndHdrPos < 0 then
     raise EZipError.CreateFmt(SErrCorruptZIP,[FileName]);
@@ -3278,11 +3384,14 @@ Begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   FEntries.Clear;
@@ -3324,6 +3433,7 @@ Begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       SavePos:=FZipStream.Position; //After fixed part of central directory...
       // and the filename; before any extra field(s)
 =======
@@ -3332,6 +3442,8 @@ Begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       NewNode.ArchiveFileName:=S;
@@ -3346,6 +3458,7 @@ Begin
         NewNode.Attributes := External_Attributes;
       ZipDateTimeToDateTime(Last_Mod_Date,Last_Mod_Time,D);
       NewNode.DateTime:=D;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3435,6 +3548,9 @@ Begin
       FZipFile.ReadBuffer(S[1],Filename_Length);
       NewNode.ArchiveFileName:=S;
       FZipFile.Seek(Extra_Field_Length+File_Comment_Length,soCurrent);
+=======
+      FZipStream.Seek(Extra_Field_Length+File_Comment_Length,soCurrent);
+>>>>>>> origin/cpstrnew
       end;
    end;
 <<<<<<< HEAD
@@ -3477,6 +3593,7 @@ Var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           if LocalZip64Fld.Compressed_Size>0 then
             Count:=Dest.CopyFrom(FZipStream,LocalZip64Fld.Compressed_Size)
           else
@@ -3490,6 +3607,9 @@ Var
 =======
           Count:=Dest.CopyFrom(FZipStream,LocalHdr.Compressed_Size)
 >>>>>>> graemeg/cpstrnew
+=======
+          Count:=Dest.CopyFrom(FZipStream,LocalHdr.Compressed_Size)
+>>>>>>> origin/cpstrnew
 =======
           Count:=Dest.CopyFrom(FZipStream,LocalHdr.Compressed_Size)
 >>>>>>> origin/cpstrnew
@@ -3850,6 +3970,9 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 constructor TZipFileEntry.Create(ACollection: TCollection);
 
 begin
@@ -3858,6 +3981,7 @@ begin
 {$ELSE}
   FOS := OS_FAT;
 {$ENDIF}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3873,6 +3997,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   inherited create(ACollection);

@@ -2071,10 +2071,14 @@ begin
          else
          writeln(outfile);
 <<<<<<< HEAD
+<<<<<<< HEAD
          shift(2);
 =======
          shift(3);
 >>>>>>> origin/fixes_2.4
+=======
+         shift(2);
+>>>>>>> origin/cpstrnew
          (* write as pointer *)
          writeln(outfile,'(* generic typedef  *)');
          writeln(outfile,aktspace,yyv[yysp-1]^.p,' = pointer;');
@@ -6270,7 +6274,10 @@ yya : array [1..yynacts] of YYARec = (
   ( sym: 287; act: 31 ),
   ( sym: 303; act: 171 ),
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/cpstrnew
   ( sym: 327; act: 32 ),
   ( sym: 328; act: 33 ),
   ( sym: 329; act: 34 ),
@@ -6281,6 +6288,7 @@ yya : array [1..yynacts] of YYARec = (
   ( sym: 269; act: 302 ),
 { 288: }
 { 289: }
+<<<<<<< HEAD
   ( sym: 268; act: 111 ),
   ( sym: 277; act: 23 ),
   ( sym: 278; act: 112 ),
@@ -6405,6 +6413,8 @@ yya : array [1..yynacts] of YYARec = (
   ( sym: 257; act: 180 ),
   ( sym: 266; act: 181 ),
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
   ( sym: 268; act: 111 ),
   ( sym: 277; act: 23 ),
   ( sym: 278; act: 112 ),
@@ -6426,6 +6436,9 @@ yya : array [1..yynacts] of YYARec = (
   ( sym: 330; act: 35 ),
   ( sym: 331; act: 36 ),
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 { 290: }
   ( sym: 324; act: 149 ),
   ( sym: 325; act: 150 ),
@@ -6541,8 +6554,11 @@ yya : array [1..yynacts] of YYARec = (
   ( sym: 329; act: 34 ),
   ( sym: 330; act: 35 ),
   ( sym: 331; act: 36 ),
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
   ( sym: 273; act: -26 ),
 { 301: }
   ( sym: 269; act: 309 ),

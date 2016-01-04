@@ -188,6 +188,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           recorddef,
           objectdef:
             begin
@@ -228,6 +229,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           objectdef,
           recorddef:
             { access to the classtype while specializing? }
@@ -255,11 +258,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
           else
@@ -298,6 +304,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
              if (is_objc_class_or_protocol(left.resultdef) or
                  is_objcclassref(left.resultdef)) then
                begin
@@ -322,6 +329,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
              { make sure that the isa field is loaded correctly in case
                of the non-fragile ABI }
              if is_objcclass(left.resultdef) and
@@ -338,6 +347,7 @@ implementation
                end
              else
                firstpass(left)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -382,6 +392,9 @@ implementation
 =======
 >>>>>>> origin/cpstrnew
            end
+=======
+           end
+>>>>>>> origin/cpstrnew
          else if not is_objcclass(left.resultdef) and
                  not is_objcclassref(left.resultdef) then
            begin
@@ -397,7 +410,10 @@ implementation
                  tobjectdef(left.resultdef).register_maybe_created_object_type
              end
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
            end;
@@ -701,6 +717,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
@@ -716,6 +733,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                (tabsolutevarsym(tloadnode(hp).symtableentry).abstyp=toaddr) then
@@ -943,10 +962,14 @@ implementation
         resultdef:=vs.vardef;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
         // don't put records from which we load float fields
         // in integer registers
         if (left.resultdef.typ=recorddef) and
            (resultdef.typ=floatdef) then
+<<<<<<< HEAD
 =======
         // don't put records from which we load fields which aren't regable in integer registers
         if (left.resultdef.typ = recorddef) and
@@ -955,6 +978,8 @@ implementation
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
           make_not_regable(left,[ra_addr_regable]);
       end;
 
@@ -1079,6 +1104,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
            do not convert range nodes }
          if (right.nodetype<>rangen) then
            case left.resultdef.typ of
@@ -1162,6 +1188,11 @@ implementation
 =======
          if (right.nodetype<>rangen) and (is_integer(right.resultdef) or (left.resultdef.typ<>arraydef)) then
 >>>>>>> origin/fixes_2_2
+=======
+           do not convert enums, char (why not? (JM))
+           and do not convert range nodes }
+         if (right.nodetype<>rangen) and (is_integer(right.resultdef) or is_boolean(right.resultdef) or (left.resultdef.typ<>arraydef)) then
+>>>>>>> origin/cpstrnew
            case left.resultdef.typ of
              arraydef:
                if ado_isvariant in Tarraydef(left.resultdef).arrayoptions then
@@ -1176,6 +1207,7 @@ implementation
                  inserttypeconv(right,uinttype)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                { convert between pasbool and cbool if necessary }
                else if is_boolean(right.resultdef) then
                  inserttypeconv(right,tarraydef(left.resultdef).rangedef)
@@ -1183,6 +1215,11 @@ implementation
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+               { convert between pasbool and cbool if necessary }
+               else if is_boolean(right.resultdef) then
+                 inserttypeconv(right,tarraydef(left.resultdef).rangedef)
+>>>>>>> origin/cpstrnew
                else
                  {Convert array indexes to low_bound..high_bound.}
                  inserttypeconv(right,Torddef.create(Torddef(sinttype).ordtype,
@@ -1299,7 +1336,7 @@ implementation
                    is_array_of_const(left.resultdef)) and
                   { cdecl functions don't have high() so we can not check the range }
                   { (can't use current_procdef, since it may be a nested procedure) }
-                  not(tprocdef(tparasymtable(tparavarsym(tloadnode(left).symtableentry).owner).defowner).proccalloption in [pocall_cdecl,pocall_cppdecl]) then
+                  not(tprocdef(tparasymtable(tparavarsym(tloadnode(left).symtableentry).owner).defowner).proccalloption in cdecl_pocalls) then
                    begin
                      { load_high_value_node already typechecks }
                      hightree:=load_high_value_node(tparavarsym(tloadnode(left).symtableentry));
@@ -1412,11 +1449,15 @@ implementation
            exclude(flags,nf_callunique);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
          { a range node as array index can only appear in function calls, and
            those convert the range node into something else in
            tcallnode.gen_high_tree }
          if (right.nodetype=rangen) then
            CGMessagePos(right.fileinfo,parser_e_illegal_expression)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1486,6 +1527,9 @@ implementation
 {$endif SUPPORT_MMX}
          if (not is_packed_array(left.resultdef)) or
 >>>>>>> graemeg/fixes_2_2
+=======
+         else if (not is_packed_array(left.resultdef)) or
+>>>>>>> origin/cpstrnew
             ((tarraydef(left.resultdef).elepackedbitsize mod 8) = 0) then
            if left.expectloc=LOC_CREFERENCE then
              expectloc:=LOC_CREFERENCE

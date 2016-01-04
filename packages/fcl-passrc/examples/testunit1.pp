@@ -16,6 +16,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 resourcestring
  SParserErrorAtToken = 'parser error at token';
@@ -28,6 +29,8 @@ resourcestring
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
  const
   AnIntegerConst=1;
   AStringConst='Hello, World!';
@@ -38,6 +41,7 @@ resourcestring
   ARecordConst: TMethod=(Code:nil;Data:nil);
   ASetConst=[true,false];
   ADeprecatedConst=1 deprecated;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -77,6 +81,8 @@ resourcestring
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
    
  Type
   TAnEnumType=(one,two,three);
@@ -87,11 +93,14 @@ resourcestring
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   TARecordType=record
@@ -119,6 +128,7 @@ resourcestring
                  3 : (Z : Longint);  
                  );  
           end;                           
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -176,6 +186,11 @@ TYPE
 //  TADeprecatedType = Integer deprecated;
 
 >>>>>>> origin/cpstrnew
+=======
+                          
+//  TADeprecatedType = Integer deprecated;
+
+>>>>>>> origin/cpstrnew
   { TMyParentClass }
 
   TMyParentClass=Class(TComponent)
@@ -218,6 +233,7 @@ TYPE
   Published
     Property AProtectedProp;
   end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -270,6 +286,8 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   
  TPasFunctionType=Class(TPasProcedureType)
   public
@@ -285,11 +303,14 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   ASimpleVar: Integer;  
@@ -303,6 +324,7 @@ var
   
   ADeprecatedVar: Integer deprecated;
   ACVarVar: Integer ; cvar;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -333,6 +355,10 @@ var
   AnExternalVar: Integer ;external name 'avar';
   AnExternalLibVar: Integer ;external 'library' name 'avar';
 >>>>>>> origin/cpstrnew
+=======
+  AnExternalVar: Integer ;external name 'avar';
+  AnExternalLibVar: Integer ;external 'library' name 'avar';
+>>>>>>> origin/cpstrnew
       
  Procedure SimpleProc;
  Procedure OverloadedProc(A: Integer);
@@ -355,6 +381,7 @@ var
  Procedure externalproc; external;
  Procedure externalnameProc; external name 'aname';
  Procedure externallibnameProc; external 'alibrary' name 'aname';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -393,11 +420,16 @@ Type
 
   
 >>>>>>> origin/cpstrnew
+=======
+
+  
+>>>>>>> origin/cpstrnew
 Implementation
 
 
  Procedure SimpleProc;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -416,6 +448,8 @@ Implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
  procedure  SubProc;
   begin
    s:= s+'a';
@@ -423,11 +457,14 @@ Implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -443,6 +480,7 @@ Implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  Var
    i : integer;
 =======
@@ -451,6 +489,8 @@ Implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
  begin
@@ -520,6 +560,7 @@ Implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  
  procedure  SubCProc;
  
@@ -534,6 +575,9 @@ Implementation
 =======
  procedure  SubCProc;
 >>>>>>> graemeg/cpstrnew
+=======
+ procedure  SubCProc;
+>>>>>>> origin/cpstrnew
 =======
  procedure  SubCProc;
 >>>>>>> origin/cpstrnew
@@ -611,6 +655,7 @@ Implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
@@ -625,11 +670,15 @@ Implementation
 =======
  
 >>>>>>> origin/cpstrnew
+=======
+ 
+>>>>>>> origin/cpstrnew
  Class Function TPasFunctionType.TypeName: String;
  begin
   Result:= 'Function';
  end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -771,6 +820,8 @@ TYpe
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
  procedure Statements;
  const
   cint=1;
@@ -809,6 +860,7 @@ TYpe
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   TScanner = record
    currow,curcolumn : integer;
    curfilename : string;
@@ -833,10 +885,15 @@ TYpe
   //PAR = Record;
  var
 >>>>>>> origin/cpstrnew
+=======
+  //PAR = Record;
+ var
+>>>>>>> origin/cpstrnew
   TheCustomer: Passenger;
   L: ^LongInt;
   P: PPChar;
   S,T: Ar;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -871,6 +928,10 @@ TYpe
       
  begin
 >>>>>>> origin/cpstrnew
+=======
+      
+ begin
+>>>>>>> origin/cpstrnew
   X:= X+Y;
   //EparserError on C++ style
   //X+=Y;      { Same as X := X+Y, needs -Sc command line switch}
@@ -895,6 +956,7 @@ TYpe
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     6: DoSomething;
 =======
     3: DoSomething;
@@ -905,6 +967,9 @@ TYpe
 =======
     3: DoSomething;
 >>>>>>> graemeg/cpstrnew
+=======
+    3: DoSomething;
+>>>>>>> origin/cpstrnew
 =======
     3: DoSomething;
 >>>>>>> origin/cpstrnew
@@ -969,6 +1034,7 @@ TYpe
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  if o is TObject then
   begin
     write('object');
@@ -982,12 +1048,15 @@ TYpe
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
  if i is integer then
   begin
     write('integer');
   end
   else 
     if i is real then 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -998,12 +1067,15 @@ TYpe
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   begin
     write('real');
   end
   else 
     write('0'); 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1018,6 +1090,9 @@ TYpe
 =======
   if Today in[Monday..Friday] then
 >>>>>>> graemeg/cpstrnew
+=======
+  if Today in[Monday..Friday] then
+>>>>>>> origin/cpstrnew
 =======
   if Today in[Monday..Friday] then
 >>>>>>> origin/cpstrnew
@@ -1058,6 +1133,7 @@ TYpe
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     while i>=10e-3 do 
       dec(i);
 
@@ -1080,6 +1156,8 @@ TYpe
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     while x>=10e-3 do 
       dec(x);
 
@@ -1098,11 +1176,14 @@ TYpe
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -1121,6 +1202,7 @@ TYpe
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   With A,B,D do
 =======
   With A,B,C,D do
@@ -1134,6 +1216,9 @@ TYpe
 =======
   With A,B,C,D do
 >>>>>>> origin/cpstrnew
+=======
+  With A,B,C,D do
+>>>>>>> origin/cpstrnew
    Statement;
 
     With A do
@@ -1142,6 +1227,7 @@ TYpe
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
       With C do
 >>>>>>> graemeg/cpstrnew
@@ -1151,6 +1237,9 @@ TYpe
 =======
       With C do
 >>>>>>> graemeg/cpstrnew
+=======
+      With C do
+>>>>>>> origin/cpstrnew
 =======
       With C do
 >>>>>>> origin/cpstrnew
@@ -1174,6 +1263,7 @@ TYpe
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	  M:= Y;
 	except
 	  on excep: EParserError do
@@ -1187,6 +1277,8 @@ TYpe
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 	  M:= ParseSource(E,cmdl,'linux','i386');
@@ -1204,6 +1296,7 @@ TYpe
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1211,11 +1304,14 @@ TYpe
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	FreeAndNil(M);
     finally
 	FreeAndNil(E)
    end;
    
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1233,10 +1329,14 @@ TYpe
 =======
    raise EParserError.Create(Format(SParserErrorAtToken, [Msg, CurTokenName]) {$ifdef addlocation}+' ('+inttostr(scanner.currow)+' '+inttostr(scanner.curcolumn)+')'{$endif},Scanner.CurFilename, Scanner.CurRow, Scanner.CurColumn);
 >>>>>>> origin/cpstrnew
+=======
+   raise EParserError.Create(Format(SParserErrorAtToken, [Msg, CurTokenName]) {$ifdef addlocation}+' ('+inttostr(scanner.currow)+' '+inttostr(scanner.curcolumn)+')'{$endif},Scanner.CurFilename, Scanner.CurRow, Scanner.CurColumn);
+>>>>>>> origin/cpstrnew
     
     // try else
  end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1284,6 +1384,8 @@ TYpe
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
  procedure Expression;
  begin
   A:= a+b *c /(-e+f)*3 div 2 + 4 mod 5 - 2 shl 3 + 3 shr 1 ;
@@ -1299,6 +1401,7 @@ TYpe
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1306,10 +1409,13 @@ TYpe
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   WriteLn('Functions return same values ');
 
  z:= [today,tomorrow];
  z:= [Monday..Friday,Sunday];
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1334,6 +1440,8 @@ TYpe
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
  z:= [2,3*2,6*2,9*2];
  z:= ['A'..'Z','a'..'z','0'..'9'];
 
@@ -1353,11 +1461,14 @@ TYpe
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
  S:= TObject(P).ClassName;
@@ -1374,6 +1485,7 @@ TYpe
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  (Co as TEdit).Text:= 'Some text';
  Co:= O as TComponent;
 
@@ -1385,6 +1497,8 @@ TYpe
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
  (C as TEdit).Text:= 'Some text';
@@ -1415,11 +1529,14 @@ TYpe
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -1437,6 +1554,7 @@ TYpe
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   Self.Write(EscapeText(AText)); 
   TObject.Create(Self);
@@ -1449,6 +1567,10 @@ TYpe
   Self.Write(EscapeText(AText)); 
   TObject.Create(Self);
 >>>>>>> graemeg/cpstrnew
+=======
+  Self.Write(EscapeText(AText)); 
+  TObject.Create(Self);
+>>>>>>> origin/cpstrnew
 =======
   Self.Write(EscapeText(AText)); 
   TObject.Create(Self);

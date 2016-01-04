@@ -120,6 +120,7 @@ type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure MDInit(out Context: TMDContext; const Version: TMDVersion);
 procedure MDUpdate(var Context: TMDContext; var Buf; const BufLen: PtrUInt);
 procedure MDFinal(var Context: TMDContext; out Digest: TMDDigest);
@@ -133,6 +134,11 @@ procedure MDInit(var Context: TMDContext; const Version: TMDVersion);
 procedure MDUpdate(var Context: TMDContext; var Buf; const BufLen: PtrUInt);
 procedure MDFinal(var Context: TMDContext; var Digest: TMDDigest);
 >>>>>>> origin/fixes_2_2
+=======
+procedure MDInit(out Context: TMDContext; const Version: TMDVersion);
+procedure MDUpdate(var Context: TMDContext; var Buf; const BufLen: PtrUInt);
+procedure MDFinal(var Context: TMDContext; out Digest: TMDDigest);
+>>>>>>> origin/cpstrnew
 
 
 (******************************************************************************
@@ -168,6 +174,9 @@ function MDMatch(const Digest1, Digest2: TMDDigest): Boolean;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 procedure MD2Init(out Context: TMD2Context); inline;
 procedure MD2Update(var Context: TMD2Context; var Buf; const BufLen: PtrUInt); external name 'MD_UPDATE';
 procedure MD2Final(var Context: TMD2Context; out Digest: TMD2Digest); external name 'MD_FINAL';
@@ -179,6 +188,7 @@ procedure MD4Final(var Context: TMD4Context; out Digest: TMD4Digest); external n
 procedure MD5Init(out Context: TMD5Context); inline;
 procedure MD5Update(var Context: TMD5Context; var Buf; const BufLen: PtrUInt); external name 'MD_UPDATE';
 procedure MD5Final(var Context: TMD5Context; out Digest: TMD5Digest); external name 'MD_FINAL';
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -197,6 +207,8 @@ procedure MD5Final(var Context: TMD5Context; var Digest: TMD5Digest); inline;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 
 
 (******************************************************************************
@@ -707,11 +719,15 @@ procedure MDInit(out Context: TMDContext; const Version: TMDVersion);
 end;
 
 
+<<<<<<< HEAD
 procedure MDInit(var Context: TMDContext; const Version: TMDVersion);
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+procedure MDInit(out Context: TMDContext; const Version: TMDVersion);
+>>>>>>> origin/cpstrnew
 begin
   FillChar(Context, Sizeof(TMDContext), 0);
   Context.Version := Version;
@@ -844,6 +860,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure MDFinal(var Context: TMDContext; out Digest: TMDDigest); [public,alias:'MD_FINAL'];
 =======
 procedure MDFinal(var Context: TMDContext; var Digest: TMDDigest);
@@ -851,6 +868,9 @@ procedure MDFinal(var Context: TMDContext; var Digest: TMDDigest);
 =======
 procedure MDFinal(var Context: TMDContext; var Digest: TMDDigest);
 >>>>>>> origin/fixes_2_2
+=======
+procedure MDFinal(var Context: TMDContext; out Digest: TMDDigest); [public,alias:'MD_FINAL'];
+>>>>>>> origin/cpstrnew
 const
 {$ifdef FPC_BIG_ENDIAN}
   PADDING_MD45: array[0..15] of Cardinal = ($80000000,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
@@ -1037,15 +1057,20 @@ procedure MD2Init(out Context: TMD2Context);
   Result := (A[0] = B[0]) and (A[1] = B[1]) and (A[2] = B[2]) and (A[3] = B[3]);
 end;
 
+<<<<<<< HEAD
 procedure MD2Init(var Context: TMD2Context);
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+procedure MD2Init(out Context: TMD2Context);
+>>>>>>> origin/cpstrnew
 begin
   MDInit(Context, MD_VERSION_2);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 procedure MD4Init(out Context: TMD4Context);
@@ -1067,10 +1092,14 @@ procedure MD4Init(var Context: TMD4Context);
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+procedure MD4Init(out Context: TMD4Context);
+>>>>>>> origin/cpstrnew
 begin
   MDInit(Context, MD_VERSION_4);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 procedure MD5Init(out Context: TMD5Context);
@@ -1092,6 +1121,9 @@ procedure MD5Init(var Context: TMD5Context);
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+procedure MD5Init(out Context: TMD5Context);
+>>>>>>> origin/cpstrnew
 begin
   MDInit(Context, MD_VERSION_5);
 end;

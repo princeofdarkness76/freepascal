@@ -660,6 +660,7 @@ function GetProcessWorkingSetSize(hProcess: THandle; var lpMinimumWorkingSetSize
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -674,6 +675,9 @@ function GetQueuedCompletionStatus(CompletionPort: THandle; var lpNumberOfBytesT
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+function GetQueuedCompletionStatus(CompletionPort: THandle; var lpNumberOfBytesTransferred: DWORD; var lpCompletionKey: ULONG_PTR; var lpOverlapped: POverlapped; dwMilliseconds: DWORD): BOOL; external 'kernel32' name 'GetQueuedCompletionStatus';
+>>>>>>> origin/cpstrnew
 function PostQueuedCompletionStatus(CompletionPort: THandle; NumberOfBytesTransferred:dword; dwCompletionKey: ULONG_PTR; lpOverlapped: POverlapped): BOOL; external 'kernel32' name 'PostQueuedCompletionStatus';
 function GetRasterizerCaps(var p1: TRasterizerStatus; p2: UINT): BOOL; external 'gdi32' name 'GetRasterizerCaps';
 function GetRgnBox(RGN: HRGN; var p2: TRect): Integer; external 'gdi32' name 'GetRgnBox';

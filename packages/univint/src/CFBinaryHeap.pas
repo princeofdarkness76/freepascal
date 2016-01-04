@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	Copyright (c) 1998-2013, Apple Inc. All rights reserved.
 }
 =======
@@ -43,6 +44,9 @@
 =======
 	Copyright (c) 1998-2009, Apple Inc. All rights reserved.
 >>>>>>> origin/fixes_2.4
+=======
+	Copyright (c) 1998-2009, Apple Inc. All rights reserved.
+>>>>>>> origin/cpstrnew
 }
 {   Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, September 2005 }
 {	  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
@@ -54,12 +58,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -71,6 +79,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -85,6 +94,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -100,6 +113,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -110,6 +124,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -117,13 +134,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -131,6 +152,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -139,8 +162,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -151,6 +177,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -171,6 +198,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -179,12 +208,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -195,6 +227,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -268,6 +301,24 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
 =======
+>>>>>>> origin/cpstrnew
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -275,6 +326,7 @@ interface
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -317,6 +369,8 @@ interface
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -325,6 +379,7 @@ interface
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 {$endc}
 <<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
@@ -491,6 +546,37 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -519,6 +605,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -527,6 +614,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -540,6 +629,7 @@ uses MacTypes,CFBase;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
 =======
@@ -550,6 +640,10 @@ uses MacTypes,CFBase;
 {$endc} {not MACOSALLINCLUDE}
 
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+
+>>>>>>> origin/cpstrnew
 {$ALIGN POWER}
 
 {!
@@ -598,6 +692,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	  version: CFIndex;
 =======
 	    version: CFIndex;
@@ -608,6 +703,9 @@ type
 =======
 	  version: CFIndex;
 >>>>>>> origin/fixes_2.4
+=======
+	  version: CFIndex;
+>>>>>>> origin/cpstrnew
 		retain: function( allocator: CFAllocatorRef; info: {const} UnivPtr ): UnivPtr;
 		release: procedure( allocator: CFAllocatorRef; info: {const} UnivPtr );
 		copyDescription: function( info: {const} UnivPtr ): CFStringRef;
@@ -661,13 +759,17 @@ function CFBinaryHeapGetTypeID: CFTypeID; external name '_CFBinaryHeapGetTypeID'
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	 Creates a new mutable
 #if MAC_OS_X_VERSION_MAX_ALLOWED <= MAC_OS_X_VERSION_10_4
 	 or fixed-mutable
 #endif
 	 binary heap with the given values.
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 	Creates a new mutable or fixed-mutable binary heap with the given values.
@@ -677,6 +779,8 @@ function CFBinaryHeapGetTypeID: CFTypeID; external name '_CFBinaryHeapGetTypeID'
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	@param allocator The CFAllocator which should be used to allocate
 		memory for the binary heap and its storage for values. This
 		parameter may be NULL in which case the current default
@@ -685,6 +789,7 @@ function CFBinaryHeapGetTypeID: CFTypeID; external name '_CFBinaryHeapGetTypeID'
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if MAC_OS_X_VERSION_MAX_ALLOWED <= MAC_OS_X_VERSION_10_4
 	@param capacity The maximum number of values that can be contained
 	by the CFBinaryHeap. The binary heap starts empty, and can grow to this
@@ -701,6 +806,11 @@ function CFBinaryHeapGetTypeID: CFTypeID; external name '_CFBinaryHeapGetTypeID'
 	@param capacity The maximum number of values that can be contained
 	by the CFBinaryHeap. The binary heap starts empty, and can grow to this
 >>>>>>> origin/fixes_2.4
+=======
+#if MAC_OS_X_VERSION_MAX_ALLOWED <= MAC_OS_X_VERSION_10_4
+	@param capacity The maximum number of values that can be contained
+	by the CFBinaryHeap. The binary heap starts empty, and can grow to this
+>>>>>>> origin/cpstrnew
 		number of values (and it can have less). If this parameter
 		is 0, the binary heap's maximum capacity is unlimited (or rather,
 		only limited by address space and available memory
@@ -709,8 +819,11 @@ function CFBinaryHeapGetTypeID: CFTypeID; external name '_CFBinaryHeapGetTypeID'
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 #else
 	@param capacity A hint about the number of values that will be held
 		by the CFBinaryHeap. Pass 0 for no hint. The implementation may
@@ -720,12 +833,15 @@ function CFBinaryHeapGetTypeID: CFTypeID; external name '_CFBinaryHeapGetTypeID'
 		parameter is negative, the behavior is undefined.
 #endif
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	@param callBacks A pointer to a CFBinaryHeapCallBacks structure
 		initialized with the callbacks for the binary heap to use on
 		each value in the binary heap. A copy of the contents of the
@@ -754,6 +870,7 @@ function CFBinaryHeapGetTypeID: CFTypeID; external name '_CFBinaryHeapGetTypeID'
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   @param compareContext A pointer to a CFBinaryHeapCompareContext structure.
 =======
         @param compareContext A pointer to a CFBinaryHeapCompareContext structure.
@@ -764,6 +881,9 @@ function CFBinaryHeapGetTypeID: CFTypeID; external name '_CFBinaryHeapGetTypeID'
 =======
   @param compareContext A pointer to a CFBinaryHeapCompareContext structure.
 >>>>>>> origin/fixes_2.4
+=======
+  @param compareContext A pointer to a CFBinaryHeapCompareContext structure.
+>>>>>>> origin/cpstrnew
 	@result A reference to the new CFBinaryHeap.
 }
 function CFBinaryHeapCreate( allocator: CFAllocatorRef; capacity: CFIndex; callBacks: CFBinaryHeapCallBacksPtr; const (*var*) compareContext: CFBinaryHeapCompareContext ): CFBinaryHeapRef; external name '_CFBinaryHeapCreate';
@@ -773,13 +893,17 @@ function CFBinaryHeapCreate( allocator: CFAllocatorRef; capacity: CFIndex; callB
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	 Creates a new mutable
 #if MAC_OS_X_VERSION_MAX_ALLOWED <= MAC_OS_X_VERSION_10_4
 	 or fixed-mutable
 #endif
 	 binary heap with the values from the given binary heap.
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 	Creates a new mutable or fixed-mutable binary heap with the values from the given binary heap.
@@ -789,6 +913,8 @@ function CFBinaryHeapCreate( allocator: CFAllocatorRef; capacity: CFIndex; callB
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	@param allocator The CFAllocator which should be used to allocate
 		memory for the binary heap and its storage for values. This
 		parameter may be NULL in which case the current default
@@ -797,6 +923,7 @@ function CFBinaryHeapCreate( allocator: CFAllocatorRef; capacity: CFIndex; callB
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if MAC_OS_X_VERSION_MAX_ALLOWED <= MAC_OS_X_VERSION_10_4
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -805,6 +932,9 @@ function CFBinaryHeapCreate( allocator: CFAllocatorRef; capacity: CFIndex; callB
 =======
 #if MAC_OS_X_VERSION_MAX_ALLOWED <= MAC_OS_X_VERSION_10_4
 >>>>>>> origin/fixes_2.4
+=======
+#if MAC_OS_X_VERSION_MAX_ALLOWED <= MAC_OS_X_VERSION_10_4
+>>>>>>> origin/cpstrnew
 	@param capacity The maximum number of values that can be contained
 		by the CFBinaryHeap. The binary heap starts empty, and can grow to this
 		number of values (and it can have less). If this parameter
@@ -814,8 +944,11 @@ function CFBinaryHeapCreate( allocator: CFAllocatorRef; capacity: CFIndex; callB
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
     values in the given binary heap, the behavior is undefined.
 #else
   @param capacity A hint about the number of values that will be held
@@ -829,6 +962,7 @@ function CFBinaryHeapCreate( allocator: CFAllocatorRef; capacity: CFIndex; callB
 		behavior is undefined.
 #endif
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
                 values in the given binary heap, the behavior is undefined.
 >>>>>>> graemeg/fixes_2_2
@@ -837,6 +971,8 @@ function CFBinaryHeapCreate( allocator: CFAllocatorRef; capacity: CFIndex; callB
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	@param heap The binary heap which is to be copied. The values from the
 		binary heap are copied as pointers into the new binary heap (that is,
 		the values themselves are copied, not that which the values
@@ -845,6 +981,7 @@ function CFBinaryHeapCreate( allocator: CFAllocatorRef; capacity: CFIndex; callB
 		be the same as the given binary heap. The new binary heap uses the same
 		callbacks as the binary heap to be copied. If this parameter is
 		not a valid CFBinaryHeap, the behavior is undefined.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -874,6 +1011,9 @@ function CFBinaryHeapCreate( allocator: CFAllocatorRef; capacity: CFIndex; callB
 =======
 	@result A reference to the new binary heap.
 >>>>>>> origin/fixes_2.4
+=======
+	@result A reference to the new binary heap.
+>>>>>>> origin/cpstrnew
 }
 function CFBinaryHeapCreateCopy( allocator: CFAllocatorRef; capacity: CFIndex; heap: CFBinaryHeapRef ): CFBinaryHeapRef; external name '_CFBinaryHeapCreateCopy';
 
@@ -980,6 +1120,7 @@ procedure CFBinaryHeapApplyFunction( heap: CFBinaryHeapRef; applier: CFBinaryHea
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 Adds the value to the binary heap.
 	@param heap The binary heap to which the value is to be added. If this parameter is not a
 	 valid mutable CFBinaryHeap, the behavior is undefined.
@@ -1002,12 +1143,19 @@ procedure CFBinaryHeapApplyFunction( heap: CFBinaryHeapRef; applier: CFBinaryHea
 =======
 	 Adds the value to the binary heap.
 	@param heap The binary heap to which the value is to be added. If this parameter is not a
+=======
+	 Adds the value to the binary heap.
+	@param heap The binary heap to which the value is to be added. If this parameter is not a
+>>>>>>> origin/cpstrnew
 	 valid mutable CFBinaryHeap, the behavior is undefined.
 #if MAC_OS_X_VERSION_MAX_ALLOWED <= MAC_OS_X_VERSION_10_4
 	 If the binary heap is a fixed-capacity binary heap and it
 	 is full before this operation, the behavior is undefined.
 #endif
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	@param value The value to add to the binary heap. The value is retained by
 		the binary heap using the retain callback provided when the binary heap
 		was created. If the value is not of the sort expected by the
@@ -1035,6 +1183,7 @@ procedure CFBinaryHeapRemoveAllValues( heap: CFBinaryHeapRef ); external name '_
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
@@ -1048,8 +1197,13 @@ end.
 end.
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew

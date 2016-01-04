@@ -26,11 +26,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     P.Dependencies.Add('fcl-base');
@@ -83,10 +86,10 @@ begin
 >>>>>>> origin/fixes_2_2
           AddInclude('xregreg.inc');
           AddInclude('regini.inc');
-          AddUnit('inifiles');
           AddUnit('xmlreg');
         end;
     T:=P.Targets.AddUnit('xmlreg.pp');
+<<<<<<< HEAD
       with T.Dependencies do
         begin
           AddUnit('dom');
@@ -97,6 +100,14 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+
+    P.ExamplePath.Add('examples');
+    P.Targets.AddExampleProgram('tests/testbasics.pp');
+    P.Targets.AddExampleProgram('tests/regtestframework.pp');
+    // 'tests/Makefile
+    // 'tests/Makefile.fpc
+>>>>>>> origin/cpstrnew
 
 {$ifndef ALLPACKAGES}
     Run;

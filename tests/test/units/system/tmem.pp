@@ -340,6 +340,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef CPU16}
   test_move_large(500000);
 {$endif CPU16}
@@ -352,6 +353,9 @@ begin
 =======
   test_move_large(500000);
 >>>>>>> graemeg/cpstrnew
+=======
+  test_move_large(500000);
+>>>>>>> origin/cpstrnew
 =======
   test_move_large(500000);
 >>>>>>> origin/cpstrnew

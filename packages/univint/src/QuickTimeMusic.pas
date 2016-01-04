@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       QuickTime/QuickTimeMusic.h
  
      Contains:   QuickTime Interfaces.
@@ -40,11 +41,15 @@
 =======
      File:       QuickTime/QuickTimeMusic.h
 >>>>>>> origin/fixes_2.4
+=======
+     File:       QuickTime/QuickTimeMusic.h
+>>>>>>> origin/cpstrnew
  
      Contains:   QuickTime Interfaces.
  
      Version:    QuickTime 7.6.3
  
+<<<<<<< HEAD
 <<<<<<< HEAD
      Copyright:  © 1990-2002 by Apple Computer, Inc., all rights reserved
 <<<<<<< HEAD
@@ -54,6 +59,9 @@
 =======
      Copyright:  © 1990-2008 by Apple Inc., all rights reserved
 >>>>>>> origin/fixes_2.4
+=======
+     Copyright:  © 1990-2008 by Apple Inc., all rights reserved
+>>>>>>> origin/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -63,6 +71,7 @@
                      http://bugs.freepascal.org
  
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -94,6 +103,8 @@
                      http://www.freepascal.org/bugs.html
  
 }
+=======
+>>>>>>> origin/cpstrnew
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {
     Modified for use with Free Pascal
@@ -103,12 +114,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -120,6 +135,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -134,6 +150,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -149,6 +169,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -159,6 +180,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -166,13 +190,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -180,6 +208,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -188,8 +218,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -200,6 +233,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -220,6 +254,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -228,12 +264,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -241,6 +280,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -487,12 +527,27 @@ interface
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
+=======
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -527,6 +582,7 @@ interface
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 {$endc}
@@ -544,6 +600,17 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -572,6 +639,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -580,6 +648,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -589,6 +659,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -613,6 +684,13 @@ uses MacTypes,Components,Dialogs,Endian,Files,ImageCompression,Movies,QuickdrawT
 
 {$ifc TARGET_OS_MAC}
 >>>>>>> graemeg/cpstrnew
+=======
+uses MacTypes,Components,Dialogs,Endian,Files,ImageCompression,Movies,QuickdrawTypes;
+{$endc} {not MACOSALLINCLUDE}
+
+
+{$ifc TARGET_OS_MAC}
+>>>>>>> origin/cpstrnew
 
 {$ALIGN MAC68K}
 
@@ -621,6 +699,7 @@ uses MacTypes,Components,Dialogs,Endian,Files,ImageCompression,Movies,QuickdrawT
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 {$ifc not TARGET_CPU_64}
 =======
@@ -661,6 +740,10 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+
+{$ifc not TARGET_CPU_64}
+>>>>>>> origin/cpstrnew
 
 const
 	kaiToneDescType = FourCharCode('tone');
@@ -680,6 +763,7 @@ const
 	kaiInstGMQualityType = FourCharCode('qual');
 	kaiLibraryInfoType = FourCharCode('linf');
 	kaiLibraryDescType = FourCharCode('ldsc');
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -697,6 +781,8 @@ uses MacTypes,Components,Dialogs,Endian,Files,ImageCompression,Movies,QuickdrawT
 { QuickTime is not available to 64-bit clients }
 
 {$ifc not TARGET_CPU_64}
+=======
+>>>>>>> origin/cpstrnew
 
 const
 	kaiToneDescType = FourCharCode('tone');
@@ -728,6 +814,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		libIDName: Str31;
 	end;
 type
@@ -746,6 +833,9 @@ const
 =======
 		libIDName: Str31;
 >>>>>>> origin/fixes_2.4
+=======
+		libIDName: Str31;
+>>>>>>> origin/cpstrnew
 	end;
 type
 	InstKnobRecPtr = ^InstKnobRec;
@@ -754,6 +844,7 @@ type
 		value: BigEndianLong;
 	end;
 const
+<<<<<<< HEAD
 <<<<<<< HEAD
 	kInstKnobMissingUnknown		= 0;
 	kInstKnobMissingDefault		= $01;
@@ -766,10 +857,15 @@ const
 	kInstKnobMissingUnknown = 0;
 	kInstKnobMissingDefault = 1 shl 0;
 >>>>>>> origin/fixes_2.4
+=======
+	kInstKnobMissingUnknown = 0;
+	kInstKnobMissingDefault = 1 shl 0;
+>>>>>>> origin/cpstrnew
 
 type
 	InstKnobListPtr = ^InstKnobList;
 	InstKnobList = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -968,9 +1064,21 @@ const
 const
 	kSoftSynthComponentSubType = FourCharCode('ss  ');
 	kGMSynthComponentSubType = FourCharCode('gm  ');
+=======
+		knobCount: BigEndianLong;
+		knobFlags: BigEndianLong;
+		knob: array [0..0] of InstKnobRec;
+	end;
+const
+	kMusicLoopTypeNormal = 0;
+	kMusicLoopTypePalindrome = 1;     { back & forth}
+>>>>>>> origin/cpstrnew
 
+const
+	instSamplePreProcessFlag = 1 shl 0;
 
 type
+<<<<<<< HEAD
 	MusicComponent = ComponentInstance;
 { MusicSynthesizerFlags}
 const
@@ -1073,6 +1181,25 @@ const
 		pitchHigh:				BigEndianLong;
 =======
 >>>>>>> origin/fixes_2.4
+=======
+	InstSampleDescRecPtr = ^InstSampleDescRec;
+	InstSampleDescRec = record
+		dataFormat: BigEndianOSType;
+		numChannels: BigEndianShort;
+		sampleSize: BigEndianShort;
+		sampleRate: BigEndianUnsignedFixed;
+		sampleDataID: BigEndianShort;
+		offset: BigEndianLong;                 { offset within SampleData - this could be just for internal use}
+		numSamples: BigEndianLong;             { this could also just be for internal use, we'll see}
+
+		loopType: BigEndianLong;
+		loopStart: BigEndianLong;
+		loopEnd: BigEndianLong;
+
+		pitchNormal: BigEndianLong;
+		pitchLow: BigEndianLong;
+		pitchHigh: BigEndianLong;
+>>>>>>> origin/cpstrnew
 	end;
 
 type
@@ -1199,12 +1326,25 @@ function QTMIDIUseSendPort( ci: QTMIDIComponent; portIndex: SIGNEDLONG; inUse: S
  }
 function QTMIDISendMIDI( ci: QTMIDIComponent; portIndex: SIGNEDLONG; var mp: MusicMIDIPacket ): ComponentResult; external name '_QTMIDISendMIDI';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+<<<<<<< HEAD
+
+=======
 
 
 const
 	kMusicComponentType = FourCharCode('musi');
 	kInstrumentComponentType = FourCharCode('inst');
 
+const
+	kSoftSynthComponentSubType = FourCharCode('ss  ');
+	kGMSynthComponentSubType = FourCharCode('gm  ');
+>>>>>>> origin/cpstrnew
+
+const
+	kMusicComponentType = FourCharCode('musi');
+	kInstrumentComponentType = FourCharCode('inst');
+
+<<<<<<< HEAD
 const
 	kSoftSynthComponentSubType = FourCharCode('ss  ');
 	kGMSynthComponentSubType = FourCharCode('gm  ');
@@ -1347,6 +1487,93 @@ const
 	kQTMSKnobVolumeAttackTimeID = $02000001;
 	kQTMSKnobVolumeDecayTimeID = $02000002;
 >>>>>>> origin/fixes_2.4
+=======
+type
+	MusicComponent = ComponentInstance;
+{ MusicSynthesizerFlags}
+const
+	kSynthesizerDynamicVoice = 1 shl 0; { can assign voices on the fly (else, polyphony is very important }
+	kSynthesizerUsesMIDIPort = 1 shl 1; { must be patched through MIDI Manager }
+	kSynthesizerMicrotone = 1 shl 2; { can play microtonal scales }
+	kSynthesizerHasSamples = 1 shl 3; { synthesizer has some use for sampled data }
+	kSynthesizerMixedDrums = 1 shl 4; { any part can play drum parts, total = instrument parts }
+	kSynthesizerSoftware = 1 shl 5; { implemented in main CPU software == uses cpu cycles }
+	kSynthesizerHardware = 1 shl 6; { is a hardware device (such as nubus, or maybe DSP?) }
+	kSynthesizerDynamicChannel = 1 shl 7; { can move any part to any channel or disable each part. (else we assume it lives on all channels in masks) }
+	kSynthesizerHogsSystemChannel = 1 shl 8; { can be channelwise dynamic, but always responds on its system channel }
+	kSynthesizerHasSystemChannel = 1 shl 9; { has some "system channel" notion to distinguish it from multiple instances of the same device (GM devices dont) }
+	kSynthesizerSlowSetPart = 1 shl 10; { SetPart() and SetPartInstrumentNumber() calls do not have rapid response, may glitch notes }
+	kSynthesizerOffline = 1 shl 12; { can enter an offline synthesis mode }
+	kSynthesizerGM = 1 shl 14; { synth is a GM device }
+	kSynthesizerDLS = 1 shl 15; { synth supports DLS level 1 }
+	kSynthesizerSoundLocalization = 1 shl 16; { synth supports extremely baroque, nonstandard, and proprietary "apple game sprockets" localization parameter set }
+
+{
+ * Note that these controller numbers
+ * are _not_ identical to the MIDI controller numbers.
+ * These are _signed_ 8.8 values, and the LSB's are
+ * always sent to a MIDI device. Controllers 32-63 are
+ * reserved (for MIDI, they are LSB's for 0-31, but we
+ * always send both).
+ *
+ * The full range, therefore, is -128.00 to 127.7f.
+ *
+ * _Excepting_ _volume_, all controls default to zero.
+ *
+ * Pitch bend is specified in fractional semitones! No
+ * more "pitch bend range" nonsense. You can bend as far
+ * as you want, any time you want.
+ }
+type
+	MusicController = SInt32;
+const
+	kControllerModulationWheel = 1;
+	kControllerBreath = 2;
+	kControllerFoot = 4;
+	kControllerPortamentoTime = 5;    { time in 8.8 seconds, portamento on/off is omitted, 0 time = 'off' }
+	kControllerVolume = 7;    { main volume control }
+	kControllerBalance = 8;
+	kControllerPan = 10;   { 0 - "default", 1 - n: positioned in output 1-n (incl fractions) }
+	kControllerExpression = 11;   { secondary volume control }
+	kControllerLever1 = 16;   { general purpose controllers }
+	kControllerLever2 = 17;   { general purpose controllers }
+	kControllerLever3 = 18;   { general purpose controllers }
+	kControllerLever4 = 19;   { general purpose controllers }
+	kControllerLever5 = 80;   { general purpose controllers }
+	kControllerLever6 = 81;   { general purpose controllers }
+	kControllerLever7 = 82;   { general purpose controllers }
+	kControllerLever8 = 83;   { general purpose controllers }
+	kControllerPitchBend = 32;   { positive & negative semitones, with 8 bits fraction, same units as transpose controllers}
+	kControllerAfterTouch = 33;   { aka channel pressure }
+	kControllerPartTranspose = 40;   { identical to pitchbend, for overall part xpose }
+	kControllerTuneTranspose = 41;   { another pitchbend, for "song global" pitch offset }
+	kControllerPartVolume = 42;   { another volume control, passed right down from note allocator part volume }
+	kControllerTuneVolume = 43;   { another volume control, used for "song global" volume - since we share one synthesizer across multiple tuneplayers}
+	kControllerSustain = 64;   { boolean - positive for on, 0 or negative off }
+	kControllerPortamento = 65;   { boolean}
+	kControllerSostenuto = 66;   { boolean }
+	kControllerSoftPedal = 67;   { boolean }
+	kControllerReverb = 91;
+	kControllerTremolo = 92;
+	kControllerChorus = 93;
+	kControllerCeleste = 94;
+	kControllerPhaser = 95;
+	kControllerEditPart = 113;  { last 16 controllers 113-128 and above are global controllers which respond on part zero }
+	kControllerMasterTune = 114;
+	kControllerMasterTranspose = 114;  { preferred}
+	kControllerMasterVolume = 115;
+	kControllerMasterCPULoad = 116;
+	kControllerMasterPolyphony = 117;
+	kControllerMasterFeatures = 118;
+
+
+{ ID's of knobs supported by the QuickTime Music Synthesizer built into QuickTime}
+
+const
+	kQTMSKnobStartID = $02000000;
+	kQTMSKnobVolumeAttackTimeID = $02000001;
+	kQTMSKnobVolumeDecayTimeID = $02000002;
+>>>>>>> origin/cpstrnew
 	kQTMSKnobVolumeSustainLevelID = $02000003;
 	kQTMSKnobVolumeRelease1RateID = $02000004;
 	kQTMSKnobVolumeDecayKeyScalingID = $02000005;
@@ -1354,6 +1581,9 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 	kQTMSKnobVolumeLFODelayID = $02000007;
 	kQTMSKnobVolumeLFORampTimeID = $02000008;
 	kQTMSKnobVolumeLFOPeriodID = $02000009;
@@ -1416,12 +1646,16 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
+<<<<<<< HEAD
 =======
 
 <<<<<<< HEAD
@@ -1435,6 +1669,8 @@ const
 =======
 
 
+>>>>>>> origin/cpstrnew
+=======
 >>>>>>> origin/cpstrnew
 const
 	kControllerMaximum = $00007FFF; { +01111111.11111111 }
@@ -1460,6 +1696,7 @@ type
 		outputCount: UNSIGNEDLONG;            { number of audio outputs (usually two) }
 		latency: UNSIGNEDLONG;                { response time in µSec }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1594,6 +1831,14 @@ const
 =======
 	kVoiceCountDynamic = -1;    { constant to use to specify dynamic voicing }
 >>>>>>> origin/fixes_2.4
+=======
+		controllers: array [0..3] of UNSIGNEDLONG;					{  array of 128 bits  }
+		gmInstruments: array [0..3] of UNSIGNEDLONG;					{  array of 128 bits  }
+		gmDrums: array [0..3] of UNSIGNEDLONG;					{  array of 128 bits  }
+	end;
+const
+	kVoiceCountDynamic = -1;    { constant to use to specify dynamic voicing }
+>>>>>>> origin/cpstrnew
 
 
 type
@@ -1602,13 +1847,17 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 		synthesizerType: BigEndianOSType;        { synthesizer type }
 		synthesizerName: Str31;        { name of instantiation of synth }
 		instrumentName: Str31;         { preferred name for human use }
 		instrumentNumber: BigEndianLong;       { inst-number used if synth-name matches }
 		gmNumber: BigEndianLong;               { Best matching general MIDI number }
+<<<<<<< HEAD
 <<<<<<< HEAD
 	end;
 const
@@ -1731,6 +1980,8 @@ const
 		gmNumber:				BigEndianLong;							{  Best matching general MIDI number  }
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	end;
 const
 	kFirstGMInstrument = $00000001;
@@ -1752,6 +2003,7 @@ const
 	kInstrumentMatchNumber = 8;
 	kInstrumentMatchGMNumber = 16;
 	kInstrumentMatchGSNumber = 32;
+<<<<<<< HEAD
 
 { KnobFlags}
 const
@@ -1785,6 +2037,34 @@ const
 	kUnknownKnobValue = $7FFFFFFF; { a knob with this value means, we don't know it. }
 	kDefaultKnobValue = $7FFFFFFE; { used to SET a knob to its default value. }
 >>>>>>> origin/fixes_2.4
+=======
+
+{ KnobFlags}
+const
+	kKnobBasic = 8;    { knob shows up in certain simplified lists of knobs }
+	kKnobReadOnly = 16;   { knob value cannot be changed by user or with a SetKnob call }
+	kKnobInterruptUnsafe = 32;   { only alter this knob from foreground task time (may access toolbox) }
+	kKnobKeyrangeOverride = 64;   { knob can be overridden within a single keyrange (software synth only) }
+	kKnobGroupStart = 128;  { knob is first in some logical group of knobs }
+	kKnobFixedPoint8 = 1024;
+	kKnobFixedPoint16 = 2048; { One of these may be used at a time. }
+	kKnobTypeNumber = 0 shl 12;
+	kKnobTypeGroupName = 1 shl 12; { "knob" is really a group name for display purposes }
+	kKnobTypeBoolean = 2 shl 12; { if range is greater than 1, its a multi-checkbox field }
+	kKnobTypeNote = 3 shl 12; { knob range is equivalent to MIDI keys }
+	kKnobTypePan = 4 shl 12; { range goes left/right (lose this? ) }
+	kKnobTypeInstrument = 5 shl 12; { knob value = reference to another instrument number }
+	kKnobTypeSetting = 6 shl 12; { knob value is 1 of n different things (eg, fm algorithms) popup menu }
+	kKnobTypeMilliseconds = 7 shl 12; { knob is a millisecond time range }
+	kKnobTypePercentage = 8 shl 12; { knob range is displayed as a Percentage }
+	kKnobTypeHertz = 9 shl 12; { knob represents frequency }
+	kKnobTypeButton = 10 shl 12; { momentary trigger push button }
+
+
+const
+	kUnknownKnobValue = $7FFFFFFF; { a knob with this value means, we don't know it. }
+	kDefaultKnobValue = $7FFFFFFE; { used to SET a knob to its default value. }
+>>>>>>> origin/cpstrnew
 
 type
 	KnobDescriptionPtr = ^KnobDescription;
@@ -1792,14 +2072,18 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 		name: Str63;
 		lowValue: SIGNEDLONG;
 		highValue: SIGNEDLONG;
 		defaultValue: SIGNEDLONG;           { a default instrument is made of all default values }
 		flags: SIGNEDLONG;
 		knobID: SIGNEDLONG;
+<<<<<<< HEAD
 	end;
 type
 	GCInstrumentData = record
@@ -1985,26 +2269,69 @@ const
 		defaultValue:			SInt32;								{  a default instrument is made of all default values  }
 		flags:					SInt32;
 		knobID:					SInt32;
+=======
+>>>>>>> origin/cpstrnew
 	end;
-
-	GCInstrumentDataPtr = ^GCInstrumentData;
+type
 	GCInstrumentData = record
-		tone:					ToneDescription;
-		knobCount:				SInt32;
-		knob:					array [0..0] of SInt32;
+		tone: ToneDescription;
+		knobCount: SIGNEDLONG;
+		knob: array [0..0] of SInt32;
 	end;
-
-	GCInstrumentDataHandle				= ^GCInstrumentDataPtr;
+	GCInstrumentDataPtr = ^GCInstrumentData;
+type
+	GCInstrumentDataHandle = ^GCInstrumentDataPtr;
 	InstrumentAboutInfoPtr = ^InstrumentAboutInfo;
 	InstrumentAboutInfo = record
-		p:						PicHandle;
-		author:					Str255;
-		copyright:				Str255;
-		other:					Str255;
+		p: PicHandle;
+		author: Str255;
+		copyright: Str255;
+		other: Str255;
 	end;
 
+const
+  notImplementedMusicErr = $8000F7E9;
+  cantSendToSynthesizerErr = $8000F7E8;
+  cantReceiveFromSynthesizerErr = $8000F7E7;
+  illegalVoiceAllocationErr = $8000F7E6;
+  illegalPartErr = $8000F7E5;
+  illegalChannelErr = $8000F7E4;
+  illegalKnobErr = $8000F7E3;
+  illegalKnobValueErr = $8000F7E2;
+  illegalInstrumentErr = $8000F7E1;
+  illegalControllerErr = $8000F7E0;
+  midiManagerAbsentErr = $8000F7DF;
+  synthesizerNotRespondingErr = $8000F7DE;
+  synthesizerErr = $8000F7DD;
+  illegalNoteChannelErr = $8000F7DC;
+  noteChannelNotAllocatedErr = $8000F7DB;
+  tunePlayerFullErr = $8000F7DA;
+  tuneParseErr = $8000F7D9;
 
 const
+	kGetAtomicInstNoExpandedSamples = 1 shl 0;
+	kGetAtomicInstNoOriginalSamples = 1 shl 1;
+	kGetAtomicInstNoSamples = kGetAtomicInstNoExpandedSamples or kGetAtomicInstNoOriginalSamples;
+	kGetAtomicInstNoKnobList = 1 shl 2;
+	kGetAtomicInstNoInstrumentInfo = 1 shl 3;
+	kGetAtomicInstOriginalKnobList = 1 shl 4;
+	kGetAtomicInstAllKnobs = 1 shl 5; { return even those that are set to default}
+
+{
+   For non-gm instruments, instrument number of tone description == 0
+   If you want to speed up while running, slam the inst num with what Get instrument number returns
+   All missing knobs are slammed to the default value
+}
+const
+	kSetAtomicInstKeepOriginalInstrument = 1 shl 0;
+	kSetAtomicInstShareAcrossParts = 1 shl 1; { inst disappears when app goes away}
+	kSetAtomicInstCallerTosses = 1 shl 2; { the caller isn't keeping a copy around (for NASetAtomicInstrument)}
+	kSetAtomicInstCallerGuarantees = 1 shl 3; { the caller guarantees a copy is around}
+	kSetAtomicInstInterruptSafe = 1 shl 4; { dont move memory at this time (but process at next task time)}
+	kSetAtomicInstDontPreprocess = 1 shl 7; { perform no further preprocessing because either 1)you know the instrument is digitally clean, or 2) you got it from a GetPartAtomic}
+
+const
+<<<<<<< HEAD
 	notImplementedMusicErr		= $8000F7E9;
 	cantSendToSynthesizerErr	= $8000F7E8;
 	cantReceiveFromSynthesizerErr = $8000F7E7;
@@ -2083,6 +2410,16 @@ const
  }
 
 const
+=======
+	kInstrumentNamesModifiable = 1;
+	kInstrumentNamesBoth = 2;
+
+{
+ * Structures specific to the GenericMusicComponent
+ }
+
+const
+>>>>>>> origin/cpstrnew
 	kGenericMusicComponentSubtype = FourCharCode('gene');
 
 type
@@ -2111,6 +2448,7 @@ const
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kGenericMusicResFirst		= 0;
 	kGenericMusicResMiscStringList = 1;							{  STR# 1: synth name, 2:about author,3:aboutcopyright,4:aboutother  }
 	kGenericMusicResMiscLongList = 2;							{  Long various params, see list below  }
@@ -2133,6 +2471,8 @@ const
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 const
 	kGenericMusicResFirst = 0;
 	kGenericMusicResMiscStringList = 1;   { STR# 1: synth name, 2:about author,3:aboutcopyright,4:aboutother }
@@ -2152,7 +2492,10 @@ const
 { elements of the misc long list }
 const
 	kGenericMusicMiscLongFirst = 0;
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	kGenericMusicMiscLongVoiceCount = 1;
 	kGenericMusicMiscLongPartCount = 2;
 	kGenericMusicMiscLongModifiableInstrumentCount = 3;
@@ -2165,13 +2508,17 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	kGenericMusicMiscLongFlags = 10;
 	kGenericMusicMiscLongFirstGMHW = 11;  { number to add to locate GM main instruments }
 	kGenericMusicMiscLongFirstGMDrumHW = 12; { number to add to locate GM drumkits }
 	kGenericMusicMiscLongFirstUserHW = 13; { First hw number of user instruments (presumed sequential) }
 	kGenericMusicMiscLongLast = 14;
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
@@ -2188,6 +2535,8 @@ const
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 type
 	GCPartPtr = ^GCPart;
@@ -2195,8 +2544,11 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 		hwInstrumentNumber: SIGNEDLONG;     { internal number of recalled instrument }
 		controller: array [0..127] of SInt16;				{  current values for all controllers  }
 		volume: SIGNEDLONG;                 { ctrl 7 is special case }
@@ -2217,11 +2569,14 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
  * Calls specific to the GenericMusicComponent
@@ -2231,6 +2586,7 @@ const
 	kMusicDerivedRange = $0200;
 
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2256,6 +2612,11 @@ const
  }
 const
 >>>>>>> origin/fixes_2.4
+=======
+ * Flags in GenericMusicConfigure call
+ }
+const
+>>>>>>> origin/cpstrnew
 	kGenericMusicDoMIDI = 1 shl 0; { implement normal MIDI messages for note, controllers, and program changes 0-127 }
 	kGenericMusicBank0 = 1 shl 1; { implement instrument bank changes on controller 0 }
 	kGenericMusicBank32 = 1 shl 2; { implement instrument bank changes on controller 32 }
@@ -2755,6 +3116,8 @@ function MusicGetDrumKnobDescription( mc: MusicComponent; knobIndex: SIGNEDLONG;
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
+<<<<<<< HEAD
+=======
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -2768,10 +3131,19 @@ function MusicGetKnobDescription( mc: MusicComponent; knobIndex: SIGNEDLONG; var
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
+function MusicGetKnobDescription( mc: MusicComponent; knobIndex: SIGNEDLONG; var mkd: KnobDescription ): ComponentResult; external name '_MusicGetKnobDescription';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{
+ *  MusicGetInfoText()   *** DEPRECATED ***
+=======
 function MusicGetInfoText( mc: MusicComponent; selector: SIGNEDLONG; var textH: Handle; var styleH: Handle ): ComponentResult; external name '_MusicGetInfoText';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
@@ -2783,6 +3155,7 @@ const
 
 {
  *  MusicGetInstrumentInfo()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
@@ -2790,12 +3163,26 @@ const
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
+function MusicGetInfoText( mc: MusicComponent; selector: SIGNEDLONG; var textH: Handle; var styleH: Handle ): ComponentResult; external name '_MusicGetInfoText';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+const
+	kGetInstrumentInfoNoBuiltIn = 1 shl 0;
+	kGetInstrumentInfoMidiUserInst = 1 shl 1;
+	kGetInstrumentInfoNoIText = 1 shl 2;
+
+{
+ *  MusicGetInstrumentInfo()   *** DEPRECATED ***
+=======
 function MusicGetInstrumentInfo( mc: MusicComponent; getInstrumentInfoFlags: SIGNEDLONG; var infoListH: InstrumentInfoListHandle ): ComponentResult; external name '_MusicGetInstrumentInfo';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
 {
  *  MusicTask()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
@@ -2803,12 +3190,20 @@ function MusicGetInstrumentInfo( mc: MusicComponent; getInstrumentInfoFlags: SIG
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
+function MusicGetInstrumentInfo( mc: MusicComponent; getInstrumentInfoFlags: SIGNEDLONG; var infoListH: InstrumentInfoListHandle ): ComponentResult; external name '_MusicGetInstrumentInfo';
+=======
 function MusicTask( mc: MusicComponent ): ComponentResult; external name '_MusicTask';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
 {
+<<<<<<< HEAD
+ *  MusicTask()   *** DEPRECATED ***
+=======
  *  MusicSetPartInstrumentNumberInterruptSafe()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
@@ -2816,12 +3211,20 @@ function MusicTask( mc: MusicComponent ): ComponentResult; external name '_Music
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
+function MusicTask( mc: MusicComponent ): ComponentResult; external name '_MusicTask';
+=======
 function MusicSetPartInstrumentNumberInterruptSafe( mc: MusicComponent; part: SIGNEDLONG; instrumentNumber: SIGNEDLONG ): ComponentResult; external name '_MusicSetPartInstrumentNumberInterruptSafe';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
 {
+<<<<<<< HEAD
+ *  MusicSetPartInstrumentNumberInterruptSafe()   *** DEPRECATED ***
+=======
  *  MusicSetPartSoundLocalization()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
@@ -2829,12 +3232,20 @@ function MusicSetPartInstrumentNumberInterruptSafe( mc: MusicComponent; part: SI
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
+function MusicSetPartInstrumentNumberInterruptSafe( mc: MusicComponent; part: SIGNEDLONG; instrumentNumber: SIGNEDLONG ): ComponentResult; external name '_MusicSetPartInstrumentNumberInterruptSafe';
+=======
 function MusicSetPartSoundLocalization( mc: MusicComponent; part: SIGNEDLONG; data: Handle ): ComponentResult; external name '_MusicSetPartSoundLocalization';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
 {
+<<<<<<< HEAD
+ *  MusicSetPartSoundLocalization()   *** DEPRECATED ***
+=======
  *  MusicGenericConfigure()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
@@ -2842,17 +3253,47 @@ function MusicSetPartSoundLocalization( mc: MusicComponent; part: SIGNEDLONG; da
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
+function MusicSetPartSoundLocalization( mc: MusicComponent; part: SIGNEDLONG; data: Handle ): ComponentResult; external name '_MusicSetPartSoundLocalization';
+=======
 function MusicGenericConfigure( mc: MusicComponent; mode: SIGNEDLONG; flags: SIGNEDLONG; baseResID: SIGNEDLONG ): ComponentResult; external name '_MusicGenericConfigure';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
 {
+<<<<<<< HEAD
+ *  MusicGenericConfigure()   *** DEPRECATED ***
+=======
  *  MusicGenericGetPart()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function MusicGenericConfigure( mc: MusicComponent; mode: SIGNEDLONG; flags: SIGNEDLONG; baseResID: SIGNEDLONG ): ComponentResult; external name '_MusicGenericConfigure';
+=======
+function MusicGenericGetPart( mc: MusicComponent; partNumber: SIGNEDLONG; var part: GCPartPtr ): ComponentResult; external name '_MusicGenericGetPart';
+>>>>>>> origin/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{
+<<<<<<< HEAD
+ *  MusicGenericGetPart()   *** DEPRECATED ***
+=======
+ *  MusicGenericGetKnobList()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+<<<<<<< HEAD
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function MusicGenericGetPart( mc: MusicComponent; partNumber: SIGNEDLONG; var part: GCPartPtr ): ComponentResult; external name '_MusicGenericGetPart';
@@ -4768,10 +5209,16 @@ function MusicGenericGetKnobList(mc: MusicComponent; knobType: SInt32; var gkdlH
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Mac OS X:         in version 10.0 and later
+=======
+>>>>>>> origin/cpstrnew
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
-function MusicGenericSetResourceNumbers(mc: MusicComponent; resourceIDH: Handle): ComponentResult; external name '_MusicGenericSetResourceNumbers';
+function MusicGenericGetKnobList( mc: MusicComponent; knobType: SIGNEDLONG; var gkdlH: GenericKnobDescriptionListHandle ): ComponentResult; external name '_MusicGenericGetKnobList';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
 {
+<<<<<<< HEAD
  *  MusicDerivedMIDISend()
  *  
  *  Availability:
@@ -5209,19 +5656,33 @@ const
 
 {
  *  TuneQueue()   *** DEPRECATED ***
+=======
+ *  MusicGenericSetResourceNumbers()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function TuneQueue( tp: TunePlayer; var tune: UNSIGNEDLONG; tuneRate: Fixed; tuneStartPosition: UNSIGNEDLONG; tuneStopPosition: UNSIGNEDLONG; queueFlags: UNSIGNEDLONG; callBackProc: TuneCallBackUPP; refCon: SIGNEDLONG ): ComponentResult; external name '_TuneQueue';
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MusicGenericSetResourceNumbers( mc: MusicComponent; resourceIDH: Handle ): ComponentResult; external name '_MusicGenericSetResourceNumbers';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
 {
+<<<<<<< HEAD
  *  TuneInstant()   *** DEPRECATED ***
+=======
+ *  MusicDerivedMIDISend()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
@@ -5229,12 +5690,20 @@ function TuneQueue( tp: TunePlayer; var tune: UNSIGNEDLONG; tuneRate: Fixed; tun
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function TuneInstant( tp: TunePlayer; var tune: UNSIGNEDLONG; tunePosition: UNSIGNEDLONG ): ComponentResult; external name '_TuneInstant';
+=======
+function MusicDerivedMIDISend( mc: MusicComponent; var packet: MusicMIDIPacket ): ComponentResult; external name '_MusicDerivedMIDISend';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
 {
+<<<<<<< HEAD
  *  TuneGetStatus()   *** DEPRECATED ***
+=======
+ *  MusicDerivedSetKnob()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
@@ -5242,6 +5711,7 @@ function TuneInstant( tp: TunePlayer; var tune: UNSIGNEDLONG; tunePosition: UNSI
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function TuneGetStatus( tp: TunePlayer; var status: TuneStatus ): ComponentResult; external name '_TuneGetStatus';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 <<<<<<< HEAD
@@ -5286,15 +5756,31 @@ function TuneStop( tp: TunePlayer; stopFlags: SIGNEDLONG ): ComponentResult; ext
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function TuneSetVolume( tp: TunePlayer; volume: Fixed ): ComponentResult; external name '_TuneSetVolume';
+=======
+function MusicDerivedSetKnob( mc: MusicComponent; knobType: SIGNEDLONG; knobNumber: SIGNEDLONG; knobValue: SIGNEDLONG; partNumber: SIGNEDLONG; var p: GCPart; var gkd: GenericKnobDescription ): ComponentResult; external name '_MusicDerivedSetKnob';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
 {
+ *  MusicDerivedSetPart()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
+>>>>>>> origin/cpstrnew
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function TuneSetVolume( tp: TunePlayer; volume: Fixed ): ComponentResult; external name '_TuneSetVolume';
+=======
+function MusicDerivedSetPart( mc: MusicComponent; partNumber: SIGNEDLONG; var p: GCPart ): ComponentResult; external name '_MusicDerivedSetPart';
+>>>>>>> origin/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{
+<<<<<<< HEAD
  *  TuneGetVolume()   *** DEPRECATED ***
 =======
  *  MusicDerivedSetKnob()   *** DEPRECATED ***
@@ -5323,19 +5809,30 @@ function MusicDerivedSetKnob( mc: MusicComponent; knobType: SIGNEDLONG; knobNumb
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
+=======
+ *  MusicDerivedSetInstrument()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TunePreroll( tp: TunePlayer ): ComponentResult; external name '_TunePreroll';
 =======
 function MusicDerivedSetPart( mc: MusicComponent; partNumber: SIGNEDLONG; var p: GCPart ): ComponentResult; external name '_MusicDerivedSetPart';
 >>>>>>> origin/fixes_2.4
+=======
+function MusicDerivedSetInstrument( mc: MusicComponent; partNumber: SIGNEDLONG; var p: GCPart ): ComponentResult; external name '_MusicDerivedSetInstrument';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  TuneUnroll()   *** DEPRECATED ***
 =======
@@ -5365,19 +5862,30 @@ function MusicDerivedSetInstrument( mc: MusicComponent; partNumber: SIGNEDLONG; 
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
+=======
+ *  MusicDerivedSetPartInstrumentNumber()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TuneSetNoteChannels( tp: TunePlayer; count: UNSIGNEDLONG; var noteChannelList: NoteChannel; playCallBackProc: TunePlayCallBackUPP; refCon: SIGNEDLONG ): ComponentResult; external name '_TuneSetNoteChannels';
 =======
 function MusicDerivedSetPartInstrumentNumber( mc: MusicComponent; partNumber: SIGNEDLONG; var p: GCPart ): ComponentResult; external name '_MusicDerivedSetPartInstrumentNumber';
 >>>>>>> origin/fixes_2.4
+=======
+function MusicDerivedSetPartInstrumentNumber( mc: MusicComponent; partNumber: SIGNEDLONG; var p: GCPart ): ComponentResult; external name '_MusicDerivedSetPartInstrumentNumber';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  TuneSetPartTranspose()   *** DEPRECATED ***
 =======
@@ -5407,21 +5915,35 @@ function MusicDerivedSetMIDI( mc: MusicComponent; midiProc: MusicMIDISendUPP; re
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
+=======
+ *  MusicDerivedSetMIDI()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TuneGetNoteAllocator( tp: TunePlayer ): NoteAllocator; external name '_TuneGetNoteAllocator';
 =======
 function MusicDerivedStorePartInstrument( mc: MusicComponent; partNumber: SIGNEDLONG; var p: GCPart; instrumentNumber: SIGNEDLONG ): ComponentResult; external name '_MusicDerivedStorePartInstrument';
 >>>>>>> origin/fixes_2.4
+=======
+function MusicDerivedSetMIDI( mc: MusicComponent; midiProc: MusicMIDISendUPP; refcon: SIGNEDLONG; midiChannel: SIGNEDLONG ): ComponentResult; external name '_MusicDerivedSetMIDI';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  TuneSetSofter()   *** DEPRECATED ***
+=======
+ *  MusicDerivedStorePartInstrument()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
@@ -5429,13 +5951,20 @@ function MusicDerivedStorePartInstrument( mc: MusicComponent; partNumber: SIGNED
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function TuneSetSofter( tp: TunePlayer; softer: SIGNEDLONG ): ComponentResult; external name '_TuneSetSofter';
+=======
+function MusicDerivedStorePartInstrument( mc: MusicComponent; partNumber: SIGNEDLONG; var p: GCPart; instrumentNumber: SIGNEDLONG ): ComponentResult; external name '_MusicDerivedStorePartInstrument';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
 {
+<<<<<<< HEAD
  *  TuneTask()   *** DEPRECATED ***
 =======
+=======
+>>>>>>> origin/cpstrnew
  *  MusicDerivedOpenResFile()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -5501,6 +6030,7 @@ type
 
 type
 	NoteChannel = SIGNEDLONG;
+<<<<<<< HEAD
 
 const
 	kPickDontMix = 1;    { dont mix instruments with drum sounds }
@@ -5961,11 +6491,27 @@ function NAPrerollNoteChannel(na: NoteAllocator; noteChannel_: NoteChannel): Com
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function NADisposeNoteChannel( na: NoteAllocator; noteChannel_: NoteChannel ): ComponentResult; external name '_NADisposeNoteChannel';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+=======
+
+const
+	kPickDontMix = 1;    { dont mix instruments with drum sounds }
+	kPickSameSynth = 2;    { only allow the same device that went in, to come out }
+	kPickUserInsts = 4;    { show user insts in addition to ROM voices }
+	kPickEditAllowEdit = 8;    { lets user switch over to edit mode }
+	kPickEditAllowPick = 16;   { lets the user switch over to pick mode }
+	kPickEditSynthGlobal = 32;   { edit the global knobs of the synth }
+	kPickEditControllers = 64;    { edit the controllers of the notechannel }
 
 
+const
+	kNoteAllocatorComponentType = FourCharCode('nota');
+
+
+{--------------------------------
+    Note Allocator Prototypes
+--------------------------------}
 {
- *  NAGetNoteChannelInfo()   *** DEPRECATED ***
+ *  NARegisterMusicDevice()   *** DEPRECATED ***
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
@@ -5973,11 +6519,120 @@ function NADisposeNoteChannel( na: NoteAllocator; noteChannel_: NoteChannel ): C
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+function NARegisterMusicDevice( na: NoteAllocator; synthType: OSType; var name: Str31; var connections: SynthesizerConnections ): ComponentResult; external name '_NARegisterMusicDevice';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{
+ *  NAUnregisterMusicDevice()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function NAUnregisterMusicDevice( na: NoteAllocator; index: SIGNEDLONG ): ComponentResult; external name '_NAUnregisterMusicDevice';
+>>>>>>> origin/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{
+<<<<<<< HEAD
+ *  NAGetNoteChannelInfo()   *** DEPRECATED ***
+=======
+ *  NAGetRegisteredMusicDevice()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+<<<<<<< HEAD
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
 function NAGetNoteChannelInfo( na: NoteAllocator; noteChannel_: NoteChannel; var index: SIGNEDLONG; var part: SIGNEDLONG ): ComponentResult; external name '_NAGetNoteChannelInfo';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
 >>>>>>> origin/fixes_2.4
+{
+ *  NAPrerollNoteChannel()   *** DEPRECATED ***
+=======
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function NAGetRegisteredMusicDevice( na: NoteAllocator; index: SIGNEDLONG; var synthType: OSType; name: Str31; var connections: SynthesizerConnections; var mc: MusicComponent ): ComponentResult; external name '_NAGetRegisteredMusicDevice';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{
+ *  NASaveMusicConfiguration()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function NASaveMusicConfiguration( na: NoteAllocator ): ComponentResult; external name '_NASaveMusicConfiguration';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{
+ *  NANewNoteChannel()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+<<<<<<< HEAD
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function NAPrerollNoteChannel( na: NoteAllocator; noteChannel_: NoteChannel ): ComponentResult; external name '_NAPrerollNoteChannel';
+=======
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function NANewNoteChannel( na: NoteAllocator; var noteRequest_: NoteRequest; var outChannel: NoteChannel ): ComponentResult; external name '_NANewNoteChannel';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{
+ *  NADisposeNoteChannel()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function NADisposeNoteChannel( na: NoteAllocator; noteChannel_: NoteChannel ): ComponentResult; external name '_NADisposeNoteChannel';
+>>>>>>> origin/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{
+<<<<<<< HEAD
+ *  NAUnrollNoteChannel()   *** DEPRECATED ***
+=======
+ *  NAGetNoteChannelInfo()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+<<<<<<< HEAD
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function NAUnrollNoteChannel( na: NoteAllocator; noteChannel_: NoteChannel ): ComponentResult; external name '_NAUnrollNoteChannel';
+=======
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function NAGetNoteChannelInfo( na: NoteAllocator; noteChannel_: NoteChannel; var index: SIGNEDLONG; var part: SIGNEDLONG ): ComponentResult; external name '_NAGetNoteChannelInfo';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
 {
  *  NAPrerollNoteChannel()   *** DEPRECATED ***
  *  
@@ -5988,24 +6643,16 @@ function NAGetNoteChannelInfo( na: NoteAllocator; noteChannel_: NoteChannel; var
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function NAPrerollNoteChannel( na: NoteAllocator; noteChannel_: NoteChannel ): ComponentResult; external name '_NAPrerollNoteChannel';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
 {
- *  NAUnrollNoteChannel()   *** DEPRECATED ***
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function NAUnrollNoteChannel( na: NoteAllocator; noteChannel_: NoteChannel ): ComponentResult; external name '_NAUnrollNoteChannel';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
-
-
-{
+<<<<<<< HEAD
  *  NASetNoteChannelVolume()   *** DEPRECATED ***
+=======
+ *  NAUnrollNoteChannel()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
@@ -6013,12 +6660,20 @@ function NAUnrollNoteChannel( na: NoteAllocator; noteChannel_: NoteChannel ): Co
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function NASetNoteChannelVolume( na: NoteAllocator; noteChannel_: NoteChannel; volume: Fixed ): ComponentResult; external name '_NASetNoteChannelVolume';
+=======
+function NAUnrollNoteChannel( na: NoteAllocator; noteChannel_: NoteChannel ): ComponentResult; external name '_NAUnrollNoteChannel';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
 {
+<<<<<<< HEAD
  *  NAResetNoteChannel()   *** DEPRECATED ***
+=======
+ *  NASetNoteChannelVolume()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
@@ -6026,12 +6681,20 @@ function NASetNoteChannelVolume( na: NoteAllocator; noteChannel_: NoteChannel; v
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function NAResetNoteChannel( na: NoteAllocator; noteChannel_: NoteChannel ): ComponentResult; external name '_NAResetNoteChannel';
+=======
+function NASetNoteChannelVolume( na: NoteAllocator; noteChannel_: NoteChannel; volume: Fixed ): ComponentResult; external name '_NASetNoteChannelVolume';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
 {
+<<<<<<< HEAD
  *  NAPlayNote()   *** DEPRECATED ***
+=======
+ *  NAResetNoteChannel()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
@@ -6039,12 +6702,20 @@ function NAResetNoteChannel( na: NoteAllocator; noteChannel_: NoteChannel ): Com
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function NAPlayNote( na: NoteAllocator; noteChannel_: NoteChannel; pitch: SIGNEDLONG; velocity: SIGNEDLONG ): ComponentResult; external name '_NAPlayNote';
+=======
+function NAResetNoteChannel( na: NoteAllocator; noteChannel_: NoteChannel ): ComponentResult; external name '_NAResetNoteChannel';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
 {
+<<<<<<< HEAD
  *  NASetController()   *** DEPRECATED ***
+=======
+ *  NAPlayNote()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
@@ -6052,12 +6723,20 @@ function NAPlayNote( na: NoteAllocator; noteChannel_: NoteChannel; pitch: SIGNED
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function NASetController( na: NoteAllocator; noteChannel_: NoteChannel; controllerNumber: SIGNEDLONG; controllerValue: SIGNEDLONG ): ComponentResult; external name '_NASetController';
+=======
+function NAPlayNote( na: NoteAllocator; noteChannel_: NoteChannel; pitch: SIGNEDLONG; velocity: SIGNEDLONG ): ComponentResult; external name '_NAPlayNote';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
 {
+<<<<<<< HEAD
  *  NASetKnob()   *** DEPRECATED ***
+=======
+ *  NASetController()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
@@ -6065,12 +6744,20 @@ function NASetController( na: NoteAllocator; noteChannel_: NoteChannel; controll
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function NASetKnob( na: NoteAllocator; noteChannel_: NoteChannel; knobNumber: SIGNEDLONG; knobValue: SIGNEDLONG ): ComponentResult; external name '_NASetKnob';
+=======
+function NASetController( na: NoteAllocator; noteChannel_: NoteChannel; controllerNumber: SIGNEDLONG; controllerValue: SIGNEDLONG ): ComponentResult; external name '_NASetController';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
 {
+<<<<<<< HEAD
  *  NAFindNoteChannelTone()   *** DEPRECATED ***
+=======
+ *  NASetKnob()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
@@ -6078,12 +6765,20 @@ function NASetKnob( na: NoteAllocator; noteChannel_: NoteChannel; knobNumber: SI
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function NAFindNoteChannelTone( na: NoteAllocator; noteChannel_: NoteChannel; var td: ToneDescription; var instrumentNumber: SIGNEDLONG ): ComponentResult; external name '_NAFindNoteChannelTone';
+=======
+function NASetKnob( na: NoteAllocator; noteChannel_: NoteChannel; knobNumber: SIGNEDLONG; knobValue: SIGNEDLONG ): ComponentResult; external name '_NASetKnob';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
 {
+<<<<<<< HEAD
  *  NASetInstrumentNumber()   *** DEPRECATED ***
+=======
+ *  NAFindNoteChannelTone()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
@@ -6091,12 +6786,20 @@ function NAFindNoteChannelTone( na: NoteAllocator; noteChannel_: NoteChannel; va
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function NASetInstrumentNumber( na: NoteAllocator; noteChannel_: NoteChannel; instrumentNumber: SIGNEDLONG ): ComponentResult; external name '_NASetInstrumentNumber';
+=======
+function NAFindNoteChannelTone( na: NoteAllocator; noteChannel_: NoteChannel; var td: ToneDescription; var instrumentNumber: SIGNEDLONG ): ComponentResult; external name '_NAFindNoteChannelTone';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
 {
+<<<<<<< HEAD
  *  NAPickInstrument()   *** DEPRECATED ***
+=======
+ *  NASetInstrumentNumber()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
@@ -6104,12 +6807,20 @@ function NASetInstrumentNumber( na: NoteAllocator; noteChannel_: NoteChannel; in
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function NAPickInstrument( na: NoteAllocator; filterProc: ModalFilterUPP; prompt: StringPtr; var sd: ToneDescription; flags: UNSIGNEDLONG; refCon: SIGNEDLONG; reserved1: SIGNEDLONG; reserved2: SIGNEDLONG ): ComponentResult; external name '_NAPickInstrument';
+=======
+function NASetInstrumentNumber( na: NoteAllocator; noteChannel_: NoteChannel; instrumentNumber: SIGNEDLONG ): ComponentResult; external name '_NASetInstrumentNumber';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
 {
+<<<<<<< HEAD
  *  NAPickArrangement()   *** DEPRECATED ***
+=======
+ *  NAPickInstrument()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
@@ -6117,11 +6828,42 @@ function NAPickInstrument( na: NoteAllocator; filterProc: ModalFilterUPP; prompt
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function NAPickArrangement( na: NoteAllocator; filterProc: ModalFilterUPP; prompt: StringPtr; zero1: SIGNEDLONG; zero2: SIGNEDLONG; t: Track; songName: StringPtr ): ComponentResult; external name '_NAPickArrangement';
+=======
+function NAPickInstrument( na: NoteAllocator; filterProc: ModalFilterUPP; prompt: StringPtr; var sd: ToneDescription; flags: UNSIGNEDLONG; refCon: SIGNEDLONG; reserved1: SIGNEDLONG; reserved2: SIGNEDLONG ): ComponentResult; external name '_NAPickInstrument';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
 {
+<<<<<<< HEAD
+ *  NAStuffToneDescription()   *** DEPRECATED ***
+=======
+ *  NAPickArrangement()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function NAStuffToneDescription( na: NoteAllocator; gmNumber: SIGNEDLONG; var td: ToneDescription ): ComponentResult; external name '_NAStuffToneDescription';
+=======
+function NAPickArrangement( na: NoteAllocator; filterProc: ModalFilterUPP; prompt: StringPtr; zero1: SIGNEDLONG; zero2: SIGNEDLONG; t: Track; songName: StringPtr ): ComponentResult; external name '_NAPickArrangement';
+>>>>>>> origin/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{
+<<<<<<< HEAD
+ *  NACopyrightDialog()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
+=======
  *  NAStuffToneDescription()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -6139,6 +6881,7 @@ function NAStuffToneDescription( na: NoteAllocator; gmNumber: SIGNEDLONG; var td
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -6329,6 +7072,7 @@ type
 	TuneStatusPtr = ^TuneStatus;
 	TuneStatus = record
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2_2
 		tune:					SInt32Ptr;								{  currently playing tune  }
 		tunePtr:				SInt32Ptr;								{  position within currently playing piece  }
@@ -6338,6 +7082,8 @@ type
 		queueTime:				TimeValue;								{  How much time is queued up? (can be very inaccurate)  }
 		reserved:				array [0..2] of SInt32;
 =======
+=======
+>>>>>>> origin/cpstrnew
 		tune: UNSIGNEDLONGPtr;                   { currently playing tune }
 		tunePtr: UNSIGNEDLONGPtr;                { position within currently playing piece }
 		time: TimeValue;                   { current tune time }
@@ -6345,7 +7091,10 @@ type
 		queueSpots: SInt16;             { How many more tunepieces can be queued }
 		queueTime: TimeValue;              { How much time is queued up? (can be very inaccurate) }
 		reserved: array [0..2] of SIGNEDLONG;
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	end;
 
 	TuneCallBackProcPtr = procedure( const (*var*) status: TuneStatus; refCon: SIGNEDLONG);
@@ -6422,8 +7171,13 @@ function TuneGetTimeScale( tp: TunePlayer; var scale: TimeScale ): ComponentResu
  }
 function TuneGetIndexedNoteChannel( tp: TunePlayer; i: SIGNEDLONG; var nc: NoteChannel ): ComponentResult; external name '_TuneGetIndexedNoteChannel';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+<<<<<<< HEAD
 
 
+=======
+
+
+>>>>>>> origin/cpstrnew
 { Values for when to start. }
 const
 	kTuneStartNow = 1;    { start after buffer is implied }
@@ -6648,8 +7402,13 @@ function TuneSetSoundLocalization( tp: TunePlayer; data: Handle ): ComponentResu
  }
 function TuneSetHeaderWithSize( tp: TunePlayer; var header: UNSIGNEDLONG; size: UNSIGNEDLONG ): ComponentResult; external name '_TuneSetHeaderWithSize';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+<<<<<<< HEAD
 
 
+=======
+
+
+>>>>>>> origin/cpstrnew
 { flags for part mix. }
 const
 	kTuneMixMute = 1;    { disable a part }
@@ -6842,6 +7601,7 @@ const
 {$endc}  {TARGET_RT_LITTLE_ENDIAN}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{  macros for extracting various fields from the QuickTime event records }
 
 
@@ -6884,6 +7644,8 @@ function NewMusicMIDISendUPP(userRoutine: MusicMIDISendProcPtr): MusicMIDISendUP
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 { macros for extracting various fields from the QuickTime event records}
 
 
@@ -6911,7 +7673,10 @@ const
 	kCurrentlyNotNativeEndian = 2;
 
 { UPP call backs }
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  NewMusicMIDISendUPP()
  *  
@@ -6919,10 +7684,14 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   available as macro/inline
  }
+<<<<<<< HEAD
 function NewMusicOfflineDataUPP( userRoutine: MusicOfflineDataProcPtr ): MusicOfflineDataUPP; external name '_NewMusicOfflineDataUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
@@ -6957,10 +7726,27 @@ function NewMusicOfflineDataUPP( userRoutine: MusicOfflineDataProcPtr ): MusicOf
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function NewMusicMIDISendUPP( userRoutine: MusicMIDISendProcPtr ): MusicMIDISendUPP; external name '_NewMusicMIDISendUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+{
+ *  NewMusicOfflineDataUPP()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function NewMusicOfflineDataUPP( userRoutine: MusicOfflineDataProcPtr ): MusicOfflineDataUPP; external name '_NewMusicOfflineDataUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+>>>>>>> origin/cpstrnew
 {
  *  NewTuneCallBackUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -6992,10 +7778,20 @@ function NewTuneCallBackUPP( userRoutine: TuneCallBackProcPtr ): TuneCallBackUPP
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function NewTuneCallBackUPP( userRoutine: TuneCallBackProcPtr ): TuneCallBackUPP; external name '_NewTuneCallBackUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+>>>>>>> origin/cpstrnew
 {
  *  NewTunePlayCallBackUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -7027,10 +7823,20 @@ function NewTunePlayCallBackUPP( userRoutine: TunePlayCallBackProcPtr ): TunePla
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function NewTunePlayCallBackUPP( userRoutine: TunePlayCallBackProcPtr ): TunePlayCallBackUPP; external name '_NewTunePlayCallBackUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+>>>>>>> origin/cpstrnew
 {
  *  DisposeMusicMIDISendUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -7062,10 +7868,20 @@ procedure DisposeMusicMIDISendUPP( userUPP: MusicMIDISendUPP ); external name '_
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeMusicMIDISendUPP( userUPP: MusicMIDISendUPP ); external name '_DisposeMusicMIDISendUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+>>>>>>> origin/cpstrnew
 {
  *  DisposeMusicOfflineDataUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -7097,10 +7913,20 @@ procedure DisposeMusicOfflineDataUPP( userUPP: MusicOfflineDataUPP ); external n
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeMusicOfflineDataUPP( userUPP: MusicOfflineDataUPP ); external name '_DisposeMusicOfflineDataUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+>>>>>>> origin/cpstrnew
 {
  *  DisposeTuneCallBackUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -7132,10 +7958,20 @@ procedure DisposeTuneCallBackUPP( userUPP: TuneCallBackUPP ); external name '_Di
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeTuneCallBackUPP( userUPP: TuneCallBackUPP ); external name '_DisposeTuneCallBackUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+>>>>>>> origin/cpstrnew
 {
  *  DisposeTunePlayCallBackUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -7167,10 +8003,20 @@ procedure DisposeTunePlayCallBackUPP( userUPP: TunePlayCallBackUPP ); external n
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeTunePlayCallBackUPP( userUPP: TunePlayCallBackUPP ); external name '_DisposeTunePlayCallBackUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+>>>>>>> origin/cpstrnew
 {
  *  InvokeMusicMIDISendUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -7202,10 +8048,20 @@ function InvokeMusicMIDISendUPP( self: ComponentInstance; refCon: SIGNEDLONG; va
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function InvokeMusicMIDISendUPP( self: ComponentInstance; refCon: SIGNEDLONG; var mmp: MusicMIDIPacket; userUPP: MusicMIDISendUPP ): ComponentResult; external name '_InvokeMusicMIDISendUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+>>>>>>> origin/cpstrnew
 {
  *  InvokeMusicOfflineDataUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -7237,10 +8093,20 @@ function InvokeMusicOfflineDataUPP( SoundData: Ptr; numBytes: SIGNEDLONG; myRefC
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function InvokeMusicOfflineDataUPP( SoundData: Ptr; numBytes: SIGNEDLONG; myRefCon: SIGNEDLONG; userUPP: MusicOfflineDataUPP ): ComponentResult; external name '_InvokeMusicOfflineDataUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+>>>>>>> origin/cpstrnew
 {
  *  InvokeTuneCallBackUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -7272,10 +8138,20 @@ procedure InvokeTuneCallBackUPP( const (*var*) status: TuneStatus; refCon: SIGNE
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure InvokeTuneCallBackUPP( const (*var*) status: TuneStatus; refCon: SIGNEDLONG; userUPP: TuneCallBackUPP ); external name '_InvokeTuneCallBackUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+>>>>>>> origin/cpstrnew
 {
  *  InvokeTunePlayCallBackUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -7417,12 +8293,139 @@ end.
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   available as macro/inline
  }
 procedure InvokeTunePlayCallBackUPP( var event: UNSIGNEDLONG; seed: SIGNEDLONG; refCon: SIGNEDLONG; userUPP: TunePlayCallBackUPP ); external name '_InvokeTunePlayCallBackUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+<<<<<<< HEAD
+=======
 
+>>>>>>> origin/cpstrnew
+
+{ selectors for component calls }
+const
+	kQTMIDIGetMIDIPortsSelect = $0001;
+	kQTMIDIUseSendPortSelect = $0002;
+	kQTMIDISendMIDISelect = $0003;
+	kMusicGetDescriptionSelect = $0001;
+	kMusicGetPartSelect = $0002;
+	kMusicSetPartSelect = $0003;
+	kMusicSetPartInstrumentNumberSelect = $0004;
+	kMusicGetPartInstrumentNumberSelect = $0005;
+	kMusicStorePartInstrumentSelect = $0006;
+	kMusicGetPartAtomicInstrumentSelect = $0009;
+	kMusicSetPartAtomicInstrumentSelect = $000A;
+	kMusicGetPartKnobSelect = $0010;
+	kMusicSetPartKnobSelect = $0011;
+	kMusicGetKnobSelect = $0012;
+	kMusicSetKnobSelect = $0013;
+	kMusicGetPartNameSelect = $0014;
+	kMusicSetPartNameSelect = $0015;
+	kMusicFindToneSelect = $0016;
+	kMusicPlayNoteSelect = $0017;
+	kMusicResetPartSelect = $0018;
+	kMusicSetPartControllerSelect = $0019;
+	kMusicGetPartControllerSelect = $001A;
+	kMusicGetMIDIProcSelect = $001B;
+	kMusicSetMIDIProcSelect = $001C;
+	kMusicGetInstrumentNamesSelect = $001D;
+	kMusicGetDrumNamesSelect = $001E;
+	kMusicGetMasterTuneSelect = $001F;
+	kMusicSetMasterTuneSelect = $0020;
+	kMusicGetInstrumentAboutInfoSelect = $0022;
+	kMusicGetDeviceConnectionSelect = $0023;
+	kMusicUseDeviceConnectionSelect = $0024;
+	kMusicGetKnobSettingStringsSelect = $0025;
+	kMusicGetMIDIPortsSelect = $0026;
+	kMusicSendMIDISelect = $0027;
+	kMusicStartOfflineSelect = $0029;
+	kMusicSetOfflineTimeToSelect = $002A;
+	kMusicGetInstrumentKnobDescriptionSelect = $002B;
+	kMusicGetDrumKnobDescriptionSelect = $002C;
+	kMusicGetKnobDescriptionSelect = $002D;
+	kMusicGetInfoTextSelect = $002E;
+	kMusicGetInstrumentInfoSelect = $002F;
+	kMusicTaskSelect = $0031;
+	kMusicSetPartInstrumentNumberInterruptSafeSelect = $0032;
+	kMusicSetPartSoundLocalizationSelect = $0033;
+	kMusicGenericConfigureSelect = $0100;
+	kMusicGenericGetPartSelect = $0101;
+	kMusicGenericGetKnobListSelect = $0102;
+	kMusicGenericSetResourceNumbersSelect = $0103;
+	kMusicDerivedMIDISendSelect = $0200;
+	kMusicDerivedSetKnobSelect = $0201;
+	kMusicDerivedSetPartSelect = $0202;
+	kMusicDerivedSetInstrumentSelect = $0203;
+	kMusicDerivedSetPartInstrumentNumberSelect = $0204;
+	kMusicDerivedSetMIDISelect = $0205;
+	kMusicDerivedStorePartInstrumentSelect = $0206;
+	kMusicDerivedOpenResFileSelect = $0207;
+	kMusicDerivedCloseResFileSelect = $0208;
+	kNARegisterMusicDeviceSelect = $0000;
+	kNAUnregisterMusicDeviceSelect = $0001;
+	kNAGetRegisteredMusicDeviceSelect = $0002;
+	kNASaveMusicConfigurationSelect = $0003;
+	kNANewNoteChannelSelect = $0004;
+	kNADisposeNoteChannelSelect = $0005;
+	kNAGetNoteChannelInfoSelect = $0006;
+	kNAPrerollNoteChannelSelect = $0007;
+	kNAUnrollNoteChannelSelect = $0008;
+	kNASetNoteChannelVolumeSelect = $000B;
+	kNAResetNoteChannelSelect = $000C;
+	kNAPlayNoteSelect = $000D;
+	kNASetControllerSelect = $000E;
+	kNASetKnobSelect = $000F;
+	kNAFindNoteChannelToneSelect = $0010;
+	kNASetInstrumentNumberSelect = $0011;
+	kNAPickInstrumentSelect = $0012;
+	kNAPickArrangementSelect = $0013;
+	kNAStuffToneDescriptionSelect = $001B;
+	kNACopyrightDialogSelect = $001C;
+	kNAGetIndNoteChannelSelect = $001F;
+	kNAGetMIDIPortsSelect = $0021;
+	kNAGetNoteRequestSelect = $0022;
+	kNASendMIDISelect = $0023;
+	kNAPickEditInstrumentSelect = $0024;
+	kNANewNoteChannelFromAtomicInstrumentSelect = $0025;
+	kNASetAtomicInstrumentSelect = $0026;
+	kNAGetKnobSelect = $0028;
+	kNATaskSelect = $0029;
+	kNASetNoteChannelBalanceSelect = $002A;
+	kNASetInstrumentNumberInterruptSafeSelect = $002B;
+	kNASetNoteChannelSoundLocalizationSelect = $002C;
+	kNAGetControllerSelect = $002D;
+	kTuneSetHeaderSelect = $0004;
+	kTuneGetTimeBaseSelect = $0005;
+	kTuneSetTimeScaleSelect = $0006;
+	kTuneGetTimeScaleSelect = $0007;
+	kTuneGetIndexedNoteChannelSelect = $0008;
+	kTuneQueueSelect = $000A;
+	kTuneInstantSelect = $000B;
+	kTuneGetStatusSelect = $000C;
+	kTuneStopSelect = $000D;
+	kTuneSetVolumeSelect = $0010;
+	kTuneGetVolumeSelect = $0011;
+	kTunePrerollSelect = $0012;
+	kTuneUnrollSelect = $0013;
+	kTuneSetNoteChannelsSelect = $0014;
+	kTuneSetPartTransposeSelect = $0015;
+	kTuneGetNoteAllocatorSelect = $0017;
+	kTuneSetSofterSelect = $0018;
+	kTuneTaskSelect = $0019;
+	kTuneSetBalanceSelect = $001A;
+	kTuneSetSoundLocalizationSelect = $001B;
+	kTuneSetHeaderWithSizeSelect = $001C;
+	kTuneSetPartMixSelect = $001D;
+	kTuneGetPartMixSelect = $001E;
+
+{$endc} {not TARGET_CPU_64}
+
+{$endc} {TARGET_OS_MAC}
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 { selectors for component calls }
 const
@@ -7546,6 +8549,7 @@ const
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -7554,3 +8558,6 @@ end.
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

@@ -59,11 +59,15 @@ var
   ExecutedActions : TFPHashList;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   CurrentDir      : string;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  CurrentDir      : string;
+>>>>>>> origin/cpstrnew
 
 procedure RegisterPkgHandler(const AAction:string;pkghandlerclass:TPackageHandlerClass);
 begin
@@ -115,6 +119,9 @@ begin
   if APackage.Name=CurrentDirPackageName then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
     begin
       // It could be that to resolve some dependencies, the current directory changes. The first time
       // PackageBuildPath is called the dependencies are not resolved yet, so store the current directory
@@ -127,6 +134,7 @@ begin
       else
         Result:=CurrentDir;
     end
+<<<<<<< HEAD
   else if APackage.Name=CmdLinePackageName then
     Result:=GlobalOptions.BuildDir+ChangeFileExt(ExtractFileName(APackage.LocalFileName),'')
   else if (APackage.RecompileBroken) and (APackage.SourcePath<>'') then
@@ -141,6 +149,12 @@ begin
   else if APackage.Name=CmdLinePackageName then
     Result:=GlobalOptions.BuildDir+ChangeFileExt(ExtractFileName(APackage.LocalFileName),'')
 >>>>>>> origin/fixes_2_2
+=======
+  else if APackage.Name=CmdLinePackageName then
+    Result:=GlobalOptions.BuildDir+ChangeFileExt(ExtractFileName(APackage.LocalFileName),'')
+  else if (APackage.RecompileBroken) and (APackage.SourcePath<>'') then
+    Result:=APackage.SourcePath
+>>>>>>> origin/cpstrnew
   else
     Result:=GlobalOptions.BuildDir+APackage.Name;
 end;
@@ -190,11 +204,15 @@ begin
   Log(vlCommands,SLogExecute,[Prog,Args]);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Flush(StdOut);
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  Flush(StdOut);
+>>>>>>> origin/cpstrnew
   Result:=SysUtils.ExecuteProcess(Prog,Args);
 end;
 

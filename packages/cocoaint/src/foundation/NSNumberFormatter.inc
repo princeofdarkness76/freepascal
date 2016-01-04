@@ -90,6 +90,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     _reserved: array[0..(12)-1] of Pointer;
 =======
         _reserved: array[0..11] of Pointer;
@@ -100,6 +101,9 @@ type
 =======
         _reserved: array[0..11] of Pointer;
 >>>>>>> graemeg/cpstrnew
+=======
+        _reserved: array[0..11] of Pointer;
+>>>>>>> origin/cpstrnew
 =======
         _reserved: array[0..11] of Pointer;
 >>>>>>> origin/cpstrnew

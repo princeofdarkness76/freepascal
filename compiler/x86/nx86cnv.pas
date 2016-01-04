@@ -244,6 +244,7 @@ implementation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if use_vectorfpu(resultdef) and
 =======
         if use_sse(resultdef) and
@@ -251,6 +252,9 @@ implementation
 =======
         if use_sse(resultdef) and
 >>>>>>> origin/fixes_2_2
+=======
+        if use_vectorfpu(resultdef) and
+>>>>>>> origin/cpstrnew
            (torddef(left.resultdef).ordtype = s32bit) then
           expectloc:=LOC_MMREGISTER
         else
@@ -284,11 +288,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         if use_vectorfpu(resultdef) and
@@ -460,11 +467,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
             { don't change left.location.reference, because if it's a temp we
@@ -495,6 +505,7 @@ implementation
                 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   current_asmdata.CurrAsmList.concat(taicpu.op_ref(A_FILD,S_IQ,leftref));
 =======
                   href:=left.location.reference;
@@ -506,6 +517,9 @@ implementation
                   tcgx86(cg).make_simple_ref(current_asmdata.CurrAsmList,href);
                   current_asmdata.CurrAsmList.concat(taicpu.op_ref(A_FILD,S_IQ,href));
 >>>>>>> origin/fixes_2_2
+=======
+                  current_asmdata.CurrAsmList.concat(taicpu.op_ref(A_FILD,S_IQ,leftref));
+>>>>>>> origin/cpstrnew
                 end;
               u64bit:
                 begin
@@ -519,6 +533,7 @@ implementation
     
                    if not(signtested) then
                      begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -562,6 +577,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                        inc(leftref.offset,4);
                        emit_const_ref(A_BT,S_L,31,leftref);
                        dec(leftref.offset,4);
@@ -584,6 +601,7 @@ implementation
                     internalerror(2007120901);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                  current_asmdata.CurrAsmList.concat(taicpu.op_ref(A_FILD,S_IL,leftref));
 =======
                  href:=left.location.reference;
@@ -595,6 +613,9 @@ implementation
                  tcgx86(cg).make_simple_ref(current_asmdata.CurrAsmList,href);
                  current_asmdata.CurrAsmList.concat(taicpu.op_ref(A_FILD,S_IL,href));
 >>>>>>> origin/fixes_2_2
+=======
+                 current_asmdata.CurrAsmList.concat(taicpu.op_ref(A_FILD,S_IL,leftref));
+>>>>>>> origin/cpstrnew
                 end;
             end;
             tcgx86(cg).inc_fpu_stack;

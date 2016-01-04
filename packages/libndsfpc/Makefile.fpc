@@ -18,6 +18,7 @@ name=libndsfpc
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 version=3.1.1
 =======
 version=2.5.1
@@ -38,6 +39,9 @@ packages=rtl fpmkunit
 =======
 >>>>>>> origin/fixes_2_2
 version=2.2.5
+=======
+version=2.5.1
+>>>>>>> origin/cpstrnew
 
 [target]
 units=nds9 nds7 dswifi9 dswifi7 fat gbfs mikmod9  mikmod7

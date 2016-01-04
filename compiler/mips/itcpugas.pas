@@ -46,6 +46,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         {$i rmipsgas.inc}
 =======
         {$i rmipsstd.inc}
@@ -56,6 +57,9 @@ const
 =======
         {$i rmipsstd.inc}
 >>>>>>> graemeg/cpstrnew
+=======
+        {$i rmipsstd.inc}
+>>>>>>> origin/cpstrnew
 =======
         {$i rmipsstd.inc}
 >>>>>>> origin/cpstrnew
@@ -72,6 +76,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   p: tregisterindex;
 =======
   i, p: tregisterindex;
@@ -82,6 +87,9 @@ var
 =======
   i, p: tregisterindex;
 >>>>>>> graemeg/cpstrnew
+=======
+  i, p: tregisterindex;
+>>>>>>> origin/cpstrnew
 =======
   i, p: tregisterindex;
 >>>>>>> origin/cpstrnew
@@ -129,12 +137,15 @@ end.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {
@@ -146,10 +157,13 @@ end.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew

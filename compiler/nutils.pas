@@ -50,6 +50,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     tforeachprocmethod = ({ children are processed before the parent node }
                           pm_preprocess,
                           { children are processed after the parent node }
@@ -65,6 +66,9 @@ interface
 =======
     tforeachprocmethod = (pm_preprocess,pm_postprocess,
 >>>>>>> graemeg/cpstrnew
+=======
+    tforeachprocmethod = (pm_preprocess,pm_postprocess,
+>>>>>>> origin/cpstrnew
 =======
     tforeachprocmethod = (pm_preprocess,pm_postprocess,
 >>>>>>> origin/cpstrnew
@@ -106,6 +110,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> graemeg/cpstrnew
@@ -113,6 +118,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     { creates an ordinal constant, optionally based on the result from a
@@ -126,6 +133,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -135,6 +143,9 @@ interface
 =======
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 =======
 
 >>>>>>> origin/cpstrnew
@@ -151,6 +162,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     { checks whether sym is a static field and if so, translates the access
       to the appropriate node tree }
     function handle_staticfield_access(sym: tsym; var p1: tnode): boolean;
@@ -163,6 +175,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     { returns true if n is an array element access of a bitpacked array with
       elements of the which the vitsize mod 8 <> 0, or if is a field access
       with bitsize mod 8 <> 0 or bitoffset mod 8 <> 0 of an element in a
@@ -173,6 +187,7 @@ interface
       represented by n }
     function genloadfield(n: tnode; const fieldname: string): tnode;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -214,6 +229,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -263,11 +280,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
           tempcreaten:
@@ -313,6 +333,7 @@ implementation
           result := false; }
       end;
 <<<<<<< HEAD
+<<<<<<< HEAD
       if (procmethod=pm_postprocess) or (procmethod=pm_postandagain) then
         result:=process_children(result);
       if procmethod=pm_postandagain then
@@ -350,6 +371,11 @@ implementation
       end;
       if n.inheritsfrom(tbinarynode) then
 >>>>>>> graemeg/fixes_2_2
+=======
+      if (procmethod=pm_postprocess) or (procmethod=pm_postandagain) then
+        result:=process_children(result);
+      if procmethod=pm_postandagain then
+>>>>>>> origin/cpstrnew
         begin
           case f(n,arg) of
             fen_norecurse_false:
@@ -394,12 +420,15 @@ implementation
 <<<<<<< HEAD
               result := foreachnodestatic(procmethod,tcallnode(n).funcretnode,f,arg) or result;
               result := foreachnodestatic(procmethod,tnode(tcallnode(n).callcleanupblock),f,arg) or result;
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
               result := foreachnodestatic(procmethod,tcallnode(n)._funcretnode,f,arg) or result;
               result := foreachnodestatic(procmethod,tcallnode(n).methodpointerdone,f,arg) or result;
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
             end;
           ifn, whilerepeatn, forn, tryexceptn, tryfinallyn:
             begin
@@ -416,11 +445,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
           tempcreaten:
@@ -625,6 +657,10 @@ implementation
       var
         pd : tprocdef;
       begin
+        result:=nil;
+        { is not assigned while parsing a property }
+        if not assigned(current_procinfo) then
+          exit;
         { we can't use searchsym here, because the
           symtablestack is not fully setup when pass1
           is run for nested procedures }
@@ -763,12 +799,15 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function load_vmt_for_self_node(self_node: tnode): tnode;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     function call_fail_node:tnode;
@@ -980,10 +1019,22 @@ implementation
           begin
             result:=internalstatements(newstatement);
             addstatement(newstatement,ccallnode.createintern('fpc_unicodestr_decr_ref',
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
         else if is_interfacecom(p.resultdef) then
+=======
+                  ccallparanode.create(
+                    ctypeconvnode.create_internal(p,voidpointertype),
+                  nil)));
+            addstatement(newstatement,cassignmentnode.create(
+               ctypeconvnode.create_internal(p.getcopy,voidpointertype),
+               cnilnode.create
+               ));
+          end
+        else if is_interfacecom_or_dispinterface(p.resultdef) then
+>>>>>>> origin/cpstrnew
           begin
             result:=internalstatements(newstatement);
             addstatement(newstatement,ccallnode.createintern('fpc_intf_decr_ref',
@@ -1114,6 +1165,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   if is_implicit_pointer_object_type(tunarynode(p).left.resultdef) or
                     is_bitpacked_access(p) then
                     inc(result,2)
@@ -1131,6 +1183,10 @@ implementation
                   if is_implicit_pointer_object_type(tunarynode(p).left.resultdef) then
                     inc(result,2);
 >>>>>>> graemeg/cpstrnew
+=======
+                  if is_implicit_pointer_object_type(tunarynode(p).left.resultdef) then
+                    inc(result,2);
+>>>>>>> origin/cpstrnew
 =======
                   if is_implicit_pointer_object_type(tunarynode(p).left.resultdef) then
                     inc(result,2);
@@ -1235,6 +1291,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               exitn:
                 begin
                   inc(result,2);
@@ -1250,6 +1307,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
               stringconstn,
@@ -1292,11 +1351,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                     in_unaligned_x,
@@ -1468,10 +1530,13 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
           begin
@@ -1491,6 +1556,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
           begin
 <<<<<<< HEAD
@@ -1512,6 +1578,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
             hn:=n.simplify(true);
@@ -1526,12 +1594,15 @@ implementation
                 n:=hn;
                 typecheckpass(n);
               end;
+<<<<<<< HEAD
 =======
             treechanged:=true;
             n.free;
             n:=hn;
             typecheckpass(n);
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
           end;
       end;
 
@@ -1562,11 +1633,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     function getpropaccesslist(propsym:tpropertysym; pap:tpropaccesslisttypes;out propaccesslist:tpropaccesslist):boolean;
@@ -1591,11 +1665,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     procedure propaccesslist_to_node(var p1:tnode;st:TSymtable;pl:tpropaccesslist);
@@ -1708,6 +1785,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function handle_staticfield_access(sym: tsym; var p1: tnode): boolean;
 
       function handle_generic_staticfield_access:boolean;
@@ -1778,6 +1856,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     function is_bitpacked_access(n: tnode): boolean;
       begin
         case n.nodetype of
@@ -1787,6 +1867,7 @@ implementation
               { only orddefs and enumdefs are actually bitpacked. Don't consider
                 e.g. an access to a 3-byte record as "bitpacked", since it
                 isn't }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1802,6 +1883,9 @@ implementation
 =======
               (tvecnode(n).left.resultdef.typ in [orddef,enumdef]) and
 >>>>>>> graemeg/cpstrnew
+=======
+              (tvecnode(n).left.resultdef.typ in [orddef,enumdef]) and
+>>>>>>> origin/cpstrnew
 =======
               (tvecnode(n).left.resultdef.typ in [orddef,enumdef]) and
 >>>>>>> origin/cpstrnew
@@ -1864,6 +1948,9 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
         end;
       end;
 

@@ -2937,17 +2937,23 @@ const
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   {$ifdef win64}
   MAXIMUM_PROCESSORS = 64;
   {$else}
   MAXIMUM_PROCESSORS = 32;
   {$endif}
+<<<<<<< HEAD
 =======
   MAXIMUM_PROCESSORS = 32;
 >>>>>>> graemeg/fixes_2_2
 =======
   MAXIMUM_PROCESSORS = 32;
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
   {$EXTERNALSYM MAXIMUM_PROCESSORS}
 
   THREAD_TERMINATE            = $0001;

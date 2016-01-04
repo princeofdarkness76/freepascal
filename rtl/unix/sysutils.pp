@@ -545,10 +545,13 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 Function FileRead (Handle : Longint; out Buffer; Count : longint) : Longint;
@@ -652,6 +655,7 @@ Var Info : Stat;
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   If  (fpstat (pointer(FileName),Info)<0) or fpS_ISDIR(info.st_mode) then
 =======
   If  fpstat (pointer(FileName),Info)<0 then
@@ -667,6 +671,11 @@ begin
 =======
 >>>>>>> graemeg/cpstrnew
 =======
+>>>>>>> origin/cpstrnew
+=======
+  If  (fpstat (pointer(FileName),Info)<0) or fpS_ISDIR(info.st_mode) then
+    exit(-1)
+  else 
 >>>>>>> origin/cpstrnew
     Result:=UnixToWinAge(info.st_mtime);
 >>>>>>> graemeg/cpstrnew
@@ -1527,12 +1536,16 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function ExecuteProcess(Const Path: AnsiString; Const ComLine: AnsiString;Flags:TExecuteFlags=[]):integer;
 =======
 =======
 >>>>>>> origin/fixes_2_2
 function ExecuteProcess(Const Path: AnsiString; Const ComLine: AnsiString):integer;
 >>>>>>> graemeg/fixes_2_2
+=======
+function ExecuteProcess(Const Path: AnsiString; Const ComLine: AnsiString;Flags:TExecuteFlags=[]):integer;
+>>>>>>> origin/cpstrnew
 var
   pid    : longint;
   e      : EOSError;
@@ -1762,12 +1775,16 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 Procedure SysBeep;
 
 begin
   Write(#7);
   Flush(Output);
 end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1790,6 +1807,8 @@ end;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 
 {****************************************************************************
                               Initialization code

@@ -10,6 +10,7 @@ Ported to FPC by Nikolay Nikolov (nickysn@users.sourceforge.net)
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 program Fire;
 
 {$MODE objfpc}
@@ -169,94 +170,88 @@ begin
 =======
 >>>>>>> origin/fixes_2_2
 Program Fire;
+=======
+program Fire;
+>>>>>>> origin/cpstrnew
 
 {$MODE objfpc}
 
-Uses
+uses
   ptc;
 
-Function pack(r, g, b : Uint32) : Uint32;
-
-Begin
+function pack(r, g, b: Uint32): Uint32;
+begin
   { pack color integer }
-  pack := (r Shl 16) Or (g Shl 8) Or b;
-End;
+  pack := (r shl 16) or (g shl 8) or b;
+end;
 
-Procedure generate(palette : TPTCPalette);
-
-Var
-  data : PUint32;
-  i, c : Integer;
-
-Begin
+procedure generate(palette: TPTCPalette);
+var
+  data: PUint32;
+  i, c: Integer;
+begin
   { lock palette data }
   data := palette.lock;
 
-  Try
+  try
     { black to red }
     i := 0;
     c := 0;
-    While i < 64 Do
-    Begin
+    while i < 64 do
+    begin
       data[i] := pack(c, 0, 0);
       Inc(c, 4);
       Inc(i);
-    End;
+    end;
 
     { red to yellow }
     c := 0;
-    While i < 128 Do
-    Begin
+    while i < 128 do
+    begin
       data[i] := pack(255, c, 0);
       Inc(c, 4);
       Inc(i);
-    End;
+    end;
 
     { yellow to white }
     c := 0;
-    While i < {192}128 Do
-    Begin
+    while i < {192}128 do
+    begin
       data[i] := pack(255, 255, c);
       Inc(c, 4);
       Inc(i);
-    End;
+    end;
 
     { white }
-    While i < 256 Do
-    Begin
+    while i < 256 do
+    begin
       data[i] := pack(255, 255, 255);
       Inc(i);
-    End;
+    end;
 
-  Finally
+  finally
     { unlock palette }
     palette.unlock;
-  End;
-End;
+  end;
+end;
 
-Var
-  format : TPTCFormat;
-  console : TPTCConsole;
-  surface : TPTCSurface;
-  palette : TPTCPalette;
-  state : Integer;
-  intensity : Single;
-  pixels, pixel, p : PUint8;
-  width, height : Integer;
-  x, y : Integer;
-  top, bottom, c1, c2 : Uint32;
-  generator : PUint8;
-  color : Integer;
-  area : TPTCArea;
-
-Begin
-  format := Nil;
-  console := Nil;
-  surface := Nil;
-  palette := Nil;
-  area := Nil;
-  Try
-    Try
+var
+  format: TPTCFormat = nil;
+  console: TPTCConsole = nil;
+  surface: TPTCSurface = nil;
+  palette: TPTCPalette = nil;
+  state: Integer;
+  intensity: Single;
+  pixels, pixel, p: PUint8;
+  width, height: Integer;
+  x, y: Integer;
+  top, bottom, c1, c2: Uint32;
+  generator: PUint8;
+  color: Integer;
+  area: TPTCArea = nil;
+begin
+  try
+    try
       { create format }
       format := TPTCFormat.Create(8);
 
@@ -333,33 +328,39 @@ Begin
       area := TPTCArea.Create(0, 0, 320, 200);
 
       { main loop }
-      Repeat
+      repeat
         { lower flame on keypress }
-        If console.KeyPressed Then
+        if console.KeyPressed then
           state := 2;
 
         { state machine }
-        Case state Of
-          0 : Begin
+        case state of
+          0: begin
             { raise flame }
-            intensity += 0.007;
+            intensity := intensity + 0.007;
 
             { maximum flame height }
-            If intensity > 0.8 Then
+            if intensity > 0.8 then
               state := 1;
-          End;
-          1 : Begin
+          end;
+          1: begin
             { constant flame }
+<<<<<<< HEAD
           End;
           2 : Begin
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+          end;
+          2: begin
+>>>>>>> origin/cpstrnew
             { lower flame }
             intensity := intensity - 0.005;
 
             { exit program when flame is out }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             if intensity < 0.01 then
@@ -379,26 +380,36 @@ Begin
 >>>>>>> origin/fixes_2_2
             If intensity < 0.01 Then
             Begin
+=======
+            if intensity < 0.01 then
+            begin
+>>>>>>> origin/cpstrnew
               console.close;
-	      Exit;
-            End;
-          End;
-        End;
+              exit;
+            end;
+          end;
+        end;
 
         { lock surface pixels }
         pixels := surface.lock;
+<<<<<<< HEAD
 	
 	Try
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+
+        try
+>>>>>>> origin/cpstrnew
           { get surface dimensions }
           width := surface.width;
           height := surface.height;
 
           { flame vertical loop }
           y := 1;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
           while y < height - 4 do
@@ -411,10 +422,15 @@ Begin
           While y < height - 4 Do
           Begin
 >>>>>>> origin/fixes_2_2
+=======
+          while y < height - 4 do
+          begin
+>>>>>>> origin/cpstrnew
             { current pixel pointer }
             pixel := pixels + y * width;
 
             { flame horizontal loop }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             for x := 0 to width - 1 do
@@ -432,11 +448,18 @@ Begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+            for x := 0 to width - 1 do
+            begin
+              { sum top pixels }
+              p := pixel + (width shl 1);
+>>>>>>> origin/cpstrnew
               top := p^;
               Inc(top, (p - 1)^);
               Inc(top, (p + 1)^);
 
               { bottom pixel }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
               bottom := (pixel + (width shl 2))^;
@@ -452,18 +475,25 @@ Begin
 =======
 >>>>>>> origin/fixes_2_2
               bottom := (pixel + (width Shl 2))^;
+=======
+              bottom := (pixel + (width shl 2))^;
+>>>>>>> origin/cpstrnew
 
               { combine pixels }
-              c1 := (top + bottom) Shr 2;
-              If c1 > 1 Then
+              c1 := (top + bottom) shr 2;
+              if c1 > 1 then
                 Dec(c1);
 
               { interpolate }
+<<<<<<< HEAD
               c2 := (c1 + bottom) Shr 1;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+              c2 := (c1 + bottom) shr 1;
+>>>>>>> origin/cpstrnew
 
               { store pixels }
               pixel^ := c1;
@@ -471,6 +501,7 @@ Begin
 
               { next pixel }
               Inc(pixel);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             end;
@@ -486,12 +517,18 @@ Begin
             Inc(y, 2);
           End;
 >>>>>>> origin/fixes_2_2
+=======
+            end;
+            Inc(y, 2);
+          end;
+>>>>>>> origin/cpstrnew
 
           { setup flame generator pointer }
           generator := pixels + width * (height - 4);
 
           { update flame generator bar }
           x := 0;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
           while x < width do
@@ -504,6 +541,10 @@ Begin
           While x < width Do
           Begin
 >>>>>>> origin/fixes_2_2
+=======
+          while x < width do
+          begin
+>>>>>>> origin/cpstrnew
             { random block color taking intensity into account }
             color := random(Integer(Trunc(255 * intensity)));
 
@@ -530,6 +571,7 @@ Begin
             Inc(x, 4);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           end;
 
         finally
@@ -540,21 +582,29 @@ Begin
 =======
 >>>>>>> origin/fixes_2_2
           End;
+=======
+          end;
+>>>>>>> origin/cpstrnew
 
-        Finally
+        finally
           { unlock surface }
           surface.unlock;
+<<<<<<< HEAD
 	End;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+        end;
+>>>>>>> origin/cpstrnew
 
         { copy surface to console }
         surface.copy(console, area, area);
 
         { update console }
         console.update;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       until False;
@@ -583,11 +633,17 @@ Begin
       
     Finally
 >>>>>>> origin/fixes_2_2
+=======
+      until False;
+
+    finally
+>>>>>>> origin/cpstrnew
       console.Free;
       surface.Free;
       format.Free;
       palette.Free;
       area.Free;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -621,3 +677,12 @@ End.
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    end;
+  except
+    on error: TPTCError do
+      { report error }
+      error.report;
+  end;
+end.
+>>>>>>> origin/cpstrnew

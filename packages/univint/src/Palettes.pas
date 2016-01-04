@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       QD/Palettes.h
  
      Contains:   Palette Manager Interfaces.
@@ -16,11 +17,15 @@
 =======
      File:       QD/Palettes.h
 >>>>>>> origin/fixes_2.4
+=======
+     File:       QD/Palettes.h
+>>>>>>> origin/cpstrnew
  
      Contains:   Palette Manager Interfaces.
  
      Version:    Quickdraw-262~1
  
+<<<<<<< HEAD
 <<<<<<< HEAD
      Copyright:  © 1987-2002 by Apple Computer, Inc., all rights reserved
 <<<<<<< HEAD
@@ -30,6 +35,9 @@
 =======
      Copyright:  © 1987-2008 by Apple Computer, Inc., all rights reserved
 >>>>>>> origin/fixes_2.4
+=======
+     Copyright:  © 1987-2008 by Apple Computer, Inc., all rights reserved
+>>>>>>> origin/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -40,6 +48,7 @@
  
 }
 {   Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+<<<<<<< HEAD
 {
     Modified for use with Free Pascal
     Version 308
@@ -54,6 +63,8 @@
  
 }
 {   Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+=======
+>>>>>>> origin/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -62,12 +73,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -79,6 +94,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -93,6 +109,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -108,6 +128,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -118,6 +139,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -125,13 +149,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -139,6 +167,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -147,8 +177,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -159,6 +192,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -179,6 +213,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -187,12 +223,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -200,6 +239,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -390,12 +430,25 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 	{$setc TARGET_CPU_PPC64 := FALSE}
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+>>>>>>> origin/cpstrnew
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
@@ -406,6 +459,8 @@ interface
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -416,6 +471,7 @@ interface
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -457,6 +513,41 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -485,6 +576,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -493,6 +585,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -505,6 +599,9 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 uses MacTypes,QuickdrawTypes;
 {$endc} {not MACOSALLINCLUDE}
 
@@ -551,6 +648,7 @@ type
 type
 	PaletteHandle = ^PalettePtr;
 {$ifc not TARGET_CPU_64}
+<<<<<<< HEAD
 {
  *  InitPalettes()   *** DEPRECATED ***
  *  
@@ -584,10 +682,22 @@ function NewPalette( entries: SInt16; srcColors: CTabHandle; srcUsage: SInt16; s
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function GetNewPalette( PaletteID: SInt16 ): PaletteHandle; external name '_GetNewPalette';
+=======
+{
+ *  InitPalettes()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure InitPalettes; external name '_InitPalettes';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  DisposePalette()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -608,10 +718,21 @@ procedure DisposePalette( srcPalette: PaletteHandle ); external name '_DisposePa
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure ActivatePalette( srcWindow: WindowRef ); external name '_ActivatePalette';
+=======
+ *  NewPalette()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function NewPalette( entries: SInt16; srcColors: CTabHandle; srcUsage: SInt16; srcTolerance: SInt16 ): PaletteHandle; external name '_NewPalette';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  SetPalette()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -632,10 +753,21 @@ procedure SetPalette( dstWindow: WindowRef; srcPalette: PaletteHandle; cUpdates:
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure NSetPalette( dstWindow: WindowRef; srcPalette: PaletteHandle; nCUpdates: SInt16 ); external name '_NSetPalette';
+=======
+ *  GetNewPalette()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function GetNewPalette( PaletteID: SInt16 ): PaletteHandle; external name '_GetNewPalette';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  GetPalette()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -656,10 +788,21 @@ function GetPalette( srcWindow: WindowRef ): PaletteHandle; external name '_GetP
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure CopyPalette( srcPalette: PaletteHandle; dstPalette: PaletteHandle; srcEntry: SInt16; dstEntry: SInt16; dstLength: SInt16 ); external name '_CopyPalette';
+=======
+ *  DisposePalette()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure DisposePalette( srcPalette: PaletteHandle ); external name '_DisposePalette';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  PmForeColor()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -680,10 +823,21 @@ procedure PmForeColor( dstEntry: SInt16 ); external name '_PmForeColor';
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure PmBackColor( dstEntry: SInt16 ); external name '_PmBackColor';
+=======
+ *  ActivatePalette()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure ActivatePalette( srcWindow: WindowRef ); external name '_ActivatePalette';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  AnimateEntry()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -706,10 +860,21 @@ procedure AnimateEntry( dstWindow: WindowRef; dstEntry: SInt16; const (*var*) sr
 procedure MacAnimatePalette( dstWindow: WindowRef; srcCTab: CTabHandle; srcIndex: SInt16; dstEntry: SInt16; dstLength: SInt16 ); external name '_AnimatePalette';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 procedure AnimatePalette( dstWindow: WindowRef; srcCTab: CTabHandle; srcIndex: SInt16; dstEntry: SInt16; dstLength: SInt16 ); external name '_AnimatePalette';
+=======
+ *  SetPalette()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure SetPalette( dstWindow: WindowRef; srcPalette: PaletteHandle; cUpdates: Boolean ); external name '_SetPalette';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  GetEntryColor()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -730,10 +895,21 @@ procedure GetEntryColor( srcPalette: PaletteHandle; srcEntry: SInt16; var dstRGB
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure SetEntryColor( dstPalette: PaletteHandle; dstEntry: SInt16; const (*var*) srcRGB: RGBColor ); external name '_SetEntryColor';
+=======
+ *  NSetPalette()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure NSetPalette( dstWindow: WindowRef; srcPalette: PaletteHandle; nCUpdates: SInt16 ); external name '_NSetPalette';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  GetEntryUsage()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -754,10 +930,21 @@ procedure GetEntryUsage( srcPalette: PaletteHandle; srcEntry: SInt16; var dstUsa
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure SetEntryUsage( dstPalette: PaletteHandle; dstEntry: SInt16; srcUsage: SInt16; srcTolerance: SInt16 ); external name '_SetEntryUsage';
+=======
+ *  GetPalette()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function GetPalette( srcWindow: WindowRef ): PaletteHandle; external name '_GetPalette';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  CTab2Palette()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -778,10 +965,21 @@ procedure CTab2Palette( srcCTab: CTabHandle; dstPalette: PaletteHandle; srcUsage
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure Palette2CTab( srcPalette: PaletteHandle; dstCTab: CTabHandle ); external name '_Palette2CTab';
+=======
+ *  CopyPalette()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure CopyPalette( srcPalette: PaletteHandle; dstPalette: PaletteHandle; srcEntry: SInt16; dstEntry: SInt16; dstLength: SInt16 ); external name '_CopyPalette';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  Entry2Index()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -816,10 +1014,21 @@ procedure RestoreDeviceClut( gd: GDHandle ); external name '_RestoreDeviceClut';
 procedure MacResizePalette( p: PaletteHandle; size: SInt16 ); external name '_ResizePalette';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 procedure ResizePalette( p: PaletteHandle; size: SInt16 ); external name '_ResizePalette';
+=======
+ *  PmForeColor()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure PmForeColor( dstEntry: SInt16 ); external name '_PmForeColor';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  SaveFore()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -840,10 +1049,21 @@ procedure SaveFore( var c: ColorSpec ); external name '_SaveFore';
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure SaveBack( var c: ColorSpec ); external name '_SaveBack';
+=======
+ *  PmBackColor()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure PmBackColor( dstEntry: SInt16 ); external name '_PmBackColor';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  RestoreFore()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -864,10 +1084,21 @@ procedure RestoreFore( const (*var*) c: ColorSpec ); external name '_RestoreFore
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure RestoreBack( const (*var*) c: ColorSpec ); external name '_RestoreBack';
+=======
+ *  AnimateEntry()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure AnimateEntry( dstWindow: WindowRef; dstEntry: SInt16; const (*var*) srcRGB: RGBColor ); external name '_AnimateEntry';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  SetDepth()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -888,10 +1119,23 @@ function SetDepth( gd: GDHandle; depth: SInt16; whichFlags: SInt16; flags: SInt1
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function HasDepth( gd: GDHandle; depth: SInt16; whichFlags: SInt16; flags: SInt16 ): SInt16; external name '_HasDepth';
+=======
+ *  [Mac]AnimatePalette()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure MacAnimatePalette( dstWindow: WindowRef; srcCTab: CTabHandle; srcIndex: SInt16; dstEntry: SInt16; dstLength: SInt16 ); external name '_AnimatePalette';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+procedure AnimatePalette( dstWindow: WindowRef; srcCTab: CTabHandle; srcIndex: SInt16; dstEntry: SInt16; dstLength: SInt16 ); external name '_AnimatePalette';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  PMgrVersion()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -912,10 +1156,21 @@ function PMgrVersion: SInt16; external name '_PMgrVersion';
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure SetPaletteUpdates( p: PaletteHandle; updates: SInt16 ); external name '_SetPaletteUpdates';
+=======
+ *  GetEntryColor()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure GetEntryColor( srcPalette: PaletteHandle; srcEntry: SInt16; var dstRGB: RGBColor ); external name '_GetEntryColor';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  GetPaletteUpdates()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -1021,10 +1276,33 @@ procedure InitPalettes; external name '_InitPalettes';
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function NewPalette( entries: SInt16; srcColors: CTabHandle; srcUsage: SInt16; srcTolerance: SInt16 ): PaletteHandle; external name '_NewPalette';
+=======
+ *  SetEntryColor()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure SetEntryColor( dstPalette: PaletteHandle; dstEntry: SInt16; const (*var*) srcRGB: RGBColor ); external name '_SetEntryColor';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+ *  GetEntryUsage()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure GetEntryUsage( srcPalette: PaletteHandle; srcEntry: SInt16; var dstUsage: SInt16; var dstTolerance: SInt16 ); external name '_GetEntryUsage';
+>>>>>>> origin/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+<<<<<<< HEAD
  *  GetNewPalette()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -1045,10 +1323,21 @@ function GetNewPalette( PaletteID: SInt16 ): PaletteHandle; external name '_GetN
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure DisposePalette( srcPalette: PaletteHandle ); external name '_DisposePalette';
+=======
+ *  SetEntryUsage()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure SetEntryUsage( dstPalette: PaletteHandle; dstEntry: SInt16; srcUsage: SInt16; srcTolerance: SInt16 ); external name '_SetEntryUsage';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  ActivatePalette()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -1069,10 +1358,21 @@ procedure ActivatePalette( srcWindow: WindowRef ); external name '_ActivatePalet
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure SetPalette( dstWindow: WindowRef; srcPalette: PaletteHandle; cUpdates: Boolean ); external name '_SetPalette';
+=======
+ *  CTab2Palette()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure CTab2Palette( srcCTab: CTabHandle; dstPalette: PaletteHandle; srcUsage: SInt16; srcTolerance: SInt16 ); external name '_CTab2Palette';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  NSetPalette()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -1093,10 +1393,21 @@ procedure NSetPalette( dstWindow: WindowRef; srcPalette: PaletteHandle; nCUpdate
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function GetPalette( srcWindow: WindowRef ): PaletteHandle; external name '_GetPalette';
+=======
+ *  Palette2CTab()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure Palette2CTab( srcPalette: PaletteHandle; dstCTab: CTabHandle ); external name '_Palette2CTab';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  CopyPalette()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -1117,10 +1428,21 @@ procedure CopyPalette( srcPalette: PaletteHandle; dstPalette: PaletteHandle; src
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure PmForeColor( dstEntry: SInt16 ); external name '_PmForeColor';
+=======
+ *  Entry2Index()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function Entry2Index( entry: SInt16 ): SInt32; external name '_Entry2Index';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  PmBackColor()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -1141,10 +1463,21 @@ procedure PmBackColor( dstEntry: SInt16 ); external name '_PmBackColor';
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure AnimateEntry( dstWindow: WindowRef; dstEntry: SInt16; const (*var*) srcRGB: RGBColor ); external name '_AnimateEntry';
+=======
+ *  RestoreDeviceClut()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure RestoreDeviceClut( gd: GDHandle ); external name '_RestoreDeviceClut';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  [Mac]AnimatePalette()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -1167,10 +1500,23 @@ procedure AnimatePalette( dstWindow: WindowRef; srcCTab: CTabHandle; srcIndex: S
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure GetEntryColor( srcPalette: PaletteHandle; srcEntry: SInt16; var dstRGB: RGBColor ); external name '_GetEntryColor';
+=======
+ *  [Mac]ResizePalette()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure MacResizePalette( p: PaletteHandle; size: SInt16 ); external name '_ResizePalette';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+procedure ResizePalette( p: PaletteHandle; size: SInt16 ); external name '_ResizePalette';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  SetEntryColor()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -1191,10 +1537,21 @@ procedure SetEntryColor( dstPalette: PaletteHandle; dstEntry: SInt16; const (*va
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure GetEntryUsage( srcPalette: PaletteHandle; srcEntry: SInt16; var dstUsage: SInt16; var dstTolerance: SInt16 ); external name '_GetEntryUsage';
+=======
+ *  SaveFore()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure SaveFore( var c: ColorSpec ); external name '_SaveFore';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  SetEntryUsage()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -1215,10 +1572,21 @@ procedure SetEntryUsage( dstPalette: PaletteHandle; dstEntry: SInt16; srcUsage: 
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure CTab2Palette( srcCTab: CTabHandle; dstPalette: PaletteHandle; srcUsage: SInt16; srcTolerance: SInt16 ); external name '_CTab2Palette';
+=======
+ *  SaveBack()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure SaveBack( var c: ColorSpec ); external name '_SaveBack';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  Palette2CTab()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -1239,10 +1607,21 @@ procedure Palette2CTab( srcPalette: PaletteHandle; dstCTab: CTabHandle ); extern
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function Entry2Index( entry: SInt16 ): SInt32; external name '_Entry2Index';
+=======
+ *  RestoreFore()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure RestoreFore( const (*var*) c: ColorSpec ); external name '_RestoreFore';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  RestoreDeviceClut()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -1265,10 +1644,21 @@ procedure RestoreDeviceClut( gd: GDHandle ); external name '_RestoreDeviceClut';
 procedure MacResizePalette( p: PaletteHandle; size: SInt16 ); external name '_ResizePalette';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 procedure ResizePalette( p: PaletteHandle; size: SInt16 ); external name '_ResizePalette';
+=======
+ *  RestoreBack()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure RestoreBack( const (*var*) c: ColorSpec ); external name '_RestoreBack';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  SaveFore()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -1289,34 +1679,61 @@ procedure SaveFore( var c: ColorSpec ); external name '_SaveFore';
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure SaveBack( var c: ColorSpec ); external name '_SaveBack';
+=======
+ *  SetDepth()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function SetDepth( gd: GDHandle; depth: SInt16; whichFlags: SInt16; flags: SInt16 ): OSErr; external name '_SetDepth';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  RestoreFore()   *** DEPRECATED ***
+=======
+ *  HasDepth()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
 procedure RestoreFore( const (*var*) c: ColorSpec ); external name '_RestoreFore';
+=======
+function HasDepth( gd: GDHandle; depth: SInt16; whichFlags: SInt16; flags: SInt16 ): SInt16; external name '_HasDepth';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  RestoreBack()   *** DEPRECATED ***
+=======
+ *  PMgrVersion()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
 procedure RestoreBack( const (*var*) c: ColorSpec ); external name '_RestoreBack';
+=======
+function PMgrVersion: SInt16; external name '_PMgrVersion';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  SetDepth()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -1337,10 +1754,21 @@ function SetDepth( gd: GDHandle; depth: SInt16; whichFlags: SInt16; flags: SInt1
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function HasDepth( gd: GDHandle; depth: SInt16; whichFlags: SInt16; flags: SInt16 ): SInt16; external name '_HasDepth';
+=======
+ *  SetPaletteUpdates()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure SetPaletteUpdates( p: PaletteHandle; updates: SInt16 ); external name '_SetPaletteUpdates';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  PMgrVersion()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -1361,10 +1789,21 @@ function PMgrVersion: SInt16; external name '_PMgrVersion';
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure SetPaletteUpdates( p: PaletteHandle; updates: SInt16 ); external name '_SetPaletteUpdates';
+=======
+ *  GetPaletteUpdates()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function GetPaletteUpdates( p: PaletteHandle ): SInt16; external name '_GetPaletteUpdates';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  GetPaletteUpdates()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -1381,6 +1820,12 @@ function GetPaletteUpdates( p: PaletteHandle ): SInt16; external name '_GetPalet
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+=======
+ *  GetGray()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -1398,9 +1843,13 @@ function GetGray( device: GDHandle; const (*var*) backGround: RGBColor; var fore
 end.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

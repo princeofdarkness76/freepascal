@@ -65,6 +65,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     _reserved: array[0..(3)-1] of cint;
 =======
         _reserved: array[0..2] of cint;
@@ -78,12 +79,16 @@ type
 =======
         _reserved: array[0..2] of cint;
 >>>>>>> origin/cpstrnew
+=======
+        _reserved: array[0..2] of cint;
+>>>>>>> origin/cpstrnew
     _numberOfTickMarks: cint;
     _altIncValue: double;
     _value: double;
     _maxValue: double;
     _minValue: double;
     _trackRect: NSRect;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -99,6 +104,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     __scFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSSliderCell0: cuint);
@@ -106,11 +113,14 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         weAreVertical: 0..1;
@@ -126,6 +136,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -133,6 +144,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       );

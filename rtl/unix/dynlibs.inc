@@ -70,6 +70,7 @@ Function LoadLibrary(const Name : AnsiString) : TLibHandle;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -79,10 +80,14 @@ Function LoadLibrary(const Name : AnsiString) : TLibHandle;
 >>>>>>> origin/cpstrnew
 
 Function SysLoadLibraryU(const Name: UnicodeString) : TLibHandle;
+=======
+
+>>>>>>> origin/cpstrnew
 begin
   Result := SysLoadLibraryA(ToSingleByteFileSystemEncodedFileName(Name));
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -97,6 +102,9 @@ Function GetProcedureAddress(Lib : TLibHandle; const ProcName : AnsiString) : Po
 =======
 Function GetProcedureAddress(Lib : TLibHandle; const ProcName : AnsiString) : Pointer;
 >>>>>>> graemeg/cpstrnew
+=======
+Function GetProcedureAddress(Lib : TLibHandle; const ProcName : AnsiString) : Pointer;
+>>>>>>> origin/cpstrnew
 =======
 Function GetProcedureAddress(Lib : TLibHandle; const ProcName : AnsiString) : Pointer;
 >>>>>>> origin/cpstrnew

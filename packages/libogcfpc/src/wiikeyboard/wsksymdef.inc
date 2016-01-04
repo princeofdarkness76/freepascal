@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 VAR
   KS_BackSpace: byte = $08;
   KS_Tab: byte = $09;
@@ -218,6 +219,8 @@ VAR
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 const
   KS_BackSpace = $08;
   KS_Tab = $09;
@@ -424,6 +427,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -431,11 +435,14 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   (*
  * Group Dead (dead accents)
   *)
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -454,6 +461,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   KS_dead_grave = $0300;
   KS_dead_acute = $0301;
   KS_dead_circumflex = $0302;
@@ -464,6 +473,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -471,11 +481,14 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   (*
  * Group Cyrillic (koi8-r)
   *)
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -561,6 +574,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   KS_Cyrillic_A = $e1;
   KS_Cyrillic_BE = $e2;
   KS_Cyrillic_VE = $f7;
@@ -638,6 +653,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -645,11 +661,14 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   (*
  * Group Latin-2 (iso8859-2)
   *)
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -717,6 +736,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   KS_L2_Aogonek = $a1;
   KS_L2_breve = $a2;
   KS_L2_Lstroke = $a3;
@@ -776,6 +797,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -783,10 +805,13 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   (*
  * Group Latin-5 (iso8859-9)
   *)
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -805,6 +830,8 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
   KS_L5_Gbreve = $d0;
   KS_L5_Idotabove = $dd;
@@ -815,6 +842,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -822,10 +850,13 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   (*
  * Group Latin-7 (iso8859-13)
   *)
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -894,6 +925,8 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
   KS_L7_rightdblquot = $a1;
   KS_L7_dbllow9quot = $a5;
@@ -954,6 +987,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -961,10 +995,13 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   (*
  * Group 1 (modifiers)
   *)
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -979,6 +1016,9 @@ const
 =======
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 =======
 
 >>>>>>> origin/cpstrnew
@@ -1054,6 +1094,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 var
   KS_f1_: word = $f300; public name 'KS_f1';
   KS_f2_: word = $f301; public name 'KS_f2';
@@ -1103,6 +1144,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
   KS_f1 = $f300;
   KS_f2 = $f301;
@@ -1147,11 +1190,14 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   KS_Home = $f381;
@@ -1242,6 +1288,7 @@ function KS_KEYCODE(v: cint): cint; inline;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 function KS_KEYCODE(v: cint): cint; inline;
 >>>>>>> graemeg/cpstrnew
@@ -1251,6 +1298,9 @@ function KS_KEYCODE(v: cint): cint; inline;
 =======
 function KS_KEYCODE(v: cint): cint; inline;
 >>>>>>> graemeg/cpstrnew
+=======
+function KS_KEYCODE(v: cint): cint; inline;
+>>>>>>> origin/cpstrnew
 =======
 function KS_KEYCODE(v: cint): cint; inline;
 >>>>>>> origin/cpstrnew
@@ -1301,6 +1351,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (*
 =======
 
@@ -1311,6 +1362,9 @@ const
 =======
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 =======
 
 >>>>>>> origin/cpstrnew
@@ -1354,6 +1408,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   	( KB_APPLE,	'apple' ));        *)
 =======
   	( KB_APPLE,	'apple' ));
@@ -1364,6 +1419,9 @@ const
 =======
   	( KB_APPLE,	'apple' ));
 >>>>>>> graemeg/cpstrnew
+=======
+  	( KB_APPLE,	'apple' ));
+>>>>>>> origin/cpstrnew
 =======
   	( KB_APPLE,	'apple' ));
 >>>>>>> origin/cpstrnew

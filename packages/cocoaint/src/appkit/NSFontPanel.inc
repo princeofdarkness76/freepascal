@@ -94,6 +94,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __fpFlags: record
       case byte of
        0: (_anonbitfield_NSFontPanel0: cuint);
@@ -105,6 +106,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     __fpFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSFontPanel0: cuint);
@@ -112,11 +115,14 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         setFontChange: 0..1;
@@ -135,6 +141,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -142,6 +149,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       );
@@ -174,6 +183,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     _fpUnused: array[0..(72)-1] of id;
 =======
         _fpUnused: array[0..71] of id;
@@ -184,6 +194,9 @@ const
 =======
         _fpUnused: array[0..71] of id;
 >>>>>>> graemeg/cpstrnew
+=======
+        _fpUnused: array[0..71] of id;
+>>>>>>> origin/cpstrnew
 =======
         _fpUnused: array[0..71] of id;
 >>>>>>> origin/cpstrnew

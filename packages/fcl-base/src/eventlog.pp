@@ -25,12 +25,15 @@ Type
   TEventLog = Class;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   TEventType = (etCustom,etInfo,etWarning,etError,etDebug);
 >>>>>>> graemeg/fixes_2_2
 =======
   TEventType = (etCustom,etInfo,etWarning,etError,etDebug);
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
   TLogType = (ltSystem,ltFile);
   TLogCodeEvent = Procedure (Sender : TObject; Var Code : DWord) of Object;
   TLogCategoryEvent = Procedure (Sender : TObject; Var Code : Word) of Object;
@@ -39,11 +42,15 @@ Type
   Private
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     fAppendContent : Boolean;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    fAppendContent : Boolean;
+>>>>>>> origin/cpstrnew
     FEventIDOffset : DWord;
     FLogHandle : Pointer;
     FStream : TFileStream;
@@ -76,6 +83,7 @@ Type
     function DefaultFileName: String;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure WriteFileLog(EventType : TEventType; const Msg: String);
     procedure WriteSystemLog(EventType: TEventType; const Msg: String);
 =======
@@ -86,6 +94,10 @@ Type
     procedure WriteFileLog(EventType : TEventType; Msg: String);
     procedure WriteSystemLog(EventType: TEventType; Msg: String);
 >>>>>>> origin/fixes_2_2
+=======
+    procedure WriteFileLog(EventType : TEventType; const Msg: String);
+    procedure WriteSystemLog(EventType: TEventType; const Msg: String);
+>>>>>>> origin/cpstrnew
     procedure DeActivateFileLog;
     procedure DeActivateSystemLog;
     procedure CheckIdentification;
@@ -104,6 +116,7 @@ Type
     Function RegisterMessageFile(AFileName : String) : Boolean; virtual;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Function UnRegisterMessageFile : Boolean; virtual;
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -119,6 +132,9 @@ Type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+    Function UnRegisterMessageFile : Boolean; virtual;
+>>>>>>> origin/cpstrnew
     Procedure Log (EventType : TEventType; const Msg : String); {$ifndef fpc }Overload;{$endif}
     Procedure Log (EventType : TEventType; const Fmt : String; Args : Array of const); {$ifndef fpc }Overload;{$endif}
     Procedure Log (const Msg : String); {$ifndef fpc }Overload;{$endif}
@@ -131,6 +147,7 @@ Type
     Procedure Debug (const Fmt : String; Args : Array of const); {$ifndef fpc }Overload;{$endif}
     Procedure Info (const Msg : String); {$ifndef fpc }Overload;{$endif}
     Procedure Info (const Fmt : String; Args : Array of const); {$ifndef fpc }Overload;{$endif}
+<<<<<<< HEAD
   Published
     Property AppendContent : Boolean Read fAppendContent Write fAppendContent;
 =======
@@ -153,6 +170,10 @@ Type
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  Published
+    Property AppendContent : Boolean Read fAppendContent Write fAppendContent;
+>>>>>>> origin/cpstrnew
     Property Identification : String Read FIdentification Write SetIdentification;
     Property LogType : TLogType Read Flogtype Write SetlogType;
     Property Active : Boolean Read FActive write SetActive;
@@ -217,6 +238,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TEventLog.Debug(const Fmt: String; Args: array of const);
 =======
 procedure TEventLog.Debug(Fmt: String; Args: array of const);
@@ -224,10 +246,14 @@ procedure TEventLog.Debug(Fmt: String; Args: array of const);
 =======
 procedure TEventLog.Debug(Fmt: String; Args: array of const);
 >>>>>>> origin/fixes_2_2
+=======
+procedure TEventLog.Debug(const Fmt: String; Args: array of const);
+>>>>>>> origin/cpstrnew
 begin
    Debug(Format(Fmt,Args));
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 procedure TEventLog.Debug(const Msg: String);
@@ -237,6 +263,9 @@ procedure TEventLog.Debug(Msg: String);
 =======
 procedure TEventLog.Debug(Msg: String);
 >>>>>>> origin/fixes_2_2
+=======
+procedure TEventLog.Debug(const Msg: String);
+>>>>>>> origin/cpstrnew
 begin
   Log(etDebug,Msg);
 end;
@@ -247,6 +276,7 @@ begin
     Active:=True;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -282,10 +312,14 @@ procedure TEventLog.Error(Fmt: String; Args: array of const);
 =======
 procedure TEventLog.Error(Fmt: String; Args: array of const);
 >>>>>>> origin/fixes_2_2
+=======
+procedure TEventLog.Error(const Fmt: String; Args: array of const);
+>>>>>>> origin/cpstrnew
 begin
   Error(Format(Fmt,Args));
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 procedure TEventLog.Error(const Msg: String);
@@ -295,10 +329,14 @@ procedure TEventLog.Error(Msg: String);
 =======
 procedure TEventLog.Error(Msg: String);
 >>>>>>> origin/fixes_2_2
+=======
+procedure TEventLog.Error(const Msg: String);
+>>>>>>> origin/cpstrnew
 begin
   Log(etError,Msg);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 procedure TEventLog.Info(const Fmt: String; Args: array of const);
@@ -308,10 +346,14 @@ procedure TEventLog.Info(Fmt: String; Args: array of const);
 =======
 procedure TEventLog.Info(Fmt: String; Args: array of const);
 >>>>>>> origin/fixes_2_2
+=======
+procedure TEventLog.Info(const Fmt: String; Args: array of const);
+>>>>>>> origin/cpstrnew
 begin
   Info(Format(Fmt,Args));
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 procedure TEventLog.Info(const Msg: String);
@@ -321,10 +363,14 @@ procedure TEventLog.Info(Msg: String);
 =======
 procedure TEventLog.Info(Msg: String);
 >>>>>>> origin/fixes_2_2
+=======
+procedure TEventLog.Info(const Msg: String);
+>>>>>>> origin/cpstrnew
 begin
   Log(etInfo,Msg);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 procedure TEventLog.Log(const Msg: String);
@@ -334,10 +380,14 @@ procedure TEventLog.Log(Msg: String);
 =======
 procedure TEventLog.Log(Msg: String);
 >>>>>>> origin/fixes_2_2
+=======
+procedure TEventLog.Log(const Msg: String);
+>>>>>>> origin/cpstrnew
 begin
   Log(DefaultEventType,msg);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 procedure TEventLog.Log(EventType: TEventType; const Fmt: String;
@@ -347,11 +397,15 @@ procedure TEventLog.Log(EventType: TEventType; Fmt: String;
 =======
 procedure TEventLog.Log(EventType: TEventType; Fmt: String;
 >>>>>>> origin/fixes_2_2
+=======
+procedure TEventLog.Log(EventType: TEventType; const Fmt: String;
+>>>>>>> origin/cpstrnew
   Args: array of const);
 begin
   Log(EventType,Format(Fmt,Args));
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 procedure TEventLog.Log(EventType: TEventType; const Msg: String);
@@ -360,6 +414,9 @@ begin
     exit;
 =======
 procedure TEventLog.Log(EventType: TEventType; Msg: String);
+=======
+procedure TEventLog.Log(EventType: TEventType; const Msg: String);
+>>>>>>> origin/cpstrnew
 begin
 >>>>>>> graemeg/fixes_2_2
 =======
@@ -375,6 +432,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TEventLog.WriteFileLog(EventType : TEventType; const Msg : String);
 =======
 procedure TEventLog.WriteFileLog(EventType : TEventType; Msg : String);
@@ -382,6 +440,9 @@ procedure TEventLog.WriteFileLog(EventType : TEventType; Msg : String);
 =======
 procedure TEventLog.WriteFileLog(EventType : TEventType; Msg : String);
 >>>>>>> origin/fixes_2_2
+=======
+procedure TEventLog.WriteFileLog(EventType : TEventType; const Msg : String);
+>>>>>>> origin/cpstrnew
 
 Var
   S,TS,T : String;
@@ -413,6 +474,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TEventLog.Log(const Fmt: String; Args: array of const);
 =======
 procedure TEventLog.Log(Fmt: String; Args: array of const);
@@ -420,6 +482,9 @@ procedure TEventLog.Log(Fmt: String; Args: array of const);
 =======
 procedure TEventLog.Log(Fmt: String; Args: array of const);
 >>>>>>> origin/fixes_2_2
+=======
+procedure TEventLog.Log(const Fmt: String; Args: array of const);
+>>>>>>> origin/cpstrnew
 begin
   Log(Format(Fmt,Args));
 end;
@@ -457,6 +522,7 @@ end;
 Procedure TEventLog.ActivateFileLog;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 var
   fFileFlags : Word;
 =======
@@ -465,12 +531,19 @@ var
 =======
 
 >>>>>>> origin/fixes_2_2
+=======
+var
+  fFileFlags : Word;
+>>>>>>> origin/cpstrnew
 begin
   If (FFileName='') then
     FFileName:=DefaultFileName;
   // This will raise an exception if the file cannot be opened for writing !
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   if fAppendContent and FileExists(FFileName) then
     fFileFlags := fmOpenWrite
   else
@@ -478,6 +551,7 @@ begin
 
   fFileFlags := fFileFlags or fmShareDenyWrite;
   FStream:=TFileStream.Create(FFileName,fFileFlags);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -498,6 +572,8 @@ begin
 =======
   FStream:=TFileStream.Create(FFileName,fmCreate or fmShareDenyWrite);
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 Procedure TEventLog.DeActivateFileLog;
@@ -521,6 +597,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TEventLog.Warning(const Fmt: String; Args: array of const);
 =======
 procedure TEventLog.Warning(Fmt: String; Args: array of const);
@@ -528,10 +605,14 @@ procedure TEventLog.Warning(Fmt: String; Args: array of const);
 =======
 procedure TEventLog.Warning(Fmt: String; Args: array of const);
 >>>>>>> origin/fixes_2_2
+=======
+procedure TEventLog.Warning(const Fmt: String; Args: array of const);
+>>>>>>> origin/cpstrnew
 begin
   Warning(Format(Fmt,Args));
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 procedure TEventLog.Warning(const Msg: String);
@@ -541,6 +622,9 @@ procedure TEventLog.Warning(Msg: String);
 =======
 procedure TEventLog.Warning(Msg: String);
 >>>>>>> origin/fixes_2_2
+=======
+procedure TEventLog.Warning(const Msg: String);
+>>>>>>> origin/cpstrnew
 begin
   Log(etWarning,Msg);
 end;

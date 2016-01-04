@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef ARM7}
   {$error The clock is only available on the ARM7}
 =======
@@ -51,6 +52,10 @@
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$ifndef ARM7}
+  {$error The clock is only available on the ARM7}
+>>>>>>> origin/cpstrnew
 {$endif ARM7}
 
 {$ifdef NDS_INTERFACE}
@@ -127,6 +132,7 @@ procedure integerToBCD(var data: cuint8; length: cuint32); cdecl; external;
 procedure initClockIRQ(); cdecl; external;
 procedure resyncClock(); cdecl; external;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -140,4 +146,6 @@ procedure initClockIRQ(); cdecl; external;
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$endif NDS_INTERFACE}

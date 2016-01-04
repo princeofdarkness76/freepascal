@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       AE/AppleEvents.h
  
      Contains:   AppleEvent Package Interfaces.
@@ -32,11 +33,15 @@
 =======
      File:       AE/AppleEvents.h
 >>>>>>> origin/fixes_2.4
+=======
+     File:       AE/AppleEvents.h
+>>>>>>> origin/cpstrnew
  
      Contains:   AppleEvent Package Interfaces.
  
      Version:    AppleEvents-496~1
  
+<<<<<<< HEAD
 <<<<<<< HEAD
      Copyright:  © 1989-2002 by Apple Computer, Inc., all rights reserved
 <<<<<<< HEAD
@@ -46,6 +51,9 @@
 =======
      Copyright:  © 1989-2008 by Apple Computer, Inc., all rights reserved
 >>>>>>> origin/fixes_2.4
+=======
+     Copyright:  © 1989-2008 by Apple Computer, Inc., all rights reserved
+>>>>>>> origin/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -56,6 +64,7 @@
  
 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -83,6 +92,8 @@
  
 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+=======
+>>>>>>> origin/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -91,12 +102,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -108,6 +123,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -122,6 +138,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -137,6 +157,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -147,6 +168,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -154,13 +178,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -168,6 +196,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -176,8 +206,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -188,6 +221,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -208,6 +242,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -216,12 +252,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -229,6 +268,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -245,12 +285,22 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -290,6 +340,11 @@ interface
 =======
 >>>>>>> graemeg/cpstrnew
 =======
+>>>>>>> origin/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -301,15 +356,19 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$elsec}
@@ -394,10 +453,13 @@ interface
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
 =======
+=======
+>>>>>>> origin/cpstrnew
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 {$endc}
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -538,6 +600,37 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -566,6 +659,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -574,6 +668,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -587,13 +683,17 @@ uses MacTypes,MixedMode,AEDataModel,AEInteraction, CFArray, CFBase, CFRunLoop, C
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$endc} {not MACOSALLINCLUDE}
 
 
 {$ifc TARGET_OS_MAC}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -601,11 +701,14 @@ uses MacTypes,MixedMode,AEDataModel,AEInteraction, CFArray, CFBase, CFRunLoop, C
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
     Note:   The functions and types for the building and parsing AppleEvent  
             messages has moved to AEDataModel.h
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -796,6 +899,8 @@ function AEInstallEventHandler( theAEEventClass: AEEventClass; theAEEventID: AEE
 }
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ALIGN MAC68K}
 
@@ -811,6 +916,7 @@ const
 	keyAERecorderCount = FourCharCode('recr'); { available only in vers 1.0.1 and greater }
                                         { Keyword for version information }
 	keyAEVersion = FourCharCode('vers'); { available only in vers 1.0.1 and greater }
+<<<<<<< HEAD
 
 { Event Class }
 const
@@ -829,13 +935,38 @@ const
 
 { Constants for recording }
 const
+=======
+
+{ Event Class }
+const
+	kCoreEventClass = FourCharCode('aevt');
+
+{ Event ID's }
+const
+	kAEOpenApplication = FourCharCode('oapp');
+	kAEOpenDocuments = FourCharCode('odoc');
+	kAEPrintDocuments = FourCharCode('pdoc');
+	kAEOpenContents = FourCharCode('ocon');
+	kAEQuitApplication = FourCharCode('quit'); { may include a property kAEQuitReason indicating what lead to the quit being sent. }
+	kAEAnswer = FourCharCode('ansr');
+	kAEApplicationDied = FourCharCode('obit');
+	kAEShowPreferences = FourCharCode('pref'); { sent by Mac OS X when the user chooses the Preferences item }
+
+{ Constants for recording }
+const
+>>>>>>> origin/cpstrnew
 	kAEStartRecording = FourCharCode('reca'); { available only in vers 1.0.1 and greater }
 	kAEStopRecording = FourCharCode('recc'); { available only in vers 1.0.1 and greater }
 	kAENotifyStartRecording = FourCharCode('rec1'); { available only in vers 1.0.1 and greater }
 	kAENotifyStopRecording = FourCharCode('rec0'); { available only in vers 1.0.1 and greater }
 	kAENotifyRecording = FourCharCode('recr'); { available only in vers 1.0.1 and greater }
+<<<<<<< HEAD
 
 
+=======
+
+
+>>>>>>> origin/cpstrnew
 {
  * AEEventSource is defined as an SInt8 for compatability with pascal.
  * Important note: keyEventSourceAttr is returned by AttributePtr as a typeShortInteger.
@@ -845,6 +976,7 @@ const
 type
 	AEEventSource = SInt8;
 const
+<<<<<<< HEAD
 <<<<<<< HEAD
 	kAEUnknownSource			= 0;
 	kAEDirectCall				= 1;
@@ -872,6 +1004,8 @@ function AEInstallEventHandler(theAEEventClass: AEEventClass; theAEEventID: AEEv
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 	kAEUnknownSource = 0;
 	kAEDirectCall = 1;
 	kAESameProcess = 2;
@@ -881,7 +1015,10 @@ function AEInstallEventHandler(theAEEventClass: AEEventClass; theAEEventID: AEEv
 {*************************************************************************
   These calls are used to set up and modify the event dispatch table.
 *************************************************************************}
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  AEInstallEventHandler()
  *  
@@ -889,6 +1026,7 @@ function AEInstallEventHandler(theAEEventClass: AEEventClass; theAEEventID: AEEv
  *    Thread safe since version 10.2
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -923,6 +1061,10 @@ function AERemoveEventHandler( theAEEventClass: AEEventClass; theAEEventID: AEEv
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+>>>>>>> origin/cpstrnew
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function AEInstallEventHandler( theAEEventClass: AEEventClass; theAEEventID: AEEventID; handler: AEEventHandlerUPP; handlerRefcon: SRefCon; isSysHandler: Boolean ): OSErr; external name '_AEInstallEventHandler';
@@ -941,17 +1083,23 @@ function AEInstallEventHandler( theAEEventClass: AEEventClass; theAEEventID: AEE
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 function AERemoveEventHandler(theAEEventClass: AEEventClass; theAEEventID: AEEventID; handler: AEEventHandlerUPP; isSysHandler: boolean): OSErr; external name '_AERemoveEventHandler';
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function AERemoveEventHandler( theAEEventClass: AEEventClass; theAEEventID: AEEventID; handler: AEEventHandlerUPP; isSysHandler: Boolean ): OSErr; external name '_AERemoveEventHandler';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  AEGetEventHandler()
  *  
@@ -959,6 +1107,7 @@ function AERemoveEventHandler( theAEEventClass: AEEventClass; theAEEventID: AEEv
  *    Thread safe since version 10.2
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1003,11 +1152,20 @@ function AEGetEventHandler(theAEEventClass: AEEventClass; theAEEventID: AEEventI
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+>>>>>>> origin/cpstrnew
 function AEGetEventHandler( theAEEventClass: AEEventClass; theAEEventID: AEEventID; var handler: AEEventHandlerUPP; var handlerRefcon: SRefCon; isSysHandler: Boolean ): OSErr; external name '_AEGetEventHandler';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {*************************************************************************
   These calls are used to set up and modify special hooks into the
   AppleEvent manager.
@@ -1019,6 +1177,7 @@ function AEGetEventHandler( theAEEventClass: AEEventClass; theAEEventID: AEEvent
  *    Thread safe since version 10.2
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1063,11 +1222,20 @@ function AEInstallSpecialHandler(functionClass: AEKeyword; handler: AEEventHandl
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+>>>>>>> origin/cpstrnew
 function AEInstallSpecialHandler( functionClass: AEKeyword; handler: AEEventHandlerUPP; isSysHandler: Boolean ): OSErr; external name '_AEInstallSpecialHandler';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  AERemoveSpecialHandler()
  *  
@@ -1075,6 +1243,7 @@ function AEInstallSpecialHandler( functionClass: AEKeyword; handler: AEEventHand
  *    Thread safe since version 10.2
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1119,11 +1288,20 @@ function AERemoveSpecialHandler(functionClass: AEKeyword; handler: AEEventHandle
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+>>>>>>> origin/cpstrnew
 function AERemoveSpecialHandler( functionClass: AEKeyword; handler: AEEventHandlerUPP; isSysHandler: Boolean ): OSErr; external name '_AERemoveSpecialHandler';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  AEGetSpecialHandler()
  *  
@@ -1131,6 +1309,7 @@ function AERemoveSpecialHandler( functionClass: AEKeyword; handler: AEEventHandl
  *    Thread safe since version 10.2
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1175,11 +1354,20 @@ function AEGetSpecialHandler(functionClass: AEKeyword; var handler: AEEventHandl
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+>>>>>>> origin/cpstrnew
 function AEGetSpecialHandler( functionClass: AEKeyword; var handler: AEEventHandlerUPP; isSysHandler: Boolean ): OSErr; external name '_AEGetSpecialHandler';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {*************************************************************************
   This call was added in version 1.0.1. If called with the keyword
   keyAERecorderCount ('recr'), the number of recorders that are
@@ -1193,6 +1381,7 @@ function AEGetSpecialHandler( functionClass: AEKeyword; var handler: AEEventHand
  *    Thread safe since version 10.2
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1240,6 +1429,15 @@ function AEManagerInfo( keyWord: AEKeyword; var result: SIGNEDLONG ): OSErr; ext
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function AEManagerInfo( keyWord: AEKeyword; var result: SIGNEDLONG ): OSErr; external name '_AEManagerInfo';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
   AERemoteProcessResolver:
@@ -1363,6 +1561,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	AERemoteProcessResolverContextPtr = ^AERemoteProcessResolverContext;
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -1371,6 +1570,9 @@ type
 =======
 	AERemoteProcessResolverContextPtr = ^AERemoteProcessResolverContext;
 >>>>>>> origin/fixes_2.4
+=======
+	AERemoteProcessResolverContextPtr = ^AERemoteProcessResolverContext;
+>>>>>>> origin/cpstrnew
 	AERemoteProcessResolverContext = record
 {
    * set to zero (0)
@@ -1401,6 +1603,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     AERemoteProcessResolverContextPtr = ^AERemoteProcessResolverContext; { when a var xx: AERemoteProcessResolverContext parameter can be nil, it is changed to xx: AERemoteProcessResolverContextPtr }
 
@@ -1411,6 +1614,8 @@ type
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  AERemoteProcessResolverRef
  *  
@@ -1425,6 +1630,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	AERemoteProcessResolverRef = ^SInt32; { an opaque type }
 =======
 	AERemoteProcessResolverRef = ^SInt32; { an opaque 32-bit type }
@@ -1435,6 +1641,9 @@ type
 =======
 	AERemoteProcessResolverRef = ^SInt32; { an opaque type }
 >>>>>>> origin/fixes_2.4
+=======
+	AERemoteProcessResolverRef = ^SInt32; { an opaque type }
+>>>>>>> origin/cpstrnew
 {
  *  AECreateRemoteProcessResolver()
  *  
@@ -1634,9 +1843,13 @@ end.
 end.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

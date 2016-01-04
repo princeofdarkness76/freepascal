@@ -12,6 +12,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$R *.res}
 
 begin
@@ -28,6 +29,10 @@ begin
 begin
   Application.Title:='FPC JSON-RPC demo';
 >>>>>>> graemeg/cpstrnew
+=======
+begin
+  Application.Title:='FPC JSON-RPC demo';
+>>>>>>> origin/cpstrnew
 =======
 begin
   Application.Title:='FPC JSON-RPC demo';

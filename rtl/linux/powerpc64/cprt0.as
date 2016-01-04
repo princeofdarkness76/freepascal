@@ -411,6 +411,7 @@ FUNCTION_PROLOG main_stub
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     bl  PASCALMAIN
 =======
     bl  .PASCALMAIN
@@ -418,6 +419,9 @@ FUNCTION_PROLOG main_stub
 =======
     bl  .PASCALMAIN
 >>>>>>> origin/fixes_2_2
+=======
+    bl  PASCALMAIN
+>>>>>>> origin/cpstrnew
     nop
 
     b   ._haltproc
@@ -432,6 +436,7 @@ FUNCTION_PROLOG _haltproc
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -443,6 +448,8 @@ FUNCTION_PROLOG _haltproc
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
     /* Define a symbol for the first piece of initialized data.  */
     .section ".data"
     .globl  __data_start
@@ -454,6 +461,9 @@ ___fpc_ret:                            /* return address to libc */
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
     .section ".bss"
 
     .type __stkptr, @object
@@ -475,6 +485,7 @@ operatingsystem_parameters:
     .set operatingsystem_parameter_envp, operatingsystem_parameters+16
 
 .section .note.GNU-stack,"",%progbits
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -488,3 +499,5 @@ operatingsystem_parameters:
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew

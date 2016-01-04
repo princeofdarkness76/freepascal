@@ -1635,6 +1635,7 @@
      DEVICE_DEFAULT_FONT = 14;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 //     DEFAULT_GUI_FONT = 17;  Returns zero in the emulator and
                             // isn't listed in MSDN, see bug 15062
 =======
@@ -1643,6 +1644,10 @@
 =======
      DEFAULT_GUI_FONT = 17;
 >>>>>>> origin/fixes_2_2
+=======
+//     DEFAULT_GUI_FONT = 17;  Returns zero in the emulator and
+                            // isn't listed in MSDN, see bug 15062
+>>>>>>> origin/cpstrnew
      OEM_FIXED_FONT = 10;
      SYSTEM_FONT = 13;
      SYSTEM_FIXED_FONT = 16;
@@ -2239,11 +2244,15 @@
      MOD_WIN = 8;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      MOD_KEYUP = $1000;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+     MOD_KEYUP = $1000;
+>>>>>>> origin/cpstrnew
      IDHOT_SNAPDESKTOP = -(2);
      IDHOT_SNAPWINDOW = -(1);
   { RegNotifyChangeKeyValue  }
@@ -2675,6 +2684,7 @@
      TPM_VERTICAL = $40;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      TPM_NONOTIFY        = $0080;     //* Don't send any notification msgs */
      TPM_RETURNCMD       = $0100;
 
@@ -2682,6 +2692,11 @@
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+     TPM_NONOTIFY        = $0080;     //* Don't send any notification msgs */
+     TPM_RETURNCMD       = $0100;
+
+>>>>>>> origin/cpstrnew
   { TranslateCharsetInfo  }
      TCI_SRCCHARSET = 1;
      TCI_SRCCODEPAGE = 2;
@@ -3893,11 +3908,15 @@
      ACS_TRANSPARENT = 2;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      ACS_TIMER       = 8;  // don't use threads... use timers
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+     ACS_TIMER       = 8;  // don't use threads... use timers
+>>>>>>> origin/cpstrnew
   { MODEMDEVCAPS structure  }
      DIALOPTION_BILLING = 64;
      DIALOPTION_QUIET = 128;
@@ -5849,6 +5868,9 @@ const
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 // define dwFlag values for LoadFSDEx function...
 const
       LOADFSD_ASYNCH        = $0000;
@@ -6097,10 +6119,13 @@ const
       MAXINTATOM = ATOM($C000);
       INVALID_ATOM = ATOM(0);
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 {$endif read_interface}
 
 
@@ -6289,6 +6314,9 @@ const
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 // winuserm.h
 // Mobile extensions to winuser.h
 
@@ -6349,10 +6377,13 @@ end;
 
 // End-of-winuserm.h
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 {$ifdef WINCE}
 {$endif WINCE}
 

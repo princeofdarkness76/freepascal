@@ -111,6 +111,7 @@ const
   scan_w_multiple_main_name_overrides=02086;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   scanner_w_illegal_warn_identifier=02087;
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -139,6 +140,9 @@ const
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  scanner_w_illegal_warn_identifier=02087;
+>>>>>>> origin/cpstrnew
   parser_e_syntax_error=03000;
   parser_e_dont_nest_interrupt=03004;
   parser_w_proc_directive_ignored=03005;
@@ -399,6 +403,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   parser_e_must_use_override=03273;
   parser_h_should_use_override=03274;
   parser_e_objc_message_name_changed=03275;
@@ -410,6 +415,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   parser_e_must_use_override_objc=03273;
   parser_h_should_use_override_objc=03274;
   parser_e_objc_message_name_changed=03275;
@@ -417,11 +424,14 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   parser_e_no_category_as_types=03277;
@@ -443,6 +453,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   parser_f_modeswitch_objc_required=03292;
   parser_e_widestring_to_ansi_compile_time=03293;
 =======
@@ -457,10 +468,14 @@ const
 =======
   parser_f_modeswitch_objc_required=03293;
 >>>>>>> origin/cpstrnew
+=======
+  parser_f_modeswitch_objc_required=03293;
+>>>>>>> origin/cpstrnew
   parser_e_objc_enumerator_2_0=03294;
   parser_e_objc_missing_enumeration_defs=03295;
   parser_e_no_procvarnested_const=03296;
   parser_f_no_generic_inside_generic=03297;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -477,11 +492,14 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   parser_e_forward_protocol_declaration_must_be_resolved=03298;
   parser_e_no_record_published=03299;
   parser_e_no_destructor_in_records=03300;
   parser_e_class_methods_only_static_in_records=03301;
   parser_e_no_constructor_in_records=03302;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -492,10 +510,13 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   parser_e_at_least_one_argument_must_be_of_type=03303;
   parser_e_cant_use_type_parameters_here=03304;
   parser_e_externals_no_section=03305;
   parser_e_section_no_locals=03306;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -561,6 +582,10 @@ const
   parser_e_cant_export_var_different_name=03247;
   parser_e_forward_mismatch=03249;
 >>>>>>> origin/fixes_2_2
+=======
+  parser_e_invalid_codepage=03307;
+  parser_e_widestring_to_ansi_compile_time=03308;
+>>>>>>> origin/cpstrnew
   type_e_mismatch=04000;
   type_e_incompatible_types=04001;
   type_e_not_equal_types=04002;
@@ -656,6 +681,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   type_e_helper_type_expected=04099;
   type_e_record_type_expected=04100;
   type_e_class_helper_must_extend_subclass=04101;
@@ -695,6 +721,8 @@ const
 =======
   type_interface_has_no_guid=04083;
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
   sym_e_id_not_found=05000;
   sym_f_internal_error_in_symtablestack=05001;
   sym_e_duplicate_id=05002;
@@ -765,6 +793,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   sym_e_formal_class_not_resolved=05080;
   sym_e_interprocgoto_into_init_final_code_not_allowed=05081;
   sym_e_external_class_name_mismatch1=05082;
@@ -788,6 +817,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   sym_e_objc_formal_class_not_resolved=05080;
   sym_e_interprocgoto_into_init_final_code_not_allowed=05081;
   sym_e_external_class_name_mismatch1=05082;
@@ -795,11 +826,14 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   cg_e_parasize_too_big=06009;
@@ -831,10 +865,14 @@ const
   cg_e_goto_label_not_found=06049;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   cg_f_unknown_type_in_unit=06050;
   cg_e_interprocedural_goto_only_to_outer_scope_allowed=06051;
   cg_e_labels_cannot_defined_outside_declaration_scope=06052;
   cg_e_goto_across_procedures_with_exceptions_not_allowed=06053;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -855,6 +893,8 @@ const
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
   asmr_d_start_reading=07000;
   asmr_d_finish_reading=07001;
   asmr_e_none_label_contain_at=07002;
@@ -960,6 +1000,7 @@ const
   asmr_e_need_pic_ref=07107;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   asmr_e_mixing_regtypes=07108;
   asmr_e_empty_regset=07109;
   asmr_w_useless_got_for_local=07110;
@@ -997,6 +1038,11 @@ const
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  asmr_e_mixing_regtypes=07108;
+  asmr_e_empty_regset=07109;
+  asmr_w_useless_got_for_local=07110;
+>>>>>>> origin/cpstrnew
   asmw_f_too_many_asm_files=08000;
   asmw_f_assembler_output_not_supported=08001;
   asmw_f_comp_not_supported=08002;
@@ -1148,6 +1194,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   unit_u_ppu_invalid_memory_model=10063;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1163,6 +1210,8 @@ const
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
   option_usage=11000;
   option_only_one_source_support=11001;
   option_def_only_for_os2=11002;
@@ -1209,6 +1258,7 @@ const
   option_dwarf_smart_linking=11046;
   option_ignored_target=11047;
 <<<<<<< HEAD
+<<<<<<< HEAD
   option_debug_external_unsupported=11048;
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1233,6 +1283,9 @@ const
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+  option_debug_external_unsupported=11048;
+>>>>>>> origin/cpstrnew
   wpo_cant_find_file=12000;
   wpo_begin_processing=12001;
   wpo_end_processing=12002;
@@ -1261,6 +1314,7 @@ const
   option_info=11024;
   option_help_pages=11025;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1320,4 +1374,11 @@ const
     24,87,253,88,65,50,108,22,202,63,
     48,20,1,1,1,1,1,1,1,1
 >>>>>>> origin/fixes_2.4
+=======
+  MsgTxtSize = 58873;
+
+  MsgIdxMax : array[1..20] of longint=(
+    24,88,309,99,84,54,111,22,202,63,
+    49,20,1,1,1,1,1,1,1,1
+>>>>>>> origin/cpstrnew
   );

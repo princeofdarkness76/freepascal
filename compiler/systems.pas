@@ -158,12 +158,15 @@ interface
              system_i386_nativent,      { 68 }
              system_i386_iphonesim,     { 69 }
              system_powerpc_wii         { 70 }
+<<<<<<< HEAD
 =======
              system_x86_64_darwin       { 61 }
 >>>>>>> graemeg/fixes_2_2
 =======
              system_x86_64_darwin       { 61 }
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
        );
 
      type
@@ -370,6 +373,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             tf_safecall_exceptions,             // Exceptions in safecall calls are not raised, but passed to the caller as an ordinal (hresult) in the function result.
                                                 // The original result (if it exists) is passed as an extra parameter
             tf_no_backquote_support,
@@ -402,6 +406,10 @@ interface
 =======
             tf_no_generic_stackcheck
 >>>>>>> origin/fixes_2_2
+=======
+            tf_safecall_exceptions              // Exceptions in safecall calls are not raised, but passed to the caller as an ordinal (hresult) in the function result.
+                                                // The original result (if it exists) is passed as an extra parameter
+>>>>>>> origin/cpstrnew
        );
 
        psysteminfo = ^tsysteminfo;
@@ -480,6 +488,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        systems_android = [system_arm_android, system_i386_android, system_mipsel_android];
        systems_linux = [system_i386_linux,system_x86_64_linux,system_powerpc_linux,system_powerpc64_linux,
                        system_arm_linux,system_sparc_linux,system_m68k_linux,
@@ -513,6 +522,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
        systems_linux = [system_i386_linux,system_x86_64_linux,system_powerpc_linux,system_powerpc64_linux,
                        system_arm_linux,system_sparc_linux,system_alpha_linux,system_m68k_linux,
                        system_x86_6432_linux,system_mips_linux,system_mipsel_linux];
@@ -531,6 +542,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                          system_arm_darwin,system_i386_iphonesim,
                          system_aarch64_darwin,system_x86_64_iphonesim];
 =======
@@ -545,10 +557,14 @@ interface
 =======
                          system_arm_darwin,system_i386_iphonesim];
 >>>>>>> origin/cpstrnew
+=======
+                         system_arm_darwin,system_i386_iphonesim];
+>>>>>>> origin/cpstrnew
 
        {all solaris systems }
        systems_solaris = [system_sparc_solaris, system_i386_solaris,
 			  system_x86_64_solaris];
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -560,6 +576,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
        { systems supporting Objective-C }
        systems_objc_supported = systems_darwin;
@@ -569,11 +587,14 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -634,6 +655,7 @@ interface
                                          system_i386_netwlibc,
                                          system_arm_wince,
                                          system_x86_64_win64,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -712,11 +734,34 @@ interface
 
        systems_internal_sysinit = [system_i386_linux,system_i386_win32];
 
+=======
+                                         system_ia64_win64]+systems_linux;
+
+       { all systems for which weak linking has been tested/is supported }
+       systems_weak_linking = systems_darwin + systems_solaris;
+
+       systems_internal_sysinit = [system_i386_linux,system_i386_win32];
+
+>>>>>>> origin/cpstrnew
        systems_interrupt_table = [{system_arm_embedded}];
 
        { all symbian systems }
        systems_symbian = [system_i386_symbian,system_arm_symbian];
 >>>>>>> graemeg/cpstrnew
+
+       { all native nt systems }
+       systems_nativent = [system_i386_nativent];
+
+       { all systems for which istack must be at a 16 byte boundary
+         when calling a function }
+       systems_need_16_byte_stack_alignment = [
+      	system_i386_darwin,
+      	system_i386_iphonesim,
+        system_x86_64_darwin,
+        system_x86_64_win64,
+        system_x86_64_linux,
+        system_x86_64_freebsd,
+        system_x86_64_solaris];
 
        { all native nt systems }
        systems_nativent = [system_i386_nativent];
@@ -780,6 +825,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
              'mips','arm', 'powerpc64', 'avr', 'mipsel','jvm', 'i8086',
              'aarch64');
 
@@ -800,6 +846,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
              'mips','arm', 'powerpc64', 'avr', 'mipsel');
@@ -1241,6 +1289,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    {$ifdef openbsd}
     default_target(system_x86_64_openbsd);
     {$define default_target_set}
@@ -1257,14 +1306,19 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
    {$ifdef solaris}
     default_target(system_x86_64_solaris);
     {$define default_target_set}
    {$endif}
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
    {$ifdef darwin}
     default_target(system_x86_64_darwin);
     {$define default_target_set}
@@ -1402,6 +1456,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$ifdef cpumipsel}
     default_target(source_info.system);
   {$else cpumipsel}
@@ -1441,6 +1496,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   default_target(system_mipsel_linux);
 {$else mipsel}
   default_target(system_mips_linux);
@@ -1449,11 +1506,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 end;

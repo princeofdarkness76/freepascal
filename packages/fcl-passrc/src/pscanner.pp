@@ -162,6 +162,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   TTokens = set of TToken;
 
   { TMacroDef }
@@ -183,6 +184,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -210,6 +213,7 @@ type
     function IsEOF: Boolean; override;
     function ReadLine: string; override;
     property Filename: string read FFilename;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -270,6 +274,10 @@ type
   end;
 
 >>>>>>> origin/cpstrnew
+=======
+  end;
+
+>>>>>>> origin/cpstrnew
   { TFileResolver }
 
   TFileResolver = class
@@ -277,11 +285,14 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     FBaseDirectory: string;
@@ -346,6 +357,7 @@ type
     Property StrictFileCase : Boolean Read FStrictFileCase Write FStrictFileCase;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     property BaseDirectory: string read FBaseDirectory write FBaseDirectory;
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -361,6 +373,9 @@ type
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    property BaseDirectory: string read FBaseDirectory write FBaseDirectory;
+>>>>>>> origin/cpstrnew
   end;
 
   EScannerError       = class(Exception);
@@ -376,6 +391,8 @@ type
   TPScannerLogHandler = Procedure (Sender : TObject; Const Msg : String) of object;
   TPScannerLogEvent = (sleFile,sleLineNumber,sleConditionals);
   TPScannerLogEvents = Set of TPScannerLogEvent;
+
+  { TPascalScanner }
 
   { TPascalScanner }
 
@@ -441,11 +458,15 @@ type
 =======
     procedure Error(const Msg: string);overload;
     procedure Error(const Msg: string; Args: array of Const);overload;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
     procedure Error(const Msg: string);overload;
     procedure Error(const Msg: string; Args: array of Const);overload;
 >>>>>>> origin/fixes_2_2
+=======
+    function DoFetchTextToken: TToken;
+>>>>>>> origin/cpstrnew
     function DoFetchToken: TToken;
     procedure ClearFiles;
     Procedure ClearMacros;
@@ -602,6 +623,7 @@ function FilenameIsUnixAbsolute(const TheFilename: string): boolean;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function IsNamedToken(Const AToken : String; Out T : TToken) : Boolean;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -609,6 +631,8 @@ function IsNamedToken(Const AToken : String; Out T : TToken) : Boolean;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -726,6 +750,7 @@ function FilenameIsUnixAbsolute(const TheFilename: string): boolean;
 begin
   Result:=(TheFilename<>'') and (TheFilename[1]='/');
 end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -924,6 +949,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 constructor TFileLineReader.Create(const AFilename: string);
 
@@ -936,11 +963,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   Assign(FTextFile, AFilename);
@@ -1086,6 +1116,7 @@ function TFileResolver.FindIncludeFile(const AName: string): TLineReader;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Var
   FN : String;
 
@@ -1102,6 +1133,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   function SearchLowUpCase(FN: string): string;
@@ -1148,6 +1181,7 @@ begin
       begin
       Try
 <<<<<<< HEAD
+<<<<<<< HEAD
         FN:=SearchLowUpCase(FIncludePaths[i]+AName);
 =======
         FN:=FIncludePaths[i]+AName;
@@ -1168,6 +1202,9 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+        FN:=SearchLowUpCase(FIncludePaths[i]+AName);
+>>>>>>> origin/cpstrnew
         If (FN<>'') then
           Result := TFileLineReader.Create(FN);
       except
@@ -1189,11 +1226,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     end;
@@ -1390,6 +1430,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure TPascalScanner.PushStackItem;
 
 Var
@@ -1496,6 +1537,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 function TPascalScanner.DoFetchToken: TToken;
@@ -2101,6 +2144,7 @@ begin
       end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   else
     if PPIsSkipping then
       Inc(TokenStr)
@@ -2116,6 +2160,12 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  else
+    if PPIsSkipping then
+      Inc(TokenStr)
+    else
+>>>>>>> origin/cpstrnew
       Error(SErrInvalidCharacter, [TokenStr[0]]);
   end;
 

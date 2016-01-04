@@ -1,0 +1,5 @@
+lib/
+lib/googlecloudsdk/
+lib/googlecloudsdk/surface/
+lib/googlecloudsdk/surface/alpha/
+lib/googlecloudsdk/surface/alpha/__init__.py

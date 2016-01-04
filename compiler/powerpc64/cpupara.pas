@@ -49,12 +49,15 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function get_funcretloc(p : tabstractprocdef; side: tcallercallee; forcetempdef: tdef): tcgpara;override;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     function get_funcretloc(p : tabstractprocdef; side: tcallercallee; def: tdef): tcgpara;override;
@@ -83,11 +86,14 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   procinfo, cpupi;
@@ -213,6 +219,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         (varspez = vs_const) and
         (
 =======
@@ -224,6 +231,9 @@ begin
 =======
         ((varspez = vs_const) and
 >>>>>>> graemeg/cpstrnew
+=======
+        ((varspez = vs_const) and
+>>>>>>> origin/cpstrnew
 =======
         ((varspez = vs_const) and
 >>>>>>> origin/cpstrnew
@@ -404,6 +414,7 @@ begin
     begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 procedure tppcparamanager.create_funcretloc_info(p: tabstractprocdef; side:
   tcallercallee);
@@ -443,10 +454,13 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       retcgsize:=def_cgsize(def);
       result.intsize:=def.size;
     end;
   result.size:=retcgsize;
+<<<<<<< HEAD
   { Return is passed as var parameter }
   if ret_in_param(def,p.proccalloption) then
     begin
@@ -489,21 +503,22 @@ begin
     p.funcretloc[side].loc := LOC_VOID;
     exit;
   end;
+=======
+>>>>>>> origin/cpstrnew
   { Return is passed as var parameter }
-  if ret_in_param(p.returndef, p.proccalloption) then
+  if ret_in_param(def,p.proccalloption) then
     begin
-      p.funcretloc[side].loc := LOC_REFERENCE;
-      p.funcretloc[side].size := retcgsize;
+      paraloc:=result.add_location;
+      paraloc^.loc:=LOC_REFERENCE;
+      paraloc^.size:=retcgsize;
       exit;
     end;
+
+  paraloc:=result.add_location;
   { Return in FPU register? }
-  if p.returndef.typ = floatdef then begin
-    p.funcretloc[side].loc := LOC_FPUREGISTER;
-    p.funcretloc[side].register := NR_FPU_RESULT_REG;
-    p.funcretloc[side].size := retcgsize;
-  end else
-    { Return in register }
+  if def.typ=floatdef then
     begin
+<<<<<<< HEAD
       p.funcretloc[side].loc := LOC_REGISTER;
       p.funcretloc[side].size := retcgsize;
       if side = callerside then
@@ -514,6 +529,22 @@ begin
           RS_FUNCTION_RETURN_REG, cgsize2subreg(retcgsize));
     end;
 >>>>>>> graemeg/fixes_2_2
+=======
+      paraloc^.loc:=LOC_FPUREGISTER;
+      paraloc^.register:=NR_FPU_RESULT_REG;
+      paraloc^.size:=retcgsize;
+    end
+  else
+   { Return in register }
+    begin
+       paraloc^.loc:=LOC_REGISTER;
+       if side=callerside then
+         paraloc^.register:=newreg(R_INTREGISTER,RS_FUNCTION_RESULT_REG,cgsize2subreg(R_INTREGISTER,retcgsize))
+       else
+         paraloc^.register:=newreg(R_INTREGISTER,RS_FUNCTION_RETURN_REG,cgsize2subreg(R_INTREGISTER,retcgsize));
+       paraloc^.size:=retcgsize;
+     end;
+>>>>>>> origin/cpstrnew
 end;
 
 function tcpuparamanager.create_paraloc_info(p: tabstractprocdef; side:

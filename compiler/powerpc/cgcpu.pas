@@ -1780,6 +1780,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
       
@@ -1790,6 +1791,9 @@ const
 =======
       
 >>>>>>> graemeg/cpstrnew
+=======
+      
+>>>>>>> origin/cpstrnew
 =======
       
 >>>>>>> origin/cpstrnew

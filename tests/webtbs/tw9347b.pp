@@ -3,11 +3,15 @@
 {$endif}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 program tw9347b;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+program tw9347b;
+>>>>>>> origin/cpstrnew
 
 {$r-}
 uses
@@ -26,6 +30,9 @@ type
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   { fails in Delphi 6, succeeds in Delphi 7, fails in D2007 }
   try
     SetPropValue(TBla.Create, 'int', 'true');
@@ -34,6 +41,7 @@ begin
       halt(0);
   end;
   halt(1);
+<<<<<<< HEAD
 =======
   { fails in Delphi 6, succeeds in Delphi 7 }
   SetPropValue(TBla.Create, 'int', 'true');
@@ -42,4 +50,6 @@ begin
   { fails in Delphi 6, succeeds in Delphi 7 }
   SetPropValue(TBla.Create, 'int', 'true');
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 end.

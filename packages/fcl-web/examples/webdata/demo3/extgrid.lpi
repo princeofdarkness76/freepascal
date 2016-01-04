@@ -5,6 +5,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Version Value="9"/>
     <General>
       <Flags>
@@ -29,6 +30,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     <Version Value="7"/>
     <General>
       <Flags>
@@ -47,11 +50,14 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     <PublishOptions>
@@ -89,6 +95,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Units Count="2">
 =======
     <Units Count="16">
@@ -102,6 +109,9 @@
 =======
     <Units Count="16">
 >>>>>>> origin/cpstrnew
+=======
+    <Units Count="16">
+>>>>>>> origin/cpstrnew
       <Unit0>
         <Filename Value="extgrid.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -110,11 +120,14 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         <CursorPos X="24" Y="6"/>
@@ -125,11 +138,14 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       </Unit0>
@@ -139,6 +155,7 @@
         <ComponentName Value="FPWebProviderDataModule1"/>
         <ResourceBaseClass Value="DataModule"/>
         <UnitName Value="wmusers"/>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -153,6 +170,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         <CursorPos X="33" Y="60"/>
@@ -402,6 +421,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -409,10 +429,13 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     <Target>
       <Filename Value="extgrid.cgi"/>
     </Target>
     <SearchPaths>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -443,6 +466,11 @@
     </SearchPaths>
     <Other>
 >>>>>>> graemeg/cpstrnew
+=======
+      <IncludeFiles Value="$(ProjOutDir)/"/>
+    </SearchPaths>
+    <Other>
+>>>>>>> origin/cpstrnew
 =======
       <IncludeFiles Value="$(ProjOutDir)/"/>
     </SearchPaths>

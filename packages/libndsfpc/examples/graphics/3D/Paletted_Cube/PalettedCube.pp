@@ -24,8 +24,11 @@ program PalettedCube;
 
 
 {$mode objfpc}
+<<<<<<< HEAD
 
 {$mode objfpc}
+=======
+>>>>>>> origin/cpstrnew
 
 uses
   ctypes, nds9;

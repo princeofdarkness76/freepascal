@@ -51,11 +51,14 @@ _dynamic_start:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     .section ".text"
@@ -72,6 +75,7 @@ _start:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> graemeg/cpstrnew
@@ -79,6 +83,8 @@ _start:
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     lwz      3,0(26)       /* get argc */
@@ -104,6 +110,7 @@ _start:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     /* we should not reach here. Crash horribly */
     trap
 =======
@@ -118,10 +125,14 @@ _start:
 =======
     b          _haltproc
 >>>>>>> origin/cpstrnew
+=======
+    b          _haltproc
+>>>>>>> origin/cpstrnew
 
     .globl  _haltproc
     .type   _haltproc,@function
 _haltproc:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -175,6 +186,12 @@ _haltproc:
     b          _haltproc
 
 >>>>>>> origin/cpstrnew
+=======
+    li       0,1          /* exit call */
+    sc
+    b          _haltproc
+
+>>>>>>> origin/cpstrnew
 /* Define a symbol for the first piece of initialized data.  */
     .section ".data"
     .globl __data_start
@@ -182,6 +199,7 @@ __data_start:
 data_start:
 
     .section ".bss"
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -226,6 +244,15 @@ __stkptr:
     .skip 4
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+    .type __stkptr, @object
+    .size __stkptr, 4
+    .global __stkptr
+__stkptr:
+    .skip 4
+
+>>>>>>> origin/cpstrnew
 =======
 
     .type __stkptr, @object

@@ -54,11 +54,15 @@ var
   mysql_real_connect : function(mysql : PMYSQL; const host,user,passwd : pchar;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		                   {$ifndef use_mysql_321} const db : Pchar; {$endif}  // strictly speaking 3.22+ not 3.21+	      		
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+		                   {$ifndef use_mysql_321} const db : Pchar; {$endif}  // strictly speaking 3.22+ not 3.21+	      		
+>>>>>>> origin/cpstrnew
                                    port : cardinal;
                                    unix_socket : pchar;
                                    clientflag : cardinal) : PMYSQL;extdecl;

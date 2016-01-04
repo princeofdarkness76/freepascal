@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef NDS_INTERFACE}
 
 =======
@@ -45,6 +46,8 @@
 
 *)
 
+=======
+>>>>>>> origin/cpstrnew
 {$ifdef NDS_INTERFACE}
 // WAIT_CR: Wait State Control Register
 <<<<<<< HEAD
@@ -162,6 +165,7 @@ type
     
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     arm9romOffset: cuint32;
 =======
     arm9romSource: cuint32;
@@ -169,10 +173,14 @@ type
 =======
     arm9romSource: cuint32;
 >>>>>>> origin/fixes_2_2
+=======
+    arm9romOffset: cuint32;
+>>>>>>> origin/cpstrnew
     arm9executeAddress: cuint32;
     arm9destination: cuint32;
     arm9binarySize: cuint32;
     
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     arm7romOffset: cuint32;
@@ -182,10 +190,14 @@ type
 =======
     arm7romSource: cuint32;
 >>>>>>> origin/fixes_2_2
+=======
+    arm7romOffset: cuint32;
+>>>>>>> origin/cpstrnew
     arm7executeAddress: cuint32;
     arm7destination: cuint32;
     arm7binarySize: cuint32;
     
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     filenameOffset: cuint32;
@@ -201,6 +213,11 @@ type
     filenameSize: cuint32;
     fatSource: cuint32;
 >>>>>>> origin/fixes_2_2
+=======
+    filenameOffset: cuint32;
+    filenameSize: cuint32;
+    fatOffset: cuint32;
+>>>>>>> origin/cpstrnew
     fatSize: cuint32;
     
     arm9overlaySource: cuint32;
@@ -243,6 +260,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   __NDSHeader : pNDSHeader = pointer($02FFFE00);
 =======
   NDSHeader : pNDSHeader = pointer($027FFE00);
@@ -253,6 +271,9 @@ const
 =======
   __NDSHeader : pNDSHeader = pointer($02FFFE00);
 >>>>>>> origin/fixes_2.4
+=======
+  __NDSHeader : pNDSHeader = pointer($02FFFE00);
+>>>>>>> origin/cpstrnew
 
 
 type
@@ -317,6 +338,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   val1, val2: cuint;
 begin
   val1 := 0;
@@ -341,6 +363,9 @@ end;
 =======
   val1, val2: cuint;
 >>>>>>> origin/fixes_2.4
+=======
+  val1, val2: cuint;
+>>>>>>> origin/cpstrnew
 begin
   val1 := 0;
   val2 := 0;

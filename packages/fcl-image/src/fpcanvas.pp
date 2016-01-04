@@ -117,11 +117,14 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     property Orientation: Integer read GetOrientation write SetOrientation default 0;
@@ -276,6 +279,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FClipRegion : TFPCustomRegion;
 =======
     FClipRect : TRect;
@@ -286,6 +290,9 @@ type
 =======
     FClipRect : TRect;
 >>>>>>> graemeg/cpstrnew
+=======
+    FClipRect : TRect;
+>>>>>>> origin/cpstrnew
 =======
     FClipRect : TRect;
 >>>>>>> origin/cpstrnew
@@ -391,11 +398,14 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     // using brush

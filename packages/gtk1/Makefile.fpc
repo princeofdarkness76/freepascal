@@ -18,6 +18,7 @@ name=gtk1
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 version=3.1.1
 
 [require]
@@ -36,6 +37,9 @@ version=2.2.5
 =======
 version=2.2.5
 >>>>>>> origin/fixes_2_2
+=======
+version=2.5.1
+>>>>>>> origin/cpstrnew
 
 [require]
 libc=y
@@ -48,11 +52,15 @@ units_freebsd=gtkglarea
 units_darwin=gtkglarea
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 units_iphonesim=gtkglarea
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+units_iphonesim=gtkglarea
+>>>>>>> origin/cpstrnew
 units_solaris=gtkglarea
 units_netbsd=gtkglarea
 units_openbsd=gtkglarea

@@ -92,6 +92,7 @@ type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   TStartRoutine = function (_para1:pointer): Pointer; cdecl;
 =======
   TStartRoutine = function (_para1:pointer): cint; cdecl;
@@ -99,6 +100,9 @@ type
 =======
   TStartRoutine = function (_para1:pointer): cint; cdecl;
 >>>>>>> origin/fixes_2_2
+=======
+  TStartRoutine = function (_para1:pointer): Pointer; cdecl;
+>>>>>>> origin/cpstrnew
   TKeyValueDestructor = procedure(ValueInKey: Pointer); cdecl;
   TInitOnceProc = Procedure;cdecl;
   TForkHandler = procedure; cdecl;
@@ -319,6 +323,7 @@ type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -419,3 +424,5 @@ type
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew

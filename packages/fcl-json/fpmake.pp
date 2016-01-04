@@ -48,6 +48,7 @@ begin
     T:=P.Targets.AddUnit('fpjson.pp');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       T.ResourceStrings:=true;
     T:=P.Targets.AddUnit('jsonconf.pp');
       T.ResourceStrings:=true;
@@ -57,6 +58,11 @@ begin
 =======
     T:=P.Targets.AddUnit('jsonconf.pp');
 >>>>>>> origin/fixes_2_2
+=======
+      T.ResourceStrings:=true;
+    T:=P.Targets.AddUnit('jsonconf.pp');
+      T.ResourceStrings:=true;
+>>>>>>> origin/cpstrnew
       with T.Dependencies do
         begin
           AddUnit('fpjson');
@@ -65,17 +71,22 @@ begin
     T:=P.Targets.AddUnit('jsonparser.pp');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       T.ResourceStrings:=true;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+      T.ResourceStrings:=true;
+>>>>>>> origin/cpstrnew
       with T.Dependencies do
         begin
           AddUnit('fpjson');
           AddUnit('jsonscanner');
         end;
     T:=P.Targets.AddUnit('jsonscanner.pp');
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       T.ResourceStrings:=true;
@@ -98,6 +109,9 @@ begin
 =======
 >>>>>>> graemeg/cpstrnew
 =======
+>>>>>>> origin/cpstrnew
+=======
+      T.ResourceStrings:=true;
 >>>>>>> origin/cpstrnew
 
     P.ExamplePath.Add('examples');

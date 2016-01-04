@@ -544,6 +544,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         add('');
 =======
 >>>>>>> graemeg/cpstrnew
@@ -551,6 +552,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         add('__sp_irq	=	__iwram_top - 0x100;');
@@ -761,6 +764,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    StripStr:='-Map '+maybequoted(ChangeFileExt(current_module.exefilename,'.map'));
 =======
    StripStr:='-Map '+maybequoted(ChangeFileExt(current_module.exefilename^,'.map'));
@@ -777,6 +781,9 @@ begin
 =======
    StripStr:='-Map '+maybequoted(ChangeFileExt(current_module.exefilename^,'.map'));
 >>>>>>> origin/fixes_2.4
+=======
+   StripStr:='-Map '+maybequoted(ChangeFileExt(current_module.exefilename^,'.map'));
+>>>>>>> origin/cpstrnew
   if create_smartlink_sections then
    GCSectionsStr:='--gc-sections';
   if not(cs_link_nolink in current_settings.globalswitches) then
@@ -805,6 +812,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Replace(cmdstr,'$MAP',MapStr);
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -813,6 +821,9 @@ begin
 =======
   Replace(cmdstr,'$MAP',MapStr);
 >>>>>>> origin/fixes_2.4
+=======
+  Replace(cmdstr,'$MAP',MapStr);
+>>>>>>> origin/cpstrnew
   Replace(cmdstr,'$DYNLINK',DynLinkStr);
   
   success:=DoExec(FindUtil(utilsprefix+BinStr),cmdstr,true,false);

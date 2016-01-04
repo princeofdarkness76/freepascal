@@ -91,6 +91,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       ncgutil,hlcgobj,cclasses,tgobj
 =======
       ncgutil, cclasses,asmutils
@@ -101,6 +102,9 @@ implementation
 =======
       ncgutil, cclasses,asmutils
 >>>>>>> graemeg/cpstrnew
+=======
+      ncgutil, cclasses,asmutils
+>>>>>>> origin/cpstrnew
 =======
       ncgutil, cclasses,asmutils
 >>>>>>> origin/cpstrnew
@@ -159,11 +163,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       var
@@ -278,6 +285,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         current_asmdata.asmlists[al_typedconsts].concat(tai_realconst.create_s80real(value_real,tfloatdef(resultdef).size));
 =======
                         current_asmdata.asmlists[al_typedconsts].concat(Tai_real_80bit.Create(value_real,resultdef.size));
@@ -288,6 +296,9 @@ implementation
 =======
                         current_asmdata.asmlists[al_typedconsts].concat(Tai_real_80bit.Create(value_real,resultdef.size));
 >>>>>>> graemeg/cpstrnew
+=======
+                        current_asmdata.asmlists[al_typedconsts].concat(Tai_real_80bit.Create(value_real,resultdef.size));
+>>>>>>> origin/cpstrnew
 =======
                         current_asmdata.asmlists[al_typedconsts].concat(Tai_real_80bit.Create(value_real,resultdef.size));
 >>>>>>> origin/cpstrnew
@@ -375,6 +386,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          lastlabel: tasmlabofs;
          pc: pchar;
          l: longint;
@@ -392,6 +404,8 @@ implementation
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
          lastlabel   : tasmlabel;
          pc       : pchar;
          l: longint;
@@ -464,6 +478,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   datatcb:=ctai_typedconstbuilder.create([tcalo_is_lab,tcalo_make_dead_strippable]);
 =======
 >>>>>>> graemeg/cpstrnew
@@ -485,12 +500,15 @@ implementation
                    current_asmdata.asmlists[al_typedconsts].concat(Tai_label.Create(lastlabel));
                    { generate an ansi string ? }
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
                    case cst_type of
                       cst_ansistring:
                         begin
                            if len=0 then
                              InternalError(2008032301)   { empty string should be handled above }
                            else
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -539,6 +557,9 @@ implementation
 =======
                              lastlabel:=emit_ansistring_const(current_asmdata.AsmLists[al_typedconsts],value_str,len,tstringdef(resultdef).encoding);
 >>>>>>> origin/cpstrnew
+=======
+                             lastlabel:=emit_ansistring_const(current_asmdata.AsmLists[al_typedconsts],value_str,len,tstringdef(resultdef).encoding);
+>>>>>>> origin/cpstrnew
                         end;
                       cst_unicodestring,
                       cst_widestring:
@@ -546,6 +567,7 @@ implementation
                            if len=0 then
                              InternalError(2008032302)   { empty string should be handled above }
                            else
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -609,6 +631,8 @@ implementation
 =======
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                              lastlabel := emit_unicodestring_const(current_asmdata.AsmLists[al_typedconsts],
                                              value_str,
                                              tstringdef(resultdef).encoding,
@@ -616,6 +640,7 @@ implementation
                         end;
                       cst_shortstring:
                         begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
@@ -627,6 +652,8 @@ implementation
                       cst_shortstring:
                         begin
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                           current_asmdata.getdatalabel(lastlabel);
@@ -659,6 +686,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                           current_asmdata.getglobaldatalabel(lastlabel.lab);
 
 =======
@@ -666,6 +694,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                           current_asmdata.getdatalabel(lastlabel);
@@ -697,6 +727,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                    datatcb.free;
                    lab_str:=lastlabel.lab;
                    entry^.Data:=lastlabel.lab;
@@ -712,6 +743,10 @@ implementation
                    lab_str:=lastlabel;
                    entry^.Data:=lastlabel;
 >>>>>>> graemeg/cpstrnew
+=======
+                   lab_str:=lastlabel;
+                   entry^.Data:=lastlabel;
+>>>>>>> origin/cpstrnew
 =======
                    lab_str:=lastlabel;
                    entry^.Data:=lastlabel;

@@ -17,6 +17,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 =======
   Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
@@ -33,6 +34,9 @@
 =======
   Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 >>>>>>> origin/fixes_2.4
+=======
+  Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+>>>>>>> origin/cpstrnew
 }
 {
   See the file COPYING.FPC, included in this distribution,
@@ -270,10 +274,14 @@ begin
     if WaitForFinish then
       While Running do
 <<<<<<< HEAD
+<<<<<<< HEAD
         CheckSynchronize(10);
 =======
         CheckSynchronize(50);
 >>>>>>> origin/fixes_2.4
+=======
+        CheckSynchronize(10);
+>>>>>>> origin/cpstrnew
 end;
 
 { TLZXMasterThread }
@@ -288,9 +296,13 @@ begin
   Lock;
   REsult := True;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> origin/fixes_2.4
+=======
+
+>>>>>>> origin/cpstrnew
   FCompressor.BlockIsFinished(ABlock);
   if DataRemains then
     QueueThread(Worker)
@@ -326,6 +338,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Result := Getmem(FCompressor.BlockSize*2); // it's unlikely but possible for the block to be bigger than the orig size
 =======
     Result := Getmem(FCompressor.BlockSize);
@@ -342,6 +355,9 @@ begin
 =======
     Result := Getmem(FCompressor.BlockSize);
 >>>>>>> origin/fixes_2.4
+=======
+    Result := Getmem(FCompressor.BlockSize);
+>>>>>>> origin/cpstrnew
 end;
 
 procedure TLZXMasterThread.Lock;
@@ -398,11 +414,16 @@ begin
   Thread.CompressData(FBlockNumber);
   Inc(FBlockNumber);
 <<<<<<< HEAD
+<<<<<<< HEAD
   if Thread.Suspended then
     Thread.Resume;
 =======
   Thread.Resume;
 >>>>>>> origin/fixes_2.4
+=======
+  if Thread.Suspended then
+    Thread.Resume;
+>>>>>>> origin/cpstrnew
   UnLockTmpData;
 end;
 
@@ -424,10 +445,14 @@ begin
   while Working do
   begin
 <<<<<<< HEAD
+<<<<<<< HEAD
       Sleep(0);
 =======
       Sleep(50);
 >>>>>>> origin/fixes_2.4
+=======
+      Sleep(0);
+>>>>>>> origin/cpstrnew
   end;
   FRunning:= False;
 end;
@@ -547,22 +572,32 @@ begin
   begin
     lzx_reset(LZXdata);
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> origin/fixes_2.4
+=======
+
+>>>>>>> origin/cpstrnew
     lzx_compress_block(LZXdata, WSize, True);
 
     MasterThread.Synchronize(@NotifyMasterDone);
 
     if ShouldSuspend then
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
     begin
       Suspend;
     end;
 
+<<<<<<< HEAD
 =======
       Suspend;
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
   end;
 end;
 
@@ -576,6 +611,7 @@ begin
   FreeOnTerminate := True;
 
   Data  := GetMem(ABlockSize);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -599,6 +635,9 @@ begin
 =======
   CompressedData:=GetMem(ABlockSize);
 >>>>>>> origin/fixes_2.4
+=======
+  CompressedData:=GetMem(ABlockSize);
+>>>>>>> origin/cpstrnew
 
   lzx_init(@LZXdata, longint(WindowSizeCode),
            TGetBytesFunc(@TLZXWorkerThread.GetBytes), Self,

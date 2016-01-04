@@ -8,6 +8,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Copyright:  (c) 2001-2008 by Apple, Inc., all rights reserved.
 =======
      Copyright:  (c) 2001-2008 by Apple Inc., all rights reserved.
@@ -24,10 +25,14 @@
 =======
      Copyright:  (c) 2001-2008 by Apple Inc., all rights reserved.
 >>>>>>> origin/fixes_2.4
+=======
+     Copyright:  (c) 2001-2008 by Apple Inc., all rights reserved.
+>>>>>>> origin/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -47,10 +52,13 @@
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
                      http://www.freepascal.org/bugs.html
  
 }
 {	  Pascal Translation:  Gorazd Krosl <gorazd_1957@yahoo.ca>, October 2009 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -64,6 +72,8 @@
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {
     Modified for use with Free Pascal
@@ -124,6 +134,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
@@ -139,6 +150,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -162,6 +175,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -192,6 +206,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/fixes_2.4
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
@@ -203,6 +222,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -233,6 +253,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/fixes_2.4
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -244,6 +269,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -255,6 +281,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -264,6 +292,7 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -280,6 +309,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -291,6 +322,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -327,12 +359,18 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/fixes_2.4
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -363,10 +401,13 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -393,6 +434,10 @@ interface
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 >>>>>>> origin/fixes_2.4
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> origin/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -513,6 +558,7 @@ uses MacTypes,AUComponent,CoreAudioTypes,MIDIServices,CFBase,CFURL;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@constant		kAudioUnitScope_Layer	A context which functions as a layer within a part and allows
 											grouped control of LayerItem-scope parameters.
 											An example is the percussive attack layer for an electric organ instrument
@@ -529,11 +575,14 @@ uses MacTypes,AUComponent,CoreAudioTypes,MIDIServices,CFBase,CFURL;
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 }
 const
 	kAudioUnitScope_Global = 0;
 	kAudioUnitScope_Input = 1;
 	kAudioUnitScope_Output = 2;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -553,6 +602,8 @@ const
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 //#if !TARGET_OS_IPHONE;
 {$ifc not TARGET_OS_IPHONE}
 	kAudioUnitScope_Group = 3;
@@ -560,6 +611,7 @@ const
 	kAudioUnitScope_Note = 5;
 //#endif;
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -573,6 +625,8 @@ const
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 
 //=====================================================================================================================
@@ -585,6 +639,7 @@ const
 	@constant		kAudioUnitProperty_ClassInfo
 						Scope:			Global (or Part for a part scope preset)
 						Value Type:		CFDictionaryRef
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -615,10 +670,13 @@ const
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 						Access:			Read / Write
 						
 						The complete state of an audio unit if on global scope. An audio unit that supports part scope, may also support presets on the part scope
 						that apply to individual parts
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -632,6 +690,8 @@ const
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 						
 	@constant		kAudioUnitProperty_MakeConnection
 						Scope:			Input
@@ -641,6 +701,7 @@ const
 	@constant		kAudioUnitProperty_SampleRate
 						Scope:			Input / Output
 						Value Type:		Float64
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -662,12 +723,16 @@ const
 =======
 						Access:			Read / Write
 >>>>>>> origin/fixes_2.4
+=======
+						Access:			Read / Write
+>>>>>>> origin/cpstrnew
 						
 	@constant		kAudioUnitProperty_ParameterList
 						Scope:			Any
 						Value Type:		AudioUnitParameterID
 						Access:			Read
 						
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -689,6 +754,9 @@ const
 =======
 						The list of parameter IDs on the specifed scope
 >>>>>>> origin/fixes_2.4
+=======
+						The list of parameter IDs on the specifed scope
+>>>>>>> origin/cpstrnew
 						
 	@constant		kAudioUnitProperty_ParameterInfo
 						Scope:			Any
@@ -704,6 +772,7 @@ const
 						
 						The caller provides the selector for a given audio unit API, and retrieves a function pointer for that selector. For instance,
 						this enables the caller to retrieve the function pointer for the AudioUnitRender call, so that call can be made directly
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -725,6 +794,9 @@ const
 =======
 						through to the audio unit to avoid the overhead of the Component Mgr's dispatch.
 >>>>>>> origin/fixes_2.4
+=======
+						through to the audio unit to avoid the overhead of the Component Mgr's dispatch.
+>>>>>>> origin/cpstrnew
 	
 	@constant		kAudioUnitProperty_CPULoad
 						Scope:			Global
@@ -741,6 +813,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 						Access:			read/write
 =======
 						Access:			Read / Write
@@ -757,6 +830,9 @@ const
 =======
 						Access:			Read / Write
 >>>>>>> origin/fixes_2.4
+=======
+						Access:			Read / Write
+>>>>>>> origin/cpstrnew
 						
 						An AudioStreamBasicDescription is used to specify the basic format for an audio data path. For instance, 2 channels, 44.1KHz, Float32 linear pcm.
 						The value can be both set and retrieve from an I/O element (bus)
@@ -769,6 +845,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 						Access:			read/write
 =======
 						Access:			Read / Write
@@ -785,6 +862,9 @@ const
 =======
 						Access:			Read / Write
 >>>>>>> origin/fixes_2.4
+=======
+						Access:			Read / Write
+>>>>>>> origin/cpstrnew
 						
 						Most audio units will only implement the read version of this call, thus they would have a fixed bus topology (number of input and output elements/buses).
 						Some audio units possess the capability to add or remove elements, so in that case this property will be writable.
@@ -821,6 +901,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 						Access:			read/write
 =======
 						Access:			Read / Write
@@ -837,6 +918,9 @@ const
 =======
 						Access:			Read / Write
 >>>>>>> origin/fixes_2.4
+=======
+						Access:			Read / Write
+>>>>>>> origin/cpstrnew
 						
 						This property is used to describe to an audio unit the maximum number of samples it will be asked to produce on any single given call to audio unit render. 
 						
@@ -915,6 +999,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 						Access:			read/write
 =======
 						Access:			Read / Write
@@ -931,6 +1016,9 @@ const
 =======
 						Access:			Read / Write
 >>>>>>> origin/fixes_2.4
+=======
+						Access:			Read / Write
+>>>>>>> origin/cpstrnew
 						
 						A boolean value that can be used to bypass the processing in an effect unit, so that the input is passed unchanged through to the output
 	
@@ -966,6 +1054,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 						Access:			read/write
 =======
 						Access:			Read / Write
@@ -982,6 +1071,9 @@ const
 =======
 						Access:			Read / Write
 >>>>>>> origin/fixes_2.4
+=======
+						Access:			Read / Write
+>>>>>>> origin/cpstrnew
 						
 						The host can set this as information to the audio unit to describe something about the context within which the audio unit is instantiated. For instance, "track 3" could
 						be set as the context, so that the audio unit's view could then display "My audio unit on track 3" as information to the user of the particular context for any audio unit.
@@ -994,6 +1086,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 						Access:			read/write
 =======
 						Access:			Read / Write
@@ -1010,6 +1103,9 @@ const
 =======
 						Access:			Read / Write
 >>>>>>> origin/fixes_2.4
+=======
+						Access:			Read / Write
+>>>>>>> origin/cpstrnew
 						
 						A value (0 - 127) that can be used to control the quality (complexity) of the rendering operation. A typical usage is to set render quality to maximum for best quality, but
 						if CPU usage is a concern a lesser quality can be set to trade off render quality.
@@ -1036,6 +1132,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 						Access:			read/write
 =======
 						Access:			Read / Write
@@ -1052,6 +1149,9 @@ const
 =======
 						Access:			Read / Write
 >>>>>>> origin/fixes_2.4
+=======
+						Access:			Read / Write
+>>>>>>> origin/cpstrnew
 						
 						A property that can be used to determine if the audio unit can process input data on the same data as is provided to it, and if so this can be turned off if the host
 						has a particular buffer management strategy and such an operation would defeat that.
@@ -1075,6 +1175,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 						querying the size of the property (i.e., How many alternate UI classes there are for the unit)
 =======
 						querying the size of the property (ie. How many alternate UI classes there are for the unit)
@@ -1091,6 +1192,9 @@ const
 =======
 						querying the size of the property (ie. How many alternate UI classes there are for the unit)
 >>>>>>> origin/fixes_2.4
+=======
+						querying the size of the property (ie. How many alternate UI classes there are for the unit)
+>>>>>>> origin/cpstrnew
 						Typically, most audio units will provide 1 UI class per unit
 	
 	@constant		kAudioUnitProperty_SupportedChannelLayoutTags
@@ -1135,6 +1239,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 						The unit could return a shorter name than requested as well. The unit returns a CFString
 =======
 						The unit could return a shorter name than requeseted as well. The unit returns a CFString
@@ -1151,6 +1256,9 @@ const
 =======
 						The unit could return a shorter name than requeseted as well. The unit returns a CFString
 >>>>>>> origin/fixes_2.4
+=======
+						The unit could return a shorter name than requeseted as well. The unit returns a CFString
+>>>>>>> origin/cpstrnew
 						that should be released by the host. When using this property, the host asks for
 						the name in the same scope and element as the unit publishes the parameter.
 
@@ -1182,6 +1290,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 						Access:				read/write
 =======
 						Access:				Read / Write
@@ -1198,6 +1307,9 @@ const
 =======
 						Access:				Read / Write
 >>>>>>> origin/fixes_2.4
+=======
+						Access:				Read / Write
+>>>>>>> origin/cpstrnew
 						
 						This is used by the host to indicate when an audio unit (that normally operates within a general real-time calling model) is 
 						rendering in an offline context. A typical usage of this is to set this to true when the rendering operation an audio unit is being used within is 
@@ -1304,6 +1416,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 							The previous audio unit's (connected to this last unit) output presentation latency will be that 
 =======
 							The previous audio unit's (connected to this last unit) output presenation latency will be that 
@@ -1320,6 +1433,9 @@ const
 =======
 							The previous audio unit's (connected to this last unit) output presenation latency will be that 
 >>>>>>> origin/fixes_2.4
+=======
+							The previous audio unit's (connected to this last unit) output presenation latency will be that 
+>>>>>>> origin/cpstrnew
 							initial presentation latency plus the processing latency (as expressed by 
 							kAudioUnitProperty_Latency) of the last unit.
 							
@@ -1437,6 +1553,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 						AUVarispeed and AUTimePitch units, where the relationship between input and output samples is 
 =======
 						AUVaripseed and AUTimePitch units, where the relationship between input and output samples is 
@@ -1453,6 +1570,9 @@ const
 =======
 						AUVaripseed and AUTimePitch units, where the relationship between input and output samples is 
 >>>>>>> origin/fixes_2.4
+=======
+						AUVaripseed and AUTimePitch units, where the relationship between input and output samples is 
+>>>>>>> origin/cpstrnew
 						non-trivial. For these units, the range of input samples that correspond to an output buffer 
 						typically differs from the range of input samples that were pulled for that render call. 
 						This difference arises because of internal buffering, processing latency, and other factors.
@@ -1511,6 +1631,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	
 	@constant		kAudioUnitProperty_ParameterHistoryInfo
 						Scope:			Global
@@ -1529,6 +1650,8 @@ const
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  }	
 const
 // range (0 -> 999)
@@ -1537,6 +1660,7 @@ const
 	kAudioUnitProperty_SampleRate = 2;
 	kAudioUnitProperty_ParameterList = 3;
 	kAudioUnitProperty_ParameterInfo = 4;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1553,11 +1677,14 @@ const
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	kAudioUnitProperty_StreamFormat = 8;
 	kAudioUnitProperty_ElementCount = 11;
 	kAudioUnitProperty_Latency = 12;
 	kAudioUnitProperty_SupportedNumChannels = 13;
 	kAudioUnitProperty_MaximumFramesPerSlice = 14;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1574,6 +1701,8 @@ const
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	kAudioUnitProperty_AudioChannelLayout = 19;
 	kAudioUnitProperty_TailTime = 20;
 	kAudioUnitProperty_BypassEffect = 21;
@@ -1591,6 +1720,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kAudioUnitProperty_ParameterHistoryInfo = 53;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1602,10 +1732,13 @@ const
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 //#if !TARGET_OS_IPHONE;
 {$ifc not TARGET_OS_IPHONE}
 	kAudioUnitProperty_FastDispatch = 5;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1637,6 +1770,11 @@ const
 	kAudioUnitProperty_SetExternalBuffer = 15;
 	kAudioUnitProperty_ParameterValueStrings = 16;
 >>>>>>> origin/fixes_2.4
+=======
+	kAudioUnitProperty_CPULoad = 6;
+	kAudioUnitProperty_SetExternalBuffer = 15;
+	kAudioUnitProperty_ParameterValueStrings = 16;
+>>>>>>> origin/cpstrnew
 	kAudioUnitProperty_GetUIComponentList = 18;
 	kAudioUnitProperty_ContextName = 25;
 	kAudioUnitProperty_HostCallbacks = 27;
@@ -1825,6 +1963,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@discussion		If the host app has set this callback, then the audio unit can use this to get the current beat and tempo as they relate to the first sample in the render buffer. The audio unit can call this callback only from within the audio unit render call (otherwise the host is unable to provide information accurately to the audio unit as the information obtained is relate to the current AudioUnitRender call). If the host cannot provide the requested information, it will return kAudioUnitErr_CannotDoInCurrentContext.
 	
 			The AudioUnit can provide NULL for any of the requested parameters (except for inHostUserData) if it is not interested in that particular piece of information
@@ -1842,12 +1981,15 @@ type
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 }
 type
 	HostCallback_GetBeatAndTempo = function( inHostUserData: UnivPtr; var outCurrentBeat: Float64; var outCurrentTempo: Float64 ): OSStatus;
 
 {!
 	@typedef		HostCallback_GetMusicalTimeLocation
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1879,12 +2021,16 @@ type
 =======
 	@abstract		Retrieve information about the general musical time state of the host
 >>>>>>> origin/fixes_2.4
+=======
+	@abstract		Retrieve information about the general musical time state of the host
+>>>>>>> origin/cpstrnew
 }
 type
 	HostCallback_GetMusicalTimeLocation = function( inHostUserData: UnivPtr; var outDeltaSampleOffsetToNextBeat: UInt32; var outTimeSig_Numerator: Float32; var outTimeSig_Denominator: UInt32; var outCurrentMeasureDownBeat: Float64 ): OSStatus;
 
 {!
 	@typedef		HostCallback_GetTransportState
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1918,6 +2064,9 @@ type
 =======
 	@abstract		Retrieve information about the time line's (or transport) state of the host
 >>>>>>> origin/fixes_2.4
+=======
+	@abstract		Retrieve information about the time line's (or transport) state of the host
+>>>>>>> origin/cpstrnew
 }
 type
 	HostCallback_GetTransportState = function( inHostUserData: UnivPtr; var outIsPlaying: Boolean; var outTransportStateChanged: Boolean; var outCurrentSampleInTimeLine: Float64; var outIsCycling: Boolean; var outCycleStartBeat: Float64; var outCycleEndBeat: Float64 ): OSStatus;
@@ -2012,6 +2161,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {!
 	@struct			AudioUnitParameterHistoryInfo
 	@abstract		This structure contains the suggested update rate and history duration for parameters which have the kAudioUnitParameterFlag_PlotHistory flag set.
@@ -2038,6 +2188,8 @@ type
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 //=====================================================================================================================
 //#pragma mark - Parameter Definitions
 
@@ -2097,6 +2249,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 						time relative to tempo, i.e., 1.0 at 120 BPM would equal 1/2 a second
 =======
 						time relative to tempo, ie. 1.0 at 120 BPM would equal 1/2 a second
@@ -2113,6 +2266,9 @@ type
 =======
 						time relative to tempo, ie. 1.0 at 120 BPM would equal 1/2 a second
 >>>>>>> origin/fixes_2.4
+=======
+						time relative to tempo, ie. 1.0 at 120 BPM would equal 1/2 a second
+>>>>>>> origin/cpstrnew
 	@constant		kAudioUnitParameterUnit_Milliseconds
 						parameter is expressed in milliseconds
 	@constant		kAudioUnitParameterUnit_Ratio
@@ -2184,6 +2340,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 						the parameter's info. The host should check for this flag, and if present, release the parameter
 =======
 						the paramter's info.. The host should check for this flag, and if present, release the parameter
@@ -2200,6 +2357,9 @@ type
 =======
 						the paramter's info.. The host should check for this flag, and if present, release the parameter
 >>>>>>> origin/fixes_2.4
+=======
+						the paramter's info.. The host should check for this flag, and if present, release the parameter
+>>>>>>> origin/cpstrnew
 						name when it is finished with it.
 }
 type
@@ -2225,6 +2385,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@constant		kAudioUnitParameterFlag_PlotHistory
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2236,6 +2397,8 @@ type
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	@constant		kAudioUnitParameterFlag_MeterReadOnly
 	@constant		kAudioUnitParameterFlag_DisplayMask
 	@constant		kAudioUnitParameterFlag_DisplaySquareRoot
@@ -2263,6 +2426,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kAudioUnitParameterFlag_PlotHistory = 1 shl 14;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2274,6 +2438,8 @@ const
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	kAudioUnitParameterFlag_MeterReadOnly = 1 shl 15;
 	
 	// bit positions 18,17,16 are set aside for display scales. bit 19 is reserved.
@@ -2370,6 +2536,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 //	These strings are used as keys to the dictionary of configuration info returned by
 //	AudioComponentGetConfiguationInfo(). Informaton about them is presented inline with the
 //	declaration.
@@ -2421,6 +2588,8 @@ const
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 //=====================================================================================================================
 //#pragma mark - Output Unit
 {!
@@ -2503,6 +2672,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 						This property allows setting and retrieving the current mapping state between 
 =======
 						This property allows setting and retreiving the current mapping state between 
@@ -2519,6 +2689,9 @@ const
 =======
 						This property allows setting and retreiving the current mapping state between 
 >>>>>>> origin/fixes_2.4
+=======
+						This property allows setting and retreiving the current mapping state between 
+>>>>>>> origin/cpstrnew
 						(some/many/all of) an audio unit's parameters and MIDI messages. When set, it should replace 
 						any previous mapped settings the audio unit had.
 					
@@ -3045,6 +3218,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 						Access:			read/write
 =======
 						Access:			Read / Write
@@ -3061,6 +3235,9 @@ const
 =======
 						Access:			Read / Write
 >>>>>>> origin/fixes_2.4
+=======
+						Access:			Read / Write
+>>>>>>> origin/cpstrnew
 
 						This will also work with AUConverter. This property is used to map input channels from an input (source) to a destination.
 						The number of channels represented in the channel map is the number of channels of the destination. The channel map entries
@@ -3097,6 +3274,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 							Note that the inputProc will always receive a NULL AudioBufferList in ioData.
 							You must call AudioUnitRender in order to obtain the audio.
 
@@ -3110,6 +3288,8 @@ const
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	@constant		kAudioOutputUnitProperty_HasIO
 	@discussion			Scope: ( scope output, element 0 = output ) ( scope input, element 1 = input )
 						Value Type: UInt32
@@ -3152,6 +3332,7 @@ type
 	AudioOutputUnitStartAtTimeParamsPtr = ^AudioOutputUnitStartAtTimeParams;
 
 //=====================================================================================================================
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3227,6 +3408,8 @@ const
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 //#pragma mark - Mixers
 {!
     @enum           Apple Mixer Property IDs
@@ -3240,6 +3423,7 @@ const
 						Enable or disable metering on a particular scope/element
 
 	@constant		kAudioUnitProperty_MatrixLevels
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3276,6 +3460,11 @@ const
 						Value Type:		Float32 array
 						Access:			Read
 >>>>>>> origin/fixes_2.4
+=======
+	@discussion			Scope:			Global
+						Value Type:		Float32 array
+						Access:			Read
+>>>>>>> origin/cpstrnew
 						
 						This property is used to retrieve the entire state of a matrix mixer. The size required is
 						the number of (input  channels + 1) * (output channels + 1) - see _MatrixDimensions
@@ -3287,6 +3476,7 @@ const
 						Output volumes are stored in the last row (volumes [2][0] and [2][1])
 						Cross point volumes are stored at their expected locations ([0][1], etc)
 						
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3312,6 +3502,8 @@ const
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	@constant		kAudioUnitProperty_MatrixDimensions
 	@discussion			Scope:			Global
 						Value Type:		2 x UInt32
@@ -3375,6 +3567,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 						Access:			read/write
 =======
 						Access:			Read / Write
@@ -3391,6 +3584,9 @@ type
 =======
 						Access:			Read / Write
 >>>>>>> origin/fixes_2.4
+=======
+						Access:			Read / Write
+>>>>>>> origin/cpstrnew
 						
 						Used to set the spatialisation algorithm used by an input of the 3DMixer. See kSpatializationAlgorithm_
 						
@@ -3409,6 +3605,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 						Access:			read/write
 =======
 						Access:			Read / Write
@@ -3425,6 +3622,9 @@ type
 =======
 						Access:			Read / Write
 >>>>>>> origin/fixes_2.4
+=======
+						Access:			Read / Write
+>>>>>>> origin/cpstrnew
 
 						Used to enable various rendering operations on a given input for the 3DMixer. See k3DMixerRenderingFlags_
 						
@@ -3523,6 +3723,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
@@ -3532,6 +3733,8 @@ const
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 //#pragma mark -
 //#pragma mark Desktop Apple Specific Properties
 
@@ -3631,6 +3834,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -3640,6 +3844,8 @@ const
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 //#pragma mark - AUScheduledSoundPlayer
 {!
     @enum           Apple AUScheduledSoundPlayer Property IDs
@@ -3839,6 +4045,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 					property. This property must not be set during playback. The audio files must
 =======
 					propery. This property must not be set during playback. The audio files must
@@ -3855,6 +4062,9 @@ type
 =======
 					propery. This property must not be set during playback. The audio files must
 >>>>>>> origin/fixes_2.4
+=======
+					propery. This property must not be set during playback. The audio files must
+>>>>>>> origin/cpstrnew
 					be kept open for the duration of playback.
 
 
@@ -3880,6 +4090,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 					specified by the property value have been read.
 =======
 					specifed by the property value have been read.
@@ -3896,6 +4107,9 @@ type
 =======
 					specifed by the property value have been read.
 >>>>>>> origin/fixes_2.4
+=======
+					specifed by the property value have been read.
+>>>>>>> origin/cpstrnew
 					
 					
 					Completion Callbacks
@@ -4009,6 +4223,7 @@ type
 	end;
 
 //=====================================================================================================================
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4221,6 +4436,8 @@ const
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 //#pragma mark - AUDeferredRenderer
 {!
 	@enum			AUDeferredRenderer
@@ -4284,6 +4501,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@discussion			Scope: Global
 						Value Type: CFStringRef
 						Access:
@@ -4308,6 +4526,8 @@ const
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	@discussion			Scope:
 						Value Type:
 						Access:
@@ -4316,6 +4536,7 @@ const
 	@discussion			Scope:
 						Value Type:
 						Access:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4329,6 +4550,8 @@ const
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 }
 const
 	kAUNetReceiveProperty_Hostname = 3511;
@@ -4339,6 +4562,7 @@ const
 {!
 	@enum			AUNetSend
 	@constant		kAUNetSendProperty_PortNum
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4396,6 +4620,8 @@ const
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	@discussion			Scope:
 						Value Type:
 						Access:
@@ -4428,6 +4654,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -4437,6 +4664,8 @@ const
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 }
 const
 	kAUNetSendProperty_PortNum = 3513;
@@ -4480,6 +4709,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@discussion			32 kilobits per second per channel
 =======
 	@discussion			kilobits per second per channel
@@ -4496,6 +4726,9 @@ const
 =======
 	@discussion			kilobits per second per channel
 >>>>>>> origin/fixes_2.4
+=======
+	@discussion			kilobits per second per channel
+>>>>>>> origin/cpstrnew
 	@constant		kAUNetSendNumPresetFormats = 14
 }
 const
@@ -4548,6 +4781,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { Numeric version part of 'vers' resource accessible in little endian format }
 =======
 { Numeric version part of 'vers' resource accessable in little endian format }
@@ -4564,6 +4798,9 @@ type
 =======
 { Numeric version part of 'vers' resource accessable in little endian format }
 >>>>>>> origin/fixes_2.4
+=======
+{ Numeric version part of 'vers' resource accessable in little endian format }
+>>>>>>> origin/cpstrnew
 		nonRelRev: UInt8;              {revision level of non-released version}
 		stage: UInt8;                  {stage code: dev, alpha, beta, final}
 		minorAndBugRev: UInt8;         {2nd & 3rd part of version number share a byte}
@@ -4658,6 +4895,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 type
 	AUSamplerBankPresetData = record
 		bankURL: CFURLRef;
@@ -4678,6 +4916,8 @@ type
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 //#endif !TARGET_OS_IPHONE
 {$endc}	{ not TARGET_OS_IPHONE }
 

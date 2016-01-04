@@ -23,6 +23,7 @@ var StarOffice : Variant;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TSampleCode_Connect(OleName : string) : boolean;
 begin
     if  VarIsEmpty(StarOffice) then
@@ -49,6 +50,23 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+function TSampleCode_Connect(OleName : string) : boolean;
+begin
+    if  VarIsEmpty(StarOffice) then
+      begin
+        try
+          Writeln('Trying to connect to ',OleName);
+          StarOffice := CreateOleObject(OleName);
+        except
+          on e : exception do
+            begin
+              StarOffice:=Unassigned;
+              Writeln('Connection to ',OleName,' failed: ',e.message);
+            end;
+          end;
+      end;
+>>>>>>> origin/cpstrnew
 
     Result := not (VarIsEmpty(StarOffice) or VarIsNull(StarOffice));
 end;
@@ -96,6 +114,9 @@ end;
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   CoInitialize(nil);
   if TSampleCode_Connect('com.sun.star.ServiceManager') then
     begin
@@ -110,6 +131,7 @@ begin
         Document.Close(false);
     end;
   CoUnInitialize;
+<<<<<<< HEAD
 =======
 	CoInitialize(nil);
 	TSampleCode_Connect();
@@ -120,4 +142,6 @@ begin
 	TSampleCode_Connect();
         TSampleCode_CreateDocument(false);
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 end.

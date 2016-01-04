@@ -274,6 +274,7 @@ implementation
                      begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                        testrange(def,tordconstnode(n).value,false,false);
 =======
                        testrange(n.resultdef,def,tordconstnode(n).value,false);
@@ -281,6 +282,9 @@ implementation
 =======
                        testrange(n.resultdef,def,tordconstnode(n).value,false);
 >>>>>>> origin/fixes_2_2
+=======
+                       testrange(def,tordconstnode(n).value,false,false);
+>>>>>>> origin/cpstrnew
                        case def.size of
                          1 :
                            list.concat(Tai_const.Create_8bit(byte(tordconstnode(n).value.svalue)));
@@ -639,6 +643,7 @@ implementation
                   tsetconstnode(p).adjustforsetbase;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   { this writing is endian-dependant   }
 =======
 =======
@@ -647,15 +652,13 @@ implementation
                   { untrue - because they are considered }
                   { arrays of 32-bit values CEC          }
 >>>>>>> graemeg/fixes_2_2
+=======
+                  { this writing is endian-dependant   }
+>>>>>>> origin/cpstrnew
                   if source_info.endian = target_info.endian then
                     begin
-{$if defined(FPC_NEW_BIGENDIAN_SETS) or defined(FPC_LITTLE_ENDIAN)}
                       for i:=0 to p.resultdef.size-1 do
                         list.concat(tai_const.create_8bit(Psetbytes(tsetconstnode(p).value_set)^[i]));
-{$else}
-                      for i:=0 to p.resultdef.size-1 do
-                        list.concat(tai_const.create_8bit(reverse_byte(Psetbytes(tsetconstnode(p).value_set)^[i xor 3])));
-{$endif}
                     end
                   else
                     begin
@@ -700,7 +703,7 @@ implementation
           strlength : aint;
           strval    : pchar;
           strch     : char;
-          ll,ll2    : tasmlabel;
+          ll        : tasmlabel;
           ca        : pchar;
           winlike   : boolean;
         begin
@@ -781,6 +784,7 @@ implementation
                        ll := nil
                      else
 <<<<<<< HEAD
+<<<<<<< HEAD
                        ll := emit_ansistring_const(current_asmdata.asmlists[al_const],strval,strlength,def.encoding);
                      hr.list.concat(Tai_const.Create_sym(ll));
 =======
@@ -806,6 +810,10 @@ implementation
                          current_asmdata.asmlists[al_const].concat(Tai_string.Create_pchar(ca,strlength+1));
                        end;
 >>>>>>> graemeg/fixes_2_2
+=======
+                       ll := emit_ansistring_const(current_asmdata.asmlists[al_const],strval,strlength,def.encoding);
+                     hr.list.concat(Tai_const.Create_sym(ll));
+>>>>>>> origin/cpstrnew
                   end;
                 st_unicodestring,
                 st_widestring:
@@ -825,10 +833,14 @@ implementation
                        if winlike then
                        begin
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
                          current_asmdata.WideInits.Concat(
                             TTCInitItem.Create(hr.origsym, hr.offset, ll)
                          );
                          ll := nil;
+<<<<<<< HEAD
 =======
                          current_asmdata.getdatalabel(ll);
                          list.concat(Tai_const.Create_sym(ll));
@@ -854,6 +866,8 @@ implementation
                          { ending #0 }
                          current_asmdata.asmlists[al_const].concat(Tai_const.Create_16bit(0))
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
                        end;
                      end;
                      hr.list.concat(Tai_const.Create_sym(ll));
@@ -1007,8 +1021,11 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                   begin
@@ -1034,6 +1051,7 @@ implementation
                       1:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
                   begin
                     case char_size of
@@ -1059,6 +1077,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                         begin
@@ -1368,6 +1388,7 @@ implementation
                         end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                       hr.offset:=startoffset+tfieldvarsym(srsym).fieldoffset;
                       read_typed_const_data(hr,tfieldvarsym(srsym).vardef);
 =======
@@ -1375,6 +1396,10 @@ implementation
 >>>>>>> origin/fixes_2_2
                       read_typed_const_data(list,tfieldvarsym(srsym).vardef);
 >>>>>>> graemeg/fixes_2_2
+=======
+                      hr.offset:=startoffset+tfieldvarsym(srsym).fieldoffset;
+                      read_typed_const_data(hr,tfieldvarsym(srsym).vardef);
+>>>>>>> origin/cpstrnew
                     end
                   else
                     begin
@@ -1604,6 +1629,7 @@ implementation
         cursectype   : TAsmSectionType;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         hrec         : threc;
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1621,6 +1647,9 @@ implementation
 =======
         valuelist    : tasmlist;
 >>>>>>> origin/fixes_2_2
+=======
+        hrec         : threc;
+>>>>>>> origin/cpstrnew
       begin
         { mark the staticvarsym as typedconst }
         include(sym.varoptions,vo_is_typed_const);
@@ -1658,10 +1687,14 @@ implementation
         maybe_new_object_file(list);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
         hrec.list:=tasmlist.create;
         hrec.origsym:=sym;
         hrec.offset:=0;
         read_typed_const_data(hrec,sym.vardef);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1687,12 +1720,20 @@ implementation
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+
+        { Parse hints }
+        try_consume_hintdirective(sym.symoptions,sym.deprecatedmsg);
+>>>>>>> origin/cpstrnew
 
         consume(_SEMICOLON);
 
         { parse public/external/export/... }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
         if not in_structure and
            (
             (
@@ -1781,8 +1822,8 @@ implementation
           list.concat(Tai_symbol.Createname(sym.mangledname,AT_DATA,0));
 
         { add the parsed value }
-        list.concatlist(valuelist);
-        valuelist.free;
+        list.concatlist(hrec.list);
+        hrec.list.free;
         list.concat(tai_symbol_end.Createname(sym.mangledname));
 >>>>>>> graemeg/fixes_2_2
         current_filepos:=storefilepos;

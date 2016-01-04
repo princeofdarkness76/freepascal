@@ -12,11 +12,15 @@ packages=fcl-base
 units=fpddcodegen fpcgcreatedbf fpcgdbcoll fpcgsqlconst fpcgtiopf fpddpopcode
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 rsts=fpddcodegen fpcgsqlconst fpddpopcode
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+rsts=fpddcodegen fpcgsqlconst fpddpopcode
+>>>>>>> origin/cpstrnew
 
 [compiler]
 options=-S2h

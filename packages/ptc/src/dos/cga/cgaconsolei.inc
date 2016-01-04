@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (C) 2001-2011 Nikolay Nikolov (nickysn@users.sourceforge.net)
 =======
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
@@ -14,6 +15,9 @@
 =======
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
+=======
+    Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> origin/cpstrnew
 =======
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> origin/cpstrnew
@@ -56,11 +60,14 @@ constructor TCGAConsole.Create;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -70,11 +77,14 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 begin
@@ -86,6 +96,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   FillChar(m_modes, SizeOf(m_modes), 0);
 >>>>>>> graemeg/cpstrnew
@@ -95,6 +106,9 @@ begin
 =======
   FillChar(m_modes, SizeOf(m_modes), 0);
 >>>>>>> graemeg/cpstrnew
+=======
+  FillChar(m_modes, SizeOf(m_modes), 0);
+>>>>>>> origin/cpstrnew
 =======
   FillChar(m_modes, SizeOf(m_modes), 0);
 >>>>>>> origin/cpstrnew
@@ -108,6 +122,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   for I := 0 to 255 do
     m_modes[I] := TPTCMode.Create;
@@ -123,6 +138,11 @@ begin
     m_modes[I] := TPTCMode.Create;
 
 >>>>>>> graemeg/cpstrnew
+=======
+  for I := 0 to 255 do
+    m_modes[I] := TPTCMode.Create;
+
+>>>>>>> origin/cpstrnew
 =======
   for I := 0 to 255 do
     m_modes[I] := TPTCMode.Create;
@@ -138,6 +158,7 @@ destructor TCGAConsole.Destroy;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 begin
   close;
 =======
@@ -145,6 +166,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -158,6 +181,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -165,11 +189,14 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   m_keyboard.Free;
   FMouse.Free;
   FEventQueue.Free;
   m_copy.Free;
   m_clear.Free;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -193,6 +220,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   m_default_format.Free;
   inherited Destroy;
 end;
@@ -211,6 +240,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -218,10 +248,13 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   if IOResult <> 0 then
     exit;
   while not EoF(F) do
   begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -249,6 +282,11 @@ begin
     Readln(F, S);
     {$I+}
 >>>>>>> origin/cpstrnew
+=======
+    {$I-}
+    Readln(F, S);
+    {$I+}
+>>>>>>> origin/cpstrnew
     if IOResult <> 0 then
       Break;
     Option(S);
@@ -256,6 +294,7 @@ begin
   CloseFile(F);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -273,6 +312,10 @@ function TCGAConsole.option(const _option: String): Boolean;
 function TCGAConsole.option(const _option: String): Boolean;
 
 >>>>>>> graemeg/cpstrnew
+=======
+function TCGAConsole.option(const _option: String): Boolean;
+
+>>>>>>> origin/cpstrnew
 =======
 function TCGAConsole.option(const _option: String): Boolean;
 
@@ -299,6 +342,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TCGAConsole.modes: TPTCModeList;
 begin
   Result := m_modes;
@@ -312,6 +356,8 @@ procedure TCGAConsole.Open(const _title: string; _pages: Integer); overload;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 function TCGAConsole.modes: PPTCMode;
 
 begin
@@ -323,6 +369,7 @@ procedure TCGAConsole.open(const _title: string; _pages: Integer); overload;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -330,10 +377,13 @@ procedure TCGAConsole.open(const _title: string; _pages: Integer); overload;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 begin
   open(_title, m_default_format, _pages);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -360,11 +410,17 @@ procedure TCGAConsole.open(const _title: string; const _format: TPTCFormat;
                            _pages: Integer); overload;
 
 >>>>>>> origin/cpstrnew
+=======
+procedure TCGAConsole.open(const _title: string; const _format: TPTCFormat;
+                           _pages: Integer); overload;
+
+>>>>>>> origin/cpstrnew
 begin
   open(_title, m_default_width, m_default_height, _format, _pages);
 end;
 
 procedure TCGAConsole.open(const _title: string; _width, _height: Integer;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -384,6 +440,8 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                            const _format: TPTCFormat; _pages: Integer); overload;
@@ -410,11 +468,14 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 begin
@@ -437,6 +498,7 @@ procedure TCGAConsole.close;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -446,6 +508,9 @@ procedure TCGAConsole.close;
 =======
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 =======
 
 >>>>>>> origin/cpstrnew
@@ -466,6 +531,7 @@ procedure TCGAConsole.flush;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -475,6 +541,9 @@ procedure TCGAConsole.flush;
 =======
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 =======
 
 >>>>>>> origin/cpstrnew
@@ -488,6 +557,7 @@ procedure TCGAConsole.finish;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -497,6 +567,9 @@ procedure TCGAConsole.finish;
 =======
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 =======
 
 >>>>>>> origin/cpstrnew
@@ -510,6 +583,7 @@ procedure TCGAConsole.update;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 var
   framebuffer: PByte;
 =======
@@ -519,6 +593,8 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 var
   framebuffer: PByte;
@@ -526,11 +602,14 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 begin
@@ -545,6 +624,7 @@ begin
   end;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -566,10 +646,15 @@ procedure TCGAConsole.update(const _area: TPTCArea);
 procedure TCGAConsole.update(const _area: TPTCArea);
 
 >>>>>>> origin/cpstrnew
+=======
+procedure TCGAConsole.update(const _area: TPTCArea);
+
+>>>>>>> origin/cpstrnew
 begin
   update;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -584,6 +669,8 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure TCGAConsole.copy(surface: TPTCBaseSurface);
 
 var
@@ -592,11 +679,14 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 begin
@@ -616,6 +706,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   end;
 end;
 
@@ -628,6 +719,8 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -643,11 +736,14 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 begin
@@ -672,6 +768,7 @@ function TCGAConsole.lock: Pointer;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 var
   pixels: Pointer;
 =======
@@ -681,6 +778,8 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 var
   pixels: Pointer;
@@ -688,11 +787,14 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 begin
@@ -710,6 +812,7 @@ procedure TCGAConsole.unlock;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -719,6 +822,9 @@ procedure TCGAConsole.unlock;
 =======
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 =======
 
 >>>>>>> origin/cpstrnew
@@ -737,6 +843,7 @@ procedure TCGAConsole.load(const pixels: Pointer;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                            _format: IPTCFormat;
                            _palette: IPTCPalette);
 var
@@ -748,6 +855,8 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                            const _format: TPTCFormat;
                            const _palette: TPTCPalette);
 var
@@ -757,11 +866,14 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 begin
@@ -786,6 +898,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     end;
   end
   else
@@ -795,6 +908,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -812,6 +927,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -819,10 +935,13 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 procedure TCGAConsole.load(const pixels: Pointer;
                            _width, _height, _pitch: Integer;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -845,6 +964,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                            const _format: TPTCFormat;
@@ -874,11 +995,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       m_copy.request(_format, format);
@@ -891,6 +1015,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
       clipped_source.Free;
       clipped_destination.Free;
@@ -903,6 +1028,10 @@ begin
       clipped_source.Free;
       clipped_destination.Free;
 >>>>>>> graemeg/cpstrnew
+=======
+      clipped_source.Free;
+      clipped_destination.Free;
+>>>>>>> origin/cpstrnew
 =======
       clipped_source.Free;
       clipped_destination.Free;
@@ -915,6 +1044,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -927,11 +1057,15 @@ begin
 =======
 
 >>>>>>> origin/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
   end;
 end;
 
 procedure TCGAConsole.save(pixels: Pointer;
                            _width, _height, _pitch: Integer;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -947,6 +1081,8 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                            const _format: TPTCFormat;
                            const _palette: TPTCPalette);
 var
@@ -956,11 +1092,14 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 begin
@@ -989,12 +1128,15 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Save(pixels, _width, _height, _pitch, _format, _palette, area, TPTCArea.Create(0, 0, width, height));
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   begin
@@ -1008,6 +1150,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1015,10 +1158,13 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 procedure TCGAConsole.save(pixels: Pointer;
                            _width, _height, _pitch: Integer;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1041,6 +1187,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                            const _format: TPTCFormat;
@@ -1070,11 +1218,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       m_copy.request(format, _format);
@@ -1087,6 +1238,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
       clipped_source.Free;
       clipped_destination.Free;
@@ -1103,10 +1255,15 @@ begin
       clipped_source.Free;
       clipped_destination.Free;
 >>>>>>> origin/cpstrnew
+=======
+      clipped_source.Free;
+      clipped_destination.Free;
+>>>>>>> origin/cpstrnew
     end;
   except
     on error:TPTCError do
       raise TPTCError.Create('failed to save console area pixels', error);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1124,6 +1281,8 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
   end;
 end;
@@ -1136,6 +1295,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1143,10 +1303,13 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 begin
   check_open;
   check_unlocked;
   if format.direct then
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1174,6 +1337,8 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     tmp := TPTCColor.Create(0, 0, 0, 0)
@@ -1212,11 +1377,14 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 begin
@@ -1227,6 +1395,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     clipped_area := nil;
 >>>>>>> graemeg/cpstrnew
@@ -1236,6 +1405,9 @@ begin
 =======
     clipped_area := nil;
 >>>>>>> graemeg/cpstrnew
+=======
+    clipped_area := nil;
+>>>>>>> origin/cpstrnew
 =======
     clipped_area := nil;
 >>>>>>> origin/cpstrnew
@@ -1250,6 +1422,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
       clipped_area.Free;
 >>>>>>> graemeg/cpstrnew
@@ -1262,10 +1435,14 @@ begin
 =======
       clipped_area.Free;
 >>>>>>> origin/cpstrnew
+=======
+      clipped_area.Free;
+>>>>>>> origin/cpstrnew
     end;
   except
     on error: TPTCError do
       raise TPTCError.Create('failed to clear console area', error);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1281,12 +1458,15 @@ procedure TCGAConsole.Palette(_palette: IPTCPalette);
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
   end;
 end;
 
 procedure TCGAConsole.Palette(const _palette: TPTCPalette);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1297,11 +1477,14 @@ procedure TCGAConsole.Palette(const _palette: TPTCPalette);
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 begin
   check_open;
   m_primary.palette(_palette);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1323,11 +1506,16 @@ function TCGAConsole.Palette: TPTCPalette;
 function TCGAConsole.Palette: TPTCPalette;
 
 >>>>>>> origin/cpstrnew
+=======
+function TCGAConsole.Palette: TPTCPalette;
+
+>>>>>>> origin/cpstrnew
 begin
   check_open;
   Result := m_primary.palette;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1349,6 +1537,10 @@ procedure TCGAConsole.Clip(const _area: TPTCArea);
 procedure TCGAConsole.Clip(const _area: TPTCArea);
 
 >>>>>>> origin/cpstrnew
+=======
+procedure TCGAConsole.Clip(const _area: TPTCArea);
+
+>>>>>>> origin/cpstrnew
 begin
   check_open;
   m_primary.clip(_area);
@@ -1359,6 +1551,7 @@ function TCGAConsole.GetWidth: Integer;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -1368,6 +1561,9 @@ function TCGAConsole.GetWidth: Integer;
 =======
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 =======
 
 >>>>>>> origin/cpstrnew
@@ -1381,6 +1577,7 @@ function TCGAConsole.GetHeight: Integer;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -1390,6 +1587,9 @@ function TCGAConsole.GetHeight: Integer;
 =======
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 =======
 
 >>>>>>> origin/cpstrnew
@@ -1403,6 +1603,7 @@ function TCGAConsole.GetPitch: Integer;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -1412,6 +1613,9 @@ function TCGAConsole.GetPitch: Integer;
 =======
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 =======
 
 >>>>>>> origin/cpstrnew
@@ -1425,6 +1629,7 @@ function TCGAConsole.GetPages: Integer;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -1437,11 +1642,15 @@ function TCGAConsole.GetPages: Integer;
 =======
 
 >>>>>>> origin/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 begin
   check_open;
   Result := 2;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1463,11 +1672,16 @@ function TCGAConsole.GetArea: TPTCArea;
 function TCGAConsole.GetArea: TPTCArea;
 
 >>>>>>> origin/cpstrnew
+=======
+function TCGAConsole.GetArea: TPTCArea;
+
+>>>>>>> origin/cpstrnew
 begin
   check_open;
   Result := m_primary.area;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1489,11 +1703,16 @@ function TCGAConsole.Clip: TPTCArea;
 function TCGAConsole.Clip: TPTCArea;
 
 >>>>>>> origin/cpstrnew
+=======
+function TCGAConsole.Clip: TPTCArea;
+
+>>>>>>> origin/cpstrnew
 begin
   check_open;
   Result := m_primary.clip;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1515,6 +1734,10 @@ function TCGAConsole.GetFormat: TPTCFormat;
 function TCGAConsole.GetFormat: TPTCFormat;
 
 >>>>>>> origin/cpstrnew
+=======
+function TCGAConsole.GetFormat: TPTCFormat;
+
+>>>>>>> origin/cpstrnew
 begin
   check_open;
   Result := m_primary.format;
@@ -1525,6 +1748,7 @@ function TCGAConsole.GetName: string;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -1534,6 +1758,9 @@ function TCGAConsole.GetName: string;
 =======
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 =======
 
 >>>>>>> origin/cpstrnew
@@ -1546,6 +1773,7 @@ function TCGAConsole.GetTitle: string;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -1555,6 +1783,9 @@ function TCGAConsole.GetTitle: string;
 =======
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 =======
 
 >>>>>>> origin/cpstrnew
@@ -1567,6 +1798,7 @@ function TCGAConsole.GetInformation: string;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -1579,10 +1811,14 @@ function TCGAConsole.GetInformation: string;
 =======
 
 >>>>>>> origin/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 begin
   Result := m_information;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1604,11 +1840,16 @@ procedure TCGAConsole.internal_pre_open_setup(const _title: String);
 procedure TCGAConsole.internal_pre_open_setup(const _title: String);
 
 >>>>>>> origin/cpstrnew
+=======
+procedure TCGAConsole.internal_pre_open_setup(const _title: String);
+
+>>>>>>> origin/cpstrnew
 begin
   m_title := _title;
 end;
 
 procedure TCGAConsole.internal_open_fullscreen_start;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1622,6 +1863,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -1640,6 +1883,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1647,10 +1891,13 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
   CGA320;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1672,10 +1919,15 @@ procedure TCGAConsole.internal_open_fullscreen(_width, _height: Integer; const _
 procedure TCGAConsole.internal_open_fullscreen(_width, _height: Integer; const _format: TPTCFormat);
 
 >>>>>>> origin/cpstrnew
+=======
+procedure TCGAConsole.internal_open_fullscreen(_width, _height: Integer; const _format: TPTCFormat);
+
+>>>>>>> origin/cpstrnew
 begin
 end;
 
 procedure TCGAConsole.internal_open_fullscreen_finish(_pages: Integer);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1692,6 +1944,9 @@ procedure TCGAConsole.internal_open_fullscreen_finish(_pages: Integer);
 =======
 
 >>>>>>> origin/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 begin
 end;
 
@@ -1700,6 +1955,7 @@ procedure TCGAConsole.internal_post_open_setup;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -1709,6 +1965,9 @@ procedure TCGAConsole.internal_post_open_setup;
 =======
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 =======
 
 >>>>>>> origin/cpstrnew
@@ -1732,6 +1991,7 @@ procedure TCGAConsole.internal_reset;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -1741,6 +2001,9 @@ procedure TCGAConsole.internal_reset;
 =======
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 =======
 
 >>>>>>> origin/cpstrnew
@@ -1756,6 +2019,7 @@ procedure TCGAConsole.internal_close;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -1765,6 +2029,9 @@ procedure TCGAConsole.internal_close;
 =======
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 =======
 
 >>>>>>> origin/cpstrnew
@@ -1782,6 +2049,7 @@ procedure TCGAConsole.HandleEvents;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -1794,11 +2062,15 @@ procedure TCGAConsole.HandleEvents;
 =======
 
 >>>>>>> origin/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 begin
   m_keyboard.GetPendingEvents(FEventQueue);
   FMouse.GetPendingEvents(FEventQueue);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1814,6 +2086,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 function TCGAConsole.NextEvent(var event: TPTCEvent; wait: Boolean; const EventMask: TPTCEventMask): Boolean;
 
 begin
@@ -1823,11 +2097,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   repeat
@@ -1840,6 +2117,7 @@ begin
   Result := event <> nil;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1861,6 +2139,10 @@ function TCGAConsole.PeekEvent(wait: Boolean; const EventMask: TPTCEventMask): T
 function TCGAConsole.PeekEvent(wait: Boolean; const EventMask: TPTCEventMask): TPTCEvent;
 
 >>>>>>> origin/cpstrnew
+=======
+function TCGAConsole.PeekEvent(wait: Boolean; const EventMask: TPTCEventMask): TPTCEvent;
+
+>>>>>>> origin/cpstrnew
 begin
   check_open;
 
@@ -1878,6 +2160,7 @@ procedure TCGAConsole.check_open;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -1887,6 +2170,9 @@ procedure TCGAConsole.check_open;
 =======
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 =======
 
 >>>>>>> origin/cpstrnew
@@ -1900,6 +2186,7 @@ procedure TCGAConsole.check_unlocked;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -1909,6 +2196,9 @@ procedure TCGAConsole.check_unlocked;
 =======
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 =======
 
 >>>>>>> origin/cpstrnew

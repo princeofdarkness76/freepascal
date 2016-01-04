@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
     This file is part of the PTCPas framebuffer library
 <<<<<<< HEAD
@@ -17,6 +18,11 @@
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
 =======
+    Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> origin/cpstrnew
+=======
+{
+    This file is part of the PTCPas framebuffer library
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> origin/cpstrnew
 
@@ -48,6 +54,7 @@
 }
 
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -130,3 +137,21 @@ Type
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  TWinCEBitmapInfo = Class(TObject)
+  private
+    FBitmapInfo: PBITMAPINFO;
+//    FPixels: Pointer;
+    FFormat: TPTCFormat;
+    FWidth, FHeight, FPitch: Integer;
+  public
+    constructor Create(AWidth, AHeight: Integer);
+    destructor Destroy; override;
+    property BMI: PBITMAPINFO read FBitmapInfo;
+    property Width: Integer read FWidth;
+    property Height: Integer read FHeight;
+    property Pitch: Integer read FPitch;
+    property Format: TPTCFormat read FFormat;
+//    property Pixels: Pointer read FPixels;
+  end;
+>>>>>>> origin/cpstrnew

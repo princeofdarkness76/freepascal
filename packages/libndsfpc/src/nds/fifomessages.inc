@@ -24,11 +24,14 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -42,12 +45,17 @@ type
           _type: cuint16;
           data: pointer;
 <<<<<<< HEAD
+<<<<<<< HEAD
           dataSize: cuint16;
           loopPoint: cuint16;
 =======
           loopPoint: cuint16;
           dataSize: cuint16;
 >>>>>>> origin/fixes_2.4
+=======
+          dataSize: cuint16;
+          loopPoint: cuint16;
+>>>>>>> origin/cpstrnew
           freq: cuint16;
           volume: cuint8;
           pan: cuint8;
@@ -62,9 +70,13 @@ type
           volume: cuint8;
           pan: cuint8;
 <<<<<<< HEAD
+<<<<<<< HEAD
           channel: cuint8;
 =======
 >>>>>>> origin/fixes_2.4
+=======
+          channel: cuint8;
+>>>>>>> origin/cpstrnew
         end;
       );
       2: (
@@ -88,6 +100,9 @@ type
         end;
       );
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
       5: (
         sdParams: record
           buffer: pointer;
@@ -95,6 +110,7 @@ type
 			    numsectors: cuint32;
 			  end;
 		  );
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -117,6 +133,8 @@ type
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
   end;
   TFifoMessage = FifoMessage;
   PFifoMessage = ^FifoMessage;

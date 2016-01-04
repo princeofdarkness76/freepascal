@@ -155,6 +155,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure ConcatListCopy(Obj:TFPObjectList);
 =======
 >>>>>>> graemeg/cpstrnew
@@ -162,6 +163,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     procedure Pack; {$ifdef CCLASSESINLINE}inline;{$endif}
@@ -236,6 +239,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function NameOfIndex(Index: Integer): TSymStr;
 =======
     function NameOfIndex(Index: Integer): ShortString;
@@ -246,6 +250,9 @@ type
 =======
     function NameOfIndex(Index: Integer): ShortString;
 >>>>>>> graemeg/cpstrnew
+=======
+    function NameOfIndex(Index: Integer): ShortString;
+>>>>>>> origin/cpstrnew
 =======
     function NameOfIndex(Index: Integer): ShortString;
 >>>>>>> origin/cpstrnew
@@ -1600,11 +1607,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   Result:=FHashTable^[AHash and FCapacityMask];
@@ -1619,12 +1629,15 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
              (AName=PSymStr(@FStrs[StrIndex])^) then
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
              (AName=PShortString(@FStrs[StrIndex])^) then
@@ -2253,11 +2266,15 @@ end;
            Next:=NewNode.Next;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
            prefetch(next.next);
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+           prefetch(next.next);
+>>>>>>> origin/cpstrnew
            NewNode.Free;
            NewNode:=Next;
           end;

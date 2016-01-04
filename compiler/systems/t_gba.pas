@@ -576,6 +576,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   GCSectionsStr:='';
 =======
 >>>>>>> graemeg/cpstrnew
@@ -587,11 +588,14 @@ begin
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
   if (cs_link_strip in current_settings.globalswitches) and
      not(cs_link_separate_dbg_file in current_settings.globalswitches) then
    StripStr:='-s';
   if (cs_link_map in current_settings.globalswitches) then
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -613,6 +617,9 @@ begin
 =======
    StripStr:='-Map '+maybequoted(ChangeFileExt(current_module.exefilename^,'.map'));
 >>>>>>> origin/fixes_2.4
+=======
+   StripStr:='-Map '+maybequoted(ChangeFileExt(current_module.exefilename^,'.map'));
+>>>>>>> origin/cpstrnew
   if create_smartlink_sections then
    GCSectionsStr:='--gc-sections';
   //if not(cs_link_extern in current_settings.globalswitches) then
@@ -626,6 +633,7 @@ begin
   SplitBinCmd(Info.ExeCmd[1],binstr,cmdstr);
   Replace(cmdstr,'$OPT',Info.ExtraOptions);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -647,6 +655,9 @@ begin
 =======
   Replace(cmdstr,'$EXE',(maybequoted(ScriptFixFileName(ChangeFileExt(current_module.exefilename^,'.elf')))));
 >>>>>>> origin/fixes_2.4
+=======
+  Replace(cmdstr,'$EXE',(maybequoted(ScriptFixFileName(ChangeFileExt(current_module.exefilename^,'.elf')))));
+>>>>>>> origin/cpstrnew
   Replace(cmdstr,'$RES',(maybequoted(ScriptFixFileName(outputexedir+Info.ResName))));
   Replace(cmdstr,'$STATIC',StaticStr);
   Replace(cmdstr,'$STRIP',StripStr);

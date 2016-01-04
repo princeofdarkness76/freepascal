@@ -46,6 +46,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FPCHelpLines,
     LogoWritten,
     ABISetExplicitly,
@@ -58,6 +59,9 @@ Type
 =======
     LogoWritten,
 >>>>>>> graemeg/cpstrnew
+=======
+    LogoWritten,
+>>>>>>> origin/cpstrnew
 =======
     LogoWritten,
 >>>>>>> origin/cpstrnew
@@ -158,11 +162,14 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   i_bsd;
@@ -218,6 +225,10 @@ const
 =======
                              + [system_i386_beos];
 >>>>>>> origin/cpstrnew
+
+  suppported_targets_x_smallr = systems_linux + systems_solaris
+                             + [system_i386_haiku]
+                             + [system_i386_beos];
 
 {****************************************************************************
                                  Defines
@@ -869,6 +880,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure toption.IgnoredPara(const opt: TCmdStr);
 =======
 procedure toption.IgnoredPara(const opt: string);
@@ -885,6 +897,9 @@ procedure toption.IgnoredPara(const opt: string);
 =======
 procedure toption.IgnoredPara(const opt: string);
 >>>>>>> origin/fixes_2.4
+=======
+procedure toption.IgnoredPara(const opt: string);
+>>>>>>> origin/cpstrnew
 begin
   Message1(option_ignored_target,opt);
 end;
@@ -1226,6 +1241,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                       If UnsetBool(More, j, opt, false) then
 =======
                       If UnsetBool(More, j) then
@@ -1236,6 +1252,9 @@ begin
 =======
                       If UnsetBool(More, j) then
 >>>>>>> graemeg/cpstrnew
+=======
+                      If UnsetBool(More, j) then
+>>>>>>> origin/cpstrnew
 =======
                       If UnsetBool(More, j) then
 >>>>>>> origin/cpstrnew
@@ -1281,11 +1300,15 @@ begin
                           IllegalPara(opt);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         FPUSetExplicitly:=True;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+                        FPUSetExplicitly:=True;
+>>>>>>> origin/cpstrnew
                         break;
                       end;
                     'F' :
@@ -1661,6 +1684,7 @@ begin
                    begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                      s:=ExtractFileDir(more);
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1679,6 +1703,10 @@ begin
 =======
                      if TryStrToInt(ExtractFileName(more),j) then 
 >>>>>>> origin/cpstrnew
+=======
+                     s:=ExtractFileDir(more);
+                     if TryStrToInt(ExtractFileName(more),j) then 
+>>>>>>> origin/cpstrnew
                        begin
                          unicodemapping:=loadunicodemapping(More,More+'.txt',j);
                          if assigned(unicodemapping) then
@@ -1686,6 +1714,7 @@ begin
                          else
                            IllegalPara(opt);
                        end
+<<<<<<< HEAD
                      else
                        IllegalPara(opt);
                    end;
@@ -1697,6 +1726,8 @@ begin
                      unicodemapping:=loadunicodemapping(More,More+'.txt');
                      if assigned(unicodemapping) then
                        registermapping(unicodemapping)
+=======
+>>>>>>> origin/cpstrnew
                      else
                        IllegalPara(opt);
                    end;
@@ -2270,6 +2301,7 @@ begin
                        't' :
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                          Message1(option_obsolete_switch,'-St');
                        'v' :
                          If UnsetBool(More, j, opt, false) then
@@ -2280,6 +2312,9 @@ begin
                            exclude(init_settings.moduleswitches,cs_static_keyword)
                          else
                            include(init_settings.moduleswitches,cs_static_keyword);
+=======
+                         Message1(option_obsolete_switch,'-St');
+>>>>>>> origin/cpstrnew
                        'v' :
                          If UnsetBool(More, j) then
 <<<<<<< HEAD
@@ -2325,6 +2360,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                                                                          cs_support_macro];
 =======
                                                                      cs_support_macro];
@@ -2335,6 +2371,9 @@ begin
 =======
                                                                      cs_support_macro];
 >>>>>>> graemeg/cpstrnew
+=======
+                                                                     cs_support_macro];
+>>>>>>> origin/cpstrnew
 =======
                                                                      cs_support_macro];
 >>>>>>> origin/cpstrnew
@@ -2753,9 +2792,12 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                       begin
@@ -2797,6 +2839,7 @@ begin
                           IgnoredPara('-Xr');
                         more:='';
 <<<<<<< HEAD
+<<<<<<< HEAD
                       end;
                     'R' :
                       begin
@@ -2811,6 +2854,8 @@ begin
                         more:='';
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
                       end;
                     'R' :
                       begin
@@ -3696,7 +3741,10 @@ begin
     system_arm_gba:
       target_unsup_features:=[f_threading,f_commandargs,f_fileio,f_textio,f_consoleio,f_dynlibs];
     system_arm_nds:
-      target_unsup_features:=[f_threading,f_commandargs,f_fileio,f_textio,f_consoleio,f_dynlibs]
+      target_unsup_features:=[f_threading,f_commandargs,f_fileio,f_textio,f_consoleio,f_dynlibs];
+    system_i386_nativent:
+      // until these features are implemented, they are disabled in the compiler
+      target_unsup_features:=[f_stackcheck];
     else
       target_unsup_features:=[];
   end;
@@ -3704,7 +3752,33 @@ begin
     features:=features-target_unsup_features
   else
     features:=features+target_unsup_features;
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2_2
+=======
+end;
+
+procedure TOption.checkoptionscompatibility;
+begin
+  if (paratargetdbg in [dbg_dwarf2,dbg_dwarf3]) and
+     not(target_info.system in systems_darwin) then
+    begin
+      { smart linking does not yet work with DWARF debug info on most targets }
+      if (cs_link_smart in init_settings.globalswitches) then
+        begin
+          Message(option_dwarf_smart_linking);
+          ForceStaticLinking;
+        end;
+    end;
+
+  { external debug info is only supported for DWARF on darwin }
+  if (target_info.system in systems_darwin) and
+     (cs_link_separate_dbg_file in init_settings.globalswitches) and
+     not(paratargetdbg in [dbg_dwarf2,dbg_dwarf3]) then
+    begin
+      Message(option_debug_external_unsupported);
+      exclude(init_settings.globalswitches,cs_link_separate_dbg_file);
+    end;
+>>>>>>> origin/cpstrnew
 end;
 
 
@@ -3717,6 +3791,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   ABISetExplicitly:=false;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -3724,6 +3799,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   FPUSetExplicitly:=false;
@@ -3874,6 +3951,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     SetApptype(app_gui)
   else
     SetApptype(apptype);
@@ -3882,6 +3960,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     apptype:=app_gui;
@@ -3923,6 +4003,9 @@ begin
   def_system_macro('FPC_OBJFPC_EXTENDED_IF');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   def_system_macro('FPC_HAS_OPERATOR_ENUMERATOR');
   def_system_macro('FPC_HAS_CONSTREF');
   def_system_macro('FPC_STATICRIPFIXED');
@@ -3944,6 +4027,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   def_system_macro('FPC_HAS_RESSTRINITS');
 =======
 >>>>>>> graemeg/cpstrnew
@@ -3951,6 +4035,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -3961,10 +4047,17 @@ begin
 =======
 >>>>>>> origin/fixes_2_2
 
-{$ifdef SUPPORT_UNALIGNED}
-  def_system_macro('FPC_SUPPORTS_UNALIGNED');
-  def_system_macro('FPC_UNALIGNED_FIXED');
-{$endif SUPPORT_UNALIGNED}
+{ these cpus have an inline sar implementaion }
+{ currently, all supported CPUs have an internal sar implementation }
+{ $if defined(x86) or defined(arm) or defined(powerpc) or defined(powerpc64) or defined(sparc)}
+  def_system_macro('FPC_HAS_INTERNAL_SAR');
+{ $endif}
+
+{ inline bsf/bsr implementation }
+{$if defined(x86) or defined(x86_64)}
+  def_system_macro('FPC_HAS_INTERNAL_BSX');
+{$endif}
+
 {$ifdef powerpc64}
   def_system_macro('FPC_HAS_LWSYNC');
 {$endif}
@@ -4255,6 +4348,7 @@ begin
 
   if (not disable_configfile) and
      (ppccfg<>'') then
+<<<<<<< HEAD
     begin
       read_configfile:=check_configfile(ppccfg,ppccfg);
       { Maybe alternative configfile ? }
@@ -4267,6 +4361,9 @@ begin
         end;
     end
 >>>>>>> graemeg/fixes_2_2
+=======
+    read_configfile:=check_configfile(ppccfg,ppccfg)
+>>>>>>> origin/cpstrnew
   else
     read_configfile := false;
 
@@ -4491,6 +4588,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   { set Mac OS X version default macros if not specified explicitly }
   option.MaybeSetDefaultMacVersionMacro;
 
@@ -4507,6 +4605,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   { force fpu emulation on arm/wince, arm/gba, arm/embedded, arm/nds and
     arm/darwin if fpu type not explicitly set }
   if not(option.FPUSetExplicitly) and
@@ -4518,6 +4618,7 @@ begin
      )
 {$ifdef arm}
      or (init_settings.fputype=fpu_soft)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
@@ -4536,6 +4637,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$endif arm}
@@ -4560,6 +4663,7 @@ begin
 {$endif cpufpemu}
     end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$ifdef arm}
@@ -4636,10 +4740,17 @@ if (target_info.system=system_arm_darwin) then
 if (target_info.system=system_arm_darwin) then
   begin
 >>>>>>> origin/cpstrnew
+=======
+{$ifdef arm}
+{ set default cpu type to ARMv6 for Darwin unless specified otherwise }
+if (target_info.system=system_arm_darwin) then
+  begin
+>>>>>>> origin/cpstrnew
     if not option.CPUSetExplicitly then
       init_settings.cputype:=cpu_armv6;
     if not option.OptCPUSetExplicitly then
       init_settings.optimizecputype:=cpu_armv6;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4724,6 +4835,11 @@ if (target_info.system=system_arm_darwin) then
 {$endif arm}
 
 >>>>>>> graemeg/cpstrnew
+=======
+  end;
+{$endif arm}
+
+>>>>>>> origin/cpstrnew
 =======
   end;
 {$endif arm}
@@ -4921,6 +5037,7 @@ if (target_info.system=system_arm_darwin) then
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   cdecl_pocalls := [pocall_cdecl, pocall_cppdecl, pocall_mwpascal];
 =======
   cdecl_pocalls := [pocall_cdecl, pocall_cppdecl];
@@ -4931,6 +5048,9 @@ if (target_info.system=system_arm_darwin) then
 =======
   cdecl_pocalls := [pocall_cdecl, pocall_cppdecl];
 >>>>>>> graemeg/cpstrnew
+=======
+  cdecl_pocalls := [pocall_cdecl, pocall_cppdecl];
+>>>>>>> origin/cpstrnew
 =======
   cdecl_pocalls := [pocall_cdecl, pocall_cppdecl];
 >>>>>>> origin/cpstrnew

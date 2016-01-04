@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       QuickTime/QuickTimeVR.h
  
      Contains:   QuickTime VR interfaces
@@ -40,11 +41,15 @@
 =======
      File:       QuickTime/QuickTimeVR.h
 >>>>>>> origin/fixes_2.4
+=======
+     File:       QuickTime/QuickTimeVR.h
+>>>>>>> origin/cpstrnew
  
      Contains:   QuickTime VR interfaces
  
      Version:    QuickTime 7.6.3
  
+<<<<<<< HEAD
 <<<<<<< HEAD
      Copyright:  © 1997-2002 by Apple Computer, Inc., all rights reserved.
 <<<<<<< HEAD
@@ -54,6 +59,9 @@
 =======
      Copyright:  © 1997-2008 by Apple Inc., all rights reserved.
 >>>>>>> origin/fixes_2.4
+=======
+     Copyright:  © 1997-2008 by Apple Inc., all rights reserved.
+>>>>>>> origin/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -63,6 +71,7 @@
                      http://bugs.freepascal.org
  
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -94,6 +103,8 @@
                      http://www.freepascal.org/bugs.html
  
 }
+=======
+>>>>>>> origin/cpstrnew
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {
     Modified for use with Free Pascal
@@ -103,12 +114,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -120,6 +135,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -134,6 +150,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -149,6 +169,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -159,6 +180,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -166,13 +190,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -180,6 +208,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -188,8 +218,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -200,6 +233,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -220,6 +254,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -228,12 +264,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -241,6 +280,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -480,6 +520,11 @@ interface
 >>>>>>> origin/fixes_2.4
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -503,6 +548,7 @@ interface
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -544,6 +590,41 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -572,6 +653,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -580,6 +662,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -589,6 +673,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -611,6 +696,12 @@ uses MacTypes,MacWindows,QuickdrawTypes,Movies;
 >>>>>>> origin/cpstrnew
 
 {$ifc TARGET_OS_MAC}
+=======
+uses MacTypes,MacWindows,QuickdrawTypes,Movies;
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
+
+{$ifc TARGET_OS_MAC}
 
 {$ifc TARGET_OS_MAC}
 
@@ -625,6 +716,7 @@ uses MacTypes,MacWindows,QuickdrawTypes,Movies;
 {$ifc not TARGET_CPU_64}
 
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1230,8 +1322,71 @@ const
 { OR the above with kQTVRInteractionDefaultValue to get/set the default value}
 const
 	kQTVRInteractionDefaultValue = $80000000;
+=======
+	QTVRInstance = ^SInt32; { an opaque type }
+	QTVRInstancePtr = ^QTVRInstance;  { when a var xx:QTVRInstance parameter can be nil, it is changed to xx: QTVRInstancePtr }
+
+{ Released API Version numbers }
+const
+  kQTVRAPIMajorVersion05 = $05;
+  kQTVRAPIMajorVersion02 = $02;
+  kQTVRAPIMinorVersion00 = $00;
+  kQTVRAPIMinorVersion01 = $01;
+  kQTVRAPIMinorVersion10 = $10;
+  kQTVRAPIMinorVersion20 = $20;
+
+{ Version numbers for the API described in this header }
+const
+  kQTVRAPIMajorVersion = kQTVRAPIMajorVersion05;
+  kQTVRAPIMinorVersion = kQTVRAPIMinorVersion00;
 
 
+const
+	kQTVRControllerSubType = FourCharCode('ctyp');
+	kQTVRQTVRType = FourCharCode('qtvr');
+	kQTVRPanoramaType = FourCharCode('pano');
+	kQTVRObjectType = FourCharCode('obje');
+	kQTVROldPanoType = FourCharCode('STpn'); { Used in QTVR 1.0 release}
+	kQTVROldObjectType = FourCharCode('stna'); { Used in QTVR 1.0 release}
+
+  kQTVRUnknownType = FourCharCode('????'); { Unknown node type }
+
+{ QTVR hot spot types}
+const
+	kQTVRHotSpotLinkType = FourCharCode('link');
+	kQTVRHotSpotURLType = FourCharCode('url ');
+	kQTVRHotSpotUndefinedType = FourCharCode('undf');
+
+{ Special Values for nodeID in QTVRGoToNodeID}
+const
+	kQTVRCurrentNode = 0;
+	kQTVRPreviousNode = $80000000;
+	kQTVRDefaultNode = $80000001;
+
+{ Panorama correction modes used for the kQTVRImagingCorrection imaging property}
+const
+	kQTVRNoCorrection = 0;
+	kQTVRPartialCorrection = 1;
+	kQTVRFullCorrection = 2;
+
+{ Imaging Modes used by QTVRSetImagingProperty, QTVRGetImagingProperty, QTVRUpdate, QTVRBeginUpdate}
+type
+	QTVRImagingMode = UInt32;
+const
+	kQTVRStatic = 1;
+	kQTVRMotion = 2;
+	kQTVRCurrentMode = 0;    { Special Value for QTVRUpdate}
+	kQTVRAllModes = 100;   { Special value for QTVRSetProperty}
+>>>>>>> origin/cpstrnew
+
+{ Imaging Properties used by QTVRSetImagingProperty, QTVRGetImagingProperty}
+const
+	kQTVRImagingCorrection = 1;
+	kQTVRImagingQuality = 2;
+	kQTVRImagingDirectDraw = 3;
+	kQTVRImagingCurrentMode = 100;   { Get Only}
+
+<<<<<<< HEAD
 { Geometry constants used in QTVRSetBackBufferPrefs, QTVRGetBackBufferSettings, QTVRGetBackBufferMemInfo}
 const
 	kQTVRUseMovieGeometry = 0;
@@ -1629,6 +1784,117 @@ const
 	kQTVRViewCenterH = 4;    { WrapAndConstrain only}
 	kQTVRViewCenterV = 5;     { WrapAndConstrain only}
 
+=======
+{ OR the above with kImagingDefaultValue to get/set the default value}
+const
+	kImagingDefaultValue = $80000000;
+
+{ Transition Types used by QTVRSetTransitionProperty, QTVREnableTransition}
+const
+	kQTVRTransitionSwing = 1;
+
+{ Transition Properties QTVRSetTransitionProperty}
+const
+	kQTVRTransitionSpeed = 1;
+	kQTVRTransitionDirection = 2;
+
+{ Constraint values used to construct value returned by GetConstraintStatus}
+const
+	kQTVRUnconstrained = 0;
+	kQTVRCantPanLeft = 1 shl 0;
+	kQTVRCantPanRight = 1 shl 1;
+	kQTVRCantPanUp = 1 shl 2;
+	kQTVRCantPanDown = 1 shl 3;
+	kQTVRCantZoomIn = 1 shl 4;
+	kQTVRCantZoomOut = 1 shl 5;
+	kQTVRCantTranslateLeft = 1 shl 6;
+	kQTVRCantTranslateRight = 1 shl 7;
+	kQTVRCantTranslateUp = 1 shl 8;
+	kQTVRCantTranslateDown = 1 shl 9;
+
+{ Object-only mouse mode values used to construct value returned by QTVRGetCurrentMouseMode}
+const
+	kQTVRPanning = 1 shl 0; { standard objects, "object only" controllers}
+	kQTVRTranslating = 1 shl 1; { all objects}
+	kQTVRZooming = 1 shl 2; { all objects}
+	kQTVRScrolling = 1 shl 3; { standard object arrow scrollers and joystick object}
+	kQTVRSelecting = 1 shl 4; { object absolute controller}
+
+{ Properties for use with QTVRSetInteractionProperty/GetInteractionProperty}
+const
+	kQTVRInteractionMouseClickHysteresis = 1; { pixels within which the mouse is considered not to have moved (UInt16)}
+	kQTVRInteractionMouseClickTimeout = 2; { ticks after which a mouse click times out and turns into panning (UInt32)}
+	kQTVRInteractionPanTiltSpeed = 3;    { control the relative pan/tilt speed from 1 (slowest) to 10 (fastest). (UInt32) Default is 5;}
+	kQTVRInteractionZoomSpeed = 4;    { control the relative zooming speed from 1 (slowest) to 10 (fastest). (UInt32) Default is 5;}
+	kQTVRInteractionTranslateOnMouseDown = 101; { Holding MouseDown with this setting translates zoomed object movies (Boolean)}
+	kQTVRInteractionMouseMotionScale = 102; { The maximum angle of rotation caused by dragging across the display window. (* float)}
+	kQTVRInteractionNudgeMode = 103;   { A QTVRNudgeMode: rotate, translate, or the same as the current mouse mode. Requires QTVR 2.1}
+
+{ OR the above with kQTVRInteractionDefaultValue to get/set the default value}
+const
+	kQTVRInteractionDefaultValue = $80000000;
+
+
+{ Geometry constants used in QTVRSetBackBufferPrefs, QTVRGetBackBufferSettings, QTVRGetBackBufferMemInfo}
+const
+	kQTVRUseMovieGeometry = 0;
+	kQTVRVerticalCylinder = FourCharCode('vcyl');
+	kQTVRHorizontalCylinder = FourCharCode('hcyl');
+	kQTVRCube = FourCharCode('cube');
+
+{ Resolution constants used in QTVRSetBackBufferPrefs, QTVRGetBackBufferSettings, QTVRGetBackBufferMemInfo}
+const
+	kQTVRDefaultRes = 0;
+	kQTVRFullRes = 1 shl 0;
+	kQTVRHalfRes = 1 shl 1;
+	kQTVRQuarterRes = 1 shl 2;
+
+{ QTVR-specific pixelFormat constants used in QTVRSetBackBufferPrefs, QTVRGetBackBufferSettings, QTVRGetBackBufferMemInfo}
+const
+	kQTVRUseMovieDepth = 0;
+
+{ Cache Size Pref constants used in QTVRSetBackBufferPrefs, QTVRGetBackBufferSettings}
+const
+	kQTVRMinimumCache = -1;
+	kQTVRSuggestedCache = 0;
+	kQTVRFullCache = 1;
+
+{ Angular units used by QTVRSetAngularUnits}
+type
+	QTVRAngularUnits = UInt32;
+const
+	kQTVRDegrees = 0;
+	kQTVRRadians = 1;
+
+{ Values for enableFlag parameter in QTVREnableHotSpot}
+const
+	kQTVRHotSpotID = 0;
+	kQTVRHotSpotType = 1;
+	kQTVRAllHotSpots = 2;
+
+{ Values for viewParameter for QTVRSet/GetViewParameter}
+const
+	kQTVRPanAngle = $0100; { default units; &float, &float}
+	kQTVRTiltAngle = $0101; { default units; &float, &float}
+	kQTVRFieldOfViewAngle = $0103; { default units; &float, &float}
+	kQTVRViewCenter = $0104; { pixels (per object movies); &QTVRFloatPoint, &QTVRFloatPoint}
+	kQTVRHotSpotsVisible = $0200; { Boolean, &Boolean}
+
+{ Values for flagsIn for QTVRSet/GetViewParameter}
+const
+	kQTVRValueIsRelative = 1 shl 0; { Is the value absolute or relative to the current value?}
+	kQTVRValueIsRate = 1 shl 1; { Is the value absolute or a rate of change to be applied?}
+	kQTVRValueIsUserPrefRelative = 1 shl 2; { Is the value a percentage of the user rate pref?}
+
+{ Values for kind parameter in QTVRGet/SetConstraints, QTVRGetViewingLimits}
+const
+	kQTVRPan = 0;
+	kQTVRTilt = 1;
+	kQTVRFieldOfView = 2;
+	kQTVRViewCenterH = 4;    { WrapAndConstrain only}
+	kQTVRViewCenterV = 5;     { WrapAndConstrain only}
+
+>>>>>>> origin/cpstrnew
 { Values for setting parameter in QTVRSetAnimationSetting, QTVRGetAnimationSetting}
 type
 	QTVRObjectAnimationSetting = UInt32;
@@ -1777,6 +2043,7 @@ function NewQTVRLeavingNodeUPP( userRoutine: QTVRLeavingNodeProcPtr ): QTVRLeavi
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 const
 	uppQTVRLeavingNodeProcInfo = $0000FFE0;
 	uppQTVREnteringNodeProcInfo = $00000FE0;
@@ -1798,10 +2065,13 @@ function NewQTVRLeavingNodeUPP(userRoutine: QTVRLeavingNodeProcPtr): QTVRLeaving
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  NewQTVREnteringNodeUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1833,10 +2103,20 @@ function NewQTVREnteringNodeUPP( userRoutine: QTVREnteringNodeProcPtr ): QTVREnt
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function NewQTVREnteringNodeUPP( userRoutine: QTVREnteringNodeProcPtr ): QTVREnteringNodeUPP; external name '_NewQTVREnteringNodeUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  NewQTVRMouseOverHotSpotUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1868,10 +2148,20 @@ function NewQTVRMouseOverHotSpotUPP( userRoutine: QTVRMouseOverHotSpotProcPtr ):
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function NewQTVRMouseOverHotSpotUPP( userRoutine: QTVRMouseOverHotSpotProcPtr ): QTVRMouseOverHotSpotUPP; external name '_NewQTVRMouseOverHotSpotUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  NewQTVRImagingCompleteUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1903,10 +2193,20 @@ function NewQTVRImagingCompleteUPP( userRoutine: QTVRImagingCompleteProcPtr ): Q
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function NewQTVRImagingCompleteUPP( userRoutine: QTVRImagingCompleteProcPtr ): QTVRImagingCompleteUPP; external name '_NewQTVRImagingCompleteUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  NewQTVRBackBufferImagingUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1938,10 +2238,20 @@ function NewQTVRBackBufferImagingUPP( userRoutine: QTVRBackBufferImagingProcPtr 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function NewQTVRBackBufferImagingUPP( userRoutine: QTVRBackBufferImagingProcPtr ): QTVRBackBufferImagingUPP; external name '_NewQTVRBackBufferImagingUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  DisposeQTVRLeavingNodeUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1973,10 +2283,20 @@ procedure DisposeQTVRLeavingNodeUPP( userUPP: QTVRLeavingNodeUPP ); external nam
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeQTVRLeavingNodeUPP( userUPP: QTVRLeavingNodeUPP ); external name '_DisposeQTVRLeavingNodeUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  DisposeQTVREnteringNodeUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2008,10 +2328,20 @@ procedure DisposeQTVREnteringNodeUPP( userUPP: QTVREnteringNodeUPP ); external n
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeQTVREnteringNodeUPP( userUPP: QTVREnteringNodeUPP ); external name '_DisposeQTVREnteringNodeUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  DisposeQTVRMouseOverHotSpotUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2043,10 +2373,20 @@ procedure DisposeQTVRMouseOverHotSpotUPP( userUPP: QTVRMouseOverHotSpotUPP ); ex
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeQTVRMouseOverHotSpotUPP( userUPP: QTVRMouseOverHotSpotUPP ); external name '_DisposeQTVRMouseOverHotSpotUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  DisposeQTVRImagingCompleteUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2078,10 +2418,20 @@ procedure DisposeQTVRImagingCompleteUPP( userUPP: QTVRImagingCompleteUPP ); exte
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeQTVRImagingCompleteUPP( userUPP: QTVRImagingCompleteUPP ); external name '_DisposeQTVRImagingCompleteUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  DisposeQTVRBackBufferImagingUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2113,10 +2463,20 @@ procedure DisposeQTVRBackBufferImagingUPP( userUPP: QTVRBackBufferImagingUPP ); 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeQTVRBackBufferImagingUPP( userUPP: QTVRBackBufferImagingUPP ); external name '_DisposeQTVRBackBufferImagingUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  InvokeQTVRLeavingNodeUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2148,10 +2508,20 @@ function InvokeQTVRLeavingNodeUPP( qtvr: QTVRInstance; fromNodeID: UInt32; toNod
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function InvokeQTVRLeavingNodeUPP( qtvr: QTVRInstance; fromNodeID: UInt32; toNodeID: UInt32; var cancel: Boolean; refCon: SInt32; userUPP: QTVRLeavingNodeUPP ): OSErr; external name '_InvokeQTVRLeavingNodeUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  InvokeQTVREnteringNodeUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2183,10 +2553,20 @@ function InvokeQTVREnteringNodeUPP( qtvr: QTVRInstance; nodeID: UInt32; refCon: 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function InvokeQTVREnteringNodeUPP( qtvr: QTVRInstance; nodeID: UInt32; refCon: SInt32; userUPP: QTVREnteringNodeUPP ): OSErr; external name '_InvokeQTVREnteringNodeUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  InvokeQTVRMouseOverHotSpotUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2218,10 +2598,20 @@ function InvokeQTVRMouseOverHotSpotUPP( qtvr: QTVRInstance; hotSpotID: UInt32; f
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function InvokeQTVRMouseOverHotSpotUPP( qtvr: QTVRInstance; hotSpotID: UInt32; flags: UInt32; refCon: SInt32; userUPP: QTVRMouseOverHotSpotUPP ): OSErr; external name '_InvokeQTVRMouseOverHotSpotUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  InvokeQTVRImagingCompleteUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2253,10 +2643,20 @@ function InvokeQTVRImagingCompleteUPP( qtvr: QTVRInstance; refCon: SInt32; userU
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function InvokeQTVRImagingCompleteUPP( qtvr: QTVRInstance; refCon: SInt32; userUPP: QTVRImagingCompleteUPP ): OSErr; external name '_InvokeQTVRImagingCompleteUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  InvokeQTVRBackBufferImagingUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2288,12 +2688,22 @@ function InvokeQTVRBackBufferImagingUPP( qtvr: QTVRInstance; var drawRect: Rect;
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function InvokeQTVRBackBufferImagingUPP( qtvr: QTVRInstance; var drawRect: Rect; areaIndex: UInt16; flagsIn: UInt32; var flagsOut: UInt32; refCon: SInt32; userUPP: QTVRBackBufferImagingUPP ): OSErr; external name '_InvokeQTVRBackBufferImagingUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
   =================================================================================================
     QTVR Intercept Struct, Callback, Routine Descriptors 
   -------------------------------------------------------------------------------------------------
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2344,6 +2754,11 @@ const
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+type
+	QTVRProcSelector = UInt32;
+const
+>>>>>>> origin/cpstrnew
 	kQTVRSetPanAngleSelector = $2000;
 	kQTVRSetTiltAngleSelector = $2001;
 	kQTVRSetFieldOfViewSelector = $2002;
@@ -2358,11 +2773,15 @@ const
 	kQTVRGetHotSpotTypeSelector = $200B; { Requires QTVR 2.1 (kQTVRAPIMajorVersion02 + kQTVRAPIMinorVersion10)}
 	kQTVRSetViewParameterSelector = $200C; { Requires QTVR 5.0 (kQTVRAPIMajorVersion05 + kQTVRAPIMinorVersion00)}
 	kQTVRGetViewParameterSelector = $200D; { Requires QTVR 5.0 (kQTVRAPIMajorVersion05 + kQTVRAPIMinorVersion00)}
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 type
 	QTVRInterceptRecordPtr = ^QTVRInterceptRecord;
 	QTVRInterceptRecord = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2406,6 +2825,10 @@ function NewQTVRInterceptUPP( userRoutine: QTVRInterceptProcPtr ): QTVRIntercept
 		reserved1: SInt32;
 		selector: SInt32;
 >>>>>>> origin/fixes_2.4
+=======
+		reserved1: SInt32;
+		selector: SInt32;
+>>>>>>> origin/cpstrnew
 
 		reserved2: SInt32;
 		reserved3: SInt32;
@@ -2431,6 +2854,7 @@ function NewQTVRInterceptUPP( userRoutine: QTVRInterceptProcPtr ): QTVRIntercept
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 const
 	uppQTVRInterceptProcInfo = $00003FC0;
 	{
@@ -2448,10 +2872,13 @@ function NewQTVRInterceptUPP(userRoutine: QTVRInterceptProcPtr): QTVRInterceptUP
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  DisposeQTVRInterceptUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2483,10 +2910,20 @@ procedure DisposeQTVRInterceptUPP( userUPP: QTVRInterceptUPP ); external name '_
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeQTVRInterceptUPP( userUPP: QTVRInterceptUPP ); external name '_DisposeQTVRInterceptUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  InvokeQTVRInterceptUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2518,12 +2955,22 @@ procedure InvokeQTVRInterceptUPP( qtvr: QTVRInstance; qtvrMsg: QTVRInterceptPtr;
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure InvokeQTVRInterceptUPP( qtvr: QTVRInstance; qtvrMsg: QTVRInterceptPtr; refCon: SInt32; var cancel: Boolean; userUPP: QTVRInterceptUPP ); external name '_InvokeQTVRInterceptUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
   =================================================================================================
     Initialization QTVR calls 
   -------------------------------------------------------------------------------------------------
    Requires QTVR 2.1 (kQTVRAPIMajorVersion02 + kQTVRAPIMinorVersion10) and only work on Non-Macintosh platforms
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2563,6 +3010,8 @@ function TerminateQTVR: OSErr; external name '_TerminateQTVR';
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
   =================================================================================================
     General QTVR calls 
@@ -2575,6 +3024,7 @@ function TerminateQTVR: OSErr; external name '_TerminateQTVR';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
@@ -2590,10 +3040,14 @@ function QTVRGetQTVRTrack( theMovie: Movie; index: SInt32 ): Track; external nam
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRGetQTVRTrack(theMovie: Movie; index: SInt32): Track; external name '_QTVRGetQTVRTrack';
 <<<<<<< HEAD
@@ -2605,11 +3059,17 @@ function QTVRGetQTVRTrack( theMovie: Movie; index: SInt32 ): Track; external nam
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRGetQTVRTrack( theMovie: Movie; index: SInt32 ): Track; external name '_QTVRGetQTVRTrack';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRGetQTVRInstance()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2628,10 +3088,14 @@ function QTVRGetQTVRInstance( var qtvr: QTVRInstance; qtvrTrack: Track; mc: Movi
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRGetQTVRInstance(var qtvr: QTVRInstance; qtvrTrack: Track; mc: MovieController): OSErr; external name '_QTVRGetQTVRInstance';
 <<<<<<< HEAD
@@ -2643,6 +3107,11 @@ function QTVRGetQTVRInstance( var qtvr: QTVRInstance; qtvrTrack: Track; mc: Movi
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRGetQTVRInstance( var qtvr: QTVRInstance; qtvrTrack: Track; mc: MovieController ): OSErr; external name '_QTVRGetQTVRInstance';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
   =================================================================================================
@@ -2653,6 +3122,7 @@ function QTVRGetQTVRInstance( var qtvr: QTVRInstance; qtvrTrack: Track; mc: Movi
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { QTVRSetViewParameter requires QTVR 5.0 (kQTVRAPIMajorVersion05 + kQTVRAPIMinorVersion00)}
 =======
 {  QTVRSetViewParameter requires QTVR 5.0 (kQTVRAPIMajorVersion05 + kQTVRAPIMinorVersion00) }
@@ -2663,10 +3133,14 @@ function QTVRGetQTVRInstance( var qtvr: QTVRInstance; qtvrTrack: Track; mc: Movi
 =======
 { QTVRSetViewParameter requires QTVR 5.0 (kQTVRAPIMajorVersion05 + kQTVRAPIMinorVersion00)}
 >>>>>>> origin/fixes_2.4
+=======
+{ QTVRSetViewParameter requires QTVR 5.0 (kQTVRAPIMajorVersion05 + kQTVRAPIMinorVersion00)}
+>>>>>>> origin/cpstrnew
 {
  *  QTVRSetViewParameter()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2687,6 +3161,9 @@ function QTVRSetViewParameter( qtvr: QTVRInstance; viewParameter: UInt32; value:
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 5.0 and later
  *    Windows:          in QTVR.lib 5.0 and later
@@ -2695,6 +3172,7 @@ function QTVRSetViewParameter( qtvr: QTVRInstance; viewParameter: UInt32; value:
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {  QTVRGetViewParameter requires QTVR 5.0 (kQTVRAPIMajorVersion05 + kQTVRAPIMinorVersion00) }
 <<<<<<< HEAD
@@ -2704,10 +3182,14 @@ function QTVRSetViewParameter( qtvr: QTVRInstance; viewParameter: UInt32; value:
 =======
 { QTVRGetViewParameter requires QTVR 5.0 (kQTVRAPIMajorVersion05 + kQTVRAPIMinorVersion00)}
 >>>>>>> origin/fixes_2.4
+=======
+{ QTVRGetViewParameter requires QTVR 5.0 (kQTVRAPIMajorVersion05 + kQTVRAPIMinorVersion00)}
+>>>>>>> origin/cpstrnew
 {
  *  QTVRGetViewParameter()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2726,10 +3208,14 @@ function QTVRGetViewParameter( qtvr: QTVRInstance; viewParameter: UInt32; value:
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 5.0 and later
  *    Windows:          in QTVR.lib 5.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRGetViewParameter(qtvr: QTVRInstance; viewParameter: UInt32; value: UnivPtr; flagsIn: UInt32; var flagsOut: UInt32): OSErr; external name '_QTVRGetViewParameter';
 <<<<<<< HEAD
@@ -2741,11 +3227,17 @@ function QTVRGetViewParameter( qtvr: QTVRInstance; viewParameter: UInt32; value:
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRGetViewParameter( qtvr: QTVRInstance; viewParameter: UInt32; value: UnivPtr; flagsIn: UInt32; var flagsOut: UInt32 ): OSErr; external name '_QTVRGetViewParameter';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRSetPanAngle()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2764,10 +3256,14 @@ function QTVRSetPanAngle( qtvr: QTVRInstance; panAngle: Float32 ): OSErr; extern
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRSetPanAngle(qtvr: QTVRInstance; panAngle: Single): OSErr; external name '_QTVRSetPanAngle';
 <<<<<<< HEAD
@@ -2779,11 +3275,17 @@ function QTVRSetPanAngle( qtvr: QTVRInstance; panAngle: Float32 ): OSErr; extern
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRSetPanAngle( qtvr: QTVRInstance; panAngle: Float32 ): OSErr; external name '_QTVRSetPanAngle';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRGetPanAngle()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2799,10 +3301,14 @@ function QTVRGetPanAngle( qtvr: QTVRInstance ): Float32; external name '_QTVRGet
 =======
 >>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
- *    Mac OS X:         in version 10.0 and later
+ *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 function QTVRGetPanAngle(qtvr: QTVRInstance): Single; external name '_QTVRGetPanAngle';
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -2830,21 +3336,31 @@ function QTVRGetPanAngle( qtvr: QTVRInstance ): Float32; external name '_QTVRGet
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRGetPanAngle( qtvr: QTVRInstance ): Float32; external name '_QTVRGetPanAngle';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRSetTiltAngle()
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRSetTiltAngle(qtvr: QTVRInstance; tiltAngle: Single): OSErr; external name '_QTVRSetTiltAngle';
 <<<<<<< HEAD
@@ -2856,11 +3372,17 @@ function QTVRSetTiltAngle( qtvr: QTVRInstance; tiltAngle: Float32 ): OSErr; exte
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRSetTiltAngle( qtvr: QTVRInstance; tiltAngle: Float32 ): OSErr; external name '_QTVRSetTiltAngle';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRGetTiltAngle()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2879,10 +3401,14 @@ function QTVRGetTiltAngle( qtvr: QTVRInstance ): Float32; external name '_QTVRGe
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRGetTiltAngle(qtvr: QTVRInstance): Single; external name '_QTVRGetTiltAngle';
 <<<<<<< HEAD
@@ -2894,11 +3420,17 @@ function QTVRGetTiltAngle( qtvr: QTVRInstance ): Float32; external name '_QTVRGe
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRGetTiltAngle( qtvr: QTVRInstance ): Float32; external name '_QTVRGetTiltAngle';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRSetFieldOfView()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2917,10 +3449,14 @@ function QTVRSetFieldOfView( qtvr: QTVRInstance; fieldOfView: Float32 ): OSErr; 
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRSetFieldOfView(qtvr: QTVRInstance; fieldOfView: Single): OSErr; external name '_QTVRSetFieldOfView';
 <<<<<<< HEAD
@@ -2932,11 +3468,17 @@ function QTVRSetFieldOfView( qtvr: QTVRInstance; fieldOfView: Float32 ): OSErr; 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRSetFieldOfView( qtvr: QTVRInstance; fieldOfView: Float32 ): OSErr; external name '_QTVRSetFieldOfView';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRGetFieldOfView()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2955,10 +3497,14 @@ function QTVRGetFieldOfView( qtvr: QTVRInstance ): Float32; external name '_QTVR
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRGetFieldOfView(qtvr: QTVRInstance): Single; external name '_QTVRGetFieldOfView';
 <<<<<<< HEAD
@@ -2970,11 +3516,17 @@ function QTVRGetFieldOfView( qtvr: QTVRInstance ): Float32; external name '_QTVR
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRGetFieldOfView( qtvr: QTVRInstance ): Float32; external name '_QTVRGetFieldOfView';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRShowDefaultView()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3005,6 +3557,9 @@ function QTVRShowDefaultView( qtvr: QTVRInstance ): OSErr; external name '_QTVRS
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
@@ -3012,6 +3567,7 @@ function QTVRShowDefaultView( qtvr: QTVRInstance ): OSErr; external name '_QTVRS
 function QTVRShowDefaultView( qtvr: QTVRInstance ): OSErr; external name '_QTVRShowDefaultView';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {  Object Specific }
 <<<<<<< HEAD
@@ -3022,10 +3578,15 @@ function QTVRShowDefaultView( qtvr: QTVRInstance ): OSErr; external name '_QTVRS
 
 { Object Specific}
 >>>>>>> origin/fixes_2.4
+=======
+
+{ Object Specific}
+>>>>>>> origin/cpstrnew
 {
  *  QTVRSetViewCenter()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3044,10 +3605,14 @@ function QTVRSetViewCenter( qtvr: QTVRInstance; const (*var*) viewCenter: QTVRFl
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRSetViewCenter(qtvr: QTVRInstance; const (*var*) viewCenter: QTVRFloatPoint): OSErr; external name '_QTVRSetViewCenter';
 <<<<<<< HEAD
@@ -3059,11 +3624,17 @@ function QTVRSetViewCenter( qtvr: QTVRInstance; const (*var*) viewCenter: QTVRFl
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRSetViewCenter( qtvr: QTVRInstance; const (*var*) viewCenter: QTVRFloatPoint ): OSErr; external name '_QTVRSetViewCenter';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRGetViewCenter()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3082,10 +3653,14 @@ function QTVRGetViewCenter( qtvr: QTVRInstance; var viewCenter: QTVRFloatPoint )
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRGetViewCenter(qtvr: QTVRInstance; var viewCenter: QTVRFloatPoint): OSErr; external name '_QTVRGetViewCenter';
 <<<<<<< HEAD
@@ -3097,11 +3672,17 @@ function QTVRGetViewCenter( qtvr: QTVRInstance; var viewCenter: QTVRFloatPoint )
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRGetViewCenter( qtvr: QTVRInstance; var viewCenter: QTVRFloatPoint ): OSErr; external name '_QTVRGetViewCenter';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRNudge()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3137,6 +3718,9 @@ function QTVRNudge( qtvr: QTVRInstance; direction: QTVRNudgeControl ): OSErr; ex
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
@@ -3144,6 +3728,7 @@ function QTVRNudge( qtvr: QTVRInstance; direction: QTVRNudgeControl ): OSErr; ex
 function QTVRNudge( qtvr: QTVRInstance; direction: QTVRNudgeControl ): OSErr; external name '_QTVRNudge';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {  QTVRInteractionNudge requires QTVR 2.1 (kQTVRAPIMajorVersion02 + kQTVRAPIMinorVersion10) }
 <<<<<<< HEAD
@@ -3154,10 +3739,15 @@ function QTVRNudge( qtvr: QTVRInstance; direction: QTVRNudgeControl ): OSErr; ex
 
 { QTVRInteractionNudge requires QTVR 2.1 (kQTVRAPIMajorVersion02 + kQTVRAPIMinorVersion10)}
 >>>>>>> origin/fixes_2.4
+=======
+
+{ QTVRInteractionNudge requires QTVR 2.1 (kQTVRAPIMajorVersion02 + kQTVRAPIMinorVersion10)}
+>>>>>>> origin/cpstrnew
 {
  *  QTVRInteractionNudge()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3176,10 +3766,14 @@ function QTVRInteractionNudge( qtvr: QTVRInstance; direction: QTVRNudgeControl )
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.1 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRInteractionNudge(qtvr: QTVRInstance; direction: QTVRNudgeControl): OSErr; external name '_QTVRInteractionNudge';
 <<<<<<< HEAD
@@ -3191,6 +3785,11 @@ function QTVRInteractionNudge( qtvr: QTVRInstance; direction: QTVRNudgeControl )
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRInteractionNudge( qtvr: QTVRInstance; direction: QTVRNudgeControl ): OSErr; external name '_QTVRInteractionNudge';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
   =================================================================================================
@@ -3205,6 +3804,7 @@ function QTVRInteractionNudge( qtvr: QTVRInstance; direction: QTVRNudgeControl )
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
@@ -3220,10 +3820,14 @@ function QTVRGetVRWorld( qtvr: QTVRInstance; var VRWorld: QTAtomContainer ): OSE
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRGetVRWorld(qtvr: QTVRInstance; var VRWorld: QTAtomContainer): OSErr; external name '_QTVRGetVRWorld';
 <<<<<<< HEAD
@@ -3235,11 +3839,17 @@ function QTVRGetVRWorld( qtvr: QTVRInstance; var VRWorld: QTAtomContainer ): OSE
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRGetVRWorld( qtvr: QTVRInstance; var VRWorld: QTAtomContainer ): OSErr; external name '_QTVRGetVRWorld';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRGetNodeInfo()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3258,10 +3868,14 @@ function QTVRGetNodeInfo( qtvr: QTVRInstance; nodeID: UInt32; var nodeInfo: QTAt
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRGetNodeInfo(qtvr: QTVRInstance; nodeID: UInt32; var nodeInfo: QTAtomContainer): OSErr; external name '_QTVRGetNodeInfo';
 <<<<<<< HEAD
@@ -3273,11 +3887,17 @@ function QTVRGetNodeInfo( qtvr: QTVRInstance; nodeID: UInt32; var nodeInfo: QTAt
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRGetNodeInfo( qtvr: QTVRInstance; nodeID: UInt32; var nodeInfo: QTAtomContainer ): OSErr; external name '_QTVRGetNodeInfo';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRGoToNodeID()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3296,10 +3916,14 @@ function QTVRGoToNodeID( qtvr: QTVRInstance; nodeID: UInt32 ): OSErr; external n
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRGoToNodeID(qtvr: QTVRInstance; nodeID: UInt32): OSErr; external name '_QTVRGoToNodeID';
 <<<<<<< HEAD
@@ -3311,11 +3935,17 @@ function QTVRGoToNodeID( qtvr: QTVRInstance; nodeID: UInt32 ): OSErr; external n
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRGoToNodeID( qtvr: QTVRInstance; nodeID: UInt32 ): OSErr; external name '_QTVRGoToNodeID';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRGetCurrentNodeID()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3334,10 +3964,14 @@ function QTVRGetCurrentNodeID( qtvr: QTVRInstance ): UInt32; external name '_QTV
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRGetCurrentNodeID(qtvr: QTVRInstance): UInt32; external name '_QTVRGetCurrentNodeID';
 <<<<<<< HEAD
@@ -3349,11 +3983,17 @@ function QTVRGetCurrentNodeID( qtvr: QTVRInstance ): UInt32; external name '_QTV
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRGetCurrentNodeID( qtvr: QTVRInstance ): UInt32; external name '_QTVRGetCurrentNodeID';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRGetNodeType()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3372,10 +4012,14 @@ function QTVRGetNodeType( qtvr: QTVRInstance; nodeID: UInt32 ): OSType; external
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRGetNodeType(qtvr: QTVRInstance; nodeID: UInt32): SInt32; external name '_QTVRGetNodeType';
 <<<<<<< HEAD
@@ -3387,6 +4031,11 @@ function QTVRGetNodeType( qtvr: QTVRInstance; nodeID: UInt32 ): OSType; external
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRGetNodeType( qtvr: QTVRInstance; nodeID: UInt32 ): OSType; external name '_QTVRGetNodeType';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
   =================================================================================================
@@ -3398,6 +4047,7 @@ function QTVRGetNodeType( qtvr: QTVRInstance; nodeID: UInt32 ): OSType; external
  *  QTVRPtToHotSpotID()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3438,6 +4088,9 @@ function QTVRPtToHotSpotID( qtvr: QTVRInstance; pt: Point; var hotSpotID: UInt32
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
@@ -3447,6 +4100,7 @@ function QTVRPtToHotSpotID( qtvr: QTVRInstance; pt: Point; var hotSpotID: UInt32
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  QTVRGetHotSpotType requires QTVR 2.1 (kQTVRAPIMajorVersion02 + kQTVRAPIMinorVersion10) }
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -3455,10 +4109,14 @@ function QTVRPtToHotSpotID( qtvr: QTVRInstance; pt: Point; var hotSpotID: UInt32
 =======
 { QTVRGetHotSpotType requires QTVR 2.1 (kQTVRAPIMajorVersion02 + kQTVRAPIMinorVersion10)}
 >>>>>>> origin/fixes_2.4
+=======
+{ QTVRGetHotSpotType requires QTVR 2.1 (kQTVRAPIMajorVersion02 + kQTVRAPIMinorVersion10)}
+>>>>>>> origin/cpstrnew
 {
  *  QTVRGetHotSpotType()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3477,10 +4135,14 @@ function QTVRGetHotSpotType( qtvr: QTVRInstance; hotSpotID: UInt32; var hotSpotT
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.1 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRGetHotSpotType(qtvr: QTVRInstance; hotSpotID: UInt32; var hotSpotType: OSType): OSErr; external name '_QTVRGetHotSpotType';
 <<<<<<< HEAD
@@ -3492,11 +4154,17 @@ function QTVRGetHotSpotType( qtvr: QTVRInstance; hotSpotID: UInt32; var hotSpotT
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRGetHotSpotType( qtvr: QTVRInstance; hotSpotID: UInt32; var hotSpotType: OSType ): OSErr; external name '_QTVRGetHotSpotType';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRTriggerHotSpot()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3515,10 +4183,14 @@ function QTVRTriggerHotSpot( qtvr: QTVRInstance; hotSpotID: UInt32; nodeInfo: QT
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRTriggerHotSpot(qtvr: QTVRInstance; hotSpotID: UInt32; nodeInfo: QTAtomContainer; selectedAtom: QTAtom): OSErr; external name '_QTVRTriggerHotSpot';
 <<<<<<< HEAD
@@ -3530,11 +4202,17 @@ function QTVRTriggerHotSpot( qtvr: QTVRInstance; hotSpotID: UInt32; nodeInfo: QT
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRTriggerHotSpot( qtvr: QTVRInstance; hotSpotID: UInt32; nodeInfo: QTAtomContainer; selectedAtom: QTAtom ): OSErr; external name '_QTVRTriggerHotSpot';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRSetMouseOverHotSpotProc()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3553,10 +4231,14 @@ function QTVRSetMouseOverHotSpotProc( qtvr: QTVRInstance; mouseOverHotSpotProc: 
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRSetMouseOverHotSpotProc(qtvr: QTVRInstance; mouseOverHotSpotProc: QTVRMouseOverHotSpotUPP; refCon: SInt32; flags: UInt32): OSErr; external name '_QTVRSetMouseOverHotSpotProc';
 <<<<<<< HEAD
@@ -3568,11 +4250,17 @@ function QTVRSetMouseOverHotSpotProc( qtvr: QTVRInstance; mouseOverHotSpotProc: 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRSetMouseOverHotSpotProc( qtvr: QTVRInstance; mouseOverHotSpotProc: QTVRMouseOverHotSpotUPP; refCon: SInt32; flags: UInt32 ): OSErr; external name '_QTVRSetMouseOverHotSpotProc';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVREnableHotSpot()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3591,10 +4279,14 @@ function QTVREnableHotSpot( qtvr: QTVRInstance; enableFlag: UInt32; hotSpotValue
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVREnableHotSpot(qtvr: QTVRInstance; enableFlag: UInt32; hotSpotValue: UInt32; enable: boolean): OSErr; external name '_QTVREnableHotSpot';
 <<<<<<< HEAD
@@ -3606,11 +4298,17 @@ function QTVREnableHotSpot( qtvr: QTVRInstance; enableFlag: UInt32; hotSpotValue
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVREnableHotSpot( qtvr: QTVRInstance; enableFlag: UInt32; hotSpotValue: UInt32; enable: Boolean ): OSErr; external name '_QTVREnableHotSpot';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRGetVisibleHotSpots()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3629,10 +4327,14 @@ function QTVRGetVisibleHotSpots( qtvr: QTVRInstance; hotSpots: Handle ): UInt32;
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRGetVisibleHotSpots(qtvr: QTVRInstance; hotSpots: Handle): UInt32; external name '_QTVRGetVisibleHotSpots';
 <<<<<<< HEAD
@@ -3644,11 +4346,17 @@ function QTVRGetVisibleHotSpots( qtvr: QTVRInstance; hotSpots: Handle ): UInt32;
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRGetVisibleHotSpots( qtvr: QTVRInstance; hotSpots: Handle ): UInt32; external name '_QTVRGetVisibleHotSpots';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRGetHotSpotRegion()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3667,10 +4375,14 @@ function QTVRGetHotSpotRegion( qtvr: QTVRInstance; hotSpotID: UInt32; hotSpotReg
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRGetHotSpotRegion(qtvr: QTVRInstance; hotSpotID: UInt32; hotSpotRegion: RgnHandle): OSErr; external name '_QTVRGetHotSpotRegion';
 <<<<<<< HEAD
@@ -3682,6 +4394,11 @@ function QTVRGetHotSpotRegion( qtvr: QTVRInstance; hotSpotID: UInt32; hotSpotReg
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRGetHotSpotRegion( qtvr: QTVRInstance; hotSpotID: UInt32; hotSpotRegion: RgnHandle ): OSErr; external name '_QTVRGetHotSpotRegion';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
   =================================================================================================
@@ -3696,6 +4413,7 @@ function QTVRGetHotSpotRegion( qtvr: QTVRInstance; hotSpotID: UInt32; hotSpotReg
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
@@ -3711,10 +4429,14 @@ function QTVRSetMouseOverTracking( qtvr: QTVRInstance; enable: Boolean ): OSErr;
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRSetMouseOverTracking(qtvr: QTVRInstance; enable: boolean): OSErr; external name '_QTVRSetMouseOverTracking';
 <<<<<<< HEAD
@@ -3726,11 +4448,17 @@ function QTVRSetMouseOverTracking( qtvr: QTVRInstance; enable: Boolean ): OSErr;
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRSetMouseOverTracking( qtvr: QTVRInstance; enable: Boolean ): OSErr; external name '_QTVRSetMouseOverTracking';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRGetMouseOverTracking()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3749,10 +4477,14 @@ function QTVRGetMouseOverTracking( qtvr: QTVRInstance ): Boolean; external name 
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRGetMouseOverTracking(qtvr: QTVRInstance): boolean; external name '_QTVRGetMouseOverTracking';
 <<<<<<< HEAD
@@ -3764,11 +4496,17 @@ function QTVRGetMouseOverTracking( qtvr: QTVRInstance ): Boolean; external name 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRGetMouseOverTracking( qtvr: QTVRInstance ): Boolean; external name '_QTVRGetMouseOverTracking';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRSetMouseDownTracking()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3787,10 +4525,14 @@ function QTVRSetMouseDownTracking( qtvr: QTVRInstance; enable: Boolean ): OSErr;
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRSetMouseDownTracking(qtvr: QTVRInstance; enable: boolean): OSErr; external name '_QTVRSetMouseDownTracking';
 <<<<<<< HEAD
@@ -3802,11 +4544,17 @@ function QTVRSetMouseDownTracking( qtvr: QTVRInstance; enable: Boolean ): OSErr;
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRSetMouseDownTracking( qtvr: QTVRInstance; enable: Boolean ): OSErr; external name '_QTVRSetMouseDownTracking';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRGetMouseDownTracking()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3825,10 +4573,14 @@ function QTVRGetMouseDownTracking( qtvr: QTVRInstance ): Boolean; external name 
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRGetMouseDownTracking(qtvr: QTVRInstance): boolean; external name '_QTVRGetMouseDownTracking';
 <<<<<<< HEAD
@@ -3840,11 +4592,17 @@ function QTVRGetMouseDownTracking( qtvr: QTVRInstance ): Boolean; external name 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRGetMouseDownTracking( qtvr: QTVRInstance ): Boolean; external name '_QTVRGetMouseDownTracking';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRMouseEnter()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3863,10 +4621,14 @@ function QTVRMouseEnter( qtvr: QTVRInstance; pt: Point; var hotSpotID: UInt32; w
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRMouseEnter(qtvr: QTVRInstance; pt: Point; var hotSpotID: UInt32; w: WindowRef): OSErr; external name '_QTVRMouseEnter';
 <<<<<<< HEAD
@@ -3878,11 +4640,17 @@ function QTVRMouseEnter( qtvr: QTVRInstance; pt: Point; var hotSpotID: UInt32; w
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRMouseEnter( qtvr: QTVRInstance; pt: Point; var hotSpotID: UInt32; w: WindowRef ): OSErr; external name '_QTVRMouseEnter';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRMouseWithin()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3901,10 +4669,14 @@ function QTVRMouseWithin( qtvr: QTVRInstance; pt: Point; var hotSpotID: UInt32; 
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRMouseWithin(qtvr: QTVRInstance; pt: Point; var hotSpotID: UInt32; w: WindowRef): OSErr; external name '_QTVRMouseWithin';
 <<<<<<< HEAD
@@ -3916,11 +4688,17 @@ function QTVRMouseWithin( qtvr: QTVRInstance; pt: Point; var hotSpotID: UInt32; 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRMouseWithin( qtvr: QTVRInstance; pt: Point; var hotSpotID: UInt32; w: WindowRef ): OSErr; external name '_QTVRMouseWithin';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRMouseLeave()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3939,10 +4717,14 @@ function QTVRMouseLeave( qtvr: QTVRInstance; pt: Point; w: WindowRef ): OSErr; e
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRMouseLeave(qtvr: QTVRInstance; pt: Point; w: WindowRef): OSErr; external name '_QTVRMouseLeave';
 <<<<<<< HEAD
@@ -3954,11 +4736,17 @@ function QTVRMouseLeave( qtvr: QTVRInstance; pt: Point; w: WindowRef ): OSErr; e
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRMouseLeave( qtvr: QTVRInstance; pt: Point; w: WindowRef ): OSErr; external name '_QTVRMouseLeave';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRMouseDown()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3977,10 +4765,14 @@ function QTVRMouseDown( qtvr: QTVRInstance; pt: Point; when: UInt32; modifiers: 
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRMouseDown(qtvr: QTVRInstance; pt: Point; when: UInt32; modifiers: UInt16; var hotSpotID: UInt32; w: WindowRef): OSErr; external name '_QTVRMouseDown';
 <<<<<<< HEAD
@@ -3992,11 +4784,17 @@ function QTVRMouseDown( qtvr: QTVRInstance; pt: Point; when: UInt32; modifiers: 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRMouseDown( qtvr: QTVRInstance; pt: Point; when: UInt32; modifiers: UInt16; var hotSpotID: UInt32; w: WindowRef ): OSErr; external name '_QTVRMouseDown';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRMouseStillDown()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4015,10 +4813,14 @@ function QTVRMouseStillDown( qtvr: QTVRInstance; pt: Point; var hotSpotID: UInt3
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRMouseStillDown(qtvr: QTVRInstance; pt: Point; var hotSpotID: UInt32; w: WindowRef): OSErr; external name '_QTVRMouseStillDown';
 <<<<<<< HEAD
@@ -4030,11 +4832,17 @@ function QTVRMouseStillDown( qtvr: QTVRInstance; pt: Point; var hotSpotID: UInt3
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRMouseStillDown( qtvr: QTVRInstance; pt: Point; var hotSpotID: UInt32; w: WindowRef ): OSErr; external name '_QTVRMouseStillDown';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRMouseUp()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4055,6 +4863,9 @@ function QTVRMouseUp( qtvr: QTVRInstance; pt: Point; var hotSpotID: UInt32; w: W
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
@@ -4062,6 +4873,7 @@ function QTVRMouseUp( qtvr: QTVRInstance; pt: Point; var hotSpotID: UInt32; w: W
 function QTVRMouseUp( qtvr: QTVRInstance; pt: Point; var hotSpotID: UInt32; w: WindowRef ): OSErr; external name '_QTVRMouseUp';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {  These require QTVR 2.01 (kQTVRAPIMajorVersion02 + kQTVRAPIMinorVersion01) }
 <<<<<<< HEAD
@@ -4072,10 +4884,15 @@ function QTVRMouseUp( qtvr: QTVRInstance; pt: Point; var hotSpotID: UInt32; w: W
 
 { These require QTVR 2.01 (kQTVRAPIMajorVersion02 + kQTVRAPIMinorVersion01)}
 >>>>>>> origin/fixes_2.4
+=======
+
+{ These require QTVR 2.01 (kQTVRAPIMajorVersion02 + kQTVRAPIMinorVersion01)}
+>>>>>>> origin/cpstrnew
 {
  *  QTVRMouseStillDownExtended()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4094,10 +4911,14 @@ function QTVRMouseStillDownExtended( qtvr: QTVRInstance; pt: Point; var hotSpotI
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0.1 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRMouseStillDownExtended(qtvr: QTVRInstance; pt: Point; var hotSpotID: UInt32; w: WindowRef; when: UInt32; modifiers: UInt16): OSErr; external name '_QTVRMouseStillDownExtended';
 <<<<<<< HEAD
@@ -4109,11 +4930,17 @@ function QTVRMouseStillDownExtended( qtvr: QTVRInstance; pt: Point; var hotSpotI
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRMouseStillDownExtended( qtvr: QTVRInstance; pt: Point; var hotSpotID: UInt32; w: WindowRef; when: UInt32; modifiers: UInt16 ): OSErr; external name '_QTVRMouseStillDownExtended';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRMouseUpExtended()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4132,10 +4959,14 @@ function QTVRMouseUpExtended( qtvr: QTVRInstance; pt: Point; var hotSpotID: UInt
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0.1 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRMouseUpExtended(qtvr: QTVRInstance; pt: Point; var hotSpotID: UInt32; w: WindowRef; when: UInt32; modifiers: UInt16): OSErr; external name '_QTVRMouseUpExtended';
 <<<<<<< HEAD
@@ -4147,6 +4978,11 @@ function QTVRMouseUpExtended( qtvr: QTVRInstance; pt: Point; var hotSpotID: UInt
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRMouseUpExtended( qtvr: QTVRInstance; pt: Point; var hotSpotID: UInt32; w: WindowRef; when: UInt32; modifiers: UInt16 ): OSErr; external name '_QTVRMouseUpExtended';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
   =================================================================================================
@@ -4161,6 +4997,7 @@ function QTVRMouseUpExtended( qtvr: QTVRInstance; pt: Point; var hotSpotID: UInt
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
@@ -4176,10 +5013,14 @@ function QTVRInstallInterceptProc( qtvr: QTVRInstance; selector: QTVRProcSelecto
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRInstallInterceptProc(qtvr: QTVRInstance; selector: QTVRProcSelector; interceptProc: QTVRInterceptUPP; refCon: SInt32; flags: UInt32): OSErr; external name '_QTVRInstallInterceptProc';
 <<<<<<< HEAD
@@ -4191,11 +5032,17 @@ function QTVRInstallInterceptProc( qtvr: QTVRInstance; selector: QTVRProcSelecto
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRInstallInterceptProc( qtvr: QTVRInstance; selector: QTVRProcSelector; interceptProc: QTVRInterceptUPP; refCon: SInt32; flags: UInt32 ): OSErr; external name '_QTVRInstallInterceptProc';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRCallInterceptedProc()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4214,10 +5061,14 @@ function QTVRCallInterceptedProc( qtvr: QTVRInstance; var qtvrMsg: QTVRIntercept
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRCallInterceptedProc(qtvr: QTVRInstance; var qtvrMsg: QTVRInterceptRecord): OSErr; external name '_QTVRCallInterceptedProc';
 <<<<<<< HEAD
@@ -4229,6 +5080,11 @@ function QTVRCallInterceptedProc( qtvr: QTVRInstance; var qtvrMsg: QTVRIntercept
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRCallInterceptedProc( qtvr: QTVRInstance; var qtvrMsg: QTVRInterceptRecord ): OSErr; external name '_QTVRCallInterceptedProc';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
   =================================================================================================
@@ -4243,6 +5099,7 @@ function QTVRCallInterceptedProc( qtvr: QTVRInstance; var qtvrMsg: QTVRIntercept
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.1 and later
@@ -4258,10 +5115,14 @@ function QTVRGetCurrentMouseMode( qtvr: QTVRInstance ): UInt32; external name '_
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.1 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRGetCurrentMouseMode(qtvr: QTVRInstance): UInt32; external name '_QTVRGetCurrentMouseMode';
 <<<<<<< HEAD
@@ -4273,11 +5134,17 @@ function QTVRGetCurrentMouseMode( qtvr: QTVRInstance ): UInt32; external name '_
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRGetCurrentMouseMode( qtvr: QTVRInstance ): UInt32; external name '_QTVRGetCurrentMouseMode';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRSetFrameRate()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4296,10 +5163,14 @@ function QTVRSetFrameRate( qtvr: QTVRInstance; rate: Float32 ): OSErr; external 
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRSetFrameRate(qtvr: QTVRInstance; rate: Single): OSErr; external name '_QTVRSetFrameRate';
 <<<<<<< HEAD
@@ -4311,11 +5182,17 @@ function QTVRSetFrameRate( qtvr: QTVRInstance; rate: Float32 ): OSErr; external 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRSetFrameRate( qtvr: QTVRInstance; rate: Float32 ): OSErr; external name '_QTVRSetFrameRate';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRGetFrameRate()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4334,10 +5211,14 @@ function QTVRGetFrameRate( qtvr: QTVRInstance ): Float32; external name '_QTVRGe
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRGetFrameRate(qtvr: QTVRInstance): Single; external name '_QTVRGetFrameRate';
 <<<<<<< HEAD
@@ -4349,11 +5230,17 @@ function QTVRGetFrameRate( qtvr: QTVRInstance ): Float32; external name '_QTVRGe
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRGetFrameRate( qtvr: QTVRInstance ): Float32; external name '_QTVRGetFrameRate';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRSetViewRate()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4372,10 +5259,14 @@ function QTVRSetViewRate( qtvr: QTVRInstance; rate: Float32 ): OSErr; external n
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRSetViewRate(qtvr: QTVRInstance; rate: Single): OSErr; external name '_QTVRSetViewRate';
 <<<<<<< HEAD
@@ -4387,11 +5278,17 @@ function QTVRSetViewRate( qtvr: QTVRInstance; rate: Float32 ): OSErr; external n
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRSetViewRate( qtvr: QTVRInstance; rate: Float32 ): OSErr; external name '_QTVRSetViewRate';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRGetViewRate()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4410,10 +5307,14 @@ function QTVRGetViewRate( qtvr: QTVRInstance ): Float32; external name '_QTVRGet
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRGetViewRate(qtvr: QTVRInstance): Single; external name '_QTVRGetViewRate';
 <<<<<<< HEAD
@@ -4425,11 +5326,17 @@ function QTVRGetViewRate( qtvr: QTVRInstance ): Float32; external name '_QTVRGet
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRGetViewRate( qtvr: QTVRInstance ): Float32; external name '_QTVRGetViewRate';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRSetViewCurrentTime()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4448,10 +5355,14 @@ function QTVRSetViewCurrentTime( qtvr: QTVRInstance; time: TimeValue ): OSErr; e
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRSetViewCurrentTime(qtvr: QTVRInstance; time: TimeValue): OSErr; external name '_QTVRSetViewCurrentTime';
 <<<<<<< HEAD
@@ -4463,11 +5374,17 @@ function QTVRSetViewCurrentTime( qtvr: QTVRInstance; time: TimeValue ): OSErr; e
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRSetViewCurrentTime( qtvr: QTVRInstance; time: TimeValue ): OSErr; external name '_QTVRSetViewCurrentTime';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRGetViewCurrentTime()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4486,10 +5403,14 @@ function QTVRGetViewCurrentTime( qtvr: QTVRInstance ): TimeValue; external name 
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRGetViewCurrentTime(qtvr: QTVRInstance): TimeValue; external name '_QTVRGetViewCurrentTime';
 <<<<<<< HEAD
@@ -4501,11 +5422,17 @@ function QTVRGetViewCurrentTime( qtvr: QTVRInstance ): TimeValue; external name 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRGetViewCurrentTime( qtvr: QTVRInstance ): TimeValue; external name '_QTVRGetViewCurrentTime';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRGetCurrentViewDuration()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4524,10 +5451,14 @@ function QTVRGetCurrentViewDuration( qtvr: QTVRInstance ): TimeValue; external n
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRGetCurrentViewDuration(qtvr: QTVRInstance): TimeValue; external name '_QTVRGetCurrentViewDuration';
 <<<<<<< HEAD
@@ -4539,6 +5470,11 @@ function QTVRGetCurrentViewDuration( qtvr: QTVRInstance ): TimeValue; external n
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRGetCurrentViewDuration( qtvr: QTVRInstance ): TimeValue; external name '_QTVRGetCurrentViewDuration';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
   =================================================================================================
@@ -4553,6 +5489,7 @@ function QTVRGetCurrentViewDuration( qtvr: QTVRInstance ): TimeValue; external n
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
@@ -4568,10 +5505,14 @@ function QTVRSetViewState( qtvr: QTVRInstance; viewStateType: QTVRViewStateType;
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRSetViewState(qtvr: QTVRInstance; viewStateType: QTVRViewStateType; state: UInt16): OSErr; external name '_QTVRSetViewState';
 <<<<<<< HEAD
@@ -4583,11 +5524,17 @@ function QTVRSetViewState( qtvr: QTVRInstance; viewStateType: QTVRViewStateType;
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRSetViewState( qtvr: QTVRInstance; viewStateType: QTVRViewStateType; state: UInt16 ): OSErr; external name '_QTVRSetViewState';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRGetViewState()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4606,10 +5553,14 @@ function QTVRGetViewState( qtvr: QTVRInstance; viewStateType: QTVRViewStateType;
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRGetViewState(qtvr: QTVRInstance; viewStateType: QTVRViewStateType; var state: UInt16): OSErr; external name '_QTVRGetViewState';
 <<<<<<< HEAD
@@ -4621,11 +5572,17 @@ function QTVRGetViewState( qtvr: QTVRInstance; viewStateType: QTVRViewStateType;
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRGetViewState( qtvr: QTVRInstance; viewStateType: QTVRViewStateType; var state: UInt16 ): OSErr; external name '_QTVRGetViewState';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRGetViewStateCount()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4644,10 +5601,14 @@ function QTVRGetViewStateCount( qtvr: QTVRInstance ): UInt16; external name '_QT
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRGetViewStateCount(qtvr: QTVRInstance): UInt16; external name '_QTVRGetViewStateCount';
 <<<<<<< HEAD
@@ -4659,11 +5620,17 @@ function QTVRGetViewStateCount( qtvr: QTVRInstance ): UInt16; external name '_QT
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRGetViewStateCount( qtvr: QTVRInstance ): UInt16; external name '_QTVRGetViewStateCount';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRSetAnimationSetting()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4682,10 +5649,14 @@ function QTVRSetAnimationSetting( qtvr: QTVRInstance; setting: QTVRObjectAnimati
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRSetAnimationSetting(qtvr: QTVRInstance; setting: QTVRObjectAnimationSetting; enable: boolean): OSErr; external name '_QTVRSetAnimationSetting';
 <<<<<<< HEAD
@@ -4697,11 +5668,17 @@ function QTVRSetAnimationSetting( qtvr: QTVRInstance; setting: QTVRObjectAnimati
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRSetAnimationSetting( qtvr: QTVRInstance; setting: QTVRObjectAnimationSetting; enable: Boolean ): OSErr; external name '_QTVRSetAnimationSetting';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRGetAnimationSetting()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4720,10 +5697,14 @@ function QTVRGetAnimationSetting( qtvr: QTVRInstance; setting: QTVRObjectAnimati
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRGetAnimationSetting(qtvr: QTVRInstance; setting: QTVRObjectAnimationSetting; var enable: boolean): OSErr; external name '_QTVRGetAnimationSetting';
 <<<<<<< HEAD
@@ -4735,11 +5716,17 @@ function QTVRGetAnimationSetting( qtvr: QTVRInstance; setting: QTVRObjectAnimati
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRGetAnimationSetting( qtvr: QTVRInstance; setting: QTVRObjectAnimationSetting; var enable: Boolean ): OSErr; external name '_QTVRGetAnimationSetting';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRSetControlSetting()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4758,10 +5745,14 @@ function QTVRSetControlSetting( qtvr: QTVRInstance; setting: QTVRControlSetting;
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRSetControlSetting(qtvr: QTVRInstance; setting: QTVRControlSetting; enable: boolean): OSErr; external name '_QTVRSetControlSetting';
 <<<<<<< HEAD
@@ -4773,11 +5764,17 @@ function QTVRSetControlSetting( qtvr: QTVRInstance; setting: QTVRControlSetting;
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRSetControlSetting( qtvr: QTVRInstance; setting: QTVRControlSetting; enable: Boolean ): OSErr; external name '_QTVRSetControlSetting';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRGetControlSetting()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4796,10 +5793,14 @@ function QTVRGetControlSetting( qtvr: QTVRInstance; setting: QTVRControlSetting;
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRGetControlSetting(qtvr: QTVRInstance; setting: QTVRControlSetting; var enable: boolean): OSErr; external name '_QTVRGetControlSetting';
 <<<<<<< HEAD
@@ -4811,11 +5812,17 @@ function QTVRGetControlSetting( qtvr: QTVRInstance; setting: QTVRControlSetting;
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRGetControlSetting( qtvr: QTVRInstance; setting: QTVRControlSetting; var enable: Boolean ): OSErr; external name '_QTVRGetControlSetting';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVREnableFrameAnimation()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4834,10 +5841,14 @@ function QTVREnableFrameAnimation( qtvr: QTVRInstance; enable: Boolean ): OSErr;
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVREnableFrameAnimation(qtvr: QTVRInstance; enable: boolean): OSErr; external name '_QTVREnableFrameAnimation';
 <<<<<<< HEAD
@@ -4849,11 +5860,17 @@ function QTVREnableFrameAnimation( qtvr: QTVRInstance; enable: Boolean ): OSErr;
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVREnableFrameAnimation( qtvr: QTVRInstance; enable: Boolean ): OSErr; external name '_QTVREnableFrameAnimation';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRGetFrameAnimation()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4872,10 +5889,14 @@ function QTVRGetFrameAnimation( qtvr: QTVRInstance ): Boolean; external name '_Q
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRGetFrameAnimation(qtvr: QTVRInstance): boolean; external name '_QTVRGetFrameAnimation';
 <<<<<<< HEAD
@@ -4887,11 +5908,17 @@ function QTVRGetFrameAnimation( qtvr: QTVRInstance ): Boolean; external name '_Q
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRGetFrameAnimation( qtvr: QTVRInstance ): Boolean; external name '_QTVRGetFrameAnimation';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVREnableViewAnimation()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4910,10 +5937,14 @@ function QTVREnableViewAnimation( qtvr: QTVRInstance; enable: Boolean ): OSErr; 
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVREnableViewAnimation(qtvr: QTVRInstance; enable: boolean): OSErr; external name '_QTVREnableViewAnimation';
 <<<<<<< HEAD
@@ -4925,11 +5956,17 @@ function QTVREnableViewAnimation( qtvr: QTVRInstance; enable: Boolean ): OSErr; 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVREnableViewAnimation( qtvr: QTVRInstance; enable: Boolean ): OSErr; external name '_QTVREnableViewAnimation';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRGetViewAnimation()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4947,10 +5984,14 @@ function QTVRGetViewAnimation( qtvr: QTVRInstance ): Boolean; external name '_QT
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRGetViewAnimation(qtvr: QTVRInstance): boolean; external name '_QTVRGetViewAnimation';
 <<<<<<< HEAD
@@ -4961,6 +6002,10 @@ function QTVRGetViewAnimation(qtvr: QTVRInstance): boolean; external name '_QTVR
 function QTVRGetViewAnimation( qtvr: QTVRInstance ): Boolean; external name '_QTVRGetViewAnimation';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRGetViewAnimation( qtvr: QTVRInstance ): Boolean; external name '_QTVRGetViewAnimation';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -4976,6 +6021,7 @@ function QTVRGetViewAnimation( qtvr: QTVRInstance ): Boolean; external name '_QT
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
@@ -4991,10 +6037,14 @@ function QTVRSetVisible( qtvr: QTVRInstance; visible: Boolean ): OSErr; external
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRSetVisible(qtvr: QTVRInstance; visible: boolean): OSErr; external name '_QTVRSetVisible';
 <<<<<<< HEAD
@@ -5006,11 +6056,17 @@ function QTVRSetVisible( qtvr: QTVRInstance; visible: Boolean ): OSErr; external
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRSetVisible( qtvr: QTVRInstance; visible: Boolean ): OSErr; external name '_QTVRSetVisible';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRGetVisible()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5029,10 +6085,14 @@ function QTVRGetVisible( qtvr: QTVRInstance ): Boolean; external name '_QTVRGetV
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRGetVisible(qtvr: QTVRInstance): boolean; external name '_QTVRGetVisible';
 <<<<<<< HEAD
@@ -5044,11 +6104,17 @@ function QTVRGetVisible( qtvr: QTVRInstance ): Boolean; external name '_QTVRGetV
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRGetVisible( qtvr: QTVRInstance ): Boolean; external name '_QTVRGetVisible';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRSetImagingProperty()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5067,10 +6133,14 @@ function QTVRSetImagingProperty( qtvr: QTVRInstance; imagingMode: QTVRImagingMod
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRSetImagingProperty(qtvr: QTVRInstance; imagingMode: QTVRImagingMode; imagingProperty: UInt32; propertyValue: SInt32): OSErr; external name '_QTVRSetImagingProperty';
 <<<<<<< HEAD
@@ -5082,11 +6152,17 @@ function QTVRSetImagingProperty( qtvr: QTVRInstance; imagingMode: QTVRImagingMod
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRSetImagingProperty( qtvr: QTVRInstance; imagingMode: QTVRImagingMode; imagingProperty: UInt32; propertyValue: SInt32 ): OSErr; external name '_QTVRSetImagingProperty';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRGetImagingProperty()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5105,10 +6181,14 @@ function QTVRGetImagingProperty( qtvr: QTVRInstance; imagingMode: QTVRImagingMod
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRGetImagingProperty(qtvr: QTVRInstance; imagingMode: QTVRImagingMode; imagingProperty: UInt32; var propertyValue: SInt32): OSErr; external name '_QTVRGetImagingProperty';
 <<<<<<< HEAD
@@ -5120,11 +6200,17 @@ function QTVRGetImagingProperty( qtvr: QTVRInstance; imagingMode: QTVRImagingMod
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRGetImagingProperty( qtvr: QTVRInstance; imagingMode: QTVRImagingMode; imagingProperty: UInt32; var propertyValue: SInt32 ): OSErr; external name '_QTVRGetImagingProperty';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRUpdate()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5143,10 +6229,14 @@ function QTVRUpdate( qtvr: QTVRInstance; imagingMode: QTVRImagingMode ): OSErr; 
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRUpdate(qtvr: QTVRInstance; imagingMode: QTVRImagingMode): OSErr; external name '_QTVRUpdate';
 <<<<<<< HEAD
@@ -5158,11 +6248,17 @@ function QTVRUpdate( qtvr: QTVRInstance; imagingMode: QTVRImagingMode ): OSErr; 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRUpdate( qtvr: QTVRInstance; imagingMode: QTVRImagingMode ): OSErr; external name '_QTVRUpdate';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRBeginUpdateStream()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5181,10 +6277,14 @@ function QTVRBeginUpdateStream( qtvr: QTVRInstance; imagingMode: QTVRImagingMode
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRBeginUpdateStream(qtvr: QTVRInstance; imagingMode: QTVRImagingMode): OSErr; external name '_QTVRBeginUpdateStream';
 <<<<<<< HEAD
@@ -5196,11 +6296,17 @@ function QTVRBeginUpdateStream( qtvr: QTVRInstance; imagingMode: QTVRImagingMode
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRBeginUpdateStream( qtvr: QTVRInstance; imagingMode: QTVRImagingMode ): OSErr; external name '_QTVRBeginUpdateStream';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVREndUpdateStream()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5219,10 +6325,14 @@ function QTVREndUpdateStream( qtvr: QTVRInstance ): OSErr; external name '_QTVRE
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVREndUpdateStream(qtvr: QTVRInstance): OSErr; external name '_QTVREndUpdateStream';
 <<<<<<< HEAD
@@ -5234,11 +6344,17 @@ function QTVREndUpdateStream( qtvr: QTVRInstance ): OSErr; external name '_QTVRE
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVREndUpdateStream( qtvr: QTVRInstance ): OSErr; external name '_QTVREndUpdateStream';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRSetTransitionProperty()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5257,10 +6373,14 @@ function QTVRSetTransitionProperty( qtvr: QTVRInstance; transitionType: UInt32; 
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRSetTransitionProperty(qtvr: QTVRInstance; transitionType: UInt32; transitionProperty: UInt32; transitionValue: SInt32): OSErr; external name '_QTVRSetTransitionProperty';
 <<<<<<< HEAD
@@ -5272,11 +6392,17 @@ function QTVRSetTransitionProperty( qtvr: QTVRInstance; transitionType: UInt32; 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRSetTransitionProperty( qtvr: QTVRInstance; transitionType: UInt32; transitionProperty: UInt32; transitionValue: SInt32 ): OSErr; external name '_QTVRSetTransitionProperty';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVREnableTransition()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5295,10 +6421,14 @@ function QTVREnableTransition( qtvr: QTVRInstance; transitionType: UInt32; enabl
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVREnableTransition(qtvr: QTVRInstance; transitionType: UInt32; enable: boolean): OSErr; external name '_QTVREnableTransition';
 <<<<<<< HEAD
@@ -5310,6 +6440,11 @@ function QTVREnableTransition( qtvr: QTVRInstance; transitionType: UInt32; enabl
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVREnableTransition( qtvr: QTVRInstance; transitionType: UInt32; enable: Boolean ): OSErr; external name '_QTVREnableTransition';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
   =================================================================================================
@@ -5324,6 +6459,7 @@ function QTVREnableTransition( qtvr: QTVRInstance; transitionType: UInt32; enabl
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
@@ -5339,10 +6475,14 @@ function QTVRSetAngularUnits( qtvr: QTVRInstance; units: QTVRAngularUnits ): OSE
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRSetAngularUnits(qtvr: QTVRInstance; units: QTVRAngularUnits): OSErr; external name '_QTVRSetAngularUnits';
 <<<<<<< HEAD
@@ -5354,11 +6494,17 @@ function QTVRSetAngularUnits( qtvr: QTVRInstance; units: QTVRAngularUnits ): OSE
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRSetAngularUnits( qtvr: QTVRInstance; units: QTVRAngularUnits ): OSErr; external name '_QTVRSetAngularUnits';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRGetAngularUnits()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5379,6 +6525,9 @@ function QTVRGetAngularUnits( qtvr: QTVRInstance ): QTVRAngularUnits; external n
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
@@ -5387,6 +6536,7 @@ function QTVRGetAngularUnits( qtvr: QTVRInstance ): QTVRAngularUnits; external n
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {  Pano specific routines }
 <<<<<<< HEAD
@@ -5396,10 +6546,14 @@ function QTVRGetAngularUnits( qtvr: QTVRInstance ): QTVRAngularUnits; external n
 =======
 { Pano specific routines}
 >>>>>>> origin/fixes_2.4
+=======
+{ Pano specific routines}
+>>>>>>> origin/cpstrnew
 {
  *  QTVRPtToAngles()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5418,10 +6572,14 @@ function QTVRPtToAngles( qtvr: QTVRInstance; pt: Point; var panAngle: Float32; v
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRPtToAngles(qtvr: QTVRInstance; pt: Point; var panAngle: Single; var tiltAngle: Single): OSErr; external name '_QTVRPtToAngles';
 <<<<<<< HEAD
@@ -5433,11 +6591,17 @@ function QTVRPtToAngles( qtvr: QTVRInstance; pt: Point; var panAngle: Float32; v
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRPtToAngles( qtvr: QTVRInstance; pt: Point; var panAngle: Float32; var tiltAngle: Float32 ): OSErr; external name '_QTVRPtToAngles';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRCoordToAngles()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5456,10 +6620,14 @@ function QTVRCoordToAngles( qtvr: QTVRInstance; var coord: QTVRFloatPoint; var p
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRCoordToAngles(qtvr: QTVRInstance; var coord: QTVRFloatPoint; var panAngle: Single; var tiltAngle: Single): OSErr; external name '_QTVRCoordToAngles';
 <<<<<<< HEAD
@@ -5471,11 +6639,17 @@ function QTVRCoordToAngles( qtvr: QTVRInstance; var coord: QTVRFloatPoint; var p
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRCoordToAngles( qtvr: QTVRInstance; var coord: QTVRFloatPoint; var panAngle: Float32; var tiltAngle: Float32 ): OSErr; external name '_QTVRCoordToAngles';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRAnglesToCoord()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5511,12 +6685,16 @@ function QTVRAnglesToCoord( qtvr: QTVRInstance; panAngle: Float32; tiltAngle: Fl
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
 function QTVRAnglesToCoord( qtvr: QTVRInstance; panAngle: Float32; tiltAngle: Float32; var coord: QTVRFloatPoint ): OSErr; external name '_QTVRAnglesToCoord';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+<<<<<<< HEAD
 
 
 <<<<<<< HEAD
@@ -5528,6 +6706,11 @@ function QTVRAnglesToCoord( qtvr: QTVRInstance; panAngle: Float32; tiltAngle: Fl
 =======
 { Object specific routines}
 >>>>>>> origin/fixes_2.4
+=======
+
+
+{ Object specific routines}
+>>>>>>> origin/cpstrnew
 {
  *  QTVRPanToColumn()
  *  
@@ -5535,6 +6718,7 @@ function QTVRAnglesToCoord( qtvr: QTVRInstance; panAngle: Float32; tiltAngle: Fl
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
@@ -5572,6 +6756,9 @@ function QTVRPanToColumn( qtvr: QTVRInstance; panAngle: Float32 ): SInt16; exter
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
@@ -5581,6 +6768,7 @@ function QTVRPanToColumn( qtvr: QTVRInstance; panAngle: Float32 ): SInt16; exter
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  zero based    }
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -5589,6 +6777,9 @@ function QTVRPanToColumn( qtvr: QTVRInstance; panAngle: Float32 ): SInt16; exter
 =======
 { zero based   }
 >>>>>>> origin/fixes_2.4
+=======
+{ zero based   }
+>>>>>>> origin/cpstrnew
 {
  *  QTVRColumnToPan()
  *  
@@ -5596,6 +6787,7 @@ function QTVRPanToColumn( qtvr: QTVRInstance; panAngle: Float32 ): SInt16; exter
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
@@ -5633,6 +6825,9 @@ function QTVRColumnToPan( qtvr: QTVRInstance; column: SInt16 ): Float32; externa
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
@@ -5641,6 +6836,7 @@ function QTVRColumnToPan( qtvr: QTVRInstance; column: SInt16 ): Float32; externa
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  zero based    }
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -5650,6 +6846,10 @@ function QTVRColumnToPan( qtvr: QTVRInstance; column: SInt16 ): Float32; externa
 
 { zero based   }
 >>>>>>> origin/fixes_2.4
+=======
+
+{ zero based   }
+>>>>>>> origin/cpstrnew
 {
  *  QTVRTiltToRow()
  *  
@@ -5657,6 +6857,7 @@ function QTVRColumnToPan( qtvr: QTVRInstance; column: SInt16 ): Float32; externa
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
@@ -5674,6 +6875,9 @@ function QTVRTiltToRow( qtvr: QTVRInstance; tiltAngle: Float32 ): SInt16; extern
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
@@ -5682,6 +6886,7 @@ function QTVRTiltToRow( qtvr: QTVRInstance; tiltAngle: Float32 ): SInt16; extern
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {  zero based    }
 <<<<<<< HEAD
@@ -5691,10 +6896,14 @@ function QTVRTiltToRow( qtvr: QTVRInstance; tiltAngle: Float32 ): SInt16; extern
 =======
 { zero based   }
 >>>>>>> origin/fixes_2.4
+=======
+{ zero based   }
+>>>>>>> origin/cpstrnew
 {
  *  QTVRRowToTilt()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5735,12 +6944,16 @@ function QTVRRowToTilt( qtvr: QTVRInstance; row: SInt16 ): Float32; external nam
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
 function QTVRRowToTilt( qtvr: QTVRInstance; row: SInt16 ): Float32; external name '_QTVRRowToTilt';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+<<<<<<< HEAD
 
 
 <<<<<<< HEAD
@@ -5752,10 +6965,16 @@ function QTVRRowToTilt( qtvr: QTVRInstance; row: SInt16 ): Float32; external nam
 =======
 { zero based               }
 >>>>>>> origin/fixes_2.4
+=======
+
+
+{ zero based               }
+>>>>>>> origin/cpstrnew
 {
  *  QTVRWrapAndConstrain()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5773,10 +6992,14 @@ function QTVRWrapAndConstrain( qtvr: QTVRInstance; kind: SInt16; value: Float32;
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRWrapAndConstrain(qtvr: QTVRInstance; kind: SInt16; value: Single; var result: Single): OSErr; external name '_QTVRWrapAndConstrain';
 <<<<<<< HEAD
@@ -5787,6 +7010,10 @@ function QTVRWrapAndConstrain(qtvr: QTVRInstance; kind: SInt16; value: Single; v
 function QTVRWrapAndConstrain( qtvr: QTVRInstance; kind: SInt16; value: Float32; var result: Float32 ): OSErr; external name '_QTVRWrapAndConstrain';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRWrapAndConstrain( qtvr: QTVRInstance; kind: SInt16; value: Float32; var result: Float32 ): OSErr; external name '_QTVRWrapAndConstrain';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -5802,6 +7029,7 @@ function QTVRWrapAndConstrain( qtvr: QTVRInstance; kind: SInt16; value: Float32;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
@@ -5817,10 +7045,14 @@ function QTVRSetEnteringNodeProc( qtvr: QTVRInstance; enteringNodeProc: QTVREnte
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRSetEnteringNodeProc(qtvr: QTVRInstance; enteringNodeProc: QTVREnteringNodeUPP; refCon: SInt32; flags: UInt32): OSErr; external name '_QTVRSetEnteringNodeProc';
 <<<<<<< HEAD
@@ -5832,11 +7064,17 @@ function QTVRSetEnteringNodeProc( qtvr: QTVRInstance; enteringNodeProc: QTVREnte
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRSetEnteringNodeProc( qtvr: QTVRInstance; enteringNodeProc: QTVREnteringNodeUPP; refCon: SInt32; flags: UInt32 ): OSErr; external name '_QTVRSetEnteringNodeProc';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRSetLeavingNodeProc()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5855,10 +7093,14 @@ function QTVRSetLeavingNodeProc( qtvr: QTVRInstance; leavingNodeProc: QTVRLeavin
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRSetLeavingNodeProc(qtvr: QTVRInstance; leavingNodeProc: QTVRLeavingNodeUPP; refCon: SInt32; flags: UInt32): OSErr; external name '_QTVRSetLeavingNodeProc';
 <<<<<<< HEAD
@@ -5870,11 +7112,17 @@ function QTVRSetLeavingNodeProc( qtvr: QTVRInstance; leavingNodeProc: QTVRLeavin
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRSetLeavingNodeProc( qtvr: QTVRInstance; leavingNodeProc: QTVRLeavingNodeUPP; refCon: SInt32; flags: UInt32 ): OSErr; external name '_QTVRSetLeavingNodeProc';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRSetInteractionProperty()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5893,10 +7141,14 @@ function QTVRSetInteractionProperty( qtvr: QTVRInstance; proprty: UInt32; value:
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRSetInteractionProperty(qtvr: QTVRInstance; proprty: UInt32; value: UnivPtr): OSErr; external name '_QTVRSetInteractionProperty';
 <<<<<<< HEAD
@@ -5908,11 +7160,17 @@ function QTVRSetInteractionProperty( qtvr: QTVRInstance; proprty: UInt32; value:
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRSetInteractionProperty( qtvr: QTVRInstance; proprty: UInt32; value: UnivPtr ): OSErr; external name '_QTVRSetInteractionProperty';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRGetInteractionProperty()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5931,10 +7189,14 @@ function QTVRGetInteractionProperty( qtvr: QTVRInstance; proprty: UInt32; value:
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRGetInteractionProperty(qtvr: QTVRInstance; proprty: UInt32; value: UnivPtr): OSErr; external name '_QTVRGetInteractionProperty';
 <<<<<<< HEAD
@@ -5946,11 +7208,17 @@ function QTVRGetInteractionProperty( qtvr: QTVRInstance; proprty: UInt32; value:
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRGetInteractionProperty( qtvr: QTVRInstance; proprty: UInt32; value: UnivPtr ): OSErr; external name '_QTVRGetInteractionProperty';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRReplaceCursor()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5969,10 +7237,14 @@ function QTVRReplaceCursor( qtvr: QTVRInstance; var cursRecord: QTVRCursorRecord
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRReplaceCursor(qtvr: QTVRInstance; var cursRecord: QTVRCursorRecord): OSErr; external name '_QTVRReplaceCursor';
 <<<<<<< HEAD
@@ -5984,6 +7256,11 @@ function QTVRReplaceCursor( qtvr: QTVRInstance; var cursRecord: QTVRCursorRecord
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRReplaceCursor( qtvr: QTVRInstance; var cursRecord: QTVRCursorRecord ): OSErr; external name '_QTVRReplaceCursor';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
   =================================================================================================
@@ -5998,6 +7275,7 @@ function QTVRReplaceCursor( qtvr: QTVRInstance; var cursRecord: QTVRCursorRecord
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
@@ -6013,10 +7291,14 @@ function QTVRGetViewingLimits( qtvr: QTVRInstance; kind: UInt16; var minValue: F
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRGetViewingLimits(qtvr: QTVRInstance; kind: UInt16; var minValue: Single; var maxValue: Single): OSErr; external name '_QTVRGetViewingLimits';
 <<<<<<< HEAD
@@ -6028,11 +7310,17 @@ function QTVRGetViewingLimits( qtvr: QTVRInstance; kind: UInt16; var minValue: F
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRGetViewingLimits( qtvr: QTVRInstance; kind: UInt16; var minValue: Float32; var maxValue: Float32 ): OSErr; external name '_QTVRGetViewingLimits';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRGetConstraintStatus()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -6051,10 +7339,14 @@ function QTVRGetConstraintStatus( qtvr: QTVRInstance ): UInt32; external name '_
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRGetConstraintStatus(qtvr: QTVRInstance): UInt32; external name '_QTVRGetConstraintStatus';
 <<<<<<< HEAD
@@ -6066,11 +7358,17 @@ function QTVRGetConstraintStatus( qtvr: QTVRInstance ): UInt32; external name '_
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRGetConstraintStatus( qtvr: QTVRInstance ): UInt32; external name '_QTVRGetConstraintStatus';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRGetConstraints()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -6089,10 +7387,14 @@ function QTVRGetConstraints( qtvr: QTVRInstance; kind: UInt16; var minValue: Flo
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRGetConstraints(qtvr: QTVRInstance; kind: UInt16; var minValue: Single; var maxValue: Single): OSErr; external name '_QTVRGetConstraints';
 <<<<<<< HEAD
@@ -6104,11 +7406,17 @@ function QTVRGetConstraints( qtvr: QTVRInstance; kind: UInt16; var minValue: Flo
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRGetConstraints( qtvr: QTVRInstance; kind: UInt16; var minValue: Float32; var maxValue: Float32 ): OSErr; external name '_QTVRGetConstraints';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRSetConstraints()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -6126,10 +7434,14 @@ function QTVRSetConstraints( qtvr: QTVRInstance; kind: UInt16; minValue: Float32
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRSetConstraints(qtvr: QTVRInstance; kind: UInt16; minValue: Single; maxValue: Single): OSErr; external name '_QTVRSetConstraints';
 <<<<<<< HEAD
@@ -6140,6 +7452,10 @@ function QTVRSetConstraints(qtvr: QTVRInstance; kind: UInt16; minValue: Single; 
 function QTVRSetConstraints( qtvr: QTVRInstance; kind: UInt16; minValue: Float32; maxValue: Float32 ): OSErr; external name '_QTVRSetConstraints';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRSetConstraints( qtvr: QTVRInstance; kind: UInt16; minValue: Float32; maxValue: Float32 ): OSErr; external name '_QTVRSetConstraints';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -6152,6 +7468,7 @@ function QTVRSetConstraints( qtvr: QTVRInstance; kind: UInt16; minValue: Float32
  *  QTVRGetAvailableResolutions()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -6192,6 +7509,9 @@ function QTVRGetAvailableResolutions( qtvr: QTVRInstance; var resolutionsMask: U
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
@@ -6199,6 +7519,7 @@ function QTVRGetAvailableResolutions( qtvr: QTVRInstance; var resolutionsMask: U
 function QTVRGetAvailableResolutions( qtvr: QTVRInstance; var resolutionsMask: UInt16 ): OSErr; external name '_QTVRGetAvailableResolutions';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {  These require QTVR 2.1 (kQTVRAPIMajorVersion02 + kQTVRAPIMinorVersion10) }
 <<<<<<< HEAD
@@ -6209,10 +7530,15 @@ function QTVRGetAvailableResolutions( qtvr: QTVRInstance; var resolutionsMask: U
 
 { These require QTVR 2.1 (kQTVRAPIMajorVersion02 + kQTVRAPIMinorVersion10)}
 >>>>>>> origin/fixes_2.4
+=======
+
+{ These require QTVR 2.1 (kQTVRAPIMajorVersion02 + kQTVRAPIMinorVersion10)}
+>>>>>>> origin/cpstrnew
 {
  *  QTVRGetBackBufferMemInfo()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -6231,10 +7557,14 @@ function QTVRGetBackBufferMemInfo( qtvr: QTVRInstance; geometry: UInt32; resolut
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.1 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRGetBackBufferMemInfo(qtvr: QTVRInstance; geometry: UInt32; resolution: UInt16; cachePixelFormat: UInt32; var minCacheBytes: SInt32; var suggestedCacheBytes: SInt32; var fullCacheBytes: SInt32): OSErr; external name '_QTVRGetBackBufferMemInfo';
 <<<<<<< HEAD
@@ -6246,11 +7576,17 @@ function QTVRGetBackBufferMemInfo( qtvr: QTVRInstance; geometry: UInt32; resolut
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRGetBackBufferMemInfo( qtvr: QTVRInstance; geometry: UInt32; resolution: UInt16; cachePixelFormat: UInt32; var minCacheBytes: SInt32; var suggestedCacheBytes: SInt32; var fullCacheBytes: SInt32 ): OSErr; external name '_QTVRGetBackBufferMemInfo';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRGetBackBufferSettings()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -6269,10 +7605,14 @@ function QTVRGetBackBufferSettings( qtvr: QTVRInstance; var geometry: UInt32; va
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.1 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRGetBackBufferSettings(qtvr: QTVRInstance; var geometry: UInt32; var resolution: UInt16; var cachePixelFormat: UInt32; var cacheSize: SInt16): OSErr; external name '_QTVRGetBackBufferSettings';
 <<<<<<< HEAD
@@ -6284,11 +7624,17 @@ function QTVRGetBackBufferSettings( qtvr: QTVRInstance; var geometry: UInt32; va
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRGetBackBufferSettings( qtvr: QTVRInstance; var geometry: UInt32; var resolution: UInt16; var cachePixelFormat: UInt32; var cacheSize: SInt16 ): OSErr; external name '_QTVRGetBackBufferSettings';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRSetBackBufferPrefs()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -6307,10 +7653,14 @@ function QTVRSetBackBufferPrefs( qtvr: QTVRInstance; geometry: UInt32; resolutio
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.1 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRSetBackBufferPrefs(qtvr: QTVRInstance; geometry: UInt32; resolution: UInt16; cachePixelFormat: UInt32; cacheSize: SInt16): OSErr; external name '_QTVRSetBackBufferPrefs';
 <<<<<<< HEAD
@@ -6322,6 +7672,11 @@ function QTVRSetBackBufferPrefs( qtvr: QTVRInstance; geometry: UInt32; resolutio
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRSetBackBufferPrefs( qtvr: QTVRInstance; geometry: UInt32; resolution: UInt16; cachePixelFormat: UInt32; cacheSize: SInt16 ): OSErr; external name '_QTVRSetBackBufferPrefs';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
   =================================================================================================
@@ -6336,6 +7691,7 @@ function QTVRSetBackBufferPrefs( qtvr: QTVRInstance; geometry: UInt32; resolutio
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
@@ -6351,10 +7707,14 @@ function QTVRSetPrescreenImagingCompleteProc( qtvr: QTVRInstance; imagingComplet
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRSetPrescreenImagingCompleteProc(qtvr: QTVRInstance; imagingCompleteProc: QTVRImagingCompleteUPP; refCon: SInt32; flags: UInt32): OSErr; external name '_QTVRSetPrescreenImagingCompleteProc';
 <<<<<<< HEAD
@@ -6366,11 +7726,17 @@ function QTVRSetPrescreenImagingCompleteProc( qtvr: QTVRInstance; imagingComplet
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRSetPrescreenImagingCompleteProc( qtvr: QTVRInstance; imagingCompleteProc: QTVRImagingCompleteUPP; refCon: SInt32; flags: UInt32 ): OSErr; external name '_QTVRSetPrescreenImagingCompleteProc';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRSetBackBufferImagingProc()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -6389,10 +7755,14 @@ function QTVRSetBackBufferImagingProc( qtvr: QTVRInstance; backBufferImagingProc
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
  *    Windows:          in QTVR.lib 2.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function QTVRSetBackBufferImagingProc(qtvr: QTVRInstance; backBufferImagingProc: QTVRBackBufferImagingUPP; numAreas: UInt16; var areasOfInterest: QTVRAreaOfInterest; refCon: SInt32): OSErr; external name '_QTVRSetBackBufferImagingProc';
 <<<<<<< HEAD
@@ -6404,6 +7774,11 @@ function QTVRSetBackBufferImagingProc( qtvr: QTVRInstance; backBufferImagingProc
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function QTVRSetBackBufferImagingProc( qtvr: QTVRInstance; backBufferImagingProc: QTVRBackBufferImagingUPP; numAreas: UInt16; areasOfInterest: {variable-size-array} QTVRAreaOfInterestPtr; refCon: SInt32 ): OSErr; external name '_QTVRSetBackBufferImagingProc';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  QTVRRefreshBackBuffer()
@@ -6412,6 +7787,9 @@ function QTVRSetBackBufferImagingProc( qtvr: QTVRInstance; backBufferImagingProc
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in QuickTimeVRLib 2.0 and later
@@ -6419,12 +7797,15 @@ function QTVRSetBackBufferImagingProc( qtvr: QTVRInstance; backBufferImagingProc
  }
 function QTVRRefreshBackBuffer( qtvr: QTVRInstance; flags: UInt32 ): OSErr; external name '_QTVRRefreshBackBuffer';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+<<<<<<< HEAD
 
 
 {$endc} {not TARGET_CPU_64}
 
 {$endc} {TARGET_OS_MAC}
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+>>>>>>> origin/cpstrnew
 
 end.
 {$endc} {not MACOSALLINCLUDE}
@@ -6442,13 +7823,19 @@ end.
 function QTVRRefreshBackBuffer( qtvr: QTVRInstance; flags: UInt32 ): OSErr; external name '_QTVRRefreshBackBuffer';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
+<<<<<<< HEAD
 
 {$endc} {not TARGET_CPU_64}
 
+=======
+{$endc} {not TARGET_CPU_64}
+
+>>>>>>> origin/cpstrnew
 {$endc} {TARGET_OS_MAC}
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -6457,3 +7844,6 @@ end.
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

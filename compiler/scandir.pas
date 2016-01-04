@@ -242,6 +242,7 @@ unit scandir;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                        system_arm_nds, system_i8086_msdos] +
                                        systems_nativent) then
 =======
@@ -253,6 +254,9 @@ unit scandir;
 =======
                                        system_arm_nds] + systems_nativent) then
 >>>>>>> graemeg/cpstrnew
+=======
+                                       system_arm_nds] + systems_nativent) then
+>>>>>>> origin/cpstrnew
 =======
                                        system_arm_nds] + systems_nativent) then
 >>>>>>> origin/cpstrnew
@@ -1178,6 +1182,7 @@ unit scandir;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function get_peflag_const(const ident:string;error:longint):longint;
       var
         srsym : tsym;
@@ -1207,10 +1212,13 @@ unit scandir;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     procedure dir_setpeflags;
       var
         ident : string;
       begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         if not (target_info.system in (systems_all_windows)) then
@@ -1220,6 +1228,9 @@ unit scandir;
 =======
         if not (target_info.system in (system_all_windows)) then
 >>>>>>> origin/fixes_2_2
+=======
+        if not (target_info.system in (systems_all_windows)) then
+>>>>>>> origin/cpstrnew
           Message(scan_w_setpeflags_not_support);
         current_scanner.skipspace;
         ident:=current_scanner.readid;
@@ -1360,6 +1371,7 @@ unit scandir;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure dir_varparacopyoutcheck;
       begin
         if not(target_info.system in systems_jvm) then
@@ -1376,6 +1388,8 @@ unit scandir;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     procedure dir_varpropsetter;
@@ -1477,11 +1491,14 @@ unit scandir;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       not implemented yet
@@ -1496,6 +1513,7 @@ unit scandir;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         i : integer;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1503,6 +1521,8 @@ unit scandir;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       begin
@@ -1516,6 +1536,7 @@ unit scandir;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         { use local ms_on/off/error tmsgstate values }
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1523,6 +1544,8 @@ unit scandir;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         if (state='ON') or (state='+') then
@@ -1544,10 +1567,14 @@ unit scandir;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           begin
             recordpendingmessagestate(type_w_instance_with_abstract, msgstate);
             recordpendingmessagestate(type_w_instance_abstract_class, msgstate);
           end
+=======
+          recordpendingmessagestate(type_w_instance_with_abstract, msgstate)
+>>>>>>> origin/cpstrnew
         else
         if ident='IMPLICIT_VARIANTS' then
           recordpendingmessagestate(parser_w_implicit_uses_of_variants_unit, msgstate)
@@ -1556,6 +1583,7 @@ unit scandir;
           recordpendingmessagestate(sym_w_function_result_not_set, msgstate)
         else
         if ident='SYMBOL_DEPRECATED' then
+<<<<<<< HEAD
           begin
             recordpendingmessagestate(sym_w_deprecated_symbol, msgstate);
             recordpendingmessagestate(sym_w_deprecated_symbol_with_msg, msgstate);
@@ -1691,6 +1719,31 @@ unit scandir;
           recordpendingmessagestate(sym_w_function_result_not_set, msgstate)
         else
         if ident='SYMBOL_DEPRECATED' then
+          begin
+            recordpendingmessagestate(sym_w_deprecated_symbol, msgstate);
+            recordpendingmessagestate(sym_w_deprecated_symbol_with_msg, msgstate);
+          end
+        else
+        if ident='SYMBOL_EXPERIMENTAL' then
+          recordpendingmessagestate(sym_w_experimental_symbol, msgstate)
+        else
+        if ident='SYMBOL_LIBRARY' then
+          recordpendingmessagestate(sym_w_library_symbol, msgstate)
+        else
+        if ident='SYMBOL_PLATFORM' then
+          recordpendingmessagestate(sym_w_non_portable_symbol, msgstate)
+        else
+        if ident='SYMBOL_UNIMPLEMENTED' then
+          recordpendingmessagestate(sym_w_non_implemented_symbol, msgstate)
+        else
+        if ident='UNIT_DEPRECATED' then
+          begin
+            recordpendingmessagestate(sym_w_deprecated_unit, msgstate);
+            recordpendingmessagestate(sym_w_deprecated_unit_with_msg, msgstate);
+          end
+        else
+>>>>>>> origin/cpstrnew
+=======
           begin
             recordpendingmessagestate(sym_w_deprecated_symbol, msgstate);
             recordpendingmessagestate(sym_w_deprecated_symbol_with_msg, msgstate);
@@ -1734,6 +1787,7 @@ unit scandir;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if ident='IMPLICIT_STRING_CAST' then
           recordpendingmessagestate(type_w_implicit_string_cast, msgstate)
         else
@@ -1766,6 +1820,9 @@ unit scandir;
 =======
           Message1(scanner_w_illegal_warn_identifier,ident);
 >>>>>>> graemeg/cpstrnew
+=======
+          Message1(scanner_w_illegal_warn_identifier,ident);
+>>>>>>> origin/cpstrnew
 =======
           Message1(scanner_w_illegal_warn_identifier,ident);
 >>>>>>> origin/cpstrnew
@@ -1988,6 +2045,7 @@ unit scandir;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         AddDirective('HUGECODE',directive_all, @dir_hugecode);
         AddDirective('HUGEPOINTERNORMALIZATION',directive_all,@dir_hugepointernormalization);
         AddDirective('HUGEPOINTERARITHMETICNORMALIZATION',directive_all,@dir_hugepointerarithmeticnormalization);
@@ -1998,6 +2056,8 @@ unit scandir;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         AddDirective('IEEEERRORS',directive_all,@dir_ieeeerrors);
@@ -2045,11 +2105,15 @@ unit scandir;
         AddDirective('PIC',directive_all, @dir_pic);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         AddDirective('POINTERMATH',directive_all, @dir_pointermath);
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+        AddDirective('POINTERMATH',directive_all, @dir_pointermath);
+>>>>>>> origin/cpstrnew
         AddDirective('POP',directive_all, @dir_pop);
         AddDirective('PROFILE',directive_all, @dir_profile);
         AddDirective('PUSH',directive_all, @dir_push);
@@ -2062,11 +2126,15 @@ unit scandir;
         AddDirective('SAFEFPUEXCEPTIONS',directive_all, @dir_safefpuexceptions);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         AddDirective('SCOPEDENUMS',directive_all, @dir_scopedenums);
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+        AddDirective('SCOPEDENUMS',directive_all, @dir_scopedenums);
+>>>>>>> origin/cpstrnew
         AddDirective('SETPEFLAGS', directive_all, @dir_setpeflags);
         AddDirective('SETPEOPTFLAGS', directive_all, @dir_setpeoptflags);
         AddDirective('SCREENNAME',directive_all, @dir_screenname);
@@ -2086,6 +2154,7 @@ unit scandir;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         AddDirective('VARPARACOPYOUTCHECK',directive_all, @dir_varparacopyoutcheck);
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2093,6 +2162,8 @@ unit scandir;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         AddDirective('VARPROPSETTER',directive_all, @dir_varpropsetter);

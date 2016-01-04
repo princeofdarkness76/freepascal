@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef ARM7}
   {$error Audio is only available on the ARM7}
 {$endif ARM7}
@@ -52,8 +53,10 @@ function SOUND_FREQ(n: cint): cint; inline;
 
 *)
 
+=======
+>>>>>>> origin/cpstrnew
 {$ifndef ARM7}
-{$error Audio is only available on the ARM7}
+  {$error Audio is only available on the ARM7}
 {$endif ARM7}
 
 {$ifdef NDS_IMPLEMENTATION}

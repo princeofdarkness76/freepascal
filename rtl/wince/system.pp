@@ -123,6 +123,7 @@ function CreateFileW(lpFileName:pwidechar; dwDesiredAccess:DWORD; dwShareMode:DW
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
@@ -133,6 +134,10 @@ function CreateFileW(lpFileName:pwidechar; dwDesiredAccess:DWORD; dwShareMode:DW
 { the external directive isn't really necessary here because it is overridden by external (FK) }
 
 >>>>>>> graemeg/cpstrnew
+=======
+{ the external directive isn't really necessary here because it is overridden by external (FK) }
+
+>>>>>>> origin/cpstrnew
 =======
 { the external directive isn't really necessary here because it is overridden by external (FK) }
 
@@ -834,12 +839,15 @@ begin
      DLL_THREAD_ATTACH :
        begin
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
          inclocked(Thread_count);
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 { Allocate Threadvars ?!}
          if assigned(Dll_Thread_Attach_Hook) then
            Dll_Thread_Attach_Hook(DllParam);

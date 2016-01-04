@@ -9,6 +9,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Classes, SysUtils, Typinfo, fpcunit, testutils, testregistry, jstoken, jsscanner;
 =======
   Classes, SysUtils, Typinfo, fpcunit, testutils, testregistry, jsscanner;
@@ -19,6 +20,9 @@ uses
 =======
   Classes, SysUtils, Typinfo, fpcunit, testutils, testregistry, jsscanner;
 >>>>>>> graemeg/cpstrnew
+=======
+  Classes, SysUtils, Typinfo, fpcunit, testutils, testregistry, jsscanner;
+>>>>>>> origin/cpstrnew
 =======
   Classes, SysUtils, Typinfo, fpcunit, testutils, testregistry, jsscanner;
 >>>>>>> origin/cpstrnew
@@ -178,6 +182,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:=FScanner;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -185,6 +190,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 end;
@@ -816,6 +823,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Inherited;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -823,6 +831,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 end;
@@ -847,6 +857,7 @@ Var
 
 begin
   CreateScanner(S);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -878,6 +889,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   J:=FScanner.FetchToken;
   AssertEquals(S+' is a number',tjsNumber,J);
   V:=FScanner.CurTokenString;
@@ -897,11 +910,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 end;
@@ -941,6 +957,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   try
     J:=FScanner.FetchToken;
     AssertEquals(S+' is a string',tjsString,J);
@@ -957,6 +974,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   J:=FScanner.FetchToken;
   AssertEquals(S+' is a string',tjsString,J);
   If (Length(S)>0) and (S[1] in ['"','''']) then
@@ -965,11 +984,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 end;
@@ -991,6 +1013,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   try
     While (FScanner.FetchToken<>tjsEOF) do ;
   finally
@@ -1005,6 +1028,9 @@ begin
 =======
   While (FScanner.FetchToken<>tjsEOF) do ;
 >>>>>>> graemeg/cpstrnew
+=======
+  While (FScanner.FetchToken<>tjsEOF) do ;
+>>>>>>> origin/cpstrnew
 =======
   While (FScanner.FetchToken<>tjsEOF) do ;
 >>>>>>> origin/cpstrnew

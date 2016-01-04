@@ -13,11 +13,15 @@ program loader;
 uses
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   popuperr,
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  popuperr,
+>>>>>>> origin/cpstrnew
   dynlibs;
 var
   h: TLibHandle;

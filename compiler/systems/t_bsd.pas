@@ -104,6 +104,7 @@ implementation
       begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         new_section(list,sec_init_func,'',sizeof(pint));
 =======
         list.concat(tai_directive.create(asd_mod_init_func,''));
@@ -113,12 +114,16 @@ implementation
         list.concat(tai_directive.create(asd_mod_init_func,''));
         list.concat(tai_align.create(sizeof(aint)));
 >>>>>>> origin/fixes_2_2
+=======
+        new_section(list,sec_init_func,'',sizeof(pint));
+>>>>>>> origin/cpstrnew
         list.concat(Tai_const.Createname(s,0));
       end;
 
 
     procedure texportlibdarwin.setfininame(list: TAsmList; const s: string);
       begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         new_section(list,sec_term_func,'',sizeof(pint));
@@ -130,6 +135,9 @@ implementation
         list.concat(tai_directive.create(asd_mod_term_func,''));
         list.concat(tai_align.create(sizeof(aint)));
 >>>>>>> origin/fixes_2_2
+=======
+        new_section(list,sec_term_func,'',sizeof(pint));
+>>>>>>> origin/cpstrnew
         list.concat(Tai_const.Createname(s,0));
       end;
 
@@ -188,13 +196,17 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifndef cpu64bitaddr}
              { Set the size of the page at address zero to 64kb, so nothing
                is loaded below that address. This avoids problems with the
                strange Windows-compatible resource handling that assumes
                that addresses below 64kb do not exist.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -213,6 +225,9 @@ begin
 =======
                
 >>>>>>> origin/cpstrnew
+=======
+               
+>>>>>>> origin/cpstrnew
                On 64bit systems, page zero is 4GB by default, so no problems
                there.
              }
@@ -222,6 +237,7 @@ begin
                programs with problems that require Valgrind will have more
                than 60KB of data (first 4KB of address space is always invalid)
              }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -237,12 +253,15 @@ begin
              else
                DllCmd[1]:='ld $PRTOBJ $TARGET $EMUL $OPT $GCSECTIONS -dynamic -bundle -multiply_defined suppress -L. -o $EXE $CATRES'
 =======
+=======
+>>>>>>> origin/cpstrnew
                ExeCmd[1]:='ld $PRTOBJ $OPT $DYNLINK $STATIC $GCSECTIONS $STRIP -multiply_defined suppress -L. -o $EXE `cat $RES`';
              if not(cs_gdb_valgrind in current_settings.globalswitches) then
                ExeCmd[1]:=ExeCmd[1]+' -pagezero_size 0x10000';
 {$else ndef cpu64bitaddr}
              ExeCmd[1]:='ld $PRTOBJ $OPT $DYNLINK $STATIC $GCSECTIONS $STRIP -multiply_defined suppress -L. -o $EXE `cat $RES`';
 {$endif ndef cpu64bitaddr}
+<<<<<<< HEAD
              if (apptype<>app_bundle) then
                DllCmd[1]:='ld $PRTOBJ $OPT $GCSECTIONS -dynamic -dylib -multiply_defined suppress -L. -o $EXE `cat $RES`'
              else
@@ -309,6 +328,12 @@ begin
              else
                DllCmd[1]:='ld $PRTOBJ $OPT -dynamic -bundle -multiply_defined suppress -L. -o $EXE `cat $RES`'
 >>>>>>> origin/fixes_2.4
+=======
+             if (apptype<>app_bundle) then
+               DllCmd[1]:='ld $PRTOBJ $OPT $GCSECTIONS -dynamic -dylib -multiply_defined suppress -L. -o $EXE `cat $RES`'
+             else
+               DllCmd[1]:='ld $PRTOBJ $OPT $GCSECTIONS -dynamic -bundle -multiply_defined suppress -L. -o $EXE `cat $RES`'
+>>>>>>> origin/cpstrnew
            end
        end
      else
@@ -719,6 +744,7 @@ begin
               LinkRes.Add('ppc');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             system_i386_darwin,
             system_i386_iphonesim:
 =======
@@ -727,6 +753,10 @@ begin
 =======
             system_i386_darwin:
 >>>>>>> origin/fixes_2_2
+=======
+            system_i386_darwin,
+            system_i386_iphonesim:
+>>>>>>> origin/cpstrnew
               LinkRes.Add('i386');
             system_powerpc64_darwin:
               LinkRes.Add('ppc64');
@@ -987,6 +1017,7 @@ var
   StaticStr,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   StripStr   : string[63];
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1008,6 +1039,9 @@ var
 =======
   StripStr   : string[63];
 >>>>>>> origin/fixes_2.4
+=======
+  StripStr   : string[63];
+>>>>>>> origin/cpstrnew
   success : boolean;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -1060,6 +1094,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       GCSectionsStr:='-dead_strip -no_dead_strip_inits_and_terms';
 =======
 =======
@@ -1069,6 +1104,9 @@ begin
 =======
       GCSectionsStr:='-dead_strip -no_dead_strip_inits_and_terms';
 >>>>>>> origin/fixes_2.4
+=======
+      GCSectionsStr:='-dead_strip -no_dead_strip_inits_and_terms';
+>>>>>>> origin/cpstrnew
 
    if(not(target_info.system in systems_darwin) and
       (cs_profile in current_settings.moduleswitches)) or
@@ -1194,6 +1232,7 @@ var
   extdbgbinstr,
   extdbgcmdstr  : TCmdStr;
   GCSectionsStr : string[63];
+<<<<<<< HEAD
 =======
   extdbgbinstr,
   extdbgcmdstr  : TCmdStr;
@@ -1202,11 +1241,14 @@ var
   extdbgbinstr,
   extdbgcmdstr  : TCmdStr;
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
   exportedsyms: text;
   success : boolean;
 begin
   MakeSharedLibrary:=false;
   GCSectionsStr:='';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1218,6 +1260,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   if not(cs_link_nolink in current_settings.globalswitches) then
@@ -1234,6 +1278,7 @@ begin
     else
       GCSectionsStr:='-dead_strip -no_dead_strip_inits_and_terms';
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1258,6 +1303,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   InitStr:='-init FPC_LIB_START';
@@ -1458,6 +1505,7 @@ initialization
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   RegisterExternalLinker(system_i386_iphonesim_info,TLinkerBSD);
 >>>>>>> graemeg/cpstrnew
@@ -1467,6 +1515,9 @@ initialization
 =======
   RegisterExternalLinker(system_i386_iphonesim_info,TLinkerBSD);
 >>>>>>> graemeg/cpstrnew
+=======
+  RegisterExternalLinker(system_i386_iphonesim_info,TLinkerBSD);
+>>>>>>> origin/cpstrnew
 =======
   RegisterExternalLinker(system_i386_iphonesim_info,TLinkerBSD);
 >>>>>>> origin/cpstrnew

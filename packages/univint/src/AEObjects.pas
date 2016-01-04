@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       AE/AEObjects.h
  
      Contains:   Object Support Library Interfaces.
@@ -32,11 +33,15 @@
 =======
      File:       AE/AEObjects.h
 >>>>>>> origin/fixes_2.4
+=======
+     File:       AE/AEObjects.h
+>>>>>>> origin/cpstrnew
  
      Contains:   Object Support Library Interfaces.
  
      Version:    AppleEvents-496~1
  
+<<<<<<< HEAD
 <<<<<<< HEAD
      Copyright:  © 1991-2002 by Apple Computer, Inc., all rights reserved
 <<<<<<< HEAD
@@ -46,6 +51,9 @@
 =======
      Copyright:  © 1991-2008 by Apple Computer, Inc., all rights reserved
 >>>>>>> origin/fixes_2.4
+=======
+     Copyright:  © 1991-2008 by Apple Computer, Inc., all rights reserved
+>>>>>>> origin/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -55,6 +63,7 @@
                      http://bugs.freepascal.org
  
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -84,6 +93,8 @@
                      http://www.freepascal.org/bugs.html
  
 }
+=======
+>>>>>>> origin/cpstrnew
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {
     Modified for use with Free Pascal
@@ -93,12 +104,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -110,6 +125,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -124,6 +140,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -139,6 +159,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -149,6 +170,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -156,13 +180,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -170,6 +198,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -178,8 +208,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -190,6 +223,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -210,6 +244,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -218,12 +254,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -231,6 +270,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -529,6 +569,11 @@ interface
 >>>>>>> origin/fixes_2.4
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -552,6 +597,7 @@ interface
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -593,6 +639,41 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -621,6 +702,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -629,6 +711,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -642,8 +726,12 @@ uses MacTypes,AEDataModel,OSUtils,AppleEvents,MacErrors;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 
 {$ifc TARGET_OS_MAC}
 <<<<<<< HEAD
@@ -651,8 +739,9 @@ uses MacTypes,AEDataModel,OSUtils,AppleEvents,MacErrors;
 =======
 >>>>>>> origin/cpstrnew
 
-{$ALIGN MAC68K}
+{$ifc TARGET_OS_MAC}
 
+<<<<<<< HEAD
 const
 {*** LOGICAL OPERATOR CONSTANTS  ***}
 	kAEAND = FourCharCode('AND '); {  0x414e4420  }
@@ -691,9 +780,13 @@ const
 	keyAEMarkProc = FourCharCode('mark'); {  0x6d61726b  }
 	keyAEAdjustMarksProc = FourCharCode('adjm'); {  0x61646a6d  }
 	keyAEGetErrDescProc = FourCharCode('indc'); {  0x696e6463  }
+=======
+{$ALIGN MAC68K}
+>>>>>>> origin/cpstrnew
 
 {***   VALUE and TYPE CONSTANTS    ***}
 const
+<<<<<<< HEAD
 {    ... possible values for the keyAEKeyForm field of an object specifier. }
 	formAbsolutePosition = FourCharCode('indx'); {  0x696e6478  }
 	formRelativePosition = FourCharCode('rele'); {  0x72656c65  }
@@ -757,6 +850,33 @@ const
 	keyAEKeyForm = FourCharCode('form'); {  0x666f726d  }
 	keyAEKeyData = FourCharCode('seld'); {  0x73656c64  }
 
+=======
+{*** LOGICAL OPERATOR CONSTANTS  ***}
+	kAEAND = FourCharCode('AND '); {  0x414e4420  }
+	kAEOR = FourCharCode('OR  '); {  0x4f522020  }
+	kAENOT = FourCharCode('NOT '); {  0x4e4f5420  }
+                                        {*** ABSOLUTE ORDINAL CONSTANTS  ***}
+	kAEFirst = FourCharCode('firs'); {  0x66697273  }
+	kAELast = FourCharCode('last'); {  0x6c617374  }
+	kAEMiddle = FourCharCode('midd'); {  0x6d696464  }
+	kAEAny = FourCharCode('any '); {  0x616e7920  }
+	kAEAll = FourCharCode('all '); {  0x616c6c20  }
+                                        {*** RELATIVE ORDINAL CONSTANTS  ***}
+	kAENext = FourCharCode('next'); {  0x6e657874  }
+	kAEPrevious = FourCharCode('prev'); {  0x70726576  }
+                                        {*** KEYWORD CONSTANT    ***}
+	keyAECompOperator = FourCharCode('relo'); {  0x72656c6f  }
+	keyAELogicalTerms = FourCharCode('term'); {  0x7465726d  }
+	keyAELogicalOperator = FourCharCode('logc'); {  0x6c6f6763  }
+	keyAEObject1 = FourCharCode('obj1'); {  0x6f626a31  }
+	keyAEObject2 = FourCharCode('obj2'); {  0x6f626a32  }
+                                        {    ... for Keywords for getting fields out of object specifier records. }
+	keyAEDesiredClass = FourCharCode('want'); {  0x77616e74  }
+	keyAEContainer = FourCharCode('from'); {  0x66726f6d  }
+	keyAEKeyForm = FourCharCode('form'); {  0x666f726d  }
+	keyAEKeyData = FourCharCode('seld'); {  0x73656c64  }
+
+>>>>>>> origin/cpstrnew
 const
 {    ... for Keywords for getting fields out of Range specifier records. }
 	keyAERangeStart = FourCharCode('star'); {  0x73746172  }
@@ -792,6 +912,9 @@ const
 	typeLogicalDescriptor = FourCharCode('logi'); {  0x6c6f6769  }
 	typeCompDescriptor = FourCharCode('cmpd'); {  0x636d7064  }
 	typeOSLTokenList = FourCharCode('ostl'); {  0x6F73746C  }
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -806,7 +929,10 @@ const
 	kAEUseRelativeIterators = $0040;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {*** SPECIAL CONSTANTS FOR CUSTOM WHOSE-CLAUSE RESOLUTION }
@@ -839,6 +965,7 @@ type
 	DescPtr = AEDescPtr;
 	DescHandle = DescPtrPtr;
 {$endc} {OLDROUTINENAMES}
+<<<<<<< HEAD
 
 { typedefs providing type checking for procedure pointers }
 type
@@ -1054,10 +1181,43 @@ function NewOSLAccessorUPP(userRoutine: OSLAccessorProcPtr): OSLAccessorUPP; ext
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+
+{ typedefs providing type checking for procedure pointers }
+type
+	OSLAccessorProcPtr = function( desiredClass: DescType; const (*var*) container: AEDesc; containerClass: DescType; form: DescType; const (*var*) selectionData: AEDesc; var value: AEDesc; accessorRefcon: SRefCon ): OSErr;
+	OSLCompareProcPtr = function( oper: DescType; const (*var*) obj1: AEDesc; const (*var*) obj2: AEDesc; var result: Boolean ): OSErr;
+	OSLCountProcPtr = function( desiredType: DescType; containerClass: DescType; const (*var*) container: AEDesc; var result: SIGNEDLONG ): OSErr;
+	OSLDisposeTokenProcPtr = function( var unneededToken: AEDesc ): OSErr;
+	OSLGetMarkTokenProcPtr = function( const (*var*) dContainerToken: AEDesc; containerClass: DescType; var result: AEDesc ): OSErr;
+	OSLGetErrDescProcPtr = function( var appDescPtr: AEDescPtr ): OSErr;
+	OSLMarkProcPtr = function( const (*var*) dToken: AEDesc; const (*var*) markToken: AEDesc; index: SIGNEDLONG ): OSErr;
+	OSLAdjustMarksProcPtr = function( newStart: SIGNEDLONG; newStop: SIGNEDLONG; const (*var*) markToken: AEDesc ): OSErr;
+	OSLAccessorUPP = OSLAccessorProcPtr;
+	OSLCompareUPP = OSLCompareProcPtr;
+	OSLCountUPP = OSLCountProcPtr;
+	OSLDisposeTokenUPP = OSLDisposeTokenProcPtr;
+	OSLGetMarkTokenUPP = OSLGetMarkTokenProcPtr;
+	OSLGetErrDescUPP = OSLGetErrDescProcPtr;
+	OSLMarkUPP = OSLMarkProcPtr;
+	OSLAdjustMarksUPP = OSLAdjustMarksProcPtr;
+{
+ *  NewOSLAccessorUPP()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function NewOSLAccessorUPP( userRoutine: OSLAccessorProcPtr ): OSLAccessorUPP; external name '_NewOSLAccessorUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  NewOSLCompareUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1105,10 +1265,20 @@ function NewOSLCompareUPP( userRoutine: OSLCompareProcPtr ): OSLCompareUPP; exte
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function NewOSLCompareUPP( userRoutine: OSLCompareProcPtr ): OSLCompareUPP; external name '_NewOSLCompareUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  NewOSLCountUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1156,10 +1326,20 @@ function NewOSLCountUPP( userRoutine: OSLCountProcPtr ): OSLCountUPP; external n
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function NewOSLCountUPP( userRoutine: OSLCountProcPtr ): OSLCountUPP; external name '_NewOSLCountUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  NewOSLDisposeTokenUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1207,10 +1387,20 @@ function NewOSLDisposeTokenUPP( userRoutine: OSLDisposeTokenProcPtr ): OSLDispos
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function NewOSLDisposeTokenUPP( userRoutine: OSLDisposeTokenProcPtr ): OSLDisposeTokenUPP; external name '_NewOSLDisposeTokenUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  NewOSLGetMarkTokenUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1258,10 +1448,20 @@ function NewOSLGetMarkTokenUPP( userRoutine: OSLGetMarkTokenProcPtr ): OSLGetMar
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function NewOSLGetMarkTokenUPP( userRoutine: OSLGetMarkTokenProcPtr ): OSLGetMarkTokenUPP; external name '_NewOSLGetMarkTokenUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  NewOSLGetErrDescUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1309,10 +1509,20 @@ function NewOSLGetErrDescUPP( userRoutine: OSLGetErrDescProcPtr ): OSLGetErrDesc
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function NewOSLGetErrDescUPP( userRoutine: OSLGetErrDescProcPtr ): OSLGetErrDescUPP; external name '_NewOSLGetErrDescUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  NewOSLMarkUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1360,10 +1570,20 @@ function NewOSLMarkUPP( userRoutine: OSLMarkProcPtr ): OSLMarkUPP; external name
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function NewOSLMarkUPP( userRoutine: OSLMarkProcPtr ): OSLMarkUPP; external name '_NewOSLMarkUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  NewOSLAdjustMarksUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1411,10 +1631,20 @@ function NewOSLAdjustMarksUPP( userRoutine: OSLAdjustMarksProcPtr ): OSLAdjustMa
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function NewOSLAdjustMarksUPP( userRoutine: OSLAdjustMarksProcPtr ): OSLAdjustMarksUPP; external name '_NewOSLAdjustMarksUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  DisposeOSLAccessorUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1462,10 +1692,20 @@ procedure DisposeOSLAccessorUPP( userUPP: OSLAccessorUPP ); external name '_Disp
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeOSLAccessorUPP( userUPP: OSLAccessorUPP ); external name '_DisposeOSLAccessorUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  DisposeOSLCompareUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1513,10 +1753,20 @@ procedure DisposeOSLCompareUPP( userUPP: OSLCompareUPP ); external name '_Dispos
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeOSLCompareUPP( userUPP: OSLCompareUPP ); external name '_DisposeOSLCompareUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  DisposeOSLCountUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1564,10 +1814,20 @@ procedure DisposeOSLCountUPP( userUPP: OSLCountUPP ); external name '_DisposeOSL
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeOSLCountUPP( userUPP: OSLCountUPP ); external name '_DisposeOSLCountUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  DisposeOSLDisposeTokenUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1615,10 +1875,20 @@ procedure DisposeOSLDisposeTokenUPP( userUPP: OSLDisposeTokenUPP ); external nam
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeOSLDisposeTokenUPP( userUPP: OSLDisposeTokenUPP ); external name '_DisposeOSLDisposeTokenUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  DisposeOSLGetMarkTokenUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1666,10 +1936,20 @@ procedure DisposeOSLGetMarkTokenUPP( userUPP: OSLGetMarkTokenUPP ); external nam
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeOSLGetMarkTokenUPP( userUPP: OSLGetMarkTokenUPP ); external name '_DisposeOSLGetMarkTokenUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  DisposeOSLGetErrDescUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1717,10 +1997,20 @@ procedure DisposeOSLGetErrDescUPP( userUPP: OSLGetErrDescUPP ); external name '_
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeOSLGetErrDescUPP( userUPP: OSLGetErrDescUPP ); external name '_DisposeOSLGetErrDescUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  DisposeOSLMarkUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1768,10 +2058,20 @@ procedure DisposeOSLMarkUPP( userUPP: OSLMarkUPP ); external name '_DisposeOSLMa
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeOSLMarkUPP( userUPP: OSLMarkUPP ); external name '_DisposeOSLMarkUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  DisposeOSLAdjustMarksUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1819,10 +2119,20 @@ procedure DisposeOSLAdjustMarksUPP( userUPP: OSLAdjustMarksUPP ); external name 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeOSLAdjustMarksUPP( userUPP: OSLAdjustMarksUPP ); external name '_DisposeOSLAdjustMarksUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  InvokeOSLAccessorUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1870,10 +2180,20 @@ function InvokeOSLAccessorUPP( desiredClass: DescType; const (*var*) container: 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function InvokeOSLAccessorUPP( desiredClass: DescType; const (*var*) container: AEDesc; containerClass: DescType; form: DescType; const (*var*) selectionData: AEDesc; var value: AEDesc; accessorRefcon: SRefCon; userUPP: OSLAccessorUPP ): OSErr; external name '_InvokeOSLAccessorUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  InvokeOSLCompareUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1921,10 +2241,20 @@ function InvokeOSLCompareUPP( oper: DescType; const (*var*) obj1: AEDesc; const 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function InvokeOSLCompareUPP( oper: DescType; const (*var*) obj1: AEDesc; const (*var*) obj2: AEDesc; var result: Boolean; userUPP: OSLCompareUPP ): OSErr; external name '_InvokeOSLCompareUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  InvokeOSLCountUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1972,10 +2302,20 @@ function InvokeOSLCountUPP( desiredType: DescType; containerClass: DescType; con
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function InvokeOSLCountUPP( desiredType: DescType; containerClass: DescType; const (*var*) container: AEDesc; var result: SIGNEDLONG; userUPP: OSLCountUPP ): OSErr; external name '_InvokeOSLCountUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  InvokeOSLDisposeTokenUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2023,10 +2363,20 @@ function InvokeOSLDisposeTokenUPP( var unneededToken: AEDesc; userUPP: OSLDispos
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function InvokeOSLDisposeTokenUPP( var unneededToken: AEDesc; userUPP: OSLDisposeTokenUPP ): OSErr; external name '_InvokeOSLDisposeTokenUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  InvokeOSLGetMarkTokenUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2074,10 +2424,20 @@ function InvokeOSLGetMarkTokenUPP( const (*var*) dContainerToken: AEDesc; contai
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function InvokeOSLGetMarkTokenUPP( const (*var*) dContainerToken: AEDesc; containerClass: DescType; var result: AEDesc; userUPP: OSLGetMarkTokenUPP ): OSErr; external name '_InvokeOSLGetMarkTokenUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  InvokeOSLGetErrDescUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2125,10 +2485,20 @@ function InvokeOSLGetErrDescUPP( var appDescPtr: AEDescPtr; userUPP: OSLGetErrDe
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function InvokeOSLGetErrDescUPP( var appDescPtr: AEDescPtr; userUPP: OSLGetErrDescUPP ): OSErr; external name '_InvokeOSLGetErrDescUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  InvokeOSLMarkUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2176,6 +2546,15 @@ function InvokeOSLMarkUPP( const (*var*) dToken: AEDesc; const (*var*) markToken
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function InvokeOSLMarkUPP( const (*var*) dToken: AEDesc; const (*var*) markToken: AEDesc; index: SIGNEDLONG; userUPP: OSLMarkUPP ): OSErr; external name '_InvokeOSLMarkUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  InvokeOSLAdjustMarksUPP()
  *  
@@ -2183,11 +2562,15 @@ function InvokeOSLMarkUPP( const (*var*) dToken: AEDesc; const (*var*) markToken
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   available as macro/inline
  }
 function InvokeOSLAdjustMarksUPP( newStart: SIGNEDLONG; newStop: SIGNEDLONG; const (*var*) markToken: AEDesc; userUPP: OSLAdjustMarksUPP ): OSErr; external name '_InvokeOSLAdjustMarksUPP';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2205,6 +2588,9 @@ function InvokeOSLAdjustMarksUPP( newStart: SIGNEDLONG; newStop: SIGNEDLONG; con
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 {
  *  AEObjectInit()
@@ -2214,6 +2600,7 @@ function InvokeOSLAdjustMarksUPP( newStart: SIGNEDLONG; newStop: SIGNEDLONG; con
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ObjectSupportLib 1.0 and later
  }
@@ -2257,10 +2644,13 @@ function InvokeOSLAdjustMarksUPP( newStart: SIGNEDLONG; newStop: SIGNEDLONG; con
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+=======
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ObjectSupportLib 1.0 and later
  }
 function AEObjectInit: OSErr; external name '_AEObjectInit';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -2270,6 +2660,10 @@ function AEObjectInit: OSErr; external name '_AEObjectInit';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 { Not done by inline, but by direct linking into code.  It sets up the pack
   such that further calls can be via inline }
@@ -2279,6 +2673,9 @@ function AEObjectInit: OSErr; external name '_AEObjectInit';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
  *  Mac OS X threading:
  *    Thread safe since version 10.2
  *  
@@ -2288,6 +2685,7 @@ function AEObjectInit: OSErr; external name '_AEObjectInit';
  *    Non-Carbon CFM:   in ObjectSupportLib 1.0 and later
  }
 function AESetObjectCallbacks( myCompareProc: OSLCompareUPP; myCountProc: OSLCountUPP; myDisposeTokenProc: OSLDisposeTokenUPP; myGetMarkTokenProc: OSLGetMarkTokenUPP; myMarkProc: OSLMarkUPP; myAdjustMarksProc: OSLAdjustMarksUPP; myGetErrDescProcPtr: OSLGetErrDescUPP ): OSErr; external name '_AESetObjectCallbacks';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2302,6 +2700,9 @@ function AESetObjectCallbacks( myCompareProc: OSLCompareUPP; myCountProc: OSLCou
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
@@ -2323,6 +2724,7 @@ function AEResolve( const (*var*) objectSpecifier: AEDesc; callbackFlags: SInt16
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -2333,6 +2735,9 @@ function AEResolve( const (*var*) objectSpecifier: AEDesc; callbackFlags: SInt16
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
@@ -2354,6 +2759,7 @@ function AEInstallObjectAccessor( desiredClass: DescType; containerType: DescTyp
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -2364,6 +2770,9 @@ function AEInstallObjectAccessor( desiredClass: DescType; containerType: DescTyp
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
@@ -2385,6 +2794,7 @@ function AERemoveObjectAccessor( desiredClass: DescType; containerType: DescType
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -2395,6 +2805,9 @@ function AERemoveObjectAccessor( desiredClass: DescType; containerType: DescType
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
@@ -2416,6 +2829,7 @@ function AEGetObjectAccessor( desiredClass: DescType; containerType: DescType; v
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -2426,6 +2840,9 @@ function AEGetObjectAccessor( desiredClass: DescType; containerType: DescType; v
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
@@ -2447,6 +2864,7 @@ function AEDisposeToken( var theToken: AEDesc ): OSErr; external name '_AEDispos
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -2460,6 +2878,9 @@ function AEDisposeToken( var theToken: AEDesc ): OSErr; external name '_AEDispos
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2470,6 +2891,7 @@ function AEDisposeToken( var theToken: AEDesc ): OSErr; external name '_AEDispos
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ObjectSupportLib 1.0 and later
  }
@@ -2602,6 +3024,11 @@ function AEDisposeToken( var theToken: AEDesc ): OSErr; external name '_AEDispos
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in ObjectSupportLib 1.0 and later
  }
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in ObjectSupportLib 1.0 and later
+ }
+>>>>>>> origin/cpstrnew
 function AECallObjectAccessor( desiredClass: DescType; const (*var*) containerToken: AEDesc; containerClass: DescType; keyForm: DescType; const (*var*) keyData: AEDesc; var token: AEDesc ): OSErr; external name '_AECallObjectAccessor';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
@@ -2611,6 +3038,7 @@ function AECallObjectAccessor( desiredClass: DescType; const (*var*) containerTo
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -2619,3 +3047,6 @@ end.
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

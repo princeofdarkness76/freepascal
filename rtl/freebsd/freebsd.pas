@@ -187,14 +187,20 @@ Type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {$ifndef FPC_USE_LIBC}
 function fpgetfsstat(buf:pstatfs;bufsize:clong;flags:cint):cint;
 {$endif} 
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 Const
  MAP_FILE         = $0000;  { map from file (default) }
  MAP_ANON         = $1000;  { allocated from memory, swap space }
@@ -354,6 +360,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/graemeg/clock_gettime
 
@@ -383,6 +390,8 @@ end;
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/graemeg/clock_gettime
+=======
+>>>>>>> origin/cpstrnew
 {$ENDIF}
 
 function kernproc_getgenvalue(pid:pid_t;kernproc_variable:cint;var s:ansistring):cint;

@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
 =======
 #   Makefile.fpc for Free Component Library
@@ -16,10 +17,14 @@
 =======
 #   Makefile.fpc for Free Component Library
 >>>>>>> origin/cpstrnew
+=======
+#   Makefile.fpc for Free Component Library
+>>>>>>> origin/cpstrnew
 #
 
 [package]
 name=fcl-extra
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -33,6 +38,8 @@ packages=rtl fpmkunit
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 version=2.5.1
@@ -78,11 +85,14 @@ sourcedir=src/$(OS_TARGET) src
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -92,6 +102,7 @@ fpcpackage=y
 [default]
 fpcdir=../..
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -193,6 +204,10 @@ endif
 [rules]
 .NOTPARALLEL:
 >>>>>>> graemeg/cpstrnew
+=======
+[rules]
+.NOTPARALLEL:
+>>>>>>> origin/cpstrnew
 =======
 [rules]
 .NOTPARALLEL:

@@ -86,6 +86,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     _reserved: array[0..(2)-1] of id;
     {$else}
     _compatibilityPadding: array[0..(192)-1] of char;
@@ -104,6 +105,11 @@ var
     {$else}
         _compatibilityPadding: array[0..191] of char;
 >>>>>>> graemeg/cpstrnew
+=======
+        _reserved: array[0..1] of id;
+    {$else}
+        _compatibilityPadding: array[0..191] of char;
+>>>>>>> origin/cpstrnew
 =======
         _reserved: array[0..1] of id;
     {$else}

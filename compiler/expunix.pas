@@ -63,6 +63,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   cgcpu,hlcgobj,hlcgcpu,
 =======
   cgcpu,
@@ -73,6 +74,9 @@ uses
 =======
   cgcpu,
 >>>>>>> graemeg/cpstrnew
+=======
+  cgcpu,
+>>>>>>> origin/cpstrnew
 =======
   cgcpu,
 >>>>>>> origin/cpstrnew
@@ -156,6 +160,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   create_hlcodegen;
 =======
   create_codegen;
@@ -166,6 +171,9 @@ begin
 =======
   create_codegen;
 >>>>>>> graemeg/cpstrnew
+=======
+  create_codegen;
+>>>>>>> origin/cpstrnew
 =======
   create_codegen;
 >>>>>>> origin/cpstrnew
@@ -190,6 +198,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
              (target_info.system in [system_i386_freebsd,system_x86_64_freebsd,system_x86_64_linux,system_i386_linux,system_x86_64_solaris,system_i386_solaris,system_i386_android,system_x86_64_dragonfly]) then
 =======
              (target_info.system in [system_i386_freebsd,system_x86_64_freebsd,system_x86_64_linux,system_i386_linux,system_x86_64_solaris,system_i386_solaris]) then
@@ -200,6 +209,9 @@ begin
 =======
              (target_info.system in [system_i386_freebsd,system_x86_64_freebsd,system_x86_64_linux,system_i386_linux,system_x86_64_solaris,system_i386_solaris]) then
 >>>>>>> graemeg/cpstrnew
+=======
+             (target_info.system in [system_i386_freebsd,system_x86_64_freebsd,system_x86_64_linux,system_i386_linux,system_x86_64_solaris,system_i386_solaris]) then
+>>>>>>> origin/cpstrnew
 =======
              (target_info.system in [system_i386_freebsd,system_x86_64_freebsd,system_x86_64_linux,system_i386_linux,system_x86_64_solaris,system_i386_solaris]) then
 >>>>>>> origin/cpstrnew
@@ -234,6 +246,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    destroy_hlcodegen;
 =======
    destroy_codegen;
@@ -244,6 +257,9 @@ begin
 =======
    destroy_codegen;
 >>>>>>> graemeg/cpstrnew
+=======
+   destroy_codegen;
+>>>>>>> origin/cpstrnew
 =======
    destroy_codegen;
 >>>>>>> origin/cpstrnew

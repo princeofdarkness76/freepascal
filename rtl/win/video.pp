@@ -642,6 +642,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                  LineBuf[BufCounter].UniCodeChar := Widechar(mapcp850[WordRec(VideoBuf^[BufCounter]).One].unicode)
                else
                  LineBuf[BufCounter].UniCodeChar := Widechar(WordRec(VideoBuf^[BufCounter]).One);
@@ -664,16 +665,23 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
                  LineBuf^[BufCounter].UniCodeChar := Widechar(mapcp850[WordRec(VideoBuf^[BufCounter]).One].unicode)
+=======
+                 LineBuf[BufCounter].UniCodeChar := Widechar(mapcp850[WordRec(VideoBuf^[BufCounter]).One].unicode)
+>>>>>>> origin/cpstrnew
                else
-                 LineBuf^[BufCounter].UniCodeChar := Widechar(WordRec(VideoBuf^[BufCounter]).One);
+                 LineBuf[BufCounter].UniCodeChar := Widechar(WordRec(VideoBuf^[BufCounter]).One);
                { If (WordRec(VideoBuf^[BufCounter]).Two and $80)<>0 then
                  LineBuf^[BufCounter].Attributes := $100+WordRec(VideoBuf^[BufCounter]).Two
                else }
+<<<<<<< HEAD
                LineBuf^[BufCounter].Attributes := WordRec(VideoBuf^[BufCounter]).Two;
 >>>>>>> origin/fixes_2_2
 =======
                LineBuf[BufCounter].Attributes := WordRec(VideoBuf^[BufCounter]).Two;
 >>>>>>> origin/fixes_2.4
+=======
+               LineBuf[BufCounter].Attributes := WordRec(VideoBuf^[BufCounter]).Two;
+>>>>>>> origin/cpstrnew
 
                Inc(BufCounter);
              end; { for }
@@ -712,6 +720,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         WriteConsoleOutputW(TextRec(Output).Handle, @LineBuf, BufSize, BufCoord, WriteRegion)
       else
         WriteConsoleOutput(TextRec(Output).Handle, @LineBuf, BufSize, BufCoord, WriteRegion);
@@ -728,6 +737,11 @@ begin
       else
         WriteConsoleOutput(TextRec(Output).Handle, @LineBuf, BufSize, BufCoord, WriteRegion);
 >>>>>>> origin/fixes_2.4
+=======
+        WriteConsoleOutputW(TextRec(Output).Handle, @LineBuf, BufSize, BufCoord, WriteRegion)
+      else
+        WriteConsoleOutput(TextRec(Output).Handle, @LineBuf, BufSize, BufCoord, WriteRegion);
+>>>>>>> origin/cpstrnew
 
       move(VideoBuf^,OldVideoBuf^,VideoBufSize);
    end;

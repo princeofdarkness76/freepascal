@@ -273,6 +273,9 @@ var
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   if Offset>length(S) then
     begin
     Result := False;
@@ -280,10 +283,13 @@ begin
     Exit;
     end;
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
   {if the regex string hasn't been parsed yet, do so}
   if (FStateCount = 0) then begin
     if not Parse(ErrorPos, ErrorCode) then
@@ -497,6 +503,7 @@ begin
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if not (aMatchType in [mtChar,mtTerminal,mtNone]) then FRegexType := rtRegEx;
 =======
   if not (aMatchType in [mtChar,mtTerminal]) then FRegexType := rtRegEx;
@@ -504,10 +511,14 @@ begin
 =======
   if not (aMatchType in [mtChar,mtTerminal]) then FRegexType := rtRegEx;
 >>>>>>> origin/fixes_2_2
+=======
+  if not (aMatchType in [mtChar,mtTerminal,mtNone]) then FRegexType := rtRegEx;
+>>>>>>> origin/cpstrnew
 end;
 {--------}
 procedure TRegexEngine.rcClear;
 var
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   i, j : integer;
@@ -517,6 +528,9 @@ var
 =======
   i : integer;
 >>>>>>> origin/fixes_2_2
+=======
+  i, j : integer;
+>>>>>>> origin/cpstrnew
 begin
   {free all items in the state transition table}
   for i := 0 to FStateCount-1 do begin
@@ -524,12 +538,16 @@ begin
       if (sdMatchType = mtClass) or
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
          (sdMatchType = mtNegClass) and
          (sdClass <> nil) then
         begin
           for j := i+1 to FStateCount-1 do
            if (FStateTable[j].sdClass = sdClass) then
              FStateTable[j].sdClass := nil;
+<<<<<<< HEAD
           FreeMem(sdClass, sizeof(TCharSet));
         end;
       // I am not sure if the next line is necessary. rcAddState set all values, so
@@ -545,6 +563,13 @@ begin
         if (sdClass <> nil) then
           FreeMem(sdClass, sizeof(TCharSet));
 >>>>>>> origin/fixes_2_2
+=======
+          FreeMem(sdClass, sizeof(TCharSet));
+        end;
+      // I am not sure if the next line is necessary. rcAddState set all values, so
+      // it shouldn't be necessary to clear its contents?
+      // FillChar(FStateTable[i],SizeOf(FStateTable[i]),#0);
+>>>>>>> origin/cpstrnew
     end;
   end;
   {clear the state transition table}
@@ -815,12 +840,17 @@ begin
         inc(FPosn);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         {always handle expressions with parentheses as regular-expression}
         FRegexType := rtRegEx;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+        {always handle expressions with parentheses as regular-expression}
+        FRegexType := rtRegEx;
+>>>>>>> origin/cpstrnew
       end;
     '[' :
       begin
@@ -866,6 +896,9 @@ begin
       end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
     '\' :
       begin
         if (FPosn+1)^ in ['d','D','s','S','w','W'] then begin
@@ -882,10 +915,13 @@ begin
         else
           Result := rcParseChar;
       end;
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
   else
     {otherwise parse a single character}
     Result := rcParseChar;
@@ -945,11 +981,15 @@ begin
     ch := rcReturnEscapeChar;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FRegexType := rtRegEx;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    FRegexType := rtRegEx;
+>>>>>>> origin/cpstrnew
     end
   else
     ch :=FPosn^;
@@ -1083,12 +1123,17 @@ begin
     rcSetState(EndState1, FStateCount, UnusedState);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     {always handle expressions with a pipe as regular-expression}
     FRegexType := rtRegEx;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    {always handle expressions with a pipe as regular-expression}
+    FRegexType := rtRegEx;
+>>>>>>> origin/cpstrnew
   end;
 end;
 {--------}
@@ -1247,12 +1292,17 @@ begin
               end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             {always handle expressions with braces as regular-expression}
             FRegexType := rtRegEx;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+            {always handle expressions with braces as regular-expression}
+            FRegexType := rtRegEx;
+>>>>>>> origin/cpstrnew
           end;
 
   else

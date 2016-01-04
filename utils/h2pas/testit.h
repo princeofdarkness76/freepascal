@@ -90,6 +90,9 @@ void   gdk_gc_set_dashes          (GdkGC            *gc,
                                    gint              n);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 
 typedef struct FnTable {
   int (*Fn1)( void );
@@ -99,7 +102,10 @@ typedef struct FnTable {
 
 
 void f(int a, char* p[]);
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew

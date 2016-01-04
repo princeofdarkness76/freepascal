@@ -1293,6 +1293,7 @@ function inflateSyncPoint(var z: z_stream): cint; cdecl; external libz name 'inf
 function get_crc_table: pointer; cdecl; external libz name 'get_crc_table';
 
 function zlibAllocMem(AppData: Pointer; Items, Size: UInt): Pointer; cdecl;
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -1362,6 +1363,8 @@ function zlibAllocMem(AppData: Pointer; Items, Size: Integer): Pointer; cdecl;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 procedure zlibFreeMem(AppData, Block: Pointer);  cdecl;
 
 implementation
@@ -1394,6 +1397,7 @@ begin
 end;
 
 function zlibAllocMem(AppData: Pointer; Items, Size: UInt): Pointer; cdecl;
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -1435,6 +1439,8 @@ function zlibAllocMem(AppData: Pointer; Items, Size: Integer): Pointer; cdecl;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 
   begin
     Result := AllocMem(Items * Size);

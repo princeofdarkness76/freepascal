@@ -31,6 +31,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       systems,dbgbase,cgbase,
       symconst,symtype,symdef,symsym,symtable,symbase,
 =======
@@ -38,6 +39,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       dbgbase,cgbase,
@@ -116,6 +119,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         tagtypeprefix: ansistring;
         function use_tag_prefix(def : tdef) : boolean;
 =======
@@ -124,6 +128,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         { tsym writing }
@@ -165,6 +171,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         function  base_stabs_str(typ: longint; const other, desc, value: ansistring): ansistring;overload;
         function  base_stabs_str(const typ, other, desc, value: ansistring): ansistring;overload;virtual;
         function  gen_procdef_startsym_stabs(def: tprocdef): TAsmList;virtual;
@@ -175,6 +182,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       protected
@@ -220,12 +229,17 @@ interface
         procedure referencesections(list:TAsmList);override;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         constructor Create;override;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+
+        constructor Create;override;
+>>>>>>> origin/cpstrnew
       end;
 
 
@@ -257,11 +271,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       aasmbase,procinfo,
@@ -540,6 +557,9 @@ implementation
       var
         spec    : string[3];
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
         varsize : asizeint;
         newss   : ansistring;
         ss      : pansistring absolute arg;
@@ -589,10 +609,14 @@ implementation
                 { how can a record/object/class contain an open array? (JM) }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {$ifdef cpu16bitaddr}
                 if varsize>$fff then
                   varsize:=$fff;
 {$else cpu16bitaddr}
+<<<<<<< HEAD
                 if varsize>$fffffff then
                   varsize:=$fffffff;
 {$endif cpu16bitaddr}
@@ -604,6 +628,11 @@ implementation
                 if varsize>$fffffff then
                   varsize:=$fffffff;
 >>>>>>> origin/fixes_2_2
+=======
+                if varsize>$fffffff then
+                  varsize:=$fffffff;
+{$endif cpu16bitaddr}
+>>>>>>> origin/cpstrnew
                 newss:=def_stabstr_evaluate(nil,'$1:$2,$3,$4;',[GetSymName(tfieldvarsym(p)),
                                      spec+def_stab_number(tfieldvarsym(p).vardef),
                                      tostr(TConstExprInt(tfieldvarsym(p).fieldoffset)*8),tostr(varsize*8)])
@@ -853,7 +882,7 @@ implementation
             st:=def_stabstr_evaluate(def,'"'+symname+':$1$2=',[stabchar,def_stab_number(def)]);
           end;
         st:=st+ss;
-        { line info is set to 0 for all defs, because the def can be in an other
+        { line info is set to 0 for all defs, because the def can be in another
           unit and then the linenumber is invalid in the current sourcefile }
         st:=st+def_stabstr_evaluate(def,'",${N_LSYM},0,0,0',[]);
         { add to list }
@@ -914,12 +943,32 @@ implementation
         if def.size <> std_param_align then
           st:='@s'+tostr(def.size*8)+';e'
         else
+<<<<<<< HEAD
           st:='e';
         p := tenumsym(def.firstenum);
         while assigned(p) do
           begin
             st:=st+GetSymName(p)+':'+tostr(p.value)+',';
             p:=p.nextenum;
+=======
+          result:='e';
+        { the if-test is required because pred(def.minval) might overflow;
+          the longint() typecast should be safe because stabs is not
+          supported for 64 bit targets }
+        if (def.minval<>lowerbound) then
+          for i:=lowerbound to pred(longint(def.minval)) do
+            result:=result+'<invalid>:'+tostr(i)+',';
+
+        for i := 0 to def.symtable.SymList.Count - 1 do
+          begin
+            p := tenumsym(def.symtable.SymList[i]);
+            if p.value<def.minval then
+              continue
+            else
+            if p.value>def.maxval then
+              break;
+            result:=result+GetSymName(p)+':'+tostr(p.value)+',';
+>>>>>>> origin/cpstrnew
           end;
         { the final ',' is required to have a valid stabs }
         st:=st+';';
@@ -989,7 +1038,8 @@ implementation
         case def.floattype of
           s32real,
           s64real,
-          s80real:
+          s80real,
+          sc80real:
             ss:=def_stabstr_evaluate(def,'r$1;${savesize};0;',[def_stab_number(s32inttype)]);
           s64currency,
           s64comp:
@@ -1191,7 +1241,7 @@ implementation
         else
           do_write_object(list,def);
         { VMT symbol }
-        if (oo_has_vmt in tobjectdef(def).objectoptions) and
+        if (oo_has_vmt in def.objectoptions) and
            assigned(def.owner) and
            assigned(def.owner.name) then
           list.concat(Tai_stab.create(stab_stabs,strpnew('"vmt_'+GetSymTableName(def.owner)+tobjectdef(def).objname^+':S'+
@@ -1203,8 +1253,17 @@ implementation
       var
         ss : ansistring;
       begin
+<<<<<<< HEAD
         ss:=def_stabstr_evaluate(def,'${numberstring};',[]);
 >>>>>>> origin/fixes_2_2
+=======
+        if not assigned(vardatadef) then
+          exit;
+
+        ss:='s'+tostr(vardatadef.size);
+        vardatadef.symtable.SymList.ForEachCall(@field_add_stabstr,@ss);
+        ss[length(ss)]:=';';
+>>>>>>> origin/cpstrnew
         write_def_stabstr(list,def,ss);
       end;
 
@@ -2162,7 +2221,9 @@ implementation
         hs : string;
         ss : ansistring;
       begin
-        if not assigned(def.procstarttai) then
+        if not(def.in_currentunit) or
+           { happens for init procdef of units without init section }
+           not assigned(def.procstarttai) then
           exit;
 
         { mark as used so the local type defs also be written }
@@ -2225,6 +2286,7 @@ implementation
         ss:=ss+def.mangledname;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if not(af_stabs_use_function_absolute_addresses in target_asm.flags) then
 =======
         if (tf_use_function_relative_addresses in target_info.flags) then
@@ -2232,6 +2294,9 @@ implementation
 =======
         if (tf_use_function_relative_addresses in target_info.flags) then
 >>>>>>> origin/fixes_2_2
+=======
+        if not(af_stabs_use_function_absolute_addresses in target_asm.flags) then
+>>>>>>> origin/cpstrnew
           begin
             ss:=ss+'-';
             if target_info.cpu=cpu_powerpc64 then
@@ -2245,6 +2310,7 @@ implementation
         ss:=tostr(N_RBRAC)+',0,0,'+stabsendlabel.name;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if not(af_stabs_use_function_absolute_addresses in target_asm.flags) then
 =======
         if (tf_use_function_relative_addresses in target_info.flags) then
@@ -2252,6 +2318,9 @@ implementation
 =======
         if (tf_use_function_relative_addresses in target_info.flags) then
 >>>>>>> origin/fixes_2_2
+=======
+        if not(af_stabs_use_function_absolute_addresses in target_asm.flags) then
+>>>>>>> origin/cpstrnew
           begin
             ss:=ss+'-';
             if target_info.cpu=cpu_powerpc64 then
@@ -2677,7 +2746,7 @@ implementation
         ss : ansistring;
       begin
         ss:='';
-        if (sym.owner.symtabletype=objecTSymtable) and
+        if (sym.owner.symtabletype in [ObjectSymtable,recordsymtable]) and
            (sp_static in sym.symoptions) then
           ss:=sym_stabstr_evaluate(sym,'"${ownername}__${name}:S$1",${N_LCSYM},0,${line},${mangledname}',
               [def_stab_number(sym.vardef)]);
@@ -2776,9 +2845,28 @@ implementation
       end;
 
 
+    function TDebugInfoStabs.get_appendsym_paravar_reg(sym:tparavarsym;const typ,stabstr:string;reg: tregister): ansistring;
+      var
+        ltyp: string[1];
+        regidx : Tregisterindex;
+      begin
+        result:='';
+        if typ='p' then
+          ltyp:='R'
+        else
+          ltyp:='a';
+        regidx:=findreg_by_number(reg);
+        { "eax", "ecx", "edx", "ebx", "esp", "ebp", "esi", "edi", "eip", "ps", "cs", "ss", "ds", "es", "fs", "gs", }
+        { this is the register order for GDB}
+        if regidx<>0 then
+          result:=sym_stabstr_evaluate(sym,'"${name}:$1",${N_RSYM},0,${line},$2',[ltyp+stabstr,tostr(longint(regstabs_table[regidx]))]);
+      end;
+
+
     procedure TDebugInfoStabs.appendsym_paravar(list:TAsmList;sym:tparavarsym);
       var
         ss : ansistring;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         c  : string[1];
@@ -2794,6 +2882,11 @@ implementation
         regidx : Tregisterindex;
         c : char;
 >>>>>>> origin/fixes_2_2
+=======
+        c  : string[1];
+        st : string;
+        regidx : Tregisterindex;
+>>>>>>> origin/cpstrnew
       begin
         ss:='';
         { set loc to LOC_REFERENCE to get somewhat usable debugging info for -Or }
@@ -2840,6 +2933,7 @@ implementation
               begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 if not(is_class(tprocdef(sym.owner.defowner).struct)) then
 =======
                 if not(is_class(tprocdef(sym.owner.defowner)._class)) then
@@ -2847,6 +2941,9 @@ implementation
 =======
                 if not(is_class(tprocdef(sym.owner.defowner)._class)) then
 >>>>>>> origin/fixes_2_2
+=======
+                if not(is_class(tprocdef(sym.owner.defowner).struct)) then
+>>>>>>> origin/cpstrnew
                   c:='v'
                 else
                   c:='p';
@@ -2898,16 +2995,25 @@ implementation
 =======
 >>>>>>> origin/fixes_2_2
                   ss:=sym_stabstr_evaluate(sym,'"$$t:$1",${N_TSYM},0,0,$2',
-                        [c+def_stab_number(tprocdef(sym.owner.defowner)._class),tostr(sym.localloc.reference.offset)])
+                        [c+def_stab_number(tprocdef(sym.owner.defowner).struct),tostr(sym.localloc.reference.offset)])
                 else
                   begin
+                    if (c='p') then
+                      c:='R'
+                    else
+                      c:='a';
                     regidx:=findreg_by_number(sym.localloc.register);
+<<<<<<< HEAD
                     ss:=sym_stabstr_evaluate(sym,'"$$t:r$1",${N_RSYM},0,0,$2',
                         [c+def_stab_number(tprocdef(sym.owner.defowner)._class),tostr(regstabs_table[regidx])]);
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+                    ss:=sym_stabstr_evaluate(sym,'"$$t:$1",${N_RSYM},0,0,$2',
+                        [c+def_stab_number(tprocdef(sym.owner.defowner).struct),tostr(regstabs_table[regidx])]);
+>>>>>>> origin/cpstrnew
                   end
               end;
           end
@@ -2929,6 +3035,7 @@ implementation
               LOC_FPUREGISTER,
               LOC_CFPUREGISTER :
                 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                   ss:=get_appendsym_paravar_reg(sym,c,st,sym.localloc.register);
@@ -3024,17 +3131,46 @@ implementation
                   { this is the register order for GDB}
                   if regidx<>0 then
                     ss:=sym_stabstr_evaluate(sym,'"${name}:$1",${N_RSYM},0,${line},$2',[st,tostr(longint(regstabs_table[regidx]))]);
+=======
+                  ss:=get_appendsym_paravar_reg(sym,c,st,sym.localloc.register);
+>>>>>>> origin/cpstrnew
                 end;
               LOC_REFERENCE :
                 begin
-                  st:=c+st;
+                  { When the *value* of a parameter (so not its address!) is
+                    copied into a local variable, you have to generate two
+                    stabs: one for the parmeter, and one for the local copy.
+                    Not doing this breaks debugging under e.g. SPARC. Doc:
+                    http://sourceware.org/gdb/current/onlinedocs/stabs_4.html#SEC26
+                  }
+                  if (c='p') and
+                     not is_open_string(sym.vardef) and
+                     ((sym.paraloc[calleeside].location^.loc<>sym.localloc.loc) or
+                      ((sym.localloc.loc in [LOC_REFERENCE,LOC_CREFERENCE]) and
+                       ((sym.paraloc[calleeside].location^.reference.index<>sym.localloc.reference.base) or
+                        (sym.paraloc[calleeside].location^.reference.offset<>sym.localloc.reference.offset))) or
+                      ((sym.localloc.loc in [LOC_REGISTER,LOC_CREGISTER,LOC_MMREGISTER,LOC_CMMREGISTER,LOC_FPUREGISTER,LOC_CFPUREGISTER]) and
+                       (sym.localloc.register<>sym.paraloc[calleeside].location^.register))) then
+                    begin
+                      if not(sym.paraloc[calleeside].location^.loc in [LOC_REFERENCE,LOC_CREFERENCE]) then
+                        ss:=get_appendsym_paravar_reg(sym,c,st,sym.paraloc[calleeside].location^.register)
+                      else
+                        ss:=sym_stabstr_evaluate(sym,'"${name}:$1",${N_TSYM},0,${line},$2',[c+st,tostr(sym.paraloc[calleeside].location^.reference.offset)]);
+                      write_sym_stabstr(list,sym,ss);
+                      { second stab has no parameter specifier }
+                      c:='';
+                    end;
                   { offset to ebp => will not work if the framepointer is esp
                     so some optimizing will make things harder to debug }
+<<<<<<< HEAD
                   ss:=sym_stabstr_evaluate(sym,'"${name}:$1",${N_TSYM},0,${line},$2',[st,tostr(sym.localloc.reference.offset)])
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+                  ss:=sym_stabstr_evaluate(sym,'"${name}:$1",${N_TSYM},0,${line},$2',[c+st,tostr(sym.localloc.reference.offset)])
+>>>>>>> origin/cpstrnew
                 end;
               else
                 internalerror(2003091814);
@@ -3531,6 +3667,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         dbgtype:=dbg_stabs;
         stabsdir:=stab_stabs;
 
@@ -3553,6 +3690,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         vardatadef:=nil;

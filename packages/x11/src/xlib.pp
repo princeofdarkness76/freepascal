@@ -1270,10 +1270,14 @@ type
 type
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   funcdisp    = function(display:PDisplay):cint;cdecl;
   funcifevent = function(display:PDisplay; event:PXEvent; p : TXPointer):TBoolResult;cdecl;
   chararr32   = array[0..31] of char;
   pchararr32  = chararr32;
+<<<<<<< HEAD
 =======
   funcdisp = function(display:PDisplay):cint;cdecl;
   funcifevent = function(display:PDisplay; event:PXEvent; p : TXPointer):TBool;cdecl;
@@ -1284,6 +1288,8 @@ type
   funcifevent = function(display:PDisplay; event:PXEvent; p : TXPointer):TBool;cdecl;
   chararr32 = array[0..31] of char;
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 
 const
   AllPlanes : culong = culong(not 0);

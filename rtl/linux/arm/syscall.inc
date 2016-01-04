@@ -450,6 +450,7 @@ asm
   bl    seterrno
   mvn   r0,#0
 .LExit:
+<<<<<<< HEAD
 =======
   Jump to FPC_SYSCALL0 because code for FPC_SYSCALL0-FPC_SYSCALL3 is the same.
 }
@@ -481,6 +482,8 @@ asm
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 
@@ -506,6 +509,7 @@ asm
   bl    seterrno
   mvn   r0,#0
 .LExit:
+<<<<<<< HEAD
 =======
   This function loads some parameters from stack and calls FPC_SYSCALL0.
 }
@@ -524,6 +528,8 @@ asm
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 

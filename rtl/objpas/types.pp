@@ -179,6 +179,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   STATFLAG_NOOPEN    	      = 2;
 =======
   STATFLAG_NOOPEN    	      = 2; 
@@ -189,6 +190,9 @@ const
 =======
   STATFLAG_NOOPEN    	      = 2; 
 >>>>>>> graemeg/cpstrnew
+=======
+  STATFLAG_NOOPEN    	      = 2; 
+>>>>>>> origin/cpstrnew
 =======
   STATFLAG_NOOPEN    	      = 2; 
 >>>>>>> origin/cpstrnew
@@ -296,6 +300,7 @@ type
 
 >>>>>>> origin/fixes_2_2
 type
+<<<<<<< HEAD
   tagSTATSTG =
 {$ifndef FPC_REQUIRES_PROPER_ALIGNMENT}
   packed
@@ -305,6 +310,9 @@ type
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  tagSTATSTG = record
+>>>>>>> origin/cpstrnew
      pwcsName      : POleStr;
      dwType        : DWord;
      cbSize        : Large_uint;
@@ -464,6 +472,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if IsRectEmpty(lRect) then
 =======
   if IsRectEmpty(Rect) then
@@ -474,6 +483,9 @@ begin
 =======
   if IsRectEmpty(Rect) then
 >>>>>>> graemeg/cpstrnew
+=======
+  if IsRectEmpty(Rect) then
+>>>>>>> origin/cpstrnew
 =======
   if IsRectEmpty(Rect) then
 >>>>>>> origin/cpstrnew
@@ -489,6 +501,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   end;
 =======
   end;  
@@ -499,6 +512,9 @@ begin
 =======
   end;  
 >>>>>>> graemeg/cpstrnew
+=======
+  end;  
+>>>>>>> origin/cpstrnew
 =======
   end;  
 >>>>>>> origin/cpstrnew

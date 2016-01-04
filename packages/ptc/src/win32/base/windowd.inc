@@ -8,6 +8,9 @@
     License as published by the Free Software Foundation; either
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
     version 2.1 of the License, or (at your option) any later version
     with the following modification:
 
@@ -21,12 +24,15 @@
     this library, you may extend this exception to your version of the library,
     but you are not obligated to do so. If you do not wish to do so, delete this
     exception statement from your version.
+<<<<<<< HEAD
 =======
     version 2.1 of the License, or (at your option) any later version.
 >>>>>>> graemeg/fixes_2_2
 =======
     version 2.1 of the License, or (at your option) any later version.
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 
     This library is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -40,6 +46,9 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 type
   TWin32Window = class
   private
@@ -64,6 +73,7 @@ type
     procedure internal_create(const AWndClass, ATitle: string; AExtra, AStyle: DWord;
                               AShow, AX, AY, AWidth, AHeight: Integer; ACenter, AMultithreaded: Boolean;
 			      AData: Pointer);
+<<<<<<< HEAD
 
     procedure Defaults;
     procedure Close;
@@ -129,3 +139,25 @@ Type
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+
+    procedure Defaults;
+    procedure Close;
+    function GetThread: DWord;
+    class procedure ThreadFunction(AOwner: TWin32Window);
+  public
+    constructor Create(window: HWND);
+    constructor Create(const AWndClass, ATitle: string; AExtra, AStyle: DWord;
+                       AShow, AX, AY, AWidth, AHeight: Integer; ACenter, AMultithreaded: Boolean;
+		       AData: Pointer = nil);
+    destructor Destroy; override;
+    procedure Cursor(AFlag: Boolean);
+    procedure ConfineCursor(AFlag: Boolean);
+    procedure Resize(AWidth, AHeight: Integer);
+    procedure Update(AForce: Boolean = False; AWaitForMessage: Boolean = False);
+    property Handle: HWND read FWindow;
+    property Thread: DWord read GetThread;
+    property Managed: Boolean read FManaged;
+    property Multithreaded: Boolean read FMultithreaded;
+  end;
+>>>>>>> origin/cpstrnew

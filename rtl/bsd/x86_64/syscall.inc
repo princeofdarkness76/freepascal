@@ -278,6 +278,9 @@ asm
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 function fpsysCall(sysnr,param1,param2,param3,param4,param5,param6 : TSysParam):TSysResult; assembler;[public,alias:'FPC_DOSYS6'];
 
 asm
@@ -294,6 +297,7 @@ asm
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   movq  %rax,%rdi
   call  SetErrno
 =======
@@ -301,6 +305,8 @@ asm
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   movq  %rax,%rdx
@@ -348,6 +354,7 @@ asm
 .LSyscOK:
 
 end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -420,6 +427,22 @@ asm
   movl   $0, 0(%rsp)    // dummy or caller frame because ?
   mov    $0xc6,%rax	// __syscall
   mov    %rcx,%r10
+=======
+
+function fp_sysCall(sysnr,param1,param2,param3,param4,param5,param6,param7 : TSysParam):TSysResult; assembler;[public,alias:'FPC_DOSYS7'];
+
+asm
+  subq   $0x10,%rsp
+  movq   sysnr,%rax       { Syscall number -> rax.  }
+  movq   param1,%rdi      { shift arg1 - arg6. }
+  movq   param2,%rsi
+  movq   param3,%rdx
+  movq   param4,%r10
+  movq   param5,%r8
+  movq   param6,%r9
+  movq   param7,%r11
+  movq   %r11,8(%rsp)
+>>>>>>> origin/cpstrnew
   syscall                 { Do the system call. }
   jge .LSyscOK            { branch to exit if ok, errorhandler otherwise}
   movq  %rax,%rdx
@@ -444,7 +467,11 @@ asm
 .LNoThread:
   movq  $-1,%rax
 .LSyscOK:
+<<<<<<< HEAD
   add    $0x18,%rsp
 >>>>>>> graemeg/fixes_2_2
+=======
+  addq   $0x10,%rsp
+>>>>>>> origin/cpstrnew
 end;
 

@@ -51,6 +51,7 @@ implementation
     {$endif}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     {$ifndef NOTARGETAROS}
       ,t_aros
     {$endif}
@@ -63,6 +64,8 @@ implementation
 
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 

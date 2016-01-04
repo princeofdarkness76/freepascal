@@ -10,6 +10,7 @@ Ported to FPC by Nikolay Nikolov (nickysn@users.sourceforge.net)
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 program Flower;
 
 {$MODE objfpc}
@@ -58,45 +59,51 @@ begin
 =======
 >>>>>>> origin/fixes_2_2
 Program Flower;
+=======
+program Flower;
+>>>>>>> origin/cpstrnew
 
 {$MODE objfpc}
 
-Uses
+uses
   ptc, Math;
 
-Function pack(r, g, b : Uint32) : Uint32;
-
-Begin
+function pack(r, g, b: Uint32): Uint32;
+begin
   { pack color integer }
-  pack := (r Shl 16) Or (g Shl 8) Or b;
-End;
+  pack := (r shl 16) or (g shl 8) or b;
+end;
 
-Procedure generate_flower(flower : TPTCSurface);
-
-Var
-  data : PUint8;
-  x, y, fx, fy, fx2, fy2 : Integer;
-  TWO_PI : Single;
-
-Begin
+procedure generate_flower(flower: TPTCSurface);
+var
+  data: PUint8;
+  x, y, fx, fy, fx2, fy2: Integer;
+  TWO_PI: Single;
+begin
   { lock surface }
   data := flower.lock;
-  
-  Try
+
+  try
     { surface width and height constants for cleaner code }
     fx := flower.width;
     fy := flower.height;
+<<<<<<< HEAD
     fx2 := fx Div 2;
     fy2 := fy Div 2;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    fx2 := fx div 2;
+    fy2 := fy div 2;
+>>>>>>> origin/cpstrnew
 
     { useful 2*pi constant }
     TWO_PI := 2 * PI;
 
     { generate flower image }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     for y := 0 to fy - 1 do
@@ -116,11 +123,19 @@ Begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    for y := 0 to fy - 1 do
+      for x := 0 to fx - 1 do
+        data[x + y * fx] := Trunc(1.0 * Cos(18*ArcTan2((y - fy2),(x - fx2))) * 255 / TWO_PI +
+                                  0.3 * Sin(15*ArcTan2((y - fy2),(x - fx2))) * 255 / TWO_PI +
+                                  Sqrt((y - fy2) * (y - fy2) + (x - fx2) * (x - fx2))) and $FF;
+>>>>>>> origin/cpstrnew
 
     { You might want to move the 1.0 and 0.3 and the 18 and the 15
       to parameters passed to the generate function...
       the 1.0 and the 0.3 define the 'height' of the flower, while the
       18 and 15 control the number of 'petals' }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   finally
@@ -276,86 +291,80 @@ begin
 =======
 >>>>>>> origin/fixes_2_2
   Finally
+=======
+  finally
+>>>>>>> origin/cpstrnew
     flower.unlock;
-  End;
-End;
+  end;
+end;
 
-Procedure generate(palette : TPTCPalette);
-
-Var
-  data : PUint32;
-  i, c : Integer;
-
-Begin
+procedure generate(palette: TPTCPalette);
+var
+  data: PUint32;
+  i, c: Integer;
+begin
   { lock palette data }
   data := palette.lock;
-  
-  Try
+
+  try
     { black to yellow }
     i := 0;
     c := 0;
-    While i < 64 Do
-    Begin
+    while i < 64 do
+    begin
       data[i] := pack(c, c, 0);
       Inc(c, 4);
       Inc(i);
-    End;
+    end;
 
     { yellow to red }
     c := 0;
-    While i < 128 Do
-    Begin
+    while i < 128 do
+    begin
       data[i] := pack(255, 255 - c, 0);
       Inc(c, 4);
       Inc(i);
-    End;
+    end;
 
     { red to white }
     c := 0;
-    While i < 192 Do
-    Begin
+    while i < 192 do
+    begin
       data[i] := pack(255, c, c);
       Inc(c, 4);
       Inc(i);
-    End;
+    end;
 
     { white to black }
     c := 0;
-    While i < 256 Do
-    Begin
+    while i < 256 do
+    begin
       data[i] := pack(255 - c, 255 - c, 255 - c);
       Inc(c, 4);
       Inc(i);
-    End;
-  Finally
+    end;
+  finally
     { unlock palette }
     palette.unlock;
-  End;
-End;
+  end;
+end;
 
-Var
-  console : TPTCConsole;
-  format : TPTCFormat;
-  flower_surface : TPTCSurface;
-  surface : TPTCSurface;
-  palette : TPTCPalette;
-  area : TPTCArea;
-  time, delta : Single;
-  scr, map : PUint8;
-  width, height, mapWidth : Integer;
-  xo, yo, xo2, yo2, xo3, yo3 : Single;
-  offset1, offset2, offset3 : Integer;
-  x, y : Integer;
-
-Begin
-  area := Nil;
-  format := Nil;
-  palette := Nil;
-  surface := Nil;
-  flower_surface := Nil;
-  console := Nil;
-  Try
-    Try
+var
+  console: TPTCConsole = nil;
+  format: TPTCFormat = nil;
+  flower_surface: TPTCSurface = nil;
+  surface: TPTCSurface = nil;
+  palette: TPTCPalette = nil;
+  area: TPTCArea = nil;
+  time, delta: Single;
+  scr, map: PUint8;
+  width, height, mapWidth: Integer;
+  xo, yo, xo2, yo2, xo3, yo3: Single;
+  offset1, offset2, offset3: Integer;
+  x, y: Integer;
+begin
+  try
+    try
       { create format }
       format := TPTCFormat.Create(8);
 
@@ -421,6 +430,7 @@ Begin
       { main loop }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       while not console.KeyPressed do
       begin
         { lock surface pixels }
@@ -433,15 +443,23 @@ Begin
 >>>>>>> origin/fixes_2_2
       While Not console.KeyPressed Do
       Begin
+=======
+      while not console.KeyPressed do
+      begin
+>>>>>>> origin/cpstrnew
         { lock surface pixels }
         scr := surface.lock;
-	Try
+        try
           map := flower_surface.lock;
+<<<<<<< HEAD
 	  Try
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+          try
+>>>>>>> origin/cpstrnew
             { get surface dimensions }
             width := surface.width;
             height := surface.height;
@@ -462,6 +480,7 @@ Begin
             { vertical loop }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             for y := 0 to height - 1 do
               { horizontal loop }
               for x := 0 to width - 1 do
@@ -480,23 +499,30 @@ Begin
 =======
 >>>>>>> origin/fixes_2_2
             For y := 0 To height - 1 Do
+=======
+            for y := 0 to height - 1 do
+>>>>>>> origin/cpstrnew
               { horizontal loop }
-	      For x := 0 To width - 1 Do
-	        scr[x + y * width] := (map[x + y * mapWidth + offset1] +
-				       map[x + y * mapWidth + offset2] +
-				       map[x + y * mapWidth + offset3]) And $FF;
-	  Finally
+              for x := 0 to width - 1 do
+                scr[x + y * width] := (map[x + y * mapWidth + offset1] +
+                                       map[x + y * mapWidth + offset2] +
+                                       map[x + y * mapWidth + offset3]) and $FF;
+          finally
             { unlock surface }
             flower_surface.unlock;
-	  End;
-	Finally
+          end;
+        finally
           { unlock surface }
           surface.unlock;
+<<<<<<< HEAD
 	End;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+        end;
+>>>>>>> origin/cpstrnew
 
         { copy surface to console }
         surface.copy(console, area, area);
@@ -506,6 +532,7 @@ Begin
 
         { update time }
         time := time + delta;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       end;
@@ -520,6 +547,11 @@ Begin
       End;
     Finally
       If Assigned(console) Then
+=======
+      end;
+    finally
+      if Assigned(console) then
+>>>>>>> origin/cpstrnew
         console.close;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -531,6 +563,7 @@ Begin
       surface.Free;
       flower_surface.Free;
       console.Free;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -564,3 +597,12 @@ End.
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    end;
+  except
+    on error: TPTCError do
+      { report error }
+      error.report;
+  end;
+end.
+>>>>>>> origin/cpstrnew

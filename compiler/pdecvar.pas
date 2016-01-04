@@ -35,6 +35,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       tvar_dec_option=(vd_record,vd_object,vd_threadvar,vd_class,vd_final,vd_canreorder,vd_check_generic);
 =======
       tvar_dec_option=(vd_record,vd_object,vd_threadvar,vd_class);
@@ -45,6 +46,9 @@ interface
 =======
       tvar_dec_option=(vd_record,vd_object,vd_threadvar,vd_class);
 >>>>>>> graemeg/cpstrnew
+=======
+      tvar_dec_option=(vd_record,vd_object,vd_threadvar,vd_class);
+>>>>>>> origin/cpstrnew
 =======
       tvar_dec_option=(vd_record,vd_object,vd_threadvar,vd_class);
 >>>>>>> origin/cpstrnew
@@ -174,6 +178,7 @@ implementation
                              if not(assigned(sym)) and is_object(def) then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                sym:=search_struct_member(tobjectdef(def),pattern);
 =======
                                sym:=search_class_member(tobjectdef(def),pattern);
@@ -181,6 +186,9 @@ implementation
 =======
                                sym:=search_class_member(tobjectdef(def),pattern);
 >>>>>>> origin/fixes_2_2
+=======
+                               sym:=search_struct_member(tobjectdef(def),pattern);
+>>>>>>> origin/cpstrnew
                              if assigned(sym) then
                               begin
                                 pl.addsym(sl_subscript,sym);
@@ -224,6 +232,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                             p:=comp_expr([ef_accept_equal]);
 =======
                             p:=comp_expr(true,false);
@@ -234,6 +243,9 @@ implementation
 =======
                             p:=comp_expr(true,false);
 >>>>>>> graemeg/cpstrnew
+=======
+                            p:=comp_expr(true,false);
+>>>>>>> origin/cpstrnew
 =======
                             p:=comp_expr(true,false);
 >>>>>>> origin/cpstrnew
@@ -310,12 +322,16 @@ implementation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
           procedure create_accessor_procsym(p: tpropertysym; pd: tprocdef; const prefix: string;
               accesstype: tpropaccesslisttypes);
             var
               sym: tprocsym;
             begin
               handle_calling_convention(pd);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -330,6 +346,9 @@ implementation
 =======
               sym:=tprocsym.create(prefix+lower(p.realname));
 >>>>>>> graemeg/cpstrnew
+=======
+              sym:=tprocsym.create(prefix+lower(p.realname));
+>>>>>>> origin/cpstrnew
 =======
               sym:=tprocsym.create(prefix+lower(p.realname));
 >>>>>>> origin/cpstrnew
@@ -360,6 +379,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               hdispid:=0;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -367,6 +387,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -377,6 +399,7 @@ implementation
 
               if try_to_consume(_DISPID) then
                 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -392,6 +415,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                   pt:=comp_expr(true,false);
                   if is_constintnode(pt) then
                     if (Tordconstnode(pt).value<int64(low(longint))) or (Tordconstnode(pt).value>int64(high(longint))) then
@@ -399,11 +424,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                     else
@@ -434,6 +462,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   hparavs:=cparavarsym.create('$value',10*paranr,vs_value,p.propdef,[]);
 =======
                   hparavs:=tparavarsym.create('$value',10*paranr,vs_value,p.propdef,[]);
@@ -444,6 +473,9 @@ implementation
 =======
                   hparavs:=tparavarsym.create('$value',10*paranr,vs_value,p.propdef,[]);
 >>>>>>> graemeg/cpstrnew
+=======
+                  hparavs:=tparavarsym.create('$value',10*paranr,vs_value,p.propdef,[]);
+>>>>>>> origin/cpstrnew
 =======
                   hparavs:=tparavarsym.create('$value',10*paranr,vs_value,p.propdef,[]);
 >>>>>>> origin/cpstrnew
@@ -459,11 +491,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
           procedure add_index_parameter(var paranr: word; p: tpropertysym; readprocdef, writeprocdef: tprocdef);
@@ -480,6 +515,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -491,6 +527,8 @@ implementation
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
       var
          sym : tsym;
          srsymtable: tsymtable;
@@ -513,6 +551,7 @@ implementation
          readprocdef,
          writeprocdef : tprocdef;
       begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -542,6 +581,8 @@ implementation
 =======
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
          { Generate temp procdefs to search for matching read/write
            procedures. the readprocdef will store all definitions }
          paranr:=0;
@@ -552,7 +593,10 @@ implementation
          writeprocdef.struct:=astruct;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
          if assigned(astruct) and is_classproperty then
@@ -574,6 +618,7 @@ implementation
          p.default:=longint($80000000);
          if is_classproperty then
            include(p.symoptions, sp_static);
+<<<<<<< HEAD
 =======
          p:=tpropertysym.create(orgpattern);
          p.default:=longint($80000000);
@@ -581,6 +626,8 @@ implementation
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
          symtablestack.top.insert(p);
          consume(_ID);
          { property parameters ? }
@@ -636,12 +683,15 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               symtablestack.pop(p.parast);
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
               symtablestack.pop(readprocdef.parast);
@@ -667,6 +717,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               single_type(p.propdef,[stoAllowSpecialization]);
 =======
               single_type(p.propdef,[]);
@@ -677,6 +728,9 @@ implementation
 =======
               single_type(p.propdef,[]);
 >>>>>>> graemeg/cpstrnew
+=======
+              single_type(p.propdef,[]);
+>>>>>>> origin/cpstrnew
 =======
               single_type(p.propdef,[]);
 >>>>>>> origin/cpstrnew
@@ -691,6 +745,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                    pt:=comp_expr([ef_accept_equal]);
 =======
                    pt:=comp_expr(true,false);
@@ -701,6 +756,9 @@ implementation
 =======
                    pt:=comp_expr(true,false);
 >>>>>>> graemeg/cpstrnew
+=======
+                   pt:=comp_expr(true,false);
+>>>>>>> origin/cpstrnew
 =======
                    pt:=comp_expr(true,false);
 >>>>>>> origin/cpstrnew
@@ -736,6 +794,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                    p.add_index_parameter(paranr,readprocdef,writeprocdef);
 =======
                    add_index_parameter(paranr,p,readprocdef,writeprocdef);
@@ -749,12 +808,16 @@ implementation
 =======
                    add_index_parameter(paranr,p,readprocdef,writeprocdef);
 >>>>>>> origin/cpstrnew
+=======
+                   add_index_parameter(paranr,p,readprocdef,writeprocdef);
+>>>>>>> origin/cpstrnew
                    pt.free;
                 end;
            end
          else
            begin
               { do an property override }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -772,6 +835,9 @@ implementation
 =======
               if (astruct.typ=objectdef) then
 >>>>>>> origin/cpstrnew
+=======
+              if (astruct.typ=objectdef) then
+>>>>>>> origin/cpstrnew
                 overridden:=search_struct_member(tobjectdef(astruct).childof,p.name)
               else
                 overridden:=nil;
@@ -783,6 +849,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   tpropertysym(overridden).makeduplicate(p,readprocdef,writeprocdef,paranr);
                   p.register_override(tpropertysym(overridden));
 =======
@@ -790,6 +857,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                   p.overriddenpropsym:=tpropertysym(overridden);
@@ -804,11 +873,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                 end
@@ -1145,6 +1217,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   pt:=comp_expr([ef_accept_equal]);
 =======
                   pt:=comp_expr(true,false);
@@ -1158,12 +1231,16 @@ implementation
 =======
                   pt:=comp_expr(true,false);
 >>>>>>> origin/cpstrnew
+=======
+                  pt:=comp_expr(true,false);
+>>>>>>> origin/cpstrnew
                   pt.free;
                 end
               else
                 begin
                   { Get the result of the default, the firstpass is
                     needed to support values like -1 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1178,6 +1255,9 @@ implementation
 =======
                   pt:=comp_expr(true,false);
 >>>>>>> graemeg/cpstrnew
+=======
+                  pt:=comp_expr(true,false);
+>>>>>>> origin/cpstrnew
 =======
                   pt:=comp_expr(true,false);
 >>>>>>> origin/cpstrnew
@@ -1232,6 +1312,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
            repeat
 =======
            begin
@@ -1242,6 +1323,9 @@ implementation
 =======
            begin
 >>>>>>> graemeg/cpstrnew
+=======
+           begin
+>>>>>>> origin/cpstrnew
 =======
            begin
 >>>>>>> origin/cpstrnew
@@ -1306,6 +1390,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
              ImplIntf:=nil;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1313,6 +1398,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
              for i:=0 to tobjectdef(astruct).ImplementedInterfaces.Count-1 do
@@ -1353,6 +1440,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                        { this must be done in a more robust way. Can't read the
                          fieldvarsym's fieldoffset yet, because it may not yet
                          be set }
@@ -1377,6 +1465,10 @@ implementation
                        { this must be done more sophisticated, here is also probably the wrong place }
                        ImplIntf.IOffset:=tfieldvarsym(p.propaccesslist[palt_read].firstsym^.sym).fieldoffset;
 >>>>>>> origin/fixes_2.4
+=======
+                       { this must be done more sophisticated, here is also probably the wrong place }
+                       ImplIntf.IOffset:=tfieldvarsym(p.propaccesslist[palt_read].firstsym^.sym).fieldoffset;
+>>>>>>> origin/cpstrnew
                      end
                    else
                      internalerror(200802161);
@@ -1396,12 +1488,15 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
            until not try_to_consume(_COMMA);
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
          end;
@@ -1596,6 +1691,7 @@ implementation
       if is_dll and
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          (target_info.system in systems_all_windows) then
         include(vs.varoptions,vo_is_dll_var);
 
@@ -1609,6 +1705,9 @@ implementation
 
 =======
          (target_info.system in system_all_windows) then
+=======
+         (target_info.system in systems_all_windows) then
+>>>>>>> origin/cpstrnew
         include(vs.varoptions,vo_is_dll_var);
 
 >>>>>>> graemeg/fixes_2_2
@@ -1758,9 +1857,23 @@ implementation
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    procedure try_consume_sectiondirective(var asection: ansistring);
+      begin
+        if idtoken=_SECTION then
+          begin
+            consume(_ID);
+            asection:=get_stringconst;
+            consume(_SEMICOLON);
+          end;
+      end;
+
+
+>>>>>>> origin/cpstrnew
     procedure read_var_decls(options:Tvar_dec_options);
 >>>>>>> graemeg/cpstrnew
 
@@ -1826,6 +1939,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           {$if defined(i386) or defined(i8086)}
           tmpaddr : int64;
           {$endif defined(i386) or defined(i8086)}
@@ -1854,6 +1968,11 @@ implementation
           tmpaddr : int64;
           {$endif}
 >>>>>>> origin/fixes_2.4
+=======
+          {$ifdef i386}
+          tmpaddr : int64;
+          {$endif}
+>>>>>>> origin/cpstrnew
         begin
           abssym:=nil;
           { only allowed for one var }
@@ -1908,6 +2027,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                       {$if defined(i8086)}
                         tcpuabsolutevarsym(abssym).addrsegment:=abssym.addroffset;
                         tmpaddr:=tordconstnode(pt).value.svalue;
@@ -1934,6 +2054,8 @@ implementation
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
                       tmpaddr:=abssym.addroffset shl 4+tordconstnode(pt).value.svalue;
                       if (tmpaddr<int64(low(abssym.addroffset))) or
                          (tmpaddr>int64(high(abssym.addroffset))) then
@@ -2166,6 +2288,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          sectionname : ansistring;
          tmp_filepos,
          old_current_filepos     : tfileposinfo;
@@ -2178,6 +2301,9 @@ implementation
 =======
          section : ansistring;
 >>>>>>> graemeg/cpstrnew
+=======
+         section : ansistring;
+>>>>>>> origin/cpstrnew
 =======
          section : ansistring;
 >>>>>>> origin/cpstrnew
@@ -2430,6 +2556,24 @@ implementation
 =======
 >>>>>>> origin/fixes_2_2
 
+             { try to parse a section directive }
+             if (target_info.system in systems_embedded) and (idtoken=_SECTION) then
+               begin
+                 try_consume_sectiondirective(section);
+                 if section<>'' then
+                   begin
+                     for i:=0 to sc.count-1 do
+                       begin
+                         vs:=tabstractvarsym(sc[i]);
+                         if (vs.varoptions *[vo_is_external,vo_is_weak_external])<>[] then
+                           Message(parser_e_externals_no_section);
+                         if vs.typ<>staticvarsym then
+                           Message(parser_e_section_no_locals);
+                         tstaticvarsym(vs).section:=section;
+                       end;
+                   end;
+               end;
+
              { allocate normal variable (non-external and non-typed-const) staticvarsyms }
              for i:=0 to sc.count-1 do
                begin
@@ -2456,6 +2600,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          hs,sorg : string;
          hdef,casetype,tmpdef : tdef;
 =======
@@ -2463,6 +2608,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
          hs,sorg,static_name : string;
@@ -2493,6 +2640,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          hadgendummy,
          semicoloneaten,
          removeclassoption: boolean;
@@ -2501,6 +2649,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
          semicoloneaten: boolean;
@@ -2534,12 +2684,16 @@ implementation
 >>>>>>> origin/fixes_2_2
 {$if defined(powerpc) or defined(powerpc64)}
          tempdef: tdef;
-         is_first_field: boolean;
+         is_first_type: boolean;
 {$endif powerpc or powerpc64}
+         sl: tpropaccesslist;
+         old_block_type: tblock_type;
       begin
+         old_block_type:=block_type;
+         block_type:=bt_var;
          recst:=tabstractrecordsymtable(symtablestack.top);
 {$if defined(powerpc) or defined(powerpc64)}
-         is_first_field := true;
+         is_first_type:=true;
 {$endif powerpc or powerpc64}
          old_current_object_option:=current_object_option;
          { all variables are public if not in a object declaration }
@@ -2561,6 +2715,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          removeclassoption:=false;
          had_generic:=false;
          while (token=_ID) and
@@ -2574,6 +2729,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
          recstlist:=TFPObjectList.create(false);;
@@ -2642,6 +2799,7 @@ implementation
                block_type:=bt_var_type
              else
                block_type:=old_block_type;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2720,6 +2878,8 @@ implementation
 =======
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/cpstrnew
              consume(_COLON);
 
              { Don't search for types where they can't be:
@@ -2733,6 +2893,9 @@ implementation
                  symtablestack.pop(recst);
                end;
              read_anon_type(hdef,false);
+<<<<<<< HEAD
+>>>>>>> origin/cpstrnew
+=======
 >>>>>>> origin/cpstrnew
              block_type:=bt_var;
              { allow only static fields reference to struct where they are declared }
@@ -2752,11 +2915,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                end;
@@ -2796,12 +2962,16 @@ implementation
                 is_first_type and
 =======
              if (target_info.system in [system_powerpc_darwin, system_powerpc_macos, system_powerpc64_darwin]) and
+<<<<<<< HEAD
                 is_first_field and
 >>>>>>> graemeg/fixes_2_2
 =======
              if (target_info.system in [system_powerpc_darwin, system_powerpc_macos, system_powerpc64_darwin]) and
                 is_first_field and
 >>>>>>> origin/fixes_2_2
+=======
+                is_first_type and
+>>>>>>> origin/cpstrnew
                 (symtablestack.top.symtabletype=recordsymtable) and
                 (trecordsymtable(symtablestack.top).usefieldalignment=C_alignment) then
                begin
@@ -2818,6 +2988,7 @@ implementation
                    trecordsymtable(symtablestack.top).padalignment:=maxpadalign;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                  is_first_type:=false;
 =======
                  is_first_field:=false;
@@ -2825,6 +2996,9 @@ implementation
 =======
                  is_first_field:=false;
 >>>>>>> origin/fixes_2_2
+=======
+                 is_first_type:=false;
+>>>>>>> origin/cpstrnew
                end;
 {$endif powerpc or powerpc64}
 
@@ -2872,6 +3046,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
              if (vd_object in options) then
 =======
              { check if it is a class field }
@@ -2885,6 +3060,19 @@ implementation
 =======
              { check if it is a class field }
              if (vd_object in options) then
+=======
+             { check if it is a class field }
+             if (vd_object in options) then
+               begin
+                 { if it is not a class var section and token=STATIC then it is a class field too }
+                 if not (vd_class in options) and try_to_consume(_STATIC) then
+                   begin
+                     consume(_SEMICOLON);
+                     include(options, vd_class);
+                   end;
+               end;
+             if vd_class in options then
+>>>>>>> origin/cpstrnew
                begin
                  { if it is not a class var section and token=STATIC then it is a class field too }
                  if not (vd_class in options) and try_to_consume(_STATIC) then
@@ -2956,11 +3144,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                end;
@@ -3080,6 +3271,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               UnionSymtable:=trecordsymtable.create('',current_settings.packrecords,current_settings.alignment.recordalignmin,current_settings.alignment.maxCrecordalign);
               UnionDef:=crecorddef.create('',unionsymtable);
 =======
@@ -3098,6 +3290,10 @@ implementation
               UnionSymtable:=trecordsymtable.create('',current_settings.packrecords);
               UnionDef:=trecorddef.create('',unionsymtable);
 >>>>>>> origin/cpstrnew
+=======
+              UnionSymtable:=trecordsymtable.create('',current_settings.packrecords);
+              UnionDef:=trecorddef.create('',unionsymtable);
+>>>>>>> origin/cpstrnew
               uniondef.isunion:=true;
 
               startvarrecsize:=UnionSymtable.datasize;
@@ -3111,6 +3307,7 @@ implementation
                 fillchar(variantdesc^^.branches[high(variantdesc^^.branches)],
                   sizeof(variantdesc^^.branches[high(variantdesc^^.branches)]),0);
                 repeat
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3136,6 +3333,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                   pt:=comp_expr(true,false);
                   if not(pt.nodetype=ordconstn) then
                     Message(parser_e_illegal_expression);
@@ -3144,11 +3343,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                   pt.free;
@@ -3193,6 +3395,7 @@ implementation
               if (target_info.system in [system_powerpc_darwin, system_powerpc_macos, system_powerpc64_darwin]) and
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                  is_first_type and
 =======
                  is_first_field and
@@ -3200,6 +3403,9 @@ implementation
 =======
                  is_first_field and
 >>>>>>> origin/fixes_2_2
+=======
+                 is_first_type and
+>>>>>>> origin/cpstrnew
                  (recst.usefieldalignment=C_alignment) and
                  (maxpadalign>recst.padalignment) then
                 recst.padalignment:=maxpadalign;

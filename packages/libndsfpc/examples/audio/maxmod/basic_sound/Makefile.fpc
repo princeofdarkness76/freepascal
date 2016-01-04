@@ -25,6 +25,7 @@ fpcdir=../../../../../..
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 options=-Xm
 targetdir=$(BIN)  
 unittargetdir=$(BUILD)
@@ -43,6 +44,9 @@ options=-g -O2
 =======
 options=-g -O2
 >>>>>>> origin/fixes_2.4
+=======
+options=-g -O2
+>>>>>>> origin/cpstrnew
 
 [clean]
 files=*.elf *.o *.s *.nds *.nef *.h *.bin *.map \

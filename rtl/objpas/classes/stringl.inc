@@ -1122,15 +1122,21 @@ Var
 begin
   TheStream:=TFileStream.Create(FileName,fmOpenRead or fmShareDenyWrite);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   try
     LoadFromStream(TheStream);
   finally
     TheStream.Free;
   end;
+<<<<<<< HEAD
 =======
   LoadFromStream(TheStream);
   TheStream.Free;
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 
@@ -1215,11 +1221,15 @@ begin
   S:=Text;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if S = '' then Exit;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  if S = '' then Exit;
+>>>>>>> origin/cpstrnew
   Stream.WriteBuffer(Pointer(S)^,Length(S));
 end;
 
@@ -1604,12 +1614,15 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   InternalClear;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   if FOwnsObjects then
@@ -1690,6 +1703,7 @@ Function TStringList.DoCompareText(const s1,s2 : string) : PtrInt;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TStringList.CompareStrings(const s1,s2 : string) : Integer;
 begin
   Result := DoCompareText(s1, s2);
@@ -1697,6 +1711,9 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+=======
+Function TStringList.Find(const S: string; Out Index: Integer): Boolean;
+>>>>>>> origin/cpstrnew
 
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1812,6 +1829,7 @@ begin
   inherited;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   FOwnsObjects:=false;
   FMap := TFPStrObjMap.Create;
   FMap.OnPtrCompare := @MapPtrCompare;
@@ -1840,6 +1858,13 @@ begin
   FMap.OnPtrCompare := @MapPtrCompare;
   FOnCompareText := @DefaultCompareText;
 >>>>>>> origin/fixes_2_2
+=======
+  FOwnsObjects:=false;
+  FMap := TFPStrObjMap.Create;
+  FMap.OnPtrCompare := @MapPtrCompare;
+  FOnCompareText := @DefaultCompareText;
+  CheckSpecialChars;
+>>>>>>> origin/cpstrnew
 end;
 
 destructor TStringList.Destroy;

@@ -146,6 +146,7 @@ more control of the test process one must distinguish between:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 * Driver environment: compiler/rtl etc. to be used by the tools which
 =======
 * Driver enviroment: compiler/rtl etc. to be used by the tools which
@@ -153,6 +154,9 @@ more control of the test process one must distinguish between:
 =======
 * Driver enviroment: compiler/rtl etc. to be used by the tools which
 >>>>>>> origin/fixes_2_2
+=======
+* Driver environment: compiler/rtl etc. to be used by the tools which
+>>>>>>> origin/cpstrnew
   runs and analyze the tests. All normal options to make, like FPC
   OS_TARGET, OPT etc. controls this.
 
@@ -173,6 +177,7 @@ TEST_FPC_VERSION       defaults to version of TEST_FPC
 TEST_CCOMPILER         defaults to installed gcc compiler, but only
                        if driver and test full-targets are the same.
 <<<<<<< HEAD
+<<<<<<< HEAD
 TEST_VERBOSE           let dotest be more verbose, only useful for debugging
 TEST_BENCH             display compilation/execution time of each test
 =======
@@ -181,6 +186,10 @@ TEST_VERBOSE           let dotest be more verbose, only usefull for debugging
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+TEST_VERBOSE           let dotest be more verbose, only useful for debugging
+TEST_BENCH             display compilation/execution time of each test
+>>>>>>> origin/cpstrnew
 TEST_DELTEMP           delete temporary executable/object/ppu file,
                        default is off
 TEST_TIMEOUT           use timeout wrapper for (remote) execution
@@ -230,6 +239,7 @@ TEST_DELTEMP         delete executable after running, so the remote system
 TEST_REMOTEPW        pass a password with -pw to remote tools,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                      mainly useful for putty
 
 
@@ -240,6 +250,9 @@ TEST_REMOTEPW        pass a password with -pw to remote tools,
 >>>>>>> graemeg/fixes_2_2
 =======
                      mainly usefull for putty
+=======
+                     mainly useful for putty
+>>>>>>> origin/cpstrnew
 
 
 >>>>>>> origin/fixes_2_2

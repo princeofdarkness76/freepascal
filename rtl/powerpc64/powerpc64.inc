@@ -45,6 +45,7 @@ procedure fpc_cpuinit;
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   { don't let libraries influence the FPU cw set by the host program }
   if not IsLibrary then
     fpc_enable_ppc_fpu_exceptions;
@@ -54,6 +55,11 @@ begin
 =======
   fpc_enable_ppc_fpu_exceptions;
 >>>>>>> origin/fixes_2_2
+=======
+  { don't let libraries influence the FPU cw set by the host program }
+  if not IsLibrary then
+    fpc_enable_ppc_fpu_exceptions;
+>>>>>>> origin/cpstrnew
 end;
 
 {****************************************************************************
@@ -754,6 +760,7 @@ asm
   lwarx  r10,0,r3
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   // lwarx performs an unsigned load -> sign extend since arguments are
   // longints
   extsw  r10,r10
@@ -761,12 +768,20 @@ asm
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  // lwarx performs an unsigned load -> sign extend since arguments are
+  // longints
+  extsw  r10,r10
+>>>>>>> origin/cpstrnew
   sub    r9,r10,r5
   addic  r9,r9,-1
   subfe  r9,r9,r9
   and    r8,r4,r9
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   andc   r7,r10,r9
   or     r6,r7,r8
   stwcx. r6,0,r3
@@ -853,6 +868,9 @@ asm
   and    r8,r4,r9
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   andc   r7,r10,r9
   or     r6,r7,r8
   stdcx. r6,0,r3
@@ -879,6 +897,7 @@ procedure ReadBarrier;assembler;nostackframe;{$ifdef SYSTEMINLINE}inline;{$endif
 asm
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   isync
 =======
 {$ifdef FPC_HAS_LWSYNC}
@@ -890,6 +909,9 @@ asm
   lwsync
 {$endif}
 >>>>>>> origin/fixes_2_2
+=======
+  isync
+>>>>>>> origin/cpstrnew
 end;
 
 procedure ReadDependencyBarrier;{$ifdef SYSTEMINLINE}inline;{$endif}
@@ -901,22 +923,29 @@ procedure ReadWriteBarrier;assembler;nostackframe;{$ifdef SYSTEMINLINE}inline;{$
 asm
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   isync
 {$ifdef FPC_HAS_LWSYNC}
   lwsync
 {$endif}
+<<<<<<< HEAD
 =======
   sync
 >>>>>>> graemeg/fixes_2_2
 =======
   sync
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 procedure WriteBarrier;assembler;nostackframe;{$ifdef SYSTEMINLINE}inline;{$endif}
 asm
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef FPC_HAS_LWSYNC}
   lwsync
 {$endif}
@@ -926,6 +955,11 @@ asm
 =======
   eieio
 >>>>>>> origin/fixes_2_2
+=======
+{$ifdef FPC_HAS_LWSYNC}
+  lwsync
+{$endif}
+>>>>>>> origin/cpstrnew
 end;
 
 {$endif}

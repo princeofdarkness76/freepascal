@@ -101,6 +101,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           tableoptions : tsymtableoptions;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -108,6 +109,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
           { level of symtable, used for nested procedures }

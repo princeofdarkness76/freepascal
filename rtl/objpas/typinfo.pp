@@ -109,6 +109,30 @@ unit typinfo;
 =======
 >>>>>>> origin/fixes_2_2
 
+      PVmtFieldEntry = ^TVmtFieldEntry;
+      TVmtFieldEntry =
+{$ifndef FPC_REQUIRES_PROPER_ALIGNMENT}
+      packed
+{$endif FPC_REQUIRES_PROPER_ALIGNMENT}
+      record
+        FieldOffset: PtrUInt;
+        TypeIndex: Word;
+        Name: ShortString;
+      end;
+
+      PVmtFieldTable = ^TVmtFieldTable;
+      TVmtFieldTable =
+{$ifndef FPC_REQUIRES_PROPER_ALIGNMENT}
+      packed
+{$endif FPC_REQUIRES_PROPER_ALIGNMENT}
+      record
+        Count: Word;
+        ClassTab: Pointer;
+        { should be array[Word] of TFieldInfo;  but
+          Elements have variant size! force at least proper alignment }
+        Fields: array[0..0] of TVmtFieldEntry
+      end;
+
 {$PACKRECORDS 1}
       TTypeInfo = record
          Kind : TTypeKind;
@@ -243,6 +267,7 @@ unit typinfo;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   ResultTypeRef : PTypeInfo;  // for mkFunction, mkClassFunction only
                   CC : TCallConv;
                   ParamTypeRefs : array[1..ParamCount] of PTypeInfo;}
@@ -261,6 +286,11 @@ unit typinfo;
                   CC : TCallConv;
                   ParamTypeRefs : array[1..ParamCount] of PPTypeInfo;}
 >>>>>>> graemeg/cpstrnew
+=======
+                  ResultTypeRef : PPTypeInfo;  // for mkFunction, mkClassFunction only
+                  CC : TCallConv;
+                  ParamTypeRefs : array[1..ParamCount] of PPTypeInfo;}
+>>>>>>> origin/cpstrnew
 =======
                   ResultTypeRef : PPTypeInfo;  // for mkFunction, mkClassFunction only
                   CC : TCallConv;
@@ -550,6 +580,7 @@ begin
   PT:=GetTypeData(TypeInfo);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if TypeInfo^.Kind=tkBool then
 =======
   if TypeInfo^.Kind=tkBool then 
@@ -557,6 +588,9 @@ begin
 =======
   if TypeInfo^.Kind=tkBool then 
 >>>>>>> origin/fixes_2_2
+=======
+  if TypeInfo^.Kind=tkBool then
+>>>>>>> origin/cpstrnew
     begin
       case Value of
         0,1:
@@ -570,11 +604,15 @@ begin
      PS:=@PT^.NameList;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      dec(Value,PT^.MinValue);
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+     dec(Value,PT^.MinValue);
+>>>>>>> origin/cpstrnew
      While Value>0 Do
        begin
          PS:=PShortString(pointer(PS)+PByte(PS)^+1);
@@ -601,6 +639,7 @@ begin
   Result:=-1;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   if TypeInfo^.Kind=tkBool then
 =======
@@ -611,6 +650,10 @@ begin
   
   if TypeInfo^.Kind=tkBool then 
 >>>>>>> origin/fixes_2_2
+=======
+
+  if TypeInfo^.Kind=tkBool then
+>>>>>>> origin/cpstrnew
     begin
     If CompareText(BooleanIdents[false],Name)=0 then
       result:=0
@@ -621,16 +664,20 @@ begin
    begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   
 >>>>>>> graemeg/fixes_2_2
 =======
   
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
      PS:=@PT^.NameList;
      While (Result=-1) and (PByte(PS)^<>0) do
        begin
          If ShortCompareText(PS^, sName) = 0 then
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
            Result:=Count+PT^.MinValue;
@@ -640,6 +687,9 @@ begin
 =======
            Result:=Count;
 >>>>>>> origin/fixes_2_2
+=======
+           Result:=Count+PT^.MinValue;
+>>>>>>> origin/cpstrnew
          PS:=PShortString(pointer(PS)+PByte(PS)^+1);
          Inc(Count);
        end;
@@ -656,6 +706,7 @@ begin
   PT:=GetTypeData(enum1);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if enum1^.Kind=tkBool then
 =======
   if enum1^.Kind=tkBool then 
@@ -663,11 +714,15 @@ begin
 =======
   if enum1^.Kind=tkBool then 
 >>>>>>> origin/fixes_2_2
+=======
+  if enum1^.Kind=tkBool then
+>>>>>>> origin/cpstrnew
     Result:=2
   else
     begin
       Count:=0;
       Result:=0;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -677,12 +732,16 @@ begin
 =======
     
 >>>>>>> origin/fixes_2_2
+=======
+
+>>>>>>> origin/cpstrnew
       PS:=@PT^.NameList;
       While (PByte(PS)^<>0) do
         begin
           PS:=PShortString(pointer(PS)+PByte(PS)^+1);
           Inc(Count);
         end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       { the last string is the unit name }
@@ -695,6 +754,10 @@ begin
     
       Result := Count;
 >>>>>>> origin/fixes_2_2
+=======
+      { the last string is the unit name }
+      Result := Count - 1;
+>>>>>>> origin/cpstrnew
     end;
 end;
 
@@ -707,6 +770,7 @@ end;
 
 Function SetToString(TypeInfo: PTypeInfo; Value: Integer; Brackets: Boolean) : String;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 type
@@ -735,11 +799,16 @@ type
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+type
+  tsetarr = bitpacked array[0..31] of 0..1;
+>>>>>>> origin/cpstrnew
 Var
   I : Integer;
   PTI : PTypeInfo;
 
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$if defined(FPC_BIG_ENDIAN)}
@@ -752,6 +821,11 @@ begin
 =======
 >>>>>>> origin/fixes_2_2
 {$if defined(FPC_NEW_BIGENDIAN_SETS) and defined(FPC_BIG_ENDIAN)}
+=======
+{$if defined(FPC_BIG_ENDIAN)}
+  { On big endian systems, set element 0 is in the most significant bit,
+    and the same goes for the elements of bitpacked arrays there.  }
+>>>>>>> origin/cpstrnew
   case GetTypeData(TypeInfo)^.OrdType of
     otSByte,otUByte: Value:=Value shl 24;
     otSWord,otUWord: Value:=Value shl 16;
@@ -768,6 +842,7 @@ begin
     begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       if (tsetarr(Value)[i]<>0) then
 =======
 =======
@@ -781,12 +856,16 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+      if (tsetarr(Value)[i]<>0) then
+>>>>>>> origin/cpstrnew
         begin
           If Result='' then
             Result:=GetEnumName(PTI,i)
           else
             Result:=Result+','+GetEnumName(PTI,I);
         end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -799,6 +878,8 @@ begin
       Value:=Value shr 1;
 {$endif FPC_NEW_BIGENDIAN_SETS}
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
     end;
   if Brackets then
     Result:='['+Result+']';
@@ -1127,6 +1208,7 @@ begin
   else
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     PropList:=Nil;
 =======
     PropList:=Nil;  
@@ -1134,6 +1216,9 @@ begin
 =======
     PropList:=Nil;  
 >>>>>>> origin/fixes_2_2
+=======
+    PropList:=Nil;
+>>>>>>> origin/cpstrnew
 end;
 
 function GetPropList(AClass: TClass; out PropList: PPropList): Integer;

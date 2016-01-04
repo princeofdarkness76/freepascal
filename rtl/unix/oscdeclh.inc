@@ -89,11 +89,14 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     function  FpTimes	(var buffer : tms): TClock; cdecl; external clib name 'times';
@@ -168,6 +171,7 @@ const
 //    function  fpsettimeofday(tp:ptimeval;tzp:ptimezone):cint;
 {$endif}
     function FpGetRLimit(resource : cInt; rlim : PRLimit) : cInt; cdecl; external clib name 'getrlimit';
+<<<<<<< HEAD
     {$ifdef HAS_UGETRLIMIT}
     { there is no ugetrlimit libc call, just map it to the getrlimit call in these cases }
     function FpUGetRLimit(resource : cInt; rlim : PRLimit) : cInt; cdecl; external clib name 'getrlimit';
@@ -179,6 +183,8 @@ const
     Function  FpFcntl      (fildes : cInt; cmd : cInt): cInt; {$ifdef FPC_IS_SYSTEM}forward;{$endif}
     Function  FpFcntl      (fildes : cInt; cmd : cInt; arg :cInt): cInt; {$ifdef FPC_IS_SYSTEM}forward;{$endif}
     Function  FpFcntl      (fildes : cInt; cmd : cInt; var arg : flock): cInt; {$ifdef FPC_IS_SYSTEM}forward;{$endif}
+=======
+>>>>>>> origin/cpstrnew
 
     Function  FpGetcwd  (path:pChar; siz:TSize):pChar; cdecl;  external clib name 'getcwd';
     function  FpFork  : TPid; cdecl; external clib name 'fork';

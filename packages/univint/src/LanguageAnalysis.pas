@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       LangAnalysis/LanguageAnalysis.h
  
      Contains:   Language Analysis Manager Interfaces
@@ -32,11 +33,15 @@
 =======
      File:       LangAnalysis/LanguageAnalysis.h
 >>>>>>> origin/fixes_2.4
+=======
+     File:       LangAnalysis/LanguageAnalysis.h
+>>>>>>> origin/cpstrnew
  
      Contains:   Language Analysis Manager Interfaces
  
      Version:    LanguageAnalysis-214~9
  
+<<<<<<< HEAD
 <<<<<<< HEAD
      Copyright:  © 1996-2002 by Apple Computer, Inc., all rights reserved
 <<<<<<< HEAD
@@ -46,6 +51,9 @@
 =======
      Copyright:  © 1996-2008 by Apple Inc., all rights reserved
 >>>>>>> origin/fixes_2.4
+=======
+     Copyright:  © 1996-2008 by Apple Inc., all rights reserved
+>>>>>>> origin/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -55,6 +63,7 @@
                      http://bugs.freepascal.org
  
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -86,6 +95,8 @@
                      http://www.freepascal.org/bugs.html
  
 }
+=======
+>>>>>>> origin/cpstrnew
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {
     Modified for use with Free Pascal
@@ -95,12 +106,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -112,6 +127,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -126,6 +142,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -141,6 +161,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -151,6 +172,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -158,13 +182,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -172,6 +200,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -180,8 +210,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -192,6 +225,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -212,6 +246,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -220,12 +256,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -233,6 +272,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -275,12 +315,25 @@ interface
 	{$setc TARGET_CPU_PPC64 := TRUE}
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+>>>>>>> origin/cpstrnew
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
@@ -308,6 +361,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
@@ -320,6 +375,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -327,6 +383,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
@@ -337,18 +395,25 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -360,12 +425,18 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
@@ -379,17 +450,25 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_CPU_ARM64 := TRUE}
+=======
+>>>>>>> origin/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> origin/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
+<<<<<<< HEAD
 {$elsec}
 =======
 =======
@@ -541,6 +620,11 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -569,6 +653,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -577,6 +662,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -590,6 +677,9 @@ uses MacTypes,AEDataModel,Files,AERegistry,Dictionary,TextCommon,MacErrors;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {$endc} {not MACOSALLINCLUDE}
 
 
@@ -628,6 +718,7 @@ type
 	end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 const
 	kLAMorphemesArrayVersion = 0;
 
@@ -673,6 +764,9 @@ const
 =======
 const
 >>>>>>> origin/cpstrnew
+=======
+const
+>>>>>>> origin/cpstrnew
 	kLAMorphemesArrayVersion = 0;
 
 {
@@ -692,6 +786,7 @@ const
 	keyAELAMorphemePath = FourCharCode('lmfp');
 	keyAELAMorpheme = FourCharCode('lmfn');
 	keyAELAHomograph = FourCharCode('lmfh');
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
@@ -716,6 +811,10 @@ const
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+
+const
+>>>>>>> origin/cpstrnew
 	typeLAMorphemeBundle = typeAERecord;
 	typeLAMorphemePath = typeAERecord;
 	typeLAMorpheme = typeAEList;
@@ -725,6 +824,9 @@ const
     Definitions for morpheme/homograph information
 }
 const
+<<<<<<< HEAD
+>>>>>>> origin/cpstrnew
+=======
 >>>>>>> origin/cpstrnew
 	keyAEMorphemePartOfSpeechCode = FourCharCode('lamc');
 	keyAEMorphemeTextRange = FourCharCode('lamt');
@@ -732,6 +834,7 @@ const
 const
 	typeAEMorphemePartOfSpeechCode = FourCharCode('lamc');
 	typeAEMorphemeTextRange = FourCharCode('lamt');
+<<<<<<< HEAD
 
 type
 	MorphemePartOfSpeech = UInt32;
@@ -857,6 +960,8 @@ const
 const
 	typeAEMorphemePartOfSpeechCode = FourCharCode('lamc');
 	typeAEMorphemeTextRange = FourCharCode('lamt');
+=======
+>>>>>>> origin/cpstrnew
 
 type
 	MorphemePartOfSpeech = UInt32;
@@ -869,6 +974,7 @@ type
 }
 const
 	kLAEndOfSourceTextMask = $00000001;
+<<<<<<< HEAD
 
 {
     Constants for leading/trailing path of analysis function
@@ -884,6 +990,23 @@ const
 const
 	kLAAllMorphemes = 0;
 
+=======
+
+{
+    Constants for leading/trailing path of analysis function
+}
+const
+	kLADefaultEdge = 0;
+	kLAFreeEdge = 1;
+	kLAIncompleteEdge = 2;
+
+{
+    Constants for confirm and shift function
+}
+const
+	kLAAllMorphemes = 0;
+
+>>>>>>> origin/cpstrnew
 {$ifc not TARGET_CPU_64}
 {
     Library version
@@ -902,6 +1025,7 @@ const
  *    Non-Carbon CFM:   in LanguageAnalysisLib 1.0 and later
  }
 function LALibraryVersion: UInt32; external name '_LALibraryVersion';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -911,6 +1035,10 @@ function LALibraryVersion: UInt32; external name '_LALibraryVersion';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+>>>>>>> origin/cpstrnew
 
 {
     High level API
@@ -919,13 +1047,17 @@ function LALibraryVersion: UInt32; external name '_LALibraryVersion';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  LATextToMorphemes()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    The Language Analysis Manager is deprecated. Use
  *    CFStringTokenizer instead.
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  
  *  Availability:
@@ -959,6 +1091,17 @@ function LATextToMorphemes( context: LAContextRef; preferedEncoding: TextEncodin
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in LanguageAnalysisLib 1.0 and later
+ }
+function LATextToMorphemes( context: LAContextRef; preferedEncoding: TextEncoding; textLength: ByteCount; sourceText: ConstLogicalAddress; bufferSize: ByteCount; convertFlags: OptionBits; structureVersion: UInt32; var acceptedLength: ByteCount; resultBuffer: LAMorphemesArrayPtr ): OSStatus; external name '_LATextToMorphemes';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+>>>>>>> origin/cpstrnew
 
 {
     Handling Context
@@ -967,14 +1110,20 @@ function LATextToMorphemes( context: LAContextRef; preferedEncoding: TextEncodin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  LAOpenAnalysisContext()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    The Language Analysis Manager is deprecated. Use
  *    CFStringTokenizer instead.
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
@@ -994,6 +1143,7 @@ function LAOpenAnalysisContext( environ: LAEnvironmentRef; var context: LAContex
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in LanguageAnalysisLib 1.0 and later
  }
@@ -1039,6 +1189,14 @@ function LACloseAnalysisContext( context: LAContextRef ): OSStatus; external nam
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in LanguageAnalysisLib 1.0 and later
+ }
+function LACloseAnalysisContext( context: LAContextRef ): OSStatus; external name '_LACloseAnalysisContext';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+>>>>>>> origin/cpstrnew
 
 {
     Handling Environment
@@ -1047,13 +1205,17 @@ function LACloseAnalysisContext( context: LAContextRef ): OSStatus; external nam
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  LAGetEnvironmentList()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    The Language Analysis Manager is deprecated. Use
  *    CFStringTokenizer instead.
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  
  *  Availability:
@@ -1078,11 +1240,24 @@ function LAGetEnvironmentList( maxCount: UInt32; var actualCount: UInt32; enviro
  *    Non-Carbon CFM:   in LanguageAnalysisLib 1.0 and later
  }
 function LAGetEnvironmentName( environment: LAEnvironmentRef; var environmentName: Str63 ): OSStatus; external name '_LAGetEnvironmentName';
+=======
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in LanguageAnalysisLib 1.0 and later
+ }
+function LAGetEnvironmentList( maxCount: UInt32; var actualCount: UInt32; environmentList: {variable-size-array} LAEnvironmentRefPtr ): OSStatus; external name '_LAGetEnvironmentList';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
 {
+<<<<<<< HEAD
  *  LAGetEnvironmentRef()   *** DEPRECATED ***
+=======
+ *  LAGetEnvironmentName()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Deprecated:
  *    The Language Analysis Manager is deprecated. Use
@@ -1090,6 +1265,7 @@ function LAGetEnvironmentName( environment: LAEnvironmentRef; var environmentNam
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in LanguageAnalysisLib 1.0 and later
  }
@@ -1131,6 +1307,17 @@ function LACreateCustomEnvironment(baseEnvironment: LAEnvironmentRef; const (*va
 
 {
  *  LADeleteCustomEnvironment()   *** DEPRECATED ***
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in LanguageAnalysisLib 1.0 and later
+ }
+function LAGetEnvironmentName( environment: LAEnvironmentRef; var environmentName: Str63 ): OSStatus; external name '_LAGetEnvironmentName';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{
+ *  LAGetEnvironmentRef()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Deprecated:
  *    The Language Analysis Manager is deprecated. Use
@@ -1138,6 +1325,7 @@ function LACreateCustomEnvironment(baseEnvironment: LAEnvironmentRef; const (*va
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in LanguageAnalysisLib 1.0 and later
  }
@@ -1157,6 +1345,12 @@ function LADeleteCustomEnvironment( environment: LAEnvironmentRef ): OSStatus; e
  *    Non-Carbon CFM:   in LanguageAnalysisLib 1.0 and later
  }
 function LAGetEnvironmentList( maxCount: UInt32; var actualCount: UInt32; environmentList: {variable-size-array} LAEnvironmentRefPtr ): OSStatus; external name '_LAGetEnvironmentList';
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in LanguageAnalysisLib 1.0 and later
+ }
+function LAGetEnvironmentRef( const (*var*) targetEnvironmentName: Str63; var environment: LAEnvironmentRef ): OSStatus; external name '_LAGetEnvironmentRef';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
@@ -1188,18 +1382,31 @@ function LAGetEnvironmentName( environment: LAEnvironmentRef; var environmentNam
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in LanguageAnalysisLib 1.0 and later
  }
+<<<<<<< HEAD
 function LAGetEnvironmentRef( const (*var*) targetEnvironmentName: Str63; var environment: LAEnvironmentRef ): OSStatus; external name '_LAGetEnvironmentRef';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
 {
  *  LACreateCustomEnvironment()
+=======
+function LACreateCustomEnvironment(baseEnvironment: LAEnvironmentRef; const (*var*) newEnvironmentName: Str63; persistent: Boolean; var newEnvironment: LAEnvironmentRef): OSStatus; external name '_LACreateCustomEnvironment';
+
+
+{
+ *  LADeleteCustomEnvironment()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    The Language Analysis Manager is deprecated. Use
+ *    CFStringTokenizer instead.
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
- *    Non-Carbon CFM:   in LanguageAnalysisLib 1.0 and later
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
+ *    Non-Carbon CFM:   in LanguageAnalysisLib 1.0 and later
  }
+<<<<<<< HEAD
 function LACreateCustomEnvironment(baseEnvironment: LAEnvironmentRef; const (*var*) newEnvironmentName: Str63; persistent: Boolean; var newEnvironment: LAEnvironmentRef): OSStatus; external name '_LACreateCustomEnvironment';
 
 
@@ -1226,6 +1433,11 @@ function LADeleteCustomEnvironment( environment: LAEnvironmentRef ): OSStatus; e
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function LADeleteCustomEnvironment( environment: LAEnvironmentRef ): OSStatus; external name '_LADeleteCustomEnvironment';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+>>>>>>> origin/cpstrnew
 
 {
     Handling dictionries
@@ -1234,14 +1446,20 @@ function LADeleteCustomEnvironment( environment: LAEnvironmentRef ): OSStatus; e
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  LAOpenDictionary()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    The Language Analysis Manager is deprecated. Use
  *    CFStringTokenizer instead.
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
@@ -1261,6 +1479,7 @@ function LAOpenDictionary( environ: LAEnvironmentRef; const (*var*) dictionary: 
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in LanguageAnalysisLib 1.0 and later
  }
@@ -1281,11 +1500,21 @@ function LACloseDictionary( environ: LAEnvironmentRef; const (*var*) dictionary:
  *    Non-Carbon CFM:   in LanguageAnalysisLib 1.0 and later
  }
 function LAListAvailableDictionaries( environ: LAEnvironmentRef; maxCount: ItemCount; var actualCount: ItemCount; dictionaryList: {variable-size-array} FSSpecPtr; opened: {variable-size-array} BooleanPtr ): OSStatus; external name '_LAListAvailableDictionaries';
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in LanguageAnalysisLib 1.0 and later
+ }
+function LACloseDictionary( environ: LAEnvironmentRef; const (*var*) dictionary: FSSpec ): OSStatus; external name '_LACloseDictionary';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
 {
+<<<<<<< HEAD
  *  LAAddNewWord()   *** DEPRECATED ***
+=======
+ *  LAListAvailableDictionaries()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Deprecated:
  *    The Language Analysis Manager is deprecated. Use
@@ -1293,6 +1522,7 @@ function LAListAvailableDictionaries( environ: LAEnvironmentRef; maxCount: ItemC
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in LanguageAnalysisLib 1.0 and later
  }
@@ -1312,11 +1542,21 @@ function LAAddNewWord( environ: LAEnvironmentRef; const (*var*) dictionary: FSSp
  *    Non-Carbon CFM:   in LanguageAnalysisLib 1.0 and later
  }
 function LAOpenDictionary( environ: LAEnvironmentRef; const (*var*) dictionary: FSSpec ): OSStatus; external name '_LAOpenDictionary';
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in LanguageAnalysisLib 1.0 and later
+ }
+function LAListAvailableDictionaries( environ: LAEnvironmentRef; maxCount: ItemCount; var actualCount: ItemCount; dictionaryList: {variable-size-array} FSSpecPtr; opened: {variable-size-array} BooleanPtr ): OSStatus; external name '_LAListAvailableDictionaries';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
 {
+<<<<<<< HEAD
  *  LACloseDictionary()   *** DEPRECATED ***
+=======
+ *  LAAddNewWord()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Deprecated:
  *    The Language Analysis Manager is deprecated. Use
@@ -1324,6 +1564,7 @@ function LAOpenDictionary( environ: LAEnvironmentRef; const (*var*) dictionary: 
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in LanguageAnalysisLib 1.0 and later
  }
@@ -1370,6 +1611,14 @@ function LAAddNewWord( environ: LAEnvironmentRef; const (*var*) dictionary: FSSp
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in LanguageAnalysisLib 1.0 and later
+ }
+function LAAddNewWord( environ: LAEnvironmentRef; const (*var*) dictionary: FSSpec; const (*var*) dataList: AEDesc ): OSStatus; external name '_LAAddNewWord';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+>>>>>>> origin/cpstrnew
 
 {
     Analyzing text
@@ -1378,13 +1627,17 @@ function LAAddNewWord( environ: LAEnvironmentRef; const (*var*) dictionary: FSSp
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  LAMorphemeAnalysis()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    The Language Analysis Manager is deprecated. Use
  *    CFStringTokenizer instead.
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  
  *  Availability:
@@ -1409,11 +1662,24 @@ function LAMorphemeAnalysis( context: LAContextRef; text: ConstUniCharArrayPtr; 
  *    Non-Carbon CFM:   in LanguageAnalysisLib 1.0 and later
  }
 function LAContinuousMorphemeAnalysis( context: LAContextRef; text: ConstUniCharArrayPtr; textLength: UniCharCount; incrementalText: Boolean; var leadingPath: LAMorphemePath; var trailingPath: LAMorphemePath; var modified: Boolean ): OSStatus; external name '_LAContinuousMorphemeAnalysis';
+=======
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in LanguageAnalysisLib 1.0 and later
+ }
+function LAMorphemeAnalysis( context: LAContextRef; text: ConstUniCharArrayPtr; textLength: UniCharCount; var leadingPath: LAMorphemePath; var trailingPath: LAMorphemePath; pathCount: ItemCount; var result: LAMorphemeBundle ): OSStatus; external name '_LAMorphemeAnalysis';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
 {
+<<<<<<< HEAD
  *  LAGetMorphemes()   *** DEPRECATED ***
+=======
+ *  LAContinuousMorphemeAnalysis()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Deprecated:
  *    The Language Analysis Manager is deprecated. Use
@@ -1421,6 +1687,7 @@ function LAContinuousMorphemeAnalysis( context: LAContextRef; text: ConstUniChar
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in LanguageAnalysisLib 1.0 and later
  }
@@ -1441,11 +1708,21 @@ function LAGetMorphemes( context: LAContextRef; var result: LAMorphemePath ): OS
  *    Non-Carbon CFM:   in LanguageAnalysisLib 1.0 and later
  }
 function LAShiftMorphemes( context: LAContextRef; morphemeCount: ItemCount; var path: LAMorphemePath; var shiftedLength: UniCharCount ): OSStatus; external name '_LAShiftMorphemes';
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in LanguageAnalysisLib 1.0 and later
+ }
+function LAContinuousMorphemeAnalysis( context: LAContextRef; text: ConstUniCharArrayPtr; textLength: UniCharCount; incrementalText: Boolean; var leadingPath: LAMorphemePath; var trailingPath: LAMorphemePath; var modified: Boolean ): OSStatus; external name '_LAContinuousMorphemeAnalysis';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
 {
+<<<<<<< HEAD
  *  LAResetAnalysis()   *** DEPRECATED ***
+=======
+ *  LAGetMorphemes()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Deprecated:
  *    The Language Analysis Manager is deprecated. Use
@@ -1453,6 +1730,7 @@ function LAShiftMorphemes( context: LAContextRef; morphemeCount: ItemCount; var 
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in LanguageAnalysisLib 1.0 and later
  }
@@ -1476,11 +1754,21 @@ function LAResetAnalysis( context: LAContextRef ): OSStatus; external name '_LAR
  *    Non-Carbon CFM:   in LanguageAnalysisLib 1.0 and later
  }
 function LAMorphemeAnalysis( context: LAContextRef; text: ConstUniCharArrayPtr; textLength: UniCharCount; var leadingPath: LAMorphemePath; var trailingPath: LAMorphemePath; pathCount: ItemCount; var result: LAMorphemeBundle ): OSStatus; external name '_LAMorphemeAnalysis';
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in LanguageAnalysisLib 1.0 and later
+ }
+function LAGetMorphemes( context: LAContextRef; var result: LAMorphemePath ): OSStatus; external name '_LAGetMorphemes';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
 {
+<<<<<<< HEAD
  *  LAContinuousMorphemeAnalysis()   *** DEPRECATED ***
+=======
+ *  LAShiftMorphemes()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Deprecated:
  *    The Language Analysis Manager is deprecated. Use
@@ -1488,6 +1776,7 @@ function LAMorphemeAnalysis( context: LAContextRef; text: ConstUniCharArrayPtr; 
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in LanguageAnalysisLib 1.0 and later
  }
@@ -1508,11 +1797,21 @@ function LAContinuousMorphemeAnalysis( context: LAContextRef; text: ConstUniChar
  *    Non-Carbon CFM:   in LanguageAnalysisLib 1.0 and later
  }
 function LAGetMorphemes( context: LAContextRef; var result: LAMorphemePath ): OSStatus; external name '_LAGetMorphemes';
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in LanguageAnalysisLib 1.0 and later
+ }
+function LAShiftMorphemes( context: LAContextRef; morphemeCount: ItemCount; var path: LAMorphemePath; var shiftedLength: UniCharCount ): OSStatus; external name '_LAShiftMorphemes';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
 {
+<<<<<<< HEAD
  *  LAShiftMorphemes()   *** DEPRECATED ***
+=======
+ *  LAResetAnalysis()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Deprecated:
  *    The Language Analysis Manager is deprecated. Use
@@ -1520,6 +1819,7 @@ function LAGetMorphemes( context: LAContextRef; var result: LAMorphemePath ): OS
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in LanguageAnalysisLib 1.0 and later
  }
@@ -1546,6 +1846,11 @@ function LAResetAnalysis(context: LAContextRef): OSStatus; external name '_LARes
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in LanguageAnalysisLib 1.0 and later
+ }
+>>>>>>> origin/cpstrnew
 function LAResetAnalysis( context: LAContextRef ): OSStatus; external name '_LAResetAnalysis';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
@@ -1553,7 +1858,10 @@ function LAResetAnalysis( context: LAContextRef ): OSStatus; external name '_LAR
 {$endc} {not TARGET_CPU_64}
 
 {$endc} {not TARGET_CPU_64}
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {
     Check Language Analysis Manager availability
@@ -1589,8 +1897,11 @@ function LAResetAnalysis( context: LAContextRef ): OSStatus; external name '_LAR
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 const
 	kLAJapaneseKanaKanjiEnvironment = 'KanaKanjiConversion';
 const
@@ -1598,6 +1909,9 @@ const
 const
 	kLAJapaneseTTSEnvironment = 'JapaneseTextToSpeech';
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {
     File cretor for dictionary of Apple Japanese access method
 }
@@ -1613,6 +1927,7 @@ const
 {
     Definitions of information in the path/bundle
 }
+<<<<<<< HEAD
 
 type
 	JapanesePartOfSpeech = MorphemePartOfSpeech;
@@ -1630,11 +1945,14 @@ const
 	typeAEHomographDicInfo = FourCharCode('lahd');
 	typeAEHomographWeight = typeSInt16;
 	typeAEHomographAccent = FourCharCode('laha');
+=======
+>>>>>>> origin/cpstrnew
 
 {
     Structure for dictionary information of homograph
 }
 type
+<<<<<<< HEAD
 	HomographDicInfoRecPtr = ^HomographDicInfoRec;
 	HomographDicInfoRec = record
 		dictionaryID: DCMDictionaryID;
@@ -1908,6 +2226,25 @@ const
 	typeAEHomographAccent = FourCharCode('laha');
 
 {
+=======
+	JapanesePartOfSpeech = MorphemePartOfSpeech;
+	HomographWeight = UInt16;
+	HomographAccent = UInt8;
+{
+    AE keywords and type definitions for morpheme/homograph information
+}
+const
+	keyAEHomographDicInfo = FourCharCode('lahd');
+	keyAEHomographWeight = FourCharCode('lahw');
+	keyAEHomographAccent = FourCharCode('laha');
+
+const
+	typeAEHomographDicInfo = FourCharCode('lahd');
+	typeAEHomographWeight = typeSInt16;
+	typeAEHomographAccent = FourCharCode('laha');
+
+{
+>>>>>>> origin/cpstrnew
     Structure for dictionary information of homograph
 }
 type
@@ -1929,6 +2266,7 @@ const
 	kLASpeechMediumClassMask = $0000FF00;
 	kLASpeechStrictClassMask = $0000FFF0;
 	kLASpeechKatsuyouMask = $0000000F;
+<<<<<<< HEAD
 
 
 {
@@ -1999,11 +2337,84 @@ const
 	kLASpeechKatsuyouMeirei = $00000007;
 
 
+=======
+
+
+{
+    Part of speeches
+}
+const
+	kLASpeechMeishi = $00000000; { noun }
+	kLASpeechFutsuuMeishi = $00000000; { general noun }
+	kLASpeechJinmei = $00000100; { person name }
+	kLASpeechJinmeiSei = $00000110; { family name }
+	kLASpeechJinmeiMei = $00000120; { first name }
+	kLASpeechChimei = $00000200; { place name }
+	kLASpeechSetsubiChimei = $00000210; { place name with suffix }
+	kLASpeechSoshikimei = $00000300; { organization name }
+	kLASpeechKoyuuMeishi = $00000400; { proper noun }
+	kLASpeechSahenMeishi = $00000500; { special noun }
+	kLASpeechKeidouMeishi = $00000600; { special noun }
+	kLASpeechRentaishi = $00001000;
+	kLASpeechFukushi = $00002000; { adverb }
+	kLASpeechSetsuzokushi = $00003000; { conjunction }
+	kLASpeechKandoushi = $00004000;
+	kLASpeechDoushi = $00005000; { verb }
+	kLASpeechGodanDoushi = $00005000;
+	kLASpeechKagyouGodan = $00005000;
+	kLASpeechSagyouGodan = $00005010;
+	kLASpeechTagyouGodan = $00005020;
+	kLASpeechNagyouGodan = $00005030;
+	kLASpeechMagyouGodan = $00005040;
+	kLASpeechRagyouGodan = $00005050;
+	kLASpeechWagyouGodan = $00005060;
+	kLASpeechGagyouGodan = $00005070;
+	kLASpeechBagyouGodan = $00005080;
+	kLASpeechIchidanDoushi = $00005100;
+	kLASpeechKahenDoushi = $00005200;
+	kLASpeechSahenDoushi = $00005300;
+	kLASpeechZahenDoushi = $00005400;
+	kLASpeechKeiyoushi = $00006000; { adjective }
+	kLASpeechKeiyoudoushi = $00007000;
+	kLASpeechSettougo = $00008000; { prefix}
+	kLASpeechSuujiSettougo = $00008100; { prefix for numbers }
+	kLASpeechSetsubigo = $00009000; { suffix }
+	kLASpeechJinmeiSetsubigo = $00009100; { suffix for person name }
+	kLASpeechChimeiSetsubigo = $00009200; { suffix for place name }
+	kLASpeechSoshikimeiSetsubigo = $00009300; { suffix for organization name }
+	kLASpeechSuujiSetsubigo = $00009400; { suffix for numbers }
+	kLASpeechMuhinshi = $0000A000; { no category }
+	kLASpeechTankanji = $0000A000; { character }
+	kLASpeechKigou = $0000A100; { symbol }
+	kLASpeechKuten = $0000A110;
+	kLASpeechTouten = $0000A120;
+	kLASpeechSuushi = $0000A200; { numbers }
+	kLASpeechDokuritsugo = $0000A300;
+	kLASpeechSeiku = $0000A400;
+	kLASpeechJodoushi = $0000B000; { auxiliary verb }
+	kLASpeechJoshi = $0000C000; { postpositional particle }
+
+
+{
+    Conjugations
+ }
+const
+	kLASpeechKatsuyouGokan = $00000001; { stem }
+	kLASpeechKatsuyouMizen = $00000002;
+	kLASpeechKatsuyouRenyou = $00000003;
+	kLASpeechKatsuyouSyuushi = $00000004;
+	kLASpeechKatsuyouRentai = $00000005;
+	kLASpeechKatsuyouKatei = $00000006;
+	kLASpeechKatsuyouMeirei = $00000007;
+
+
+>>>>>>> origin/cpstrnew
 {$endc} {TARGET_OS_MAC}
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -2012,3 +2423,6 @@ end.
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

@@ -37,12 +37,17 @@ uses
   ziputils,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   paszlib,
   ctypes,
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  paszlib,
+  ctypes,
+>>>>>>> origin/cpstrnew
   unzip;
 
 const
@@ -82,6 +87,7 @@ begin
   DosDateTimeToFileTime(WORD((dosdate shl 16)), WORD(dosdate), @ftLocal);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   LocalFileTimeToFileTime(ftLocal, ftm);
 =======
   LocalFileTimeToFileTime(ftLocal, @ftm);
@@ -89,6 +95,9 @@ begin
 =======
   LocalFileTimeToFileTime(ftLocal, @ftm);
 >>>>>>> origin/fixes_2_2
+=======
+  LocalFileTimeToFileTime(ftLocal, ftm);
+>>>>>>> origin/cpstrnew
   SetFileTime(hFile,ftm, ftLastAcc, ftm);
   CloseHandle(hFile);
 end;

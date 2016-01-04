@@ -643,6 +643,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           #127..#255:
 =======
           #128..#255:
@@ -653,6 +654,9 @@ var
 =======
           #127..#255:
 >>>>>>> origin/fixes_2.4
+=======
+          #127..#255:
+>>>>>>> origin/cpstrnew
             converted:=convert_cp437_to_UTF8[c];
           else
           begin
@@ -1129,6 +1133,9 @@ begin
     if cur_term_strings=@term_codes_xterm then
     begin
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
       {$ifdef haiku}
       TerminalSupportsBold := true;
       TerminalSupportsHighIntensityColors := false;
@@ -1136,10 +1143,13 @@ begin
       TerminalSupportsBold := false;
       TerminalSupportsHighIntensityColors := true;
       {$endif}
+<<<<<<< HEAD
 =======
       TerminalSupportsBold := false;
       TerminalSupportsHighIntensityColors := true;
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
     end
     else
     begin
@@ -1147,13 +1157,19 @@ begin
       TerminalSupportsHighIntensityColors := false;
     end;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
     if cur_term_strings=@term_codes_beos then
     begin
       TerminalSupportsBold := false;
       TerminalSupportsHighIntensityColors := false;      
     end;  
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
     if cur_term_strings=@term_codes_freebsd then
       console:=ttyFreeBSD;
 {$ifdef linux}

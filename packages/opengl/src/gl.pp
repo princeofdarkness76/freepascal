@@ -2429,6 +2429,7 @@ initialization
   {$ELSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$ifdef haiku}
   LoadOpenGL('libGL.so');
   {$else}
@@ -2443,7 +2444,13 @@ initialization
   {$endif}
 >>>>>>> graemeg/fixes_2_2
 =======
+=======
+  {$ifdef haiku}
+  LoadOpenGL('libGL.so');
+  {$else}
+>>>>>>> origin/cpstrnew
   LoadOpenGL('libGL.so.1');
+  {$endif}
   {$ENDIF}
   {$endif}
 >>>>>>> origin/fixes_2_2

@@ -76,11 +76,14 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -165,11 +168,14 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
        end;
@@ -207,6 +213,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          etFieldValue,
          etVirtualMethodClass,
          etStaticMethodClass,
@@ -218,6 +225,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
          etFieldValue, 
          etVirtualMethodClass,
          etStaticMethodClass,
@@ -225,11 +234,14 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
        );
@@ -285,6 +297,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             exceptaddr : codepointer) : HResult;virtual;
 =======
             exceptaddr : pointer) : HResult;virtual;
@@ -295,6 +308,9 @@
 =======
             exceptaddr : pointer) : HResult;virtual;
 >>>>>>> graemeg/cpstrnew
+=======
+            exceptaddr : pointer) : HResult;virtual;
+>>>>>>> origin/cpstrnew
 =======
             exceptaddr : pointer) : HResult;virtual;
 >>>>>>> origin/cpstrnew
@@ -334,12 +350,15 @@
           function GetInterface(const iidstr : shortstring;out obj) : boolean;
           function GetInterfaceByStr(const iidstr : shortstring; out obj) : boolean;
           function GetInterfaceWeak(const iid : tguid; out obj) : boolean; // equal to GetInterface but the interface returned is not referenced
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
           function GetInterface(const iidstr : string;out obj) : boolean;{$ifdef SYSTEMINLINE}inline;{$endif}
           function GetInterfaceByStr(const iidstr : string; out obj) : boolean;
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
           class function GetInterfaceEntry(const iid : tguid) : pinterfaceentry;
           class function GetInterfaceEntryByStr(const iidstr : shortstring) : pinterfaceentry;
           class function GetInterfaceTable : pinterfacetable;
@@ -423,6 +442,7 @@
 <<<<<<< HEAD
          protected
            function QueryInterface({$IFDEF FPC_HAS_CONSTREF}constref{$ELSE}const{$ENDIF} iid : tguid;out obj) : longint;virtual; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
+<<<<<<< HEAD
 =======
          protected 
            function QueryInterface(const iid : tguid;out obj) : longint;virtual; stdcall;
@@ -431,6 +451,8 @@
          protected 
            function QueryInterface(const iid : tguid;out obj) : longint;virtual; stdcall;
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
          end;
 
        { some pointer definitions }
@@ -499,6 +521,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef FPUNONE}
       vtExtended      = 3;
 {$endif}
@@ -517,6 +540,11 @@
       vtExtended      = 3;
 {$endif}              
 >>>>>>> graemeg/cpstrnew
+=======
+{$ifndef FPUNONE}     
+      vtExtended      = 3;
+{$endif}              
+>>>>>>> origin/cpstrnew
 =======
 {$ifndef FPUNONE}     
       vtExtended      = 3;
@@ -546,6 +574,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef ENDIAN_BIG}
 =======
 {$ifdef ENDIAN_BIG}        
@@ -559,10 +588,14 @@
 =======
 {$ifdef ENDIAN_BIG}        
 >>>>>>> origin/cpstrnew
+=======
+{$ifdef ENDIAN_BIG}        
+>>>>>>> origin/cpstrnew
            vtInteger       : ({$IFDEF CPU64}integerdummy1 : Longint;{$ENDIF CPU64}VInteger: Longint);
            vtBoolean       : ({$IFDEF CPU64}booldummy : Longint;{$ENDIF CPU64}booldummy1,booldummy2,booldummy3: byte; VBoolean: Boolean);
            vtChar          : ({$IFDEF CPU64}chardummy : Longint;{$ENDIF CPU64}chardummy1,chardummy2,chardummy3: byte; VChar: Char);
            vtWideChar      : ({$IFDEF CPU64}widechardummy : Longint;{$ENDIF CPU64}wchardummy1,VWideChar: WideChar);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -580,10 +613,14 @@
 =======
 {$else ENDIAN_BIG}         
 >>>>>>> origin/cpstrnew
+=======
+{$else ENDIAN_BIG}         
+>>>>>>> origin/cpstrnew
            vtInteger       : (VInteger: Longint);
            vtBoolean       : (VBoolean: Boolean);
            vtChar          : (VChar: Char);
            vtWideChar      : (VWideChar: WideChar);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -602,6 +639,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$endif ENDIAN_BIG}        
 {$ifndef FPUNONE}          
            vtExtended      : (VExtended: PExtended);
@@ -612,11 +651,14 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
            vtObject        : (VObject: TObject);
@@ -640,6 +682,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -647,10 +690,13 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
   const
     { for safe as operator support }
     IObjectInstance: TGuid = '{D91C9AF4-3C93-420F-A303-BF5BA82BFD23}';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -675,5 +721,7 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew

@@ -53,11 +53,14 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     Procedure ProcessCommandLine(FirstPass: boolean);
@@ -70,6 +73,7 @@ Type
 { TMakeTool }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 function TMakeTool.GetConfigFileName: String;
 begin
@@ -81,6 +85,8 @@ end;
 
 
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 procedure TMakeTool.LoadGlobalDefaults;
 var
   i : integer;
@@ -89,6 +95,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   GeneratedConfig,
   UseGlobalConfig : boolean;
@@ -101,6 +108,10 @@ var
   GeneratedConfig,
   UseGlobalConfig : boolean;
 >>>>>>> graemeg/cpstrnew
+=======
+  GeneratedConfig,
+  UseGlobalConfig : boolean;
+>>>>>>> origin/cpstrnew
 =======
   GeneratedConfig,
   UseGlobalConfig : boolean;
@@ -199,34 +210,64 @@ begin
         LogLevels:=AllLogLevels+[vlDebug];
         break;
       end;
-  // Load file or create new default configuration
-  cfgfile:=GetConfigFileName;
   GeneratedConfig:=false;
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2_2
   if FileExists(cfgfile) then
+=======
+  UseGlobalConfig:=false;
+  // First try config file from command line
+  if HasOption('C','config-file') then
+>>>>>>> origin/cpstrnew
     begin
-      GlobalOptions.LoadGlobalFromFile(cfgfile);
-      if GlobalOptions.Dirty then
-        GlobalOptions.SaveGlobalToFile(cfgfile);
+      cfgfile:=GetOptionValue('C','config-file');
+      if not FileExists(cfgfile) then
+        Error(SErrNoSuchFile,[cfgfile]);
     end
   else
     begin
-      ForceDirectories(ExtractFilePath(cfgfile));
-      GlobalOptions.SaveGlobalToFile(cfgfile);
-      GeneratedConfig:=true;
+      // Now try if a local config-file exists
+      cfgfile:=GetAppConfigFile(False,False);
+      if not FileExists(cfgfile) then
+        begin
+          // If not, try to find a global configuration file
+          cfgfile:=GetAppConfigFile(True,False);
+          if FileExists(cfgfile) then
+            UseGlobalConfig := true
+          else
+            begin
+              // Create a new configuration file
+              if not IsSuperUser then // Make a local, not global, configuration file
+                cfgfile:=GetAppConfigFile(False,False);
+              ForceDirectories(ExtractFilePath(cfgfile));
+              GlobalOptions.SaveGlobalToFile(cfgfile);
+              GeneratedConfig:=true;
+            end;
+        end;
+    end;
+  // Load file or create new default configuration
+  if not GeneratedConfig then
+    begin
+      GlobalOptions.LoadGlobalFromFile(cfgfile);
+      if GlobalOptions.SaveInifileChanges and (not UseGlobalConfig or IsSuperUser) then
+        GlobalOptions.SaveGlobalToFile(cfgfile);
     end;
   GlobalOptions.CompilerConfig:=GlobalOptions.DefaultCompilerConfig;
   // Tracing of what we've done above, need to be done after the verbosity is set
   if GeneratedConfig then
-    Log(vlDebug,SLogGeneratingGlobalConfig,[cfgfile])
+    pkgglobals.Log(vlDebug,SLogGeneratingGlobalConfig,[cfgfile])
   else
-    Log(vlDebug,SLogLoadingGlobalConfig,[cfgfile]);
+    pkgglobals.Log(vlDebug,SLogLoadingGlobalConfig,[cfgfile]);
   // Log configuration
+<<<<<<< HEAD
   GlobalOptions.LogValues;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  GlobalOptions.LogValues(vlDebug);
+>>>>>>> origin/cpstrnew
 end;
 
 
@@ -248,6 +289,7 @@ begin
   S:=GlobalOptions.CompilerConfigDir+GlobalOptions.CompilerConfig;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   CompilerOptions.UpdateLocalRepositoryOption;
   if FileExists(S) then
     begin
@@ -262,6 +304,12 @@ begin
     begin
       Log(vlDebug,SLogLoadingCompilerConfig,[S]);
 >>>>>>> origin/fixes_2_2
+=======
+  CompilerOptions.UpdateLocalRepositoryOption;
+  if FileExists(S) then
+    begin
+      pkgglobals.Log(vlDebug,SLogLoadingCompilerConfig,[S]);
+>>>>>>> origin/cpstrnew
       CompilerOptions.LoadCompilerFromFile(S)
     end
   else
@@ -269,6 +317,7 @@ begin
       // Generate a default configuration if it doesn't exists
       if GlobalOptions.CompilerConfig='default' then
         begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
           pkgglobals.Log(vlDebug,SLogGeneratingCompilerConfig,[S]);
@@ -286,12 +335,19 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+          pkgglobals.Log(vlDebug,SLogGeneratingCompilerConfig,[S]);
+          CompilerOptions.InitCompilerDefaults;
+          CompilerOptions.SaveCompilerToFile(S);
+          if CompilerOptions.SaveInifileChanges then
+>>>>>>> origin/cpstrnew
             CompilerOptions.SaveCompilerToFile(S);
         end
       else
         Error(SErrMissingCompilerConfig,[S]);
     end;
   // Log compiler configuration
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   CompilerOptions.LogValues(vlDebug,'');
@@ -307,22 +363,31 @@ begin
 =======
 >>>>>>> origin/fixes_2_2
   CompilerOptions.LogValues('');
+=======
+  CompilerOptions.LogValues(vlDebug,'');
+>>>>>>> origin/cpstrnew
   // Load FPMake compiler config, this is normally the same config as above
   S:=GlobalOptions.CompilerConfigDir+GlobalOptions.FPMakeCompilerConfig;
+  FPMakeCompilerOptions.UpdateLocalRepositoryOption;
   if FileExists(S) then
     begin
-      Log(vlDebug,SLogLoadingFPMakeCompilerConfig,[S]);
+      pkgglobals.Log(vlDebug,SLogLoadingFPMakeCompilerConfig,[S]);
       FPMakeCompilerOptions.LoadCompilerFromFile(S);
+<<<<<<< HEAD
       if FPMakeCompilerOptions.Dirty then
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+      if FPMakeCompilerOptions.SaveInifileChanges then
+>>>>>>> origin/cpstrnew
         FPMakeCompilerOptions.SaveCompilerToFile(S);
     end
   else
     Error(SErrMissingCompilerConfig,[S]);
   // Log compiler configuration
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   FPMakeCompilerOptions.LogValues(vlDebug,'fpmake-building ');
@@ -332,6 +397,9 @@ begin
 =======
   FPMakeCompilerOptions.LogValues('fpmake-building ');
 >>>>>>> origin/fixes_2_2
+=======
+  FPMakeCompilerOptions.LogValues(vlDebug,'fpmake-building ');
+>>>>>>> origin/cpstrnew
 end;
 
 
@@ -350,6 +418,9 @@ begin
   Writeln('  -r --recovery      Recovery mode, use always internal fpmkunit');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   Writeln('  -b --broken        Do not stop on broken packages');
   Writeln('  -l --showlocation  Show if the packages are installed globally or locally');
   Writeln('  -o --options=value Pass extra options to the compiler');
@@ -359,6 +430,7 @@ begin
   Writeln('  --compiler=value   Specify the compiler-executable');
   Writeln('  --cpu=value        Specify the target cpu to compile for');
   Writeln('  --os=value         Specify the target operating system to compile for');
+<<<<<<< HEAD
   Writeln('Actions:');
   Writeln('  update            Update packages list');
   Writeln('  list              List available and installed packages');
@@ -414,6 +486,20 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  Writeln('Actions:');
+  Writeln('  update            Update packages list');
+  Writeln('  list              List available and installed packages');
+  Writeln('  build             Build package');
+  Writeln('  compile           Compile package');
+  Writeln('  install           Install package');
+  Writeln('  clean             Clean package');
+  Writeln('  archive           Create archive of package');
+  Writeln('  download          Download package');
+  Writeln('  convertmk         Convert Makefile.fpc to fpmake.pp');
+  Writeln('  fixbroken         Recompile all (broken) packages with changed dependencies');
+  Writeln('  listsettings      Show the values for all fppkg settings');
+>>>>>>> origin/cpstrnew
 //  Writeln('  addconfig          Add a compiler configuration for the supplied compiler');
   Halt(0);
 end;
@@ -530,6 +616,7 @@ begin
         GlobalOptions.RecoveryMode:=true
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       else if CheckOption(I,'n','') then
         GlobalOptions.SkipConfigurationFiles:=true
       else if CheckOption(I,'b','broken') then
@@ -568,6 +655,38 @@ begin
       else if CheckOption(I,'b','broken') then
         GlobalOptions.AllowBroken:=true
 >>>>>>> origin/fixes_2_2
+=======
+      else if CheckOption(I,'n','') then
+        GlobalOptions.SkipConfigurationFiles:=true
+      else if CheckOption(I,'b','broken') then
+        GlobalOptions.AllowBroken:=true
+      else if CheckOption(I,'l','showlocation') then
+        GlobalOptions.ShowLocation:=true
+      else if CheckOption(I,'s','skipbroken') then
+        GlobalOptions.SkipFixBrokenAfterInstall:=true
+      else if CheckOption(I,'o','options') and FirstPass then
+        begin
+          OptString := OptionArg(I);
+          while OptString <> '' do
+            CompilerOptions.Options.Add(SplitSpaces(OptString));
+        end
+      else if CheckOption(I,'p','prefix') then
+        begin
+          CompilerOptions.GlobalPrefix := OptionArg(I);
+          CompilerOptions.LocalPrefix := OptionArg(I);
+          FPMakeCompilerOptions.GlobalPrefix := OptionArg(I);
+          FPMakeCompilerOptions.LocalPrefix := OptionArg(I);
+        end
+      else if CheckOption(I,'','compiler') then
+        begin
+          CompilerOptions.Compiler := OptionArg(I);
+          FPMakeCompilerOptions.Compiler := OptionArg(I);
+        end
+      else if CheckOption(I,'','os') then
+        CompilerOptions.CompilerOS := StringToOS(OptionArg(I))
+      else if CheckOption(I,'','cpu') then
+        CompilerOptions.CompilerCPU := StringToCPU(OptionArg(I))
+>>>>>>> origin/cpstrnew
       else if CheckOption(I,'h','help') then
         begin
           ShowUsage;
@@ -610,6 +729,7 @@ begin
     LoadGlobalDefaults;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     ProcessCommandLine(true);
 =======
     ProcessCommandLine;
@@ -617,6 +737,9 @@ begin
 =======
     ProcessCommandLine;
 >>>>>>> origin/fixes_2_2
+=======
+    ProcessCommandLine(true);
+>>>>>>> origin/cpstrnew
 
     // Scan is special, it doesn't need a valid local setup
     if (ParaAction='scan') then
@@ -629,6 +752,9 @@ begin
 
     MaybeCreateLocalDirs;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
     if not GlobalOptions.SkipConfigurationFiles then
       LoadCompilerDefaults
     else
@@ -646,12 +772,15 @@ begin
     FPMakeCompilerOptions.CheckCompilerValues;
     CompilerOptions.CheckCompilerValues;
 
+<<<<<<< HEAD
 =======
     LoadCompilerDefaults;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
     LoadLocalAvailableMirrors;
 
     // Load local repository, update first if this is a new installation
@@ -663,6 +792,7 @@ begin
           pkghandler.ExecuteAction('','update');
         except
           on E: Exception do
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -688,6 +818,9 @@ begin
 =======
             Log(vlWarning,E.Message);
 >>>>>>> origin/fixes_2_2
+=======
+            pkgglobals.Log(vlWarning,E.Message);
+>>>>>>> origin/cpstrnew
         end;
       end;
     LoadLocalAvailableRepository;
@@ -716,11 +849,15 @@ begin
     if not GlobalOptions.AllowBroken and
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
        (((ParaAction='fixbroken') and (ParaPackages.Count>0)) or
         (ParaAction='compile') or
         (ParaAction='build') or
         (ParaAction='install') or
         (ParaAction='archive')) then
+<<<<<<< HEAD
       begin
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -747,6 +884,10 @@ begin
        not((ParaPackages.Count=0) and (ParaAction='fixbroken')) then
       begin
 >>>>>>> origin/fixes_2_2
+=======
+      begin
+        pkgglobals.Log(vlDebug,SLogCheckBrokenDependenvies);
+>>>>>>> origin/cpstrnew
         SL:=TStringList.Create;
         if FindBrokenPackages(SL) then
           Error(SErrBrokenPackagesFound);
@@ -765,6 +906,7 @@ begin
           begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             if sametext(ExtractFileExt(ParaPackages[i]),'.zip') and FileExists(ParaPackages[i]) then
 =======
             if FileExists(ParaPackages[i]) then
@@ -772,6 +914,9 @@ begin
 =======
             if FileExists(ParaPackages[i]) then
 >>>>>>> origin/fixes_2_2
+=======
+            if sametext(ExtractFileExt(ParaPackages[i]),'.zip') and FileExists(ParaPackages[i]) then
+>>>>>>> origin/cpstrnew
               begin
                 ActionPackage:=AvailableRepository.AddPackage(CmdLinePackageName);
                 ActionPackage.LocalFileName:=ExpandFileName(ParaPackages[i]);
@@ -779,6 +924,7 @@ begin
               end
             else
               begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -804,12 +950,16 @@ begin
 =======
                 Log(vlDebug,SLogCommandLineAction,['['+ParaPackages[i]+']',ParaAction]);
 >>>>>>> origin/fixes_2_2
+=======
+                pkgglobals.Log(vlDebug,SLogCommandLineAction,['['+ParaPackages[i]+']',ParaAction]);
+>>>>>>> origin/cpstrnew
                 pkghandler.ExecuteAction(ParaPackages[i],ParaAction);
               end;
           end;
       end;
 
     // Recompile all packages dependent on this package
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     if (ParaAction='install') and not GlobalOptions.SkipFixBrokenAfterInstall then
@@ -819,6 +969,9 @@ begin
 =======
     if (ParaAction='install') then
 >>>>>>> origin/fixes_2_2
+=======
+    if (ParaAction='install') and not GlobalOptions.SkipFixBrokenAfterInstall then
+>>>>>>> origin/cpstrnew
       pkghandler.ExecuteAction('','fixbroken');
 
     Terminate;

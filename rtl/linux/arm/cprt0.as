@@ -105,6 +105,9 @@ _haltproc:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
         .globl  _haltproc_eabi
         .type   _haltproc_eabi,#function
 _haltproc_eabi:

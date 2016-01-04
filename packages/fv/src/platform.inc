@@ -33,12 +33,16 @@
 {                 - FPC 0.9912+             (32 Bit)       }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {       WIN64     - FPC 2.4.3               (64 Bit)       }
 {        OS2      - Virtual Pascal 1.0+     (32 Bit)       }
 {                 - C'T patch to BP         (16 Bit)       }
 {        LINUX    - FPC 0.9912+             (32 Bit)       }
 {        LINUX    - FPC 2.4.3               (64 Bit)       }
 {        LINUX    - FPC 2.4.3               (64 Bit)       }
+<<<<<<< HEAD
 =======
 {        OS2      - Virtual Pascal 1.0+     (32 Bit)       }
 {                 - C'T patch to BP         (16 Bit)       }
@@ -49,6 +53,8 @@
 {                 - C'T patch to BP         (16 Bit)       }
 {        LINUX    - FPC 0.9912+             (32 Bit)       }
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 {                                                          }
 {******************[ REVISION HISTORY ]********************}
 {  Version  Date      Who    Fix                           }
@@ -72,6 +78,7 @@
 {  1.34    02 May 02  MvdV   FreeBSD, NetBSD, OS_UNIX      }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  1.35    28 Nov 10  PM     64 bit OS Linux, Win64, FreeBSD }
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -90,6 +97,9 @@
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{  1.35    28 Nov 10  PM     64 bit OS Linux, Win64, FreeBSD }
+>>>>>>> origin/cpstrnew
 {**********************************************************}
 
 { ****************************************************************************
@@ -121,11 +131,15 @@
  LINUX    OS_LINUX    FPC      PPC_FPC      PROC_Protected  BIT_32  ASM_FPC
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
  LINUX    OS_LINUX    FPC      PPC_FPC      PROC_Protected  BIT_64  ASM_FPC
           OS_UNIX
 
  FREEBSD  OS_FREEBSD  FPC      PPC_FPC      PROC_Protected  BIT_32  ASM_FPC
  FREEBSD  OS_FREEBSD  FPC      PPC_FPC      PROC_Protected  BIT_64  ASM_FPC
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -154,6 +168,8 @@
 
  FREEBSD  OS_FREEBSD  FPC      PPC_FPC      PROC_Protected  BIT_32  ASM_FPC
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
           OS_UNIX
 
  NETBSD   OS_NETBSD   FPC      PPC_FPC      PROC_Protected  BIT_32  ASM_FPC
@@ -172,11 +188,15 @@
                       FPC      PPC_FPC      PROC_Protected  BIT_32  ASM_FPC
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  WINDOWS 64-BITS      FPC      PPC_FPC      PROC_Protected  BIT_64  ASM_FPC
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+ WINDOWS 64-BITS      FPC      PPC_FPC      PROC_Protected  BIT_64  ASM_FPC
+>>>>>>> origin/cpstrnew
 
  OS2      OS_OS2      BPOS2    PPC_BPOS2    PROC_Protected  BIT_16  ASM_BP
                       VIRTUAL  PPC_VIRTUAL  PROC_Protected  BIT_32  ASM_BP
@@ -248,11 +268,15 @@ FOR FPC THESE ARE THE TRANSLATIONS
 {  FPC 32 BIT COMPILER changes ASM, 32 bits etc - Updated 27Aug98 LdB       }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  FPC 64 BIT COMPILER added - Update 28Nov2010 PM                          }
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{  FPC 64 BIT COMPILER added - Update 28Nov2010 PM                          }
+>>>>>>> origin/cpstrnew
 {---------------------------------------------------------------------------}
 {$IFDEF FPC}
   {$mode fpc}
@@ -262,6 +286,9 @@ FOR FPC THESE ARE THE TRANSLATIONS
   {$UNDEF BIT_16}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   {$IFDEF CPU64}
     {$UNDEF BIT_32}
     {$DEFINE BIT_64}
@@ -269,12 +296,15 @@ FOR FPC THESE ARE THE TRANSLATIONS
     {$DEFINE BIT_32}
     {$UNDEF BIT_64}
   {$ENDIF}
+<<<<<<< HEAD
 =======
   {$DEFINE BIT_32}
 >>>>>>> graemeg/fixes_2_2
 =======
   {$DEFINE BIT_32}
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
   {$UNDEF PPC_BP}
   {$DEFINE PPC_FPC}
   {$UNDEF ASM_BP}
@@ -399,6 +429,9 @@ FOR FPC THESE ARE THE TRANSLATIONS
 {---------------------------------------------------------------------------}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {  64 BIT WINDOWS COMPILERS changes bit size - Updated 28Nov10 PM           }
 {---------------------------------------------------------------------------}
 {$IFDEF WIN64}
@@ -411,10 +444,13 @@ FOR FPC THESE ARE THE TRANSLATIONS
 {$ENDIF}
 
 {---------------------------------------------------------------------------}
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 {  WINDOWS COMPILERS change op system and proc mode - Updated 03Nov99 LdB   }
 {---------------------------------------------------------------------------}
 {$IFDEF WINDOWS}
@@ -425,6 +461,7 @@ FOR FPC THESE ARE THE TRANSLATIONS
   {$IFDEF FPC}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     // {$DEFINE WIN32}
 =======
     {$DEFINE WIN32}
@@ -432,6 +469,9 @@ FOR FPC THESE ARE THE TRANSLATIONS
 =======
     {$DEFINE WIN32}
 >>>>>>> origin/fixes_2_2
+=======
+    // {$DEFINE WIN32}
+>>>>>>> origin/cpstrnew
   {$ENDIF}
 {$ENDIF}
 
@@ -605,11 +645,15 @@ FOR FPC THESE ARE THE TRANSLATIONS
 {  WIN16 AND WIN32 set if in windows - Updated 16Oct2000 LdB                }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  WIN64 added - Update 28Nov2010 PM                                        }
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{  WIN64 added - Update 28Nov2010 PM                                        }
+>>>>>>> origin/cpstrnew
 {---------------------------------------------------------------------------}
 {$IFDEF OS_WINDOWS}                                   { WINDOWS SYSTEM }
   {$IFDEF BIT_16}
@@ -618,6 +662,7 @@ FOR FPC THESE ARE THE TRANSLATIONS
   {$IFDEF BIT_32}
     {$DEFINE WIN32}                                   { 32 BIT WINDOWS }
   {$ENDIF}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   {$IFDEF BIT_64}
@@ -702,4 +747,24 @@ FOR FPC THESE ARE THE TRANSLATIONS
 
 
 >>>>>>> origin/fixes_2_2
+=======
+  {$IFDEF BIT_64}
+    {$DEFINE WIN64}                                   { 64 BIT WINDOWS }
+  {$ENDIF}
+{$ENDIF}
+
+
+{---------------------------------------------------------------------------}
+{  BIT_32_OR_MORE                                                           }
+{---------------------------------------------------------------------------}
+
+{$ifdef BIT_16}
+  {$UNDEF BIT_32_OR_MORE}
+{$ELSE}
+  {$DEFINE BIT_32_OR_MORE}
+{$ENDIF}
+
+
+
+>>>>>>> origin/cpstrnew
 

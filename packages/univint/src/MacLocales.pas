@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       CarbonCore/MacLocales.h
  
      Contains:   Types & prototypes for locale functions
@@ -38,11 +39,15 @@
 =======
      File:       CarbonCore/MacLocales.h
 >>>>>>> origin/fixes_2.4
+=======
+     File:       CarbonCore/MacLocales.h
+>>>>>>> origin/cpstrnew
  
      Contains:   Types & prototypes for locale functions
  
      Version:    CarbonCore-859.2~1
  
+<<<<<<< HEAD
 <<<<<<< HEAD
      Copyright:  © 1998-2002 by Apple Computer, Inc., all rights reserved.
 <<<<<<< HEAD
@@ -52,6 +57,9 @@
 =======
      Copyright:  © 1998-2008 by Apple Computer, Inc., all rights reserved.
 >>>>>>> origin/fixes_2.4
+=======
+     Copyright:  © 1998-2008 by Apple Computer, Inc., all rights reserved.
+>>>>>>> origin/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -61,6 +69,7 @@
                      http://bugs.freepascal.org
  
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -90,6 +99,8 @@
                      http://www.freepascal.org/bugs.html
  
 }
+=======
+>>>>>>> origin/cpstrnew
 {      Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {
     Modified for use with Free Pascal
@@ -99,12 +110,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -116,6 +131,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -130,6 +146,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -145,6 +165,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -155,6 +176,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -162,13 +186,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -176,6 +204,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -184,8 +214,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -196,6 +229,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -216,6 +250,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -224,12 +260,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -237,6 +276,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -498,6 +538,8 @@ interface
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
@@ -508,7 +550,10 @@ interface
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -549,6 +594,7 @@ interface
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 {$endc}
@@ -566,6 +612,17 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -594,6 +651,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -602,6 +660,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -611,6 +671,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -644,6 +705,13 @@ uses MacTypes;
 
 {$ifc TARGET_OS_MAC}
 >>>>>>> origin/fixes_2.4
+=======
+uses MacTypes;
+{$endc} {not MACOSALLINCLUDE}
+
+
+{$ifc TARGET_OS_MAC}
+>>>>>>> origin/cpstrnew
 
 {$ALIGN MAC68K}
 
@@ -654,6 +722,7 @@ uses MacTypes;
    -------------------------------------------------------------------------------------------------
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -744,6 +813,20 @@ function LocaleRefFromLangOrRegionCode( lang: LangCode; region: RegionCode; var 
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+type
+	LocaleRef = ^SInt32; { an opaque type }
+	LocalePartMask = UInt32;
+const
+{ bit set requests the following:}
+	kLocaleLanguageMask = 1 shl 0; { ISO 639-1 or -2 language code (2 or 3 letters)}
+	kLocaleLanguageVariantMask = 1 shl 1; { custom string for language variant}
+	kLocaleScriptMask = 1 shl 2; { ISO 15924 script code (2 letters)}
+	kLocaleScriptVariantMask = 1 shl 3; { custom string for script variant}
+	kLocaleRegionMask = 1 shl 4; { ISO 3166 country/region code (2 letters)}
+	kLocaleRegionVariantMask = 1 shl 5; { custom string for region variant}
+	kLocaleAllPartsMask = $0000003F; { all of the above}
+>>>>>>> origin/cpstrnew
 
 =======
 >>>>>>> origin/fixes_2.4
@@ -764,6 +847,12 @@ type
 	LocaleOperationClass = FourCharCode;
 { constants for LocaleOperationClass are in UnicodeUtilities interfaces}
 type
+<<<<<<< HEAD
+=======
+	LocaleOperationClass = FourCharCode;
+{ constants for LocaleOperationClass are in UnicodeUtilities interfaces}
+type
+>>>>>>> origin/cpstrnew
 	LocaleAndVariantPtr = ^LocaleAndVariant;
 	LocaleOperationVariant = FourCharCode;
 	LocaleAndVariant = record
@@ -774,6 +863,7 @@ type
 type
 	LocaleNameMask = UInt32;
 const
+<<<<<<< HEAD
 <<<<<<< HEAD
 																{  bit set requests the following: }
 	kLocaleNameMask				= $00000001;					{  name of locale }
@@ -802,11 +892,16 @@ function LocaleRefFromLangOrRegionCode(lang: LangCode; region: RegionCode; var l
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 { bit set requests the following:}
 	kLocaleNameMask = 1 shl 0; { name of locale}
 	kLocaleOperationVariantNameMask = 1 shl 1; { name of LocaleOperationVariant}
 	kLocaleAndVariantNameMask = $00000003; { all of the above}
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {
    -------------------------------------------------------------------------------------------------
@@ -823,10 +918,14 @@ function LocaleRefFromLangOrRegionCode(lang: LangCode; region: RegionCode; var l
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in LocalesLib 8.6 and later
  }
+<<<<<<< HEAD
 function LocaleRefFromLocaleString( localeString: ConstCStringPtr; var locale: LocaleRef ): OSStatus; external name '_LocaleRefFromLocaleString';
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -878,11 +977,29 @@ function LocaleRefFromLocaleString( localeString: ConstCStringPtr; var locale: L
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function LocaleRefFromLangOrRegionCode( lang: LangCode; region: RegionCode; var locale: LocaleRef ): OSStatus; external name '_LocaleRefFromLangOrRegionCode';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  LocaleRefFromLocaleString()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in LocalesLib 8.6 and later
+ }
+function LocaleRefFromLocaleString( localeString: ConstCStringPtr; var locale: LocaleRef ): OSStatus; external name '_LocaleRefFromLocaleString';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  LocaleRefGetPartString()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -930,6 +1047,15 @@ function LocaleRefGetPartString( locale: LocaleRef; partMask: LocalePartMask; ma
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in LocalesLib 8.6 and later
+ }
+function LocaleRefGetPartString( locale: LocaleRef; partMask: LocalePartMask; maxStringLen: ByteCount; partString: CStringPtr ): OSStatus; external name '_LocaleRefGetPartString';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  LocaleStringToLangAndRegionCodes()
@@ -937,8 +1063,11 @@ function LocaleRefGetPartString( locale: LocaleRef; partMask: LocalePartMask; ma
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  Summary:
  *    Map a CFLocale-style locale string to old Script Manager LangCode
  *    and RegionCode values.
@@ -966,6 +1095,7 @@ function LocaleRefGetPartString( locale: LocaleRef; partMask: LocalePartMask; ma
  *    OSStatus, noErr if operation successful, otherwise paramErr or
  *    possibly other errors.
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
@@ -1044,6 +1174,18 @@ function LocaleOperationCountLocales( opClass: LocaleOperationClass; var localeC
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
 
+=======
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in LocalesLib 9.0 and later
+ }
+function LocaleStringToLangAndRegionCodes( localeString: ConstCStringPtr; var lang: LangCode; var region: RegionCode ): OSStatus; external name '_LocaleStringToLangAndRegionCodes';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ Enumerate locales for a LocaleOperationClass }
+>>>>>>> origin/cpstrnew
 
 {
  *  LocaleOperationGetLocales()   *** DEPRECATED ***
@@ -1056,6 +1198,7 @@ function LocaleOperationCountLocales( opClass: LocaleOperationClass; var localeC
  *    CFLocaleCopyAvailableLocaleIdentifiers instead.
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1153,6 +1296,14 @@ function LocaleGetName( locale: LocaleRef; opVariant: LocaleOperationVariant; na
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in LocalesLib 8.6 and later
+ }
+function LocaleOperationCountLocales( opClass: LocaleOperationClass; var localeCount: ItemCount ): OSStatus; external name '_LocaleOperationCountLocales';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1166,6 +1317,7 @@ function LocaleGetName( locale: LocaleRef; opVariant: LocaleOperationVariant; na
  *    CFLocaleCopyAvailableLocaleIdentifiers instead.
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1258,6 +1410,17 @@ function LocaleGetIndName( locale: LocaleRef; opVariant: LocaleOperationVariant;
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in LocalesLib 8.6 and later
+ }
+function LocaleOperationGetLocales( opClass: LocaleOperationClass; maxLocaleCount: ItemCount; var actualLocaleCount: ItemCount; localeVariantList: {variable-size-array} LocaleAndVariantPtr ): OSStatus; external name '_LocaleOperationGetLocales';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ Get names for a locale (or a region's language)}
+>>>>>>> origin/cpstrnew
 
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1279,6 +1442,7 @@ function LocaleGetIndName( locale: LocaleRef; opVariant: LocaleOperationVariant;
  *    CFLocaleCopyDisplayNameForPropertyValue instead.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in LocalesLib 9.0 and later
@@ -1339,21 +1503,30 @@ function LocaleOperationCountLocales( opClass: LocaleOperationClass; var localeC
  *  LocaleOperationGetLocales()
  *  
  *  Availability:
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in LocalesLib 8.6 and later
  }
+<<<<<<< HEAD
 function LocaleOperationGetLocales( opClass: LocaleOperationClass; maxLocaleCount: ItemCount; var actualLocaleCount: ItemCount; localeVariantList: {variable-size-array} LocaleAndVariantPtr ): OSStatus; external name '_LocaleOperationGetLocales';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
 { Get names for a locale (or a region's language)}
+=======
+function LocaleGetName( locale: LocaleRef; opVariant: LocaleOperationVariant; nameMask: LocaleNameMask; displayLocale: LocaleRef; maxNameLen: UniCharCount; var actualNameLen: UniCharCount; displayName: {variable-size-array} UniCharPtr ): OSStatus; external name '_LocaleGetName';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  LocaleGetName()
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in LocalesLib 8.6 and later
  }
@@ -1366,6 +1539,8 @@ function LocaleGetName( locale: LocaleRef; opVariant: LocaleOperationVariant; na
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+=======
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in LocalesLib 8.6 and later
  }
@@ -1383,8 +1558,13 @@ function LocaleCountNames( locale: LocaleRef; opVariant: LocaleOperationVariant;
  }
 function LocaleGetIndName( locale: LocaleRef; opVariant: LocaleOperationVariant; nameMask: LocaleNameMask; nameIndex: ItemCount; maxNameLen: UniCharCount; var actualNameLen: UniCharCount; displayName: {variable-size-array} UniCharPtr; var displayLocale: LocaleRef ): OSStatus; external name '_LocaleGetIndName';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+<<<<<<< HEAD
 
 
+=======
+
+
+>>>>>>> origin/cpstrnew
 {$ifc TARGET_CPU_64}
 {
  *  LocaleGetRegionLanguageName()   *** DEPRECATED ***
@@ -1408,6 +1588,7 @@ function LocaleGetRegionLanguageName( region: RegionCode; var languageName: Str2
 
 
 { Get names for a LocaleOperationClass}
+<<<<<<< HEAD
 
 {$endc} {TARGET_CPU_64}
 
@@ -1419,10 +1600,16 @@ function LocaleGetRegionLanguageName( region: RegionCode; var languageName: Str2
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+
+{$endc} {TARGET_CPU_64}
+
+>>>>>>> origin/cpstrnew
 {
  *  LocaleOperationGetName()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1470,11 +1657,21 @@ function LocaleOperationGetName( opClass: LocaleOperationClass; displayLocale: L
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in LocalesLib 8.6 and later
+ }
+function LocaleOperationGetName( opClass: LocaleOperationClass; displayLocale: LocaleRef; maxNameLen: UniCharCount; var actualNameLen: UniCharCount; displayName: {variable-size-array} UniCharPtr ): OSStatus; external name '_LocaleOperationGetName';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  LocaleOperationCountNames()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1522,11 +1719,21 @@ function LocaleOperationCountNames( opClass: LocaleOperationClass; var nameCount
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in LocalesLib 8.6 and later
+ }
+function LocaleOperationCountNames( opClass: LocaleOperationClass; var nameCount: ItemCount ): OSStatus; external name '_LocaleOperationCountNames';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  LocaleOperationGetIndName()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1567,6 +1774,9 @@ end.
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in LocalesLib 8.6 and later
  }
@@ -1580,9 +1790,13 @@ function LocaleOperationGetIndName( opClass: LocaleOperationClass; nameIndex: It
 end.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

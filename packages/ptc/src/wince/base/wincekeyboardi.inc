@@ -19,6 +19,9 @@
     License as published by the Free Software Foundation; either
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
     version 2.1 of the License, or (at your option) any later version
     with the following modification:
 
@@ -32,12 +35,15 @@
     this library, you may extend this exception to your version of the library,
     but you are not obligated to do so. If you do not wish to do so, delete this
     exception statement from your version.
+<<<<<<< HEAD
 =======
     version 2.1 of the License, or (at your option) any later version.
 >>>>>>> graemeg/fixes_2_2
 =======
     version 2.1 of the License, or (at your option) any later version.
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 
     This library is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -49,6 +55,7 @@
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 constructor TWinCEKeyboard.Create(EventQueue: TEventQueue);
@@ -70,6 +77,14 @@ Begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+constructor TWinCEKeyboard.Create(EventQueue: TEventQueue);
+
+begin
+//  m_monitor := nil;
+//  m_event := nil;
+//  inherited Create(window, thread);
+>>>>>>> origin/cpstrnew
 //  m_monitor := TWin32Monitor.Create;
 //  m_event := TWin32Event.Create;
 
@@ -84,6 +99,7 @@ Begin
 
   { enable buffering }
   m_enabled := True;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 end;
@@ -141,64 +157,73 @@ begin
 =======
 >>>>>>> origin/fixes_2_2
 End;
+=======
+end;
+>>>>>>> origin/cpstrnew
 
-Procedure TWinCEKeyboard.enable;
+procedure TWinCEKeyboard.enable;
 
-Begin
+begin
   { enable buffering }
   m_enabled := True;
-End;
+end;
 
-Procedure TWinCEKeyboard.disable;
+procedure TWinCEKeyboard.disable;
 
-Begin
+begin
   { disable buffering }
   m_enabled := False;
-End;
+end;
 
-Function TWinCEKeyboard.WndProc(hWnd : HWND; message : DWord; wParam : WPARAM; lParam : LPARAM) : LRESULT;
+function TWinCEKeyboard.WndProc(hWnd: HWND; message: DWord; wParam: WPARAM; lParam: LPARAM): LRESULT;
 
-Var
-  i : Integer;
-  scancode : Integer;
-  KeyStateArray : Array[0..255] Of Byte;
-  AsciiBuf : Word;
-  press : Boolean;
-  uni : Integer;
-  tmp : Integer;
+var
+  i: Integer;
+  scancode: Integer;
+  KeyStateArray: array [0..255] of Byte;
+  AsciiBuf: Word;
+  press: Boolean;
+  uni: Integer;
+  tmp: Integer;
 
-Begin
+begin
   WndProc := 0;
   { check enabled flag }
-  If Not m_enabled Then
-    Exit;
+  if not m_enabled then
+    exit;
 
   { process key message }
-  If (message = WM_KEYDOWN) Or (message = WM_KEYUP) {Or ((message = WM_SYSKEYDOWN) And ((lParam And (1 Shl 29)) <> 0))} Then
-  Begin
-    If message = WM_KEYUP Then
+  if (message = WM_KEYDOWN) or (message = WM_KEYUP) {Or ((message = WM_SYSKEYDOWN) and ((lParam and (1 shl 29)) <> 0))} then
+  begin
+    if message = WM_KEYUP then
       press := False
-    Else
+    else
       press := True;
 
     { update modifiers }
-    If wParam = VK_MENU Then
+    if wParam = VK_MENU then
       { alt }
       m_alt := press
-    Else
-      If wParam = VK_SHIFT Then
+    else
+      if wParam = VK_SHIFT then
         { shift }
         m_shift := press
+<<<<<<< HEAD
       Else
         If wParam = VK_CONTROL Then
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+      else
+        if wParam = VK_CONTROL then
+>>>>>>> origin/cpstrnew
           { control }
           m_control := press;
 
     { enter monitor if multithreaded }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 (*    if m_multithreaded then
@@ -208,10 +233,14 @@ Begin
 =======
 (*    If m_multithreaded Then
 >>>>>>> origin/fixes_2_2
+=======
+(*    if m_multithreaded then
+>>>>>>> origin/cpstrnew
       m_monitor.enter;*)
 
     uni := -1;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 (*    if GetKeyboardState(@KeyStateArray) then
@@ -244,35 +273,45 @@ Begin
 (*    If GetKeyboardState(@KeyStateArray) Then
     Begin
       scancode := (lParam Shr 16) And $FF;
+=======
+(*    if GetKeyboardState(@KeyStateArray) then
+    begin
+      scancode := (lParam shr 16) and $FF;
+>>>>>>> origin/cpstrnew
       {todo: ToUnicode (Windows NT)}
       tmp := ToAscii(wParam, scancode, @KeyStateArray, @AsciiBuf, 0);
-      If (tmp = 1) Or (tmp = 2) Then
-      Begin
-        If tmp = 2 Then
-        Begin
+      if (tmp = 1) or (tmp = 2) then
+      begin
+        if tmp = 2 then
+        begin
 //          Writeln('[', AsciiBuf, ']'); {???? todo: dead keys ????}
-        End
-        Else
-        Begin
+        end
+        else
+        begin
 //          Write(Chr(AsciiBuf));
           {todo: codepage -> unicode}
-          If AsciiBuf <= 126 Then
+          if AsciiBuf <= 126 then
             uni := AsciiBuf;
-        End;
+        end;
 
-      End;
+      end;
     End;*)
 
     { handle key repeat count }
+<<<<<<< HEAD
     For i := 1 To lParam And $FFFF Do
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    for i := 1 to lParam and $FFFF do
+>>>>>>> origin/cpstrnew
       { create and insert key object }
       FEventQueue.AddEvent(TPTCKeyEvent.Create(wParam, uni, m_alt, m_shift, m_control, press));
 
     { check multithreaded flag }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 (*    if m_multithreaded then
@@ -285,12 +324,17 @@ Begin
 (*    If m_multithreaded Then
     Begin
 >>>>>>> origin/fixes_2_2
+=======
+(*    if m_multithreaded then
+    begin
+>>>>>>> origin/cpstrnew
       { set event }
       m_event._set;
 
       { leave monitor }
       m_monitor.leave;
     End;*)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   end;
@@ -303,3 +347,7 @@ End;
   End;
 End;
 >>>>>>> origin/fixes_2_2
+=======
+  end;
+end;
+>>>>>>> origin/cpstrnew

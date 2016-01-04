@@ -105,6 +105,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     _private: array[0..(32)-1] of cuint8;
 =======
         _private: array[0..31] of cuint8;
@@ -115,6 +116,9 @@ type
 =======
         _private: array[0..31] of cuint8;
 >>>>>>> graemeg/cpstrnew
+=======
+        _private: array[0..31] of cuint8;
+>>>>>>> origin/cpstrnew
 =======
         _private: array[0..31] of cuint8;
 >>>>>>> origin/cpstrnew

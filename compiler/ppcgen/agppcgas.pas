@@ -122,6 +122,7 @@ unit agppcgas;
 {$ifdef cpu64bitaddr}
     const
       refaddr2str: array[trefaddr] of string[9] = ('', '', '', '', '@l', '@h', '@higher', '@highest', '@ha', '@highera', '@highesta');
+<<<<<<< HEAD
       verbose_refaddrs = [addr_low, addr_high, addr_higher, addr_highest, addr_higha, addr_highera, addr_highesta];
       refaddr2str_darwin: array[trefaddr] of string[4] = ('','','','','lo16', 'hi16', '@err', '@err', 'ha16', '@err', '@err');
 {$else cpu64bitaddr}
@@ -142,9 +143,14 @@ unit agppcgas;
       verbose_refaddrs = [addr_low, addr_high, addr_higher, addr_highest, addr_higha, addr_highera, addr_highesta];
       refaddr2str_darwin: array[trefaddr] of string[4] = ('','','','lo16', 'hi16', '@err', '@err', 'ha16', '@err', '@err');
 {$else cpu64bit}
+=======
+      verbose_refaddrs = [addr_low, addr_high, addr_higher, addr_highest, addr_higha, addr_highera, addr_highesta];
+      refaddr2str_darwin: array[trefaddr] of string[4] = ('','','','','lo16', 'hi16', '@err', '@err', 'ha16', '@err', '@err');
+{$else cpu64bitaddr}
+>>>>>>> origin/cpstrnew
     const
-      refaddr2str: array[trefaddr] of string[3] = ('','','','@l','@h','@ha');
-      refaddr2str_darwin: array[trefaddr] of string[4] = ('','','','lo16','hi16','ha16');
+      refaddr2str: array[trefaddr] of string[3] = ('','','','','@l','@h','@ha');
+      refaddr2str_darwin: array[trefaddr] of string[4] = ('','','','','lo16','hi16','ha16');
       verbose_refaddrs = [addr_low,addr_high,addr_higha];
 {$endif cpu64bit}
 
@@ -909,8 +915,13 @@ begin
          idtxt  : 'AS-Darwin';
          asmbin : 'as';
          asmcmd : '-o $OBJ $ASM -arch $ARCH';
+<<<<<<< HEAD
          supported_target : system_any;
          flags : [af_allowdirect,af_needar,af_smartlink_sections,af_supports_dwarf];
+=======
+         supported_targets : [system_powerpc_darwin,system_powerpc64_darwin];
+         flags : [af_allowdirect,af_needar,af_smartlink_sections,af_supports_dwarf,af_stabs_use_function_absolute_addresses];
+>>>>>>> origin/cpstrnew
          labelprefix : 'L';
          comment : '# ';
        );

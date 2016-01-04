@@ -135,6 +135,7 @@ var
 {$ENDIF}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   doseek,
   exists,
   writing : boolean;
@@ -157,6 +158,11 @@ var
 =======
 
 >>>>>>> origin/fixes_2_2
+=======
+  doseek,
+  exists,
+  writing : boolean;
+>>>>>>> origin/cpstrnew
 begin
 
   if (path='') or (mode='') then begin
@@ -194,11 +200,15 @@ begin
       'w'      : s^.mode := 'w';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       'a'      : s^.mode := 'a';
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+      'a'      : s^.mode := 'a';
+>>>>>>> origin/cpstrnew
       '0'..'9' : level := Ord(mode[i])-Ord('0');
       'f'      : strategy := Z_FILTERED;
       'h'      : strategy := Z_HUFFMAN_ONLY;
@@ -212,6 +222,7 @@ begin
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   writing:=( s^.mode='a') or (s^.mode='w');
 
   if writing then begin
@@ -221,6 +232,11 @@ begin
 =======
   if (s^.mode='w') then begin
 >>>>>>> origin/fixes_2_2
+=======
+  writing:=( s^.mode='a') or (s^.mode='w');
+
+  if writing then begin
+>>>>>>> origin/cpstrnew
 {$IFDEF NO_DEFLATE}
     err := Z_STREAM_ERROR;
 {$ELSE}
@@ -314,17 +330,25 @@ begin
   {$IFOPT I+} {$I-} {$define IOcheck} {$ENDIF}
   Assign (s^.gzfile, path);
   {$ifdef unix}
-  if (fpstat(path,info)<0) and (s^.mode='w') then
-    ReWrite (s^.gzfile,1)  
-  else
-    Reset (s^.gzfile,1);
+    exists:=not (fpstat(path,info)<0);
   {$else}
-  GetFAttr(s^.gzfile, Attr);
-  if (DosError <> 0) and (s^.mode='w') then
-    ReWrite (s^.gzfile,1)
-  else
-    Reset (s^.gzfile,1);
+    GetFAttr(s^.gzfile, Attr);
+    exists:=(DosError= 0);
   {$endif}
+  
+  doseek:=false;
+  if ((s^.mode='a') and not exists) or (s^.mode='w') then
+    begin
+   
+    ReWrite (s^.gzfile,1)  
+    end
+  else
+    begin
+      Reset (s^.gzfile,1);  
+      if s^.mode='a' then
+        doseek:=true;      // seek AFTER I/O check.
+    end;
+    
   {$IFDEF IOCheck} {$I+} {$ENDIF}
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -335,6 +359,7 @@ begin
     gzopen := gzFile(nil);
     exit;
   end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   // append binary file.
@@ -352,6 +377,15 @@ begin
 
   if (s^.mode = 'w') then begin { Write a very simple .gz header }
 >>>>>>> origin/fixes_2_2
+=======
+  // append binary file.
+  if doseek then
+     seek(s^.gzfile,filesize(s^.gzfile));
+
+  if s^.mode='a' then
+    s^.mode:='w';   // difference append<->write doesn't matter anymore
+  if writing then begin { Write a very simple .gz header }
+>>>>>>> origin/cpstrnew
 {$IFNDEF NO_DEFLATE}
     gzheader [0] := gz_magic [0];
     gzheader [1] := gz_magic [1];
@@ -563,6 +597,7 @@ begin
     len := cardinal(get_byte(s));
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     len := len + (cardinal(get_byte(s)) shl 8);
 =======
     len := len + (cardinal(get_byte(s)) shr 8);
@@ -570,6 +605,9 @@ begin
 =======
     len := len + (cardinal(get_byte(s)) shr 8);
 >>>>>>> origin/fixes_2_2
+=======
+    len := len + (cardinal(get_byte(s)) shl 8);
+>>>>>>> origin/cpstrnew
     { len is garbage if EOF but the loop below will quit anyway }
     while (len <> 0) and (get_byte(s) <> Z_EOF) do Dec(len);
   end;
@@ -1412,6 +1450,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 end.
 =======
 end.
@@ -1419,3 +1458,6 @@ end.
 =======
 end.
 >>>>>>> origin/fixes_2_2
+=======
+end.
+>>>>>>> origin/cpstrnew

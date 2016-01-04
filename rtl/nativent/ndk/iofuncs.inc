@@ -42,6 +42,7 @@ function NtOpenFile(
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function NtQueryDirectoryFile(
   FileHandle: HANDLE;
   Event: HANDLE; {OPTIONAL}
@@ -62,6 +63,8 @@ function NtQueryDirectoryFile(
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 function NtQueryFullAttributesFile(

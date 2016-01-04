@@ -18,6 +18,7 @@ name=unzip
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 version=3.1.1
 
 [require]
@@ -29,10 +30,13 @@ packages=rtl fpmkunit
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 version=2.5.1
 
 [target]
 units=ziptypes unzip51g
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -48,6 +52,8 @@ units=ziptypes unzip
 =======
 units=ziptypes unzip51g
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 units_emx=unzipdll
 units_os2=unzipdll
 

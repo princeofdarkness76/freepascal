@@ -89,6 +89,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   csigned                = cint;               pcsigned               = ^csigned;
   cunsigned              = cuint;              pcunsigned             = ^cunsigned;
@@ -98,6 +99,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -125,6 +128,9 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 
 {$if defined(darwin) and defined(cpuaarch64)}
   {$define longdouble_is_double}
@@ -148,6 +154,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$if defined(cpui8086) or defined(cpui386) or defined(cpux86_64) or defined(cpuavr)}
 =======
   {$if defined(cpui386) or defined(cpux86_64) or defined(cpuavr)}
@@ -158,6 +165,9 @@ type
 =======
   {$if defined(cpui386) or defined(cpux86_64) or defined(cpuavr)}
 >>>>>>> graemeg/cpstrnew
+=======
+  {$if defined(cpui386) or defined(cpux86_64) or defined(cpuavr)}
+>>>>>>> origin/cpstrnew
 =======
   {$if defined(cpui386) or defined(cpux86_64) or defined(cpuavr)}
 >>>>>>> origin/cpstrnew

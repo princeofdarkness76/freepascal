@@ -909,6 +909,7 @@ implementation
     function TElfObjData.sectionname(atype:TAsmSectiontype;const aname:string;aorder:TAsmSectionOrder):string;
       const
 <<<<<<< HEAD
+<<<<<<< HEAD
         secnames : array[TAsmSectiontype] of string[length('__DATA, __datacoal_nt,coalesced')] = ('','',
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -925,6 +926,9 @@ implementation
 =======
         secnames : array[TAsmSectiontype] of string[13] = ('',
 >>>>>>> origin/fixes_2.4
+=======
+        secnames : array[TAsmSectiontype] of string[length('__DATA, __datacoal_nt,coalesced')] = ('','',
+>>>>>>> origin/cpstrnew
 {$ifdef userodata}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -992,6 +996,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           '.objc_protolist',
           '.stack',
           '.heap'
@@ -1016,6 +1021,11 @@ implementation
         );
         secnames_pic : array[TAsmSectiontype] of string[17] = ('',
 >>>>>>> origin/fixes_2.4
+=======
+          '.objc_protolist'
+        );
+        secnames_pic : array[TAsmSectiontype] of string[length('__DATA, __datacoal_nt,coalesced')] = ('','',
+>>>>>>> origin/cpstrnew
           '.text',
           '.data.rel',
           '.data.rel',
@@ -1077,6 +1087,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1093,11 +1104,14 @@ implementation
 =======
           '.fini'
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
         );
       var
         sep : string[3];
         secname : string;
       begin
+<<<<<<< HEAD
 <<<<<<< HEAD
         { section type user gives the user full controll on the section name }
         if atype=sec_user then
@@ -1155,13 +1169,39 @@ implementation
         if (cs_create_pic in current_settings.moduleswitches) and
            not(target_info.system in systems_darwin) then
           secname:=secnames_pic[atype]
+=======
+        { section type user gives the user full controll on the section name }
+        if atype=sec_user then
+          result:=aname
+>>>>>>> origin/cpstrnew
         else
-          secname:=secnames[atype];
-        if (atype=sec_fpc) and (Copy(aname,1,3)='res') then
           begin
-            result:=secname+'.'+aname;
-            exit;
+            if (cs_create_pic in current_settings.moduleswitches) and
+               not(target_info.system in systems_darwin) then
+              secname:=secnames_pic[atype]
+            else
+              secname:=secnames[atype];
+            if (atype=sec_fpc) and (Copy(aname,1,3)='res') then
+              begin
+                result:=secname+'.'+aname;
+                exit;
+              end;
+            if create_smartlink_sections and (aname<>'') then
+              begin
+                case aorder of
+                  secorder_begin :
+                    sep:='.b_';
+                  secorder_end :
+                    sep:='.z_';
+                  else
+                    sep:='.n_';
+                end;
+                result:=secname+sep+aname
+              end
+            else
+              result:=secname;
           end;
+<<<<<<< HEAD
         if create_smartlink_sections and (aname<>'') then
           begin
             case aorder of
@@ -1177,6 +1217,8 @@ implementation
         else
           result:=secname;
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
       end;
 
 
@@ -1197,6 +1239,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         objreloc: TObjRelocation;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1204,6 +1247,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       begin
@@ -1731,11 +1776,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
               not(cs_executable_stack in current_settings.moduleswitches) then

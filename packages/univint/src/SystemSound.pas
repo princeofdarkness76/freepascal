@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
      File:       OSServices/SystemSound.h
  
@@ -31,12 +32,16 @@
 =======
 {
 >>>>>>> origin/fixes_2.4
+=======
+{
+>>>>>>> origin/cpstrnew
      File:       OSServices/SystemSound.h
  
      Contains:   SystemSound include file
  
      Version:    OSServices-352~2
  
+<<<<<<< HEAD
 <<<<<<< HEAD
      Copyright:  © 2000-2005 by Apple Computer, Inc., all rights reserved.
 <<<<<<< HEAD
@@ -46,6 +51,9 @@
 =======
      Copyright:  © 2000-2008 by Apple Computer, Inc., all rights reserved.
 >>>>>>> origin/fixes_2.4
+=======
+     Copyright:  © 2000-2008 by Apple Computer, Inc., all rights reserved.
+>>>>>>> origin/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -98,12 +106,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -115,6 +127,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -129,6 +142,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -144,6 +161,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -154,6 +172,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -161,13 +182,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -175,6 +200,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -183,8 +210,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -195,6 +225,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -215,6 +246,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -223,12 +256,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -236,6 +272,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -496,6 +533,10 @@ interface
 	{$setc TARGET_CPU_PPC64 := FALSE}
 >>>>>>> origin/fixes_2.4
 	{$setc TARGET_CPU_X86 := FALSE}
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
@@ -520,6 +561,7 @@ interface
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -561,6 +603,41 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -589,6 +666,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -597,6 +675,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -610,13 +690,17 @@ uses MacTypes,Files,CFBase,CFRunLoop;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$endc} {not MACOSALLINCLUDE}
 
 
 {$ifc TARGET_OS_MAC}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ALIGN POWER}
 
@@ -645,11 +729,20 @@ uses MacTypes,Files,CFBase,CFRunLoop;
 { Errors                                                                           }
 { ================================================================================ }
 >>>>>>> origin/fixes_2.4
+=======
+{$ALIGN POWER}
+
+
+{ ================================================================================ }
+{ Errors                                                                           }
+{ ================================================================================ }
+>>>>>>> origin/cpstrnew
 const
 	kSystemSoundNoError = 0;
 	kSystemSoundUnspecifiedError = -1500;
 	kSystemSoundClientTimedOutError = -1501;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -790,6 +883,11 @@ function InvokeSystemSoundCompletionUPP( actionID: SystemSoundActionID; userData
 { Types                                                                            }
 { ================================================================================ }
 >>>>>>> origin/fixes_2.4
+=======
+{ ================================================================================ }
+{ Types                                                                            }
+{ ================================================================================ }
+>>>>>>> origin/cpstrnew
 type
 	SystemSoundActionID = UInt32;
 	SystemSoundCompletionProcPtr = function( actionID: SystemSoundActionID; userData: UnivPtr ): OSStatus;
@@ -829,6 +927,7 @@ function InvokeSystemSoundCompletionUPP( actionID: SystemSoundActionID; userData
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* ================================================================================ *)
 (* Public APIs                                                                      *)
 (* ================================================================================ *)
@@ -839,6 +938,8 @@ function InvokeSystemSoundCompletionUPP( actionID: SystemSoundActionID; userData
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 { ================================================================================ }
 { Public APIs                                                                      }
 { ================================================================================ }
@@ -848,7 +949,10 @@ function InvokeSystemSoundCompletionUPP( actionID: SystemSoundActionID; userData
  *  Deprecated:
  *    Use AudioServicesPlayAlertSound(). Found in
  *    <AudioToolbox/AudioServices.h>
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  
  *  Summary:
  *    Play an Alert Sound
@@ -858,6 +962,7 @@ function InvokeSystemSoundCompletionUPP( actionID: SystemSoundActionID; userData
  *    playing alert sound.
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -898,6 +1003,9 @@ procedure AlertSoundPlay; external name '_AlertSoundPlay';
 =======
  *    Mac OS X:         in version 10.2 and later in CoreServices.framework but deprecated in 10.5
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.2 and later in CoreServices.framework but deprecated in 10.5
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
@@ -906,6 +1014,7 @@ procedure AlertSoundPlay; external name '_AlertSoundPlay';
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 (*
  *  AlertSoundPlayCustomSound()
 <<<<<<< HEAD
@@ -913,13 +1022,18 @@ procedure AlertSoundPlay; external name '_AlertSoundPlay';
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 {
  *  AlertSoundPlayCustomSound()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    Use AudioServicesPlayAlertSound(). Found in
  *    <AudioToolbox/AudioServices.h>
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  
  *  Summary:
  *    Play a User designated Alert Sound
@@ -935,6 +1049,7 @@ procedure AlertSoundPlay; external name '_AlertSoundPlay';
  *      with AlertSound behavior.
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -975,6 +1090,9 @@ procedure AlertSoundPlayCustomSound( inAction: SystemSoundActionID ); external n
 =======
  *    Mac OS X:         in version 10.3 and later in CoreServices.framework but deprecated in 10.5
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.3 and later in CoreServices.framework but deprecated in 10.5
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
@@ -983,6 +1101,7 @@ procedure AlertSoundPlayCustomSound( inAction: SystemSoundActionID ); external n
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 (*
  *  SystemSoundPlay()
 <<<<<<< HEAD
@@ -990,13 +1109,18 @@ procedure AlertSoundPlayCustomSound( inAction: SystemSoundActionID ); external n
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 {
  *  SystemSoundPlay()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    Use AudioServicesPlaySystemSound(). Found in
  *    <AudioToolbox/AudioServices.h>
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  
  *  Summary:
  *    Play a System Sound
@@ -1013,6 +1137,7 @@ procedure AlertSoundPlayCustomSound( inAction: SystemSoundActionID ); external n
  *      played.
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1053,6 +1178,9 @@ procedure SystemSoundPlay( inAction: SystemSoundActionID ); external name '_Syst
 =======
  *    Mac OS X:         in version 10.2 and later in CoreServices.framework but deprecated in 10.5
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.2 and later in CoreServices.framework but deprecated in 10.5
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
@@ -1061,6 +1189,7 @@ procedure SystemSoundPlay( inAction: SystemSoundActionID ); external name '_Syst
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 (*
  *  SystemSoundGetActionID()
 <<<<<<< HEAD
@@ -1068,13 +1197,18 @@ procedure SystemSoundPlay( inAction: SystemSoundActionID ); external name '_Syst
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 {
  *  SystemSoundGetActionID()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    Use AudioServicesCreateSystemSoundID(). Found in
  *    <AudioToolbox/AudioServices.h>
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  
  *  Summary:
  *    Create a 'custom' System Sound by providing an audio file.
@@ -1104,6 +1238,7 @@ procedure SystemSoundPlay( inAction: SystemSoundActionID ); external name '_Syst
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in CoreServices.framework but deprecated in 10.5
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
@@ -1141,6 +1276,9 @@ function SystemSoundGetActionID( const (*var*) userFile: FSRef; var outAction: S
 =======
  *    Mac OS X:         in version 10.2 and later in CoreServices.framework but deprecated in 10.5
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.2 and later in CoreServices.framework but deprecated in 10.5
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
@@ -1149,6 +1287,7 @@ function SystemSoundGetActionID( const (*var*) userFile: FSRef; var outAction: S
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 (*
  *  SystemSoundRemoveActionID()
 <<<<<<< HEAD
@@ -1156,13 +1295,18 @@ function SystemSoundGetActionID( const (*var*) userFile: FSRef; var outAction: S
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 {
  *  SystemSoundRemoveActionID()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    Use AudioServicesDisposeSystemSoundID(). Found in
  *    <AudioToolbox/AudioServices.h>
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  
  *  Summary:
  *    Remove a 'custom' System Sound.
@@ -1183,6 +1327,7 @@ function SystemSoundGetActionID( const (*var*) userFile: FSRef; var outAction: S
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in CoreServices.framework but deprecated in 10.5
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
@@ -1220,6 +1365,9 @@ function SystemSoundRemoveActionID( inAction: SystemSoundActionID ): OSStatus; e
 =======
  *    Mac OS X:         in version 10.2 and later in CoreServices.framework but deprecated in 10.5
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.2 and later in CoreServices.framework but deprecated in 10.5
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
@@ -1228,6 +1376,7 @@ function SystemSoundRemoveActionID( inAction: SystemSoundActionID ): OSStatus; e
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 (*
  *  SystemSoundSetCompletionRoutine()
 <<<<<<< HEAD
@@ -1235,13 +1384,18 @@ function SystemSoundRemoveActionID( inAction: SystemSoundActionID ): OSStatus; e
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 {
  *  SystemSoundSetCompletionRoutine()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    Use AudioServicesAddSystemSoundCompletion(). Found in
  *    <AudioToolbox/AudioServices.h>
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  
  *  Summary:
  *    Call the provided Completion Routine when the provided
@@ -1279,6 +1433,7 @@ function SystemSoundRemoveActionID( inAction: SystemSoundActionID ): OSStatus; e
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.3 and later in CoreServices.framework but deprecated in 10.5
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
@@ -1316,6 +1471,9 @@ function SystemSoundSetCompletionRoutine( inAction: SystemSoundActionID; inRunLo
 =======
  *    Mac OS X:         in version 10.3 and later in CoreServices.framework but deprecated in 10.5
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.3 and later in CoreServices.framework but deprecated in 10.5
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
@@ -1324,6 +1482,7 @@ function SystemSoundSetCompletionRoutine( inAction: SystemSoundActionID; inRunLo
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 (*
  *  SystemSoundRemoveCompletionRoutine()
 <<<<<<< HEAD
@@ -1331,13 +1490,18 @@ function SystemSoundSetCompletionRoutine( inAction: SystemSoundActionID; inRunLo
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 {
  *  SystemSoundRemoveCompletionRoutine()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    Use AudioServicesRemoveSystemSoundCompletion(). Found in
  *    <AudioToolbox/AudioServices.h>
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  
  *  Summary:
  *    Remove the Completion Routine being used for the provided
@@ -1358,6 +1522,7 @@ function SystemSoundSetCompletionRoutine( inAction: SystemSoundActionID; inRunLo
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.3 and later in CoreServices.framework but deprecated in 10.5
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
@@ -1393,6 +1558,9 @@ end.
 =======
  *    Mac OS X:         in version 10.3 and later in CoreServices.framework but deprecated in 10.5
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.3 and later in CoreServices.framework but deprecated in 10.5
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
@@ -1405,9 +1573,13 @@ procedure SystemSoundRemoveCompletionRoutine( inAction: SystemSoundActionID ); e
 end.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

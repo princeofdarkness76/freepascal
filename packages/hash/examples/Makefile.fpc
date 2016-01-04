@@ -10,6 +10,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 programs=mdtest crctest sha1test md5performancetest  sha1performancetest
 =======
 programs=mdtest crctest sha1test
@@ -33,6 +34,9 @@ programs=mdtest
 =======
 programs=mdtest crctest sha1test
 >>>>>>> origin/fixes_2.4
+=======
+programs=mdtest crctest sha1test
+>>>>>>> origin/cpstrnew
 
 [require]
 packages=hash

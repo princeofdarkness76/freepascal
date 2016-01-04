@@ -100,6 +100,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$if defined(ARM) or defined(i386) or defined(AVR) or defined(MIPSEL)}
 =======
 {$if defined(ARM) or defined(i386)}
@@ -110,6 +111,9 @@ begin
 =======
 {$if defined(ARM) or defined(i386)}
 >>>>>>> graemeg/cpstrnew
+=======
+{$if defined(ARM) or defined(i386)}
+>>>>>>> origin/cpstrnew
 =======
 {$if defined(ARM) or defined(i386)}
 >>>>>>> origin/cpstrnew
@@ -678,8 +682,11 @@ begin
         end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       ct_stm32f103re:
@@ -694,7 +701,10 @@ begin
           Add('_stack_top = 0x2000FFFC;');
         end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -724,6 +734,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       Add('    _text_start = .;');
       Add('    KEEP(*(.init, .init.*))');
       if (embedded_controllers[current_settings.controllertype].controllerunitstr='MK20D5')
@@ -743,6 +754,9 @@ begin
 =======
       Add('    KEEP(*(.init, .init.*))');
 >>>>>>> graemeg/cpstrnew
+=======
+      Add('    KEEP(*(.init, .init.*))');
+>>>>>>> origin/cpstrnew
 =======
       Add('    KEEP(*(.init, .init.*))');
 >>>>>>> origin/cpstrnew
@@ -823,6 +837,7 @@ begin
       Add('_end = .;');
     end;
 {$endif I386}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1321,6 +1336,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
   { Write and Close response }
   linkres.writetodisk;
@@ -1386,6 +1403,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if success and not(cs_link_nolink in current_settings.globalswitches) then
     success:=PostProcessExecutable(current_module.exefilename+'.elf',false);
 
@@ -1399,6 +1417,9 @@ begin
 =======
   if success and (target_info.system=system_arm_embedded) then
 >>>>>>> graemeg/cpstrnew
+=======
+  if success and (target_info.system=system_arm_embedded) then
+>>>>>>> origin/cpstrnew
 =======
   if success and (target_info.system=system_arm_embedded) then
 >>>>>>> origin/cpstrnew
@@ -1593,6 +1614,7 @@ initialization
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   RegisterLinker(ld_embedded,TLinkerEmbedded);
   RegisterTarget(system_i386_embedded_info);
 {$endif i386}
@@ -1617,6 +1639,11 @@ initialization
   RegisterTarget(system_i386_embedded_info);
 {$endif i386}
 >>>>>>> graemeg/cpstrnew
+=======
+  RegisterExternalLinker(system_i386_embedded_info,TlinkerEmbedded);
+  RegisterTarget(system_i386_embedded_info);
+{$endif i386}
+>>>>>>> origin/cpstrnew
 =======
   RegisterExternalLinker(system_i386_embedded_info,TlinkerEmbedded);
   RegisterTarget(system_i386_embedded_info);

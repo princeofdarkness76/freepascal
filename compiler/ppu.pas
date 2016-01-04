@@ -30,6 +30,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     systems,globtype,constexp,cstreams;
 =======
     globtype,constexp,cstreams;
@@ -40,6 +41,9 @@ interface
 =======
     globtype,constexp,cstreams;
 >>>>>>> graemeg/cpstrnew
+=======
+    globtype,constexp,cstreams;
+>>>>>>> origin/cpstrnew
 =======
     globtype,constexp,cstreams;
 >>>>>>> origin/cpstrnew
@@ -65,6 +69,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   CurrentPPUVersion = 181;
 =======
   CurrentPPUVersion = 127;
@@ -84,6 +89,9 @@ const
 =======
   CurrentPPUVersion = 91;
 >>>>>>> origin/fixes_2_2
+=======
+  CurrentPPUVersion = 127;
+>>>>>>> origin/cpstrnew
 
 { buffer sizes }
   maxentrysize = 1024;
@@ -180,6 +188,7 @@ const
   ibjvmnamespace = 101;
 =======
 
+<<<<<<< HEAD
   ibmainname       = 90;
   { target-specific things }
   iblinkotherframeworks = 100;
@@ -191,6 +200,8 @@ const
   iblinkotherframeworks = 100;
 >>>>>>> origin/fixes_2_2
 
+=======
+>>>>>>> origin/cpstrnew
 { unit flags }
   uf_init                = $000001; { unit has initialization section }
   uf_finalize            = $000002; { unit has finalization section   }
@@ -215,6 +226,7 @@ const
   uf_has_dwarf_debuginfo = $200000; { this unit has dwarf debuginfo generated }
   uf_wideinits           = $400000; { this unit has winlike widestring typed constants }
   uf_classinits          = $800000; { this unit has class constructors/destructors }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -276,6 +288,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -344,6 +358,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     change_endian    : boolean; { Used in ppudump util }
 =======
 >>>>>>> graemeg/cpstrnew
@@ -355,6 +370,8 @@ type
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
     { crc for the entire unit }
     crc,
     { crc for the interface definitions in this unit }
@@ -413,6 +430,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure getnormalset(out b);
     procedure getsmallset(out b);
 =======
@@ -420,6 +438,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     procedure getnormalset(var b);
@@ -610,6 +630,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   header.indirect_checksum := swapendian(header.indirect_checksum);
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -618,6 +639,9 @@ begin
 =======
   header.indirect_checksum := swapendian(header.indirect_checksum);
 >>>>>>> origin/fixes_2.4
+=======
+  header.indirect_checksum := swapendian(header.indirect_checksum);
+>>>>>>> origin/cpstrnew
   header.deflistsize:=swapendian(header.deflistsize);
   header.symlistsize:=swapendian(header.symlistsize);
 {$ENDIF}
@@ -807,12 +831,15 @@ begin
    end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$ifdef FPC_UNALIGNED_FIXED}
 >>>>>>> graemeg/fixes_2_2
 =======
 {$ifdef FPC_UNALIGNED_FIXED}
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
   if bufsize-bufidx>=sizeof(word) then
     begin
       result:=Unaligned(pword(@buf[bufidx])^);
@@ -821,12 +848,15 @@ begin
   else
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$endif FPC_UNALIGNED_FIXED}
 >>>>>>> graemeg/fixes_2_2
 =======
 {$endif FPC_UNALIGNED_FIXED}
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
     readdata(result,sizeof(word));
   if change_endian then
    result:=swapendian(result);
@@ -844,12 +874,15 @@ begin
    end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$ifdef FPC_UNALIGNED_FIXED}
 >>>>>>> graemeg/fixes_2_2
 =======
 {$ifdef FPC_UNALIGNED_FIXED}
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
   if bufsize-bufidx>=sizeof(longint) then
     begin
       result:=Unaligned(plongint(@buf[bufidx])^);
@@ -906,12 +939,15 @@ begin
    end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$ifdef FPC_UNALIGNED_FIXED}
 >>>>>>> graemeg/fixes_2_2
 =======
 {$ifdef FPC_UNALIGNED_FIXED}
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
   if bufsize-bufidx>=sizeof(int64) then
     begin
       result:=Unaligned(pint64(@buf[bufidx])^);
@@ -989,6 +1025,16 @@ end;
 <<<<<<< HEAD
 function tppufile.getasizeint:{$ifdef generic_cpu}int64{$else}asizeint{$endif};
 =======
+function tppufile.getasizeint:asizeint;
+begin
+{$ifdef cpu64bitaddr}
+  result:=getint64;
+{$else cpu64bitaddr}
+  result:=getlongint;
+{$endif cpu32bitaddr}
+end;
+
+
 function tppufile.getasizeint:asizeint;
 begin
 {$ifdef cpu64bitaddr}
@@ -1202,6 +1248,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function tppufile.getansistring:ansistring;
 var
   len: longint;
@@ -1240,11 +1287,20 @@ begin
   l:=getlongint;
   if entryidx+l>entry.size then
 >>>>>>> origin/cpstrnew
+=======
+function tppufile.getansistring: ansistring;
+var
+  l : longint;
+begin
+  l:=getlongint;
+  if entryidx+l>entry.size then
+>>>>>>> origin/cpstrnew
    begin
      error:=true;
      result:='';
      exit;
    end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1283,6 +1339,11 @@ begin
   if change_endian then
     for i:=0 to 3 do
       Pbyte(@b)[i]:=reverse_byte(Pbyte(@b)[i]);
+=======
+  SetLength(Result,l);
+  ReadData(result[1],l);
+  inc(entryidx,l);
+>>>>>>> origin/cpstrnew
 end;
 
 
@@ -1378,6 +1439,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   indirect_crc:=0;
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -1386,6 +1448,9 @@ begin
 =======
   indirect_crc:=0;
 >>>>>>> origin/fixes_2.4
+=======
+  indirect_crc:=0;
+>>>>>>> origin/cpstrnew
   do_interface_crc:=true;
   do_indirect_crc:=false;
   Error:=false;
@@ -1424,6 +1489,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     header.indirect_checksum := swapendian(header.indirect_checksum);
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -1432,6 +1498,9 @@ begin
 =======
     header.indirect_checksum := swapendian(header.indirect_checksum);
 >>>>>>> origin/fixes_2.4
+=======
+    header.indirect_checksum := swapendian(header.indirect_checksum);
+>>>>>>> origin/cpstrnew
     header.deflistsize:=swapendian(header.deflistsize);
     header.symlistsize:=swapendian(header.symlistsize);
 {$endif not FPC_BIG_ENDIAN}
@@ -1683,6 +1752,7 @@ procedure tppufile.putstring(s:string);
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure tppufile.putansistring(const s:ansistring);
   var
     len: longint;
@@ -1698,6 +1768,8 @@ procedure tppufile.putansistring(const s:ansistring);
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure tppufile.putansistring(const s: ansistring);
   var
     l : longint;
@@ -1705,6 +1777,7 @@ procedure tppufile.putansistring(const s: ansistring);
     l:=length(s);
     putdata(l,4);
     putdata(s[1],l);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1866,6 +1939,11 @@ function tppufile.tempopen:boolean;
     seek(f,closepos);
 >>>>>>> graemeg/fixes_2_2
 =======
+=======
+  end;
+
+
+>>>>>>> origin/cpstrnew
 procedure tppufile.putsmallset(const b);
   var
     l : longint;
@@ -1887,11 +1965,8 @@ procedure tppufile.tempclose;
   begin
     if not closed then
      begin
-       closepos:=filepos(f);
-       {$I-}
-        system.close(f);
-       {$I+}
-       if ioresult<>0 then;
+       closepos:=f.Position;
+       f.Free;
        closed:=true;
        tempclosed:=true;
      end;
@@ -1905,6 +1980,10 @@ function tppufile.tempopen:boolean;
     tempopen:=false;
     if not closed or not tempclosed then
      exit;
+    // MG: not sure, if this is correct
+
+    f.Position:=0;
+    (*
     ofm:=filemode;
     filemode:=0;
     {$I-}
@@ -1913,12 +1992,17 @@ function tppufile.tempopen:boolean;
     filemode:=ofm;
     if ioresult<>0 then
      exit;
+    *)
     closed:=false;
     tempclosed:=false;
 
   { restore state }
+<<<<<<< HEAD
     seek(f,closepos);
 >>>>>>> origin/fixes_2_2
+=======
+    f.Position:=closepos;
+>>>>>>> origin/cpstrnew
     tempopen:=true;
   end;
 

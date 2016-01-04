@@ -16,6 +16,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   image: IPTCSurface;
   surface: IPTCSurface;
   format: IPTCFormat;
@@ -34,6 +35,11 @@ var
   surface: TPTCSurface = nil;
   format: TPTCFormat = nil;
 >>>>>>> graemeg/cpstrnew
+=======
+  image: TPTCSurface = nil;
+  surface: TPTCSurface = nil;
+  format: TPTCFormat = nil;
+>>>>>>> origin/cpstrnew
 =======
   image: TPTCSurface = nil;
   surface: TPTCSurface = nil;
@@ -65,6 +71,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure generic(src, dest: IPTCSurface);
 =======
 procedure generic(src, dest: TPTCSurface);
@@ -75,6 +82,9 @@ procedure generic(src, dest: TPTCSurface);
 =======
 procedure generic(src, dest: TPTCSurface);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure generic(src, dest: TPTCSurface);
+>>>>>>> origin/cpstrnew
 =======
 procedure generic(src, dest: TPTCSurface);
 >>>>>>> origin/cpstrnew
@@ -218,6 +228,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   srcformat, destformat: IPTCFormat;
   src, dest: IPTCSurface;
 =======
@@ -236,10 +247,15 @@ var
   srcformat, destformat: TPTCFormat;
   src, dest: TPTCSurface;
 >>>>>>> origin/cpstrnew
+=======
+  srcformat, destformat: TPTCFormat;
+  src, dest: TPTCSurface;
+>>>>>>> origin/cpstrnew
   pixels: Pointer;
   F: File;
 begin
   Writeln(sbits, ' ', sr, ' ', sg, ' ', sb, ' ', dbits, ' ', dr, ' ', dg, ' ', db, ' ', da);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -261,6 +277,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   try
@@ -285,11 +303,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -312,6 +333,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure load(surface: IPTCSurface; filename: String);
 =======
 procedure load(surface: TPTCSurface; filename: String);
@@ -322,6 +344,9 @@ procedure load(surface: TPTCSurface; filename: String);
 =======
 procedure load(surface: TPTCSurface; filename: String);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure load(surface: TPTCSurface; filename: String);
+>>>>>>> origin/cpstrnew
 =======
 procedure load(surface: TPTCSurface; filename: String);
 >>>>>>> origin/cpstrnew
@@ -352,6 +377,7 @@ end;
 begin
   TestNum := 0;
   try
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -450,6 +476,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     try
       {$IFDEF FPC_LITTLE_ENDIAN}
       format := TPTCFormat.Create(24, $00FF0000, $0000FF00, $000000FF);
@@ -546,11 +574,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   except

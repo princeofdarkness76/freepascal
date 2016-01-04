@@ -59,6 +59,7 @@ const
       cmExpandFold           = 51267;
       cmDelToEndOfWord       = 51268;
 <<<<<<< HEAD
+<<<<<<< HEAD
       cmInputLineLen         = 51269;
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -82,12 +83,19 @@ const
       MaxLineCount      = 2000000;
 =======
 
+=======
+      cmInputLineLen         = 51269;
+      
+>>>>>>> origin/cpstrnew
       EditorTextBufSize = 32768;
       MaxLineLength     = 255;
       MaxLineCount      = 2000000;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 
+=======
+>>>>>>> origin/cpstrnew
       CodeTemplateCursorChar = '|'; { char to signal cursor pos in templates }
 
       efBackupFiles         = $00000001;
@@ -743,6 +751,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <<<<<<< HEAD
     TSearchHelperDialog = object(TDialog)
@@ -758,6 +767,9 @@ type
 =======
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 =======
 
 >>>>>>> origin/cpstrnew
@@ -6998,6 +7010,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                       if PtrInt(Event.InfoPtr)=0 then
                                         okbutton^.DisableCommands([cmok])
 =======
@@ -7016,10 +7029,15 @@ begin
                                       if Event.InfoLong=0 then
                                         okbutton^.DisableCommands([cmok]) 
 >>>>>>> origin/cpstrnew
+=======
+                                      if Event.InfoLong=0 then
+                                        okbutton^.DisableCommands([cmok]) 
+>>>>>>> origin/cpstrnew
                                       else
                                         okbutton^.EnableCommands([cmok]);
                                       clearevent(event);
                                     end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -7034,6 +7052,9 @@ begin
 =======
              end;      
 >>>>>>> graemeg/cpstrnew
+=======
+             end;      
+>>>>>>> origin/cpstrnew
 =======
              end;      
 >>>>>>> origin/cpstrnew

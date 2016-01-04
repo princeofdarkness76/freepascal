@@ -122,11 +122,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$ifndef WINCE}
@@ -192,6 +195,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Errno2InoutRes(GetLastError);
 =======
     errno := GetLastError;
@@ -205,6 +209,10 @@ begin
     errno := GetLastError;
     Errno2InoutRes;
 >>>>>>> graemeg/cpstrnew
+=======
+    errno := GetLastError;
+    Errno2InoutRes;
+>>>>>>> origin/cpstrnew
 =======
     errno := GetLastError;
     Errno2InoutRes;
@@ -227,6 +235,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Errno2InoutRes(GetLastError);
 =======
     errno := GetLastError;
@@ -240,6 +249,10 @@ begin
     errno := GetLastError;
     Errno2InoutRes;
 >>>>>>> graemeg/cpstrnew
+=======
+    errno := GetLastError;
+    Errno2InoutRes;
+>>>>>>> origin/cpstrnew
 =======
     errno := GetLastError;
     Errno2InoutRes;
@@ -260,6 +273,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Errno2InoutRes(GetLastError);
 =======
     errno := GetLastError;
@@ -273,6 +287,10 @@ begin
     errno := GetLastError;
     Errno2InoutRes;
 >>>>>>> graemeg/cpstrnew
+=======
+    errno := GetLastError;
+    Errno2InoutRes;
+>>>>>>> origin/cpstrnew
 =======
     errno := GetLastError;
     Errno2InoutRes;

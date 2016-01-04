@@ -74,6 +74,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       TExternalAssembler = class;
 
       IExternalAssemblerOutputFileDecorator=interface
@@ -88,6 +89,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       {# This is the base class which should be overridden for each each
@@ -222,11 +225,14 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         {# This routine should be overridden for each assembler, it is used
@@ -249,6 +255,8 @@ interface
         property writer: TExternalAssemblerOutputFile read fwriter;
       end;
       TExternalAssemblerClass = class of TExternalAssembler;
+
+      { TInternalAssembler }
 
       { TInternalAssembler }
 
@@ -976,11 +984,14 @@ Implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$ifdef arm}
@@ -1502,6 +1513,7 @@ Implementation
             ObjData.Writebytes(stab,sizeof(TObjStabEntry)-4);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             ObjData.Writereloc(stab.nvalue,4,relocsym,RELOC_ABSOLUTE32);
 =======
             ObjData.Writereloc(stab.nvalue,4,relocsym,RELOC_ABSOLUTE);
@@ -1509,6 +1521,9 @@ Implementation
 =======
             ObjData.Writereloc(stab.nvalue,4,relocsym,RELOC_ABSOLUTE);
 >>>>>>> origin/fixes_2_2
+=======
+            ObjData.Writereloc(stab.nvalue,4,relocsym,RELOC_ABSOLUTE32);
+>>>>>>> origin/cpstrnew
             ObjData.setsection(oldsec);
           end;
         if assigned(pendquote) then
@@ -1559,6 +1574,7 @@ Implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             indsym:=ObjData.CObjSymbol.Create(ObjData.ObjSymbolList, indirectname);
 =======
             indsym:=TObjSymbol.Create(ObjData.ObjSymbolList, indirectname);
@@ -1569,6 +1585,9 @@ Implementation
 =======
             indsym:=TObjSymbol.Create(ObjData.ObjSymbolList, indirectname);
 >>>>>>> graemeg/cpstrnew
+=======
+            indsym:=TObjSymbol.Create(ObjData.ObjSymbolList, indirectname);
+>>>>>>> origin/cpstrnew
 =======
             indsym:=TObjSymbol.Create(ObjData.ObjSymbolList, indirectname);
 >>>>>>> origin/cpstrnew
@@ -1682,6 +1701,9 @@ Implementation
                end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
              ait_directive:
                begin
                  case tai_directive(hp).directive of
@@ -1690,6 +1712,7 @@ Implementation
                      ;
                    asd_lazy_reference:
                      begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1717,11 +1740,17 @@ Implementation
                          Internalerror(2009112101);
                        objsym:=ObjData.symbolref(tai_directive(hp).name^);
 >>>>>>> origin/cpstrnew
+=======
+                       if tai_directive(hp).name = nil then
+                         Internalerror(2009112101);
+                       objsym:=ObjData.symbolref(tai_directive(hp).name^);
+>>>>>>> origin/cpstrnew
                        objsym.bind:=AB_LAZY;
                      end;
                    asd_reference:
                      { ignore for now, but should be added}
                      ;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1738,14 +1767,19 @@ Implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                    else
                      internalerror(2010011101);
                  end;
                end;
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
              ait_section:
                begin
                  ObjData.CreateSection(Tai_section(hp).sectype,Tai_section(hp).name^,Tai_section(hp).secorder);
@@ -1896,10 +1930,14 @@ Implementation
                 break;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
              ait_directive :
                begin
                  case tai_directive(hp).directive of
                    asd_indirect_symbol:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1927,6 +1965,11 @@ Implementation
                        Internalerror(2009101103)
                      else if not SetIndirectToSymbol(Tai(hp.Previous), tai_directive(hp).name^) then
 >>>>>>> origin/cpstrnew
+=======
+                     if tai_directive(hp).name = nil then
+                       Internalerror(2009101103)
+                     else if not SetIndirectToSymbol(Tai(hp.Previous), tai_directive(hp).name^) then
+>>>>>>> origin/cpstrnew
                        Internalerror(2009101102);
                    asd_lazy_reference:
                      { handled in TreePass0 }
@@ -1934,6 +1977,7 @@ Implementation
                    asd_reference:
                      { ignore for now, but should be added}
                      ;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1949,14 +1993,19 @@ Implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                    else
                      internalerror(2010011102);
                  end;
                end;
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
            end;
            hp:=Tai(hp.next);
          end;
@@ -2018,17 +2067,23 @@ Implementation
         lebbuf : array[0..63] of byte;
         objsym,
         objsymend : TObjSymbol;
+        zerobuf : array[0..63] of byte;
       begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+        fillchar(zerobuf,sizeof(zerobuf),0);
+>>>>>>> origin/cpstrnew
         { main loop }
         while assigned(hp) do
          begin
            case hp.typ of
              ait_align :
                begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2041,6 +2096,8 @@ Implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                  if oso_data in ObjData.CurrObjSec.secoptions then
@@ -2242,6 +2299,7 @@ Implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                    aitconst_half16bit,
                    aitconst_gs:
                      begin
@@ -2254,6 +2312,8 @@ Implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                    else

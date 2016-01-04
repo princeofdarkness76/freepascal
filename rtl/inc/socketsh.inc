@@ -159,11 +159,14 @@ type
 <<<<<<< HEAD
 =======
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 
 >>>>>>> origin/fixes_2_2
 
+=======
+>>>>>>> origin/cpstrnew
 function socketerror : cint; 
 
 function  fpsocket      (domain:cint; xtype:cint; protocol: cint):cint;
@@ -187,6 +190,7 @@ Function CloseSocket(Sock:Longint):Longint; // vote is still out on this one
 {Basic Socket Functions}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef legacysocket}
 Function Socket(Domain,SocketType,Protocol:Longint):Longint; deprecated;
 =======
@@ -197,6 +201,10 @@ Function CloseSocket(Sock:Longint):Longint; // vote is still out on this one
 Function Socket(Domain,SocketType,Protocol:Longint):Longint; deprecated;
 Function CloseSocket(Sock:Longint):Longint; // vote is still out on this one
 >>>>>>> origin/fixes_2_2
+=======
+{$ifdef legacysocket}
+Function Socket(Domain,SocketType,Protocol:Longint):Longint; deprecated;
+>>>>>>> origin/cpstrnew
 Function Send(Sock:Longint;Const Buf;BufLen,Flags:Longint):Longint; deprecated;
 Function SendTo(Sock:Longint;Const Buf;BufLen,Flags:Longint;Var Addr; AddrLen : Longint):Longint; deprecated;
 Function Recv(Sock:Longint;Var Buf;BufLen,Flags:Longint):Longint; deprecated;
@@ -213,23 +221,25 @@ Function GetSocketOptions(Sock,Level,OptName:Longint;Var OptVal;Var optlen:longi
 Function SocketPair(Domain,SocketType,Protocol:Longint;var Pair:TSockArray):Longint;deprecated;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif}
 
 { untyped/text filetype support }
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$endif}
+>>>>>>> origin/cpstrnew
 
-{Text Support}
+{ untyped/text filetype support }
+
 Procedure Sock2Text(Sock:Longint;Var SockIn,SockOut:Text);deprecated;
-
-{Untyped File Support}
-Procedure Sock2File(Sock:Longint;Var SockIn,SockOut:File);deprecated;
-
 Function Accept(Sock:longint;var addr:TInetSockAddr;var SockIn,SockOut:File):Boolean; deprecated;
 Function Accept(Sock:longint;var addr:TInetSockAddr;var SockIn,SockOut:text):Boolean;deprecated;
 Function Connect(Sock:longint;const addr:TInetSockAddr;var SockIn,SockOut:text):Boolean; deprecated;
 Function Connect(Sock:longint;const addr:TInetSockAddr;var SockIn,SockOut:file):Boolean;deprecated;
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 
@@ -242,6 +252,9 @@ Procedure Sock2File(Sock:Longint;Var SockIn,SockOut:File);deprecated;
 =======
 
 >>>>>>> origin/fixes_2_2
+=======
+Procedure Sock2File(Sock:Longint;Var SockIn,SockOut:File);deprecated;
+>>>>>>> origin/cpstrnew
 
 { Utility routines}
 function htonl( host : longint):longint; inline;

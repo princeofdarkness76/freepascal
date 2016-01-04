@@ -71,8 +71,11 @@ interface
         { keep pool data separate, so we can generate new pool entries
           while emitting other data }
         al_objc_pools,
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
         al_end
       );
 
@@ -97,6 +100,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          sp_objcprotocolrefs,
          sp_varsets,
          sp_floats,
@@ -116,6 +120,9 @@ interface
 =======
          sp_unicodestr
 >>>>>>> origin/fixes_2.4
+=======
+         sp_objcprotocolrefs
+>>>>>>> origin/cpstrnew
       );
       
     const
@@ -143,8 +150,11 @@ interface
 <<<<<<< HEAD
         'al_objc_data',
         'al_objc_pools',
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
         'al_end'
       );
 
@@ -192,6 +202,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         ResStrInits   : TLinkedList;
         constructor create(n: pshortstring);
 =======
@@ -199,6 +210,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         { hash tables for reusing constant storage }
@@ -276,6 +289,13 @@ interface
 =======
 >>>>>>> origin/cpstrnew
 
+      TTCInitItem = class(TLinkedListItem)
+        sym: tsym;
+        offset: aint;
+        datalabel: TAsmLabel;
+        constructor Create(asym: tsym; aoffset: aint; alabel: TAsmLabel);
+      end;
+
     var
       CAsmCFI : TAsmCFIClass;
       current_asmdata : TAsmData;
@@ -347,11 +367,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {*****************************************************************************
@@ -451,6 +474,7 @@ implementation
         for hal:=low(TAsmListType) to high(TAsmListType) do
           AsmLists[hal]:=TAsmList.create;
 <<<<<<< HEAD
+<<<<<<< HEAD
         WideInits :=TLinkedList.create;
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -470,6 +494,9 @@ implementation
         if (target_info.system in systems_darwin) then
           AsmLists[al_picdata].concat(tai_directive.create(asd_non_lazy_symbol_pointer,''));
 >>>>>>> graemeg/fixes_2_2
+=======
+        WideInits :=TLinkedList.create;
+>>>>>>> origin/cpstrnew
         { CFI }
         FAsmCFI:=CAsmCFI.Create;
       end;
@@ -505,6 +532,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         ResStrInits.free;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -512,6 +540,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         WideInits.free;
@@ -625,6 +655,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (target_info.system in (systems_linux + systems_bsd + systems_android)) and
            { the next condition was
              (cs_create_smart in current_settings.moduleswitches) and
@@ -639,6 +670,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         if (target_info.system in systems_linux) and
            (cs_link_smart in current_settings.globalswitches) and
            (alt = alt_dbgline) then
@@ -646,11 +679,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         else

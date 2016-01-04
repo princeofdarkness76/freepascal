@@ -10,6 +10,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure test(p: codepointer);
 =======
 procedure test(p: pointer);
@@ -20,6 +21,9 @@ procedure test(p: pointer);
 =======
 procedure test(p: pointer);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure test(p: pointer);
+>>>>>>> origin/cpstrnew
 =======
 procedure test(p: pointer);
 >>>>>>> origin/cpstrnew

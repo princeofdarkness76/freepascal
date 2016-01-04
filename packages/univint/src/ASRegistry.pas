@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       OpenScripting/ASRegistry.h
  
      Contains:   AppleScript Registry constants.
@@ -32,11 +33,15 @@
 =======
      File:       OpenScripting/ASRegistry.h
 >>>>>>> origin/fixes_2.4
+=======
+     File:       OpenScripting/ASRegistry.h
+>>>>>>> origin/cpstrnew
  
      Contains:   AppleScript Registry constants.
  
      Version:    OSA-136~14
  
+<<<<<<< HEAD
 <<<<<<< HEAD
      Copyright:  © 1991-2002 by Apple Computer, Inc., all rights reserved
 <<<<<<< HEAD
@@ -46,6 +51,9 @@
 =======
      Copyright:  © 1991-2008 by Apple Computer, Inc., all rights reserved
 >>>>>>> origin/fixes_2.4
+=======
+     Copyright:  © 1991-2008 by Apple Computer, Inc., all rights reserved
+>>>>>>> origin/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -98,12 +106,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -115,6 +127,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -129,6 +142,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -144,6 +161,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -154,6 +172,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -161,13 +182,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -175,6 +200,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -183,8 +210,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -195,6 +225,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -215,6 +246,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -223,12 +256,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -236,6 +272,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -478,6 +515,9 @@ interface
 =======
 	{$setc TARGET_CPU_PPC64 := FALSE}
 >>>>>>> origin/fixes_2.4
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -507,6 +547,7 @@ interface
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 {$endc}
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -544,6 +585,37 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -572,6 +644,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -580,6 +653,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -589,6 +664,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -609,6 +685,10 @@ uses MacTypes,AERegistry,AEDataModel,AEObjects;
 uses MacTypes,AERegistry,AEDataModel,AEObjects;
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+uses MacTypes,AERegistry,AEDataModel,AEObjects;
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 
 
 {$ifc TARGET_OS_MAC}
@@ -638,6 +718,7 @@ const
 	keyASSubroutineName = FourCharCode('snam');
 	kASPrepositionalSubroutine = FourCharCode('psbr');
 	keyASPositionalArgs = FourCharCode('parg');
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1284,6 +1365,87 @@ const
 	keyASPrepositionUnder = FourCharCode('undr');
 
 const
+=======
+
+const
+{ Add this parameter to a Get Data result if your app handled the 'as' parameter }
+	keyAppHandledCoercion = FourCharCode('idas');
+
+const
+{ Miscellaneous AppleScript commands }
+	kASStartLogEvent = FourCharCode('log1');
+	kASStopLogEvent = FourCharCode('log0');
+	kASCommentEvent = FourCharCode('cmnt');
+
+
+{ Operator Events: }
+const
+{ Binary: }
+	kASAdd = FourCharCode('+   ');
+	kASSubtract = FourCharCode('-   ');
+	kASMultiply = FourCharCode('*   ');
+	kASDivide = FourCharCode('/   ');
+	kASQuotient = FourCharCode('div ');
+	kASRemainder = FourCharCode('mod ');
+	kASPower = FourCharCode('^   ');
+	kASEqual = kAEEquals;
+	kASNotEqual = $AD202020;
+	kASGreaterThan = kAEGreaterThan;
+	kASGreaterThanOrEqual = kAEGreaterThanEquals;
+	kASLessThan = kAELessThan;
+	kASLessThanOrEqual = kAELessThanEquals;
+	kASComesBefore = FourCharCode('cbfr');
+	kASComesAfter = FourCharCode('cafr');
+	kASConcatenate = FourCharCode('ccat');
+	kASStartsWith = kAEBeginsWith;
+	kASEndsWith = kAEEndsWith;
+	kASContains = kAEContains;
+
+const
+	kASAnd = kAEAND;
+	kASOr = kAEOR; { Unary: }
+	kASNot = kAENOT;
+	kASNegate = FourCharCode('neg ');
+	keyASArg = FourCharCode('arg ');
+
+const
+{ event code for the 'error' statement }
+	kASErrorEventCode = FourCharCode('err ');
+	kOSAErrorArgs = FourCharCode('erra');
+	keyAEErrorObject = FourCharCode('erob'); { Properties: }
+	pLength = FourCharCode('leng');
+	pReverse = FourCharCode('rvse');
+	pRest = FourCharCode('rest');
+	pInherits = FourCharCode('c@#^');
+	pProperties = FourCharCode('pALL'); { User-Defined Record Fields: }
+	keyASUserRecordFields = FourCharCode('usrf');
+	typeUserRecordFields = typeAEList;
+
+{ Prepositions: }
+const
+	keyASPrepositionAt = FourCharCode('at  ');
+	keyASPrepositionIn = FourCharCode('in  ');
+	keyASPrepositionFrom = FourCharCode('from');
+	keyASPrepositionFor = FourCharCode('for ');
+	keyASPrepositionTo = FourCharCode('to  ');
+	keyASPrepositionThru = FourCharCode('thru');
+	keyASPrepositionThrough = FourCharCode('thgh');
+	keyASPrepositionBy = FourCharCode('by  ');
+	keyASPrepositionOn = FourCharCode('on  ');
+	keyASPrepositionInto = FourCharCode('into');
+	keyASPrepositionOnto = FourCharCode('onto');
+	keyASPrepositionBetween = FourCharCode('btwn');
+	keyASPrepositionAgainst = FourCharCode('agst');
+	keyASPrepositionOutOf = FourCharCode('outo');
+	keyASPrepositionInsteadOf = FourCharCode('isto');
+	keyASPrepositionAsideFrom = FourCharCode('asdf');
+	keyASPrepositionAround = FourCharCode('arnd');
+	keyASPrepositionBeside = FourCharCode('bsid');
+	keyASPrepositionBeneath = FourCharCode('bnth');
+	keyASPrepositionUnder = FourCharCode('undr');
+
+const
+>>>>>>> origin/cpstrnew
 	keyASPrepositionOver = FourCharCode('over');
 	keyASPrepositionAbove = FourCharCode('abve');
 	keyASPrepositionBelow = FourCharCode('belw');
@@ -1415,6 +1577,7 @@ const
 	cAddress = FourCharCode('addr');
 	cRunningAddress = FourCharCode('radd');
 	cStorage = FourCharCode('stor');
+<<<<<<< HEAD
 
 const
 { DateTime things: }
@@ -1461,10 +1624,59 @@ const
 	kASMagicTellEvent = FourCharCode('tell');
 	kASMagicEndTellEvent = FourCharCode('tend');
 
+=======
+
+const
+{ DateTime things: }
+	pASWeekday = FourCharCode('wkdy');
+	pASMonth = FourCharCode('mnth');
+	pASDay = FourCharCode('day ');
+	pASYear = FourCharCode('year');
+	pASTime = FourCharCode('time');
+	pASDateString = FourCharCode('dstr');
+	pASTimeString = FourCharCode('tstr'); { Months }
+	cMonth = pASMonth;
+	cJanuary = FourCharCode('jan ');
+	cFebruary = FourCharCode('feb ');
+	cMarch = FourCharCode('mar ');
+	cApril = FourCharCode('apr ');
+	cMay = FourCharCode('may ');
+	cJune = FourCharCode('jun ');
+	cJuly = FourCharCode('jul ');
+	cAugust = FourCharCode('aug ');
+	cSeptember = FourCharCode('sep ');
+	cOctober = FourCharCode('oct ');
+	cNovember = FourCharCode('nov ');
+	cDecember = FourCharCode('dec ');
+
+const
+{ Weekdays }
+	cWeekday = pASWeekday;
+	cSunday = FourCharCode('sun ');
+	cMonday = FourCharCode('mon ');
+	cTuesday = FourCharCode('tue ');
+	cWednesday = FourCharCode('wed ');
+	cThursday = FourCharCode('thu ');
+	cFriday = FourCharCode('fri ');
+	cSaturday = FourCharCode('sat '); { AS 1.1 Globals: }
+	pASQuote = FourCharCode('quot');
+	pASSeconds = FourCharCode('secs');
+	pASMinutes = FourCharCode('min ');
+	pASHours = FourCharCode('hour');
+	pASDays = FourCharCode('days');
+	pASWeeks = FourCharCode('week'); { Writing Code things: }
+	cWritingCodeInfo = FourCharCode('citl');
+	pScriptCode = FourCharCode('pscd');
+	pLangCode = FourCharCode('plcd'); { Magic Tell and End Tell events for logging: }
+	kASMagicTellEvent = FourCharCode('tell');
+	kASMagicEndTellEvent = FourCharCode('tend');
+
+>>>>>>> origin/cpstrnew
 {$endc} {TARGET_OS_MAC}
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -1473,3 +1685,6 @@ end.
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

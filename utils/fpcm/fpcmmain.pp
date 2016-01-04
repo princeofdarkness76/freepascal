@@ -71,6 +71,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         c_i386,c_m68k,c_powerpc,c_sparc,c_x86_64,c_arm,c_powerpc64,c_avr,c_armeb,c_armel,c_mips,c_mipsel,c_mips64,c_mips64el,c_jvm,c_i8086,c_aarch64
 =======
         c_i386,c_m68k,c_powerpc,c_sparc,c_x86_64,c_arm,c_powerpc64,c_avr,c_armeb,c_armel,c_mips,c_mipsel,c_mips64,c_mips64el
@@ -84,6 +85,9 @@ interface
 =======
         c_i386,c_m68k,c_powerpc,c_sparc,c_x86_64,c_arm,c_powerpc64,c_avr,c_armeb,c_armel,c_mips,c_mipsel,c_mips64,c_mips64el
 >>>>>>> origin/cpstrnew
+=======
+        c_i386,c_m68k,c_powerpc,c_sparc,c_x86_64,c_arm,c_powerpc64,c_avr,c_armeb,c_armel,c_mips,c_mipsel,c_mips64,c_mips64el
+>>>>>>> origin/cpstrnew
       );
 
       TOS=(
@@ -91,6 +95,7 @@ interface
         o_amiga,o_atari, o_solaris, o_qnx, o_netware, o_openbsd,o_wdosx,
         o_palmos,o_macos,o_darwin,o_emx,o_watcom,o_morphos,o_netwlibc,
         o_win64,o_wince,o_gba,o_nds,o_embedded,o_symbian,o_nativent,o_iphonesim,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -108,12 +113,16 @@ interface
 =======
         o_wii
 >>>>>>> origin/cpstrnew
+=======
+        o_wii
+>>>>>>> origin/cpstrnew
       );
 
       TTargetSet=array[tcpu,tos] of boolean;
 
     const
       CpuStr : array[TCpu] of string=(
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -167,6 +176,17 @@ interface
 
       ppcSuffix : array[TCpu] of string=(
         '386','m68k','ppc','sparc','x86_64','arm','ppc64'
+=======
+        'i386','m68k','powerpc','sparc','x86_64','arm','powerpc64','avr','armeb', 'armel', 'mips', 'mipsel', 'mips64', 'mips64el'
+      );
+
+      CpuSuffix : array[TCpu] of string=(
+        '_i386','_m68k','_powerpc','_sparc','_x86_64','_arm','_powerpc64','avr','_armeb', '_armel', '_mips', '_mipsel', '_mips64', '_mips64el'
+      );
+
+      ppcSuffix : array[TCpu] of string=(
+        '386','m68k','ppc','sparc','x86_64','arm','ppc64','avr','armeb', 'armel', 'mips', 'mipsel', 'mips64', 'mips64el'
+>>>>>>> origin/cpstrnew
       );
 
       OSStr : array[TOS] of string=(
@@ -174,6 +194,7 @@ interface
         'amiga','atari','solaris', 'qnx', 'netware','openbsd','wdosx',
         'palmos','macos','darwin','emx','watcom','morphos','netwlibc',
         'win64','wince','gba','nds','embedded','symbian','nativent',
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -192,6 +213,9 @@ interface
 =======
         'iphonesim', 'wii'
 >>>>>>> origin/cpstrnew
+=======
+        'iphonesim', 'wii'
+>>>>>>> origin/cpstrnew
       );
 
       OSSuffix : array[TOS] of string=(
@@ -199,6 +223,7 @@ interface
         '_amiga','_atari','_solaris', '_qnx', '_netware','_openbsd','_wdosx',
         '_palmos','_macos','_darwin','_emx','_watcom','_morphos','_netwlibc',
         '_win64','_wince','_gba','_nds','_embedded','_symbian','_nativent',
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -217,10 +242,14 @@ interface
 =======
         '_iphonesim','_wii'
 >>>>>>> origin/cpstrnew
+=======
+        '_iphonesim','_wii'
+>>>>>>> origin/cpstrnew
       );
 
       { This table is kept OS,Cpu because it is easier to maintain (PFV) }
       OSCpuPossible : array[TOS,TCpu] of boolean = (
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -272,6 +301,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         { os          i386    m68k  ppc    sparc  x86_64 arm    ppc64  avr    armeb  armel  mips   mipsel mips64 misp64el}
         { linux }   ( true,  true,  true,  true,  true,  true,  true,  false, true,  false, false, true,  false, false),
         { go32v2 }  ( true,  false, false, false, false, false, false, false, false, false, false, false, false, false),
@@ -304,6 +335,7 @@ interface
         { nativent }( true,  false, false, false, false, false, false, false, false, false, false, false, false, false),
         { iphonesim }( true,  false, false, false, false, false, false, false, false, false, false, false, false, false),        
         { wii }     ( false, false, true,  false, false, false, false, false, false, false, false, false, false, false)        
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -344,6 +376,8 @@ interface
         { embedded }( true,  true,  true,  true,  true,  true,  true),
         { symbian } ( true,  false, false, false, false, true,  false)
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
       );
 
     type

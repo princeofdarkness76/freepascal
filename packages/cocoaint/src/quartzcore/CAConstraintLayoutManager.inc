@@ -74,6 +74,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     _anoninternstruct_CAConstraintLayoutManager0: record
       case byte of
        0: (_anonbitfield_CAConstraintLayoutManager0: CAConstraintAttribute);
@@ -88,6 +89,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     _anoninternstruct_CAConstraintLayoutManager0: bitpacked record
       case byte of
        0: (_anonbitfield_CAConstraintLayoutManager0: CAConstraintAttribute);
@@ -97,11 +100,14 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       );

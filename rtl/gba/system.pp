@@ -26,6 +26,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$i libch.inc}
 
 
@@ -40,6 +41,11 @@ interface
 
 
 >>>>>>> origin/fixes_2.4
+=======
+{$i libch.inc}
+
+
+>>>>>>> origin/cpstrnew
 
 {$define fpc_softfpu_interface}
   {$i softfpu.pp}
@@ -69,6 +75,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  sLineBreak = LineEnding;
 =======
 =======
@@ -85,6 +92,8 @@ const
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  sLineBreak : string[1] = LineEnding;
 >>>>>>> graemeg/cpstrnew
  DefaultTextLineBreakStyle : TTextLineBreakStyle = tlbsCRLF;
@@ -103,6 +112,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -112,6 +122,9 @@ const
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+
+>>>>>>> origin/cpstrnew
 var
   argc: LongInt = 0;
   argv: PPChar;
@@ -122,6 +135,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 //  errno: integer;
 >>>>>>> graemeg/cpstrnew
@@ -137,6 +151,9 @@ var
 =======
 //  errno: integer;
 >>>>>>> origin/fixes_2.4
+=======
+//  errno: integer;
+>>>>>>> origin/cpstrnew
   fake_heap_end: ^byte; cvar; external;
 
 
@@ -286,6 +303,9 @@ begin
 
 { Set up signals handlers }
   fpc_cpucodeinit;
+
+{ Set up signals handlers }
+//  fpc_cpucodeinit;
 
 { Setup heap }
   InitHeap;

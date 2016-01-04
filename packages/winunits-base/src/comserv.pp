@@ -117,6 +117,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (*
 =======
 {
@@ -127,6 +128,9 @@ end;
 =======
 {
 >>>>>>> graemeg/cpstrnew
+=======
+{
+>>>>>>> origin/cpstrnew
 =======
 {
 >>>>>>> origin/cpstrnew
@@ -145,6 +149,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 *)
 =======
 }
@@ -155,6 +160,9 @@ end;
 =======
 }
 >>>>>>> graemeg/cpstrnew
+=======
+}
+>>>>>>> origin/cpstrnew
 =======
 }
 >>>>>>> origin/cpstrnew
@@ -243,6 +251,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     ActiveX.UnRegisterTypeLib(ptla^.guid, ptla^.wMajorVerNum, ptla^.wMinorVerNum, ptla^.lcid, ptla^.syskind);
 =======
     OleCheck(ActiveX.UnRegisterTypeLib(ptla^.guid, ptla^.wMajorVerNum, ptla^.wMinorVerNum, ptla^.lcid, ptla^.syskind));
@@ -253,6 +262,9 @@ begin
 =======
     OleCheck(ActiveX.UnRegisterTypeLib(ptla^.guid, ptla^.wMajorVerNum, ptla^.wMinorVerNum, ptla^.lcid, ptla^.syskind));
 >>>>>>> graemeg/cpstrnew
+=======
+    OleCheck(ActiveX.UnRegisterTypeLib(ptla^.guid, ptla^.wMajorVerNum, ptla^.wMinorVerNum, ptla^.lcid, ptla^.syskind));
+>>>>>>> origin/cpstrnew
 =======
     OleCheck(ActiveX.UnRegisterTypeLib(ptla^.guid, ptla^.wMajorVerNum, ptla^.wMinorVerNum, ptla^.lcid, ptla^.syskind));
 >>>>>>> origin/cpstrnew

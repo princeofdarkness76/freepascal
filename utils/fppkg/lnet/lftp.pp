@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { lFTP CopyRight (C) 2005-2008 Ales Katona
 =======
 { lFTP CopyRight (C) 2005-2007 Ales Katona
@@ -7,6 +8,9 @@
 =======
 { lFTP CopyRight (C) 2005-2007 Ales Katona
 >>>>>>> origin/fixes_2_2
+=======
+{ lFTP CopyRight (C) 2005-2008 Ales Katona
+>>>>>>> origin/cpstrnew
 
   This library is Free software; you can rediStribute it and/or modify it
   under the terms of the GNU Library General Public License as published by
@@ -84,16 +88,22 @@ type
     procedure SetTimeout(const Value: Integer);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 
     function GetSession: TLSession;
     procedure SetSession(const AValue: TLSession);
     procedure SetCreator(AValue: TLComponent); override;
 
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
     
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
     function GetSocketClass: TLSocketClass;
     procedure SetSocketClass(Value: TLSocketClass);
    public
@@ -115,12 +125,17 @@ type
     property TransferMethod: TLFTPTransferMethod read FTransferMethod write FTransferMethod default ftPassive;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     property Session: TLSession read GetSession write SetSession;
     property FeatureList: TStringList read FFeatureList;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    property Session: TLSession read GetSession write SetSession;
+    property FeatureList: TStringList read FFeatureList;
+>>>>>>> origin/cpstrnew
   end;
 
   { TLFTPTelnetClient }
@@ -167,6 +182,7 @@ type
     procedure OnControlDs(aSocket: TLSocket);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     
     procedure ClearStatusFlags;
 
@@ -177,6 +193,12 @@ type
 =======
 
 >>>>>>> origin/fixes_2_2
+=======
+    
+    procedure ClearStatusFlags;
+
+    function GetCurrentStatus: TLFTPStatus;
+>>>>>>> origin/cpstrnew
     function GetTransfer: Boolean;
 
     function GetEcho: Boolean;
@@ -223,12 +245,16 @@ type
     
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function GetData(out aData; const aSize: Integer): Integer;
 =======
 =======
 >>>>>>> origin/fixes_2_2
     function GetData(var aData; const aSize: Integer): Integer;
 >>>>>>> graemeg/fixes_2_2
+=======
+    function GetData(out aData; const aSize: Integer): Integer;
+>>>>>>> origin/cpstrnew
     function GetDataMessage: string;
     
     function Retrieve(const FileName: string): Boolean;
@@ -980,6 +1006,7 @@ begin
     Writedbg(['Sent PASV']);
     FStatus.Insert(MakeStatusRec(fsPasv, '', ''));
     FControl.SendMessage('PASV' + FLE);
+<<<<<<< HEAD
   end;
 end;
 
@@ -1020,6 +1047,8 @@ begin
     FControl.SendMessage('PASS ' + aPassword + FLE);
     FStatus.Insert(MakeStatusRec(fsPass, '', ''));
     Result := True;
+=======
+>>>>>>> origin/cpstrnew
   end;
 end;
 
@@ -1027,8 +1056,8 @@ function TLFTPClient.User(const aUserName: string): Boolean;
 begin
   Result := not FPipeLine;
   if CanContinue(fsUser, aUserName, '') then begin
-    FControl.SendMessage('USER ' + aUserName + FLE);
     FStatus.Insert(MakeStatusRec(fsUser, '', ''));
+    FControl.SendMessage('USER ' + aUserName + FLE);
     Result := True;
   end;
 end;
@@ -1037,8 +1066,8 @@ function TLFTPClient.Password(const aPassword: string): Boolean;
 begin
   Result := not FPipeLine;
   if CanContinue(fsPass, aPassword, '') then begin
-    FControl.SendMessage('PASS ' + aPassword + FLE);
     FStatus.Insert(MakeStatusRec(fsPass, '', ''));
+    FControl.SendMessage('PASS ' + aPassword + FLE);
     Result := True;
   end;
 end;

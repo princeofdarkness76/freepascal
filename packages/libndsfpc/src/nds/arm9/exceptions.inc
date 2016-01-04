@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef NDS_INTERFACE}
 const
   EXCEPTION_VECTOR : ^VoidFn = pointer($2FFFD9C);
@@ -59,10 +60,19 @@ var
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$ifdef NDS_INTERFACE}
+const
+  EXCEPTION_VECTOR : ^VoidFn = pointer($2FFFD9C);
+
+var
+  exceptionC: ^VoidFn; cvar; external;
+>>>>>>> origin/cpstrnew
   exceptionStack: cuint32; cvar; external;
   exceptionRegisters: pcint32; cvar; external;
 
 procedure enterException(); cdecl; external;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 procedure setExceptionHandler(handler: VoidFn); cdecl; external;
@@ -72,6 +82,9 @@ procedure setExceptionHandler(handler: VoidFunctionPointer); cdecl; external;
 =======
 procedure setExceptionHandler(handler: VoidFunctionPointer); cdecl; external;
 >>>>>>> origin/fixes_2_2
+=======
+procedure setExceptionHandler(handler: VoidFn); cdecl; external;
+>>>>>>> origin/cpstrnew
 procedure defaultExceptionHandler(); cdecl; external;
 
 function getCPSR(): cuint32; cdecl; external;

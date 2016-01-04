@@ -10,12 +10,15 @@
    type
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
      PPPChar   = ^PPchar;
 >>>>>>> graemeg/fixes_2_2
 =======
      PPPChar   = ^PPchar;
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
      PPguchar  = Pguchar;
      PPgchar   = ^Pgchar;
      PPPgchar  = ^PPgchar;

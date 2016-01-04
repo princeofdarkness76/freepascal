@@ -54,6 +54,7 @@ _start:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         movq    operatingsystem_parameter_envp@GOTPCREL(%rip),%rcx
         movq    %rax,(%rcx)
 =======
@@ -68,6 +69,10 @@ _start:
         movq    operatingsystem_parameter_envp@GOTPCREL(%rip),%rsi
         movq    %rax,(%rsi)
 >>>>>>> graemeg/cpstrnew
+=======
+        movq    operatingsystem_parameter_envp@GOTPCREL(%rip),%rsi
+        movq    %rax,(%rsi)
+>>>>>>> origin/cpstrnew
 =======
         movq    operatingsystem_parameter_envp@GOTPCREL(%rip),%rsi
         movq    %rax,(%rsi)
@@ -87,6 +92,7 @@ _start:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	movq __libc_csu_init@GOTPCREL(%rip), %rcx
 	movq __libc_csu_fini@GOTPCREL(%rip), %r8
 =======
@@ -101,6 +107,10 @@ _start:
 	movq _init_dummy@GOTPCREL(%rip), %rcx
 	movq _fini_dummy@GOTPCREL(%rip), %r8
 >>>>>>> graemeg/cpstrnew
+=======
+	movq _init_dummy@GOTPCREL(%rip), %rcx
+	movq _fini_dummy@GOTPCREL(%rip), %r8
+>>>>>>> origin/cpstrnew
 =======
 	movq _init_dummy@GOTPCREL(%rip), %rcx
 	movq _fini_dummy@GOTPCREL(%rip), %r8
@@ -148,6 +158,7 @@ _haltproc:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         movl    %edi,%eax
 =======
         movq    operatingsystem_result@GOTPCREL(%rip),%rax
@@ -165,6 +176,10 @@ _haltproc:
         movq    operatingsystem_result@GOTPCREL(%rip),%rax
         movzwl  (%rax),%eax
 >>>>>>> origin/cpstrnew
+=======
+        movq    operatingsystem_result@GOTPCREL(%rip),%rax
+        movzwl  (%rax),%eax
+>>>>>>> origin/cpstrnew
 
         /* return to libc */
 	movq    ___fpc_ret_rbp@GOTPCREL(%rip),%rcx
@@ -178,11 +193,14 @@ _haltproc:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -200,11 +218,14 @@ _fini_dummy:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 

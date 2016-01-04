@@ -346,6 +346,7 @@ Implementation
               { generate this automatically                      }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               if (target_info.system in [system_i386_darwin,system_i386_iphonesim]) then
 =======
               if (target_info.system=system_i386_darwin) then
@@ -353,11 +354,15 @@ Implementation
 =======
               if (target_info.system=system_i386_darwin) then
 >>>>>>> origin/fixes_2_2
+=======
+              if (target_info.system in [system_i386_darwin,system_i386_iphonesim]) then
+>>>>>>> origin/cpstrnew
                 Message(asmr_e_invalid_reference_syntax);
               consume(AS_AT);
               if actasmtoken=AS_ID then
                 begin
 {$ifdef x86_64}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                   if (actasmpattern='GOTPCREL') or
@@ -368,6 +373,10 @@ Implementation
 =======
                   if actasmpattern='GOTPCREL' then
 >>>>>>> origin/fixes_2_2
+=======
+                  if (actasmpattern='GOTPCREL') or
+		     (actasmpattern='PLT') then
+>>>>>>> origin/cpstrnew
 {$endif x86_64}
 {$ifdef i386}
                   if actasmpattern='GOT' then
@@ -405,6 +414,7 @@ Implementation
                          (oper.opr.ref.symbol.bind=AB_LOCAL) then
 			Message(asmr_w_useless_got_for_local);
 {$endif x86_64}
+<<<<<<< HEAD
 =======
                     begin
                       oper.opr.ref.refaddr:=addr_pic;
@@ -413,6 +423,8 @@ Implementation
                     begin
                       oper.opr.ref.refaddr:=addr_pic;
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
                       consume(AS_ID);
                     end
                   else

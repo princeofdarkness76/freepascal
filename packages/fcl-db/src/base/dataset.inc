@@ -481,6 +481,7 @@ begin
     deDataSetScroll : HandleScrollOrChange;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     deLayoutChange  : FEnableControlsEvent:=deLayoutChange;    
   end;
 
@@ -491,6 +492,9 @@ begin
   if not ControlsDisabled then begin
 >>>>>>> graemeg/fixes_2_2
 =======
+=======
+    deLayoutChange  : FEnableControlsEvent:=deLayoutChange;    
+>>>>>>> origin/cpstrnew
   end;
 
   if not ControlsDisabled then begin
@@ -1601,8 +1605,7 @@ begin
           if Required then Attributes := attributes + [faRequired];
           if ReadOnly then Attributes := attributes + [faReadOnly];
           if DataType = ftBCD then precision := (fields[i] as TBCDField).Precision
-          // this must change if TFMTBcdfield is implemented
-          else if DataType = ftFMTBcd then precision := (fields[i] as TBCDField).Precision;
+          else if DataType = ftFMTBcd then precision := (fields[i] as TFMTBCDField).Precision;
           end;
         end;
 <<<<<<< HEAD
@@ -1886,11 +1889,15 @@ begin
       DoBeforeOpen;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       FEnableControlsEvent:=deLayoutChange;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+      FEnableControlsEvent:=deLayoutChange;
+>>>>>>> origin/cpstrnew
       FInternalCalcFields:=False;
       try
         FDefaultFields:=FieldCount=0;
@@ -1984,6 +1991,7 @@ begin
   GetNextRecords;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if (FRecordCount < FBufferCount) and not IsUniDirectional then
 =======
   if FRecordCount < FBufferCount then
@@ -1991,6 +1999,9 @@ begin
 =======
   if FRecordCount < FBufferCount then
 >>>>>>> origin/fixes_2_2
+=======
+  if (FRecordCount < FBufferCount) and not IsUniDirectional then
+>>>>>>> origin/cpstrnew
     begin
     FActiveRecord := FActiveRecord + GetPriorRecords;
     CursorPosChanged;

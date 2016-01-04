@@ -19,6 +19,9 @@
     License as published by the Free Software Foundation; either
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
     version 2.1 of the License, or (at your option) any later version
     with the following modification:
 
@@ -32,12 +35,15 @@
     this library, you may extend this exception to your version of the library,
     but you are not obligated to do so. If you do not wish to do so, delete this
     exception statement from your version.
+<<<<<<< HEAD
 =======
     version 2.1 of the License, or (at your option) any later version.
 >>>>>>> graemeg/fixes_2_2
 =======
     version 2.1 of the License, or (at your option) any later version.
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 
     This library is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -49,6 +55,7 @@
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 type
@@ -79,26 +86,30 @@ type
 =======
 >>>>>>> origin/fixes_2_2
 Type
+=======
+type
+>>>>>>> origin/cpstrnew
   TWinCEKeyboard = Class(TObject)
-  Private
+  private
     { data }
-    FEventQueue : TEventQueue;
+    FEventQueue: TEventQueue;
 
     { flag data }
-    m_enabled : Boolean;
+    m_enabled: Boolean;
 
     { modifiers }
-    m_alt : Boolean;
-    m_shift : Boolean;
-    m_control : Boolean;
-  Public
+    m_alt: Boolean;
+    m_shift: Boolean;
+    m_control: Boolean;
+  public
     { setup }
-    Constructor Create(EventQueue : TEventQueue);
+    constructor Create(EventQueue: TEventQueue);
 
     { window procedure }
-    Function WndProc(hWnd : HWND; message : DWord; wParam : WPARAM; lParam : LPARAM) : LRESULT;
+    function WndProc(hWnd: HWND; message: DWord; wParam: WPARAM; lParam: LPARAM): LRESULT;
 
     { control }
+<<<<<<< HEAD
     Procedure enable;
     Procedure disable;
   End;
@@ -106,3 +117,8 @@ Type
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    procedure enable;
+    procedure disable;
+  end;
+>>>>>>> origin/cpstrnew

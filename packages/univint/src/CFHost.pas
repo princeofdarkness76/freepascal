@@ -2,6 +2,9 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 	 File:	   CFNetwork/CFHost.h
  
 	 Contains:   CoreFoundation CFHost header
@@ -11,6 +14,7 @@
 	 Bugs?:	  For bug reports, consult the following page on
 				 the World Wide Web:
  
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -29,11 +33,14 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 					 http://www.freepascal.org/bugs.html
  
 }
 {	  Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2004 }
 {   Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -71,6 +78,8 @@
 }
 {	  Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2004 }
 {   Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+=======
+>>>>>>> origin/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -79,12 +88,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -96,6 +109,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -110,6 +124,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -125,6 +143,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -135,6 +154,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -142,13 +164,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -156,6 +182,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -164,8 +192,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -176,6 +207,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -196,6 +228,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -204,12 +238,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -220,6 +257,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
@@ -281,6 +319,9 @@ interface
 =======
 	{$setc TARGET_CPU_PPC64 := FALSE}
 >>>>>>> origin/fixes_2.4
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -290,6 +331,7 @@ interface
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
@@ -501,6 +543,9 @@ interface
 =======
 >>>>>>> origin/fixes_2.4
 	{$setc TARGET_CPU_X86 := FALSE}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
@@ -520,6 +565,7 @@ interface
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 {$endc}
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -557,6 +603,37 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -585,6 +662,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -593,6 +671,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -603,6 +683,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,CFBase,CFData,CFArray,CFRunLoop,CFStream;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -636,11 +717,17 @@ uses MacTypes,CFBase,CFData,CFArray,CFRunLoop,CFStream;
 
 {$ALIGN POWER}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+
+{$ALIGN POWER}
+>>>>>>> origin/cpstrnew
 
 {
  *  CFHostRef
  *  
  *  Discussion:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -682,11 +769,18 @@ type
 type
 	CFHostRef = ^SInt32; { an opaque type }
 >>>>>>> origin/fixes_2.4
+=======
+ *	This is the type of a reference to a host name or address lookup.
+ }
+type
+	CFHostRef = ^SInt32; { an opaque type }
+>>>>>>> origin/cpstrnew
 
 {
  *  kCFStreamErrorDomainNetDB
  *  
  *  Discussion:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -706,6 +800,9 @@ var kCFStreamErrorDomainNetDB: SInt32; external name '_kCFStreamErrorDomainNetDB
 =======
  *	Errors listed in netdb.h
 >>>>>>> origin/fixes_2.4
+=======
+ *	Errors listed in netdb.h
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *	Mac OS X:		 in version 10.3 and later in CoreServices.framework
@@ -715,18 +812,23 @@ var kCFStreamErrorDomainNetDB: SInt32; external name '_kCFStreamErrorDomainNetDB
 var kCFStreamErrorDomainNetDB: SInt32; external name '_kCFStreamErrorDomainNetDB'; (* attribute const *)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 
 {
  *  kCFStreamErrorDomainSystemConfiguration
  *  
  *  Discussion:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -746,6 +848,9 @@ var kCFStreamErrorDomainSystemConfiguration: SInt32; external name '_kCFStreamEr
 =======
  *	Errors listed in SystemConfiguration/SystemConfiguration.h
 >>>>>>> origin/fixes_2.4
+=======
+ *	Errors listed in SystemConfiguration/SystemConfiguration.h
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *	Mac OS X:		 in version 10.3 and later in CoreServices.framework
@@ -755,12 +860,16 @@ var kCFStreamErrorDomainSystemConfiguration: SInt32; external name '_kCFStreamEr
 var kCFStreamErrorDomainSystemConfiguration: SInt32; external name '_kCFStreamErrorDomainSystemConfiguration'; (* attribute const *)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -770,6 +879,7 @@ var kCFStreamErrorDomainSystemConfiguration: SInt32; external name '_kCFStreamEr
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *	Host information types to be resolved.
 =======
  *    Host information types to be resolved.
@@ -780,10 +890,14 @@ var kCFStreamErrorDomainSystemConfiguration: SInt32; external name '_kCFStreamEr
 =======
  *	Host information types to be resolved.
 >>>>>>> origin/fixes_2.4
+=======
+ *	Host information types to be resolved.
+>>>>>>> origin/cpstrnew
  }
 type
 	CFHostInfoType = SInt32;
 const
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -811,10 +925,18 @@ const
    }
 	kCFHostAddresses = 0;
 >>>>>>> origin/fixes_2.4
+=======
+{
+   * Results value is a CFArray of CFData's (each being a struct
+   * sockaddr)
+   }
+	kCFHostAddresses = 0;
+>>>>>>> origin/cpstrnew
 
   {
    * Results value is a CFArray of CFString's
    }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -828,6 +950,9 @@ const
 =======
 	kCFHostNames = 1;
 >>>>>>> origin/fixes_2.4
+=======
+	kCFHostNames = 1;
+>>>>>>> origin/cpstrnew
 
   {
    * Results value is a CFData wrapping SCNetworkConnectionFlags
@@ -836,6 +961,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kCFHostReachability = 2;
 =======
   kCFHostReachability           = 2;
@@ -846,12 +972,16 @@ const
 =======
 	kCFHostReachability = 2;
 >>>>>>> origin/fixes_2.4
+=======
+	kCFHostReachability = 2;
+>>>>>>> origin/cpstrnew
 
 
 {
  *  CFHostClientContext
  *  
  *  Discussion:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -903,6 +1033,10 @@ type
  *	Structure containing the user-defined data and callbacks for
  *	CFHost objects.
 >>>>>>> origin/fixes_2.4
+=======
+ *	Structure containing the user-defined data and callbacks for
+ *	CFHost objects.
+>>>>>>> origin/cpstrnew
  }
 type
 	CFHostClientContext = record
@@ -934,6 +1068,7 @@ type
    }
 		release: CFAllocatorReleaseCallBack;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	
 		{
 		 * The callback used to create a descriptive string representation of
@@ -946,6 +1081,8 @@ type
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 
   {
    * The callback used to create a descriptive string representation of
@@ -953,7 +1090,10 @@ type
    * debugging purposes. This is used by the CFCopyDescription()
    * function.
    }
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 		copyDescription: CFAllocatorCopyDescriptionCallBack;
 	end;
 	CFHostClientContextPtr = ^CFHostClientContext;
@@ -962,6 +1102,7 @@ type
  *  CFHostClientCallBack
  *  
  *  Discussion:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -994,6 +1135,10 @@ type
  *	Callback function which is called upon error or completion of an
  *	asynchronous resolve.
 >>>>>>> origin/fixes_2.4
+=======
+ *	Callback function which is called upon error or completion of an
+ *	asynchronous resolve.
+>>>>>>> origin/cpstrnew
  *  
  *  Parameters:
  *	
@@ -1011,6 +1156,7 @@ type
  *	  context.
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 type CFHostClientCallBack = procedure( theHost: CFHostRef; typeInfo: CFHostInfoType; const (*var*) error: CFStreamError; info: UnivPtr );
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -1020,12 +1166,17 @@ type CFHostClientCallBack = procedure( theHost: CFHostRef; typeInfo: CFHostInfoT
 type
 	CFHostClientCallBack = procedure( theHost: CFHostRef; typeInfo: CFHostInfoType; const (*var*) error: CFStreamError; info: UnivPtr );
 >>>>>>> origin/fixes_2.4
+=======
+type
+	CFHostClientCallBack = procedure( theHost: CFHostRef; typeInfo: CFHostInfoType; const (*var*) error: CFStreamError; info: UnivPtr );
+>>>>>>> origin/cpstrnew
 
 
 {
  *  CFHostGetTypeID()
  *  
  *  Discussion:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1048,6 +1199,9 @@ function CFHostGetTypeID: CFTypeID; external name '_CFHostGetTypeID';
 =======
  *	Returns the type identifier of all CFHost instances.
 >>>>>>> origin/fixes_2.4
+=======
+ *	Returns the type identifier of all CFHost instances.
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *	Thread safe
@@ -1060,18 +1214,23 @@ function CFHostGetTypeID: CFTypeID; external name '_CFHostGetTypeID';
 function CFHostGetTypeID: CFTypeID; external name '_CFHostGetTypeID';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 
 {
  *  CFHostCreateWithName()
  *  
  *  Discussion:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1110,6 +1269,9 @@ function CFHostCreateWithName( allocator: CFAllocatorRef; hostname: CFStringRef 
 =======
  *	Creates a new host object with the given name.
 >>>>>>> origin/fixes_2.4
+=======
+ *	Creates a new host object with the given name.
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *	Thread safe
@@ -1138,18 +1300,23 @@ function CFHostCreateWithName( allocator: CFAllocatorRef; hostname: CFStringRef 
 function CFHostCreateWithName( allocator: CFAllocatorRef; hostname: CFStringRef ): CFHostRef; external name '_CFHostCreateWithName';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 
 {
  *  CFHostCreateWithAddress()
  *  
  *  Discussion:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1188,6 +1355,9 @@ function CFHostCreateWithAddress( allocator: CFAllocatorRef; addr: CFDataRef ): 
 =======
  *	Creates a new host object with the given address.
 >>>>>>> origin/fixes_2.4
+=======
+ *	Creates a new host object with the given address.
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *	Thread safe
@@ -1216,18 +1386,23 @@ function CFHostCreateWithAddress( allocator: CFAllocatorRef; addr: CFDataRef ): 
 function CFHostCreateWithAddress( allocator: CFAllocatorRef; addr: CFDataRef ): CFHostRef; external name '_CFHostCreateWithAddress';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 
 {
  *  CFHostCreateCopy()
  *  
  *  Discussion:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1267,6 +1442,9 @@ function CFHostCreateCopy( alloc: CFAllocatorRef; host: CFHostRef ): CFHostRef; 
 =======
  *	Creates a new host object as a copy of host argument.
 >>>>>>> origin/fixes_2.4
+=======
+ *	Creates a new host object as a copy of host argument.
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *	Thread safe
@@ -1296,18 +1474,23 @@ function CFHostCreateCopy( alloc: CFAllocatorRef; host: CFHostRef ): CFHostRef; 
 function CFHostCreateCopy( alloc: CFAllocatorRef; host: CFHostRef ): CFHostRef; external name '_CFHostCreateCopy';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 
 {
  *  CFHostStartInfoResolution()
  *  
  *  Discussion:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1358,6 +1541,11 @@ function CFHostStartInfoResolution( theHost: CFHostRef; info: CFHostInfoType; er
  *	requested information if there is no other active request. 
  *	Previously cached information of the given type will be released.
 >>>>>>> origin/fixes_2.4
+=======
+ *	Performs a lookup for the given host.  It will search for the
+ *	requested information if there is no other active request. 
+ *	Previously cached information of the given type will be released.
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *	Thread safe
@@ -1390,6 +1578,7 @@ function CFHostStartInfoResolution( theHost: CFHostRef; info: CFHostInfoType; er
  *	Non-Carbon CFM:   not available
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 // AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
 function CFHostStartInfoResolution( theHost: CFHostRef; info: CFHostInfoType; error: CFStreamErrorPtr ): Boolean; external name '_CFHostStartInfoResolution';
 <<<<<<< HEAD
@@ -1400,6 +1589,10 @@ function CFHostStartInfoResolution( theHost: CFHostRef; info: CFHostInfoType; er
 function CFHostStartInfoResolution( theHost: CFHostRef; info: CFHostInfoType; error: CFStreamErrorPtr { can be NULL } ): Boolean; external name '_CFHostStartInfoResolution';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+function CFHostStartInfoResolution( theHost: CFHostRef; info: CFHostInfoType; error: CFStreamErrorPtr { can be NULL } ): Boolean; external name '_CFHostStartInfoResolution';
+(* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1409,12 +1602,16 @@ function CFHostStartInfoResolution( theHost: CFHostRef; info: CFHostInfoType; er
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *	Tries to retrieve the known addresses from the given host.
  *	Returns a CFArrayRef of addresses if known and there were some.
  *	NULL is returned otherwise.  Each address is a CFDataRef wrapping
  *	a struct sockaddr.
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  
  *  Mac OS X threading:
@@ -1468,6 +1665,8 @@ function CFHostGetAddressing( theHost: CFHostRef; var hasBeenResolved: Boolean )
  *    a struct sockaddr.
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *	Thread safe
@@ -1496,18 +1695,23 @@ function CFHostGetAddressing( theHost: CFHostRef; var hasBeenResolved: Boolean )
 function CFHostGetAddressing( theHost: CFHostRef; var hasBeenResolved: Boolean ): CFArrayRef; external name '_CFHostGetAddressing';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 
 {
  *  CFHostGetNames()
  *  
  *  Discussion:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1568,6 +1772,11 @@ function CFHostGetNames( theHost: CFHostRef; var hasBeenResolved: Boolean ): CFA
  *	a CFArrayRef of names for the given host.  NULL is returned
  *	otherwise.
 >>>>>>> origin/fixes_2.4
+=======
+ *	Tries to retrieve the names/aliases from the given host. Returns
+ *	a CFArrayRef of names for the given host.  NULL is returned
+ *	otherwise.
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *	Thread safe
@@ -1596,12 +1805,16 @@ function CFHostGetNames( theHost: CFHostRef; var hasBeenResolved: Boolean ): CFA
 function CFHostGetNames( theHost: CFHostRef; var hasBeenResolved: Boolean ): CFArrayRef; external name '_CFHostGetNames';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1611,8 +1824,11 @@ function CFHostGetNames( theHost: CFHostRef; var hasBeenResolved: Boolean ): CFA
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *	Tries to retrieve the reachability of the given host. Returns a
  *	CFDataRef which wraps the reachability flags. NULL will be
  *	returned if the value has not been resolved. The possible values
@@ -1620,6 +1836,7 @@ function CFHostGetNames( theHost: CFHostRef; var hasBeenResolved: Boolean ): CFA
  *	Returns FALSE if the information was not available, otherwise
  *	TRUE will be returned with the results containing the requested
  *	information.
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  
  *  Mac OS X threading:
@@ -1660,6 +1877,8 @@ function CFHostGetReachability( theHost: CFHostRef; hasBeenResolved: BooleanPtr 
  *    information.
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *	Thread safe
@@ -1686,6 +1905,7 @@ function CFHostGetReachability( theHost: CFHostRef; hasBeenResolved: BooleanPtr 
  *	Non-Carbon CFM:   not available
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 // AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
 function CFHostGetReachability( theHost: CFHostRef; hasBeenResolved: BooleanPtr ): CFDataRef; external name '_CFHostGetReachability';
 <<<<<<< HEAD
@@ -1696,12 +1916,17 @@ function CFHostGetReachability( theHost: CFHostRef; hasBeenResolved: BooleanPtr 
 function CFHostGetReachability( theHost: CFHostRef; hasBeenResolved: BooleanPtr { can be NULL } ): CFDataRef; external name '_CFHostGetReachability';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+function CFHostGetReachability( theHost: CFHostRef; hasBeenResolved: BooleanPtr { can be NULL } ): CFDataRef; external name '_CFHostGetReachability';
+(* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 
 {
  *  CFHostCancelInfoResolution()
  *  
  *  Discussion:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1735,6 +1960,9 @@ procedure CFHostCancelInfoResolution( theHost: CFHostRef; info: CFHostInfoType )
 =======
  *	Cancels an outstanding asynchronous or synchronous resolve.
 >>>>>>> origin/fixes_2.4
+=======
+ *	Cancels an outstanding asynchronous or synchronous resolve.
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *	Thread safe
@@ -1758,18 +1986,23 @@ procedure CFHostCancelInfoResolution( theHost: CFHostRef; info: CFHostInfoType )
 procedure CFHostCancelInfoResolution( theHost: CFHostRef; info: CFHostInfoType ); external name '_CFHostCancelInfoResolution';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 
 {
  *  CFHostSetClient()
  *  
  *  Discussion:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1820,6 +2053,11 @@ function CFHostSetClient( theHost: CFHostRef; clientCB: CFHostClientCallBack { c
  *	CFHostRef.  This is required for asynchronous usage.  If not set,
  *	resolve will take place synchronously.
 >>>>>>> origin/fixes_2.4
+=======
+ *	Associates a client context and callback function with a
+ *	CFHostRef.  This is required for asynchronous usage.  If not set,
+ *	resolve will take place synchronously.
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *	Thread safe
@@ -1852,6 +2090,7 @@ function CFHostSetClient( theHost: CFHostRef; clientCB: CFHostClientCallBack { c
  *	Non-Carbon CFM:   not available
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 // AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
 function CFHostSetClient( theHost: CFHostRef; clientCB: CFHostClientCallBack; clientContext: CFHostClientContextPtr ): Boolean; external name '_CFHostSetClient';
 <<<<<<< HEAD
@@ -1862,12 +2101,17 @@ function CFHostSetClient( theHost: CFHostRef; clientCB: CFHostClientCallBack; cl
 function CFHostSetClient( theHost: CFHostRef; clientCB: CFHostClientCallBack { can be NULL }; clientContext: CFHostClientContextPtr { can be NULL } ): Boolean; external name '_CFHostSetClient';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+function CFHostSetClient( theHost: CFHostRef; clientCB: CFHostClientCallBack { can be NULL }; clientContext: CFHostClientContextPtr { can be NULL } ): Boolean; external name '_CFHostSetClient';
+(* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 
 {
  *  CFHostScheduleWithRunLoop()
  *  
  *  Discussion:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1910,6 +2154,10 @@ procedure CFHostScheduleWithRunLoop( theHost: CFHostRef; runLoop: CFRunLoopRef; 
  *	Schedules the given host on a run loop and mode so the client
  *	will receive its callbacks on that loop and mode.
 >>>>>>> origin/fixes_2.4
+=======
+ *	Schedules the given host on a run loop and mode so the client
+ *	will receive its callbacks on that loop and mode.
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *	Thread safe
@@ -1939,18 +2187,23 @@ procedure CFHostScheduleWithRunLoop( theHost: CFHostRef; runLoop: CFRunLoopRef; 
 procedure CFHostScheduleWithRunLoop( theHost: CFHostRef; runLoop: CFRunLoopRef; runLoopMode: CFStringRef ); external name '_CFHostScheduleWithRunLoop';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 
 {
  *  CFHostUnscheduleFromRunLoop()
  *  
  *  Discussion:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1999,6 +2252,10 @@ end.
  *	Unschedules the given host from a run loop and mode so the client
  *	will not receive its callbacks on that loop and mode.
 >>>>>>> origin/fixes_2.4
+=======
+ *	Unschedules the given host from a run loop and mode so the client
+ *	will not receive its callbacks on that loop and mode.
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *	Thread safe
@@ -2034,9 +2291,13 @@ procedure CFHostUnscheduleFromRunLoop( theHost: CFHostRef; runLoop: CFRunLoopRef
 end.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

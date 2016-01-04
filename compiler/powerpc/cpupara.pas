@@ -44,12 +44,15 @@ unit cpupara;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           function get_funcretloc(p : tabstractprocdef; side: tcallercallee; forcetempdef: tdef): tcgpara;override;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
           function get_funcretloc(p : tabstractprocdef; side: tcallercallee; def: tdef): tcgpara;override;
@@ -302,6 +305,7 @@ unit cpupara;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -309,10 +313,13 @@ unit cpupara;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       var
         paraloc : pcgparalocation;
         retcgsize  : tcgsize;
       begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -330,10 +337,13 @@ unit cpupara;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         result.init;
         result.alignment:=get_para_align(p.proccalloption);
         { void has no location }
         if is_void(def) then
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -363,6 +373,8 @@ unit cpupara;
 <<<<<<< HEAD
           end;
 =======
+=======
+>>>>>>> origin/cpstrnew
           begin
             paraloc:=result.add_location;
             result.size:=OS_NO;
@@ -381,6 +393,7 @@ unit cpupara;
           begin
             retcgsize:=def_cgsize(def);
             result.intsize:=def.size;
+<<<<<<< HEAD
           end;
 >>>>>>> graemeg/cpstrnew
 =======
@@ -406,14 +419,22 @@ unit cpupara;
         { Return is passed as var parameter }
         if ret_in_param(p.returndef,p.proccalloption) then
 =======
+=======
+          end;
+        result.size:=retcgsize;
+>>>>>>> origin/cpstrnew
         { Return is passed as var parameter }
-        if ret_in_param(p.returndef,p.proccalloption) then
+        if ret_in_param(def,p.proccalloption) then
           begin
-            p.funcretloc[side].loc:=LOC_REFERENCE;
-            p.funcretloc[side].size:=retcgsize;
+            paraloc:=result.add_location;
+            paraloc^.loc:=LOC_REFERENCE;
+            paraloc^.size:=retcgsize;
             exit;
           end;
+
+        paraloc:=result.add_location;
         { Return in FPU register? }
+<<<<<<< HEAD
         if p.returndef.typ=floatdef then
 >>>>>>> origin/fixes_2_2
           begin
@@ -451,6 +472,13 @@ unit cpupara;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+        if def.typ=floatdef then
+          begin
+            paraloc^.loc:=LOC_FPUREGISTER;
+            paraloc^.register:=NR_FPU_RESULT_REG;
+            paraloc^.size:=retcgsize;
+>>>>>>> origin/cpstrnew
           end
         else
          { Return in register }
@@ -468,6 +496,7 @@ unit cpupara;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                paraloc^.def:=u32inttype;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -475,6 +504,8 @@ unit cpupara;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                { high 32bits }
@@ -489,6 +520,7 @@ unit cpupara;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                paraloc^.def:=u32inttype;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -496,6 +528,8 @@ unit cpupara;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
              end
@@ -511,6 +545,7 @@ unit cpupara;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                paraloc^.def:=result.def;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -518,6 +553,8 @@ unit cpupara;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
              end;
@@ -558,6 +595,7 @@ unit cpupara;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          firstparaloc: boolean;
 =======
          sym: tfieldvarsym;
@@ -568,6 +606,9 @@ unit cpupara;
 =======
          sym: tfieldvarsym;
 >>>>>>> graemeg/cpstrnew
+=======
+         sym: tfieldvarsym;
+>>>>>>> origin/cpstrnew
 =======
          sym: tfieldvarsym;
 >>>>>>> origin/cpstrnew
@@ -634,12 +675,15 @@ unit cpupara;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   if (target_info.abi in [abi_powerpc_aix,abi_powerpc_darwin]) and
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                   if (target_info.abi = abi_powerpc_aix) and
@@ -668,11 +712,14 @@ unit cpupara;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                           paracgsize:=def_cgsize(paradef);

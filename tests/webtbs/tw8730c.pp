@@ -39,11 +39,16 @@ begin
     deletefile('tw8730b.txt');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if error<>0 then
     writeln('tw8730c did not complete successfully');
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  if error<>0 then
+    writeln('tw8730c did not complete successfully');
+>>>>>>> origin/cpstrnew
   halt(error);
 end.

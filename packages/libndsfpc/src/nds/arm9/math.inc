@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef NDS_INTERFACE}
 //  Math coprocessor register definitions
 const
@@ -64,6 +65,8 @@ const
 
 *)
 
+=======
+>>>>>>> origin/cpstrnew
 {$ifdef NDS_INTERFACE}
 //  Math coprocessor register definitions
 const

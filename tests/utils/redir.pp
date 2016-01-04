@@ -54,6 +54,7 @@ Interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef aix}
 {$define implemented}
 {$endif}
@@ -63,6 +64,8 @@ Interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -99,11 +102,16 @@ const
 Implementation
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 //or defined(windows)
 {$if defined(macos) or defined(shell_implemented) or defined(go32v2)}
 =======
 {$if defined(macos) or defined(windows) or defined(shell_implemented) or defined(go32v2)}
 >>>>>>> origin/fixes_2.4
+=======
+//or defined(windows)
+{$if defined(macos) or defined(shell_implemented) or defined(go32v2)}
+>>>>>>> origin/cpstrnew
 {$define usedos}
 {$endif}
 
@@ -226,6 +234,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef usedos}
 {$if defined(ver2_4_0) or defined(ver2_4_1)}
 =======
@@ -242,6 +251,10 @@ const
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$ifndef usedos}
+{$if defined(ver2_4_0) or defined(ver2_4_1)}
+>>>>>>> origin/cpstrnew
 
 Type
   TExecuteFlags= set of (ExecInheritsHandles);
@@ -250,8 +263,11 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -285,6 +301,7 @@ begin
 
   ExecInherits:=ExecInheritsHandles in Flags;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -430,6 +447,42 @@ end;
 =======
 >>>>>>> graemeg/cpstrnew
 =======
+>>>>>>> origin/cpstrnew
+=======
+  if not CreateProcess(nil, pchar(CommandLine),
+    Nil, Nil, ExecInherits,$20, Nil, Nil, SI, PI) then
+    begin
+      e:=EOSError.CreateFmt(SExecuteProcessFailed,[CommandLine,GetLastError]);
+      e.ErrorCode:=GetLastError;
+      raise e;
+    end;
+  Proc:=PI.hProcess;
+  if WaitForSingleObject(Proc, dword($ffffffff)) <> $ffffffff then
+    begin
+      GetExitCodeProcess(Proc,l);
+      CloseHandle(Proc);
+      CloseHandle(PI.hThread);
+      result:=l;
+    end
+  else
+    begin
+      e:=EOSError.CreateFmt(SExecuteProcessFailed,[CommandLine,GetLastError]);
+      e.ErrorCode:=GetLastError;
+      CloseHandle(Proc);
+      CloseHandle(PI.hThread);
+      raise e;
+    end;
+end;
+{$else}
+function ExecuteProcess(Const Path: AnsiString; Const ComLine: AnsiString;Flags:TExecuteFlags=[]):integer;
+begin
+    result:=ExecuteProcess(path,comline);
+end;
+{$endif}
+{$ifend}
+{$endif}
+
+
 >>>>>>> origin/cpstrnew
 {$ifndef windows}
 var
@@ -486,12 +539,16 @@ end;
 {$ifdef windows}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function fpclose (Handle : Longint) : boolean;
 =======
 =======
 >>>>>>> origin/fixes_2_2
 Function {$ifdef ver1_0}fdclose{$else}fpclose{$endif} (Handle : Longint) : boolean;
 >>>>>>> graemeg/fixes_2_2
+=======
+Function fpclose (Handle : Longint) : boolean;
+>>>>>>> origin/cpstrnew
 begin
   { Do we need this ?? }
   fpclose:=true;
@@ -572,6 +629,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -579,8 +637,11 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -598,6 +659,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -706,6 +769,7 @@ function ChangeRedirOut(Const Redir : String; AppendToFile : Boolean) : Boolean;
 {$else not windows}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -714,6 +778,8 @@ function ChangeRedirOut(Const Redir : String; AppendToFile : Boolean) : Boolean;
     dup2(FileRec(FOUT^).Handle,StdOutputHandle);
     {$else}
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
     TempHOut:=fpdup(StdOutputHandle);
     fpdup2(FileRec(FOUT^).Handle,StdOutputHandle);
     if (TempHOut<>UnusedHandle) and
@@ -749,6 +815,7 @@ function ChangeRedirIn(Const Redir : String) : Boolean;
 {$else not windows}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -757,6 +824,8 @@ function ChangeRedirIn(Const Redir : String) : Boolean;
     dup2(FileRec(FIn^).Handle,StdInputHandle);
     {$else}
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
     TempHIn:=fpdup(StdInputHandle);
     fpdup2(FileRec(FIn^).Handle,StdInputHandle);
     if (TempHIn<>UnusedHandle) and
@@ -812,6 +881,7 @@ function ChangeRedirError(Const Redir : String; AppendToFile : Boolean) : Boolea
 {$else not windows}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -820,6 +890,8 @@ function ChangeRedirError(Const Redir : String; AppendToFile : Boolean) : Boolea
     dup2(FileRec(PF^).Handle,StdErrorHandle);
     {$else}
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
     TempHError:=fpdup(StdErrorHandle);
     fpdup2(FileRec(PF^).Handle,StdErrorHandle);
     if (TempHError<>UnusedHandle) and
@@ -839,6 +911,7 @@ function ChangeRedirError(Const Redir : String; AppendToFile : Boolean) : Boolea
   begin
     If not RedirChangedOut then Exit;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef windows}
     SetStdHandle(Std_Output_Handle,StdOutputHandle);
 {$else not windows}
@@ -849,13 +922,18 @@ function ChangeRedirError(Const Redir : String; AppendToFile : Boolean) : Boolea
     Handles^[StdOutputHandle]:=OldHandleOut;
     OldHandleOut:=StdOutputHandle;
 {$else}
+=======
+>>>>>>> origin/cpstrnew
 {$ifdef windows}
     SetStdHandle(Std_Output_Handle,StdOutputHandle);
 {$else not windows}
-    {$ifdef ver1_0}dup2{$else}fpdup2{$endif}(TempHOut,StdOutputHandle);
+    fpdup2(TempHOut,StdOutputHandle);
 {$endif not windows}
+<<<<<<< HEAD
 {$endif FPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
     Close (FOUT^);
 {$ifndef windows}
     fpclose(TempHOut);
@@ -878,6 +956,7 @@ function ChangeRedirError(Const Redir : String; AppendToFile : Boolean) : Boolea
 {$else not windows}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     fpdup2(TempHIn,StdInputHandle);
 =======
     {$ifdef ver1_0}dup2{$else}fpdup2{$endif}(TempHIn,StdInputHandle);
@@ -885,6 +964,9 @@ function ChangeRedirError(Const Redir : String; AppendToFile : Boolean) : Boolea
 =======
     {$ifdef ver1_0}dup2{$else}fpdup2{$endif}(TempHIn,StdInputHandle);
 >>>>>>> origin/fixes_2_2
+=======
+    fpdup2(TempHIn,StdInputHandle);
+>>>>>>> origin/cpstrnew
 {$endif not windows}
 {$endif}
     Close (FIn^);
@@ -909,6 +991,7 @@ function ChangeRedirError(Const Redir : String; AppendToFile : Boolean) : Boolea
 {$else not windows}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     fpdup2(TempHIn,StdInputHandle);
 =======
     {$ifdef ver1_0}dup2{$else}fpdup2{$endif}(TempHIn,StdInputHandle);
@@ -916,6 +999,9 @@ function ChangeRedirError(Const Redir : String; AppendToFile : Boolean) : Boolea
 =======
     {$ifdef ver1_0}dup2{$else}fpdup2{$endif}(TempHIn,StdInputHandle);
 >>>>>>> origin/fixes_2_2
+=======
+    fpdup2(TempHIn,StdInputHandle);
+>>>>>>> origin/cpstrnew
 {$endif not windows}
 {$endif}
     InRedirDisabled:=True;
@@ -937,6 +1023,7 @@ function ChangeRedirError(Const Redir : String; AppendToFile : Boolean) : Boolea
 {$else not windows}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     fpdup2(FileRec(FIn^).Handle,StdInputHandle);
 =======
     {$ifdef ver1_0}dup2{$else}fpdup2{$endif}(FileRec(FIn^).Handle,StdInputHandle);
@@ -944,6 +1031,9 @@ function ChangeRedirError(Const Redir : String; AppendToFile : Boolean) : Boolea
 =======
     {$ifdef ver1_0}dup2{$else}fpdup2{$endif}(FileRec(FIn^).Handle,StdInputHandle);
 >>>>>>> origin/fixes_2_2
+=======
+    fpdup2(FileRec(FIn^).Handle,StdInputHandle);
+>>>>>>> origin/cpstrnew
 {$endif not windows}
 {$endif}
     InRedirDisabled:=False;
@@ -964,6 +1054,7 @@ function ChangeRedirError(Const Redir : String; AppendToFile : Boolean) : Boolea
 {$else not windows}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     fpdup2(TempHOut,StdOutputHandle);
 =======
     {$ifdef ver1_0}dup2{$else}fpdup2{$endif}(TempHOut,StdOutputHandle);
@@ -971,6 +1062,9 @@ function ChangeRedirError(Const Redir : String; AppendToFile : Boolean) : Boolea
 =======
     {$ifdef ver1_0}dup2{$else}fpdup2{$endif}(TempHOut,StdOutputHandle);
 >>>>>>> origin/fixes_2_2
+=======
+    fpdup2(TempHOut,StdOutputHandle);
+>>>>>>> origin/cpstrnew
 {$endif not windows}
 {$endif}
     OutRedirDisabled:=True;
@@ -992,6 +1086,7 @@ function ChangeRedirError(Const Redir : String; AppendToFile : Boolean) : Boolea
 {$else not windows}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     fpdup2(FileRec(FOut^).Handle,StdOutputHandle);
 =======
     {$ifdef ver1_0}dup2{$else}fpdup2{$endif}(FileRec(FOut^).Handle,StdOutputHandle);
@@ -999,6 +1094,9 @@ function ChangeRedirError(Const Redir : String; AppendToFile : Boolean) : Boolea
 =======
     {$ifdef ver1_0}dup2{$else}fpdup2{$endif}(FileRec(FOut^).Handle,StdOutputHandle);
 >>>>>>> origin/fixes_2_2
+=======
+    fpdup2(FileRec(FOut^).Handle,StdOutputHandle);
+>>>>>>> origin/cpstrnew
 {$endif not windows}
 {$endif}
     OutRedirDisabled:=False;
@@ -1019,6 +1117,7 @@ function ChangeRedirError(Const Redir : String; AppendToFile : Boolean) : Boolea
 {$else not windows}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     fpdup2(TempHError,StdErrorHandle);
 =======
     {$ifdef ver1_0}dup2{$else}fpdup2{$endif}(TempHError,StdErrorHandle);
@@ -1026,6 +1125,9 @@ function ChangeRedirError(Const Redir : String; AppendToFile : Boolean) : Boolea
 =======
     {$ifdef ver1_0}dup2{$else}fpdup2{$endif}(TempHError,StdErrorHandle);
 >>>>>>> origin/fixes_2_2
+=======
+    fpdup2(TempHError,StdErrorHandle);
+>>>>>>> origin/cpstrnew
 {$endif not windows}
 {$endif}
     { don't close when redirected to STDOUT }
@@ -1052,6 +1154,7 @@ function ChangeRedirError(Const Redir : String; AppendToFile : Boolean) : Boolea
 {$else not windows}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     fpdup2(TempHError,StdErrorHandle);
 =======
     {$ifdef ver1_0}dup2{$else}fpdup2{$endif}(TempHError,StdErrorHandle);
@@ -1059,6 +1162,9 @@ function ChangeRedirError(Const Redir : String; AppendToFile : Boolean) : Boolea
 =======
     {$ifdef ver1_0}dup2{$else}fpdup2{$endif}(TempHError,StdErrorHandle);
 >>>>>>> origin/fixes_2_2
+=======
+    fpdup2(TempHError,StdErrorHandle);
+>>>>>>> origin/cpstrnew
 {$endif not windows}
 {$endif}
     ErrorRedirDisabled:=True;
@@ -1080,6 +1186,7 @@ function ChangeRedirError(Const Redir : String; AppendToFile : Boolean) : Boolea
 {$else not windows}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     fpdup2(FileRec(FERR^).Handle,StdErrorHandle);
 =======
     {$ifdef ver1_0}dup2{$else}fpdup2{$endif}(FileRec(FERR^).Handle,StdErrorHandle);
@@ -1087,6 +1194,9 @@ function ChangeRedirError(Const Redir : String; AppendToFile : Boolean) : Boolea
 =======
     {$ifdef ver1_0}dup2{$else}fpdup2{$endif}(FileRec(FERR^).Handle,StdErrorHandle);
 >>>>>>> origin/fixes_2_2
+=======
+    fpdup2(FileRec(FERR^).Handle,StdErrorHandle);
+>>>>>>> origin/cpstrnew
 {$endif not windows}
 {$endif}
     ErrorRedirDisabled:=False;
@@ -1364,6 +1474,7 @@ end;
   procedure DosExecute(ProgName, ComLine : String);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 =======
@@ -1376,6 +1487,9 @@ end;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+
+>>>>>>> origin/cpstrnew
 
   Begin
 {$IfDef MsDos}
@@ -1394,11 +1508,14 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     if ExecuteResult<0 then
@@ -1408,6 +1525,7 @@ end;
       end;
 {$else}
   {$ifdef windows}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -1424,6 +1542,12 @@ end;
   {$endif windows}
     DosError:=0;
 >>>>>>> graemeg/fixes_2_2
+=======
+
+    { Avoid dialog boxes if dll loading fails }
+    SetErrorMode(SEM_FAILCRITICALERRORS);
+  {$endif windows}
+>>>>>>> origin/cpstrnew
     If UseComSpec then
       begin
       {$ifndef usedos}
@@ -1469,6 +1593,7 @@ end;
   {$ifdef windows}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     SetErrorMode(0);
   {$endif windows}
 
@@ -1481,6 +1606,11 @@ end;
     IOStatus:=DosError;
     ExecuteResult:=DosExitCode;
 >>>>>>> graemeg/fixes_2_2
+=======
+    SetErrorMode(0);
+  {$endif windows}
+
+>>>>>>> origin/cpstrnew
 {$endif}
 {$ifdef usedos}
     SwapVectors;

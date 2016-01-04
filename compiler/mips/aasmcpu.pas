@@ -32,6 +32,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   aasmbase, aasmdata, aasmsym, aasmtai,
 =======
   aasmbase, aasmtai,
@@ -45,10 +46,14 @@ uses
 =======
   aasmbase, aasmtai,
 >>>>>>> origin/cpstrnew
+=======
+  aasmbase, aasmtai,
+>>>>>>> origin/cpstrnew
   cgbase, cgutils, cpubase, cpuinfo;
 
 const
   { "mov reg,reg" source operand number }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -67,6 +72,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   O_MOV_SOURCE = 0;
   { "mov reg,reg" source operand number }
   O_MOV_DEST   = 1;
@@ -76,11 +83,14 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     delayslot_annulled: boolean;   { conditinal opcode with ,a }
@@ -97,6 +107,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     constructor op_const_const(op: tasmop; _op1: aint; _op2: aint);
 =======
 >>>>>>> graemeg/cpstrnew
@@ -106,11 +117,14 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
     constructor op_reg_reg_reg(op: tasmop; _op1, _op2, _op3: tregister);
 
     constructor op_reg_reg_ref(op: tasmop; _op1, _op2: tregister; const _op3: treference);
     constructor op_reg_reg_const(op: tasmop; _op1, _op2: tregister; _op3: aint);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -124,6 +138,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -143,6 +159,7 @@ type
   tai_align = class(tai_align_abstract)
     { nothing to add }
   end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -172,12 +189,18 @@ type
   procedure InitAsm;
   procedure DoneAsm;
 >>>>>>> origin/cpstrnew
+=======
+
+  procedure InitAsm;
+  procedure DoneAsm;
+>>>>>>> origin/cpstrnew
 
   function spilling_create_load(const ref: treference; r: tregister): taicpu;
   function spilling_create_store(r: tregister; const ref: treference): taicpu;
 
 implementation
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -193,6 +216,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {*****************************************************************************
                                  taicpu Constructors
 *****************************************************************************}
@@ -201,6 +226,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 
@@ -213,6 +239,10 @@ implementation
 
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+
+>>>>>>> origin/cpstrnew
 =======
 
 
@@ -267,6 +297,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 constructor taicpu.op_const_const(op: tasmop; _op1: aint; _op2: aint);
 begin
   inherited Create(op);
@@ -281,6 +312,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -304,6 +337,7 @@ end;
 
 
 constructor taicpu.op_reg_reg_ref(op: tasmop; _op1, _op2: tregister; const _op3: treference);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -355,6 +389,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
  begin
    inherited create(op);
    ops := 3;
@@ -376,6 +412,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -383,10 +420,13 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 constructor taicpu.op_sym(op: tasmop; _op1: tasmsymbol);
 begin
   inherited Create(op);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -399,6 +439,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   is_jmp := op in [A_J, A_BEQI, A_BNEI, A_BLTI, A_BLEI, A_BGTI, A_BGEI,
     A_BLTUI, A_BLEUI, A_BGTUI, A_BGEUI,
     A_BEQ, A_BNE, A_BLT, A_BLE, A_BGT, A_BGE,
@@ -408,11 +450,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   ops := 1;
@@ -426,12 +471,15 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    is_jmp := op in [A_BC, A_BA];
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
    is_jmp := op in [A_J,
@@ -441,11 +489,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
    ops := 3;
@@ -461,12 +512,15 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    is_jmp := op in [A_BC, A_BA];
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
    is_jmp := op in [A_J,
@@ -476,11 +530,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
    ops := 2;
@@ -560,6 +617,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { We can get into trouble if an instruction can be interpreted as
   macros with different operands. The following commented out ones
   refer to elementary instructions: DIV[U], MULT[U] do not modify
@@ -572,12 +630,15 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       A_MUL,
       A_MULO,
       A_MULOU,
       A_DMUL,
       A_DMULO,
       A_DMULOU,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -600,12 +661,17 @@ end;
       A_DIV,
       A_DIVU,
 >>>>>>> origin/cpstrnew
+=======
+      A_DIV,
+      A_DIVU,
+>>>>>>> origin/cpstrnew
       A_DDIV,
       A_DDIVU,
       A_REM,
       A_REMU,
       A_DREM,
       A_DREMU,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -621,6 +687,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       A_MULT,
@@ -644,11 +712,14 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -724,6 +795,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       A_SNE,
       A_EXT,
       A_INS,
@@ -750,6 +822,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       A_SNE];
 
       begin
@@ -760,11 +834,14 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       end;
@@ -821,6 +898,9 @@ procedure InitAsm;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -830,6 +910,7 @@ procedure DoneAsm;
   end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure fixup_jmps(list: TAsmList);
   var
@@ -1043,6 +1124,8 @@ procedure DoneAsm;
 =======
 >>>>>>> graemeg/cpstrnew
 
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 begin

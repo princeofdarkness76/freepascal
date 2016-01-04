@@ -67,6 +67,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   SDMMC_INSERT       : FifoSystemCommands = 4;
   SDMMC_REMOVE       : FifoSystemCommands = 5;  
   
@@ -90,6 +91,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   SYS_HAVE_SD        : FifoSystemCommands = 4;
 	SYS_SD_START       : FifoSystemCommands = 5;
 	SYS_SD_IS_INSERTED : FifoSystemCommands = 6;
@@ -97,11 +100,14 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 

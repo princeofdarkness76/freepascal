@@ -81,6 +81,7 @@ function FindResourceExA(hModule:HINST; lpType:LPCSTR; lpName:LPCSTR; wLanguage:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function EnumResourceTypesA(hModule:HMODULE; lpEnumFunc:ENUMRESTYPEPROC; lParam:LONG_PTR):WINBOOL; external 'kernel32' name 'EnumResourceTypesA';
 function EnumResourceNamesA(hModule:HMODULE; lpType:LPCSTR; lpEnumFunc:ENUMRESNAMEPROC; lParam:LONG_PTR):WINBOOL; external 'kernel32' name 'EnumResourceNamesA';
 function EnumResourceLanguagesA(hModule:HMODULE; lpType:LPCSTR; lpName:LPCSTR; lpEnumFunc:ENUMRESLANGPROC; lParam:LONG_PTR):WINBOOL; external 'kernel32' name 'EnumResourceLanguagesA';
@@ -99,6 +100,11 @@ function EnumResourceTypesA(hModule:HINST; lpEnumFunc:ENUMRESTYPEPROC; lParam:LO
 function EnumResourceNamesA(hModule:HINST; lpType:LPCSTR; lpEnumFunc:ENUMRESNAMEPROC; lParam:LONG_PTR):WINBOOL; external 'kernel32' name 'EnumResourceNamesA';
 function EnumResourceLanguagesA(hModule:HINST; lpType:LPCSTR; lpName:LPCSTR; lpEnumFunc:ENUMRESLANGPROC; lParam:LONG_PTR):WINBOOL; external 'kernel32' name 'EnumResourceLanguagesA';
 >>>>>>> graemeg/cpstrnew
+=======
+function EnumResourceTypesA(hModule:HINST; lpEnumFunc:ENUMRESTYPEPROC; lParam:LONG_PTR):WINBOOL; external 'kernel32' name 'EnumResourceTypesA';
+function EnumResourceNamesA(hModule:HINST; lpType:LPCSTR; lpEnumFunc:ENUMRESNAMEPROC; lParam:LONG_PTR):WINBOOL; external 'kernel32' name 'EnumResourceNamesA';
+function EnumResourceLanguagesA(hModule:HINST; lpType:LPCSTR; lpName:LPCSTR; lpEnumFunc:ENUMRESLANGPROC; lParam:LONG_PTR):WINBOOL; external 'kernel32' name 'EnumResourceLanguagesA';
+>>>>>>> origin/cpstrnew
 =======
 function EnumResourceTypesA(hModule:HINST; lpEnumFunc:ENUMRESTYPEPROC; lParam:LONG_PTR):WINBOOL; external 'kernel32' name 'EnumResourceTypesA';
 function EnumResourceNamesA(hModule:HINST; lpType:LPCSTR; lpEnumFunc:ENUMRESNAMEPROC; lParam:LONG_PTR):WINBOOL; external 'kernel32' name 'EnumResourceNamesA';
@@ -192,6 +198,7 @@ function GetUserNameA(lpBuffer:LPSTR; nSize:LPDWORD):WINBOOL; external 'advapi32
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function wvsprintfA(_para1:LPSTR; _para2:LPCSTR; arglist:va_list):longint; stdcall; external 'user32' name 'wvsprintfA';
 =======
 function wvsprintfA(_para1:LPSTR; _para2:LPCSTR; arglist:va_list):longint; cdecl; external 'user32' name 'wvsprintfA';
@@ -202,6 +209,9 @@ function wvsprintfA(_para1:LPSTR; _para2:LPCSTR; arglist:va_list):longint; cdecl
 =======
 function wvsprintfA(_para1:LPSTR; _para2:LPCSTR; arglist:va_list):longint; cdecl; external 'user32' name 'wvsprintfA';
 >>>>>>> graemeg/cpstrnew
+=======
+function wvsprintfA(_para1:LPSTR; _para2:LPCSTR; arglist:va_list):longint; cdecl; external 'user32' name 'wvsprintfA';
+>>>>>>> origin/cpstrnew
 =======
 function wvsprintfA(_para1:LPSTR; _para2:LPCSTR; arglist:va_list):longint; cdecl; external 'user32' name 'wvsprintfA';
 >>>>>>> origin/cpstrnew
@@ -558,9 +568,15 @@ function FindFirstFileTransactedA(lpfilename : LPCStr;fInfoLevelId:FINDEX_INFO_L
 function CreateWaitableTimerA(lpTimerAttributes :LPSECURITY_ATTRIBUTES; bManualReset:BOOl;lpTimerName:LPCTSTR):THandle;external 'kernel32' name 'CreateWaitableTimerA'; 
 function OpenWaitableTimerA(dwDesiredAccess:DWORD;bInheritHandle:BOOL;lpTimerName:LPCTSTR):THandle;external 'kernel32' name 'OpenWaitableTimerA'; 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+function FindFirstFileExA(lpfilename : LPCStr;fInfoLevelId:FINDEX_INFO_LEVELS ;lpFindFileData:pointer;fSearchOp : FINDEX_SEARCH_OPS;lpSearchFilter:pointer;dwAdditionalFlags:dword):Handle; stdcall; external name 'FindFirstFileExA';
+// winver>$0600
+function FindFirstFileTransactedA(lpfilename : LPCStr;fInfoLevelId:FINDEX_INFO_LEVELS ;lpFindFileData:pointer;fSearchOp : FINDEX_SEARCH_OPS;lpSearchFilter:pointer;dwAdditionalFlags:dword;htransaction : HANDLE):Handle; stdcall; external name 'FindFirstFileTransactedA';
+>>>>>>> origin/cpstrnew
 
 {$endif read_interface}
 

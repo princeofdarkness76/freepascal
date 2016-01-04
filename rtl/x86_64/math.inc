@@ -220,6 +220,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$ifdef FPC_HAS_TYPE_EXTENDED}
 >>>>>>> graemeg/cpstrnew
@@ -229,6 +230,9 @@ const
 =======
 {$ifdef FPC_HAS_TYPE_EXTENDED}
 >>>>>>> graemeg/cpstrnew
+=======
+{$ifdef FPC_HAS_TYPE_EXTENDED}
+>>>>>>> origin/cpstrnew
 =======
 {$ifdef FPC_HAS_TYPE_EXTENDED}
 >>>>>>> origin/cpstrnew
@@ -403,11 +407,14 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$endif FPC_HAS_TYPE_EXTENDED}

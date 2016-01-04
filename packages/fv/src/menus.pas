@@ -1457,6 +1457,7 @@ BEGIN
      {$ELSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      MoveChar(B[I], #124, Byte(CNormal), 1);          { '|' char to buffer }
 =======
      MoveChar(B[I], #166, Byte(CNormal), 1);          { '|' char to buffer }
@@ -1464,6 +1465,9 @@ BEGIN
 =======
      MoveChar(B[I], #166, Byte(CNormal), 1);          { '|' char to buffer }
 >>>>>>> origin/fixes_2_2
+=======
+     MoveChar(B[I], #124, Byte(CNormal), 1);          { '|' char to buffer }
+>>>>>>> origin/cpstrnew
      {$ENDIF}
      Inc(I, 2);                                       { Move along }
      MoveStr(B[I], HintBuf, Byte(CNormal));           { Move hint to buffer }

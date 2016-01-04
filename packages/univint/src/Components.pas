@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       CarbonCore/Components.h
  
      Contains:   Component Manager Interfaces.
@@ -31,11 +32,15 @@
 =======
      File:       CarbonCore/Components.h
 >>>>>>> origin/fixes_2.4
+=======
+     File:       CarbonCore/Components.h
+>>>>>>> origin/cpstrnew
  
      Contains:   Component Manager Interfaces.
  
      Version:    CarbonCore-859.2~1
  
+<<<<<<< HEAD
 <<<<<<< HEAD
      Copyright:  © 1991-2002 by Apple Computer, Inc., all rights reserved.
 <<<<<<< HEAD
@@ -45,6 +50,9 @@
 =======
      Copyright:  © 1991-2008 by Apple Computer, Inc., all rights reserved.
 >>>>>>> origin/fixes_2.4
+=======
+     Copyright:  © 1991-2008 by Apple Computer, Inc., all rights reserved.
+>>>>>>> origin/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -52,6 +60,7 @@
                      http://www.freepascal.org/bugs.html
  
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -81,6 +90,9 @@
 =======
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 >>>>>>> origin/fixes_2.4
+=======
+{       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> origin/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -89,12 +101,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -106,6 +122,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -120,6 +137,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -135,6 +156,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -145,6 +167,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -152,13 +177,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -166,6 +195,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -174,8 +205,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -186,6 +220,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -206,6 +241,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -214,12 +251,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -230,6 +270,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -288,12 +329,16 @@ interface
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
@@ -306,6 +351,17 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
 =======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
+=======
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
@@ -316,6 +372,7 @@ interface
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -482,6 +539,8 @@ interface
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -520,6 +579,7 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc TARGET_CPU_PPC_64 := FALSE}
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -527,6 +587,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -555,6 +617,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -563,6 +626,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -572,6 +637,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -602,6 +668,12 @@ uses MacTypes,MacErrors,Files,MixedMode,Resources;
 >>>>>>> origin/fixes_2.4
 
 >>>>>>> origin/fixes_2_2
+=======
+uses MacTypes,MacErrors,Files,MixedMode,Resources;
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
+
+{$ifc TARGET_OS_MAC}
 
 {$ifc TARGET_OS_MAC}
 
@@ -612,8 +684,11 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	kAppleManufacturer = FourCharCode('appl'); { Apple supplied components }
 	kComponentResourceType = FourCharCode('thng'); { a components resource type }
 	kComponentAliasResourceType = FourCharCode('thga'); { component alias resource type }
@@ -654,6 +729,7 @@ const
 const
 	defaultComponentIdentical = 0;
 	defaultComponentAnyFlags = 1;
+<<<<<<< HEAD
 <<<<<<< HEAD
 	defaultComponentAnyManufacturer = 2;
 	defaultComponentAnySubType = 4;
@@ -702,11 +778,14 @@ const
 	defaultComponentAnyFlags	= 1;
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	defaultComponentAnyManufacturer = 2;
 	defaultComponentAnySubType = 4;
 	defaultComponentAnyFlagsAnyManufacturer = defaultComponentAnyFlags + defaultComponentAnyManufacturer;
 	defaultComponentAnyFlagsAnyManufacturerAnySubType = defaultComponentAnyFlags + defaultComponentAnyManufacturer + defaultComponentAnySubType;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{	 RegisterComponentResource flags 	}
 	registerComponentGlobal		= 1;
@@ -719,6 +798,11 @@ const
 const
 	registerComponentGlobal = 1;
 >>>>>>> origin/fixes_2.4
+=======
+{ RegisterComponentResource flags }
+const
+	registerComponentGlobal = 1;
+>>>>>>> origin/cpstrnew
 	registerComponentNoDuplicates = 2;
 	registerComponentAfterExisting = 4;
 	registerComponentAliasesOnly = 8;
@@ -730,14 +814,20 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 		componentType: OSType;          { A unique 4-byte code indentifying the command set }
 		componentSubType: OSType;       { Particular flavor of this instance }
 		componentManufacturer: OSType;  { Vendor indentification }
 		componentFlags: UInt32;         { 8 each for Component,Type,SubType,Manuf/revision }
 		componentFlagsMask: UInt32;     { Mask for specifying which flags to consider in search, zero during registration }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 	end;
 
 type
@@ -806,6 +896,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -817,13 +908,18 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/cpstrnew
 
 		padding: UInt32;
 {$endc} {TARGET_CPU_64}
 
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   params: array[0..0] of SIGNEDLONG;             { actual parameters for the indicated routine }
@@ -892,8 +988,95 @@ type
 const
 	kCSAcceptAllComponentsMode = 0;
 	kCSAcceptThreadSafeComponentsOnlyMode = 1;
+<<<<<<< HEAD
+=======
 
 {
+ *  CSSetComponentsThreadMode()
+ *  
+ *  Summary:
+ *    Set whether or not using thread-unsafe components is allowed on
+ *    the current thread.
+ *  
+ *  Discussion:
+ *    When set to kCSAcceptThreadSafeComponentsOnlyMode, the current
+ *    thread can only make thread-safe calls. Applications and other
+ *    high-level code that wants to call QuickTime (and other) APIs
+ *    from preemptive threads should call  SetComponentsThreadMode(
+ *    kCSAcceptThreadSafeComponentsOnlyMode );  from their thread
+ *    beforehand. The safeguard flag should only be left
+ *    kCSAcceptAllComponentsMode for the main thread and other threads
+ *    that participate in cooperative locking with it (such as the
+ *    Carbon Thread Manager-style cooperative threads and application 
+ *    threads that perform private locking).
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Parameters:
+ *    
+ *    mode:
+ *      The thread-safety mode in current thread.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.3 and later in CoreServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+procedure CSSetComponentsThreadMode( mode: CSComponentsThreadMode ); external name '_CSSetComponentsThreadMode';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+
+{
+ *  CSGetComponentsThreadMode()
+ *  
+ *  Summary:
+ *    Get the current thread's thread-safety mode.
+ *  
+ *  Discussion:
+ *    Returns kCSAcceptThreadSafeComponentsOnlyMode if only thread-safe
+ *    components are allowed in current thread and
+ *    kCSAcceptAllComponentsMode if all components are accepted
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.3 and later in CoreServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function CSGetComponentsThreadMode: CSComponentsThreadMode; external name '_CSGetComponentsThreadMode';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
+
+type
+	ComponentMPWorkFunctionHeaderRecord = record
+		headerSize: UInt32;
+		recordSize: UInt32;
+		workFlags: UInt32;
+		processorCount: UInt16;
+		unused: UInt8;
+		isRunning: UInt8;
+	end;
+	ComponentMPWorkFunctionHeaderRecordPtr = ^ComponentMPWorkFunctionHeaderRecord;
+type
+	ComponentMPWorkFunctionProcPtr = function( globalRefCon: UnivPtr; header: ComponentMPWorkFunctionHeaderRecordPtr ): ComponentResult;
+	ComponentRoutineProcPtr = function( var cp: ComponentParameters; componentStorage: Handle ): ComponentResult;
+	GetMissingComponentResourceProcPtr = function( c: Component; resType: OSType; resID: SInt16; refCon: UnivPtr; var resource: Handle ): OSErr;
+	ComponentMPWorkFunctionUPP = ComponentMPWorkFunctionProcPtr;
+	ComponentRoutineUPP = ComponentRoutineProcPtr;
+	GetMissingComponentResourceUPP = GetMissingComponentResourceProcPtr;
+{
+    The parameter list for each ComponentFunction is unique. It is
+    therefore up to users to create the appropriate procInfo for their
+    own ComponentFunctions where necessary.
+}
+type
+	ComponentFunctionUPP = UniversalProcPtr;
+{
+<<<<<<< HEAD
  *  CSSetComponentsThreadMode()
  *  
  *  Summary:
@@ -982,6 +1165,45 @@ function CSGetComponentsThreadMode: CSComponentsThreadMode; external name '_CSGe
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+ *  NewComponentFunctionUPP()
+ *  
+ *  Discussion:
+ *    For use in writing a Carbon compliant Component.  It is used to
+ *    create a ComponentFunctionUPP needed to call
+ *    CallComponentFunction in the Components dispatch routine.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.0
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function NewComponentFunctionUPP( userRoutine: ProcPtr; procInfo: ProcInfoType ): ComponentFunctionUPP; external name '_NewComponentFunctionUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DisposeComponentFunctionUPP()
+ *  
+ *  Discussion:
+ *    For use in writing a Carbon compliant Component.  It is used to
+ *    dispose of a ComponentFunctionUPP created by
+ *    NewComponentFunctionUPP.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.0
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeComponentFunctionUPP( userUPP: ComponentFunctionUPP ); external name '_DisposeComponentFunctionUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 type
@@ -1002,15 +1224,34 @@ type
 	ComponentRoutineUPP = ComponentRoutineProcPtr;
 	GetMissingComponentResourceUPP = GetMissingComponentResourceProcPtr;
 {
+<<<<<<< HEAD
     The parameter list for each ComponentFunction is unique. It is
     therefore up to users to create the appropriate procInfo for their
     own ComponentFunctions where necessary.
 }
 type
 	ComponentFunctionUPP = UniversalProcPtr;
+=======
+ *  RegisterComponent()
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function RegisterComponent( var cd: ComponentDescription; componentEntryPoint: ComponentRoutineUPP; global: SInt16; componentName: Handle; componentInfo: Handle; componentIcon: Handle ): Component; external name '_RegisterComponent';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
 {
  *  NewComponentFunctionUPP()
  *  
+<<<<<<< HEAD
  *  Discussion:
  *    For use in writing a Carbon compliant Component.  It is used to
  *    create a ComponentFunctionUPP needed to call
@@ -1018,10 +1259,47 @@ type
  *  
  *  Mac OS X threading:
  *    Thread safe since version 10.0
+=======
+ *  Mac OS X threading:
+ *    Not thread safe
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function RegisterComponentResource( cr: ComponentResourceHandle; global: SInt16 ): Component; external name '_RegisterComponentResource';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  UnregisterComponent()
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function UnregisterComponent( aComponent: Component ): OSErr; external name '_UnregisterComponent';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  FindNextComponent()
+>>>>>>> origin/cpstrnew
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
  *    Non-Carbon CFM:   available as macro/inline
  }
 function NewComponentFunctionUPP( userRoutine: ProcPtr; procInfo: ProcInfoType ): ComponentFunctionUPP; external name '_NewComponentFunctionUPP';
@@ -1042,11 +1320,19 @@ function NewComponentFunctionUPP( userRoutine: ProcPtr; procInfo: ProcInfoType )
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function FindNextComponent( aComponent: Component; var looking: ComponentDescription ): Component; external name '_FindNextComponent';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
  *  DisposeComponentFunctionUPP()
  *  
+<<<<<<< HEAD
  *  Discussion:
  *    For use in writing a Carbon compliant Component.  It is used to
  *    dispose of a ComponentFunctionUPP created by
@@ -1054,9 +1340,30 @@ function NewComponentFunctionUPP( userRoutine: ProcPtr; procInfo: ProcInfoType )
  *  
  *  Mac OS X threading:
  *    Thread safe since version 10.0
+=======
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function CountComponents( var looking: ComponentDescription ): SIGNEDLONG; external name '_CountComponents';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  GetComponentInfo()
+>>>>>>> origin/cpstrnew
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   available as macro/inline
  }
@@ -2691,20 +2998,33 @@ procedure SetComponentInstanceStorage( aComponentInstance: ComponentInstance; th
 =======
  *  Availability:
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+=======
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function GetComponentInstanceStorage(aComponentInstance: ComponentInstance): Handle; external name '_GetComponentInstanceStorage';
+=======
+function GetComponentInfo( aComponent: Component; var cd: ComponentDescription; componentName: Handle; componentInfo: Handle; componentIcon: Handle ): OSErr; external name '_GetComponentInfo';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
 {
  *  SetComponentInstanceStorage()
  *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
  *  Availability:
- *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
- *    Mac OS X:         in version 10.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 procedure SetComponentInstanceStorage(aComponentInstance: ComponentInstance; theStorage: Handle); external name '_SetComponentInstanceStorage';
 {$ifc CALL_NOT_IN_CARBON}
 {
@@ -3340,6 +3660,10 @@ function RegisterComponentFileRef( const (*var*) ref: FSRef; global: SInt16 ): O
 function GetComponentResource( aComponent: Component; resType: OSType; resID: SInt16; var theResource: Handle ): OSErr; external name '_GetComponentResource';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+function GetComponentListModSeed: SInt32; external name '_GetComponentListModSeed';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -3351,8 +3675,12 @@ function GetComponentResource( aComponent: Component; resType: OSType; resID: SI
  *  Mac OS X threading:
  *    Thread safe since version 10.3
  *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
@@ -3388,6 +3716,13 @@ function RegisterComponentFileRefEntries( const (*var*) ref: FSRef; global: SInt
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function GetComponentIndString( aComponent: Component; var theString: Str255; strListID: SInt16; index: SInt16 ): OSErr; external name '_GetComponentIndString';
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib via QuickTime 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function GetComponentTypeModSeed( componentType: OSType ): SInt32; external name '_GetComponentTypeModSeed';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -3400,13 +3735,23 @@ function GetComponentIndString( aComponent: Component; var theString: Str255; st
  *  Mac OS X threading:
  *    Thread safe since version 10.4
  *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function GetComponentInstanceStorage( aComponentInstance: ComponentInstance ): Handle; external name '_GetComponentInstanceStorage';
+=======
+ *    Non-Carbon CFM:   in InterfaceLib via QuickTime 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function OpenAComponent( aComponent: Component; var ci: ComponentInstance ): OSErr; external name '_OpenAComponent';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -3416,13 +3761,20 @@ function GetComponentInstanceStorage( aComponentInstance: ComponentInstance ): H
  *  Mac OS X threading:
  *    Thread safe since version 10.4
  *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 procedure SetComponentInstanceStorage( aComponentInstance: ComponentInstance; theStorage: Handle ); external name '_SetComponentInstanceStorage';
+=======
+function OpenComponent( aComponent: Component ): ComponentInstance; external name '_OpenComponent';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -3432,34 +3784,62 @@ procedure SetComponentInstanceStorage( aComponentInstance: ComponentInstance; th
  *  Mac OS X threading:
  *    Thread safe since version 10.4
  *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function CountComponentInstances( aComponent: Component ): SIGNEDLONG; external name '_CountComponentInstances';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
 { useful helper routines for convenient method dispatching }
+=======
+function CloseComponent( aComponentInstance: ComponentInstance ): OSErr; external name '_CloseComponent';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
 {
  *  CallComponentFunction()
  *  
  *  Mac OS X threading:
  *    Thread safe since version 10.3
  *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.4
+ *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+<<<<<<< HEAD
  }
 function CallComponentFunction( var params: ComponentParameters; func: ComponentFunctionUPP ): ComponentResult; external name '_CallComponentFunction';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function GetComponentInstanceError( aComponentInstance: ComponentInstance ): OSErr; external name '_GetComponentInstanceError';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{*******************************************************
+* Component aliases
+*******************************************************}
+>>>>>>> origin/cpstrnew
 {
  *  CallComponentFunctionWithStorage()
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
  *  
  *  Mac OS X threading:
  *    Thread safe since version 10.3
@@ -3467,6 +3847,7 @@ function CallComponentFunction( var params: ComponentParameters; func: Component
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
@@ -3474,18 +3855,57 @@ function CallComponentFunctionWithStorage( storage: Handle; var params: Componen
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Non-Carbon CFM:   in InterfaceLib via QuickTime 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function ResolveComponentAlias( aComponent: Component ): Component; external name '_ResolveComponentAlias';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{*******************************************************
+* Component public resources and public string lists
+*******************************************************}
+{ Note: GetComponentPublicResource returns a Handle, not a resource.  The caller must dispose it with DisposeHandle. }
+>>>>>>> origin/cpstrnew
 {
  *  CallComponentFunctionWithStorageProcInfo()
  *  
  *  Mac OS X threading:
+<<<<<<< HEAD
  *    Not thread safe
+=======
+ *    Thread safe since version 10.3
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in InterfaceLib via QuickTime 4.0 and later
+ }
+function GetComponentPublicResource( aComponent: Component; resourceType: OSType; resourceID: SInt16; var theResource: Handle ): OSErr; external name '_GetComponentPublicResource';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  GetComponentPublicResourceList()
+>>>>>>> origin/cpstrnew
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib via QuickTime 2.5 and later
  }
 function CallComponentFunctionWithStorageProcInfo( storage: Handle; var params: ComponentParameters; func: ProcPtr; funcProcInfo: ProcInfoType ): ComponentResult; external name '_CallComponentFunctionWithStorageProcInfo';
+=======
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in InterfaceLib via QuickTime 4.0 and later
+ }
+function GetComponentPublicResourceList( resourceType: OSType; resourceID: SInt16; flags: SInt32; var cd: ComponentDescription; missingProc: GetMissingComponentResourceUPP; refCon: UnivPtr; atomContainerPtr: UnivPtr ): OSErr; external name '_GetComponentPublicResourceList';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -3493,20 +3913,55 @@ function CallComponentFunctionWithStorageProcInfo( storage: Handle; var params: 
  *  DelegateComponentCall()
  *  
  *  Mac OS X threading:
+<<<<<<< HEAD
  *    Not thread safe
+=======
+ *    Thread safe since version 10.3
  *  
  *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.3 and later
+ *    Non-Carbon CFM:   in InterfaceLib via QuickTime 4.0 and later
+ }
+function GetComponentPublicIndString( aComponent: Component; var theString: Str255; strListID: SInt16; index: SInt16 ): OSErr; external name '_GetComponentPublicIndString';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{*******************************************************
+*                                                       *
+*                   CALLS MADE BY COMPONENTS            *
+*                                                       *
+*******************************************************}
+{*******************************************************
+* Component Management routines
+*******************************************************}
+{
+ *  SetComponentInstanceError()
+>>>>>>> origin/cpstrnew
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.4
+ *  
+ *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> origin/fixes_2_2
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function DelegateComponentCall( var originalParams: ComponentParameters; ci: ComponentInstance ): ComponentResult; external name '_DelegateComponentCall';
+=======
+procedure SetComponentInstanceError( aComponentInstance: ComponentInstance; theError: OSErr ); external name '_SetComponentInstanceError';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -3516,13 +3971,20 @@ function DelegateComponentCall( var originalParams: ComponentParameters; ci: Com
  *  Mac OS X threading:
  *    Not thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.4
+ *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function SetDefaultComponent( aComponent: Component; flags: SInt16 ): OSErr; external name '_SetDefaultComponent';
+=======
+function GetComponentRefcon( aComponent: Component ): SIGNEDLONG; external name '_GetComponentRefcon';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -3532,13 +3994,20 @@ function SetDefaultComponent( aComponent: Component; flags: SInt16 ): OSErr; ext
  *  Mac OS X threading:
  *    Thread safe since version 10.3
  *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.4
+ *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function OpenDefaultComponent( componentType: OSType; componentSubType: OSType ): ComponentInstance; external name '_OpenDefaultComponent';
+=======
+procedure SetComponentRefcon( aComponent: Component; theRefcon: SIGNEDLONG ); external name '_SetComponentRefcon';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -3548,13 +4017,23 @@ function OpenDefaultComponent( componentType: OSType; componentSubType: OSType )
  *  Mac OS X threading:
  *    Thread safe since version 10.3
  *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
  *    Non-Carbon CFM:   in InterfaceLib via QuickTime 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function OpenADefaultComponent( componentType: OSType; componentSubType: OSType; var ci: ComponentInstance ): OSErr; external name '_OpenADefaultComponent';
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function OpenComponentResFile( aComponent: Component ): ResFileRefNum; external name '_OpenComponentResFile';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -3564,13 +4043,23 @@ function OpenADefaultComponent( componentType: OSType; componentSubType: OSType;
  *  Mac OS X threading:
  *    Thread safe since version 10.4
  *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function CaptureComponent( capturedComponent: Component; capturingComponent: Component ): Component; external name '_CaptureComponent';
+=======
+ *    Non-Carbon CFM:   in InterfaceLib via QuickTime 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function OpenAComponentResFile( aComponent: Component; var resRef: ResFileRefNum ): OSErr; external name '_OpenAComponentResFile';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -3580,25 +4069,40 @@ function CaptureComponent( capturedComponent: Component; capturingComponent: Com
  *  Mac OS X threading:
  *    Thread safe since version 10.4
  *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in CoreServices.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function UncaptureComponent( aComponent: Component ): OSErr; external name '_UncaptureComponent';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  RegisterComponentResourceFile()
- *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function UncaptureComponent( aComponent: Component ): OSErr; external name '_UncaptureComponent';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+=======
+function CloseComponentResFile( refnum: ResFileRefNum ): OSErr; external name '_CloseComponentResFile';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ Note: GetComponentResource returns a Handle, not a resource.  The caller must dispose it with DisposeHandle. }
+>>>>>>> origin/cpstrnew
+{
+ *  RegisterComponentResourceFile()
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
@@ -3608,13 +4112,26 @@ function RegisterComponentResourceFile( resRefNum: SInt16; global: SInt16 ): SIn
 
 { This call is deprecated. Please use GetIconRefFromComponent() instead.}
 {$ifc not TARGET_CPU_64}
+=======
+ *    Non-Carbon CFM:   in InterfaceLib via QuickTime 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function GetComponentResource( aComponent: Component; resType: OSType; resID: SInt16; var theResource: Handle ): OSErr; external name '_GetComponentResource';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
 {
  *  GetComponentIconSuite()
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only]
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -3627,6 +4144,646 @@ function GetComponentIconSuite(aComponent: Component; var iconSuite: Handle): OS
 =======
 >>>>>>> origin/fixes_2_2
 =======
+function GetComponentIconSuite( aComponent: Component; var iconSuite: Handle ): OSErr; external name '_GetComponentIconSuite';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{$endc} {not TARGET_CPU_64}
+
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib via QuickTime 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function GetComponentIndString( aComponent: Component; var theString: Str255; strListID: SInt16; index: SInt16 ): OSErr; external name '_GetComponentIndString';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{*******************************************************
+* Component Instance Management routines
+*******************************************************}
+>>>>>>> origin/cpstrnew
+{
+ * These calls allow you to register a file system entity.  The
+ * Component Manager will "do the right thing" with the entity,
+ * whether it is a standard resource fork based CFM component, CFM
+ * bundle, mach-o bundle, or packaged bundle.  
+ *
+ * The *Entries calls allow you to specify a component description
+ * which will be used to register selective components.  (Passing
+ * NULL, 0 means to register all components.  
+ }
+{$ifc not TARGET_CPU_64}
+{
+ *  RegisterComponentFile()   *** DEPRECATED ***
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+<<<<<<< HEAD
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function RegisterComponentFile( const (*var*) spec: FSSpec; global: SInt16 ): OSErr; external name '_RegisterComponentFile';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{
+ *  RegisterComponentFileEntries()   *** DEPRECATED ***
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function RegisterComponentFileEntries( const (*var*) spec: FSSpec; global: SInt16; {const} toRegister: ComponentDescriptionPtr { can be NULL }; registerCount: UInt32 ): OSErr; external name '_RegisterComponentFileEntries';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{$endc} {not TARGET_CPU_64}
+
+{
+ *  RegisterComponentFileRef()
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function RegisterComponentFileRef( const (*var*) ref: FSRef; global: SInt16 ): OSErr; external name '_RegisterComponentFileRef';
+=======
+ *  Mac OS X threading:
+ *    Thread safe since version 10.4
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function GetComponentInstanceStorage( aComponentInstance: ComponentInstance ): Handle; external name '_GetComponentInstanceStorage';
+>>>>>>> origin/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+<<<<<<< HEAD
+ *  RegisterComponentFileRefEntries()
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function RegisterComponentFileRefEntries( const (*var*) ref: FSRef; global: SInt16; {const} toRegister: ComponentDescriptionPtr { can be NULL }; registerCount: UInt32 ): OSErr; external name '_RegisterComponentFileRefEntries';
+=======
+ *  SetComponentInstanceStorage()
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.4
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+procedure SetComponentInstanceStorage( aComponentInstance: ComponentInstance; theStorage: Handle ); external name '_SetComponentInstanceStorage';
+>>>>>>> origin/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/fixes_2.4
+{*******************************************************
+*                                                       *
+*           Direct calls to the Components              *
+*                                                       *
+*******************************************************}
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+{ Old style names}
+
+{$ifc not TARGET_CPU_64}
+{
+ *  ComponentFunctionImplemented()   *** DEPRECATED ***
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.4
+ *  
+ *  Availability:
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function ComponentFunctionImplemented( ci: ComponentInstance; ftnNumber: SInt16 ): ComponentResult; external name '_ComponentFunctionImplemented';
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> origin/cpstrnew
+
+
+=======
+function CountComponentInstances( aComponent: Component ): SIGNEDLONG; external name '_CountComponentInstances';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ useful helper routines for convenient method dispatching }
+>>>>>>> origin/cpstrnew
+{
+ *  GetComponentVersion()   *** DEPRECATED ***
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Availability:
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function GetComponentVersion( ci: ComponentInstance ): ComponentResult; external name '_GetComponentVersion';
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> origin/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function CallComponentFunction( var params: ComponentParameters; func: ComponentFunctionUPP ): ComponentResult; external name '_CallComponentFunction';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
+
+
+{
+ *  ComponentSetTarget()   *** DEPRECATED ***
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Availability:
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function ComponentSetTarget( ci: ComponentInstance; target: ComponentInstance ): ComponentResult; external name '_ComponentSetTarget';
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> origin/cpstrnew
+
+
+{ New style names}
+=======
+function CallComponentFunctionWithStorage( storage: Handle; var params: ComponentParameters; func: ComponentFunctionUPP ): ComponentResult; external name '_CallComponentFunctionWithStorage';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
+
+{$endc} {not TARGET_CPU_64}
+=======
+=======
+>>>>>>> origin/fixes_2_2
+{  Old style names }
+=======
+{ Old style names}
+>>>>>>> origin/fixes_2.4
+
+{$ifc not TARGET_CPU_64}
+{
+ *  ComponentFunctionImplemented()   *** DEPRECATED ***
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function ComponentFunctionImplemented( ci: ComponentInstance; ftnNumber: SInt16 ): ComponentResult; external name '_ComponentFunctionImplemented';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib via QuickTime 2.5 and later
+ }
+function CallComponentFunctionWithStorageProcInfo( storage: Handle; var params: ComponentParameters; func: ProcPtr; funcProcInfo: ProcInfoType ): ComponentResult; external name '_CallComponentFunctionWithStorageProcInfo';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
+
+
+{
+ *  GetComponentVersion()   *** DEPRECATED ***
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function GetComponentVersion( ci: ComponentInstance ): ComponentResult; external name '_GetComponentVersion';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+=======
+function DelegateComponentCall( var originalParams: ComponentParameters; ci: ComponentInstance ): ComponentResult; external name '_DelegateComponentCall';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
+
+
+{
+ *  ComponentSetTarget()   *** DEPRECATED ***
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+<<<<<<< HEAD
+function ComponentSetTarget(ci: ComponentInstance; target: ComponentInstance): SInt32; external name '_ComponentSetTarget';
+{  New style names }
+<<<<<<< HEAD
+>>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/fixes_2_2
+=======
+function ComponentSetTarget( ci: ComponentInstance; target: ComponentInstance ): ComponentResult; external name '_ComponentSetTarget';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{ New style names}
+
+{$endc} {not TARGET_CPU_64}
+>>>>>>> origin/fixes_2.4
+
+=======
+function SetDefaultComponent( aComponent: Component; flags: SInt16 ): OSErr; external name '_SetDefaultComponent';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
+{
+ *  CallComponentOpen()
+ *  
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
+ *    Non-Carbon CFM:   in InterfaceLib via QuickTime 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function CallComponentOpen( ci: ComponentInstance; self: ComponentInstance ): ComponentResult; external name '_CallComponentOpen';
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function OpenDefaultComponent( componentType: OSType; componentSubType: OSType ): ComponentInstance; external name '_OpenDefaultComponent';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
+
+
+{
+ *  CallComponentClose()
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib via QuickTime 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function CallComponentClose( ci: ComponentInstance; self: ComponentInstance ): ComponentResult; external name '_CallComponentClose';
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
+=======
+function OpenADefaultComponent( componentType: OSType; componentSubType: OSType; var ci: ComponentInstance ): OSErr; external name '_OpenADefaultComponent';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
+
+
+{
+ *  CallComponentCanDo()
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.4
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
+ *    Non-Carbon CFM:   in InterfaceLib via QuickTime 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function CallComponentCanDo( ci: ComponentInstance; ftnNumber: SInt16 ): ComponentResult; external name '_CallComponentCanDo';
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function CaptureComponent( capturedComponent: Component; capturingComponent: Component ): Component; external name '_CaptureComponent';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
+
+
+{
+ *  CallComponentVersion()
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.4
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
+ *    Non-Carbon CFM:   in InterfaceLib via QuickTime 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function CallComponentVersion( ci: ComponentInstance ): ComponentResult; external name '_CallComponentVersion';
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function UncaptureComponent( aComponent: Component ): OSErr; external name '_UncaptureComponent';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
+
+
+{
+ *  CallComponentRegister()
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
+ *    Non-Carbon CFM:   in InterfaceLib via QuickTime 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function CallComponentRegister( ci: ComponentInstance ): ComponentResult; external name '_CallComponentRegister';
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
+
+
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function RegisterComponentResourceFile( resRefNum: SInt16; global: SInt16 ): SInt32; external name '_RegisterComponentResourceFile';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ This call is deprecated. Please use GetIconRefFromComponent() instead.}
+{$ifc not TARGET_CPU_64}
+>>>>>>> origin/cpstrnew
+{
+ *  CallComponentTarget()
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib via QuickTime 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function CallComponentTarget( ci: ComponentInstance; target: ComponentInstance ): ComponentResult; external name '_CallComponentTarget';
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
+
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only]
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
 function GetComponentIconSuite( aComponent: Component; var iconSuite: Handle ): OSErr; external name '_GetComponentIconSuite';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
@@ -3706,389 +4863,27 @@ function RegisterComponentFileRefEntries( const (*var*) ref: FSRef; global: SInt
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
->>>>>>> origin/fixes_2.4
 {*******************************************************
 *                                                       *
 *           Direct calls to the Components              *
 *                                                       *
 *******************************************************}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 { Old style names}
+>>>>>>> origin/cpstrnew
 
 {$ifc not TARGET_CPU_64}
 {
- *  ComponentFunctionImplemented()   *** DEPRECATED ***
- *  
- *  Mac OS X threading:
- *    Thread safe since version 10.3
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function ComponentFunctionImplemented( ci: ComponentInstance; ftnNumber: SInt16 ): ComponentResult; external name '_ComponentFunctionImplemented';
 <<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
-=======
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
->>>>>>> graemeg/cpstrnew
-=======
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
->>>>>>> graemeg/cpstrnew
-=======
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
->>>>>>> graemeg/cpstrnew
-=======
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
->>>>>>> origin/cpstrnew
-
-
-{
- *  GetComponentVersion()   *** DEPRECATED ***
- *  
- *  Mac OS X threading:
- *    Thread safe since version 10.3
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function GetComponentVersion( ci: ComponentInstance ): ComponentResult; external name '_GetComponentVersion';
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
-=======
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
->>>>>>> graemeg/cpstrnew
-=======
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
->>>>>>> graemeg/cpstrnew
-=======
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
->>>>>>> graemeg/cpstrnew
-=======
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
->>>>>>> origin/cpstrnew
-
-
-{
- *  ComponentSetTarget()   *** DEPRECATED ***
- *  
- *  Mac OS X threading:
- *    Thread safe since version 10.3
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function ComponentSetTarget( ci: ComponentInstance; target: ComponentInstance ): ComponentResult; external name '_ComponentSetTarget';
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
-=======
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
->>>>>>> graemeg/cpstrnew
-=======
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
->>>>>>> graemeg/cpstrnew
-=======
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
->>>>>>> graemeg/cpstrnew
-=======
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
->>>>>>> origin/cpstrnew
-
-
-{ New style names}
-
-{$endc} {not TARGET_CPU_64}
-=======
-=======
->>>>>>> origin/fixes_2_2
-{  Old style names }
-=======
-{ Old style names}
->>>>>>> origin/fixes_2.4
-
-{$ifc not TARGET_CPU_64}
-{
- *  ComponentFunctionImplemented()   *** DEPRECATED ***
- *  
- *  Mac OS X threading:
- *    Thread safe since version 10.3
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function ComponentFunctionImplemented( ci: ComponentInstance; ftnNumber: SInt16 ): ComponentResult; external name '_ComponentFunctionImplemented';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
-
-
-{
- *  GetComponentVersion()   *** DEPRECATED ***
- *  
- *  Mac OS X threading:
- *    Thread safe since version 10.3
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function GetComponentVersion( ci: ComponentInstance ): ComponentResult; external name '_GetComponentVersion';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
-
-
-{
- *  ComponentSetTarget()   *** DEPRECATED ***
- *  
- *  Mac OS X threading:
- *    Thread safe since version 10.3
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-<<<<<<< HEAD
-function ComponentSetTarget(ci: ComponentInstance; target: ComponentInstance): SInt32; external name '_ComponentSetTarget';
-{  New style names }
-<<<<<<< HEAD
->>>>>>> graemeg/fixes_2_2
-=======
->>>>>>> origin/fixes_2_2
-=======
-function ComponentSetTarget( ci: ComponentInstance; target: ComponentInstance ): ComponentResult; external name '_ComponentSetTarget';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
-
-
-{ New style names}
-
-{$endc} {not TARGET_CPU_64}
->>>>>>> origin/fixes_2.4
-
-{
- *  CallComponentOpen()
- *  
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
- *  Mac OS X threading:
- *    Thread safe since version 10.3
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in CoreServices.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in InterfaceLib via QuickTime 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function CallComponentOpen( ci: ComponentInstance; self: ComponentInstance ): ComponentResult; external name '_CallComponentOpen';
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
-=======
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
->>>>>>> graemeg/cpstrnew
-=======
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
->>>>>>> graemeg/cpstrnew
-=======
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
->>>>>>> graemeg/cpstrnew
-=======
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
->>>>>>> origin/cpstrnew
-
-
-{
- *  CallComponentClose()
- *  
- *  Mac OS X threading:
- *    Thread safe since version 10.3
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in CoreServices.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in InterfaceLib via QuickTime 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function CallComponentClose( ci: ComponentInstance; self: ComponentInstance ): ComponentResult; external name '_CallComponentClose';
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
-=======
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
->>>>>>> graemeg/cpstrnew
-=======
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
->>>>>>> graemeg/cpstrnew
-=======
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
->>>>>>> graemeg/cpstrnew
-=======
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
->>>>>>> origin/cpstrnew
-
-
-{
- *  CallComponentCanDo()
- *  
- *  Mac OS X threading:
- *    Thread safe since version 10.3
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in CoreServices.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in InterfaceLib via QuickTime 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function CallComponentCanDo( ci: ComponentInstance; ftnNumber: SInt16 ): ComponentResult; external name '_CallComponentCanDo';
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
-=======
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
->>>>>>> graemeg/cpstrnew
-=======
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
->>>>>>> graemeg/cpstrnew
-=======
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
->>>>>>> graemeg/cpstrnew
-=======
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
->>>>>>> origin/cpstrnew
-
-
-{
- *  CallComponentVersion()
- *  
- *  Mac OS X threading:
- *    Thread safe since version 10.3
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in CoreServices.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in InterfaceLib via QuickTime 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function CallComponentVersion( ci: ComponentInstance ): ComponentResult; external name '_CallComponentVersion';
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
-=======
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
->>>>>>> graemeg/cpstrnew
-=======
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
->>>>>>> graemeg/cpstrnew
-=======
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
->>>>>>> graemeg/cpstrnew
-=======
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
->>>>>>> origin/cpstrnew
-
-
-{
- *  CallComponentRegister()
- *  
- *  Mac OS X threading:
- *    Thread safe since version 10.3
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in CoreServices.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in InterfaceLib via QuickTime 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function CallComponentRegister( ci: ComponentInstance ): ComponentResult; external name '_CallComponentRegister';
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
-=======
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
->>>>>>> graemeg/cpstrnew
-=======
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
->>>>>>> graemeg/cpstrnew
-=======
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
->>>>>>> graemeg/cpstrnew
-=======
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
->>>>>>> origin/cpstrnew
-
-
-{
- *  CallComponentTarget()
- *  
- *  Mac OS X threading:
- *    Thread safe since version 10.3
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in CoreServices.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in InterfaceLib via QuickTime 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function CallComponentTarget( ci: ComponentInstance; target: ComponentInstance ): ComponentResult; external name '_CallComponentTarget';
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
-=======
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
->>>>>>> graemeg/cpstrnew
-=======
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
->>>>>>> graemeg/cpstrnew
-=======
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
->>>>>>> graemeg/cpstrnew
-=======
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
->>>>>>> origin/cpstrnew
-
-
-{
  *  CallComponentUnregister()
+=======
+ *  ComponentFunctionImplemented()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *    Thread safe since version 10.3
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib via QuickTime 2.5 and later
@@ -4116,11 +4911,25 @@ function CallComponentUnregister( ci: ComponentInstance ): ComponentResult; exte
 
 {
  *  CallComponentGetMPWorkFunction()
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function ComponentFunctionImplemented( ci: ComponentInstance; ftnNumber: SInt16 ): ComponentResult; external name '_ComponentFunctionImplemented';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{
+ *  GetComponentVersion()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *    Thread safe since version 10.3
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib via QuickTime 2.5 and later
@@ -4148,11 +4957,25 @@ function CallComponentGetMPWorkFunction( ci: ComponentInstance; var workFunction
 
 {
  *  CallComponentGetPublicResource()
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function GetComponentVersion( ci: ComponentInstance ): ComponentResult; external name '_GetComponentVersion';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{
+ *  ComponentSetTarget()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *    Thread safe since version 10.3
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in InterfaceLib via QuickTime 4.0 and later
@@ -4175,6 +4998,20 @@ function CallComponentGetPublicResource( ci: ComponentInstance; resourceType: OS
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function ComponentSetTarget( ci: ComponentInstance; target: ComponentInstance ): ComponentResult; external name '_ComponentSetTarget';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{ New style names}
+
+{$endc} {not TARGET_CPU_64}
+>>>>>>> origin/cpstrnew
 
 =======
 =======
@@ -4183,7 +5020,13 @@ function CallComponentGetPublicResource( ci: ComponentInstance; resourceType: OS
  *  Mac OS X threading:
  *    Thread safe since version 10.3
  *  
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+>>>>>>> origin/cpstrnew
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -4320,6 +5163,7 @@ function CallComponentGetMPWorkFunction( ci: ComponentInstance; var workFunction
 function CallComponentGetPublicResource( ci: ComponentInstance; resourceType: OSType; resourceID: SInt16; var resource: Handle ): ComponentResult; external name '_CallComponentGetPublicResource';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$endc}  {CALL_NOT_IN_CARBON}
 {$endc}
@@ -4329,6 +5173,8 @@ function CallComponentGetPublicResource( ci: ComponentInstance; resourceType: OS
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {
     CallComponentDispatch is a CarbonLib routine that replaces CallComponent inline glue
@@ -4340,11 +5186,15 @@ function CallComponentGetPublicResource( ci: ComponentInstance; resourceType: OS
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
  *  Mac OS X threading:
  *    Thread safe since version 10.3
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -4407,6 +5257,9 @@ function NewComponentMPWorkFunctionUPP( userRoutine: ComponentMPWorkFunctionProc
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+>>>>>>> origin/cpstrnew
  *    Non-Carbon CFM:   not available
  }
 function CallComponentDispatch( var cp: ComponentParameters ): ComponentResult; external name '_CallComponentDispatch';
@@ -4425,6 +5278,7 @@ function CallComponentDispatch( var cp: ComponentParameters ): ComponentResult; 
 function NewComponentMPWorkFunctionUPP( userRoutine: ComponentMPWorkFunctionProcPtr ): ComponentMPWorkFunctionUPP; external name '_NewComponentMPWorkFunctionUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 const
 	uppComponentMPWorkFunctionProcInfo = $000003F0;
@@ -4445,10 +5299,13 @@ function NewComponentMPWorkFunctionUPP(userRoutine: ComponentMPWorkFunctionProcP
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  NewComponentRoutineUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4496,10 +5353,20 @@ function NewComponentRoutineUPP( userRoutine: ComponentRoutineProcPtr ): Compone
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function NewComponentRoutineUPP( userRoutine: ComponentRoutineProcPtr ): ComponentRoutineUPP; external name '_NewComponentRoutineUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  NewGetMissingComponentResourceUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4547,10 +5414,20 @@ function NewGetMissingComponentResourceUPP( userRoutine: GetMissingComponentReso
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function NewGetMissingComponentResourceUPP( userRoutine: GetMissingComponentResourceProcPtr ): GetMissingComponentResourceUPP; external name '_NewGetMissingComponentResourceUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  DisposeComponentMPWorkFunctionUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4598,10 +5475,20 @@ procedure DisposeComponentMPWorkFunctionUPP( userUPP: ComponentMPWorkFunctionUPP
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeComponentMPWorkFunctionUPP( userUPP: ComponentMPWorkFunctionUPP ); external name '_DisposeComponentMPWorkFunctionUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  DisposeComponentRoutineUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4649,10 +5536,20 @@ procedure DisposeComponentRoutineUPP( userUPP: ComponentRoutineUPP ); external n
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeComponentRoutineUPP( userUPP: ComponentRoutineUPP ); external name '_DisposeComponentRoutineUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  DisposeGetMissingComponentResourceUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4700,10 +5597,20 @@ procedure DisposeGetMissingComponentResourceUPP( userUPP: GetMissingComponentRes
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeGetMissingComponentResourceUPP( userUPP: GetMissingComponentResourceUPP ); external name '_DisposeGetMissingComponentResourceUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  InvokeComponentMPWorkFunctionUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4751,10 +5658,20 @@ function InvokeComponentMPWorkFunctionUPP( globalRefCon: UnivPtr; header: Compon
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function InvokeComponentMPWorkFunctionUPP( globalRefCon: UnivPtr; header: ComponentMPWorkFunctionHeaderRecordPtr; userUPP: ComponentMPWorkFunctionUPP ): ComponentResult; external name '_InvokeComponentMPWorkFunctionUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  InvokeComponentRoutineUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4802,10 +5719,20 @@ function InvokeComponentRoutineUPP( var cp: ComponentParameters; componentStorag
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function InvokeComponentRoutineUPP( var cp: ComponentParameters; componentStorage: Handle; userUPP: ComponentRoutineUPP ): ComponentResult; external name '_InvokeComponentRoutineUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  InvokeGetMissingComponentResourceUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4862,11 +5789,15 @@ end.
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   available as macro/inline
  }
 function InvokeGetMissingComponentResourceUPP( c: Component; resType: OSType; resID: SInt16; refCon: UnivPtr; var resource: Handle; userUPP: GetMissingComponentResourceUPP ): OSErr; external name '_InvokeGetMissingComponentResourceUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+<<<<<<< HEAD
 
 { ProcInfos }
 
@@ -4898,3 +5829,29 @@ end.
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+
+{ ProcInfos }
+
+{ MixedMode ProcInfo constants for component calls }
+const
+	uppComponentFunctionImplementedProcInfo = $000002F0;
+	uppGetComponentVersionProcInfo = $000000F0;
+	uppComponentSetTargetProcInfo = $000003F0;
+	uppCallComponentOpenProcInfo = $000003F0;
+	uppCallComponentCloseProcInfo = $000003F0;
+	uppCallComponentCanDoProcInfo = $000002F0;
+	uppCallComponentVersionProcInfo = $000000F0;
+	uppCallComponentRegisterProcInfo = $000000F0;
+	uppCallComponentTargetProcInfo = $000003F0;
+	uppCallComponentUnregisterProcInfo = $000000F0;
+	uppCallComponentGetMPWorkFunctionProcInfo = $00000FF0;
+	uppCallComponentGetPublicResourceProcInfo = $00003BF0;
+
+{$endc} {TARGET_OS_MAC}
+
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+
+end.
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -48,6 +49,8 @@
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 {$ifndef ARM9}
   {$error 3D hardware is only available from the ARM9}
 {$endif}
@@ -556,6 +559,9 @@ const
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 
 (*-----------------------------------------
 Structures specific to allocating and 
@@ -613,6 +619,7 @@ type
 
 
 
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -627,10 +634,13 @@ const
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 
 type
   gl_hidden_globals = record
     matrixMode: GL_MATRIX_MODE_ENUM; // holds the current Matrix Mode
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -647,6 +657,10 @@ type
 =======
 >>>>>>> graemeg/cpstrnew
 =======
+>>>>>>> origin/cpstrnew
+=======
+
+    vramBlocks: array [0..1] of ps_vramBlock;		// Two classe instances, one for textures, and one for palettes
 >>>>>>> origin/cpstrnew
     
     // texture globals
@@ -713,6 +727,7 @@ procedure glColorTableEXT(target, empty1: cint; width: cuint16; empty2, empty3: 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure glColorSubTableEXT(target, start, count, empty1, empty2: cint; const data: pcuint16); cdecl; external;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -720,6 +735,8 @@ procedure glColorSubTableEXT(target, start, count, empty1, empty2: cint; const d
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 procedure glAssignColorTable(target, name: cint); cdecl; external;
@@ -827,11 +844,14 @@ function intto12d3(n: cint): fixed12d3; inline;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 begin
@@ -1022,6 +1042,9 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 function FIFO_VERTEX10(): cuint8; inline;
 begin
   FIFO_VERTEX10 := REG2ID(GFX_VERTEX10);
@@ -1042,10 +1065,13 @@ begin
   FIFO_VERTEX_YZ := REG2ID(GFX_VERTEX_YZ); 
 end;
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 function FIFO_TEX_COORD(): cuint8; inline;
 begin
   FIFO_TEX_COORD := REG2ID(GFX_TEX_COORD);
@@ -1444,6 +1470,7 @@ end;
 
 procedure glTranslatef32(x, y, z: cint32); inline;
 begin
+<<<<<<< HEAD
 =======
 procedure glTranslate3f32(x, y, z: cint32); inline; 
 begin 
@@ -1452,11 +1479,14 @@ begin
 procedure glTranslate3f32(x, y, z: cint32); inline; 
 begin 
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 	MATRIX_TRANSLATE^ := x;
 	MATRIX_TRANSLATE^ := y;
 	MATRIX_TRANSLATE^ := z;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 procedure glScalef32(x, y, z: cint); inline;
@@ -1476,6 +1506,13 @@ begin
 	MATRIX_SCALE^ := factor;
 	MATRIX_SCALE^ := factor;
 	MATRIX_SCALE^ := factor;
+=======
+procedure glScalef32(x, y, z: cint); inline;
+begin
+	MATRIX_SCALE^ := x;
+	MATRIX_SCALE^ := y;
+	MATRIX_SCALE^ := z;
+>>>>>>> origin/cpstrnew
 end;
 
 procedure glLight(id: cint; color: rgb; x, y, z: v10); inline; 
@@ -1612,6 +1649,9 @@ var
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 	sassert(list <> nil, 'glCallList received a null display list pointer');
   count := list^;
 	sassert(count <> 0, 'glCallList received a display list of size 0');
@@ -1668,6 +1708,9 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 
 procedure glFogShift(shift: cint); inline;
 begin
@@ -2270,6 +2313,9 @@ var
   x, y: cint;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   tex: pgl_texture_data;
 begin
   tex := pgl_texture_data(DynamicArrayGet(@(glGlob^.texturePtrs), glGlob^.activeTexture));
@@ -2604,6 +2650,7 @@ begin
         if tex <> nil then
           i := 8 shl ((tex^.texFormat shr 23 ) and 7);
       end;      
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -2626,6 +2673,8 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
   end;
 end;
 

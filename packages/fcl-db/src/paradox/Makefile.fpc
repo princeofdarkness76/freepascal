@@ -12,6 +12,7 @@ rsts=paradox
 [require]
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 packages=pxlib fcl-base
 =======
 packages=pxlib
@@ -19,6 +20,9 @@ packages=pxlib
 =======
 packages=pxlib
 >>>>>>> origin/fixes_2_2
+=======
+packages=pxlib fcl-base
+>>>>>>> origin/cpstrnew
 
 [install]
 fpcpackage=y

@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 unit p_gx;
 =======
 Unit p_gx;
@@ -7,12 +8,16 @@ Unit p_gx;
 =======
 Unit p_gx;
 >>>>>>> origin/fixes_2_2
+=======
+unit p_gx;
+>>>>>>> origin/cpstrnew
 
 {$MODE objfpc}
 
 { convention is cdecl for WinCE API}
 {$calling cdecl}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 interface
@@ -68,13 +73,17 @@ function GXIsDisplayDRAMBuffer: BOOL; external GXDLL Name '?GXIsDisplayDRAMBuffe
 =======
 >>>>>>> origin/fixes_2_2
 Interface
+=======
+interface
+>>>>>>> origin/cpstrnew
 
-Uses
+uses
   Windows;
 
-Const
+const
   GXDLL = 'gx';
 
+<<<<<<< HEAD
 Type
   GXDisplayProperties = Record
     cxWidth : DWord;
@@ -120,11 +129,55 @@ Function GXIsDisplayDRAMBuffer : BOOL; External GXDLL Name '?GXIsDisplayDRAMBuff
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+type
+  GXDisplayProperties = record
+    cxWidth: DWord;
+    cyHeight: DWord;            // notice lack of 'th' in the word height.
+    cbxPitch: LONG;             // number of bytes to move right one x pixel - can be negative.
+    cbyPitch: LONG;             // number of bytes to move down one y pixel - can be negative.
+    cBPP: LONG;                 // # of bits in each pixel
+    ffFormat: DWord;            // format flags.
+  end;
+
+  GXKeyList = record
+    vkUp: SHORT;             // key for up
+    ptUp: POINT;             // x,y position of key/button.  not on screen but in screen coordinates.
+    vkDown: SHORT;
+    ptDown: POINT;
+    vkLeft: SHORT;
+    ptLeft: POINT;
+    vkRight: SHORT;
+    ptRight: POINT;
+    vkA: SHORT;
+    ptA: POINT;
+    vkB: SHORT;
+    ptB: POINT;
+    vkC: SHORT;
+    ptC: POINT;
+    vkStart: SHORT;
+    ptStart: POINT;
+  end;
+
+function GXOpenDisplay(AhWnd: HWND; dwFlags: DWORD): Integer; external GXDLL Name '?GXOpenDisplay@@YAHPAUHWND__@@K@Z';
+function GXCloseDisplay: Integer; external GXDLL Name '?GXCloseDisplay@@YAHXZ';
+function GXBeginDraw: Pointer; external GXDLL Name '?GXBeginDraw@@YAPAXXZ';
+function GXEndDraw: Integer; external GXDLL Name '?GXEndDraw@@YAHXZ';
+function GXOpenInput: Integer; external GXDLL Name '?GXOpenInput@@YAHXZ';
+function GXCloseInput: Integer; external GXDLL Name '?GXCloseInput@@YAHXZ';
+function GXGetDisplayProperties: GXDisplayProperties; external GXDLL Name '?GXGetDisplayProperties@@YA?AUGXDisplayProperties@@XZ';
+function GXGetDefaultKeys(iOptions: Integer): GXKeyList; external GXDLL Name '?GXGetDefaultKeys@@YA?AUGXKeyList@@H@Z';
+function GXSuspend: Integer; external GXDLL Name '?GXSuspend@@YAHXZ';
+function GXResume: Integer; external GXDLL Name '?GXResume@@YAHXZ';
+function GXSetViewport(dwTop, dwHeight, dwReserved1, dwReserved2: DWORD): Integer; external GXDLL Name '?GXSetViewport@@YAHKKKK@Z';
+function GXIsDisplayDRAMBuffer: BOOL; external GXDLL Name '?GXIsDisplayDRAMBuffer@@YAHXZ';
+>>>>>>> origin/cpstrnew
 
 
 // Although these flags can be unrelated they still
 // have unique values.
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 const
@@ -134,6 +187,9 @@ Const
 =======
 Const
 >>>>>>> origin/fixes_2_2
+=======
+const
+>>>>>>> origin/cpstrnew
   GX_FULLSCREEN    = $01;        // for OpenDisplay()
   GX_NORMALKEYS    = $02;
   GX_LANDSCAPEKEYS = $03;
@@ -151,6 +207,9 @@ Const
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 type
   RawFrameBufferInfo = record
     wFormat: WORD;
@@ -163,6 +222,7 @@ type
   end;
 
 const
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -182,10 +242,13 @@ Const
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
   FORMAT_565   = 1;
   FORMAT_555   = 2;
   FORMAT_OTHER = 3;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 implementation
@@ -201,3 +264,8 @@ Implementation
 
 End.
 >>>>>>> origin/fixes_2_2
+=======
+implementation
+
+end.
+>>>>>>> origin/cpstrnew

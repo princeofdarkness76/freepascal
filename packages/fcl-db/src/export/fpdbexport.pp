@@ -74,10 +74,14 @@ Type
     FDecimalSeparator: Char;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
     FUseDisplayText : Boolean;
   Protected
     Procedure InitSettings; virtual;
     Property UseDisplayText : Boolean Read FUseDisplayText Write FUseDisplayText;
+<<<<<<< HEAD
 =======
   Protected
     Procedure InitSettings; virtual;
@@ -86,6 +90,8 @@ Type
   Protected
     Procedure InitSettings; virtual;
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
     Property IntegerFormat : String Read FIntegerFormat Write FIntegerFormat;
     Property DecimalSeparator : Char Read FDecimalSeparator Write FDecimalSeparator;
     Property CurrencySymbol : String Read FCurrencySymbol Write FCurrencySymbol;
@@ -643,6 +649,7 @@ begin
       Result:=Format(FormatSettings.IntegerFormat,[F.AsInteger])
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     else if FormatSettings.UseDisplayText then
       Result:=F.DisplayText
     else
@@ -655,6 +662,12 @@ begin
     else
       Result:=F.AsString;
 >>>>>>> origin/fixes_2_2
+=======
+    else if FormatSettings.UseDisplayText then
+      Result:=F.DisplayText
+    else
+      Result:=F.AsString;  
+>>>>>>> origin/cpstrnew
     end
   else if (F.DataType=ftBoolean) then
     begin
@@ -665,21 +678,28 @@ begin
     If (Result='') then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
       if FormatSettings.UseDisplayText then
         Result:=F.DisplayText
       else
         Result:=F.AsString;  
+<<<<<<< HEAD
 =======
       Result:=F.AsString;
 >>>>>>> graemeg/fixes_2_2
 =======
       Result:=F.AsString;
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
     end
   else if (F.DataType=ftDate) then
     begin
     If (FormatSettings.DateFormat<>'') then
       Result:=FormatDateTime(FormatSettings.DateFormat,F.AsDateTime)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     else if FormatSettings.UseDisplayText then
@@ -688,6 +708,10 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    else if FormatSettings.UseDisplayText then
+      Result:=F.DisplayText
+>>>>>>> origin/cpstrnew
     else
       Result:=F.AsString;
     end
@@ -695,6 +719,7 @@ begin
     begin
     If (FormatSettings.TimeFormat<>'') then
       Result:=FormatDateTime(FormatSettings.TimeFormat,F.AsDateTime)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     else if FormatSettings.UseDisplayText then
@@ -709,11 +734,18 @@ begin
     else
       Result:=F.AsString;
 >>>>>>> origin/fixes_2_2
+=======
+    else if FormatSettings.UseDisplayText then
+      Result:=F.DisplayText
+    else
+      Result:=F.AsString;  
+>>>>>>> origin/cpstrnew
     end
   else if (F.DataType in [ftDateTime,ftTimeStamp]) then
     begin
     If (FormatSettings.DateTimeFormat<>'') then
       Result:=FormatDateTime(FormatSettings.DateTimeFormat,F.AsDateTime)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     else if FormatSettings.UseDisplayText then
@@ -731,6 +763,13 @@ begin
       Result:=F.AsString;
     end
 >>>>>>> origin/fixes_2_2
+=======
+    else if FormatSettings.UseDisplayText then
+      Result:=F.DisplayText
+    else
+      Result:=F.AsString;
+    end 
+>>>>>>> origin/cpstrnew
   else if (F.DataType=ftCurrency) then
     begin
     If (FormatSettings.CurrencySymbol<>'') then
@@ -741,10 +780,14 @@ begin
       end
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
     else  if FormatSettings.UseDisplayText then
       Result:=F.DisplayText
     else 
       Result:=F.AsString;
+<<<<<<< HEAD
     end
   else if FormatSettings.UseDisplayText then
     Result:=F.DisplayText
@@ -755,13 +798,21 @@ begin
 >>>>>>> origin/fixes_2_2
     else
       Result:=F.AsString
+=======
+>>>>>>> origin/cpstrnew
     end
+  else if FormatSettings.UseDisplayText then
+    Result:=F.DisplayText
   else
+<<<<<<< HEAD
     Result:=F.AsString;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    Result:=F.AsString;  
+>>>>>>> origin/cpstrnew
 end;
 
 procedure TCustomDatasetExporter.ExportError(Msg: String);
@@ -790,11 +841,15 @@ begin
   FreeAndNil(FExportFields);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   FreeAndNil(FFormatSettings);
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  FreeAndNil(FFormatSettings);
+>>>>>>> origin/cpstrnew
   inherited Destroy;
 end;
 
@@ -998,11 +1053,15 @@ begin
     FDecimalSeparator:=FS.FDecimalSeparator;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FUseDisplayText:=FS.FUseDisplayText;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    FUseDisplayText:=FS.FUseDisplayText;
+>>>>>>> origin/cpstrnew
     end
   else
     inherited Assign(Source);

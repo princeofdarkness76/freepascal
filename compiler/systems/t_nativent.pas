@@ -89,6 +89,7 @@ initialization
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   RegisterLinker(ld_int_nativent,TInternalLinkerNativeNT);
 =======
   RegisterInternalLinker(system_i386_nativent_info,TInternalLinkerNativeNT);
@@ -99,6 +100,9 @@ initialization
 =======
   RegisterInternalLinker(system_i386_nativent_info,TInternalLinkerNativeNT);
 >>>>>>> graemeg/cpstrnew
+=======
+  RegisterInternalLinker(system_i386_nativent_info,TInternalLinkerNativeNT);
+>>>>>>> origin/cpstrnew
 =======
   RegisterInternalLinker(system_i386_nativent_info,TInternalLinkerNativeNT);
 >>>>>>> origin/cpstrnew

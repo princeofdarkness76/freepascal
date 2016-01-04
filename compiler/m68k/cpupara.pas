@@ -47,6 +47,7 @@ unit cpupara;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           function get_funcretloc(p : tabstractprocdef; side: tcallercallee; forcetempdef: tdef): tcgpara;override;
           procedure createtempparaloc(list: TAsmList;calloption : tproccalloption;parasym : tparavarsym;can_use_final_stack_loc : boolean;var cgpara:TCGPara);override;
           function create_varargs_paraloc_info(p : tabstractprocdef; varargspara:tvarargsparalist):longint;override;
@@ -55,6 +56,8 @@ unit cpupara;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
           function get_funcretloc(p : tabstractprocdef; side: tcallercallee; def: tdef): tcgpara;override;
@@ -205,6 +208,7 @@ unit cpupara;
 
 =======
     procedure tm68kparamanager.create_funcretloc_info(p: tabstractprocdef; side: tcallercallee);
+<<<<<<< HEAD
       begin
         p.funcretloc[side]:=get_funcretloc(p,side,p.returndef);
       end;
@@ -278,14 +282,56 @@ unit cpupara;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
-        { Return is passed as var parameter }
-        if ret_in_param(p.returndef,p.proccalloption) then
+=======
+      begin
+        p.funcretloc[side]:=get_funcretloc(p,side,p.returndef);
+      end;
+
+
+    function tm68kparamanager.get_funcretloc(p : tabstractprocdef; side: tcallercallee; def: tdef): tcgpara;
+      var
+        paraloc : pcgparalocation;
+        retcgsize  : tcgsize;
+      begin
+        result.init;
+        result.alignment:=get_para_align(p.proccalloption);
+        { void has no location }
+        if is_void(def) then
           begin
-            p.funcretloc[side].loc:=LOC_REFERENCE;
-            p.funcretloc[side].size:=retcgsize;
+            paraloc:=result.add_location;
+            result.size:=OS_NO;
+            result.intsize:=0;
+            paraloc^.size:=OS_NO;
+            paraloc^.loc:=LOC_VOID;
             exit;
           end;
+        { Constructors return self instead of a boolean }
+        if (p.proctypeoption=potype_constructor) then
+          begin
+            retcgsize:=OS_ADDR;
+            result.intsize:=sizeof(pint);
+          end
+        else
+          begin
+            retcgsize:=def_cgsize(def);
+            result.intsize:=def.size;
+          end;
+        result.size:=retcgsize;
+>>>>>>> origin/cpstrnew
+        { Return is passed as var parameter }
+        if ret_in_param(def,p.proccalloption) then
+          begin
+            paraloc:=result.add_location;
+            paraloc^.loc:=LOC_REFERENCE;
+            paraloc^.size:=retcgsize;
+            exit;
+          end;
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2_2
+=======
+
+        paraloc:=result.add_location;
+>>>>>>> origin/cpstrnew
         { Return in FPU register? }
         if not (cs_fp_emulation in current_settings.moduleswitches) and
            not (current_settings.fputype=fpu_soft) and (result.def.typ=floatdef) then
@@ -297,6 +343,7 @@ unit cpupara;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             paraloc^.def:=result.def;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -304,6 +351,8 @@ unit cpupara;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
           end
@@ -319,6 +368,7 @@ unit cpupara;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                paraloc^.def:=u32inttype;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -326,6 +376,8 @@ unit cpupara;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                if side=callerside then
@@ -340,6 +392,7 @@ unit cpupara;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                paraloc^.def:=u32inttype;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -347,6 +400,8 @@ unit cpupara;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                if side=calleeside then
@@ -362,6 +417,7 @@ unit cpupara;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                paraloc^.def:=result.def;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -369,6 +425,8 @@ unit cpupara;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                if side=callerside then
@@ -587,6 +645,7 @@ unit cpupara;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure tcpuparamanager.createtempparaloc(list: TAsmList;calloption : tproccalloption;parasym : tparavarsym;can_use_final_stack_loc : boolean;var cgpara:TCGPara);
       begin
         { Never a need for temps when value is pushed (calls inside parameters
@@ -609,9 +668,13 @@ unit cpupara;
 =======
     procedure tm68kparamanager.createtempparaloc(list: TAsmList;calloption : tproccalloption;parasym : tparavarsym;can_use_final_stack_loc : boolean;var cgpara:TCGPara);
 >>>>>>> origin/cpstrnew
+=======
+    procedure tm68kparamanager.createtempparaloc(list: TAsmList;calloption : tproccalloption;parasym : tparavarsym;can_use_final_stack_loc : boolean;var cgpara:TCGPara);
+>>>>>>> origin/cpstrnew
       var
         cur_stack_offset: aword;
       begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -631,6 +694,8 @@ unit cpupara;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         paraloc:=parasym.paraloc[callerside].location;
         { Never a need for temps when value is pushed (calls inside parameters
           will simply allocate even more stack space for their parameters) }
@@ -640,11 +705,14 @@ unit cpupara;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       end;

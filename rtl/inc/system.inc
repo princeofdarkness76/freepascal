@@ -16,6 +16,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { ObjpasInt is the integer type, equivalent to Objpas.Integer (the Integer
   type in ObjFpc and Delphi modes). It is defined here for use in the
   implementation part of the System unit. }
@@ -34,12 +35,15 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 { The RTTI is implemented through a series of constants : }
 
 Const
    // please update tkManagedTypes below if you add new
    // values
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -81,6 +85,8 @@ Const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
    tkUnknown       = 0;
    tkInteger       = 1;
    tkChar          = 2;
@@ -110,11 +116,14 @@ Const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -285,6 +294,7 @@ function do_isdevice(handle:thandle):boolean;forward;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$i armdefines.inc}
   {$if defined(CPUTHUMB2)}
     {$i thumb2.inc}  { Case dependent, don't change }
@@ -301,6 +311,8 @@ function do_isdevice(handle:thandle):boolean;forward;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   {$if defined(CPUCORTEXM3) or defined(CPUARMV7M)}
     {$i thumb2.inc}  { Case dependent, don't change }
   {$else}
@@ -308,11 +320,14 @@ function do_isdevice(handle:thandle):boolean;forward;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   {$endif}
@@ -1038,6 +1053,7 @@ begin
   fpc_cpuinit;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef FPC_HAS_INDIRECT_MAIN_INFORMATION}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1079,6 +1095,13 @@ begin
     InitFinalTable
     {$ifdef FPC_HAS_INDIRECT_MAIN_INFORMATION})^{$endif FPC_HAS_INDIRECT_MAIN_INFORMATION} do
 >>>>>>> origin/fixes_2_2
+=======
+{$ifdef FPC_HAS_INDIRECT_MAIN_INFORMATION}
+  with PInitFinalTable(EntryInformation.InitFinalTable)^ do
+{$else FPC_HAS_INDIRECT_MAIN_INFORMATION}
+  with InitFinalTable do
+{$endif FPC_HAS_INDIRECT_MAIN_INFORMATION}
+>>>>>>> origin/cpstrnew
    begin
      for i:=1 to ALUUInt(TableCount) do
       begin
@@ -1113,11 +1136,15 @@ procedure FinalizeUnits;[public,alias:'FPC_FINALIZEUNITS'];
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {$ifdef FPC_HAS_INDIRECT_MAIN_INFORMATION}
   with PInitFinalTable(EntryInformation.InitFinalTable)^ do
 {$else FPC_HAS_INDIRECT_MAIN_INFORMATION}
   with InitFinalTable do
 {$endif FPC_HAS_INDIRECT_MAIN_INFORMATION}
+<<<<<<< HEAD
 =======
   with {$ifdef FPC_HAS_INDIRECT_MAIN_INFORMATION}PInitFinalTable(EntryInformation.{$endif FPC_HAS_INDIRECT_MAIN_INFORMATION}
     InitFinalTable
@@ -1128,6 +1155,8 @@ begin
     InitFinalTable
     {$ifdef FPC_HAS_INDIRECT_MAIN_INFORMATION})^{$endif FPC_HAS_INDIRECT_MAIN_INFORMATION} do
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
    begin
      while (InitCount>0) do
       begin
@@ -2079,6 +2108,7 @@ End;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 {$ifdef FPC_HAS_FEATURE_ANSISTRINGS}
@@ -2259,6 +2289,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 

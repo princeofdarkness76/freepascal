@@ -14,6 +14,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     f:=BsfByte(x8 or ((7-i) shl i));
     if (f<>i) then
     begin
@@ -47,6 +48,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     f:=BsfByte(x8);
     if (f<>i) then
     begin
@@ -63,11 +66,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   result:=true;
@@ -85,6 +91,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     f:=BsfWord(x16 or ((15-i) shl i));
 =======
     f:=BsfWord(x16);
@@ -98,11 +105,15 @@ begin
 =======
     f:=BsfWord(x16);
 >>>>>>> origin/cpstrnew
+=======
+    f:=BsfWord(x16);
+>>>>>>> origin/cpstrnew
     if (f<>i) then
     begin
       writeln('BsfWord(',x16,') returned ',f,', should be ',i);
       exit(false);
     end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -134,6 +145,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     r:=BsrWord(x16);
     if r<>i then
     begin
@@ -144,11 +157,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   result:=true;
@@ -161,6 +177,7 @@ var
 begin
   for i:=0 to 31 do
   begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -183,11 +200,16 @@ begin
     x32:=1 shl i;
     f:=BsfDWord(x32);
 >>>>>>> origin/cpstrnew
+=======
+    x32:=1 shl i;
+    f:=BsfDWord(x32);
+>>>>>>> origin/cpstrnew
     if (f<>i) then
     begin
       writeln('BsfDWord(',x32,') returned ',f,', should be ',i);
       exit(false);
     end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -219,6 +241,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     r:=BsrDWord(x32);
     if r<>i then
     begin
@@ -229,11 +253,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   result:=true;
@@ -251,6 +278,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     f:=BsfQWord(x64 or (uint64(63-i) shl i));
 =======
     f:=BsfQWord(x64);
@@ -264,10 +292,14 @@ begin
 =======
     f:=BsfQWord(x64);
 >>>>>>> origin/cpstrnew
+=======
+    f:=BsfQWord(x64);
+>>>>>>> origin/cpstrnew
     if f<>i then begin
       writeln('BsfQWord(',x64,') returned ',f,', should be ',i);
       exit(false);
     end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -285,11 +317,15 @@ begin
 =======
     r:=BsrQWord(x64);
 >>>>>>> origin/cpstrnew
+=======
+    r:=BsrQWord(x64);
+>>>>>>> origin/cpstrnew
     if r<>i then begin
       writeln('BsrQWord(',x64,') returned ',r,', should be ',i);
       exit(false);
     end;
   end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -313,6 +349,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   result:=true;

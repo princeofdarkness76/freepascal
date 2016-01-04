@@ -175,6 +175,7 @@ implementation
         #9'.sleb128'#9,#9'.uleb128'#9,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         #9'.rva'#9,#9'.secrel32'#9,#9'.quad'#9,#9'.long'#9
 =======
         #9'.rva'#9,#9'.secrel32'#9,#9'.indirect_symbol'#9,#9'.quad'#9,#9'.long'#9
@@ -182,6 +183,9 @@ implementation
 =======
         #9'.rva'#9,#9'.secrel32'#9,#9'.indirect_symbol'#9,#9'.quad'#9,#9'.long'#9
 >>>>>>> origin/fixes_2_2
+=======
+        #9'.rva'#9,#9'.secrel32'#9,#9'.quad'#9,#9'.long'#9
+>>>>>>> origin/cpstrnew
       );
 >>>>>>> graemeg/cpstrnew
 
@@ -228,10 +232,14 @@ implementation
     function TGNUAssembler.sectionname(atype:TAsmSectiontype;const aname:string;aorder:TAsmSectionOrder):string;
       const
 <<<<<<< HEAD
+<<<<<<< HEAD
         secnames : array[TAsmSectiontype] of string[length('__DATA, __datacoal_nt,coalesced')] = ('','',
 =======
         secnames : array[TAsmSectiontype] of string[17] = ('',
 >>>>>>> origin/fixes_2.4
+=======
+        secnames : array[TAsmSectiontype] of string[length('__DATA, __datacoal_nt,coalesced')] = ('','',
+>>>>>>> origin/cpstrnew
           '.text',
           '.data',
 { why doesn't .rodata work? (FK) }
@@ -261,6 +269,7 @@ implementation
 {$else}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           '.rodata',
 =======
 	  '.rodata',
@@ -268,6 +277,9 @@ implementation
 =======
 	  '.rodata',
 >>>>>>> origin/fixes_2_2
+=======
+          '.rodata',
+>>>>>>> origin/cpstrnew
 {$endif}
           '.bss',
           '.threadvar',
@@ -326,6 +338,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           '.objc_protolist',
           '.stack',
           '.heap'
@@ -354,6 +367,11 @@ implementation
         );
         secnames_pic : array[TAsmSectiontype] of string[17] = ('',
 >>>>>>> origin/fixes_2.4
+=======
+          '.objc_protolist'
+        );
+        secnames_pic : array[TAsmSectiontype] of string[length('__DATA, __datacoal_nt,coalesced')] = ('','',
+>>>>>>> origin/cpstrnew
           '.text',
           '.data.rel',
           '.data.rel',
@@ -415,6 +433,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           '.objc_protolist',
           '.stack',
           '.heap'
@@ -439,6 +458,9 @@ implementation
 =======
           '.fini'
 >>>>>>> origin/fixes_2.4
+=======
+          '.objc_protolist'
+>>>>>>> origin/cpstrnew
         );
       var
         sep     : string[3];
@@ -481,10 +503,14 @@ implementation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
         { section type user gives the user full controll on the section name }
         if atype=sec_user then
           secname:=aname;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -501,6 +527,8 @@ implementation
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
         { For bss we need to set some flags that are target dependent,
           it is easier to disable it for smartlinking. It doesn't take up
           filespace }
@@ -514,11 +542,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
           begin
@@ -605,6 +636,9 @@ implementation
          system_i386_darwin,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
          system_i386_iphonesim,
          system_powerpc64_darwin,
          system_x86_64_darwin,
@@ -627,12 +661,15 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                writer.AsmWrite('.section ');
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                AsmWrite('.section ');
@@ -769,6 +806,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                  (tai(hp.next).typ in [ait_const,ait_datablock,ait_realconst])
               ) or
               (hp.sym.typ=AT_DATA);
@@ -789,6 +827,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                  (tai(hp.next).typ in [ait_const,ait_datablock,
                   ait_real_32bit,ait_real_64bit,ait_real_80bit,ait_comp_64bit])
               ) or
@@ -803,6 +843,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -810,10 +851,13 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         begin
           last_align:=alignment;
           if alignment>1 then
             begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -865,6 +909,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
               if not(target_info.system in systems_darwin) then
                 begin
                   AsmWrite(#9'.balign '+tostr(alignment));
@@ -888,11 +934,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
             end;
@@ -988,6 +1037,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                doalign(tai_align_abstract(hp).aligntype,tai_align_abstract(hp).use_op,tai_align_abstract(hp).fillop,last_align,lasthp);
 =======
                doalign(tai_align_abstract(hp).aligntype,tai_align_abstract(hp).use_op,tai_align_abstract(hp).fillop,last_align);
@@ -1026,6 +1076,9 @@ implementation
                    AsmLn;
                  end;
 >>>>>>> graemeg/fixes_2_2
+=======
+               doalign(tai_align_abstract(hp).aligntype,tai_align_abstract(hp).use_op,tai_align_abstract(hp).fillop,last_align);
+>>>>>>> origin/cpstrnew
              end;
 
            ait_section :
@@ -1261,6 +1314,7 @@ implementation
                  aitconst_secrel32_symbol,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                  aitconst_darwin_dwarf_delta32,
                  aitconst_darwin_dwarf_delta64,
                  aitconst_half16bit,
@@ -1288,6 +1342,8 @@ implementation
 >>>>>>> graemeg/fixes_2_2
 =======
                  aitconst_indirect_symbol,
+=======
+>>>>>>> origin/cpstrnew
                  aitconst_darwin_dwarf_delta32,
                  aitconst_darwin_dwarf_delta64:
                    begin
@@ -1366,6 +1422,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                            if constdef = aitconst_half16bit then
                              s:='('+s+')/2';
                            if constdef = aitconst_gs then
@@ -1377,6 +1434,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                            AsmWrite(s);
@@ -1570,6 +1629,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                       writer.AsmWrite(#9'.private_extern ');
                       writer.AsmWriteln(tai_label(hp).labsym.name);
 =======
@@ -1584,6 +1644,10 @@ implementation
                       AsmWrite(#9'.private_extern ');
                       AsmWriteln(tai_label(hp).labsym.name);
 >>>>>>> graemeg/cpstrnew
+=======
+                      AsmWrite(#9'.private_extern ');
+                      AsmWriteln(tai_label(hp).labsym.name);
+>>>>>>> origin/cpstrnew
 =======
                       AsmWrite(#9'.private_extern ');
                       AsmWriteln(tai_label(hp).labsym.name);
@@ -1617,11 +1681,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                  begin
@@ -1722,6 +1789,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                if replaceforbidden then
                  if not(tai_symbol(hp).has_value) then
                    writer.AsmWriteLn(ReplaceForbiddenAsmSymbolChars(tai_symbol(hp).sym.name + ':'))
@@ -1798,6 +1866,8 @@ implementation
              end;
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/cpstrnew
                if not(tai_symbol(hp).has_value) then
                  AsmWriteLn(tai_symbol(hp).sym.name + ':')
                else
@@ -1808,6 +1878,9 @@ implementation
              begin
                AsmWriteLn(#9'.thumb_func');
              end;
+<<<<<<< HEAD
+>>>>>>> origin/cpstrnew
+=======
 >>>>>>> origin/cpstrnew
 {$endif arm}
 
@@ -1913,6 +1986,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
              begin
 {$ifdef DEBUG_AGGAS}
                WriteStr(s,tai_marker(hp).Kind);
@@ -1928,6 +2002,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
              if tai_marker(hp).kind=mark_NoLineInfoStart then
@@ -2230,11 +2306,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
          not(cs_executable_stack in current_settings.moduleswitches) then
@@ -2327,6 +2406,9 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
             sec_data_nonlazy:
               begin
                 result:='.section __DATA, __nl_symbol_ptr,non_lazy_symbol_pointers';
@@ -2400,6 +2482,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             sec_objc_meth_var_types:
               begin
                 if (target_info.system in systems_objc_nfabi) then
@@ -2428,10 +2511,14 @@ implementation
 =======
             sec_objc_meth_var_names,
 >>>>>>> origin/cpstrnew
+=======
+            sec_objc_meth_var_names,
+>>>>>>> origin/cpstrnew
             sec_objc_class_names:
               begin
                 if (target_info.system in systems_objc_nfabi) then
                   begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2446,6 +2533,9 @@ implementation
 =======
                     result:='.cstring';
 >>>>>>> graemeg/cpstrnew
+=======
+                    result:='.cstring';
+>>>>>>> origin/cpstrnew
 =======
                     result:='.cstring';
 >>>>>>> origin/cpstrnew
@@ -2502,12 +2592,15 @@ implementation
                 result:='.section __DATA, __objc_protolist, coalesced, no_dead_strip';
                 exit;
               end;
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
           end;
         result := inherited sectionname(atype,aname,aorder);
       end;
@@ -2599,6 +2692,7 @@ implementation
          sec_none (* sec_objc_nlclasslist *),
          sec_none (* sec_objc_catlist *),
          sec_none (* sec_objc_nlcatlist *),
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2714,6 +2808,9 @@ implementation
 =======
 >>>>>>> origin/fixes_2.4
          sec_code (* sec_fini *)
+=======
+         sec_none (* sec_objc_protlist *)
+>>>>>>> origin/cpstrnew
         );
       begin
         Result := inherited SectionName (SecXTable [AType], AName, AOrder);

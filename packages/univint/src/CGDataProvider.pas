@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    Copyright (c) 1999-2011 Apple Inc.
    All rights reserved. }
 {       Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
@@ -53,6 +54,10 @@
  * Copyright (c) 1999-2008 Apple Inc.
  * All rights reserved. }
 >>>>>>> origin/fixes_2.4
+=======
+ * Copyright (c) 1999-2008 Apple Inc.
+ * All rights reserved. }
+>>>>>>> origin/cpstrnew
 {       Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {
@@ -63,12 +68,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -80,6 +89,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -94,6 +104,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -109,6 +123,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -119,6 +134,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -126,13 +144,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -140,6 +162,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -148,8 +172,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -160,6 +187,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -180,6 +208,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -188,12 +218,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -201,6 +234,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -452,6 +486,11 @@ interface
 >>>>>>> origin/fixes_2.4
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -479,6 +518,7 @@ interface
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 {$endc}
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -516,6 +556,37 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -544,6 +615,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -552,6 +624,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -564,6 +638,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 uses MacTypes,MacOSXPosix,CFBase,CFData,CGBase,CFURL;
 {$endc} {not MACOSALLINCLUDE}
 
@@ -578,10 +653,16 @@ uses MacTypes,MacOSXPosix,CFBase,CFData,CGBase,CFURL;
 {$endc} {not MACOSALLINCLUDE}
 
 >>>>>>> origin/fixes_2.4
+=======
+uses MacTypes,MacOSXPosix,CFBase,CFData,CGBase,CFURL;
+{$endc} {not MACOSALLINCLUDE}
+
+>>>>>>> origin/cpstrnew
 {$ALIGN POWER}
 
 
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -626,11 +707,19 @@ type
 { This callback is called to copy `count' bytes from the sequential data
    stream to `buffer'. }
 >>>>>>> origin/fixes_2.4
+=======
+	CGDataProviderRef = ^SInt32; { an opaque type }
+
+
+{ This callback is called to copy `count' bytes from the sequential data
+   stream to `buffer'. }
+>>>>>>> origin/cpstrnew
 
 type
 	CGDataProviderGetBytesCallback = function( info: UnivPtr; buffer: UnivPtr; count: size_t ): size_t;
 
 { This callback is called to skip `count' bytes forward in the sequential
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -650,11 +739,16 @@ type
    data stream. It should return the number of bytes that were actually
    skipped. }
 >>>>>>> origin/fixes_2.4
+=======
+   data stream. It should return the number of bytes that were actually
+   skipped. }
+>>>>>>> origin/cpstrnew
 
 type
 	CGDataProviderSkipForwardCallback = function( info: UnivPtr; count: off_t ): off_t;
 
 { This callback is called to rewind to the beginning of sequential data
+<<<<<<< HEAD
 <<<<<<< HEAD
  * stream. }
 <<<<<<< HEAD
@@ -664,11 +758,15 @@ type
 =======
    stream. }
 >>>>>>> origin/fixes_2.4
+=======
+   stream. }
+>>>>>>> origin/cpstrnew
 
 type
 	CGDataProviderRewindCallback = procedure( info: UnivPtr );
 
 { This callback is called to release the `info' pointer when the data
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -682,6 +780,9 @@ type
 =======
    provider is freed. }
 >>>>>>> origin/fixes_2.4
+=======
+   provider is freed. }
+>>>>>>> origin/cpstrnew
 
 type
 	CGDataProviderReleaseInfoCallback = procedure( info: UnivPtr );
@@ -690,8 +791,11 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
    `version' is the version of this structure. It should be set to 0.
    `getBytes' is called to copy `count' bytes from the sequential data
      stream to `buffer'. It should return the number of bytes copied, or 0
@@ -702,6 +806,7 @@ type
      of the data.
    `releaseInfo', if non-NULL, is called to release the `info' pointer when
      the provider is freed. }
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 type
@@ -728,6 +833,8 @@ type
  *   when the provider is freed. }
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 type
 	CGDataProviderSequentialCallbacks = record
@@ -739,6 +846,7 @@ type
 		skipForward: CGDataProviderSkipForwardCallback;
 		rewind: CGDataProviderRewindCallback;
 <<<<<<< HEAD
+<<<<<<< HEAD
 		releaseProvider: CGDataProviderReleaseInfoCallback;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -747,6 +855,9 @@ type
 =======
 		releaseInfo: CGDataProviderReleaseInfoCallback;
 >>>>>>> origin/fixes_2.4
+=======
+		releaseInfo: CGDataProviderReleaseInfoCallback;
+>>>>>>> origin/cpstrnew
 	end;
 
 { This callback is called to get a pointer to the entire block of data. }
@@ -758,6 +869,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    data. }
 =======
  * data. }
@@ -768,10 +880,14 @@ type
 =======
    data. }
 >>>>>>> origin/fixes_2.4
+=======
+   data. }
+>>>>>>> origin/cpstrnew
 
 type
 	CGDataProviderReleaseBytePointerCallback = procedure( info: UnivPtr; pointr: {const} UnivPtr );
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -815,6 +931,10 @@ type
 { This callback is called to copy `count' bytes at byte offset `position'
    into `buffer'. }
 >>>>>>> origin/fixes_2.4
+=======
+{ This callback is called to copy `count' bytes at byte offset `position'
+   into `buffer'. }
+>>>>>>> origin/cpstrnew
 
 type
 	CGDataProviderGetBytesAtPositionCallback = function( info: UnivPtr; buffer: UnivPtr; position: off_t; count: size_t ): size_t;
@@ -843,6 +963,7 @@ type
 		getBytePointer: CGDataProviderGetBytePointerCallback;
 		releaseBytePointer: CGDataProviderReleaseBytePointerCallback;
 <<<<<<< HEAD
+<<<<<<< HEAD
 		getBytes: CGDataProviderGetBytesAtOffsetCallback;
 		releaseProvider: CGDataProviderReleaseInfoCallback;
 <<<<<<< HEAD
@@ -853,10 +974,15 @@ type
 		getBytesAtPosition: CGDataProviderGetBytesAtPositionCallback;
 		releaseInfo: CGDataProviderReleaseInfoCallback;
 >>>>>>> origin/fixes_2.4
+=======
+		getBytesAtPosition: CGDataProviderGetBytesAtPositionCallback;
+		releaseInfo: CGDataProviderReleaseInfoCallback;
+>>>>>>> origin/cpstrnew
 	end;
 
 { Return the CFTypeID for CGDataProviderRefs. }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -899,6 +1025,10 @@ function CGDataProviderGetTypeID: CFTypeID; external name '_CGDataProviderGetTyp
 function CGDataProviderGetTypeID: CFTypeID; external name '_CGDataProviderGetTypeID';
 (* CG_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+function CGDataProviderGetTypeID: CFTypeID; external name '_CGDataProviderGetTypeID';
+(* CG_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 { Create a sequential-access data provider using `callbacks' to provide the
    data. `info' is passed to each of the callback functions. }
@@ -910,6 +1040,7 @@ function CGDataProviderCreateSequential( info: UnivPtr; const (*var*) callbacks:
    bytes of data. `info' is passed to each of the callback functions. }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function CGDataProviderCreateDirectAccess( info: UnivPtr; size: size_t; const (*var*) callbacks: CGDataProviderDirectAccessCallbacks ): CGDataProviderRef; external name '_CGDataProviderCreateDirectAccess';
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -919,6 +1050,10 @@ function CGDataProviderCreateDirectAccess( info: UnivPtr; size: size_t; const (*
 function CGDataProviderCreateDirect( info: UnivPtr; size: off_t; const (*var*) callbacks: CGDataProviderDirectCallbacks ): CGDataProviderRef; external name '_CGDataProviderCreateDirect';
 (* CG_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+function CGDataProviderCreateDirect( info: UnivPtr; size: off_t; const (*var*) callbacks: CGDataProviderDirectCallbacks ): CGDataProviderRef; external name '_CGDataProviderCreateDirect';
+(* CG_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 { The callback used by `CGDataProviderCreateWithData'. }
 
@@ -926,6 +1061,7 @@ type
 	CGDataProviderReleaseDataCallback = procedure( info: UnivPtr; data: {const} UnivPtr; size: size_t );
 
 { Create a direct-access data provider using `data', an array of `size'
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1207,6 +1343,10 @@ end.
    bytes. `releaseData' is called when the data provider is freed, and is
    passed `info' as its first argument. }
 >>>>>>> origin/fixes_2.4
+=======
+   bytes. `releaseData' is called when the data provider is freed, and is
+   passed `info' as its first argument. }
+>>>>>>> origin/cpstrnew
 
 function CGDataProviderCreateWithData( info: UnivPtr; data: {const} UnivPtr; size: size_t; releaseData: CGDataProviderReleaseDataCallback ): CGDataProviderRef; external name '_CGDataProviderCreateWithData';
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
@@ -1263,6 +1403,7 @@ type
      of the data.
    `releaseProvider', if non-NULL, is called to release the `info' pointer
      when the provider is freed. }
+<<<<<<< HEAD
 
 type
 	CGDataProviderCallbacks = record
@@ -1298,6 +1439,43 @@ type
 		releaseProvider: CGDataProviderReleaseInfoCallback;
 	end;
 
+=======
+
+type
+	CGDataProviderCallbacks = record
+		getBytes: CGDataProviderGetBytesCallback;
+		skipBytes: CGDataProviderSkipBytesCallback;
+		rewind: CGDataProviderRewindCallback;
+		releaseProvider: CGDataProviderReleaseInfoCallback;
+	end;
+
+{ This callback is called to copy `count' bytes at byte offset `offset'
+   into `buffer'. }
+
+type
+	CGDataProviderGetBytesAtOffsetCallback = function( info: UnivPtr; buffer: UnivPtr; offset: size_t; count: size_t ): size_t;
+
+{ Callbacks for directly accessing data.
+   `getBytePointer', if non-NULL, is called to return a pointer to the
+     provider's entire block of data.
+   `releaseBytePointer', if non-NULL, is called to release a pointer to the
+     provider's entire block of data.
+   `getBytes', if non-NULL, is called to copy `count' bytes at offset
+     `offset' from the provider's data to `buffer'. It should return the
+     number of bytes copied, or 0 if there's no more data.
+   `releaseProvider', if non-NULL, is called when the provider is freed.
+  
+   At least one of `getBytePointer' or `getBytes' must be non-NULL. }
+
+type
+	CGDataProviderDirectAccessCallbacks = record
+		getBytePointer: CGDataProviderGetBytePointerCallback;
+		releaseBytePointer: CGDataProviderReleaseBytePointerCallback;
+		getBytes: CGDataProviderGetBytesAtOffsetCallback;
+		releaseProvider: CGDataProviderReleaseInfoCallback;
+	end;
+
+>>>>>>> origin/cpstrnew
 { Create a sequential-access data provider using `callbacks' to provide the
    data. `info' is passed to each of the callback functions. }
 
@@ -1314,9 +1492,13 @@ function CGDataProviderCreateDirectAccess( info: UnivPtr; size: size_t; const (*
 end.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

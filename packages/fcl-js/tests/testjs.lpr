@@ -7,6 +7,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   cwstring,Classes, consoletestrunner, tcscanner, jsparser, jsscanner, jstree, jsbase,
   tcparser, jswriter, tctextwriter, tcwriter, jstoken;
 
@@ -17,6 +18,8 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   Classes, consoletestrunner, tcscanner, jsparser, jsscanner, jstree, jsbase,
@@ -36,6 +39,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -43,10 +47,13 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {$IFDEF WINDOWS}{$R testjs.rc}{$ENDIF}
 
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -70,6 +77,11 @@ begin
   Application.Initialize;
   Application.Title := 'FPCUnit Console test runner';
 >>>>>>> graemeg/cpstrnew
+=======
+  Application := TMyTestRunner.Create(nil);
+  Application.Initialize;
+  Application.Title := 'FPCUnit Console test runner';
+>>>>>>> origin/cpstrnew
 =======
   Application := TMyTestRunner.Create(nil);
   Application.Initialize;

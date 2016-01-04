@@ -5,6 +5,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
 =======
 #   Makefile.fpc for LUA library
@@ -48,6 +49,14 @@ version=2.2.5
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+#   Makefile.fpc for LUA library
+#
+
+[package]
+name=lua
+version=2.5.1
+>>>>>>> origin/cpstrnew
 
 [target]
 units=lua lualib lauxlib

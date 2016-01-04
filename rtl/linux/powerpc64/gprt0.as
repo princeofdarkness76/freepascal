@@ -412,6 +412,7 @@ FUNCTION_PROLOG main_stub
     LOAD_64BIT_VAL 3, _start
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     ld      3, 0(3)
     LOAD_64BIT_VAL 4, etext
     bl      __monstartup
@@ -429,6 +430,9 @@ FUNCTION_PROLOG main_stub
 =======
 >>>>>>> origin/fixes_2_2
     ld 3, 0(3)
+=======
+    ld      3, 0(3)
+>>>>>>> origin/cpstrnew
     LOAD_64BIT_VAL 4, etext
     bl  .__monstartup
     nop
@@ -465,6 +469,9 @@ ___fpc_ret:                            /* return address to libc */
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
     .section ".bss"
 
     .type __stkptr, @object
@@ -485,6 +492,7 @@ operatingsystem_parameters:
     .set operatingsystem_parameter_envp, operatingsystem_parameters+16
 
 .section .note.GNU-stack,"",%progbits
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -498,3 +506,5 @@ operatingsystem_parameters:
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew

@@ -89,6 +89,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       move((PChar(hello_str) + aFileOffset)^,ABuffer^, aBufferSize);
 =======
       move(aBuffer^, (PChar(hello_str) + aFileOffset)^, aBufferSize);
@@ -99,6 +100,9 @@ begin
 =======
       move(aBuffer^, (PChar(hello_str) + aFileOffset)^, aBufferSize);
 >>>>>>> graemeg/cpstrnew
+=======
+      move(aBuffer^, (PChar(hello_str) + aFileOffset)^, aBufferSize);
+>>>>>>> origin/cpstrnew
 =======
       move(aBuffer^, (PChar(hello_str) + aFileOffset)^, aBufferSize);
 >>>>>>> origin/cpstrnew

@@ -19,6 +19,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     FIDValue : TJSONData;
 >>>>>>> graemeg/cpstrnew
@@ -28,6 +29,9 @@ type
 =======
     FIDValue : TJSONData;
 >>>>>>> graemeg/cpstrnew
+=======
+    FIDValue : TJSONData;
+>>>>>>> origin/cpstrnew
 =======
     FIDValue : TJSONData;
 >>>>>>> origin/cpstrnew
@@ -311,6 +315,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             ftTime : O.Add('dateFormat','H:i:s');
             ftDateTime,
             ftTimeStamp : O.Add('dateFormat','Y-m-d H:i:s');
@@ -329,6 +334,11 @@ begin
             ftDateTime,
             ftTimeStamp : O.Add('dateFormat','Y-m-d h:i:s');
 >>>>>>> graemeg/cpstrnew
+=======
+            ftTime : O.Add('dateFormat','h:i:s');
+            ftDateTime,
+            ftTimeStamp : O.Add('dateFormat','Y-m-d h:i:s');
+>>>>>>> origin/cpstrnew
 =======
             ftTime : O.Add('dateFormat','h:i:s');
             ftDateTime,
@@ -568,6 +578,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         begin
         FRows:=nil;
         FCurrentRow:=TJSONObject.Create(['ID',D]);
@@ -581,6 +592,9 @@ begin
 =======
         FIDValue:=D
 >>>>>>> graemeg/cpstrnew
+=======
+        FIDValue:=D
+>>>>>>> origin/cpstrnew
 =======
         FIDValue:=D
 >>>>>>> origin/cpstrnew
@@ -607,6 +621,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   FreeAndNil(FIDValue);
 >>>>>>> graemeg/cpstrnew
@@ -616,6 +631,9 @@ begin
 =======
   FreeAndNil(FIDValue);
 >>>>>>> graemeg/cpstrnew
+=======
+  FreeAndNil(FIDValue);
+>>>>>>> origin/cpstrnew
 =======
   FreeAndNil(FIDValue);
 >>>>>>> origin/cpstrnew
@@ -651,6 +669,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     I:=FCurrentRow.IndexOfName(AFieldName);
     Result:=I<>-1;
     if result and (FCurrentRow.Items[I].JSONType<>jtNull) then
@@ -660,6 +679,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     If Assigned(FIDValue) and (0=CompareText(AFieldName,'ID')) then
@@ -677,11 +698,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     end;
@@ -692,6 +716,7 @@ begin
   If Assigned(FRows) then
     FreeAndNil(FRows)
   else if assigned(FCurrentRow) then
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -712,6 +737,11 @@ begin
   else if Assigned(FIDValue) then
     FreeAndNil(FIDValue);
 >>>>>>> graemeg/cpstrnew
+=======
+    FreeAndNil(FCurrentRow)
+  else if Assigned(FIDValue) then
+    FreeAndNil(FIDValue);
+>>>>>>> origin/cpstrnew
 =======
     FreeAndNil(FCurrentRow)
   else if Assigned(FIDValue) then

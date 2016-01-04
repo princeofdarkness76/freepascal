@@ -511,16 +511,22 @@ end;
       { only search in the current driver modes ... }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
       if (ModeNumber >= lowNewMode) and (ModeNumber <= highNewMode) then
           mode:=SearchMode(IntCurrentNewDriver,ModeNumber)
       else
           mode:=SearchMode(IntCurrentDriver,ModeNumber);
+<<<<<<< HEAD
 =======
       mode:=SearchMode(IntCurrentNewDriver,ModeNumber);
 >>>>>>> graemeg/fixes_2_2
 =======
       mode:=SearchMode(IntCurrentNewDriver,ModeNumber);
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
       if assigned(mode) then
           GetModeName:=Mode^.ModeName
       else
@@ -598,11 +604,15 @@ end;
      usedDriver: Integer;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      dummyNewModeNr: smallint;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+     dummyNewModeNr: smallint;
+>>>>>>> origin/cpstrnew
     begin
       { check if the mode exists... }
       { Depending on the modenumber, we search using the old or new }
@@ -733,10 +743,14 @@ end;
          OutTextXY:=modeInfo^.OutTextXY;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
       if assigned(modeInfo^.SetBkColor) then
          SetBkColor:=modeInfo^.SetBkColor;
       if assigned(modeInfo^.GetBkColor) then
          GetBkColor:=modeInfo^.GetBkColor;
+<<<<<<< HEAD
 
       IntCurrentMode := modeinfo^.ModeNumber;
       { fix by nickysn: always set *both* IntCurrentDriver and IntCurrentNewDriver to the
@@ -754,6 +768,15 @@ end;
       IntCurrentMode := modeinfo^.ModeNumber;
       IntCurrentDriver := usedDriver;
 >>>>>>> origin/fixes_2_2
+=======
+
+      IntCurrentMode := modeinfo^.ModeNumber;
+      { fix by nickysn: always set *both* IntCurrentDriver and IntCurrentNewDriver to the
+        *correct* old & new style driver numbers. Solves a lot of bugs, e.g. when using InitGraph
+	with a new style driver/mode and then later using SetGraphMode(GetGraphMode) }
+      IntCurrentDriver := modeinfo^.DriverNumber;
+      res2Mode(modeinfo^.maxx+1, modeinfo^.maxy+1, modeinfo^.maxColor, IntCurrentNewDriver, dummyNewModeNr);
+>>>>>>> origin/cpstrnew
 {$ifdef logging}
        logln('Entering mode '+strf(intCurrentMode)+' of driver '+strf(intCurrentDriver));
 {$endif logging}
@@ -782,11 +805,15 @@ end;
         end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       _GraphResult := grOk;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+      _GraphResult := grOk;
+>>>>>>> origin/cpstrnew
       modeinfo^.InitMode;
       if _GraphResult <> grOk then
         begin

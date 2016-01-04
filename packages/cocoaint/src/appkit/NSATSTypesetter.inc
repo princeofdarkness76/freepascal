@@ -56,6 +56,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     _atsReserved: array[0..(8)-1] of Pointer;
 =======
         _atsReserved: array[0..7] of Pointer;
@@ -66,6 +67,9 @@
 =======
         _atsReserved: array[0..7] of Pointer;
 >>>>>>> graemeg/cpstrnew
+=======
+        _atsReserved: array[0..7] of Pointer;
+>>>>>>> origin/cpstrnew
 =======
         _atsReserved: array[0..7] of Pointer;
 >>>>>>> origin/cpstrnew

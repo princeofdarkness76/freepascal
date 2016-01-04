@@ -18,6 +18,7 @@ unit wchmhwrap;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 interface
 =======
 interface 
@@ -28,11 +29,15 @@ interface
 =======
 interface
 >>>>>>> origin/fixes_2.4
+=======
+interface
+>>>>>>> origin/cpstrnew
 {$Mode Delphi}
 
 Uses  wutils,whelp,whtml,SysUtils,ChmReader,ChmSiteMap,Classes;
 
 Type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -74,6 +79,12 @@ Type
 
      TChmWrapper = Class
                      private
+=======
+//      TopicLinks: PTopicLinkCollection;IndexEntries : PUnsortedIndexEntryCollection;
+
+     TChmWrapper = Class
+                     private
+>>>>>>> origin/cpstrnew
                        ffs   	   : Classes.TFileStream;
                        fchmr 	   : TChmReader;
                        findex	   : TChmSiteMap;
@@ -85,13 +96,17 @@ Type
                        fTopicLinks : PTopicLinkCollection;
                      public
                       constructor Create(name:String;aid:integer;TopicLinks:PTopicLinkCollection);
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
                       function	  LoadIndex(id:integer;TopicLinks: PTopicLinkCollection;IndexEntries : PUnsortedIndexEntryCollection;helpfacility:PHelpFacility):boolean;
                       function    GetTopic(name:string):PMemoryTextFile;
                       destructor  Destroy;override;
                     end;
 
 function combinepaths(relpath,basepath:String):String;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -107,9 +122,14 @@ var CHMIndex : TStringList; // list to register open CHMs.
 
 <<<<<<< HEAD
 =======
+=======
+function CHMResolve( href: ansistring; var AFileId,ALinkId : longint):boolean;
+>>>>>>> origin/cpstrnew
 
+function stringreplace(const s:ansistring;const oldstr:ansistring; const newstr:ansistring):ansistring;
 implementation
 
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 
@@ -118,6 +138,11 @@ implementation
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+var CHMIndex : TStringList; // list to register open CHMs.
+
+
+>>>>>>> origin/cpstrnew
 function combinepaths(relpath,basepath:String):String;
 
 begin
@@ -133,6 +158,7 @@ begin
        basepath:=extractfiledir(basepath);
        delete(relpath,1,3);
      end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -168,6 +194,10 @@ begin
 
   {$ifdef combinedebug}
 >>>>>>> origin/fixes_2.4
+=======
+
+  {$ifdef combinedebug}
+>>>>>>> origin/cpstrnew
     debugmessageS({$i %file%},'combine out "'+relpath+'" and "'+basepath+'"',{$i %line%},'1',0,0);
   {$endif}
   if (length(basepath)>0) and (length(relpath)>0) then
@@ -190,12 +220,16 @@ begin
   findex:=nil;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
   FTopicLinks:=TopicLinks;
 >>>>>>> origin/fixes_2.4
+=======
+  FTopicLinks:=TopicLinks;
+>>>>>>> origin/cpstrnew
   if not fchmr.isvalidfile then
     begin
       freeandnil(fchmr);
@@ -203,14 +237,18 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
       exit;
     end;
   fileid:=aid;
   flongname:=name;
   fshortname:=lowercase(extractfilename(name)); // We assume ms-its: urls are case insensitive wrt filename.
   chmindex.addobject(fshortname,self);
+<<<<<<< HEAD
 <<<<<<< HEAD
   {$ifdef wdebug}
     debugmessageS({$i %file%},'TCHMWrapper.Create: before sitemap creation '+fshortname+' id='+inttostr(aid),{$i %line%},'1',0,0);
@@ -224,11 +262,14 @@ begin
     end;      
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
   {$ifdef wdebug}
     debugmessageS({$i %file%},'TCHMWrapper.Create: before sitemap creation '+fshortname+' id='+inttostr(aid),{$i %line%},'1',0,0);
   {$endif}
   findex:=TChmSiteMap.create(stindex);
   ftopic:=TChmSiteMap.create(sttoc);
+<<<<<<< HEAD
 <<<<<<< HEAD
   {$ifdef wdebug}
     debugmessageS({$i %file%},'TCHMWrapper: after sitemap creation ',{$i %line%},'1',0,0);
@@ -239,6 +280,8 @@ begin
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
   floaded:=false;
 end;
 
@@ -254,6 +297,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
               
@@ -264,6 +308,9 @@ end;
 =======
 
 >>>>>>> origin/fixes_2.4
+=======
+
+>>>>>>> origin/cpstrnew
 var
     m : Classes.TMemoryStream;
     i,j : integer;
@@ -274,6 +321,7 @@ var
     s  : String;
 begin
  result:=false;
+<<<<<<< HEAD
  if floaded then exit;
  if not assigned (fchmr) then exit;
  {$ifdef wdebug}
@@ -288,11 +336,14 @@ begin
 >>>>>>> origin/fixes_2_2
 begin
  result:=false;
+=======
+>>>>>>> origin/cpstrnew
  if floaded then exit;
  if not assigned (fchmr) then exit;
  {$ifdef wdebug}
      debugmessageS({$i %file%},'TCHMWrapper: indexfilename:'+fchmr.indexfile,{$i %line%},'1',0,0);
  {$endif}
+<<<<<<< HEAD
 <<<<<<< HEAD
   
   m:=fchmr.getobject(fchmr.indexfile);
@@ -301,15 +352,21 @@ begin
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 
 
   findex:=fchmr.GetIndexSitemap(false);
 (*  m:=fchmr.getobject(fchmr.indexfile);
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
   try
    if assigned(m) then
      begin
       {$ifdef wdebug}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -323,6 +380,9 @@ begin
 =======
        debugmessageS({$i %file%},'TCHMWrapper: stream size loaded :'+inttostr(m.size),{$i %line%},'1',0,0);
 >>>>>>> origin/fixes_2.4
+=======
+       debugmessageS({$i %file%},'TCHMWrapper: stream size loaded :'+inttostr(m.size),{$i %line%},'1',0,0);
+>>>>>>> origin/cpstrnew
       {$endif}
       findex.loadfromStream(m);
     end;
@@ -332,6 +392,9 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
     *)
    {$ifdef wdebug}
      debugmessageS({$i %file%},'TCHMWrapper: loadindex after final ',{$i %line%},'1',0,0);
@@ -353,6 +416,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       s:=formatalias(item.text);
       if s<>'' then
         begin
@@ -370,6 +434,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       if (length(item.local)>0) and (item.local[1]<>'/') then
         tli:=TopicLinks^.AddItem('/'+item.local)
       else
@@ -380,6 +446,7 @@ begin
     end;
    {$ifdef wdebug}
      debugmessageS({$i %file%},'TCHMWrapper: endloadindex ',{$i %line%},'1',0,0);
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -416,6 +483,8 @@ begin
 =======
      debugmessageS({$i %file%},'TCHMWrapper: endloadindex ',{$i %line%},'1',0,0);
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
   {$endif}
   floaded:=true;
   result:=true;
@@ -441,6 +510,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     end;
 =======
     end;  
@@ -451,6 +521,9 @@ begin
 =======
     end;
 >>>>>>> origin/fixes_2.4
+=======
+    end;
+>>>>>>> origin/cpstrnew
   scanvalue:=lastpoint;
 end;
 
@@ -483,6 +556,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
   
@@ -493,6 +567,9 @@ begin
 =======
 
 >>>>>>> origin/fixes_2.4
+=======
+
+>>>>>>> origin/cpstrnew
   If (name[1]<>'/') and (copy(name,1,7)<>'ms-its:') Then
     name:='/'+name;
   linedata:=Classes.TStringList.create;
@@ -501,6 +578,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      debugmessageS({$i %file%},'TCHMWrapper: Getting file '+name,{$i %line%},'1',0,0);
 =======
      debugmessageS({$i %file%},'TCHMWrapper: Getting file '+name,{$i %line%},'1',0,0); 
@@ -511,6 +589,9 @@ begin
 =======
      debugmessageS({$i %file%},'TCHMWrapper: Getting file '+name,{$i %line%},'1',0,0);
 >>>>>>> origin/fixes_2.4
+=======
+     debugmessageS({$i %file%},'TCHMWrapper: Getting file '+name,{$i %line%},'1',0,0);
+>>>>>>> origin/cpstrnew
     {$endif}
 //    if uppercase(name)='TABLE OF CONTENTS' Then
   //    m:=fchmr.getobject(fchmr.tocfile)
@@ -519,6 +600,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
     
@@ -529,6 +611,9 @@ begin
 =======
 
 >>>>>>> origin/fixes_2.4
+=======
+
+>>>>>>> origin/cpstrnew
     if not assigned(m) then exit;
     linedata.loadfromstream(m);
     result:=new(PMemoryTextFile,Init);
@@ -548,6 +633,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 destructor TChmWrapper.Destroy;
 
 var i : integer;
@@ -679,6 +765,8 @@ end.
 
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 destructor TChmWrapper.Destroy;
 
 var i : integer;
@@ -698,6 +786,7 @@ begin
     debugmessageS({$i %file%},'TCHMWrapper: destroying ',{$i %line%},'1',0,0);
   {$endif}
 
+<<<<<<< HEAD
 end;
 
 function CHMResolve( href: ansistring; var AFileId,ALinkId : longint):boolean;
@@ -743,6 +832,45 @@ end.
 end.
 >>>>>>> origin/fixes_2_2
 =======
+=======
+end;
+
+function CHMResolve( href: ansistring; var AFileId,ALinkId : longint):boolean;
+
+var filename, restlink : ansistring;
+    I :integer;
+    chmw: TCHMWrapper;
+begin
+  result:=false;
+  if copy(href,1,7)='ms-its:' then
+    begin
+      {$ifdef wdebug}
+              debugmessageS({$i %file%},'TCHMWrapper: resolving '+href,{$i %line%},'1',0,0);
+      {$endif}
+
+       delete(href,1,7);
+       i:=pos('::',href);
+       if i<>0 then
+         begin
+           filename:=lowercase(copy(href,1,i-1));
+           restlink:=lowercase(copy(href,i+2,length(href)-(I+2)+1));
+           i:=chmindex.indexof(filename);
+           if i<>-1 then
+             begin
+               {$ifdef wdebug}
+                 debugmessageS({$i %file%},'TCHMWrapper: resolving '+filename+' '+inttostr(i),{$i %line%},'1',0,0);
+                 debugmessageS({$i %file%},'TCHMWrapper: resolving '+restlink+' ',{$i %line%},'1',0,0);
+               {$endif}
+               chmw:=TCHMWrapper(chmindex.objects[i]);
+               Afileid:=chmw.fileid;
+               alinkid:=chmw.fTopicLinks.additem(restlink);
+               result:=true;
+            end;
+         end;
+    end
+end;
+
+>>>>>>> origin/cpstrnew
 function stringreplace(const s:ansistring;const oldstr:ansistring; const newstr:ansistring):ansistring;
 
 begin
@@ -754,4 +882,7 @@ initialization
 finalization
   ChmIndex.Free;
 end.
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew

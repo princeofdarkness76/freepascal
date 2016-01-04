@@ -144,6 +144,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function OpenSection(const Section: string; CreateSection : Boolean = false): boolean;
     procedure CloseSection;
 =======
@@ -152,6 +153,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   public
@@ -181,6 +184,7 @@ type
     property FileName: String read fFileName;
     property PreferStringValues: Boolean read fPreferStringValues
                 write fPreferStringValues;
+<<<<<<< HEAD
   end;
 
 { ---------------------------------------------------------------------
@@ -250,6 +254,8 @@ type
     procedure DeleteKey(const Section, Name: String); override;
     procedure UpdateFile; override;
     property RegIniFile: TRegIniFile read FRegIniFile;
+=======
+>>>>>>> origin/cpstrnew
   end;
 
 { ---------------------------------------------------------------------

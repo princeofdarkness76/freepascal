@@ -1,5 +1,8 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {$ifdef NDS_INTERFACE}
 type 
   f32 = integer;
@@ -176,8 +179,11 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
   MOSAIC_CR = REG_MOSAIC;
 
   BLEND_CR = REG_BLDCNT;
@@ -296,6 +302,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   REG_WINOUT_SUB	: pcuint16 = pointer($400104A);
   
   SUB_MOSAIC_CR = REG_MOSAIC_SUB;
@@ -322,6 +329,13 @@ const
   
   REG_BLDMOD_SUB: pcuint16 = pointer($4001050);
 >>>>>>> origin/fixes_2.4
+=======
+  REG_WINOUT_SUB	: pcuint16 = pointer($400104A);
+  
+  SUB_MOSAIC_CR = REG_MOSAIC_SUB;
+  
+  REG_BLDMOD_SUB: pcuint16 = pointer($4001050);
+>>>>>>> origin/cpstrnew
   REG_COLV_SUB	: pcuint16 = pointer($4001052);
   REG_COLY_SUB	: pcuint16 = pointer($4001054);
   
@@ -490,10 +504,14 @@ const
   
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   CARD_CR1     = REG_AUXSPICNT;
   CARD_CR1H    = REG_AUXSPICNTH;
   CARD_CR2     = REG_ROMCTRL;
   CARD_EEPDATA = REG_AUXSPIDATA;
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -505,6 +523,8 @@ const
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
   
   REG_CARD_DATA		: pcuint32 = pointer($04100000);
   REG_CARD_DATA_RD	: pcuint32 = pointer($04100010);

@@ -113,6 +113,7 @@ unit cpubase;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       VOLATILE_MMREGISTERS =  [RS_D0..RS_D7,RS_D16..RS_D31,RS_S1..RS_S15];
 =======
       VOLATILE_MMREGISTERS =  [RS_D0..RS_D7,RS_D16..RS_D31];
@@ -123,6 +124,9 @@ unit cpubase;
 =======
       VOLATILE_MMREGISTERS =  [RS_D0..RS_D7,RS_D16..RS_D31];
 >>>>>>> graemeg/cpstrnew
+=======
+      VOLATILE_MMREGISTERS =  [RS_D0..RS_D7,RS_D16..RS_D31];
+>>>>>>> origin/cpstrnew
 =======
       VOLATILE_MMREGISTERS =  [RS_D0..RS_D7,RS_D16..RS_D31];
 >>>>>>> origin/cpstrnew
@@ -161,6 +165,7 @@ unit cpubase;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         PF_IAX,PF_DBX,PF_FDX,PF_EAX,
         { VFP postfixes }
         PF_8,PF_16,PF_32,PF_64,
@@ -186,6 +191,9 @@ unit cpubase;
 =======
         PF_IAX,PF_DBX,PF_FDX,PF_EAX
 >>>>>>> origin/cpstrnew
+=======
+        PF_IAX,PF_DBX,PF_FDX,PF_EAX
+>>>>>>> origin/cpstrnew
       );
 
       TOpPostfixes = set of TOpPostfix;
@@ -198,6 +206,7 @@ unit cpubase;
         PF_None,PF_None,PF_None,PF_None,PF_None,PF_None,PF_None,PF_None,PF_None,PF_None,
         PF_S,PF_D,PF_E,PF_None,PF_None);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -215,6 +224,9 @@ unit cpubase;
 =======
       oppostfix2str : array[TOpPostfix] of string[3] = ('',
 >>>>>>> origin/cpstrnew
+=======
+      oppostfix2str : array[TOpPostfix] of string[3] = ('',
+>>>>>>> origin/cpstrnew
         's',
         'd','e','p','ep',
         'x',
@@ -223,6 +235,7 @@ unit cpubase;
         'ia','ib','da','db','fd','fa','ed','ea',
         'iad','dbd','fdd','ead',
         'ias','dbs','fds','eas',
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -248,6 +261,9 @@ unit cpubase;
 =======
         'iax','dbx','fdx','eax');
 >>>>>>> graemeg/cpstrnew
+=======
+        'iax','dbx','fdx','eax');
+>>>>>>> origin/cpstrnew
 =======
         'iax','dbx','fdx','eax');
 >>>>>>> origin/cpstrnew
@@ -310,6 +326,7 @@ unit cpubase;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       tspecialregflag = (srC, srX, srS, srF);
       tspecialregflags = set of tspecialregflag;
 
@@ -319,6 +336,8 @@ unit cpubase;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {*****************************************************************************
@@ -745,6 +764,7 @@ unit cpubase;
       begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         lsb:=BsfDword(d);
         msb:=BsrDword(d);
         
@@ -754,6 +774,8 @@ unit cpubase;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         if current_settings.cputype in cpu_thumb2 then
           begin
             for i:=0 to 24 do
@@ -780,9 +802,12 @@ unit cpubase;
           end;
         result:=false;
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       end;
 
 

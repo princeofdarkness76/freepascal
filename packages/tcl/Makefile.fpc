@@ -26,11 +26,15 @@ version=2.5.1
 #
 [package]
 name=tcl
+<<<<<<< HEAD
 version=2.2.5
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+version=2.5.1
+>>>>>>> origin/cpstrnew
 
 [target]
 units=tcl80

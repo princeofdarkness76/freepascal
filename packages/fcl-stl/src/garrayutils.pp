@@ -220,6 +220,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   f := size;
 =======
   f := -1;
@@ -233,12 +234,16 @@ begin
 =======
   f := -1;
 >>>>>>> origin/cpstrnew
+=======
+  f := -1;
+>>>>>>> origin/cpstrnew
   for i:=size-1 downto 1 do begin 
     if (TCompare.c(arr[i-1], arr[i])) then begin
       f := i-1;
       break;
     end;
   end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -253,6 +258,9 @@ begin
 =======
   if f = -1 then exit(false);
 >>>>>>> graemeg/cpstrnew
+=======
+  if f = -1 then exit(false);
+>>>>>>> origin/cpstrnew
 =======
   if f = -1 then exit(false);
 >>>>>>> origin/cpstrnew

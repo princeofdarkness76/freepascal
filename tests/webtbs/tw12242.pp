@@ -9,6 +9,7 @@ program staticbug;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$mode delphi}
 =======
 {$mode delphi}{$STATIC ON}
@@ -16,6 +17,9 @@ program staticbug;
 =======
 {$mode delphi}{$STATIC ON}
 >>>>>>> origin/fixes_2_2
+=======
+{$mode delphi}
+>>>>>>> origin/cpstrnew
 
 uses
   Classes, SysUtils;

@@ -36,6 +36,9 @@ interface
        tcompare_paras_type = ( cp_none, cp_value_equal_const, cp_all,cp_procvar);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
        tcompare_paras_option = (
           cpo_allowdefaults,
           cpo_ignorehidden,           // ignore hidden parameters
@@ -45,6 +48,7 @@ interface
           cpo_ignoreuniv,
           cpo_warn_incompatible_univ,
           cpo_ignorevarspez,          // ignore parameter access type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -99,6 +103,14 @@ interface
        tcompare_defs_option = (cdo_internal,cdo_explicit,cdo_check_operator,cdo_allow_variant,cdo_parameter,cdo_warn_incompatible_univ);
 >>>>>>> graemeg/cpstrnew
 =======
+       tcompare_defs_option = (cdo_internal,cdo_explicit,cdo_check_operator,cdo_allow_variant,cdo_parameter,cdo_warn_incompatible_univ);
+>>>>>>> origin/cpstrnew
+=======
+          cpo_ignoreframepointer      // ignore frame pointer parameter (for assignment-compatibility of global procedures to nested procvars)
+       );
+
+       tcompare_paras_options = set of tcompare_paras_option;
+
        tcompare_defs_option = (cdo_internal,cdo_explicit,cdo_check_operator,cdo_allow_variant,cdo_parameter,cdo_warn_incompatible_univ);
 >>>>>>> origin/cpstrnew
        tcompare_defs_options = set of tcompare_defs_option;
@@ -291,6 +303,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          if cdo_strict_undefined_check in cdoptions then
            begin
              { two different undefined defs are not considered equal }
@@ -412,6 +425,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
          { undefined def? then mark it as equal }
@@ -603,6 +618,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                              eq:=te_convert_l3;
                          end
 =======
@@ -610,6 +626,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                              eq:=te_convert_l1;
@@ -633,11 +651,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                       end          
@@ -653,12 +674,15 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                           (tstringdef(def_from).encoding=tstringdef(def_to).encoding)) then
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                           (tstringdef(def_from).encoding=tstringdef(def_to).encoding) //or
@@ -668,11 +692,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                         eq:=te_equal
@@ -682,6 +709,7 @@ implementation
                          case tstringdef(def_from).stringtype of
                            st_widestring :
                              begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -710,6 +738,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                                { Prefer conversions to unicodestring }
@@ -1005,6 +1035,7 @@ implementation
                              { do we lose precision? }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                              if (def_to.size<def_from.size) or
                                (is_currency(def_from) and (tfloatdef(def_to).floattype in [s32real,s64real])) then
 =======
@@ -1012,6 +1043,10 @@ implementation
 >>>>>>> origin/fixes_2_2
                              if def_to.size<def_from.size then
 >>>>>>> graemeg/fixes_2_2
+=======
+                             if (def_to.size<def_from.size) or
+                               (is_currency(def_from) and (tfloatdef(def_to).floattype in [s32real,s64real])) then
+>>>>>>> origin/cpstrnew
                                eq:=te_convert_l2
                              else
                                eq:=te_convert_l1;
@@ -1791,6 +1826,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                      if eq<te_equal then
                        doconv:=tc_proc_2_procvar
                      else
@@ -1801,6 +1837,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                    end;
@@ -1839,12 +1877,15 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   (def_is_related(tobjectdef(def_from),tobjectdef(def_to))) then
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                   (find_real_objcclass_definition(tobjectdef(def_from),false) =
@@ -1925,6 +1966,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                              is_objcclass(def_from)) or
                             (is_javainterface(def_to) and
                              is_javaclass(def_from))) and
@@ -1937,6 +1979,9 @@ implementation
 =======
                              is_objcclass(def_from))) and
 >>>>>>> graemeg/cpstrnew
+=======
+                             is_objcclass(def_from))) and
+>>>>>>> origin/cpstrnew
 =======
                              is_objcclass(def_from))) and
 >>>>>>> origin/cpstrnew
@@ -2103,6 +2148,7 @@ implementation
                if (def_to=rec_tguid) and
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   (is_interfacecom_or_dispinterface(def_from)) then
 =======
                   (is_interfacecom(def_from) or is_dispinterface(def_from)) then
@@ -2110,6 +2156,9 @@ implementation
 =======
                   (is_interfacecom(def_from) or is_dispinterface(def_from)) then
 >>>>>>> origin/fixes_2_2
+=======
+                  (is_interfacecom_or_dispinterface(def_from)) then
+>>>>>>> origin/cpstrnew
                 begin
                   doconv:=tc_intf_2_guid;
                   eq:=te_convert_l1;
@@ -2162,6 +2211,7 @@ implementation
              (cdo_check_operator in cdoptions) and
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
              ((def_from.typ<>variantdef) or (def_to.typ<>variantdef))
 =======
              ((def_from.typ in [objectdef,recorddef,arraydef,stringdef]) or
@@ -2171,6 +2221,9 @@ implementation
              ((def_from.typ in [objectdef,recorddef,arraydef,stringdef]) or
               (def_to.typ in [objectdef,recorddef,arraydef,stringdef]))
 >>>>>>> origin/fixes_2_2
+=======
+             ((def_from.typ<>variantdef) or (def_to.typ<>variantdef))
+>>>>>>> origin/cpstrnew
             )
            ) then
           begin
@@ -2433,6 +2486,9 @@ implementation
               { check type }
               if eq=te_incompatible then
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
                 begin
                   { special case: "univ" parameters match if their size is equal }
                   if not(cpo_ignoreuniv in cpoptions) and
@@ -2454,6 +2510,7 @@ implementation
                             Message2(type_w_procvar_univ_conflicting_para,currpara1.vardef.typename,currpara2.vardef.typename)
                         end;
                     end
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2510,6 +2567,11 @@ implementation
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+                  else
+                    exit;
+                end;
+>>>>>>> origin/cpstrnew
               { open strings can never match exactly, since you cannot define }
               { a separate "open string" type -> we have to be able to        }
               { consider those as exact when resolving forward definitions.   }
@@ -2595,11 +2657,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         pa_comp: tcompare_paras_options;
@@ -2608,6 +2673,7 @@ implementation
          if not(assigned(def1)) or not(assigned(def2)) then
            exit;
          { check for method pointer and local procedure pointer:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2629,6 +2695,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
              a) if one is a procedure of object, the other also has to be one
              b) if one is a pure address, the other also has to be one
                 except if def1 is a global proc and def2 is a nested procdef
@@ -2639,6 +2707,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2646,11 +2715,14 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                 non-nested (we don't allow assignments from non-nested to
                 nested procvars to make sure that we can still implement
                 nested procvars using trampolines -- e.g., this would be
                 necessary for LLVM or CIL as long as they do not have support
                 for Delphi-style frame pointer parameter passing) }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2718,6 +2790,8 @@ implementation
          pa_comp:=[cpo_ignoreframepointer];
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/cpstrnew
          if (def1.is_methodpointer<>def2.is_methodpointer) or  { a) }
             ((def1.is_addressonly<>def2.is_addressonly) and    { b) }
              (is_nested_pd(def1) or
@@ -2730,6 +2804,9 @@ implementation
              (is_nested_pd(def1)<>is_nested_pd(def2))) then
            exit;
          pa_comp:=[cpo_ignoreframepointer];
+<<<<<<< HEAD
+>>>>>>> origin/cpstrnew
+=======
 >>>>>>> origin/cpstrnew
          if checkincompatibleuniv then
            include(pa_comp,cpo_warn_incompatible_univ);
@@ -2762,6 +2839,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 { in case of non-block to block, we need a type conversion }
                 if (po_is_block in def1.procoptions) <> (po_is_block in def2.procoptions) then
                   eq:=te_convert_l1;
@@ -2771,6 +2849,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
               end;
@@ -2785,6 +2865,7 @@ implementation
           (equal_defs(parentretdef,childretdef)) or
           ((parentretdef.typ=objectdef) and
            (childretdef.typ=objectdef) and
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2939,6 +3020,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
            is_class_or_interface_or_objc(parentretdef) and

@@ -113,6 +113,9 @@ function mmx_support : boolean;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {$ifndef FPC_PIC}
 {$if not defined(FPC_SYSTEM_HAS_MOVE) and defined(REGCALL) }
 >>>>>>> graemeg/cpstrnew
@@ -128,9 +131,13 @@ function mmx_support : boolean;
 {$i fastmove.inc}
 {$endif FPC_SYSTEM_HAS_MOVE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$endif FPC_PIC}
+>>>>>>> origin/cpstrnew
 
 procedure fpc_cpuinit;
   begin
@@ -149,11 +156,14 @@ procedure fpc_cpuinit;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   end;
@@ -940,6 +950,9 @@ procedure fpc_shortstr_to_shortstr(out res:shortstring; const sstr: shortstring)
   asm
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   {$ifdef FPC_PROFILE}
         push  %eax
         push  %edx
@@ -1279,6 +1292,9 @@ var
 asm
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {$ifdef FPC_PROFILE}
         push  %eax
         push  %edx
@@ -1288,6 +1304,7 @@ asm
         pop   %edx
         pop   %eax
 {$endif FPC_PROFILE}
+<<<<<<< HEAD
         movl    %ebx,saveebx
         movl    %esi,saveesi
         movl    %edi,saveedi
@@ -1297,6 +1314,8 @@ asm
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
         movl    %ebx,saveebx
         movl    %esi,saveesi
         movl    %edi,saveedi
@@ -1437,6 +1456,9 @@ var
 asm
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {$ifdef FPC_PROFILE}
         push  %eax
         push  %edx
@@ -1446,6 +1468,7 @@ asm
         pop   %edx
         pop   %eax
 {$endif FPC_PROFILE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1470,6 +1493,8 @@ asm
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
         movl    %edi,saveedi
 {$ifdef REGCALL}
         movl    %eax,%edi
@@ -2007,9 +2032,17 @@ procedure fpc_cpucodeinit;
       end;
     has_sse_support:=os_supports_sse;
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    { don't let libraries influence the FPU cw set by the host program }
+    if has_sse_support and
+       IsLibrary then
+      mxcsr:=GetSSECSR;
+
+>>>>>>> origin/cpstrnew
     has_mmx_support:=mmx_support;
 >>>>>>> graemeg/cpstrnew
     SysResetFPU;
@@ -2044,11 +2077,14 @@ asm
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   {$ifdef FPC_PIC}
@@ -2241,6 +2277,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2294,11 +2331,32 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+{$ifndef FPC_SYSTEM_HAS_BSX_QWORD}
+{$define FPC_SYSTEM_HAS_BSX_QWORD}
+
+function BsfQWord(Const AValue : QWord): cardinal; assembler; nostackframe;
+asm
+     bsfl    4(%esp),%eax
+     jnz     .L2
+.L1: bsfl    8(%esp),%eax
+     add     $32,%eax
+.L2:
+end;
+
+function BsrQWord(Const AValue : QWord): cardinal; assembler; nostackframe;
+asm
+     bsrl    8(%esp),%eax
+     jz     .L1
+     add     $32,%eax
+     jmp     .L2
+>>>>>>> origin/cpstrnew
 .L1: bsrl    4(%esp),%eax
 .L2:
 end;
 
 {$endif}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2313,3 +2371,5 @@ end;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew

@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { CoreGraphics - CGDisplayConfiguration.h
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -57,6 +58,11 @@
    Copyright (c) 2002-2009 Apple Inc.
    All rights reserved. }
 >>>>>>> origin/fixes_2.4
+=======
+{ CoreGraphics - CGDisplayConfiguration.h
+   Copyright (c) 2002-2009 Apple Inc.
+   All rights reserved. }
+>>>>>>> origin/cpstrnew
 {       Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {
@@ -67,12 +73,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -84,6 +94,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -98,6 +109,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -113,6 +128,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -123,6 +139,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -130,13 +149,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -144,6 +167,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -152,8 +177,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -164,6 +192,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -184,6 +213,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -192,12 +223,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -205,6 +239,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -269,6 +304,24 @@ interface
 =======
 >>>>>>> graemeg/cpstrnew
 =======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -295,15 +348,19 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -507,6 +564,41 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -535,6 +627,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -543,6 +636,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -552,6 +647,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -794,6 +890,11 @@ uses MacTypes,CGBase,CGDirectDisplay,CGColorSpace,CGErrors,CFDictionary,CGGeomet
 {$endc} {not MACOSALLINCLUDE}
 
 >>>>>>> origin/fixes_2.4
+=======
+uses MacTypes,CGBase,CGDirectDisplay,CGColorSpace,CGErrors,CFDictionary,CGGeometry;
+{$endc} {not MACOSALLINCLUDE}
+
+>>>>>>> origin/cpstrnew
 {$ALIGN POWER}
 
 
@@ -820,6 +921,7 @@ function CGBeginDisplayConfiguration( var config: CGDisplayConfigRef ): CGError;
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
 
 { Configure the origin of a display in global display coordinates.
+<<<<<<< HEAD
 
    The new origin of the display is placed as close as possible to the
    requested location, without overlapping or leaving a gap between
@@ -969,6 +1071,128 @@ function CGCancelDisplayConfiguration( config: CGDisplayConfigRef ): CGError; ex
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+
+   The new origin of the display is placed as close as possible to the
+   requested location, without overlapping or leaving a gap between
+   displays.
+
+   Any display whose origin is not explicitly set in a reconfiguration will
+   be repositioned to a location as close as possible to its current
+   location without overlapping or leaving a gap between displays.
+
+   Note that setting the origin of a display which is mirroring another
+   display will remove that display from any mirroring set. }
+
+function CGConfigureDisplayOrigin( config: CGDisplayConfigRef; display: CGDirectDisplayID; x: SInt32; y: SInt32 ): CGError; external name '_CGConfigureDisplayOrigin';
+(* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+
+{ Configure the display mode of a display. The "options" field is reserved
+   for future expansion; pass NULL for now.
+
+   A display mode is a set of properties such as width, height, pixel depth,
+   and refresh rate, and options such as stretched LCD panel filling.
+
+   If you use this function to change the mode of a display in a mirroring
+   set, Quartz may adjust the bounds, resolutions, and depth of the other
+   displays in the set to a safe mode, with matching depth and the smallest
+   enclosing size. }
+
+function CGConfigureDisplayWithDisplayMode( config: CGDisplayConfigRef; display: CGDirectDisplayID; mode: CGDisplayModeRef; options: CFDictionaryRef ): CGError; external name '_CGConfigureDisplayWithDisplayMode';
+(* CG_AVAILABLE_STARTING(__MAC_10_6, __IPHONE_NA) *)
+
+{ Enable or disable stereo operation for a display.
+
+   Note that the system normally detects the presence of a stereo window,
+   and will automatically switch a display containing a stereo window to
+   stereo operation. This function provides a mechanism to force a display
+   to stereo operation, and to set options (such as blue line sync signal)
+   when in stereo operation.
+
+   When in stereo operation, a display may need to generate a special stereo
+   sync signal as part of the video output. The sync signal consists of a
+   blue line which occupies the first 25% of the last scanline for the left
+   eye view, and the first 75% of the last scanline for the right eye view.
+   The remainder of the scanline is black. To force the display to generate
+   this sync signal, pass true for `forceBlueLine'; otherwise, pass false.
+
+   Returns `kCGErrorSuccess' on success, or `kCGErrorRangeCheck' if the
+   display does not support the stereo operation settings requested.
+
+   On success, the display resolution, mirroring mode, and available display
+   modes may change due to hardware-specific capabilities and limitations.
+   You should check these settings to verify that they are appropriate for
+   your application. }
+
+function CGConfigureDisplayStereoOperation( config: CGDisplayConfigRef; display: CGDirectDisplayID; stereo: boolean_t; forceBlueLine: boolean_t ): CGError; external name '_CGConfigureDisplayStereoOperation';
+(* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+
+{ Make a display a mirror of a master display.
+
+   Pass `kCGNullDirectDisplay' for the master display to disable mirroring.
+   Pass `CGMainDisplayID()' for the master display to mirror the main
+   display.
+
+   Display mirroring and display matte generation are implemented either in
+   hardware (preferred) or software, at the discretion of the device driver.
+
+   - Hardware mirroring
+
+     With hardware mirroring enabled, all drawing is directed to the primary
+     display --- see CGDisplayPrimaryDisplay.
+
+     If the device driver selects hardware matte generation, the display
+     bounds and rowbytes values are adjusted to reflect the active drawable
+     area.
+
+   - Software mirroring
+
+     In this form of mirroring, identical content is drawn into each display
+     in the mirroring set. Applications that use the window system need not
+     be concerned about mirroring, as the window system takes care of all
+     flushing of window content to the appropriate displays.
+
+     Applications that draw directly to the display, as with display
+     capture, must make sure to draw the same content to all mirrored
+     displays in a software mirror set. When drawing to software mirrored
+     displays using a full screen OpenGL context (not drawing through a
+     window), you should create shared OpenGL contexts for each display and
+     re-render for each display.
+
+     You can use the function `CGGetActiveDisplayList' to determine which
+     displays are active, or drawable. This automatically gives your
+     application the correct view of the current displays. }
+
+function CGConfigureDisplayMirrorOfDisplay( config: CGDisplayConfigRef; display: CGDirectDisplayID; master: CGDirectDisplayID ): CGError; external name '_CGConfigureDisplayMirrorOfDisplay';
+(* CG_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_NA) *)
+
+{ Cancel a set of display configuration changes. On return, the
+   configuration is cancelled and is no longer valid. }
+
+function CGCancelDisplayConfiguration( config: CGDisplayConfigRef ): CGError; external name '_CGCancelDisplayConfiguration';
+(* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+
+{ Complete a set of display configuration changes. On return, the
+   configuration is no longer valid.
+
+   A configuration change can apply for the life of an application, the life
+   of a login session, or permanently. If a request is made to make a change
+   permanent, and the change cannot be supported by Mac OS X user interface,
+   then the configuration change lasts only for the current login session.
+
+   A permanent configuration change also becomes the current session's
+   configuration.
+
+   When the system reverts configurations at app termination, the
+   configuration reverts to the session or permanent configuration setting.
+
+   When the system reverts configurations at session termination, the
+   configuration reverts to the permanent configuration setting.
+
+   This operation may fail if an unsupported display mode is requested, or
+   if another app is running in full-screen mode. }
+
+>>>>>>> origin/cpstrnew
 const
 	kCGConfigureForAppOnly = 0;
 	kCGConfigureForSession = 1;
@@ -979,13 +1203,17 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 function CGCompleteDisplayConfiguration( config: CGDisplayConfigRef; option: CGConfigureOption ): CGError; external name '_CGCompleteDisplayConfiguration';
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
 
 { Restore the permanent display configuration settings for the current
    user. }
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 procedure CGRestorePermanentDisplayConfiguration; external name '_CGRestorePermanentDisplayConfiguration';
@@ -1020,10 +1248,13 @@ procedure CGRestorePermanentDisplayConfiguration; external name '_CGRestorePerma
 function CGCompleteDisplayConfiguration( configRef: CGDisplayConfigRef; option: CGConfigureOption ): CGError; external name '_CGCompleteDisplayConfiguration';
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 procedure CGRestorePermanentDisplayConfiguration; external name '_CGRestorePermanentDisplayConfiguration';
 (* CG_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_NA) *)
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {
  * Applications may want to register for notifications of display changes.
@@ -1060,6 +1291,8 @@ procedure CGRestorePermanentDisplayConfiguration; external name '_CGRestorePerma
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 { Display changes are reported via a callback mechanism.
 
    Callbacks are invoked when the app is listening for events, on the event
@@ -1083,7 +1316,10 @@ procedure CGRestorePermanentDisplayConfiguration; external name '_CGRestorePerma
    for each added, removed, and currently on-line display. Note that in the
    case of removed displays, calls into the CoreGraphics API with the
    removed display ID will fail. }
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 const
 	kCGDisplayBeginConfigurationFlag = 1 shl 0; { Set in pre-reconfiguration callback }
@@ -1099,10 +1335,14 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 	kCGDisplayDesktopShapeChangedFlag = 1 shl 12;
 type
 	CGDisplayChangeSummaryFlags = UInt32;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1120,6 +1360,9 @@ type
 =======
 { A client-supplied callback function thatÕs invoked whenever the
 >>>>>>> origin/cpstrnew
+=======
+{ A client-supplied callback function thatÕs invoked whenever the
+>>>>>>> origin/cpstrnew
    configuration of a local display is changed. }
 
 type
@@ -1128,6 +1371,7 @@ type
 { Register a display reconfiguration callback procedure. The `userInfo'
    argument is passed back to the callback procedure each time it is
    invoked. }
+<<<<<<< HEAD
 
 function CGDisplayRegisterReconfigurationCallback( callback: CGDisplayReconfigurationCallBack; userInfo: UnivPtr ): CGError; external name '_CGDisplayRegisterReconfigurationCallback';
 (* CG_AVAILABLE_STARTING(__MAC_10_3, __IPHONE_NA) *)
@@ -1418,6 +1662,51 @@ function CGDisplaySetStereoOperation( display: CGDirectDisplayID; stereo: boolea
 { Return true if the display is connected, awake, and available for
    drawing; false otherwise. }
 
+=======
+
+function CGDisplayRegisterReconfigurationCallback( callback: CGDisplayReconfigurationCallBack; userInfo: UnivPtr ): CGError; external name '_CGDisplayRegisterReconfigurationCallback';
+(* CG_AVAILABLE_STARTING(__MAC_10_3, __IPHONE_NA) *)
+
+{ Remove a display reconfiguration callback procedure. }
+
+function CGDisplayRemoveReconfigurationCallback( callback: CGDisplayReconfigurationCallBack; userInfo: UnivPtr ): CGError; external name '_CGDisplayRemoveReconfigurationCallback';
+(* CG_AVAILABLE_STARTING(__MAC_10_3, __IPHONE_NA) *)
+
+{ Specialized configuration changes should be done outside of the scope of
+   a `CGBeginDisplayConfiguration'/`CGCompleteDisplayConfiguration' pair, as
+   they may alter things such as the available display modes which a normal
+   reconfiguration sequence might assume are invariant. }
+
+{ Immediately enable or disable stereo operation for a display.
+
+   Note that the system normally detects the presence of a stereo window,
+   and will automatically switch a display containing a stereo window to
+   stereo operation. This function provides a mechanism to force a display
+   to stereo operation, and to set options (such as blue line sync signal)
+   when in stereo operation.
+
+   When in stereo operation, a display may need to generate a special stereo
+   sync signal as part of the video output. The sync signal consists of a
+   blue line which occupies the first 25% of the last scanline for the left
+   eye view, and the first 75% of the last scanline for the right eye view.
+   The remainder of the scanline is black. To force the display to generate
+   this sync signal, pass true for `forceBlueLine'; otherwise, pass false.
+
+   Returns `kCGErrorSuccess' on success, or `kCGErrorRangeCheck' if the
+   display does not support the stereo operation settings requested.
+
+   On success, the display resolution, mirroring mode, and available display
+   modes may change due to hardware-specific capabilities and limitations.
+   You should check these settings to verify that they are appropriate for
+   your application. }
+
+function CGDisplaySetStereoOperation( display: CGDirectDisplayID; stereo: boolean_t; forceBlueLine: boolean_t; option: CGConfigureOption ): CGError; external name '_CGDisplaySetStereoOperation';
+(* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+
+{ Return true if the display is connected, awake, and available for
+   drawing; false otherwise. }
+
+>>>>>>> origin/cpstrnew
 function CGDisplayIsActive( display: CGDirectDisplayID ): boolean_t; external name '_CGDisplayIsActive';
 (* CG_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_NA) *)
 
@@ -1562,9 +1851,13 @@ function CGConfigureDisplayMode( config: CGDisplayConfigRef; display: CGDirectDi
 end.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

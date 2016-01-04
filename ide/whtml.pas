@@ -123,6 +123,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       function    AddItem(Item: string): sw_integer;
 =======
       function    AddItem(Item: string): integer;
@@ -133,6 +134,9 @@ Type
 =======
       function    AddItem(Item: string): sw_integer;
 >>>>>>> origin/fixes_2.4
+=======
+      function    AddItem(Item: string): sw_integer;
+>>>>>>> origin/cpstrnew
     end;
 
 function EncodeHTMLCtx(FileID: integer; LinkNo: word): longint;
@@ -916,6 +920,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TTopicLinkCollection.AddItem(Item: string): sw_integer;
 =======
 function TTopicLinkCollection.AddItem(Item: string): integer;
@@ -926,6 +931,9 @@ function TTopicLinkCollection.AddItem(Item: string): integer;
 =======
 function TTopicLinkCollection.AddItem(Item: string): sw_integer;
 >>>>>>> origin/fixes_2.4
+=======
+function TTopicLinkCollection.AddItem(Item: string): sw_integer;
+>>>>>>> origin/cpstrnew
 var Idx: sw_integer;
 begin
   if Item='' then Idx:=-1 else

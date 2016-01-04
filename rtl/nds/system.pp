@@ -23,11 +23,14 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$define FPC_HAS_FEATURE_THREADING}
@@ -64,6 +67,7 @@ const
   LFNSupport = true;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   DirectorySeparator = '/';
   DriveSeparator = ':';
   ExtensionSeparator = '.';
@@ -80,27 +84,31 @@ const
 =======
 >>>>>>> origin/fixes_2_2
   CtrlZMarksEOF: boolean = false;
+=======
+>>>>>>> origin/cpstrnew
   DirectorySeparator = '/';
   DriveSeparator = ':';
   ExtensionSeparator = '.';
-  PathSeparator = ';';
+  PathSeparator = ':';
   AllowDirectorySeparators : set of char = ['\','/'];
   AllowDriveSeparators : set of char = [':'];
-  FileNameCaseSensitive = false;
   maxExitCode = 255;
-  MaxPathLen = 255;
+
+  MaxPathLen = 1024; // BSDs since 1993, Solaris 10, Darwin
   AllFilesMask = '*';
 
-  sLineBreak: string[1] = LineEnding;
-  DefaultTextLineBreakStyle: TTextLineBreakStyle = tlbsCRLF;
-
+<<<<<<< HEAD
   UnusedHandle    = $ffff;
 >>>>>>> graemeg/fixes_2_2
+=======
+  UnusedHandle    = -1;
+>>>>>>> origin/cpstrnew
   StdInputHandle  = 0;
   StdOutputHandle = 1;
   StdErrorHandle  = 2;
 
   FileNameCaseSensitive : boolean = true;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -112,6 +120,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   CtrlZMarksEOF: boolean = true; (* #26 not considered as end of file *)
@@ -131,6 +141,7 @@ var
 function get_cmdline:Pchar;
 
 property cmdline:Pchar read get_cmdline;
+<<<<<<< HEAD
 =======
   errno: integer;
   fake_heap_end: ^byte; cvar;
@@ -138,6 +149,8 @@ property cmdline:Pchar read get_cmdline;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 
 implementation
 
@@ -325,6 +338,9 @@ var
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   if argc<=0 then
     exit;
   GetMem(buf,ARG_MAX);
@@ -361,6 +377,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      if i<argc-1 then
 =======
      if i<argc then
@@ -374,6 +391,9 @@ begin
 =======
      if i<argc then
 >>>>>>> origin/cpstrnew
+=======
+     if i<argc then
+>>>>>>> origin/cpstrnew
       buf[bufsize]:=' '
      else
       buf[bufsize]:=#0;
@@ -382,6 +402,7 @@ begin
    end;
   AddBuf;
   FreeMem(buf,ARG_MAX);
+<<<<<<< HEAD
 =======
   paramstr := '';
 >>>>>>> graemeg/fixes_2_2
@@ -419,11 +440,22 @@ begin
 =======
   // Boo!
 >>>>>>> origin/fixes_2_2
+=======
+end;
+
+function get_cmdline:Pchar;
+
+begin
+  if calculated_cmdline=nil then
+    setupcmdline;
+  get_cmdline:=calculated_cmdline;
+>>>>>>> origin/cpstrnew
 end;
 
 
 procedure SysInitStdIO;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -440,6 +472,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   OpenStdIO(Input,fmInput,0);
   OpenStdIO(Output,fmOutput,0);
   OpenStdIO(ErrOutput,fmOutput,0);
@@ -448,11 +482,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 end;
@@ -481,6 +518,7 @@ begin
 
 { Set up signals handlers }
 <<<<<<< HEAD
+<<<<<<< HEAD
   if IsARM9 then
     fpc_cpucodeinit;
 <<<<<<< HEAD
@@ -490,10 +528,14 @@ begin
 =======
   fpc_cpucodeinit;
 >>>>>>> origin/fixes_2.4
+=======
+  fpc_cpucodeinit;
+>>>>>>> origin/cpstrnew
 
 { Setup heap }
   InitHeap;
   SysInitExceptions;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -513,6 +555,12 @@ begin
   
 >>>>>>> graemeg/cpstrnew
 =======
+  
+>>>>>>> origin/cpstrnew
+=======
+
+  SetupCmdLine;
+  
   
 >>>>>>> origin/cpstrnew
 {$ifdef FPC_HAS_FEATURE_CONSOLEIO}

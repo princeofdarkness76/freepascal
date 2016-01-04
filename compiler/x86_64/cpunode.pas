@@ -47,6 +47,7 @@ unit cpunode;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        { symtable }
        symcpu,
 {$ifndef llvm}
@@ -55,6 +56,8 @@ unit cpunode;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
        // n386con,n386flw,n386mat,n386mem,

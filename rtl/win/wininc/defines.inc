@@ -1758,6 +1758,9 @@
      STD_OUTPUT_HANDLE = HANDLE(-11);
      STD_ERROR_HANDLE = HANDLE(-12);
 
+
+
+
      INVALID_HANDLE_VALUE = HANDLE(-1);
 >>>>>>> origin/fixes_2_2
 
@@ -2946,6 +2949,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      TPM_BOTTOMALIGN = $20;
 =======
      TPM_BOOTOMALIGN = $20;
@@ -2956,6 +2960,9 @@ Type
 =======
      TPM_BOTTOMALIGN = $20;
 >>>>>>> origin/fixes_2.4
+=======
+     TPM_BOTTOMALIGN = $20;
+>>>>>>> origin/cpstrnew
      TPM_NONOTIFY    = $80;
      TPM_RETURNCMD   = $100;
      TPM_RECURSE         = $0001;
@@ -5935,6 +5942,9 @@ const
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   FIND_FIRST_EX_CASE_SENSITIVE   = $00000001;
   FIND_FIRST_EX_LARGE_FETCH      = $00000002;
 
@@ -5979,6 +5989,7 @@ const
     IMAGE_FILE_MACHINE_AMD64             = $8664;  // AMD64 (K8)
     IMAGE_FILE_MACHINE_M32R              = $9041;  // M32R little-endian
     IMAGE_FILE_MACHINE_CEE               = $C0EE;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -6053,6 +6064,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 
     GWLP_WNDPROC        		 = -4; 
@@ -6069,6 +6082,7 @@ const
     GCLP_WNDPROC                         = -24;
     GCLP_HICONSM                         = -34;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -6099,6 +6113,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -6132,10 +6148,13 @@ const
       MBIFB_BAR_FOCUSED = $00000001;
       MBIFB_FOCUSED     = $00000002;
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 {$endif read_interface}
 
 {$ifdef read_implementation}

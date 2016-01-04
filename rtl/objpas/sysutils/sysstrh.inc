@@ -84,6 +84,7 @@ function LowerCase(const V: variant): string; overload;{$ifdef SYSUTILSINLINE}in
 function CompareStr(const S1, S2: string): Integer; overload;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function CompareMemRange(P1, P2: Pointer; Length: PtrUInt): integer;{$ifdef SYSUTILSINLINE}inline;{$endif}
 function CompareMem(P1, P2: Pointer; Length: PtrUInt): Boolean;{$ifdef SYSUTILSINLINE}inline;{$endif}
 =======
@@ -92,6 +93,10 @@ function CompareMem(P1, P2: Pointer; Length: PtrUInt): Boolean;{$ifdef SYSUTILSI
 function CompareMemRange(P1, P2: Pointer; Length: cardinal): integer;
 function CompareMem(P1, P2: Pointer; Length: cardinal): Boolean;
 >>>>>>> graemeg/fixes_2_2
+=======
+function CompareMemRange(P1, P2: Pointer; Length: PtrUInt): integer;{$ifdef SYSUTILSINLINE}inline;{$endif}
+function CompareMem(P1, P2: Pointer; Length: PtrUInt): Boolean;{$ifdef SYSUTILSINLINE}inline;{$endif}
+>>>>>>> origin/cpstrnew
 function CompareText(const S1, S2: string): integer;
 function SameText(const s1,s2:String):Boolean;
 
@@ -228,6 +233,7 @@ function StrToCurr(const S: string): Currency;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function StrToCurr(const S: string; Const FormatSettings: TFormatSettings): Currency;
 function TryStrToCurr(const S: string;Out Value : Currency): Boolean;
 function TryStrToCurr(const S: string;Out Value : Currency; Const FormatSettings: TFormatSettings): Boolean;
@@ -240,6 +246,8 @@ function StrToCurrDef(const S: string; Default : Currency; Const FormatSettings:
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 function StrToCurr(const S: string; Const FormatSettings: TFormatSettings): Currency;  
 function TryStrToCurr(const S: string;Out Value : Currency): Boolean;
 function TryStrToCurr(const S: string;Out Value : Currency; Const FormatSettings: TFormatSettings): Boolean;       
@@ -248,11 +256,14 @@ function StrToCurrDef(const S: string; Default : Currency; Const FormatSettings:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 

@@ -92,6 +92,7 @@ function WriteModuleData(Module: TModuleHandle; SymbolName: string; var Buffer; 
 // new class for each DLL you are interested in and explicitly call GetProcedure for
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 // each function in an overridden Load method. You would then add procedure/function
 =======
 // each function in an overriden Load method. You would then add procedure/function
@@ -99,6 +100,9 @@ function WriteModuleData(Module: TModuleHandle; SymbolName: string; var Buffer; 
 =======
 // each function in an overriden Load method. You would then add procedure/function
 >>>>>>> origin/fixes_2_2
+=======
+// each function in an overridden Load method. You would then add procedure/function
+>>>>>>> origin/cpstrnew
 // aliases to the new class that maps down to the internally managed function pointers.
 // This class is built from an idea I read about in Delphi Magazine a while ago but
 // I forget who was the originator. If you know, let me know and I'll put it in the credits
@@ -394,6 +398,7 @@ procedure TModuleLoader.Error(ErrorCode: Cardinal);
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   // overridden classes should handle this
 =======
   // overriden classes should handle this
@@ -401,6 +406,9 @@ begin
 =======
   // overriden classes should handle this
 >>>>>>> origin/fixes_2_2
+=======
+  // overridden classes should handle this
+>>>>>>> origin/cpstrnew
 end;
 
 function TModuleLoader.GetExportedSymbol(const AName: string; var Buffer;

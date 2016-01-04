@@ -87,6 +87,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         p:=comp_expr([ef_accept_equal]);
 =======
         p:=comp_expr(true,false);
@@ -97,6 +98,9 @@ implementation
 =======
         p:=comp_expr(true,false);
 >>>>>>> graemeg/cpstrnew
+=======
+        p:=comp_expr(true,false);
+>>>>>>> origin/cpstrnew
 =======
         p:=comp_expr(true,false);
 >>>>>>> origin/cpstrnew
@@ -122,6 +126,7 @@ implementation
             if is_new then
               begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                 sym:=search_struct_member(classh,'CREATE');
 =======
                 sym:=search_class_member(classh,'CREATE');
@@ -129,6 +134,9 @@ implementation
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+                sym:=search_struct_member(classh,'CREATE');
+>>>>>>> origin/cpstrnew
                 p2 := cloadvmtaddrnode.create(ctypenode.create(p.resultdef));
               end
             else
@@ -205,6 +213,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                  p:=factor(false,[]);
 =======
                  p:=factor(false,false);
@@ -215,6 +224,9 @@ implementation
 =======
                  p:=factor(false,false);
 >>>>>>> graemeg/cpstrnew
+=======
+                 p:=factor(false,false);
+>>>>>>> origin/cpstrnew
 =======
                  p:=factor(false,false);
 >>>>>>> origin/cpstrnew
@@ -232,6 +244,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                  new_dispose_statement:=factor(false,[]);
 =======
                  new_dispose_statement:=factor(false,false);
@@ -242,6 +255,9 @@ implementation
 =======
                  new_dispose_statement:=factor(false,false);
 >>>>>>> graemeg/cpstrnew
+=======
+                 new_dispose_statement:=factor(false,false);
+>>>>>>> origin/cpstrnew
 =======
                  new_dispose_statement:=factor(false,false);
 >>>>>>> origin/cpstrnew
@@ -258,6 +274,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                  new_dispose_statement:=factor(false,[]);
 =======
                  new_dispose_statement:=factor(false,false);
@@ -268,6 +285,9 @@ implementation
 =======
                  new_dispose_statement:=factor(false,false);
 >>>>>>> graemeg/cpstrnew
+=======
+                 new_dispose_statement:=factor(false,false);
+>>>>>>> origin/cpstrnew
 =======
                  new_dispose_statement:=factor(false,false);
 >>>>>>> origin/cpstrnew
@@ -415,6 +435,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                        ((m_isolike_io in current_settings.modeswitches) and (tpointerdef(p.resultdef).pointeddef.typ=filedef)) then
                        addstatement(newstatement,cnodeutils.initialize_data_node(cderefnode.create(ctemprefnode.create(temp)),false));
 =======
@@ -422,6 +443,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                        ((m_iso in current_settings.modeswitches) and (tpointerdef(p.resultdef).pointeddef.typ=filedef)) then
@@ -487,12 +510,15 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                        addstatement(newstatement,cnodeutils.finalize_data_node(cderefnode.create(p.getcopy)));
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                        addstatement(newstatement,finalize_data_node(cderefnode.create(p.getcopy)));
@@ -523,6 +549,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         p1:=factor(false,[]);
 =======
         p1:=factor(false,false);
@@ -533,6 +560,9 @@ implementation
 =======
         p1:=factor(false,false);
 >>>>>>> graemeg/cpstrnew
+=======
+        p1:=factor(false,false);
+>>>>>>> origin/cpstrnew
 =======
         p1:=factor(false,false);
 >>>>>>> origin/cpstrnew
@@ -819,11 +849,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     function inline_initfinal(isinit: boolean): tnode;
@@ -877,6 +910,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
              newblock:=cnodeutils.initialize_data_node(ppn.left,true)
            else
              newblock:=cnodeutils.finalize_data_node(ppn.left);
@@ -895,6 +929,11 @@ implementation
            else
              newblock:=finalize_data_node(ppn.left);
 >>>>>>> graemeg/cpstrnew
+=======
+             newblock:=initialize_data_node(ppn.left)
+           else
+             newblock:=finalize_data_node(ppn.left);
+>>>>>>> origin/cpstrnew
 =======
              newblock:=initialize_data_node(ppn.left)
            else

@@ -16,6 +16,7 @@ program prog;
 uses
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   popuperr,
   dynlibs;
 =======
@@ -24,6 +25,10 @@ uses
 =======
  dynlibs;
 >>>>>>> origin/fixes_2_2
+=======
+  popuperr,
+  dynlibs;
+>>>>>>> origin/cpstrnew
 
 // this function is exported from the EXE
 function exetest: longint; {public name 'exetest';}
@@ -63,6 +68,7 @@ begin
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   // call function in dll, which calls function in exe, and then prints
 =======
   // call function in dll, which calls function in exe, and then prints 
@@ -70,6 +76,9 @@ begin
 =======
   // call function in dll, which calls function in exe, and then prints 
 >>>>>>> origin/fixes_2_2
+=======
+  // call function in dll, which calls function in exe, and then prints
+>>>>>>> origin/cpstrnew
   // a result number 5
   if (dllf()<>5) then
     halt(1);

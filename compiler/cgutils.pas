@@ -81,6 +81,7 @@ unit cgutils;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef jvm}
          arrayreftype: tarrayreftype;
          indexbase: tregister;
@@ -94,6 +95,8 @@ unit cgutils;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
          alignment : byte;
@@ -208,6 +211,7 @@ unit cgutils;
 =======
 >>>>>>> origin/cpstrnew
 
+<<<<<<< HEAD
     { returns r with the given alignment }
     function setalignment(const r : treference;b : byte) : treference;
 
@@ -218,6 +222,8 @@ unit cgutils;
     procedure calc_divconst_magic_signed(N: byte; d: aInt; out magic_m: aInt; out magic_s: byte);
     procedure calc_divconst_magic_unsigned(N: byte; d: aWord; out magic_m: aWord; out magic_add: boolean; out magic_shift: byte);
 
+=======
+>>>>>>> origin/cpstrnew
     { returns r with the given alignment }
     function setalignment(const r : treference;b : byte) : treference;
 
@@ -326,6 +332,7 @@ uses
       end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -515,6 +522,8 @@ uses
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 end.

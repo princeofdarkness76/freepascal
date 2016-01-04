@@ -36,6 +36,7 @@ unit i_sunos;
             shortname    : 'solaris';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             flags        : [tf_under_development,tf_needs_symbol_size,
                             tf_files_case_sensitive,tf_requires_proper_alignment,
 <<<<<<< HEAD
@@ -58,6 +59,11 @@ unit i_sunos;
 =======
             flags        : [tf_under_development,tf_files_case_sensitive,tf_use_function_relative_addresses,tf_smartlink_library];
 >>>>>>> origin/fixes_2_2
+=======
+            flags        : [tf_under_development,tf_needs_symbol_size,
+                            tf_files_case_sensitive,tf_requires_proper_alignment,
+                            tf_smartlink_library,tf_has_winlike_resources];
+>>>>>>> origin/cpstrnew
             cpu          : cpu_i386;
             unit_env     : 'SOLARISUNITS';
             extradefines : 'UNIX;LIBC;SUNOS;HASUNIX';
@@ -123,6 +129,7 @@ unit i_sunos;
             name         : 'Solaris for x86-64';
             shortname    : 'solaris';
             flags        : [tf_needs_symbol_size,tf_needs_symbol_type,
+<<<<<<< HEAD
 <<<<<<< HEAD
                             tf_under_development,
 =======
@@ -215,6 +222,8 @@ unit i_sunos;
             name         : 'Solaris for x86-64';
             shortname    : 'solaris';
             flags        : [tf_needs_symbol_size,tf_needs_symbol_type,
+=======
+>>>>>>> origin/cpstrnew
 			    tf_under_development,
                             tf_files_case_sensitive,
                             tf_requires_proper_alignment,tf_smartlink_library,tf_library_needs_pic,
@@ -277,9 +286,12 @@ unit i_sunos;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
        system_sparc_solaris_info : tsysteminfo =
@@ -287,6 +299,7 @@ unit i_sunos;
             system       : system_sparc_solaris;
             name         : 'Solaris for SPARC';
             shortname    : 'solaris';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             flags        : [tf_needs_symbol_size,tf_under_development,
@@ -314,6 +327,12 @@ unit i_sunos;
             flags        : [tf_needs_symbol_size,tf_under_development,tf_files_case_sensitive,tf_use_function_relative_addresses,
                             tf_requires_proper_alignment,tf_smartlink_library];
 >>>>>>> origin/fixes_2_2
+=======
+            flags        : [tf_needs_symbol_size,tf_under_development,
+                            tf_files_case_sensitive,
+                            tf_requires_proper_alignment,tf_smartlink_library,
+                            tf_has_winlike_resources];
+>>>>>>> origin/cpstrnew
             cpu          : cpu_SPARC;
             unit_env     : 'SOLARISUNITS';
             extradefines : 'UNIX;LIBC;SUNOS;HASUNIX';
@@ -385,11 +404,14 @@ initialization
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$ifdef CPUX86_64}

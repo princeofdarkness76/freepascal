@@ -677,6 +677,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             current_filepos:=taicpu(p).fileinfo;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -684,6 +685,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
             if InsContainsSegRef(taicpu(p)) then

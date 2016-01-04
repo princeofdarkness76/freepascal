@@ -46,6 +46,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Constructor Create;
     Constructor CreateNull;
     Constructor Create(ANumber : TJSNumber);
@@ -57,6 +58,8 @@ Type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     Destructor Destroy; override;
@@ -185,6 +188,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Constructor TJSValue.CreateNull;
 begin
   IsNull:=True;
@@ -220,6 +224,9 @@ destructor TJSValue.Destroy;
 =======
 destructor TJSValue.Destroy;
 >>>>>>> graemeg/cpstrnew
+=======
+destructor TJSValue.Destroy;
+>>>>>>> origin/cpstrnew
 =======
 destructor TJSValue.Destroy;
 >>>>>>> origin/cpstrnew

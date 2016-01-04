@@ -369,6 +369,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     Case DataType of
       dtDWORD : S:=IntToStr(PCardinal(@Data)^);
@@ -381,6 +382,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     // Reading <value></value> results in <value/>, i.e. no subkey exists any more. Create textnode.
@@ -401,6 +404,7 @@ begin
                  S:=BufToHex(Data,DataSize);
                  DataNode.NodeValue:=S;
                  end;
+<<<<<<< HEAD
       end;
 >>>>>>> graemeg/cpstrnew
     end;
@@ -437,6 +441,8 @@ begin
                      DataNode.NodeValue:=S;
                      end;
         end;
+=======
+>>>>>>> origin/cpstrnew
       end;
     end;
   If Result then

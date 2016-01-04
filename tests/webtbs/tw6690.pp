@@ -55,6 +55,7 @@ begin
                   (po^.name<>'iinterface6') then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   halt(2);
   else
     halt(3);
@@ -68,6 +69,11 @@ begin
   else
     halt(1);
 >>>>>>> origin/fixes_2_2
+=======
+                  halt(2);
+  else
+    halt(3);
+>>>>>>> origin/cpstrnew
  end;
 end;
 

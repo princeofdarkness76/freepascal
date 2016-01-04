@@ -55,6 +55,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           function handle_threadvar_access: tnode; virtual;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -62,6 +63,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
        public
@@ -106,6 +109,7 @@ interface
           function pass_typecheck:tnode;override;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           function simplify(forinline : boolean) : tnode;override;
 =======
           function simplify : tnode;override;
@@ -113,6 +117,9 @@ interface
 =======
           function simplify : tnode;override;
 >>>>>>> origin/fixes_2_2
+=======
+          function simplify(forinline : boolean) : tnode;override;
+>>>>>>> origin/cpstrnew
        {$ifdef state_tracking}
           function track_state_pass(exec_known:boolean):boolean;override;
        {$endif state_tracking}
@@ -253,6 +260,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         ppufile.getsmallset(loadnodeflags);
 =======
 >>>>>>> graemeg/cpstrnew
@@ -260,6 +268,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       end;
@@ -274,6 +284,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         ppufile.putsmallset(loadnodeflags);
 =======
 >>>>>>> graemeg/cpstrnew
@@ -281,6 +292,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       end;
@@ -551,6 +564,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 left:=cloadparentfpnode.create(tprocdef(p.owner.defowner),lpf_forpara);
 =======
                 left:=cloadparentfpnode.create(tprocdef(p.owner.defowner));
@@ -561,6 +575,9 @@ implementation
 =======
                 left:=cloadparentfpnode.create(tprocdef(p.owner.defowner));
 >>>>>>> graemeg/cpstrnew
+=======
+                left:=cloadparentfpnode.create(tprocdef(p.owner.defowner));
+>>>>>>> origin/cpstrnew
 =======
                 left:=cloadparentfpnode.create(tprocdef(p.owner.defowner));
 >>>>>>> origin/cpstrnew
@@ -636,6 +653,7 @@ implementation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function tassignmentnode.simplify(forinline : boolean) : tnode;
 =======
     function tassignmentnode.simplify : tnode;
@@ -643,6 +661,9 @@ implementation
 =======
     function tassignmentnode.simplify : tnode;
 >>>>>>> origin/fixes_2_2
+=======
+    function tassignmentnode.simplify(forinline : boolean) : tnode;
+>>>>>>> origin/cpstrnew
       begin
         result:=nil;
         { assignment nodes can perform several floating point }
@@ -789,6 +810,9 @@ implementation
                 { bother implementing support for that                  }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
                 and (use_vectorfpu(left.resultdef) or not(use_vectorfpu(right.resultdef)))
 {$endif}
 
@@ -799,6 +823,7 @@ implementation
                 and (use_vectorfpu(left.resultdef) and
                      use_vectorfpu(right.resultdef) and
                      (tfloatdef(left.resultdef).floattype=tfloatdef(right.resultdef).floattype))
+<<<<<<< HEAD
 {$endif}
         then
           begin
@@ -808,6 +833,8 @@ implementation
 =======
 >>>>>>> origin/fixes_2_2
                 and (use_sse(left.resultdef) or not(use_sse(right.resultdef)))
+=======
+>>>>>>> origin/cpstrnew
 {$endif}
         then
           begin
@@ -991,6 +1018,7 @@ implementation
                begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                  { remove property flag to avoid errors, see comments for }
                  { tf_winlikewidestring assignments below                 }
                  exclude(left.flags, nf_isproperty);
@@ -998,6 +1026,11 @@ implementation
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+                 { remove property flag to avoid errors, see comments for }
+                 { tf_winlikewidestring assignments below                 }
+                 exclude(left.flags, nf_isproperty);
+>>>>>>> origin/cpstrnew
                  hp:=ccallparanode.create
                        (right,
                   ccallparanode.create(left,nil));
@@ -1038,9 +1071,9 @@ implementation
 >>>>>>> origin/fixes_2_2
            end
         { call helpers for composite types containing automated types }
-        else if (left.resultdef.needs_inittable) and
+        else if is_managed_type(left.resultdef) and
             (left.resultdef.typ in [arraydef,objectdef,recorddef]) and
-            not is_interfacecom(left.resultdef) and
+            not is_interfacecom_or_dispinterface(left.resultdef) and
             not is_dynamic_array(left.resultdef) then
          begin
            hp:=ccallparanode.create(caddrnode.create_internal(

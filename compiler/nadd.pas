@@ -213,6 +213,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function taddnode.cmp_of_disjunct_ranges(var res : boolean) : boolean;
       var
         hp          : tnode;
@@ -382,6 +383,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     function taddnode.simplify(forinline : boolean) : tnode;
@@ -1166,6 +1169,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         { slow simplifications }
         if (cs_opt_level2 in current_settings.optimizerswitches) then
           begin
@@ -1294,6 +1298,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         { the comparison is might be expensive and the nodes are usually only
           equal if some previous optimizations were done so don't check
           this simplification always
@@ -1326,11 +1332,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       end;
@@ -1492,6 +1501,7 @@ implementation
           operation on a float and int are also handled }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef x86}
         { use extended as default real type only when the x87 fpu is used }
 <<<<<<< HEAD
@@ -1518,6 +1528,10 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+{$ifdef x86}
+        { use extended as default real type only when the x87 fpu is used }
+>>>>>>> origin/cpstrnew
 {$ifdef i386}
         if not(current_settings.fputype=fpu_x87) then
 {$endif i386}
@@ -1529,6 +1543,7 @@ implementation
         else
 {$endif x86}
           resultrealdef:=pbestrealtype^;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1546,6 +1561,9 @@ implementation
 =======
         resultrealdef:=pbestrealtype^;
 >>>>>>> origin/fixes_2_2
+=======
+
+>>>>>>> origin/cpstrnew
         if (right.resultdef.typ=floatdef) or (left.resultdef.typ=floatdef) then
          begin
            { when both floattypes are already equal then use that
@@ -1846,6 +1864,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
              { don't do it if either type is 64 bit (except for "and"),    }
              { since in that case we can't safely find a "common" type     }
 =======
@@ -1860,6 +1879,10 @@ implementation
              { don't do it if either type is 64 bit, since in that case we }
              { can't safely find a "common" type                           }
 >>>>>>> graemeg/cpstrnew
+=======
+             { don't do it if either type is 64 bit, since in that case we }
+             { can't safely find a "common" type                           }
+>>>>>>> origin/cpstrnew
 =======
              { don't do it if either type is 64 bit, since in that case we }
              { can't safely find a "common" type                           }

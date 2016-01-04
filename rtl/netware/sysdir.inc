@@ -21,6 +21,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure do_MkDir(s: rawbytestring);
 var
     Rc : longint;
@@ -32,12 +33,15 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 Procedure MkDir(s: pchar;len:sizeuint);[IOCheck, public, alias : 'FPC_SYS_MKDIR'];
 var
     Rc : longint;
 begin
   If not assigned(s) or (len=0) or (InOutRes <> 0) then
     exit;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -48,10 +52,13 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   DoDirSeparators(s);
   Rc := _mkdir(pchar(s));
   if Rc <> 0 then
     SetFileError (Rc);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -87,6 +94,8 @@ begin
 <<<<<<< HEAD
 =======
 =======
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 
@@ -99,7 +108,10 @@ begin
     exit;
   DoDirSeparators(s);
   Rc := _rmdir(pchar(s));
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/cpstrnew
   if Rc <> 0 then
     SetFileError(Rc);
 end;
@@ -107,6 +119,7 @@ end;
 
 procedure ChDir(s: pchar;len:sizeuint);[IOCheck, public, alias : 'FPC_SYS_CHDIR'];
 var RC: longint;
+<<<<<<< HEAD
 begin
   If not assigned(s) or (len=0) or (InOutRes <> 0) then
     exit;
@@ -119,13 +132,18 @@ end;
 
 procedure ChDir(s: pchar;len:sizeuint);[IOCheck, public, alias : 'FPC_SYS_CHDIR'];
 var RC: longint;
+=======
+>>>>>>> origin/cpstrnew
 begin
   If not assigned(s) or (len=0) or (InOutRes <> 0) then
     exit;
   RC := _chdir (pchar(s));
   if Rc <> 0 then
     SetFileError(Rc);
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 

@@ -32,6 +32,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$modeswitch typehelpers}
 {$modeswitch advancedrecords}
 
@@ -48,6 +49,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 { Include platform independent interface part }
 {$i sysutilh.inc}
@@ -56,6 +59,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -65,6 +69,9 @@ interface
 =======
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 =======
 
 >>>>>>> origin/cpstrnew
@@ -84,6 +91,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function FileOpen(const FileName: rawbytestring; Mode: Integer): LongInt;
 =======
 function FileOpen(const FileName: string; Mode: Integer): LongInt;
@@ -94,6 +102,9 @@ function FileOpen(const FileName: string; Mode: Integer): LongInt;
 =======
 function FileOpen(const FileName: string; Mode: Integer): LongInt;
 >>>>>>> graemeg/cpstrnew
+=======
+function FileOpen(const FileName: string; Mode: Integer): LongInt;
+>>>>>>> origin/cpstrnew
 =======
 function FileOpen(const FileName: string; Mode: Integer): LongInt;
 >>>>>>> origin/cpstrnew
@@ -118,6 +129,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function FileCreate(const FileName: RawByteString) : LongInt;
 =======
 function FileCreate(const FileName: string) : LongInt;
@@ -131,11 +143,15 @@ function FileCreate(const FileName: string) : LongInt;
 =======
 function FileCreate(const FileName: string) : LongInt;
 >>>>>>> origin/cpstrnew
+=======
+function FileCreate(const FileName: string) : LongInt;
+>>>>>>> origin/cpstrnew
 begin
   result := -1;
 end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -155,6 +171,9 @@ function FileCreate(const FileName: string; Mode: integer): LongInt;
 =======
 function FileCreate(const FileName: string; Mode: integer): LongInt;
 >>>>>>> graemeg/cpstrnew
+=======
+function FileCreate(const FileName: string; Mode: integer): LongInt;
+>>>>>>> origin/cpstrnew
 =======
 function FileCreate(const FileName: string; Mode: integer): LongInt;
 >>>>>>> origin/cpstrnew
@@ -201,6 +220,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function DeleteFile(const FileName: RawByteString) : Boolean;
 =======
 function DeleteFile(const FileName: string) : Boolean;
@@ -214,11 +234,15 @@ function DeleteFile(const FileName: string) : Boolean;
 =======
 function DeleteFile(const FileName: string) : Boolean;
 >>>>>>> origin/cpstrnew
+=======
+function DeleteFile(const FileName: string) : Boolean;
+>>>>>>> origin/cpstrnew
 begin
   result := false;
 end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -236,6 +260,9 @@ function RenameFile(const OldName, NewName: string): Boolean;
 =======
 function RenameFile(const OldName, NewName: string): Boolean;
 >>>>>>> origin/cpstrnew
+=======
+function RenameFile(const OldName, NewName: string): Boolean;
+>>>>>>> origin/cpstrnew
 begin
   result := false;
 end;
@@ -244,6 +271,7 @@ end;
 (****** end of non portable routines ******)
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -261,11 +289,15 @@ Function FileAge (Const FileName : String): Longint;
 =======
 Function FileAge (Const FileName : String): Longint;
 >>>>>>> origin/cpstrnew
+=======
+Function FileAge (Const FileName : String): Longint;
+>>>>>>> origin/cpstrnew
 begin
   result := -1;
 end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -283,12 +315,16 @@ Function FileExists (Const FileName : String) : Boolean;
 =======
 Function FileExists (Const FileName : String) : Boolean;
 >>>>>>> origin/cpstrnew
+=======
+Function FileExists (Const FileName : String) : Boolean;
+>>>>>>> origin/cpstrnew
 Begin
   result := false;
 end;
 
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -306,11 +342,15 @@ Function FindFirst (Const Path : String; Attr : Longint; Out Rslt : TSearchRec) 
 =======
 Function FindFirst (Const Path : String; Attr : Longint; Out Rslt : TSearchRec) : Longint;
 >>>>>>> origin/cpstrnew
+=======
+Function FindFirst (Const Path : String; Attr : Longint; Out Rslt : TSearchRec) : Longint;
+>>>>>>> origin/cpstrnew
 begin
   result := -1;
 end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -328,10 +368,14 @@ Function FindNext (Var Rslt : TSearchRec) : Longint;
 =======
 Function FindNext (Var Rslt : TSearchRec) : Longint;
 >>>>>>> origin/cpstrnew
+=======
+Function FindNext (Var Rslt : TSearchRec) : Longint;
+>>>>>>> origin/cpstrnew
 begin
   result := -1;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -348,11 +392,14 @@ Function FileGetAttr (Const FileName : RawByteString) : Longint;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 Procedure FindClose (Var F : TSearchrec);
 begin
 end;
 
 Function FileGetAttr (Const FileName : String) : Longint;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -363,11 +410,14 @@ Function FileGetAttr (Const FileName : String) : Longint;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 begin
   result := -1;
 end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -382,6 +432,9 @@ Function FileSetAttr (Const Filename : String; Attr: longint) : Longint;
 =======
 Function FileSetAttr (Const Filename : String; Attr: longint) : Longint;
 >>>>>>> graemeg/cpstrnew
+=======
+Function FileSetAttr (Const Filename : String; Attr: longint) : Longint;
+>>>>>>> origin/cpstrnew
 =======
 Function FileSetAttr (Const Filename : String; Attr: longint) : Longint;
 >>>>>>> origin/cpstrnew
@@ -418,12 +471,15 @@ End;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function DirectoryExists(const Directory: RawByteString): Boolean;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 Function GetCurrentDir : String;
@@ -454,11 +510,14 @@ function DirectoryExists(const Directory: string): Boolean;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 begin
@@ -475,6 +534,7 @@ Procedure SysBeep;
 begin
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -506,6 +566,9 @@ end;
 =======
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 =======
 
 >>>>>>> origin/cpstrnew
@@ -542,6 +605,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function GetEnvironmentString(Index : Integer) : {$ifdef FPC_RTL_UNICODE}UnicodeString{$else}AnsiString{$endif};
 =======
 Function GetEnvironmentString(Index : Integer) : String;
@@ -552,6 +616,9 @@ Function GetEnvironmentString(Index : Integer) : String;
 =======
 Function GetEnvironmentString(Index : Integer) : String;
 >>>>>>> graemeg/cpstrnew
+=======
+Function GetEnvironmentString(Index : Integer) : String;
+>>>>>>> origin/cpstrnew
 =======
 Function GetEnvironmentString(Index : Integer) : String;
 >>>>>>> origin/cpstrnew

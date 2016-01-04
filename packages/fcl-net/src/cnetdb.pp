@@ -195,6 +195,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$if defined(LINUX) or defined(OPENBSD)}
 {$define FIRST_ADDR_THEN_CANONNAME}
 {$endif}
@@ -213,6 +214,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   PAddrInfo = ^addrinfo;
   addrinfo = record
     ai_flags: cInt;     {* AI_PASSIVE, AI_CANONNAME, AI_NUMERICHOST *}
@@ -220,6 +223,7 @@ type
     ai_socktype: cInt;  {* SOCK_xxx *}
     ai_protocol: cInt;  {* 0 or IPPROTO_xxx for IPv4 and IPv6 *}
     ai_addrlen: TSocklen;  {* length of ai_addr *}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -244,6 +248,10 @@ type
     ai_canonname: PChar;   {* canonical name for hostname *}
     ai_addr: psockaddr;	   {* binary address *}
 >>>>>>> graemeg/cpstrnew
+=======
+    ai_canonname: PChar;   {* canonical name for hostname *}
+    ai_addr: psockaddr;	   {* binary address *}
+>>>>>>> origin/cpstrnew
 =======
     ai_canonname: PChar;   {* canonical name for hostname *}
     ai_addr: psockaddr;	   {* binary address *}

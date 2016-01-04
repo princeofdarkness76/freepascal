@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       QuickTime/MoviesFormat.h
  
      Contains:   QuickTime Interfaces.
@@ -40,11 +41,15 @@
 =======
      File:       QuickTime/MoviesFormat.h
 >>>>>>> origin/fixes_2.4
+=======
+     File:       QuickTime/MoviesFormat.h
+>>>>>>> origin/cpstrnew
  
      Contains:   QuickTime Interfaces.
  
      Version:    QuickTime 7.6.3
  
+<<<<<<< HEAD
 <<<<<<< HEAD
      Copyright:  © 1990-2002 by Apple Computer, Inc., all rights reserved
 <<<<<<< HEAD
@@ -54,6 +59,9 @@
 =======
      Copyright:  © 1990-2008 by Apple Inc., all rights reserved
 >>>>>>> origin/fixes_2.4
+=======
+     Copyright:  © 1990-2008 by Apple Inc., all rights reserved
+>>>>>>> origin/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -64,6 +72,7 @@
  
 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -91,6 +100,8 @@
  
 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+=======
+>>>>>>> origin/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -99,12 +110,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -116,6 +131,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -130,6 +146,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -145,6 +165,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -155,6 +176,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -162,13 +186,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -176,6 +204,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -184,8 +214,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -196,6 +229,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -216,6 +250,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -224,12 +260,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -237,6 +276,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -517,12 +557,27 @@ interface
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
+=======
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -567,6 +622,7 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc TARGET_CPU_PPC_64 := FALSE}
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -574,6 +630,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -602,9 +660,12 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -615,6 +676,7 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,ImageCompression,Components,Movies;
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 <<<<<<< HEAD
@@ -638,6 +700,12 @@ uses MacTypes,ImageCompression,Components,Movies;
 {$ifc TARGET_OS_MAC}
 
 {$ifc TARGET_OS_MAC}
+=======
+{$endc} {not MACOSALLINCLUDE}
+
+>>>>>>> origin/cpstrnew
+
+{$ifc TARGET_OS_MAC}
 
 {$ALIGN MAC68K}
 >>>>>>> graemeg/cpstrnew
@@ -647,6 +715,7 @@ uses MacTypes,ImageCompression,Components,Movies;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ALIGN MAC68K}
 
 
@@ -654,6 +723,8 @@ uses MacTypes,ImageCompression,Components,Movies;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 const
@@ -719,12 +790,15 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		timeToSampleNumTable: array [0..0] of TimeToSampleNum;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 		timeToSampleNumTable:	array [0..0] of TimeToSampleNum;
@@ -810,6 +884,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		compositionOffsetTable: array [0..0] of CompositionOffsetEntry;
 =======
     compositionOffsetTable: array [0..0] of CompositionOffsetEntry;
@@ -826,6 +901,8 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     compositionOffsetTable: array [0..0] of CompositionOffsetEntry;
 	end;
 type
@@ -836,6 +913,7 @@ type
 		flags: SInt32;                  { 1 byte of version / 3 bytes of flags }
 		sampleDependencyTable: array [0..0] of UInt8;
 	end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
@@ -851,6 +929,8 @@ type
 		flags: SInt32;                  { 1 byte of version / 3 bytes of flags }
 		sampleDependencyTable: array [0..0] of UInt8;
 	end;
+>>>>>>> origin/cpstrnew
+=======
 >>>>>>> origin/cpstrnew
 {
 NOTE: The values for these flags that shipped with QuickTime 7.0 were incorrect. 
@@ -960,6 +1040,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 		flags: SInt32;                  { 1 byte of version / 3 bytes of flags }
 
@@ -973,6 +1054,11 @@ type
 		flags: SInt32;                  { 1 byte of version / 3 bytes of flags }
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+		flags: SInt32;                  { 1 byte of version / 3 bytes of flags }
+
+>>>>>>> origin/cpstrnew
 =======
 
 		flags: SInt32;                  { 1 byte of version / 3 bytes of flags }
@@ -1028,6 +1114,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 		dataHandler: HandlerAtom;
 
@@ -1041,6 +1128,11 @@ type
 		dataHandler: HandlerAtom;
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+		dataHandler: HandlerAtom;
+
+>>>>>>> origin/cpstrnew
 =======
 
 		dataHandler: HandlerAtom;
@@ -1076,6 +1168,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 		dataHandler: HandlerAtom;
 
@@ -1089,6 +1182,11 @@ type
 		dataHandler: HandlerAtom;
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+		dataHandler: HandlerAtom;
+
+>>>>>>> origin/cpstrnew
 =======
 
 		dataHandler: HandlerAtom;
@@ -1117,10 +1215,14 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 
 		creationTime: SInt32;           { seconds since Jan 1904 when directory was created }
 		modificationTime: SInt32;       { seconds since Jan 1904 when directory was appended }
 
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1141,6 +1243,8 @@ type
 
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 		timeScale: TimeValue;              { start time for Media (Media time) }
@@ -1162,6 +1266,7 @@ type
 	MediaDirectory = record
 		size: SInt32;
 		atomType: SInt32;               { = 'mdia' }
+<<<<<<< HEAD
 
 		mediaHeader: MediaHeaderAtom;            { standard Media information }
 
@@ -1624,6 +1729,28 @@ type
 =======
 		flags: SInt32;                  { 1 byte of version / 3 bytes of flags }
 >>>>>>> origin/fixes_2.4
+=======
+
+		mediaHeader: MediaHeaderAtom;            { standard Media information }
+
+		mediaHandler: HandlerAtom;
+
+		mediaInfo: MediaInfo_fix;
+	end;
+{**********************
+* Track Structures
+**********************}
+const
+	TrackEnable = 1 shl 0;
+	TrackInMovie = 1 shl 1;
+	TrackInPreview = 1 shl 2;
+	TrackInPoster = 1 shl 3;
+
+type
+	TrackHeaderPtr = ^TrackHeader;
+	TrackHeader = record
+		flags: SInt32;                  { 1 byte of version / 3 bytes of flags }
+>>>>>>> origin/cpstrnew
 
 		creationTime: SInt32;           { seconds since Jan 1904 when directory was created }
 		modificationTime: SInt32;       { seconds since Jan 1904 when directory was appended }
@@ -1631,6 +1758,7 @@ type
 		trackID: SInt32;
 
 		reserved1: SInt32;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2246,6 +2374,8 @@ const
 	end;
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 		duration: TimeValue;               { length of track (track time) }
 
@@ -2282,9 +2412,15 @@ type
 	EditListAtom = record
 		size: SInt32;
 		atomType: SInt32;               { = elst }
+<<<<<<< HEAD
 
 		flags: SInt32;                  { 1 byte of version / 3 bytes of flags }
 
+=======
+
+		flags: SInt32;                  { 1 byte of version / 3 bytes of flags }
+
+>>>>>>> origin/cpstrnew
 		numEntries: SInt32;
 editListTable: array [0..0] of EditListType;
 	end;
@@ -2311,6 +2447,7 @@ type
 		atomType: SInt32;               { = load }
 
 		settings: TrackLoadSettings;
+<<<<<<< HEAD
 	end;
 type
 	TrackCleanApertureDimensionsPtr = ^TrackCleanApertureDimensions;
@@ -2352,6 +2489,49 @@ type
 		size: SInt32;
 		atomType: SInt32;               { = 'enof' }
 
+=======
+	end;
+type
+	TrackCleanApertureDimensionsPtr = ^TrackCleanApertureDimensions;
+	TrackCleanApertureDimensions = record
+		flags: SInt32;                  { 1 byte of version / 3 bytes of flags }
+		cleanApertureDimensions: FixedPoint;
+	end;
+type
+	TrackCleanApertureDimensionsAtomPtr = ^TrackCleanApertureDimensionsAtom;
+	TrackCleanApertureDimensionsAtom = record
+		size: SInt32;
+		atomType: SInt32;               { = 'tapt' }
+
+		cleanApertureDimensions: TrackCleanApertureDimensions;
+	end;
+type
+	TrackProductionApertureDimensionsPtr = ^TrackProductionApertureDimensions;
+	TrackProductionApertureDimensions = record
+		flags: SInt32;                  { 1 byte of version / 3 bytes of flags }
+		productionApertureDimensions: FixedPoint;
+	end;
+type
+	TrackProductionApertureDimensionsAtomPtr = ^TrackProductionApertureDimensionsAtom;
+	TrackProductionApertureDimensionsAtom = record
+		size: SInt32;
+		atomType: SInt32;               { = 'prof' }
+
+		productionApertureDimensions: TrackProductionApertureDimensions;
+	end;
+type
+	TrackEncodedPixelsDimensionsPtr = ^TrackEncodedPixelsDimensions;
+	TrackEncodedPixelsDimensions = record
+		flags: SInt32;                  { 1 byte of version / 3 bytes of flags }
+		encodedPixelsDimensions: FixedPoint;
+	end;
+type
+	TrackEncodedPixelsDimensionsAtomPtr = ^TrackEncodedPixelsDimensionsAtom;
+	TrackEncodedPixelsDimensionsAtom = record
+		size: SInt32;
+		atomType: SInt32;               { = 'enof' }
+
+>>>>>>> origin/cpstrnew
 		encodedPixelsDimensions: TrackEncodedPixelsDimensions;
 	end;
 type
@@ -2393,6 +2573,7 @@ type
 
 		preferredVolume: SInt16;        { volume to play movie at }
 		reserved1: SInt16;
+<<<<<<< HEAD
 
 		preferredLong1: SInt32;
 		preferredLong2: SInt32;
@@ -2404,6 +2585,19 @@ type
 
 		posterTime: TimeValue;             { time in track the proxy begins (track time) }
 
+=======
+
+		preferredLong1: SInt32;
+		preferredLong2: SInt32;
+
+		matrix: MatrixRecord;
+
+		previewTime: TimeValue;            { time in track the proxy begins (track time) }
+		previewDuration: TimeValue;        { how long the proxy lasts (track time) }
+
+		posterTime: TimeValue;             { time in track the proxy begins (track time) }
+
+>>>>>>> origin/cpstrnew
 		selectionTime: TimeValue;          { time in track the proxy begins (track time) }
 		selectionDuration: TimeValue;      { time in track the proxy begins (track time) }
 		currentTime: TimeValue;            { time in track the proxy begins (track time) }
@@ -2450,6 +2644,7 @@ const
 	QT_MEDIA_TYPE = FourCharCode('mdia');
 	QT_VIDEO_TYPE = FourCharCode('vide');
 	QT_SOUND_TYPE = FourCharCode('soun');
+<<<<<<< HEAD
 
 const
 	MOVIE_TYPE = FourCharCode('moov');
@@ -2457,6 +2652,15 @@ const
 	VIDEO_TYPE = FourCharCode('vide');
 	SOUND_TYPE = FourCharCode('soun');
 
+=======
+
+const
+	MOVIE_TYPE = FourCharCode('moov');
+	TRACK_TYPE = FourCharCode('trak');
+	VIDEO_TYPE = FourCharCode('vide');
+	SOUND_TYPE = FourCharCode('soun');
+
+>>>>>>> origin/cpstrnew
 {$ifc not TARGET_OS_WIN32}
 { The name "MEDIA_TYPE" has a name space collision on Win32.}
 const
@@ -2525,6 +2729,7 @@ const
 	ReferenceMovieAlternateGroupAID = FourCharCode('rmag');
 	ReferenceMovieNetworkStatusAID = FourCharCode('rnet');
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CloneMediaAID				= FourCharCode('clon');
 	FileTypeAID					= FourCharCode('ftyp');
 	SecureContentInfoAID		= FourCharCode('sinf');
@@ -2538,6 +2743,8 @@ const
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 	CloneMediaAID = FourCharCode('clon');
 	FileTypeAID = FourCharCode('ftyp');
 	SecureContentInfoAID = FourCharCode('sinf');
@@ -2549,11 +2756,15 @@ const
 	TrackEncodedPixelsDimensionsAID = FourCharCode('enof');
 
 { Text ATOM definitions}
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 type
 	TextBoxAtomPtr = ^TextBoxAtom;
 	TextBoxAtom = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2596,6 +2807,11 @@ const
 		atomType: SInt32;               { = 'tbox' }
 		textBox: Rect;                { New text box (overrides defaultTextBox)}
 >>>>>>> origin/fixes_2.4
+=======
+		size: SInt32;
+		atomType: SInt32;               { = 'tbox' }
+		textBox: Rect;                { New text box (overrides defaultTextBox)}
+>>>>>>> origin/cpstrnew
 	end;
 type
 	HiliteAtomPtr = ^HiliteAtom;
@@ -2621,6 +2837,7 @@ type
 { for ReferenceMovieDataRefRecord.flags}
 const
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kDataRefIsSelfContained		= $01;
 
 <<<<<<< HEAD
@@ -2630,6 +2847,9 @@ const
 =======
 	kDataRefIsSelfContained = 1 shl 0;
 >>>>>>> origin/fixes_2.4
+=======
+	kDataRefIsSelfContained = 1 shl 0;
+>>>>>>> origin/cpstrnew
 
 type
 	ReferenceMovieDataRefRecordPtr = ^ReferenceMovieDataRefRecord;
@@ -2637,12 +2857,16 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 		flags: SInt32;
 		dataRefType: OSType;
 		dataRefSize: SInt32;
 		dataRef: array [0..0] of SInt8;
+<<<<<<< HEAD
 <<<<<<< HEAD
 	end;
 { for VersionCheckRecord.checkType}
@@ -2673,6 +2897,13 @@ const
 	kVersionCheckMin = 0;    { val1 is the min. version required}
 	kVersionCheckMask = 1;     { (gestalt return value & val2) must == val1}
 >>>>>>> origin/fixes_2.4
+=======
+	end;
+{ for VersionCheckRecord.checkType}
+const
+	kVersionCheckMin = 0;    { val1 is the min. version required}
+	kVersionCheckMask = 1;     { (gestalt return value & val2) must == val1}
+>>>>>>> origin/cpstrnew
 
 type
 	QTAltVersionCheckRecordPtr = ^QTAltVersionCheckRecord;
@@ -2680,13 +2911,17 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 		flags: SInt32;                  { currently always 0}
 		gestaltTag: OSType;
 		val1: UInt32;
 		val2: UInt32;
 		checkType: SInt16;
+<<<<<<< HEAD
 <<<<<<< HEAD
 	end;
 { some helpful constants for DataRateRecord.dataRate }
@@ -2735,6 +2970,11 @@ const
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+	end;
+{ some helpful constants for DataRateRecord.dataRate }
+const
+>>>>>>> origin/cpstrnew
 	kDataRate144ModemRate = 1400;
 	kDataRate288ModemRate = 2800;
 	kDataRateISDNRate = 5600;
@@ -2747,11 +2987,15 @@ const
 	kDataRateT1Rate = 150000;
 	kDataRateInfiniteRate = $7FFFFFFF;
 	kDataRateDefaultIfNotSet = kDataRate512kbpsRate;
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 type
 	QTAltDataRateRecordPtr = ^QTAltDataRateRecord;
 	QTAltDataRateRecord = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2787,6 +3031,10 @@ const
 		flags: SInt32;                  { currently always 0}
 		dataRate: SInt32;
 >>>>>>> origin/fixes_2.4
+=======
+		flags: SInt32;                  { currently always 0}
+		dataRate: SInt32;
+>>>>>>> origin/cpstrnew
 	end;
 type
 	QTAltComponentCheckRecordPtr = ^QTAltComponentCheckRecord;
@@ -2804,6 +3052,7 @@ type
 
 const
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kQTCPUSpeed1Rating			= 100;							{  slowest }
 	kQTCPUSpeed2Rating			= 200;
 	kQTCPUSpeed3Rating			= 300;
@@ -2815,16 +3064,22 @@ const
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 	kQTCPUSpeed1Rating = 100;  { slowest}
 	kQTCPUSpeed2Rating = 200;
 	kQTCPUSpeed3Rating = 300;
 	kQTCPUSpeed4Rating = 400;
 	kQTCPUSpeed5Rating = 500;   { fastest}
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 type
 	QTAltCPURatingRecordPtr = ^QTAltCPURatingRecord;
 	QTAltCPURatingRecord = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2875,6 +3130,10 @@ const
 		flags: UInt32;                  { currently always 0}
 		speed: UInt16;
 >>>>>>> origin/fixes_2.4
+=======
+		flags: UInt32;                  { currently always 0}
+		speed: UInt16;
+>>>>>>> origin/cpstrnew
 	end;
 type
 	ReferenceMovieNetworkStatusRecordPtr = ^ReferenceMovieNetworkStatusRecord;
@@ -2908,6 +3167,7 @@ type
 	end;
 const
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kQTFileTypeBrandQuickTimeMovie = FourCharCode('qt  ');					{  QuickTime movie files }
 	kQTFileTypeBrandISOFile		= FourCharCode('isom');						{  ISO Base Media files }
 	kQTFileTypeBrandMPEG4v1		= FourCharCode('mp41');						{  MPEG-4 (ISO/IEC 14496-1) version 1 files }
@@ -2918,11 +3178,16 @@ const
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 	kQTFileTypeBrandQuickTimeMovie = FourCharCode('qt  '); { QuickTime movie files}
 	kQTFileTypeBrandISOFile = FourCharCode('isom'); { ISO Base Media files}
 	kQTFileTypeBrandMPEG4v1 = FourCharCode('mp41'); { MPEG-4 (ISO/IEC 14496-1) version 1 files}
 	kQTFileTypeBrandMPEG4v2 = FourCharCode('mp42'); { MPEG-4 (ISO/IEC 14496-1) version 2 files}
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 type
 	SecureContentInfoAtomPtr = ^SecureContentInfoAtom;
@@ -2930,6 +3195,9 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 		size: SInt32;
 		atomType: SInt32;               { = 'sinf' }
 	end;
@@ -2938,6 +3206,7 @@ type
 	SecureContentSchemeTypeAtom = record
 		size: SInt32;
 		atomType: SInt32;               { = 'schm' }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2991,6 +3260,8 @@ type
 	SecureContentSchemeTypeAtom = record
 		size: SInt32;
 		atomType: SInt32;               { = 'schm' }
+=======
+>>>>>>> origin/cpstrnew
 
 		flags: SInt32;                  { 1 byte of version / 3 bytes of flags }
 
@@ -3012,9 +3283,13 @@ type
 end.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

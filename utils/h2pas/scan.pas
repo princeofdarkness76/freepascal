@@ -1193,12 +1193,16 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 yynmarks   = 345;
 yynmatches = 345;
 yyntrans   = 644;
 yynstates  = 371;
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
@@ -1210,6 +1214,8 @@ yynstates  = 369;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 yyk : array [1..yynmarks] of Integer = (
   { 0: }
@@ -1796,6 +1802,7 @@ yyk : array [1..yynmarks] of Integer = (
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   97,
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -1804,10 +1811,14 @@ yyk : array [1..yynmarks] of Integer = (
 =======
   97,
 >>>>>>> origin/fixes_2.4
+=======
+  97,
+>>>>>>> origin/cpstrnew
   { 273: }
   56,
   { 274: }
   { 275: }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1816,9 +1827,11 @@ yyk : array [1..yynmarks] of Integer = (
   65,
 =======
   65,
+=======
+>>>>>>> origin/cpstrnew
   { 276: }
-  66,
   { 277: }
+<<<<<<< HEAD
 =======
   65,
 =======
@@ -1833,6 +1846,9 @@ yyk : array [1..yynmarks] of Integer = (
 =======
   65,
 >>>>>>> origin/fixes_2.4
+=======
+  65,
+>>>>>>> origin/cpstrnew
   { 278: }
   66,
   { 279: }
@@ -1848,6 +1864,7 @@ yyk : array [1..yynmarks] of Integer = (
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   97,
   { 284: }
   97,
@@ -1864,11 +1881,16 @@ yyk : array [1..yynmarks] of Integer = (
 >>>>>>> origin/fixes_2.4
   97,
   { 284: }
+=======
+  97,
+  { 284: }
+>>>>>>> origin/cpstrnew
   97,
   { 285: }
   73,
   97,
   { 286: }
+<<<<<<< HEAD
 <<<<<<< HEAD
   82,
 <<<<<<< HEAD
@@ -1878,6 +1900,9 @@ yyk : array [1..yynmarks] of Integer = (
 =======
   80,
 >>>>>>> origin/fixes_2.4
+=======
+  80,
+>>>>>>> origin/cpstrnew
   97,
   { 287: }
   81,
@@ -1886,6 +1911,9 @@ yyk : array [1..yynmarks] of Integer = (
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   82,
   97,
   { 289: }
@@ -1893,6 +1921,7 @@ yyk : array [1..yynmarks] of Integer = (
   { 291: }
   { 292: }
   62,
+<<<<<<< HEAD
   { 293: }
   44,
   97,
@@ -1920,6 +1949,8 @@ yyk : array [1..yynmarks] of Integer = (
   { 291: }
   { 292: }
   62,
+=======
+>>>>>>> origin/cpstrnew
   { 293: }
   44,
   97,
@@ -1927,6 +1958,7 @@ yyk : array [1..yynmarks] of Integer = (
   46,
   97,
   { 295: }
+<<<<<<< HEAD
 <<<<<<< HEAD
   78,
 <<<<<<< HEAD
@@ -1935,6 +1967,8 @@ yyk : array [1..yynmarks] of Integer = (
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
   97,
   { 296: }
   47,
@@ -1942,11 +1976,14 @@ yyk : array [1..yynmarks] of Integer = (
   { 297: }
   78,
 <<<<<<< HEAD
+<<<<<<< HEAD
   97,
   { 298: }
   45,
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
   97,
   { 298: }
   { 299: }
@@ -2616,6 +2653,7 @@ yym : array [1..yynmatches] of Integer = (
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   97,
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -2624,10 +2662,14 @@ yym : array [1..yynmatches] of Integer = (
 =======
   97,
 >>>>>>> origin/fixes_2.4
+=======
+  97,
+>>>>>>> origin/cpstrnew
 { 273: }
   56,
 { 274: }
 { 275: }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2636,9 +2678,11 @@ yym : array [1..yynmatches] of Integer = (
   65,
 =======
   65,
+=======
+>>>>>>> origin/cpstrnew
 { 276: }
-  66,
 { 277: }
+<<<<<<< HEAD
 =======
   65,
 =======
@@ -2653,6 +2697,9 @@ yym : array [1..yynmatches] of Integer = (
 =======
   65,
 >>>>>>> origin/fixes_2.4
+=======
+  65,
+>>>>>>> origin/cpstrnew
 { 278: }
   66,
 { 279: }
@@ -2668,6 +2715,7 @@ yym : array [1..yynmatches] of Integer = (
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   97,
 { 284: }
   97,
@@ -2684,11 +2732,16 @@ yym : array [1..yynmatches] of Integer = (
 >>>>>>> origin/fixes_2.4
   97,
 { 284: }
+=======
+  97,
+{ 284: }
+>>>>>>> origin/cpstrnew
   97,
 { 285: }
   73,
   97,
 { 286: }
+<<<<<<< HEAD
 <<<<<<< HEAD
   82,
 <<<<<<< HEAD
@@ -2698,6 +2751,9 @@ yym : array [1..yynmatches] of Integer = (
 =======
   80,
 >>>>>>> origin/fixes_2.4
+=======
+  80,
+>>>>>>> origin/cpstrnew
   97,
 { 287: }
   81,
@@ -2706,12 +2762,16 @@ yym : array [1..yynmatches] of Integer = (
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
   82,
   97,
 { 289: }
 { 290: }
+<<<<<<< HEAD
 <<<<<<< HEAD
 { 291: }
 { 292: }
@@ -2739,6 +2799,11 @@ yym : array [1..yynmatches] of Integer = (
 { 291: }
 { 292: }
   62,
+=======
+{ 291: }
+{ 292: }
+  62,
+>>>>>>> origin/cpstrnew
 { 293: }
   44,
   97,
@@ -2746,6 +2811,7 @@ yym : array [1..yynmatches] of Integer = (
   46,
   97,
 { 295: }
+<<<<<<< HEAD
 <<<<<<< HEAD
   78,
 <<<<<<< HEAD
@@ -2754,6 +2820,8 @@ yym : array [1..yynmatches] of Integer = (
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
   97,
 { 296: }
   47,
@@ -2761,11 +2829,14 @@ yym : array [1..yynmatches] of Integer = (
 { 297: }
   78,
 <<<<<<< HEAD
+<<<<<<< HEAD
   97,
 { 298: }
   45,
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
   97,
 { 298: }
 { 299: }
@@ -3610,6 +3681,7 @@ yyt : array [1..yyntrans] of YYTrec = (
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   ( cc: [ '0'..'9','A'..'Z','_','a'..'z' ]; s: 65),
 { 248: }
   ( cc: [ '0'..'9','A'..'Z','_','a'..'z' ]; s: 65),
@@ -3630,6 +3702,11 @@ yyt : array [1..yyntrans] of YYTrec = (
 { 248: }
   ( cc: [ '0'..'9','A'..'Z','_','a'..'z' ]; s: 65),
 >>>>>>> origin/fixes_2.4
+=======
+  ( cc: [ '0'..'9','A'..'Z','_','a'..'z' ]; s: 65),
+{ 248: }
+  ( cc: [ '0'..'9','A'..'Z','_','a'..'z' ]; s: 65),
+>>>>>>> origin/cpstrnew
 { 249: }
   ( cc: [ #9,' ' ]; s: 273),
   ( cc: [ '_' ]; s: 274),
@@ -3638,6 +3715,7 @@ yyt : array [1..yyntrans] of YYTrec = (
   ( cc: [ 'd' ]; s: 276),
 { 251: }
 { 252: }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3689,6 +3767,18 @@ yyt : array [1..yyntrans] of YYTrec = (
   ( cc: [ '0'..'9','A'..'K','M'..'Z','_','a'..'z' ]; s: 65),
   ( cc: [ 'L' ]; s: 279),
 >>>>>>> origin/fixes_2.4
+=======
+{ 253: }
+{ 254: }
+  ( cc: [ 'a' ]; s: 277),
+{ 255: }
+  ( cc: [ 'e' ]; s: 278),
+{ 256: }
+  ( cc: [ '0'..'9','A'..'Z','_','a'..'z' ]; s: 65),
+{ 257: }
+  ( cc: [ '0'..'9','A'..'K','M'..'Z','_','a'..'z' ]; s: 65),
+  ( cc: [ 'L' ]; s: 279),
+>>>>>>> origin/cpstrnew
 { 258: }
   ( cc: [ '0'..'9','B'..'Z','_','a'..'z' ]; s: 65),
   ( cc: [ 'A' ]; s: 280),
@@ -3698,6 +3788,7 @@ yyt : array [1..yyntrans] of YYTrec = (
 { 260: }
   ( cc: [ '0'..'9','A'..'Z','_','a'..'z' ]; s: 65),
 { 261: }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   ( cc: [ '0'..'9','A'..'Z','_','a'..'z' ]; s: 65),
@@ -3726,6 +3817,14 @@ yyt : array [1..yyntrans] of YYTrec = (
   ( cc: [ '0'..'9','B'..'Z','_','a'..'z' ]; s: 65),
   ( cc: [ 'A' ]; s: 282),
 >>>>>>> origin/fixes_2.4
+=======
+  ( cc: [ '0'..'9','A'..'Z','_','a'..'z' ]; s: 65),
+{ 262: }
+  ( cc: [ '0'..'9','A'..'Z','_','a'..'z' ]; s: 65),
+{ 263: }
+  ( cc: [ '0'..'9','B'..'Z','_','a'..'z' ]; s: 65),
+  ( cc: [ 'A' ]; s: 282),
+>>>>>>> origin/cpstrnew
 { 264: }
   ( cc: [ '0'..'9','A'..'Q','S'..'Z','_','a'..'z' ]; s: 65),
   ( cc: [ 'R' ]; s: 283),
@@ -3733,6 +3832,7 @@ yyt : array [1..yyntrans] of YYTrec = (
   ( cc: [ '0'..'9','A'..'Z','_','a'..'d','f'..'z' ]; s: 65),
   ( cc: [ 'e' ]; s: 284),
 { 266: }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   ( cc: [ '0'..'9','A'..'Z','_','a'..'z' ]; s: 65),
@@ -3764,6 +3864,9 @@ yyt : array [1..yyntrans] of YYTrec = (
 =======
   ( cc: [ '0'..'9','A'..'Z','_','a'..'z' ]; s: 65),
 >>>>>>> origin/fixes_2.4
+=======
+  ( cc: [ '0'..'9','A'..'Z','_','a'..'z' ]; s: 65),
+>>>>>>> origin/cpstrnew
 { 267: }
   ( cc: [ '0'..'9','A'..'Z','_','a'..'z' ]; s: 65),
 { 268: }
@@ -3786,6 +3889,7 @@ yyt : array [1..yyntrans] of YYTrec = (
   ( cc: [ 'c' ]; s: 275),
 { 274: }
 <<<<<<< HEAD
+<<<<<<< HEAD
   ( cc: [ 'e' ]; s: 290),
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -3803,19 +3907,24 @@ yyt : array [1..yyntrans] of YYTrec = (
   ( cc: [ '0'..'9','A'..'Z','_','a'..'z' ]; s: 65),
 =======
 =======
+=======
+>>>>>>> origin/cpstrnew
   ( cc: [ '_' ]; s: 290),
 { 275: }
   ( cc: [ 'p' ]; s: 291),
 { 276: }
   ( cc: [ 'e' ]; s: 292),
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
 { 277: }
 { 278: }
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/cpstrnew
 { 277: }
-  ( cc: [ '0'..'9','A'..'Z','_','a'..'z' ]; s: 65),
 { 278: }
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2_2
   ( cc: [ '0'..'9','A'..'O','Q'..'Z','_','a'..'z' ]; s: 65),
   ( cc: [ 'P' ]; s: 291),
@@ -3830,10 +3939,15 @@ yyt : array [1..yyntrans] of YYTrec = (
 { 279: }
   ( cc: [ '0'..'9','A'..'Z','_','a'..'z' ]; s: 65),
 >>>>>>> origin/fixes_2.4
+=======
+{ 279: }
+  ( cc: [ '0'..'9','A'..'Z','_','a'..'z' ]; s: 65),
+>>>>>>> origin/cpstrnew
 { 280: }
   ( cc: [ '0'..'9','A'..'O','Q'..'Z','_','a'..'z' ]; s: 65),
   ( cc: [ 'P' ]; s: 293),
 { 281: }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3863,6 +3977,13 @@ yyt : array [1..yyntrans] of YYTrec = (
   ( cc: [ '0'..'9','A'..'O','Q'..'Z','_','a'..'z' ]; s: 65),
   ( cc: [ 'P' ]; s: 295),
 >>>>>>> origin/fixes_2.4
+=======
+  ( cc: [ '0'..'9','A'..'J','L'..'Z','_','a'..'z' ]; s: 65),
+  ( cc: [ 'K' ]; s: 294),
+{ 282: }
+  ( cc: [ '0'..'9','A'..'O','Q'..'Z','_','a'..'z' ]; s: 65),
+  ( cc: [ 'P' ]; s: 295),
+>>>>>>> origin/cpstrnew
 { 283: }
   ( cc: [ '0'..'9','A'..'X','Z','_','a'..'z' ]; s: 65),
   ( cc: [ 'Y' ]; s: 296),
@@ -3874,6 +3995,7 @@ yyt : array [1..yyntrans] of YYTrec = (
 { 286: }
   ( cc: [ '0'..'9','A'..'Z','_','a'..'z' ]; s: 65),
 { 287: }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3905,6 +4027,11 @@ yyt : array [1..yyntrans] of YYTrec = (
 { 288: }
   ( cc: [ '0'..'9','A'..'Z','_','a'..'z' ]; s: 65),
 >>>>>>> origin/fixes_2.4
+=======
+  ( cc: [ '0'..'9','A'..'Z','_','a'..'z' ]; s: 65),
+{ 288: }
+  ( cc: [ '0'..'9','A'..'Z','_','a'..'z' ]; s: 65),
+>>>>>>> origin/cpstrnew
 { 289: }
   ( cc: [ #9,' ' ]; s: 289),
   ( cc: [ '_' ]; s: 274),
@@ -3912,6 +4039,7 @@ yyt : array [1..yyntrans] of YYTrec = (
 { 290: }
   ( cc: [ 'c' ]; s: 298),
 { 291: }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -3925,6 +4053,10 @@ yyt : array [1..yyntrans] of YYTrec = (
   ( cc: [ 'l' ]; s: 299),
 { 292: }
 >>>>>>> origin/fixes_2.4
+=======
+  ( cc: [ 'l' ]; s: 299),
+{ 292: }
+>>>>>>> origin/cpstrnew
 { 293: }
   ( cc: [ '0'..'9','A'..'Z','_','a'..'z' ]; s: 65),
 { 294: }
@@ -3933,11 +4065,15 @@ yyt : array [1..yyntrans] of YYTrec = (
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   ( cc: [ '0'..'9','A'..'H','J'..'Z','_','a'..'z' ]; s: 65),
   ( cc: [ 'I' ]; s: 300),
 { 296: }
   ( cc: [ '0'..'9','A'..'Z','_','a'..'z' ]; s: 65),
 { 297: }
+<<<<<<< HEAD
   ( cc: [ '0'..'9','A'..'Z','_','a'..'z' ]; s: 65),
 { 298: }
   ( cc: [ 'p' ]; s: 301),
@@ -3963,6 +4099,11 @@ yyt : array [1..yyntrans] of YYTrec = (
 { 298: }
   ( cc: [ 'p' ]; s: 301),
 >>>>>>> origin/fixes_2.4
+=======
+  ( cc: [ '0'..'9','A'..'Z','_','a'..'z' ]; s: 65),
+{ 298: }
+  ( cc: [ 'p' ]; s: 301),
+>>>>>>> origin/cpstrnew
 { 299: }
   ( cc: [ 'u' ]; s: 302),
 { 300: }
@@ -4386,12 +4527,16 @@ yykl : array [0..yynstates-1] of Integer = (
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 { 273: } 310,
 { 274: } 311,
 { 275: } 311,
 { 276: } 311,
+<<<<<<< HEAD
 <<<<<<< HEAD
 { 277: } 311,
 { 278: } 312,
@@ -4415,6 +4560,11 @@ yykl : array [0..yynstates-1] of Integer = (
 { 278: } 312,
 { 279: } 313,
 >>>>>>> origin/fixes_2.4
+=======
+{ 277: } 311,
+{ 278: } 312,
+{ 279: } 313,
+>>>>>>> origin/cpstrnew
 { 280: } 315,
 { 281: } 316,
 { 282: } 317,
@@ -4422,12 +4572,16 @@ yykl : array [0..yynstates-1] of Integer = (
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 { 284: } 319,
 { 285: } 320,
 { 286: } 322,
 { 287: } 324,
+<<<<<<< HEAD
 <<<<<<< HEAD
 { 288: } 326,
 { 289: } 328,
@@ -4521,6 +4675,8 @@ yykl : array [0..yynstates-1] of Integer = (
 { 287: } 326,
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 { 288: } 326,
 { 289: } 328,
 { 290: } 328,
@@ -4534,6 +4690,7 @@ yykl : array [0..yynstates-1] of Integer = (
 { 298: } 338,
 { 299: } 338,
 { 300: } 338,
+<<<<<<< HEAD
 <<<<<<< HEAD
 { 301: } 338,
 { 302: } 338,
@@ -4608,6 +4765,8 @@ yykl : array [0..yynstates-1] of Integer = (
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 { 301: } 340,
 { 302: } 340,
 { 303: } 340,
@@ -4678,7 +4837,10 @@ yykl : array [0..yynstates-1] of Integer = (
 { 368: } 344,
 { 369: } 345,
 { 370: } 345
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 );
 
 yykh : array [0..yynstates-1] of Integer = (
@@ -4957,12 +5119,16 @@ yykh : array [0..yynstates-1] of Integer = (
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 { 272: } 309,
 { 273: } 310,
 { 274: } 310,
 { 275: } 310,
+<<<<<<< HEAD
 <<<<<<< HEAD
 { 276: } 310,
 { 277: } 311,
@@ -4986,6 +5152,11 @@ yykh : array [0..yynstates-1] of Integer = (
 { 277: } 311,
 { 278: } 312,
 >>>>>>> origin/fixes_2.4
+=======
+{ 276: } 310,
+{ 277: } 311,
+{ 278: } 312,
+>>>>>>> origin/cpstrnew
 { 279: } 314,
 { 280: } 315,
 { 281: } 316,
@@ -4993,12 +5164,16 @@ yykh : array [0..yynstates-1] of Integer = (
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 { 283: } 318,
 { 284: } 319,
 { 285: } 321,
 { 286: } 323,
+<<<<<<< HEAD
 <<<<<<< HEAD
 { 287: } 325,
 { 288: } 327,
@@ -5093,6 +5268,8 @@ yykh : array [0..yynstates-1] of Integer = (
 { 286: } 325,
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 { 287: } 325,
 { 288: } 327,
 { 289: } 327,
@@ -5106,6 +5283,7 @@ yykh : array [0..yynstates-1] of Integer = (
 { 297: } 337,
 { 298: } 337,
 { 299: } 337,
+<<<<<<< HEAD
 <<<<<<< HEAD
 { 300: } 337,
 { 301: } 337,
@@ -5181,6 +5359,8 @@ yykh : array [0..yynstates-1] of Integer = (
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 { 300: } 339,
 { 301: } 339,
 { 302: } 339,
@@ -5252,7 +5432,10 @@ yykh : array [0..yynstates-1] of Integer = (
 { 368: } 344,
 { 369: } 344,
 { 370: } 345
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 );
 
 yyml : array [0..yynstates-1] of Integer = (
@@ -5532,12 +5715,16 @@ yyml : array [0..yynstates-1] of Integer = (
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 { 273: } 310,
 { 274: } 311,
 { 275: } 311,
 { 276: } 311,
+<<<<<<< HEAD
 <<<<<<< HEAD
 { 277: } 311,
 { 278: } 312,
@@ -5561,6 +5748,11 @@ yyml : array [0..yynstates-1] of Integer = (
 { 278: } 312,
 { 279: } 313,
 >>>>>>> origin/fixes_2.4
+=======
+{ 277: } 311,
+{ 278: } 312,
+{ 279: } 313,
+>>>>>>> origin/cpstrnew
 { 280: } 315,
 { 281: } 316,
 { 282: } 317,
@@ -5568,12 +5760,16 @@ yyml : array [0..yynstates-1] of Integer = (
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 { 284: } 319,
 { 285: } 320,
 { 286: } 322,
 { 287: } 324,
+<<<<<<< HEAD
 <<<<<<< HEAD
 { 288: } 326,
 { 289: } 328,
@@ -5667,6 +5863,8 @@ yyml : array [0..yynstates-1] of Integer = (
 { 287: } 326,
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 { 288: } 326,
 { 289: } 328,
 { 290: } 328,
@@ -5680,6 +5878,7 @@ yyml : array [0..yynstates-1] of Integer = (
 { 298: } 338,
 { 299: } 338,
 { 300: } 338,
+<<<<<<< HEAD
 <<<<<<< HEAD
 { 301: } 338,
 { 302: } 338,
@@ -5754,6 +5953,8 @@ yyml : array [0..yynstates-1] of Integer = (
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 { 301: } 340,
 { 302: } 340,
 { 303: } 340,
@@ -5824,7 +6025,10 @@ yyml : array [0..yynstates-1] of Integer = (
 { 368: } 344,
 { 369: } 345,
 { 370: } 345
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 );
 
 yymh : array [0..yynstates-1] of Integer = (
@@ -6103,12 +6307,16 @@ yymh : array [0..yynstates-1] of Integer = (
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 { 272: } 309,
 { 273: } 310,
 { 274: } 310,
 { 275: } 310,
+<<<<<<< HEAD
 <<<<<<< HEAD
 { 276: } 310,
 { 277: } 311,
@@ -6132,6 +6340,11 @@ yymh : array [0..yynstates-1] of Integer = (
 { 277: } 311,
 { 278: } 312,
 >>>>>>> origin/fixes_2.4
+=======
+{ 276: } 310,
+{ 277: } 311,
+{ 278: } 312,
+>>>>>>> origin/cpstrnew
 { 279: } 314,
 { 280: } 315,
 { 281: } 316,
@@ -6139,12 +6352,16 @@ yymh : array [0..yynstates-1] of Integer = (
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 { 283: } 318,
 { 284: } 319,
 { 285: } 321,
 { 286: } 323,
+<<<<<<< HEAD
 <<<<<<< HEAD
 { 287: } 325,
 { 288: } 327,
@@ -6239,6 +6456,8 @@ yymh : array [0..yynstates-1] of Integer = (
 { 286: } 325,
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 { 287: } 325,
 { 288: } 327,
 { 289: } 327,
@@ -6252,6 +6471,7 @@ yymh : array [0..yynstates-1] of Integer = (
 { 297: } 337,
 { 298: } 337,
 { 299: } 337,
+<<<<<<< HEAD
 <<<<<<< HEAD
 { 300: } 337,
 { 301: } 337,
@@ -6327,6 +6547,8 @@ yymh : array [0..yynstates-1] of Integer = (
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 { 300: } 339,
 { 301: } 339,
 { 302: } 339,
@@ -6398,7 +6620,10 @@ yymh : array [0..yynstates-1] of Integer = (
 { 368: } 344,
 { 369: } 344,
 { 370: } 345
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 );
 
 yytl : array [0..yynstates-1] of Integer = (
@@ -6653,14 +6878,18 @@ yytl : array [0..yynstates-1] of Integer = (
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 { 248: } 506,
 { 249: } 507,
 { 250: } 510,
 { 251: } 511,
 { 252: } 511,
 { 253: } 511,
+<<<<<<< HEAD
 <<<<<<< HEAD
 { 254: } 511,
 { 255: } 512,
@@ -6715,6 +6944,8 @@ yytl : array [0..yynstates-1] of Integer = (
 { 253: } 510,
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 { 254: } 511,
 { 255: } 512,
 { 256: } 513,
@@ -6756,6 +6987,7 @@ yytl : array [0..yynstates-1] of Integer = (
 { 292: } 566,
 { 293: } 566,
 <<<<<<< HEAD
+<<<<<<< HEAD
 { 294: } 568,
 { 295: } 569,
 <<<<<<< HEAD
@@ -6766,6 +6998,10 @@ yytl : array [0..yynstates-1] of Integer = (
 { 294: } 567,
 { 295: } 568,
 >>>>>>> origin/fixes_2.4
+=======
+{ 294: } 567,
+{ 295: } 568,
+>>>>>>> origin/cpstrnew
 { 296: } 570,
 { 297: } 571,
 { 298: } 572,
@@ -6784,13 +7020,17 @@ yytl : array [0..yynstates-1] of Integer = (
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 { 311: } 585,
 { 312: } 586,
 { 313: } 588,
 { 314: } 589,
 { 315: } 591,
+<<<<<<< HEAD
 <<<<<<< HEAD
 { 316: } 593,
 { 317: } 594,
@@ -6815,6 +7055,11 @@ yytl : array [0..yynstates-1] of Integer = (
 { 317: } 594,
 { 318: } 595,
 >>>>>>> origin/fixes_2.4
+=======
+{ 316: } 593,
+{ 317: } 594,
+{ 318: } 595,
+>>>>>>> origin/cpstrnew
 { 319: } 597,
 { 320: } 598,
 { 321: } 599,
@@ -6839,6 +7084,7 @@ yytl : array [0..yynstates-1] of Integer = (
 { 340: } 618,
 { 341: } 619,
 { 342: } 620,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -6872,6 +7118,15 @@ yytl : array [0..yynstates-1] of Integer = (
 { 348: } 625,
 { 349: } 626,
 >>>>>>> origin/fixes_2.4
+=======
+{ 343: } 621,
+{ 344: } 622,
+{ 345: } 622,
+{ 346: } 623,
+{ 347: } 624,
+{ 348: } 625,
+{ 349: } 626,
+>>>>>>> origin/cpstrnew
 { 350: } 626,
 { 351: } 627,
 { 352: } 628,
@@ -6892,12 +7147,16 @@ yytl : array [0..yynstates-1] of Integer = (
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 { 367: } 643,
 { 368: } 644,
 { 369: } 644,
 { 370: } 645
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 { 367: } 642,
@@ -6909,6 +7168,8 @@ yytl : array [0..yynstates-1] of Integer = (
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 );
 
 yyth : array [0..yynstates-1] of Integer = (
@@ -7162,14 +7423,18 @@ yyth : array [0..yynstates-1] of Integer = (
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 { 247: } 505,
 { 248: } 506,
 { 249: } 509,
 { 250: } 510,
 { 251: } 510,
 { 252: } 510,
+<<<<<<< HEAD
 <<<<<<< HEAD
 { 253: } 510,
 { 254: } 511,
@@ -7224,6 +7489,8 @@ yyth : array [0..yynstates-1] of Integer = (
 { 252: } 509,
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 { 253: } 510,
 { 254: } 511,
 { 255: } 512,
@@ -7265,6 +7532,7 @@ yyth : array [0..yynstates-1] of Integer = (
 { 291: } 565,
 { 292: } 565,
 <<<<<<< HEAD
+<<<<<<< HEAD
 { 293: } 567,
 { 294: } 568,
 <<<<<<< HEAD
@@ -7275,6 +7543,10 @@ yyth : array [0..yynstates-1] of Integer = (
 { 293: } 566,
 { 294: } 567,
 >>>>>>> origin/fixes_2.4
+=======
+{ 293: } 566,
+{ 294: } 567,
+>>>>>>> origin/cpstrnew
 { 295: } 569,
 { 296: } 570,
 { 297: } 571,
@@ -7293,13 +7565,17 @@ yyth : array [0..yynstates-1] of Integer = (
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 { 310: } 584,
 { 311: } 585,
 { 312: } 587,
 { 313: } 588,
 { 314: } 590,
+<<<<<<< HEAD
 <<<<<<< HEAD
 { 315: } 592,
 { 316: } 593,
@@ -7324,6 +7600,11 @@ yyth : array [0..yynstates-1] of Integer = (
 { 316: } 593,
 { 317: } 594,
 >>>>>>> origin/fixes_2.4
+=======
+{ 315: } 592,
+{ 316: } 593,
+{ 317: } 594,
+>>>>>>> origin/cpstrnew
 { 318: } 596,
 { 319: } 597,
 { 320: } 598,
@@ -7348,6 +7629,7 @@ yyth : array [0..yynstates-1] of Integer = (
 { 339: } 617,
 { 340: } 618,
 { 341: } 619,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -7381,6 +7663,15 @@ yyth : array [0..yynstates-1] of Integer = (
 { 347: } 624,
 { 348: } 625,
 >>>>>>> origin/fixes_2.4
+=======
+{ 342: } 620,
+{ 343: } 621,
+{ 344: } 621,
+{ 345: } 622,
+{ 346: } 623,
+{ 347: } 624,
+{ 348: } 625,
+>>>>>>> origin/cpstrnew
 { 349: } 625,
 { 350: } 626,
 { 351: } 627,
@@ -7401,13 +7692,17 @@ yyth : array [0..yynstates-1] of Integer = (
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 { 366: } 642,
 { 367: } 643,
 { 368: } 643,
 { 369: } 644,
 { 370: } 644
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 { 366: } 641,
@@ -7421,6 +7716,8 @@ yyth : array [0..yynstates-1] of Integer = (
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 );
 
 

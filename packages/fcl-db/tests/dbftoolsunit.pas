@@ -283,6 +283,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -290,10 +291,13 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 procedure TDBFDBConnector.DropFieldDataset;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -308,6 +312,9 @@ begin
 =======
   DeleteFile(ExtractFilePath(dbname)+'fpdev_field.db');
 >>>>>>> graemeg/cpstrnew
+=======
+  DeleteFile(ExtractFilePath(dbname)+'fpdev_field.db');
+>>>>>>> origin/cpstrnew
 =======
   DeleteFile(ExtractFilePath(dbname)+'fpdev_field.db');
 >>>>>>> origin/cpstrnew

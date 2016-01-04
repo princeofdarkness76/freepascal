@@ -12,6 +12,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure DispInvoke(Dest: PVarData; var Source: TVarData; CallDesc: PCallDesc; Params: Pointer); override;
 =======
     procedure DispInvoke(Dest: PVarData; const Source: TVarData; CallDesc: PCallDesc; Params: Pointer); override;
@@ -22,6 +23,9 @@ type
 =======
     procedure DispInvoke(Dest: PVarData; const Source: TVarData; CallDesc: PCallDesc; Params: Pointer); override;
 >>>>>>> graemeg/cpstrnew
+=======
+    procedure DispInvoke(Dest: PVarData; const Source: TVarData; CallDesc: PCallDesc; Params: Pointer); override;
+>>>>>>> origin/cpstrnew
 =======
     procedure DispInvoke(Dest: PVarData; const Source: TVarData; CallDesc: PCallDesc; Params: Pointer); override;
 >>>>>>> origin/cpstrnew
@@ -39,6 +43,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TTest.DispInvoke(Dest: PVarData; var Source: TVarData; CallDesc: PCallDesc; Params: Pointer);
 =======
 procedure TTest.DispInvoke(Dest: PVarData; const Source: TVarData; CallDesc: PCallDesc; Params: Pointer);
@@ -49,6 +54,9 @@ procedure TTest.DispInvoke(Dest: PVarData; const Source: TVarData; CallDesc: PCa
 =======
 procedure TTest.DispInvoke(Dest: PVarData; const Source: TVarData; CallDesc: PCallDesc; Params: Pointer);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TTest.DispInvoke(Dest: PVarData; const Source: TVarData; CallDesc: PCallDesc; Params: Pointer);
+>>>>>>> origin/cpstrnew
 =======
 procedure TTest.DispInvoke(Dest: PVarData; const Source: TVarData; CallDesc: PCallDesc; Params: Pointer);
 >>>>>>> origin/cpstrnew

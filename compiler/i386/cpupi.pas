@@ -47,6 +47,7 @@ unit cpupi;
       systems,globals,globtype,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       cgobj,tgobj,paramgr,
 =======
       cgobj,tgobj,
@@ -54,6 +55,9 @@ unit cpupi;
 =======
       cgobj,tgobj,
 >>>>>>> origin/fixes_2_2
+=======
+      cgobj,tgobj,paramgr,
+>>>>>>> origin/cpstrnew
       cpubase,
       cgutils,
       symconst;
@@ -88,6 +92,7 @@ unit cpupi;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if target_info.stackalign<=4 then
           result:=Align(tg.direction*tg.lasttemp,min(current_settings.alignment.localalignmax,4))
 =======
@@ -95,6 +100,8 @@ unit cpupi;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         if not(target_info.system in [system_i386_darwin,system_i386_iphonesim]) then
@@ -125,6 +132,7 @@ unit cpupi;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (cs_create_pic in current_settings.moduleswitches) then
 =======
 =======
@@ -142,6 +150,9 @@ unit cpupi;
 >>>>>>> graemeg/fixes_2_2
 =======
         if (target_info.system = system_i386_darwin) and
+=======
+        if (target_info.system in [system_i386_darwin,system_i386_iphonesim]) and
+>>>>>>> origin/cpstrnew
            (cs_create_pic in current_settings.moduleswitches) then
 >>>>>>> origin/fixes_2_2
           begin

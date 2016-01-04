@@ -529,6 +529,7 @@ function SmsSendMessage(smshHandle:SMS_HANDLE;
                         psmsaSMSCAddress:LPSMS_ADDRESS;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         psmsaDestinationAddress:LPSMS_ADDRESS;
 =======
                         psmsaDestinationAddress:SMS_ADDRESS;
@@ -536,6 +537,9 @@ function SmsSendMessage(smshHandle:SMS_HANDLE;
 =======
                         psmsaDestinationAddress:SMS_ADDRESS;
 >>>>>>> origin/fixes_2_2
+=======
+                        psmsaDestinationAddress:LPSMS_ADDRESS;
+>>>>>>> origin/cpstrnew
                         pstValidityPeriod:LPSYSTEMTIME;  // (Values in this structure are expressed relative to the current time)
                         pbData:LPBYTE;
                         dwDataSize:DWORD;

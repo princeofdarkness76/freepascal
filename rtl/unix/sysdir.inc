@@ -22,6 +22,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 Procedure MkDir(s: pchar;len:sizeuint);[IOCheck, public, alias : 'FPC_SYS_MKDIR'];
 >>>>>>> graemeg/cpstrnew
@@ -34,6 +35,9 @@ Procedure MkDir(s: pchar;len:sizeuint);[IOCheck, public, alias : 'FPC_SYS_MKDIR'
 =======
 Procedure MkDir(s: pchar;len:sizeuint);[IOCheck, public, alias : 'FPC_SYS_MKDIR'];
 >>>>>>> origin/cpstrnew
+=======
+Procedure MkDir(s: pchar;len:sizeuint);[IOCheck, public, alias : 'FPC_SYS_MKDIR'];
+>>>>>>> origin/cpstrnew
 const
   { read/write search permission for everyone }
   MODE_MKDIR = S_IWUSR OR S_IRUSR OR
@@ -41,6 +45,7 @@ const
                S_IWOTH OR S_IROTH OR
                S_IXUSR OR S_IXGRP OR S_IXOTH;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -89,9 +94,20 @@ Begin
     exit;
   If Fpmkdir(s, MODE_MKDIR)<0 Then
 >>>>>>> origin/cpstrnew
+=======
+// len is not passed to the *nix functions because the unix API doesn't 
+// use length safeguards for these functions. (probably because there
+// already is a length limit due to PATH_MAX)
+
+Begin
+  If not assigned(s) or (len=0) or (InOutRes <> 0) then
+    exit;
+  If Fpmkdir(s, MODE_MKDIR)<0 Then
+>>>>>>> origin/cpstrnew
    Errno2Inoutres
 End;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -113,6 +129,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 Procedure RmDir(s: pchar;len:sizeuint);[IOCheck, public, alias : 'FPC_SYS_RMDIR'];
 Begin
   if (len=1) and (s^ = '.') then
@@ -123,6 +141,7 @@ Begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -130,9 +149,12 @@ Begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
    Errno2Inoutres
 End;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -154,6 +176,10 @@ Begin
 Procedure ChDir(s: pchar;len:sizeuint);[IOCheck, public, alias : 'FPC_SYS_CHDIR'];
 Begin
 >>>>>>> graemeg/cpstrnew
+=======
+Procedure ChDir(s: pchar;len:sizeuint);[IOCheck, public, alias : 'FPC_SYS_CHDIR'];
+Begin
+>>>>>>> origin/cpstrnew
 =======
 Procedure ChDir(s: pchar;len:sizeuint);[IOCheck, public, alias : 'FPC_SYS_CHDIR'];
 Begin

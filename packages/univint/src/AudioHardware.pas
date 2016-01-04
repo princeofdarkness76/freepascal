@@ -10,6 +10,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Copyright:  (c) 1985-2011 by Apple, Inc., all rights reserved.
 =======
      Copyright:  (c) 1985-2008 by Apple Inc., all rights reserved.
@@ -66,6 +67,18 @@
 {	 Pascal Translation:  Gale R Paeper, <gpaeper@empirenet.com>, 2006 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 >>>>>>> origin/cpstrnew
+=======
+     Copyright:  (c) 1985-2008 by Apple Inc., all rights reserved.
+
+     Bugs?:      For bug reports, consult the following page on
+                 the World Wide Web:
+
+                     http://www.freepascal.org/bugs.html
+
+==================================================================================================}
+{	 Pascal Translation:  Gale R Paeper, <gpaeper@empirenet.com>, 2006 }
+{  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> origin/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -73,6 +86,7 @@
 }
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -104,6 +118,8 @@
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -112,6 +128,7 @@
 
 unit AudioHardware;
 interface
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -129,6 +146,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -144,6 +165,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -154,6 +176,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -161,13 +186,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -175,6 +204,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -183,8 +214,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -195,6 +229,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -215,6 +250,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -223,12 +260,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -236,6 +276,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -499,12 +540,25 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 	{$setc TARGET_CPU_PPC64 := FALSE}
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+>>>>>>> origin/cpstrnew
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
@@ -515,6 +569,8 @@ interface
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -525,6 +581,7 @@ interface
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -566,6 +623,41 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -594,6 +686,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -602,6 +695,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -638,12 +733,20 @@ uses MacTypes, CFRunLoop, CoreAudioTypes;
 >>>>>>> origin/cpstrnew
 =======
 uses MacTypes, CFRunLoop, CoreAudioTypes;
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 uses MacTypes, CFRunLoop, CoreAudioTypes;
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+
+
+{$ifc TARGET_OS_MAC}
+
+>>>>>>> origin/cpstrnew
 {$ALIGN POWER}
 
 //==================================================================================================
@@ -713,6 +816,7 @@ uses MacTypes, CFRunLoop, CoreAudioTypes;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
@@ -728,6 +832,8 @@ uses MacTypes, CFRunLoop, CoreAudioTypes;
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 //==================================================================================================
 //#pragma mark    Error Constants
 
@@ -893,8 +999,11 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
     @constant       kAudioPropertyWildcardPropertyID
                         A synonym for kAudioObjectPropertySelectorWildcard.
     @constant       kAudioPropertyWildcardSection
@@ -902,6 +1011,7 @@ type
                         AudioDeviceGetProperty(), and AudioDeviceSetProperty().
     @constant       kAudioPropertyWildcardChannel
                         A synonym for kAudioObjectPropertyElementWildcard.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -932,6 +1042,8 @@ const
 						A synonym for kAudioObjectPropertyElementWildcard.
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 }
 const
 	kAudioObjectPropertySelectorWildcard = FourCharCode('****');
@@ -1063,6 +1175,7 @@ const
     @constant       kAudioObjectPropertyCreator
                         A CFString that contains the bundle ID of the plug-in that instantiated the
 <<<<<<< HEAD
+<<<<<<< HEAD
                         object.
     @constant       kAudioObjectPropertyObjectName
 <<<<<<< HEAD
@@ -1073,6 +1186,10 @@ const
                         object. The caller is responsible for releasing the returned CFObject.
     @constant       kAudioObjectPropertyName
 >>>>>>> origin/fixes_2.4
+=======
+                        object. The caller is responsible for releasing the returned CFObject.
+    @constant       kAudioObjectPropertyName
+>>>>>>> origin/cpstrnew
                         A CFString that contains the human readable name of the object. The caller
                         is responsible for releasing the returned CFObject.
     @constant       kAudioObjectPropertyManufacturer
@@ -1154,6 +1271,7 @@ procedure AudioObjectShow( inObjectID: AudioObjectID ); external name '_AudioObj
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_2_0) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
@@ -1164,6 +1282,9 @@ procedure AudioObjectShow( inObjectID: AudioObjectID ); external name '_AudioObj
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 {!
     @function       AudioObjectHasProperty
@@ -1178,6 +1299,7 @@ function AudioObjectHasProperty( inObjectID: AudioObjectID; const (*var*) inAddr
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_2_0) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
@@ -1188,6 +1310,9 @@ function AudioObjectHasProperty( inObjectID: AudioObjectID; const (*var*) inAddr
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 {!
     @function       AudioObjectIsPropertySettable
@@ -1205,6 +1330,7 @@ function AudioObjectIsPropertySettable( inObjectID: AudioObjectID; const (*var*)
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_2_0) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
@@ -1215,6 +1341,9 @@ function AudioObjectIsPropertySettable( inObjectID: AudioObjectID; const (*var*)
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 {!
     @function       AudioObjectGetPropertyDataSize
@@ -1239,6 +1368,7 @@ function AudioObjectGetPropertyDataSize( inObjectID: AudioObjectID; const (*var*
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_2_0) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
@@ -1249,6 +1379,9 @@ function AudioObjectGetPropertyDataSize( inObjectID: AudioObjectID; const (*var*
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 {!
     @function       AudioObjectGetPropertyData
@@ -1278,6 +1411,7 @@ function AudioObjectGetPropertyData( inObjectID: AudioObjectID; const (*var*) in
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_2_0) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
@@ -1288,6 +1422,9 @@ function AudioObjectGetPropertyData( inObjectID: AudioObjectID; const (*var*) in
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 {!
     @function       AudioObjectSetPropertyData
@@ -1318,6 +1455,7 @@ function AudioObjectSetPropertyData( inObjectID: AudioObjectID; const (*var*) in
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_2_0) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
@@ -1328,6 +1466,9 @@ function AudioObjectSetPropertyData( inObjectID: AudioObjectID; const (*var*) in
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 {!
     @function       AudioObjectAddPropertyListener
@@ -1348,6 +1489,7 @@ function AudioObjectAddPropertyListener( inObjectID: AudioObjectID; const (*var*
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_2_0) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
@@ -1358,6 +1500,9 @@ function AudioObjectAddPropertyListener( inObjectID: AudioObjectID; const (*var*
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 {!
     @function       AudioObjectRemovePropertyListener
@@ -1377,6 +1522,7 @@ function AudioObjectAddPropertyListener( inObjectID: AudioObjectID; const (*var*
     @result         An OSStatus indicating success or failure.
 }
 function AudioObjectRemovePropertyListener( inObjectID: AudioObjectID; const (*var*) inAddress: AudioObjectPropertyAddress; inListener: AudioObjectPropertyListenerProc; inClientData: UnivPtr ): OSStatus; external name '_AudioObjectRemovePropertyListener';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1402,6 +1548,9 @@ function AudioObjectRemovePropertyListener( inObjectID: AudioObjectID; const (*v
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 //==================================================================================================
 //#pragma mark    AudioControl Constants
@@ -1544,6 +1693,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         A Float32 that represents the value of the volume control. The range is
                         between 0.0 and 1.0 (inclusive).
     @constant       kAudioLevelControlPropertyDecibelValue
@@ -1569,6 +1719,10 @@ const
                         A Float32 that represents the value of the volume control. The range is
                         between 0.0 and 1.0 (inclusive).
 >>>>>>> origin/fixes_2.4
+=======
+                        A Float32 that represents the value of the volume control. The range is
+                        between 0.0 and 1.0 (inclusive).
+>>>>>>> origin/cpstrnew
     @constant       kAudioLevelControlPropertyDecibelValue
                         A Float32 that represents the value of the volume control in dB.
     @constant       kAudioLevelControlPropertyDecibelRange
@@ -1579,6 +1733,7 @@ const
                         contains the equivalent dB value.
     @constant       kAudioLevelControlPropertyConvertDecibelsToScalar
 <<<<<<< HEAD
+<<<<<<< HEAD
                         A Float32 that on input contains a dB volume value for the boot chime and on
                         exit contains the equivalent scalar value.
 <<<<<<< HEAD
@@ -1586,12 +1741,17 @@ const
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
                         A Float32 that on input contains a dB volume value for the and on exit
                         contains the equivalent scalar value.
     @constant       kAudioLevelControlPropertyDecibelsToScalarTransferFunction
                         A UInt32 whose value indicates the transfer function the HAL uses to convert
                         between decibel values and scalar values.
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 }
 const
 	kAudioLevelControlPropertyScalarValue = FourCharCode('lcsv');
@@ -1602,8 +1762,11 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	kAudioLevelControlPropertyDecibelsToScalarTransferFunction = FourCharCode('lctf');
 
 {!
@@ -1633,12 +1796,15 @@ const
 	kAudioLevelControlTranferFunction11Over1 = 14;
 	kAudioLevelControlTranferFunction12Over1 = 15;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {!
     @enum           AudioBooleanControl Properties
@@ -1680,6 +1846,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         the item ID refers to. The qualifier contains the ID of the item.
 =======
                         the item ID refers to. The qualifier contains the ID of the item. Values for
@@ -1692,6 +1859,9 @@ const
 =======
                         the item ID refers to. The qualifier contains the ID of the item.
 >>>>>>> origin/fixes_2.4
+=======
+                        the item ID refers to. The qualifier contains the ID of the item.
+>>>>>>> origin/cpstrnew
 }
 const
 	kAudioClockSourceControlPropertyItemKind = FourCharCode('clkk');
@@ -1699,8 +1869,11 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {!
     @enum           Constants describing the kind of a clock source
@@ -1713,12 +1886,15 @@ const
 	kAudioClockSourceItemKindInternal = FourCharCode('int ');
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {!
     @enum           AudioStereoPanControl Properties
     @abstract       AudioObjectPropertySelector values that apply to all AudioStereoPanControls.
@@ -1845,6 +2021,15 @@ const
 const
 	kAudioHardwareRunLoopMode = 'com.apple.audio.CoreAudio';
 
+{!
+    @defined        kAudioHardwareRunLoopMode
+    @discussion     The name of the run loop mode to which only HAL run loop sources and sources
+                    added via AudioHardwareAddRunLoopSource() belong. This is the mode in which to
+                    task a run loop in order to ensure that just HAL related events are handled.
+}
+const
+	kAudioHardwareRunLoopMode = 'com.apple.audio.CoreAudio';
+
 //==================================================================================================
 //#pragma mark    AudioSystemObject Properties
 
@@ -1907,8 +2092,11 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
     @constant       kAudioHardwarePropertyUserIDChanged
                         This property exists so that clients can tell the HAL when they are changing
                         the effective user ID of the process. The way it works is that a client will
@@ -1916,6 +2104,7 @@ const
                         user preferences such as the default devices. The value of this property is
                         a UInt32, but it's value has no currently defined meaning and clients may
                         pass any value when setting it to trigger the cache flush.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1934,6 +2123,8 @@ const
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
     @constant       kAudioHardwarePropertyDevices
                         An array of the AudioDeviceIDs that represent all the devices currently
                         available to the system.
@@ -1941,6 +2132,7 @@ const
                         The AudioDeviceID of the default input AudioDevice.
     @constant       kAudioHardwarePropertyDefaultOutputDevice
                         The AudioDeviceID of the default output AudioDevice.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1954,6 +2146,9 @@ const
 =======
     @constant       kAudioHardwarePropertyDefaultSystemOutputDevice
 >>>>>>> origin/fixes_2.4
+=======
+    @constant       kAudioHardwarePropertyDefaultSystemOutputDevice
+>>>>>>> origin/cpstrnew
                         The AudioDeviceID of the output AudioDevice to use for system related sound
                         from the alert sound to digital call progress.
     @constant       kAudioHardwarePropertyDeviceForUID
@@ -1967,6 +2162,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1976,10 +2172,13 @@ const
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
     @constant       kAudioHardwarePropertyProcessIsAudible
                         A UInt32 where a non-zero value indicates that the audio of the process will
                         be heard. A value of 0 indicates that all audio in the process will not be
                         heard.
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -1987,6 +2186,8 @@ const
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
     @constant       kAudioHardwarePropertySleepingIsAllowed
                         A UInt32 where 1 means that the process will allow the CPU to idle sleep
                         even if there is audio IO in progress. A 0 means that the CPU will not be
@@ -2024,12 +2225,16 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
     @constant       kAudioHardwarePropertyUserSessionIsActiveOrHeadless
                         A UInt32 where a value other than 0 indicates that the login session of the
                         user of the process is either an active console session or a headless
                         session.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2051,11 +2256,14 @@ const
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
     @constant       kAudioHardwarePropertyMixStereoToMono
                         A UInt32 where a value other than 0 indicates that AudioDevices should mix
                         stereo signals down to mono. Note that the two channels on the device that
                         comprise the stereo signal are defined on the device by
                         kAudioDevicePropertyPreferredChannelsForStereo.
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -2063,10 +2271,13 @@ const
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 }
 const
 	kAudioHardwarePropertyProcessIsMaster = FourCharCode('mast');
 	kAudioHardwarePropertyIsInitingOrExiting = FourCharCode('inot');
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2088,6 +2299,9 @@ const
 =======
 	kAudioHardwarePropertyUserIDChanged = FourCharCode('euid');
 >>>>>>> origin/fixes_2.4
+=======
+	kAudioHardwarePropertyUserIDChanged = FourCharCode('euid');
+>>>>>>> origin/cpstrnew
 	kAudioHardwarePropertyDevices = FourCharCode('dev#');
 	kAudioHardwarePropertyDefaultInputDevice = FourCharCode('dIn ');
 	kAudioHardwarePropertyDefaultOutputDevice = FourCharCode('dOut');
@@ -2104,6 +2318,7 @@ const
 	kAudioHardwarePropertyUserIDChanged = FourCharCode('euid');
 =======
 	kAudioHardwarePropertyDeviceForUID = FourCharCode('duid');
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2137,12 +2352,15 @@ const
 =======
 >>>>>>> origin/fixes_2_2
 	kAudioHardwarePropertyDeviceForUID = FourCharCode('duid');
+=======
+>>>>>>> origin/cpstrnew
 	kAudioHardwarePropertyProcessIsAudible = FourCharCode('pmut');
 	kAudioHardwarePropertySleepingIsAllowed = FourCharCode('slep');
 	kAudioHardwarePropertyUnloadingIsAllowed = FourCharCode('unld');
 	kAudioHardwarePropertyHogModeIsAllowed = FourCharCode('hogr');
 	kAudioHardwarePropertyRunLoop = FourCharCode('rnlp');
 	kAudioHardwarePropertyPlugInForBundleID = FourCharCode('pibi');
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -2152,6 +2370,10 @@ const
 	kAudioHardwarePropertyUserSessionIsActiveOrHeadless = FourCharCode('user');
 	kAudioHardwarePropertyMixStereoToMono = FourCharCode('stmo');
 >>>>>>> origin/fixes_2.4
+=======
+	kAudioHardwarePropertyUserSessionIsActiveOrHeadless = FourCharCode('user');
+	kAudioHardwarePropertyMixStereoToMono = FourCharCode('stmo');
+>>>>>>> origin/cpstrnew
 
 {!
     @enum           AudioSystemObject Properties Implemented via AudioControl objects
@@ -2183,12 +2405,16 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
     @constant       kAudioHardwarePropertyBootChimeVolumeDecibelsToScalarTransferFunction
                         A UInt32 whose value indicates the transfer function the HAL uses to convert
                         between decibel values and scalar values. This property is implemented by an
                         AudioControl object that is a subclass of AudioBootChimeVolumeControl.
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -2196,6 +2422,8 @@ const
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 }
 const
 	kAudioHardwarePropertyBootChimeVolumeScalar = FourCharCode('bbvs');
@@ -2203,6 +2431,7 @@ const
 	kAudioHardwarePropertyBootChimeVolumeRangeDecibels = FourCharCode('bbd#');
 	kAudioHardwarePropertyBootChimeVolumeScalarToDecibels = FourCharCode('bv2d');
 	kAudioHardwarePropertyBootChimeVolumeDecibelsToScalar = FourCharCode('bd2v');
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2224,6 +2453,9 @@ const
 =======
 	kAudioHardwarePropertyBootChimeVolumeDecibelsToScalarTransferFunction = FourCharCode('bvtf');
 >>>>>>> origin/fixes_2.4
+=======
+	kAudioHardwarePropertyBootChimeVolumeDecibelsToScalarTransferFunction = FourCharCode('bvtf');
+>>>>>>> origin/cpstrnew
 
 //==================================================================================================
 //#pragma mark    AudioSystemObject Functions
@@ -2255,6 +2487,7 @@ function AudioHardwareAddRunLoopSource( inRunLoopSource: CFRunLoopSourceRef ): O
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3, __IPHONE_2_0) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
@@ -2265,6 +2498,9 @@ function AudioHardwareAddRunLoopSource( inRunLoopSource: CFRunLoopSourceRef ): O
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3, __IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_3, __IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 {!
     @function       AudioHardwareRemoveRunLoopSource
@@ -2276,6 +2512,7 @@ function AudioHardwareAddRunLoopSource( inRunLoopSource: CFRunLoopSourceRef ): O
     @result         An OSStatus indicating success or failure.
 }
 function AudioHardwareRemoveRunLoopSource( inRunLoopSource: CFRunLoopSourceRef ): OSStatus; external name '_AudioHardwareRemoveRunLoopSource';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2309,6 +2546,9 @@ function AudioHardwareUnload: OSStatus; external name '_AudioHardwareUnload';
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3, __IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_3, __IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 {!
     @function       AudioHardwareUnload
@@ -2319,6 +2559,7 @@ function AudioHardwareUnload: OSStatus; external name '_AudioHardwareUnload';
 }
 function AudioHardwareUnload: OSStatus; external name '_AudioHardwareUnload';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -2327,6 +2568,9 @@ function AudioHardwareUnload: OSStatus; external name '_AudioHardwareUnload';
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1, __IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_1, __IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 {!
     @function       AudioHardwareGetPropertyInfo
@@ -2349,6 +2593,7 @@ function AudioHardwareGetPropertyInfo( inPropertyID: AudioHardwarePropertyID; ou
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_6, __IPHONE_2_0, __IPHONE_2_0) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -2359,6 +2604,9 @@ function AudioHardwareGetPropertyInfo( inPropertyID: AudioHardwarePropertyID; ou
 =======
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_6, __IPHONE_2_0, __IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_6, __IPHONE_2_0, __IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 {!
     @function       AudioHardwareGetProperty
@@ -2380,6 +2628,7 @@ function AudioHardwareGetProperty( inPropertyID: AudioHardwarePropertyID; var io
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_6, __IPHONE_2_0, __IPHONE_2_0) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -2390,6 +2639,9 @@ function AudioHardwareGetProperty( inPropertyID: AudioHardwarePropertyID; var io
 =======
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_6, __IPHONE_2_0, __IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_6, __IPHONE_2_0, __IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 {!
     @function       AudioHardwareSetProperty
@@ -2411,6 +2663,7 @@ function AudioHardwareSetProperty( inPropertyID: AudioHardwarePropertyID; inProp
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_6, __IPHONE_2_0, __IPHONE_2_0) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -2421,6 +2674,9 @@ function AudioHardwareSetProperty( inPropertyID: AudioHardwarePropertyID; inProp
 =======
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_6, __IPHONE_2_0, __IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_6, __IPHONE_2_0, __IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 {!
     @function       AudioHardwareAddPropertyListener
@@ -2440,6 +2696,7 @@ function AudioHardwareAddPropertyListener( inPropertyID: AudioHardwarePropertyID
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_6, __IPHONE_2_0, __IPHONE_2_0) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -2450,6 +2707,9 @@ function AudioHardwareAddPropertyListener( inPropertyID: AudioHardwarePropertyID
 =======
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_6, __IPHONE_2_0, __IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_6, __IPHONE_2_0, __IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 {!
     @function       AudioHardwareRemovePropertyListener
@@ -2468,6 +2728,7 @@ function AudioHardwareRemovePropertyListener( inPropertyID: AudioHardwarePropert
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_6, __IPHONE_2_0, __IPHONE_2_0) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -2478,6 +2739,9 @@ function AudioHardwareRemovePropertyListener( inPropertyID: AudioHardwarePropert
 =======
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_6, __IPHONE_2_0, __IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_6, __IPHONE_2_0, __IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 //==================================================================================================
 //#pragma mark    AudioPlugIn Constants
@@ -2613,6 +2877,7 @@ type
 
 {!
 <<<<<<< HEAD
+<<<<<<< HEAD
     @struct         AudioHardwareIOProcStreamUsage
     @abstract       This structure describes which streams a given AudioDeviceIOProc will use. It is
                     used in conjunction with kAudioDevicePropertyIOProcStreamUsage.
@@ -2639,6 +2904,8 @@ type
 {!
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
     @typedef        AudioDeviceIOProc
     @abstract       An AudioDeviceIOProc is called by an AudioDevice to provide input data read from
                     the device and collect output data to be written to the device for the current
@@ -2850,6 +3117,37 @@ type
 	end;
 
 {!
+    @typedef        AudioDeviceIOProcID
+    @abstract       An AudioDeviceIOProcID represents both an IOProc and the client data that goes
+                    with it. Once created, an AudioDeviceIOProcID can be used everywhere one would
+                    use a regular IOProc. The purpose for an AudioDeviceIOProcID is to allow a
+                    client to register the same function pointer as an IOProc with a device multiple
+                    times provided
+}
+type
+	AudioDeviceIOProcID = AudioDeviceIOProc;
+
+{!
+    @struct         AudioHardwareIOProcStreamUsage
+    @abstract       This structure describes which streams a given AudioDeviceIOProc will use. It is
+                    used in conjunction with kAudioDevicePropertyIOProcStreamUsage.
+    @field          mIOProc
+                        The IOProc whose stream usage is being specified.
+    @field          mNumberStreams
+                        The number of streams being specified.
+    @field          mStreamIsOn
+                        An array of UInt32's whose length is specified by mNumberStreams. Each
+                        element of the array corresponds to a stream. A value of 0 means the stream
+                        is not to be enabled. Any other value means the stream is to be used.
+}
+type
+	AudioHardwareIOProcStreamUsage = record
+		mIOProc: UnivPtr;
+		mNumberStreams: UInt32;
+		mStreamIsOn: array[0..0] of UInt32;
+	end;
+
+{!
     @typedef        AudioDevicePropertyListenerProc
     @abstract       Clients register an AudioDevicePropertyListenerProc with the AudioDevice object
                     in order to receive notifications when the properties of the object change.
@@ -2957,8 +3255,11 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {!
     @enum           Transport Type IDs
     @abstract       Commonly used values for kAudioDevicePropertyTransportType
@@ -2995,12 +3296,15 @@ const
 	kAudioDeviceTransportTypeBluetooth = FourCharCode('blue');
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 //==================================================================================================
 //#pragma mark    AudioDevice Properties
 
@@ -3054,6 +3358,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         of hardware. The caller is responsible for releasing the returned CFObject.
 =======
                         of hardware.
@@ -3064,11 +3369,15 @@ const
 =======
                         of hardware. The caller is responsible for releasing the returned CFObject.
 >>>>>>> origin/fixes_2.4
+=======
+                        of hardware. The caller is responsible for releasing the returned CFObject.
+>>>>>>> origin/cpstrnew
     @constant       kAudioDevicePropertyModelUID
                         A CFString that contains a persistent identifier for the model of an
                         AudioDevice. The identifier is unique such that the identifier from two
                         AudioDevices are equal if and only if the two AudioDevices are the exact
                         same model from the same manufacturer. Further, the identifier has to be the
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3098,6 +3407,14 @@ const
                         Constants for some of the values for this property can be found in the enum
                         in the AudioDevice constants section of this file.
 >>>>>>> origin/fixes_2.4
+=======
+                        same no matter on what machine the AudioDevice appears. The caller is
+                        responsible for releasing the returned CFObject.
+    @constant       kAudioDevicePropertyTransportType
+                        A UInt32 whose value indicates how the AudioDevice is connected to the CPU.
+                        Constants for some of the values for this property can be found in the enum
+                        in the AudioDevice constants section of this file.
+>>>>>>> origin/cpstrnew
     @constant       kAudioDevicePropertyRelatedDevices
                         An array of AudioDeviceIDs for devices related to the AudioDevice. For
                         IOAudio-based devices, a AudioDevices are related if they share the same
@@ -3168,8 +3485,11 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
                         Note that when setting this property, the value passed in is ignored. If
                         another process owns exclusive access, that remains unchanged. If the
                         current process owns exclusive access, it is released and made available to
@@ -3177,6 +3497,7 @@ const
                         value is -1), this process gains ownership of exclusive access.  On return,
                         the pid_t pointed to by inPropertyData will contain the new value of the
                         property.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3195,6 +3516,8 @@ const
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
     @constant       kAudioDevicePropertyLatency
                         A UInt32 containing the number of frames of latency in the AudioDevice. Note
                         that input and output latency may differ. Further, the AudioDevice's
@@ -3351,6 +3674,7 @@ const
 	kAudioDevicePropertyActualSampleRate = FourCharCode('asrt');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
@@ -3358,6 +3682,10 @@ const
 	kAudioDevicePropertyIcon = FourCharCode('icon');
 	kAudioDevicePropertyIsHidden = FourCharCode('hidn');
 >>>>>>> origin/fixes_2.4
+=======
+	kAudioDevicePropertyIcon = FourCharCode('icon');
+	kAudioDevicePropertyIsHidden = FourCharCode('hidn');
+>>>>>>> origin/cpstrnew
 
 {!
     @enum           AudioDevice Properties Implemented via AudioControl objects
@@ -3417,12 +3745,16 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
     @constant       kAudioDevicePropertyVolumeDecibelsToScalarTransferFunction
                         A UInt32 whose value indicates the transfer function the HAL uses to convert
                         between decibel values and scalar values. This property is implemented by an
                         AudioControl object that is a subclass of AudioVolumeControl.
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -3430,6 +3762,8 @@ const
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
     @constant       kAudioDevicePropertyStereoPan
                         A Float32 where 0.0 is full left, 1.0 is full right, and 0.5 is center. This
                         property is implemented by an AudioControl object that is a subclass of
@@ -3535,6 +3869,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
                         Values for this property are defined in <IOAudio/audio/IOAudioTypes.h>. 
 >>>>>>> graemeg/fixes_2_2
@@ -3543,6 +3878,8 @@ const
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
     @constant       kAudioDevicePropertyPlayThru
                         A UInt32 where a value of 0 means that play through is off and a value of 1
                         means that it is on. This property is implemented by an AudioControl object
@@ -3614,8 +3951,11 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
     @constant       kAudioDevicePropertyPlayThruVolumeDecibelsToScalarTransferFunction
                         A UInt32 whose value indicates the transfer function the HAL uses to convert
                         between decibel values and scalar values. This property is implemented by an
@@ -3623,12 +3963,15 @@ const
                         control that implements this property is only available through
                         kAudioDevicePropertyScopePlayThrough.
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
     @constant       kAudioDevicePropertyPlayThruStereoPan
                         A Float32 where 0.0 is full left, 1.0 is full right, and 0.5 is center. This
                         property is implemented by an AudioControl object that is a subclass of
@@ -3774,12 +4117,16 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
     @constant       kAudioDevicePropertySubVolumeDecibelsToScalarTransferFunction
                         A UInt32 whose value indicates the transfer function the HAL uses to convert
                         between decibel values and scalar values. This property is implemented by an
                         AudioControl object that is a subclass of AudioLFEVolumeControl.
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -3787,6 +4134,8 @@ const
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
     @constant       kAudioDevicePropertySubMute
                         A UInt32 where a value of 1 means that mute is enabled making the LFE on
                         that element inaudible. The property is implemented by an AudioControl
@@ -3802,6 +4151,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kAudioDevicePropertyVolumeDecibelsToScalarTransferFunction = FourCharCode('vctf');
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -3810,6 +4160,9 @@ const
 =======
 	kAudioDevicePropertyVolumeDecibelsToScalarTransferFunction = FourCharCode('vctf');
 >>>>>>> origin/fixes_2.4
+=======
+	kAudioDevicePropertyVolumeDecibelsToScalarTransferFunction = FourCharCode('vctf');
+>>>>>>> origin/cpstrnew
 	kAudioDevicePropertyStereoPan = FourCharCode('span');
 	kAudioDevicePropertyStereoPanChannels = FourCharCode('spn#');
 	kAudioDevicePropertyMute = FourCharCode('mute');
@@ -3849,6 +4202,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kAudioDevicePropertyPlayThruVolumeDecibelsToScalarTransferFunction = FourCharCode('mvtf');
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -3857,6 +4211,9 @@ const
 =======
 	kAudioDevicePropertyPlayThruVolumeDecibelsToScalarTransferFunction = FourCharCode('mvtf');
 >>>>>>> origin/fixes_2.4
+=======
+	kAudioDevicePropertyPlayThruVolumeDecibelsToScalarTransferFunction = FourCharCode('mvtf');
+>>>>>>> origin/cpstrnew
 	kAudioDevicePropertyPlayThruStereoPan = FourCharCode('mspn');
 	kAudioDevicePropertyPlayThruStereoPanChannels = FourCharCode('msp#');
 	kAudioDevicePropertyPlayThruDestination = FourCharCode('mdds');
@@ -3884,6 +4241,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kAudioDevicePropertySubVolumeDecibelsToScalarTransferFunction = FourCharCode('svtf');
 	kAudioDevicePropertySubMute = FourCharCode('smut');
 
@@ -3897,6 +4255,9 @@ const
 =======
 	kAudioDevicePropertySubVolumeDecibelsToScalarTransferFunction = FourCharCode('svtf');
 >>>>>>> origin/fixes_2.4
+=======
+	kAudioDevicePropertySubVolumeDecibelsToScalarTransferFunction = FourCharCode('svtf');
+>>>>>>> origin/cpstrnew
 	kAudioDevicePropertySubMute = FourCharCode('smut');
 
 >>>>>>> origin/fixes_2_2
@@ -3950,6 +4311,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         A C-string that contains a human readable name for the given element in the
 =======
                         A CFString that contains a human readable name for the given element in the
@@ -3960,6 +4322,9 @@ const
 =======
                         A C-string that contains a human readable name for the given element in the
 >>>>>>> origin/fixes_2.4
+=======
+                        A C-string that contains a human readable name for the given element in the
+>>>>>>> origin/cpstrnew
                         given scope. The caller is responsible for releasing the returned CFObject.
                         (kAudioObjectPropertyElementName: CFStrings are better for
                         localization.)
@@ -3972,6 +4337,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         A C-string that contains a human readable name for the category of the given
 =======
                         A CFString that contains a human readable name for the category of the given
@@ -3982,6 +4348,9 @@ const
 =======
                         A C-string that contains a human readable name for the category of the given
 >>>>>>> origin/fixes_2.4
+=======
+                        A C-string that contains a human readable name for the category of the given
+>>>>>>> origin/cpstrnew
                         element in the given scope. The caller is responsible for releasing the
                         returned CFObject.
                         (kAudioObjectPropertyElementCategoryName: CFStrings are better for
@@ -3996,6 +4365,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         A C-string that contains a human readable name for the number of the given
 =======
                         A CFString that contains a human readable name for the number of the given
@@ -4006,6 +4376,9 @@ const
 =======
                         A C-string that contains a human readable name for the number of the given
 >>>>>>> origin/fixes_2.4
+=======
+                        A C-string that contains a human readable name for the number of the given
+>>>>>>> origin/cpstrnew
                         element in the given scope. The caller is responsible for releasing the
                         returned CFObject.
                         (kAudioObjectPropertyElementNumberName: CFStrings are better for
@@ -4064,6 +4437,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         the name as a null terminated C-string.
 =======
                         the name as a null terminated c-string.
@@ -4074,6 +4448,9 @@ const
 =======
                         the name as a null terminated C-string.
 >>>>>>> origin/fixes_2.4
+=======
+                        the name as a null terminated C-string.
+>>>>>>> origin/cpstrnew
                         (kAudioDevicePropertyDataSourceNameForIDCFString: CFStrings are better for
                         localization.)
     @constant       kAudioDevicePropertyClockSourceNameForID
@@ -4083,6 +4460,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         buffer to hold the name as a null terminated C-string.
 =======
                         buffer to hold the name as a null terminated c-string.
@@ -4093,6 +4471,9 @@ const
 =======
                         buffer to hold the name as a null terminated C-string.
 >>>>>>> origin/fixes_2.4
+=======
+                        buffer to hold the name as a null terminated C-string.
+>>>>>>> origin/cpstrnew
                         (kAudioDevicePropertyClockSourceNameForIDCFString: CFStrings are better for
                         localization.)
     @constant       kAudioDevicePropertyPlayThruDestinationNameForID
@@ -4102,6 +4483,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         buffer to hold the name as a null terminated C-string.
 =======
                         buffer to hold the name as a null terminated c-string.
@@ -4112,6 +4494,9 @@ const
 =======
                         buffer to hold the name as a null terminated C-string.
 >>>>>>> origin/fixes_2.4
+=======
+                        buffer to hold the name as a null terminated C-string.
+>>>>>>> origin/cpstrnew
                         (kAudioDevicePropertyPlayThruDestinationNameForIDCFString: CFStrings are
                         better for localization.)
     @constant       kAudioDevicePropertyChannelNominalLineLevelNameForID
@@ -4121,6 +4506,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         buffer to hold the name as a null terminated C-string.
 =======
                         buffer to hold the name as a null terminated c-string.
@@ -4131,6 +4517,9 @@ const
 =======
                         buffer to hold the name as a null terminated C-string.
 >>>>>>> origin/fixes_2.4
+=======
+                        buffer to hold the name as a null terminated C-string.
+>>>>>>> origin/cpstrnew
                         (kAudioDevicePropertyChannelNominalLineLevelNameForIDCFString: CFStrings are
                         better for localization.)
 }
@@ -4176,13 +4565,17 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
     @function       AudioDeviceCreateIOProcID
     @abstract       Creates an AudioDeviceIOProcID from an AudioDeviceIOProc and a client data
                     pointer.
     @discussion     AudioDeviceIOProcIDs allow for the client to register the same function pointer
                     with a device multiple times
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4197,6 +4590,8 @@ const
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
     @param          inDevice
                         The AudioDevice to register the IOProc with.
     @param          inProc
@@ -4227,12 +4622,15 @@ function AudioDeviceDestroyIOProcID( inDevice: AudioDeviceID; inIOProcID: AudioD
 
 {!
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
     @function       AudioDeviceAddIOProc
     @abstract       Registers the given AudioDeviceIOProc with the AudioDevice.
     @discussion     A client may have multiple IOProcs for a given device, but the device is free to
@@ -4240,6 +4638,7 @@ function AudioDeviceDestroyIOProcID( inDevice: AudioDeviceID; inIOProcID: AudioD
                     clients to have more than a single IOProc registered at a time as this can be
                     wasteful of system resources. Rather, it is recommended that the client do any
                     necessary mixing itself so that only one IOProc is necessary.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4261,6 +4660,9 @@ function AudioDeviceDestroyIOProcID( inDevice: AudioDeviceID; inIOProcID: AudioD
 =======
                     This routine has been deprecated in favor of AudioDeviceCreateIOProcID().
 >>>>>>> origin/fixes_2.4
+=======
+                    This routine has been deprecated in favor of AudioDeviceCreateIOProcID().
+>>>>>>> origin/cpstrnew
     @param          inDevice
                         The AudioDevice to register the IOProc with.
     @param          inProc
@@ -4294,6 +4696,7 @@ function AudioDeviceAddIOProc( inDevice: AudioDeviceID; inProc: AudioDeviceIOPro
 }
 function AudioDeviceAddIOProc( inDevice: AudioDeviceID; inProc: AudioDeviceIOProc; inClientData: UnivPtr ): OSStatus; external name '_AudioDeviceAddIOProc';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -4302,10 +4705,14 @@ function AudioDeviceAddIOProc( inDevice: AudioDeviceID; inProc: AudioDeviceIOPro
 =======
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_2_0, __IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_2_0, __IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 {!
     @function       AudioDeviceRemoveIOProc
     @abstract       Unregisters the given AudioDeviceIOProc from the AudioDevice.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4390,6 +4797,9 @@ function AudioDeviceStart( inDevice: AudioDeviceID; inProcID: AudioDeviceIOProcI
 =======
                     This routine has been deprecated in favor of AudioDeviceDestroyIOProcID().
 >>>>>>> origin/fixes_2.4
+=======
+                    This routine has been deprecated in favor of AudioDeviceDestroyIOProcID().
+>>>>>>> origin/cpstrnew
     @param          inDevice
                         The AudioDevice to unregister the IOProc from.
     @param          inProc
@@ -4422,6 +4832,7 @@ function AudioDeviceStart( inDevice: AudioDeviceID; inProcID: AudioDeviceIOProcI
     @param          inDevice
                         The AudioDevice to start the IOProc on.
 <<<<<<< HEAD
+<<<<<<< HEAD
     @param          inProc
                         The AudioDeviceIOProc to start. Note that this can be NULL, which starts the
                         hardware regardless of whether or not there are any IOProcs registered.
@@ -4434,6 +4845,11 @@ function AudioDeviceStart( inDevice: AudioDeviceID; inProcID: AudioDeviceIOProcI
                         The AudioDeviceIOProcID to start. Note that this can be NULL, which starts
                         the hardware regardless of whether or not there are any IOProcs registered.
 >>>>>>> origin/fixes_2.4
+=======
+    @param          inProcID
+                        The AudioDeviceIOProcID to start. Note that this can be NULL, which starts
+                        the hardware regardless of whether or not there are any IOProcs registered.
+>>>>>>> origin/cpstrnew
     @param          ioRequestedStartTime
                         A pointer to an AudioTimeStamp that, on entry, is the requested time to
                         start the IOProc. On exit, it will be the actual time the IOProc will start.
@@ -4444,6 +4860,7 @@ function AudioDeviceStart( inDevice: AudioDeviceID; inProcID: AudioDeviceIOProcI
                     not support starting at a specific time and inProc and ioRequestedStartTime are
                     not NULL.
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4497,6 +4914,10 @@ function AudioDeviceStartAtTime( inDevice: AudioDeviceID; inProc: AudioDeviceIOP
 function AudioDeviceStartAtTime( inDevice: AudioDeviceID; inProcID: AudioDeviceIOProcID; ioRequestedStartTime: AudioTimeStampPtr; inFlags: UInt32 ): OSStatus; external name '_AudioDeviceStartAtTime';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3, __IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+function AudioDeviceStartAtTime( inDevice: AudioDeviceID; inProcID: AudioDeviceIOProcID; ioRequestedStartTime: AudioTimeStampPtr; inFlags: UInt32 ): OSStatus; external name '_AudioDeviceStartAtTime';
+(* __OSX_AVAILABLE_STARTING(__MAC_10_3, __IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 {!
     @function       AudioDeviceStop
@@ -4508,6 +4929,7 @@ function AudioDeviceStartAtTime( inDevice: AudioDeviceID; inProcID: AudioDeviceI
     @result         An OSStatus indicating success or failure.
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 function AudioDeviceStop( inDevice: AudioDeviceID; inProc: AudioDeviceIOProc ): OSStatus; external name '_AudioDeviceStop';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 <<<<<<< HEAD
@@ -4518,11 +4940,16 @@ function AudioDeviceStop( inDevice: AudioDeviceID; inProc: AudioDeviceIOProc ): 
 function AudioDeviceStop( inDevice: AudioDeviceID; inProcID: AudioDeviceIOProcID ): OSStatus; external name '_AudioDeviceStop';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+function AudioDeviceStop( inDevice: AudioDeviceID; inProcID: AudioDeviceIOProcID ): OSStatus; external name '_AudioDeviceStop';
+(* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 {!
     @function       AudioDeviceRead
     @abstract       Read some data from an AudioDevice starting at the given time.
     @discussion     With the advent of aggregate devices, the need for AudioDeviceRead has gone
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4536,6 +4963,9 @@ function AudioDeviceStop( inDevice: AudioDeviceID; inProcID: AudioDeviceIOProcID
 =======
                     away. Consequently, this function is now deprecated.
 >>>>>>> origin/fixes_2.4
+=======
+                    away. Consequently, this function is now deprecated.
+>>>>>>> origin/cpstrnew
     @param          inDevice
                         The AudioDevice to read from.
     @param          inStartTime
@@ -4578,6 +5008,7 @@ function AudioDeviceRead( inDevice: AudioDeviceID; const (*var*) inStartTime: Au
 }
 function AudioDeviceRead( inDevice: AudioDeviceID; const (*var*) inStartTime: AudioTimeStamp; var outData: AudioBufferList ): OSStatus; external name '_AudioDeviceRead';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -4586,6 +5017,9 @@ function AudioDeviceRead( inDevice: AudioDeviceID; const (*var*) inStartTime: Au
 =======
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_1, __MAC_10_5, __IPHONE_2_0, __IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_1, __MAC_10_5, __IPHONE_2_0, __IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 {!
     @function       AudioDeviceGetCurrentTime
@@ -4604,6 +5038,7 @@ function AudioDeviceRead( inDevice: AudioDeviceID; const (*var*) inStartTime: Au
 function AudioDeviceGetCurrentTime( inDevice: AudioObjectID; var outTime: AudioTimeStamp ): OSStatus; external name '_AudioDeviceGetCurrentTime';
 =======
 function AudioDeviceGetCurrentTime( inDevice: AudioDeviceID; var outTime: AudioTimeStamp ): OSStatus; external name '_AudioDeviceGetCurrentTime';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4627,6 +5062,9 @@ function AudioDeviceGetCurrentTime( inDevice: AudioDeviceID; var outTime: AudioT
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 {!
     @function       AudioDeviceTranslateTime
@@ -4663,6 +5101,7 @@ function AudioDeviceTranslateTime( inDevice: AudioDeviceID; const (*var*) inTime
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
 =======
 function AudioDeviceTranslateTime( inDevice: AudioDeviceID; const (*var*) inTime: AudioTimeStamp; var outTime: AudioTimeStamp ): OSStatus; external name '_AudioDeviceTranslateTime';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/fixes_2_2
 =======
@@ -4673,6 +5112,9 @@ function AudioDeviceTranslateTime( inDevice: AudioDeviceID; const (*var*) inTime
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 {!
     @function       AudioDeviceGetNearestStartTime
@@ -4714,11 +5156,15 @@ function AudioDeviceGetNearestStartTime( inDevice: AudioDeviceID; var ioRequeste
 =======
 function AudioDeviceGetNearestStartTime( inDevice: AudioDeviceID; var ioRequestedStartTime: AudioTimeStamp; inFlags: UInt32 ): OSStatus; external name '_AudioDeviceGetNearestStartTime';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> origin/fixes_2_2
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3, __IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_3, __IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 {!
     @function       AudioDeviceGetPropertyInfo
@@ -4747,6 +5193,7 @@ function AudioDeviceGetPropertyInfo( inDevice: AudioDeviceID; inChannel: UInt32;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_6, __IPHONE_2_0, __IPHONE_2_0) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -4757,6 +5204,9 @@ function AudioDeviceGetPropertyInfo( inDevice: AudioDeviceID; inChannel: UInt32;
 =======
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_6, __IPHONE_2_0, __IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_6, __IPHONE_2_0, __IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 {!
     @function       AudioDeviceGetProperty
@@ -4783,6 +5233,7 @@ function AudioDeviceGetProperty( inDevice: AudioDeviceID; inChannel: UInt32; isI
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_6, __IPHONE_2_0, __IPHONE_2_0) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -4793,6 +5244,9 @@ function AudioDeviceGetProperty( inDevice: AudioDeviceID; inChannel: UInt32; isI
 =======
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_6, __IPHONE_2_0, __IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_6, __IPHONE_2_0, __IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 {!
     @function       AudioDeviceSetProperty
@@ -4804,6 +5258,7 @@ function AudioDeviceGetProperty( inDevice: AudioDeviceID; inChannel: UInt32; isI
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     function AudioObjectSetPropertyData().
 =======
                     function AudioObjectGetPropertyData().
@@ -4814,6 +5269,9 @@ function AudioDeviceGetProperty( inDevice: AudioDeviceID; inChannel: UInt32; isI
 =======
                     function AudioObjectSetPropertyData().
 >>>>>>> origin/fixes_2.4
+=======
+                    function AudioObjectSetPropertyData().
+>>>>>>> origin/cpstrnew
     @param          inDevice
                         The AudioDevice to change.
     @param          inWhen
@@ -4836,6 +5294,7 @@ function AudioDeviceSetProperty( inDevice: AudioDeviceID; inWhen: {const} AudioT
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_6, __IPHONE_2_0, __IPHONE_2_0) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -4846,6 +5305,9 @@ function AudioDeviceSetProperty( inDevice: AudioDeviceID; inWhen: {const} AudioT
 =======
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_6, __IPHONE_2_0, __IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_6, __IPHONE_2_0, __IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 {!
     @function       AudioDeviceAddPropertyListener
@@ -4871,6 +5333,7 @@ function AudioDeviceAddPropertyListener( inDevice: AudioDeviceID; inChannel: UIn
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_6, __IPHONE_2_0, __IPHONE_2_0) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -4881,6 +5344,9 @@ function AudioDeviceAddPropertyListener( inDevice: AudioDeviceID; inChannel: UIn
 =======
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_6, __IPHONE_2_0, __IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_6, __IPHONE_2_0, __IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 {!
     @function       AudioDeviceRemovePropertyListener
@@ -4905,6 +5371,7 @@ function AudioDeviceRemovePropertyListener( inDevice: AudioDeviceID; inChannel: 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_6, __IPHONE_2_0, __IPHONE_2_0) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -4915,6 +5382,9 @@ function AudioDeviceRemovePropertyListener( inDevice: AudioDeviceID; inChannel: 
 =======
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_6, __IPHONE_2_0, __IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_6, __IPHONE_2_0, __IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 //==================================================================================================
 //#pragma mark    AudioStream Types
@@ -4990,8 +5460,11 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {!
     @enum           AudioStream Terminal Types
     @abstract       Various constants that describe the terminal type of an AudioStream.
@@ -5035,12 +5508,15 @@ const
 	kAudioStreamTerminalTypeTTY = FourCharCode('tty_');
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 //==================================================================================================
 //#pragma mark    AudioStream Properties
 
@@ -5062,6 +5538,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         to the AudioStream.
 =======
                         to the AudioStream. Constants that describe some of the values of this
@@ -5074,6 +5551,9 @@ const
 =======
                         to the AudioStream.
 >>>>>>> origin/fixes_2.4
+=======
+                        to the AudioStream.
+>>>>>>> origin/cpstrnew
     @constant       kAudioStreamPropertyStartingChannel
                         A UInt32 that specifies the first element in the owning device that
                         corresponds to element one of this stream.
@@ -5186,6 +5666,7 @@ function AudioStreamGetPropertyInfo( inStream: AudioStreamID; inChannel: UInt32;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_1, __MAC_10_6, __IPHONE_2_0, __IPHONE_2_0) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
@@ -5196,6 +5677,9 @@ function AudioStreamGetPropertyInfo( inStream: AudioStreamID; inChannel: UInt32;
 =======
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_1, __MAC_10_6, __IPHONE_2_0, __IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_1, __MAC_10_6, __IPHONE_2_0, __IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 {!
     @function       AudioStreamGetProperty
@@ -5220,6 +5704,7 @@ function AudioStreamGetProperty( inStream: AudioStreamID; inChannel: UInt32; inP
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_1, __MAC_10_6, __IPHONE_2_0, __IPHONE_2_0) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
@@ -5230,6 +5715,9 @@ function AudioStreamGetProperty( inStream: AudioStreamID; inChannel: UInt32; inP
 =======
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_1, __MAC_10_6, __IPHONE_2_0, __IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_1, __MAC_10_6, __IPHONE_2_0, __IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 {!
     @function       AudioStreamSetProperty
@@ -5241,6 +5729,7 @@ function AudioStreamGetProperty( inStream: AudioStreamID; inChannel: UInt32; inP
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     function AudioObjectSetPropertyData().
 =======
                     function AudioObjectGetPropertyData().
@@ -5251,6 +5740,9 @@ function AudioStreamGetProperty( inStream: AudioStreamID; inChannel: UInt32; inP
 =======
                     function AudioObjectSetPropertyData().
 >>>>>>> origin/fixes_2.4
+=======
+                    function AudioObjectSetPropertyData().
+>>>>>>> origin/cpstrnew
     @param          inStream
                         The AudioStream to change.
     @param          inWhen
@@ -5271,6 +5763,7 @@ function AudioStreamSetProperty( inStream: AudioStreamID; inWhen: AudioTimeStamp
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_1, __MAC_10_6, __IPHONE_2_0, __IPHONE_2_0) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
@@ -5281,6 +5774,9 @@ function AudioStreamSetProperty( inStream: AudioStreamID; inWhen: AudioTimeStamp
 =======
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_1, __MAC_10_6, __IPHONE_2_0, __IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_1, __MAC_10_6, __IPHONE_2_0, __IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 {!
     @function       AudioStreamAddPropertyListener
@@ -5304,6 +5800,7 @@ function AudioStreamAddPropertyListener( inStream: AudioStreamID; inChannel: UIn
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_1, __MAC_10_6, __IPHONE_2_0, __IPHONE_2_0) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
@@ -5314,6 +5811,9 @@ function AudioStreamAddPropertyListener( inStream: AudioStreamID; inChannel: UIn
 =======
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_1, __MAC_10_6, __IPHONE_2_0, __IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_1, __MAC_10_6, __IPHONE_2_0, __IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 {!
     @function       AudioStreamRemovePropertyListener
@@ -5333,6 +5833,7 @@ function AudioStreamAddPropertyListener( inStream: AudioStreamID; inChannel: UIn
     @result         An OSStatus indicating success or failure.
 }
 function AudioStreamRemovePropertyListener( inStream: AudioStreamID; inChannel: UInt32; inPropertyID: AudioDevicePropertyID; inProc: AudioStreamPropertyListenerProc ): OSStatus; external name '_AudioStreamRemovePropertyListener';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5356,6 +5857,9 @@ function AudioStreamRemovePropertyListener( inStream: AudioStreamID; inChannel: 
 =======
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_1, __MAC_10_6, __IPHONE_2_0, __IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_1, __MAC_10_6, __IPHONE_2_0, __IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 //==================================================================================================
 //#pragma mark    AudioAggregateDevice Constants
@@ -5380,6 +5884,7 @@ const
 const
 	kAudioAggregateDeviceClassID = FourCharCode('aagg');
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kAudioDeviceTransportTypeAggregate = FourCharCode('grup');
 	kAudioDeviceTransportTypeAutoAggregate = FourCharCode('fgrp');
 <<<<<<< HEAD
@@ -5388,6 +5893,8 @@ const
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {!
     @defined        kAudioAggregateDeviceUIDKey
@@ -5489,6 +5996,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         Constants section. The caller is responsible for releasing the returned
                         CFObject.
 <<<<<<< HEAD
@@ -5517,6 +6025,10 @@ const
                         Constants section. The caller is responsible for releasing the returned
                         CFObject.
 >>>>>>> origin/fixes_2.4
+=======
+                        Constants section. The caller is responsible for releasing the returned
+                        CFObject.
+>>>>>>> origin/cpstrnew
 }
 const
 	kAudioAggregateDevicePropertyFullSubDeviceList = FourCharCode('grup');
@@ -5545,6 +6057,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         global scope of the AudioAggregateDevice. The caller is responsible for
                         releasing the returned CFObject.
 }
@@ -5561,6 +6074,10 @@ const
                         global scope of the AudioAggregateDevice. The caller is responsible for
                         releasing the returned CFObject.
 >>>>>>> origin/fixes_2.4
+=======
+                        global scope of the AudioAggregateDevice. The caller is responsible for
+                        releasing the returned CFObject.
+>>>>>>> origin/cpstrnew
 }
 const
 >>>>>>> origin/fixes_2_2
@@ -5613,8 +6130,11 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {!
     @defined        kAudioAggregateDeviceSubDeviceNameKey
     @discussion     The key used in a CFDictionary that describes the state of an AudioSubDevice.
@@ -5681,12 +6201,15 @@ const
 	kAudioSubDeviceDriftCompensationQualityKey = 'drift quality';
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 //==================================================================================================
 //#pragma mark    AudioSubDevice Properties
 
@@ -5763,7 +6286,11 @@ end.
 
 end.
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2_2
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

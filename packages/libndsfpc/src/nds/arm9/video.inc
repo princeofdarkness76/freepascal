@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -47,6 +48,8 @@
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 {$ifndef ARM9}
   {$error Video is only available on the ARM9}
 {$endif ARM9}
@@ -127,11 +130,15 @@ const
   VRAM_D_CR		: pcuint8 = pointer($04000243);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   VRAM_EFG_CR	: pcuint8 = pointer($04000244);
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  VRAM_EFG_CR	: pcuint8 = pointer($04000244);
+>>>>>>> origin/cpstrnew
   VRAM_E_CR		: pcuint8 = pointer($04000244);
   VRAM_F_CR		: pcuint8 = pointer($04000245);
   VRAM_G_CR		: pcuint8 = pointer($04000246);
@@ -463,6 +470,9 @@ var
   VRAM_G_EXT_PALETTE : P_ext_palette absolute VRAM_G;
   VRAM_H_EXT_PALETTE : P_ext_palette absolute VRAM_H;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 
 function vramSetPrimaryBanks(a: VRAM_A_TYPE; b: VRAM_B_TYPE; c: VRAM_C_TYPE; d: VRAM_D_TYPE): cuint32; cdecl; external; 
 function vramSetMainBanks(a: VRAM_A_TYPE; b: VRAM_B_TYPE; c: VRAM_C_TYPE; d: VRAM_D_TYPE): cuint32; cdecl; external; deprecated;
@@ -480,6 +490,7 @@ procedure vramSetBankF(f: VRAM_F_TYPE); inline;
 procedure vramSetBankG(g: VRAM_G_TYPE); inline;
 procedure vramSetBankH(h: VRAM_H_TYPE); inline;
 procedure vramSetBankI(i: VRAM_I_TYPE); inline;
+<<<<<<< HEAD
 
 const
   REG_DISPCNT       : pcuint32 = pointer($04000000);
@@ -515,6 +526,8 @@ procedure vramSetBankF(f: VRAM_F_TYPE); cdecl; external;
 procedure vramSetBankG(g: VRAM_G_TYPE); cdecl; external;
 procedure vramSetBankH(h: VRAM_H_TYPE); cdecl; external;
 procedure vramSetBankI(i: VRAM_I_TYPE); cdecl; external;
+=======
+>>>>>>> origin/cpstrnew
 
 
 // Display control registers
@@ -935,8 +948,11 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
   REG_MOSAIC     : pcuint16 = pointer($0400004C);
   REG_MOSAIC_SUB : pcuint16 = pointer($0400104C);
 
@@ -1003,6 +1019,7 @@ const
 
 function DCAP_MODE(n: cint): cint; inline;   
 function DCAP_SRC_ADDR(n: cint): cint; inline;    
+<<<<<<< HEAD
 function DCAP_SRC(n: cint): cint; inline;    
 function DCAP_SRC_A(n: cint): cint;
 function DCAP_SRC_B(n: cint): cint;
@@ -1070,6 +1087,11 @@ begin
   DCAP_SRC := (((n) and 3) shl 24);
 end;
 
+=======
+function DCAP_SRC(n: cint): cint; inline;    
+function DCAP_SRC_A(n: cint): cint;
+function DCAP_SRC_B(n: cint): cint;
+>>>>>>> origin/cpstrnew
 function DCAP_SIZE(n: cint): cint; inline;   
 begin
   DCAP_SIZE := (((n) and 3) shl 20);
@@ -1102,6 +1124,23 @@ end;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+const
+  DCAP_MODE_A           = 0;
+  DCAP_MODE_B           = 1;
+  DCAP_MODE_BLEND       = 2;
+  DCAP_SRC_A_COMPOSITED = 0;
+  DCAP_SRC_A_3DONLY     = 1;
+  DCAP_SRC_B_VRAM       = 0;
+  DCAP_SRC_B_DISPFIFO   = 1;
+  DCAP_SIZE_128x128     = 0;
+  DCAP_SIZE_256x64      = 1;
+  DCAP_SIZE_256x128     = 2;
+  DCAP_SIZE_256x192     = 3;
+  DCAP_BANK_VRAM_A      = 0;
+  DCAP_BANK_VRAM_B      = 1;
+  DCAP_BANK_VRAM_C      = 1;
+  DCAP_BANK_VRAM_D      = 2;
+
 const
   GFX_CONTROL           : pcuint16 = pointer($04000060);
 

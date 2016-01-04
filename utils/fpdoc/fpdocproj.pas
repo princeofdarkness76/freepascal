@@ -19,6 +19,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FImports: TStrings;
     FInputs: TStrings;
 =======
@@ -33,6 +34,10 @@ Type
     FIMports: TStrings;
     FinPuts: TStrings;
 >>>>>>> graemeg/cpstrnew
+=======
+    FIMports: TStrings;
+    FinPuts: TStrings;
+>>>>>>> origin/cpstrnew
 =======
     FIMports: TStrings;
     FinPuts: TStrings;
@@ -74,6 +79,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FEmitNotes: Boolean;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -81,6 +87,8 @@ Type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     FFormat: String;
@@ -96,6 +104,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FDontTrim : Boolean;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -103,6 +112,8 @@ Type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     procedure SetBackendOptions(const AValue: TStrings);
@@ -127,6 +138,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Property DontTrim : Boolean Read FDontTrim Write FDontTrim;
     Property EmitNotes : Boolean Read FEmitNotes Write FEmitNotes;
 =======
@@ -135,6 +147,8 @@ Type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   end;
@@ -154,6 +168,7 @@ Type
     Property Options : TEngineOptions Read FOptions Write setOptions;
   end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -222,6 +237,10 @@ implementation
 implementation
 
 >>>>>>> graemeg/cpstrnew
+=======
+implementation
+
+>>>>>>> origin/cpstrnew
 =======
 implementation
 

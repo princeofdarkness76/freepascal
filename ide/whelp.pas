@@ -159,6 +159,7 @@ const TopicCacheSize    : sw_integer = 10;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       MaxHelpTopicSize  : sw_word = 1024*1024;
 =======
       MaxHelpTopicSize  : sw_word = 3*65520;
@@ -169,6 +170,9 @@ const TopicCacheSize    : sw_integer = 10;
 =======
       MaxHelpTopicSize  : sw_word = 1024*1024;
 >>>>>>> origin/fixes_2.4
+=======
+      MaxHelpTopicSize  : sw_word = 1024*1024;
+>>>>>>> origin/cpstrnew
 
 function  NewTopic(FileID: byte; HelpCtx: THelpCtx; Pos: longint; Param: string;
           ExtData: pointer; ExtDataSize: longint): PTopic;

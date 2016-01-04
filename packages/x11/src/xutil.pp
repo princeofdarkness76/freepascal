@@ -245,6 +245,7 @@ function XMatchVisualInfo(para1:PDisplay; para2:cint; para3:cint; para4:cint; pa
 function XOffsetRegion(para1:TRegion; para2:cint; para3:cint):cint;cdecl;external libX11;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function XPointInRegion(para1:TRegion; para2:cint; para3:cint):TBoolResult;cdecl;external libX11;
 =======
 function XPointInRegion(para1:TRegion; para2:cint; para3:cint):TBool;cdecl;external libX11;
@@ -252,6 +253,9 @@ function XPointInRegion(para1:TRegion; para2:cint; para3:cint):TBool;cdecl;exter
 =======
 function XPointInRegion(para1:TRegion; para2:cint; para3:cint):TBool;cdecl;external libX11;
 >>>>>>> origin/fixes_2_2
+=======
+function XPointInRegion(para1:TRegion; para2:cint; para3:cint):TBoolResult;cdecl;external libX11;
+>>>>>>> origin/cpstrnew
 function XPolygonRegion(para1:PXPoint; para2:cint; para3:cint):TRegion;cdecl;external libX11;
 function XRectInRegion(para1:TRegion; para2:cint; para3:cint; para4:cuint; para5:cuint):cint;cdecl;external libX11;
 function XSaveContext(para1:PDisplay; para2:TXID; para3:TXContext; para4:Pchar):cint;cdecl;external libX11;

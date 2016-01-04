@@ -30,11 +30,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -59,11 +62,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     P.IncludePath.Add('src/dummy',AllOSes);
@@ -128,12 +134,16 @@ begin
     T:=P.Targets.AddUnit('avl_tree.pp');
     T:=P.Targets.AddUnit('base64.pp');
     T:=P.Targets.AddUnit('blowfish.pp');
+      T.ResourceStrings:=true;
     T:=P.Targets.AddUnit('bufstream.pp');
+      T.ResourceStrings:=true;
     T:=P.Targets.AddUnit('cachecls.pp');
       T.ResourceStrings:=true;
     T:=P.Targets.AddUnit('contnrs.pp');
+      T.ResourceStrings:=true;
     T:=P.Targets.AddUnit('custapp.pp');
       T.ResourceStrings:=true;
+<<<<<<< HEAD
     T:=P.Targets.AddUnit('daemonapp.pp',AllWindowsOSes+AllUnixOSes);
       with T.Dependencies do
         begin
@@ -145,6 +155,8 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
     T:=P.Targets.AddUnit('eventlog.pp');
       T.ResourceStrings:=true;
       with T.Dependencies do
@@ -184,11 +196,15 @@ begin
 =======
     T:=P.Targets.AddUnit('libtar.pp');
     T:=P.Targets.AddUnit('maskutils.pp');
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
     T:=P.Targets.AddUnit('libtar.pp');
     T:=P.Targets.AddUnit('maskutils.pp');
 >>>>>>> origin/fixes_2_2
+=======
+      T.ResourceStrings:=true;
+>>>>>>> origin/cpstrnew
     T:=P.Targets.AddUnit('pooledmm.pp');
     T:=P.Targets.AddUnit('rtfpars.pp');
       with T.Dependencies do
@@ -200,6 +216,7 @@ begin
       T.ResourceStrings:=true;
     T:=P.Targets.AddUnit('streamex.pp');
     T:=P.Targets.AddUnit('streamio.pp');
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       T.ResourceStrings:=true;
@@ -220,6 +237,11 @@ begin
     T:=P.Targets.AddUnit('syncobjs.pp',AllOSes-[GO32v2,OS2,EMX]);
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+      T.ResourceStrings:=true;
+    T:=P.Targets.AddUnit('fptemplate.pp');
+      T.ResourceStrings:=true;
+>>>>>>> origin/cpstrnew
     T:=P.Targets.AddUnit('syncobjs.pp',AllOSes-[GO32v2,OS2,EMX]);
 >>>>>>> graemeg/fixes_2_2
 =======
@@ -240,6 +262,9 @@ begin
     T:=P.Targets.AddUnit('fpexprpars.pp');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
       T.ResourceStrings:=true;
 
 <<<<<<< HEAD

@@ -51,6 +51,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     _padding3: array[0..(3)-1] of cuint8;
 =======
         _padding3: array[0..2] of cuint8;
@@ -64,12 +65,16 @@
 =======
         _padding3: array[0..2] of cuint8;
 >>>>>>> origin/cpstrnew
+=======
+        _padding3: array[0..2] of cuint8;
+>>>>>>> origin/cpstrnew
     _entities: NSMutableDictionary;
     _elements: NSMutableDictionary;
     _notations: NSMutableDictionary;
     _attributes: NSMutableDictionary;
     _original: NSString;
     _modified: Boolean;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -84,6 +89,9 @@
 =======
         _padding2: array[0..2] of cuint8;
 >>>>>>> graemeg/cpstrnew
+=======
+        _padding2: array[0..2] of cuint8;
+>>>>>>> origin/cpstrnew
 =======
         _padding2: array[0..2] of cuint8;
 >>>>>>> origin/cpstrnew

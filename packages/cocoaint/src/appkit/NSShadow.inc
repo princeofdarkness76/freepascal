@@ -50,6 +50,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     _reservedFloat: array[0..(3)-1] of CGFloat;
 =======
         _reservedFloat: array[0..2] of CGFloat;
@@ -60,6 +61,9 @@
 =======
         _reservedFloat: array[0..2] of CGFloat;
 >>>>>>> graemeg/cpstrnew
+=======
+        _reservedFloat: array[0..2] of CGFloat;
+>>>>>>> origin/cpstrnew
 =======
         _reservedFloat: array[0..2] of CGFloat;
 >>>>>>> origin/cpstrnew

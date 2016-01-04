@@ -1,0 +1,14 @@
+3/usr/local/bin/makepp /Users/stevenjames/build/freepascal/rtl/i386/cpu.pp /Users/stevenjames/build/freepascal/rtl/i386/mmx.pp
+VERSION2.05.18.2darwin-thread-multi-2level
+LOAD_DEFAULT140699849478624i386140699841319824/users/stevenjames/build/freepascal/rtl
+LOAD_INCL140699851924192makepp_builtin_rules.mk140699851877856/usr/local/cellar/makepp/2.0/share/makepp140699851923352makepp_default_makefile.mk140699851877856
+LOAD_END140699851923352
+TRY140699851915928cpu.pp140699849478624
+USEdefault rule
+DEPEND140699851915928
+UP_TO_DATE140699851915928
+TRY140699851915976mmx.pp140699849478624
+USEdefault rule
+DEPEND140699851915976
+UP_TO_DATE140699851915976
+N_FILES000

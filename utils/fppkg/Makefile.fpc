@@ -13,11 +13,17 @@ packages=rtl fpmkunit
 name=fppkg
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 version=2.5.1
 
 [target]
 programs=fppkg
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 
 units=fprepos fpxmlrep pkgoptions pkgglobals pkgmessages pkghandler pkgmkconv pkgdownload pkgfpmake pkgcommands pkgrepos
 units_linux=pkgwget  pkglnet
@@ -32,6 +38,7 @@ units_solaris=pkgwget pkglnet
 units_win32=pkgwget pkglnet
 units_win64=pkgwget pkglnet
 units_wince=pkgwget pkglnet
+<<<<<<< HEAD
 =======
 version=2.2.5
 
@@ -61,6 +68,8 @@ implicitunits_wince=pkgwget pkglnet
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 rsts=fprepos fpxmlrep pkgmessages
 
 [compiler]
@@ -104,6 +113,7 @@ packages_iphonesim=univint
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -121,6 +131,8 @@ tools=data2inc
 packages=fcl-base fcl-xml fcl-process fcl-net paszlib libcurl
 tools=data2inc
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 
 [rules]
 # Do not pass the Makefile's unit and binary target locations. Fpmake uses it's own.

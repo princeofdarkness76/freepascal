@@ -78,12 +78,17 @@ interface
 >>>>>>> origin/fixes_2_2
          [m_delphi,m_all,m_class,m_objpas,m_result,m_string_pchar,
           m_pointer_2_procedure,m_autoderef,m_tp_procvar,m_initfinal,m_default_ansistring,
+<<<<<<< HEAD
           m_out,m_default_para,m_duplicate_names,m_hintdirective,m_add_pointer,
           m_property,m_default_inline,m_except];
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+          m_out,m_default_para,m_duplicate_names,m_hintdirective,
+          m_property,m_default_inline,m_except,m_advanced_records];
+>>>>>>> origin/cpstrnew
        fpcmodeswitches =
          [m_fpc,m_all,m_string_pchar,m_nested_comment,m_repeat_forward,
           m_cvar_support,m_initfinal,m_hintdirective,
@@ -93,11 +98,14 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
           m_repeat_forward,m_cvar_support,m_initfinal,m_out,m_default_para,m_hintdirective,
@@ -153,8 +161,14 @@ interface
          [m_gpc,m_all,m_tp_procvar];
 {$endif}
        macmodeswitches =
+<<<<<<< HEAD
          [m_mac,m_all,m_result,m_cvar_support,m_mac_procvar];
 >>>>>>> graemeg/fixes_2_2
+=======
+         [m_mac,m_all,m_cvar_support,m_mac_procvar,m_nested_procvars,m_non_local_goto];
+       isomodeswitches =
+         [m_iso,m_all,m_tp_procvar,m_duplicate_names,m_nested_procvars,m_non_local_goto];
+>>>>>>> origin/cpstrnew
 
        { maximum nesting of routines }
        maxnesting = 32;
@@ -192,6 +206,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 =======
@@ -213,6 +228,9 @@ interface
 
        nroftrashvalues = 4;
        trashintvalues: array[0..nroftrashvalues-1] of int64 = ($5555555555555555,$AAAAAAAAAAAAAAAA,$EFEFEFEFEFEFEFEF,0);
+=======
+
+>>>>>>> origin/cpstrnew
 
 
     type
@@ -501,6 +519,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         localswitches : [cs_check_io,cs_typed_const_writable,cs_pointermath{$ifdef i8086},cs_force_far_calls{$endif}];
 =======
         localswitches : [cs_check_io,cs_typed_const_writable,cs_pointermath];
@@ -511,6 +530,9 @@ interface
 =======
         localswitches : [cs_check_io,cs_typed_const_writable,cs_pointermath];
 >>>>>>> graemeg/cpstrnew
+=======
+        localswitches : [cs_check_io,cs_typed_const_writable,cs_pointermath];
+>>>>>>> origin/cpstrnew
 =======
         localswitches : [cs_check_io,cs_typed_const_writable,cs_pointermath];
 >>>>>>> origin/cpstrnew
@@ -702,6 +724,11 @@ interface
         optimizecputype : cpuinfo.cpu_avr;
         fputype : fpu_none;
 {$endif avr}
+{$ifdef mips}
+        cputype : cpu_mips32;
+        optimizecputype : cpu_mips32;
+        fputype : fpu_mips2;
+{$endif mips}
         asmmode : asmmode_standard;
         interfacetype : it_interfacecom;
         defproccall : pocall_default;
@@ -868,12 +895,15 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       windirs,
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$ifdef VER2_4}
@@ -884,11 +914,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$endif}
@@ -1165,6 +1198,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          Replace(s,'$FPCSUBARCH',lower(cputypestr[init_settings.cputype]));
          Replace(s,'$FPCABI',lower(abiinfo[target_info.abi].name));
 {$ifdef i8086}
@@ -1178,6 +1212,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$ifdef mswindows}
@@ -1925,10 +1961,14 @@ implementation
 
     function floating_point_range_check_error : boolean;
       begin
+<<<<<<< HEAD
         result:=((([cs_check_range,cs_check_overflow]*current_settings.localswitches)<>[]) and not
                    (m_delphi in current_settings.modeswitches)
                 ); // or (cs_ieee_errors in current_settings.localswitches);
 >>>>>>> graemeg/fixes_2_2
+=======
+        result:=cs_ieee_errors in current_settings.localswitches;
+>>>>>>> origin/cpstrnew
       end;
 
 {****************************************************************************
@@ -2003,11 +2043,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         DLLsource:=false;
@@ -2069,11 +2112,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         { memory sizes, will be overridden by parameter or default for target

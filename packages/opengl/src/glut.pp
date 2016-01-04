@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
 
   Adaption of the delphi3d.net OpenGL units to FreePascal
@@ -19,6 +20,13 @@
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{
+
+  Adaption of the delphi3d.net OpenGL units to FreePascal
+  Sebastian Guenther (sg@freepascal.org) in 2002
+  These units are free to use
+>>>>>>> origin/cpstrnew
 }
 
 {$MACRO ON}
@@ -29,6 +37,7 @@
   {$DEFINE extdecl := cdecl}
 {$ENDIF}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -45,6 +54,8 @@
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 {$IFDEF MORPHOS}
 {$INLINE ON}
 {$DEFINE GLUT_UNIT}
@@ -79,6 +90,7 @@ uses
   {$ENDIF}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   GL;
 
 type
@@ -97,6 +109,11 @@ type
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  GL;
+
+type
+>>>>>>> origin/cpstrnew
   TGlutVoidCallback = procedure; cdecl;
   TGlut1IntCallback = procedure(value: Integer); cdecl;
   TGlut2IntCallback = procedure(v1, v2: Integer); cdecl;
@@ -360,6 +377,7 @@ const
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -601,6 +619,8 @@ function glutGameModeGet(mode : GLenum): integer; mode_inline;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 var
 // GLUT initialization sub-API.
   glutInit: procedure(argcp: PInteger; argv: PPChar); extdecl;
@@ -748,6 +768,7 @@ var
   glutGameModeGet : function (mode : GLenum) : integer; extdecl;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ENDIF MORPHOS}
 
 procedure LoadGlut(const dll: String);
@@ -765,6 +786,12 @@ procedure FreeGlut;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$ENDIF MORPHOS}
+
+procedure LoadGlut(const dll: String);
+procedure UnloadGlut;
+>>>>>>> origin/cpstrnew
 
 implementation
 
@@ -777,16 +804,22 @@ implementation
 {$ELSE MORPHOS}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 uses FreeGlut;
 
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+uses FreeGlut;
+
+>>>>>>> origin/cpstrnew
 var
   hDLL: TLibHandle;
 {$ENDIF MORPHOS}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 procedure UnloadGlut;
@@ -796,6 +829,9 @@ procedure FreeGlut;
 =======
 procedure FreeGlut;
 >>>>>>> origin/fixes_2_2
+=======
+procedure UnloadGlut;
+>>>>>>> origin/cpstrnew
 begin
 {$IFDEF MORPHOS}
   // MorphOS's GL will closed down by TinyGL unit, nothing is needed here.
@@ -804,6 +840,7 @@ begin
   if (hDLL <> 0) then
     FreeLibrary(hDLL);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -931,6 +968,8 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
   @glutInit := nil;
   @glutInitDisplayMode := nil;
   @glutInitDisplayString := nil;
@@ -1047,6 +1086,7 @@ begin
   @glutGameModeGet := nil;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   
   UnloadFreeGlut;
 =======
@@ -1055,6 +1095,10 @@ begin
 =======
 {$ENDIF GLUT_EXCLUSIVE_FPUMODE}
 >>>>>>> origin/fixes_2_2
+=======
+  
+  UnloadFreeGlut;
+>>>>>>> origin/cpstrnew
 {$ENDIF MORPHOS}
 end;
 
@@ -1077,6 +1121,7 @@ begin
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   UnloadGlut;
 =======
   FreeGlut;
@@ -1084,10 +1129,14 @@ begin
 =======
   FreeGlut;
 >>>>>>> origin/fixes_2_2
+=======
+  UnloadGlut;
+>>>>>>> origin/cpstrnew
 
   hDLL := LoadLibrary(PChar(dll));
   if hDLL = 0 then raise Exception.Create('Could not load Glut from ' + dll);
   try
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -1213,6 +1262,8 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
     @glutInit := GetGLutProcAddress(hDLL, 'glutInit');
     @glutInitDisplayMode := GetGLutProcAddress(hDLL, 'glutInitDisplayMode');
     @glutInitDisplayString := GetGLutProcAddress(hDLL, 'glutInitDisplayString');
@@ -1329,6 +1380,7 @@ begin
     @glutGameModeGet := GetGLutProcAddress(hDLL, 'glutGameModeGet');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$ENDIF GLUT_EXCLUSIVE_FPUMODE}
 
@@ -1337,6 +1389,8 @@ begin
 {$ENDIF GLUT_EXCLUSIVE_FPUMODE}
 
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 {$ifndef Windows}
     GLUT_STROKE_ROMAN := GetGLutProcAddress(hDll, 'glutStrokeRoman');
     GLUT_STROKE_MONO_ROMAN := GetGLutProcAddress(hDll,'glutStrokeMonoRoman');
@@ -1351,6 +1405,7 @@ begin
   except
     raise Exception.Create('Could not load ' + MethodName + ' from ' + dll);
   end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   LoadFreeGlut(hDLL);
@@ -1387,855 +1442,14 @@ finalization
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  LoadFreeGlut(hDLL);
+>>>>>>> origin/cpstrnew
 end;
 {$ENDIF MORPHOS}
 
-{$IFDEF GLUT_EXCLUSIVE_FPUMODE}
-
-VAR
-GLUT_EXCLUSIVE_glut_ExceptionMask : TFPUExceptionMask;
-GLUT_EXCLUSIVE_fpc__ExceptionMask : TFPUExceptionMask;
-GLUT_EXCLUSIVE_glut_PrecisionMode : TFPUPrecisionMode;
-GLUT_EXCLUSIVE_fpc__PrecisionMode : TFPUPrecisionMode;
-GLUT_EXCLUSIVE_glut_RoundMode : TFPURoundingMode;
-GLUT_EXCLUSIVE_fpc__RoundMode : TFPURoundingMode;
-
-
-PROCEDURE init_fpumode;
-BEGIN
-  GLUT_EXCLUSIVE_glut_ExceptionMask := GetExceptionMask+[exDenormalized, exInvalidOp, exOverflow, exPrecision, exUnderflow, exZeroDivide];
-  GLUT_EXCLUSIVE_glut_PrecisionMode := GetPrecisionMode;
-  GLUT_EXCLUSIVE_glut_RoundMode     := GetRoundMode;
-END;
-
-
-PROCEDURE switch_to_glut_fpumode; mode_inline;
-BEGIN
-  GLUT_EXCLUSIVE_fpc__ExceptionMask := GetExceptionMask;
-  GLUT_EXCLUSIVE_fpc__PrecisionMode := GetPrecisionMode;
-  GLUT_EXCLUSIVE_fpc__RoundMode     := GetRoundMode;
-  SetExceptionMask(GLUT_EXCLUSIVE_glut_ExceptionMask);
-  SetPrecisionMode(GLUT_EXCLUSIVE_glut_PrecisionMode);
-  SetRoundMode(GLUT_EXCLUSIVE_glut_RoundMode);
-END;
-
-PROCEDURE switch_to_FPC_fpumode; mode_inline;
-BEGIN
-  GLUT_EXCLUSIVE_glut_ExceptionMask := GetExceptionMask;
-  GLUT_EXCLUSIVE_glut_PrecisionMode := GetPrecisionMode;
-  GLUT_EXCLUSIVE_glut_RoundMode     := GetRoundMode;
-  SetExceptionMask(GLUT_EXCLUSIVE_fpc__ExceptionMask);
-  SetPrecisionMode(GLUT_EXCLUSIVE_fpc__PrecisionMode);
-  SetRoundMode(GLUT_EXCLUSIVE_fpc__RoundMode);
-END;
-
-
-procedure glutInit(argcp: PInteger; argv: PPChar);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutInit(argcp,argv);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutInitDisplayMode(mode: Cardinal);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutInitDisplayMode(mode);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutInitDisplayString(const str: PChar);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutInitDisplayString(str);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutInitWindowPosition(x, y: Integer);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutInitWindowPosition(x,y);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutInitWindowSize(width, height: Integer);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutInitWindowSize(width,height);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutMainLoop;
-begin
-  switch_to_glut_fpumode;
-  OLD_glutMainLoop();
-  switch_to_FPC_fpumode;
-end;
-
-function glutCreateWindow(const title: PChar): Integer;
-begin
-  switch_to_glut_fpumode;
-  glutCreateWindow := OLD_glutCreateWindow(title);
-  switch_to_FPC_fpumode;
-end;
-
-function glutCreateSubWindow(win, x, y, width, height: Integer): Integer;
-begin
-  switch_to_glut_fpumode;
-  glutCreateSubWindow := OLD_glutCreateSubWindow(win,x,y,width,height);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutDestroyWindow(win: Integer);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutDestroyWindow(win);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutPostRedisplay;
-begin
-  switch_to_glut_fpumode;
-  OLD_glutPostRedisplay();
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutPostWindowRedisplay(win: Integer);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutPostWindowRedisplay(win);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutSwapBuffers;
-begin
-  switch_to_glut_fpumode;
-  OLD_glutSwapBuffers();
-  switch_to_FPC_fpumode;
-end;
-
-function glutGetWindow: Integer;
-begin
-  switch_to_glut_fpumode;
-  glutGetWindow := OLD_glutGetWindow();
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutSetWindow(win: Integer);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutSetWindow(win);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutSetWindowTitle(const title: PChar);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutSetWindowTitle(title);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutSetIconTitle(const title: PChar);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutSetIconTitle(title);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutPositionWindow(x, y: Integer);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutPositionWindow(x,y);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutReshapeWindow(width, height: Integer);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutReshapeWindow(width,height);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutPopWindow;
-begin
-  switch_to_glut_fpumode;
-  OLD_glutPopWindow();
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutPushWindow;
-begin
-  switch_to_glut_fpumode;
-  OLD_glutPushWindow();
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutIconifyWindow;
-begin
-  switch_to_glut_fpumode;
-  OLD_glutIconifyWindow();
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutShowWindow;
-begin
-  switch_to_glut_fpumode;
-  OLD_glutShowWindow();
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutHideWindow;
-begin
-  switch_to_glut_fpumode;
-  OLD_glutHideWindow();
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutFullScreen;
-begin
-  switch_to_glut_fpumode;
-  OLD_glutFullScreen();
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutSetCursor(cursor: Integer);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutSetCursor(cursor);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutWarpPointer(x, y: Integer);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutWarpPointer(x,y);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutEstablishOverlay;
-begin
-  switch_to_glut_fpumode;
-  OLD_glutEstablishOverlay();
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutRemoveOverlay;
-begin
-  switch_to_glut_fpumode;
-  OLD_glutRemoveOverlay();
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutUseLayer(layer: GLenum);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutUseLayer(layer);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutPostOverlayRedisplay;
-begin
-  switch_to_glut_fpumode;
-  OLD_glutPostOverlayRedisplay();
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutPostWindowOverlayRedisplay(win: Integer);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutPostWindowOverlayRedisplay(win);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutShowOverlay;
-begin
-  switch_to_glut_fpumode;
-  OLD_glutShowOverlay();
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutHideOverlay;
-begin
-  switch_to_glut_fpumode;
-  OLD_glutHideOverlay();
-  switch_to_FPC_fpumode;
-end;
-
-function glutCreateMenu(callback: TGlut1IntCallback): Integer;
-begin
-  switch_to_glut_fpumode;
-  glutCreateMenu := OLD_glutCreateMenu(callback);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutDestroyMenu(menu: Integer);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutDestroyMenu(menu);
-  switch_to_FPC_fpumode;
-end;
-
-function glutGetMenu: Integer;
-begin
-  switch_to_glut_fpumode;
-  glutGetMenu := OLD_glutGetMenu();
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutSetMenu(menu: Integer);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutSetMenu(menu);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutAddMenuEntry(const caption: PChar; value: Integer);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutAddMenuEntry(caption,value);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutAddSubMenu(const caption: PChar; submenu: Integer);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutAddSubMenu(caption,submenu);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutChangeToMenuEntry(item: Integer; const caption: PChar; value: Integer);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutChangeToMenuEntry(item,caption,value);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutChangeToSubMenu(item: Integer; const caption: PChar; submenu: Integer);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutChangeToSubMenu(item,caption,submenu);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutRemoveMenuItem(item: Integer);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutRemoveMenuItem(item);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutAttachMenu(button: Integer);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutAttachMenu(button);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutDetachMenu(button: Integer);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutDetachMenu(button);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutDisplayFunc(f: TGlutVoidCallback);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutDisplayFunc(f);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutReshapeFunc(f: TGlut2IntCallback);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutReshapeFunc(f);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutKeyboardFunc(f: TGlut1Char2IntCallback);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutKeyboardFunc(f);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutMouseFunc(f: TGlut4IntCallback);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutMouseFunc(f);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutMotionFunc(f: TGlut2IntCallback);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutMotionFunc(f);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutPassiveMotionFunc(f: TGlut2IntCallback);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutPassiveMotionFunc(f);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutEntryFunc(f: TGlut1IntCallback);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutEntryFunc(f);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutVisibilityFunc(f: TGlut1IntCallback);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutVisibilityFunc(f);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutIdleFunc(f: TGlutVoidCallback);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutIdleFunc(f);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutTimerFunc(millis: Cardinal; f: TGlut1IntCallback; value: Integer);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutTimerFunc(millis,f,value);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutMenuStateFunc(f: TGlut1IntCallback);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutMenuStateFunc(f);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutSpecialFunc(f: TGlut3IntCallback);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutSpecialFunc(f);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutSpaceballMotionFunc(f: TGlut3IntCallback);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutSpaceballMotionFunc(f);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutSpaceballRotateFunc(f: TGlut3IntCallback);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutSpaceballRotateFunc(f);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutSpaceballButtonFunc(f: TGlut2IntCallback);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutSpaceballButtonFunc(f);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutButtonBoxFunc(f: TGlut2IntCallback);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutButtonBoxFunc(f);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutDialsFunc(f: TGlut2IntCallback);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutDialsFunc(f);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutTabletMotionFunc(f: TGlut2IntCallback);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutTabletMotionFunc(f);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutTabletButtonFunc(f: TGlut4IntCallback);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutTabletButtonFunc(f);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutMenuStatusFunc(f: TGlut3IntCallback);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutMenuStatusFunc(f);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutOverlayDisplayFunc(f:TGlutVoidCallback);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutOverlayDisplayFunc(f);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutWindowStatusFunc(f: TGlut1IntCallback);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutWindowStatusFunc(f);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutKeyboardUpFunc(f: TGlut1Char2IntCallback);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutKeyboardUpFunc(f);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutSpecialUpFunc(f: TGlut3IntCallback);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutSpecialUpFunc(f);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutJoystickFunc(f: TGlut1UInt3IntCallback; pollInterval: Integer);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutJoystickFunc(f,pollInterval);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutSetColor(cell: Integer; red, green, blue: GLfloat);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutSetColor(cell,red,green,blue);
-  switch_to_FPC_fpumode;
-end;
-
-function glutGetColor(ndx, component: Integer): GLfloat;
-begin
-  switch_to_glut_fpumode;
-  glutGetColor := OLD_glutGetColor(ndx,component);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutCopyColormap(win: Integer);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutCopyColormap(win);
-  switch_to_FPC_fpumode;
-end;
-
-function glutGet(t: GLenum): Integer;
-begin
-  switch_to_glut_fpumode;
-  glutGet := OLD_glutGet(t);
-  switch_to_FPC_fpumode;
-end;
-
-function glutDeviceGet(t: GLenum): Integer;
-begin
-  switch_to_glut_fpumode;
-  glutDeviceGet := OLD_glutDeviceGet(t);
-  switch_to_FPC_fpumode;
-end;
-
-function glutExtensionSupported(const name: PChar): Integer;
-begin
-  switch_to_glut_fpumode;
-  glutExtensionSupported := OLD_glutExtensionSupported(name);
-  switch_to_FPC_fpumode;
-end;
-
-function glutGetModifiers: Integer;
-begin
-  switch_to_glut_fpumode;
-  glutGetModifiers := OLD_glutGetModifiers();
-  switch_to_FPC_fpumode;
-end;
-
-function glutLayerGet(t: GLenum): Integer;
-begin
-  switch_to_glut_fpumode;
-  glutLayerGet := OLD_glutLayerGet(t);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutBitmapCharacter(font : pointer; character: Integer);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutBitmapCharacter(font,character);
-  switch_to_FPC_fpumode;
-end;
-
-function glutBitmapWidth(font : pointer; character: Integer): Integer;
-begin
-  switch_to_glut_fpumode;
-  glutBitmapWidth := OLD_glutBitmapWidth(font,character);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutStrokeCharacter(font : pointer; character: Integer);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutStrokeCharacter(font,character);
-  switch_to_FPC_fpumode;
-end;
-
-function glutStrokeWidth(font : pointer; character: Integer): Integer;
-begin
-  switch_to_glut_fpumode;
-  glutStrokeWidth := OLD_glutStrokeWidth(font,character);
-  switch_to_FPC_fpumode;
-end;
-
-function glutBitmapLength(font: pointer; const str: PChar): Integer;
-begin
-  switch_to_glut_fpumode;
-  glutBitmapLength := OLD_glutBitmapLength(font,str);
-  switch_to_FPC_fpumode;
-end;
-
-function glutStrokeLength(font: pointer; const str: PChar): Integer;
-begin
-  switch_to_glut_fpumode;
-  glutStrokeLength := OLD_glutStrokeLength(font,str);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutWireSphere(radius: GLdouble; slices, stacks: GLint);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutWireSphere(radius,slices,stacks);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutSolidSphere(radius: GLdouble; slices, stacks: GLint);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutSolidSphere(radius,slices,stacks);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutWireCone(base, height: GLdouble; slices, stacks: GLint);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutWireCone(base,height,slices,stacks);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutSolidCone(base, height: GLdouble; slices, stacks: GLint);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutSolidCone(base,height,slices,stacks);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutWireCube(size: GLdouble);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutWireCube(size);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutSolidCube(size: GLdouble);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutSolidCube(size);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutWireTorus(innerRadius, outerRadius: GLdouble; sides, rings: GLint);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutWireTorus(innerRadius,outerRadius,sides,rings);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutSolidTorus(innerRadius, outerRadius: GLdouble; sides, rings: GLint);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutSolidTorus(innerRadius,outerRadius,sides,rings);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutWireDodecahedron;
-begin
-  switch_to_glut_fpumode;
-  OLD_glutWireDodecahedron();
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutSolidDodecahedron;
-begin
-  switch_to_glut_fpumode;
-  OLD_glutSolidDodecahedron();
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutWireTeapot(size: GLdouble);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutWireTeapot(size);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutSolidTeapot(size: GLdouble);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutSolidTeapot(size);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutWireOctahedron;
-begin
-  switch_to_glut_fpumode;
-  OLD_glutWireOctahedron();
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutSolidOctahedron;
-begin
-  switch_to_glut_fpumode;
-  OLD_glutSolidOctahedron();
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutWireTetrahedron;
-begin
-  switch_to_glut_fpumode;
-  OLD_glutWireTetrahedron();
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutSolidTetrahedron;
-begin
-  switch_to_glut_fpumode;
-  OLD_glutSolidTetrahedron();
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutWireIcosahedron;
-begin
-  switch_to_glut_fpumode;
-  OLD_glutWireIcosahedron();
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutSolidIcosahedron;
-begin
-  switch_to_glut_fpumode;
-  OLD_glutSolidIcosahedron();
-  switch_to_FPC_fpumode;
-end;
-
-function glutVideoResizeGet(param: GLenum): Integer;
-begin
-  switch_to_glut_fpumode;
-  glutVideoResizeGet := OLD_glutVideoResizeGet(param);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutSetupVideoResizing;
-begin
-  switch_to_glut_fpumode;
-  OLD_glutSetupVideoResizing();
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutStopVideoResizing;
-begin
-  switch_to_glut_fpumode;
-  OLD_glutStopVideoResizing();
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutVideoResize(x, y, width, height: Integer);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutVideoResize(x,y,width,height);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutVideoPan(x, y, width, height: Integer);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutVideoPan(x,y,width,height);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutReportErrors;
-begin
-  switch_to_glut_fpumode;
-  OLD_glutReportErrors();
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutIgnoreKeyRepeat(ignore: Integer);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutIgnoreKeyRepeat(ignore);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutSetKeyRepeat(repeatMode: Integer);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutSetKeyRepeat(repeatMode);
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutForceJoystickFunc;
-begin
-  switch_to_glut_fpumode;
-  OLD_glutForceJoystickFunc();
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutGameModeString(const AString : PChar);
-begin
-  switch_to_glut_fpumode;
-  OLD_glutGameModeString(AString);
-  switch_to_FPC_fpumode;
-end;
-
-function glutEnterGameMode: integer;
-begin
-  switch_to_glut_fpumode;
-  glutEnterGameMode := OLD_glutEnterGameMode();
-  switch_to_FPC_fpumode;
-end;
-
-procedure glutLeaveGameMode;
-begin
-  switch_to_glut_fpumode;
-  OLD_glutLeaveGameMode();
-  switch_to_FPC_fpumode;
-end;
-
-function glutGameModeGet(mode : GLenum): integer;
-begin
-  switch_to_glut_fpumode;
-  glutGameModeGet := OLD_glutGameModeGet(mode);
-  switch_to_FPC_fpumode;
-end;
-
-
-{$ENDIF GLUT_EXCLUSIVE_FPUMODE}
 
 initialization
-
-  {$IFDEF GLUT_EXCLUSIVE_FPUMODE}
-  init_fpumode;
-  {$ENDIF GLUT_EXCLUSIVE_FPUMODE}
 
   {$IFDEF Windows}
   LoadGlut('glut32.dll');
@@ -2243,16 +1457,26 @@ initialization
   {$ifdef darwin}
   LoadGlut('/System/Library/Frameworks/GLUT.framework/GLUT');
   {$else}
+  {$IFDEF haiku}
+  LoadGlut('libglut.so');
+  {$ELSE}
   {$IFNDEF MORPHOS}
   LoadGlut('libglut.so.3');
+  {$ENDIF}
   {$ENDIF}
   {$endif}
   {$ENDIF}
 
 finalization
+<<<<<<< HEAD
   FreeGlut;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+
+  UnloadGlut;
+
+>>>>>>> origin/cpstrnew
 end.

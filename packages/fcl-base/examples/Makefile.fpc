@@ -28,6 +28,7 @@ programs_darwin=sockcli isockcli dsockcli socksvr isocksvr dsocksvr \
                ipcserver ipcclient debugtest dbugsrv asiotest testtimer
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 programs_iphonesim=sockcli isockcli dsockcli socksvr isocksvr dsocksvr \
                testhres testnres testsres testrhre testrnre testrsre testur \
                ipcserver ipcclient debugtest dbugsrv asiotest testtimer
@@ -35,6 +36,11 @@ programs_iphonesim=sockcli isockcli dsockcli socksvr isocksvr dsocksvr \
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+programs_iphonesim=sockcli isockcli dsockcli socksvr isocksvr dsocksvr \
+               testhres testnres testsres testrhre testrnre testrsre testur \
+               ipcserver ipcclient debugtest dbugsrv asiotest testtimer
+>>>>>>> origin/cpstrnew
 programs_freebsd=sockcli isockcli dsockcli socksvr isocksvr dsocksvr \
                testhres testnres testsres testrhre testrnre testrsre testur \
                ipcserver ipcclient debugtest dbugsrv asiotest testtimer

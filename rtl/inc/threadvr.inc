@@ -61,6 +61,7 @@ begin
 {$ifdef DEBUG_MT}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     WriteLn ('init_all_unit_threadvars (',count,') units');
 {$endif}
     for i := 1 to count do
@@ -85,6 +86,13 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    WriteLn ('init_all_unit_threadvars (',count,') units');
+{$endif}
+    for i := 1 to count do
+      init_unit_threadvars (tables[i]);
+  end;
+>>>>>>> origin/cpstrnew
 end;
 
 
@@ -116,6 +124,7 @@ begin
 {$ifdef DEBUG_MT}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     WriteLn ('copy_all_unit_threadvars (',count,') units');
 {$endif}
     for i := 1 to count do
@@ -138,6 +147,13 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    WriteLn ('copy_all_unit_threadvars (',count,') units');
+{$endif}
+    for i := 1 to count do
+      copy_unit_threadvars (tables[i]);
+  end;
+>>>>>>> origin/cpstrnew
 end;
 
 procedure InitThreadVars(RelocProc : TRelocateThreadVarHandler);

@@ -28,6 +28,7 @@ procedure ShortStrToNTStr(aStr: ShortString; var aNTStr: UNICODE_STRING);
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure AnsiStrToNTStr(const aStr: RawByteString; var aNTStr: UNICODE_STRING);
 =======
 procedure AnsiStrToNTStr(const aStr: String; var aNTStr: UNICODE_STRING);
@@ -38,6 +39,9 @@ procedure AnsiStrToNTStr(const aStr: String; var aNTStr: UNICODE_STRING);
 =======
 procedure AnsiStrToNTStr(const aStr: String; var aNTStr: UNICODE_STRING);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure AnsiStrToNTStr(const aStr: String; var aNTStr: UNICODE_STRING);
+>>>>>>> origin/cpstrnew
 =======
 procedure AnsiStrToNTStr(const aStr: String; var aNTStr: UNICODE_STRING);
 >>>>>>> origin/cpstrnew
@@ -73,6 +77,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure AnsiStrToNTStr(const aStr: RawByteString; var aNTStr: UNICODE_STRING);
 =======
 procedure AnsiStrToNTStr(const aStr: String; var aNTStr: UNICODE_STRING);
@@ -83,6 +88,9 @@ procedure AnsiStrToNTStr(const aStr: String; var aNTStr: UNICODE_STRING);
 =======
 procedure AnsiStrToNTStr(const aStr: String; var aNTStr: UNICODE_STRING);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure AnsiStrToNTStr(const aStr: String; var aNTStr: UNICODE_STRING);
+>>>>>>> origin/cpstrnew
 =======
 procedure AnsiStrToNTStr(const aStr: String; var aNTStr: UNICODE_STRING);
 >>>>>>> origin/cpstrnew

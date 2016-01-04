@@ -26,6 +26,7 @@ units=$(SYSTEMUNIT) objpas macpas iso7185 strings \
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -35,6 +36,8 @@ units=$(SYSTEMUNIT) objpas macpas iso7185 strings \
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 #      exec timer doslib utility hardware inputevent graphics layers \
 # these can be moved to packages later
 #      clipboard datatypes asl ahi tinygl get9 muihelper  \
@@ -77,6 +80,7 @@ SYSTEMUNIT=system
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 LOADERS=prt0 cprt0
 override FPCOPT+=@rtl.cfg
 =======
@@ -89,6 +93,8 @@ override FPCOPT+=@rtl.cfg
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 # Use new feature from 1.0.5 version
 # that generates release PPU files
@@ -228,6 +234,7 @@ lineinfo$(PPUEXT) : $(INC)/lineinfo.pp $(SYSTEMUNIT)$(PPUEXT)
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         $(COMPILER) $(INC)/lineinfo.pp
 
 =======
@@ -240,6 +247,8 @@ lineinfo$(PPUEXT) : $(INC)/lineinfo.pp $(SYSTEMUNIT)$(PPUEXT)
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 #lnfodwrf$(PPUEXT) : $(INC)/lnfodwrf.pp $(SYSTEMUNIT)$(PPUEXT)
 
 charset$(PPUEXT) : $(INC)/charset.pp $(SYSTEMUNIT)$(PPUEXT)

@@ -197,6 +197,7 @@ implementation
                      (oper[n+1]^.typ=top_reg) and
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                      ((getregtype(oper[n+0]^.reg)<>regtype) or
                       (getregtype(oper[n+1]^.reg)<>regtype) or
                       (get_alias(getsupreg(oper[n+0]^.reg))<>get_alias(getsupreg(oper[n+1]^.reg)))) then
@@ -213,11 +214,16 @@ implementation
 =======
 >>>>>>> origin/fixes_2_2
                      (get_alias(getsupreg(oper[n+0]^.reg))<>get_alias(getsupreg(oper[n+1]^.reg))) then
+=======
+                     ((getregtype(oper[n+0]^.reg)<>regtype) or
+                      (getregtype(oper[n+1]^.reg)<>regtype) or
+                      (get_alias(getsupreg(oper[n+0]^.reg))<>get_alias(getsupreg(oper[n+1]^.reg)))) then
+>>>>>>> origin/cpstrnew
                     begin
-                      { One of the arguments shall be able to be replaced }
                       if (getregtype(oper[n+0]^.reg)=regtype) and
                          (get_alias(getsupreg(oper[n+0]^.reg))=orgreg) then
                         replaceoper:=0+n
+<<<<<<< HEAD
                       else
                         if (getregtype(oper[n+1]^.reg)=regtype) and
                            (get_alias(getsupreg(oper[n+1]^.reg))=orgreg) then
@@ -405,6 +411,13 @@ implementation
                         internalerror(200704281);
                     end;
                   if (oper[n+0]^.typ=top_reg) and
+=======
+                      else if (getregtype(oper[n+1]^.reg)=regtype) and
+                         (get_alias(getsupreg(oper[n+1]^.reg))=orgreg) then
+                        replaceoper:=1+n;
+                    end
+                  else if (oper[n+0]^.typ=top_reg) and
+>>>>>>> origin/cpstrnew
                      (oper[n+1]^.typ=top_const) then
                     begin
                       if (getregtype(oper[0+n]^.reg)=regtype) and
@@ -412,9 +425,14 @@ implementation
                         replaceoper:=0+n
                       else
                         internalerror(200704282);
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2_2
                     end;
                   if (oper[n+0]^.typ=top_const) and
+=======
+                    end
+                  else if (oper[n+0]^.typ=top_const) and
+>>>>>>> origin/cpstrnew
                      (oper[n+1]^.typ=top_reg) then
                     begin
                       if (getregtype(oper[1+n]^.reg)=regtype) and
@@ -498,6 +516,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef x86_64}
 =======
             {$ifdef x86_64}
@@ -514,10 +533,14 @@ implementation
 =======
             {$ifdef x86_64}
 >>>>>>> origin/fixes_2.4
+=======
+            {$ifdef x86_64}
+>>>>>>> origin/cpstrnew
             { 32 bit operations on 32 bit registers on x86_64 can result in
               zeroing the upper 32 bits of the register. This does not happen
               with memory operations, so we have to perform these calculations
               in registers.  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -551,6 +574,11 @@ implementation
               replaceoper:=-1;
             {$endif x86_64}
 >>>>>>> origin/fixes_2.4
+=======
+            if (instr.opsize=S_L) then
+              replaceoper:=-1;
+            {$endif x86_64}
+>>>>>>> origin/cpstrnew
 
             { Replace register with spill reference }
             if replaceoper<>-1 then

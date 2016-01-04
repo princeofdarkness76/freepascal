@@ -2,6 +2,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Copyright (C) 2006-2008 Micha Nelissen
 =======
   Copyright (C) 2006-2007 Micha Nelissen
@@ -9,6 +10,9 @@
 =======
   Copyright (C) 2006-2007 Micha Nelissen
 >>>>>>> origin/fixes_2_2
+=======
+  Copyright (C) 2006-2008 Micha Nelissen
+>>>>>>> origin/cpstrnew
 
   This library is Free software; you can redistribute it and/or modify it
   under the terms of the GNU Library General Public License as published by

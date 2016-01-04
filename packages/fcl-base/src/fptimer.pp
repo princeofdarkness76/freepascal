@@ -190,11 +190,15 @@ Type
     FThread : TFPTimerThread;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Procedure DoNilTimer(Sender : TObject);
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    Procedure DoNilTimer(Sender : TObject);
+>>>>>>> origin/cpstrnew
   Public
     Procedure StartTimer; override;
     Procedure StopTimer; override;
@@ -283,20 +287,27 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 Procedure TFPThreadedTimerDriver.DoNilTimer(Sender : TObject);
 
 begin
   FThread:=Nil;
 end;
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 Procedure TFPThreadedTimerDriver.StartTimer; 
 
 begin
   FThread:=TFPTimerThread.CreateTimerThread(Self);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   FThread.OnTerminate:=@DoNilTimer;
@@ -318,6 +329,9 @@ begin
   FThread.Resume;
 >>>>>>> graemeg/fixes_2_2
 =======
+=======
+  FThread.OnTerminate:=@DoNilTimer;
+>>>>>>> origin/cpstrnew
   FThread.Resume;
 >>>>>>> origin/fixes_2_2
 end;
@@ -328,6 +342,7 @@ begin
   FThread.Terminate; // Will free itself.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   CheckSynchronize; // make sure thread is not stuck at synchronize call.
   If Assigned(FThread) then
     Fthread.WaitFor;  
@@ -335,6 +350,11 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  CheckSynchronize; // make sure thread is not stuck at synchronize call.
+  If Assigned(FThread) then
+    Fthread.WaitFor;  
+>>>>>>> origin/cpstrnew
 end;
 
 

@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       QuickTime/QuickTimeVRFormat.h
  
      Contains:   QuickTime VR interfaces
@@ -40,11 +41,15 @@
 =======
      File:       QuickTime/QuickTimeVRFormat.h
 >>>>>>> origin/fixes_2.4
+=======
+     File:       QuickTime/QuickTimeVRFormat.h
+>>>>>>> origin/cpstrnew
  
      Contains:   QuickTime VR interfaces
  
      Version:    QuickTime 7.6.3
  
+<<<<<<< HEAD
 <<<<<<< HEAD
      Copyright:  © 1997-2002 by Apple Computer, Inc., all rights reserved.
 <<<<<<< HEAD
@@ -54,6 +59,9 @@
 =======
      Copyright:  © 1997-2008 by Apple Inc., all rights reserved.
 >>>>>>> origin/fixes_2.4
+=======
+     Copyright:  © 1997-2008 by Apple Inc., all rights reserved.
+>>>>>>> origin/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -63,6 +71,7 @@
                      http://bugs.freepascal.org
  
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -94,6 +103,8 @@
                      http://www.freepascal.org/bugs.html
  
 }
+=======
+>>>>>>> origin/cpstrnew
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {
     Modified for use with Free Pascal
@@ -103,12 +114,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -120,6 +135,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -134,6 +150,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -149,6 +169,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -159,6 +180,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -166,13 +190,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -180,6 +208,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -188,8 +218,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -200,6 +233,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -220,6 +254,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -228,12 +264,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -241,6 +280,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -476,6 +516,11 @@ interface
 >>>>>>> origin/fixes_2.4
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -499,6 +544,7 @@ interface
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -540,6 +586,41 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -568,6 +649,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -576,6 +658,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -585,6 +669,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -605,6 +690,13 @@ uses MacTypes,Movies,QuickTimeVR;
 >>>>>>> graemeg/cpstrnew
 
 {$ifc TARGET_OS_MAC}
+=======
+uses MacTypes,Movies,QuickTimeVR;
+{$endc} {not MACOSALLINCLUDE}
+
+>>>>>>> origin/cpstrnew
+
+{$ifc TARGET_OS_MAC}
 
 {$ifc TARGET_OS_MAC}
 
@@ -616,6 +708,7 @@ uses MacTypes,Movies,QuickTimeVR;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 {$ifc not TARGET_CPU_64}
 
@@ -873,6 +966,18 @@ const
 const
 	kQTVRMinorVersion = 0;
 
+=======
+
+{$ifc not TARGET_CPU_64}
+
+
+{ File Format Version numbers }
+const
+	kQTVRMajorVersion = 2;
+const
+	kQTVRMinorVersion = 0;
+
+>>>>>>> origin/cpstrnew
 { User data type for the Movie Controller type specifier}
 const
 	kQTControllerType = kQTVRControllerSubType; { Atom & ID of where our}
@@ -950,6 +1055,9 @@ const
 
 {$endc} {not TARGET_CPU_64}
 
+<<<<<<< HEAD
+>>>>>>> origin/cpstrnew
+=======
 >>>>>>> origin/cpstrnew
 { Header for QTVR track's Sample Description record (vrWorld atom container is appended)}
 type
@@ -983,6 +1091,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		theString: packed array [0..3] of UInt8;           { field previously named "string" }
 =======
 		theString: packed array [0..3] of UInt8;			{  field previously named "string" }
@@ -993,6 +1102,9 @@ type
 =======
 		theString: packed array [0..3] of UInt8;			{  field previously named "string" }
 >>>>>>> graemeg/cpstrnew
+=======
+		theString: packed array [0..3] of UInt8;			{  field previously named "string" }
+>>>>>>> origin/cpstrnew
 =======
 		theString: packed array [0..3] of UInt8;			{  field previously named "string" }
 >>>>>>> origin/cpstrnew
@@ -1080,6 +1192,7 @@ type
 	QTVRHotSpotInfoAtom = record
 		majorVersion: UInt16;
 		minorVersion: UInt16;
+<<<<<<< HEAD
 
 		hotSpotType: OSType;
 		nameAtomID: QTAtomID;
@@ -1565,11 +1678,133 @@ const
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+
+		hotSpotType: OSType;
+		nameAtomID: QTAtomID;
+		commentAtomID: QTAtomID;
+
+		cursorID: array [0..2] of SInt32;
+
+                                              { canonical view for this hot spot}
+		bestPan: Float32;
+		bestTilt: Float32;
+		bestFOV: Float32;
+		bestViewCenter: QTVRFloatPoint;
+
+                                              { Bounding box for this hot spot}
+		hotSpotRect: Rect;
+
+		flags: UInt32;
+		reserved1: UInt32;
+		reserved2: UInt32;
+	end;
+	QTVRHotSpotInfoAtomPtr = ^QTVRHotSpotInfoAtom;
+type
+	QTVRLinkHotSpotAtom = record
+		majorVersion: UInt16;
+		minorVersion: UInt16;
+
+		toNodeID: UInt32;
+
+		fromValidFlags: UInt32;
+		fromPan: Float32;
+		fromTilt: Float32;
+		fromFOV: Float32;
+		fromViewCenter: QTVRFloatPoint;
+
+		toValidFlags: UInt32;
+		toPan: Float32;
+		toTilt: Float32;
+		toFOV: Float32;
+		toViewCenter: QTVRFloatPoint;
+
+		distance: Float32;
+
+		flags: UInt32;
+		reserved1: UInt32;
+		reserved2: UInt32;
+	end;
+	QTVRLinkHotSpotAtomPtr = ^QTVRLinkHotSpotAtom;
+{
+  =================================================================================================
+   Definitions and structures used in Panorama and Object tracks
+  -------------------------------------------------------------------------------------------------
+}
+
+type
+	QTVRPanoSampleAtom = record
+		majorVersion: UInt16;
+		minorVersion: UInt16;
+
+		imageRefTrackIndex: UInt32;     { track reference index of the full res image track}
+		hotSpotRefTrackIndex: UInt32;   { track reference index of the full res hot spot track}
+
+		minPan: Float32;
+		maxPan: Float32;
+		minTilt: Float32;
+		maxTilt: Float32;
+		minFieldOfView: Float32;
+		maxFieldOfView: Float32;
+
+		defaultPan: Float32;
+		defaultTilt: Float32;
+		defaultFieldOfView: Float32;
+
+                                              { Info for highest res version of image track}
+		imageSizeX: UInt32;             { pixel width of the panorama (e.g. 768)}
+		imageSizeY: UInt32;             { pixel height of the panorama (e.g. 2496)}
+		imageNumFramesX: UInt16;        { diced frames wide (e.g. 1)}
+		imageNumFramesY: UInt16;        { diced frames high (e.g. 24)}
+
+                                              { Info for highest res version of hotSpot track}
+		hotSpotSizeX: UInt32;           { pixel width of the hot spot panorama (e.g. 768)}
+		hotSpotSizeY: UInt32;           { pixel height of the hot spot panorama (e.g. 2496)}
+		hotSpotNumFramesX: UInt16;      { diced frames wide (e.g. 1)}
+		hotSpotNumFramesY: UInt16;      { diced frames high (e.g. 24)}
+
+		flags: UInt32;
+		panoType: OSType;
+		reserved2: UInt32;
+	end;
+	QTVRPanoSampleAtomPtr = ^QTVRPanoSampleAtom;
+{
+   View atom for cubes (since same fields in QTVRPanoSampleAtom are set to special
+   values for backwards compatibility and hence are ignored by the cubic engine)
+}
+type
+	QTVRCubicViewAtom = record
+		minPan: Float32;
+		maxPan: Float32;
+		minTilt: Float32;
+		maxTilt: Float32;
+		minFieldOfView: Float32;
+		maxFieldOfView: Float32;
+
+		defaultPan: Float32;
+		defaultTilt: Float32;
+		defaultFieldOfView: Float32;
+	end;
+	QTVRCubicViewAtomPtr = ^QTVRCubicViewAtom;
+type
+	QTVRCubicFaceData = record
+		orientation: array [0..3] of Float32;         {  WXYZ quaternion of absolute orientation }
+		center: array [0..1] of Float32;              {  Center of image relative to center of projection (default = (0,0)) in normalized units }
+		aspect: Float32;                 { aspect>1 => tall pixels; aspect <1 => squat pixels (default = 1)}
+		skew: Float32;                   { skew x by y (default = 0)}
+	end;
+	QTVRCubicFaceDataPtr = ^QTVRCubicFaceData;
+{ Special resolution values for the Image Track Reference Atoms. Use only one value per track reference.}
+const
+>>>>>>> origin/cpstrnew
 	kQTVRFullTrackRes = kQTVRFullRes;
 	kQTVRHalfTrackRes = kQTVRHalfRes;
 	kQTVRQuarterTrackRes = kQTVRQuarterRes;
 	kQTVRPreviewTrackRes = $8000;
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 type
 	QTVRTrackRefEntryPtr = ^QTVRTrackRefEntry;
@@ -1577,6 +1812,9 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 		trackRefType: UInt32;
 		trackResolution: UInt16;
 		trackRefIndex: UInt32;
@@ -1598,6 +1836,9 @@ const
 	kQTVRObjectStreamingViewsOn = 1 shl 8;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -1612,6 +1853,7 @@ const
 
 const
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 const
@@ -1625,6 +1867,8 @@ const
 
 const
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 	kGrabberScrollerUI = 1;    { "Object" }
@@ -1701,6 +1945,7 @@ const
 const
 	kQTVRObjExporterSettingsBlockSize = FourCharCode('bsiz'); { block size for compression}
 	kQTVRObjExporterSettingsTargetSize = FourCharCode('tsiz'); { target file size}
+<<<<<<< HEAD
 
 
 {$endc} {not TARGET_CPU_64}
@@ -1827,11 +2072,18 @@ const
 
 {$endc} {not TARGET_CPU_64}
 
+=======
+
+
+{$endc} {not TARGET_CPU_64}
+
+>>>>>>> origin/cpstrnew
 {$endc} {TARGET_OS_MAC}
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -1840,3 +2092,6 @@ end.
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

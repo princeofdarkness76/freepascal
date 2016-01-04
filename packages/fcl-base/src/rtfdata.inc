@@ -178,11 +178,15 @@ Const
                 rtfIIntID               = 38;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 rtfUnicodeID            = 39;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+                rtfUnicodeID            = 39;
+>>>>>>> origin/cpstrnew
 
         rtfStyleAttr    = 7;
                 rtfBasedOn              = 0;
@@ -475,6 +479,7 @@ Type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Const rtfKey : Array [0..286] of TRTFKey =
 =======
 Const rtfKey : Array [0..284] of TRTFKey =
@@ -482,6 +487,9 @@ Const rtfKey : Array [0..284] of TRTFKey =
 =======
 Const rtfKey : Array [0..284] of TRTFKey =
 >>>>>>> origin/fixes_2_2
+=======
+Const rtfKey : Array [0..286] of TRTFKey =
+>>>>>>> origin/cpstrnew
 (
 ( rtfKMajor: RTFSPECIALCHAR; rtfKMinor : rtfCURHEADPICT; rtfKStr  : 'chpict'; rtfKhash :        0),
 ( rtfKMajor: rtfSpecialChar; rtfKMinor:         rtfCurHeadDate; rtfKstr : 'chdate'; rtfkHash : 0),
@@ -525,11 +533,15 @@ Const rtfKey : Array [0..284] of TRTFKey =
 ( rtfKMajor: rtfSpecialChar; rtfKMinor:         rtfIIntID; rtfKstr : 'id'; rtfkHash : 0),
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ( rtfKMajor: rtfSpecialChar; rtfKMinor:         rtfUnicodeID; rtfKstr : 'u'; rtfkHash : 0),
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+( rtfKMajor: rtfSpecialChar; rtfKMinor:         rtfUnicodeID; rtfKstr : 'u'; rtfkHash : 0),
+>>>>>>> origin/cpstrnew
 
 ( rtfKMajor: rtfCharAttr; rtfKMinor:    rtfPlain; rtfKstr : 'plain'; rtfkHash : 0),
 ( rtfKMajor: rtfCharAttr; rtfKMinor:    rtfBold; rtfKstr : 'b'; rtfkHash : 0),
@@ -551,11 +563,15 @@ Const rtfKey : Array [0..284] of TRTFKey =
 ( rtfKMajor: rtfCharAttr; rtfKMinor:    rtfSuperScript; rtfKstr : 'up'; rtfkHash : 0),
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ( rtfKMajor: rtfCharAttr; rtfKMinor:    rtfSuperScript; rtfKstr : 'super'; rtfkHash : 0),
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+( rtfKMajor: rtfCharAttr; rtfKMinor:    rtfSuperScript; rtfKstr : 'super'; rtfkHash : 0),
+>>>>>>> origin/cpstrnew
 ( rtfKMajor: rtfCharAttr; rtfKMinor:    rtfSubScript; rtfKstr : 'dn'; rtfkHash : 0),
 ( rtfKMajor: rtfCharAttr; rtfKMinor:    rtfRevised; rtfKstr : 'revised'; rtfkHash : 0),
 ( rtfKMajor: rtfCharAttr; rtfKMinor:    rtfForeColor; rtfKstr : 'cf'; rtfkHash : 0),

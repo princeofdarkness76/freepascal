@@ -138,6 +138,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$push}
 =======
 {$ifopt I+}
@@ -159,6 +160,11 @@ begin
   {$define OPT_I}
 {$endif}
 >>>>>>> origin/cpstrnew
+=======
+{$ifopt I+}
+  {$define OPT_I}
+{$endif}
+>>>>>>> origin/cpstrnew
 {$I-}  
   reset(ft);
   if IOResult=0 then
@@ -169,6 +175,7 @@ begin
           p:=pos('#',s);
           if p>0 then
             s[0]:=chr(p-1);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -191,6 +198,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	  p:=pos('TZ=',s);
           if p>0 then
             begin
@@ -207,11 +216,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 end;

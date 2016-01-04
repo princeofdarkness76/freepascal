@@ -12,14 +12,20 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {$ifdef USE_GDBLIBINC}
   {$include gdblib.inc}
 {$endif USE_GDBLIBINC}
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 { --- Special OS settings --- }
 {$ifdef Go32V2}
   { NOVESA conditional avoids use of
@@ -98,6 +104,11 @@
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+  {$endif}
+  {$ifdef win64}
+    {$define HasSignal}
+    {$define SignalIsFunction}
+    {$define SignalIsCdecl}
   {$endif}
   {$define FSCaseInsensitive}
   {$define HasSysMsgUnit}

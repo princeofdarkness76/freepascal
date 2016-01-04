@@ -127,6 +127,7 @@ uses
   ,i_symbian
 {$endif symbian}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef nativent}
   ,i_nativent
 {$endif nativent}
@@ -144,6 +145,11 @@ uses
 =======
 >>>>>>> graemeg/cpstrnew
 =======
+>>>>>>> origin/cpstrnew
+=======
+{$ifdef nativent}
+  ,i_nativent
+{$endif nativent}
 >>>>>>> origin/cpstrnew
   ,globtype;
 

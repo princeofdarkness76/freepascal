@@ -45,7 +45,6 @@ end;
 {******************************************************************************
                           Process start/halt
  ******************************************************************************}
-{$asmmode ATT}
 
 var
   dlexitproc: pointer;
@@ -88,6 +87,7 @@ asm
         call fpc_geteipasebxlocal
         addl  $_GLOBAL_OFFSET_TABLE_,%ebx
 
+<<<<<<< HEAD
 	movl  operatingsystem_parameter_envp@GOT(%ebx),%ecx
 	movl  %eax,(%ecx)
 
@@ -141,6 +141,8 @@ asm
 =======
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/cpstrnew
   {$ifdef FPC_PIC}
         pushl %ebx
         pushl %ecx
@@ -152,13 +154,21 @@ asm
 	movl  %edx,(%ecx)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	movl  operatingsystem_parameter_envp@GOT(%ebx),%ecx
 	movl  %eax,(%ecx)
 =======
   movl    %edx, dlexitproc
+=======
+	movl  operatingsystem_parameter_envp@GOT(%ebx),%ecx
+	movl  %eax,(%ecx)
+>>>>>>> origin/cpstrnew
 
-  movl    %edx, dlexitproc
+	movl  operatingsystem_parameter_argc@GOT(%ebx),%edx
+	popl  %ecx
+	movl  %ecx,(%edx)
 
+<<<<<<< HEAD
   fninit                           { initialize fpu }
   fwait
   fldcw   Default8087CW
@@ -168,6 +178,8 @@ asm
 	popl  %ecx
 	movl  %ecx,(%edx)
 
+=======
+>>>>>>> origin/cpstrnew
 	movl  operatingsystem_parameter_argv@GOT(%ebx),%edx
 	popl  %ebx
 	movl  %ebx,(%edx)
@@ -178,6 +190,9 @@ asm
   	movl  %ebx,operatingsystem_parameter_argv
   {$endif FPC_PIC}
 
+<<<<<<< HEAD
+>>>>>>> origin/cpstrnew
+=======
 >>>>>>> origin/cpstrnew
   { Initialize FPU }
   call SysResetFPU
@@ -185,6 +200,7 @@ asm
   { Save initial stackpointer }
   {$ifdef FPC_PIC}
         pushl %ebx
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -199,6 +215,9 @@ asm
 =======
         call  fpc_geteipasebx
 >>>>>>> graemeg/cpstrnew
+=======
+        call  fpc_geteipasebx
+>>>>>>> origin/cpstrnew
 =======
         call  fpc_geteipasebx
 >>>>>>> origin/cpstrnew
@@ -237,6 +256,7 @@ asm
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   //addl  $12, %esp  { align stack back to 16 bytes }
   {$ifdef FPC_PIC}
         call  fpc_geteipasebxlocal
@@ -263,24 +283,34 @@ asm
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+
+.Lhaltproc:
+  {$ifdef FPC_PIC}
+        call  fpc_geteipasebx
+>>>>>>> origin/cpstrnew
         addl  $_GLOBAL_OFFSET_TABLE_,%ebx
 	movl  dlexitproc@GOT(%ebx),%eax
 	movl  (%eax),%eax
   {$else FPC_PIC}
   	movl    dlexitproc,%eax
   {$endif FPC_PIC}
+<<<<<<< HEAD
 =======
   movl    dlexitproc,%eax
 >>>>>>> graemeg/fixes_2_2
 =======
   movl    dlexitproc,%eax
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
   testl   %eax,%eax
   je      .Lnodlexitproc
   call    *%eax
 .Lnodlexitproc:
   movl    syscall_nr_exit_group,%eax
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -295,6 +325,8 @@ asm
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$ifdef FPC_PIC}
@@ -337,11 +369,14 @@ asm
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   int     $0x80

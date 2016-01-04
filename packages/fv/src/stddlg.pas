@@ -629,6 +629,7 @@ resourcestring  sChangeDirectory='Change Directory';
 {$endif go32v2}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef OS_WINDOWS}
 {$define NetDrive}
 {$endif OS_WINDOWS}
@@ -642,6 +643,11 @@ resourcestring  sChangeDirectory='Change Directory';
 {$define NetDrive}
 {$endif win32}
 >>>>>>> origin/fixes_2_2
+=======
+{$ifdef OS_WINDOWS}
+{$define NetDrive}
+{$endif OS_WINDOWS}
+>>>>>>> origin/cpstrnew
 
 procedure RemoveDoubleDirSep(var ExpPath : PathStr);
 var
@@ -693,6 +699,7 @@ begin
     // That's why we allow hidden dirs below (bug 6173)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FindFirst(ExpPath, Directory+hidden, SR);
 =======
     FindFirst(ExpPath, Directory+hidden, SR); 
@@ -700,6 +707,9 @@ begin
 =======
     FindFirst(ExpPath, Directory+hidden, SR); 
 >>>>>>> origin/fixes_2_2
+=======
+    FindFirst(ExpPath, Directory+hidden, SR);
+>>>>>>> origin/cpstrnew
     PathValid := (DosError = 0) and (SR.Attr and Directory <> 0);
 {$ifdef NetDrive}
     if (DosError<>0) and (length(ExpPath)>2) and
@@ -2929,6 +2939,7 @@ begin
 {$else not go32v2}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef OS_WINDOWS}
     IllegalChars := ';,=+<>|"[]'+DirSeparator;
 {$else not go32v2 and not OS_WINDOWS }
@@ -2938,14 +2949,21 @@ begin
 =======
 >>>>>>> origin/fixes_2_2
 {$ifdef win32}
+=======
+{$ifdef OS_WINDOWS}
+>>>>>>> origin/cpstrnew
     IllegalChars := ';,=+<>|"[]'+DirSeparator;
-{$else not go32v2 and not win32 }
+{$else not go32v2 and not OS_WINDOWS }
     IllegalChars := ';,=+<>|"[] '+DirSeparator;
+<<<<<<< HEAD
 {$endif not win32}
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$endif not OS_WINDOWS}
+>>>>>>> origin/cpstrnew
 {$endif not go32v2}
 {$else not PPC_FPC}
   IllegalChars := ';,=+<>|"[] '+DirSeparator;

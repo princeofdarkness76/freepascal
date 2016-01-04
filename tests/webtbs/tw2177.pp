@@ -20,6 +20,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function QueryInterface(constref IID: TGUID; out Obj): Longint; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
     function _AddRef: Longint; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
     function _Release: Longint; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
@@ -43,11 +44,17 @@ type
     function _AddRef: Integer; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
     function _Release: Integer; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
 >>>>>>> origin/cpstrnew
+=======
+    function QueryInterface(constref IID: TGUID; out Obj): Integer; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
+    function _AddRef: Integer; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
+    function _Release: Integer; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
+>>>>>>> origin/cpstrnew
 
     procedure Show;stdcall;
   end;
 
   {________doomy interfaces______}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -65,10 +72,14 @@ type
 =======
   function Twii.QueryInterface(constref IID: TGUID; out Obj): Integer; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
 >>>>>>> origin/cpstrnew
+=======
+  function Twii.QueryInterface(constref IID: TGUID; out Obj): Integer; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
+>>>>>>> origin/cpstrnew
   begin
     result:= -1;
   end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -86,10 +97,14 @@ type
 =======
   function Twii._AddRef: Integer; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
 >>>>>>> origin/cpstrnew
+=======
+  function Twii._AddRef: Integer; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
+>>>>>>> origin/cpstrnew
   begin
     result:= -1;
   end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -104,6 +119,9 @@ type
 =======
   function Twii._Release: Integer; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
 >>>>>>> graemeg/cpstrnew
+=======
+  function Twii._Release: Integer; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
+>>>>>>> origin/cpstrnew
 =======
   function Twii._Release: Integer; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
 >>>>>>> origin/cpstrnew

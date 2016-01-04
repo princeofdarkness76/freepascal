@@ -11,6 +11,7 @@ loaders=
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 units=system uuchar strings objpas macpas iso7185 extpas heaptrc getopts macostp macutils \
       unixutil dos cmem charset cpall ctypes
 =======
@@ -18,6 +19,8 @@ units=system uuchar strings objpas macpas iso7185 extpas heaptrc getopts macostp
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 units=system strings objpas macpas iso7185 heaptrc getopts macostp macutils \

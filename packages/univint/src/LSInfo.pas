@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       LSInfo.h
  
      Contains:   Public interfaces for LaunchServices.framework
@@ -18,6 +19,8 @@
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
      File:       LaunchServices/LSInfo.h
  
      Contains:   Public interfaces for LaunchServices.framework
@@ -25,6 +28,7 @@
      Version:    LaunchServices-360.3~1
  
      Copyright:  © 2001-2008 by Apple Computer, Inc., all rights reserved.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -38,10 +42,13 @@
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -58,10 +65,13 @@
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
                      http://www.freepascal.org/bugs.html
  
 }
 {	 Pascal Translation: Gorazd Krosl <gorazd_1957@yahoo.ca>, October 2009 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -75,6 +85,8 @@
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {
     Modified for use with Free Pascal
@@ -135,6 +147,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
@@ -150,6 +163,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -173,6 +188,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -203,6 +219,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/fixes_2.4
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
@@ -214,6 +235,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -244,6 +266,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/fixes_2.4
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -255,6 +282,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -266,6 +294,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -275,6 +305,7 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -291,6 +322,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -302,6 +335,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -338,12 +372,18 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/fixes_2.4
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -376,10 +416,13 @@ interface
 	{$setc TARGET_CPU_ARM64 := TRUE}
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
@@ -404,6 +447,10 @@ interface
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 >>>>>>> origin/fixes_2.4
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> origin/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -584,6 +631,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.3
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework but deprecated in 10.3
@@ -600,10 +648,14 @@ const
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework but deprecated in 10.3
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework but deprecated in 10.3
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
 function LSInit( inFlags: LSInitializeFlags ): OSStatus; external name '_LSInit';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -625,6 +677,9 @@ function LSInit( inFlags: LSInitializeFlags ): OSStatus; external name '_LSInit'
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -639,6 +694,7 @@ function LSInit( inFlags: LSInitializeFlags ): OSStatus; external name '_LSInit'
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.3
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework but deprecated in 10.3
@@ -655,10 +711,14 @@ function LSInit( inFlags: LSInitializeFlags ): OSStatus; external name '_LSInit'
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework but deprecated in 10.3
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework but deprecated in 10.3
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
 function LSTerm: OSStatus; external name '_LSTerm';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -680,6 +740,9 @@ function LSTerm: OSStatus; external name '_LSTerm';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -712,6 +775,7 @@ function LSTerm: OSStatus; external name '_LSTerm';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
@@ -728,10 +792,14 @@ function LSTerm: OSStatus; external name '_LSTerm';
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
 function LSCopyItemInfoForRef( const (*var*) inItemRef: FSRef; inWhichInfo: LSRequestedInfo; var outItemInfo: LSItemInfoRecord ): OSStatus; external name '_LSCopyItemInfoForRef';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -753,6 +821,9 @@ function LSCopyItemInfoForRef( const (*var*) inItemRef: FSRef; inWhichInfo: LSRe
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -784,6 +855,7 @@ function LSCopyItemInfoForRef( const (*var*) inItemRef: FSRef; inWhichInfo: LSRe
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
@@ -800,10 +872,14 @@ function LSCopyItemInfoForRef( const (*var*) inItemRef: FSRef; inWhichInfo: LSRe
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
 function LSCopyItemInfoForURL( inURL: CFURLRef; inWhichInfo: LSRequestedInfo; var outItemInfo: LSItemInfoRecord ): OSStatus; external name '_LSCopyItemInfoForURL';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -825,6 +901,9 @@ function LSCopyItemInfoForURL( inURL: CFURLRef; inWhichInfo: LSRequestedInfo; va
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -860,6 +939,7 @@ function LSCopyItemInfoForURL( inURL: CFURLRef; inWhichInfo: LSRequestedInfo; va
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.1 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework
@@ -876,10 +956,14 @@ function LSCopyItemInfoForURL( inURL: CFURLRef; inWhichInfo: LSRequestedInfo; va
 =======
  *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
 function LSGetExtensionInfo( inNameLen: UniCharCount; {const} inNameBuffer: {variable-size-array} UniCharPtr; var outExtStartIndex: UniCharCount ): OSStatus; external name '_LSGetExtensionInfo';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -901,6 +985,9 @@ function LSGetExtensionInfo( inNameLen: UniCharCount; {const} inNameBuffer: {var
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -931,6 +1018,7 @@ function LSGetExtensionInfo( inNameLen: UniCharCount; {const} inNameBuffer: {var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.1 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework
@@ -947,10 +1035,14 @@ function LSGetExtensionInfo( inNameLen: UniCharCount; {const} inNameBuffer: {var
 =======
  *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
 function LSCopyDisplayNameForRef( const (*var*) inRef: FSRef; var outDisplayName: CFStringRef ): OSStatus; external name '_LSCopyDisplayNameForRef';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -972,6 +1064,9 @@ function LSCopyDisplayNameForRef( const (*var*) inRef: FSRef; var outDisplayName
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1002,6 +1097,7 @@ function LSCopyDisplayNameForRef( const (*var*) inRef: FSRef; var outDisplayName
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.1 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework
@@ -1018,10 +1114,14 @@ function LSCopyDisplayNameForRef( const (*var*) inRef: FSRef; var outDisplayName
 =======
  *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
 function LSCopyDisplayNameForURL( inURL: CFURLRef; var outDisplayName: CFStringRef ): OSStatus; external name '_LSCopyDisplayNameForURL';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1043,6 +1143,9 @@ function LSCopyDisplayNameForURL( inURL: CFURLRef; var outDisplayName: CFStringR
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1074,6 +1177,7 @@ function LSCopyDisplayNameForURL( inURL: CFURLRef; var outDisplayName: CFStringR
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.1 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework
@@ -1090,10 +1194,14 @@ function LSCopyDisplayNameForURL( inURL: CFURLRef; var outDisplayName: CFStringR
 =======
  *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
 function LSSetExtensionHiddenForRef( const (*var*) inRef: FSRef; inHide: Boolean ): OSStatus; external name '_LSSetExtensionHiddenForRef';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1115,6 +1223,9 @@ function LSSetExtensionHiddenForRef( const (*var*) inRef: FSRef; inHide: Boolean
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1146,6 +1257,7 @@ function LSSetExtensionHiddenForRef( const (*var*) inRef: FSRef; inHide: Boolean
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.1 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework
@@ -1162,10 +1274,14 @@ function LSSetExtensionHiddenForRef( const (*var*) inRef: FSRef; inHide: Boolean
 =======
  *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
 function LSSetExtensionHiddenForURL( inURL: CFURLRef; inHide: Boolean ): OSStatus; external name '_LSSetExtensionHiddenForURL';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1187,6 +1303,9 @@ function LSSetExtensionHiddenForURL( inURL: CFURLRef; inHide: Boolean ): OSStatu
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1217,6 +1336,7 @@ function LSSetExtensionHiddenForURL( inURL: CFURLRef; inHide: Boolean ): OSStatu
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
@@ -1233,10 +1353,14 @@ function LSSetExtensionHiddenForURL( inURL: CFURLRef; inHide: Boolean ): OSStatu
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
 function LSCopyKindStringForRef( const (*var*) inFSRef: FSRef; var outKindString: CFStringRef ): OSStatus; external name '_LSCopyKindStringForRef';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1258,6 +1382,9 @@ function LSCopyKindStringForRef( const (*var*) inFSRef: FSRef; var outKindString
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1288,6 +1415,7 @@ function LSCopyKindStringForRef( const (*var*) inFSRef: FSRef; var outKindString
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
@@ -1304,10 +1432,14 @@ function LSCopyKindStringForRef( const (*var*) inFSRef: FSRef; var outKindString
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
 function LSCopyKindStringForURL( inURL: CFURLRef; var outKindString: CFStringRef ): OSStatus; external name '_LSCopyKindStringForURL';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1329,6 +1461,9 @@ function LSCopyKindStringForURL( inURL: CFURLRef; var outKindString: CFStringRef
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1376,6 +1511,7 @@ function LSCopyKindStringForURL( inURL: CFURLRef; var outKindString: CFStringRef
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework
@@ -1392,10 +1528,14 @@ function LSCopyKindStringForURL( inURL: CFURLRef; var outKindString: CFStringRef
 =======
  *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
 function LSCopyKindStringForTypeInfo( inType: OSType; inCreator: OSType; inExtension: CFStringRef { can be NULL }; var outKindString: CFStringRef ): OSStatus; external name '_LSCopyKindStringForTypeInfo';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1417,6 +1557,9 @@ function LSCopyKindStringForTypeInfo( inType: OSType; inCreator: OSType; inExten
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1447,6 +1590,7 @@ function LSCopyKindStringForTypeInfo( inType: OSType; inCreator: OSType; inExten
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework
@@ -1463,10 +1607,14 @@ function LSCopyKindStringForTypeInfo( inType: OSType; inCreator: OSType; inExten
 =======
  *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
 function LSCopyKindStringForMIMEType( inMIMEType: CFStringRef; var outKindString: CFStringRef ): OSStatus; external name '_LSCopyKindStringForMIMEType';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1488,6 +1636,9 @@ function LSCopyKindStringForMIMEType( inMIMEType: CFStringRef; var outKindString
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1531,6 +1682,7 @@ function LSCopyKindStringForMIMEType( inMIMEType: CFStringRef; var outKindString
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
@@ -1547,10 +1699,14 @@ function LSCopyKindStringForMIMEType( inMIMEType: CFStringRef; var outKindString
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
 function LSGetApplicationForItem( const (*var*) inItemRef: FSRef; inRoleMask: LSRolesMask; outAppRef: FSRefPtr { can be NULL }; outAppURL: CFURLRefPtr { can be NULL } ): OSStatus; external name '_LSGetApplicationForItem';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1572,6 +1728,9 @@ function LSGetApplicationForItem( const (*var*) inItemRef: FSRef; inRoleMask: LS
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1623,6 +1782,7 @@ function LSGetApplicationForItem( const (*var*) inItemRef: FSRef; inRoleMask: LS
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
@@ -1639,10 +1799,14 @@ function LSGetApplicationForItem( const (*var*) inItemRef: FSRef; inRoleMask: LS
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
 function LSGetApplicationForInfo( inType: OSType; inCreator: OSType; inExtension: CFStringRef { can be NULL }; inRoleMask: LSRolesMask; outAppRef: FSRefPtr { can be NULL }; outAppURL: CFURLRefPtr { can be NULL } ): OSStatus; external name '_LSGetApplicationForInfo';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1664,6 +1828,9 @@ function LSGetApplicationForInfo( inType: OSType; inCreator: OSType; inExtension
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1702,6 +1869,7 @@ function LSGetApplicationForInfo( inType: OSType; inCreator: OSType; inExtension
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework
@@ -1718,10 +1886,14 @@ function LSGetApplicationForInfo( inType: OSType; inCreator: OSType; inExtension
 =======
  *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
 function LSCopyApplicationForMIMEType( inMIMEType: CFStringRef; inRoleMask: LSRolesMask; var outAppURL: CFURLRef ): OSStatus; external name '_LSCopyApplicationForMIMEType';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1743,6 +1915,9 @@ function LSCopyApplicationForMIMEType( inMIMEType: CFStringRef; inRoleMask: LSRo
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1786,6 +1961,7 @@ function LSCopyApplicationForMIMEType( inMIMEType: CFStringRef; inRoleMask: LSRo
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
@@ -1802,10 +1978,14 @@ function LSCopyApplicationForMIMEType( inMIMEType: CFStringRef; inRoleMask: LSRo
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
 function LSGetApplicationForURL( inURL: CFURLRef; inRoleMask: LSRolesMask; outAppRef: FSRefPtr { can be NULL }; outAppURL: CFURLRefPtr { can be NULL } ): OSStatus; external name '_LSGetApplicationForURL';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1827,6 +2007,9 @@ function LSGetApplicationForURL( inURL: CFURLRef; inRoleMask: LSRolesMask; outAp
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1872,6 +2055,7 @@ function LSGetApplicationForURL( inURL: CFURLRef; inRoleMask: LSRolesMask; outAp
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
@@ -1888,10 +2072,14 @@ function LSGetApplicationForURL( inURL: CFURLRef; inRoleMask: LSRolesMask; outAp
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
 function LSFindApplicationForInfo( inCreator: OSType; inBundleID: CFStringRef { can be NULL }; inName: CFStringRef { can be NULL }; outAppRef: FSRefPtr { can be NULL }; outAppURL: CFURLRefPtr { can be NULL } ): OSStatus; external name '_LSFindApplicationForInfo';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1913,6 +2101,9 @@ function LSFindApplicationForInfo( inCreator: OSType; inBundleID: CFStringRef { 
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1954,6 +2145,7 @@ function LSFindApplicationForInfo( inCreator: OSType; inBundleID: CFStringRef { 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
@@ -1970,10 +2162,14 @@ function LSFindApplicationForInfo( inCreator: OSType; inBundleID: CFStringRef { 
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
 function LSCanRefAcceptItem( const (*var*) inItemFSRef: FSRef; const (*var*) inTargetRef: FSRef; inRoleMask: LSRolesMask; inFlags: LSAcceptanceFlags; var outAcceptsItem: Boolean ): OSStatus; external name '_LSCanRefAcceptItem';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1995,6 +2191,9 @@ function LSCanRefAcceptItem( const (*var*) inItemFSRef: FSRef; const (*var*) inT
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2036,6 +2235,7 @@ function LSCanRefAcceptItem( const (*var*) inItemFSRef: FSRef; const (*var*) inT
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
@@ -2052,10 +2252,14 @@ function LSCanRefAcceptItem( const (*var*) inItemFSRef: FSRef; const (*var*) inT
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
 function LSCanURLAcceptURL( inItemURL: CFURLRef; inTargetURL: CFURLRef; inRoleMask: LSRolesMask; inFlags: LSAcceptanceFlags; var outAcceptsItem: Boolean ): OSStatus; external name '_LSCanURLAcceptURL';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2077,6 +2281,9 @@ function LSCanURLAcceptURL( inItemURL: CFURLRef; inTargetURL: CFURLRef; inRoleMa
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2113,6 +2320,7 @@ function LSCanURLAcceptURL( inItemURL: CFURLRef; inTargetURL: CFURLRef; inRoleMa
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.3 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.3 and later in ApplicationServices.framework
@@ -2129,10 +2337,14 @@ function LSCanURLAcceptURL( inItemURL: CFURLRef; inTargetURL: CFURLRef; inRoleMa
 =======
  *    Mac OS X:         in version 10.3 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.3 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
 function LSRegisterURL( inURL: CFURLRef; inUpdate: Boolean ): OSStatus; external name '_LSRegisterURL';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2154,6 +2366,9 @@ function LSRegisterURL( inURL: CFURLRef; inUpdate: Boolean ): OSStatus; external
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2190,6 +2405,7 @@ function LSRegisterURL( inURL: CFURLRef; inUpdate: Boolean ): OSStatus; external
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.3 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.3 and later in ApplicationServices.framework
@@ -2206,10 +2422,14 @@ function LSRegisterURL( inURL: CFURLRef; inUpdate: Boolean ): OSStatus; external
 =======
  *    Mac OS X:         in version 10.3 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.3 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
 function LSRegisterFSRef( const (*var*) inRef: FSRef; inUpdate: Boolean ): OSStatus; external name '_LSRegisterFSRef';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2231,6 +2451,9 @@ function LSRegisterFSRef( const (*var*) inRef: FSRef; inUpdate: Boolean ): OSSta
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2270,6 +2493,7 @@ function LSRegisterFSRef( const (*var*) inRef: FSRef; inUpdate: Boolean ): OSSta
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.3 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.3 and later in ApplicationServices.framework
@@ -2286,10 +2510,14 @@ function LSRegisterFSRef( const (*var*) inRef: FSRef; inUpdate: Boolean ): OSSta
 =======
  *    Mac OS X:         in version 10.3 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.3 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
 function LSCopyApplicationURLsForURL( inURL: CFURLRef; inRoleMask: LSRolesMask ): CFArrayRef; external name '_LSCopyApplicationURLsForURL';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2311,6 +2539,9 @@ function LSCopyApplicationURLsForURL( inURL: CFURLRef; inRoleMask: LSRolesMask )
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 { ================================================================================== }
@@ -2392,6 +2623,7 @@ function LSCopyApplicationURLsForURL( inURL: CFURLRef; inRoleMask: LSRolesMask )
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
@@ -2408,6 +2640,9 @@ function LSCopyApplicationURLsForURL( inURL: CFURLRef; inRoleMask: LSRolesMask )
 =======
  *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
@@ -2417,6 +2652,7 @@ var kLSItemContentType: CFStringRef; external name '_kLSItemContentType'; (* att
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
@@ -2433,6 +2669,9 @@ var kLSItemContentType: CFStringRef; external name '_kLSItemContentType'; (* att
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> origin/cpstrnew
 {
  *  kLSItemFileType
  *  
@@ -2442,6 +2681,7 @@ var kLSItemContentType: CFStringRef; external name '_kLSItemContentType'; (* att
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
@@ -2458,6 +2698,9 @@ var kLSItemContentType: CFStringRef; external name '_kLSItemContentType'; (* att
 =======
  *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
@@ -2467,6 +2710,7 @@ var kLSItemFileType: CFStringRef; external name '_kLSItemFileType'; (* attribute
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
@@ -2483,6 +2727,9 @@ var kLSItemFileType: CFStringRef; external name '_kLSItemFileType'; (* attribute
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> origin/cpstrnew
 {
  *  kLSItemFileCreator
  *  
@@ -2492,6 +2739,7 @@ var kLSItemFileType: CFStringRef; external name '_kLSItemFileType'; (* attribute
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
@@ -2508,6 +2756,9 @@ var kLSItemFileType: CFStringRef; external name '_kLSItemFileType'; (* attribute
 =======
  *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
@@ -2517,6 +2768,7 @@ var kLSItemFileCreator: CFStringRef; external name '_kLSItemFileCreator'; (* att
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
@@ -2533,6 +2785,9 @@ var kLSItemFileCreator: CFStringRef; external name '_kLSItemFileCreator'; (* att
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> origin/cpstrnew
 {
  *  kLSItemExtension
  *  
@@ -2542,6 +2797,7 @@ var kLSItemFileCreator: CFStringRef; external name '_kLSItemFileCreator'; (* att
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
@@ -2558,6 +2814,9 @@ var kLSItemFileCreator: CFStringRef; external name '_kLSItemFileCreator'; (* att
 =======
  *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
@@ -2567,6 +2826,7 @@ var kLSItemExtension: CFStringRef; external name '_kLSItemExtension'; (* attribu
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
@@ -2583,6 +2843,9 @@ var kLSItemExtension: CFStringRef; external name '_kLSItemExtension'; (* attribu
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> origin/cpstrnew
 {
  *  kLSItemDisplayName
  *  
@@ -2592,6 +2855,7 @@ var kLSItemExtension: CFStringRef; external name '_kLSItemExtension'; (* attribu
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
@@ -2608,6 +2872,9 @@ var kLSItemExtension: CFStringRef; external name '_kLSItemExtension'; (* attribu
 =======
  *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
@@ -2617,6 +2884,7 @@ var kLSItemDisplayName: CFStringRef; external name '_kLSItemDisplayName'; (* att
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
@@ -2633,6 +2901,9 @@ var kLSItemDisplayName: CFStringRef; external name '_kLSItemDisplayName'; (* att
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> origin/cpstrnew
 {
  *  kLSItemDisplayKind
  *  
@@ -2642,6 +2913,7 @@ var kLSItemDisplayName: CFStringRef; external name '_kLSItemDisplayName'; (* att
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
@@ -2658,6 +2930,9 @@ var kLSItemDisplayName: CFStringRef; external name '_kLSItemDisplayName'; (* att
 =======
  *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
@@ -2667,6 +2942,7 @@ var kLSItemDisplayKind: CFStringRef; external name '_kLSItemDisplayKind'; (* att
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
@@ -2683,6 +2959,9 @@ var kLSItemDisplayKind: CFStringRef; external name '_kLSItemDisplayKind'; (* att
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> origin/cpstrnew
 {
  *  kLSItemRoleHandlerDisplayName
  *  
@@ -2692,6 +2971,7 @@ var kLSItemDisplayKind: CFStringRef; external name '_kLSItemDisplayKind'; (* att
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
@@ -2708,6 +2988,9 @@ var kLSItemDisplayKind: CFStringRef; external name '_kLSItemDisplayKind'; (* att
 =======
  *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
@@ -2717,6 +3000,7 @@ var kLSItemRoleHandlerDisplayName: CFStringRef; external name '_kLSItemRoleHandl
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
@@ -2733,6 +3017,9 @@ var kLSItemRoleHandlerDisplayName: CFStringRef; external name '_kLSItemRoleHandl
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> origin/cpstrnew
 {
  *  kLSItemIsInvisible
  *  
@@ -2742,6 +3029,7 @@ var kLSItemRoleHandlerDisplayName: CFStringRef; external name '_kLSItemRoleHandl
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
@@ -2758,6 +3046,9 @@ var kLSItemRoleHandlerDisplayName: CFStringRef; external name '_kLSItemRoleHandl
 =======
  *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
@@ -2767,6 +3058,7 @@ var kLSItemIsInvisible: CFStringRef; external name '_kLSItemIsInvisible'; (* att
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
@@ -2783,10 +3075,14 @@ var kLSItemIsInvisible: CFStringRef; external name '_kLSItemIsInvisible'; (* att
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> origin/cpstrnew
 {
  *  kLSItemExtensionIsHidden
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2808,10 +3104,14 @@ var kLSItemIsInvisible: CFStringRef; external name '_kLSItemIsInvisible'; (* att
 =======
  *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 var kLSItemExtensionIsHidden: CFStringRef; external name '_kLSItemExtensionIsHidden'; (* attribute const *)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2833,10 +3133,14 @@ var kLSItemExtensionIsHidden: CFStringRef; external name '_kLSItemExtensionIsHid
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> origin/cpstrnew
 {
  *  kLSItemQuarantineProperties
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2858,10 +3162,14 @@ var kLSItemExtensionIsHidden: CFStringRef; external name '_kLSItemExtensionIsHid
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 var kLSItemQuarantineProperties: CFStringRef; external name '_kLSItemQuarantineProperties'; (* attribute const *)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2883,6 +3191,9 @@ var kLSItemQuarantineProperties: CFStringRef; external name '_kLSItemQuarantineP
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 {
  *  LSCopyItemAttribute()
  *  
@@ -2920,6 +3231,7 @@ var kLSItemQuarantineProperties: CFStringRef; external name '_kLSItemQuarantineP
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
@@ -2936,10 +3248,14 @@ var kLSItemQuarantineProperties: CFStringRef; external name '_kLSItemQuarantineP
 =======
  *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSCopyItemAttribute( const (*var*) inItem: FSRef; inRoles: LSRolesMask; inAttributeName: CFStringRef; var outValue: CFTypeRef ): OSStatus; external name '_LSCopyItemAttribute';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2961,6 +3277,9 @@ function LSCopyItemAttribute( const (*var*) inItem: FSRef; inRoles: LSRolesMask;
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -3003,6 +3322,7 @@ function LSCopyItemAttribute( const (*var*) inItem: FSRef; inRoles: LSRolesMask;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
@@ -3019,10 +3339,14 @@ function LSCopyItemAttribute( const (*var*) inItem: FSRef; inRoles: LSRolesMask;
 =======
  *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSCopyItemAttributes( const (*var*) inItem: FSRef; inRoles: LSRolesMask; inAttributeNames: CFArrayRef; var outValues: CFDictionaryRef ): OSStatus; external name '_LSCopyItemAttributes';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3044,6 +3368,9 @@ function LSCopyItemAttributes( const (*var*) inItem: FSRef; inRoles: LSRolesMask
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -3082,6 +3409,7 @@ function LSCopyItemAttributes( const (*var*) inItem: FSRef; inRoles: LSRolesMask
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
@@ -3098,10 +3426,14 @@ function LSCopyItemAttributes( const (*var*) inItem: FSRef; inRoles: LSRolesMask
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSSetItemAttribute( const (*var*) inItem: FSRef; inRoles: LSRolesMask; inAttributeName: CFStringRef; inValue: CFTypeRef { can be NULL } ): OSStatus; external name '_LSSetItemAttribute';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3123,6 +3455,9 @@ function LSSetItemAttribute( const (*var*) inItem: FSRef; inRoles: LSRolesMask; 
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 { ================================================================================== }
@@ -3149,6 +3484,7 @@ function LSSetItemAttribute( const (*var*) inItem: FSRef; inRoles: LSRolesMask; 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
@@ -3165,10 +3501,14 @@ function LSSetItemAttribute( const (*var*) inItem: FSRef; inRoles: LSRolesMask; 
 =======
  *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSCopyDefaultRoleHandlerForContentType( inContentType: CFStringRef; inRole: LSRolesMask ): CFStringRef; external name '_LSCopyDefaultRoleHandlerForContentType';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3190,6 +3530,9 @@ function LSCopyDefaultRoleHandlerForContentType( inContentType: CFStringRef; inR
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -3214,6 +3557,7 @@ function LSCopyDefaultRoleHandlerForContentType( inContentType: CFStringRef; inR
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
@@ -3230,10 +3574,14 @@ function LSCopyDefaultRoleHandlerForContentType( inContentType: CFStringRef; inR
 =======
  *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSCopyAllRoleHandlersForContentType( inContentType: CFStringRef; inRole: LSRolesMask ): CFArrayRef; external name '_LSCopyAllRoleHandlersForContentType';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3255,6 +3603,9 @@ function LSCopyAllRoleHandlersForContentType( inContentType: CFStringRef; inRole
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -3277,6 +3628,7 @@ function LSCopyAllRoleHandlersForContentType( inContentType: CFStringRef; inRole
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
@@ -3293,10 +3645,14 @@ function LSCopyAllRoleHandlersForContentType( inContentType: CFStringRef; inRole
 =======
  *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSSetDefaultRoleHandlerForContentType( inContentType: CFStringRef; inRole: LSRolesMask; inHandlerBundleID: CFStringRef ): OSStatus; external name '_LSSetDefaultRoleHandlerForContentType';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3318,6 +3674,9 @@ function LSSetDefaultRoleHandlerForContentType( inContentType: CFStringRef; inRo
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -3355,6 +3714,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
@@ -3371,10 +3731,14 @@ const
 =======
  *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSGetHandlerOptionsForContentType( inContentType: CFStringRef ): LSHandlerOptions; external name '_LSGetHandlerOptionsForContentType';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3396,6 +3760,9 @@ function LSGetHandlerOptionsForContentType( inContentType: CFStringRef ): LSHand
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -3415,6 +3782,7 @@ function LSGetHandlerOptionsForContentType( inContentType: CFStringRef ): LSHand
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
@@ -3431,10 +3799,14 @@ function LSGetHandlerOptionsForContentType( inContentType: CFStringRef ): LSHand
 =======
  *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSSetHandlerOptionsForContentType( inContentType: CFStringRef; inOptions: LSHandlerOptions ): OSStatus; external name '_LSSetHandlerOptionsForContentType';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3456,6 +3828,9 @@ function LSSetHandlerOptionsForContentType( inContentType: CFStringRef; inOption
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -3477,6 +3852,7 @@ function LSSetHandlerOptionsForContentType( inContentType: CFStringRef; inOption
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
@@ -3493,10 +3869,14 @@ function LSSetHandlerOptionsForContentType( inContentType: CFStringRef; inOption
 =======
  *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSCopyDefaultHandlerForURLScheme( inURLScheme: CFStringRef ): CFStringRef; external name '_LSCopyDefaultHandlerForURLScheme';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3518,6 +3898,9 @@ function LSCopyDefaultHandlerForURLScheme( inURLScheme: CFStringRef ): CFStringR
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -3541,6 +3924,7 @@ function LSCopyDefaultHandlerForURLScheme( inURLScheme: CFStringRef ): CFStringR
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
@@ -3557,10 +3941,14 @@ function LSCopyDefaultHandlerForURLScheme( inURLScheme: CFStringRef ): CFStringR
 =======
  *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSCopyAllHandlersForURLScheme( inURLScheme: CFStringRef ): CFArrayRef; external name '_LSCopyAllHandlersForURLScheme';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3582,6 +3970,9 @@ function LSCopyAllHandlersForURLScheme( inURLScheme: CFStringRef ): CFArrayRef; 
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -3603,6 +3994,7 @@ function LSCopyAllHandlersForURLScheme( inURLScheme: CFStringRef ): CFArrayRef; 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
@@ -3619,10 +4011,14 @@ function LSCopyAllHandlersForURLScheme( inURLScheme: CFStringRef ): CFArrayRef; 
 =======
  *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSSetDefaultHandlerForURLScheme( inURLScheme: CFStringRef; inHandlerBundleID: CFStringRef ): OSStatus; external name '_LSSetDefaultHandlerForURLScheme';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3644,6 +4040,9 @@ function LSSetDefaultHandlerForURLScheme( inURLScheme: CFStringRef; inHandlerBun
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {$endc} {TARGET_OS_MAC}

@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
     This file is part of the PTCPas framebuffer library
 <<<<<<< HEAD
@@ -17,6 +18,11 @@
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
 =======
+    Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> origin/cpstrnew
+=======
+{
+    This file is part of the PTCPas framebuffer library
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> origin/cpstrnew
 
@@ -52,6 +58,7 @@ constructor TWinCEGAPIConsole.Create;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -77,6 +84,11 @@ Begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+
+begin
+  inherited Create;
+>>>>>>> origin/cpstrnew
 
   FCopy := TPTCCopy.Create;
   FClear := TPTCClear.Create;
@@ -95,6 +107,7 @@ Begin
   FDisplayWidth := FGXDisplayProperties.cxWidth;
   FDisplayHeight := FGXDisplayProperties.cyHeight;
   FDisplayPitch := FGXDisplayProperties.cbyPitch;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -133,6 +146,8 @@ destructor TWinCEGAPIConsole.Destroy;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   FDisplayFormat := nil;
 
   if (FGXDisplayProperties.ffFormat and kfDirect565) <> 0 then
@@ -153,6 +168,7 @@ destructor TWinCEGAPIConsole.Destroy;
 
   if FDisplayFormat = nil then
     raise TPTCError.Create('GAPI: Unknown/unsupported pixel format');
+<<<<<<< HEAD
 
   FModes[0] := TPTCMode.Create(FDisplayWidth, FDisplayHeight, FDisplayFormat);
   FModes[1] := TPTCMode.Create;
@@ -179,21 +195,27 @@ begin
 >>>>>>> origin/fixes_2_2
 //  FDisplayFormat := TPTCFormat.Create(32, $00FF0000, $0000FF00, $000000FF);
   FDisplayFormat := TPTCFormat.Create(16, $F800, $07E0, $001F); {hardcoded for now...}
+=======
+>>>>>>> origin/cpstrnew
 
   FModes[0] := TPTCMode.Create(FDisplayWidth, FDisplayHeight, FDisplayFormat);
   FModes[1] := TPTCMode.Create;
-End;
+end;
 
-Destructor TWinCEGAPIConsole.Destroy;
+destructor TWinCEGAPIConsole.Destroy;
 
-Var
-  I : Integer;
+var
+  I: Integer;
 
+<<<<<<< HEAD
 Begin
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+begin
+>>>>>>> origin/cpstrnew
   Close;
 
   FCopy.Free;
@@ -210,6 +232,7 @@ Begin
   FClip.Free;
   FDisplayFormat.Free;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   for I := Low(FModes) to High(FModes) do
@@ -338,52 +361,60 @@ begin
 =======
 >>>>>>> origin/fixes_2_2
   For I := Low(FModes) To High(FModes) Do
+=======
+  for I := Low(FModes) to High(FModes) do
+>>>>>>> origin/cpstrnew
     FModes[I].Free;
 
-  Inherited Destroy;
-End;
+  inherited Destroy;
+end;
 
-Procedure TWinCEGAPIConsole.Open(Const ATitle : String; APages : Integer = 0);
+procedure TWinCEGAPIConsole.Open(const ATitle: string; APages: Integer = 0);
 
-Begin
+begin
   Open(ATitle, FDisplayFormat, APages);
-End;
+end;
 
-Procedure TWinCEGAPIConsole.Open(Const ATitle : String; Const AFormat : TPTCFormat;
-                                 APages : Integer = 0);
+procedure TWinCEGAPIConsole.Open(const ATitle: string; const AFormat: TPTCFormat;
+                                 APages: Integer = 0);
 
-Begin
+begin
   Open(ATitle, FDisplayWidth, FDisplayHeight, AFormat, APages);
-End;
+end;
 
-Procedure TWinCEGAPIConsole.Open(Const ATitle : String; Const AMode : TPTCMode;
-                                 APages : Integer = 0);
+procedure TWinCEGAPIConsole.Open(const ATitle: string; const AMode: TPTCMode;
+                                 APages: Integer = 0);
 
-Begin
+begin
   Open(ATitle, AMode.Width, AMode.Height, AMode.Format, APages);
-End;
+end;
 
-Procedure TWinCEGAPIConsole.Open(Const ATitle : String; AWidth, AHeight : Integer;
-                                 Const AFormat : TPTCFormat; APages : Integer = 0);
+procedure TWinCEGAPIConsole.Open(const ATitle: string; AWidth, AHeight: Integer;
+                                 const AFormat: TPTCFormat; APages: Integer = 0);
 
-Var
-  tmp : TPTCArea;
+var
+  tmp: TPTCArea;
 
-Begin
+begin
   LOG('TWinCEGAPIConsole.Open');
 
-  If FOpen Then
+  if FOpen then
     Close;
 
+<<<<<<< HEAD
   Try
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  try
+>>>>>>> origin/cpstrnew
     LOG('creating window');
     FWindow := TWinCEWindow.Create('PTC_GAPI_FULLSCREEN',
                                    ATitle,
                                    0,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                                    WS_VISIBLE {Or WS_SYSMENU or WS_CAPTION},
@@ -399,11 +430,17 @@ Begin
                                    SW_SHOWNORMAL,
                                    CW_USEDEFAULT, CW_USEDEFAULT,
 >>>>>>> origin/fixes_2_2
+=======
+                                   WS_VISIBLE {Or WS_SYSMENU or WS_CAPTION},
+                                   SW_SHOWNORMAL,
+                                   0, 0,
+>>>>>>> origin/cpstrnew
                                    FDisplayWidth, FDisplayHeight,
 				   @WndProc);
     LOG('window created successfully');
 
     LOG('opening display');
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     if GXOpenDisplay(FWindow.WindowHandle, GX_FULLSCREEN) <> 0 then
@@ -436,26 +473,34 @@ Begin
 =======
 >>>>>>> origin/fixes_2_2
     If GXOpenDisplay(FWindow.WindowHandle, GX_FULLSCREEN) <> 0 Then
+=======
+    if GXOpenDisplay(FWindow.WindowHandle, GX_FULLSCREEN) <> 0 then
+>>>>>>> origin/cpstrnew
       FGXDisplayIsOpen := True {success!!!}
-    Else
-      Raise TPTCError.Create('could not open display');
+    else
+      raise TPTCError.Create('could not open display');
 
     tmp := TPTCArea.Create(0, 0, FDisplayWidth, FDisplayHeight);
-    Try
+    try
       FArea.Assign(tmp);
       FClip.Assign(tmp);
-    Finally
+    finally
       tmp.Free;
+<<<<<<< HEAD
     End;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    end;
+>>>>>>> origin/cpstrnew
 
     FEventQueue := TEventQueue.Create;
     FKeyboard := TWinCEKeyboard.Create(FEventQueue);
     FMouse := TWinCEMouse.Create(FEventQueue, True, FDisplayWidth, FDisplayHeight);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     if {m_primary.m_fullscreen}True then
@@ -465,11 +510,15 @@ Begin
 =======
     If {m_primary.m_fullscreen}True Then
 >>>>>>> origin/fixes_2_2
+=======
+    if {m_primary.m_fullscreen}True then
+>>>>>>> origin/cpstrnew
       FMouse.SetWindowArea(0, 0, FDisplayWidth, FDisplayHeight);
 
     FWindow.Update;
 
     FOpen := True;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   except
@@ -511,22 +560,31 @@ begin
   Except
     On error : TObject Do
     Begin
+=======
+  except
+    on error: TObject do
+    begin
+>>>>>>> origin/cpstrnew
       Close;
       Raise;
-    End;
-  End;
-End;
+    end;
+  end;
+end;
 
-Procedure TWinCEGAPIConsole.Close;
+procedure TWinCEGAPIConsole.Close;
 
-Begin
+begin
   LOG('TWinCEGAPIConsole.Close');
 
+<<<<<<< HEAD
   If FGXDisplayIsOpen Then;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  if FGXDisplayIsOpen Then;
+>>>>>>> origin/cpstrnew
     GXCloseDisplay;
   FGXDisplayIsOpen := False;
 
@@ -536,6 +594,7 @@ Begin
   FreeAndNil(FEventQueue);
 
   FOpen := False;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 end;
@@ -623,42 +682,50 @@ begin
 =======
 >>>>>>> origin/fixes_2_2
 End;
+=======
+end;
+>>>>>>> origin/cpstrnew
 
-Procedure TWinCEGAPIConsole.Copy(Var ASurface : TPTCBaseSurface);
+procedure TWinCEGAPIConsole.Copy(ASurface: TPTCBaseSurface);
 
-Begin
-End;
+begin
+end;
 
-Procedure TWinCEGAPIConsole.Copy(Var ASurface : TPTCBaseSurface;
-                                 Const ASource, ADestination : TPTCArea);
+procedure TWinCEGAPIConsole.Copy(ASurface: TPTCBaseSurface;
+                                 const ASource, ADestination: TPTCArea);
 
-Begin
-End;
+begin
+end;
 
-Procedure TWinCEGAPIConsole.Load(Const APixels : Pointer;
-                                 AWidth, AHeight, APitch : Integer;
-                                 Const AFormat : TPTCFormat;
-                                 Const APalette : TPTCPalette);
-Var
-  Area_ : TPTCArea;
-  console_pixels : Pointer;
+procedure TWinCEGAPIConsole.Load(const APixels: Pointer;
+                                 AWidth, AHeight, APitch: Integer;
+                                 const AFormat: TPTCFormat;
+                                 const APalette: TPTCPalette);
+var
+  Area_: TPTCArea;
+  console_pixels: Pointer;
 
-Begin
+begin
   CheckOpen(    'TWinCEGAPIConsole.Load(APixels, AWidth, AHeight, APitch, AFormat, APalette)');
   CheckUnlocked('TWinCEGAPIConsole.Load(APixels, AWidth, AHeight, APitch, AFormat, APalette)');
-  If Clip.Equals(Area) Then
-  Begin
-    Try
+  if Clip.Equals(Area) then
+  begin
+    try
       console_pixels := Lock;
+<<<<<<< HEAD
       Try
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+      try
+>>>>>>> origin/cpstrnew
         FCopy.Request(AFormat, Format);
         FCopy.Palette(APalette, Palette);
         FCopy.Copy(APixels, 0, 0, AWidth, AHeight, APitch, console_pixels, 0, 0,
                     Width, Height, Pitch);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       finally
@@ -781,58 +848,66 @@ begin
 =======
 >>>>>>> origin/fixes_2_2
       Finally
+=======
+      finally
+>>>>>>> origin/cpstrnew
         Unlock;
-      End;
-    Except
-      On error : TPTCError Do
-        Raise TPTCError.Create('failed to load pixels to console', error);
-    End;
-  End
-  Else
-  Begin
+      end;
+    except
+      on error: TPTCError do
+        raise TPTCError.Create('failed to load pixels to console', error);
+    end;
+  end
+  else
+  begin
     Area_ := TPTCArea.Create(0, 0, width, height);
-    Try
+    try
       Load(APixels, AWidth, AHeight, APitch, AFormat, APalette, Area_, Area);
-    Finally
+    finally
       Area_.Free;
-    End;
-  End;
-End;
+    end;
+  end;
+end;
 
-Procedure TWinCEGAPIConsole.Load(Const APixels : Pointer;
-                                 AWidth, AHeight, APitch : Integer;
-                                 Const AFormat : TPTCFormat;
-                                 Const APalette : TPTCPalette;
-                                 Const ASource, ADestination : TPTCArea);
-Var
-  console_pixels : Pointer;
-  clipped_source, clipped_destination : TPTCArea;
-  tmp : TPTCArea;
+procedure TWinCEGAPIConsole.Load(const APixels: Pointer;
+                                 AWidth, AHeight, APitch: Integer;
+                                 const AFormat: TPTCFormat;
+                                 const APalette: TPTCPalette;
+                                 const ASource, ADestination: TPTCArea);
+var
+  console_pixels: Pointer;
+  clipped_source, clipped_destination: TPTCArea;
+  tmp: TPTCArea;
 
-Begin
+begin
   CheckOpen(    'TWinCEGAPIConsole.Load(APixels, AWidth, AHeight, APitch, AFormat, APalette, ASource, ADestination)');
   CheckUnlocked('TWinCEGAPIConsole.Load(APixels, AWidth, AHeight, APitch, AFormat, APalette, ASource, ADestination)');
-  clipped_source := Nil;
-  clipped_destination := Nil;
-  Try
+  clipped_source := nil;
+  clipped_destination := nil;
+  try
     console_pixels := Lock;
-    Try
+    try
       clipped_source := TPTCArea.Create;
       clipped_destination := TPTCArea.Create;
       tmp := TPTCArea.Create(0, 0, AWidth, AHeight);
-      Try
+      try
         TPTCClipper.Clip(ASource, tmp, clipped_source, ADestination, Clip, clipped_destination);
-      Finally
+      finally
         tmp.Free;
+<<<<<<< HEAD
       End;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+      end;
+>>>>>>> origin/cpstrnew
       FCopy.request(AFormat, Format);
       FCopy.palette(APalette, Palette);
       FCopy.copy(APixels, clipped_source.left, clipped_source.top, clipped_source.width, clipped_source.height, APitch,
                  console_pixels, clipped_destination.left, clipped_destination.top, clipped_destination.width, clipped_destination.height, Pitch);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     finally
@@ -1182,110 +1257,118 @@ begin
 =======
 >>>>>>> origin/fixes_2_2
     Finally
+=======
+    finally
+>>>>>>> origin/cpstrnew
       Unlock;
       clipped_source.Free;
       clipped_destination.Free;
-    End;
-  Except
-    On error : TPTCError Do
-      Raise TPTCError.Create('failed to load pixels to console area', error);
-  End;
-End;
+    end;
+  except
+    on error: TPTCError do
+      raise TPTCError.Create('failed to load pixels to console area', error);
+  end;
+end;
 
-Procedure TWinCEGAPIConsole.Save(APixels : Pointer;
-                                 AWidth, AHeight, APitch : Integer;
-                                 Const AFormat : TPTCFormat;
-                                 Const APalette : TPTCPalette);
+procedure TWinCEGAPIConsole.Save(APixels: Pointer;
+                                 AWidth, AHeight, APitch: Integer;
+                                 const AFormat: TPTCFormat;
+                                 const APalette: TPTCPalette);
 
-Begin
-End;
+begin
+end;
 
-Procedure TWinCEGAPIConsole.Save(APixels : Pointer;
-                                 AWidth, AHeight, APitch : Integer;
-                                 Const AFormat : TPTCFormat;
-                                 Const APalette : TPTCPalette;
-                                 Const ASource, ADestination : TPTCArea);
+procedure TWinCEGAPIConsole.Save(APixels: Pointer;
+                                 AWidth, AHeight, APitch: Integer;
+                                 const AFormat: TPTCFormat;
+                                 const APalette: TPTCPalette;
+                                 const ASource, ADestination: TPTCArea);
 
-Begin
-End;
+begin
+end;
 
-Function TWinCEGAPIConsole.Lock : Pointer;
+function TWinCEGAPIConsole.Lock: Pointer;
 
-Begin
+begin
   CheckUnlocked('display already locked');
   Result := GXBeginDraw;
 
-  If Result = Nil Then
-    Raise TPTCError.Create('the display cannot be locked');
+  if Result = nil then
+    raise TPTCError.Create('the display cannot be locked');
 
   FLocked := True;
-End;
+end;
 
-Procedure TWinCEGAPIConsole.Unlock;
+procedure TWinCEGAPIConsole.Unlock;
 
-Begin
-  If Not FLocked Then
-    Raise TPTCError.Create('display is not locked');
+begin
+  if not FLocked then
+    raise TPTCError.Create('display is not locked');
 
-  If GXEndDraw = 0 Then
-    Raise TPTCError.Create('could not unlock display');
+  if GXEndDraw = 0 then
+    raise TPTCError.Create('could not unlock display');
 
   FLocked := False;
-End;
+end;
 
-Procedure TWinCEGAPIConsole.Clear;
+procedure TWinCEGAPIConsole.Clear;
 
-Begin
-End;
+begin
+end;
 
-Procedure TWinCEGAPIConsole.Clear(Const AColor : TPTCColor);
+procedure TWinCEGAPIConsole.Clear(const AColor: TPTCColor);
 
-Begin
-End;
+begin
+end;
 
-Procedure TWinCEGAPIConsole.Clear(Const AColor : TPTCColor;
-                    Const AArea : TPTCArea);
+procedure TWinCEGAPIConsole.Clear(const AColor: TPTCColor;
+                    const AArea: TPTCArea);
 
-Begin
-End;
+begin
+end;
 
-Procedure TWinCEGAPIConsole.Configure(Const AFileName : String);
+procedure TWinCEGAPIConsole.Configure(const AFileName: String);
 
-Var
-  F : Text;
-  S : String;
+var
+  F: Text;
+  S: string;
 
-Begin
+begin
   AssignFile(F, AFileName);
   {$I-}
   Reset(F);
   {$I+}
-  If IOResult <> 0 Then
-    Exit;
-  While Not EoF(F) Do
-  Begin
+  if IOResult <> 0 then
+    exit;
+  while not EoF(F) do
+  begin
     {$I-}
     Readln(F, S);
     {$I+}
-    If IOResult <> 0 Then
+    if IOResult <> 0 then
       Break;
     Option(S);
-  End;
+  end;
   CloseFile(F);
-End;
+end;
 
-Function TWinCEGAPIConsole.Option(Const AOption : String) : Boolean;
+function TWinCEGAPIConsole.Option(const AOption: String): Boolean;
 
+<<<<<<< HEAD
 Begin
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+begin
+>>>>>>> origin/cpstrnew
   LOG('console option', AOption);
 
   // todo...
 
   Result := FCopy.Option(AOption);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 end;
@@ -1524,104 +1607,112 @@ begin
 =======
 >>>>>>> origin/fixes_2_2
 End;
+=======
+end;
+>>>>>>> origin/cpstrnew
 
-Procedure TWinCEGAPIConsole.Palette(Const APalette : TPTCPalette);
+procedure TWinCEGAPIConsole.Palette(const APalette: TPTCPalette);
 
-Begin
-End;
+begin
+end;
 
-Procedure TWinCEGAPIConsole.Clip(Const AArea : TPTCArea);
+procedure TWinCEGAPIConsole.Clip(const AArea: TPTCArea);
 
-Var
-  tmp : TPTCArea;
+var
+  tmp: TPTCArea;
 
-Begin
+begin
   CheckOpen('TWinCEGAPIConsole.Clip(AArea)');
 
   tmp := TPTCClipper.Clip(AArea, FArea);
-  Try
+  try
     FClip.Assign(tmp);
-  Finally
+  finally
     tmp.Free;
-  End;
-End;
+  end;
+end;
 
-Function TWinCEGAPIConsole.Clip : TPTCArea;
+function TWinCEGAPIConsole.Clip: TPTCArea;
 
-Begin
+begin
   CheckOpen('TWinCEGAPIConsole.Clip');
   Result := FClip;
-End;
+end;
 
-Function TWinCEGAPIConsole.Palette : TPTCPalette;
+function TWinCEGAPIConsole.Palette: TPTCPalette;
 
-Begin
-End;
+begin
+end;
 
-Function TWinCEGAPIConsole.Modes : PPTCMode;
+function TWinCEGAPIConsole.Modes: PPTCMode;
 
-Begin
+begin
   Result := @FModes[0];
-End;
+end;
 
-Function TWinCEGAPIConsole.WndProc(Ahwnd : HWND; AuMsg : UINT; AwParam : WPARAM; AlParam : LPARAM) : LRESULT;
+function TWinCEGAPIConsole.WndProc(Ahwnd: HWND; AuMsg: UINT; AwParam: WPARAM; AlParam: LPARAM): LRESULT;
 
-Begin
-  Case AuMsg Of
-  WM_CLOSE : Begin
+begin
+  case AuMsg of
+  WM_CLOSE: begin
     LOG('TWinCEGAPIConsole.WndProc: WM_CLOSE');
     Halt(0);
-  End;
-  WM_KILLFOCUS : Begin
+  end;
+  WM_KILLFOCUS: begin
     LOG('TWinCEGAPIConsole.WndProc: WM_KILLFOCUS');
-    If FGXDisplayIsOpen Then
+    if FGXDisplayIsOpen then
       GXSuspend;
     Result := 0;
-    Exit;
-  End;
-  WM_SETFOCUS : Begin
+    exit;
+  end;
+  WM_SETFOCUS: begin
     LOG('TWinCEGAPIConsole.WndProc: WM_SETFOCUS');
-    If FGXDisplayIsOpen Then
+    if FGXDisplayIsOpen then
       GXResume;
     Result := 0;
-    Exit;
-  End;
-  WM_KEYDOWN, WM_KEYUP : Begin
-    If FKeyboard <> Nil Then
+    exit;
+  end;
+  WM_KEYDOWN, WM_KEYUP: begin
+    if FKeyboard <> nil then
       Result := FKeyboard.WndProc(Ahwnd, AuMsg, AwParam, AlParam)
-    Else
+    else
       Result := 0;
-    Exit;
-  End;
+    exit;
+  end;
   WM_MOUSEMOVE,
   WM_LBUTTONDOWN, WM_LBUTTONUP, WM_LBUTTONDBLCLK,
   WM_MBUTTONDOWN, WM_MBUTTONUP, WM_MBUTTONDBLCLK,
-  WM_RBUTTONDOWN, WM_RBUTTONUP, WM_RBUTTONDBLCLK : Begin
-    If FMouse <> Nil Then
+  WM_RBUTTONDOWN, WM_RBUTTONUP, WM_RBUTTONDBLCLK: begin
+    if FMouse <> nil then
       Result := FMouse.WndProc(Ahwnd, AuMsg, AwParam, AlParam)
-    Else
+    else
       Result := 0;
-    Exit;
-  End;
+    exit;
+  end;
 
-  Else
+  else
     Result := DefWindowProcW(Ahwnd, AuMsg, AwParam, AlParam);
-  End;
-End;
+  end;
+end;
 
-Procedure TWinCEGAPIConsole.Flush;
+procedure TWinCEGAPIConsole.Flush;
 
+<<<<<<< HEAD
 Begin
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+begin
+>>>>>>> origin/cpstrnew
   CheckOpen    ('TWinCEGAPIConsole.Flush');
   CheckUnlocked('TWinCEGAPIConsole.Flush');
 
   Update;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 end;
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1654,20 +1745,28 @@ begin
 =======
 >>>>>>> origin/fixes_2_2
 End;
+=======
+end;
+>>>>>>> origin/cpstrnew
 
-Procedure TWinCEGAPIConsole.Finish;
+procedure TWinCEGAPIConsole.Finish;
 
+<<<<<<< HEAD
 Begin
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+begin
+>>>>>>> origin/cpstrnew
   CheckOpen    ('TWinCEGAPIConsole.Finish');
   CheckUnlocked('TWinCEGAPIConsole.Finish');
 
   Update;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 end;
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1696,18 +1795,26 @@ begin
 =======
 >>>>>>> origin/fixes_2_2
 End;
+=======
+end;
+>>>>>>> origin/cpstrnew
 
-Procedure TWinCEGAPIConsole.Update;
+procedure TWinCEGAPIConsole.Update;
 
+<<<<<<< HEAD
 Begin
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+begin
+>>>>>>> origin/cpstrnew
   CheckOpen    ('TWinCEGAPIConsole.Update');
   CheckUnlocked('TWinCEGAPIConsole.Update');
 
   FWindow.Update;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 end;
@@ -1785,30 +1892,38 @@ begin
 =======
 >>>>>>> origin/fixes_2_2
 End;
+=======
+end;
+>>>>>>> origin/cpstrnew
 
-Procedure TWinCEGAPIConsole.Update(Const AArea : TPTCArea);
+procedure TWinCEGAPIConsole.Update(const AArea: TPTCArea);
 
-Begin
+begin
   Update;
-End;
+end;
 
-Function TWinCEGAPIConsole.NextEvent(Var AEvent : TPTCEvent; AWait : Boolean; Const AEventMask : TPTCEventMask) : Boolean;
+function TWinCEGAPIConsole.NextEvent(var AEvent: TPTCEvent; AWait: Boolean; const AEventMask: TPTCEventMask): Boolean;
 
-Begin
+begin
   CheckOpen('TWinCEGAPIConsole.NextEvent');
 //  CheckUnlocked('TWinCEGAPIConsole.NextEvent');
 
   FreeAndNil(AEvent);
+<<<<<<< HEAD
   Repeat
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  repeat
+>>>>>>> origin/cpstrnew
     { update window }
     FWindow.Update;
 
     { try to find an event that matches the EventMask }
     AEvent := FEventQueue.NextEvent(AEventMask);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   until (not AWait) or (AEvent <> Nil);
@@ -1851,23 +1966,33 @@ begin
   Until (Not AWait) Or (AEvent <> Nil);
   Result := AEvent <> Nil;
 End;
+=======
+  until (not AWait) or (AEvent <> Nil);
+  Result := AEvent <> nil;
+end;
+>>>>>>> origin/cpstrnew
 
-Function TWinCEGAPIConsole.PeekEvent(AWait : Boolean; Const AEventMask : TPTCEventMask) : TPTCEvent;
+function TWinCEGAPIConsole.PeekEvent(AWait: Boolean; const AEventMask: TPTCEventMask): TPTCEvent;
 
-Begin
+begin
   CheckOpen('TWinCEGAPIConsole.PeekEvent');
 //  CheckUnlocked('TWinCEGAPIConsole.PeekEvent');
 
+<<<<<<< HEAD
   Repeat
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  repeat
+>>>>>>> origin/cpstrnew
     { update window }
     FWindow.Update;
 
     { try to find an event that matches the EventMask }
     Result := FEventQueue.PeekEvent(AEventMask);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   until (not AWait) or (Result <> nil);
@@ -2178,66 +2303,71 @@ end;
 >>>>>>> origin/fixes_2_2
   Until (Not AWait) Or (Result <> Nil);
 End;
+=======
+  until (not AWait) or (Result <> nil);
+end;
+>>>>>>> origin/cpstrnew
 
-Function TWinCEGAPIConsole.GetWidth : Integer;
+function TWinCEGAPIConsole.GetWidth: Integer;
 
-Begin
+begin
   CheckOpen('TWinCEGAPIConsole.GetWidth');
   Result := FDisplayWidth;
-End;
+end;
 
-Function TWinCEGAPIConsole.GetHeight : Integer;
+function TWinCEGAPIConsole.GetHeight: Integer;
 
-Begin
+begin
   CheckOpen('TWinCEGAPIConsole.GetHeight');
   Result := FDisplayHeight;
-End;
+end;
 
-Function TWinCEGAPIConsole.GetPitch : Integer;
+function TWinCEGAPIConsole.GetPitch: Integer;
 
-Begin
+begin
   CheckOpen('TWinCEGAPIConsole.GetPitch');
   Result := FDisplayPitch;
-End;
+end;
 
-Function TWinCEGAPIConsole.GetArea : TPTCArea;
+function TWinCEGAPIConsole.GetArea: TPTCArea;
 
-Begin
+begin
   CheckOpen('TWinCEGAPIConsole.GetArea');
   Result := FArea;
-End;
+end;
 
-Function TWinCEGAPIConsole.GetFormat : TPTCFormat;
+function TWinCEGAPIConsole.GetFormat: TPTCFormat;
 
-Begin
+begin
   CheckOpen('TWinCEGAPIConsole.GetFormat');
   Result := FDisplayFormat;
-End;
+end;
 
-Function TWinCEGAPIConsole.GetPages : Integer;
+function TWinCEGAPIConsole.GetPages: Integer;
 
-Begin
+begin
   CheckOpen('TWinCEGAPIConsole.GetPages');
   Result := 1; {???}
-End;
+end;
 
-Function TWinCEGAPIConsole.GetName : String;
+function TWinCEGAPIConsole.GetName: string;
 
-Begin
+begin
   Result := 'GAPI';
-End;
+end;
 
-Function TWinCEGAPIConsole.GetTitle : String;
+function TWinCEGAPIConsole.GetTitle: string;
 
-Begin
+begin
   CheckOpen('TWinCEGAPIConsole.GetTitle');
   Result := FTitle;
-End;
+end;
 
-Function TWinCEGAPIConsole.GetInformation : String;
+function TWinCEGAPIConsole.GetInformation: string;
 
-Begin
+begin
   Result := ''; // todo...
+<<<<<<< HEAD
 End;
 
 Procedure TWinCEGAPIConsole.CheckOpen(    AMessage : String);
@@ -2267,3 +2397,30 @@ End;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+end;
+
+procedure TWinCEGAPIConsole.CheckOpen(    AMessage: String);
+
+begin
+  if not FOpen then
+  try
+    raise TPTCError.Create('console is not open');
+  except
+    on error: TPTCError do
+      raise TPTCError.Create(AMessage, error);
+  end;
+end;
+
+procedure TWinCEGAPIConsole.CheckUnlocked(AMessage: String);
+
+begin
+  if FLocked then
+  try
+    raise TPTCError.Create('console is locked');
+  except
+    on error: TPTCError do
+      raise TPTCError.Create(AMessage, error);
+  end;
+end;
+>>>>>>> origin/cpstrnew

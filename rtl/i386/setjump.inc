@@ -15,12 +15,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function fpc_SetJmp (Var S : Jmp_buf) : longint;assembler;nostackframe;[Public, alias : 'FPC_SETJMP']; compilerproc;
 asm
 =======
 =======
 >>>>>>> origin/fixes_2_2
 Function SetJmp (Var S : Jmp_buf) : longint;assembler;nostackframe;[Public, alias : 'FPC_SETJMP'];
+=======
+Function fpc_SetJmp (Var S : Jmp_buf) : longint;assembler;nostackframe;[Public, alias : 'FPC_SETJMP']; compilerproc;
+>>>>>>> origin/cpstrnew
 asm
 {$ifndef REGCALL}
   movl 4(%esp),%eax
@@ -65,6 +69,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure fpc_longJmp (Var S : Jmp_buf; value : longint); assembler;nostackframe;[Public, alias : 'FPC_LONGJMP']; compilerproc;
 =======
 Procedure longJmp (Var S : Jmp_buf; value : longint); assembler;nostackframe;[Public, alias : 'FPC_LONGJMP'];
@@ -72,6 +77,9 @@ Procedure longJmp (Var S : Jmp_buf; value : longint); assembler;nostackframe;[Pu
 =======
 Procedure longJmp (Var S : Jmp_buf; value : longint); assembler;nostackframe;[Public, alias : 'FPC_LONGJMP'];
 >>>>>>> origin/fixes_2_2
+=======
+Procedure fpc_longJmp (Var S : Jmp_buf; value : longint); assembler;nostackframe;[Public, alias : 'FPC_LONGJMP']; compilerproc;
+>>>>>>> origin/cpstrnew
 asm
   xchgl %edx,%eax
 <<<<<<< HEAD

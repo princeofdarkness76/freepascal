@@ -39,6 +39,9 @@ begin
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
     P.Sources.AddSrc('README.txt');
 
     P.ExamplePath.Add('examples');

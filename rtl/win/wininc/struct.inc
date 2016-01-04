@@ -48,6 +48,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Const
 =======
 Const 
@@ -55,6 +56,9 @@ Const
 =======
 Const 
 >>>>>>> origin/fixes_2_2
+=======
+Const
+>>>>>>> origin/cpstrnew
   IMAGE_SIZEOF_SHORT_NAME = 8;
 
   type
@@ -1572,6 +1576,7 @@ Const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      LPCPINFOEX = PCPINFOEXA;
      _cpinfoex  = CPINFOEXA;
      Tcpinfoex  = CPINFOEXA;
@@ -1589,6 +1594,8 @@ Const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
      LPCPINFOEX = ^CPINFOEXA;
      _cpinfoex  = CPINFOEXA;
      Tcpinfoex  = CPINFOEXA;
@@ -1602,11 +1609,14 @@ Const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$ENDIF}
@@ -4093,6 +4103,7 @@ Const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  // NOTE:  this is defined as DWORD in http://msdn.microsoft.com/en-us/library/windows/desktop/bb773313%28v=vs.85%29.asp
 // but mingw has it as DWORD_PTR, so we will use that
 =======
@@ -4101,6 +4112,8 @@ Const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
           MousePos : POINT;
@@ -4958,11 +4971,14 @@ Const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
           dwContextHelpId : DWORD_PTR;
@@ -5507,11 +5523,15 @@ Const
 =======
      POSVERSIONINFOW = ^OSVERSIONINFOW;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
      {$push}
      {$packrecords 4}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5522,6 +5542,8 @@ Const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
      TEXTMETRIC = record
@@ -5566,11 +5588,14 @@ Const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -5607,6 +5632,7 @@ Const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
      {$IFNDEF UNICODE}
        LPTEXTMETRIC       = ^TEXTMETRICA;
@@ -5631,6 +5657,8 @@ Const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
      OUTLINETEXTMETRICA = record
@@ -5713,6 +5741,7 @@ Const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      POUTLINETEXTMETRICW = LPOUTLINETEXTMETRICW;
 
      {$ifdef Unicode}
@@ -5736,6 +5765,8 @@ Const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
      POUTLINETEXTMETRICW = ^OUTLINETEXTMETRICW;
 
      {$ifdef Unicode}
@@ -5754,11 +5785,14 @@ Const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
      {$POP}
@@ -6984,6 +7018,7 @@ Const
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      STRRET = record
           utype : UINT;
           case longint of
@@ -6997,6 +7032,11 @@ Const
           utype : UINT;
           case longint of 
 >>>>>>> origin/fixes_2_2
+=======
+     STRRET = record
+          utype : UINT;
+          case longint of
+>>>>>>> origin/cpstrnew
            0: ( polestr:LPWSTR);
            1: ( uOffset : UINT);
            2: ( cStr : array[0..(MAX_PATH)-1] of char );
@@ -7041,6 +7081,7 @@ Const
           	       lpMaximumApplicationAddress : LPVOID;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           	       dwActiveProcessorMask : DWORD_PTR;
 =======
           	       dwActiveProcessorMask : DWORD;
@@ -7048,6 +7089,9 @@ Const
 =======
           	       dwActiveProcessorMask : DWORD;
 >>>>>>> origin/fixes_2_2
+=======
+          	       dwActiveProcessorMask : DWORD_PTR;
+>>>>>>> origin/cpstrnew
           	       dwNumberOfProcessors : DWORD;
                        dwProcessorType : DWORD;
                        dwAllocationGranularity : DWORD;
@@ -7056,11 +7100,15 @@ Const
 			 );
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                  1 : (
                       wProcessorArchitecture : WORD;
                       wReserved : WORD;
 =======
                  1 : ( 
+=======
+                 1 : (
+>>>>>>> origin/cpstrnew
                       wProcessorArchitecture : WORD;
 >>>>>>> graemeg/fixes_2_2
 =======
@@ -8058,6 +8106,7 @@ Const
           e_res2 : array[0..9] of WORD;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           case boolean of
 =======
           case boolean of 
@@ -8065,6 +8114,9 @@ Const
 =======
           case boolean of 
 >>>>>>> origin/fixes_2_2
+=======
+          case boolean of
+>>>>>>> origin/cpstrnew
              true : (e_lfanew : LONG);
              false: (_lfanew : LONG); // delphi naming
        end;
@@ -8474,6 +8526,7 @@ type
        EndingAddress :   ULONGLONG   ;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        case boolean of
 =======
        case boolean of 
@@ -8481,6 +8534,9 @@ type
 =======
        case boolean of 
 >>>>>>> origin/fixes_2_2
+=======
+       case boolean of
+>>>>>>> origin/cpstrnew
          false : (EndOfPrologue : ULONGLONG);
          true  : (UnwindInfoAddress : ULONGLONG);
        end;
@@ -8511,6 +8567,7 @@ type
     cdwLocals : DWORD;             // # bytes in locals/4
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     bitvalues : word;              //
 =======
     bitvalues : word;              // 
@@ -8518,6 +8575,9 @@ type
 =======
     bitvalues : word;              // 
 >>>>>>> origin/fixes_2_2
+=======
+    bitvalues : word;              //
+>>>>>>> origin/cpstrnew
 {
     WORD        cdwParams;              // # bytes in params/4
     WORD        cbProlog : 8;           // # bytes in prolog
@@ -8859,6 +8919,9 @@ type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   CURSORINFO = record
     		 cbSize  : DWORD;
      		 flags   : DWORD;
@@ -8869,6 +8932,7 @@ type
   TCURSORINFO = CURSORINFO;
 
 const
+<<<<<<< HEAD
   SECURITY_DESCRIPTOR_MIN_LENGTH = SIZEOF(SECURITY_DESCRIPTOR);
 
 
@@ -8912,6 +8976,41 @@ const
   SECURITY_DESCRIPTOR_MIN_LENGTH = SIZEOF(SECURITY_DESCRIPTOR);
 
 >>>>>>> origin/fixes_2_2
+=======
+  SECURITY_DESCRIPTOR_MIN_LENGTH = SIZEOF(SECURITY_DESCRIPTOR);
+
+
+// #if(WINVER >= 0x0500)
+type
+     tagMENUGETOBJECTINFO = packed record
+       dwFlags:DWORD;
+       uPos:UINT;
+       _hmenu:HMENU;
+       riid:PVOID;
+       pvObj:PVOID;
+     end;
+     MENUGETOBJECTINFO = tagMENUGETOBJECTINFO;
+     PMENUGETOBJECTINFO = ^tagMENUGETOBJECTINFO;
+     LPMENUGETOBJECTINFO = ^tagMENUGETOBJECTINFO;
+//#endif /* WINVER >= 0x0500 */
+
+
+// Menubar information
+type
+     tagMENUBARINFO = packed record
+       cbSize:DWORD;
+       rcBar:Windows.RECT; // rect of bar, popup, item
+       _hmenu:HMENU;       // real menu handle of bar, popup
+       hwndMenu:HWND;      // hwnd of item submenu if one
+//    fBarFocused:1:BOOL;  // bar, popup has the focus
+//    fFocused:1:BOOL;     // item has the focus
+      FocusedBits:DWORD;
+    end;
+    MENUBARINFO = tagMENUBARINFO;
+    PMENUBARINFO = ^tagMENUBARINFO;
+    LPMENUBARINFO = ^tagMENUBARINFO;
+
+>>>>>>> origin/cpstrnew
 {$endif read_interface}
 
 

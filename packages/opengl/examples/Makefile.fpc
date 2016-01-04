@@ -5,6 +5,7 @@
 [target]
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 programs=glutdemo morph3d bounce radblur glutdemova freeglutdemo
 =======
 programs=glutdemo morph3d bounce radblur
@@ -12,6 +13,9 @@ programs=glutdemo morph3d bounce radblur
 =======
 programs=glutdemo morph3d bounce radblur
 >>>>>>> origin/fixes_2_2
+=======
+programs=glutdemo morph3d bounce radblur glutdemova freeglutdemo
+>>>>>>> origin/cpstrnew
 programs_linux=glxtest
 programs_freebsd=glxtest
 programs_netbsd=glxtest
@@ -19,11 +23,15 @@ programs_openbsd=glxtest
 programs_darwin=glxtest
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 programs_iphonesim=glxtest
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+programs_iphonesim=glxtest
+>>>>>>> origin/cpstrnew
 
 [require]
 packages=opengl

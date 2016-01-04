@@ -1,8 +1,11 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 program TestVal;
 
@@ -34,6 +37,7 @@ begin
       Halt(1);
     end;
 end.
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
@@ -75,3 +79,5 @@ end.
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew

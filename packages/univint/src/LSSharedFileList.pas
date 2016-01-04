@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       LSSharedFileList.h
  
      Contains:   Services to load and share file lists.
@@ -18,6 +19,8 @@
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
      File:       LaunchServices/LSSharedFileList.h
  
      Contains:   Services to load and share file lists.
@@ -25,6 +28,7 @@
      Version:    LaunchServices-360.3~1
  
      Copyright:  © 2005-2008 by Apple Computer, Inc., all rights reserved.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -38,10 +42,13 @@
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -60,10 +67,13 @@
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
                      http://www.freepascal.org/bugs.html
  
 }
 {	 Pascal Translation: Gorazd Krosl <gorazd_1957@yahoo.ca>, October 2009 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -77,6 +87,8 @@
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {
     Modified for use with Free Pascal
@@ -137,6 +149,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
@@ -152,6 +165,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -175,6 +190,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -205,6 +221,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/fixes_2.4
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
@@ -216,6 +237,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -246,6 +268,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/fixes_2.4
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -257,6 +284,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -268,6 +296,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -277,6 +307,7 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -293,6 +324,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -304,6 +337,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -340,6 +374,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/fixes_2.4
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -351,15 +390,19 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
@@ -406,6 +449,10 @@ interface
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 >>>>>>> origin/fixes_2.4
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> origin/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -469,6 +516,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	LSSharedFileListRef = ^OpaqueLSSharedFileListRef; { an opaque type }
 	OpaqueLSSharedFileListRef = record end;
 	LSSharedFileListItemRef = ^OpaqueLSSharedFileListItemRef; { an opaque type }
@@ -493,6 +541,10 @@ type
 	LSSharedFileListRef = ^SInt32; { an opaque type }
 	LSSharedFileListItemRef = ^SInt32; { an opaque type }
 >>>>>>> origin/fixes_2.4
+=======
+	LSSharedFileListRef = ^SInt32; { an opaque type }
+	LSSharedFileListItemRef = ^SInt32; { an opaque type }
+>>>>>>> origin/cpstrnew
 
 { list types }
 
@@ -505,6 +557,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
@@ -521,10 +574,14 @@ type
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 var kLSSharedFileListFavoriteVolumes: CFStringRef; external name '_kLSSharedFileListFavoriteVolumes'; (* attribute const *)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -546,6 +603,9 @@ var kLSSharedFileListFavoriteVolumes: CFStringRef; external name '_kLSSharedFile
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -557,6 +617,7 @@ var kLSSharedFileListFavoriteVolumes: CFStringRef; external name '_kLSSharedFile
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
@@ -573,10 +634,14 @@ var kLSSharedFileListFavoriteVolumes: CFStringRef; external name '_kLSSharedFile
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 var kLSSharedFileListFavoriteItems: CFStringRef; external name '_kLSSharedFileListFavoriteItems'; (* attribute const *)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -598,6 +663,9 @@ var kLSSharedFileListFavoriteItems: CFStringRef; external name '_kLSSharedFileLi
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -609,6 +677,7 @@ var kLSSharedFileListFavoriteItems: CFStringRef; external name '_kLSSharedFileLi
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
@@ -625,10 +694,14 @@ var kLSSharedFileListFavoriteItems: CFStringRef; external name '_kLSSharedFileLi
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 var kLSSharedFileListRecentApplicationItems: CFStringRef; external name '_kLSSharedFileListRecentApplicationItems'; (* attribute const *)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -650,6 +723,9 @@ var kLSSharedFileListRecentApplicationItems: CFStringRef; external name '_kLSSha
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -661,6 +737,7 @@ var kLSSharedFileListRecentApplicationItems: CFStringRef; external name '_kLSSha
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
@@ -677,10 +754,14 @@ var kLSSharedFileListRecentApplicationItems: CFStringRef; external name '_kLSSha
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 var kLSSharedFileListRecentDocumentItems: CFStringRef; external name '_kLSSharedFileListRecentDocumentItems'; (* attribute const *)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -702,6 +783,9 @@ var kLSSharedFileListRecentDocumentItems: CFStringRef; external name '_kLSShared
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -713,6 +797,7 @@ var kLSSharedFileListRecentDocumentItems: CFStringRef; external name '_kLSShared
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
@@ -729,10 +814,14 @@ var kLSSharedFileListRecentDocumentItems: CFStringRef; external name '_kLSShared
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 var kLSSharedFileListRecentServerItems: CFStringRef; external name '_kLSSharedFileListRecentServerItems'; (* attribute const *)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -754,12 +843,16 @@ var kLSSharedFileListRecentServerItems: CFStringRef; external name '_kLSSharedFi
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
  *  kLSSharedFileListSessionLoginItems
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -781,10 +874,14 @@ var kLSSharedFileListRecentServerItems: CFStringRef; external name '_kLSSharedFi
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 var kLSSharedFileListSessionLoginItems: CFStringRef; external name '_kLSSharedFileListSessionLoginItems'; (* attribute const *)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -810,6 +907,8 @@ var kLSSharedFileListSessionLoginItems: CFStringRef; external name '_kLSSharedFi
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 
 
@@ -818,6 +917,7 @@ var kLSSharedFileListSessionLoginItems: CFStringRef; external name '_kLSSharedFi
  *  
  *  Availability:
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -831,10 +931,13 @@ var kLSSharedFileListSessionLoginItems: CFStringRef; external name '_kLSSharedFi
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 var kLSSharedFileListGlobalLoginItems: CFStringRef; external name '_kLSSharedFileListGlobalLoginItems'; (* attribute const *)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -856,6 +959,9 @@ var kLSSharedFileListGlobalLoginItems: CFStringRef; external name '_kLSSharedFil
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 { LSSharedFileList property keys }
@@ -874,6 +980,7 @@ var kLSSharedFileListGlobalLoginItems: CFStringRef; external name '_kLSSharedFil
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
@@ -890,10 +997,14 @@ var kLSSharedFileListGlobalLoginItems: CFStringRef; external name '_kLSSharedFil
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 var kLSSharedFileListRecentItemsMaxAmount: CFStringRef; external name '_kLSSharedFileListRecentItemsMaxAmount'; (* attribute const *)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -915,6 +1026,9 @@ var kLSSharedFileListRecentItemsMaxAmount: CFStringRef; external name '_kLSShare
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 {
  *  kLSSharedFileListVolumesComputerVisible
@@ -929,6 +1043,7 @@ var kLSSharedFileListRecentItemsMaxAmount: CFStringRef; external name '_kLSShare
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
@@ -945,10 +1060,14 @@ var kLSSharedFileListRecentItemsMaxAmount: CFStringRef; external name '_kLSShare
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 var kLSSharedFileListVolumesComputerVisible: CFStringRef; external name '_kLSSharedFileListVolumesComputerVisible'; (* attribute const *)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -970,6 +1089,9 @@ var kLSSharedFileListVolumesComputerVisible: CFStringRef; external name '_kLSSha
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 {
  *  kLSSharedFileListVolumesIDiskVisible
@@ -979,6 +1101,7 @@ var kLSSharedFileListVolumesComputerVisible: CFStringRef; external name '_kLSSha
  *    property is CFBoolean.
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1000,10 +1123,14 @@ var kLSSharedFileListVolumesComputerVisible: CFStringRef; external name '_kLSSha
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 var kLSSharedFileListVolumesIDiskVisible: CFStringRef; external name '_kLSSharedFileListVolumesIDiskVisible'; (* attribute const *)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1025,6 +1152,9 @@ var kLSSharedFileListVolumesIDiskVisible: CFStringRef; external name '_kLSShared
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 {
  *  kLSSharedFileListVolumesNetworkVisible
@@ -1034,6 +1164,7 @@ var kLSSharedFileListVolumesIDiskVisible: CFStringRef; external name '_kLSShared
  *    property is CFBoolean.
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1055,10 +1186,14 @@ var kLSSharedFileListVolumesIDiskVisible: CFStringRef; external name '_kLSShared
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 var kLSSharedFileListVolumesNetworkVisible: CFStringRef; external name '_kLSSharedFileListVolumesNetworkVisible'; (* attribute const *)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1080,6 +1215,9 @@ var kLSSharedFileListVolumesNetworkVisible: CFStringRef; external name '_kLSShar
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 { item default positions }
 
@@ -1097,6 +1235,7 @@ var kLSSharedFileListVolumesNetworkVisible: CFStringRef; external name '_kLSShar
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
@@ -1113,10 +1252,14 @@ var kLSSharedFileListVolumesNetworkVisible: CFStringRef; external name '_kLSShar
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 var kLSSharedFileListItemBeforeFirst: LSSharedFileListItemRef; external name '_kLSSharedFileListItemBeforeFirst'; (* attribute const *)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1138,6 +1281,9 @@ var kLSSharedFileListItemBeforeFirst: LSSharedFileListItemRef; external name '_k
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 {
  *  kLSSharedFileListItemLast
@@ -1152,6 +1298,7 @@ var kLSSharedFileListItemBeforeFirst: LSSharedFileListItemRef; external name '_k
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
@@ -1168,10 +1315,14 @@ var kLSSharedFileListItemBeforeFirst: LSSharedFileListItemRef; external name '_k
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 var kLSSharedFileListItemLast: LSSharedFileListItemRef; external name '_kLSSharedFileListItemLast'; (* attribute const *)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1193,6 +1344,9 @@ var kLSSharedFileListItemLast: LSSharedFileListItemRef; external name '_kLSShare
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 { LSSharedFileListItem property keys }
@@ -1210,6 +1364,7 @@ var kLSSharedFileListItemLast: LSSharedFileListItemRef; external name '_kLSShare
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
@@ -1226,10 +1381,14 @@ var kLSSharedFileListItemLast: LSSharedFileListItemRef; external name '_kLSShare
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 var kLSSharedFileListItemHidden: CFStringRef; external name '_kLSSharedFileListItemHidden'; (* attribute const *)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1251,6 +1410,9 @@ var kLSSharedFileListItemHidden: CFStringRef; external name '_kLSSharedFileListI
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 {
  *  kLSSharedFileListLoginItemHidden
  *  
@@ -1259,6 +1421,7 @@ var kLSSharedFileListItemHidden: CFStringRef; external name '_kLSSharedFileListI
  *    CFBoolean.
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1280,10 +1443,14 @@ var kLSSharedFileListItemHidden: CFStringRef; external name '_kLSSharedFileListI
 =======
  *    Mac OS X:         in version 10.6 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.6 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 var kLSSharedFileListLoginItemHidden: CFStringRef; external name '_kLSSharedFileListLoginItemHidden'; (* attribute const *)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1305,6 +1472,9 @@ var kLSSharedFileListLoginItemHidden: CFStringRef; external name '_kLSSharedFile
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 { LSSharedFileListItemResolve flags }
 const
@@ -1341,6 +1511,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
@@ -1357,10 +1528,14 @@ type
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSSharedFileListGetTypeID: CFTypeID; external name '_LSSharedFileListGetTypeID';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1382,6 +1557,9 @@ function LSSharedFileListGetTypeID: CFTypeID; external name '_LSSharedFileListGe
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1403,6 +1581,7 @@ function LSSharedFileListGetTypeID: CFTypeID; external name '_LSSharedFileListGe
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
@@ -1419,10 +1598,14 @@ function LSSharedFileListGetTypeID: CFTypeID; external name '_LSSharedFileListGe
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSSharedFileListItemGetTypeID: CFTypeID; external name '_LSSharedFileListItemGetTypeID';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1444,6 +1627,9 @@ function LSSharedFileListItemGetTypeID: CFTypeID; external name '_LSSharedFileLi
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1484,6 +1670,7 @@ function LSSharedFileListItemGetTypeID: CFTypeID; external name '_LSSharedFileLi
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
@@ -1500,10 +1687,14 @@ function LSSharedFileListItemGetTypeID: CFTypeID; external name '_LSSharedFileLi
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSSharedFileListCreate( inAllocator: CFAllocatorRef; inListType: CFStringRef; listOptions: CFTypeRef ): LSSharedFileListRef; external name '_LSSharedFileListCreate';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1525,6 +1716,9 @@ function LSSharedFileListCreate( inAllocator: CFAllocatorRef; inListType: CFStri
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1557,6 +1751,7 @@ function LSSharedFileListCreate( inAllocator: CFAllocatorRef; inListType: CFStri
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
@@ -1573,10 +1768,14 @@ function LSSharedFileListCreate( inAllocator: CFAllocatorRef; inListType: CFStri
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSSharedFileListSetAuthorization( inList: LSSharedFileListRef; inAuthorization: AuthorizationRef ): OSStatus; external name '_LSSharedFileListSetAuthorization';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1598,6 +1797,9 @@ function LSSharedFileListSetAuthorization( inList: LSSharedFileListRef; inAuthor
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1637,6 +1839,7 @@ function LSSharedFileListSetAuthorization( inList: LSSharedFileListRef; inAuthor
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
@@ -1653,10 +1856,14 @@ function LSSharedFileListSetAuthorization( inList: LSSharedFileListRef; inAuthor
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 procedure LSSharedFileListAddObserver( inList: LSSharedFileListRef; inRunloop: CFRunLoopRef; inRunloopMode: CFStringRef; callback: LSSharedFileListChangedProcPtr; context: UnivPtr ); external name '_LSSharedFileListAddObserver';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1678,6 +1885,9 @@ procedure LSSharedFileListAddObserver( inList: LSSharedFileListRef; inRunloop: C
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1715,6 +1925,7 @@ procedure LSSharedFileListAddObserver( inList: LSSharedFileListRef; inRunloop: C
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
@@ -1731,10 +1942,14 @@ procedure LSSharedFileListAddObserver( inList: LSSharedFileListRef; inRunloop: C
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 procedure LSSharedFileListRemoveObserver( inList: LSSharedFileListRef; inRunloop: CFRunLoopRef; inRunloopMode: CFStringRef; callback: LSSharedFileListChangedProcPtr; context: UnivPtr ); external name '_LSSharedFileListRemoveObserver';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1756,6 +1971,9 @@ procedure LSSharedFileListRemoveObserver( inList: LSSharedFileListRef; inRunloop
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1781,6 +1999,7 @@ procedure LSSharedFileListRemoveObserver( inList: LSSharedFileListRef; inRunloop
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
@@ -1797,10 +2016,14 @@ procedure LSSharedFileListRemoveObserver( inList: LSSharedFileListRef; inRunloop
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSSharedFileListGetSeedValue( inList: LSSharedFileListRef ): UInt32; external name '_LSSharedFileListGetSeedValue';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1822,6 +2045,9 @@ function LSSharedFileListGetSeedValue( inList: LSSharedFileListRef ): UInt32; ex
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1855,6 +2081,7 @@ function LSSharedFileListGetSeedValue( inList: LSSharedFileListRef ): UInt32; ex
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
@@ -1871,10 +2098,14 @@ function LSSharedFileListGetSeedValue( inList: LSSharedFileListRef ): UInt32; ex
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSSharedFileListCopyProperty( inList: LSSharedFileListRef; inPropertyName: CFStringRef ): CFTypeRef; external name '_LSSharedFileListCopyProperty';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1896,6 +2127,9 @@ function LSSharedFileListCopyProperty( inList: LSSharedFileListRef; inPropertyNa
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1927,6 +2161,7 @@ function LSSharedFileListCopyProperty( inList: LSSharedFileListRef; inPropertyNa
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
@@ -1943,10 +2178,14 @@ function LSSharedFileListCopyProperty( inList: LSSharedFileListRef; inPropertyNa
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSSharedFileListSetProperty( inList: LSSharedFileListRef; inPropertyName: CFStringRef; inPropertyData: CFTypeRef ): OSStatus; external name '_LSSharedFileListSetProperty';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1968,6 +2207,9 @@ function LSSharedFileListSetProperty( inList: LSSharedFileListRef; inPropertyNam
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2001,6 +2243,7 @@ function LSSharedFileListSetProperty( inList: LSSharedFileListRef; inPropertyNam
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
@@ -2017,10 +2260,14 @@ function LSSharedFileListSetProperty( inList: LSSharedFileListRef; inPropertyNam
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSSharedFileListCopySnapshot( inList: LSSharedFileListRef; var outSnapshotSeed: UInt32 ): CFArrayRef; external name '_LSSharedFileListCopySnapshot';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2042,6 +2289,9 @@ function LSSharedFileListCopySnapshot( inList: LSSharedFileListRef; var outSnaps
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2096,6 +2346,7 @@ function LSSharedFileListCopySnapshot( inList: LSSharedFileListRef; var outSnaps
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
@@ -2112,10 +2363,14 @@ function LSSharedFileListCopySnapshot( inList: LSSharedFileListRef; var outSnaps
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSSharedFileListInsertItemURL( inList: LSSharedFileListRef; insertAfterThisItem: LSSharedFileListItemRef; inDisplayName: CFStringRef; inIconRef: IconRef; inURL: CFURLRef; inPropertiesToSet: CFDictionaryRef; inPropertiesToClear: CFArrayRef ): LSSharedFileListItemRef; external name '_LSSharedFileListInsertItemURL';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2137,6 +2392,9 @@ function LSSharedFileListInsertItemURL( inList: LSSharedFileListRef; insertAfter
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2191,6 +2449,7 @@ function LSSharedFileListInsertItemURL( inList: LSSharedFileListRef; insertAfter
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
@@ -2207,10 +2466,14 @@ function LSSharedFileListInsertItemURL( inList: LSSharedFileListRef; insertAfter
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSSharedFileListInsertItemFSRef( inList: LSSharedFileListRef; insertAfterThisItem: LSSharedFileListItemRef; inDisplayName: CFStringRef; inIconRef: IconRef; const (*var*) inFSRef: FSRef; inPropertiesToSet: CFDictionaryRef; inPropertiesToClear: CFArrayRef ): LSSharedFileListItemRef; external name '_LSSharedFileListInsertItemFSRef';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2232,6 +2495,9 @@ function LSSharedFileListInsertItemFSRef( inList: LSSharedFileListRef; insertAft
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2265,6 +2531,7 @@ function LSSharedFileListInsertItemFSRef( inList: LSSharedFileListRef; insertAft
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
@@ -2281,10 +2548,14 @@ function LSSharedFileListInsertItemFSRef( inList: LSSharedFileListRef; insertAft
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSSharedFileListItemMove( inList: LSSharedFileListRef; inItem: LSSharedFileListItemRef; inMoveAfterItem: LSSharedFileListItemRef ): OSStatus; external name '_LSSharedFileListItemMove';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2306,6 +2577,9 @@ function LSSharedFileListItemMove( inList: LSSharedFileListRef; inItem: LSShared
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2334,6 +2608,7 @@ function LSSharedFileListItemMove( inList: LSSharedFileListRef; inItem: LSShared
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
@@ -2350,10 +2625,14 @@ function LSSharedFileListItemMove( inList: LSSharedFileListRef; inItem: LSShared
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSSharedFileListItemRemove( inList: LSSharedFileListRef; inItem: LSSharedFileListItemRef ): OSStatus; external name '_LSSharedFileListItemRemove';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2375,6 +2654,9 @@ function LSSharedFileListItemRemove( inList: LSSharedFileListRef; inItem: LSShar
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2400,6 +2682,7 @@ function LSSharedFileListItemRemove( inList: LSSharedFileListRef; inItem: LSShar
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
@@ -2416,10 +2699,14 @@ function LSSharedFileListItemRemove( inList: LSSharedFileListRef; inItem: LSShar
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSSharedFileListRemoveAllItems( inList: LSSharedFileListRef ): OSStatus; external name '_LSSharedFileListRemoveAllItems';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2441,6 +2728,9 @@ function LSSharedFileListRemoveAllItems( inList: LSSharedFileListRef ): OSStatus
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2461,6 +2751,7 @@ function LSSharedFileListRemoveAllItems( inList: LSSharedFileListRef ): OSStatus
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
@@ -2477,10 +2768,14 @@ function LSSharedFileListRemoveAllItems( inList: LSSharedFileListRef ): OSStatus
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSSharedFileListItemGetID( inItem: LSSharedFileListItemRef ): UInt32; external name '_LSSharedFileListItemGetID';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2502,6 +2797,9 @@ function LSSharedFileListItemGetID( inItem: LSSharedFileListItemRef ): UInt32; e
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2526,6 +2824,7 @@ function LSSharedFileListItemGetID( inItem: LSSharedFileListItemRef ): UInt32; e
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
@@ -2542,10 +2841,14 @@ function LSSharedFileListItemGetID( inItem: LSSharedFileListItemRef ): UInt32; e
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSSharedFileListItemCopyIconRef( inItem: LSSharedFileListItemRef ): IconRef; external name '_LSSharedFileListItemCopyIconRef';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2567,6 +2870,9 @@ function LSSharedFileListItemCopyIconRef( inItem: LSSharedFileListItemRef ): Ico
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2588,6 +2894,7 @@ function LSSharedFileListItemCopyIconRef( inItem: LSSharedFileListItemRef ): Ico
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
@@ -2604,10 +2911,14 @@ function LSSharedFileListItemCopyIconRef( inItem: LSSharedFileListItemRef ): Ico
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSSharedFileListItemCopyDisplayName( inItem: LSSharedFileListItemRef ): CFStringRef; external name '_LSSharedFileListItemCopyDisplayName';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2629,6 +2940,9 @@ function LSSharedFileListItemCopyDisplayName( inItem: LSSharedFileListItemRef ):
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2664,6 +2978,7 @@ function LSSharedFileListItemCopyDisplayName( inItem: LSSharedFileListItemRef ):
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
@@ -2680,10 +2995,14 @@ function LSSharedFileListItemCopyDisplayName( inItem: LSSharedFileListItemRef ):
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSSharedFileListItemResolve( inItem: LSSharedFileListItemRef; inFlags: UInt32; var outURL: CFURLRef; var outRef: FSRef ): OSStatus; external name '_LSSharedFileListItemResolve';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2705,6 +3024,9 @@ function LSSharedFileListItemResolve( inItem: LSSharedFileListItemRef; inFlags: 
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2726,6 +3048,7 @@ function LSSharedFileListItemResolve( inItem: LSSharedFileListItemRef; inFlags: 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
@@ -2742,10 +3065,14 @@ function LSSharedFileListItemResolve( inItem: LSSharedFileListItemRef; inFlags: 
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSSharedFileListItemCopyProperty( inItem: LSSharedFileListItemRef; inPropertyName: CFStringRef ): CFTypeRef; external name '_LSSharedFileListItemCopyProperty';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2767,6 +3094,9 @@ function LSSharedFileListItemCopyProperty( inItem: LSSharedFileListItemRef; inPr
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2787,6 +3117,7 @@ function LSSharedFileListItemCopyProperty( inItem: LSSharedFileListItemRef; inPr
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
@@ -2803,10 +3134,14 @@ function LSSharedFileListItemCopyProperty( inItem: LSSharedFileListItemRef; inPr
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSSharedFileListItemSetProperty( inItem: LSSharedFileListItemRef; inPropertyName: CFStringRef; inPropertyData: CFTypeRef ): OSStatus; external name '_LSSharedFileListItemSetProperty';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2833,6 +3168,10 @@ function LSSharedFileListItemSetProperty( inItem: LSSharedFileListItemRef; inPro
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {$endc} {TARGET_OS_MAC}
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}

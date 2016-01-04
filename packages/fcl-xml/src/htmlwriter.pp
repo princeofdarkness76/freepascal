@@ -64,6 +64,7 @@ type
     function FormFile (aname, aValue:DOMstring) : THTML_Input;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     { Other useful links to elements }
 =======
     { Other usefull links to elements }
@@ -71,6 +72,9 @@ type
 =======
     { Other usefull links to elements }
 >>>>>>> origin/fixes_2_2
+=======
+    { Other useful links to elements }
+>>>>>>> origin/cpstrnew
     function Meta (aname, ahtpequiv,acontent: DOMString) : THTML_meta;
     function Link (arel, ahref, athetype, amedia: DOMString) : THTML_link;
     function Script (s, athetype, asrc: DOMString) : THTML_script;

@@ -864,14 +864,20 @@ IMPLEMENTATION
       procedure Copy(var Dest: TVarData; const Source: TVarData; const Indirect: Boolean); override;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
       function CompareOp(const Left, Right: TVarData; const Operation: TVarOp): Boolean; override;
       procedure Compare(const Left, Right: TVarData; var Relationship: TVarCompareResult); override;
       procedure Cast(var Dest: TVarData; const Source: TVarData); override;
       procedure CastTo(var Dest: TVarData; const Source: TVarData; const aVarType: TVarType); override;
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
     end;
 
     TFMTBcdVarData = CLASS(TPersistent)
@@ -1651,6 +1657,7 @@ IMPLEMENTATION
      end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -1665,6 +1672,8 @@ IMPLEMENTATION
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 
   function CurrToBCD ( const Curr : currency;
                          var BCD : tBCD;
@@ -3951,6 +3960,54 @@ procedure TFMTBcdFactory.BinaryOp(var Left: TVarData; const Right: TVarData; con
         l:=l*r;
       opDivide:
         l:=l/r;
+<<<<<<< HEAD
+=======
+    else
+      RaiseInvalidOp;
+    end;
+
+    if Left.vType=VarType then
+      TFMTBcdVarData(Left.VPointer).BCD := l
+    else
+      RaiseInvalidOp;
+  end;
+
+procedure TFMTBcdFactory.Compare(const Left, Right: TVarData; var Relationship: TVarCompareResult);
+  var l, r: TBCD;
+      CmpRes: integer;
+  begin
+    l:=VariantToBCD(Left);
+    r:=VariantToBCD(Right);
+
+    CmpRes := BCDCompare(l,r);
+    if CmpRes=0 then
+      Relationship := crEqual
+    else if CmpRes<0 then
+      Relationship := crLessThan
+    else
+      Relationship := crGreaterThan;
+  end;
+
+function TFMTBcdFactory.CompareOp(const Left, Right: TVarData; const Operation: TVarOp): Boolean;
+  var l, r: TBCD;
+  begin
+    l:=VariantToBCD(Left);
+    r:=VariantToBCD(Right);
+
+    case Operation of
+      opCmpEq:
+        Result := l=r;
+      opCmpNe:
+        Result := l<>r;
+      opCmpLt:
+        Result := l<r;
+      opCmpLe:
+        Result := l<=r;
+      opCmpGt:
+        Result := l>r;
+      opCmpGe:
+        Result := l>=r;
+>>>>>>> origin/cpstrnew
     else
       RaiseInvalidOp;
     end;
@@ -4063,9 +4120,37 @@ procedure TFMTBcdFactory.Copy(var Dest: TVarData; const Source: TVarData; const 
       Dest.VPointer:=Source.VPointer
     else
       Dest.VPointer:=TFMTBcdVarData.Create(TFMTBcdVarData(Source.VPointer).BCD);
-    Dest.VType:=Vartype;
+    Dest.VType:=VarType;
   end;
 >>>>>>> origin/fixes_2_2
+
+procedure TFMTBcdFactory.Cast(var Dest: TVarData; const Source: TVarData);
+begin
+  not_implemented;
+end;
+
+procedure TFMTBcdFactory.CastTo(var Dest: TVarData; const Source: TVarData; const aVarType: TVarType);
+var v: TVarData;
+begin
+  if Source.vType=VarType then
+  begin
+    VarDataInit(v);
+    try
+      if aVarType = varString then
+        VarDataFromStr(Dest, BCDToStr(TFMTBcdVarData(Source.vPointer).BCD))
+      else
+      begin
+        v.vType:=varDouble;
+        v.vDouble:=BCDToDouble(TFMTBcdVarData(Source.vPointer).BCD);
+        VarDataCastTo(Dest, v, aVarType); //now cast Double to any requested type
+      end;
+    finally
+      VarDataClear(v);
+    end;
+  end
+  else
+    inherited;
+end;
 
 {$if declared ( myMinIntBCD ) }
 (*

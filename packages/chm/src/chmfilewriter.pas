@@ -35,6 +35,7 @@ interface
 uses
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Strings, Classes, SysUtils, chmwriter, inifiles, contnrs, chmsitemap, avl_tree,
   {for html scanning } dom,SAX_HTML,dom_html;
 
@@ -57,6 +58,17 @@ type
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  Strings, Classes, SysUtils, chmwriter, inifiles, contnrs, chmsitemap, avl_tree,
+  {for html scanning } dom,SAX_HTML,dom_html;
+
+type
+  TChmProject = class;
+  TChmProjectErrorKind = (chmerror,chmwarning,chmhint,chmnote,chmnone);
+
+  TChmProgressCB = procedure (Project: TChmProject; CurrentFile: String) of object;
+  TChmErrorCB    = procedure (Project: TChmProject;errorkind:TChmProjectErrorKind;msg:String;detaillevel:integer=0);
+>>>>>>> origin/cpstrnew
 
   { TChmProject }
 
@@ -67,6 +79,7 @@ type
     FDefaultPage: String;
     FFiles: TStrings;
     FIndexFileName: String;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -171,30 +184,56 @@ type
     FMakeBinaryTOC: Boolean;
     FMakeBinaryIndex: Boolean;
 >>>>>>> origin/fixes_2.4
+=======
+    FMakeBinaryTOC: Boolean;
+    FMakeBinaryIndex: Boolean;
+>>>>>>> origin/cpstrnew
     FMakeSearchable: Boolean;
     FFileName: String;
     FOnProgress: TChmProgressCB;
+    FOnError   : TChmErrorCB;
     FOutputFileName: String;
     FTableOfContentsFileName: String;
     FTitle: String;
+    FWindows : TObjectList;
+    FMergeFiles : TStringlist;
+    fDefaultWindow : string;
+    fScanHtmlContents  : Boolean;
+    fOtherFiles : TStrings; // Files found in a scan.
+    fAllowedExtensions: TStringList;
+    fTotalFileList : TAvlTree;
+    FSpareString   : TStringIndex;
+    FBasePath       : String;     // location of the .hhp file. Needed to resolve relative paths
   protected
     function GetData(const DataName: String; out PathInChm: String; out FileName: String; var Stream: TStream): Boolean;
     procedure LastFileAdded(Sender: TObject);
+    procedure readIniOptions(keyvaluepairs:tstringlist);
+    procedure ScanHtml;
+    procedure ScanList(toscan,newfiles:TStrings;recursion:boolean);
+    procedure ScanSitemap(sitemap:TChmSiteMap;newfiles:TStrings;recursion:boolean);
+    function  FileInTotalList(const s:String):boolean;
   public
-    constructor Create;
+    constructor Create; virtual;
     destructor Destroy; override;
-    procedure LoadFromFile(AFileName: String);
-    procedure SaveToFile(AFileName: String);
-    procedure WriteChm(AOutStream: TStream);
+    procedure LoadFromFile(AFileName: String); virtual;
+    procedure LoadFromhhp (AFileName:String;LeaveInclude:Boolean); virtual;
+    procedure SaveToFile(AFileName: String); virtual;
+    procedure WriteChm(AOutStream: TStream); virtual;
     function ProjectDir: String;
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    procedure AddFileWithContext(contextid:integer;filename:ansistring;contextname:ansistring='');
+    procedure Error(errorkind:TChmProjectErrorKind;msg:String;detaillevel:integer=0);
+>>>>>>> origin/cpstrnew
     // though stored in the project file, it is only there for the program that uses the unit
     // since we actually write to a stream
     property OutputFileName: String read FOutputFileName write FOutputFileName;
     property FileName: String read FFileName write FFileName;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     property Files: TStrings read FFiles write FFiles;  // html files
@@ -218,11 +257,20 @@ type
     property MakeBinaryTOC: Boolean read FMakeBinaryTOC write FMakeBinaryTOC;
     property MakeBinaryIndex: Boolean read FMakeBinaryIndex write FMakeBinaryIndex;
 >>>>>>> origin/fixes_2.4
+=======
+    property Files: TStrings read FFiles write FFiles;  // html files
+    property OtherFiles: TStrings read FOtherFiles write FOtherFiles;  // other files (.css, img etc)
+    property AutoFollowLinks: Boolean read FAutoFollowLinks write FAutoFollowLinks;
+    property TableOfContentsFileName: String read FTableOfContentsFileName write FTableOfContentsFileName;
+    property MakeBinaryTOC: Boolean read FMakeBinaryTOC write FMakeBinaryTOC;
+    property MakeBinaryIndex: Boolean read FMakeBinaryIndex write FMakeBinaryIndex;
+>>>>>>> origin/cpstrnew
     property Title: String read FTitle write FTitle;
     property IndexFileName: String read FIndexFileName write FIndexFileName;
     property MakeSearchable: Boolean read FMakeSearchable write FMakeSearchable;
     property DefaultPage: String read FDefaultPage write FDefaultPage;
     property DefaultFont: String read FDefaultFont write FDefaultFont;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -303,11 +351,31 @@ end;
 =======
 
 >>>>>>> origin/fixes_2.4
+=======
+    property Windows :TObjectList read FWindows write FWindows;
+    property MergeFiles :TStringlist read FMergeFiles write FMergefiles;
+>>>>>>> origin/cpstrnew
     property OnProgress: TChmProgressCB read FOnProgress write FOnProgress;
+    property OnError   : TChmErrorCB read FOnError write FOnError;
+    property DefaultWindow : String read FDefaultWindow write FDefaultWindow;
+    property ScanHtmlContents  : Boolean read fScanHtmlContents write fScanHtmlContents;
+    property AllowedExtensions : TStringList read FAllowedExtensions;
   end;
+
+  TChmContextNode = Class
+                     URLName       : AnsiString;
+                     ContextNumber : Integer;
+                     ContextName   : AnsiString;
+                    End;
+
+
+
+Const
+  ChmErrorKindText : array[TCHMProjectErrorKind] of string = ('Error','Warning','Hint','Note','');
 
 implementation
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 uses XmlCfg;
 <<<<<<< HEAD
@@ -317,6 +385,9 @@ uses XmlCfg;
 =======
 uses XmlCfg, chmsitemap;
 >>>>>>> origin/fixes_2.4
+=======
+uses XmlCfg, CHMTypes;
+>>>>>>> origin/cpstrnew
 
 { TChmProject }
 
@@ -332,6 +403,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
   
@@ -342,6 +414,9 @@ begin
 =======
 
 >>>>>>> origin/fixes_2.4
+=======
+
+>>>>>>> origin/cpstrnew
   PathInChm := '/'+ExtractFilePath(DataName);
   if Assigned(FOnProgress) then FOnProgress(Self, DataName);
 end;
@@ -442,10 +517,13 @@ begin
     Writer.AppendIndex(IndexStream);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
     if MakeBinaryIndex then
     begin
       {$ifdef chmindex}
@@ -455,9 +533,14 @@ begin
       IndexSitemap := TChmSiteMap.Create(stIndex);
       indexSitemap.LoadFromStream(IndexStream);
       Writer.AppendBinaryIndexFromSiteMap(IndexSitemap,False);
+<<<<<<< HEAD
       IndexSitemap.Free;	
     end;
 >>>>>>> origin/fixes_2.4
+=======
+      IndexSitemap.Free;
+    end;
+>>>>>>> origin/cpstrnew
     IndexStream.Free;
   end;
   if (TableOfContentsFileName <> '') and FileExists(TableOfContentsFileName) then begin
@@ -466,8 +549,11 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
     if MakeBinaryTOC then
     begin
       TOCStream.Position := 0;
@@ -476,6 +562,7 @@ begin
       Writer.AppendBinaryTOCFromSiteMap(TOCSitemap);
       TOCSitemap.Free;
     end;
+<<<<<<< HEAD
 <<<<<<< HEAD
     TOCStream.Free;
 >>>>>>> graemeg/cpstrnew
@@ -494,6 +581,12 @@ begin
   end;
 
 >>>>>>> origin/fixes_2_2
+=======
+    TOCStream.Free;
+  end;
+  if not assigned(sender) then
+    Writer.Free;
+>>>>>>> origin/cpstrnew
 end;
 
 constructor TChmProject.Create;
@@ -501,6 +594,9 @@ begin
   FFiles := TStringList.Create;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   FOtherFiles := TStringList.Create;
   FAllowedExtensions:=TStringList.Create;
   FAllowedExtensions.add('.HTM');
@@ -510,6 +606,7 @@ begin
   ScanHtmlContents:=False;
   FTotalFileList:=TAvlTree.Create(@CompareStrings);
   FSparestring  :=TStringIndex.Create;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -660,27 +757,135 @@ var
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 destructor TChmProject.Destroy;
+var i : integer;
 begin
-  FFIles.Free;
+  for i:=0 to ffiles.count -1 do
+    ffiles.objects[i].free;
+  FMergeFiles.Free;
+  FFiles.Free;
+  FOtherFiles.Free;
+  FWindows.Free;
+  FSpareString.Free;
+  FTotalFileList.FreeAndClear;
+  FTotalFileList.Free;
   inherited Destroy;
 end;
+
+Type
+   TSectionEnum = (secOptions,secWindows,secFiles,secMergeFiles,secAlias,secMap,secInfoTypes,secTextPopups,secUnknown);
+   TOptionEnum = (OPTAUTO_INDEX,OPTAUTO_TOC,OPTBINARY_INDEX,OPTBINARY_TOC,OPTCITATION,
+       OPTCOMPRESS,OPTCOPYRIGHT,OPTCOMPATIBILITY,OPTCOMPILED_FILE,OPTCONTENTS_FILE,
+       OPTCREATE_CHI_FILE,OPTDBCS,OPTDEFAULT_FONT,OPTDEFAULT_WINDOW,OPTDEFAULT_TOPIC,
+       OPTDISPLAY_COMPILE_NOTES,OPTDISPLAY_COMPILE_PROGRESS,OPTENHANCED_DECOMPILATION,OPTERROR_LOG_FILE,OPTFLAT,
+       OPTFULL_TEXT_SEARCH_STOP_LIST,OPTFULL_TEXT_SEARCH,OPTIGNORE,OPTINDEX_FILE,OPTLANGUAGE,OPTPREFIX,
+       OPTSAMPLE_STAGING_PATH,OPTSAMPLE_LIST_FILE,OPTTMPDIR,OPTTITLE,OPTCUSTOM_TAB,OPTUNKNOWN);
+
+Const
+  SectionNames : Array[TSectionEnum] of String =
+      ('OPTIONS','WINDOWS','FILES','MERGE FILES','ALIAS','MAP','INFOTYPES','TEXT POPUPS','UNKNOWN');
+
+  OptionKeys : array [TOptionEnum] of String =
+      ('AUTO INDEX','AUTO TOC','BINARY INDEX','BINARY TOC','CITATION',
+       'COMPRESS','COPYRIGHT','COMPATIBILITY','COMPILED FILE','CONTENTS FILE',
+       'CREATE CHI FILE','DBCS','DEFAULT FONT','DEFAULT WINDOW','DEFAULT TOPIC',
+       'DISPLAY COMPILE NOTES','DISPLAY COMPILE PROGRESS','ENHANCED DECOMPILATION','ERROR LOG FILE','FLAT',
+       'FULL-TEXT SEARCH STOP LIST','FULL-TEXT SEARCH','IGNORE','INDEX FILE','LANGUAGE','PREFIX',
+       'SAMPLE STAGING PATH','SAMPLE LIST FILE','TMPDIR','TITLE','CUSTOM TAB','UNKNOWN');
+
+function FindSectionName (const name:string):TSectionEnum;
+
+begin
+  result:=low(TSectionEnum);
+  while (result<secUnknown) and (name<>SectionNames[Result]) do
+    inc(result);
+end;
+
+function FindOptionName(Const name:string):TOptionEnum;
+
+begin
+  result:=low(TOptionEnum);
+  while (result<optUnknown) and (name<>OptionKeys[Result]) do
+    inc(result);
+end;
+
+procedure TChmProject.readIniOptions(keyvaluepairs:tstringlist);
+var i : integer;
+    Opt : TOptionEnum;
+    OptVal,
+    OptValUpper : string;
+begin
+  for i:=0 to keyvaluepairs.count-1 do
+    begin
+      Opt:=findoptionname(uppercase(keyvaluepairs.names[i]));
+      optval :=keyvaluepairs.valuefromindex[i];
+      optvalupper:=uppercase(OptVal);
+      case Opt Of
+      OPTAUTO_INDEX                : ;
+      OPTAUTO_TOC                  : ;
+      OPTBINARY_INDEX              : MakeBinaryIndex:=optvalupper='YES';
+      OPTBINARY_TOC                : MakeBinaryToc  :=optvalupper='YES';
+      OPTCITATION                  : ;
+      OPTCOMPRESS                  : ; // Doesn't seem to have effect in workshop
+      OPTCOPYRIGHT                 : ;
+      OPTCOMPATIBILITY             : ;
+      OPTCOMPILED_FILE             : OutputFilename:=optval;
+      OPTCONTENTS_FILE             : TableOfContentsFileName:=optval;
+      OPTCREATE_CHI_FILE           : ;
+      OPTDBCS                      : ; // What this field makes unicode is not known?
+      OPTDEFAULT_FONT              : defaultfont:=optval;
+      OPTDEFAULT_WINDOW            : defaultwindow:=optval;
+      OPTDEFAULT_TOPIC             : defaultpage:=optval;
+      OPTDISPLAY_COMPILE_NOTES     : ;
+      OPTDISPLAY_COMPILE_PROGRESS  : ;
+      OPTENHANCED_DECOMPILATION    : ;
+      OPTERROR_LOG_FILE            : ;
+      OPTFLAT                      : ;
+      OPTFULL_TEXT_SEARCH_STOP_LIST: ;
+      OPTFULL_TEXT_SEARCH          : MakeSearchable:=optvalupper='YES';
+      OPTIGNORE                    : ;
+      OPTINDEX_FILE                : Indexfilename:=optval;
+      OPTLANGUAGE                  : ;
+      OPTPREFIX                    : ;  // doesn't seem to have effect
+      OPTSAMPLE_STAGING_PATH       : ;
+      OPTSAMPLE_LIST_FILE          : ;
+      OPTTMPDIR                    : ;
+      OPTTITLE                     : Title:=optval;
+      OPTCUSTOM_TAB                : ;
+      OPTUNKNOWN                   : ;  // can be used for errors on unknown keys
+      end;
+    end;
+end;
+
 
 procedure TChmProject.LoadFromFile(AFileName: String);
 var
   Cfg: TXMLConfig;
+  MergeFileCount,
+  WinCount,
   FileCount: Integer;
+<<<<<<< HEAD
   I: Integer;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  I  : Integer;
+  nd : TChmContextNode;
+  win: TCHMWindow;
+  s  : String;
+
+>>>>>>> origin/cpstrnew
 begin
   Cfg := TXMLConfig.Create(nil);
   Cfg.Filename := AFileName;
   FileName := AFileName;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -748,13 +953,48 @@ begin
 =======
 
 >>>>>>> origin/fixes_2.4
+=======
+  FBasePath:=extractfilepath(expandfilename(afilename));
+
+>>>>>>> origin/cpstrnew
   Files.Clear;
   FileCount := Cfg.GetValue('Files/Count/Value', 0);
-  for I := 0 to FileCount-1 do begin
-    Files.Add(Cfg.GetValue('Files/FileName'+IntToStr(I)+'/Value',''));
-  end;
+  for I := 0 to FileCount-1 do
+    begin
+      nd:=TChmContextNode.Create;
+      nd.urlname:=Cfg.GetValue('Files/FileName'+IntToStr(I)+'/Value','');
+      nd.contextnumber:=Cfg.GetValue('Files/FileName'+IntToStr(I)+'/ContextNumber',0);
+      nd.contextname:=Cfg.GetValue('Files/FileName'+IntToStr(I)+'/ContextName','');
+      Files.AddObject(nd.URLNAME,nd);
+    end;
+
+  FileCount := Cfg.GetValue('OtherFiles/Count/Value', 0);
+  for I := 0 to FileCount-1 do
+    begin
+      s:=Cfg.GetValue('OtherFiles/FileName'+IntToStr(I)+'/Value','');
+      OtherFiles.Add(s);
+    end;
+
+  WinCount:= Cfg.GetValue('Windows/Count/Value', 0);
+  for i:=0 To WinCount-1 do
+    begin
+      win:=TCHMWindow.Create;
+      win.loadfromxml(cfg,'Windows/item'+inttostr(i)+'/');
+      fwindows.add(win);
+    end;
+
+  Mergefilecount:=Cfg.getValue('MergeFiles/Count/Value', 0);
+  for i:=0 To MergeFileCount-1 do
+    Mergefiles.add(Cfg.getValue('MergeFiles/FileName'+IntToStr(I)+'/value',''));
+
+  // load some values that changed key backwards compatible.
+
   IndexFileName := Cfg.GetValue('Files/IndexFile/Value','');
+  if IndexFileName='' Then
+    IndexFileName := Cfg.GetValue('Settings/IndexFile/Value','');
+
   TableOfContentsFileName := Cfg.GetValue('Files/TOCFile/Value','');
+<<<<<<< HEAD
 <<<<<<< HEAD
   
 <<<<<<< HEAD
@@ -766,6 +1006,26 @@ begin
   MakeBinaryTOC := Cfg.GetValue('Files/MakeBinaryTOC/Value', True);
   MakeBinaryIndex:= Cfg.GetValue('Files/MakeBinaryIndex/Value', False);
 >>>>>>> origin/fixes_2.4
+=======
+  If TableOfContentsFileName='' then
+    TableOfContentsFileName := Cfg.GetValue('Settings/TOCFile/Value','');
+
+  // For chm file merging, bintoc must be false and binindex true. Change defaults in time?
+  // OTOH, merging will be mostly done for fpdoc files, and that doesn't care about defaults.
+
+  S:=Cfg.GetValue('Files/MakeBinaryTOC/Value', '');
+  if s='' Then
+    MakeBinaryTOC := Cfg.GetValue('Settings/MakeBinaryTOC/Value', True)
+  else
+    MakeBinaryTOC := Cfg.GetValue('Files/MakeBinaryTOC/Value', True);
+
+  S:=Cfg.GetValue('Files/MakeBinaryIndex/Value', '');
+  if s='' Then
+    MakeBinaryIndex := Cfg.GetValue('Settings/MakeBinaryIndex/Value', False)
+  else
+    MakeBinaryIndex := Cfg.GetValue('Files/MakeBinaryIndex/Value', False);
+
+>>>>>>> origin/cpstrnew
   AutoFollowLinks := Cfg.GetValue('Settings/AutoFollowLinks/Value', False);
   MakeSearchable := Cfg.GetValue('Settings/MakeSearchable/Value', False);
   DefaultPage := Cfg.GetValue('Settings/DefaultPage/Value', '');
@@ -773,10 +1033,14 @@ begin
   OutputFileName := Cfg.GetValue('Settings/OutputFileName/Value', '');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   DefaultFont  := Cfg.GetValue('Settings/DefaultFont/Value', '');
   DefaultWindow:= Cfg.GetValue('Settings/DefaultWindow/Value', '');
   ScanHtmlContents:=  Cfg.GetValue('Settings/ScanHtmlContents/Value', False);
 
+<<<<<<< HEAD
   Cfg.Free;
 end;
 
@@ -1115,23 +1379,270 @@ begin
 =======
 >>>>>>> origin/fixes_2_2
   DefaultFont := Cfg.GetValue('Settings/DefaultFont/Value', '');
+=======
+>>>>>>> origin/cpstrnew
   Cfg.Free;
+end;
+
+function cleanupstring(const s:string):string;
+var
+  i:integer;
+begin
+  i:=pos(';',s);
+  if i>0 then
+    result:=trim(copy(s,1,i-1))
+  else
+    result:=trim(s);
+end;
+
+procedure TChmProject.LoadFromhhp (AFileName:String;LeaveInclude:Boolean);
+// leaveinclude=true leaves includefiles includefiles.
+
+procedure addalias(const key,value :string);
+
+var i,j : integer;
+    node: TCHMContextNode;
+    keyupper : string;
+begin
+ { Defaults other than global }
+   MakeBinaryIndex:=True;
+
+ {$ifdef hhp_debug}
+   writeln('alias entry:',key,'=',value);
+ {$endif}
+ keyupper:=uppercase(value);
+ i:=0; j:=files.count;
+ while (i<j) and (uppercase(TCHMContextnode(files.objects[i]).UrlName)<>keyupper) do
+  inc(i);
+ if i=j then
+  begin
+   {$ifdef hhp_debug}
+    writeln('alias new node:',key);
+   {$endif}
+    node:=TCHMContextNode.create;
+    node.URLName:=value;
+    node.contextname:=key;
+  end
+ else
+  begin
+    node:=TCHMContextNode(Files.objects[i]);
+    node.ContextName:=key;
+  end;
+end;
+
+procedure processalias(strs:TStringlist);
+var i,j : integer;
+    s : string;
+    strls2:tstringlist;
+
+begin
+ for i:=0 to strs.count-1 do
+  begin
+    s:=cleanupstring(strs[i]);
+    if uppercase(copy(s,1,8))='#INCLUDE' then
+      begin
+        delete(s,1,8);
+        s:=trim(s);
+        if fileexists(s) then
+          begin
+            strls2:=TstringList.create;
+            strls2.loadfromfile(s);
+            processalias(strls2);
+            strls2.free;
+          end;
+
+      end
+    else
+     begin
+       s:=cleanupstring(s);
+       j:=pos('=',s);
+       if j>0 then
+         addalias(trim(copy(s,1,j-1)),copy(s,j+1,length(s)-j));
+     end;
+  end;
+end;
+
+procedure addmap(const key,value :string);
+
+var i,j : integer;
+    node: TCHMContextNode;
+    keyupper : string;
+begin
+ {$ifdef hhp_debug}
+ writeln('map entry:',key,'=',value);
+ {$endif}
+ keyupper:=uppercase(key);
+ i:=0; j:=files.count;
+ while (i<j) and (uppercase(TCHMContextnode(files.objects[i]).contextname)<>keyupper) do
+  inc(i);
+ if i=j then
+    raise Exception.create('context "'+key+'" not found!')
+ else
+  begin
+    node:=TCHMContextNode(Files.objects[i]);
+    node.Contextnumber:=strtointdef(value,0);
+  end;
+end;
+
+procedure processmap(strs:TStringlist);
+var i,j : integer;
+    s : string;
+    strls2:tstringlist;
+
+begin
+ for i:=0 to strs.count-1 do
+  begin
+    s:=cleanupstring(strs[i]);
+    {$ifdef hhp_debug}
+      writeln('map item:',s);
+    {$endif}
+    if uppercase(copy(s,1,8))='#INCLUDE' then
+      begin
+        delete(s,1,8);
+        s:=trim(s);
+        if fileexists(s) then
+          begin
+            strls2:=TstringList.create;
+            strls2.loadfromfile(s);
+            processmap(strls2);
+            strls2.free;
+          end;
+      end
+    else
+     begin
+       s:=cleanupstring(s);
+       if uppercase(copy(s,1,7))='#DEFINE' Then
+         begin
+           delete(s,1,7);
+           s:=trim(s);
+           j:=pos(' ',s);
+           if j>0 then
+             addmap(trim(copy(s,1,j-1)),copy(s,j+1,length(s)-j));
+         end
+       else
+         begin
+            {$ifdef hhp_debug}
+              writeln('map leftover:',s);
+            {$endif}
+         end;
+     end;
+  end;
+end;
+
+var
+  Fini      : TMemIniFile;  // TMemInifile is more compatible with Delphi. Delphi's API based TIniFile fails on .hhp files.
+  secs,strs : TStringList;
+  i,j       : Integer;
+  section   : TSectionEnum;
+  nd        : TChmContextNode;
+
+begin
+ { Defaults other than global }
+   MakeBinaryIndex:=True;
+  FBasePath:=extractfilepath(expandfilename(afilename));
+  Fini:=TMeminiFile.Create(AFileName);
+  secs := TStringList.create;
+  strs := TStringList.create;
+  fini.readsections(secs);
+
+  // Do the files section first so that we can emit errors if
+  // other sections reference unknown files.
+
+  fini.readsectionvalues(SectionNames[secFiles] ,strs);
+  if strs.count>0 then
+    for j:=0 to strs.count-1 do
+      begin
+          nd:=TChmContextNode.Create;
+          nd.urlname:=strs[j];
+          nd.contextnumber:=0;
+          nd.contextname:='';
+          Files.AddObject(nd.urlname,nd);
+        end;
+
+  // aliases also add file nodes.
+
+  fini.readsectionvalues(SectionNames[secAlias] ,strs); // resolve all aliases.
+  if strs.count>0 then
+    processalias(strs);
+
+  // map files only add to existing file nodes.
+  fini.readsectionvalues(SectionNames[secmap] ,strs);
+  if strs.count>0 then
+    processmap(strs);
+
+
+  for i:=0 to secs.count-1 do
+    begin
+      section:=FindSectionName(Uppercase(Secs[i]));
+      if section<>secunknown then
+        fini.readsectionvalues(secs[i] ,strs);
+      case section of
+      secOptions   : readinioptions(strs);
+      secWindows   : for j:=0 to strs.count-1 do
+                       FWindows.add(TCHMWindow.Create(strs[j]));
+      secFiles     : ; // already done
+      secMergeFiles: FMergeFiles.Assign(Strs); // just a filelist
+      secAlias     : ; // already done
+      secMap       : ; // already done
+      secInfoTypes : ; // unused for now.
+      secTextPopups: ; // rarely used.
+      end;
+    end;
+  secs.free;
+  strs.free;
+  fini.free;
+  ScanHtmlContents:=true;
+end;
+
+procedure TChmProject.AddFileWithContext(contextid:integer;filename:ansistring;contextname:ansistring='');
+var x : integer;
+    nd : TChmContextNode;
+begin
+  x:=files.indexof(filename);
+  if x=-1 then
+    begin
+      nd:=TChmContextNode.Create;
+      nd.urlname:=filename;
+      nd.contextnumber:=contextid;
+      nd.contextname:=contextname;
+      Files.AddObject(nd.urlname,nd);
+    end
+  else
+   begin
+     nd:=TChmContextNode(files.objects[x]);
+     if not assigned(nd) then
+       begin
+         nd:=TChmContextNode.Create;
+         nd.urlname:=filename;
+         files.objects[x]:=nd;
+       end;
+      nd.contextnumber:=contextid;
+      nd.contextname:=contextname;
+   end;
 end;
 
 procedure TChmProject.SaveToFile(AFileName: String);
 var
   Cfg: TXMLConfig;
-  I: Integer;
-
+  I  : Integer;
+  nd : TChmContextNode;
 begin
   Cfg := TXMLConfig.Create(nil);
   Cfg.StartEmpty := True;
-  Cfg.Filename := FileName;
+  Cfg.Filename := AFileName;
   Cfg.Clear;
   Cfg.SetValue('Files/Count/Value', Files.Count);
-  for I := 0 to Files.Count-1 do begin
+  for I := 0 to Files.Count-1 do
+  begin
+    nd:=TChmContextNode(files.objects[i]);
     Cfg.SetValue('Files/FileName'+IntToStr(I)+'/Value', Files.Strings[I]);
+    if assigned(nd) then
+      begin
+        Cfg.SetValue('Files/FileName'+IntToStr(I)+'/ContextNumber', nd.contextnumber);
+        Cfg.SetValue('Files/FileName'+IntToStr(I)+'/ContextName', nd.contextname);
+      end;
   end;
+<<<<<<< HEAD
   Cfg.SetValue('Files/IndexFile/Value', IndexFileName);
   Cfg.SetValue('Files/TOCFile/Value', TableOfContentsFileName);
 <<<<<<< HEAD
@@ -1139,6 +1650,31 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+
+  Cfg.SetValue('OtherFiles/Count/Value', OtherFiles.Count);
+  for I := 0 to OtherFiles.Count-1 do
+    Cfg.SetValue('OtherFiles/FileName'+IntToStr(I)+'/Value', OtherFiles.Strings[I]);
+
+
+  Cfg.SetValue('Windows/Count/Value', FWindows.count);
+  for i:=0 To FWindows.Count-1 do
+    TCHMWindow(FWindows[i]).savetoxml(cfg,'Windows/item'+inttostr(i)+'/');
+
+  Cfg.SetValue('MergeFiles/Count/Value', FMergeFiles.count);
+  for i:=0 To FMergeFiles.Count-1 do
+    Cfg.SetValue('MergeFiles/FileName'+IntToStr(I)+'/value',FMergeFiles[i]);
+
+  // delete legacy keys.
+  Cfg.DeleteValue('Files/IndexFile/Value');
+  Cfg.DeleteValue('Files/TOCFile/Value');
+  Cfg.DeleteValue('Files/MakeBinaryTOC/Value');
+  Cfg.DeleteValue('Files/MakeBinaryIndex/Value');
+  Cfg.SetValue('Settings/IndexFile/Value', IndexFileName);
+  Cfg.SetValue('Settings/TOCFile/Value', TableOfContentsFileName);
+  Cfg.SetValue('Settings/MakeBinaryTOC/Value',MakeBinaryTOC);
+  Cfg.SetValue('Settings/MakeBinaryIndex/Value',MakeBinaryIndex);
+>>>>>>> origin/cpstrnew
 
 =======
   Cfg.SetValue('Files/MakeBinaryTOC/Value',MakeBinaryTOC);
@@ -1152,15 +1688,21 @@ begin
   Cfg.SetValue('Settings/DefaultFont/Value', DefaultFont);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 
   Cfg.SetValue('Settings/DefaultWindow/Value', DefaultWindow);
   Cfg.SetValue('Settings/ScanHtmlContents/Value', ScanHtmlContents);
 
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
   Cfg.Flush;
   Cfg.Free;
 end;
@@ -1172,6 +1714,9 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 procedure TChmProject.Error(errorkind:TChmProjectErrorKind;msg:String;detaillevel:integer=0);
 begin
   if assigned(OnError) then
@@ -1179,6 +1724,7 @@ begin
 end;
 
 const
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1196,6 +1742,8 @@ var i,j,len : integer;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
    protocols   : array[0..2] of string = ('HTTP:','FTP:','MS-ITS:');
    protocollen : array[0..2] of integer= ( 5 ,4 ,7);
 
@@ -1204,11 +1752,14 @@ var i,j,len : integer;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 begin
@@ -1223,6 +1774,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   { Check for protocols before adding local path }
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1232,6 +1784,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   i:=0;
   while (i<=high(protocols)) do
     begin
@@ -1239,6 +1793,7 @@ begin
         exit(false);
       inc(i);
     end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1266,6 +1821,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
    outstring:=instring;
 
    i:=pos('#',outstring);
@@ -1274,11 +1831,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -1307,6 +1867,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function findattribute(node:TDomNode;attributename:string):String;
 var
     Attributes: TDOMNamedNodeMap;
@@ -1321,6 +1882,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure checkattributes(node:TDomNode;attributename:string;filelist :TStringList);
 var
     Attributes: TDOMNamedNodeMap;
@@ -1331,6 +1894,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1338,10 +1902,13 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   if assigned(node) then
     begin
       Attributes:=node.Attributes;
       if assigned(attributes) then
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1380,6 +1947,8 @@ var chld: TDomNode;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
          begin
            for n:=0 to attributes.length-1 do
              begin
@@ -1403,11 +1972,14 @@ var chld: TDomNode;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 begin
@@ -1417,6 +1989,7 @@ begin
       chld:=prnt.firstchild;
       while assigned(chld) do
         begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1434,12 +2007,16 @@ begin
 =======
           scantags(chld,filelist);  // depth first.
 >>>>>>> origin/cpstrnew
+=======
+          scantags(chld,filelist);  // depth first.
+>>>>>>> origin/cpstrnew
           if (chld is TDomElement) then
             begin
               s:=uppercase(tdomelement(chld).tagname);
               if s='LINK' then
                 begin
                   //printattributes(chld,'');
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1457,10 +2034,14 @@ begin
 =======
                   checkattributes(chld,'HREF',filelist);
 >>>>>>> origin/cpstrnew
+=======
+                  checkattributes(chld,'HREF',filelist);
+>>>>>>> origin/cpstrnew
                 end;
              if s='IMG'then
                begin
                   //printattributes(chld,'');
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1478,10 +2059,14 @@ begin
 =======
                   checkattributes(chld,'SRC',filelist);
 >>>>>>> origin/cpstrnew
+=======
+                  checkattributes(chld,'SRC',filelist);
+>>>>>>> origin/cpstrnew
                end;
              if s='A'then
                begin
                   //printattributes(chld,'');
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1514,6 +2099,9 @@ begin
 =======
                   checkattributes(chld,'HREF',filelist);
 >>>>>>> origin/cpstrnew
+=======
+                  checkattributes(chld,'HREF',filelist);
+>>>>>>> origin/cpstrnew
                 end;
             end;
           chld:=chld.nextsibling;
@@ -1543,6 +2131,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      exit(true);
 =======
      exit(false);
@@ -1553,6 +2142,9 @@ begin
 =======
      exit(false);
 >>>>>>> graemeg/cpstrnew
+=======
+     exit(false);
+>>>>>>> origin/cpstrnew
 =======
      exit(false);
 >>>>>>> origin/cpstrnew
@@ -1592,6 +2184,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                scantags(domdoc,extractfilename(fn),localfilelist);
 =======
                scantags(domdoc,localfilelist);
@@ -1602,6 +2195,9 @@ begin
 =======
                scantags(domdoc,localfilelist);
 >>>>>>> graemeg/cpstrnew
+=======
+               scantags(domdoc,localfilelist);
+>>>>>>> origin/cpstrnew
 =======
                scantags(domdoc,localfilelist);
 >>>>>>> origin/cpstrnew
@@ -1653,6 +2249,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       if sanitizeurl(fbasepath,x.local,'','Site Map for '+x.Text,S) then   // sanitize, remove stuff etc.
 =======
       if sanitizeurl(fbasepath,x.local,S) then   // sanitize, remove stuff etc.
@@ -1663,6 +2260,9 @@ begin
 =======
       if sanitizeurl(fbasepath,x.local,S) then   // sanitize, remove stuff etc.
 >>>>>>> graemeg/cpstrnew
+=======
+      if sanitizeurl(fbasepath,x.local,S) then   // sanitize, remove stuff etc.
+>>>>>>> origin/cpstrnew
 =======
       if sanitizeurl(fbasepath,x.local,S) then   // sanitize, remove stuff etc.
 >>>>>>> origin/cpstrnew
@@ -1712,6 +2312,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   x      : TChmSiteMap;
 >>>>>>> graemeg/cpstrnew
@@ -1721,6 +2322,9 @@ var
 =======
   x      : TChmSiteMap;
 >>>>>>> graemeg/cpstrnew
+=======
+  x      : TChmSiteMap;
+>>>>>>> origin/cpstrnew
 =======
   x      : TChmSiteMap;
 >>>>>>> origin/cpstrnew
@@ -1760,6 +2364,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  if assigned(FToc) then
    begin
        Error(chmnote,'Scanning TOC file : '+FTableOfContentsFileName+'.',3);
@@ -1788,6 +2393,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
  if FTableOfContentsFileName<>'' then
@@ -1832,6 +2439,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1839,10 +2447,13 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
  localfilelist.free;
 end;
 
 
+<<<<<<< HEAD
 procedure TChmProject.WriteChm(AOutStream: TStream);
 var
   Writer     : TChmWriter;
@@ -1881,17 +2492,30 @@ begin
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 procedure TChmProject.WriteChm(AOutStream: TStream);
 var
-  Writer: TChmWriter;
+  Writer     : TChmWriter;
   TOCStream,
   IndexStream: TFileStream;
+<<<<<<< HEAD
 
 begin
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  nd         : TChmContextNode;
+  I          : Integer;
+begin
+  // Scan html for "rest" files.
+
+  If ScanHtmlContents Then
+    ScanHtml;                 // Since this is slowing we opt to skip this step, and only do this on html load.
+
+>>>>>>> origin/cpstrnew
   IndexStream := nil;
   TOCStream := nil;
 
@@ -1900,6 +2524,7 @@ begin
   // our callback to get data
   Writer.OnGetFileData := @GetData;
   Writer.OnLastFile    := @LastFileAdded;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1925,11 +2550,22 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+
+  // give it the list of html files
+  Writer.FilesToCompress.AddStrings(Files);
+
+  // give it the list of other files
+
+  Writer.FilesToCompress.AddStrings(OtherFiles);
+
+>>>>>>> origin/cpstrnew
   // now some settings in the chm
   Writer.DefaultPage := DefaultPage;
   Writer.Title := Title;
   Writer.DefaultFont := DefaultFont;
   Writer.FullTextSearch := MakeSearchable;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1963,6 +2599,13 @@ begin
   Writer.TocName   := TableOfContentsFileName;
 
 >>>>>>> origin/cpstrnew
+=======
+  Writer.HasBinaryTOC := MakeBinaryTOC;
+  Writer.HasBinaryIndex := MakeBinaryIndex;
+  Writer.IndexName := IndexFileName;
+  Writer.TocName   := TableOfContentsFileName;
+
+>>>>>>> origin/cpstrnew
   for i:=0 to files.count-1 do
     begin
       nd:=TChmContextNode(files.objects[i]);
@@ -1973,6 +2616,7 @@ begin
     end;
   if FWIndows.Count>0 then
     Writer.Windows:=FWIndows;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1989,6 +2633,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
   // and write!
 
@@ -1996,6 +2642,7 @@ begin
 
   Writer.Execute;
 
+<<<<<<< HEAD
   if Assigned(TOCStream) then TOCStream.Free;
   if Assigned(IndexStream) then IndexStream.Free;
   Writer.Free;
@@ -2086,8 +2733,11 @@ end;
   // and write!
   Writer.Execute;
 
+=======
+>>>>>>> origin/cpstrnew
   if Assigned(TOCStream) then TOCStream.Free;
   if Assigned(IndexStream) then IndexStream.Free;
+  Writer.Free;
 end;
 
 <<<<<<< HEAD

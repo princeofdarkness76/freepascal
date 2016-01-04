@@ -603,6 +603,7 @@ type
     function GetMaxChainLength: Longword;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   protected
     function Chain(const index: Longword):TFPObjectList;
 <<<<<<< HEAD
@@ -624,7 +625,10 @@ type
 =======
 >>>>>>> origin/fixes_2_2
     function Chain(const index: Longword):TFPObjectList;
+=======
+>>>>>>> origin/cpstrnew
   protected
+    function Chain(const index: Longword):TFPObjectList;
     Function CreateNewNode(const aKey : string) : THTCustomNode; virtual; abstract;
     Procedure AddNode(ANode : THTCustomNode); virtual; abstract;
     function ChainLength(const ChainIndex: Longword): Longword; virtual;

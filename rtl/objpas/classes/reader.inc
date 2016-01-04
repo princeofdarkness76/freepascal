@@ -177,6 +177,7 @@ begin
   Read(Signature, 4);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if Signature <> LongInt(unaligned(FilerSignature)) then
 =======
   if Signature <> LongInt({$ifdef FPC_SUPPORTS_UNALIGNED}unaligned{$endif}(FilerSignature)) then
@@ -184,6 +185,9 @@ begin
 =======
   if Signature <> LongInt({$ifdef FPC_SUPPORTS_UNALIGNED}unaligned{$endif}(FilerSignature)) then
 >>>>>>> origin/fixes_2_2
+=======
+  if Signature <> LongInt(unaligned(FilerSignature)) then
+>>>>>>> origin/cpstrnew
     raise EReadError.Create(SInvalidImage);
 >>>>>>> graemeg/cpstrnew
 end;
@@ -707,6 +711,7 @@ end;
 procedure TReader.BeginReferences;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   FLoaded := TFpList.Create;
 =======
   FLoaded := TList.Create;
@@ -714,6 +719,9 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  FLoaded := TFpList.Create;
+>>>>>>> origin/cpstrnew
 end;
 
 procedure TReader.CheckValue(Value: TValueType);

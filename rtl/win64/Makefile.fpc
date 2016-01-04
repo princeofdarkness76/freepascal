@@ -13,6 +13,7 @@ loaders=$(LOADERS)
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 units=system uuchar objpas macpas iso7185 buildrtl cpall lineinfo lnfodwrf
 =======
 units=system objpas macpas iso7185 buildrtl lineinfo lnfodwrf
@@ -32,6 +33,9 @@ units=system objpas macpas buildrtl lineinfo lnfodwrf
 =======
 units=system objpas macpas buildrtl lineinfo lnfodwrf
 >>>>>>> origin/fixes_2_2
+=======
+units=system objpas macpas iso7185 buildrtl lineinfo lnfodwrf
+>>>>>>> origin/cpstrnew
 implicitunits=ctypes strings \
       extpas \
       heaptrc \
@@ -54,6 +58,7 @@ implicitunits=ctypes strings \
       winevent video mouse keyboard \
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       sharemem exeinfo fpintres windirs \
       cpu signals
 <<<<<<< HEAD
@@ -73,6 +78,11 @@ implicitunits=ctypes strings \
 =======
       sharemem exeinfo
 >>>>>>> origin/fixes_2_2
+=======
+      sharemem exeinfo fpintres windirs \
+      cpu signals
+# mmx
+>>>>>>> origin/cpstrnew
 #      fpcmemdll
 #     winsysut signals
 #     no cygwin so far

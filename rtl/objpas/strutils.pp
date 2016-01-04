@@ -626,6 +626,9 @@ var
   pc : pchar;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   PosEx:=0;
   SubLen := Length(SubStr);
   if (SubLen > 0) and (Offset > 0) and (Offset <= Cardinal(Length(S))) then
@@ -647,6 +650,7 @@ begin
       i := indexbyte(S[Offset],Length(S) - Offset + 1, Byte(SubFirst));
     end;
   end;
+<<<<<<< HEAD
 =======
   if (offset<1) or (offset>SizeUInt(length(s))) then exit(0);
   i:=strpos(@s[offset],@substr[1]);
@@ -658,6 +662,8 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 Function PosEx(c:char; const S: string; Offset: Cardinal): Integer;
@@ -681,6 +687,7 @@ begin
   posex:=posex(substr,s,1);
 end;
 
+<<<<<<< HEAD
 function StringsReplace(const S: string; OldPattern, NewPattern: array of string;  Flags: TReplaceFlags): string;
 
 var pc,pcc,lastpc : pchar;
@@ -724,6 +731,8 @@ var pc,pcc,lastpc : pchar;
 
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/cpstrnew
 function StringsReplace(const S: string; OldPattern, NewPattern: array of string;  Flags: TReplaceFlags): string;
 
 var pc,pcc,lastpc : pchar;

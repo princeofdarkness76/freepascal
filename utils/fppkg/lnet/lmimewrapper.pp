@@ -2,6 +2,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   CopyRight (C) 2007-2008 by Ales Katona
 =======
   CopyRight (C) 2007 Ales Katona
@@ -9,6 +10,9 @@
 =======
   CopyRight (C) 2007 Ales Katona
 >>>>>>> origin/fixes_2_2
+=======
+  CopyRight (C) 2007-2008 by Ales Katona
+>>>>>>> origin/cpstrnew
 
   This library is Free software; you can rediStribute it and/or modify it
   under the terms of the GNU Library General Public License as published by
@@ -622,6 +626,7 @@ end;
 procedure TMimeStream.DoRead(const aSize: Integer);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 var
   n: Integer;
@@ -630,6 +635,8 @@ var
 var
   n: Integer;
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 begin
   ActivateFirstSection;
   

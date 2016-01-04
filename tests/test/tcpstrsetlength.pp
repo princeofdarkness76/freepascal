@@ -4,6 +4,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$ifdef darwin}iosxwstr{$else}cwstring{$endif},
 =======
   cwstring,
@@ -17,10 +18,14 @@ uses
 =======
   cwstring,
 >>>>>>> origin/cpstrnew
+=======
+  cwstring,
+>>>>>>> origin/cpstrnew
 {$endif unix}
   SysUtils;
 
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -35,6 +40,9 @@ type
 =======
   ts866 = type string<866>;
 >>>>>>> graemeg/cpstrnew
+=======
+  ts866 = type string<866>;
+>>>>>>> origin/cpstrnew
 =======
   ts866 = type string<866>;
 >>>>>>> origin/cpstrnew

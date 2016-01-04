@@ -113,6 +113,7 @@ type
   public
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     constructor Create(const AIdent, AValue: string);
 =======
     constructor Create(AIdent, AValue: string);
@@ -120,6 +121,9 @@ type
 =======
     constructor Create(AIdent, AValue: string);
 >>>>>>> origin/fixes_2_2
+=======
+    constructor Create(const AIdent, AValue: string);
+>>>>>>> origin/cpstrnew
     property Ident: string read FIdent write FIdent;
     property Value: string read FValue write FValue;
   end;
@@ -129,6 +133,7 @@ type
     function GetItem(Index: integer): TIniFileKey;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function KeyByName(const AName: string; CaseSensitive : Boolean): TIniFileKey;
 =======
     function KeyByName(AName: string; CaseSensitive : Boolean): TIniFileKey;
@@ -136,6 +141,9 @@ type
 =======
     function KeyByName(AName: string; CaseSensitive : Boolean): TIniFileKey;
 >>>>>>> origin/fixes_2_2
+=======
+    function KeyByName(const AName: string; CaseSensitive : Boolean): TIniFileKey;
+>>>>>>> origin/cpstrnew
   public
     destructor Destroy; override;
     procedure Clear; override;
@@ -150,6 +158,7 @@ type
     Function Empty : Boolean;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     constructor Create(const AName: string);
 =======
     constructor Create(AName: string);
@@ -157,6 +166,9 @@ type
 =======
     constructor Create(AName: string);
 >>>>>>> origin/fixes_2_2
+=======
+    constructor Create(const AName: string);
+>>>>>>> origin/cpstrnew
     destructor Destroy; override;
     property Name: string read FName;
     property KeyList: TIniFileKeyList read FKeyList;
@@ -167,6 +179,7 @@ type
     function GetItem(Index: integer): TIniFileSection;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function SectionByName(const AName: string; CaseSensitive : Boolean): TIniFileSection;
 =======
     function SectionByName(AName: string; CaseSensitive : Boolean): TIniFileSection;
@@ -174,6 +187,9 @@ type
 =======
     function SectionByName(AName: string; CaseSensitive : Boolean): TIniFileSection;
 >>>>>>> origin/fixes_2_2
+=======
+    function SectionByName(const AName: string; CaseSensitive : Boolean): TIniFileSection;
+>>>>>>> origin/cpstrnew
   public
     destructor Destroy; override;
     procedure Clear;override;
@@ -195,6 +211,7 @@ type
     FEscapeLineFeeds: boolean;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FCaseSensitive : Boolean;
     FStripQuotes : Boolean;
     FFormatSettingsActive: Boolean;
@@ -207,6 +224,9 @@ type
 >>>>>>> graemeg/fixes_2_2
 =======
     FCaseSensitive : Boolean; 
+=======
+    FCaseSensitive : Boolean;
+>>>>>>> origin/cpstrnew
     FStripQuotes : Boolean;
   public
 >>>>>>> origin/fixes_2_2
@@ -368,6 +388,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function IsComment(const AString: string): boolean;
 =======
 function IsComment(AString: string): boolean;
@@ -375,6 +396,9 @@ function IsComment(AString: string): boolean;
 =======
 function IsComment(AString: string): boolean;
 >>>>>>> origin/fixes_2_2
+=======
+function IsComment(const AString: string): boolean;
+>>>>>>> origin/cpstrnew
 begin
   Result := False;
   if AString > '' then
@@ -534,6 +558,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 constructor TIniFileKey.Create(const AIdent, AValue: string);
 =======
 constructor TIniFileKey.Create(AIdent, AValue: string);
@@ -541,6 +566,9 @@ constructor TIniFileKey.Create(AIdent, AValue: string);
 =======
 constructor TIniFileKey.Create(AIdent, AValue: string);
 >>>>>>> origin/fixes_2_2
+=======
+constructor TIniFileKey.Create(const AIdent, AValue: string);
+>>>>>>> origin/cpstrnew
 begin
   FIdent := AIdent;
   FValue := AValue;
@@ -557,6 +585,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TIniFileKeyList.KeyByName(const AName: string; CaseSensitive : Boolean): TIniFileKey;
 =======
 function TIniFileKeyList.KeyByName(AName: string; CaseSensitive : Boolean): TIniFileKey;
@@ -564,6 +593,9 @@ function TIniFileKeyList.KeyByName(AName: string; CaseSensitive : Boolean): TIni
 =======
 function TIniFileKeyList.KeyByName(AName: string; CaseSensitive : Boolean): TIniFileKey;
 >>>>>>> origin/fixes_2_2
+=======
+function TIniFileKeyList.KeyByName(const AName: string; CaseSensitive : Boolean): TIniFileKey;
+>>>>>>> origin/cpstrnew
 var
   i: integer;
 begin
@@ -574,6 +606,7 @@ begin
       for i := 0 to Count-1 do
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if Items[i].Ident=AName then
 =======
         if Items[i].Ident=AName then 
@@ -581,11 +614,15 @@ begin
 =======
         if Items[i].Ident=AName then 
 >>>>>>> origin/fixes_2_2
+=======
+        if Items[i].Ident=AName then
+>>>>>>> origin/cpstrnew
           begin
           Result := Items[i];
           Break;
           end;
       end
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     else
@@ -595,6 +632,9 @@ begin
 =======
     else  
 >>>>>>> origin/fixes_2_2
+=======
+    else
+>>>>>>> origin/cpstrnew
       for i := 0 to Count-1 do
         if CompareText(Items[i].Ident, AName) = 0 then begin
           Result := Items[i];
@@ -637,6 +677,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 constructor TIniFileSection.Create(const AName: string);
 =======
 constructor TIniFileSection.Create(AName: string);
@@ -644,6 +685,9 @@ constructor TIniFileSection.Create(AName: string);
 =======
 constructor TIniFileSection.Create(AName: string);
 >>>>>>> origin/fixes_2_2
+=======
+constructor TIniFileSection.Create(const AName: string);
+>>>>>>> origin/cpstrnew
 begin
   FName := AName;
   FKeyList := TIniFileKeyList.Create;
@@ -665,6 +709,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TIniFileSectionList.SectionByName(const AName: string; CaseSensitive : Boolean): TIniFileSection;
 =======
 function TIniFileSectionList.SectionByName(AName: string; CaseSensitive : Boolean): TIniFileSection;
@@ -672,6 +717,9 @@ function TIniFileSectionList.SectionByName(AName: string; CaseSensitive : Boolea
 =======
 function TIniFileSectionList.SectionByName(AName: string; CaseSensitive : Boolean): TIniFileSection;
 >>>>>>> origin/fixes_2_2
+=======
+function TIniFileSectionList.SectionByName(const AName: string; CaseSensitive : Boolean): TIniFileSection;
+>>>>>>> origin/cpstrnew
 var
   i: integer;
 begin
@@ -682,6 +730,7 @@ begin
       for i:=0 to Count-1 do
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (Items[i].Name=AName) then
 =======
         if (Items[i].Name=AName) then 
@@ -689,6 +738,9 @@ begin
 =======
         if (Items[i].Name=AName) then 
 >>>>>>> origin/fixes_2_2
+=======
+        if (Items[i].Name=AName) then
+>>>>>>> origin/cpstrnew
           begin
           Result := Items[i];
           Break;
@@ -698,6 +750,7 @@ begin
       for i := 0 to Count-1 do
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if CompareText(Items[i].Name, AName) = 0 then
 =======
         if CompareText(Items[i].Name, AName) = 0 then 
@@ -705,6 +758,9 @@ begin
 =======
         if CompareText(Items[i].Name, AName) = 0 then 
 >>>>>>> origin/fixes_2_2
+=======
+        if CompareText(Items[i].Name, AName) = 0 then
+>>>>>>> origin/cpstrnew
           begin
           Result := Items[i];
           Break;
@@ -1048,6 +1104,7 @@ begin
   try
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     if FileExists(FFileName) then
 =======
     if FileExists(FFileName) then 
@@ -1055,10 +1112,14 @@ begin
 =======
     if FileExists(FFileName) then 
 >>>>>>> origin/fixes_2_2
+=======
+    if FileExists(FFileName) then
+>>>>>>> origin/cpstrnew
       begin
       // read the ini file values
       slLines.LoadFromFile(FFileName);
       FillSectionList(slLines);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       end
@@ -1068,6 +1129,9 @@ begin
 =======
       end 
 >>>>>>> origin/fixes_2_2
+=======
+      end
+>>>>>>> origin/cpstrnew
   finally
     slLines.Free;
   end;
@@ -1101,17 +1165,23 @@ begin
   If FDirty and FCacheUpdates then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
     try
       UpdateFile;
     except
       // Eat exception. Compatible to D7 behaviour, see comments to bug 19046
     end;  
+<<<<<<< HEAD
 =======
     UpdateFile;
 >>>>>>> graemeg/fixes_2_2
 =======
     UpdateFile;
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
   inherited destroy;
 end;
 
@@ -1203,6 +1273,7 @@ begin
              sValue:=Trim(Copy(sLine, j + 1, Length(sLine) - j));
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -1219,6 +1290,8 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
            end;
         end;
         oSection.KeyList.Add(TIniFileKey.Create(sIdent, sValue));
@@ -1233,11 +1306,15 @@ var
   oKey: TIniFileKey;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   J: integer;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  J: integer;
+>>>>>>> origin/cpstrnew
 begin
   Result := Default;
   oSection := FSectionList.SectionByName(Section,CaseSensitive);
@@ -1246,6 +1323,9 @@ begin
     if oKey <> nil then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
       If StripQuotes then
       begin
         J:=Length(oKey.Value);
@@ -1396,6 +1476,7 @@ var
   s: string;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   i,J: integer;
 =======
   i: integer;
@@ -1403,6 +1484,9 @@ var
 =======
   i: integer;
 >>>>>>> origin/fixes_2_2
+=======
+  i,J: integer;
+>>>>>>> origin/cpstrnew
 begin
   Strings.BeginUpdate;
   try
@@ -1412,6 +1496,9 @@ begin
       for i := 0 to Count-1 do begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
         s := Items[i].Value;
       If StripQuotes then
         begin
@@ -1424,12 +1511,15 @@ begin
         end;
         if Items[i].Ident<>'' then
           s:=Items[i].Ident+Separator+s;
+<<<<<<< HEAD
 =======
         s := Items[i].Ident+Separator+Items[i].Value;
 >>>>>>> graemeg/fixes_2_2
 =======
         s := Items[i].Ident+Separator+Items[i].Value;
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
         Strings.Add(s);
       end;
   finally
@@ -1472,6 +1562,7 @@ begin
   oSection := FSectionList.SectionByName(Section,CaseSensitive);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if oSection <> nil then
     begin
     oKey := oSection.KeyList.KeyByName(Ident,CaseSensitive);
@@ -1483,9 +1574,12 @@ begin
 =======
 >>>>>>> origin/fixes_2_2
   if oSection <> nil then 
+=======
+  if oSection <> nil then
+>>>>>>> origin/cpstrnew
     begin
     oKey := oSection.KeyList.KeyByName(Ident,CaseSensitive);
-    if oKey <> nil then 
+    if oKey <> nil then
       begin
       oSection.KeyList.Delete(oSection.KeyList.IndexOf(oKey));
       oKey.Free;

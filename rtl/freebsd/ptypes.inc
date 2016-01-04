@@ -141,6 +141,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   
    psem_t = ^sem_t;
    ppsem_t= ^psem_t;
@@ -179,6 +180,11 @@ type
    sem_t_rec		= record end;
    sem_t                = ^sem_t_rec;
 >>>>>>> origin/cpstrnew
+=======
+
+   sem_t_rec		= record end;
+   sem_t                = ^sem_t_rec;
+>>>>>>> origin/cpstrnew
    rlim_t		= int64;
    TRlim		= rlim_t;
   {
@@ -205,12 +211,15 @@ type
   );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 Const
      MNAMLEN   = 88-2*sizeof(clong); // slightly machine specific.
      MFSNamLen = 16;	
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 type
   fsid_t  = array[0..1] of cint32;
 
@@ -305,6 +314,7 @@ Type TStatFS =  {?} Record
   end;
  
   PStatFS4=^TStatFs4;
+<<<<<<< HEAD
 
   mbstate_t = record
       case byte of
@@ -319,8 +329,10 @@ Type TStatFS =  {?} Record
         1: (_mbstateL: cint64); { for alignment }
     end;
     pmbstate_t = ^mbstate_t;
+=======
+>>>>>>> origin/cpstrnew
 
-    mbstate_t = record
+  mbstate_t = record
       case byte of
         0: (__mbstate8: array[0..127] of char);
         1: (_mbstateL: cint64); { for alignment }

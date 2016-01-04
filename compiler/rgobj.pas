@@ -183,6 +183,7 @@ unit rgobj;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         spillednodes: tsuperregisterworklist;
 
         { can be overridden to add cpu specific interferences }
@@ -195,6 +196,8 @@ unit rgobj;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         { can be overridden to add cpu specific interferences }
         procedure add_cpu_interferences(p : tai);virtual;
         procedure add_constraints(reg:Tregister);virtual;
@@ -202,11 +205,14 @@ unit rgobj;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         function  getregisterinline(list:TAsmList;const subregconstraints:Tsubregisterset):Tregister;
@@ -263,6 +269,7 @@ unit rgobj;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         has_usedmarks: boolean;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -271,6 +278,8 @@ unit rgobj;
 
         { Disposes of the reginfo array.}
 =======
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -468,6 +477,7 @@ unit rgobj;
          live_range_direction:=rad_forward;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
          supregset_reset(extended_backwards,false,high(tsuperregister));
          supregset_reset(backwards_was_first,false,high(tsuperregister));
@@ -476,11 +486,14 @@ unit rgobj;
          supregset_reset(extended_backwards,false,high(tsuperregister));
          supregset_reset(backwards_was_first,false,high(tsuperregister));
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
          first_imaginary:=Afirst_imaginary;
          maxreg:=Afirst_imaginary;
          regtype:=Aregtype;
          defaultsub:=Adefaultsub;
          preserved_by_proc:=Apreserved_by_proc;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -500,6 +513,10 @@ unit rgobj;
          // default value set by newinstance
          // used_in_proc:=[];
 >>>>>>> graemeg/cpstrnew
+=======
+         // default value set by newinstance
+         // used_in_proc:=[];
+>>>>>>> origin/cpstrnew
 =======
          // default value set by newinstance
          // used_in_proc:=[];
@@ -845,6 +862,9 @@ unit rgobj;
           begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
             if not assigned(extended_backwards) then
               begin
                 { create expects a "size", not a "max bit" parameter -> +1 }
@@ -857,6 +877,7 @@ unit rgobj;
                   extended_backwards.clear;
                 backwards_was_first.clear;
               end;
+<<<<<<< HEAD
             int_live_range_direction:=rad_backwards;
           end
         else
@@ -890,9 +911,9 @@ unit rgobj;
 >>>>>>> origin/fixes_2_2
             if (dir=rad_backwards_reinit) then
               supregset_reset(extended_backwards,false,high(tsuperregister));
+=======
+>>>>>>> origin/cpstrnew
             int_live_range_direction:=rad_backwards;
-            { new registers may be allocated }
-            supregset_reset(backwards_was_first,false,high(tsuperregister));
           end
         else
           int_live_range_direction:=rad_forward;
@@ -2208,6 +2229,7 @@ unit rgobj;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure trgobj.do_spill_read(list:TAsmList;pos:tai;const spilltemp:treference;tempreg:tregister;orgsupreg:tsuperregister);
       var
         ins:tai_cpu_abstract_sym;
@@ -2240,6 +2262,11 @@ unit rgobj;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    procedure trgobj.do_spill_read(list:TAsmList;pos:tai;const spilltemp:treference;tempreg:tregister);
+      var
+        ins:Taicpu;
+>>>>>>> origin/cpstrnew
       begin
         ins:=spilling_create_load(spilltemp,tempreg);
         add_cpu_interferences(ins);
@@ -2264,6 +2291,7 @@ unit rgobj;
     procedure Trgobj.do_spill_written(list:TAsmList;pos:tai;const spilltemp:treference;tempreg:tregister);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       var
         ins:Taicpu;
 <<<<<<< HEAD
@@ -2286,6 +2314,10 @@ unit rgobj;
     var ins:Taicpu;
 
 >>>>>>> origin/fixes_2_2
+=======
+      var
+        ins:Taicpu;
+>>>>>>> origin/cpstrnew
       begin
         ins:=spilling_create_store(tempreg,spilltemp);
         add_cpu_interferences(ins);
@@ -2377,6 +2409,7 @@ unit rgobj;
 <<<<<<< HEAD
     function trgobj.instr_get_oper_spilling_info(var regs: tspillregsinfo; const r: tsuperregisterset; instr: tai_cpu_abstract_sym; opidx: longint): boolean;
 =======
+
 
 
 
@@ -2611,6 +2644,7 @@ unit rgobj;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   loadreg:=getregisterinline(list,regs.reginfo[counter].spillregconstraints);
                   do_spill_read(list,tai(loadpos.previous),spilltemplist[orgreg],loadreg,orgreg);
 =======
@@ -2618,6 +2652,8 @@ unit rgobj;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                   tempreg:=getregisterinline(list,regs[counter].spillregconstraints);
@@ -2673,11 +2709,14 @@ unit rgobj;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                   { The original instruction will be the next that uses this register, this

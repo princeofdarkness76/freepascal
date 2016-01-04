@@ -87,6 +87,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure fpc_intf_assign(var D: pointer; const s: pointer); [external name 'FPC_INTF_ASSIGN'];
 =======
 >>>>>>> graemeg/cpstrnew
@@ -94,6 +95,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -194,6 +197,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           begin
             // decrease reference count
             fpc_class_cast_intf:=nil;
@@ -208,6 +212,9 @@
 =======
           pointer(fpc_class_cast_intf):=tmpi
 >>>>>>> graemeg/cpstrnew
+=======
+          pointer(fpc_class_cast_intf):=tmpi
+>>>>>>> origin/cpstrnew
 =======
           pointer(fpc_class_cast_intf):=tmpi
 >>>>>>> origin/cpstrnew
@@ -556,6 +563,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         exceptaddr : codepointer) : HResult;
 =======
         exceptaddr : pointer) : HResult;
@@ -566,6 +574,9 @@
 =======
         exceptaddr : pointer) : HResult;
 >>>>>>> graemeg/cpstrnew
+=======
+        exceptaddr : pointer) : HResult;
+>>>>>>> origin/cpstrnew
 =======
         exceptaddr : pointer) : HResult;
 >>>>>>> origin/cpstrnew
@@ -776,6 +787,7 @@
         TClassGetter = function: TObject of object;
 
       function GetInterfaceByEntry(Instance: pointer; IEntry: pinterfaceentry; out obj): boolean;
+<<<<<<< HEAD
         var
           Getter: TMethod;
         begin
@@ -919,42 +931,48 @@
           Instance: TObject;
 =======
       function getcorbainterfacebyentry(Instance: pointer; IEntry: pinterfaceentry; out obj): boolean;
+=======
+>>>>>>> origin/cpstrnew
         var
-          Getter: function: IInterface of object;
+          Getter: TMethod;
         begin
           Pointer(Obj) := nil;
+          Getter.Data := Instance;
           if Assigned(IEntry) and Assigned(Instance) then
           begin
             case IEntry^.IType of
               etStandard:
-                begin
-                  //writeln('Doing etStandard cast of ', TObject(Instance).classname(), ' with self = ', ptruint(Instance), ' and offset = ', IEntry^.IOffset);
-                  Pbyte(Obj):=Pbyte(instance)+IEntry^.IOffset;
-                end;
-              etFieldValue:
-                begin
-                  //writeln('Doing etFieldValue cast of ', TObject(Instance).classname(), ' with offset = ', IEntry^.IOffset);
-                  Pointer(obj) := ppointer(Pbyte(Instance)+IEntry^.IOffset)^;
-                end;
+                  Pointer(Obj) := PByte(instance)+IEntry^.IOffset;
+              etFieldValue, etFieldValueClass:
+                  Pointer(obj) := PPointer(PByte(Instance)+IEntry^.IOffset)^;
               etVirtualMethodResult:
                 begin
-                  //writeln('Doing etVirtualMethodResult cast of ', TObject(Instance).classname());
-                  TMethod(Getter).data := Instance;
-                  TMethod(Getter).code := ppointer(Pbyte(Instance) + IEntry^.IOffset)^;
-                  Pointer(obj) := Pointer(Getter());
+                  // IOffset is relative to the VMT, not to instance.
+                  Getter.code := PPointer(PByte(PPointer(Instance)^) + IEntry^.IOffset)^;
+                  TInterfaceGetter(Getter)(obj);
+                end;
+              etVirtualMethodClass:
+                begin
+                  // IOffset is relative to the VMT, not to instance.
+                  Getter.code := PPointer(PByte(PPointer(Instance)^) + IEntry^.IOffset)^;
+                  TObject(obj) := TClassGetter(Getter)();
                 end;
               etStaticMethodResult:
                 begin
-                  //writeln('Doing etStaticMethodResult cast of ', TObject(Instance).classname());
-                  TMethod(Getter).data := Instance;
-                  TMethod(Getter).code := pointer(IEntry^.IOffset);
-                  Pointer(obj) := Pointer(Getter());
+                  Getter.code := Pointer(IEntry^.IOffset);
+                  TInterfaceGetter(Getter)(obj);
+                end;
+              etStaticMethodClass:
+                begin
+                  Getter.code := Pointer(IEntry^.IOffset);
+                  TObject(obj) := TClassGetter(Getter)();
                 end;
             end;
           end;
           result := assigned(pointer(obj));
         end;
 
+<<<<<<< HEAD
       function getcorbainterfacebyentry(Instance: pointer; IEntry: pinterfaceentry; out obj): boolean;
         var
           Getter: function: IInterface of object;
@@ -994,6 +1012,45 @@
 
       function TObject.getinterface(const iid : tguid;out obj) : boolean;
 >>>>>>> graemeg/fixes_2_2
+=======
+      function TObject.GetInterface(const iid : tguid;out obj) : boolean;
+        var
+          IEntry: PInterfaceEntry;
+          Instance: TObject;
+        begin
+          if IsGUIDEqual(IObjectInstance,iid) then
+          begin
+            TObject(Obj) := Self;
+            Result := True;
+            Exit;
+          end;
+
+          Instance := self;
+          repeat
+            IEntry := Instance.GetInterfaceEntry(iid);
+            result := GetInterfaceByEntry(Instance, IEntry, obj);
+
+            if (not result) or
+              (IEntry^.IType in [etStandard, etFieldValue,
+               etStaticMethodResult, etVirtualMethodResult]) then
+              Break;
+
+            { if interface is implemented by a class-type property or field,
+              continue search }
+            Instance := TObject(obj);
+          until False;
+
+          { Getter function will normally AddRef, so adding another reference here
+            will cause memleak. }
+          if result and (IEntry^.IType in [etStandard, etFieldValue]) then
+            IInterface(obj)._AddRef;
+        end;
+
+      function TObject.GetInterfaceWeak(const iid : tguid; out obj) : boolean;
+        var
+          IEntry: PInterfaceEntry;
+          Instance: TObject;
+>>>>>>> origin/cpstrnew
         begin
           if IsGUIDEqual(IObjectInstance,iid) then
           begin
@@ -1052,6 +1109,7 @@
       function TObject.GetInterface(const iidstr : shortstring;out obj) : boolean;
         begin
 <<<<<<< HEAD
+<<<<<<< HEAD
           Result := GetInterfaceByStr(iidstr,obj);
 =======
           Result := getcorbainterfacebyentry(self, getinterfaceentrybystr(iidstr), obj);
@@ -1072,6 +1130,11 @@
 >>>>>>> origin/fixes_2_2
         end;
 
+=======
+          Result := GetInterfaceByStr(iidstr,obj);
+        end;
+
+>>>>>>> origin/cpstrnew
       class function TObject.GetInterfaceEntry(const iid : tguid) : pinterfaceentry;
         var
           i: longint;
@@ -1262,6 +1325,7 @@
 
     function TContainedObject.QueryInterface(
 <<<<<<< HEAD
+<<<<<<< HEAD
             {$IFDEF FPC_HAS_CONSTREF}constref{$ELSE}const{$ENDIF} iid : tguid;out obj) : longint; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
 
     begin
@@ -1271,6 +1335,9 @@
         result:=longint(E_NOINTERFACE);
 =======
             const iid : tguid;out obj) : longint; stdcall;
+=======
+            {$IFDEF FPC_HAS_CONSTREF}constref{$ELSE}const{$ENDIF} iid : tguid;out obj) : longint; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
+>>>>>>> origin/cpstrnew
 
 =======
 
@@ -1280,7 +1347,7 @@
 >>>>>>> origin/fixes_2_2
     begin
       if getinterface(iid,obj) then
-        result:=0
+        result:=S_OK
       else
         result:=longint(E_NOINTERFACE); 
 <<<<<<< HEAD

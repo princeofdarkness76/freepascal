@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {%skiptarget=wince}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -18,6 +19,9 @@
 =======
 {%skiptarget=wince}
 >>>>>>> origin/fixes_2.4
+=======
+{%skiptarget=wince}
+>>>>>>> origin/cpstrnew
 
 { This file is to check if there is some memory corruption
   due to startup code with argument loading
@@ -59,6 +63,9 @@ uses
 
 const
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   Prefix =
 {$ifdef Unix}
   './'
@@ -66,8 +73,11 @@ const
   ''
 {$endif}
   ;
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
   ExeSuffix =
 {$ifdef HasExeSuffix}
   '.exe'
@@ -90,10 +100,14 @@ const
   Everything_ok : boolean = true;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   cmd:=Prefix+'targ1a'+ExeSuffix;
 =======
   cmd:='targ1a'+ExeSuffix;
 >>>>>>> origin/fixes_2.4
+=======
+  cmd:=Prefix+'targ1a'+ExeSuffix;
+>>>>>>> origin/cpstrnew
   arg:='';
   first_wrong:=-1;
   for i:=0 to MAX do
@@ -104,11 +118,16 @@ begin
       if (DosExitCode<>0) or (DosError<>0) then
         begin
 <<<<<<< HEAD
+<<<<<<< HEAD
           Writeln(stderr,'Crash detected, DosError=', DosError);
           Writeln(stderr,'DosExitCode=',DosExitCode);
 =======
           Writeln(stderr,'Crash detected');
 >>>>>>> origin/fixes_2.4
+=======
+          Writeln(stderr,'Crash detected, DosError=', DosError);
+          Writeln(stderr,'DosExitCode=',DosExitCode);
+>>>>>>> origin/cpstrnew
           if first_wrong=-1 then
             first_wrong:=i;
           Everything_ok := false;
@@ -130,6 +149,7 @@ begin
     end;
 end.
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
@@ -234,3 +254,5 @@ end.
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew

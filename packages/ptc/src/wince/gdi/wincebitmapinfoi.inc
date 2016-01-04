@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
     This file is part of the PTCPas framebuffer library
 <<<<<<< HEAD
@@ -13,6 +14,10 @@
 =======
 >>>>>>> graemeg/cpstrnew
 =======
+>>>>>>> origin/cpstrnew
+=======
+{
+    This file is part of the PTCPas framebuffer library
 >>>>>>> origin/cpstrnew
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
 
@@ -43,6 +48,7 @@
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -111,21 +117,28 @@ begin
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 
 {TODO: create DIBs with the same color depth as the desktop}
 
-Constructor TWinCEBitmapInfo.Create(AWidth, AHeight : Integer);
+constructor TWinCEBitmapInfo.Create(AWidth, AHeight: Integer);
 
-Begin
+begin
   FBitmapInfo := GetMem(SizeOf(BITMAPINFOHEADER) + 12);
 
   FillChar(FBitmapInfo^.bmiHeader, SizeOf(BITMAPINFOHEADER), 0);
+<<<<<<< HEAD
   With FBitmapInfo^.bmiHeader Do
   Begin
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  With FBitmapInfo^.bmiHeader do
+  begin
+>>>>>>> origin/cpstrnew
     biSize := SizeOf(BITMAPINFOHEADER);
     biWidth := AWidth;
     biHeight := -AHeight;
@@ -139,6 +152,7 @@ Begin
     biClrImportant := 0;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   end;
 =======
   End;
@@ -146,6 +160,9 @@ Begin
 =======
   End;
 >>>>>>> origin/fixes_2_2
+=======
+  end;
+>>>>>>> origin/cpstrnew
 
   PDWord(@FBitmapInfo^.bmiColors)[0] := $FF0000;
   PDWord(@FBitmapInfo^.bmiColors)[1] := $00FF00;
@@ -158,6 +175,7 @@ Begin
 
 //  FPixels := GetMem(AWidth * AHeight * 4);
 //  FillChar(FPixels^, AWidth * AHeight * 4, 0);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 end;
@@ -200,16 +218,24 @@ end;
 =======
 >>>>>>> origin/fixes_2_2
 End;
+=======
+end;
+>>>>>>> origin/cpstrnew
 
-Destructor TWinCEBitmapInfo.Destroy;
+destructor TWinCEBitmapInfo.Destroy;
 
-Begin
+begin
 //  FreeMem(FPixels);
   FreeMem(FBitmapInfo);
   FFormat.Free;
+<<<<<<< HEAD
   Inherited Destroy;
 End;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  inherited Destroy;
+end;
+>>>>>>> origin/cpstrnew

@@ -18,6 +18,7 @@ name=fcl-process
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 version=3.1.1
 
 [require]
@@ -36,6 +37,9 @@ version=2.2.5
 =======
 version=2.2.5
 >>>>>>> origin/fixes_2_2
+=======
+version=2.5.1
+>>>>>>> origin/cpstrnew
 
 [target]
 units=pipes process
@@ -46,6 +50,7 @@ units_haiku=simpleipc dbugmsg dbugintf
 units_freebsd=simpleipc dbugmsg dbugintf
 units_darwin=simpleipc dbugmsg dbugintf
 units_iphonesim=simpleipc dbugmsg dbugintf
+<<<<<<< HEAD
 =======
 units_freebsd=simpleipc dbugmsg dbugintf
 units_darwin=simpleipc dbugmsg dbugintf
@@ -54,6 +59,8 @@ units_darwin=simpleipc dbugmsg dbugintf
 units_freebsd=simpleipc dbugmsg dbugintf
 units_darwin=simpleipc dbugmsg dbugintf
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 units_solaris=simpleipc dbugmsg dbugintf
 units_netbsd=simpleipc dbugmsg dbugintf
 units_openbsd=simpleipc dbugmsg dbugintf
@@ -91,6 +98,7 @@ includedir_morphos=src/dummy
 includedir_amiga=src/dummy
 includedir_netware=src/dummy
 includedir_netwlibc=src/dummy
+<<<<<<< HEAD
 sourcedir=src/$(OS_TARGET) src
 >>>>>>> graemeg/cpstrnew
 =======
@@ -108,6 +116,8 @@ includedir_emx=src/os2
 includedir_win32=src/win
 includedir_win64=src/win
 includedir_wince=src/win
+=======
+>>>>>>> origin/cpstrnew
 sourcedir=src/$(OS_TARGET) src
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2

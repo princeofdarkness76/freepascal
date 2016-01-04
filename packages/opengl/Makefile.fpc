@@ -18,6 +18,7 @@ name=opengl
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 version=3.1.1
 
 [require]
@@ -36,6 +37,9 @@ version=2.2.5
 =======
 version=2.2.5
 >>>>>>> origin/fixes_2_2
+=======
+version=2.5.1
+>>>>>>> origin/cpstrnew
 
 [require]
 packages_linux=x11
@@ -45,15 +49,20 @@ packages_openbsd=x11
 packages_darwin=x11
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 packages_i386_iphonesim=x11
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+packages_i386_iphonesim=x11
+>>>>>>> origin/cpstrnew
 
 [target]
 units=gl glu glut
 units_win32=glext
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 units_haiku=glext
@@ -61,6 +70,9 @@ units_haiku=glext
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+units_haiku=glext
+>>>>>>> origin/cpstrnew
 units_linux=glx glext
 units_freebsd=glx glext
 units_netbsd=glx glext
@@ -82,6 +94,8 @@ implicitunits=freeglut
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+
+implicitunits=freeglut
 
 [install]
 fpcpackage=y

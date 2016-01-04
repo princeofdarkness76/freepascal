@@ -101,6 +101,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     import,export,link,i_nwm,ogbase, ogcoff, ognlm, owar, cclasses
 =======
     import,export,link,i_nwm,ogbase, ogcoff, ognlm, cclasses
@@ -111,6 +112,9 @@ implementation
 =======
     import,export,link,i_nwm,ogbase, ogcoff, ognlm, cclasses
 >>>>>>> graemeg/cpstrnew
+=======
+    import,export,link,i_nwm,ogbase, ogcoff, ognlm, cclasses
+>>>>>>> origin/cpstrnew
 =======
     import,export,link,i_nwm,ogbase, ogcoff, ognlm, cclasses
 >>>>>>> origin/cpstrnew
@@ -613,6 +617,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         CArObjectReader:=TArObjectReader;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -620,6 +625,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         CExeoutput:=TNLMexeoutput;
@@ -701,6 +708,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
           p : integer;
 >>>>>>> graemeg/cpstrnew
@@ -710,6 +718,9 @@ end;
 =======
           p : integer;
 >>>>>>> graemeg/cpstrnew
+=======
+          p : integer;
+>>>>>>> origin/cpstrnew
 =======
           p : integer;
 >>>>>>> origin/cpstrnew
@@ -768,6 +779,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
           p : integer;
 >>>>>>> graemeg/cpstrnew
@@ -777,6 +789,9 @@ end;
 =======
           p : integer;
 >>>>>>> graemeg/cpstrnew
+=======
+          p : integer;
+>>>>>>> origin/cpstrnew
 =======
           p : integer;
 >>>>>>> origin/cpstrnew
@@ -1004,6 +1019,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 AddImportSymbol('!clib',s,s,0,false);
 =======
                 AddImportSymbol('!clib',s,0,false);
@@ -1014,6 +1030,9 @@ end;
 =======
                 AddImportSymbol('!clib',s,0,false);
 >>>>>>> graemeg/cpstrnew
+=======
+                AddImportSymbol('!clib',s,0,false);
+>>>>>>> origin/cpstrnew
 =======
                 AddImportSymbol('!clib',s,0,false);
 >>>>>>> origin/cpstrnew
@@ -1052,6 +1071,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       MakeSharedLibrary := false;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1059,6 +1079,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     end;
@@ -1078,11 +1100,14 @@ initialization
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   RegisterImport(system_i386_netware,TImportLibNetware);

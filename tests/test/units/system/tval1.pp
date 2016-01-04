@@ -1,8 +1,11 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 unit tval1;
 
@@ -30,6 +33,7 @@ begin
 end;
 
 end.
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
@@ -67,3 +71,5 @@ end.
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew

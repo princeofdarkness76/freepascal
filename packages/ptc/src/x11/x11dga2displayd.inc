@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
     This file is part of the PTCPas framebuffer library
 <<<<<<< HEAD
@@ -17,6 +18,11 @@
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
 =======
+    Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> origin/cpstrnew
+=======
+{
+    This file is part of the PTCPas framebuffer library
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> origin/cpstrnew
     Original C++ version by Christian Nentwich (c.nentwich@cs.ucl.ac.uk)
@@ -37,6 +43,7 @@
     this library, you may extend this exception to your version of the library,
     but you are not obligated to do so. If you do not wish to do so, delete this
     exception statement from your version.
+<<<<<<< HEAD
 
     This library is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -172,24 +179,37 @@ type
 =======
 >>>>>>> origin/fixes_2_2
 {$IFDEF ENABLE_X11_EXTENSION_XF86DGA2}
+=======
+>>>>>>> origin/cpstrnew
 
-Type
-  TX11DGA2Display = Class(TX11Display)
-  Private
-    Function NextEvent(Var event : TPTCEvent; wait : Boolean; Const EventMask : TPTCEventMask) : Boolean; Override;
-    Function PeekEvent(wait : Boolean; Const EventMask : TPTCEventMask) : TPTCEvent; Override;
+    This library is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Lesser General Public License for more details.
 
-    Procedure HandleEvents;
+    You should have received a copy of the GNU Lesser General Public
+    License along with this library; if not, write to the Free Software
+    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+}
 
+{$IFDEF ENABLE_X11_EXTENSION_XF86DGA2}
+
+type
+  TX11DGA2Display = class(TX11Display)
+  private
+    FXDGAEventBase: cint;
+    FXDGAErrorBase: cint;
+  
     { The list of available modes (todo: move to local vars in the open function) }
-    FXDGAModes : PXDGAMode;
-    FXDGAModesNum : cint;
+    FXDGAModes: PXDGAMode;
+    FXDGAModesNum: cint;
 
     { Holds the pointer to the framebuffer and all the other information for
       the current mode (or nil, if a mode isn't open) }
-    FXDGADevice : PXDGADevice;
+    FXDGADevice: PXDGADevice;
 
     { Coordinates of upper left frame corner }
+<<<<<<< HEAD
     m_destx, m_desty : Integer;
 
     FModeIsSet : Boolean;
@@ -217,5 +237,36 @@ Type
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    FDestX, FDestY: Integer;
+
+    FModeIsSet: Boolean;
+    FFramebufferIsOpen: Boolean;
+
+    function NextEvent(var event: TPTCEvent; wait: Boolean; const EventMask: TPTCEventMask): Boolean; override;
+    function PeekEvent(wait: Boolean; const EventMask: TPTCEventMask): TPTCEvent; override;
+
+    procedure HandleEvents;
+  public
+    constructor Create(ADisplay: PDisplay; AScreen: Integer; const AFlags: TX11Flags); override;
+    destructor Destroy; override;
+
+    procedure open(ATitle: string; AWidth, AHeight: Integer; const AFormat: TPTCFormat); override;
+    procedure open(w: TWindow; const _format: TPTCFormat); override;
+    procedure open(_window: TWindow; const _format: TPTCFormat; x, y, w, h: Integer); override;
+    procedure close; override;
+    procedure GetModes(var AModes: TPTCModeDynArray); override;
+    procedure update; override;
+    procedure update(const _area: TPTCArea); override;
+    function lock: Pointer; override;
+    procedure unlock; override;
+    procedure palette(const _palette: TPTCPalette); override;
+    function GetPitch: Integer; override;
+    function getX11Window: TWindow; override;
+    function isFullScreen: Boolean; override;
+    procedure SetCursor(visible: Boolean); override;
+    procedure SetMouseGrab(AGrabMouse: Boolean); override;
+  end;
+>>>>>>> origin/cpstrnew
 
 {$ENDIF ENABLE_X11_EXTENSION_XF86DGA2}

@@ -62,17 +62,21 @@ begin
         AddUnit('cairo');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         AddUnit('freetypeh');
 >>>>>>> graemeg/fixes_2_2
 =======
         AddUnit('freetypeh');
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
       end;
    T:=P.Targets.AddUnit('cairoxlib.pp',AllUnixOSes);
     with T.Dependencies do
       begin
         AddUnit('cairo');
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       end;
@@ -84,17 +88,21 @@ begin
 >>>>>>> origin/fixes_2_2
         AddUnit('xlib');
         AddUnit('xrender');
+=======
+>>>>>>> origin/cpstrnew
       end;
    T:=P.Targets.AddUnit('cairowin32.pp',AllWindowOses);
     with T.Dependencies do
-      begin
         AddUnit('cairo');
+<<<<<<< HEAD
         AddUnit('windows');
       end;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 {$ifndef ALLPACKAGES}
     Run;
     end;

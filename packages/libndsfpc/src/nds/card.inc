@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef NDS_INTERFACE}
 const  
   // Card bus
@@ -52,19 +53,24 @@ const
 *)
 
 
+=======
+>>>>>>> origin/cpstrnew
 {$ifdef NDS_INTERFACE}
 const  
   // Card bus
-  CARD_CR1       : pcuint16 = pointer($040001A0);
-  CARD_CR1H      : pcuint8  = pointer($040001A1);
-  CARD_EEPDATA   : pcuint8  = pointer($040001A2);
-  CARD_CR2       : pcuint32 = pointer($040001A4);
   CARD_COMMAND   : pcuint8  = pointer($040001A8);
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  REG_ROMCTRL    : pcuint32 = pointer($040001A4);
+  REG_AUXSPICNT  : pcuint16 = pointer($040001A0);
+  REG_AUXSPICNTH : pcuint8  = pointer($040001A1);
+  REG_AUXSPIDATA : pcuint8  = pointer($040001A2);
+>>>>>>> origin/cpstrnew
   CARD_DATA_RD   : pcuint32 = pointer($04100010);
 
   CARD_1B0       : pcuint32 = pointer($040001B0);
@@ -74,10 +80,14 @@ const
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   CARD_CR1_ENABLE = $80;  // in byte 1, i.e. 0x8000
   CARD_CR1_IRQ    = $40;  // in byte 1, i.e. 0x4000
 
   // SPI EEPROM COMMANDS
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -104,6 +114,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   EEPROM_WRSR = $01;
   EEPROM_WRDI = $04;
   EEPROM_RDSR = $05;
@@ -114,11 +126,14 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   CARD_ACTIVATE   = (1 shl 31);  // when writing, get the ball rolling
@@ -207,6 +222,7 @@ procedure cardParamCommand(command: cuint8; parameter, flags: cuint32; destinati
 procedure cardReadHeader(header: pcuint8); cdecl; external;
 function cardReadID(flags: cuint32): cuint32; cdecl; external;
 procedure cardReset(); cdecl; external;
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -233,6 +249,8 @@ function cardEepromCommand(command: cuint8): cuint8; cdecl; external;
 =======
 >>>>>>> origin/fixes_2_2
 
+=======
+>>>>>>> origin/cpstrnew
 
 procedure cardWriteCommand(const command: pcuint8); cdecl; external;
 
@@ -245,12 +263,19 @@ function cardReadID(flags: cuint32): cint; cdecl; external;
 procedure cardReadEeprom(address: cuint32;  data: pcuint8;  length: cuint32;  addrtype: cuint32); cdecl; external; 
 procedure cardWriteEeprom(address: cuint32;  data: pcuint8;  length: cuint32;  addrtype: cuint32); cdecl; external; 
 
+<<<<<<< HEAD
 function cardEepromReadID(i: cuint8): cuint8; cdecl; external;
 function cardEepromCommand(command: cuint8; address: cuint32): cuint8; cdecl; external;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+function cardEepromReadID(): cuint32; cdecl; external;
+
+function cardEepromCommand(command: cuint8): cuint8; cdecl; external;
+
+>>>>>>> origin/cpstrnew
 function cardEepromGetType({void}): cint; cdecl; external;
 function cardEepromGetSize(): cuint32; cdecl; external;
 procedure cardEepromChipErase({void}); cdecl; external;

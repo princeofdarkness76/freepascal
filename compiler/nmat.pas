@@ -177,6 +177,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 if nf_isomod in flags then
                   begin
                     if lv>=0 then
@@ -206,6 +207,11 @@ implementation
               divn:
                 t:=create_simplified_ord_const(lv div rv,resultdef,forinline);
 >>>>>>> graemeg/cpstrnew
+=======
+                t:=create_simplified_ord_const(lv mod rv,resultdef,forinline);
+              divn:
+                t:=create_simplified_ord_const(lv div rv,resultdef,forinline);
+>>>>>>> origin/cpstrnew
 =======
                 t:=create_simplified_ord_const(lv mod rv,resultdef,forinline);
               divn:
@@ -272,11 +278,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
          result:=simplify(false);
@@ -825,11 +834,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
          result:=simplify(false);
@@ -1171,6 +1183,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         { avoid any problems with type parameters later on }
         if is_typeparam(left.resultdef) then
@@ -1185,6 +1198,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         set_varstate(left,vs_read,[vsf_must_be_valid]);
@@ -1204,6 +1219,7 @@ implementation
             result:=left;
             left:=nil;
           end
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1228,6 +1244,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifndef cpu64bitaddr}
         else if is_64bit(left.resultdef) then
           begin
@@ -1239,11 +1257,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         else if (left.resultdef.typ=orddef) then
@@ -1369,6 +1390,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
              { not-nodes are not range checked by the code generator -> also
                don't range check while inlining; the resultdef is a bit tricky
                though: the node's resultdef gets changed in most cases compared
@@ -1391,10 +1413,13 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
              if not forinline then
                t:=cordconstnode.create(v,def,false)
              else
                t:=create_simplified_ord_const(v,resultdef,true);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1411,6 +1436,8 @@ implementation
 =======
              t:=cordconstnode.create(v,def,false);
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
              result:=t;
              exit;
           end;

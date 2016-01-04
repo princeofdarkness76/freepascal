@@ -21,6 +21,7 @@ Function fppipe(var fildes : tfildes):cint;assembler;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Extracted from linux/source/arch/mips/kernel/syscall.c:
   * For historic reasons the pipe(2) syscall on MIPS has an unusual calling
   * convention.  It returns results in registers $v0 / $v1 which means there
@@ -56,6 +57,8 @@ asm
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 }
 asm
 // At present it is NOT IMPLEMENTED for MIPS
@@ -64,11 +67,14 @@ asm
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 end;

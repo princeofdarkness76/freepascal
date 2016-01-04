@@ -632,10 +632,13 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 function TCustomMemoryStream.Read(var Buffer; Count: LongInt): LongInt;
@@ -774,6 +777,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TMemoryStream.SetSize({$ifdef CPU64}const NewSize: Int64{$else}NewSize: LongInt{$endif});
 =======
 procedure TMemoryStream.SetSize({$ifdef CPU64}const{$endif CPU64} NewSize: PtrInt);
@@ -784,6 +788,9 @@ procedure TMemoryStream.SetSize({$ifdef CPU64}const{$endif CPU64} NewSize: PtrIn
 =======
 procedure TMemoryStream.SetSize({$ifdef CPU64}const{$endif CPU64} NewSize: PtrInt);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TMemoryStream.SetSize({$ifdef CPU64}const{$endif CPU64} NewSize: PtrInt);
+>>>>>>> origin/cpstrnew
 =======
 procedure TMemoryStream.SetSize({$ifdef CPU64}const{$endif CPU64} NewSize: PtrInt);
 >>>>>>> origin/cpstrnew
@@ -954,11 +961,14 @@ procedure TResourceStream.Initialize(Instance: THandle; Name, ResType: PWideChar
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   begin
@@ -1004,7 +1014,10 @@ procedure TResourceStream.Initialize(Instance: THandle; Name, ResType: PChar; Na
 
 procedure TResourceStream.Initialize(Instance: THandle; Name, ResType: PChar; NameIsID: Boolean);
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   begin
@@ -1069,6 +1082,7 @@ begin
   FOwnership:=Ownership;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_bReverted:=false;   // mantis 15003
 			// http://www.tech-archive.net/Archive/German/microsoft.public.de.vc/2005-08/msg00791.html
 			// http://code.google.com/p/ddab-lib/wiki/TPJIStreamWrapper
@@ -1076,6 +1090,11 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  m_bReverted:=false;   // mantis 15003
+			// http://www.tech-archive.net/Archive/German/microsoft.public.de.vc/2005-08/msg00791.html
+			// http://code.google.com/p/ddab-lib/wiki/TPJIStreamWrapper
+>>>>>>> origin/cpstrnew
 end;
 
 
@@ -1880,71 +1899,229 @@ end;
   
 {$warnings off}
 function TStreamAdapter.Read(pv: Pointer; cb: DWORD; pcbRead: PDWORD): HResult; stdcall;
+var
+  readcount: Longint;
 begin
-  runerror(217);
-end;
+  if m_bReverted then
+    begin
+      Result := STG_E_REVERTED;
+      Exit;
+    end;
+  if pv = nil then
+    begin
+      Result := STG_E_INVALIDPOINTER;
+      Exit;
+    end;
 
+  readcount := FStream.Read(pv^, cb);
+  if pcbRead <> nil then pcbRead^ := readcount;
+  Result := S_OK;
+end;
 
 function TStreamAdapter.Write(pv: Pointer; cb: DWORD; pcbWritten: PDWORD): HResult; stdcall;
+var
+  writecount: Longint;
 begin
-  runerror(217);
-end;
+  if m_bReverted then
+    begin
+      Result := STG_E_REVERTED;
+      Exit;
+    end;
+  if pv = nil then
+    begin
+      Result := STG_E_INVALIDPOINTER;
+      Exit;
+    end;
 
+  writecount := FStream.Write(pv^, cb);
+  if pcbWritten <> nil then pcbWritten^ := writecount;
+  Result := S_OK;
+end;
 
 function TStreamAdapter.Seek(dlibMove: Largeint; dwOrigin: Longint; out libNewPosition: Largeint): HResult; stdcall;
+var
+  newpos: Int64;
 begin
-  runerror(217);
+  if m_bReverted then
+    begin
+      Result := STG_E_REVERTED;
+      Exit;
+    end;
+  case dwOrigin of
+    STREAM_SEEK_SET: newpos := FStream.Seek(dlibMove, soBeginning);
+    STREAM_SEEK_CUR: newpos := FStream.Seek(dlibMove, soCurrent);
+    STREAM_SEEK_END: newpos := FStream.Seek(dlibMove, soEnd);
+    else 
+      begin 
+        Result := STG_E_INVALIDFUNCTION; 
+        Exit; 
+      end;
+  end;
+  if @libNewPosition <> nil then
+    libNewPosition := newpos;
+  Result := S_OK;
 end;
-
 
 function TStreamAdapter.SetSize(libNewSize: Largeint): HResult; stdcall;
 begin
-  runerror(217);
+  if m_bReverted then
+    begin
+      Result := STG_E_REVERTED;
+      Exit;
+    end;
+  if libNewSize<0 then
+    begin
+      Result := STG_E_INVALIDFUNCTION;
+      Exit;
+    end;
+  try
+    FStream.Size := libNewSize;
+    Result := S_OK;
+  except
+    // TODO: return different error value according to exception like STG_E_MEDIUMFULL
+    Result := E_FAIL;
+  end;
 end;
 
 
 function TStreamAdapter.CopyTo(stm: IStream; cb: Largeint; out cbRead: Largeint; out cbWritten: Largeint): HResult; stdcall;
+var
+  sz: dword;
+  buffer : array[0..1023] of byte;
 begin
-  runerror(217);
-end;
+  if m_bReverted then
+    begin
+      Result := STG_E_REVERTED;
+      Exit;
+    end;
 
+  // the method is similar to TStream.CopyFrom => use CopyFrom implementation
+  cbWritten := 0;
+  cbRead := 0;
+  while cb > 0 do
+    begin
+      if (cb > sizeof(buffer)) then
+        sz := sizeof(Buffer)
+      else
+        sz := cb;
+      sz := FStream.Read(buffer, sz);
+      inc(cbRead, sz);
+      stm.Write(@buffer[0], sz, @sz);
+      inc(cbWritten, sz);
+      if sz = 0 then
+        begin
+          Result := E_FAIL;
+          Exit;
+        end;
+      dec(cb, sz);
+    end;
+  Result := S_OK;
+end;
 
 function TStreamAdapter.Commit(grfCommitFlags: Longint): HResult; stdcall;
 begin
-  runerror(217);
+  if m_bReverted then
+    Result := STG_E_REVERTED
+  else
+    Result := S_OK;
 end;
-
 
 function TStreamAdapter.Revert: HResult; stdcall;
 begin
-  runerror(217);
+  m_bReverted := True;
+  Result := S_OK;
 end;
 
 
 function TStreamAdapter.LockRegion(libOffset: Largeint; cb: Largeint; dwLockType: Longint): HResult; stdcall;
 begin
-  runerror(217);
+  Result := STG_E_INVALIDFUNCTION;
 end;
 
 
 function TStreamAdapter.UnlockRegion(libOffset: Largeint; cb: Largeint; dwLockType: Longint): HResult; stdcall;
 begin
-  runerror(217);
+  Result := STG_E_INVALIDFUNCTION;
 end;
 
 
 function TStreamAdapter.Stat(out statstg: TStatStg; grfStatFlag: Longint): HResult; stdcall;
 begin
-  runerror(217);
-end;
+  if m_bReverted then
+    begin
+      Result := STG_E_REVERTED;
+      Exit;
+    end;
+  if grfStatFlag in [STATFLAG_DEFAULT,STATFLAG_NOOPEN,STATFLAG_NONAME] then
+  begin
+    if @statstg <> nil then
+    begin
+      fillchar(statstg, sizeof(TStatStg),#0);
+      
+      { //TODO handle pwcsName
+        if grfStatFlag = STATFLAG_DEFAULT then
+          runerror(217) //Result :={$ifdef windows} STG_E_INVALIDFLAG{$else}E_INVALID_FLAG{$endif}
+      }
 
+      statstg.dwType := STGTY_STREAM;
+      statstg.cbSize := FStream.Size;
+      statstg.grfLocksSupported := LOCK_WRITE;
+    end;
+    Result := S_OK;
+  end else
+    Result := STG_E_INVALIDFLAG
+end; 
 
 function TStreamAdapter.Clone(out stm: IStream): HResult; stdcall;
 begin
-  runerror(217);
+  if m_bReverted then
+    begin
+      Result := STG_E_REVERTED;
+      Exit;
+    end;
+  // don't raise an exception here return error value that function is not implemented
+  // to implement this we need a clone method for TStream class
+  Result := STG_E_UNIMPLEMENTEDFUNCTION;
 end;
+
+constructor TProxyStream.Create(const Stream: IStream);
+begin
+  FStream := Stream;
+end;
+
+function TProxyStream.Read(var Buffer; Count: Longint): Longint;
+begin
+  Check(FStream.Read(@Buffer, Count, @Result));
+end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+
+function TProxyStream. Seek(const Offset: int64; Origin: TSeekOrigin): int64;
+begin
+  Check(FStream.Seek(Offset, ord(Origin), result));
+end;
+
+function TProxyStream.Write(const Buffer; Count: Longint): Longint;
+begin
+  Check(FStream.Write(@Buffer, Count, @Result));
+end;
+
+function TProxyStream.GetIStream: IStream;
+begin
+  Result := FStream;
+end; 
+
+procedure TProxyStream.Check(err:integer);
+var e : EInOutError;
+begin 
+  e:= EInOutError.Create('Proxystream.Check');
+  e.Errorcode:=err;
+  raise e;
+end;
+
+>>>>>>> origin/cpstrnew
 {$warnings on}

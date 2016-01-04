@@ -72,6 +72,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 -1,
 =======
 16,
@@ -85,6 +86,10 @@
 16,
 16,
 >>>>>>> graemeg/cpstrnew
+=======
+16,
+16,
+>>>>>>> origin/cpstrnew
 =======
 16,
 16,
@@ -137,6 +142,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 21,
 22,
 23,
@@ -159,6 +165,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 21,

@@ -574,6 +574,9 @@ implementation
                   register_maybe_adjust_setbase(current_asmdata.CurrAsmList,left.location,setbase);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
                   { emit bit test operation -- warning: do not use
                     location_force_reg() to force a set into a register, except
                     to a register of the same size as the set. The reason is
@@ -587,6 +590,7 @@ implementation
                   cg.a_bit_test_reg_loc_reg(current_asmdata.CurrAsmList,
                     left.location.size,location.size,
                     left.location.register,right.location,location.register);
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -599,6 +603,8 @@ implementation
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 
                   { now zero the result if left > nr_of_bits_in_right_register }
                   hr := cg.getintregister(current_asmdata.CurrAsmList,location.size);

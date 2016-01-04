@@ -133,8 +133,8 @@ type
 =======
 >>>>>>> origin/fixes_2_2
     procedure StartOverview(WithAccess : Boolean); override;
-    procedure WriteOverviewMember(ALabel,AName,Access,ADescr : String); override;
-    procedure WriteOverviewMember(ALabel,AName,ADescr : String); override;
+    procedure WriteOverviewMember(const ALabel,AName,Access,ADescr : String); override;
+    procedure WriteOverviewMember(const ALabel,AName,ADescr : String); override;
     procedure EndOverview; override;
     Class Function FileNameExtension : String; override;
 <<<<<<< HEAD
@@ -884,11 +884,15 @@ begin
         [EscapeText(SDocPage), EscapeText(SDocProperty), EscapeText(SDocDescription)]);
 end;
 
+<<<<<<< HEAD
 procedure TRTFWriter.WriteOverviewMember(ALabel,AName,Access,ADescr : String);
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+procedure TRTFWriter.WriteOverviewMember(const ALabel,AName,Access,ADescr : String);
+>>>>>>> origin/cpstrnew
 begin
   //TODO: Translate Latex \pageref to RTF
   //WriteLnF('\pageref{%s} & %s  & %s & %s \\',[ALabel,AName,Access,ADescr]);
@@ -898,6 +902,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TRTFWriter.WriteOverviewMember(const ALabel,AName,ADescr : String);
 =======
 procedure TRTFWriter.WriteOverviewMember(ALabel,AName,ADescr : String);
@@ -905,6 +910,9 @@ procedure TRTFWriter.WriteOverviewMember(ALabel,AName,ADescr : String);
 =======
 procedure TRTFWriter.WriteOverviewMember(ALabel,AName,ADescr : String);
 >>>>>>> origin/fixes_2_2
+=======
+procedure TRTFWriter.WriteOverviewMember(const ALabel,AName,ADescr : String);
+>>>>>>> origin/cpstrnew
 begin
   //TODO: Translate Latex \pageref to RTF
   //WriteLnF('\pageref{%s} & %s  & %s \\',[ALabel,AName,ADescr]);

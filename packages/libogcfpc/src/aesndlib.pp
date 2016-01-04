@@ -18,6 +18,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef HW_DOL}
   DSP_DEFAULT_FREQ = 48044;
 {$else}
@@ -32,6 +33,9 @@ const
 =======
   DSP_DEFAULT_FREQ = 48000;
 >>>>>>> graemeg/cpstrnew
+=======
+  DSP_DEFAULT_FREQ = 48000;
+>>>>>>> origin/cpstrnew
 =======
   DSP_DEFAULT_FREQ = 48000;
 >>>>>>> origin/cpstrnew

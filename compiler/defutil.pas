@@ -30,6 +30,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        globtype,globals,constexp,
        symconst,symtype,symdef,
 =======
@@ -37,6 +38,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
        cclasses,
@@ -64,6 +67,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     {# Returns True, if definition defines a type that behaves like a string,
        namely that can be joined and compared with another string-like type }
     function is_stringlike(def : tdef) : boolean;
@@ -80,6 +84,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     {# Returns the minimal integer value of the type }
@@ -316,8 +322,12 @@ interface
     {# If @var(l) isn't in the range of todef a range check error (if not explicit) is generated and
       the value is placed within the range
     }
+<<<<<<< HEAD
     procedure testrange(fromdef, todef : tdef;var l : tconstexprint;explicit:boolean);
 >>>>>>> origin/fixes_2_2
+=======
+    procedure testrange(todef : tdef;var l : tconstexprint;explicit,forcerangecheck:boolean);
+>>>>>>> origin/cpstrnew
 
     {# Returns the range of def, where @var(l) is the low-range and @var(h) is
       the high-range.
@@ -376,6 +386,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     { # returns whether def is a type parameter of a generic }
     function is_typeparam(def : tdef) : boolean;{$ifdef USEINLINE}inline;{$endif}
 
@@ -391,6 +402,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 implementation
@@ -541,6 +554,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function is_stringlike(def : tdef) : boolean;
       begin
         result := is_string(def) or
@@ -569,6 +583,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -717,12 +733,17 @@ implementation
                           (tsetdef(def_from).setmax<=tsetdef(def_to).setmax);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          else
            is_in_limit:=false;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+         else
+           is_in_limit:=false;
+>>>>>>> origin/cpstrnew
          end;
       end;
 
@@ -730,6 +751,7 @@ implementation
     function is_managed_type(def: tdef): boolean;{$ifdef USEINLINE}inline;{$endif}
       begin
         result:=def.needs_inittable;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -753,6 +775,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       end;
@@ -1097,8 +1121,12 @@ implementation
 =======
     { if l isn't in the range of todef a range check error (if not explicit) is generated and
       the value is placed within the range }
+<<<<<<< HEAD
     procedure testrange(fromdef, todef : tdef;var l : tconstexprint;explicit:boolean);
 >>>>>>> origin/fixes_2_2
+=======
+    procedure testrange(todef : tdef;var l : tconstexprint;explicit,forcerangecheck:boolean);
+>>>>>>> origin/cpstrnew
       var
          lv,hv: TConstExprInt;
       begin
@@ -1121,12 +1149,15 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                    Message3(type_e_range_check_error_bounds,tostr(l),tostr(lv),tostr(hv))
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                    Message(parser_e_range_check_error)
@@ -1402,6 +1433,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               result:=int_cgsize(def.size);
               { can happen for far/huge pointers on non-i8086 }
               if result=OS_NO then
@@ -1411,6 +1443,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
               if not tprocvardef(def).is_addressonly then
@@ -1490,6 +1524,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function cgsize_orddef(size: tcgsize): torddef;
       begin
         case size of
@@ -1552,6 +1587,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     { In Windows 95 era, ordinals were restricted to [u8bit,s32bit,s16bit,bool16bit]
       As of today, both signed and unsigned types from 8 to 64 bits are supported. }
     function is_automatable(p : tdef) : boolean;
@@ -1560,6 +1597,7 @@ implementation
         case p.typ of
           orddef:
             result:=torddef(p).ordtype in [u8bit,s8bit,u16bit,s16bit,u32bit,s32bit,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1574,6 +1612,9 @@ implementation
 =======
               u64bit,s64bit,bool16bit];
 >>>>>>> graemeg/cpstrnew
+=======
+              u64bit,s64bit,bool16bit];
+>>>>>>> origin/cpstrnew
 =======
               u64bit,s64bit,bool16bit];
 >>>>>>> origin/cpstrnew
@@ -1628,6 +1669,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         llow:=min(ld.low,rd.low);
         lhigh:=max(ld.high,rd.high);
 =======
@@ -1635,6 +1677,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         llow:=rd.low;
@@ -1646,11 +1690,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         case range_to_basetype(llow,lhigh) of
@@ -1718,6 +1765,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function is_typeparam(def : tdef) : boolean;{$ifdef USEINLINE}inline;{$endif}
       begin
         result:=(def.typ=undefineddef);
@@ -1741,6 +1789,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 end.

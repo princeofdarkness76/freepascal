@@ -25,6 +25,7 @@ procedure TGMapTest.MapTest;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 var it:maplli.TIterator;
 =======
 var it:maplli.TMSet.pnode;
@@ -38,10 +39,14 @@ var it:maplli.TMSet.pnode;
 =======
 var it:maplli.TMSet.pnode;
 >>>>>>> origin/cpstrnew
+=======
+var it:maplli.TMSet.pnode;
+>>>>>>> origin/cpstrnew
 begin
   data[3]:=3;
   data[5]:=5;
   data[7]:=7;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -57,10 +62,13 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   AssertEquals('Wrong min key', 3, data.min()^.data.key);
   AssertEquals('Wrong max key', 7, data.max()^.data.key);
   AssertEquals('Wrong min val', 3, data.min()^.data.value);
   AssertEquals('Wrong max val', 7, data.max()^.data.value);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -71,10 +79,13 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
   AssertEquals('Wrong val', 5, data[5]);
 
   data.delete(3);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -90,6 +101,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   AssertEquals('Wrong min key', 5, data.min()^.data.key);
   AssertEquals('Wrong max key', 7, data.max()^.data.key);
   AssertEquals('Wrong min val', 5, data.min()^.data.value);
@@ -97,11 +110,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -116,6 +132,7 @@ begin
   data[17]:=42;
 
   it:=data.min;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -150,6 +167,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   AssertEquals('Wrong min', 3, it^.Data.key);
   it:=data.next(it);
   AssertEquals('Wrong next', 5, it^.Data.key);
@@ -175,11 +194,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 end;

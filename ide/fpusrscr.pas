@@ -27,6 +27,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef linux}
   linuxvcs,
 {$endif}
@@ -39,6 +40,11 @@ uses
   linuxvcs,
 {$endif}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifdef linux}
+  linuxvcs,
+{$endif}
+>>>>>>> origin/cpstrnew
 {$endif}
   video,Objects;
 
@@ -793,13 +799,17 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
                 if TTYFd = -1 then
                 begin
                   if try_grab_vcsa then
                     TTYFd:=fpOpen(FName, &666, O_RdWr); { try again }
                 end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -807,6 +817,8 @@ begin
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
                 If TTYFd <>-1 Then
                   Console:=ttyLinux;
 {$endif}

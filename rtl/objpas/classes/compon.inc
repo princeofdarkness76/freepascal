@@ -644,6 +644,7 @@ Function  TComponent.SafeCallException(ExceptObject: TObject;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   ExceptAddr: CodePointer): HResult;
 =======
   ExceptAddr: Pointer): HResult;
@@ -654,6 +655,9 @@ Function  TComponent.SafeCallException(ExceptObject: TObject;
 =======
   ExceptAddr: Pointer): HResult;
 >>>>>>> graemeg/cpstrnew
+=======
+  ExceptAddr: Pointer): HResult;
+>>>>>>> origin/cpstrnew
 =======
   ExceptAddr: Pointer): HResult;
 >>>>>>> origin/cpstrnew
@@ -691,6 +695,7 @@ begin
   else
   if GetInterface(IID, Obj) then
     Result := S_OK
+<<<<<<< HEAD
   else
     Result := E_NOINTERFACE;
 <<<<<<< HEAD
@@ -748,6 +753,26 @@ begin
     Result := IVCLComObject(VCLComObject).GetTypeInfoCount(Count)
   else
     Result := E_NOTIMPL;
+=======
+  else
+    Result := E_NOINTERFACE;
+end;
+
+function TComponent._AddRef: Integer;{$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
+begin
+  if Assigned(VCLComObject) then
+    Result := IVCLComObject(VCLComObject)._AddRef
+  else
+    Result := -1;
+end;
+
+function TComponent._Release: Integer;{$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
+begin
+  if Assigned(VCLComObject) then
+    Result := IVCLComObject(VCLComObject)._Release
+  else
+    Result := -1;
+>>>>>>> origin/cpstrnew
 end;
 
 <<<<<<< HEAD
@@ -844,4 +869,40 @@ function TComponent.iicrGetComponent: TComponent;
 begin
   result:=self;
 >>>>>>> origin/fixes_2_2
+end;
+
+function TComponent.GetTypeInfoCount(out Count: Integer): HResult; stdcall;
+begin
+  if Assigned(VCLComObject) then
+    Result := IVCLComObject(VCLComObject).GetTypeInfoCount(Count)
+  else
+    Result := E_NOTIMPL;
+end;
+
+function TComponent.GetTypeInfo(Index, LocaleID: Integer; out TypeInfo): HResult; stdcall;
+begin
+  if Assigned(VCLComObject) then
+    Result := IVCLComObject(VCLComObject).GetTypeInfo(Index, LocaleID, TypeInfo)
+  else
+    Result := E_NOTIMPL;
+end;
+
+function TComponent.GetIDsOfNames(const IID: TGUID; Names: Pointer; NameCount,
+  LocaleID: Integer; DispIDs: Pointer): HResult; stdcall;
+begin
+  if Assigned(VCLComObject) then
+    Result := IVCLComObject(VCLComObject).GetIDsOfNames(IID, Names, NameCount, LocaleID, DispIDs)
+  else
+    Result := E_NOTIMPL;
+end;
+
+function TComponent.Invoke(DispID: Integer; const IID: TGUID;
+  LocaleID: Integer; Flags: Word; var Params; VarResult, ExcepInfo,
+  ArgErr: Pointer): HResult; stdcall;
+begin
+  if Assigned(VCLComObject) then
+    Result := IVCLComObject(VCLComObject).Invoke(DispID, IID, LocaleID, Flags, Params,
+      VarResult, ExcepInfo, ArgErr)
+  else
+    Result := E_NOTIMPL;
 end;

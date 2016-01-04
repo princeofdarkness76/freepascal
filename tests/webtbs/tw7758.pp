@@ -21,6 +21,7 @@ const
 var
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   c: ansichar;
 =======
   c: char;
@@ -28,6 +29,9 @@ var
 =======
   c: char;
 >>>>>>> origin/fixes_2_2
+=======
+  c: ansichar;
+>>>>>>> origin/cpstrnew
   wc,wc2: widechar;
   s,s2,a: ansistring;
   w: widestring;

@@ -7,6 +7,7 @@ unit CocoaAll;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$packrecords c}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -14,6 +15,8 @@ unit CocoaAll;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 

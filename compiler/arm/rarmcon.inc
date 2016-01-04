@@ -29,6 +29,7 @@ NR_S0 = tregister($04060000);
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 NR_S1 = tregister($04060020);
 NR_D0 = tregister($04070000);
 NR_S2 = tregister($04060001);
@@ -82,6 +83,8 @@ NR_S31 = tregister($0406002F);
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 NR_S1 = tregister($04060000);
 NR_D0 = tregister($04070000);
 NR_S2 = tregister($04060001);
@@ -131,11 +134,14 @@ NR_S31 = tregister($0406000F);
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 NR_D15 = tregister($0407000F);
@@ -155,6 +161,7 @@ NR_D28 = tregister($0407001C);
 NR_D29 = tregister($0407001D);
 NR_D30 = tregister($0407001E);
 NR_D31 = tregister($0407001F);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -213,6 +220,10 @@ NR_FPSCR = tregister($05000001);
 NR_CPSR_C = tregister($05000000);
 NR_FPSCR = tregister($05000001);
 >>>>>>> graemeg/cpstrnew
+=======
+NR_CPSR_C = tregister($05000000);
+NR_FPSCR = tregister($05000001);
+>>>>>>> origin/cpstrnew
 =======
 NR_CPSR_C = tregister($05000000);
 NR_FPSCR = tregister($05000001);

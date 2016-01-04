@@ -99,6 +99,7 @@ program install;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      installerversion='3.1.1';
      installercopyright='Copyright (c) 1993-2015 Florian Klaempfl';
 
@@ -154,6 +155,14 @@ program install;
 =======
      maxpackages=29;
 >>>>>>> origin/fixes_2.4
+=======
+     installerversion='2.5.1';
+     installercopyright='Copyright (c) 1993-2011 Florian Klaempfl';
+
+
+     maxpacks=20;
+     maxpackages=40;
+>>>>>>> origin/cpstrnew
      maxdefcfgs=1024;
 
      HTMLIndexExt = '.htx';
@@ -969,6 +978,7 @@ program install;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          System.Delete (S, Length (S) - 6, 7);
          S := S + 'dll''';
          R.Assign (2, YB - 15, 64, YB - 13);
@@ -977,6 +987,8 @@ program install;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
          System.Delete (S, Length (S) - 3, 4);
@@ -1903,6 +1915,7 @@ end;
       R.A.Y := R.B.Y - 1;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       //R.B.X := R.B.X - 2;
 =======
       R.B.X := R.B.X - 12;
@@ -1910,6 +1923,9 @@ end;
 =======
       R.B.X := R.B.X - 12;
 >>>>>>> origin/fixes_2_2
+=======
+      //R.B.X := R.B.X - 2;
+>>>>>>> origin/cpstrnew
       New(StatusLine,
         Init(R,
           NewStatusDef(0, $EFFF,nil,nil

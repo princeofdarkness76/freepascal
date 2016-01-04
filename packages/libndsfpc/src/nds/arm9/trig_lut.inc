@@ -1,5 +1,8 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {$ifdef NDS_INTERFACE}
 const
   DEGREES_IN_CIRCLE = (1 shl 15);

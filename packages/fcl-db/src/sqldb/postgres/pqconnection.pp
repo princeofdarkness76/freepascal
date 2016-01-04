@@ -316,6 +316,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   FConnOptions := FConnOptions + [sqSupportParams, sqSupportEmptyDatabaseName, sqEscapeRepeat, sqEscapeSlash, sqImplicitTransaction,sqSupportReturning];
   FieldNameQuoteChars:=DoubleQuotes;
   VerboseErrors:=True;
@@ -350,6 +351,10 @@ begin
 =======
   FConnOptions := FConnOptions + [sqSupportParams] + [sqEscapeRepeat] + [sqEscapeSlash] + [sqQuoteFieldnames];
 >>>>>>> origin/fixes_2_2
+=======
+  FConnOptions := FConnOptions + [sqSupportParams] + [sqEscapeRepeat] + [sqEscapeSlash];
+  FieldNameQuoteChars:=DoubleQuotes;
+>>>>>>> origin/cpstrnew
 end;
 
 procedure TPQConnection.CreateDB;
@@ -952,6 +957,7 @@ procedure TPQConnection.PrepareStatement(cursor: TSQLCursor;ATransaction : TSQLT
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                           
 const TypeStrings : array[TFieldType] of string =
     (
@@ -960,6 +966,8 @@ const TypeStrings : array[TFieldType] of string =
       'text',      // ftString
       'smallint',  // ftSmallint
 =======
+=======
+>>>>>>> origin/cpstrnew
 {
   TFieldType = (ftUnknown, ftString, ftSmallint, ftInteger, ftWord,
       ftBoolean, ftFloat, ftCurrency, ftBCD, ftDate,  ftTime, ftDateTime,
@@ -976,6 +984,7 @@ const TypeStrings : array[TFieldType] of string =
       'Unknown',   // ftUnknown
       'text',     // ftString
       'int',       // ftSmallint
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 =======
@@ -1003,12 +1012,15 @@ const TypeStrings : array[TFieldType] of string =
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       'int',       // ftInteger
       'int',       // ftWord
       'bool',      // ftBoolean
       'float',     // ftFloat
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1023,6 +1035,9 @@ const TypeStrings : array[TFieldType] of string =
 =======
       'numeric',   // ftCurrency
 >>>>>>> graemeg/cpstrnew
+=======
+      'numeric',   // ftCurrency
+>>>>>>> origin/cpstrnew
 =======
       'numeric',   // ftCurrency
 >>>>>>> origin/cpstrnew
@@ -1045,6 +1060,7 @@ const TypeStrings : array[TFieldType] of string =
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       'char',      // ftFixedChar
 =======
       'text',      // ftFixedChar
@@ -1055,6 +1071,9 @@ const TypeStrings : array[TFieldType] of string =
 =======
       'text',      // ftFixedChar
 >>>>>>> graemeg/cpstrnew
+=======
+      'text',      // ftFixedChar
+>>>>>>> origin/cpstrnew
 =======
       'text',      // ftFixedChar
 >>>>>>> origin/cpstrnew
@@ -1069,6 +1088,7 @@ const TypeStrings : array[TFieldType] of string =
       'Unknown',   // ftVariant
       'Unknown',   // ftInterface
       'Unknown',   // ftIDispatch
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1140,6 +1160,13 @@ const TypeStrings : array[TFieldType] of string =
       'Unknown',
       'Unknown'
 >>>>>>> graemeg/fixes_2_2
+=======
+      'Unknown',   // ftGuid
+      'Unknown',   // ftTimeStamp
+      'Unknown',   // ftFMTBcd
+      'Unknown',   // ftFixedWideChar
+      'Unknown'    // ftWideMemo
+>>>>>>> origin/cpstrnew
     );
 
 
@@ -1169,6 +1196,7 @@ begin
         s := s + '(';
         for i := 0 to AParams.Count-1 do
           begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1206,6 +1234,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           if AParams[i].DataType = ftUnknown then 
             DatabaseErrorFmt(SUnknownParamFieldType,[AParams[i].Name],self)
           else 
@@ -1213,11 +1243,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
           end;
@@ -1247,6 +1280,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       Statement := AParams.ParseSQL(buf,false,sqEscapeSlash in ConnOptions, sqEscapeRepeat in ConnOptions,psPostgreSQL);
 =======
       statement := AParams.ParseSQL(buf,false,sqEscapeSlash in ConnOptions, sqEscapeRepeat in ConnOptions,psPostgreSQL);
@@ -1257,6 +1291,9 @@ begin
 =======
       statement := AParams.ParseSQL(buf,false,sqEscapeSlash in ConnOptions, sqEscapeRepeat in ConnOptions,psPostgreSQL);
 >>>>>>> graemeg/cpstrnew
+=======
+      statement := AParams.ParseSQL(buf,false,sqEscapeSlash in ConnOptions, sqEscapeRepeat in ConnOptions,psPostgreSQL);
+>>>>>>> origin/cpstrnew
 =======
       statement := AParams.ParseSQL(buf,false,sqEscapeSlash in ConnOptions, sqEscapeRepeat in ConnOptions,psPostgreSQL);
 >>>>>>> origin/cpstrnew
@@ -1277,6 +1314,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         res := PQexec(tr.PGConn,pchar('deallocate '+StmtName));
         CheckResultError(res,nil,SErrUnPrepareFailed);
         PQclear(res);
@@ -1290,11 +1328,14 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           pqclear(res);
           DatabaseError(SErrPrepareFailed + ' (PostgreSQL: ' + PQerrorMessage(tr.PGConn) + ')',self)
         end
       else
         pqclear(res);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1305,6 +1346,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       end;
     end;
 end;
@@ -1312,6 +1355,7 @@ end;
 procedure TPQConnection.Execute(cursor: TSQLCursor;atransaction:tSQLtransaction;AParams : TParams);
 
 var ar  : array of pchar;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1361,6 +1405,13 @@ var ar  : array of pchar;
 =======
     ParamNames,ParamValues : array of string;
 >>>>>>> origin/fixes_2_2
+=======
+    l,i   : integer;
+    s   : string;
+    lengths,formats : array of integer;
+    ParamNames,
+    ParamValues : array of string;
+>>>>>>> origin/cpstrnew
 
 begin
   with cursor as TPQCursor do
@@ -1376,6 +1427,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         l:=AParams.Count;
         setlength(ar,l);
         setlength(lengths,l);
@@ -1386,6 +1438,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         l:=Aparams.count;
@@ -1445,11 +1499,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
           else
@@ -1461,6 +1518,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         res := PQexecPrepared(tr.PGConn,pchar(StmtName),AParams.Count,@Ar[0],@Lengths[0],@Formats[0],1);
         for i := 0 to AParams.Count -1 do
 =======
@@ -1468,6 +1526,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         res := PQexecPrepared(tr.PGConn,pchar('prepst'+nr),Aparams.count,@Ar[0],@Lengths[0],@Formats[0],1);
@@ -1538,11 +1598,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     if assigned(res) and not (PQresultStatus(res) in [PGRES_COMMAND_OK,PGRES_TUPLES_OK]) then

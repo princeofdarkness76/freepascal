@@ -185,6 +185,7 @@ begin
     begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       el := TDOMElement(tables[I]);
 =======
       el := TDOMElement(tables.Item[I]);
@@ -192,6 +193,9 @@ begin
 =======
       el := TDOMElement(tables.Item[I]);
 >>>>>>> origin/fixes_2_2
+=======
+      el := TDOMElement(tables[I]);
+>>>>>>> origin/cpstrnew
       id := el['id'];
       if id = 'valid' then
         table_valid := el
@@ -233,6 +237,7 @@ begin
   repeat
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Child := Children[Index];
 =======
     Child := Children.Item[Index];
@@ -240,6 +245,9 @@ begin
 =======
     Child := Children.Item[Index];
 >>>>>>> origin/fixes_2_2
+=======
+    Child := Children[Index];
+>>>>>>> origin/cpstrnew
     if Child = nil then Break;
     Inc(index);
 
@@ -360,6 +368,7 @@ begin
     for I := 0 to Cases.Count-1 do
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       RunTest(Cases[I] as TDOMElement);
 =======
       RunTest(Cases.Item[I] as TDOMElement);
@@ -367,6 +376,9 @@ begin
 =======
       RunTest(Cases.Item[I] as TDOMElement);
 >>>>>>> origin/fixes_2_2
+=======
+      RunTest(Cases[I] as TDOMElement);
+>>>>>>> origin/cpstrnew
     I := Cases.Count;
   finally
     Cases.Free;
@@ -419,7 +431,11 @@ var
 =======
   outURI: UTF8string;
   FailMsg: string;
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2_2
+=======
+  ExceptionClass: TClass;
+>>>>>>> origin/cpstrnew
   docNode, refNode: TDOMNode;
   docMap, refMap: TDOMNamedNodeMap;
   docN, refN: TDOMNotation;
@@ -506,11 +522,15 @@ begin
         begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           ExceptionClass := E.ClassType;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+          ExceptionClass := E.ClassType;
+>>>>>>> origin/cpstrnew
           FailMsg := E.Message;
           FValError := '';
         end;
@@ -541,6 +561,7 @@ begin
           { outside not-wf category it is a test failure }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           if (table <> table_not_wf) or (ExceptionClass <> EXMLReadError) then
 =======
           if table <> table_not_wf then
@@ -548,6 +569,9 @@ begin
 =======
           if table <> table_not_wf then
 >>>>>>> origin/fixes_2_2
+=======
+          if (table <> table_not_wf) or (ExceptionClass <> EXMLReadError) then
+>>>>>>> origin/cpstrnew
           begin
             Inc(FFailCount);
             Diagnose(Element, table, dcFail, FailMsg);
@@ -594,12 +618,15 @@ begin
     if outURI = '' then Exit;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     TempDoc.DocumentElement.Normalize;
 >>>>>>> graemeg/fixes_2_2
 =======
     TempDoc.DocumentElement.Normalize;
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
     try
       // reference data must be parsed in non-validating mode because it contains DTDs
       // only when Notations need to be reported

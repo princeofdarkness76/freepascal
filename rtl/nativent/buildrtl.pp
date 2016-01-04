@@ -9,6 +9,7 @@ unit buildrtl;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       rtlconsts, sysconst, sysutils, math, types,
       typinfo, fgl, classes,
 =======
@@ -18,10 +19,13 @@ unit buildrtl;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       matrix,
       rtlconsts, sysconst, sysutils, math, types,
       strutils, dateutils, varutils, variants, typinfo, fgl, classes,
       convutils, stdconvs,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -32,12 +36,15 @@ unit buildrtl;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifdef cpui386}
       mmx, cpu,
 {$endif}
 {$ifdef cpux86_64}
       cpu,
 {$endif}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -55,6 +62,10 @@ unit buildrtl;
       charset, ucomplex, getopts,
       fmtbcd;
 >>>>>>> graemeg/cpstrnew
+=======
+      charset, ucomplex, getopts,
+      fmtbcd;
+>>>>>>> origin/cpstrnew
 =======
       charset, ucomplex, getopts,
       fmtbcd;

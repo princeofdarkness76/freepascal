@@ -10,6 +10,7 @@ main=rtl
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 units=$(SYSTEMUNIT) uuchar fpintres ctypes objpas macpas iso7185 extpas strings \
 =======
 units=$(SYSTEMUNIT) fpintres ctypes objpas macpas iso7185 strings \
@@ -20,6 +21,9 @@ units=$(SYSTEMUNIT) fpintres ctypes objpas macpas iso7185 strings \
 =======
 units=$(SYSTEMUNIT) fpintres ctypes objpas macpas iso7185 strings \
 >>>>>>> graemeg/cpstrnew
+=======
+units=$(SYSTEMUNIT) fpintres ctypes objpas macpas iso7185 strings \
+>>>>>>> origin/cpstrnew
 =======
 units=$(SYSTEMUNIT) fpintres ctypes objpas macpas iso7185 strings \
 >>>>>>> origin/cpstrnew
@@ -171,6 +175,7 @@ messages$(PPUEXT): messages.pp $(WININC)/messages.inc windows$(PPUEXT) $(SYSTEMU
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 dynlibs$(PPUEXT) : $(INC)/dynlibs.pas windows$(PPUEXT) rtlconsts$(PPUEXT) sysconst$(PPUEXT) sysutils$(PPUEXT) $(SYSTEMUNIT)$(PPUEXT)
 	$(COMPILER) $(INC)/dynlibs.pas
 =======
@@ -182,6 +187,9 @@ dynlibs$(PPUEXT) : $(INC)/dynlibs.pas windows$(PPUEXT) rtlconsts$(PPUEXT) syscon
 =======
 dynlibs$(PPUEXT) : $(INC)/dynlibs.pas windows$(PPUEXT) rtlconsts$(PPUEXT) sysconst$(PPUEXT) sysutils$(PPUEXT)
 >>>>>>> graemeg/cpstrnew
+=======
+dynlibs$(PPUEXT) : $(INC)/dynlibs.pas windows$(PPUEXT) rtlconsts$(PPUEXT) sysconst$(PPUEXT) sysutils$(PPUEXT)
+>>>>>>> origin/cpstrnew
 =======
 dynlibs$(PPUEXT) : $(INC)/dynlibs.pas windows$(PPUEXT) rtlconsts$(PPUEXT) sysconst$(PPUEXT) sysutils$(PPUEXT)
 >>>>>>> origin/cpstrnew

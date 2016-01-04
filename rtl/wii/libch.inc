@@ -35,6 +35,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Ptimeval = ^Ttimeval;
   Ttimeval = record
     tv_sec  : longint;
@@ -50,6 +51,9 @@ type
 =======
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 =======
 
 >>>>>>> origin/cpstrnew

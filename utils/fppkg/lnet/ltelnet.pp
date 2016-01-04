@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { lTelnet CopyRight (C) 2004-2008 Ales Katona
 =======
 { lTelnet CopyRight (C) 2004-2007 Ales Katona
@@ -7,6 +8,9 @@
 =======
 { lTelnet CopyRight (C) 2004-2007 Ales Katona
 >>>>>>> origin/fixes_2_2
+=======
+{ lTelnet CopyRight (C) 2004-2008 Ales Katona
+>>>>>>> origin/cpstrnew
 
   This library is Free software; you can rediStribute it and/or modify it
   under the terms of the GNU Library General Public License as published by
@@ -104,6 +108,7 @@ type
     FCommandArgs: string[3];
     FOrders: TLTelnetControlChars;
 <<<<<<< HEAD
+<<<<<<< HEAD
     FBuffer: array of Char;
     FBufferIndex: Integer;
     FBufferEnd: Integer;
@@ -137,6 +142,18 @@ type
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    FBuffer: array of Char;
+    FBufferIndex: Integer;
+    FBufferEnd: Integer;
+    procedure InflateBuffer;
+    function AddToBuffer(const aStr: string): Boolean; inline;
+    
+    function Question(const Command: Char; const Value: Boolean): Char;
+    
+    function GetConnected: Boolean;
+    
+>>>>>>> origin/cpstrnew
     function GetTimeout: Integer;
     procedure SetTimeout(const Value: Integer);
 
@@ -154,6 +171,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function React(const Operation, Command: Char): boolean; virtual; abstract;
 =======
     procedure React(const Operation, Command: Char); virtual; abstract;
@@ -164,6 +182,9 @@ type
 =======
     procedure React(const Operation, Command: Char); virtual; abstract;
 >>>>>>> graemeg/cpstrnew
+=======
+    procedure React(const Operation, Command: Char); virtual; abstract;
+>>>>>>> origin/cpstrnew
 =======
     procedure React(const Operation, Command: Char); virtual; abstract;
 >>>>>>> origin/cpstrnew
@@ -194,11 +215,14 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     procedure Disconnect(const Forced: Boolean = True); override;
@@ -207,6 +231,7 @@ type
    public
     property Output: TMemoryStream read FOutput;
 <<<<<<< HEAD
+<<<<<<< HEAD
     property Connected: Boolean read GetConnected;
 =======
     property Connected: Boolean read FConnected;
@@ -214,6 +239,9 @@ type
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    property Connected: Boolean read GetConnected;
+>>>>>>> origin/cpstrnew
     property Timeout: Integer read GetTimeout write SetTimeout;
     property OnReceive: TLSocketEvent read FOnReceive write FOnReceive;
     property OnDisconnect: TLSocketEvent read FOnDisconnect write FOnDisconnect;
@@ -271,6 +299,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Math;
 
 const   subcommandEndLength= 2;
@@ -283,6 +312,9 @@ const   subcommandEndLength= 2;
 =======
   SysUtils, Math;
 >>>>>>> graemeg/cpstrnew
+=======
+  SysUtils, Math;
+>>>>>>> origin/cpstrnew
 =======
   SysUtils, Math;
 >>>>>>> origin/cpstrnew
@@ -299,6 +331,7 @@ begin
   
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   FConnection := TLTCP.Create(nil);
   FConnection.Creator := Self;
 =======
@@ -307,6 +340,10 @@ begin
 =======
   FConnection := TLTCP.Create(aOwner);
 >>>>>>> origin/fixes_2_2
+=======
+  FConnection := TLTCP.Create(nil);
+  FConnection.Creator := Self;
+>>>>>>> origin/cpstrnew
   FConnection.OnCanSend := @OnCs;
   
   FOutput := TMemoryStream.Create;
@@ -445,6 +482,7 @@ begin
       FOutput.WriteByte(Byte(msg[i]));
       Inc(Result);
     end;
+<<<<<<< HEAD
 end;
 
 procedure TLTelnet.OnCs(aSocket: TLSocket);
@@ -479,6 +517,8 @@ begin
     if n > 0 then
       System.Delete(FBuffer, 1, n);
   end;
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 procedure TLTelnet.OnCs(aSocket: TLSocket);
@@ -487,11 +527,17 @@ var
 begin
   n := 1;
 
-  while n > 0 do begin
-    n := FConnection.SendMessage(FBuffer);
+  while (n > 0) and (FBufferIndex < FBufferEnd) do begin
+    n := FConnection.Send(FBuffer[FBufferIndex], FBufferEnd - FBufferIndex);
 
     if n > 0 then
-      System.Delete(FBuffer, 1, n);
+      Inc(FBufferIndex, n);
+  end;
+  
+  if FBufferEnd - FBufferIndex < FBufferIndex then begin // if we can move the "right" side of the buffer back to the left
+    Move(FBuffer[FBufferIndex], FBuffer[0], FBufferEnd - FBufferIndex);
+    FBufferEnd := FBufferEnd - FBufferIndex;
+    FBufferIndex := 0;
   end;
 end;
 
@@ -525,6 +571,7 @@ begin
     SendCommand(Option, False);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -568,6 +615,10 @@ begin
 procedure TLTelnet.Disconnect(const Forced: Boolean = True);
 begin
 >>>>>>> origin/cpstrnew
+=======
+procedure TLTelnet.Disconnect(const Forced: Boolean = True);
+begin
+>>>>>>> origin/cpstrnew
   FConnection.Disconnect(Forced);
 end;
 
@@ -578,6 +629,7 @@ begin
   {$endif}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   AddToBuffer(TS_IAC + Char(How) + aCommand);
 =======
   FBuffer := FBuffer + TS_IAC + Char(How) + aCommand;
@@ -585,6 +637,9 @@ begin
 =======
   FBuffer := FBuffer + TS_IAC + Char(How) + aCommand;
 >>>>>>> origin/fixes_2_2
+=======
+  AddToBuffer(TS_IAC + Char(How) + aCommand);
+>>>>>>> origin/cpstrnew
   OnCs(nil);
 end;
 
@@ -600,11 +655,14 @@ begin
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
   FConnected := False;
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
   FPossible := [TS_ECHO, TS_HYI, TS_SGA];
   FActiveOpts := [];
   FOrders := [];
@@ -649,6 +707,7 @@ function TLTelnetClient.React(const Operation, Command: Char): boolean;
     {$endif}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     AddToBuffer(TS_IAC + Operation + Command);
 =======
     FBuffer := FBuffer + TS_IAC + Operation + Command;
@@ -656,6 +715,9 @@ function TLTelnetClient.React(const Operation, Command: Char): boolean;
 =======
     FBuffer := FBuffer + TS_IAC + Operation + Command;
 >>>>>>> origin/fixes_2_2
+=======
+    AddToBuffer(TS_IAC + Operation + Command);
+>>>>>>> origin/cpstrnew
     OnCs(nil);
   end;
   
@@ -667,6 +729,7 @@ function TLTelnetClient.React(const Operation, Command: Char): boolean;
     {$endif}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     AddToBuffer(TS_IAC + Operation + Command);
 =======
     FBuffer := FBuffer + TS_IAC + Operation + Command;
@@ -674,6 +737,9 @@ function TLTelnetClient.React(const Operation, Command: Char): boolean;
 =======
     FBuffer := FBuffer + TS_IAC + Operation + Command;
 >>>>>>> origin/fixes_2_2
+=======
+    AddToBuffer(TS_IAC + Operation + Command);
+>>>>>>> origin/cpstrnew
     OnCs(nil);
   end;
 
@@ -746,6 +812,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     TS_SB   : if not Assigned(FSubcommandCallbacks[command].callback) then
                 refuse(TS_WONT, command)
               else
@@ -763,6 +830,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   end;
 end;
 
@@ -777,6 +846,7 @@ begin
     end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     AddToBuffer(TS_IAC + Question(Command, Value) + Command);
 =======
     FBuffer := FBuffer + TS_IAC + Question(Command, Value) + Command;
@@ -784,6 +854,9 @@ begin
 =======
     FBuffer := FBuffer + TS_IAC + Question(Command, Value) + Command;
 >>>>>>> origin/fixes_2_2
+=======
+    AddToBuffer(TS_IAC + Question(Command, Value) + Command);
+>>>>>>> origin/cpstrnew
     OnCs(nil);
   end;
 end;
@@ -835,6 +908,7 @@ begin
       
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     AddToBuffer(Tmp);
 =======
     FBuffer := FBuffer + Tmp;
@@ -842,6 +916,9 @@ begin
 =======
     FBuffer := FBuffer + Tmp;
 >>>>>>> origin/fixes_2_2
+=======
+    AddToBuffer(Tmp);
+>>>>>>> origin/cpstrnew
     OnCs(nil);
     
     Result := aSize;

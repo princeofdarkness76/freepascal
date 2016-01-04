@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { %target=darwin,linux,freebsd,solaris,beos,haiku,aix,android }
 { %NEEDLIBRARY }
 { %delfiles=tw16263a }
@@ -17,6 +18,10 @@
 { %target=darwin,linux,freebsd,solaris,beos,haiku }
 { %NEEDLIBRARY }
 >>>>>>> graemeg/cpstrnew
+=======
+{ %target=darwin,linux,freebsd,solaris,beos,haiku }
+{ %NEEDLIBRARY }
+>>>>>>> origin/cpstrnew
 =======
 { %target=darwin,linux,freebsd,solaris,beos,haiku }
 { %NEEDLIBRARY }
@@ -37,12 +42,15 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   libname = './libtw16263a.'+SharedSuffix;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   {$ifdef darwin}
@@ -53,11 +61,14 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$endif}

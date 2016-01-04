@@ -1,5 +1,8 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 (*---------------------------------------------------------------------------------
 
 	libnds Copyright (C) 2005
@@ -32,10 +35,13 @@
 ---------------------------------------------------------------------------------*)
 
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 unit nds7;
 {$mode objfpc} 
 {$apptype arm7}
@@ -57,11 +63,15 @@ uses
 {$linklib gcc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$linklib g}
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$linklib g}
+>>>>>>> origin/cpstrnew
 {$linklib sysbase}
 
 {$define NDS_INTERFACE}

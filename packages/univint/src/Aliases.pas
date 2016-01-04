@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       CarbonCore/Aliases.h
  
      Contains:   Alias Manager Interfaces.
@@ -31,11 +32,15 @@
 =======
      File:       CarbonCore/Aliases.h
 >>>>>>> origin/fixes_2.4
+=======
+     File:       CarbonCore/Aliases.h
+>>>>>>> origin/cpstrnew
  
      Contains:   Alias Manager Interfaces.
  
      Version:    CarbonCore-859.2~1
  
+<<<<<<< HEAD
 <<<<<<< HEAD
      Copyright:  © 1989-2002 by Apple Computer, Inc., all rights reserved
 <<<<<<< HEAD
@@ -45,6 +50,9 @@
 =======
      Copyright:  © 1989-2008 by Apple Computer, Inc., all rights reserved
 >>>>>>> origin/fixes_2.4
+=======
+     Copyright:  © 1989-2008 by Apple Computer, Inc., all rights reserved
+>>>>>>> origin/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -52,6 +60,7 @@
                      http://www.freepascal.org/bugs.html
  
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -81,6 +90,9 @@
 =======
 {	  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 >>>>>>> origin/fixes_2.4
+=======
+{	  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> origin/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -89,12 +101,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -106,6 +122,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -120,6 +137,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -135,6 +156,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -145,6 +167,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -152,13 +177,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -166,6 +195,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -174,8 +205,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -186,6 +220,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -206,6 +241,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -214,12 +251,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -227,6 +267,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -445,6 +486,18 @@ interface
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
 >>>>>>> origin/fixes_2.4
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -461,6 +514,7 @@ interface
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -502,6 +556,41 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -530,6 +619,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -538,6 +628,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -547,6 +639,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -577,6 +670,12 @@ uses MacTypes,Files,UTCUtils,CFBase;
 >>>>>>> origin/fixes_2.4
 
 >>>>>>> origin/fixes_2_2
+=======
+uses MacTypes,Files,UTCUtils,CFBase;
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
+
+{$ifc TARGET_OS_MAC}
 
 {$ifc TARGET_OS_MAC}
 
@@ -586,8 +685,11 @@ uses MacTypes,Files,UTCUtils,CFBase;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 type
 	FSAliasInfoBitmap = UInt32;
 	FSAliasInfoBitmapPtr = ^FSAliasInfoBitmap;
@@ -614,6 +716,7 @@ const
 	kARMSearchRelFirst = $00000400; { search target on a relative path first }
 	kARMTryFileIDFirst = $00000800; { search by file id before path }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -702,6 +805,9 @@ const
 >>>>>>> origin/fixes_2_2
 =======
 const
+=======
+const
+>>>>>>> origin/cpstrnew
 { define alias record information types }
 	asiZoneName = -3;   { get zone name }
 	asiServerName = -2;   { get server name }
@@ -713,7 +819,10 @@ const
 const
 	kResolveAliasFileNoUI = $00000001; { no user interaction during resolution }
 	kResolveAliasTryFileIDFirst = $00000002; { search by file id before path }
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 	{	 define the alias record that will be the blackbox for the caller 	}
 
@@ -722,6 +831,9 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   { Opaque as of Mac OS X 10.4 ... }
 	AliasRecord = record
 		userType: OSType;               { appl stored type like creator type }
@@ -758,15 +870,33 @@ type
 	AliasFilterUPP = AliasFilterProcPtr;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
  *  NewAliasFilterUPP()
 <<<<<<< HEAD
 =======
+=======
+{
+ *  NewAliasFilterUPP()
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   available as macro/inline
+ }
+{ old name was NewAliasFilterProc }
+function NewAliasFilterUPP( userRoutine: AliasFilterProcPtr ): AliasFilterUPP; external name '_NewAliasFilterUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+{
+ *  DisposeAliasFilterUPP()
+>>>>>>> origin/cpstrnew
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+<<<<<<< HEAD
  }
 { old name was NewAliasFilterProc }
 function NewAliasFilterUPP( userRoutine: AliasFilterProcPtr ): AliasFilterUPP; external name '_NewAliasFilterUPP';
@@ -921,14 +1051,7 @@ type
 { old name was NewAliasFilterProc }
 function NewAliasFilterUPP( userRoutine: AliasFilterProcPtr ): AliasFilterUPP; external name '_NewAliasFilterUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-{
- *  DisposeAliasFilterUPP()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in CoreServices.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   available as macro/inline
+=======
  }
 procedure DisposeAliasFilterUPP( userUPP: AliasFilterUPP ); external name '_DisposeAliasFilterUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -1466,6 +1589,811 @@ procedure SetAliasUserTypeWithPtr( alias: AliasPtr; userType: OSType ); external
 function FSMatchAlias( {const} fromFile: FSRefPtr { can be NULL }; rulesMask: UNSIGNEDLONG; inAlias: AliasHandle; var aliasCount: SInt16; var aliasList: FSRef; var needsUpdate: Boolean; aliasFilter: AliasFilterUPP; yourDataPtr: UnivPtr ): OSErr; external name '_FSMatchAlias';
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
+>>>>>>> origin/cpstrnew
+
+{
+ *  FSMatchAliasNoUI()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    Use FSMatchAliasBulk with the kARMNoUI flag instead
+ *  
+ *  Summary:
+ *    variation on FSMatchAlias that does not prompt user with a dialog
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Availability:
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeAliasFilterUPP( userUPP: AliasFilterUPP ); external name '_DisposeAliasFilterUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+=======
+ *    Mac OS X:         in version 10.2 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
+ *    Non-Carbon CFM:   not available
+ }
+function FSMatchAliasNoUI( {const} fromFile: FSRefPtr { can be NULL }; rulesMask: UNSIGNEDLONG; inAlias: AliasHandle; var aliasCount: SInt16; var aliasList: FSRef; var needsUpdate: Boolean; aliasFilter: AliasFilterUPP; yourDataPtr: UnivPtr ): OSErr; external name '_FSMatchAliasNoUI';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+>>>>>>> origin/cpstrnew
+
+{
+ *  NewAlias()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    Use FSNewAlias
+ *  
+ *  Summary:
+ *    create a new alias between fromFile and target, returns alias
+ *    record handle
+ *  
+ *  Discussion:
+ *    Create an alias betwen fromFile and target, and return it in an
+ *    AliasHandle. This function is deprecated in Mac OS X 10.4;
+ *    instead, you should use FSNewAliasUnicode() because NewAlias()
+ *    has problems creating aliases to certain files, including those
+ *    which are impossible to represent in an FSSpec.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Availability:
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function InvokeAliasFilterUPP( cpbPtr: CInfoPBPtr; var quitFlag: Boolean; myDataPtr: Ptr; userUPP: AliasFilterUPP ): Boolean; external name '_InvokeAliasFilterUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+{#if __MACH__
+    #define NewAliasFilterUPP(userRoutine)                      ((AliasFilterUPP)userRoutine)
+    #define DisposeAliasFilterUPP(userUPP)
+    #define InvokeAliasFilterUPP(cpbPtr, quitFlag, myDataPtr, userUPP) (*userUPP)(cpbPtr, quitFlag, myDataPtr)
+#endif}
+
+{$endc} {not TARGET_CPU_64}
+
+type
+	FSAliasFilterProcPtr = function( const (*var*) ref: FSRef; var quitFlag: Boolean; myDataPtr: Ptr ): Boolean;
+	FSAliasFilterUPP = FSAliasFilterProcPtr;
+
+{
+ *  FSNewAlias()
+ *  
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function NewAlias( {const} fromFile: FSSpecPtr { can be NULL }; const (*var*) target: FSSpec; var alias: AliasHandle ): OSErr; external name '_NewAlias';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  NewAliasMinimal()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    Use FSNewAliasMinimalUnicode
+ *  
+ *  Summary:
+ *    create a minimal new alias for a target and return alias record
+ *    handle
+ *  
+ *  Discussion:
+ *    Create a minimal alias for a target, and return it in an
+ *    AliasHandle. This function is deprecated in Mac OS X 10.4;
+ *    instead, you should use FSNewAliasMinimalUnicode() because
+ *    NewAliasMinimalAlias() has problems creating aliases to certain
+ *    files, including those which are impossible to represent in an
+ *    FSSpec.
+ *  
+>>>>>>> origin/cpstrnew
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Availability:
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in InterfaceLib 9.1 and later
+ }
+function FSNewAlias( {const} fromFile: FSRefPtr { can be NULL }; const (*var*) target: FSRef; var inAlias: AliasHandle ): OSErr; external name '_FSNewAlias';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  FSNewAliasMinimal()
+ *  
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function NewAliasMinimal( const (*var*) target: FSSpec; var alias: AliasHandle ): OSErr; external name '_NewAliasMinimal';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  NewAliasMinimalFromFullPath()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    Use FSNewAliasMinimalUnicode
+ *  
+ *  Summary:
+ *    create a minimal new alias from a target fullpath (optional zone
+ *    and server name) and return alias record handle
+ *  
+ *  Discussion:
+ *    Create a minimal alias for a target fullpath, and return it in an
+ *    AliasHandle. This function is deprecated in Mac OS X 10.4;
+ *    instead, you should use FSNewAliasMinimalUnicode() because
+ *    NewAliasMinimalFromFullPath() has problems creating aliases to
+ *    certain files, including those which are impossible to represent
+ *    in an FSSpec.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function NewAliasMinimalFromFullPath( fullPathLength: SInt16; fullPath: {const} UnivPtr; const (*var*) zoneName: Str32; const (*var*) serverName: Str31; var alias: AliasHandle ): OSErr; external name '_NewAliasMinimalFromFullPath';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  ResolveAlias()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    Use FSResolveAlias() or FSResolveAliasWithMountFlags() instead.
+ *  
+ *  Summary:
+ *    given an alias handle and fromFile, resolve the alias, update the
+ *    alias record and return aliased filename and wasChanged flag.
+ *  
+>>>>>>> origin/cpstrnew
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Availability:
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in InterfaceLib 9.1 and later
+ }
+function FSNewAliasMinimal( const (*var*) target: FSRef; var inAlias: AliasHandle ): OSErr; external name '_FSNewAliasMinimal';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  FSIsAliasFile()
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in InterfaceLib 9.1 and later
+ }
+function FSIsAliasFile( const (*var*) fileRef: FSRef; var aliasFileFlag: Boolean; var folderFlag: Boolean ): OSErr; external name '_FSIsAliasFile';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  FSResolveAliasWithMountFlags()
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in InterfaceLib 9.1 and later
+ }
+function FSResolveAliasWithMountFlags( {const} fromFile: FSRefPtr { can be NULL }; inAlias: AliasHandle; var target: FSRef; var wasChanged: Boolean; mountFlags: UNSIGNEDLONG ): OSErr; external name '_FSResolveAliasWithMountFlags';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  FSResolveAlias()
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function ResolveAlias( {const} fromFile: FSSpecPtr { can be NULL }; alias: AliasHandle; var target: FSSpec; var wasChanged: Boolean ): OSErr; external name '_ResolveAlias';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  GetAliasInfo()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    Use FSCopyAliasInfo instead.
+ *  
+ *  Summary:
+ *    This call does not work on all aliases. Given an alias handle and
+ *    an index specifying requested alias information type, return the
+ *    information from alias record as a string. An empty string is
+ *    returned when the index is greater than the number of levels
+ *    between the target and root.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.0
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.3
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function GetAliasInfo( alias: AliasHandle; itemIndex: AliasInfoType; var theString: Str63 ): OSErr; external name '_GetAliasInfo';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+
+
+{
+ *  IsAliasFile()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    Use FSIsAliasFile() instead.
+ *  
+ *  Summary:
+ *    Return true if the file pointed to by fileFSSpec is an alias file.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.0
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ }
+function IsAliasFile( const (*var*) fileFSSpec: FSSpec; var aliasFileFlag: Boolean; var folderFlag: Boolean ): OSErr; external name '_IsAliasFile';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  ResolveAliasWithMountFlags()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    Use FSResolveAliasWithMountFlags() instead.
+ *  
+ *  Summary:
+ *    Given an AliasHandle, return target file spec. It resolves the
+ *    entire alias chain or one step of the chain.  It returns info
+ *    about whether the target is a folder or file; and whether the
+ *    input file spec was an alias or not.
+>>>>>>> origin/cpstrnew
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Availability:
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in InterfaceLib 9.1 and later
+ }
+function FSResolveAlias( {const} fromFile: FSRefPtr { can be NULL }; alias: AliasHandle; var target: FSRef; var wasChanged: Boolean ): OSErr; external name '_FSResolveAlias';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  FSResolveAliasFileWithMountFlags()
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ }
+function ResolveAliasWithMountFlags( {const} fromFile: FSSpecPtr { can be NULL }; alias: AliasHandle; var target: FSSpec; var wasChanged: Boolean; mountFlags: UNSIGNEDLONG ): OSErr; external name '_ResolveAliasWithMountFlags';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  ResolveAliasFile()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    Use FSResolveAliasFile
+ *  
+ *  Summary:
+ *    Given a file spec, return target file spec if input file spec is
+ *    an alias. It resolves the entire alias chain or one step of the
+ *    chain.  It returns info about whether the target is a folder or
+ *    file; and whether the input file spec was an alias or not.
+>>>>>>> origin/cpstrnew
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Availability:
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in InterfaceLib 9.1 and later
+ }
+function FSResolveAliasFileWithMountFlags( var theRef: FSRef; resolveAliasChains: Boolean; var targetIsFolder: Boolean; var wasAliased: Boolean; mountFlags: UNSIGNEDLONG ): OSErr; external name '_FSResolveAliasFileWithMountFlags';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  FSResolveAliasFile()
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function ResolveAliasFile( var theSpec: FSSpec; resolveAliasChains: Boolean; var targetIsFolder: Boolean; var wasAliased: Boolean ): OSErr; external name '_ResolveAliasFile';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{ Deprecated: Use FSResolveAliasFileWithMountFlags instead}
+{
+ *  ResolveAliasFileWithMountFlags()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Availability:
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in InterfaceLib 9.1 and later
+ }
+function FSResolveAliasFile( var theRef: FSRef; resolveAliasChains: Boolean; var targetIsFolder: Boolean; var wasAliased: Boolean ): OSErr; external name '_FSResolveAliasFile';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  FSFollowFinderAlias()
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ }
+function ResolveAliasFileWithMountFlags( var theSpec: FSSpec; resolveAliasChains: Boolean; var targetIsFolder: Boolean; var wasAliased: Boolean; mountFlags: UNSIGNEDLONG ): OSErr; external name '_ResolveAliasFileWithMountFlags';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{ Deprecated:  Use FSFollowFinderAlias instead}
+{
+ *  FollowFinderAlias()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Availability:
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in InterfaceLib 9.1 and later
+ }
+function FSFollowFinderAlias( fromFile: FSRefPtr { can be NULL }; alias: AliasHandle; logon: Boolean; var target: FSRef; var wasChanged: Boolean ): OSErr; external name '_FSFollowFinderAlias';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  FSUpdateAlias()
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ }
+function FollowFinderAlias( {const} fromFile: FSSpecPtr { can be NULL }; alias: AliasHandle; logon: Boolean; var target: FSSpec; var wasChanged: Boolean ): OSErr; external name '_FollowFinderAlias';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{ 
+   Low Level Routines 
+}
+{
+ *  UpdateAlias()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    UseFSUpdateAlias
+ *  
+ *  Summary:
+ *    given a fromFile-target pair and an alias handle, update the
+ *    alias record pointed to by alias handle to represent target as
+ *    the new alias.
+>>>>>>> origin/cpstrnew
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Availability:
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in InterfaceLib 9.1 and later
+ }
+function FSUpdateAlias( {const} fromFile: FSRefPtr { can be NULL }; const (*var*) target: FSRef; alias: AliasHandle; var wasChanged: Boolean ): OSErr; external name '_FSUpdateAlias';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  FSNewAliasUnicode()
+ *  
+ *  Summary:
+ *    Creates an alias given a ref to the target's parent directory and
+ *    the target's unicode name.  If the target does not exist fnfErr
+ *    will be returned but the alias will still be created.  This
+ *    allows the creation of aliases to targets that do not exist.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Parameters:
+ *    
+ *    fromFile:
+ *      The starting point for a relative search.
+ *    
+ *    targetParentRef:
+ *      An FSRef to the parent directory of the target.
+ *    
+ *    targetNameLength:
+ *      Number of Unicode characters in the target's name.
+ *    
+ *    targetName:
+ *      A pointer to the Unicode name.
+ *    
+ *    inAlias:
+ *      A Handle to the newly created alias record.
+ *    
+ *    isDirectory:
+ *      On input, if target does not exist, a flag to indicate whether
+ *      or not the target is a directory.  On output, if the target did
+ *      exist, a flag indicating if the target is a directory.  Pass
+ *      NULL in the non-existant case if unsure.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.2 and later in CoreServices.framework
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
+ *    Non-Carbon CFM:   not available
+ }
+function FSNewAliasUnicode( {const} fromFile: FSRefPtr { can be NULL }; const (*var*) targetParentRef: FSRef; targetNameLength: UniCharCount; targetName: ConstUniCharPtr; var inAlias: AliasHandle; isDirectory: BooleanPtr { can be NULL } ): OSErr; external name '_FSNewAliasUnicode';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+
+{
+ *  FSNewAliasMinimalUnicode()
+ *  
+ *  Summary:
+ *    Creates a minimal alias given a ref to the target's parent
+ *    directory and the target's unicode name.  If the target does not
+ *    exist fnfErr will be returned but the alias will still be created.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Parameters:
+ *    
+ *    targetParentRef:
+ *      An FSRef to the parent directory of the target.
+ *    
+ *    targetNameLength:
+ *      Number of Unicode characters in the target's name.
+ *    
+ *    targetName:
+ *      A pointer to the Unicode name.
+ *    
+ *    inAlias:
+ *      A Handle to the newly created alias record.
+ *    
+ *    isDirectory:
+ *      On input, if target does not exist, a flag to indicate whether
+ *      or not the target is a directory.  On output, if the target did
+ *      exist, a flag indicating if the target is a directory.  Pass
+ *      NULL in the non-existant case if unsure.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.2 and later in CoreServices.framework
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
+ *    Non-Carbon CFM:   not available
+ }
+function FSNewAliasMinimalUnicode( const (*var*) targetParentRef: FSRef; targetNameLength: UniCharCount; targetName: ConstUniCharPtr; var inAlias: AliasHandle; isDirectory: BooleanPtr { can be NULL } ): OSErr; external name '_FSNewAliasMinimalUnicode';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+
+{
+ *  FSNewAliasFromPath()
+ *  
+ *  Summary:
+ *    Creates an alias given a POSIX style utf-8 path to the target. 
+ *    If the target file does not exist but the path up to the leaf
+ *    does then fnfErr will be returned but the alias will still be
+ *    created.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.5
+ *  
+ *  Parameters:
+ *    
+ *    fromFilePath:
+ *      The starting point for a relative search.
+ *    
+ *    targetPath:
+ *      POSIX style UTF-8 path to target.
+ *    
+ *    flags:
+ *      Options for future use.  Pass in 0.
+ *    
+ *    inAlias:
+ *      A Handle to the newly created alias record.
+ *    
+ *    isDirectory:
+ *      On input, if target does not exist, a flag to indicate whether
+ *      or not the target is a directory.  On output, if the target did
+ *      exist, a flag indicating if the target is a directory.  Pass
+ *      NULL in the non-existant case if unsure.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in CoreServices.framework
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.5 and later
+ *    Non-Carbon CFM:   not available
+ }
+function FSNewAliasFromPath( fromFilePath: ConstCStringPtr { can be NULL }; targetPath: ConstCStringPtr; flags: OptionBits; var inAlias: AliasHandle; isDirectory: BooleanPtr { can be NULL } ): OSStatus; external name '_FSNewAliasFromPath';
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+
+{
+ *  FSMatchAliasBulk()
+ *  
+ *  Summary:
+ *    Given an alias handle and fromFile, match the alias and return
+ *    FSRefs to the aliased file(s) and needsUpdate flag
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.5
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in CoreServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function FSMatchAliasBulk( {const} fromFile: FSRefPtr { can be NULL }; rulesMask: UNSIGNEDLONG; inAlias: AliasHandle; var aliasCount: SInt16; var aliasList: FSRef; var needsUpdate: Boolean; aliasFilter: FSAliasFilterProcPtr { can be NULL }; yourDataPtr: UnivPtr { can be NULL } ): OSStatus; external name '_FSMatchAliasBulk';
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+
+{
+ *  FSCopyAliasInfo()
+ *  
+ *  Discussion:
+ *    This routine will return the requested information from the
+ *    passed in aliasHandle.  The information is gathered only from the
+ *    alias record so it may not match what is on disk (no disk i/o is
+ *    performed).  The whichInfo paramter is an output parameter that
+ *    signifies which fields in the info record contain valid data.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.2
+ *  
+ *  Parameters:
+ *    
+ *    inAlias:
+ *      A handle to the alias record to get the information from.
+ *    
+ *    targetName:
+ *      The name of the target item.
+ *    
+ *    volumeName:
+ *      The name of the volume the target resides on.
+ *    
+ *    pathString:
+ *      POSIX path to target.
+ *    
+ *    whichInfo:
+ *      An indication of which fields in the info block contain valid
+ *      data.
+ *    
+ *    info:
+ *      Returned information about the alias.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.2 and later in CoreServices.framework
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
+ *    Non-Carbon CFM:   not available
+ }
+function FSCopyAliasInfo( inAlias: AliasHandle; targetName: HFSUniStr255Ptr { can be NULL }; volumeName: HFSUniStr255Ptr { can be NULL }; pathString: CFStringRefPtr { can be NULL }; whichInfo: FSAliasInfoBitmapPtr { can be NULL }; info: FSAliasInfoPtr { can be NULL } ): OSStatus; external name '_FSCopyAliasInfo';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+
+{
+ *  GetAliasSize()
+ *  
+ *  Discussion:
+ *    This routine will return the size of the alias record referenced
+ *    by the AliasHandle alias.  This will be smaller than the size
+ *    returned by GetHandleSize if any custom data has been added (IM
+ *    Files 4-13).
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.4
+ *  
+ *  Parameters:
+ *    
+ *    alias:
+ *      A handle to the alias record to get the information from.
+ *  
+ *  Result:
+ *    The size of the private section of the alias record.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in CoreServices.framework
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
+ *    Non-Carbon CFM:   not available
+ }
+function GetAliasSize( alias: AliasHandle ): Size; external name '_GetAliasSize';
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+
+
+{
+ *  GetAliasUserType()
+ *  
+ *  Discussion:
+ *    This routine will return the usertype associated with the alias
+ *    record referenced by the AliasHandle alias.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.4
+ *  
+ *  Parameters:
+ *    
+ *    alias:
+ *      A handle to the alias record to get the userType from.
+ *  
+ *  Result:
+ *    The userType associated with the alias as an OSType
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in CoreServices.framework
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
+ *    Non-Carbon CFM:   not available
+ }
+function GetAliasUserType( alias: AliasHandle ): OSType; external name '_GetAliasUserType';
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+
+
+{
+ *  SetAliasUserType()
+ *  
+ *  Discussion:
+ *    This routine will set the userType associated with an alias
+ *    record.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.4
+ *  
+ *  Parameters:
+ *    
+ *    alias:
+ *      A handle to the alias record to set the userType for.
+ *    
+ *    userType:
+ *      The OSType to set the userType to.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in CoreServices.framework
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.4 and later
+ *    Non-Carbon CFM:   not available
+ }
+procedure SetAliasUserType( alias: AliasHandle; userType: OSType ); external name '_SetAliasUserType';
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+
+
+{
+ *  GetAliasSizeFromPtr()
+ *  
+ *  Discussion:
+ *    This routine will return the size of the alias record referenced
+ *    by a pointer to the AliasRecord.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.4
+ *  
+ *  Parameters:
+ *    
+ *    alias:
+ *      A pointer to the alias record to get the information from.
+ *  
+ *  Result:
+ *    The size of the private section of the alias record.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in CoreServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function GetAliasSizeFromPtr( const (*var*) alias: AliasRecord ): Size; external name '_GetAliasSizeFromPtr';
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+
+
+{
+ *  GetAliasUserTypeFromPtr()
+ *  
+ *  Discussion:
+ *    This routine will return the usertype associated withthe alias
+ *    record pointed to by alias.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.4
+ *  
+ *  Parameters:
+ *    
+ *    alias:
+ *      A pointer to the alias record to get the userType from.
+ *  
+ *  Result:
+ *    The userType associated with the alias as an OSType
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in CoreServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function GetAliasUserTypeFromPtr( const (*var*) alias: AliasRecord ): OSType; external name '_GetAliasUserTypeFromPtr';
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+
+
+{
+ *  SetAliasUserTypeWithPtr()
+ *  
+ *  Discussion:
+ *    This routine will set the userType associated with an alias
+ *    record.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.4
+ *  
+ *  Parameters:
+ *    
+ *    alias:
+ *      A pointer to the alias record to set the userType for.
+ *    
+ *    userType:
+ *      The OSType to set the userType to.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in CoreServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+procedure SetAliasUserTypeWithPtr( alias: AliasPtr; userType: OSType ); external name '_SetAliasUserTypeWithPtr';
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+
+
+{ Functions beyond this point are deprecated}
+
+{$ifc not TARGET_CPU_64}
+{
+ *  FSMatchAlias()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    Use FSMatchAliasBulk instead
+ *  
+ *  Summary:
+ *    Given an alias handle and fromFile, match the alias and return
+ *    FSRefs to the aliased file(s) and needsUpdate flag
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.2 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
+ *    Non-Carbon CFM:   not available
+ }
+function FSMatchAlias( {const} fromFile: FSRefPtr { can be NULL }; rulesMask: UNSIGNEDLONG; inAlias: AliasHandle; var aliasCount: SInt16; var aliasList: FSRef; var needsUpdate: Boolean; aliasFilter: AliasFilterUPP; yourDataPtr: UnivPtr ): OSErr; external name '_FSMatchAlias';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
 
 <<<<<<< HEAD
 const
@@ -1546,11 +2474,54 @@ function FSMatchAliasNoUI( {const} fromFile: FSRefPtr { can be NULL }; rulesMask
  *    instead, you should use FSNewAliasUnicode() because NewAlias()
  *    has problems creating aliases to certain files, including those
  *    which are impossible to represent in an FSSpec.
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function UpdateAlias( {const} fromFile: FSSpecPtr { can be NULL }; const (*var*) target: FSSpec; alias: AliasHandle; var wasChanged: Boolean ): OSErr; external name '_UpdateAlias';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  MatchAlias()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    Use FSMatchAliasBulk instead
+ *  
+ *  Summary:
+ *    Given an alias handle and fromFile, match the alias and return
+ *    FSSpecs to the aliased file(s) and needsUpdate flag
  *  
  *  Mac OS X threading:
  *    Thread safe since version 10.3
  *  
  *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function MatchAlias( {const} fromFile: FSSpecPtr { can be NULL }; rulesMask: UNSIGNEDLONG; alias: AliasHandle; var aliasCount: SInt16; aliasList: FSSpecArrayPtr; var needsUpdate: Boolean; aliasFilter: AliasFilterUPP; yourDataPtr: UnivPtr ): OSErr; external name '_MatchAlias';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  ResolveAliasFileWithMountFlagsNoUI()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    Use FSResolveAliasFileWithMountFlags passing in the
+ *    kResolveAliasFileNoUI flag
+ *  
+ *  Summary:
+ *    variation on ResolveAliasFile that does not prompt user with a
+ *    dialog
+>>>>>>> origin/cpstrnew
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1590,11 +2561,30 @@ function FSNewAlias( {const} fromFile: FSRefPtr { can be NULL }; const (*var*) t
 
 {
  *  FSNewAliasMinimal()
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   not available
+ }
+function ResolveAliasFileWithMountFlagsNoUI( var theSpec: FSSpec; resolveAliasChains: Boolean; var targetIsFolder: Boolean; var wasAliased: Boolean; mountFlags: UNSIGNEDLONG ): OSErr; external name '_ResolveAliasFileWithMountFlagsNoUI';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  MatchAliasNoUI()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    Use FSMatchAliasBulk with the kARMNoUI flag instead
+ *  
+ *  Summary:
+ *    variation on MatchAlias that does not prompt user with a dialog
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *    Thread safe since version 10.3
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in InterfaceLib 9.1 and later
@@ -5660,6 +6650,12 @@ function ResolveAliasFileWithMountFlagsNoUI( var theSpec: FSSpec; resolveAliasCh
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   not available
+ }
+>>>>>>> origin/cpstrnew
 function MatchAliasNoUI( {const} fromFile: FSSpecPtr { can be NULL }; rulesMask: UNSIGNEDLONG; alias: AliasHandle; var aliasCount: SInt16; aliasList: FSSpecArrayPtr; var needsUpdate: Boolean; aliasFilter: AliasFilterUPP; yourDataPtr: UnivPtr ): OSErr; external name '_MatchAliasNoUI';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
@@ -5673,9 +6669,13 @@ function MatchAliasNoUI( {const} fromFile: FSSpecPtr { can be NULL }; rulesMask:
 end.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

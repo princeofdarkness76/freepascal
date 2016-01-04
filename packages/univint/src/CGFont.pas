@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    Copyright (c) 1999-2009 Apple Inc.
    All rights reserved. }
 {       Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
@@ -36,6 +37,10 @@
    Copyright (c) 1999-2009 Apple Inc.
    All rights reserved. }
 >>>>>>> origin/fixes_2.4
+=======
+   Copyright (c) 1999-2009 Apple Inc.
+   All rights reserved. }
+>>>>>>> origin/cpstrnew
 {       Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {
@@ -46,12 +51,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -63,6 +72,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -77,6 +87,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -92,6 +106,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -102,6 +117,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -109,13 +127,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -123,6 +145,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -131,8 +155,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -143,6 +170,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -163,6 +191,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -171,12 +201,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -184,6 +217,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -444,6 +478,18 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -494,6 +540,7 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc TARGET_CPU_PPC_64 := FALSE}
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -501,6 +548,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -529,6 +578,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -537,6 +587,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -549,6 +601,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 uses MacTypes,CFBase,CFData,CFDictionary,CFArray,CGBase,CGDataProvider,CGGeometry;
 {$endc} {not MACOSALLINCLUDE}
 
@@ -563,12 +616,18 @@ uses MacTypes,CFBase,CFData,CFDictionary,CFArray,CGBase,CGDataProvider,CGGeometr
 {$endc} {not MACOSALLINCLUDE}
 
 >>>>>>> origin/fixes_2.4
+=======
+uses MacTypes,CFBase,CFData,CFDictionary,CFArray,CGBase,CGDataProvider,CGGeometry;
+{$endc} {not MACOSALLINCLUDE}
+
+>>>>>>> origin/cpstrnew
 {$ALIGN POWER}
 
 
 { The type used to represent a CoreGraphics font. }
 
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -599,6 +658,9 @@ type
 =======
 	CGFontRef = ^SInt32; { an opaque type }
 >>>>>>> origin/fixes_2.4
+=======
+	CGFontRef = ^SInt32; { an opaque type }
+>>>>>>> origin/cpstrnew
 
 { A type to represent indexes in a CGFontRef. }
 
@@ -614,12 +676,16 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 { The format of a PostScript font subset. Type1 is documented in "Adobe
    Type 1 Font Format"; Type3 in "PostScript Language Reference, 3rd ed."
    and Type42 in "Adobe Technical Note 5012, The Type 42 Font Format
    Specification". }
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
@@ -634,6 +700,8 @@ type
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 type
 	CGFontPostScriptFormat = SInt32;
@@ -650,12 +718,16 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   { A value representing an invalid CGFontIndex. Always <= USHRT_MAX. }
 	kCGFontIndexInvalid = (1 shl 16) - 1;
 
   { The maximum allowed value of a CGGlyph. }
 	kCGGlyphMax = kCGFontIndexMax;
 
+<<<<<<< HEAD
 { Return the CFTypeID for CGFontRefs. }
 
 function CGFontGetTypeID: CFTypeID; external name '_CGFontGetTypeID';
@@ -1013,6 +1085,8 @@ function CGFontCopyTableForTag( font: CGFontRef; tag: UInt32 ): CFDataRef; exter
   { The maximum allowed value of a CGGlyph. }
 	kCGGlyphMax = kCGFontIndexMax;
 
+=======
+>>>>>>> origin/cpstrnew
 { Return the CFTypeID for CGFontRefs. }
 
 function CGFontGetTypeID: CFTypeID; external name '_CGFontGetTypeID';
@@ -1027,6 +1101,7 @@ function CGFontCreateWithPlatformFont( platformFontReference: UnivPtr ): CGFontR
 (* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_6,
     __IPHONE_NA, __IPHONE_NA) *)
 {$endc}
+<<<<<<< HEAD
 
 { Return the font defined by the data provided by `provider', or NULL if
    the font can't be created. }
@@ -1038,6 +1113,19 @@ function CGFontCreateWithDataProvider( provider: CGDataProviderRef ): CGFontRef;
    PostScript name or its full name, or NULL if the font can't be
    created. }
 
+=======
+
+{ Return the font defined by the data provided by `provider', or NULL if
+   the font can't be created. }
+
+function CGFontCreateWithDataProvider( provider: CGDataProviderRef ): CGFontRef; external name '_CGFontCreateWithDataProvider';
+(* CG_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_2_0) *)
+
+{ Return the font identified by `name', corresponding to the font's
+   PostScript name or its full name, or NULL if the font can't be
+   created. }
+
+>>>>>>> origin/cpstrnew
 function CGFontCreateWithFontName( name: CFStringRef ): CGFontRef; external name '_CGFontCreateWithFontName';
 (* CG_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_2_0) *)
 
@@ -1175,10 +1263,17 @@ function CGFontGetGlyphBBoxes( font: CGFontRef; {const} glyphs: {variable-size-a
 
 { Return the glyph associated with `name' in `font'. If `name' isn't found
    in the font, return 0. }
+<<<<<<< HEAD
 
 function CGFontGetGlyphWithGlyphName( font: CGFontRef; name: CFStringRef ): CGGlyph; external name '_CGFontGetGlyphWithGlyphName';
 (* CG_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_2_0) *)
 
+=======
+
+function CGFontGetGlyphWithGlyphName( font: CGFontRef; name: CFStringRef ): CGGlyph; external name '_CGFontGetGlyphWithGlyphName';
+(* CG_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_2_0) *)
+
+>>>>>>> origin/cpstrnew
 { Return the glyph name of `glyph' in `font', or NULL if `glyph' does not
    appear in `font'. }
 
@@ -1203,6 +1298,7 @@ function CGFontCreatePostScriptSubset( font: CGFontRef; subsetName: CFStringRef;
 
 { Return a PostScript encoding of `font' containing glyphs in
    `encoding'. }
+<<<<<<< HEAD
 
 function CGFontCreatePostScriptEncoding( font: CGFontRef; const (*var*) encoding: CGGlyph256Array ): CFDataRef; external name '_CGFontCreatePostScriptEncoding';
 (* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_2_0) *)
@@ -1218,6 +1314,16 @@ function CGFontCreatePostScriptEncoding( font: CGFontRef; const (*var*) encoding
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+
+function CGFontCreatePostScriptEncoding( font: CGFontRef; const (*var*) encoding: CGGlyph256Array ): CFDataRef; external name '_CGFontCreatePostScriptEncoding';
+(* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_2_0) *)
+
+{ Return an array of font table tags in `font'. Each entry in the array is
+   a four-byte value representing a single TrueType or OpenType font table
+   tag. }
+
+>>>>>>> origin/cpstrnew
 function CGFontCopyTableTags( font: CGFontRef ): CFArrayRef; external name '_CGFontCopyTableTags';
 (* CG_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_2_0) *)
 
@@ -1226,11 +1332,15 @@ function CGFontCopyTableTags( font: CGFontRef ): CFArrayRef; external name '_CGF
 
 function CGFontCopyTableForTag( font: CGFontRef; tag: UInt32 ): CFDataRef; external name '_CGFontCopyTableForTag';
 (* CG_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_2_0) *)
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {** Keys for the font variation axis dictionary. **}
 
 { The key used to obtain the variation axis name from a variation axis
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1269,6 +1379,10 @@ var kCGFontVariationAxisDefaultValue: CFStringRef; external name '_kCGFontVariat
    dictionary. The value obtained with this key is a CFStringRef specifying
    the name of the variation axis. }
 >>>>>>> origin/fixes_2.4
+=======
+   dictionary. The value obtained with this key is a CFStringRef specifying
+   the name of the variation axis. }
+>>>>>>> origin/cpstrnew
 
 var kCGFontVariationAxisName: CFStringRef; external name '_kCGFontVariationAxisName'; (* attribute const *)
 (* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_2_0) *)
@@ -1293,6 +1407,7 @@ var kCGFontVariationAxisMaxValue: CFStringRef; external name '_kCGFontVariationA
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
@@ -1300,6 +1415,10 @@ var kCGFontVariationAxisMaxValue: CFStringRef; external name '_kCGFontVariationA
 var kCGFontVariationAxisDefaultValue: CFStringRef; external name '_kCGFontVariationAxisDefaultValue'; (* attribute const *)
 (* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+var kCGFontVariationAxisDefaultValue: CFStringRef; external name '_kCGFontVariationAxisDefaultValue'; (* attribute const *)
+(* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 { Obsolete; don't use these. }
 
@@ -1310,6 +1429,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
@@ -1323,8 +1443,13 @@ end.
 end.
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew

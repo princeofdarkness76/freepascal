@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
     This file is part of the PTCPas framebuffer library
 <<<<<<< HEAD
@@ -17,6 +18,11 @@
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
 =======
+    Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> origin/cpstrnew
+=======
+{
+    This file is part of the PTCPas framebuffer library
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> origin/cpstrnew
     Original C++ version by Christian Nentwich (c.nentwich@cs.ucl.ac.uk)
@@ -37,6 +43,7 @@
     this library, you may extend this exception to your version of the library,
     but you are not obligated to do so. If you do not wish to do so, delete this
     exception statement from your version.
+<<<<<<< HEAD
 
     This library is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -170,26 +177,36 @@ type
 =======
 >>>>>>> origin/fixes_2_2
 {$IFDEF ENABLE_X11_EXTENSION_XF86DGA1}
+=======
+>>>>>>> origin/cpstrnew
 
-Type
-  TX11DGA1Display = Class(TX11Display)
-  Private
-    Function NextEvent(Var AEvent : TPTCEvent; AWait : Boolean; Const AEventMask : TPTCEventMask) : Boolean; Override;
-    Function PeekEvent(AWait : Boolean; Const AEventMask : TPTCEventMask) : TPTCEvent; Override;
+    This library is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Lesser General Public License for more details.
 
-    Procedure HandleEvents;
+    You should have received a copy of the GNU Lesser General Public
+    License along with this library; if not, write to the Free Software
+    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+}
 
-    FModeInfo : PPXF86VidModeModeInfo;
-    FModeInfoNum : Integer;
-    FPreviousMode : Integer;
+{$IFDEF ENABLE_X11_EXTENSION_XF86DGA1}
 
-    FDGAAddr : PByte;
-    FDGALineWidth : Integer;
-    FDGABankSize : Integer;
-    FDGAMemSize : Integer;
-    FDGAWidth, FDGAHeight : Integer;
+type
+  TX11DGA1Display = class(TX11Display)
+  private
+    FModeInfo: PPXF86VidModeModeInfo;
+    FModeInfoNum: Integer;
+    FPreviousMode: Integer;
+
+    FDGAAddr: PByte;
+    FDGALineWidth: Integer;
+    FDGABankSize: Integer;
+    FDGAMemSize: Integer;
+    FDGAWidth, FDGAHeight: Integer;
 
     { Coordinates of upper left frame corner }
+<<<<<<< HEAD
     FDestX, FDestY : Integer;
 
     FInDirect, FInMode : Boolean;
@@ -216,5 +233,35 @@ Type
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    FDestX, FDestY: Integer;
+
+    FInDirect, FInMode: Boolean;
+
+    function NextEvent(var AEvent: TPTCEvent; AWait: Boolean; const AEventMask: TPTCEventMask): Boolean; override;
+    function PeekEvent(AWait: Boolean; const AEventMask: TPTCEventMask): TPTCEvent; override;
+
+    procedure HandleEvents;
+  public
+    constructor Create(ADisplay: PDisplay; AScreen: Integer; const AFlags: TX11Flags); override;
+    destructor Destroy; override;
+
+    procedure Open(ATitle: string; AWidth, AHeight: Integer; const AFormat: TPTCFormat); override;
+    procedure Open(AWindow: TWindow; const AFormat: TPTCFormat); override;
+    procedure Open(AWindow: TWindow; const AFormat: TPTCFormat; AX, AY, AWidth, AHeight: Integer); override;
+    procedure Close; override;
+    procedure GetModes(var AModes: TPTCModeDynArray); override;
+    procedure Update; override;
+    procedure Update(const AArea: TPTCArea); override;
+    function Lock: Pointer; override;
+    procedure Unlock; override;
+    procedure Palette(const APalette: TPTCPalette); override;
+    function GetPitch: Integer; override;
+    function GetX11Window: TWindow; override;
+    function IsFullScreen: Boolean; override;
+    procedure SetCursor(AVisible: Boolean); override;
+    procedure SetMouseGrab(AGrabMouse: Boolean); override;
+  end;
+>>>>>>> origin/cpstrnew
 
 {$ENDIF ENABLE_X11_EXTENSION_XF86DGA1}

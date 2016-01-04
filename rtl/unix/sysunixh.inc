@@ -31,6 +31,7 @@ const
  DirectorySeparator = '/';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  DriveSeparator = '';
 =======
  DriveSeparator = '/';
@@ -38,6 +39,9 @@ const
 =======
  DriveSeparator = '/';
 >>>>>>> origin/fixes_2_2
+=======
+ DriveSeparator = '';
+>>>>>>> origin/cpstrnew
  ExtensionSeparator = '.';
  PathSeparator = ':';
  AllowDirectorySeparators : set of char = ['\','/'];

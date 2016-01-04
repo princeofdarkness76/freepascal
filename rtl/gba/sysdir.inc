@@ -23,6 +23,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure do_mkdir(const s: rawbytestring);
 =======
 procedure mkdir(s: pchar; len: sizeuint);[IOCheck, public, alias : 'FPC_SYS_MKDIR'];
@@ -36,10 +37,14 @@ procedure mkdir(s: pchar; len: sizeuint);[IOCheck, public, alias : 'FPC_SYS_MKDI
 =======
 procedure mkdir(s: pchar; len: sizeuint);[IOCheck, public, alias : 'FPC_SYS_MKDIR'];
 >>>>>>> origin/cpstrnew
+=======
+procedure mkdir(s: pchar; len: sizeuint);[IOCheck, public, alias : 'FPC_SYS_MKDIR'];
+>>>>>>> origin/cpstrnew
 begin
 
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -57,10 +62,14 @@ procedure rmdir(s: pchar; len: sizeuint);[IOCheck, public, alias : 'FPC_SYS_RMDI
 =======
 procedure rmdir(s: pchar; len: sizeuint);[IOCheck, public, alias : 'FPC_SYS_RMDIR'];
 >>>>>>> origin/cpstrnew
+=======
+procedure rmdir(s: pchar; len: sizeuint);[IOCheck, public, alias : 'FPC_SYS_RMDIR'];
+>>>>>>> origin/cpstrnew
 begin
 
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -78,10 +87,14 @@ procedure chdir(s: pchar; len: sizeuint);[IOCheck, public, alias : 'FPC_SYS_CHDI
 =======
 procedure chdir(s: pchar; len: sizeuint);[IOCheck, public, alias : 'FPC_SYS_CHDIR'];
 >>>>>>> origin/cpstrnew
+=======
+procedure chdir(s: pchar; len: sizeuint);[IOCheck, public, alias : 'FPC_SYS_CHDIR'];
+>>>>>>> origin/cpstrnew
 begin
 
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -96,6 +109,9 @@ procedure GetDir(DriveNr: byte; var Dir: ShortString);
 =======
 procedure GetDir(DriveNr: byte; var Dir: ShortString);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure GetDir(DriveNr: byte; var Dir: ShortString);
+>>>>>>> origin/cpstrnew
 =======
 procedure GetDir(DriveNr: byte; var Dir: ShortString);
 >>>>>>> origin/cpstrnew

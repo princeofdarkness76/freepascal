@@ -21,6 +21,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   fpmkunit,
 =======
 >>>>>>> graemeg/cpstrnew
@@ -30,11 +31,14 @@ uses
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   SysUtils,
   Classes,
 {$ifdef unix}
   baseunix,
 {$endif}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -52,6 +56,10 @@ uses
   fpTemplate,
   process;
 >>>>>>> graemeg/cpstrnew
+=======
+  fpTemplate,
+  process;
+>>>>>>> origin/cpstrnew
 =======
   fpTemplate,
   process;
@@ -115,6 +123,7 @@ Resourcestring
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   SErrDestDirectory   = 'Error: The output file "%s" is a directory.';
 =======
 >>>>>>> graemeg/cpstrnew
@@ -124,10 +133,13 @@ Resourcestring
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
   SWarnIgnoringFile   = 'Warning: Ignoring non-existent file: ';
   SWarnIgnoringPair   = 'Warning: Ignoring wrong name/value pair: ';
   SWarngccNotFound    = 'Warning: Could not find gcc. Unable to determine the gcclib path.';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -139,6 +151,8 @@ Resourcestring
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -228,6 +242,7 @@ function GetDefaultGCCDir: string;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   var
     OS: TOS;
     CPU: TCPU;
@@ -282,6 +297,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 var GccExecutable: string;
@@ -398,11 +415,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 end;
@@ -610,6 +630,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if (OutputFileName<>'') and
      DirectoryExists(OutputFileName) then
     begin
@@ -622,6 +643,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   If (OutputFileName<>'')

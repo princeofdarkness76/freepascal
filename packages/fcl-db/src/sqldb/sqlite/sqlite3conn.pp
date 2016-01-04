@@ -239,7 +239,6 @@ const
     // New methods
     procedure execsql(const asql: string);
     procedure UpdateIndexDefs(IndexDefs : TIndexDefs;TableName : string); override; // Differs from SQLDB.
-    function getprimarykeyfield(const atablename: string; const acursor: tsqlcursor): string;
     function RowsAffected(cursor: TSQLCursor): TRowsCount; override;
     function GetSchemaInfoSQL(SchemaType : TSchemaType; SchemaObjectName, SchemaPattern : string) : string; override;
     function StrToStatementType(s : string) : TStatementType; override;
@@ -250,11 +249,14 @@ const
   published
     property Options: TSqliteOptions read FOptions write SetOptions;
   end;
- 
+  
+Var
+  SQLiteLibraryName : String = sqlite3lib; 
+   
 implementation
 
 uses
-  dbconst, sysutils, typinfo, dateutils;
+  dbconst, sysutils, dateutils,FmtBCD;
  
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -447,20 +449,25 @@ begin
                 do1:= P.asfloat;
                 checkerror(sqlite3_bind_double(fstatement,I,do1));
                 end;
-        ftstring: begin
-                  str1:= p.asstring;
-                  checkerror(sqlite3_bind_text(fstatement,I,pcharstr(str1), length(str1),@freebindstring));
-                  end;
+        ftstring,
+        ftmemo: begin // According to SQLite documentation, CLOB's (ftMemo) have the Text affinity
+                str1:= p.asstring;
+                checkerror(sqlite3_bind_text(fstatement,I,pcharstr(str1), length(str1),@freebindstring));
+                end;
         ftblob: begin
                 str1:= P.asstring;
                 checkerror(sqlite3_bind_blob(fstatement,I,pcharstr(str1), length(str1),@freebindstring));
                 end; 
       else 
+<<<<<<< HEAD
         databaseerror('Parameter type '+getenumname(typeinfo(tfieldtype),ord(P.datatype))+' not supported.');
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+        DatabaseErrorFmt(SUnsupportedParameter, [Fieldtypenames[P.DataType], Self]);
+>>>>>>> origin/cpstrnew
       end; { Case }
     end;   
 end;
@@ -638,6 +645,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Res.fconnection:=Self;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -653,6 +661,8 @@ begin
 =======
   Res.fhandle:=self.fhandle;
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
   Result:=Res;
 end;
 
@@ -674,6 +684,7 @@ procedure TSQLite3Connection.PrepareStatement(cursor: TSQLCursor;
                ATransaction: TSQLTransaction; buf: string; AParams: TParams);
 begin
   TSQLite3Cursor(cursor).fhandle:=self.fhandle;
+<<<<<<< HEAD
 =======
 procedure TSQLite3Connection.PrepareStatement(cursor: TSQLCursor;
                ATransaction: TSQLTransaction; buf: string; AParams: TParams);
@@ -684,6 +695,8 @@ procedure TSQLite3Connection.PrepareStatement(cursor: TSQLCursor;
                ATransaction: TSQLTransaction; buf: string; AParams: TParams);
 begin
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
   TSQLite3Cursor(cursor).Prepare(Buf,AParams);
 end;
 
@@ -693,11 +706,15 @@ begin
   TSQLite3Cursor(cursor).UnPrepare;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   TSQLite3Cursor(cursor).fhandle:=nil;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  TSQLite3Cursor(cursor).fhandle:=nil;
+>>>>>>> origin/cpstrnew
 end;
 
 
@@ -708,6 +725,7 @@ Type
   end;
   
 Const
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -738,6 +756,9 @@ Const
 =======
 >>>>>>> origin/fixes_2_2
   FieldMapCount = 19;
+=======
+  FieldMapCount = 20;
+>>>>>>> origin/cpstrnew
   FieldMap : Array [1..FieldMapCount] of TFieldMap = (
    (n:'INT'; t: ftInteger),
    (n:'LARGEINT'; t:ftlargeInt),
@@ -785,6 +806,7 @@ Const
    (n:'NUMERIC'; t: ftBCD),
    (n:'DECIMAL'; t: ftBCD),
    (n:'TEXT'; t: ftmemo),
+   (n:'CLOB'; t: ftmemo),
    (n:'BLOB'; t: ftBlob)
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -885,6 +907,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     // Column declared as INTEGER PRIMARY KEY [AUTOINCREMENT] becomes ROWID for given table
     // declared data type must be INTEGER (not INT, BIGINT, NUMERIC etc.)
     if (FD='INTEGER') and SameText(FN, PrimaryKeyFields) then
@@ -897,6 +920,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     // In case of an empty fieldtype (FD='', which is allowed and used in calculated
     // columns (aggregates) and by pragma-statements) or an unknown fieldtype,
     // use the field's affinity:
@@ -907,6 +932,7 @@ begin
         stBlob:    ft1:=ftBlob;
         else       ft1:=ftString;
       end;
+<<<<<<< HEAD
     // handle some specials.
     size1:=0;
     case ft1 of
@@ -940,6 +966,8 @@ begin
     // Empty field types are allowed and used in calculated columns (aggregates)
     // and by pragma-statements
     if FD='' then ft1 := ftString;
+=======
+>>>>>>> origin/cpstrnew
     // handle some specials.
     size1:=0;
     case ft1 of
@@ -967,12 +995,17 @@ begin
                   size1:=StrToIntDef(trim(copy(FD,1,fi-1)),255);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   if size1>4 then
                     ft1 := ftFMTBcd;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+                  if size1>4 then
+                    ft1 := ftFMTBcd;
+>>>>>>> origin/cpstrnew
                   end
                 else size1 := 4;
                 end;
@@ -1201,6 +1234,9 @@ var
  i64: int64;
  int1,int2: integer;
  str1: string;
+ bcd: tBCD;
+ StoreDecimalPoint: tDecimalPoint;
+ bcdstr: FmtBCDStringtype;
  ar1,ar2: TStringArray;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -1281,6 +1317,7 @@ begin
               end;
     ftFmtBCD: begin
               int1:= sqlite3_column_bytes(st,fnum);
+<<<<<<< HEAD
               if (int1 > 0) and (int1 <= MAXFMTBcdFractionSize) then
                 begin
                 SetLength(bcdstr,int1);
@@ -1351,6 +1388,8 @@ begin
 >>>>>>> origin/cpstrnew
     ftFmtBCD: begin
               int1:= sqlite3_column_bytes(st,fnum);
+=======
+>>>>>>> origin/cpstrnew
               if int1>255 then
                 int1:=255;
               if int1 > 0 then
@@ -1370,6 +1409,7 @@ begin
                 bcd := 0;
               pBCD(buffer)^:= bcd;
               end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
@@ -1404,6 +1444,8 @@ begin
 =======
               end;
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
     ftMemo,
     ftBlob: CreateBlob:=True;
   else { Case }
@@ -1505,7 +1547,7 @@ begin
 begin
   if Length(databasename)=0 then
     DatabaseError(SErrNoDatabaseName,self);
-  initialisesqlite;
+  InitializeSqlite(SQLiteLibraryName);
   str1:= databasename;
   checkerror(sqlite3_open(pchar(str1),@fhandle));
 <<<<<<< HEAD
@@ -1639,6 +1681,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TSQLite3Connection.GetSchemaInfoSQL(SchemaType: TSchemaType;
   SchemaObjectName, SchemaPattern: string): string;
   
@@ -1748,6 +1791,8 @@ end;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 function TSQLite3Connection.RowsAffected(cursor: TSQLCursor): TRowsCount;
 begin
   if assigned(cursor) then
@@ -1896,17 +1941,25 @@ end;
 constructor TSQLite3Connection.Create(AOwner: TComponent);
 begin
   inherited Create(AOwner);
+<<<<<<< HEAD
   FConnOptions := FConnOptions + [sqEscapeRepeat] + [sqEscapeSlash] + [sqQuoteFieldnames];
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  FConnOptions := FConnOptions + [sqEscapeRepeat] + [sqEscapeSlash];
+  FieldNameQuoteChars:=DoubleQuotes;
+>>>>>>> origin/cpstrnew
 end;
 
 procedure TSQLite3Connection.UpdateIndexDefs(IndexDefs: TIndexDefs; TableName: string);
 var
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   artableinfo, arindexlist, arindexinfo: TArrayStringArray;
   il,ii: integer;
   IndexName: string;
@@ -1925,6 +1978,7 @@ var
     PKFields.Clear;
   end;
 
+<<<<<<< HEAD
 begin
   PKFields:=TStringList.Create;
   PKFields.Delimiter:=';';
@@ -2023,30 +2077,46 @@ finalization
 >>>>>>> origin/fixes_2_2
   str1: string;
   
+=======
+>>>>>>> origin/cpstrnew
 begin
-  str1:= getprimarykeyfield(tablename,nil);
-  if str1 <> '' then 
+  PKFields:=TStringList.Create;
+  PKFields.Delimiter:=';';
+  IXFields:=TStringList.Create;
+  IXFields.Delimiter:=';';
+
+  //primary key fields
+  artableinfo := stringsquery('PRAGMA table_info('+TableName+');');
+  for ii:=low(artableinfo) to high(artableinfo) do
+    if (high(artableinfo[ii]) >= 5) and (artableinfo[ii][5] = '1') then
+      PKFields.Add(artableinfo[ii][1]);
+
+  //list of all table indexes
+  arindexlist:=stringsquery('PRAGMA index_list('+TableName+');');
+  for il:=low(arindexlist) to high(arindexlist) do
     begin
-    indexdefs.add('$PRIMARY_KEY$',str1,[ixPrimary,ixUnique]);
+    IndexName:=arindexlist[il][1];
+    if arindexlist[il][2]='1' then
+      IndexOptions:=[ixUnique]
+    else
+      IndexOptions:=[];
+    //list of columns in given index
+    arindexinfo:=stringsquery('PRAGMA index_info('+IndexName+');');
+    IXFields.Clear;
+    for ii:=low(arindexinfo) to high(arindexinfo) do
+      IXFields.Add(arindexinfo[ii][2]);
+
+    if CheckPKFields then IndexOptions:=IndexOptions+[ixPrimary];
+
+    IndexDefs.Add(IndexName, IXFields.DelimitedText, IndexOptions);
     end;
+
+  if PKFields.Count > 0 then //in special case for INTEGER PRIMARY KEY column, unique index is not created
+    IndexDefs.Add('$PRIMARY_KEY$', PKFields.DelimitedText, [ixPrimary,ixUnique]);
+
+  PKFields.Free;
+  IXFields.Free;
 end;
-{
-procedure TSQLite3Connection.UpdateIndexDefs(var IndexDefs: TIndexDefs;
-                              const TableName: string);
-var
- int1,int2: integer;
- ar1: TArrayStringArray;
- str1: string;
-begin
- ar1:= stringsquery('PRAGMA table_info('+tablename+');');
- for int1:= 0 to high(ar1) do begin
-  if (high(ar1[int1]) >= 5) and (ar1[int1][5] <> '0') then begin
-   indexdefs.add('$PRIMARY_KEY$',ar1[int1][1],[ixPrimary,ixUnique]);
-   break;
-  end;
- end;
-end;
-}
 
 function TSQLite3Connection.getinsertid: int64;
 begin

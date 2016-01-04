@@ -4,6 +4,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   ctypes, cl;
 =======
   cl;
@@ -14,6 +15,9 @@ uses
 =======
   cl;
 >>>>>>> graemeg/cpstrnew
+=======
+  cl;
+>>>>>>> origin/cpstrnew
 =======
   cl;
 >>>>>>> origin/cpstrnew
@@ -40,6 +44,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   bufwritten : csize_t;
 =======
   bufwritten : LongWord;
@@ -50,6 +55,9 @@ var
 =======
   bufwritten : LongWord;
 >>>>>>> graemeg/cpstrnew
+=======
+  bufwritten : LongWord;
+>>>>>>> origin/cpstrnew
 =======
   bufwritten : LongWord;
 >>>>>>> origin/cpstrnew

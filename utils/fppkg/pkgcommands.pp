@@ -214,6 +214,25 @@ begin
     Procedure Execute;override;
   end;
 
+  { TCommandListSettings }
+
+  TCommandListSettings = Class(TPackagehandler)
+  Public
+    Procedure Execute;override;
+  end;
+
+var
+  DependenciesDepth: integer;
+
+{ TCommandListSettings }
+
+procedure TCommandListSettings.Execute;
+begin
+  GlobalOptions.LogValues(vlProgres);
+  CompilerOptions.LogValues(vlProgres,'');
+  FPMakeCompilerOptions.LogValues(vlProgres,'fpmake-building ');
+end;
+
 
 procedure TCommandAddConfig.Execute;
 begin
@@ -252,7 +271,7 @@ end;
 
 procedure TCommandListPackages.Execute;
 begin
-  ListPackages;
+  ListPackages(GlobalOptions.ShowLocation);
 end;
 
 
@@ -337,6 +356,7 @@ end;
 
 
 procedure TCommandBuild.Execute;
+<<<<<<< HEAD
 <<<<<<< HEAD
 var
   P: TFPPackage;
@@ -465,6 +485,10 @@ begin
   for i:=0 to P.Dependencies.Count-1 do
     begin
 =======
+=======
+var
+  P: TFPPackage;
+>>>>>>> origin/cpstrnew
 begin
   if PackageName<>'' then
     begin
@@ -483,7 +507,12 @@ begin
       else
         begin
           ExecuteAction(PackageName,'installdependencies');
-          ExecuteAction(PackageName,'unzip');
+          // Check if the package is not installed but being recompiled because of changed
+          // dependencies while the original source is still available.
+          P := AvailableRepository.FindPackage(PackageName);
+          if not (assigned(P) and P.RecompileBroken and (P.SourcePath<>'')) then
+            // The package is not available locally, download and unzip it.
+            ExecuteAction(PackageName,'unzip');
         end;
     end;
   ExecuteAction(PackageName,'fpmakebuild');
@@ -513,12 +542,35 @@ begin
       P:=InstalledRepository.FindPackage(S);
       if not assigned(P) then
         P:=InstalledRepository.AddPackage(S);
+<<<<<<< HEAD
       if GlobalOptions.InstallGlobal then
         UFN:=CompilerOptions.GlobalUnitDir
+=======
+      if P.RecompileBroken then
+        begin
+          // If the package is recompiled, the installation-location is dependent on where
+          // the package was installed originally.
+          if P.InstalledLocally then
+            UFN:=CompilerOptions.LocalUnitDir
+          else
+            UFN:=CompilerOptions.GlobalUnitDir;
+          // Setting RecompileBroken to false is in a strict sense not needed. But it is better
+          // to clean this temporary flag, to avoid problems with changes in the future
+          P.RecompileBroken := false;
+          AvailableRepository.FindPackage(P.Name).RecompileBroken:=false;
+        end
+>>>>>>> origin/cpstrnew
       else
-        UFN:=CompilerOptions.LocalUnitDir;
+        begin
+          if (IsSuperUser or GlobalOptions.InstallGlobal) then
+            UFN:=CompilerOptions.GlobalUnitDir
+          else
+            UFN:=CompilerOptions.LocalUnitDir;
+        end;
       UFN:=IncludeTrailingPathDelimiter(UFN)+S+PathDelim+UnitConfigFileName;
       LoadUnitConfigFromFile(P,UFN);
+      if P.IsFPMakeAddIn then
+        AddFPMakeAddIn(P);
     end
   else
     ExecuteAction(PackageName,'fpmakeinstall');
@@ -726,6 +778,7 @@ begin
             begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               if PackageIsBroken(InstalledP, True) then
 =======
               if PackageIsBroken(InstalledP) then
@@ -733,6 +786,9 @@ begin
 =======
               if PackageIsBroken(InstalledP) then
 >>>>>>> origin/fixes_2_2
+=======
+              if PackageIsBroken(InstalledP, True) then
+>>>>>>> origin/cpstrnew
                 begin
                   status:='Broken, recompiling';
                   L.Add(D.PackageName);
@@ -774,12 +830,28 @@ begin
   if assigned(MissingDependency) then
     Error(SErrNoPackageAvailable,[MissingDependency.PackageName,MissingDependency.MinVersion.AsString]);
   // Install needed updates
+<<<<<<< HEAD
   for i:=0 to L.Count-1 do
     ExecuteAction(L[i],'install');
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  if L.Count > 0 then
+    begin
+      if DependenciesDepth=0 then
+        pkgglobals.Log(vlProgres,SProgrInstallDependencies);
+      inc(DependenciesDepth);
+
+      for i:=0 to L.Count-1 do
+        ExecuteAction(L[i],'install');
+
+      dec(DependenciesDepth);
+      if DependenciesDepth=0 then
+        pkgglobals.Log(vlProgres,SProgrDependenciesInstalled);
+    end;
+>>>>>>> origin/cpstrnew
   FreeAndNil(L);
   if FreeManifest then
     FreeAndNil(P);
@@ -798,11 +870,15 @@ begin
       break;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     pkgglobals.Log(vlProgres,SProgrReinstallDependent);
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    pkgglobals.Log(vlProgres,SProgrReinstallDependent);
+>>>>>>> origin/cpstrnew
     for i:=0 to SL.Count-1 do
       begin
         ExecuteAction(SL[i],'build');
@@ -829,9 +905,13 @@ initialization
   RegisterPkgHandler('fixbroken',TCommandFixBroken);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   RegisterPkgHandler('listsettings',TCommandListSettings);
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  RegisterPkgHandler('listsettings',TCommandListSettings);
+>>>>>>> origin/cpstrnew
 end.

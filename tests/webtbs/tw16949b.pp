@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { %target=win32,win64,wince,darwin,linux,freebsd,solaris,beos,aix,android }
 { %needlibrary }
 { %delfiles=tw16949a }
@@ -17,6 +18,10 @@
 { %target=win32,win64,wince,darwin,linux,freebsd,solaris,beos}
 { %needlibrary }
 >>>>>>> graemeg/cpstrnew
+=======
+{ %target=win32,win64,wince,darwin,linux,freebsd,solaris,beos}
+{ %needlibrary }
+>>>>>>> origin/cpstrnew
 =======
 { %target=win32,win64,wince,darwin,linux,freebsd,solaris,beos}
 { %needlibrary }

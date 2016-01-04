@@ -67,6 +67,7 @@ unit i_wii;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             link         : ld_none;
             linkextern   : ld_wii;
 =======
@@ -81,6 +82,10 @@ unit i_wii;
             link         : nil;
             linkextern   : nil;
 >>>>>>> graemeg/cpstrnew
+=======
+            link         : nil;
+            linkextern   : nil;
+>>>>>>> origin/cpstrnew
 =======
             link         : nil;
             linkextern   : nil;
@@ -111,6 +116,7 @@ unit i_wii;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             stackalign   : 16;
             abi : abi_powerpc_sysv;
             llvmdatalayout : 'E-p:32:32:32-i1:8:8-i8:8:8-i16:16:16-i32:32:32-i64:64:64-f32:32:32-f64:64:64-v128:128:128-n32';
@@ -123,6 +129,9 @@ unit i_wii;
 =======
             abi : abi_powerpc_sysv;
 >>>>>>> graemeg/cpstrnew
+=======
+            abi : abi_powerpc_sysv;
+>>>>>>> origin/cpstrnew
 =======
             abi : abi_powerpc_sysv;
 >>>>>>> origin/cpstrnew

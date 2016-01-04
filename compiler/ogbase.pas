@@ -70,6 +70,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef i8086}
          RELOC_ABSOLUTE32,
          RELOC_RELATIVE32,
@@ -88,6 +89,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$ifdef arm}
@@ -114,6 +117,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          RELOC_PIC_PAIR,
          { Relative to GOT/gp }
          RELOC_GOTOFF,
@@ -128,6 +132,9 @@ interface
 =======
          RELOC_PIC_PAIR
 >>>>>>> graemeg/cpstrnew
+=======
+         RELOC_PIC_PAIR
+>>>>>>> origin/cpstrnew
 =======
          RELOC_PIC_PAIR
 >>>>>>> origin/cpstrnew
@@ -227,6 +234,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        { Used by the OMF object format and its complicated relocation records }
        group: TObjSectionGroup;
 {$ifdef ARM}
@@ -239,6 +247,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
        constructor create(AList:TFPHashObjectList;const AName:string);
@@ -736,9 +746,13 @@ interface
         procedure GenerateDebugLink(const dbgname:string;dbgcrc:cardinal);
         function WriteExeFile(const fn:string):boolean;
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+        procedure ParseScript (linkscript:TCmdStrList); virtual;
+>>>>>>> origin/cpstrnew
         property Writer:TObjectWriter read FWriter;
         property ExeSectionList:TFPHashObjectList read FExeSectionList;
         property ObjDataList:TFPObjectList read FObjDataList;
@@ -850,6 +864,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (bind in [AB_EXTERNAL,AB_LAZY]) or
           { Put all COMMON to GLOBAL in step 3 of
             TExeOutput.ResolveSymbols }
@@ -863,6 +878,9 @@ implementation
 =======
         if (bind in [AB_EXTERNAL,AB_LAZY]) then
 >>>>>>> graemeg/cpstrnew
+=======
+        if (bind in [AB_EXTERNAL,AB_LAZY]) then
+>>>>>>> origin/cpstrnew
 =======
         if (bind in [AB_EXTERNAL,AB_LAZY]) then
 >>>>>>> origin/cpstrnew
@@ -1266,10 +1284,14 @@ implementation
     function TObjData.sectionname(atype:TAsmSectiontype;const aname:string;aorder:TAsmSectionOrder):string;
       const
 <<<<<<< HEAD
+<<<<<<< HEAD
         secnames : array[TAsmSectiontype] of string[length('__DATA, __datacoal_nt,coalesced')] = ('','',
 =======
         secnames : array[TAsmSectiontype] of string[16] = ('',
 >>>>>>> origin/fixes_2.4
+=======
+        secnames : array[TAsmSectiontype] of string[length('__DATA, __datacoal_nt,coalesced')] = ('','',
+>>>>>>> origin/cpstrnew
           'code',
           'Data',
           'Data',
@@ -1327,6 +1349,7 @@ implementation
           '.objc_catlist',
           '.obcj_nlcatlist',
           '.objc_protolist'
+<<<<<<< HEAD
 =======
           'fini'
 >>>>>>> graemeg/fixes_2_2
@@ -1336,6 +1359,8 @@ implementation
 =======
           'fini'
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
         );
       var
         sep : string[3];
@@ -1386,6 +1411,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1393,10 +1419,13 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           {data_nonlazy}  [oso_Data,oso_load,oso_write],
           {data_lazy} [oso_Data,oso_load,oso_write],
           {init_func} [oso_Data,oso_load],
           {term_func} [oso_Data,oso_load],
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1408,6 +1437,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
           {stab} [oso_Data,oso_noload,oso_debug],
@@ -1467,6 +1498,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           {sec_objc_protolist'} [oso_data,oso_load],
           {stack} [oso_load,oso_write],
           {heap} [oso_load,oso_write]
@@ -1502,6 +1534,9 @@ implementation
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+          {sec_objc_protolist'} [oso_data,oso_load]
+>>>>>>> origin/cpstrnew
         );
       begin
         result:=secoptions[atype];
@@ -2169,6 +2204,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         FixedSectionAlign:=True;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2176,6 +2212,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         FCExeSection:=TExeSection;

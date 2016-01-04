@@ -40,6 +40,7 @@ unit i_haiku;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                             tf_smartlink_sections, tf_has_winlike_resources];
 =======
                             tf_smartlink_sections, tf_smartlink_library, tf_has_winlike_resources];
@@ -50,6 +51,9 @@ unit i_haiku;
 =======
                             tf_smartlink_sections, tf_smartlink_library, tf_has_winlike_resources];
 >>>>>>> graemeg/cpstrnew
+=======
+                            tf_smartlink_sections, tf_smartlink_library, tf_has_winlike_resources];
+>>>>>>> origin/cpstrnew
 =======
                             tf_smartlink_sections, tf_smartlink_library, tf_has_winlike_resources];
 >>>>>>> origin/cpstrnew

@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       Help/AppleHelp.h
  
      Contains:   Apple Help
@@ -16,11 +17,15 @@
 =======
      File:       Help/AppleHelp.h
 >>>>>>> origin/fixes_2.4
+=======
+     File:       Help/AppleHelp.h
+>>>>>>> origin/cpstrnew
  
      Contains:   Apple Help
  
      Version:    Help-36~232
  
+<<<<<<< HEAD
 <<<<<<< HEAD
      Copyright:  © 2000-2002 by Apple Computer, Inc., all rights reserved.
 <<<<<<< HEAD
@@ -30,6 +35,9 @@
 =======
      Copyright:  © 2000-2008 by Apple Computer, Inc., all rights reserved.
 >>>>>>> origin/fixes_2.4
+=======
+     Copyright:  © 2000-2008 by Apple Computer, Inc., all rights reserved.
+>>>>>>> origin/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -40,6 +48,7 @@
  
 }
 {       Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+<<<<<<< HEAD
 {
     Modified for use with Free Pascal
     Version 308
@@ -54,6 +63,8 @@
  
 }
 {       Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+=======
+>>>>>>> origin/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -62,12 +73,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -79,6 +94,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -93,6 +109,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -108,6 +128,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -118,6 +139,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -125,13 +149,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -139,6 +167,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -147,8 +177,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -159,6 +192,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -179,6 +213,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -187,12 +223,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -203,12 +242,16 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -451,6 +494,16 @@ interface
 >>>>>>> origin/fixes_2.4
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -465,6 +518,7 @@ interface
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -506,6 +560,41 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -534,6 +623,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -542,6 +632,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -555,11 +647,16 @@ uses MacTypes,CFBase,Files,CFString;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 
 {$ifc TARGET_OS_MAC}
 
+<<<<<<< HEAD
 {$ALIGN POWER}
 
 { AppleHelp Error Codes }
@@ -627,6 +724,14 @@ function AHSearch( bookname: CFStringRef; query: CFStringRef ): OSStatus; extern
 
 { AppleHelp Error Codes }
 const
+=======
+{$ifc TARGET_OS_MAC}
+
+{$ALIGN POWER}
+
+{ AppleHelp Error Codes }
+const
+>>>>>>> origin/cpstrnew
 	kAHInternalErr = -10790;
 	kAHInternetConfigPrefErr = -10791;
 
@@ -636,6 +741,7 @@ type
 const
 	kAHTOCTypeUser = 0;
 	kAHTOCTypeDeveloper = 1;
+<<<<<<< HEAD
 
 {
  *  AHSearch()
@@ -669,10 +775,46 @@ function AHSearch( bookname: CFStringRef; query: CFStringRef ): OSStatus; extern
 
 
 {
+=======
+
+{
+ *  AHSearch()
+ *  
+ *  Discussion:
+ *    Delivers a request to perform the specified search to the Help
+ *    Viewer application.
+ *  
+ *  Parameters:
+ *    
+ *    bookname:
+ *      Optionally, the AppleTitle of the Help book to be searched. If
+ *      NULL, all installed Help books are searched.
+ *    
+ *    query:
+ *      The query to be made. This string can, if desired, have boolean
+ *      operators or be a natural language phrase.
+ *  
+ *  Result:
+ *    An operating system result code that indicates whether the
+ *    request was successfully sent to the Help Viewer application.
+ *    Possible values: noErr, paramErr, kAHInternalErr.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   not available
+ }
+function AHSearch( bookname: CFStringRef; query: CFStringRef ): OSStatus; external name '_AHSearch';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+>>>>>>> origin/cpstrnew
  *  AHGotoMainTOC()   *** DEPRECATED ***
  *  
  *  Discussion:
  *    Delivers a request to load the main table of contents of
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    installed help books to the Help Viewer application.
 <<<<<<< HEAD
@@ -684,6 +826,11 @@ function AHSearch( bookname: CFStringRef; query: CFStringRef ): OSStatus; extern
  *    has been deprecated in Mac OS X 10.4. Instead, please use
  *    AHGotoPage to jump directly to different books or anchors.
 >>>>>>> origin/fixes_2.4
+=======
+ *    installed help books to the Help Viewer application. This method
+ *    has been deprecated in Mac OS X 10.4. Instead, please use
+ *    AHGotoPage to jump directly to different books or anchors.
+>>>>>>> origin/cpstrnew
  *  
  *  Parameters:
  *    
@@ -693,6 +840,7 @@ function AHSearch( bookname: CFStringRef; query: CFStringRef ): OSStatus; extern
  *  Result:
  *    An operating system result code that indicates whether the
  *    request was successfully sent to the Help Viewer application.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -714,12 +862,16 @@ function AHGotoMainTOC( toctype: AHTOCType ): OSStatus; external name '_AHGotoMa
 =======
  *    Possible values: noErr, paramErr, kAHInternalErr.
 >>>>>>> origin/fixes_2.4
+=======
+ *    Possible values: noErr, paramErr, kAHInternalErr.
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   not available
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function AHGotoMainTOC(toctype: AHTOCType): OSStatus; external name '_AHGotoMainTOC';
 <<<<<<< HEAD
@@ -731,6 +883,11 @@ function AHGotoMainTOC( toctype: AHTOCType ): OSStatus; external name '_AHGotoMa
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function AHGotoMainTOC( toctype: AHTOCType ): OSStatus; external name '_AHGotoMainTOC';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  AHGotoPage()
@@ -764,6 +921,7 @@ function AHGotoMainTOC( toctype: AHTOCType ): OSStatus; external name '_AHGotoMa
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Possible values: noErr, paramErr, kAHInternalErr.
  *  
  *  Availability:
@@ -782,12 +940,16 @@ function AHGotoPage( bookname: CFStringRef; path: CFStringRef; anchor: CFStringR
 =======
  *    Possible values: noErr, paramErr, kAHInternalErr.
 >>>>>>> origin/fixes_2.4
+=======
+ *    Possible values: noErr, paramErr, kAHInternalErr.
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   not available
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function AHGotoPage(bookname: CFStringRef; path: CFStringRef; anchor: CFStringRef): OSStatus; external name '_AHGotoPage';
 <<<<<<< HEAD
@@ -799,6 +961,11 @@ function AHGotoPage( bookname: CFStringRef; path: CFStringRef; anchor: CFStringR
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> origin/fixes_2.4
+=======
+function AHGotoPage( bookname: CFStringRef; path: CFStringRef; anchor: CFStringRef ): OSStatus; external name '_AHGotoPage';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  AHLookupAnchor()
@@ -825,6 +992,7 @@ function AHGotoPage( bookname: CFStringRef; path: CFStringRef; anchor: CFStringR
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Possible values: noErr, paramErr, kAHInternalErr.
  *  
  *  Availability:
@@ -842,12 +1010,16 @@ function AHLookupAnchor( bookname: CFStringRef; anchor: CFStringRef ): OSStatus;
 =======
  *    Possible values: noErr, paramErr, kAHInternalErr.
 >>>>>>> origin/fixes_2.4
+=======
+ *    Possible values: noErr, paramErr, kAHInternalErr.
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   not available
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function AHLookupAnchor(bookname: CFStringRef; anchor: CFStringRef): OSStatus; external name '_AHLookupAnchor';
 <<<<<<< HEAD
@@ -858,6 +1030,10 @@ function AHLookupAnchor(bookname: CFStringRef; anchor: CFStringRef): OSStatus; e
 function AHLookupAnchor( bookname: CFStringRef; anchor: CFStringRef ): OSStatus; external name '_AHLookupAnchor';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+function AHLookupAnchor( bookname: CFStringRef; anchor: CFStringRef ): OSStatus; external name '_AHLookupAnchor';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -886,6 +1062,7 @@ function AHLookupAnchor( bookname: CFStringRef; anchor: CFStringRef ): OSStatus;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   not available
@@ -909,6 +1086,9 @@ end.
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   not available
  }
@@ -923,6 +1103,7 @@ function AHRegisterHelpBookWithURL( {const} applicationURL: CFURLRef ): OSStatus
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -931,3 +1112,6 @@ end.
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

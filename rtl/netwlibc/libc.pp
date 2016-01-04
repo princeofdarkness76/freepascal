@@ -39,12 +39,16 @@ Type
 $endif}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 //  PPPChar   = ^PPChar;
 =======
 =======
 >>>>>>> origin/fixes_2_2
   PPPChar   = ^PPChar;
 >>>>>>> graemeg/fixes_2_2
+=======
+//  PPPChar   = ^PPChar;
+>>>>>>> origin/cpstrnew
   void      = pointer;
   cint      = longint;
   TNLMHandle = Pointer;

@@ -1463,12 +1463,17 @@ begin
     Addln(Strings);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Addln(Strings, '{$mode objfpc}{$H+}');
     Addln(Strings);
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    Addln(Strings, '{$mode objfpc}{$H+}');
+    Addln(Strings);
+>>>>>>> origin/cpstrnew
     Addln(Strings,'Interface');
     Addln(Strings);
     S:=GetInterfaceUsesClause;

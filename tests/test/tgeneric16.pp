@@ -3,17 +3,22 @@ program Project1;
 {$mode objfpc}{$H+}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$apptype console}
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$apptype console}
+>>>>>>> origin/cpstrnew
 
 type
 
   { TStack }
 
   generic TStack<T> = class(TObject)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   public
@@ -23,10 +28,14 @@ type
 =======
    public
 >>>>>>> origin/fixes_2_2
+=======
+  public
+>>>>>>> origin/cpstrnew
     procedure Clear; virtual;
     destructor Destroy; override;
   end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   { TAdvStack }
@@ -42,6 +51,11 @@ type
 
   TAdvStack = class(specialize TStack<T>)
 >>>>>>> origin/fixes_2_2
+=======
+  { TAdvStack }
+
+  generic TAdvStack<T> = class(specialize TStack<T>)
+>>>>>>> origin/cpstrnew
   public
     procedure Clear; override;
   end;
@@ -54,6 +68,7 @@ type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   TIntegerStack2 = class(specialize TAdvStack<Integer>)
 =======
   TIntegerStack2 = class(specialize TAdvStack<Integer>);
@@ -61,6 +76,9 @@ type
 =======
   TIntegerStack2 = class(specialize TAdvStack<Integer>);
 >>>>>>> origin/fixes_2_2
+=======
+  TIntegerStack2 = class(specialize TAdvStack<Integer>)
+>>>>>>> origin/cpstrnew
   public
     procedure Clear; override;
   end;

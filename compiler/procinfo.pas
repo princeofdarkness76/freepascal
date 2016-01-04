@@ -53,6 +53,7 @@ unit procinfo;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        { This object gives information on the current routine being
          compiled.
 =======
@@ -60,6 +61,8 @@ unit procinfo;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
        {# This object gives information on the current routine being
@@ -77,6 +80,7 @@ unit procinfo;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           { required alignment for this stackframe }
           fstackalignment : longint;
 =======
@@ -85,6 +89,8 @@ unit procinfo;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
           procedure addnestedproc(child: tprocinfo);
@@ -179,6 +185,7 @@ unit procinfo;
           procedure allocate_got_register(list: TAsmList);virtual;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -211,6 +218,9 @@ unit procinfo;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
           { Destroy the entire procinfo tree, starting from the outermost parent }
           procedure destroy_tree;
 
@@ -225,6 +235,7 @@ unit procinfo;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -236,6 +247,8 @@ unit procinfo;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
        end;
        tcprocinfo = class of tprocinfo;
 
@@ -280,11 +293,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         if Assigned(parent) and (parent.procdef.parast.symtablelevel>=normal_function_level) then
@@ -317,9 +333,12 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 =======
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -330,7 +349,10 @@ implementation
         nestedprocs.insert(child);
       end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/cpstrnew
 
     function tprocinfo.get_first_nestedproc: tprocinfo;
       begin
@@ -358,6 +380,7 @@ implementation
         CurrFalseLabel:=saved[false];
         CurrTrueLabel:=saved[true];
       end;
+<<<<<<< HEAD
 >>>>>>> origin/cpstrnew
 
     function tprocinfo.get_first_nestedproc: tprocinfo;
@@ -489,6 +512,8 @@ implementation
         while assigned(result.parent) and (result.procdef.parast.symtablelevel>normal_function_level) do
           result:=result.parent;
       end;
+=======
+>>>>>>> origin/cpstrnew
 
     procedure tprocinfo.allocate_push_parasize(size:longint);
       begin
@@ -526,7 +551,14 @@ implementation
 
     procedure tprocinfo.allocate_got_register(list: TAsmList);
       begin
+<<<<<<< HEAD
         { most os/cpu combo's don't use this yet, so not yet abstract }
+=======
+        { generate callee paraloc register info, it initialises the size that
+          is allocated on the stack }
+        procdef.init_paraloc_info(calleeside);
+        para_stack_size:=procdef.calleeargareasize;
+>>>>>>> origin/cpstrnew
       end;
 
 

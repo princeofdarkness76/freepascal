@@ -63,6 +63,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    reset_textfile;
    lsock:=fpsocket(af_inet,sock_stream,0);
    if lsock=-1 then
@@ -78,6 +79,8 @@ begin
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
    lsock:=fpsocket(af_inet,sock_stream,0);
    if lsock=-1 then
      begin
@@ -100,6 +103,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       writeln('bind call error:',socketerror);
       stop(1);
 =======
@@ -111,6 +115,8 @@ begin
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
       writeln('bind:',socketerror);
       halt(1);
 >>>>>>> graemeg/cpstrnew
@@ -118,6 +124,7 @@ begin
 
   if  fplisten(lsock,1)<>0 then
     begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -134,6 +141,8 @@ begin
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
       writeln('listen:',socketerror);
       halt(1);
 >>>>>>> graemeg/cpstrnew
@@ -143,6 +152,7 @@ begin
   usock:=fpaccept(lsock,@saddr,@len);
   if usock=-1 then
     begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -159,6 +169,8 @@ begin
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
       writeln('accept:',SocketError);
       halt(1);
 >>>>>>> graemeg/cpstrnew

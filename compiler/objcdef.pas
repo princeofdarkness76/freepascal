@@ -375,6 +375,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             if not(po_is_block in tprocvardef(def).procoptions) then
               encodedstr:=encodedstr+'^?'
             else
@@ -402,12 +403,18 @@ implementation
           objectdef :
             case tobjectdef(def).objecttype of
 >>>>>>> origin/cpstrnew
+=======
+            encodedstr:=encodedstr+'^?';
+          objectdef :
+            case tobjectdef(def).objecttype of
+>>>>>>> origin/cpstrnew
               odt_class,
               odt_object,
               odt_cppclass:
                 begin
                   newstate:=recordinfostate;
                   { implicit pointer for classes }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -422,6 +429,9 @@ implementation
 =======
                   if (tobjectdef(def).objecttype=odt_class) then
 >>>>>>> graemeg/cpstrnew
+=======
+                  if (tobjectdef(def).objecttype=odt_class) then
+>>>>>>> origin/cpstrnew
 =======
                   if (tobjectdef(def).objecttype=odt_class) then
 >>>>>>> origin/cpstrnew
@@ -641,6 +651,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               odt_helper,
 =======
 >>>>>>> graemeg/cpstrnew
@@ -650,12 +661,15 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
               odt_class,
               odt_object,
               odt_cppclass:
                 begin
                   newstate:=recordinfostate;
                   { implicit pointer for classes }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -670,6 +684,9 @@ implementation
 =======
                   if (tobjectdef(def).objecttype=odt_class) then
 >>>>>>> graemeg/cpstrnew
+=======
+                  if (tobjectdef(def).objecttype=odt_class) then
+>>>>>>> origin/cpstrnew
 =======
                   if (tobjectdef(def).objecttype=odt_class) then
 >>>>>>> origin/cpstrnew

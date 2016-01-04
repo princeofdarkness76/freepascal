@@ -250,6 +250,9 @@ end;
     RealSeg := word(Ptr shr 16);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
     { we have to init everything to zero, since VBE < 1.1  }
     { may not setup fields correctly.                      }
 {$ifndef fpc}
@@ -257,10 +260,13 @@ end;
 {$else fpc}
     DosMemFillChar(RealSeg, 0, sizeof(ModeInfo), #0);
 {$endif fpc}
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
     { setup interrupt registers }
     FillChar(regs, sizeof(regs), #0);
     { call VESA mode information...}
@@ -351,16 +357,22 @@ end;
           { may not setup fields correctly.                      }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
           { bugfix: for DPMI this is now done in GetVESAModeInfo }
 {$IFNDEF DPMI}
           FillChar(VESAModeInfo, sizeof(VESAModeInfo), #0);
 {$ENDIF}
+<<<<<<< HEAD
 =======
           FillChar(VESAModeInfo, sizeof(VESAModeInfo), #0);
 >>>>>>> graemeg/fixes_2_2
 =======
           FillChar(VESAModeInfo, sizeof(VESAModeInfo), #0);
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
           If GetVESAModeInfo(VESAModeInfo, Mode) And
              ((VESAModeInfo.attr and modeAvail) <> 0) then
             ModeSupported := TRUE
@@ -372,6 +384,9 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 procedure SetBankIndex(win: byte; BankNr: smallint);
 {I don't know why but the previous assembler version changed by some mechanism
  unknown to me some places in memory what lead to changing some variables not
@@ -383,6 +398,7 @@ begin
   r.dx:=BankNr;
   RealIntr($10,r);
 end;
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -418,6 +434,8 @@ end;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 
   {********************************************************}
   { There are two routines for setting banks. This may in  }
@@ -611,6 +629,7 @@ end;
             begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               pixels := MemL[WinReadSeg:word(offs)+l*4];
 =======
               pixels := MemL[WinWriteSeg:word(offs)+l*4];
@@ -618,6 +637,9 @@ end;
 =======
               pixels := MemL[WinWriteSeg:word(offs)+l*4];
 >>>>>>> origin/fixes_2_2
+=======
+              pixels := MemL[WinReadSeg:word(offs)+l*4];
+>>>>>>> origin/cpstrnew
               WordArray(Data)[index+l*4] := pixels and $ff;
               pixels := pixels shr 8;
               WordArray(Data)[index+l*4+1] := pixels and $ff;
@@ -1007,6 +1029,7 @@ end;
                          Mem[WinWriteSeg:word(offs)] :=
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                            Mem[WinReadSeg:word(offs)] Or byte(currentColor);
 =======
                            Mem[WinReadSeg:word(offs)] And byte(currentColor);
@@ -1014,6 +1037,9 @@ end;
 =======
                            Mem[WinReadSeg:word(offs)] And byte(currentColor);
 >>>>>>> origin/fixes_2_2
+=======
+                           Mem[WinReadSeg:word(offs)] Or byte(currentColor);
+>>>>>>> origin/cpstrnew
                          inc(offs);
                        end;
                      HLength := 0
@@ -1173,6 +1199,7 @@ end;
                  {$endif logging}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                  If (VLength-1)*bytesperline <= ($ffff-(Offs and $ffff)) Then
                    bankrest := VLength
                  else {the rest won't fit anymore in the current window }
@@ -1188,6 +1215,12 @@ end;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+                 If (VLength-1)*bytesperline <= ($ffff-(Offs and $ffff)) Then
+                   bankrest := VLength
+                 else {the rest won't fit anymore in the current window }
+                   bankrest := (($ffff - (Offs and $ffff)) div bytesperline)+1;
+>>>>>>> origin/cpstrnew
                  {$ifdef logging2}
                  LogLn('Rest to be drawn in this window: '+strf(bankrest));
                  {$endif logging}
@@ -1214,6 +1247,7 @@ end;
                  {$endif logging}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                  If (VLength-1)*bytesperline <= ($ffff-(Offs and $ffff)) Then
                    bankrest := VLength
                  else {the rest won't fit anymore in the current window }
@@ -1229,6 +1263,12 @@ end;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+                 If (VLength-1)*bytesperline <= ($ffff-(Offs and $ffff)) Then
+                   bankrest := VLength
+                 else {the rest won't fit anymore in the current window }
+                   bankrest := (($ffff - (Offs and $ffff)) div bytesperline)+1;
+>>>>>>> origin/cpstrnew
                  {$ifdef logging2}
                  LogLn('Rest to be drawn in this window: '+strf(bankrest));
                  {$endif logging}
@@ -1255,6 +1295,7 @@ end;
                  {$endif logging}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                  If (VLength-1)*bytesperline <= ($ffff-(Offs and $ffff)) Then
                    bankrest := VLength
                  else {the rest won't fit anymore in the current window }
@@ -1270,6 +1311,12 @@ end;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+                 If (VLength-1)*bytesperline <= ($ffff-(Offs and $ffff)) Then
+                   bankrest := VLength
+                 else {the rest won't fit anymore in the current window }
+                   bankrest := (($ffff - (Offs and $ffff)) div bytesperline)+1;
+>>>>>>> origin/cpstrnew
                  {$ifdef logging2}
                  LogLn('Rest to be drawn in this window: '+strf(bankrest));
                  {$endif logging}
@@ -1297,6 +1344,7 @@ end;
                  {$endif logging}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                  If (VLength-1)*bytesperline <= ($ffff-(Offs and $ffff)) Then
                    bankrest := VLength
                  else {the rest won't fit anymore in the current window }
@@ -1312,6 +1360,12 @@ end;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+                 If (VLength-1)*bytesperline <= ($ffff-(Offs and $ffff)) Then
+                   bankrest := VLength
+                 else {the rest won't fit anymore in the current window }
+                   bankrest := (($ffff - (Offs and $ffff)) div bytesperline)+1;
+>>>>>>> origin/cpstrnew
                  {$ifdef logging2}
                  LogLn('Rest to be drawn in this window: '+strf(bankrest));
                  {$endif logging}
@@ -1637,6 +1691,7 @@ end;
      offs : longint;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      place: word;
      bank : shortint;
 
@@ -1644,6 +1699,11 @@ end;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+     place: word;
+     bank : shortint;
+
+>>>>>>> origin/cpstrnew
   begin
 {$ifdef logging}
      logln('putpixvesa32kor64k('+strf(x)+','+strf(y)+')');
@@ -1662,10 +1722,14 @@ end;
      offs := longint(y) * BytesPerLine + 2*x;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
      bank := offs div 65536;
      place:= offs mod 65536;
      SetWriteBank(bank);
 
+<<<<<<< HEAD
 {$ifdef logging}
      logln('putpixvesa32kor64k offset: '+strf(word(offs)));
 {$endif logging}
@@ -1682,6 +1746,12 @@ end;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$ifdef logging}
+     logln('putpixvesa32kor64k offset: '+strf(word(offs)));
+{$endif logging}
+     memW[WinWriteSeg : place] := color;
+>>>>>>> origin/cpstrnew
   end;
 
   function GetPixVESA32kOr64k(x, y : smallint): word; {$ifndef fpc}far;{$endif fpc}
@@ -1700,6 +1770,7 @@ end;
      offs : longint;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      bank : smallint;
      place,col : word;
 =======
@@ -1708,11 +1779,16 @@ end;
 =======
      col : word;
 >>>>>>> origin/fixes_2_2
+=======
+     bank : smallint;
+     place,col : word;
+>>>>>>> origin/cpstrnew
   begin
 {$ifdef logging}
      logln('directputpixvesa32kor64k('+strf(x)+','+strf(y)+')');
 {$endif logging}
      y:= Y + YOffset;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -1739,27 +1815,38 @@ end;
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+
+>>>>>>> origin/cpstrnew
      offs := longint(y) * BytesPerLine + 2*x;
-     SetWriteBank(smallint((offs shr 16) and $ff));
+     bank:=offs div 65536;
+     place:=offs mod 65536;
+
+     SetWriteBank(bank and $FF); // unknown why this and $FF is here.
      Case CurrentWriteMode of
        XorPut:
          Begin
-           SetReadBank(smallint(offs shr 16));
-           memW[WinWriteSeg : word(offs)] := memW[WinReadSeg : word(offs)] xor currentcolor;
+           SetReadBank(bank);
+           memW[WinWriteSeg : place] := memW[WinReadSeg : place] xor currentcolor;
          End;
        AndPut:
          Begin
-           SetReadBank(smallint(offs shr 16));
-           memW[WinWriteSeg : word(offs)] := memW[WinReadSeg : word(offs)] And currentcolor;
+           SetReadBank(bank);
+           memW[WinWriteSeg : place] := memW[WinReadSeg : place] And currentcolor;
          End;
        OrPut:
          Begin
+<<<<<<< HEAD
            SetReadBank(smallint(offs shr 16));
            memW[WinWriteSeg : word(offs)] := memW[WinReadSeg : word(offs)] or currentcolor;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+           SetReadBank(bank);
+           memW[WinWriteSeg : place] := memW[WinReadSeg : place] or currentcolor;
+>>>>>>> origin/cpstrnew
          End
        else
          Begin
@@ -1771,6 +1858,7 @@ end;
 {$endif logging}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
            memW[WinWriteSeg : place] := Col;
 =======
            memW[WinWriteSeg : word(offs)] := Col;
@@ -1778,6 +1866,9 @@ end;
 =======
            memW[WinWriteSeg : word(offs)] := Col;
 >>>>>>> origin/fixes_2_2
+=======
+           memW[WinWriteSeg : place] := Col;
+>>>>>>> origin/cpstrnew
          End
      End;
   end;
@@ -2216,16 +2307,21 @@ end;
      offs := longint(y) * BytesPerLine + (x div 8);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      SetReadBank(smallint(offs shr 16));
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+     SetReadBank(smallint(offs shr 16));
+>>>>>>> origin/cpstrnew
      SetWriteBank(smallint(offs shr 16));
 
      PortW[$3ce] := $0f01;       { Index 01 : Enable ops on all 4 planes }
      PortW[$3ce] := color shl 8; { Index 00 : Enable correct plane and write color }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
      { Index 08 : Bitmask register.          }
@@ -2245,6 +2341,13 @@ end;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+     { Index 08 : Bitmask register.          }
+     PortW[$3ce] := ($8000 shr (x and $7)) or 8; { Select correct bits to modify }
+
+     dummy := Mem[WinReadSeg: word(offs)];  { Latch the data into host space.  }
+     Mem[WinWriteSeg: word(offs)] := dummy;  { Write the data into video memory }
+>>>>>>> origin/cpstrnew
      PortW[$3ce] := $ff08;         { Enable all bit planes.           }
      PortW[$3ce] := $0001;         { Index 01 : Disable ops on all four planes.         }
      { }
@@ -2252,6 +2355,7 @@ end;
 
 
  Function GetPixVESA16(X,Y: smallint):word; {$ifndef fpc}far;{$endif fpc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  Var dummy: Word;
@@ -2262,12 +2366,17 @@ end;
 =======
  Var dummy, offset: Word;
 >>>>>>> origin/fixes_2_2
+=======
+ Var dummy: Word;
+     offset: longint;
+>>>>>>> origin/cpstrnew
      shift: byte;
   Begin
     X:= X + StartXViewPort;
     Y:= Y + StartYViewPort + YOffset;
     offset := longint(Y) * BytesPerLine + (x div 8);
     SetReadBank(smallint(offset shr 16));
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     PortW[$3ce] := $0004;
@@ -2283,19 +2392,25 @@ end;
 =======
 >>>>>>> origin/fixes_2_2
     Port[$3ce] := 4;
+=======
+    PortW[$3ce] := $0004;
+>>>>>>> origin/cpstrnew
     shift := 7 - (X and 7);
-    Port[$3cf] := 0;
-    dummy := (Mem[WinReadSeg:offset] shr shift) and 1;
+    dummy := (Mem[WinReadSeg:word(offset)] shr shift) and 1;
     Port[$3cf] := 1;
-    dummy := dummy or (((Mem[WinReadSeg:offset] shr shift) and 1) shl 1);
+    dummy := dummy or (((Mem[WinReadSeg:word(offset)] shr shift) and 1) shl 1);
     Port[$3cf] := 2;
-    dummy := dummy or (((Mem[WinReadSeg:offset] shr shift) and 1) shl 2);
+    dummy := dummy or (((Mem[WinReadSeg:word(offset)] shr shift) and 1) shl 2);
     Port[$3cf] := 3;
+<<<<<<< HEAD
     dummy := dummy or (((Mem[WinReadSeg:offset] shr shift) and 1) shl 3);
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    dummy := dummy or (((Mem[WinReadSeg:word(offset)] shr shift) and 1) shl 3);
+>>>>>>> origin/cpstrnew
     GetPixVESA16 := dummy;
   end;
 
@@ -2308,6 +2423,9 @@ end;
   begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
      If CurrentWriteMode <> NotPut Then
        Color := CurrentColor
      else Color := not CurrentColor;
@@ -2327,6 +2445,7 @@ end;
      end;
 
      Y := Y + YOffset;
+<<<<<<< HEAD
      offs := longint(y) * BytesPerLine + (x div 8);
      SetReadBank(smallint(offs shr 16));
 =======
@@ -2364,10 +2483,15 @@ end;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+     offs := longint(y) * BytesPerLine + (x div 8);
+     SetReadBank(smallint(offs shr 16));
+>>>>>>> origin/cpstrnew
      SetWriteBank(smallint(offs shr 16));
      PortW[$3ce] := $0f01;       { Index 01 : Enable ops on all 4 planes }
      PortW[$3ce] := color shl 8; { Index 00 : Enable correct plane and write color }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
      { Index 08 : Bitmask register.          }
@@ -2603,18 +2727,165 @@ end;
 >>>>>>> origin/fixes_2_2
      Port[$3ce] := 8;           { Index 08 : Bitmask register.          }
      Port[$3cf] := $80 shr (x and $7); { Select correct bits to modify }
+=======
+     { Index 08 : Bitmask register.          }
+     PortW[$3ce] := ($8000 shr (x and $7)) or 8; { Select correct bits to modify }
+>>>>>>> origin/cpstrnew
 
-     dummy := Mem[WinWriteSeg: offs];  { Latch the data into host space.  }
-     Mem[WinWriteSeg: offs] := dummy;  { Write the data into video memory }
+     dummy := Mem[WinReadSeg: word(offs)];  { Latch the data into host space.  }
+     Mem[WinWriteSeg: word(offs)] := dummy;  { Write the data into video memory }
      PortW[$3ce] := $ff08;         { Enable all bit planes.           }
      PortW[$3ce] := $0001;         { Index 01 : Disable ops on all four planes.         }
+     if (CurrentWriteMode = XORPut) or
+        (CurrentWriteMode = ANDPut) or
+        (CurrentWriteMode = ORPut) then
+       PortW[$3ce] := $0003;
   end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  procedure HLineVESA16(x,x2,y: smallint); {$ifndef fpc}far;{$endif fpc}
+  var
+      xtmp: smallint;
+      ScrOfs, BankRest: longint;
+      HLength : word;
+      LMask,RMask : byte;
+  begin
+
+    { must we swap the values? }
+    if x > x2 then
+      Begin
+        xtmp := x2;
+        x2 := x;
+        x:= xtmp;
+      end;
+    { First convert to global coordinates }
+    X   := X + StartXViewPort;
+    X2  := X2 + StartXViewPort;
+    Y   := Y + StartYViewPort;
+    if ClipPixels then
+      Begin
+         if LineClipped(x,y,x2,y,StartXViewPort,StartYViewPort,
+                StartXViewPort+ViewWidth, StartYViewPort+ViewHeight) then
+            exit;
+      end;
+    Y := Y + YOffset;
+    ScrOfs := longint(y) * BytesPerLine + (x div 8);
+    SetReadBank(smallint(ScrOfs shr 16));
+    SetWriteBank(smallint(ScrOfs shr 16));
+    HLength:=x2 div 8-x div 8;
+    LMask:=$ff shr (x and 7);
+{$ifopt r+}
+{$define rangeOn}
+{$r-}
+{$endif}
+{$ifopt q+}
+{$define overflowOn}
+{$q-}
+{$endif}
+    RMask:=$ff shl (7-(x2 and 7));
+{$ifdef rangeOn}
+{$undef rangeOn}
+{$r+}
+{$endif}
+{$ifdef overflowOn}
+{$undef overflowOn}
+{$q+}
+{$endif}
+    if HLength=0 then
+      LMask:=LMask and RMask;
+    If CurrentWriteMode <> NotPut Then
+      PortW[$3ce]:= CurrentColor shl 8
+    else PortW[$3ce]:= (not CurrentColor) shl 8;
+    PortW[$3ce]:=$0f01;
+    case CurrentWriteMode of
+       XORPut:
+         PortW[$3ce]:=((3 shl 3) shl 8) or 3;
+       ANDPut:
+         PortW[$3ce]:=((1 shl 3) shl 8) or 3;
+       ORPut:
+         PortW[$3ce]:=((2 shl 3) shl 8) or 3;
+       NormalPut, NotPut:
+         PortW[$3ce]:=$0003
+       else
+         PortW[$3ce]:=$0003
+    end;
+
+    PortW[$3ce]:=(LMask shl 8) or 8;
+{$ifopt r+}
+{$define rangeOn}
+{$r-}
+{$endif}
+{$ifopt q+}
+{$define overflowOn}
+{$q-}
+{$endif}
+    Mem[WinWriteSeg:word(ScrOfs)]:=Mem[WinReadSeg:word(ScrOfs)]+1;
+{$ifdef rangeOn}
+{$undef rangeOn}
+{$r+}
+{$endif}
+{$ifdef overflowOn}
+{$undef overflowOn}
+{$q+}
+{$endif}
+    {Port[$3ce]:=8;}{not needed, the register is already selected}
+    if HLength>0 then
+      begin
+         dec(HLength);
+         inc(ScrOfs);
+         while (HLength>0) do
+           begin
+              SetReadBank(smallint(ScrOfs shr 16));
+              SetWriteBank(smallint(ScrOfs shr 16));
+              Port[$3cf]:=$ff;
+              if HLength <= ($10000-(ScrOfs and $ffff)) Then
+                 BankRest := HLength
+              else {the rest won't fit anymore in the current window }
+                BankRest := $10000 - (ScrOfs and $ffff);
+{$ifndef tp}
+              seg_bytemove(dosmemselector,(WinReadSeg shl 4)+word(ScrOfs),dosmemselector,(WinWriteSeg shl 4)+word(ScrOfs),BankRest);
+{$else}
+              move(Ptr(WinReadSeg,word(ScrOfs))^, Ptr(WinWriteSeg,word(ScrOfs))^, BankRest);
+{$endif}
+              ScrOfs := ScrOfs + BankRest;
+              HLength := HLength - BankRest;
+           end;
+         SetReadBank(smallint(ScrOfs shr 16));
+         SetWriteBank(smallint(ScrOfs shr 16));
+         Port[$3cf]:=RMask;
+{$ifopt r+}
+{$define rangeOn}
+{$r-}
+{$endif}
+{$ifopt q+}
+{$define overflowOn}
+{$q-}
+{$endif}
+         Mem[WinWriteSeg:word(ScrOfs)]:=Mem[WinReadSeg:word(ScrOfs)]+1;
+{$ifdef rangeOn}
+{$undef rangeOn}
+{$r+}
+{$endif}
+{$ifdef overflowOn}
+{$undef overflowOn}
+{$q+}
+{$endif}
+      end;
+    { clean up }
+    {Port[$3cf]:=0;}{not needed, the register is reset by the next operation:}
+    PortW[$3ce]:=$ff08;
+    PortW[$3ce]:=$0001;
+    PortW[$3ce]:=$0003;
+   end;
+
+
+>>>>>>> origin/cpstrnew
 
 
  {************************************************************************}
@@ -3012,16 +3283,22 @@ Const
      SetUpLinear:=false;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 
      if VESAInfo.Version >= $0300 then
        BytesPerLine := VESAModeInfo.LinBytesPerScanLine
      else
        BytesPerLine := VESAModeInfo.BytesPerScanLine;
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 {$ifdef FPC}
      case mode of
        m320x200x32k,
@@ -3121,6 +3398,7 @@ Const
      InLinear:=false;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
      BytesPerLine := VESAModeInfo.BytesPerScanLine;
 
@@ -3128,6 +3406,11 @@ Const
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+
+     BytesPerLine := VESAModeInfo.BytesPerScanLine;
+
+>>>>>>> origin/cpstrnew
      { now we check the windowing scheme ...}
      if (ModeInfo.WinAAttr and WinSupported) <> 0 then
        { is this window supported ... }
@@ -3279,6 +3562,7 @@ Const
      CurrentReadBank := -1;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {    nickysn: setting BytesPerLine moved to SetupLinear and SetupWindowed
      BytesPerLine := VESAModeInfo.BytesPerScanLine;}
 =======
@@ -3287,6 +3571,10 @@ Const
 =======
      BytesPerLine := VESAModeInfo.BytesPerScanLine;
 >>>>>>> origin/fixes_2_2
+=======
+{    nickysn: setting BytesPerLine moved to SetupLinear and SetupWindowed
+     BytesPerLine := VESAModeInfo.BytesPerScanLine;}
+>>>>>>> origin/cpstrnew
 
      { These are the window adresses ... }
      WinWriteSeg := 0;  { This is the segment to use for writes }

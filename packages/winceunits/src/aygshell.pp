@@ -92,6 +92,7 @@
            103    SHBoxEx
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
            114    SHChangeNotifyDeregister
            115    SHChangeNotifyFree
@@ -102,6 +103,8 @@
            115    SHChangeNotifyFree
            113    SHChangeNotifyRegister
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
             48    SHCheckForContextMenu
             86    SHClearStartedBit
             55    SHColorDisplay
@@ -116,12 +119,15 @@
             74    SHCreateMenuBarInternal
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
            108    SHCreateNewItem
 >>>>>>> graemeg/fixes_2_2
 =======
            108    SHCreateNewItem
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
             53    SHCreateSystemFont
             35    SHCreateWorkerWindow
            329    SHDeleteTodayWallpaper
@@ -155,12 +161,15 @@
             99    SHForceBaseStateEx
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
            102    SHFreeContextMenuExtensions
 >>>>>>> graemeg/fixes_2_2
 =======
            102    SHFreeContextMenuExtensions
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
            120    SHFreeScanners
            213    SHGetActiveDialog
            292    SHGetBitmapDimensions
@@ -171,6 +180,7 @@
            299    SHGetDisplayRotation
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
            218    SHGetFontHeight
 =======
            128    SHGetEmergencyCallList
@@ -182,6 +192,9 @@
            218    SHGetFontHeight
            232    SHGetInputContext
 >>>>>>> origin/fixes_2_2
+=======
+           218    SHGetFontHeight
+>>>>>>> origin/cpstrnew
            133    SHGetKOBits
            305    SHGetLandscapeRotationSettings
            345    SHGetLegacySupportWindow
@@ -213,6 +226,7 @@
            129    SHInvalidateScreen
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
            123    SHIsLocked
            295    SHIsPreOzoneUpdate
             94    SHIsPreRapierApp
@@ -228,6 +242,11 @@
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+           123    SHIsLocked
+           295    SHIsPreOzoneUpdate
+            94    SHIsPreRapierApp
+>>>>>>> origin/cpstrnew
            230    SHLoadFileContextMenuExtensions
            313    SHLoadFontFromResource
             91    SHLoadMenuPopup
@@ -237,6 +256,7 @@
            235    SHMakeValidFilename
             32    SHMessageBox
             80    SHNewProfileObj
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -250,6 +270,8 @@
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
            208    SHNotifyAppsOnCallConnect
            210    SHNotifyAppsOnCarkit
            165    SHNotifyAppsOnDock
@@ -286,6 +308,7 @@
            169    SHSetAsWatermark
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
            161    SHSetBubbleRegion
            298    SHSetDisplayRotation
            131    SHSetForegroundLastActivePopup
@@ -301,6 +324,11 @@
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+           161    SHSetBubbleRegion
+           298    SHSetDisplayRotation
+           131    SHSetForegroundLastActivePopup
+>>>>>>> origin/cpstrnew
            134    SHSetKOBits
            154    SHSetPresetMessage
            170    SHSetSimToolkitMenu
@@ -362,12 +390,17 @@ interface
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$MODE OBJFPC}
 
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$MODE OBJFPC}
+
+>>>>>>> origin/cpstrnew
 uses windows;
 
 {$calling cdecl}
@@ -701,10 +734,13 @@ const
 //////////////////////////////////////////////////////////////////////////////
 
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 //*****************************************************************************
 // functions
 //*****************************************************************************
@@ -719,6 +755,7 @@ function ExitWindowsEx(uFlags:UINT; dwReserved:DWORD):WINBOOL; external UserDLLA
 function SHChangeNotifyDeregister(_hwnd:HWND):BOOL; external UserDLLAyg name 'SHChangeNotifyDeregister'; // index 114
 procedure SHChangeNotifyFree(pfcn:LPFILECHANGENOTIFY); external UserDLLAyg name 'SHChangeNotifyFree'; // index 115
 function SHChangeNotifyRegister(_hwnd:HWND; pshcne:LPSHCHANGENOTIFYENTRY):BOOL; external UserDLLAyg name 'SHChangeNotifyRegister'; // index 113
+<<<<<<< HEAD
 function SHCloseApps( dwMemSought : DWORD ): WINBOOL; external UserDLLAyg name 'SHCloseApps';
 function SHCreateMenuBar(pmbi : PSHMENUBARINFO ): WINBOOL; external UserDLLAyg name 'SHCreateMenuBar';
 
@@ -741,16 +778,34 @@ function SHGetEmergencyCallList(pwszBuffer:PTCHAR; uLenBuf:UINT):HRESULT; extern
 =======
 >>>>>>> origin/fixes_2_2
 function ExitWindowsEx(uFlags:UINT; dwReserved:DWORD):WINBOOL; external UserDLLAyg name 'ExitWindowsEx';
+=======
+>>>>>>> origin/cpstrnew
 function SHCloseApps( dwMemSought : DWORD ): WINBOOL; external UserDLLAyg name 'SHCloseApps';
 function SHCreateMenuBar(pmbi : PSHMENUBARINFO ): WINBOOL; external UserDLLAyg name 'SHCreateMenuBar';
+
+// SHCreateNewItem
+//    Creates a New item, as if an item were chosen from the
+//    global New menu dropdown.
+function SHCreateNewItem(hwndOwner:HWND; clsid:PCLSID{REFCLSID}):HRESULT; external UserDLLAyg name 'SHCreateNewItem'; // index 108
+
 function SHDoneButton(hwndRequester: HWND ; dwState : DWORD ): WINBOOL; external UserDLLAyg name 'SHDoneButton';
 function SHFindMenuBar(hwnd:HWND) : HWND; external UserDLLAyg name 'SHFindMenuBar';
+function SHFreeContextMenuExtensions(hCMExtensions:HANDLE):BOOL; external UserDLLAyg name 'SHFreeContextMenuExtensions'; // index 102
 function SHFullScreen(hwmdRequester: hWnd; dwState: DWord): WINBOOL; external UserDLLAyg name 'SHFullScreen';  {Pocket PC  special controls}
+<<<<<<< HEAD
 function SHGetAutoRunPath( pAutoRunPath : LPTSTR ): WINBOOL; external UserDLLAyg name 'SHGetAutoRunPath';  
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+function SHGetAutoRunPath( pAutoRunPath : LPTSTR ): WINBOOL; external UserDLLAyg name 'SHGetAutoRunPath';
+
+//  SHGetEmergencyCallList
+//       Gets a list of emergency calls
+function SHGetEmergencyCallList(pwszBuffer:PTCHAR; uLenBuf:UINT):HRESULT; external UserDLLAyg name 'SHGetEmergencyCallList'; // index 128    
+
+>>>>>>> origin/cpstrnew
 function SHHandleWMActivate(hwnd:HWND; wParam:WPARAM; lParam:LPARAM; psai: PSHACTIVATEINFO; dwFlags:DWORD  ): WINBOOL; external UserDLLAyg index 84;
 function SHHandleWMSettingChange(hwnd:HWND; wParam:WPARAM; lParam:LPARAM; psai: PSHACTIVATEINFO): WINBOOL; external UserDLLAyg index 83;
 function SHInitDialog(pshidi: PSHINITDLGINFO): WINBOOL; external UserDLLAyg name 'SHInitDialog';
@@ -758,6 +813,9 @@ function SHInitExtraControls: WINBOOL; external UserDLLAyg name 'SHInitExtraCont
 procedure SHInputDialog(hwnd : HWND; uMsg : UINT; wParam: WPARAM ); external UserDLLAyg name 'SHInputDialog';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 
 //    Invokes a command from a context menu.  Issues the command in the
 //    extension that added it to the menu.
@@ -770,10 +828,13 @@ function SHLoadContextMenuExtensions(punkOwner:IUnknown;
                                      idCmdFirst:UINT;
                                      idCmdLast:UINT;
                                      phCMExtensions:LPHANDLE):BOOL; external UserDLLAyg name 'SHLoadContextMenuExtensions'; // index 100
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 function SHGetAppKeyAssoc( ptszApp: LPCTSTR ): Byte; external UserDLLAyg name 'SHGetAppKeyAssoc';
 function SHSetAppKeyWndAssoc( bVk: BYTE ; hwnd : HWND ): WINBOOL; external UserDLLAyg name 'SHSetAppKeyWndAssoc';
 function SHSetNavBarText(hwndRequester : HWND; pszText : LPCTSTR): WINBOOL; external UserDLLAyg name 'SHSetNavBarText';
@@ -1162,10 +1223,13 @@ function SHNotificationGetData(pclsid:LPCLSID; dwID:DWORD; pndBuffer:LPSHNOTIFIC
 // This function is not implemented.
 // It is provided as a stub in the operating system (OS) for application compatibility.
 procedure SHSetBack(eOp:longint; _hwnd:HWND); external UserDLLAyg name 'SHSetBack'; // index 184    
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 
 implementation
 

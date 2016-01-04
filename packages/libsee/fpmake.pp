@@ -18,6 +18,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     P.Directory:=ADirectory;
 {$endif ALLPACKAGES}
     P.Version:='3.1.1';
@@ -41,12 +42,18 @@ begin
 {$endif ALLPACKAGES}
     P.Version:='2.5.1';
 >>>>>>> origin/cpstrnew
+=======
+    P.Directory:='libsee';
+{$endif ALLPACKAGES}
+    P.Version:='2.5.1';
+>>>>>>> origin/cpstrnew
     P.Author := 'David Leonard';
     P.License := 'BSD style';
     P.HomepageURL := 'http://www.adaptive-enterprises.com.au/~d/software/see/';
     P.Email := 'leonard@users.sourceforge.net';
     P.Description := 'Headers for the libSEE library (javascript engine)';
     P.NeedLibC:= true;  // true for headers that indirectly link to libc?
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -58,6 +65,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 

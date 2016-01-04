@@ -51,6 +51,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function xsdFormatBase64(Value: TStream): AnsiString;
 function xsdFormatBoolean(Value: Boolean; UseWords: Boolean = False): AnsiString;
 function xsdFormatDate(Year, Month, Day: Longword; BC: Boolean; Timezone: PXsdTimezone = nil): AnsiString;
@@ -78,6 +79,8 @@ function xsdFormatEnum(enum: array of AnsiString; Value: Integer): AnsiString;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 function xsdFormatBase64(Value: TStream): Utf8String;
 function xsdFormatBoolean(Value: Boolean; UseWords: Boolean = False): Utf8String;
 function xsdFormatDate(Year, Month, Day: Longword; BC: Boolean; Timezone: PXsdTimezone = nil): Utf8String;
@@ -101,11 +104,14 @@ function xsdFormatEnum(enum: array of Utf8String; Value: Integer): Utf8String;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -118,6 +124,7 @@ function xsdDateTimeConvert(const DateTime: TDateTime; const Current, Target: TX
 
 { Parse functions }
 function xsdTryParseBase64(Chars: PChar; Len: Integer; const Value: TStream): Boolean;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -136,6 +143,10 @@ function xsdTryParseStringLower(Chars: PChar; Len: Integer; out Value: Utf8Strin
 function xsdTryParseString(Chars: PChar; Len: Integer; out Value: Utf8String): Boolean;
 function xsdTryParseStringLower(Chars: PChar; Len: Integer; out Value: Utf8String): Boolean;
 >>>>>>> graemeg/cpstrnew
+=======
+function xsdTryParseString(Chars: PChar; Len: Integer; out Value: Utf8String): Boolean;
+function xsdTryParseStringLower(Chars: PChar; Len: Integer; out Value: Utf8String): Boolean;
+>>>>>>> origin/cpstrnew
 =======
 function xsdTryParseString(Chars: PChar; Len: Integer; out Value: Utf8String): Boolean;
 function xsdTryParseStringLower(Chars: PChar; Len: Integer; out Value: Utf8String): Boolean;
@@ -167,6 +178,7 @@ function xsdTryParseUnsignedLong(Chars: PChar; Len: Integer; out Value: QWord): 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function xsdTryParseEnum(Chars: PChar; Len: Integer; enum: array of AnsiString; out Value: Integer): Boolean;
 
 function xsdParseStringDef(Chars: PChar; Len: Integer; Default: AnsiString): AnsiString;
@@ -178,6 +190,8 @@ function xsdParseStringLowerDef(Chars: PChar; Len: Integer; Default: AnsiString)
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 function xsdTryParseEnum(Chars: PChar; Len: Integer; enum: array of Utf8String; out Value: Integer): Boolean;
 
 function xsdParseStringDef(Chars: PChar; Len: Integer; Default: Utf8String): Utf8String;
@@ -185,11 +199,14 @@ function xsdParseStringLowerDef(Chars: PChar; Len: Integer; Default: Utf8String)
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 function xsdParseBooleanDef(Chars: PChar; Len: Integer; Default: Boolean): Boolean;
@@ -216,6 +233,7 @@ function xsdParseUnsignedLongDef(Chars: PChar; Len: Integer; Default: QWord): QW
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function xsdParseEnumDef(Chars: PChar; Len: Integer; enum: array of AnsiString; Default: Integer): Integer;
 
 procedure xsdParseBase64(Chars: PChar; Len: Integer; const Value: TStream);
@@ -228,6 +246,8 @@ procedure xsdParseStringLower(Chars: PChar; Len: Integer; out Value: AnsiString)
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 function xsdParseEnumDef(Chars: PChar; Len: Integer; enum: array of Utf8String; Default: Integer): Integer;
 
 procedure xsdParseBase64(Chars: PChar; Len: Integer; const Value: TStream);
@@ -236,11 +256,14 @@ procedure xsdParseStringLower(Chars: PChar; Len: Integer; out Value: Utf8String)
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 procedure xsdParseBoolean(Chars: PChar; Len: Integer; out Value: Boolean);
@@ -270,6 +293,7 @@ procedure xsdParseUnsignedLong(Chars: PChar; Len: Integer; out Value: QWord);
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure xsdParseEnum(Chars: PChar; Len: Integer; enum: array of AnsiString; out Value: Integer);
 
 function xsdParseString(Chars: PChar; Len: Integer): AnsiString;
@@ -281,6 +305,8 @@ function xsdParseStringLower(Chars: PChar; Len: Integer): AnsiString;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure xsdParseEnum(Chars: PChar; Len: Integer; enum: array of Utf8String; out Value: Integer);
 
 function xsdParseString(Chars: PChar; Len: Integer): Utf8String;
@@ -288,11 +314,14 @@ function xsdParseStringLower(Chars: PChar; Len: Integer): Utf8String;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 function xsdParseBoolean(Chars: PChar; Len: Integer): Boolean;
@@ -315,6 +344,7 @@ function xsdParseUnsignedByte(Chars: PChar; Len: Integer): Byte;
 function xsdParseUnsignedShort(Chars: PChar; Len: Integer): Word;
 function xsdParseUnsignedInt(Chars: PChar; Len: Integer): Longword;
 function xsdParseUnsignedLong(Chars: PChar; Len: Integer): QWord;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -431,6 +461,8 @@ function xsdParseEnum(const S: AnsiString; enum: array of AnsiString): Integer;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 function xsdParseEnum(Chars: PChar; Len: Integer; enum: array of Utf8String): Integer;
 {
 function xsdTryParseBase64(const S: UTF8String; const Value: TStream): Boolean;
@@ -539,11 +571,14 @@ function xsdParseEnum(const S: UTF8String; enum: array of Utf8String): Integer;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -563,6 +598,7 @@ function __parseTime(var P: PChar; const L: PChar; const AllowMoreThan24h: Boole
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function __strpas(Chars: PChar; Len: Integer): AnsiString;
 
 implementation
@@ -575,6 +611,8 @@ function xsdFormatBase64(Value: TStream): AnsiString;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 function __strpas(Chars: PChar; Len: Integer): Utf8String;
 
 implementation
@@ -583,11 +621,14 @@ function xsdFormatBase64(Value: TStream): Utf8String;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 const
@@ -659,6 +700,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function xsdFormatBoolean(Value: Boolean; UseWords: Boolean): AnsiString;
 =======
 function xsdFormatBoolean(Value: Boolean; UseWords: Boolean): Utf8String;
@@ -669,6 +711,9 @@ function xsdFormatBoolean(Value: Boolean; UseWords: Boolean): Utf8String;
 =======
 function xsdFormatBoolean(Value: Boolean; UseWords: Boolean): Utf8String;
 >>>>>>> graemeg/cpstrnew
+=======
+function xsdFormatBoolean(Value: Boolean; UseWords: Boolean): Utf8String;
+>>>>>>> origin/cpstrnew
 =======
 function xsdFormatBoolean(Value: Boolean; UseWords: Boolean): Utf8String;
 >>>>>>> origin/cpstrnew
@@ -689,6 +734,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function xsdFormatDate(Year, Month, Day: Longword; BC: Boolean; Timezone: PXsdTimezone): AnsiString;
 =======
 function xsdFormatDate(Year, Month, Day: Longword; BC: Boolean; Timezone: PXsdTimezone): Utf8String;
@@ -699,6 +745,9 @@ function xsdFormatDate(Year, Month, Day: Longword; BC: Boolean; Timezone: PXsdTi
 =======
 function xsdFormatDate(Year, Month, Day: Longword; BC: Boolean; Timezone: PXsdTimezone): Utf8String;
 >>>>>>> graemeg/cpstrnew
+=======
+function xsdFormatDate(Year, Month, Day: Longword; BC: Boolean; Timezone: PXsdTimezone): Utf8String;
+>>>>>>> origin/cpstrnew
 =======
 function xsdFormatDate(Year, Month, Day: Longword; BC: Boolean; Timezone: PXsdTimezone): Utf8String;
 >>>>>>> origin/cpstrnew
@@ -726,6 +775,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function xsdFormatDate(Value: TDateTime; Timezone: PXsdTimezone): AnsiString;
 =======
 function xsdFormatDate(Value: TDateTime; Timezone: PXsdTimezone): Utf8String;
@@ -736,6 +786,9 @@ function xsdFormatDate(Value: TDateTime; Timezone: PXsdTimezone): Utf8String;
 =======
 function xsdFormatDate(Value: TDateTime; Timezone: PXsdTimezone): Utf8String;
 >>>>>>> graemeg/cpstrnew
+=======
+function xsdFormatDate(Value: TDateTime; Timezone: PXsdTimezone): Utf8String;
+>>>>>>> origin/cpstrnew
 =======
 function xsdFormatDate(Value: TDateTime; Timezone: PXsdTimezone): Utf8String;
 >>>>>>> origin/cpstrnew
@@ -750,6 +803,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function xsdFormatTime(Hour, Minute, Second, Milliseconds: Longword; Timezone: PXsdTimezone): AnsiString;
 =======
 function xsdFormatTime(Hour, Minute, Second, Milliseconds: Longword; Timezone: PXsdTimezone): Utf8String;
@@ -760,6 +814,9 @@ function xsdFormatTime(Hour, Minute, Second, Milliseconds: Longword; Timezone: P
 =======
 function xsdFormatTime(Hour, Minute, Second, Milliseconds: Longword; Timezone: PXsdTimezone): Utf8String;
 >>>>>>> graemeg/cpstrnew
+=======
+function xsdFormatTime(Hour, Minute, Second, Milliseconds: Longword; Timezone: PXsdTimezone): Utf8String;
+>>>>>>> origin/cpstrnew
 =======
 function xsdFormatTime(Hour, Minute, Second, Milliseconds: Longword; Timezone: PXsdTimezone): Utf8String;
 >>>>>>> origin/cpstrnew
@@ -787,6 +844,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function xsdFormatTime(Value: TDateTime; Timezone: PXsdTimezone): AnsiString;
 =======
 function xsdFormatTime(Value: TDateTime; Timezone: PXsdTimezone): Utf8String;
@@ -800,6 +858,9 @@ function xsdFormatTime(Value: TDateTime; Timezone: PXsdTimezone): Utf8String;
 =======
 function xsdFormatTime(Value: TDateTime; Timezone: PXsdTimezone): Utf8String;
 >>>>>>> origin/cpstrnew
+=======
+function xsdFormatTime(Value: TDateTime; Timezone: PXsdTimezone): Utf8String;
+>>>>>>> origin/cpstrnew
 var
   Hour, Minute, Second, Milliseconds: Word;
 begin
@@ -807,6 +868,7 @@ begin
   Result := xsdFormatTime(Hour, Minute, Second, Milliseconds, Timezone);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -824,10 +886,14 @@ function xsdFormatDateTime(Year, Month, Day, Hour, Minute, Second, Milliseconds:
 =======
 function xsdFormatDateTime(Year, Month, Day, Hour, Minute, Second, Milliseconds: Longword; BC: Boolean; Timezone: PXsdTimezone): Utf8String;
 >>>>>>> origin/cpstrnew
+=======
+function xsdFormatDateTime(Year, Month, Day, Hour, Minute, Second, Milliseconds: Longword; BC: Boolean; Timezone: PXsdTimezone): Utf8String;
+>>>>>>> origin/cpstrnew
 begin
   Result := xsdFormatDate(Year, Month, Day, BC, nil) + 'T' + xsdFormatTime(Hour, Minute, Second, Milliseconds, Timezone);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -845,6 +911,9 @@ function xsdFormatDateTime(Value: TDateTime; Timezone: PXsdTimezone): Utf8String
 =======
 function xsdFormatDateTime(Value: TDateTime; Timezone: PXsdTimezone): Utf8String;
 >>>>>>> origin/cpstrnew
+=======
+function xsdFormatDateTime(Value: TDateTime; Timezone: PXsdTimezone): Utf8String;
+>>>>>>> origin/cpstrnew
 var
   Year, Month, Day, Hour, Minute, Second, Milliseconds: Word;
 begin
@@ -852,6 +921,7 @@ begin
   Result := xsdFormatDateTime(Year, Month, Day, Hour, Minute, Second, Milliseconds, False, Timezone);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -869,10 +939,14 @@ function xsdFormatDecimal(Value: Extended; Precision: Integer; Digits: Integer):
 =======
 function xsdFormatDecimal(Value: Extended; Precision: Integer; Digits: Integer): Utf8String;
 >>>>>>> origin/cpstrnew
+=======
+function xsdFormatDecimal(Value: Extended; Precision: Integer; Digits: Integer): Utf8String;
+>>>>>>> origin/cpstrnew
 begin
   Result := FloatToStrF(Value, ffFixed, Precision, Digits);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -890,10 +964,14 @@ function xsdFormatDouble(Value: Double): Utf8String;
 =======
 function xsdFormatDouble(Value: Double): Utf8String;
 >>>>>>> origin/cpstrnew
+=======
+function xsdFormatDouble(Value: Double): Utf8String;
+>>>>>>> origin/cpstrnew
 begin
   Result := FloatToStr(Value);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -911,10 +989,14 @@ function xsdFormatFloat(Value: Single): Utf8String;
 =======
 function xsdFormatFloat(Value: Single): Utf8String;
 >>>>>>> origin/cpstrnew
+=======
+function xsdFormatFloat(Value: Single): Utf8String;
+>>>>>>> origin/cpstrnew
 begin
   Result := FloatToStr(Value);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -932,10 +1014,14 @@ function xsdFormatByte(Value: Shortint): Utf8String;
 =======
 function xsdFormatByte(Value: Shortint): Utf8String;
 >>>>>>> origin/cpstrnew
+=======
+function xsdFormatByte(Value: Shortint): Utf8String;
+>>>>>>> origin/cpstrnew
 begin
   Result := IntToStr(Value);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -953,10 +1039,14 @@ function xsdFormatShort(Value: Smallint): Utf8String;
 =======
 function xsdFormatShort(Value: Smallint): Utf8String;
 >>>>>>> origin/cpstrnew
+=======
+function xsdFormatShort(Value: Smallint): Utf8String;
+>>>>>>> origin/cpstrnew
 begin
   Result := IntToStr(Value);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -974,10 +1064,14 @@ function xsdFormatInt(Value: Integer): Utf8String;
 =======
 function xsdFormatInt(Value: Integer): Utf8String;
 >>>>>>> origin/cpstrnew
+=======
+function xsdFormatInt(Value: Integer): Utf8String;
+>>>>>>> origin/cpstrnew
 begin
   Result := IntToStr(Value);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -995,10 +1089,14 @@ function xsdFormatLong(Value: Int64): Utf8String;
 =======
 function xsdFormatLong(Value: Int64): Utf8String;
 >>>>>>> origin/cpstrnew
+=======
+function xsdFormatLong(Value: Int64): Utf8String;
+>>>>>>> origin/cpstrnew
 begin
   Result := IntToStr(Value);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1016,10 +1114,14 @@ function xsdFormatUnsignedByte(Value: Byte): Utf8String;
 =======
 function xsdFormatUnsignedByte(Value: Byte): Utf8String;
 >>>>>>> origin/cpstrnew
+=======
+function xsdFormatUnsignedByte(Value: Byte): Utf8String;
+>>>>>>> origin/cpstrnew
 begin
   Result := IntToStr(Value);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1037,10 +1139,14 @@ function xsdFormatUnsignedShort(Value: Word): Utf8String;
 =======
 function xsdFormatUnsignedShort(Value: Word): Utf8String;
 >>>>>>> origin/cpstrnew
+=======
+function xsdFormatUnsignedShort(Value: Word): Utf8String;
+>>>>>>> origin/cpstrnew
 begin
   Result := IntToStr(Value);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1058,10 +1164,14 @@ function xsdFormatUnsignedInt(Value: Longword): Utf8String;
 =======
 function xsdFormatUnsignedInt(Value: Longword): Utf8String;
 >>>>>>> origin/cpstrnew
+=======
+function xsdFormatUnsignedInt(Value: Longword): Utf8String;
+>>>>>>> origin/cpstrnew
 begin
   Result := IntToStr(Value);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1079,10 +1189,14 @@ function xsdFormatUnsignedLong(Value: QWord): Utf8String;
 =======
 function xsdFormatUnsignedLong(Value: QWord): Utf8String;
 >>>>>>> origin/cpstrnew
+=======
+function xsdFormatUnsignedLong(Value: QWord): Utf8String;
+>>>>>>> origin/cpstrnew
 begin
   Result := IntToStr(Value);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1097,6 +1211,9 @@ function xsdFormatEnum(enum: array of Utf8String; Value: Integer): Utf8String;
 =======
 function xsdFormatEnum(enum: array of Utf8String; Value: Integer): Utf8String;
 >>>>>>> graemeg/cpstrnew
+=======
+function xsdFormatEnum(enum: array of Utf8String; Value: Integer): Utf8String;
+>>>>>>> origin/cpstrnew
 =======
 function xsdFormatEnum(enum: array of Utf8String; Value: Integer): Utf8String;
 >>>>>>> origin/cpstrnew
@@ -1643,6 +1760,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function xsdTryParseString(Chars: PChar; Len: Integer; out Value: AnsiString): Boolean;
 =======
 function xsdTryParseString(Chars: PChar; Len: Integer; out Value: Utf8String): Boolean;
@@ -1653,6 +1771,9 @@ function xsdTryParseString(Chars: PChar; Len: Integer; out Value: Utf8String): B
 =======
 function xsdTryParseString(Chars: PChar; Len: Integer; out Value: Utf8String): Boolean;
 >>>>>>> graemeg/cpstrnew
+=======
+function xsdTryParseString(Chars: PChar; Len: Integer; out Value: Utf8String): Boolean;
+>>>>>>> origin/cpstrnew
 =======
 function xsdTryParseString(Chars: PChar; Len: Integer; out Value: Utf8String): Boolean;
 >>>>>>> origin/cpstrnew
@@ -1716,6 +1837,7 @@ end;}
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function xsdTryParseStringLower(Chars: PChar; Len: Integer; out Value: AnsiString): Boolean;
 =======
 function xsdTryParseStringLower(Chars: PChar; Len: Integer; out Value: Utf8String): Boolean;
@@ -1726,6 +1848,9 @@ function xsdTryParseStringLower(Chars: PChar; Len: Integer; out Value: Utf8Strin
 =======
 function xsdTryParseStringLower(Chars: PChar; Len: Integer; out Value: Utf8String): Boolean;
 >>>>>>> graemeg/cpstrnew
+=======
+function xsdTryParseStringLower(Chars: PChar; Len: Integer; out Value: Utf8String): Boolean;
+>>>>>>> origin/cpstrnew
 =======
 function xsdTryParseStringLower(Chars: PChar; Len: Integer; out Value: Utf8String): Boolean;
 >>>>>>> origin/cpstrnew
@@ -1781,6 +1906,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function __strpas(Chars: PChar; Len: Integer): AnsiString;
 =======
 function __strpas(Chars: PChar; Len: Integer): Utf8String;
@@ -1791,6 +1917,9 @@ function __strpas(Chars: PChar; Len: Integer): Utf8String;
 =======
 function __strpas(Chars: PChar; Len: Integer): Utf8String;
 >>>>>>> graemeg/cpstrnew
+=======
+function __strpas(Chars: PChar; Len: Integer): Utf8String;
+>>>>>>> origin/cpstrnew
 =======
 function __strpas(Chars: PChar; Len: Integer): Utf8String;
 >>>>>>> origin/cpstrnew
@@ -2104,6 +2233,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function xsdTryParseEnum(Chars: PChar; Len: Integer; enum: array of AnsiString; out Value: Integer): Boolean;
 var
   Temp: AnsiString;
@@ -2122,6 +2252,11 @@ function xsdTryParseEnum(Chars: PChar; Len: Integer; enum: array of Utf8String; 
 var
   Temp: Utf8String;
 >>>>>>> graemeg/cpstrnew
+=======
+function xsdTryParseEnum(Chars: PChar; Len: Integer; enum: array of Utf8String; out Value: Integer): Boolean;
+var
+  Temp: Utf8String;
+>>>>>>> origin/cpstrnew
 =======
 function xsdTryParseEnum(Chars: PChar; Len: Integer; enum: array of Utf8String; out Value: Integer): Boolean;
 var
@@ -2147,6 +2282,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function xsdParseStringDef(Chars: PChar; Len: Integer; Default: AnsiString): AnsiString;
 =======
 function xsdParseStringDef(Chars: PChar; Len: Integer; Default: Utf8String): Utf8String;
@@ -2160,11 +2296,15 @@ function xsdParseStringDef(Chars: PChar; Len: Integer; Default: Utf8String): Utf
 =======
 function xsdParseStringDef(Chars: PChar; Len: Integer; Default: Utf8String): Utf8String;
 >>>>>>> origin/cpstrnew
+=======
+function xsdParseStringDef(Chars: PChar; Len: Integer; Default: Utf8String): Utf8String;
+>>>>>>> origin/cpstrnew
 begin
   if not xsdTryParseString(Chars, Len, Result) then
     Result := Default;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2179,6 +2319,9 @@ function xsdParseStringLowerDef(Chars: PChar; Len: Integer; Default: Utf8String)
 =======
 function xsdParseStringLowerDef(Chars: PChar; Len: Integer; Default: Utf8String): Utf8String;
 >>>>>>> graemeg/cpstrnew
+=======
+function xsdParseStringLowerDef(Chars: PChar; Len: Integer; Default: Utf8String): Utf8String;
+>>>>>>> origin/cpstrnew
 =======
 function xsdParseStringLowerDef(Chars: PChar; Len: Integer; Default: Utf8String): Utf8String;
 >>>>>>> origin/cpstrnew
@@ -2311,6 +2454,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function xsdParseEnumDef(Chars: PChar; Len: Integer; enum: array of AnsiString; Default: Integer): Integer;
 =======
 function xsdParseEnumDef(Chars: PChar; Len: Integer; enum: array of Utf8String; Default: Integer): Integer;
@@ -2321,6 +2465,9 @@ function xsdParseEnumDef(Chars: PChar; Len: Integer; enum: array of Utf8String; 
 =======
 function xsdParseEnumDef(Chars: PChar; Len: Integer; enum: array of Utf8String; Default: Integer): Integer;
 >>>>>>> graemeg/cpstrnew
+=======
+function xsdParseEnumDef(Chars: PChar; Len: Integer; enum: array of Utf8String; Default: Integer): Integer;
+>>>>>>> origin/cpstrnew
 =======
 function xsdParseEnumDef(Chars: PChar; Len: Integer; enum: array of Utf8String; Default: Integer): Integer;
 >>>>>>> origin/cpstrnew
@@ -2339,6 +2486,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure xsdParseString(Chars: PChar; Len: Integer; out Value: AnsiString);
 =======
 procedure xsdParseString(Chars: PChar; Len: Integer; out Value: Utf8String);
@@ -2352,11 +2500,15 @@ procedure xsdParseString(Chars: PChar; Len: Integer; out Value: Utf8String);
 =======
 procedure xsdParseString(Chars: PChar; Len: Integer; out Value: Utf8String);
 >>>>>>> origin/cpstrnew
+=======
+procedure xsdParseString(Chars: PChar; Len: Integer; out Value: Utf8String);
+>>>>>>> origin/cpstrnew
 begin
   if not xsdTryParseString(Chars, Len, Value) then
     raise EConvertError.CreateFmt(SXsdParserError, [__strpas(Chars,Len), 'xs:string']);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2371,6 +2523,9 @@ procedure xsdParseStringLower(Chars: PChar; Len: Integer; out Value: Utf8String)
 =======
 procedure xsdParseStringLower(Chars: PChar; Len: Integer; out Value: Utf8String);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure xsdParseStringLower(Chars: PChar; Len: Integer; out Value: Utf8String);
+>>>>>>> origin/cpstrnew
 =======
 procedure xsdParseStringLower(Chars: PChar; Len: Integer; out Value: Utf8String);
 >>>>>>> origin/cpstrnew
@@ -2521,6 +2676,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure xsdParseEnum(Chars: PChar; Len: Integer; enum: array of AnsiString; out Value: Integer);
 =======
 procedure xsdParseEnum(Chars: PChar; Len: Integer; enum: array of Utf8String; out Value: Integer);
@@ -2534,11 +2690,15 @@ procedure xsdParseEnum(Chars: PChar; Len: Integer; enum: array of Utf8String; ou
 =======
 procedure xsdParseEnum(Chars: PChar; Len: Integer; enum: array of Utf8String; out Value: Integer);
 >>>>>>> origin/cpstrnew
+=======
+procedure xsdParseEnum(Chars: PChar; Len: Integer; enum: array of Utf8String; out Value: Integer);
+>>>>>>> origin/cpstrnew
 begin
   if not xsdTryParseEnum(Chars, Len, enum, Value) then
     raise EConvertError.CreateFmt(SXsdParserError, [__strpas(Chars,Len), 'xs:enum']);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2556,10 +2716,14 @@ function xsdParseString(Chars: PChar; Len: Integer): Utf8String;
 =======
 function xsdParseString(Chars: PChar; Len: Integer): Utf8String;
 >>>>>>> origin/cpstrnew
+=======
+function xsdParseString(Chars: PChar; Len: Integer): Utf8String;
+>>>>>>> origin/cpstrnew
 begin
   xsdParseString(Chars, Len, Result);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2574,6 +2738,9 @@ function xsdParseStringLower(Chars: PChar; Len: Integer): Utf8String;
 =======
 function xsdParseStringLower(Chars: PChar; Len: Integer): Utf8String;
 >>>>>>> graemeg/cpstrnew
+=======
+function xsdParseStringLower(Chars: PChar; Len: Integer): Utf8String;
+>>>>>>> origin/cpstrnew
 =======
 function xsdParseStringLower(Chars: PChar; Len: Integer): Utf8String;
 >>>>>>> origin/cpstrnew
@@ -2685,6 +2852,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function xsdParseEnum(Chars: PChar; Len: Integer; enum: array of AnsiString): Integer;
 =======
 function xsdParseEnum(Chars: PChar; Len: Integer; enum: array of Utf8String): Integer;
@@ -2698,10 +2866,14 @@ function xsdParseEnum(Chars: PChar; Len: Integer; enum: array of Utf8String): In
 =======
 function xsdParseEnum(Chars: PChar; Len: Integer; enum: array of Utf8String): Integer;
 >>>>>>> origin/cpstrnew
+=======
+function xsdParseEnum(Chars: PChar; Len: Integer; enum: array of Utf8String): Integer;
+>>>>>>> origin/cpstrnew
 begin
   xsdParseEnum(Chars, Len, enum, Result);
 end;
 (*
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2719,10 +2891,14 @@ function xsdTryParseBase64(const S: UTF8String; const Value: TStream): Boolean;
 =======
 function xsdTryParseBase64(const S: UTF8String; const Value: TStream): Boolean;
 >>>>>>> origin/cpstrnew
+=======
+function xsdTryParseBase64(const S: UTF8String; const Value: TStream): Boolean;
+>>>>>>> origin/cpstrnew
 begin
 
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2740,10 +2916,14 @@ function xsdTryParseString(const S: UTF8String; out Value: Utf8String): Boolean;
 =======
 function xsdTryParseString(const S: UTF8String; out Value: Utf8String): Boolean;
 >>>>>>> origin/cpstrnew
+=======
+function xsdTryParseString(const S: UTF8String; out Value: Utf8String): Boolean;
+>>>>>>> origin/cpstrnew
 begin
 
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2761,11 +2941,15 @@ function xsdTryParseStringLower(const S: UTF8String; out Value: Utf8String
 =======
 function xsdTryParseStringLower(const S: UTF8String; out Value: Utf8String
 >>>>>>> origin/cpstrnew
+=======
+function xsdTryParseStringLower(const S: UTF8String; out Value: Utf8String
+>>>>>>> origin/cpstrnew
   ): Boolean;
 begin
 
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2783,10 +2967,14 @@ function xsdTryParseBoolean(const S: UTF8String; out Value: Boolean): Boolean;
 =======
 function xsdTryParseBoolean(const S: UTF8String; out Value: Boolean): Boolean;
 >>>>>>> origin/cpstrnew
+=======
+function xsdTryParseBoolean(const S: UTF8String; out Value: Boolean): Boolean;
+>>>>>>> origin/cpstrnew
 begin
 
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2804,11 +2992,15 @@ function xsdTryParseDate(const S: UTF8String; out Year, Month, Day: Longword;
 =======
 function xsdTryParseDate(const S: UTF8String; out Year, Month, Day: Longword;
 >>>>>>> origin/cpstrnew
+=======
+function xsdTryParseDate(const S: UTF8String; out Year, Month, Day: Longword;
+>>>>>>> origin/cpstrnew
   Timezone: PXsdTimezone; BC: PBoolean): Boolean;
 begin
 
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2826,11 +3018,15 @@ function xsdTryParseDate(const S: UTF8String; out Value: TDateTime;
 =======
 function xsdTryParseDate(const S: UTF8String; out Value: TDateTime;
 >>>>>>> origin/cpstrnew
+=======
+function xsdTryParseDate(const S: UTF8String; out Value: TDateTime;
+>>>>>>> origin/cpstrnew
   Timezone: PXsdTimezone): Boolean;
 begin
 
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2848,11 +3044,15 @@ function xsdTryParseTime(const S: UTF8String; out Hour, Minute, Second,
 =======
 function xsdTryParseTime(const S: UTF8String; out Hour, Minute, Second,
 >>>>>>> origin/cpstrnew
+=======
+function xsdTryParseTime(const S: UTF8String; out Hour, Minute, Second,
+>>>>>>> origin/cpstrnew
   Milliseconds: Longword; Timezone: PXsdTimezone): Boolean;
 begin
 
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2870,11 +3070,15 @@ function xsdTryParseTime(const S: UTF8String; out Value: TDateTime;
 =======
 function xsdTryParseTime(const S: UTF8String; out Value: TDateTime;
 >>>>>>> origin/cpstrnew
+=======
+function xsdTryParseTime(const S: UTF8String; out Value: TDateTime;
+>>>>>>> origin/cpstrnew
   Timezone: PXsdTimezone): Boolean;
 begin
 
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2892,12 +3096,16 @@ function xsdTryParseDateTime(const S: UTF8String; out Year, Month, Day, Hour,
 =======
 function xsdTryParseDateTime(const S: UTF8String; out Year, Month, Day, Hour,
 >>>>>>> origin/cpstrnew
+=======
+function xsdTryParseDateTime(const S: UTF8String; out Year, Month, Day, Hour,
+>>>>>>> origin/cpstrnew
   Minute, Second, Milliseconds: Longword; Timezone: PXsdTimezone; BC: PBoolean
   ): Boolean;
 begin
 
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2915,11 +3123,15 @@ function xsdTryParseDateTime(const S: UTF8String; out Value: TDateTime;
 =======
 function xsdTryParseDateTime(const S: UTF8String; out Value: TDateTime;
 >>>>>>> origin/cpstrnew
+=======
+function xsdTryParseDateTime(const S: UTF8String; out Value: TDateTime;
+>>>>>>> origin/cpstrnew
   Timezone: PXsdTimezone): Boolean;
 begin
 
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2937,10 +3149,14 @@ function xsdTryParseDecimal(const S: UTF8String; out Value: Extended): Boolean;
 =======
 function xsdTryParseDecimal(const S: UTF8String; out Value: Extended): Boolean;
 >>>>>>> origin/cpstrnew
+=======
+function xsdTryParseDecimal(const S: UTF8String; out Value: Extended): Boolean;
+>>>>>>> origin/cpstrnew
 begin
 
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2958,10 +3174,14 @@ function xsdTryParseDouble(const S: UTF8String; out Value: Double): Boolean;
 =======
 function xsdTryParseDouble(const S: UTF8String; out Value: Double): Boolean;
 >>>>>>> origin/cpstrnew
+=======
+function xsdTryParseDouble(const S: UTF8String; out Value: Double): Boolean;
+>>>>>>> origin/cpstrnew
 begin
 
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2979,10 +3199,14 @@ function xsdTryParseFloat(const S: UTF8String; out Value: Single): Boolean;
 =======
 function xsdTryParseFloat(const S: UTF8String; out Value: Single): Boolean;
 >>>>>>> origin/cpstrnew
+=======
+function xsdTryParseFloat(const S: UTF8String; out Value: Single): Boolean;
+>>>>>>> origin/cpstrnew
 begin
 
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3000,10 +3224,14 @@ function xsdTryParseInteger(const S: UTF8String; out Value: Int64): Boolean;
 =======
 function xsdTryParseInteger(const S: UTF8String; out Value: Int64): Boolean;
 >>>>>>> origin/cpstrnew
+=======
+function xsdTryParseInteger(const S: UTF8String; out Value: Int64): Boolean;
+>>>>>>> origin/cpstrnew
 begin
 
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3021,11 +3249,15 @@ function xsdTryParseNonNegativeInteger(const S: UTF8String; out Value: QWord
 =======
 function xsdTryParseNonNegativeInteger(const S: UTF8String; out Value: QWord
 >>>>>>> origin/cpstrnew
+=======
+function xsdTryParseNonNegativeInteger(const S: UTF8String; out Value: QWord
+>>>>>>> origin/cpstrnew
   ): Boolean;
 begin
 
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3043,11 +3275,15 @@ function xsdTryParseNonPositiveInteger(const S: UTF8String; out Value: Int64
 =======
 function xsdTryParseNonPositiveInteger(const S: UTF8String; out Value: Int64
 >>>>>>> origin/cpstrnew
+=======
+function xsdTryParseNonPositiveInteger(const S: UTF8String; out Value: Int64
+>>>>>>> origin/cpstrnew
   ): Boolean;
 begin
 
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3065,11 +3301,15 @@ function xsdTryParseNegativeInteger(const S: UTF8String; out Value: Int64
 =======
 function xsdTryParseNegativeInteger(const S: UTF8String; out Value: Int64
 >>>>>>> origin/cpstrnew
+=======
+function xsdTryParseNegativeInteger(const S: UTF8String; out Value: Int64
+>>>>>>> origin/cpstrnew
   ): Boolean;
 begin
 
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3087,11 +3327,15 @@ function xsdTryParsePositiveInteger(const S: UTF8String; out Value: QWord
 =======
 function xsdTryParsePositiveInteger(const S: UTF8String; out Value: QWord
 >>>>>>> origin/cpstrnew
+=======
+function xsdTryParsePositiveInteger(const S: UTF8String; out Value: QWord
+>>>>>>> origin/cpstrnew
   ): Boolean;
 begin
 
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3109,10 +3353,14 @@ function xsdTryParseByte(const S: UTF8String; out Value: Shortint): Boolean;
 =======
 function xsdTryParseByte(const S: UTF8String; out Value: Shortint): Boolean;
 >>>>>>> origin/cpstrnew
+=======
+function xsdTryParseByte(const S: UTF8String; out Value: Shortint): Boolean;
+>>>>>>> origin/cpstrnew
 begin
 
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3130,10 +3378,14 @@ function xsdTryParseShort(const S: UTF8String; out Value: Smallint): Boolean;
 =======
 function xsdTryParseShort(const S: UTF8String; out Value: Smallint): Boolean;
 >>>>>>> origin/cpstrnew
+=======
+function xsdTryParseShort(const S: UTF8String; out Value: Smallint): Boolean;
+>>>>>>> origin/cpstrnew
 begin
 
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3151,10 +3403,14 @@ function xsdTryParseInt(const S: UTF8String; out Value: Longint): Boolean;
 =======
 function xsdTryParseInt(const S: UTF8String; out Value: Longint): Boolean;
 >>>>>>> origin/cpstrnew
+=======
+function xsdTryParseInt(const S: UTF8String; out Value: Longint): Boolean;
+>>>>>>> origin/cpstrnew
 begin
 
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3172,10 +3428,14 @@ function xsdTryParseLong(const S: UTF8String; out Value: Int64): Boolean;
 =======
 function xsdTryParseLong(const S: UTF8String; out Value: Int64): Boolean;
 >>>>>>> origin/cpstrnew
+=======
+function xsdTryParseLong(const S: UTF8String; out Value: Int64): Boolean;
+>>>>>>> origin/cpstrnew
 begin
 
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3193,10 +3453,14 @@ function xsdTryParseUnsignedByte(const S: UTF8String; out Value: Byte): Boolean;
 =======
 function xsdTryParseUnsignedByte(const S: UTF8String; out Value: Byte): Boolean;
 >>>>>>> origin/cpstrnew
+=======
+function xsdTryParseUnsignedByte(const S: UTF8String; out Value: Byte): Boolean;
+>>>>>>> origin/cpstrnew
 begin
 
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3214,11 +3478,15 @@ function xsdTryParseUnsignedShort(const S: UTF8String; out Value: Word
 =======
 function xsdTryParseUnsignedShort(const S: UTF8String; out Value: Word
 >>>>>>> origin/cpstrnew
+=======
+function xsdTryParseUnsignedShort(const S: UTF8String; out Value: Word
+>>>>>>> origin/cpstrnew
   ): Boolean;
 begin
 
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3236,11 +3504,15 @@ function xsdTryParseUnsignedInt(const S: UTF8String; out Value: Longword
 =======
 function xsdTryParseUnsignedInt(const S: UTF8String; out Value: Longword
 >>>>>>> origin/cpstrnew
+=======
+function xsdTryParseUnsignedInt(const S: UTF8String; out Value: Longword
+>>>>>>> origin/cpstrnew
   ): Boolean;
 begin
 
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3258,11 +3530,15 @@ function xsdTryParseUnsignedLong(const S: UTF8String; out Value: QWord
 =======
 function xsdTryParseUnsignedLong(const S: UTF8String; out Value: QWord
 >>>>>>> origin/cpstrnew
+=======
+function xsdTryParseUnsignedLong(const S: UTF8String; out Value: QWord
+>>>>>>> origin/cpstrnew
   ): Boolean;
 begin
 
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3280,11 +3556,15 @@ function xsdTryParseEnum(const S: UTF8String; enum: array of Utf8String;
 =======
 function xsdTryParseEnum(const S: UTF8String; enum: array of Utf8String;
 >>>>>>> origin/cpstrnew
+=======
+function xsdTryParseEnum(const S: UTF8String; enum: array of Utf8String;
+>>>>>>> origin/cpstrnew
   out Value: Integer): Boolean;
 begin
 
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3307,10 +3587,15 @@ function xsdParseStringDef(const S: UTF8String; Default: Utf8String
 function xsdParseStringDef(const S: UTF8String; Default: Utf8String
   ): Utf8String;
 >>>>>>> origin/cpstrnew
+=======
+function xsdParseStringDef(const S: UTF8String; Default: Utf8String
+  ): Utf8String;
+>>>>>>> origin/cpstrnew
 begin
 
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3333,10 +3618,15 @@ function xsdParseStringLowerDef(const S: UTF8String; Default: Utf8String
 function xsdParseStringLowerDef(const S: UTF8String; Default: Utf8String
   ): Utf8String;
 >>>>>>> origin/cpstrnew
+=======
+function xsdParseStringLowerDef(const S: UTF8String; Default: Utf8String
+  ): Utf8String;
+>>>>>>> origin/cpstrnew
 begin
 
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3354,10 +3644,14 @@ function xsdParseBooleanDef(const S: UTF8String; Default: Boolean): Boolean;
 =======
 function xsdParseBooleanDef(const S: UTF8String; Default: Boolean): Boolean;
 >>>>>>> origin/cpstrnew
+=======
+function xsdParseBooleanDef(const S: UTF8String; Default: Boolean): Boolean;
+>>>>>>> origin/cpstrnew
 begin
 
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3375,11 +3669,15 @@ function xsdParseDateDef(const S: UTF8String; Default: TDateTime;
 =======
 function xsdParseDateDef(const S: UTF8String; Default: TDateTime;
 >>>>>>> origin/cpstrnew
+=======
+function xsdParseDateDef(const S: UTF8String; Default: TDateTime;
+>>>>>>> origin/cpstrnew
   Timezone: PXsdTimezone): TDateTime;
 begin
 
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3397,11 +3695,15 @@ function xsdParseTimeDef(const S: UTF8String; Default: TDateTime;
 =======
 function xsdParseTimeDef(const S: UTF8String; Default: TDateTime;
 >>>>>>> origin/cpstrnew
+=======
+function xsdParseTimeDef(const S: UTF8String; Default: TDateTime;
+>>>>>>> origin/cpstrnew
   Timezone: PXsdTimezone): TDateTime;
 begin
 
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3419,11 +3721,15 @@ function xsdParseDateTimeDef(const S: UTF8String; Default: TDateTime;
 =======
 function xsdParseDateTimeDef(const S: UTF8String; Default: TDateTime;
 >>>>>>> origin/cpstrnew
+=======
+function xsdParseDateTimeDef(const S: UTF8String; Default: TDateTime;
+>>>>>>> origin/cpstrnew
   Timezone: PXsdTimezone): TDateTime;
 begin
 
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3441,10 +3747,14 @@ function xsdParseDecimalDef(const S: UTF8String; Default: Extended): Extended;
 =======
 function xsdParseDecimalDef(const S: UTF8String; Default: Extended): Extended;
 >>>>>>> origin/cpstrnew
+=======
+function xsdParseDecimalDef(const S: UTF8String; Default: Extended): Extended;
+>>>>>>> origin/cpstrnew
 begin
 
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3462,10 +3772,14 @@ function xsdParseDoubleDef(const S: UTF8String; Default: Double): Double;
 =======
 function xsdParseDoubleDef(const S: UTF8String; Default: Double): Double;
 >>>>>>> origin/cpstrnew
+=======
+function xsdParseDoubleDef(const S: UTF8String; Default: Double): Double;
+>>>>>>> origin/cpstrnew
 begin
 
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3483,10 +3797,14 @@ function xsdParseFloatDef(const S: UTF8String; Default: Single): Single;
 =======
 function xsdParseFloatDef(const S: UTF8String; Default: Single): Single;
 >>>>>>> origin/cpstrnew
+=======
+function xsdParseFloatDef(const S: UTF8String; Default: Single): Single;
+>>>>>>> origin/cpstrnew
 begin
 
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3504,10 +3822,14 @@ function xsdParseIntegerDef(const S: UTF8String; Default: Int64): Int64;
 =======
 function xsdParseIntegerDef(const S: UTF8String; Default: Int64): Int64;
 >>>>>>> origin/cpstrnew
+=======
+function xsdParseIntegerDef(const S: UTF8String; Default: Int64): Int64;
+>>>>>>> origin/cpstrnew
 begin
 
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3525,11 +3847,15 @@ function xsdParseNonNegativeIntegerDef(const S: UTF8String; Default: QWord
 =======
 function xsdParseNonNegativeIntegerDef(const S: UTF8String; Default: QWord
 >>>>>>> origin/cpstrnew
+=======
+function xsdParseNonNegativeIntegerDef(const S: UTF8String; Default: QWord
+>>>>>>> origin/cpstrnew
   ): QWord;
 begin
 
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3547,11 +3873,15 @@ function xsdParseNonPositiveIntegerDef(const S: UTF8String; Default: Int64
 =======
 function xsdParseNonPositiveIntegerDef(const S: UTF8String; Default: Int64
 >>>>>>> origin/cpstrnew
+=======
+function xsdParseNonPositiveIntegerDef(const S: UTF8String; Default: Int64
+>>>>>>> origin/cpstrnew
   ): Int64;
 begin
 
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3569,10 +3899,14 @@ function xsdParseNegativeIntegerDef(const S: UTF8String; Default: Int64): Int64;
 =======
 function xsdParseNegativeIntegerDef(const S: UTF8String; Default: Int64): Int64;
 >>>>>>> origin/cpstrnew
+=======
+function xsdParseNegativeIntegerDef(const S: UTF8String; Default: Int64): Int64;
+>>>>>>> origin/cpstrnew
 begin
 
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3590,10 +3924,14 @@ function xsdParsePositiveIntegerDef(const S: UTF8String; Default: QWord): QWord;
 =======
 function xsdParsePositiveIntegerDef(const S: UTF8String; Default: QWord): QWord;
 >>>>>>> origin/cpstrnew
+=======
+function xsdParsePositiveIntegerDef(const S: UTF8String; Default: QWord): QWord;
+>>>>>>> origin/cpstrnew
 begin
 
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3611,10 +3949,14 @@ function xsdParseByteDef(const S: UTF8String; Default: Shortint): Shortint;
 =======
 function xsdParseByteDef(const S: UTF8String; Default: Shortint): Shortint;
 >>>>>>> origin/cpstrnew
+=======
+function xsdParseByteDef(const S: UTF8String; Default: Shortint): Shortint;
+>>>>>>> origin/cpstrnew
 begin
 
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3632,10 +3974,14 @@ function xsdParseShortDef(const S: UTF8String; Default: Smallint): Smallint;
 =======
 function xsdParseShortDef(const S: UTF8String; Default: Smallint): Smallint;
 >>>>>>> origin/cpstrnew
+=======
+function xsdParseShortDef(const S: UTF8String; Default: Smallint): Smallint;
+>>>>>>> origin/cpstrnew
 begin
 
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3653,10 +3999,14 @@ function xsdParseIntDef(const S: UTF8String; Default: Longint): Longint;
 =======
 function xsdParseIntDef(const S: UTF8String; Default: Longint): Longint;
 >>>>>>> origin/cpstrnew
+=======
+function xsdParseIntDef(const S: UTF8String; Default: Longint): Longint;
+>>>>>>> origin/cpstrnew
 begin
 
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3674,10 +4024,14 @@ function xsdParseLongDef(const S: UTF8String; Default: Int64): Int64;
 =======
 function xsdParseLongDef(const S: UTF8String; Default: Int64): Int64;
 >>>>>>> origin/cpstrnew
+=======
+function xsdParseLongDef(const S: UTF8String; Default: Int64): Int64;
+>>>>>>> origin/cpstrnew
 begin
 
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3695,10 +4049,14 @@ function xsdParseUnsignedByteDef(const S: UTF8String; Default: Byte): Byte;
 =======
 function xsdParseUnsignedByteDef(const S: UTF8String; Default: Byte): Byte;
 >>>>>>> origin/cpstrnew
+=======
+function xsdParseUnsignedByteDef(const S: UTF8String; Default: Byte): Byte;
+>>>>>>> origin/cpstrnew
 begin
 
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3716,10 +4074,14 @@ function xsdParseUnsignedShortDef(const S: UTF8String; Default: Word): Word;
 =======
 function xsdParseUnsignedShortDef(const S: UTF8String; Default: Word): Word;
 >>>>>>> origin/cpstrnew
+=======
+function xsdParseUnsignedShortDef(const S: UTF8String; Default: Word): Word;
+>>>>>>> origin/cpstrnew
 begin
 
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3737,11 +4099,15 @@ function xsdParseUnsignedIntDef(const S: UTF8String; Default: Longword
 =======
 function xsdParseUnsignedIntDef(const S: UTF8String; Default: Longword
 >>>>>>> origin/cpstrnew
+=======
+function xsdParseUnsignedIntDef(const S: UTF8String; Default: Longword
+>>>>>>> origin/cpstrnew
   ): Longword;
 begin
 
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3759,10 +4125,14 @@ function xsdParseUnsignedLongDef(const S: UTF8String; Default: QWord): QWord;
 =======
 function xsdParseUnsignedLongDef(const S: UTF8String; Default: QWord): QWord;
 >>>>>>> origin/cpstrnew
+=======
+function xsdParseUnsignedLongDef(const S: UTF8String; Default: QWord): QWord;
+>>>>>>> origin/cpstrnew
 begin
 
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3780,11 +4150,15 @@ function xsdParseEnumDef(const S: UTF8String; enum: array of Utf8String;
 =======
 function xsdParseEnumDef(const S: UTF8String; enum: array of Utf8String;
 >>>>>>> origin/cpstrnew
+=======
+function xsdParseEnumDef(const S: UTF8String; enum: array of Utf8String;
+>>>>>>> origin/cpstrnew
   Default: Integer): Integer;
 begin
 
 end;*)
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3802,10 +4176,14 @@ procedure xsdParseBase64(const S: UTF8String; const Value: TStream);
 =======
 procedure xsdParseBase64(const S: UTF8String; const Value: TStream);
 >>>>>>> origin/cpstrnew
+=======
+procedure xsdParseBase64(const S: UTF8String; const Value: TStream);
+>>>>>>> origin/cpstrnew
 begin
   xsdParseBase64(PChar(S), Length(S), Value);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3823,10 +4201,14 @@ procedure xsdParseString(const S: UTF8String; out Value: Utf8String);
 =======
 procedure xsdParseString(const S: UTF8String; out Value: Utf8String);
 >>>>>>> origin/cpstrnew
+=======
+procedure xsdParseString(const S: UTF8String; out Value: Utf8String);
+>>>>>>> origin/cpstrnew
 begin
   xsdParseString(PChar(S), Length(S), Value);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3844,10 +4226,14 @@ procedure xsdParseStringLower(const S: UTF8String; out Value: Utf8String);
 =======
 procedure xsdParseStringLower(const S: UTF8String; out Value: Utf8String);
 >>>>>>> origin/cpstrnew
+=======
+procedure xsdParseStringLower(const S: UTF8String; out Value: Utf8String);
+>>>>>>> origin/cpstrnew
 begin
   xsdParseStringLower(PChar(S), Length(S), Value);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3865,10 +4251,14 @@ procedure xsdParseBoolean(const S: UTF8String; out Value: Boolean);
 =======
 procedure xsdParseBoolean(const S: UTF8String; out Value: Boolean);
 >>>>>>> origin/cpstrnew
+=======
+procedure xsdParseBoolean(const S: UTF8String; out Value: Boolean);
+>>>>>>> origin/cpstrnew
 begin
   xsdParseBoolean(PChar(S), Length(S), Value);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3886,11 +4276,15 @@ procedure xsdParseDate(const S: UTF8String; out Year, Month, Day: Longword;
 =======
 procedure xsdParseDate(const S: UTF8String; out Year, Month, Day: Longword;
 >>>>>>> origin/cpstrnew
+=======
+procedure xsdParseDate(const S: UTF8String; out Year, Month, Day: Longword;
+>>>>>>> origin/cpstrnew
   Timezone: PXsdTimezone; BC: PBoolean);
 begin
   xsdParseDate(PChar(S), Length(S), Year, Month, Day, Timezone, BC);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3908,11 +4302,15 @@ procedure xsdParseDate(const S: UTF8String; out Value: TDateTime;
 =======
 procedure xsdParseDate(const S: UTF8String; out Value: TDateTime;
 >>>>>>> origin/cpstrnew
+=======
+procedure xsdParseDate(const S: UTF8String; out Value: TDateTime;
+>>>>>>> origin/cpstrnew
   Timezone: PXsdTimezone);
 begin
   xsdParseDate(PChar(S), Length(S), Value);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3930,12 +4328,16 @@ procedure xsdParseTime(const S: UTF8String; out Hour, Minute, Second,
 =======
 procedure xsdParseTime(const S: UTF8String; out Hour, Minute, Second,
 >>>>>>> origin/cpstrnew
+=======
+procedure xsdParseTime(const S: UTF8String; out Hour, Minute, Second,
+>>>>>>> origin/cpstrnew
   Milliseconds: Longword; Timezone: PXsdTimezone);
 begin
   xsdParseTime(PChar(S), Length(S), Hour, Minute, Second,
     Milliseconds, Timezone);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3953,11 +4355,15 @@ procedure xsdParseTime(const S: UTF8String; out Value: TDateTime;
 =======
 procedure xsdParseTime(const S: UTF8String; out Value: TDateTime;
 >>>>>>> origin/cpstrnew
+=======
+procedure xsdParseTime(const S: UTF8String; out Value: TDateTime;
+>>>>>>> origin/cpstrnew
   Timezone: PXsdTimezone);
 begin
   xsdParseTime(PChar(S), Length(S), Value, Timezone);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3975,12 +4381,16 @@ procedure xsdParseDateTime(const S: UTF8String; out Year, Month, Day, Hour,
 =======
 procedure xsdParseDateTime(const S: UTF8String; out Year, Month, Day, Hour,
 >>>>>>> origin/cpstrnew
+=======
+procedure xsdParseDateTime(const S: UTF8String; out Year, Month, Day, Hour,
+>>>>>>> origin/cpstrnew
   Minute, Second, Milliseconds: Longword; Timezone: PXsdTimezone; BC: PBoolean);
 begin
   xsdParseDateTime(PChar(S), Length(S), Year, Month, Day, Hour,
     Minute, Second, Milliseconds, Timezone, BC);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3998,11 +4408,15 @@ procedure xsdParseDateTime(const S: UTF8String; out Value: TDateTime;
 =======
 procedure xsdParseDateTime(const S: UTF8String; out Value: TDateTime;
 >>>>>>> origin/cpstrnew
+=======
+procedure xsdParseDateTime(const S: UTF8String; out Value: TDateTime;
+>>>>>>> origin/cpstrnew
   Timezone: PXsdTimezone);
 begin
   xsdParseDateTime(PChar(S), Length(S), Value);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4020,10 +4434,14 @@ procedure xsdParseDecimal(const S: UTF8String; out Value: Extended);
 =======
 procedure xsdParseDecimal(const S: UTF8String; out Value: Extended);
 >>>>>>> origin/cpstrnew
+=======
+procedure xsdParseDecimal(const S: UTF8String; out Value: Extended);
+>>>>>>> origin/cpstrnew
 begin
   xsdParseDecimal(PChar(S), Length(S), Value);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4041,10 +4459,14 @@ procedure xsdParseDouble(const S: UTF8String; out Value: Double);
 =======
 procedure xsdParseDouble(const S: UTF8String; out Value: Double);
 >>>>>>> origin/cpstrnew
+=======
+procedure xsdParseDouble(const S: UTF8String; out Value: Double);
+>>>>>>> origin/cpstrnew
 begin
   xsdParseDouble(PChar(S), Length(S), Value);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4062,10 +4484,14 @@ procedure xsdParseFloat(const S: UTF8String; out Value: Single);
 =======
 procedure xsdParseFloat(const S: UTF8String; out Value: Single);
 >>>>>>> origin/cpstrnew
+=======
+procedure xsdParseFloat(const S: UTF8String; out Value: Single);
+>>>>>>> origin/cpstrnew
 begin
   xsdParseFloat(PChar(S), Length(S), Value);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4083,10 +4509,14 @@ procedure xsdParseInteger(const S: UTF8String; out Value: Int64);
 =======
 procedure xsdParseInteger(const S: UTF8String; out Value: Int64);
 >>>>>>> origin/cpstrnew
+=======
+procedure xsdParseInteger(const S: UTF8String; out Value: Int64);
+>>>>>>> origin/cpstrnew
 begin
   xsdParseInteger(PChar(S), Length(S), Value);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4104,10 +4534,14 @@ procedure xsdParseNonNegativeInteger(const S: UTF8String; out Value: QWord);
 =======
 procedure xsdParseNonNegativeInteger(const S: UTF8String; out Value: QWord);
 >>>>>>> origin/cpstrnew
+=======
+procedure xsdParseNonNegativeInteger(const S: UTF8String; out Value: QWord);
+>>>>>>> origin/cpstrnew
 begin
   xsdParseNonNegativeInteger(PChar(S), Length(S), Value);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4125,10 +4559,14 @@ procedure xsdParseNonPositiveInteger(const S: UTF8String; out Value: Int64);
 =======
 procedure xsdParseNonPositiveInteger(const S: UTF8String; out Value: Int64);
 >>>>>>> origin/cpstrnew
+=======
+procedure xsdParseNonPositiveInteger(const S: UTF8String; out Value: Int64);
+>>>>>>> origin/cpstrnew
 begin
   xsdParseNonPositiveInteger(PChar(S), Length(S), Value);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4146,10 +4584,14 @@ procedure xsdParseNegativeInteger(const S: UTF8String; out Value: Int64);
 =======
 procedure xsdParseNegativeInteger(const S: UTF8String; out Value: Int64);
 >>>>>>> origin/cpstrnew
+=======
+procedure xsdParseNegativeInteger(const S: UTF8String; out Value: Int64);
+>>>>>>> origin/cpstrnew
 begin
   xsdParseNegativeInteger(PChar(S), Length(S), Value);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4167,10 +4609,14 @@ procedure xsdParsePositiveInteger(const S: UTF8String; out Value: QWord);
 =======
 procedure xsdParsePositiveInteger(const S: UTF8String; out Value: QWord);
 >>>>>>> origin/cpstrnew
+=======
+procedure xsdParsePositiveInteger(const S: UTF8String; out Value: QWord);
+>>>>>>> origin/cpstrnew
 begin
   xsdParsePositiveInteger(PChar(S), Length(S), Value);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4188,10 +4634,14 @@ procedure xsdParseByte(const S: UTF8String; out Value: Shortint);
 =======
 procedure xsdParseByte(const S: UTF8String; out Value: Shortint);
 >>>>>>> origin/cpstrnew
+=======
+procedure xsdParseByte(const S: UTF8String; out Value: Shortint);
+>>>>>>> origin/cpstrnew
 begin
   xsdParseByte(PChar(S), Length(S), Value);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4209,10 +4659,14 @@ procedure xsdParseShort(const S: UTF8String; out Value: Smallint);
 =======
 procedure xsdParseShort(const S: UTF8String; out Value: Smallint);
 >>>>>>> origin/cpstrnew
+=======
+procedure xsdParseShort(const S: UTF8String; out Value: Smallint);
+>>>>>>> origin/cpstrnew
 begin
   xsdParseShort(PChar(S), Length(S), Value);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4230,10 +4684,14 @@ procedure xsdParseInt(const S: UTF8String; out Value: Longint);
 =======
 procedure xsdParseInt(const S: UTF8String; out Value: Longint);
 >>>>>>> origin/cpstrnew
+=======
+procedure xsdParseInt(const S: UTF8String; out Value: Longint);
+>>>>>>> origin/cpstrnew
 begin
   xsdParseInt(PChar(S), Length(S), Value);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4251,10 +4709,14 @@ procedure xsdParseLong(const S: UTF8String; out Value: Int64);
 =======
 procedure xsdParseLong(const S: UTF8String; out Value: Int64);
 >>>>>>> origin/cpstrnew
+=======
+procedure xsdParseLong(const S: UTF8String; out Value: Int64);
+>>>>>>> origin/cpstrnew
 begin
   xsdParseLong(PChar(S), Length(S), Value);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4272,10 +4734,14 @@ procedure xsdParseUnsignedByte(const S: UTF8String; out Value: Byte);
 =======
 procedure xsdParseUnsignedByte(const S: UTF8String; out Value: Byte);
 >>>>>>> origin/cpstrnew
+=======
+procedure xsdParseUnsignedByte(const S: UTF8String; out Value: Byte);
+>>>>>>> origin/cpstrnew
 begin
   xsdParseUnsignedByte(PChar(S), Length(S), Value);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4293,10 +4759,14 @@ procedure xsdParseUnsignedShort(const S: UTF8String; out Value: Word);
 =======
 procedure xsdParseUnsignedShort(const S: UTF8String; out Value: Word);
 >>>>>>> origin/cpstrnew
+=======
+procedure xsdParseUnsignedShort(const S: UTF8String; out Value: Word);
+>>>>>>> origin/cpstrnew
 begin
   xsdParseUnsignedShort(PChar(S), Length(S), Value);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4314,10 +4784,14 @@ procedure xsdParseUnsignedInt(const S: UTF8String; out Value: Longword);
 =======
 procedure xsdParseUnsignedInt(const S: UTF8String; out Value: Longword);
 >>>>>>> origin/cpstrnew
+=======
+procedure xsdParseUnsignedInt(const S: UTF8String; out Value: Longword);
+>>>>>>> origin/cpstrnew
 begin
   xsdParseUnsignedInt(PChar(S), Length(S), Value);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4335,10 +4809,14 @@ procedure xsdParseUnsignedLong(const S: UTF8String; out Value: QWord);
 =======
 procedure xsdParseUnsignedLong(const S: UTF8String; out Value: QWord);
 >>>>>>> origin/cpstrnew
+=======
+procedure xsdParseUnsignedLong(const S: UTF8String; out Value: QWord);
+>>>>>>> origin/cpstrnew
 begin
   xsdParseUnsignedLong(PChar(S), Length(S), Value);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4356,10 +4834,14 @@ procedure xsdParseEnum(const S: UTF8String; enum: array of Utf8String; out Value
 =======
 procedure xsdParseEnum(const S: UTF8String; enum: array of Utf8String; out Value: Integer);
 >>>>>>> origin/cpstrnew
+=======
+procedure xsdParseEnum(const S: UTF8String; enum: array of Utf8String; out Value: Integer);
+>>>>>>> origin/cpstrnew
 begin
   xsdParseEnum(PChar(S), Length(S), enum, Value);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4377,10 +4859,14 @@ function xsdParseString(const S: UTF8String): Utf8String;
 =======
 function xsdParseString(const S: UTF8String): Utf8String;
 >>>>>>> origin/cpstrnew
+=======
+function xsdParseString(const S: UTF8String): Utf8String;
+>>>>>>> origin/cpstrnew
 begin
   xsdParseString(PChar(S), Length(S), Result);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4398,10 +4884,14 @@ function xsdParseStringLower(const S: UTF8String): Utf8String;
 =======
 function xsdParseStringLower(const S: UTF8String): Utf8String;
 >>>>>>> origin/cpstrnew
+=======
+function xsdParseStringLower(const S: UTF8String): Utf8String;
+>>>>>>> origin/cpstrnew
 begin
   xsdParseStringLower(PChar(S), Length(S), Result);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4419,10 +4909,14 @@ function xsdParseBoolean(const S: UTF8String): Boolean;
 =======
 function xsdParseBoolean(const S: UTF8String): Boolean;
 >>>>>>> origin/cpstrnew
+=======
+function xsdParseBoolean(const S: UTF8String): Boolean;
+>>>>>>> origin/cpstrnew
 begin
   xsdParseBoolean(PChar(S), Length(S), Result);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4440,10 +4934,14 @@ function xsdParseDate(const S: UTF8String; Timezone: PXsdTimezone): TDateTime;
 =======
 function xsdParseDate(const S: UTF8String; Timezone: PXsdTimezone): TDateTime;
 >>>>>>> origin/cpstrnew
+=======
+function xsdParseDate(const S: UTF8String; Timezone: PXsdTimezone): TDateTime;
+>>>>>>> origin/cpstrnew
 begin
   xsdParseDate(PChar(S), Length(S), Result, Timezone);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4461,10 +4959,14 @@ function xsdParseTime(const S: UTF8String; Timezone: PXsdTimezone): TDateTime;
 =======
 function xsdParseTime(const S: UTF8String; Timezone: PXsdTimezone): TDateTime;
 >>>>>>> origin/cpstrnew
+=======
+function xsdParseTime(const S: UTF8String; Timezone: PXsdTimezone): TDateTime;
+>>>>>>> origin/cpstrnew
 begin
   xsdParseTime(PChar(S), Length(S), Result, Timezone);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4482,10 +4984,14 @@ function xsdParseDateTime(const S: UTF8String; Timezone: PXsdTimezone): TDateTim
 =======
 function xsdParseDateTime(const S: UTF8String; Timezone: PXsdTimezone): TDateTime;
 >>>>>>> origin/cpstrnew
+=======
+function xsdParseDateTime(const S: UTF8String; Timezone: PXsdTimezone): TDateTime;
+>>>>>>> origin/cpstrnew
 begin
   xsdParseDateTime(PChar(S), Length(S), Result, Timezone);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4503,10 +5009,14 @@ function xsdParseDecimal(const S: UTF8String): Extended;
 =======
 function xsdParseDecimal(const S: UTF8String): Extended;
 >>>>>>> origin/cpstrnew
+=======
+function xsdParseDecimal(const S: UTF8String): Extended;
+>>>>>>> origin/cpstrnew
 begin
   xsdParseDecimal(PChar(S), Length(S), Result);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4524,10 +5034,14 @@ function xsdParseDouble(const S: UTF8String): Double;
 =======
 function xsdParseDouble(const S: UTF8String): Double;
 >>>>>>> origin/cpstrnew
+=======
+function xsdParseDouble(const S: UTF8String): Double;
+>>>>>>> origin/cpstrnew
 begin
   xsdParseDouble(PChar(S), Length(S), Result);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4545,10 +5059,14 @@ function xsdParseFloat(const S: UTF8String): Single;
 =======
 function xsdParseFloat(const S: UTF8String): Single;
 >>>>>>> origin/cpstrnew
+=======
+function xsdParseFloat(const S: UTF8String): Single;
+>>>>>>> origin/cpstrnew
 begin
   xsdParseFloat(PChar(S), Length(S), Result);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4566,10 +5084,14 @@ function xsdParseInteger(const S: UTF8String): Int64;
 =======
 function xsdParseInteger(const S: UTF8String): Int64;
 >>>>>>> origin/cpstrnew
+=======
+function xsdParseInteger(const S: UTF8String): Int64;
+>>>>>>> origin/cpstrnew
 begin
   xsdParseInteger(PChar(S), Length(S), Result);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4587,10 +5109,14 @@ function xsdParseNonNegativeInteger(const S: UTF8String): QWord;
 =======
 function xsdParseNonNegativeInteger(const S: UTF8String): QWord;
 >>>>>>> origin/cpstrnew
+=======
+function xsdParseNonNegativeInteger(const S: UTF8String): QWord;
+>>>>>>> origin/cpstrnew
 begin
   xsdParseNonNegativeInteger(PChar(S), Length(S), Result);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4608,10 +5134,14 @@ function xsdParseNonPositiveInteger(const S: UTF8String): Int64;
 =======
 function xsdParseNonPositiveInteger(const S: UTF8String): Int64;
 >>>>>>> origin/cpstrnew
+=======
+function xsdParseNonPositiveInteger(const S: UTF8String): Int64;
+>>>>>>> origin/cpstrnew
 begin
   xsdParseNonPositiveInteger(PChar(S), Length(S), Result);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4629,10 +5159,14 @@ function xsdParseNegativeInteger(const S: UTF8String): Int64;
 =======
 function xsdParseNegativeInteger(const S: UTF8String): Int64;
 >>>>>>> origin/cpstrnew
+=======
+function xsdParseNegativeInteger(const S: UTF8String): Int64;
+>>>>>>> origin/cpstrnew
 begin
   xsdParseNegativeInteger(PChar(S), Length(S), Result);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4650,10 +5184,14 @@ function xsdParsePositiveInteger(const S: UTF8String): QWord;
 =======
 function xsdParsePositiveInteger(const S: UTF8String): QWord;
 >>>>>>> origin/cpstrnew
+=======
+function xsdParsePositiveInteger(const S: UTF8String): QWord;
+>>>>>>> origin/cpstrnew
 begin
   xsdParsePositiveInteger(PChar(S), Length(S), Result);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4671,10 +5209,14 @@ function xsdParseByte(const S: UTF8String): Shortint;
 =======
 function xsdParseByte(const S: UTF8String): Shortint;
 >>>>>>> origin/cpstrnew
+=======
+function xsdParseByte(const S: UTF8String): Shortint;
+>>>>>>> origin/cpstrnew
 begin
   xsdParseByte(PChar(S), Length(S), Result);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4692,10 +5234,14 @@ function xsdParseShort(const S: UTF8String): Smallint;
 =======
 function xsdParseShort(const S: UTF8String): Smallint;
 >>>>>>> origin/cpstrnew
+=======
+function xsdParseShort(const S: UTF8String): Smallint;
+>>>>>>> origin/cpstrnew
 begin
   xsdParseShort(PChar(S), Length(S), Result);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4713,10 +5259,14 @@ function xsdParseInt(const S: UTF8String): Longint;
 =======
 function xsdParseInt(const S: UTF8String): Longint;
 >>>>>>> origin/cpstrnew
+=======
+function xsdParseInt(const S: UTF8String): Longint;
+>>>>>>> origin/cpstrnew
 begin
   xsdParseInt(PChar(S), Length(S), Result);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4734,10 +5284,14 @@ function xsdParseLong(const S: UTF8String): Int64;
 =======
 function xsdParseLong(const S: UTF8String): Int64;
 >>>>>>> origin/cpstrnew
+=======
+function xsdParseLong(const S: UTF8String): Int64;
+>>>>>>> origin/cpstrnew
 begin
   xsdParseLong(PChar(S), Length(S), Result);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4755,10 +5309,14 @@ function xsdParseUnsignedByte(const S: UTF8String): Byte;
 =======
 function xsdParseUnsignedByte(const S: UTF8String): Byte;
 >>>>>>> origin/cpstrnew
+=======
+function xsdParseUnsignedByte(const S: UTF8String): Byte;
+>>>>>>> origin/cpstrnew
 begin
   xsdParseUnsignedByte(PChar(S), Length(S), Result);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4776,10 +5334,14 @@ function xsdParseUnsignedShort(const S: UTF8String): Word;
 =======
 function xsdParseUnsignedShort(const S: UTF8String): Word;
 >>>>>>> origin/cpstrnew
+=======
+function xsdParseUnsignedShort(const S: UTF8String): Word;
+>>>>>>> origin/cpstrnew
 begin
   xsdParseUnsignedShort(PChar(S), Length(S), Result);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4797,10 +5359,14 @@ function xsdParseUnsignedInt(const S: UTF8String): Longword;
 =======
 function xsdParseUnsignedInt(const S: UTF8String): Longword;
 >>>>>>> origin/cpstrnew
+=======
+function xsdParseUnsignedInt(const S: UTF8String): Longword;
+>>>>>>> origin/cpstrnew
 begin
   xsdParseUnsignedInt(PChar(S), Length(S), Result);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4818,10 +5384,14 @@ function xsdParseUnsignedLong(const S: UTF8String): QWord;
 =======
 function xsdParseUnsignedLong(const S: UTF8String): QWord;
 >>>>>>> origin/cpstrnew
+=======
+function xsdParseUnsignedLong(const S: UTF8String): QWord;
+>>>>>>> origin/cpstrnew
 begin
   xsdParseUnsignedLong(PChar(S), Length(S), Result);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4836,6 +5406,9 @@ function xsdParseEnum(const S: UTF8String; enum: array of Utf8String): Integer;
 =======
 function xsdParseEnum(const S: UTF8String; enum: array of Utf8String): Integer;
 >>>>>>> graemeg/cpstrnew
+=======
+function xsdParseEnum(const S: UTF8String; enum: array of Utf8String): Integer;
+>>>>>>> origin/cpstrnew
 =======
 function xsdParseEnum(const S: UTF8String; enum: array of Utf8String): Integer;
 >>>>>>> origin/cpstrnew

@@ -9,6 +9,7 @@ loaders=prt0 exceptn fpu
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 units=system uuchar objpas macpas iso7185 extpas strings \
       go32 dpmiexcp initc ports profile dxetype dxeload emu387 \
       dos cmem \
@@ -32,6 +33,10 @@ units=system objpas macpas iso7185 strings \
 units=system objpas macpas iso7185 strings \
       go32 dpmiexcp initc ports profile dxetype dxeload emu387 \
 >>>>>>> graemeg/cpstrnew
+=======
+units=system objpas macpas iso7185 strings \
+      go32 dpmiexcp initc ports profile dxetype dxeload emu387 \
+>>>>>>> origin/cpstrnew
 =======
 units=system objpas macpas iso7185 strings \
       go32 dpmiexcp initc ports profile dxetype dxeload emu387 \

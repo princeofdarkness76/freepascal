@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    Copyright (c) 1998-2011 Apple Inc.
    All rights reserved. }
 {       Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
@@ -53,6 +54,10 @@
    Copyright (c) 1998-2009 Apple Inc.
    All rights reserved. }
 >>>>>>> origin/fixes_2.4
+=======
+   Copyright (c) 1998-2009 Apple Inc.
+   All rights reserved. }
+>>>>>>> origin/cpstrnew
 {       Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {
@@ -63,12 +68,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -80,6 +89,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -94,6 +104,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -109,6 +123,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -119,6 +134,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -126,13 +144,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -140,6 +162,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -148,8 +172,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -160,6 +187,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -180,6 +208,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -188,12 +218,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -201,6 +234,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -453,6 +487,19 @@ interface
 	{$setc TARGET_CPU_PPC64 := TRUE}
 >>>>>>> origin/fixes_2.4
 	{$setc TARGET_CPU_X86 := FALSE}
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
@@ -472,6 +519,7 @@ interface
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 {$endc}
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -509,6 +557,37 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -537,6 +616,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -545,6 +625,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -557,6 +639,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 uses MacTypes,CFBase,CFDictionary,CGBase;
 {$endc} {not MACOSALLINCLUDE}
 
@@ -571,6 +654,11 @@ uses MacTypes,CFBase,CFDictionary,CGBase;
 {$endc} {not MACOSALLINCLUDE}
 
 >>>>>>> origin/fixes_2.4
+=======
+uses MacTypes,CFBase,CFDictionary,CGBase;
+{$endc} {not MACOSALLINCLUDE}
+
+>>>>>>> origin/cpstrnew
 {$ALIGN POWER}
 
 
@@ -582,6 +670,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		x: CGFloat;
 		y: CGFloat;
 =======
@@ -596,6 +685,10 @@ type
 		x: CGFloat;
 		y: CGFloat;
 >>>>>>> origin/fixes_2.4
+=======
+		x: CGFloat;
+		y: CGFloat;
+>>>>>>> origin/cpstrnew
 	end;
 
 { Sizes. }
@@ -603,6 +696,7 @@ type
 type
 	CGSizePtr = ^CGSize;
 	CGSize = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -644,6 +738,10 @@ type
 		width: CGFloat;
 		height: CGFloat;
 >>>>>>> origin/fixes_2.4
+=======
+		width: CGFloat;
+		height: CGFloat;
+>>>>>>> origin/cpstrnew
 	end;
 
 { Rectangles. }
@@ -671,6 +769,7 @@ var CGPointZero: CGPoint; external name '_CGPointZero'; (* attribute const *)
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -679,6 +778,9 @@ var CGPointZero: CGPoint; external name '_CGPointZero'; (* attribute const *)
 =======
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+(* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 { The "zero" size -- equivalent to CGSizeMake(0, 0). } 
 
@@ -686,6 +788,7 @@ var CGSizeZero: CGSize; external name '_CGSizeZero'; (* attribute const *)
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -694,6 +797,9 @@ var CGSizeZero: CGSize; external name '_CGSizeZero'; (* attribute const *)
 =======
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+(* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 { The "zero" rectangle -- equivalent to CGRectMake(0, 0, 0, 0). } 
 
@@ -701,6 +807,9 @@ var CGRectZero: CGRect; external name '_CGRectZero'; (* attribute const *)
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
 
 { The "empty" rect. This is the rectangle returned when, for example, we
@@ -714,6 +823,7 @@ var CGRectNull: CGRect; external name '_CGRectNull'; (* attribute const *)
 
 var CGRectInfinite: CGRect; external name '_CGRectInfinite'; (* attribute const *)
 (* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_2_0) *)
+<<<<<<< HEAD
 
 { Return the leftmost x-value of `rect'. }
 
@@ -845,6 +955,8 @@ var CGRectNull: CGRect; external name '_CGRectNull'; (* attribute const *)
 
 var CGRectInfinite: CGRect; external name '_CGRectInfinite'; (* attribute const *)
 (* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_2_0) *)
+=======
+>>>>>>> origin/cpstrnew
 
 { Return the leftmost x-value of `rect'. }
 
@@ -885,11 +997,19 @@ function CGRectGetWidth( rect: CGRect ): CGFloat; external name '_CGRectGetWidth
 
 function CGRectGetHeight( rect: CGRect ): CGFloat; external name '_CGRectGetHeight';
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
+<<<<<<< HEAD
 
 
 
 { Return true if `rect1' and `rect2' are the same, false otherwise. }
 
+=======
+
+
+
+{ Return true if `rect1' and `rect2' are the same, false otherwise. }
+
+>>>>>>> origin/cpstrnew
 function CGRectEqualToRect( rect1: CGRect; rect2: CGRect ): CBool; external name '_CGRectEqualToRect';
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
 
@@ -927,12 +1047,16 @@ function CGRectInset( rect: CGRect; dx: CGFloat; dy: CGFloat ): CGRect; external
 function CGRectIntegral( rect: CGRect ): CGRect; external name '_CGRectIntegral';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
 >>>>>>> origin/fixes_2.4
+=======
+(* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
+>>>>>>> origin/cpstrnew
 
 { Return the union of `r1' and `r2'. }
 
@@ -940,6 +1064,9 @@ function CGRectUnion( r1: CGRect; r2: CGRect ): CGRect; external name '_CGRectUn
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
 
 { Return the intersection of `r1' and `r2'. This may return a null rect. }
@@ -955,10 +1082,13 @@ function CGRectOffset( rect: CGRect; dx: CGFloat; dy: CGFloat ): CGRect; externa
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -970,6 +1100,7 @@ function CGRectOffset( rect: CGRect; dx: CGFloat; dy: CGFloat ): CGRect; externa
 
 procedure CGRectDivide( rect: CGRect; var slice: CGRect; var remainder: CGRect; amount: CGFloat; edge: CGRectEdge ); external name '_CGRectDivide';
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
+<<<<<<< HEAD
 
 { Return true if `point' is contained in `rect', false otherwise. }
 <<<<<<< HEAD
@@ -1078,6 +1209,32 @@ function CGRectIntersectsRect( rect1: CGRect; rect2: CGRect ): CBool; external n
 
 >>>>>>> graemeg/cpstrnew
 =======
+
+function CGRectContainsPoint( rect: CGRect; point: CGPoint ): CBool; external name '_CGRectContainsPoint';
+(* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
+
+{ Return true if `rect2' is contained in `rect1', false otherwise. `rect2'
+   is contained in `rect1' if the union of `rect1' and `rect2' is equal to
+   `rect1'. }
+
+function CGRectContainsRect( rect1: CGRect; rect2: CGRect ): CBool; external name '_CGRectContainsRect';
+(* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
+
+{ Return true if `rect1' intersects `rect2', false otherwise. `rect1'
+   intersects `rect2' if the intersection of `rect1' and `rect2' is not the
+   null rect. }
+
+function CGRectIntersectsRect( rect1: CGRect; rect2: CGRect ): CBool; external name '_CGRectIntersectsRect';
+(* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
+
+{** Persistent representations. **}
+
+{ Return a dictionary representation of `point'. }
+
+>>>>>>> origin/cpstrnew
+=======
+
+{ Return true if `point' is contained in `rect', false otherwise. }
 
 function CGRectContainsPoint( rect: CGRect; point: CGPoint ): CBool; external name '_CGRectContainsPoint';
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
@@ -1143,14 +1300,18 @@ function CGPointMake(x: CGFloat; y: CGFloat): CGPoint; inline;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {
   CGPoint p; p.x = x; p.y = y; return p;
 }
 
 // CG_INLINE CGSize
 function CGSizeMake(width: CGFloat; height: CGFloat): CGSize; inline;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {
@@ -1196,11 +1357,18 @@ function CGSizeMake(width: CGFloat; height: CGFloat): CGSize; inline;
   CGSize size; size.width = width; size.height = height; return size;
 }
 
+=======
+{
+  CGSize size; size.width = width; size.height = height; return size;
+}
+
+>>>>>>> origin/cpstrnew
 // CG_INLINE CGRect
 // seems not useful to inline to me, is fairly big (unless you can reschedule
 // all the stores among the rest of the code, but still will probably increase
 // code size in all cases)
 function CGRectMake(x: CGFloat; y: CGFloat; width: CGFloat; height: CGFloat): CGRect;
+<<<<<<< HEAD
 {
   CGRect rect;
   rect.origin.x = x; rect.origin.y = y;
@@ -1485,6 +1653,21 @@ function CGPointEqualToPoint(const point1: CGPoint; const point2: CGPoint): bool
   return point1.x == point2.x && point1.y == point2.y;
 }
 
+=======
+{
+  CGRect rect;
+  rect.origin.x = x; rect.origin.y = y;
+  rect.size.width = width; rect.size.height = height;
+  return rect;
+}
+
+// CG_INLINE bool
+function CGPointEqualToPoint(const point1: CGPoint; const point2: CGPoint): boolean; inline;
+{
+  return point1.x == point2.x && point1.y == point2.y;
+}
+
+>>>>>>> origin/cpstrnew
 // CG_INLINE bool
 function CGSizeEqualToSize(size1: CGSize; size2: CGSize): boolean; inline;
 {
@@ -1536,6 +1719,7 @@ end;
 end.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
@@ -1543,3 +1727,7 @@ end.
 
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

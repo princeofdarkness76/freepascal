@@ -10,6 +10,7 @@ INTERFACE
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 uses Windows, RAPITypes;
 =======
 uses Windows;
@@ -17,6 +18,9 @@ uses Windows;
 =======
 uses Windows;
 >>>>>>> origin/fixes_2_2
+=======
+uses Windows, RAPITypes;
+>>>>>>> origin/cpstrnew
 
 const
   FAF_ATTRIBUTES = $00000001;
@@ -366,6 +370,8 @@ function CeRapiUninit: LongInt;
   TCeFindAllFiles = function(Path: PWideChar; Attr: DWORD; var Count: DWord;
     var FindData: PCe_Find_Data_array): BOOL stdcall;
   TRapiFreeBuffer = procedure(p: Pointer) stdcall;
+  TCeRapiInvoke = function (pDllPath: LPCWSTR; pFunctionName: LPCWSTR; cbInput: DWord; pInput: PByte;
+    pcbOutput: PDWord; ppOutput: PPByte; ppIRAPIStream: PIRAPIStream; dwReserved: DWord): HResult; stdcall;
 
 function CeRapiInit: LongInt;
 function CeRapiInitEx(var RInit: TRapiInit) : LongInt;
@@ -464,12 +470,17 @@ function DesktopToDevice(DesktopLocation, TableList: String; Sync: BOOL; Overwri
 function DeviceToDesktop(DesktopLocation, TableList: String; Sync: BOOL; Overwrite: Integer; DeviceLocation: String): Longint;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function CeRapiInvoke(pDllPath: LPCWSTR; pFunctionName: LPCWSTR; cbInput: DWord; pInput: PByte;
   pcbOutput: PDWord; ppOutput: PPByte; ppIRAPIStream: PIRAPIStream; dwReserved: DWord): HResult;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+function CeRapiInvoke(pDllPath: LPCWSTR; pFunctionName: LPCWSTR; cbInput: DWord; pInput: PByte;
+  pcbOutput: PDWord; ppOutput: PPByte; ppIRAPIStream: PIRAPIStream; dwReserved: DWord): HResult;
+>>>>>>> origin/cpstrnew
 
 IMPLEMENTATION
 
@@ -551,11 +562,15 @@ var
   mDeviceToDesktop: TDeviceToDesktop;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   mCeRapiInvoke: TCeRapiInvoke;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  mCeRapiInvoke: TCeRapiInvoke;
+>>>>>>> origin/cpstrnew
 
   RapiModule, AdoCEModule: THandle;
 
@@ -648,11 +663,15 @@ begin
     @mCeGetSystemPowerStatusEx:= GetProcAddress(RapiModule, 'CeGetSystemPowerStatusEx');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     @mCeRapiInvoke:= GetProcAddress(RapiModule, 'CeRapiInvoke');
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    @mCeRapiInvoke:= GetProcAddress(RapiModule, 'CeRapiInvoke');
+>>>>>>> origin/cpstrnew
   end
   else
     Result := False;
@@ -1560,6 +1579,9 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 function CeRapiInvoke(pDllPath: LPCWSTR; pFunctionName: LPCWSTR;
   cbInput: DWord; pInput: PByte; pcbOutput: PDWord; ppOutput: PPByte;
   ppIRAPIStream: PIRAPIStream; dwReserved: DWord): HResult;
@@ -1575,10 +1597,13 @@ begin
     Result := $FFFF;
 end;
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 INITIALIZATION
   RapiModule := 0;
   AdoCEModule := 0;

@@ -30,6 +30,7 @@ unit cpugas;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       cpubase, aasmbase, globtype, systems,
       aasmtai, aasmcpu, assemble, aggas;
 
@@ -46,12 +47,15 @@ unit cpugas;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       cpubase,
        aasmtai, aasmcpu, assemble, aggas;
 
     type
       TMIPSGNUAssembler = class(TGNUassembler)
         constructor create(smart: boolean); override;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -62,12 +66,15 @@ unit cpugas;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       end;
 
       TMIPSInstrWriter = class(TCPUInstrWriter)
         procedure WriteInstruction(hp : tai);override;
       end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -102,11 +109,14 @@ unit cpugas;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   implementation
 
     uses
       cutils, systems,
       verbose, itcpugas, cgbase, cgutils;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -117,11 +127,14 @@ unit cpugas;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {****************************************************************************}
 {                         GNU MIPS  Assembler writer                           }
 {****************************************************************************}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -151,12 +164,15 @@ unit cpugas;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     constructor TMIPSGNUAssembler.create(smart: boolean);
       begin
         inherited create(smart);
         InstrWriter := TMIPSInstrWriter.create(self);
       end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -167,12 +183,15 @@ unit cpugas;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {****************************************************************************}
 {                  Helper routines for Instruction Writer                    }
 {****************************************************************************}
 
     function GetReferenceString(var ref: TReference): string;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -246,6 +265,8 @@ unit cpugas;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       begin
         GetReferenceString := '';
         with ref do
@@ -300,11 +321,14 @@ unit cpugas;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       end;
@@ -315,6 +339,7 @@ unit cpugas;
         with Oper do
           case typ of
             top_reg:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -331,6 +356,8 @@ unit cpugas;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
               getopstr := gas_regname(reg);
             top_const:
               getopstr := tostr(longint(val));
@@ -343,11 +370,14 @@ unit cpugas;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
             else
@@ -372,6 +402,7 @@ unit cpugas;
           end;
       end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -425,10 +456,13 @@ unit cpugas;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
     procedure TMIPSInstrWriter.WriteInstruction(hp: Tai);
       var
         Op: TAsmOp;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -445,10 +479,13 @@ unit cpugas;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         s,s1:  string;
         i:  integer;
         tmpfpu: string;
         tmpfpu_len: longint;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -459,12 +496,15 @@ unit cpugas;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       begin
         if hp.typ <> ait_instruction then
           exit;
         op := taicpu(hp).opcode;
 
         case op of
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -582,6 +622,8 @@ unit cpugas;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           A_P_STK2:
           begin
             s1 := getopstr(taicpu(hp).oper[2]^);
@@ -664,6 +706,7 @@ unit cpugas;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -671,11 +714,14 @@ unit cpugas;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         end;
       end;
 
 
     const
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -689,11 +735,14 @@ unit cpugas;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       as_MIPSEL_as_info: tasminfo =
         (
         id: as_gas;
         idtxt: 'AS';
         asmbin: 'as';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -733,6 +782,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         asmcmd: '-mips2 -W -EL -o $OBJ $ASM';
         supported_targets: [system_mips_linux,system_mipsel_linux];
         flags: [af_allowdirect, af_needar, af_smartlink_sections];
@@ -745,11 +796,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 end.

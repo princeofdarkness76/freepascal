@@ -21,6 +21,7 @@
 _startlib:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         .globl  FPC_SHARED_LIB_START
         .type   FPC_SHARED_LIB_START,@function
 <<<<<<< HEAD
@@ -54,6 +55,11 @@ FPC_LIB_START:
         .type   FPC_LIB_START,@function
 FPC_LIB_START:
 >>>>>>> origin/fixes_2_2
+=======
+        .globl  FPC_SHARED_LIB_START
+        .type   FPC_SHARED_LIB_START,@function
+FPC_SHARED_LIB_START:
+>>>>>>> origin/cpstrnew
 |
 |       The args and envs are not tested yet
 |
@@ -103,6 +109,9 @@ FPC_SHARED_LIB_EXIT:
         .globl  _haltproc
         .type   _haltproc,@function
 haltproc:
+        .globl  FPC_SHARED_LIB_EXIT
+        .type   FPC_SHARED_LIB_EXIT,@function
+FPC_SHARED_LIB_EXIT:
         moveq.l   #1,%d0
         move.w    U_SYSLINUX_EXITCODE,%d1
         trap      #0

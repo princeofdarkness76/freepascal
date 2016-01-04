@@ -1,5 +1,8 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {$ifdef NDS_INTERFACE}
 const
   REG_DISPSTAT	: pcuint16 = pointer($04000004);
@@ -48,6 +51,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 //procedure SystemSleep(); cdecl; external;
 procedure ledBlink(bm: cint); cdecl; external;
@@ -61,11 +65,14 @@ procedure ledBlink(bm: cint); cdecl; external;
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 var
   __dsimode: cbool; cvar; external;
 
 {$ifdef ARM9}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -99,6 +106,11 @@ procedure powerOn(bits: cint); cdecl; external;
 procedure powerOff(bits: cint); cdecl; external;
 procedure ledBlink(bm: cint); cdecl; external;
 >>>>>>> origin/fixes_2.4
+=======
+procedure powerOn(bits: cint); cdecl; external;
+procedure powerOff(bits: cint); cdecl; external;
+procedure ledBlink(bm: cint); cdecl; external;
+>>>>>>> origin/cpstrnew
 
 procedure systemMsgHandler(bytes: cint; user_data: pointer); cdecl; external;
 procedure systemValueHandler(value: cuint32; data: pointer); cdecl; external;
@@ -113,6 +125,7 @@ procedure systemShutDown(); inline;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure readFirmware(address: cuint32; buffer: pointer; length: cuint32); cdecl; external;
 function writeFirmware(address: cuint32; buffer: pointer; length: cuint32): cint; cdecl; external;
 
@@ -123,6 +136,8 @@ function writeFirmware(address: cuint32; buffer: pointer; length: cuint32): cint
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 function getBatteryLevel(): cuint32; cdecl; external;
@@ -186,6 +201,7 @@ function writePowerManagement(reg, command: cint): cint; cdecl; external;
 
 function readPowerManagement(reg: cint): cint; inline; 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure powerOn(bits: cint); inline;
 procedure powerOff(bits: cint); inline;
@@ -359,6 +375,23 @@ procedure readUserSettings(); cdecl; external;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+procedure powerOn(bits: cint); inline;
+procedure powerOff(bits: cint); inline;
+procedure readUserSettings(); cdecl; external;
+procedure systemShutDown(); cdecl; external;
+{$endif ARM7}
+
+
+type
+  BACKLIGHT_LEVELS = cint;
+const
+	BACKLIGHT_LOW  : BACKLIGHT_LEVELS = 0;
+	BACKLIGHT_MED  : BACKLIGHT_LEVELS = 1;
+	BACKLIGHT_HIGH : BACKLIGHT_LEVELS = 2;
+	BACKLIGHT_MAX  : BACKLIGHT_LEVELS = 3;	
+
+>>>>>>> origin/cpstrnew
 type
   tPERSONAL_DATA = bitpacked record
     RESERVED0: array [0..1] of cuint8;
@@ -398,6 +431,7 @@ type
       autoMode: 0..1;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       RESERVED5: 0..2;
 	    settingsLost: 0..1;	
 	    RESERVED6: 0..6;
@@ -411,6 +445,11 @@ type
 	    settingsLost: 0..1;	
 	    RESERVED2: 0..6;
 >>>>>>> origin/fixes_2_2
+=======
+      RESERVED5: 0..2;
+	    settingsLost: 0..1;	
+	    RESERVED6: 0..6;
+>>>>>>> origin/cpstrnew
     end;
     RESERVED3: cuint16;
     rtcOffset: cuint32;
@@ -422,6 +461,9 @@ type
 const
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   PersonalData  : PPERSONAL_DATA = pointer($2FFFC80);
 
 type
@@ -435,6 +477,7 @@ type
     seconds: cuint8;     // 0 to 59
 //    padding: cuint8;
   end;
+<<<<<<< HEAD
 
 const
   ARGV_MAGIC = $5f617267;
@@ -447,7 +490,11 @@ type
   REG_KEYINPUT	: pcuint16 = pointer($04000130);
   REG_KEYCNT		: pcuint16 = pointer($04000132);
   PersonalData  : PPERSONAL_DATA = pointer($2FFFC80);
+=======
+>>>>>>> origin/cpstrnew
 
+const
+  ARGV_MAGIC = $5f617267;
 
 type 
 <<<<<<< HEAD
@@ -464,15 +511,19 @@ type
     argv: ppcchar;    
     dummy: cint;          // internal use
     host: cuint32;        // internal use, host ip for dslink 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
   end;
   Targv = __argv;
   Pargv = ^Targv;
 
 const
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -502,6 +553,13 @@ const
   ARGV_MAGIC = $5f617267;
   
 >>>>>>> origin/fixes_2.4
+=======
+  __system_argv: Pargv = pointer($02FFFE70);
+
+const
+  BOOTSIG = $62757473746F6F62; // ULL?
+
+>>>>>>> origin/cpstrnew
 
 type
   __bootstub = packed record      // packed ?
@@ -514,6 +572,9 @@ type
 
 {$ifdef ARM9}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 //procedure memCached(address: pointer); cdecl; external;
 function memCached(address: pointer): pointer; cdecl; external;
 //procedure memUncached(address: pointer); cdecl; external;
@@ -524,12 +585,15 @@ procedure resetARM7(address: cuint32); cdecl; external;
 {$ifdef ARM7}
 procedure resetARM9(address: cuint32); cdecl; external;
 {$endif ARM7}
+<<<<<<< HEAD
 =======
 procedure memCached(address: pointer); cdecl; external;
 procedure memUncached(address: pointer); cdecl; external;
 {$endif ARM9}
 
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$endif NDS_INTERFACE}
 

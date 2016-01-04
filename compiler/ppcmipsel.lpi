@@ -5,6 +5,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Version Value="9"/>
     <PathDelim Value="\"/>
 =======
@@ -23,11 +24,16 @@
     <PathDelim Value="\"/>
     <Version Value="7"/>
 >>>>>>> origin/cpstrnew
+=======
+    <PathDelim Value="\"/>
+    <Version Value="7"/>
+>>>>>>> origin/cpstrnew
     <General>
       <Flags>
         <MainUnitHasUsesSectionForAllUnits Value="False"/>
         <MainUnitHasCreateFormStatements Value="False"/>
         <MainUnitHasTitleStatement Value="False"/>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -44,10 +50,14 @@
 =======
         <AlwaysBuild Value="False"/>
 >>>>>>> origin/cpstrnew
+=======
+        <AlwaysBuild Value="False"/>
+>>>>>>> origin/cpstrnew
         <LRSInOutputDirectory Value="False"/>
       </Flags>
       <SessionStorage Value="InProjectDir"/>
       <MainUnit Value="0"/>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -72,6 +82,11 @@
       <Title Value="pp"/>
     </General>
 >>>>>>> graemeg/cpstrnew
+=======
+      <TargetFileExt Value=".exe"/>
+      <Title Value="pp"/>
+    </General>
+>>>>>>> origin/cpstrnew
 =======
       <TargetFileExt Value=".exe"/>
       <Title Value="pp"/>
@@ -122,6 +137,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Version Value="11"/>
     <PathDelim Value="\"/>
     <Target>
@@ -138,6 +154,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     <Version Value="8"/>
     <PathDelim Value="\"/>
     <Target>
@@ -150,11 +168,14 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     </SearchPaths>
@@ -163,6 +184,7 @@
         <CStyleOperator Value="False"/>
         <AllowLabel Value="False"/>
         <CPPInline Value="False"/>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -177,6 +199,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       </SyntaxOptions>
     </Parsing>
     <Linking>
@@ -187,11 +211,14 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     <Other>

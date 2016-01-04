@@ -190,6 +190,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     {$WARNING HMONITOR should go to the windows unit}
     HMONITOR = HANDLE;
@@ -202,6 +203,10 @@ type
     {$WARNING HMONITOR should go to the windows unit}
     HMONITOR = HANDLE;
 >>>>>>> graemeg/cpstrnew
+=======
+    {$WARNING HMONITOR should go to the windows unit}
+    HMONITOR = HANDLE;
+>>>>>>> origin/cpstrnew
 =======
     {$WARNING HMONITOR should go to the windows unit}
     HMONITOR = HANDLE;

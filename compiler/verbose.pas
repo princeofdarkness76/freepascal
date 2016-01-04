@@ -134,6 +134,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       comphook,fmodule,constexp,globals,cfileutl,switches;
 =======
       comphook,fmodule,constexp,globals,cfileutl;
@@ -154,6 +155,9 @@ implementation
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+      comphook,fmodule,constexp,globals,cfileutl;
+>>>>>>> origin/cpstrnew
 
 {****************************************************************************
                        Extra Handlers for default compiler
@@ -240,12 +244,15 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         msgnr, code : longint;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         code : longint;
@@ -331,11 +338,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                          begin
@@ -518,6 +528,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               status.sources_avail:=module.sources_avail;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -525,6 +536,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
               { if currentsourcepath is relative, make it absolute }
@@ -770,6 +783,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     { We only want to know about local value }
                     st:= tmsgstate(ord(st) and ms_local_mask);
                     if st=ms_error then
@@ -783,6 +797,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                     if st=ms_error then
                       begin
                         v:=v or V_Error;
@@ -790,11 +806,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                       end
@@ -809,6 +828,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                               GenerateError
 =======
                               inc(status.errorcount)
@@ -819,6 +839,9 @@ implementation
 =======
                               inc(status.errorcount)
 >>>>>>> graemeg/cpstrnew
+=======
+                              inc(status.errorcount)
+>>>>>>> origin/cpstrnew
 =======
                               inc(status.errorcount)
 >>>>>>> origin/cpstrnew
@@ -834,6 +857,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                               GenerateError
 =======
                               inc(status.errorcount)
@@ -844,6 +868,9 @@ implementation
 =======
                               inc(status.errorcount)
 >>>>>>> graemeg/cpstrnew
+=======
+                              inc(status.errorcount)
+>>>>>>> origin/cpstrnew
 =======
                               inc(status.errorcount)
 >>>>>>> origin/cpstrnew
@@ -859,6 +886,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                               GenerateError
 =======
                               inc(status.errorcount)
@@ -869,6 +897,9 @@ implementation
 =======
                               inc(status.errorcount)
 >>>>>>> graemeg/cpstrnew
+=======
+                              inc(status.errorcount)
+>>>>>>> origin/cpstrnew
 =======
                               inc(status.errorcount)
 >>>>>>> origin/cpstrnew

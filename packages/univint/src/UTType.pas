@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
 <<<<<<< HEAD
      File:       UTType.h
@@ -73,6 +74,8 @@
 {The original source on which this file is based: }
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
      File:       LaunchServices/UTType.h
  
@@ -80,6 +83,7 @@
  
      Version:    LaunchServices-360.3~1
  
+<<<<<<< HEAD
 <<<<<<< HEAD
      Copyright:  © 2003 by Apple Computer, Inc., all rights reserved.
 <<<<<<< HEAD
@@ -89,6 +93,9 @@
 =======
      Copyright:  © 2003-2008 by Apple Computer, Inc., all rights reserved.
 >>>>>>> origin/fixes_2.4
+=======
+     Copyright:  © 2003-2008 by Apple Computer, Inc., all rights reserved.
+>>>>>>> origin/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -138,12 +145,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -155,6 +166,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -169,6 +181,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -184,6 +200,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -194,6 +211,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -201,13 +221,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -215,6 +239,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -223,8 +249,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -235,6 +264,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -255,6 +285,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -263,12 +295,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -276,6 +311,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -528,12 +564,25 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 	{$setc TARGET_CPU_PPC64 := FALSE}
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+>>>>>>> origin/cpstrnew
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
@@ -544,6 +593,8 @@ interface
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -554,6 +605,7 @@ interface
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -595,6 +647,41 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -623,6 +710,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -631,6 +719,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -644,6 +734,7 @@ uses MacTypes,CFBase,CFArray,CFDictionary,CFURL;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not MACOSALLINCLUDE}
 
 <<<<<<< HEAD
@@ -695,6 +786,17 @@ uses MacTypes,CFBase,CFArray,CFDictionary,CFURL;
 
 
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+
+
+{ header available as of iPhoneOS 3.0, but can't add iPhoneOS markers yet
+  because they're not yet present in the Mac OS X version of the header }
+
+{$ALIGN POWER}
+
+
+>>>>>>> origin/cpstrnew
 { ======================================================================================================== }
 { Uniform Type Identification API                                                                          }
 { ======================================================================================================== }
@@ -705,6 +807,7 @@ uses MacTypes,CFBase,CFArray,CFDictionary,CFURL;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     abstract types. They can be used to describe a file format or an
     in-memory data type, but can also be used to describe the type of
 =======
@@ -719,6 +822,10 @@ uses MacTypes,CFBase,CFArray,CFDictionary,CFURL;
     abstract types. They can be used to describe a file format or an
     in-memory data type, but can also be used to describe the type of
 >>>>>>> origin/fixes_2.4
+=======
+    abstract types. They can be used to describe a file format or an
+    in-memory data type, but can also be used to describe the type of
+>>>>>>> origin/cpstrnew
     other sorts of entities, such as directories, volumes, or packages.
 
     The syntax of a uniform type identifier looks like a bundle identifier.
@@ -726,6 +833,7 @@ uses MacTypes,CFBase,CFArray,CFDictionary,CFURL;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     UTI domains are reserved by Apple and are outside the current IANA 
 =======
     UTI domains are reserved by Apple and are outside the currect IANA 
@@ -736,12 +844,16 @@ uses MacTypes,CFBase,CFArray,CFDictionary,CFURL;
 =======
     UTI domains are reserved by Apple and are outside the current IANA 
 >>>>>>> origin/fixes_2.4
+=======
+    UTI domains are reserved by Apple and are outside the current IANA 
+>>>>>>> origin/cpstrnew
     top-level Internet domain name space.
 
     Examples:
 
         public.jpeg
         public.utf16-plain-text
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -768,6 +880,9 @@ uses MacTypes,CFBase,CFArray,CFDictionary,CFURL;
 =======
         com.apple.xml-property-list
 >>>>>>> origin/fixes_2.4
+=======
+        com.apple.xml-property-list
+>>>>>>> origin/cpstrnew
         com.apple.appleworks.doc
 >>>>>>> origin/fixes_2_2
 
@@ -790,6 +905,7 @@ uses MacTypes,CFBase,CFArray,CFDictionary,CFURL;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     type com.apple.xml-property-list conforms to both the
     com.apple.property-list and public.xml types. The public.xml 
 =======
@@ -804,6 +920,10 @@ uses MacTypes,CFBase,CFArray,CFDictionary,CFURL;
     type com.apple.xml-property-list conforms to both the
     com.apple.property-list and public.xml types. The public.xml 
 >>>>>>> origin/fixes_2.4
+=======
+    type com.apple.xml-property-list conforms to both the
+    com.apple.property-list and public.xml types. The public.xml 
+>>>>>>> origin/cpstrnew
     type in turn conforms to type public.text. Finally, type public.text  
     conforms to public.data, which is the base type for all types 
     describing bytes stream formats. Conformance relationships between 
@@ -814,6 +934,7 @@ uses MacTypes,CFBase,CFArray,CFDictionary,CFURL;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     according to the conformance relationships for each type. When a type's 
 =======
     according to the conformance relationships each type. When a type's 
@@ -824,6 +945,9 @@ uses MacTypes,CFBase,CFArray,CFDictionary,CFURL;
 =======
     according to the conformance relationships for each type. When a type's 
 >>>>>>> origin/fixes_2.4
+=======
+    according to the conformance relationships for each type. When a type's 
+>>>>>>> origin/cpstrnew
     declaration does not include a value for particular type property, 
     then the type's supertypes are searched for a value. Supertypes are 
     searched depth-first, in the order given in the type declaration. 
@@ -831,6 +955,7 @@ uses MacTypes,CFBase,CFArray,CFDictionary,CFURL;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     supertypes is significant.
 =======
     supertypes is signitificant.
@@ -841,6 +966,9 @@ uses MacTypes,CFBase,CFArray,CFDictionary,CFURL;
 =======
     supertypes is significant.
 >>>>>>> origin/fixes_2.4
+=======
+    supertypes is significant.
+>>>>>>> origin/cpstrnew
 
     Tags
 
@@ -868,6 +996,7 @@ uses MacTypes,CFBase,CFArray,CFDictionary,CFURL;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
     
@@ -878,6 +1007,9 @@ uses MacTypes,CFBase,CFArray,CFDictionary,CFURL;
 =======
 
 >>>>>>> origin/fixes_2.4
+=======
+
+>>>>>>> origin/cpstrnew
     Type declarations are either exported or imported. An exported
     type declaration means that the type itself is defined or owned 
     by the organization making the declaration. For example, a propietary
@@ -887,6 +1019,7 @@ uses MacTypes,CFBase,CFArray,CFDictionary,CFURL;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     An imported declaration is for applications which depend on the
 =======
     An imported declatation is for applications which depend on the
@@ -897,6 +1030,9 @@ uses MacTypes,CFBase,CFArray,CFDictionary,CFURL;
 =======
     An imported declaration is for applications which depend on the
 >>>>>>> origin/fixes_2.4
+=======
+    An imported declaration is for applications which depend on the
+>>>>>>> origin/cpstrnew
     existence of someone else's type declaration. If application A can
     open application B's document format, then application A makes
     an imported declaration of application B's document type so that
@@ -916,6 +1052,7 @@ uses MacTypes,CFBase,CFArray,CFDictionary,CFURL;
             <dict>
                 <key>UTTypeIdentifier</key>
                 <string>public.jpeg</string>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -939,10 +1076,16 @@ uses MacTypes,CFBase,CFArray,CFDictionary,CFURL;
                 <string>JPEG image</string>
                 <key>UTTypeIconFile</key>
 >>>>>>> origin/fixes_2.4
+=======
+                <key>UTTypeDescription</key>
+                <string>JPEG image</string>
+                <key>UTTypeIconFile</key>
+>>>>>>> origin/cpstrnew
                 <string>public.jpeg.icns</string>
                 <key>UTTypeConformsTo</key>
                 <array>
                     <string>public.image</string>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -968,6 +1111,12 @@ uses MacTypes,CFBase,CFArray,CFDictionary,CFURL;
                 <dict>
                     <key>com.apple.ostype</key>
 >>>>>>> origin/fixes_2.4
+=======
+                </array>
+                <key>UTTypeTagSpecification</key>
+                <dict>
+                    <key>com.apple.ostype</key>
+>>>>>>> origin/cpstrnew
                     <string>JPEG</string>
                     <key>public.filename-extension</key>
                     <array>
@@ -1058,6 +1207,7 @@ var kUTImportedTypeDeclarationsKey: CFStringRef; external name '_kUTImportedType
  }
 var kUTExportedTypeDeclarationsKey: CFStringRef; external name '_kUTExportedTypeDeclarationsKey'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -1066,6 +1216,9 @@ var kUTExportedTypeDeclarationsKey: CFStringRef; external name '_kUTExportedType
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> origin/cpstrnew
 {
  *  kUTImportedTypeDeclarationsKey
  *  
@@ -1073,6 +1226,7 @@ var kUTExportedTypeDeclarationsKey: CFStringRef; external name '_kUTExportedType
  *    Mac OS X:         in version 10.3 and later in ApplicationServices.framework
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1141,6 +1295,9 @@ var kUTTypeConformsToKey: CFStringRef; external name '_kUTTypeConformsToKey'; (*
 =======
  }
 >>>>>>> origin/fixes_2.4
+=======
+ }
+>>>>>>> origin/cpstrnew
 var kUTImportedTypeDeclarationsKey: CFStringRef; external name '_kUTImportedTypeDeclarationsKey'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 {
@@ -1163,6 +1320,7 @@ var kUTTypeIdentifierKey: CFStringRef; external name '_kUTTypeIdentifierKey'; (*
  }
 var kUTTypeTagSpecificationKey: CFStringRef; external name '_kUTTypeTagSpecificationKey'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -1171,6 +1329,9 @@ var kUTTypeTagSpecificationKey: CFStringRef; external name '_kUTTypeTagSpecifica
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> origin/cpstrnew
 {
  *  kUTTypeConformsToKey
  *  
@@ -1178,6 +1339,7 @@ var kUTTypeTagSpecificationKey: CFStringRef; external name '_kUTTypeTagSpecifica
  *    Mac OS X:         in version 10.3 and later in ApplicationServices.framework
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1287,6 +1449,9 @@ var kUTTypeVersionKey: CFStringRef; external name '_kUTTypeVersionKey'; (* attri
 =======
  }
 >>>>>>> origin/fixes_2.4
+=======
+ }
+>>>>>>> origin/cpstrnew
 var kUTTypeConformsToKey: CFStringRef; external name '_kUTTypeConformsToKey'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 {
@@ -1330,12 +1495,16 @@ var kUTTypeReferenceURLKey: CFStringRef; external name '_kUTTypeReferenceURLKey'
 var kUTTypeVersionKey: CFStringRef; external name '_kUTTypeVersionKey'; (* attribute const *)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1473,12 +1642,16 @@ var kUTTagClassNSPboardType: CFStringRef; external name '_kUTTagClassNSPboardTyp
 var kUTTagClassOSType: CFStringRef; external name '_kUTTagClassOSType'; (* attribute const *)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 {
  *  UTTypeCreatePreferredIdentifierForTag()
@@ -1528,6 +1701,7 @@ var kUTTagClassOSType: CFStringRef; external name '_kUTTagClassOSType'; (* attri
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    inConformingToUTI:
 =======
  *    inConformingToTypeIdentifier:
@@ -1538,6 +1712,9 @@ var kUTTagClassOSType: CFStringRef; external name '_kUTTagClassOSType'; (* attri
 =======
  *    inConformingToUTI:
 >>>>>>> origin/fixes_2.4
+=======
+ *    inConformingToUTI:
+>>>>>>> origin/cpstrnew
  *      the identifier of a type to which the result must conform
  *  
  *  Result:
@@ -1574,6 +1751,7 @@ function UTTypeCreatePreferredIdentifierForTag( inTagClass: CFStringRef; inTag: 
  *    Non-Carbon CFM:   not available
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 // AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER 
 function UTTypeCreatePreferredIdentifierForTag(
@@ -1588,6 +1766,10 @@ function UTTypeCreatePreferredIdentifierForTag(
 function UTTypeCreatePreferredIdentifierForTag( inTagClass: CFStringRef; inTag: CFStringRef; inConformingToUTI: CFStringRef { can be NULL } ): CFStringRef; external name '_UTTypeCreatePreferredIdentifierForTag';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+function UTTypeCreatePreferredIdentifierForTag( inTagClass: CFStringRef; inTag: CFStringRef; inConformingToUTI: CFStringRef { can be NULL } ): CFStringRef; external name '_UTTypeCreatePreferredIdentifierForTag';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1624,6 +1806,7 @@ function UTTypeCreatePreferredIdentifierForTag( inTagClass: CFStringRef; inTag: 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    inConformingToUTI:
 =======
  *    inConformingToTypeIdentifier:
@@ -1634,6 +1817,9 @@ function UTTypeCreatePreferredIdentifierForTag( inTagClass: CFStringRef; inTag: 
 =======
  *    inConformingToUTI:
 >>>>>>> origin/fixes_2.4
+=======
+ *    inConformingToUTI:
+>>>>>>> origin/cpstrnew
  *      the identifier of a type to which the results must conform
  *  
  *  Result:
@@ -1670,6 +1856,7 @@ function UTTypeCreateAllIdentifiersForTag( inTagClass: CFStringRef; inTag: CFStr
  *    Non-Carbon CFM:   not available
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 // AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
 function UTTypeCreateAllIdentifiersForTag(
@@ -1684,6 +1871,10 @@ function UTTypeCreateAllIdentifiersForTag(
 function UTTypeCreateAllIdentifiersForTag( inTagClass: CFStringRef; inTag: CFStringRef; inConformingToUTI: CFStringRef { can be NULL } ): CFArrayRef; external name '_UTTypeCreateAllIdentifiersForTag';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+function UTTypeCreateAllIdentifiersForTag( inTagClass: CFStringRef; inTag: CFStringRef; inConformingToUTI: CFStringRef { can be NULL } ): CFArrayRef; external name '_UTTypeCreateAllIdentifiersForTag';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1691,6 +1882,7 @@ function UTTypeCreateAllIdentifiersForTag( inTagClass: CFStringRef; inTag: CFStr
  *  
  *  Discussion:
  *    Returns the identified type's preferred tag with the specified
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1704,6 +1896,9 @@ function UTTypeCreateAllIdentifiersForTag( inTagClass: CFStringRef; inTag: CFStr
 =======
  *    tag class as a CFString. This is the primary function to use for
 >>>>>>> origin/fixes_2.4
+=======
+ *    tag class as a CFString. This is the primary function to use for
+>>>>>>> origin/cpstrnew
  *    going from uniform type identifier to tag. If the type
  *    declaration included more than one tag with the specified class,
  *    the first tag in the declared tag array is the preferred tag.
@@ -1716,6 +1911,7 @@ function UTTypeCreateAllIdentifiersForTag( inTagClass: CFStringRef; inTag: CFStr
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    inUTI:
 =======
  *    inTypeIdentifier:
@@ -1726,12 +1922,16 @@ function UTTypeCreateAllIdentifiersForTag( inTagClass: CFStringRef; inTag: CFStr
 =======
  *    inUTI:
 >>>>>>> origin/fixes_2.4
+=======
+ *    inUTI:
+>>>>>>> origin/cpstrnew
  *      the uniform type identifier
  *    
  *    inTagClass:
  *      the class of tags to return
  *  
  *  Result:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1761,12 +1961,16 @@ function UTTypeCopyPreferredTagWithClass( inUTI: CFStringRef; inTagClass: CFStri
 =======
  *    the tag string, or NULL if there is no tag of the specified class.
 >>>>>>> origin/fixes_2.4
+=======
+ *    the tag string, or NULL if there is no tag of the specified class.
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.3 and later in ApplicationServices.framework
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1798,6 +2002,10 @@ function UTTypeCopyPreferredTagWithClass(
 function UTTypeCopyPreferredTagWithClass( inUTI: CFStringRef; inTagClass: CFStringRef ): CFStringRef; external name '_UTTypeCopyPreferredTagWithClass';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+function UTTypeCopyPreferredTagWithClass( inUTI: CFStringRef; inTagClass: CFStringRef ): CFStringRef; external name '_UTTypeCopyPreferredTagWithClass';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1816,6 +2024,7 @@ function UTTypeCopyPreferredTagWithClass( inUTI: CFStringRef; inTagClass: CFStri
  *  
  *  Parameters:
  *    
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1850,6 +2059,9 @@ function UTTypeEqual( inUTI1: CFStringRef; inUTI2: CFStringRef ): Boolean; exter
 =======
  *    inUTI1:
 >>>>>>> origin/fixes_2.4
+=======
+ *    inUTI1:
+>>>>>>> origin/cpstrnew
  *      a uniform type identifier
  *    
  *    inUTI2:
@@ -1860,6 +2072,7 @@ function UTTypeEqual( inUTI1: CFStringRef; inUTI2: CFStringRef ): Boolean; exter
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 // AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
@@ -1874,6 +2087,10 @@ function UTTypeEqual(
 function UTTypeEqual( inUTI1: CFStringRef; inUTI2: CFStringRef ): Boolean; external name '_UTTypeEqual';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+function UTTypeEqual( inUTI1: CFStringRef; inUTI2: CFStringRef ): Boolean; external name '_UTTypeEqual';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1889,6 +2106,7 @@ function UTTypeEqual( inUTI1: CFStringRef; inUTI2: CFStringRef ): Boolean; exter
  *  
  *  Parameters:
  *    
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1923,6 +2141,9 @@ function UTTypeConformsTo( inUTI: CFStringRef; inConformsToUTI: CFStringRef ): B
 =======
  *    inUTI:
 >>>>>>> origin/fixes_2.4
+=======
+ *    inUTI:
+>>>>>>> origin/cpstrnew
  *      the uniform type identifier to test
  *    
  *    inConformsToUTI:
@@ -1933,6 +2154,7 @@ function UTTypeConformsTo( inUTI: CFStringRef; inConformsToUTI: CFStringRef ): B
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 // AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
@@ -1947,6 +2169,10 @@ function UTTypeConformsTo(
 function UTTypeConformsTo( inUTI: CFStringRef; inConformsToUTI: CFStringRef ): Boolean; external name '_UTTypeConformsTo';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+function UTTypeConformsTo( inUTI: CFStringRef; inConformsToUTI: CFStringRef ): Boolean; external name '_UTTypeConformsTo';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1963,6 +2189,7 @@ function UTTypeConformsTo( inUTI: CFStringRef; inConformsToUTI: CFStringRef ): B
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    inUTI:
 =======
  *    inTypeIdentifier:
@@ -1973,6 +2200,9 @@ function UTTypeConformsTo( inUTI: CFStringRef; inConformsToUTI: CFStringRef ): B
 =======
  *    inUTI:
 >>>>>>> origin/fixes_2.4
+=======
+ *    inUTI:
+>>>>>>> origin/cpstrnew
  *      the uniform type identifier
  *  
  *  Result:
@@ -2008,6 +2238,7 @@ function UTTypeCopyDescription( inUTI: CFStringRef ): CFStringRef; external name
  *    Non-Carbon CFM:   not available
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 // AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
 function UTTypeCopyDescription(inTypeIdentifier: CFStringRef): CFStringRef; external name '_UTTypeCopyDescription';
@@ -2019,6 +2250,10 @@ function UTTypeCopyDescription(inTypeIdentifier: CFStringRef): CFStringRef; exte
 function UTTypeCopyDescription( inUTI: CFStringRef ): CFStringRef; external name '_UTTypeCopyDescription';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+function UTTypeCopyDescription( inUTI: CFStringRef ): CFStringRef; external name '_UTTypeCopyDescription';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2038,6 +2273,7 @@ function UTTypeCopyDescription( inUTI: CFStringRef ): CFStringRef; external name
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    inUTI:
 =======
  *    inTypeIdentifier:
@@ -2048,6 +2284,9 @@ function UTTypeCopyDescription( inUTI: CFStringRef ): CFStringRef; external name
 =======
  *    inUTI:
 >>>>>>> origin/fixes_2.4
+=======
+ *    inUTI:
+>>>>>>> origin/cpstrnew
  *      the uniform type identifier
  *  
  *  Result:
@@ -2083,6 +2322,7 @@ function UTTypeCopyDeclaration( inUTI: CFStringRef ): CFDictionaryRef; external 
  *    Non-Carbon CFM:   not available
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 // AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
 function UTTypeCopyDeclaration(inTypeIdentifier: CFStringRef): CFDictionaryRef; external name '_UTTypeCopyDeclaration';
@@ -2094,6 +2334,10 @@ function UTTypeCopyDeclaration(inTypeIdentifier: CFStringRef): CFDictionaryRef; 
 function UTTypeCopyDeclaration( inUTI: CFStringRef ): CFDictionaryRef; external name '_UTTypeCopyDeclaration';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+function UTTypeCopyDeclaration( inUTI: CFStringRef ): CFDictionaryRef; external name '_UTTypeCopyDeclaration';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2111,6 +2355,7 @@ function UTTypeCopyDeclaration( inUTI: CFStringRef ): CFDictionaryRef; external 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    inUTI:
 =======
  *    inTypeIdentifier:
@@ -2121,6 +2366,9 @@ function UTTypeCopyDeclaration( inUTI: CFStringRef ): CFDictionaryRef; external 
 =======
  *    inUTI:
 >>>>>>> origin/fixes_2.4
+=======
+ *    inUTI:
+>>>>>>> origin/cpstrnew
  *      the uniform type identifier
  *  
  *  Result:
@@ -2156,6 +2404,7 @@ function UTTypeCopyDeclaringBundleURL( inUTI: CFStringRef ): CFURLRef; external 
  *    Non-Carbon CFM:   not available
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 // AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
 function UTTypeCopyDeclaringBundleURL(inTypeIdentifier: CFStringRef): CFURLRef; external name '_UTTypeCopyDeclaringBundleURL';
@@ -2167,6 +2416,10 @@ function UTTypeCopyDeclaringBundleURL(inTypeIdentifier: CFStringRef): CFURLRef; 
 function UTTypeCopyDeclaringBundleURL( inUTI: CFStringRef ): CFURLRef; external name '_UTTypeCopyDeclaringBundleURL';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+function UTTypeCopyDeclaringBundleURL( inUTI: CFStringRef ): CFURLRef; external name '_UTTypeCopyDeclaringBundleURL';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2185,6 +2438,7 @@ function UTTypeCopyDeclaringBundleURL( inUTI: CFStringRef ): CFURLRef; external 
  *      the OSType value to encode
  *  
  *  Result:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2217,12 +2471,17 @@ function UTCreateStringForOSType( inOSType: OSType ): CFStringRef; external name
  *    a new CFString representing the OSType. Returns the empty string
  *    when the argument is 0
 >>>>>>> origin/fixes_2.4
+=======
+ *    a new CFString representing the OSType. Returns the empty string
+ *    when the argument is 0
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.3 and later in ApplicationServices.framework
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2252,6 +2511,10 @@ function UTCreateStringForOSType(inOSType: OSType): CFStringRef; external name '
 function UTCreateStringForOSType( inOSType: OSType ): CFStringRef; external name '_UTCreateStringForOSType';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> origin/fixes_2.4
+=======
+function UTCreateStringForOSType( inOSType: OSType ): CFStringRef; external name '_UTCreateStringForOSType';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2315,9 +2578,13 @@ function UTGetOSTypeFromString( inString: CFStringRef ): OSType; external name '
 end.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

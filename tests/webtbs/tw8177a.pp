@@ -1,8 +1,11 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 
 var
@@ -32,6 +35,7 @@ begin
     begin
       Writeln('Correct: #0 string is a not valid input for val function');
     end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
@@ -71,4 +75,6 @@ begin
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 end.

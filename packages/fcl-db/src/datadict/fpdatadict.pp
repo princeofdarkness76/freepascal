@@ -86,11 +86,15 @@ Type
     procedure SetSectionName(const Value: String); override;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function GetDisplayName: string; override;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    function GetDisplayName: string; override;
+>>>>>>> origin/cpstrnew
   Public
     Constructor Create(ACollection : TCollection); override;
     Function FieldDefs : TDDFieldDefs;
@@ -126,11 +130,15 @@ Type
   end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   TDDFieldDefClass = Class of TDDFieldDef;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  TDDFieldDefClass = Class of TDDFieldDef;
+>>>>>>> origin/cpstrnew
 
   { TDDTableCollection }
   TDDTableCollection = Class(TIniCollection)
@@ -160,11 +168,15 @@ Type
     Constructor Create(ATableName : string);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Class Function FieldDefClass : TDDFieldDefClass; virtual;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    Class Function FieldDefClass : TDDFieldDefClass; virtual;
+>>>>>>> origin/cpstrnew
     Property TableDef : TDDTableDef Read FTableDef;
     Property TableName : String Read GetTableName Write SetTableName;
     Function AddField(AFieldName: String = '') : TDDFieldDef;
@@ -1098,6 +1110,9 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 function TDDFieldDef.GetDisplayName: string;
 begin
   If (FieldName<>'') then
@@ -1106,10 +1121,13 @@ begin
     Result:=inherited GetDisplayName;
 end;
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 constructor TDDFieldDef.Create(ACollection: TCollection);
 begin
   Inherited;
@@ -1332,6 +1350,7 @@ constructor TDDFieldDefs.Create(ATableDef: TDDTableDef);
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Inherited Create(FieldDefClass);
 =======
   Inherited Create(TDDFieldDef);
@@ -1339,6 +1358,9 @@ begin
 =======
   Inherited Create(TDDFieldDef);
 >>>>>>> origin/fixes_2_2
+=======
+  Inherited Create(FieldDefClass);
+>>>>>>> origin/cpstrnew
   FPrefix:='Field';
   SetTableDef(ATableDef);
 end;
@@ -1347,6 +1369,7 @@ constructor TDDFieldDefs.Create(ATableName: String);
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Inherited Create(FieldDefClass);
 =======
   Inherited Create(TDDFieldDef);
@@ -1354,21 +1377,30 @@ begin
 =======
   Inherited Create(TDDFieldDef);
 >>>>>>> origin/fixes_2_2
+=======
+  Inherited Create(FieldDefClass);
+>>>>>>> origin/cpstrnew
   FPrefix:='Field';
   TableName:=ATableName;
 end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 class function TDDFieldDefs.FieldDefClass: TDDFieldDefClass;
 begin
   Result:=TDDFieldDef
 end;
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 function TDDFieldDefs.GetField(Index : Integer): TDDFieldDef;
 begin
   Result:=TDDFieldDef(Items[Index]);
@@ -1377,11 +1409,15 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+
+>>>>>>> origin/cpstrnew
 procedure TDDFieldDefs.SetField(Index : Integer; const AValue: TDDFieldDef);
 begin
   Items[Index]:=AValue;

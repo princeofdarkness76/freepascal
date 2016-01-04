@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       CarbonCore/CodeFragments.h
  
      Contains:   Public Code Fragment Manager Interfaces.
@@ -30,11 +31,15 @@
 =======
      File:       CarbonCore/CodeFragments.h
 >>>>>>> origin/fixes_2.4
+=======
+     File:       CarbonCore/CodeFragments.h
+>>>>>>> origin/cpstrnew
  
      Contains:   Public Code Fragment Manager Interfaces.
  
      Version:    CarbonCore-859.2~1
  
+<<<<<<< HEAD
 <<<<<<< HEAD
      Copyright:  © 1992-2002 by Apple Computer, Inc., all rights reserved.
 <<<<<<< HEAD
@@ -44,6 +49,9 @@
 =======
      Copyright:  © 1992-2008 by Apple Computer, Inc., all rights reserved.
 >>>>>>> origin/fixes_2.4
+=======
+     Copyright:  © 1992-2008 by Apple Computer, Inc., all rights reserved.
+>>>>>>> origin/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -51,6 +59,7 @@
                      http://www.freepascal.org/bugs.html
  
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -86,6 +95,9 @@
 =======
 {    Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 >>>>>>> origin/fixes_2.4
+=======
+{    Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> origin/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -94,12 +106,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -111,6 +127,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -125,6 +142,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -140,6 +161,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -150,6 +172,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -157,13 +182,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -171,6 +200,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -179,8 +210,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -191,6 +225,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -211,6 +246,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -219,12 +256,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -232,6 +272,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -306,12 +347,31 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> origin/cpstrnew
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -325,10 +385,13 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -542,6 +605,41 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -570,6 +668,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -578,6 +677,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -591,14 +692,18 @@ uses MacTypes,CFBundle,Files,Multiprocessing;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$endc} {not MACOSALLINCLUDE}
 
 
 {$ifc TARGET_OS_MAC}
 
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -619,10 +724,14 @@ uses MacTypes,CFBundle,Files,Multiprocessing;
 =======
    ¥
 >>>>>>> origin/fixes_2.4
+=======
+   ¥
+>>>>>>> origin/cpstrnew
    ===========================================================================================
    The Code Fragment Manager API
    =============================
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -630,6 +739,8 @@ uses MacTypes,CFBundle,Files,Multiprocessing;
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 
 {$ALIGN MAC68K}
@@ -637,6 +748,7 @@ uses MacTypes,CFBundle,Files,Multiprocessing;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -645,6 +757,9 @@ uses MacTypes,CFBundle,Files,Multiprocessing;
 =======
 {$ifc not TARGET_CPU_64}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not TARGET_CPU_64}
+>>>>>>> origin/cpstrnew
 {
    ¤
    ===========================================================================================
@@ -652,6 +767,7 @@ uses MacTypes,CFBundle,Files,Multiprocessing;
    ===========================
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -680,10 +796,18 @@ const
 {$ifc TARGET_CPU_X86 or TARGET_CPU_X86_64}
 const
 	kCompiledCFragArch = FourCharCode('none');
+=======
+const
+	kCFragResourceType = FourCharCode('cfrg');
+	kCFragResourceID = 0;
+	kCFragLibraryFileType = FourCharCode('shlb');
+	kCFragAllFileTypes = -1;
+>>>>>>> origin/cpstrnew
 
 {$endc}  {TARGET_CPU_X86 or TARGET_CPU_X86_64}
 
 type
+<<<<<<< HEAD
 	CFragVersionNumber = UInt32;
 const
 	kNullCFragVersion = 0;
@@ -708,9 +832,30 @@ const
 
 const
 	kCFragGoesToEOF = 0;
+=======
+	CFragArchitecture = OSType;
+const
+{ Values for type CFragArchitecture.}
+	kPowerPCCFragArch = FourCharCode('pwpc');
+	kMotorola68KCFragArch = FourCharCode('m68k');
+	kAnyCFragArch = $3F3F3F3F;
 
+
+{$ifc TARGET_CPU_PPC}
+const
+	kCompiledCFragArch = kPowerPCCFragArch;
+
+{$endc}  {TARGET_CPU_PPC}
+
+{$ifc TARGET_CPU_X86 or TARGET_CPU_X86_64}
+const
+	kCompiledCFragArch = FourCharCode('none');
+>>>>>>> origin/cpstrnew
+
+{$endc}  {TARGET_CPU_X86 or TARGET_CPU_X86_64}
 
 type
+<<<<<<< HEAD
 	CFragLocatorKind = UInt8;
 const
 { Values for type CFragLocatorKind.}
@@ -757,15 +902,39 @@ const
 {$ifc TARGET_CPU_PPC}
 const
 	kCompiledCFragArch = kPowerPCCFragArch;
+=======
+	CFragVersionNumber = UInt32;
+const
+	kNullCFragVersion = 0;
+	kWildcardCFragVersion = -1;
+
+
+type
+	CFragUsage = UInt8;
+const
+{ Values for type CFragUsage.}
+	kImportLibraryCFrag = 0;    { Standard CFM import library.}
+	kApplicationCFrag = 1;    { MacOS application.}
+	kDropInAdditionCFrag = 2;    { Application or library private extension/plug-in}
+	kStubLibraryCFrag = 3;    { Import library used for linking only}
+	kWeakStubLibraryCFrag = 4;     { Import library used for linking only and will be automatically weak linked}
+>>>>>>> origin/cpstrnew
 
 {$endc}  {TARGET_CPU_PPC}
 
+<<<<<<< HEAD
 {$ifc TARGET_CPU_X86 or TARGET_CPU_X86_64}
 const
 	kCompiledCFragArch = FourCharCode('none');
+=======
+const
+	kIsCompleteCFrag = 0;    { A "base" fragment, not an update.}
+	kFirstCFragUpdate = 1;     { The first update, others are numbered 2, 3, ...}
+>>>>>>> origin/cpstrnew
 
 {$endc}  {TARGET_CPU_X86 or TARGET_CPU_X86_64}
 
+<<<<<<< HEAD
 type
 	CFragVersionNumber = UInt32;
 const
@@ -821,6 +990,15 @@ const
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+const
+	kCFragGoesToEOF = 0;
+
+
+type
+	CFragLocatorKind = UInt8;
+const
+>>>>>>> origin/cpstrnew
 { Values for type CFragLocatorKind.}
 	kMemoryCFragLocator = 0;    { Container is in memory.}
 	kDataForkCFragLocator = 1;    { Container is in a file's data fork.}
@@ -840,7 +1018,10 @@ const
    Only one standard extension type is defined at present, it is used by SOM's searching
    mechanism.
 }
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 
 type
@@ -850,6 +1031,9 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 																		{ ! Meaning differs depending on value of "usage".}
 		0: (
 			appStackSize: UInt32;									{ If the fragment is an application. (Not used by CFM!)}
@@ -860,6 +1044,7 @@ type
 	CFragUsage2Union = record
 		case SInt16 of
 																		{ ! Meaning differs depending on value of "usage".}
+<<<<<<< HEAD
 		0: (
 			appSubdirID: SInt16;									{ If the fragment is an application. }
 			);
@@ -887,6 +1072,9 @@ type
 		case SInt16 of
 																		{ ! Meaning differs depending on value of "usage".}
 		0: (
+=======
+		0: (
+>>>>>>> origin/cpstrnew
 			appSubdirID: SInt16;									{ If the fragment is an application. }
 			);
 		1: (
@@ -894,6 +1082,7 @@ type
 			);
 	end;
 const
+<<<<<<< HEAD
 <<<<<<< HEAD
 																{  Bit masks for the CFragUsage2Union libFlags variant. }
 	kCFragLibUsageMapPrivatelyMask = $0001;						{  Put container in app heap if necessary. }
@@ -905,6 +1094,10 @@ const
 { Bit masks for the CFragUsage2Union libFlags variant.}
 	kCFragLibUsageMapPrivatelyMask = $0001; { Put container in app heap if necessary.}
 >>>>>>> origin/fixes_2.4
+=======
+{ Bit masks for the CFragUsage2Union libFlags variant.}
+	kCFragLibUsageMapPrivatelyMask = $0001; { Put container in app heap if necessary.}
+>>>>>>> origin/cpstrnew
 
 
 type
@@ -914,6 +1107,9 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 																		{ ! Meaning differs depending on value of "where". }
 		0: (
 			spaceID: UInt32;									{ If the fragment is in memory.  (Actually an AddressSpaceID.)}
@@ -957,6 +1153,7 @@ type
 	CFragResourceExtensionHeader = record
 		extensionKind: UInt16;
 		extensionSize: UInt16;
+<<<<<<< HEAD
 	end;
 	CFragResourceExtensionHeaderPtr = ^CFragResourceExtensionHeader;
 type
@@ -1018,6 +1215,9 @@ type
 		extensionKind: UInt16;
 		extensionSize: UInt16;
 	end;
+=======
+	end;
+>>>>>>> origin/cpstrnew
 	CFragResourceExtensionHeaderPtr = ^CFragResourceExtensionHeader;
 type
 	CFragResourceSearchExtension = record
@@ -1029,12 +1229,16 @@ type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 	CFragResourceSearchExtensionPtr = ^CFragResourceSearchExtension;
 >>>>>>> origin/fixes_2.4
+=======
+	CFragResourceSearchExtensionPtr = ^CFragResourceSearchExtension;
+>>>>>>> origin/cpstrnew
 const
 	kCFragResourceSearchExtensionKind = $30EE;
 
@@ -1043,6 +1247,9 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 	CFragResource = record
 		reservedA: UInt32;              { ! Must be zero!}
 		reservedB: UInt32;              { ! Must be zero!}
@@ -1074,6 +1281,7 @@ type
 	CFragLoadOptions = OptionBits;
 	mainAddrPtr = ^Ptr;  { when a var mainAddr: Ptr parameter can be nil, it is changed to mainAddr: mainAddrPtr }
 	symAddrPtr = ^Ptr;  { when a var symAddr: Ptr parameter can be nil, it is changed to symAddr: symAddrPtr }
+<<<<<<< HEAD
 const
 { Values for type CFragLoadOptions.}
 	kReferenceCFrag = $0001; { Try to use existing copy, increment reference counts.}
@@ -1134,6 +1342,16 @@ const
 =======
 const
 >>>>>>> origin/fixes_2.4
+=======
+const
+{ Values for type CFragLoadOptions.}
+	kReferenceCFrag = $0001; { Try to use existing copy, increment reference counts.}
+	kFindCFrag = $0002; { Try find an existing copy, do not increment reference counts.}
+	kPrivateCFragCopy = $0005; { Prepare a new private copy.  (kReferenceCFrag | 0x0004)}
+
+
+const
+>>>>>>> origin/cpstrnew
 	kUnresolvedCFragSymbolAddress = 0;
 
 
@@ -1141,6 +1359,9 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 	CFragSymbolClass = UInt8;
 	CFragSymbolClassPtr = ^CFragSymbolClass;
 const
@@ -1156,6 +1377,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
    ¤
    ===========================================================================================
@@ -1169,6 +1391,8 @@ const
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {
    ¤
    ===========================================================================================
@@ -1179,6 +1403,7 @@ const
 
 {$ifc not TARGET_CPU_64}
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1198,6 +1423,8 @@ const
 {
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
  *  GetSharedLibrary()   *** DEPRECATED ***
@@ -1212,6 +1439,7 @@ const
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in CFragManager 1.0 and later
  }
@@ -1330,12 +1558,24 @@ function CloseConnection( var connID: CFragConnectionID ): OSErr; external name 
 
 {
  *  FindSymbol()   *** DEPRECATED ***
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in CFragManager 1.0 and later
+ }
+function GetSharedLibrary( libName: ConstStr63Param; archType: CFragArchitecture; options: CFragLoadOptions; var connID: CFragConnectionID; var mainAddr: Ptr; var errMessage: Str255 ): OSErr; external name '_GetSharedLibrary';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{
+ *  GetDiskFragment()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *    Thread safe since version 10.4
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in CFragManager 1.0 and later
  }
@@ -1392,12 +1632,24 @@ function CountSymbols( connID: CFragConnectionID; var symCount: SIGNEDLONG ): OS
 
 {
  *  GetIndSymbol()   *** DEPRECATED ***
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in CFragManager 1.0 and later
+ }
+function GetDiskFragment( const (*var*) fileSpec: FSSpec; offset: UInt32; length: UInt32; fragName: ConstStr63Param { can be NULL }; options: CFragLoadOptions; connID: CFragConnectionIDPtr { can be NULL }; mainAddr: mainAddrPtr { can be NULL }; errMessage: StringPtr { can be NULL } ): OSErr; external name '_GetDiskFragment';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{
+ *  GetMemFragment()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *    Thread safe since version 10.4
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in CFragManager 1.0 and later
  }
@@ -1466,17 +1718,28 @@ const
  *    Non-Carbon CFM:   in CFragManager 1.0 and later
  }
 function GetSharedLibrary( libName: ConstStr63Param; archType: CFragArchitecture; options: CFragLoadOptions; var connID: CFragConnectionID; var mainAddr: Ptr; var errMessage: Str255 ): OSErr; external name '_GetSharedLibrary';
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in CFragManager 1.0 and later
+ }
+function GetMemFragment( memAddr: UnivPtr; length: UInt32; fragName: ConstStringPtr { can be NULL }; options: CFragLoadOptions; connID: CFragConnectionIDPtr { can be NULL }; mainAddr: mainAddrPtr { can be NULL }; errMessage: StringPtr { can be NULL } ): OSErr; external name '_GetMemFragment';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
 {
+<<<<<<< HEAD
  *  GetDiskFragment()   *** DEPRECATED ***
+=======
+ *  CloseConnection()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *    Thread safe since version 10.4
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in CFragManager 1.0 and later
  }
@@ -1496,17 +1759,28 @@ function GetDiskFragment( const (*var*) fileSpec: FSSpec; offset: UInt32; length
  *    Non-Carbon CFM:   in CFragManager 1.0 and later
  }
 function GetMemFragment( memAddr: UnivPtr; length: UInt32; fragName: ConstStringPtr { can be NULL }; options: CFragLoadOptions; connID: CFragConnectionIDPtr { can be NULL }; mainAddr: mainAddrPtr { can be NULL }; errMessage: StringPtr { can be NULL } ): OSErr; external name '_GetMemFragment';
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in CFragManager 1.0 and later
+ }
+function CloseConnection( var connID: CFragConnectionID ): OSErr; external name '_CloseConnection';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
 {
+<<<<<<< HEAD
  *  CloseConnection()   *** DEPRECATED ***
+=======
+ *  FindSymbol()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *    Thread safe since version 10.4
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in CFragManager 1.0 and later
  }
@@ -1522,6 +1796,8 @@ function CloseConnection( var connID: CFragConnectionID ): OSErr; external name 
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
+=======
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in CFragManager 1.0 and later
  }
@@ -1556,17 +1832,23 @@ function CountSymbols( connID: CFragConnectionID; var symCount: SIGNEDLONG ): OS
  *    Non-Carbon CFM:   in CFragManager 1.0 and later
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 function GetIndSymbol(connID: CFragConnectionID; symIndex: SInt32; symName: StringPtr; symAddr: symAddrPtr; symClass: CFragSymbolClassPtr): OSErr; external name '_GetIndSymbol';
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 function GetIndSymbol( connID: CFragConnectionID; symIndex: SIGNEDLONG; symName: StringPtr { can be NULL }; symAddr: symAddrPtr { can be NULL }; symClass: CFragSymbolClassPtr { can be NULL } ): OSErr; external name '_GetIndSymbol';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
    ¤
    ===========================================================================================
@@ -1609,6 +1891,9 @@ function GetIndSymbol( connID: CFragConnectionID; symIndex: SIGNEDLONG; symName:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {$endc} {not TARGET_CPU_64}
 
 type
@@ -1666,6 +1951,7 @@ type
 			);
 	end;
 type
+<<<<<<< HEAD
 	CFragSystem7InitBlock = record
 		contextID: CFragContextID;
 		closureID: CFragClosureID;
@@ -1772,6 +2058,8 @@ type
 			);
 	end;
 type
+=======
+>>>>>>> origin/cpstrnew
 	CFragSystem7InitBlock = record
 		contextID: CFragContextID;
 		closureID: CFragClosureID;
@@ -1788,6 +2076,7 @@ type
 type
 	CFragInitFunction = function( const (*var*) initBlock: CFragInitBlock ): OSErr;
 	CFragTermProcedure = procedure;
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$elsec}
 	CFragTermProcedure = ProcPtr;
@@ -1811,6 +2100,8 @@ function ConvertBundlePreLocator(initBlockLocator: CFragSystem7LocatorPtr): OSEr
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 { For use by init routines. If you get a BundlePreLocator, convert it to a CFBundleLocator with this}
 {$ifc not TARGET_CPU_64}
 {
@@ -1823,7 +2114,10 @@ function ConvertBundlePreLocator(initBlockLocator: CFragSystem7LocatorPtr): OSEr
  }
 function ConvertBundlePreLocator( initBlockLocator: CFragSystem7LocatorPtr ): OSErr; external name '_ConvertBundlePreLocator';
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1844,12 +2138,22 @@ function ConvertBundlePreLocator( initBlockLocator: CFragSystem7LocatorPtr ): OS
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not TARGET_CPU_64}
 
 const
 	kLoadCFrag = kReferenceCFrag;
+=======
+{$endc} {not TARGET_CPU_64}
+>>>>>>> origin/cpstrnew
 
+const
+	kLoadCFrag = kReferenceCFrag;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/cpstrnew
 {$if OLDROUTINENAMES}
 //#define IsFileLocation      CFragHasFileLocation
 type
@@ -1908,6 +2212,7 @@ const
 
 {$endc} {TARGET_OS_MAC}
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+<<<<<<< HEAD
 
 end.
 {$endc} {not MACOSALLINCLUDE}
@@ -1992,3 +2297,8 @@ end.
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+
+end.
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

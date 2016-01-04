@@ -162,6 +162,7 @@ unit optloop;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         foreachnodestatic(tnode(unrollstatement),@replaceloadnodes,@replaceinfo);
                         if lnf_backward in tfornode(node).loopflags then
                           replaceinfo.value:=replaceinfo.value-1
@@ -187,6 +188,8 @@ unit optloop;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                         { insert incr/decrementation of counter var }

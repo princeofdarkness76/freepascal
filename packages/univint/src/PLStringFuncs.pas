@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       CarbonCore/PLStringFuncs.h
  
      Contains:   Pascal string manipulation routines that parallel ANSI C string.h
@@ -30,11 +31,15 @@
 =======
      File:       CarbonCore/PLStringFuncs.h
 >>>>>>> origin/fixes_2.4
+=======
+     File:       CarbonCore/PLStringFuncs.h
+>>>>>>> origin/cpstrnew
  
      Contains:   Pascal string manipulation routines that parallel ANSI C string.h
  
      Version:    CarbonCore-859.2~1
  
+<<<<<<< HEAD
 <<<<<<< HEAD
      Copyright:  © 1999-2002 by Apple Computer, Inc., all rights reserved.
 <<<<<<< HEAD
@@ -44,6 +49,9 @@
 =======
      Copyright:  © 1999-2008 by Apple Computer, Inc., all rights reserved.
 >>>>>>> origin/fixes_2.4
+=======
+     Copyright:  © 1999-2008 by Apple Computer, Inc., all rights reserved.
+>>>>>>> origin/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -51,6 +59,7 @@
                      http://www.freepascal.org/bugs.html
  
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -80,6 +89,9 @@
 =======
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 >>>>>>> origin/fixes_2.4
+=======
+{       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> origin/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -88,12 +100,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -105,6 +121,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -119,6 +136,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -134,6 +155,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -144,6 +166,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -151,13 +176,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -165,6 +194,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -173,8 +204,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -185,6 +219,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -205,6 +240,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -213,12 +250,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -229,6 +269,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -269,12 +310,25 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+>>>>>>> origin/cpstrnew
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
@@ -289,6 +343,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
@@ -297,6 +353,7 @@ interface
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -332,6 +389,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -340,6 +399,7 @@ interface
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -511,6 +571,37 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -539,6 +630,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -547,6 +639,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -560,6 +654,9 @@ uses MacTypes;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {$endc} {not MACOSALLINCLUDE}
 
 
@@ -610,6 +707,7 @@ function PLstrcmp( const (*var*) str1: Str255; const (*var*) str2: Str255 ): SIn
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
@@ -620,6 +718,9 @@ function PLstrcmp( const (*var*) str1: Str255; const (*var*) str2: Str255 ): SIn
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> origin/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> origin/cpstrnew
@@ -668,6 +769,7 @@ function PLstrcmp( const (*var*) str1: Str255; const (*var*) str2: Str255 ): SIn
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -749,6 +851,17 @@ function PLstrcpy( dest: StringPtr; const (*var*) source: Str255 ): StringPtr; e
 
 {
  *  PLstrncpy()   *** DEPRECATED ***
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   not available
+ }
+function PLstrncmp( const (*var*) str1: Str255; const (*var*) str2: Str255; num: SInt16 ): SInt16; external name '_PLstrncmp';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  PLstrcpy()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Deprecated:
  *    use CFString instead.
@@ -758,6 +871,7 @@ function PLstrcpy( dest: StringPtr; const (*var*) source: Str255 ): StringPtr; e
  *  
  *  Discussion:
  *    This function copies the string source to dest (including the
+<<<<<<< HEAD
  *    initial length byte ), provided the length of source is <= num. 
  *    If the length of source is > num, then the first num characters
  *    of source are copied into dest, and the length of dest is set to
@@ -770,6 +884,16 @@ function PLstrcpy( dest: StringPtr; const (*var*) source: Str255 ): StringPtr; e
  *  Mac OS X threading:
  *    Thread safe
  *    Thread safe provided no other thread is modifying source.
+=======
+ *    initial length byte ). The caller must ensure that neither source
+ *    or dest are NULL, and that dest is large enough to hold the
+ *    entire contents of source. This function should be deprecated
+ *    since pascal strings are obsolete on MacOSX and CFString should
+ *    be used instead.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe
+>>>>>>> origin/cpstrnew
  *  
  *  Parameters:
  *    
@@ -778,15 +902,19 @@ function PLstrcpy( dest: StringPtr; const (*var*) source: Str255 ): StringPtr; e
  *    
  *    source:
  *      the source pascal string
+<<<<<<< HEAD
  *    
  *    num:
  *      the maximum number of bytes to copy
+=======
+>>>>>>> origin/cpstrnew
  *  
  *  Result:
  *    This function returns dest.
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -872,11 +1000,23 @@ function PLstrcat( str: StringPtr; const (*var*) append: Str255 ): StringPtr; ex
 
 {
  *  PLstrncat()   *** DEPRECATED ***
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   not available
+ }
+function PLstrcpy( dest: StringPtr; const (*var*) source: Str255 ): StringPtr; external name '_PLstrcpy';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  PLstrncpy()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Deprecated:
  *    use CFString instead.
  *  
  *  Summary:
+<<<<<<< HEAD
  *    Append up to num bytes of a pascal string to another pascal string
  *  
  *  Discussion:
@@ -889,10 +1029,24 @@ function PLstrcat( str: StringPtr; const (*var*) append: Str255 ): StringPtr; ex
  *    append are NULL, and that str is large enough to hold the entire
  *    contents of append. This function should be deprecated since
  *    pascal strings are obsolete on MacOSX and CFString should be used
+=======
+ *    Copy a pascal string
+ *  
+ *  Discussion:
+ *    This function copies the string source to dest (including the
+ *    initial length byte ), provided the length of source is <= num. 
+ *    If the length of source is > num, then the first num characters
+ *    of source are copied into dest, and the length of dest is set to
+ *    num.  The caller must ensure that neither source or dest are
+ *    NULL, and that dest is large enough to hold the entire contents
+ *    of source. This function should be deprecated since pascal
+ *    strings are obsolete on MacOSX and CFString should be used
+>>>>>>> origin/cpstrnew
  *    instead.
  *  
  *  Mac OS X threading:
  *    Thread safe
+<<<<<<< HEAD
  *    Thread safe provided no other thread is modifying str1 or append.
  *  
  *  Parameters:
@@ -992,11 +1146,41 @@ function PLstrchr( const (*var*) str1: Str255; ch1: SInt16 ): Ptr; external name
 
 {
  *  PLstrrchr()   *** DEPRECATED ***
+=======
+ *    Thread safe provided no other thread is modifying source.
+ *  
+ *  Parameters:
+ *    
+ *    dest:
+ *      the destination pascal string
+ *    
+ *    source:
+ *      the source pascal string
+ *    
+ *    num:
+ *      the maximum number of bytes to copy
+ *  
+ *  Result:
+ *    This function returns dest.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   not available
+ }
+function PLstrncpy( dest: StringPtr; const (*var*) source: Str255; num: SInt16 ): StringPtr; external name '_PLstrncpy';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  PLstrcat()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Deprecated:
  *    use CFString instead.
  *  
  *  Summary:
+<<<<<<< HEAD
  *    Return a pointer to the last occurrence of ch1 in str.
  *  
  *  Discussion:
@@ -1106,11 +1290,53 @@ function PLstrpbrk( const (*var*) str1: Str255; const (*var*) charSet: Str255 ):
 
 {
  *  PLstrspn()   *** DEPRECATED ***
+=======
+ *    Append a pascal string to another pascal string
+ *  
+ *  Discussion:
+ *    This function append a copy of the pascal string append to the
+ *    end of the pascal string str.  If the length of str plus the
+ *    length of append is greater than 255 ( the maximum size of a
+ *    pascal string ) then only enough characters are copied to str to
+ *    reach the 255 character limit, and the length of str is set to
+ *    255.  The caller must ensure that neither str nor append are
+ *    NULL, and that str is large enough to hold the entire contents of
+ *    append. This function should be deprecated since pascal strings
+ *    are obsolete on MacOSX and CFString should be used instead.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *    Thread safe provided no other thread is modifying str or append.
+ *  
+ *  Parameters:
+ *    
+ *    str:
+ *      the destination pascal string
+ *    
+ *    append:
+ *      the pascal string to append
+ *  
+ *  Result:
+ *    This function returns s.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   not available
+ }
+function PLstrcat( str: StringPtr; const (*var*) append: Str255 ): StringPtr; external name '_PLstrcat';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  PLstrncat()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Deprecated:
  *    use CFString instead.
  *  
  *  Summary:
+<<<<<<< HEAD
  *    Spans the initial part of str1 as long as the characters from
  *    str1 occur in string charset
  *  
@@ -1121,15 +1347,34 @@ function PLstrpbrk( const (*var*) str1: Str255; const (*var*) charSet: Str255 ):
  *    characters at the beginning of the pascal string str1 which are
  *    in charset. This function should be deprecated since pascal
  *    strings are obsolete on MacOSX and CFString should be used
+=======
+ *    Append up to num bytes of a pascal string to another pascal string
+ *  
+ *  Discussion:
+ *    This function append up to the first num bytes of the pascal
+ *    string append to the end of the pascal string s.  If the length
+ *    of str plus the length of append is greater than 255 ( the
+ *    maximum size of a pascal string ) then only enough characters are
+ *    copied to str to reach the 255 character limit, and the length of
+ *    str is set to 255.  The caller must ensure that neither str nor
+ *    append are NULL, and that str is large enough to hold the entire
+ *    contents of append. This function should be deprecated since
+ *    pascal strings are obsolete on MacOSX and CFString should be used
+>>>>>>> origin/cpstrnew
  *    instead.
  *  
  *  Mac OS X threading:
  *    Thread safe
+<<<<<<< HEAD
  *    Thread safe provided no other thread is modifying str1 or charSet.
+=======
+ *    Thread safe provided no other thread is modifying str1 or append.
+>>>>>>> origin/cpstrnew
  *  
  *  Parameters:
  *    
  *    str1:
+<<<<<<< HEAD
  *      the pascal string
  *    
  *    charSet:
@@ -1223,11 +1468,36 @@ function PLstrstr( const (*var*) str1: Str255; const (*var*) searchStr: Str255 )
 
 {
  *  PLstrlen()   *** DEPRECATED ***
+=======
+ *      the destination pascal string
+ *    
+ *    append:
+ *      the pascal string to append
+ *    
+ *    num:
+ *      the maximum number of bytes of append to append onto s
+ *  
+ *  Result:
+ *    This function returns str.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   not available
+ }
+function PLstrncat( str1: StringPtr; const (*var*) append: Str255; num: SInt16 ): StringPtr; external name '_PLstrncat';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  PLstrchr()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Deprecated:
  *    use CFString instead.
  *  
  *  Summary:
+<<<<<<< HEAD
  *    Returns the length of the pascal string
  *  
  *  Discussion:
@@ -1351,11 +1621,49 @@ end.
 
 {
  *  PLstrcmp()   *** DEPRECATED ***
+=======
+ *    Return a pointer to the first occurrence of ch1 in str.
+ *  
+ *  Discussion:
+ *    The PLstrrchr() function locates the first occurrence of ch1
+ *    (converted to an unsigned char) in the string s.  If ch1 does not
+ *    occur in the string, this returns NULL. This function should be
+ *    deprecated since pascal strings are obsolete on MacOSX and
+ *    CFString should be used instead.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *    Thread safe provided no other thread is modifying str1.
+ *  
+ *  Parameters:
+ *    
+ *    str1:
+ *      the pascal string
+ *    
+ *    ch1:
+ *      the character to find
+ *  
+ *  Result:
+ *    A pointer to the first occurrence of ch1 in str1, or NULL.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   not available
+ }
+function PLstrchr( const (*var*) str1: Str255; ch1: SInt16 ): Ptr; external name '_PLstrchr';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  PLstrrchr()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Deprecated:
  *    use CFString instead.
  *  
  *  Summary:
+<<<<<<< HEAD
  *    Compare two pascal strings
  *  
  *  Discussion:
@@ -1369,10 +1677,25 @@ end.
  *  Mac OS X threading:
  *    Thread safe
  *    Thread safe provided no other thread is modifying str1 or str2.
+=======
+ *    Return a pointer to the last occurrence of ch1 in str.
+ *  
+ *  Discussion:
+ *    The PLstrrchr() function locates the last occurrence of ch1
+ *    (converted to an unsigned char) in the string s.  If ch1 does not
+ *    occur in the string, this returns NULL. This function should be
+ *    deprecated since pascal strings are obsolete on MacOSX and
+ *    CFString should be used instead.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *    Thread safe provided no other thread is modifying str1.
+>>>>>>> origin/cpstrnew
  *  
  *  Parameters:
  *    
  *    str1:
+<<<<<<< HEAD
  *      the first pascal string
  *    
  *    str2:
@@ -1440,16 +1763,37 @@ function PLstrcmp( const (*var*) str1: Str255; const (*var*) str2: Str255 ): SIn
  *    Non-Carbon CFM:   not available
  }
 function PLstrncmp( const (*var*) str1: Str255; const (*var*) str2: Str255; num: SInt16 ): SInt16; external name '_PLstrncmp';
+=======
+ *      the pascal string
+ *    
+ *    ch1:
+ *      the character to find
+ *  
+ *  Result:
+ *    A pointer to the last occurrence of ch1 in str1, or NULL.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   not available
+ }
+function PLstrrchr( const (*var*) str1: Str255; ch1: SInt16 ): Ptr; external name '_PLstrrchr';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  PLstrcpy()   *** DEPRECATED ***
+=======
+ *  PLstrpbrk()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Deprecated:
  *    use CFString instead.
  *  
  *  Summary:
+<<<<<<< HEAD
  *    Copy a pascal string
  *  
  *  Discussion:
@@ -1527,16 +1871,55 @@ function PLstrcpy( dest: StringPtr; const (*var*) source: Str255 ): StringPtr; e
  *    Non-Carbon CFM:   not available
  }
 function PLstrncpy( dest: StringPtr; const (*var*) source: Str255; num: SInt16 ): StringPtr; external name '_PLstrncpy';
+=======
+ *    Return a pointer to the first occurrence in str of any character
+ *    in charSet.
+ *  
+ *  Discussion:
+ *    The PLstrpbrk() function returns a pointer to the first
+ *    occurrence in str of any character in searchStr.  If none of the
+ *    characters in searchStr can be found in str, then NULL is
+ *    returned. This function should be deprecated since pascal strings
+ *    are obsolete on MacOSX and CFString should be used instead.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *    Thread safe provided no other thread is modifying str1 or charSet.
+ *  
+ *  Parameters:
+ *    
+ *    str1:
+ *      the pascal string
+ *    
+ *    charSet:
+ *      the character to find
+ *  
+ *  Result:
+ *    A pointer to the first occurrence of any character in charSet in
+ *    str1, or NULL.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   not available
+ }
+function PLstrpbrk( const (*var*) str1: Str255; const (*var*) charSet: Str255 ): Ptr; external name '_PLstrpbrk';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  PLstrcat()   *** DEPRECATED ***
+=======
+ *  PLstrspn()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Deprecated:
  *    use CFString instead.
  *  
  *  Summary:
+<<<<<<< HEAD
  *    Append a pascal string to another pascal string
  *  
  *  Discussion:
@@ -1619,16 +2002,57 @@ function PLstrcat( str: StringPtr; const (*var*) append: Str255 ): StringPtr; ex
  *    Non-Carbon CFM:   not available
  }
 function PLstrncat( str1: StringPtr; const (*var*) append: Str255; num: SInt16 ): StringPtr; external name '_PLstrncat';
+=======
+ *    Spans the initial part of str1 as long as the characters from
+ *    str1 occur in string charset
+ *  
+ *  Discussion:
+ *    The PLstrspn() function spans the initial part of the pascal
+ *    string str1 as long as the characters from s occur in string
+ *    charset. In effect, this returns a count of the number of
+ *    characters at the beginning of the pascal string str1 which are
+ *    in charset. This function should be deprecated since pascal
+ *    strings are obsolete on MacOSX and CFString should be used
+ *    instead.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *    Thread safe provided no other thread is modifying str1 or charSet.
+ *  
+ *  Parameters:
+ *    
+ *    str1:
+ *      the pascal string
+ *    
+ *    charSet:
+ *      the character to find
+ *  
+ *  Result:
+ *    The count of characters at the beginning of str1 which are in
+ *    charSet.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   not available
+ }
+function PLstrspn( const (*var*) str1: Str255; const (*var*) charSet: Str255 ): SInt16; external name '_PLstrspn';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  PLstrchr()   *** DEPRECATED ***
+=======
+ *  PLstrstr()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Deprecated:
  *    use CFString instead.
  *  
  *  Summary:
+<<<<<<< HEAD
  *    Return a pointer to the first occurrence of ch1 in str.
  *  
  *  Discussion:
@@ -1641,12 +2065,27 @@ function PLstrncat( str1: StringPtr; const (*var*) append: Str255; num: SInt16 )
  *  Mac OS X threading:
  *    Thread safe
  *    Thread safe provided no other thread is modifying str1.
+=======
+ *    Returns a pointer to the first occurrence of searchStr in str1
+ *  
+ *  Discussion:
+ *    The PLstrstr() function returns a pointer to the first occurrence
+ *    of searchStr in str1, or NULL if searchStr does not exist in
+ *    str1. This function should be deprecated since pascal strings are
+ *    obsolete on MacOSX and CFString should be used instead.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *    Thread safe provided no other thread is modifying str1 or
+ *    searchStr.
+>>>>>>> origin/cpstrnew
  *  
  *  Parameters:
  *    
  *    str1:
  *      the pascal string
  *    
+<<<<<<< HEAD
  *    ch1:
  *      the character to find
  *  
@@ -1699,16 +2138,36 @@ function PLstrchr( const (*var*) str1: Str255; ch1: SInt16 ): Ptr; external name
  *    Non-Carbon CFM:   not available
  }
 function PLstrrchr( const (*var*) str1: Str255; ch1: SInt16 ): Ptr; external name '_PLstrrchr';
+=======
+ *    searchStr:
+ *      the string to find
+ *  
+ *  Result:
+ *    The count of characters at the beginning of str1 which are in
+ *    charSet.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   not available
+ }
+function PLstrstr( const (*var*) str1: Str255; const (*var*) searchStr: Str255 ): Ptr; external name '_PLstrstr';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  PLstrpbrk()   *** DEPRECATED ***
+=======
+ *  PLstrlen()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Deprecated:
  *    use CFString instead.
  *  
  *  Summary:
+<<<<<<< HEAD
  *    Return a pointer to the first occurrence in str of any character
  *    in charSet.
  *  
@@ -1785,16 +2244,48 @@ function PLstrpbrk( const (*var*) str1: Str255; const (*var*) charSet: Str255 ):
  *    Non-Carbon CFM:   not available
  }
 function PLstrspn( const (*var*) str1: Str255; const (*var*) charSet: Str255 ): SInt16; external name '_PLstrspn';
+=======
+ *    Returns the length of the pascal string
+ *  
+ *  Discussion:
+ *    The PLstrlen() function returns the length of the pascal string
+ *    str. This function should be deprecated since pascal strings are
+ *    obsolete on MacOSX and CFString should be used instead.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *    Thread safe provided no other thread is modifying str.
+ *  
+ *  Parameters:
+ *    
+ *    str:
+ *      the pascal string
+ *  
+ *  Result:
+ *    The length of the pascal string str.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   not available
+ }
+function PLstrlen( const (*var*) str: Str255 ): SInt16; external name '_PLstrlen';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  PLstrstr()   *** DEPRECATED ***
+=======
+ *  PLpos()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Deprecated:
  *    use CFString instead.
  *  
  *  Summary:
+<<<<<<< HEAD
  *    Returns a pointer to the first occurrence of searchStr in str1
  *  
  *  Discussion:
@@ -1802,6 +2293,17 @@ function PLstrspn( const (*var*) str1: Str255; const (*var*) charSet: Str255 ): 
  *    of searchStr in str1, or NULL if searchStr does not exist in
  *    str1. This function should be deprecated since pascal strings are
  *    obsolete on MacOSX and CFString should be used instead.
+=======
+ *    Returns the offset to the first occurrence of searchStr in str1
+ *  
+ *  Discussion:
+ *    The PLpos() function returns the offset of the string searchStr
+ *    in str1, or 0 if searchStr does not occur in str1.  For example,
+ *    if str1 is "\pHello World" and searchStr is "\pWorld", then this
+ *    function will return the value 7. This function should be
+ *    deprecated since pascal strings are obsolete on MacOSX and
+ *    CFString should be used instead.
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *    Thread safe
@@ -1822,6 +2324,7 @@ function PLstrspn( const (*var*) str1: Str255; const (*var*) charSet: Str255 ): 
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1903,6 +2406,11 @@ function PLstrlen( const (*var*) str: Str255 ): SInt16; external name '_PLstrlen
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   not available
  }
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   not available
+ }
+>>>>>>> origin/cpstrnew
 function PLpos( const (*var*) str1: Str255; const (*var*) searchStr: Str255 ): SInt16; external name '_PLpos';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
@@ -1911,6 +2419,7 @@ function PLpos( const (*var*) str1: Str255; const (*var*) searchStr: Str255 ): S
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -1919,3 +2428,6 @@ end.
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

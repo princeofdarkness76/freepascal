@@ -52,6 +52,7 @@ _start:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         leaq    8(,%rsi,8),%rax
         addq    %rsp,%rax
         movq    operatingsystem_parameter_envp@GOTPCREL(%rip),%rcx
@@ -63,6 +64,8 @@ _start:
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         leaq     8(,%rsi,8),%rax
         addq     %rsp,%rax
         movq    operatingsystem_parameter_envp@GOTPCREL(%rip),%rsi
@@ -70,11 +73,14 @@ _start:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 

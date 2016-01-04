@@ -92,6 +92,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           AddUnit('winutils');
           AddUnit('comserv');
           AddUnit('winspool');
@@ -113,6 +114,9 @@ begin
 =======
           AddUnit('winspool');
 >>>>>>> graemeg/cpstrnew
+=======
+          AddUnit('winspool');
+>>>>>>> origin/cpstrnew
 =======
           AddUnit('winspool');
 >>>>>>> origin/cpstrnew
@@ -159,6 +163,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     T:=P.Targets.AddImplicitUnit('winutils.pp');
     T:=P.Targets.AddImplicitUnit('comserv.pp');
     T:=P.Targets.AddImplicitUnit('winspool.pp');
@@ -179,6 +184,9 @@ begin
 =======
     T:=P.Targets.AddImplicitUnit('winspool.pp');
 >>>>>>> graemeg/cpstrnew
+=======
+    T:=P.Targets.AddImplicitUnit('winspool.pp');
+>>>>>>> origin/cpstrnew
 =======
     T:=P.Targets.AddImplicitUnit('winspool.pp');
 >>>>>>> origin/cpstrnew

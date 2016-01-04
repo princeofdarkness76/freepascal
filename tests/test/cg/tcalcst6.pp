@@ -32,6 +32,7 @@ program tcalcst6;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { On linux/i386 and linux/x86-64safecall is the same as cdecl, so it does not       }
 { support all parameter types.                                      }
 {$if ((defined(linux) or defined(android)) and (defined(cpui386) or defined(cpux86_64)))}
@@ -52,6 +53,8 @@ program tcalcst6;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 { On linux/i386 safecall is the same as cdecl, so it does not       }
 { support all parameter types.                                      }
 {$if (defined(linux) and defined(cpui386))}
@@ -61,11 +64,14 @@ program tcalcst6;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 

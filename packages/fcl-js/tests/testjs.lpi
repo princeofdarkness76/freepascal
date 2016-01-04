@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <CONFIG>
   <ProjectOptions>
@@ -27,6 +28,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 <?xml version="1.0"?>
 <CONFIG>
   <ProjectOptions>
@@ -46,11 +49,14 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     <PublishOptions>
@@ -62,6 +68,7 @@
     <RunParams>
       <local>
         <FormatVersion Value="1"/>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -83,6 +90,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         <CommandLineParams Value="-a --format=plain"/>
         <LaunchingApplication PathPlusParams="/usr/X11R6/bin/xterm -T 'Lazarus Run Output' -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
       </local>
@@ -99,6 +108,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -106,10 +116,13 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       <Unit0>
         <Filename Value="testjs.lpr"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="testjs"/>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -125,11 +138,14 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         <CursorPos X="11" Y="7"/>
         <TopLine Value="1"/>
         <EditorIndex Value="0"/>
         <UsageCount Value="201"/>
         <Loaded Value="True"/>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -140,11 +156,14 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       </Unit0>
       <Unit1>
         <Filename Value="tcscanner.pp"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="tcscanner"/>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -160,11 +179,14 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         <CursorPos X="27" Y="427"/>
         <TopLine Value="416"/>
         <EditorIndex Value="2"/>
         <UsageCount Value="201"/>
         <Loaded Value="True"/>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -175,11 +197,14 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       </Unit1>
       <Unit2>
         <Filename Value="../src/jsbase.pp"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="jsbase"/>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -195,11 +220,14 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         <CursorPos X="1" Y="153"/>
         <TopLine Value="132"/>
         <EditorIndex Value="1"/>
         <UsageCount Value="196"/>
         <Loaded Value="True"/>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -210,11 +238,14 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       </Unit2>
       <Unit3>
         <Filename Value="../src/jsparser.pp"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="jsparser"/>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -245,11 +276,17 @@
         <TopLine Value="1"/>
         <UsageCount Value="201"/>
 >>>>>>> origin/cpstrnew
+=======
+        <CursorPos X="1" Y="1"/>
+        <TopLine Value="1"/>
+        <UsageCount Value="201"/>
+>>>>>>> origin/cpstrnew
       </Unit3>
       <Unit4>
         <Filename Value="../src/jsscanner.pp"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="JSScanner"/>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -280,11 +317,17 @@
         <TopLine Value="1"/>
         <UsageCount Value="201"/>
 >>>>>>> origin/cpstrnew
+=======
+        <CursorPos X="1" Y="1"/>
+        <TopLine Value="1"/>
+        <UsageCount Value="201"/>
+>>>>>>> origin/cpstrnew
       </Unit4>
       <Unit5>
         <Filename Value="../src/jstree.pp"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="jstree"/>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -315,11 +358,17 @@
         <TopLine Value="1"/>
         <UsageCount Value="200"/>
 >>>>>>> origin/cpstrnew
+=======
+        <CursorPos X="1" Y="1"/>
+        <TopLine Value="1"/>
+        <UsageCount Value="200"/>
+>>>>>>> origin/cpstrnew
       </Unit5>
       <Unit6>
         <Filename Value="tcparser.pp"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="tcparser"/>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -451,6 +500,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         <CursorPos X="3" Y="2059"/>
@@ -591,11 +642,14 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     </SearchPaths>
@@ -604,6 +658,7 @@
         <OptimizationLevel Value="0"/>
       </Optimizations>
     </CodeGeneration>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -621,11 +676,14 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     <Other>
       <CompilerPath Value="$(CompPath)"/>
     </Other>
   </CompilerOptions>
   <Debugging>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -687,6 +745,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     <BreakPoints Count="1">
       <Item1>
         <Source Value="../jsscanner.pp"/>
@@ -695,11 +755,14 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     </BreakPoints>
@@ -719,6 +782,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   <EditorMacros Count="0"/>
 =======
 >>>>>>> graemeg/cpstrnew
@@ -726,6 +790,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 </CONFIG>

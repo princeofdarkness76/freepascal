@@ -65,6 +65,12 @@ interface
     function destructor_head:tprocdef;
     procedure struct_property_dec(is_classproperty:boolean);
 
+    function class_constructor_head:tprocdef;
+    function class_destructor_head:tprocdef;
+    function constructor_head:tprocdef;
+    function destructor_head:tprocdef;
+    procedure struct_property_dec(is_classproperty:boolean);
+
 implementation
 
     uses
@@ -73,6 +79,7 @@ implementation
       symbase,symsym,symtable,symcreat,defcmp,
       node,nld,nmem,ncon,ncnv,ncal,
       fmodule,scanner,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -94,6 +101,9 @@ implementation
 =======
       pbase,pexpr,pdecsub,pdecvar,ptype,pdecl,ppu
 >>>>>>> origin/cpstrnew
+=======
+      pbase,pexpr,pdecsub,pdecvar,ptype,pdecl,ppu
+>>>>>>> origin/cpstrnew
       ;
 
     const
@@ -105,6 +115,7 @@ implementation
     var
       current_objectdef : tobjectdef absolute current_structdef;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -154,12 +165,16 @@ implementation
 =======
     function class_constructor_head:tprocdef;
 >>>>>>> origin/cpstrnew
+=======
+    function class_constructor_head:tprocdef;
+>>>>>>> origin/cpstrnew
       var
         pd : tprocdef;
       begin
         result:=nil;
         consume(_CONSTRUCTOR);
         { must be at same level as in implementation }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -177,6 +192,9 @@ implementation
 =======
         parse_proc_head(current_structdef,potype_class_constructor,pd);
 >>>>>>> origin/cpstrnew
+=======
+        parse_proc_head(current_structdef,potype_class_constructor,pd);
+>>>>>>> origin/cpstrnew
         if not assigned(pd) then
           begin
             consume(_SEMICOLON);
@@ -186,6 +204,7 @@ implementation
         if (pd.maxparacount>0) then
           Message(parser_e_no_paras_for_class_constructor);
         consume(_SEMICOLON);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -202,6 +221,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         include(current_structdef.objectoptions,oo_has_class_constructor);
         current_module.flags:=current_module.flags or uf_classinits;
         { no return value }
@@ -209,11 +230,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         result:=pd;
@@ -226,6 +250,7 @@ implementation
         result:=nil;
         consume(_CONSTRUCTOR);
         { must be at same level as in implementation }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -243,6 +268,9 @@ implementation
 =======
         parse_proc_head(current_structdef,potype_constructor,pd);
 >>>>>>> origin/cpstrnew
+=======
+        parse_proc_head(current_structdef,potype_constructor,pd);
+>>>>>>> origin/cpstrnew
         if not assigned(pd) then
           begin
             consume(_SEMICOLON);
@@ -254,6 +282,7 @@ implementation
         consume(_SEMICOLON);
         include(current_structdef.objectoptions,oo_has_constructor);
         { Set return type, class and record constructors return the
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -275,6 +304,10 @@ implementation
           created instance, object constructors return boolean }
         if is_class(pd.struct) or is_record(pd.struct) then
 >>>>>>> graemeg/cpstrnew
+=======
+          created instance, object constructors return boolean }
+        if is_class(pd.struct) or is_record(pd.struct) then
+>>>>>>> origin/cpstrnew
 =======
           created instance, object constructors return boolean }
         if is_class(pd.struct) or is_record(pd.struct) then
@@ -302,6 +335,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         { check for a class, record or helper }
         if not((is_class_or_interface_or_dispinterface(current_structdef) or is_record(current_structdef) or
                 is_objectpascal_helper(current_structdef) or is_java_class_or_interface(current_structdef)) or
@@ -321,6 +355,11 @@ implementation
         if not((is_class_or_interface_or_dispinterface(current_structdef) or is_record(current_structdef)) or
            (not(m_tp7 in current_settings.modeswitches) and (is_object(current_structdef)))) then
 >>>>>>> graemeg/cpstrnew
+=======
+        { check for a class or record }
+        if not((is_class_or_interface_or_dispinterface(current_structdef) or is_record(current_structdef)) or
+           (not(m_tp7 in current_settings.modeswitches) and (is_object(current_structdef)))) then
+>>>>>>> origin/cpstrnew
 =======
         { check for a class or record }
         if not((is_class_or_interface_or_dispinterface(current_structdef) or is_record(current_structdef)) or
@@ -381,6 +420,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function class_destructor_head(astruct: tabstractrecorddef):tprocdef;
 =======
     function class_destructor_head:tprocdef;
@@ -394,11 +434,15 @@ implementation
 =======
     function class_destructor_head:tprocdef;
 >>>>>>> origin/cpstrnew
+=======
+    function class_destructor_head:tprocdef;
+>>>>>>> origin/cpstrnew
       var
         pd : tprocdef;
       begin
         result:=nil;
         consume(_DESTRUCTOR);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -416,6 +460,9 @@ implementation
 =======
         parse_proc_head(current_structdef,potype_class_destructor,pd);
 >>>>>>> origin/cpstrnew
+=======
+        parse_proc_head(current_structdef,potype_class_destructor,pd);
+>>>>>>> origin/cpstrnew
         if not assigned(pd) then
           begin
             consume(_SEMICOLON);
@@ -425,6 +472,7 @@ implementation
         if (pd.maxparacount>0) then
           Message(parser_e_no_paras_for_class_destructor);
         consume(_SEMICOLON);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -441,6 +489,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         include(current_structdef.objectoptions,oo_has_class_destructor);
         current_module.flags:=current_module.flags or uf_classinits;
         { no return value }
@@ -448,11 +498,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         result:=pd;
@@ -468,6 +521,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         parse_proc_head(current_structdef,potype_destructor,false,nil,nil,pd);
 =======
         parse_proc_head(current_structdef,potype_destructor,pd);
@@ -478,6 +532,9 @@ implementation
 =======
         parse_proc_head(current_structdef,potype_destructor,pd);
 >>>>>>> graemeg/cpstrnew
+=======
+        parse_proc_head(current_structdef,potype_destructor,pd);
+>>>>>>> origin/cpstrnew
 =======
         parse_proc_head(current_structdef,potype_destructor,pd);
 >>>>>>> origin/cpstrnew
@@ -499,6 +556,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         include(current_structdef.objectoptions,oo_has_new_destructor);
 =======
 >>>>>>> graemeg/cpstrnew
@@ -506,6 +564,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         { no return value }
@@ -580,6 +640,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure handleImplementedProtocolOrJavaIntf(intfdef : tobjectdef);
       begin
         intfdef:=find_real_class_definition(intfdef,false);
@@ -615,6 +676,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     procedure handleImplementedProtocol(intfdef : tobjectdef);
       begin
         intfdef:=find_real_objcclass_definition(intfdef,false);
@@ -632,11 +695,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
           Message1(sym_e_duplicate_id,intfdef.objname^)
@@ -670,6 +736,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                handleImplementedProtocolOrJavaIntf(tobjectdef(hdef));
 =======
                handleImplementedProtocol(tobjectdef(hdef));
@@ -680,6 +747,9 @@ implementation
 =======
                handleImplementedProtocol(tobjectdef(hdef));
 >>>>>>> graemeg/cpstrnew
+=======
+               handleImplementedProtocol(tobjectdef(hdef));
+>>>>>>> origin/cpstrnew
 =======
                handleImplementedProtocol(tobjectdef(hdef));
 >>>>>>> origin/cpstrnew
@@ -696,6 +766,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         p:=comp_expr([ef_accept_equal]);
 =======
         p:=comp_expr(true,false);
@@ -706,6 +777,9 @@ implementation
 =======
         p:=comp_expr(true,false);
 >>>>>>> graemeg/cpstrnew
+=======
+        p:=comp_expr(true,false);
+>>>>>>> origin/cpstrnew
 =======
         p:=comp_expr(true,false);
 >>>>>>> origin/cpstrnew
@@ -728,6 +802,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure get_cpp_or_java_class_external_status(od: tobjectdef);
 =======
     procedure get_cpp_class_external_status(od: tobjectdef);
@@ -738,6 +813,9 @@ implementation
 =======
     procedure get_cpp_class_external_status(od: tobjectdef);
 >>>>>>> graemeg/cpstrnew
+=======
+    procedure get_cpp_class_external_status(od: tobjectdef);
+>>>>>>> origin/cpstrnew
 =======
     procedure get_cpp_class_external_status(od: tobjectdef);
 >>>>>>> origin/cpstrnew
@@ -754,6 +832,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             hs:='';
 =======
 >>>>>>> graemeg/cpstrnew
@@ -761,6 +840,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
             if token in [_CSTRING,_CWSTRING,_CCHAR,_CWCHAR] then
@@ -771,6 +852,7 @@ implementation
                   hs:=ChangeFileExt(hs,target_info.sharedlibext);
                 if Copy(hs,1,length(target_info.sharedlibprefix))<>target_info.sharedlibprefix then
                   hs:=target_info.sharedlibprefix+hs;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -804,6 +886,11 @@ implementation
               end;
             include(od.objectoptions, oo_is_external);
 >>>>>>> origin/cpstrnew
+=======
+                od.import_lib:=stringdup(hs);
+              end;
+            include(od.objectoptions, oo_is_external);
+>>>>>>> origin/cpstrnew
             { check if we shall use another name for the class }
             if try_to_consume(_NAME) then
               od.objextname:=stringdup(get_stringconst)
@@ -812,6 +899,7 @@ implementation
             include(od.objectoptions,oo_is_external);
           end
         else
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -829,6 +917,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           od.objextname:=stringdup(od.objrealname^);
         { ToDo: read the namespace of the class (influences the mangled name)}
       end;
@@ -836,11 +926,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     procedure get_objc_class_or_protocol_external_status(od: tobjectdef);
@@ -871,6 +964,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       var
         gotexternal: boolean;
       begin
@@ -886,10 +980,13 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       begin
         case current_objectdef.objecttype of
           odt_object,odt_class:
             begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -900,6 +997,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
               while true do
                 begin
                   if try_to_consume(_ABSTRACT) then
@@ -907,6 +1006,7 @@ implementation
                   else
                   if try_to_consume(_SEALED) then
                     include(current_structdef.objectoptions,oo_is_sealed)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -943,6 +1043,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                   else
                     break;
                 end;
@@ -956,11 +1058,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         end;
@@ -1023,6 +1128,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                          Message1(parser_e_sealed_descendant,childof.typename)
                        else
                          childof:=find_real_class_definition(childof,true);
@@ -1035,6 +1141,9 @@ implementation
 =======
                          Message1(parser_e_sealed_descendant,childof.typename);
 >>>>>>> graemeg/cpstrnew
+=======
+                         Message1(parser_e_sealed_descendant,childof.typename);
+>>>>>>> origin/cpstrnew
 =======
                          Message1(parser_e_sealed_descendant,childof.typename);
 >>>>>>> origin/cpstrnew
@@ -1072,6 +1181,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                        childof:=find_real_class_definition(childof,true);
 =======
                        childof:=find_real_objcclass_definition(childof,true);
@@ -1085,6 +1195,9 @@ implementation
 =======
                        childof:=find_real_objcclass_definition(childof,true);
 >>>>>>> origin/cpstrnew
+=======
+                       childof:=find_real_objcclass_definition(childof,true);
+>>>>>>> origin/cpstrnew
                    odt_objcprotocol:
                      begin
                        if not(is_objcprotocol(childof)) then
@@ -1092,6 +1205,7 @@ implementation
                        intfchildof:=childof;
                        childof:=nil;
                      end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1109,6 +1223,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                    odt_object:
@@ -1148,6 +1264,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               odt_javaclass:
                 { inherit from TObject by default for compatibility }
                 if current_objectdef<>java_jlobject then
@@ -1158,6 +1275,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
             end;
@@ -1178,6 +1297,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               Message1(sym_e_formal_class_not_resolved,childof.objrealname^);
           end;
 
@@ -1189,6 +1309,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
               Message1(sym_e_objc_formal_class_not_resolved,childof.objrealname^);
@@ -1203,6 +1325,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1210,11 +1333,14 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
               begin
                 if assigned(intfchildof) then
                   if current_objectdef.objecttype=odt_class then
                     handleImplementedInterface(intfchildof)
                   else
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1229,6 +1355,9 @@ implementation
 =======
                     handleImplementedProtocol(intfchildof);
 >>>>>>> graemeg/cpstrnew
+=======
+                    handleImplementedProtocol(intfchildof);
+>>>>>>> origin/cpstrnew
 =======
                     handleImplementedProtocol(intfchildof);
 >>>>>>> origin/cpstrnew
@@ -1372,6 +1501,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     function method_dec(astruct: tabstractrecorddef; is_classdef: boolean;hadgeneric:boolean): tprocdef;
 
@@ -1423,11 +1553,14 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     procedure parse_object_members;
 
       procedure chkobjc(pd: tprocdef);
         begin
           if is_objc_class_or_protocol(pd.struct) then
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -1486,6 +1619,10 @@ implementation
             begin
               Message(parser_e_no_generics_as_types);
               childof:=nil;
+=======
+            begin
+              include(pd.procoptions,po_objc);
+>>>>>>> origin/cpstrnew
             end;
 
           { if no parent class, then a class get tobject as parent }
@@ -1513,6 +1650,7 @@ implementation
             { nothing currently }
           end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1673,6 +1811,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         procedure maybe_parse_hint_directives(pd:tprocdef);
         var
           dummysymoptions : tsymoptions;
@@ -1692,11 +1832,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         end;
@@ -1806,11 +1949,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
            (token=_SEMICOLON) then
@@ -1821,6 +1967,7 @@ implementation
           current_structdef.symtable.currentvisibility:=vis_published
         else
           current_structdef.symtable.currentvisibility:=vis_public;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1838,10 +1985,13 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         has_destructor:=false;
         fields_allowed:=true;
         is_classdef:=false;
         classfields:=false;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1852,12 +2002,15 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         object_member_blocktype:=bt_general;
         fieldlist:=tfpobjectlist.create(false);
         repeat
           case token of
             _TYPE :
               begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1875,12 +2028,16 @@ implementation
 =======
                 if not(current_objectdef.objecttype in [odt_class,odt_object]) then
 >>>>>>> origin/cpstrnew
+=======
+                if not(current_objectdef.objecttype in [odt_class,odt_object]) then
+>>>>>>> origin/cpstrnew
                   Message(parser_e_type_var_const_only_in_records_and_classes);
                 consume(_TYPE);
                 object_member_blocktype:=bt_type;
               end;
             _VAR :
               begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1895,6 +2052,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                 if not(current_objectdef.objecttype in [odt_class,odt_object]) then
@@ -1914,11 +2073,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
               end;
@@ -1927,6 +2089,7 @@ implementation
                 if is_objcprotocol(current_structdef) and
                    ((idtoken=_REQUIRED) or
                     (idtoken=_OPTIONAL)) then
+<<<<<<< HEAD
 =======
         dummysymoptions : tsymoptions;
         i : longint;
@@ -2029,6 +2192,8 @@ implementation
                   end;
                 _ID :
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
                   begin
                     current_structdef.symtable.currentlyoptional:=(idtoken=_OPTIONAL);
                     consume(idtoken)
@@ -2036,6 +2201,7 @@ implementation
                 else case idtoken of
                   _PRIVATE :
                     begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2058,6 +2224,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                       if is_interface(current_structdef) or
@@ -2116,6 +2284,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2123,10 +2292,13 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                      end;
                    _STRICT :
                      begin
                        if is_interface(current_structdef) or
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2140,6 +2312,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                           is_objc_protocol_or_category(current_structdef) then
@@ -2169,6 +2343,7 @@ implementation
                           message(parser_e_protected_or_private_expected);
                         fields_allowed:=true;
                         is_classdef:=false;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2214,10 +2389,16 @@ implementation
                         object_member_blocktype:=bt_general;
                      end
 >>>>>>> origin/cpstrnew
+=======
+                        classfields:=false;
+                        object_member_blocktype:=bt_general;
+                     end
+>>>>>>> origin/cpstrnew
                     else
                       begin
                         if object_member_blocktype=bt_general then
                           begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2288,6 +2469,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                             if is_interface(current_structdef) or
                                is_objc_protocol_or_category(current_structdef) then
                               Message(parser_e_no_vars_in_interfaces);
@@ -2305,11 +2488,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                           end
@@ -2329,11 +2515,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                 fields_allowed:=false;
@@ -2496,12 +2685,15 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 parse_class;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                 if (current_structdef.symtable.currentvisibility=vis_published) and
@@ -2546,11 +2738,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
               end;
@@ -2559,6 +2754,7 @@ implementation
             _CONSTRUCTOR,
             _DESTRUCTOR :
               begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2572,6 +2768,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                 if (current_structdef.symtable.currentvisibility=vis_published) and
@@ -2623,11 +2821,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
               end;
@@ -2644,6 +2845,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         if is_class(current_structdef) then
           tabstractrecordsymtable(current_structdef.symtable).addfieldlist(fieldlist,true);
@@ -2654,6 +2856,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       end;
@@ -2669,6 +2873,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         list: TFPObjectList;
         s: String;
         st: TSymtable;
@@ -2679,6 +2884,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       begin
@@ -2696,6 +2903,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if not(symtablestack.top.symtabletype in [globalsymtable,staticsymtable,objectsymtable,recordsymtable]) and
 =======
         if not(symtablestack.top.symtabletype in [globalsymtable,staticsymtable,objectsymtable]) and
@@ -2706,6 +2914,9 @@ implementation
 =======
         if not(symtablestack.top.symtabletype in [globalsymtable,staticsymtable,objectsymtable]) and
 >>>>>>> graemeg/cpstrnew
+=======
+        if not(symtablestack.top.symtabletype in [globalsymtable,staticsymtable,objectsymtable]) and
+>>>>>>> origin/cpstrnew
 =======
         if not(symtablestack.top.symtabletype in [globalsymtable,staticsymtable,objectsymtable]) and
 >>>>>>> origin/cpstrnew
@@ -2723,6 +2934,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 current_structdef:=cobjectdef.create(current_objectdef.objecttype,n,nil,true);
 =======
                 current_structdef:=tobjectdef.create(current_objectdef.objecttype,n,nil);
@@ -2733,6 +2945,9 @@ implementation
 =======
                 current_structdef:=tobjectdef.create(current_objectdef.objecttype,n,nil);
 >>>>>>> graemeg/cpstrnew
+=======
+                current_structdef:=tobjectdef.create(current_objectdef.objecttype,n,nil);
+>>>>>>> origin/cpstrnew
 =======
                 current_structdef:=tobjectdef.create(current_objectdef.objecttype,n,nil);
 >>>>>>> origin/cpstrnew
@@ -2752,6 +2967,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             current_structdef:=cobjectdef.create(objecttype,n,nil,true);
 =======
             current_structdef:=tobjectdef.create(objecttype,n,nil);
@@ -2762,6 +2978,9 @@ implementation
 =======
             current_structdef:=tobjectdef.create(objecttype,n,nil);
 >>>>>>> graemeg/cpstrnew
+=======
+            current_structdef:=tobjectdef.create(objecttype,n,nil);
+>>>>>>> origin/cpstrnew
 =======
             current_structdef:=tobjectdef.create(objecttype,n,nil);
 >>>>>>> origin/cpstrnew
@@ -2828,7 +3047,10 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/cpstrnew
             if (current_module.modulename^='OBJCBASE') then
               begin
                 case current_objectdef.objecttype of
@@ -2837,11 +3059,15 @@ implementation
                       objc_protocoltype:=current_objectdef;
                 end;
               end;
+<<<<<<< HEAD
+>>>>>>> origin/cpstrnew
+=======
 >>>>>>> origin/cpstrnew
           end;
 
         { usage of specialized type inside its generic template }
         if assigned(genericdef) then
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
           current_specializedef:=current_structdef;
@@ -2886,14 +3112,19 @@ implementation
 =======
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           current_specializedef:=current_structdef
         { reject declaration of generic class inside generic class }
         else if assigned(genericlist) then
           current_genericdef:=current_structdef;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         { set published flag in $M+ mode, it can also be inherited and will
@@ -2910,11 +3141,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
           parse_object_options;
@@ -2936,6 +3170,7 @@ implementation
                 include(current_structdef.objectoptions,oo_is_classhelper);
               end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2962,10 +3197,15 @@ implementation
             { parse list of options (abstract / sealed) }
             if not(objecttype in [odt_objcclass,odt_objcprotocol,odt_objccategory]) then
 >>>>>>> origin/cpstrnew
+=======
+            { parse list of options (abstract / sealed) }
+            if not(objecttype in [odt_objcclass,odt_objcprotocol,odt_objccategory]) then
+>>>>>>> origin/cpstrnew
               parse_object_options;
 
             symtablestack.push(current_structdef.symtable);
             insert_generic_parameter_types(current_structdef,genericdef,genericlist);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2992,6 +3232,10 @@ implementation
             parse_generic:=(df_generic in current_structdef.defoptions);
 
 >>>>>>> graemeg/cpstrnew
+=======
+            parse_generic:=(df_generic in current_structdef.defoptions);
+
+>>>>>>> origin/cpstrnew
 =======
             parse_generic:=(df_generic in current_structdef.defoptions);
 
@@ -3035,6 +3279,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
             if assigned(olddef) then
               begin
@@ -3070,6 +3315,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
             symtablestack.pop(current_structdef.symtable);
           end;
 
@@ -3077,6 +3324,7 @@ implementation
         { generate vmt space if needed }
         if not(oo_has_vmt in current_structdef.objectoptions) and
            not(oo_is_forward in current_structdef.objectoptions) and
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3092,6 +3340,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
            (
             ([oo_has_virtual,oo_has_constructor,oo_has_destructor]*current_structdef.objectoptions<>[]) or
             (current_objectdef.objecttype in [odt_class])
@@ -3102,6 +3352,7 @@ implementation
         if (oo_has_vmt in current_structdef.objectoptions) and
            not(oo_is_forward in current_structdef.objectoptions) and
            not(oo_has_constructor in current_structdef.objectoptions) and
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3151,6 +3402,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
            not is_objc_class_or_protocol(current_structdef) then
           Message1(parser_w_virtual_without_constructor,current_structdef.objrealname^);
 
@@ -3162,11 +3415,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -3178,6 +3434,7 @@ implementation
         current_genericdef:=old_current_genericdef;
         current_specializedef:=old_current_specializedef;
         parse_generic:=old_parse_generic;
+<<<<<<< HEAD
 =======
          { restore old state }
          aktobjectdef:=oldaktobjectdef;
@@ -3186,6 +3443,8 @@ implementation
          parse_generic:=old_parse_generic;
          current_object_option:=old_object_option;
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
       end;
 
 end.

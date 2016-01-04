@@ -36,6 +36,7 @@ uses
 <<<<<<< HEAD
     ole2, activex, shellapi, shlobj, oleserver,  shfolder, richedit,
 <<<<<<< HEAD
+<<<<<<< HEAD
     imagehlp, wininet, uxtheme, dwmapi, multimon, htmlhelp, winutils,
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -65,6 +66,10 @@ uses
 =======
     imagehlp, wininet, uxtheme, dwmapi, multimon, htmlhelp, winutils;
 >>>>>>> origin/fixes_2.4
+=======
+    imagehlp, wininet, uxtheme, dwmapi, multimon, htmlhelp, winutils,
+    comserv, winspool, imm, imm_dyn, nb30;
+>>>>>>> origin/cpstrnew
 
 implementation
 

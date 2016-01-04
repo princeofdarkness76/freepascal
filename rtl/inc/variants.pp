@@ -399,6 +399,7 @@ procedure DoVarCast(var aDest : TVarData; const aSource : TVarData; aVarType : L
 var
   customvarianttypes    : array of TCustomVariantType;
   customvarianttypelock : trtlcriticalsection;
+  customvariantcurrtype : LongInt;
 
 const
   { all variants for which vType and varComplexType = 0 do not require
@@ -700,12 +701,15 @@ end;
 function sysvartoreal (const v : Variant) : Extended;
 var Handler: TCustomVariantType;
     dest: TVarData;
+<<<<<<< HEAD
 =======
 function sysvartoreal (const v : Variant) : Extended;
 >>>>>>> graemeg/fixes_2_2
 =======
 function sysvartoreal (const v : Variant) : Extended;
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 begin
   if VarType(v) = varNull then
     if NullStrictConvert then
@@ -714,6 +718,9 @@ begin
       Result := 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   { TODO: performance: custom variants must be handled after standard ones }
   else if FindCustomVariantType(TVarData(v).vType, Handler) then
   begin
@@ -721,10 +728,13 @@ begin
     Handler.CastTo(dest, TVarData(v), varDouble);
     Result := dest.vDouble;
   end
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
   else
     Result := VariantToDouble(TVarData(V));
 end;
@@ -744,6 +754,9 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 function CustomVarToLStr(const v: TVarData; out s: AnsiString): Boolean;
 var
   handler: TCustomVariantType;
@@ -759,10 +772,13 @@ begin
     Pointer(s) := temp.vString;
   end;
 end;
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 
 procedure sysvartolstr (var s : AnsiString; const v : Variant);
 begin
@@ -773,6 +789,7 @@ begin
       s := NullAsStringValue
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   { TODO: performance: custom variants must be handled after standard ones }
   else if not CustomVarToLStr(TVarData(v), s) then
 =======
@@ -781,11 +798,16 @@ begin
 =======
   else
 >>>>>>> origin/fixes_2_2
+=======
+  { TODO: performance: custom variants must be handled after standard ones }
+  else if not CustomVarToLStr(TVarData(v), s) then
+>>>>>>> origin/cpstrnew
     S := VariantToAnsiString(TVarData(V));
 end;
 
 
 procedure sysvartopstr (var s; const v : Variant);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 var
@@ -808,6 +830,13 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+var
+  tmp: AnsiString;
+begin
+  sysvartolstr(tmp, v);
+  ShortString(s) := tmp;
+>>>>>>> origin/cpstrnew
 end;
 
 
@@ -1491,6 +1520,7 @@ end;
 
 function DoVarCmpFloat(const Left, Right: Double; const OpCode: TVarOp): ShortInt;
 begin
+<<<<<<< HEAD
   if SameValue(Left, Right) then
     Result := 0
   else if (OpCode in [opCmpEq, opCmpNe]) or (Left < Right) then
@@ -1521,6 +1551,9 @@ function DoVarCmpFloat(const Left, Right: Double; const OpCode: TVarOp): ShortIn
 begin
   if SameValue(Left, Right) then
 >>>>>>> graemeg/fixes_2_2
+=======
+  if Left = Right then
+>>>>>>> origin/cpstrnew
     Result := 0
   else if (OpCode in [opCmpEq, opCmpNe]) or (Left < Right) then
     Result := -1
@@ -1672,6 +1705,7 @@ begin
         Result:=-1;
   end;
 end;
+<<<<<<< HEAD
 =======
 
 function DoVarCmpNull(const Left, Right: TCommonType; const OpCode: TVarOp) : ShortInt;
@@ -1740,6 +1774,8 @@ begin
   VarInvalidOp(Left.vType, Right.vType, OpCode);
   Result:=0;
 end;
+=======
+>>>>>>> origin/cpstrnew
 
 
 function DoVarCmp(const vl, vr : TVarData; const OpCode : TVarOp) : ShortInt;
@@ -1778,6 +1814,10 @@ begin
         Result := DoVarCmpWStrDirect(Pointer(vl.vOleStr), Pointer(vr.vOleStr), OpCode)
       else
         Result := DoVarCmpWStr(vl, vr, OpCode);
+<<<<<<< HEAD
+=======
+{$ifndef FPUNONE}
+>>>>>>> origin/cpstrnew
     ctDate:     Result := DoVarCmpFloat(VariantToDate(vl), VariantToDate(vr), OpCode);
     ctCurrency: Result := DoVarCmpCurr(VariantToCurrency(vl), VariantToCurrency(vr));
     ctString:
@@ -3504,8 +3544,13 @@ begin
 end;
 
 procedure DoVarOpComplex(var vl : TVarData; const vr : TVarData; const OpCode : TVarOp);
+var Handler: TCustomVariantType;
 begin
-  {custom Variant support? }
+  if FindCustomVariantType(vl.vType, Handler) then
+    Handler.BinaryOp(vl, vr, OpCode)
+  else if FindCustomVariantType(vr.vType, Handler) then
+    Handler.BinaryOp(vl, vr, OpCode)
+  else
    VarInvalidOp(vl.vType, vr.vType, OpCode);
 end;
 
@@ -4429,10 +4474,17 @@ begin
   with v do
     if vType < varInt64 then
       VarResultCheck(VariantClear(v))
-    else if vType = varString then begin
-      AnsiString(vString) := '';
-      vType := varEmpty
-    end else if vType = varAny then
+    else if vType = varString then
+      begin
+        AnsiString(vString) := '';
+        vType := varEmpty;
+      end
+    else if vType = varUString then
+      begin
+        UnicodeString(vString) := '';
+        vType := varEmpty;
+      end
+    else if vType = varAny then
       ClearAnyProc(v)
     else if vType and varArray <> 0 then
       DoVarClearArray(v)
@@ -4526,6 +4578,8 @@ begin
       RefAnyProc(Dest);
     end else if vType and varArray <> 0 then
       DoVarCopyArray(Dest, Source, @DoVarCopy)
+    else if (vType and varByRef <> 0) and (vType xor varByRef = varString) then
+      Dest := Source
     else if FindCustomVariantType(vType, Handler) then
       Handler.Copy(Dest, Source, False)
     else
@@ -5144,6 +5198,7 @@ var
   valuevtype,
   arrayelementtype : TVarType;
   tempvar : Variant;
+<<<<<<< HEAD
 begin
   Dest:=TVarData(a);
   { get final Variant }
@@ -5220,6 +5275,8 @@ var
   arrayelementtype : TVarType;
   tempvar : Variant;
   variantmanager : tvariantmanager;
+=======
+>>>>>>> origin/cpstrnew
 begin
   Dest:=TVarData(a);
   { get final Variant }
@@ -5268,6 +5325,7 @@ begin
         begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           VarCast(tempvar,value,arrayelementtype);
 =======
           GetVariantManager(variantmanager);
@@ -5277,6 +5335,9 @@ begin
           GetVariantManager(variantmanager);
           variantmanager.varcast(tempvar,value,arrayelementtype);
 >>>>>>> origin/fixes_2_2
+=======
+          VarCast(tempvar,value,arrayelementtype);
+>>>>>>> origin/cpstrnew
           if arrayelementtype in [varOleStr,varDispatch,varUnknown] then
             VarResultCheck(SafeArrayPutElement(p,PVarArrayCoorArray(indices),TVarData(tempvar).vPointer))
           else
@@ -5291,6 +5352,7 @@ end;
 { import from system unit }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure fpc_Write_Text_AnsiStr (Len : LongInt; Var f : Text; S : RawByteString); external name 'FPC_WRITE_TEXT_ANSISTR';
 =======
 Procedure fpc_Write_Text_AnsiStr (Len : LongInt; Var f : Text; S : AnsiString); external name 'FPC_WRITE_TEXT_ANSISTR';
@@ -5298,6 +5360,9 @@ Procedure fpc_Write_Text_AnsiStr (Len : LongInt; Var f : Text; S : AnsiString); 
 =======
 Procedure fpc_Write_Text_AnsiStr (Len : LongInt; Var f : Text; S : AnsiString); external name 'FPC_WRITE_TEXT_ANSISTR';
 >>>>>>> origin/fixes_2_2
+=======
+Procedure fpc_Write_Text_AnsiStr (Len : LongInt; Var f : Text; S : RawByteString); external name 'FPC_WRITE_TEXT_ANSISTR';
+>>>>>>> origin/cpstrnew
 
 
 function syswritevariant(var t : text; const v : Variant;width : LongInt) : Pointer;
@@ -5483,16 +5548,22 @@ begin
   While Not Result and (I<=High(AVarTypes)) do
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
     begin
       Result:=((TVarData(V).vType and varTypeMask)=AVarTypes[I]);
       inc(i);
     end;
+<<<<<<< HEAD
 =======
     Result:=((TVarData(V).vType and varTypeMask)=AVarTypes[I]);
 >>>>>>> graemeg/fixes_2_2
 =======
     Result:=((TVarData(V).vType and varTypeMask)=AVarTypes[I]);
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 
@@ -5543,12 +5614,16 @@ begin
   VT:=TVarData(V).vType and varTypeMask;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   if VT<CFirstUserType then
     Result:=(VT=varEmpty) or
             (((VT=varDispatch) or (VT=varUnknown))
              and (TVarData(V).vDispatch=Nil))
    else
      Result:=FindCustomVariantType(VT,CustomType) and CustomType.IsClear(TVarData(V));
+<<<<<<< HEAD
 =======
   Result:=(VT=varEmpty) or
           (((VT=varDispatch) or (VT=varUnknown))
@@ -5559,6 +5634,8 @@ begin
           (((VT=varDispatch) or (VT=varUnknown))
            and (TVarData(V).vDispatch=Nil));
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 
@@ -5989,6 +6066,9 @@ function VarTypeIsValidElementType(const aVarType: TVarType): Boolean;
   begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
     Result:=((aVarType and not(varByRef) and not(varArray)) in [varEmpty,varNull,varSmallInt,varInteger,
 {$ifndef FPUNONE}
       varSingle,varDouble,varDate,
@@ -5996,6 +6076,7 @@ function VarTypeIsValidElementType(const aVarType: TVarType): Boolean;
       varCurrency,varOleStr,varDispatch,varError,varBoolean,
       varVariant,varUnknown,varShortInt,varByte,varWord,varLongWord,varInt64]) or
     FindCustomVariantType(aVarType,customvarianttype);
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -6008,6 +6089,8 @@ function VarTypeIsValidElementType(const aVarType: TVarType): Boolean;
           varVariant,varUnknown,varShortInt,varByte,varWord,varLongWord,varInt64];
       end;
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
   end;
 
 
@@ -6054,11 +6137,14 @@ procedure DynArrayToVariant(var V: Variant; const DynArray: Pointer; TypeInfo: P
     temp : Variant;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
     variantmanager : tvariantmanager;
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
     dynarraybounds : tdynarraybounds;
   type
     TDynArray = array of Pointer;
@@ -6074,6 +6160,7 @@ procedure DynArrayToVariant(var V: Variant; const DynArray: Pointer; TypeInfo: P
       exit;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     GetVariantManager(variantmanager);
 
@@ -6081,6 +6168,8 @@ procedure DynArrayToVariant(var V: Variant; const DynArray: Pointer; TypeInfo: P
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
     { retrieve Bounds array }
     Setlength(dynarraybounds,Dims);
     GetMem(vararraybounds,Dims*SizeOf(TVarArrayBound));
@@ -6169,6 +6258,7 @@ procedure DynArrayToVariant(var V: Variant; const DynArray: Pointer; TypeInfo: P
           dynarriter.next;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           VarArrayPut(V,temp,Slice(iter.Coords^,Dims));
 =======
           variantmanager.VarArrayPut(V,temp,Dims,PSizeInt(iter.Coords));
@@ -6176,6 +6266,9 @@ procedure DynArrayToVariant(var V: Variant; const DynArray: Pointer; TypeInfo: P
 =======
           variantmanager.VarArrayPut(V,temp,Dims,PSizeInt(iter.Coords));
 >>>>>>> origin/fixes_2_2
+=======
+          VarArrayPut(V,temp,Slice(iter.Coords^,Dims));
+>>>>>>> origin/cpstrnew
         until not(iter.next);
       finally
         iter.done;
@@ -6198,12 +6291,15 @@ procedure DynArrayFromVariant(var DynArray: Pointer; const V: Variant; TypeInfo:
     dynarrvartype : LongInt;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     variantmanager : tvariantmanager;
 >>>>>>> graemeg/fixes_2_2
 =======
     variantmanager : tvariantmanager;
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
     vararraybounds : PVarArrayBoundArray;
     dynarraybounds : tdynarraybounds;
     i : SizeInt;
@@ -6237,6 +6333,7 @@ procedure DynArrayFromVariant(var DynArray: Pointer; const V: Variant; TypeInfo:
         repeat
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           temp:=VarArrayGet(V,Slice(iter.Coords^,VarArrayDims));
 =======
           temp:=variantmanager.VarArrayGet(V,VarArrayDims,PSizeInt(iter.Coords));
@@ -6244,6 +6341,9 @@ procedure DynArrayFromVariant(var DynArray: Pointer; const V: Variant; TypeInfo:
 =======
           temp:=variantmanager.VarArrayGet(V,VarArrayDims,PSizeInt(iter.Coords));
 >>>>>>> origin/fixes_2_2
+=======
+          temp:=VarArrayGet(V,Slice(iter.Coords^,VarArrayDims));
+>>>>>>> origin/cpstrnew
           case dynarrvartype of
             varSmallInt:
               PSmallInt(dynarriter.data)^:=temp;
@@ -7263,12 +7363,16 @@ Procedure SetPropValue(Instance: TObject; const PropName: string;  const Value: 
 var
  PropInfo: PPropInfo;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
  TypeData: PTypeData;
  O: Integer;
  I64: Int64;
  Qw: QWord;
  S: String;
  B: Boolean;
+<<<<<<< HEAD
 =======
 // TypeData: PTypeData;
  O : Integer;
@@ -7278,6 +7382,8 @@ var
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 
 begin
    // find the property
@@ -7287,6 +7393,7 @@ begin
    else
      begin
 <<<<<<< HEAD
+<<<<<<< HEAD
      TypeData := GetTypeData(PropInfo^.PropType);
 =======
 //     TypeData := GetTypeData(PropInfo^.PropType);
@@ -7294,6 +7401,9 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+     TypeData := GetTypeData(PropInfo^.PropType);
+>>>>>>> origin/cpstrnew
      // call Right SetxxxProp
      case PropInfo^.PropType^.Kind of
        tkBool:
@@ -7301,6 +7411,9 @@ begin
          { to support the strings 'true' and 'false' }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
          if (VarType(Value)=varOleStr) or
             (VarType(Value)=varString) or
             (VarType(Value)=varBoolean) then
@@ -7315,6 +7428,7 @@ begin
                raise ERangeError.Create(SRangeError);
              SetOrdProp(Instance, PropInfo, I64);
            end;
+<<<<<<< HEAD
 =======
          B:=Value;
          SetOrdProp(Instance, PropInfo, ord(B));
@@ -7323,6 +7437,8 @@ begin
          B:=Value;
          SetOrdProp(Instance, PropInfo, ord(B));
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
          end;
        tkInteger, tkChar, tkWChar:
          begin
@@ -7340,6 +7456,7 @@ begin
          begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          if (VarType(Value)=varOleStr) or (VarType(Value)=varString) then
 =======
          if (VarType(Value)=varOleStr) or  (VarType(Value)=varString) then
@@ -7347,6 +7464,9 @@ begin
 =======
          if (VarType(Value)=varOleStr) or  (VarType(Value)=varString) then
 >>>>>>> origin/fixes_2_2
+=======
+         if (VarType(Value)=varOleStr) or (VarType(Value)=varString) then
+>>>>>>> origin/cpstrnew
            begin
            S:=Value;
            SetEnumProp(Instance,PropInfo,S);
@@ -7363,6 +7483,7 @@ begin
          begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          if (VarType(Value)=varOleStr) or (VarType(Value)=varString) then
 =======
          if (VarType(Value)=varOleStr) or  (VarType(Value)=varString) then
@@ -7370,6 +7491,9 @@ begin
 =======
          if (VarType(Value)=varOleStr) or  (VarType(Value)=varString) then
 >>>>>>> origin/fixes_2_2
+=======
+         if (VarType(Value)=varOleStr) or (VarType(Value)=varString) then
+>>>>>>> origin/cpstrnew
            begin
            S:=Value;
            SetSetProp(Instance,PropInfo,S);

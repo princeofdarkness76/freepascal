@@ -329,6 +329,7 @@
 <item id="baseURI"/>
 <!--
 <item id="baseURI"/>
+<<<<<<< HEAD
 =======
 <item id="isId"/>
 
@@ -337,6 +338,8 @@
 <item id="isId"/>
 
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 // assertNotEquals
 // assertLowerSeverity
 
@@ -357,6 +360,7 @@
   <arg>namespaceURI</arg>
 </item>  
 <!--
+<<<<<<< HEAD
 =======
 <item id="lookupNamespaceURI"/>
 <item id="lookupPrefix"/>
@@ -367,11 +371,14 @@
 <item id="lookupPrefix"/>
 <item id="isDefaultNamespace"/>
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 <item id="adoptNode"/>
 <item id="renameNode"/>
 <item id="replaceWholeText"/>
 <item id="wholeText"/>
 -->
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <item id="inputEncoding"/>
@@ -389,6 +396,11 @@
 =======
 >>>>>>> graemeg/cpstrnew
 =======
+>>>>>>> origin/cpstrnew
+=======
+<item id="inputEncoding"/>
+<item id="xmlEncoding"/>
+<item id="xmlVersion" type="prop"/>
 >>>>>>> origin/cpstrnew
 
 <!-- XPath -->

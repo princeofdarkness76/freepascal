@@ -480,6 +480,8 @@ begin
 Procedure InitialisePostgres3;
 Procedure ReleasePostgres3;
 
+function PQsetdb(M_PGHOST,M_PGPORT,M_PGOPT,M_PGTTY,M_DBNAME : pchar) : ppgconn;
+
 var Postgres3LibraryHandle : TLibHandle;
 
 implementation
@@ -544,6 +546,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     pointer(PQPrepare) := GetProcedureAddress(Postgres3LibraryHandle,'PQprepare');
 =======
     pointer(PQPrepare) := GetProcedureAddress(Postgres3LibraryHandle,'PQPrepare');
@@ -554,6 +557,9 @@ begin
 =======
     pointer(PQPrepare) := GetProcedureAddress(Postgres3LibraryHandle,'PQprepare');
 >>>>>>> origin/fixes_2.4
+=======
+    pointer(PQPrepare) := GetProcedureAddress(Postgres3LibraryHandle,'PQprepare');
+>>>>>>> origin/cpstrnew
     pointer(PQsendQuery) := GetProcedureAddress(Postgres3LibraryHandle,'PQsendQuery');
     pointer(PQsendQueryParams) := GetProcedureAddress(Postgres3LibraryHandle,'PQsendQueryParams');
     pointer(PQsendQueryPrepared) := GetProcedureAddress(Postgres3LibraryHandle,'PQsendQueryPrepared');

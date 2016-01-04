@@ -106,9 +106,14 @@ CPU_UNITS=x86 ports cpu mmx
 =======
 endif
 
+<<<<<<< HEAD
 ifeq ($(CPU_TARGET),x86_64)
 CPU_UNITS=x86 ports 
 >>>>>>> origin/fixes_2_2
+=======
+ifeq ($(ARCH),x86_64)
+CPU_UNITS=x86 ports cpu
+>>>>>>> origin/cpstrnew
 endif
 
 ifeq ($(CPU_TARGET),x86_64)

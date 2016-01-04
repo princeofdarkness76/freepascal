@@ -38,6 +38,7 @@ unit i_symbian;
             flags        : [tf_files_case_aware, tf_has_dllscanner,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                             tf_smartlink_library];
 =======
                             tf_smartlink_library,tf_use_function_relative_addresses];
@@ -45,6 +46,9 @@ unit i_symbian;
 =======
                             tf_smartlink_library,tf_use_function_relative_addresses];
 >>>>>>> origin/fixes_2_2
+=======
+                            tf_smartlink_library];
+>>>>>>> origin/cpstrnew
             cpu          : cpu_i386;
             unit_env     : 'SYMBIANUNITS';
             extradefines : 'SYMBIAN';

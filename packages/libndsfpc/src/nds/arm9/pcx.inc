@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -47,6 +48,8 @@
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 {$ifdef NDS_INTERFACE}
 type
   // short int = cint16???
@@ -72,6 +75,7 @@ type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function loadPCX(const pcx: pcuchar; image: PsImage): cint; cdecl; external;
 =======
 function loadPCX(pcx: pcuchar; image: PsImage): cint; cdecl; external;
@@ -79,4 +83,7 @@ function loadPCX(pcx: pcuchar; image: PsImage): cint; cdecl; external;
 =======
 function loadPCX(pcx: pcuchar; image: PsImage): cint; cdecl; external;
 >>>>>>> origin/fixes_2_2
+=======
+function loadPCX(const pcx: pcuchar; image: PsImage): cint; cdecl; external;
+>>>>>>> origin/cpstrnew
 {$endif NDS_INTERFACE}

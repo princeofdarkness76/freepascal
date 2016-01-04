@@ -295,6 +295,7 @@ begin
             codes_too_long := 0;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           end;
           Inc(leaves_left);
 =======
@@ -307,6 +308,10 @@ begin
           end;
 
 >>>>>>> origin/fixes_2_2
+=======
+          end;
+          Inc(leaves_left);
+>>>>>>> origin/cpstrnew
         end;
         if codes_too_long <> 0 then
           raise Exception.Create('!codes_too_long');
@@ -743,6 +748,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       lzxd^.bit_buf := word(lzxd^.bit_buf shl shift_bits);
       lzxd^.bit_buf := word(lzxd^.bit_buf or (bits shr rshift_bits) and mask_bits);
     end;
@@ -767,6 +773,13 @@ begin
 {$IFDEF ENDIAN_BIG}
     lzxd^.bit_buf := word(((lzxd^.bit_buf and $FF)shl 8) or (lzxd^.bit_buf shr 8));
 >>>>>>> origin/fixes_2.4
+=======
+      lzxd^.bit_buf := word(lzxd^.bit_buf shl shift_bits);
+      lzxd^.bit_buf := word(lzxd^.bit_buf or (bits shr rshift_bits) and mask_bits);
+    end;
+{$IFDEF ENDIAN_BIG}
+    lzxd^.bit_buf := word(((lzxd^.bit_buf and $FF)shl 8) or (lzxd^.bit_buf shr 8));
+>>>>>>> origin/cpstrnew
 {$ENDIF}
     lzxd^.put_bytes(lzxd^.out_arg, sizeof(lzxd^.bit_buf), @lzxd^.bit_buf);
     Inc(lzxd^.len_compressed_output, sizeof(lzxd^.bit_buf));
@@ -778,6 +791,7 @@ begin
   //   otherwise move bits in */
   shift_bits := nbits;
   mask_bits := (1 shl shift_bits) - 1;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -795,6 +809,10 @@ begin
   lzxd^.bit_buf := word(lzxd^.bit_buf shl shift_bits);
   lzxd^.bit_buf := word(lzxd^.bit_buf or bits and mask_bits);
 >>>>>>> origin/fixes_2.4
+=======
+  lzxd^.bit_buf := word(lzxd^.bit_buf shl shift_bits);
+  lzxd^.bit_buf := word(lzxd^.bit_buf or bits and mask_bits);
+>>>>>>> origin/cpstrnew
   Inc(cur_bits, nbits);
 
   lzxd^.bits_in_buf := cur_bits;
@@ -962,6 +980,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	  codep^ := byte(prevlengths[i-cur_run] - last_len);
 	  if (codep^ > 16) then codep^ := byte(codep^ + 17); //Inc(codep^, 17);
 =======
@@ -976,6 +995,10 @@ begin
 	  codep^ := byte(prevlengths[i-cur_run] - last_len);
 	  if (codep^ > 16) then codep^ := byte(codep^ + 17); //Inc(codep^, 17);
 >>>>>>> origin/fixes_2.4
+=======
+	  codep^ := byte(prevlengths[i-cur_run] - last_len);
+	  if (codep^ > 16) then codep^ := byte(codep^ + 17); //Inc(codep^, 17);
+>>>>>>> origin/cpstrnew
 	  Inc(freqs[codep^]);
           Inc(codep);
 	  runp^ := 0; //* not necessary */
@@ -986,6 +1009,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	  codep^ := byte(prevlengths[i-cur_run] - last_len);
 	  if (codep^ > 16) then codep^ := byte(codep^ + 17); //Inc(codep^, byte(17));
 =======
@@ -1000,6 +1024,10 @@ begin
 	  codep^ := byte(prevlengths[i-cur_run] - last_len);
 	  if (codep^ > 16) then codep^ := byte(codep^ + 17); //Inc(codep^, byte(17));
 >>>>>>> origin/fixes_2.4
+=======
+	  codep^ := byte(prevlengths[i-cur_run] - last_len);
+	  if (codep^ > 16) then codep^ := byte(codep^ + 17); //Inc(codep^, byte(17));
+>>>>>>> origin/cpstrnew
 	  runp^ := 0; //* not necessary */
           Inc(runp);
 	  Dec(cur_run);
@@ -1093,12 +1121,15 @@ begin
   Fillchar(lzxd^.aligned_freq_table[0], LZX_ALIGNED_SIZE * sizeof(longint), 0);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/fixes_2_2
 =======
 
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
   while ((lzxd^.left_in_block<>0) and ((lz_left_to_process(lzxd^.lzi)<>0) or not(lzxd^.at_eof(lzxd^.in_arg)))) do begin
     lz_compress(lzxd^.lzi, lzxd^.left_in_block);
 
@@ -1108,12 +1139,15 @@ begin
     
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     if lzxd^.at_eof(lzxd^.in_arg) then Sleep(500);
 >>>>>>> graemeg/fixes_2_2
 =======
     if lzxd^.at_eof(lzxd^.in_arg) then Sleep(500);
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
     if ((lzxd^.subdivide<0)
       or (lzxd^.left_in_block = 0)
       or ((lz_left_to_process(lzxd^.lzi) = 0) and lzxd^.at_eof(lzxd^.in_arg))) then begin
@@ -1136,12 +1170,15 @@ begin
       end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/fixes_2_2
 =======
 
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
       //* handle extra bits */
       uncomp_bits := 0;
       comp_bits := 0;
@@ -1272,6 +1309,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   freemem(lzxd^.block_codes);
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -1280,6 +1318,9 @@ begin
 =======
   freemem(lzxd^.block_codes);
 >>>>>>> origin/fixes_2.4
+=======
+  freemem(lzxd^.block_codes);
+>>>>>>> origin/cpstrnew
   dispose(lzxd);
   Exit(0);
 end;

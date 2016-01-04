@@ -57,6 +57,7 @@ unit cgcpu;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         procedure a_load_const_cgpara(list : TAsmList;size : tcgsize;a : tcgint;const cgpara : tcgpara);override;
 =======
         procedure a_load_const_cgpara(list : TAsmList;size : tcgsize;a : aint;const cgpara : tcgpara);override;
@@ -67,6 +68,9 @@ unit cgcpu;
 =======
         procedure a_load_const_cgpara(list : TAsmList;size : tcgsize;a : aint;const cgpara : tcgpara);override;
 >>>>>>> graemeg/cpstrnew
+=======
+        procedure a_load_const_cgpara(list : TAsmList;size : tcgsize;a : aint;const cgpara : tcgpara);override;
+>>>>>>> origin/cpstrnew
 =======
         procedure a_load_const_cgpara(list : TAsmList;size : tcgsize;a : aint;const cgpara : tcgpara);override;
 >>>>>>> origin/cpstrnew
@@ -186,11 +190,14 @@ unit cgcpu;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     procedure create_codegen;
@@ -369,7 +376,7 @@ unit cgcpu;
 >>>>>>> graemeg/fixes_2_2
 =======
 {$ifdef DEBUG_CHARLIE}
-//        writeln('a_param_reg');
+//        writeln('a_load_reg');_cgpara
 {$endif DEBUG_CHARLIE}
 >>>>>>> origin/fixes_2_2
         { it's probably necessary to port this from x86 later, or provide an m68k solution (KB) }
@@ -396,6 +403,7 @@ unit cgcpu;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure tcg68k.a_load_const_cgpara(list : TAsmList;size : tcgsize;a : tcgint;const cgpara : tcgpara);
 =======
     procedure tcg68k.a_load_const_cgpara(list : TAsmList;size : tcgsize;a : aint;const cgpara : tcgpara);
@@ -406,6 +414,9 @@ unit cgcpu;
 =======
     procedure tcg68k.a_load_const_cgpara(list : TAsmList;size : tcgsize;a : aint;const cgpara : tcgpara);
 >>>>>>> graemeg/cpstrnew
+=======
+    procedure tcg68k.a_load_const_cgpara(list : TAsmList;size : tcgsize;a : aint;const cgpara : tcgpara);
+>>>>>>> origin/cpstrnew
 =======
     procedure tcg68k.a_load_const_cgpara(list : TAsmList;size : tcgsize;a : aint;const cgpara : tcgpara);
 >>>>>>> origin/cpstrnew
@@ -423,7 +434,7 @@ unit cgcpu;
 >>>>>>> graemeg/cpstrnew
 =======
 {$ifdef DEBUG_CHARLIE}
-//        writeln('a_param_const');
+//        writeln('a_load_const');_cgpara
 {$endif DEBUG_CHARLIE}
 >>>>>>> graemeg/fixes_2_2
 =======
@@ -505,8 +516,12 @@ unit cgcpu;
 //        writeln('a_load_ref');_cgpara
 =======
 {$ifdef DEBUG_CHARLIE}
+<<<<<<< HEAD
 //        writeln('a_param_ref');
 >>>>>>> graemeg/fixes_2_2
+=======
+//        writeln('a_load_ref');_cgpara
+>>>>>>> origin/cpstrnew
 {$endif DEBUG_CHARLIE}
 
 >>>>>>> graemeg/cpstrnew
@@ -570,8 +585,12 @@ unit cgcpu;
 >>>>>>> graemeg/fixes_2_2
 =======
 {$ifdef DEBUG_CHARLIE}
+<<<<<<< HEAD
 //        writeln('a_paramaddr_ref');
 >>>>>>> origin/fixes_2_2
+=======
+//        writeln('a_loadaddr_ref');_cgpara
+>>>>>>> origin/cpstrnew
 {$endif DEBUG_CHARLIE}
         with r do
           begin
@@ -1328,6 +1347,7 @@ unit cgcpu;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure tcg68k.a_loadfpu_ref_cgpara(list : TAsmList; size : tcgsize;const ref : treference;const cgpara : TCGPara);
       var
         href : treference;
@@ -1344,6 +1364,10 @@ unit cgcpu;
 
     procedure tcg68k.a_loadmm_reg_cgpara(list: TAsmList; size: tcgsize; reg: tregister;const locpara : TCGPara;shuffle : pmmshuffle);
 >>>>>>> graemeg/cpstrnew
+=======
+
+    procedure tcg68k.a_loadmm_reg_cgpara(list: TAsmList; size: tcgsize; reg: tregister;const locpara : TCGPara;shuffle : pmmshuffle);
+>>>>>>> origin/cpstrnew
 =======
 
     procedure tcg68k.a_loadmm_reg_cgpara(list: TAsmList; size: tcgsize; reg: tregister;const locpara : TCGPara;shuffle : pmmshuffle);
@@ -2813,6 +2837,13 @@ unit cgcpu;
       end;
 
 
+procedure create_codegen;
+  begin
+    cg := tcg68k.create;
+    cg64 :=tcg64f68k.create;
+  end;
+  
+  
 procedure create_codegen;
   begin
     cg := tcg68k.create;

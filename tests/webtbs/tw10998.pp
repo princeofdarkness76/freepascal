@@ -2,6 +2,7 @@ program statictest;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$mode delphi}
 =======
 {$mode delphi}{$STATIC ON}
@@ -9,6 +10,9 @@ program statictest;
 =======
 {$mode delphi}{$STATIC ON}
 >>>>>>> origin/fixes_2_2
+=======
+{$mode delphi}
+>>>>>>> origin/cpstrnew
 
 type
   TMyClass = class

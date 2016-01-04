@@ -225,6 +225,9 @@ type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 function getByte(var f:file):byte;
   begin
     BlockRead (f,getByte,1);
@@ -239,6 +242,7 @@ function getByte(var f:file):byte;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
   
@@ -249,6 +253,9 @@ function getByte(var f:file):byte;
 =======
   
 >>>>>>> graemeg/cpstrnew
+=======
+  
+>>>>>>> origin/cpstrnew
 =======
   
 >>>>>>> origin/cpstrnew
@@ -267,6 +274,7 @@ function getByte(var f:file):byte;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
   
@@ -280,20 +288,27 @@ function getByte(var f:file):byte;
 =======
   
 >>>>>>> origin/cpstrnew
+=======
+  
+>>>>>>> origin/cpstrnew
   function getint32 (var f:file): longint;
   begin
     blockread (F, getint32, 4);
   end;
 
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 const SIZE_OF_NLM_INTERNAL_FIXED_HEADER = 130;
       SIZE_OF_NLM_INTERNAL_VERSION_HEADER = 32;
       SIZE_OF_NLM_INTERNAL_EXTENDED_HEADER = 124;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 function openNetwareNLM(var e:TExeFile):boolean;
@@ -323,14 +338,15 @@ var valid : boolean;
 =======
 >>>>>>> origin/fixes_2_2
 function loadNetwareNLM:boolean;
+=======
+function openNetwareNLM(var e:TExeFile):boolean;
+>>>>>>> origin/cpstrnew
 var valid : boolean;
     name  : string;
-    StabLength,
-    StabStrLength,
-    alignAmount,
     hdrLength,
     dataOffset,
     dataLength : longint;
+<<<<<<< HEAD
 
   function getByte:byte;
   begin
@@ -346,10 +362,14 @@ var valid : boolean;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  
+>>>>>>> origin/cpstrnew
 
   function getLString : String;
   var Res:string;
   begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     blockread (e.F, res, 1);
@@ -367,6 +387,12 @@ var valid : boolean;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    blockread (e.F, res, 1);
+    if length (res) > 0 THEN
+      blockread (e.F, res[1], length (res));
+    getbyte(e.f);
+>>>>>>> origin/cpstrnew
     getLString := res;
   end;
 
@@ -375,6 +401,7 @@ var valid : boolean;
   begin
     getFixString := '';
     for I := 1 to Len do
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       getFixString := getFixString + char (getbyte(e.f));
@@ -434,38 +461,27 @@ begin
 =======
 >>>>>>> origin/fixes_2_2
       getFixString := getFixString + char (getbyte);
+=======
+      getFixString := getFixString + char (getbyte(e.f));
+>>>>>>> origin/cpstrnew
   end;
 
-  function get0String : string;
-  var c : char;
-  begin
-    get0String := '';
-    c := char (getbyte);
-    while (c <> #0) do
-    begin
-      get0String := get0String + c;
-      c := char (getbyte);
-    end;
-  end;
 
   function getword : word;
   begin
-    blockread (F, getword, 2);
+    blockread (e.F, getword, 2);
   end;
 
-  function getint32 : longint;
-  begin
-    blockread (F, getint32, 4);
-  end;
+  
 
 begin
-  processaddress := 0;
-  LoadNetwareNLM:=false;
-  stabofs:=-1;
-  stabstrofs:=-1;
-  { read and check header }
-  Skip (SIZE_OF_NLM_INTERNAL_FIXED_HEADER);
+  e.sechdrofs := 0;
+  openNetwareNLM:=false;
+  
+  // read and check header
+  Skip (e.f,SIZE_OF_NLM_INTERNAL_FIXED_HEADER);
   getLString;  // NLM Description
+<<<<<<< HEAD
   getInt32;    // Stacksize
   getInt32;    // Reserved
   skip(5);     // old Thread Name
@@ -473,6 +489,11 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  getInt32(e.f);    // Stacksize
+  getInt32(e.f);    // Reserved
+  skip(e.f,5);     // old Thread Name
+>>>>>>> origin/cpstrnew
   getLString;  // Screen Name
   getLString;  // Thread Name
   hdrLength := -1;
@@ -485,6 +506,7 @@ begin
     begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       Skip (e.f,SIZE_OF_NLM_INTERNAL_VERSION_HEADER-8);
 =======
       Skip (SIZE_OF_NLM_INTERNAL_VERSION_HEADER-8);
@@ -492,6 +514,9 @@ begin
 =======
       Skip (SIZE_OF_NLM_INTERNAL_VERSION_HEADER-8);
 >>>>>>> origin/fixes_2_2
+=======
+      Skip (e.f,SIZE_OF_NLM_INTERNAL_VERSION_HEADER-8);
+>>>>>>> origin/cpstrnew
     end else
     if (name = 'CoPyRiGh') then
     begin
@@ -500,6 +525,7 @@ begin
     end else
     if (name = 'MeSsAgEs') then
     begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       skip (e.f,SIZE_OF_NLM_INTERNAL_EXTENDED_HEADER - 8);
@@ -525,6 +551,16 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+      skip (e.f,SIZE_OF_NLM_INTERNAL_EXTENDED_HEADER - 8);
+    end else
+    if (name = 'CuStHeAd') then
+    begin
+      hdrLength := getInt32(e.f);
+      dataOffset := getInt32(e.f);
+      dataLength := getInt32(e.f);
+      Skip (e.f,8); // dateStamp
+>>>>>>> origin/cpstrnew
       Valid := false;
     end else
       Valid := false;
@@ -533,6 +569,9 @@ begin
     exit;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 
   Seek (e.F, dataOffset);
   e.sechdrofs := dataOffset;
@@ -545,16 +584,20 @@ var name : string;
 begin
   seek(e.f,e.sechdrofs);
     (* The format of the section information is:
+<<<<<<< HEAD
 =======
   (* The format of the section information is:
 >>>>>>> graemeg/fixes_2_2
 =======
   (* The format of the section information is:
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
        null terminated section name
        zeroes to adjust to 4 byte boundary
        4 byte section data file pointer
        4 byte section size *)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   Repeat
@@ -577,32 +620,29 @@ end;
   Seek (F, dataOffset);
   stabOfs := 0;
   stabStrOfs := 0;
+=======
+>>>>>>> origin/cpstrnew
   Repeat
-    Name := Get0String;
+    Name := Get0String(e.f);
     alignAmount := 4 - ((length (Name) + 1) MOD 4);
-    Skip (alignAmount);
-    if (Name = '.stab') then
+    Skip (e.f,AlignAmount);
+    if (Name = asecname) then
     begin
-      stabOfs := getInt32;
-      stabLength := getInt32;
-      stabcnt:=stabLength div sizeof(tstab);
+      secOfs := getInt32(e.f);
+      secLen := getInt32(e.f);
     end else
-    if (Name = '.stabstr') then
-    begin
-      stabStrOfs := getInt32;
-      stabStrLength := getInt32;
-    end else
-      Skip (8);
-  until (Name = '') or ((StabOfs <> 0) and (stabStrOfs <> 0));
-  Seek (F,stabOfs);
-  //if (StabOfs = 0) then __ConsolePrintf ('StabOfs = 0');
-  //if (StabStrOfs = 0) then __ConsolePrintf ('StabStrOfs = 0');
-  LoadNetwareNLM := ((stabOfs > 0) and (stabStrOfs > 0));
+      Skip(e.f,8);
+  until (Name = '') or (Name = asecname);
+  FindSectionNetwareNLM := (Name=asecname);
 end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+
+>>>>>>> origin/cpstrnew
 {$endif}
 
 
@@ -1253,6 +1293,7 @@ begin
      seek(e.f,e.secstrofs+elfsec.sh_name);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      blockread(e.f,secnamebuf,sizeof(secnamebuf)-1,bufsize);
 =======
      blockread(e.f,secnamebuf,sizeof(secnamebuf),bufsize);
@@ -1260,6 +1301,9 @@ begin
 =======
      blockread(e.f,secnamebuf,sizeof(secnamebuf),bufsize);
 >>>>>>> origin/fixes_2_2
+=======
+     blockread(e.f,secnamebuf,sizeof(secnamebuf)-1,bufsize);
+>>>>>>> origin/cpstrnew
      seek(e.f,oldofs);
      secname:=strpas(secnamebuf);
      if asecname=secname then
@@ -1429,17 +1473,23 @@ begin
     begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
       {$I-}
       blockread (e.f, block, sizeof(block));
       {$I+}
       if IOResult <> 0 then
         Exit;
+<<<<<<< HEAD
 =======
       blockread (e.f, block, sizeof(block));
 >>>>>>> graemeg/fixes_2_2
 =======
       blockread (e.f, block, sizeof(block));
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
       if block.cmd = $2   then
       begin
           blockread (e.f, symbolsSeg, sizeof(symbolsSeg));
@@ -1663,6 +1713,7 @@ begin
   i:=align(length(dbgfn)+1,4);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if (i+4)>dbglinklen then
 =======
   if i>dbglinklen then
@@ -1670,6 +1721,9 @@ begin
 =======
   if i>dbglinklen then
 >>>>>>> origin/fixes_2_2
+=======
+  if (i+4)>dbglinklen then
+>>>>>>> origin/cpstrnew
     exit;
   move(dbglink[i],dbgcrc,4);
   { current dir }

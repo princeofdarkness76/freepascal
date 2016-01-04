@@ -34,11 +34,15 @@ begin
     P.Version:='2.2.4';
     P.SourcePath.Add('src');
 
+<<<<<<< HEAD
     T:=P.Targets.AddUnit('unzip.pp');
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    T:=P.Targets.AddUnit('unzip51g.pp');
+>>>>>>> origin/cpstrnew
       with T.Dependencies do
         begin
           AddUnit('ziptypes');

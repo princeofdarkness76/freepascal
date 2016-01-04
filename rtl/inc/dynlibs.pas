@@ -45,6 +45,7 @@ Function GetLoadErrorStr: string; inline;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function FreeLibrary(Lib : TLibHandle) : Boolean; inline;
 Function GetProcAddress(Lib : TlibHandle; const ProcName : AnsiString) : {$ifdef cpui8086}FarPointer{$else}Pointer{$endif}; inline;
 =======
@@ -64,12 +65,18 @@ Function SafeLoadLibrary(Name : AnsiString) : TLibHandle;
 Function LoadLibrary(Name : AnsiString) : TLibHandle;
 Function GetProcedureAddress(Lib : TlibHandle; ProcName : AnsiString) : Pointer;
 >>>>>>> graemeg/fixes_2_2
+=======
+Function SafeLoadLibrary(const Name : AnsiString) : TLibHandle;
+Function LoadLibrary(const Name : AnsiString) : TLibHandle;
+Function GetProcedureAddress(Lib : TlibHandle; const ProcName : AnsiString) : Pointer;
+>>>>>>> origin/cpstrnew
 Function UnloadLibrary(Lib : TLibHandle) : Boolean;
 
 // Kylix/Delphi compability
 
 Function FreeLibrary(Lib : TLibHandle) : Boolean;
 Function GetProcAddress(Lib : TlibHandle; const ProcName : AnsiString) : Pointer;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -80,10 +87,13 @@ Function GetProcAddress(Lib : TlibHandle; const ProcName : AnsiString) : Pointer
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 Type
   HModule = TLibHandle; 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -109,6 +119,8 @@ Const
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 Implementation
 
 
@@ -195,12 +207,17 @@ begin
   Result:=System.FreeLibrary(lib);
 end;
 
+<<<<<<< HEAD
 Function GetProcAddress(Lib : TlibHandle; const ProcName : AnsiString) : {$ifdef cpui8086}FarPointer{$else}Pointer{$endif};
+=======
+Function GetProcAddress(Lib : TlibHandle; const ProcName : AnsiString) : Pointer;
+>>>>>>> origin/cpstrnew
 
 begin
   Result:=System.GetProcedureAddress(Lib,Procname);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 initialization
@@ -213,6 +230,9 @@ finalization
 =======
 >>>>>>> origin/fixes_2_2
 Function SafeLoadLibrary(Name : AnsiString) : TLibHandle;
+=======
+Function SafeLoadLibrary(const Name : AnsiString) : TLibHandle;
+>>>>>>> origin/cpstrnew
 
 {$ifdef i386}
  var w : word;

@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef NDS_INTERFACE}
 type
   time_t = cint;
@@ -97,6 +98,8 @@ end;
 (* +------------------------------------------------------------------------+ *)
 (*    Begin Random function                                                   *)
 (* +------------------------------------------------------------------------+ *)
+=======
+>>>>>>> origin/cpstrnew
 {$ifdef NDS_INTERFACE}
 const
   QRAN_SHIFT  = 15;

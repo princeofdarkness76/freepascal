@@ -90,6 +90,7 @@ begin
               begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               {$ifdef windows}
               S:=DateToStr(Longv+1721425-2415019);
               {$else}
@@ -103,8 +104,14 @@ begin
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+              {$ifdef windows}
+              S:=DateToStr(Longv+1721425-2415019);
+              {$else}
+>>>>>>> origin/cpstrnew
               PX_SdnToGregorian(longv+1721425,@Y,@M,@D);
               S:=DateToStr(EncodeDate(Y,M,D));
+              {$endif}
               end;
         pxfShort:
           if PX_get_data_short(Doc,fbuf, flen, @D)>0 then

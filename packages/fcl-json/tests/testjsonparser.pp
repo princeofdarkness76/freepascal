@@ -173,6 +173,7 @@ Var
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   P:=TJSONParser.Create('null');
   Try
     J:=P.Parse;
@@ -190,6 +191,13 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  P:=TJSONParser.Create('null');
+  Try
+    J:=P.Parse;
+    If (J=Nil) then
+      Fail('Parse of null fails');
+>>>>>>> origin/cpstrnew
     TestJSONType(J,jtNull);
   Finally
     FreeAndNil(J);
@@ -206,6 +214,7 @@ Var
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   P:=TJSONParser.Create('true');
 =======
   P:=TJSONParser.Create('True');
@@ -213,6 +222,9 @@ begin
 =======
   P:=TJSONParser.Create('True');
 >>>>>>> origin/fixes_2_2
+=======
+  P:=TJSONParser.Create('true');
+>>>>>>> origin/cpstrnew
   Try
     J:=P.Parse;
     If (J=Nil) then
@@ -234,6 +246,7 @@ Var
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   P:=TJSONParser.Create('false');
 =======
   P:=TJSONParser.Create('False');
@@ -241,6 +254,9 @@ begin
 =======
   P:=TJSONParser.Create('False');
 >>>>>>> origin/fixes_2_2
+=======
+  P:=TJSONParser.Create('false');
+>>>>>>> origin/cpstrnew
   Try
     J:=P.Parse;
     If (J=Nil) then
@@ -287,6 +303,9 @@ begin
   DoTestArray('[]',0);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   DoTestArray('[null]',1);
   DoTestArray('[true]',1);
   DoTestArray('[false]',1);
@@ -296,6 +315,7 @@ begin
   DoTestArray('[1234567890123456]',1);
   DoTestArray('[1234567890123456, 2234567890123456]',2);
   DoTestArray('[1234567890123456, 2234567890123456, 3234567890123456]',3);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -342,12 +362,18 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  Str(Double(1.2),S1);
+  Str(Double(2.3),S2);
+  Str(Double(3.4),S3);
+>>>>>>> origin/cpstrnew
   DoTestArray('['+S1+']',1);
   DoTestArray('['+S1+', '+S2+']',2);
   DoTestArray('['+S1+', '+S2+', '+S3+']',3);
   DoTestArray('["A string"]',1);
   DoTestArray('["A string", "Another string"]',2);
   DoTestArray('["A string", "Another string", "Yet another string"]',3);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   DoTestArray('[null, false]',2);
@@ -363,6 +389,11 @@ begin
   DoTestArray('[True, False]',2);
   DoTestArray('[Null, 1]',2);
 >>>>>>> origin/fixes_2_2
+=======
+  DoTestArray('[null, false]',2);
+  DoTestArray('[true, false]',2);
+  DoTestArray('[null, 1]',2);
+>>>>>>> origin/cpstrnew
   DoTestArray('[1, "A string"]',2);
   DoTestArray('[1, []]',2);
   DoTestArray('[1, [1, 2]]',2);
@@ -682,11 +713,15 @@ begin
   P:=TJSONParser.Create(S);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   P.Strict:=True;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  P.Strict:=True;
+>>>>>>> origin/cpstrnew
   J:=Nil;
   Try
     Try

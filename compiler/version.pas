@@ -35,6 +35,7 @@ interface
 =======
        version_nr = '2';
 <<<<<<< HEAD
+<<<<<<< HEAD
        release_nr = '5';
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -59,6 +60,11 @@ interface
        patch_nr   = '5';
        minorpatch = '';
 >>>>>>> graemeg/fixes_2_2
+=======
+       release_nr = '5';
+       patch_nr   = '1';
+       minorpatch = '-cps';
+>>>>>>> origin/cpstrnew
 
        { word version for ppu file }
        wordversion = ((ord(version_nr)-ord('0')) shl 14)+

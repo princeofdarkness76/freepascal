@@ -20,6 +20,7 @@ function fpc_setjmp(var S : jmp_buf) : longint;assembler;[Public, alias : 'FPC_S
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     {$if defined(FPUVFPV2) or defined(FPUVFPV3) or defined(FPUVFPV3_D16)}
     {$if defined(CPUARMV3) or defined(CPUARMV4) or defined(CPUARMV5)}
     fstmiax r0!, {d8-d15}
@@ -46,11 +47,17 @@ function fpc_setjmp(var S : jmp_buf) : longint;assembler;[Public, alias : 'FPC_S
     {$if defined(CPUARMV3) or defined(CPUARMV4) or defined(CPUARMV5)}
     fstmiax r0!, {d8-d15}
 >>>>>>> origin/cpstrnew
+=======
+    {$if defined(FPUVFPV2) or defined(FPUVFPV3)}
+    {$if defined(CPUARMV3) or defined(CPUARMV4) or defined(CPUARMV5)}
+    fstmiax r0!, {d8-d15}
+>>>>>>> origin/cpstrnew
     {$else}
     fstmiad r0!, {d8-d15}
     {$endif}
     {$endif}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -78,10 +85,16 @@ function fpc_setjmp(var S : jmp_buf) : longint;assembler;[Public, alias : 'FPC_S
     stmia	r0!, {v1-v6, sl, fp}
     mov	   r2, sp
 >>>>>>> origin/cpstrnew
+=======
+    {$if defined(CPUCORTEXM3) or defined(CPUARMV7M)}
+    stmia	r0!, {v1-v6, sl, fp}
+    mov	   r2, sp
+>>>>>>> origin/cpstrnew
     stmia	r0!, {r2, lr}
 
     mov     r0,#0
     mov     pc,lr
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -134,12 +147,19 @@ function fpc_setjmp(var S : jmp_buf) : longint;assembler;[Public, alias : 'FPC_S
     mov     r0,#0
     bx      lr
 >>>>>>> origin/cpstrnew
+=======
+    {$else}
+    stmia   r0,{v1-v6, sl, fp, sp, lr}
+    mov     r0,#0
+    bx      lr
+>>>>>>> origin/cpstrnew
     {$endif}
   end;
 
 
 procedure fpc_longjmp(var S : jmp_buf;value : longint);assembler;[Public, alias : 'FPC_LONGJMP']; compilerproc;
   asm
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -157,10 +177,14 @@ procedure fpc_longjmp(var S : jmp_buf;value : longint);assembler;[Public, alias 
 =======
     {$if defined(CPUCORTEXM3) or defined(CPUARMV7M)}
 >>>>>>> origin/cpstrnew
+=======
+    {$if defined(CPUCORTEXM3) or defined(CPUARMV7M)}
+>>>>>>> origin/cpstrnew
     mov     ip, r0
     movs    r0, r1
     it eq
     moveq   r0, #1
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -200,6 +224,8 @@ procedure fpc_longjmp(var S : jmp_buf;value : longint);assembler;[Public, alias 
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     {$if defined(FPUVFPV2) or defined(FPUVFPV3)}
     fldmiad ip!, {d8-d15}
     {$endif}
@@ -210,6 +236,7 @@ procedure fpc_longjmp(var S : jmp_buf;value : longint);assembler;[Public, alias 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -217,10 +244,13 @@ procedure fpc_longjmp(var S : jmp_buf;value : longint);assembler;[Public, alias 
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     {$else}
     mov     ip, r0
     movs    r0, r1
     moveq   r0, #1
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -246,6 +276,11 @@ procedure fpc_longjmp(var S : jmp_buf;value : longint);assembler;[Public, alias 
     {$if defined(CPUARMV3) or defined(CPUARMV4) or defined(CPUARMV5)}
     fldmiax ip!, {d8-d15}
 >>>>>>> graemeg/cpstrnew
+=======
+    {$if defined(FPUVFPV2) or defined(FPUVFPV3)}
+    {$if defined(CPUARMV3) or defined(CPUARMV4) or defined(CPUARMV5)}
+    fldmiax ip!, {d8-d15}
+>>>>>>> origin/cpstrnew
 =======
     {$if defined(FPUVFPV2) or defined(FPUVFPV3)}
     {$if defined(CPUARMV3) or defined(CPUARMV4) or defined(CPUARMV5)}

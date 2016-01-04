@@ -10,6 +10,7 @@
 { we do not cut off too long strings silently anymore }
 {$H+}
 
+<<<<<<< HEAD
 =======
 { execute this test only on reasonable fast cpus }
 
@@ -18,6 +19,8 @@
 { execute this test only on reasonable fast cpus }
 
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 {$ifdef darwin}
 {$PIC+}
 {$endif darwin}

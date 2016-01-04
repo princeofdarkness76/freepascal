@@ -96,6 +96,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   platformids : Pcl_platform_id;
   num_platforms : cl_uint;
   
@@ -107,12 +108,15 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 begin
   // Fill our data set with random float values
   count := DATA_SIZE;
   for i:=0 to count - 1 do
     data[i]:= random;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -142,11 +146,14 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   // Connect to a compute device
   // change CL_DEVICE_TYPE_CPU to CL_DEVICE_TYPE_GPU is you have powerful video (GeForce 8800/8600M or higher)
   gpu := CL_DEVICE_TYPE_GPU;
 
   device_id:=nil;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -161,6 +168,9 @@ begin
 =======
   err := clGetDeviceIDs(nil, gpu, 1, @device_id, nil);
 >>>>>>> graemeg/cpstrnew
+=======
+  err := clGetDeviceIDs(nil, gpu, 1, @device_id, nil);
+>>>>>>> origin/cpstrnew
 =======
   err := clGetDeviceIDs(nil, gpu, 1, @device_id, nil);
 >>>>>>> origin/cpstrnew

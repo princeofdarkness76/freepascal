@@ -126,6 +126,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FInternalData: Dword;
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -134,6 +135,9 @@ type
 =======
     FInternalData: Dword;
 >>>>>>> origin/fixes_2.4
+=======
+    FInternalData: Dword;
+>>>>>>> origin/cpstrnew
     FList: TList;
     FOwner: TChmSiteMap;
     FParentItem: TChmSiteMapItem;
@@ -156,6 +160,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     property InternalData: Dword read FInternalData write FInternalData;
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -164,6 +169,9 @@ type
 =======
     property InternalData: Dword read FInternalData write FInternalData;
 >>>>>>> origin/fixes_2.4
+=======
+    property InternalData: Dword read FInternalData write FInternalData;
+>>>>>>> origin/cpstrnew
   end;
   
 
@@ -199,11 +207,15 @@ type
     FLevel: Integer;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FLevelForced: Boolean;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    FLevelForced: Boolean;
+>>>>>>> origin/cpstrnew
     FWindowStyles: LongInt;
     procedure SetItems(const AValue: TChmSiteMapItems);
   protected
@@ -216,11 +228,15 @@ type
     procedure LoadFromStream(AStream: TStream);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure SaveToFile(AFileName:String);
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    procedure SaveToFile(AFileName:String);
+>>>>>>> origin/cpstrnew
     procedure SaveToStream(AStream: TStream);
     property Items: TChmSiteMapItems read FItems write SetItems;
     property SiteMapType: TSiteMapType read FSiteMapType;
@@ -293,6 +309,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  if not (smtHTML in FSiteMapTags) then begin
     if (TagName = 'HTML') or (TagName = '/HTML') then Include(FSiteMapTags, smtHTML);
   end
@@ -310,10 +327,15 @@ begin
 {  if not (smtHTML in FSiteMapTags) then begin
     if (TagName = 'HTML') or (TagName = '/HTML') then Include(FSiteMapTags, smtHTML);
 >>>>>>> origin/fixes_2.4
+=======
+{  if not (smtHTML in FSiteMapTags) then begin
+    if (TagName = 'HTML') or (TagName = '/HTML') then Include(FSiteMapTags, smtHTML);
+>>>>>>> origin/cpstrnew
   end
   else begin // looking for /HTML
     if TagName = '/HTML' then Exclude(FSiteMapTags, smtHTML);
   end;}
+<<<<<<< HEAD
   
 <<<<<<< HEAD
   if (smtHTML in FSiteMapTags) then begin
@@ -324,12 +346,17 @@ begin
 =======
   //if (smtHTML in FSiteMapTags) then begin
 >>>>>>> origin/fixes_2.4
+=======
+
+  //if (smtHTML in FSiteMapTags) then begin
+>>>>>>> origin/cpstrnew
      if not (smtBODY in FSiteMapTags) then begin
        if TagName = 'BODY' then Include(FSiteMapTags, smtBODY);
      end
      else begin
        if TagName = '/BODY' then Exclude(FSiteMapTags, smtBODY);
      end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -339,6 +366,9 @@ begin
 =======
      
 >>>>>>> origin/fixes_2_2
+=======
+
+>>>>>>> origin/cpstrnew
      if (smtBODY in FSiteMapTags) then begin
        //WriteLn('GOT TAG: ', AActualTag);
        if TagName = 'UL' then begin
@@ -351,12 +381,16 @@ begin
        end
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
        else if (TagName = 'LI') and (FLevel = 0) then
          FLevelForced := True
        else if TagName = 'OBJECT' then begin
          Include(FSiteMapBodyTags, smbtOBJECT);
          if FLevelForced then
            IncreaseULevel;
+<<<<<<< HEAD
 =======
        else if TagName = 'OBJECT' then begin
          Include(FSiteMapBodyTags, smbtOBJECT);
@@ -365,6 +399,8 @@ begin
        else if TagName = 'OBJECT' then begin
          Include(FSiteMapBodyTags, smbtOBJECT);
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
          If FLevel > 0 then // if it is zero it is the site properties
            NewSiteMapItem;
        end
@@ -372,11 +408,15 @@ begin
          Exclude(FSiteMapBodyTags, smbtOBJECT);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
          if FLevelForced then
          begin
            DecreaseULevel;
            FLevelForced := False;
          end;
+<<<<<<< HEAD
        end
        else begin // we are the properties of the object tag
 <<<<<<< HEAD
@@ -471,6 +511,12 @@ begin
        else begin // we are the properties of the object tag
          if (smbtOBJECT in FSiteMapBodyTags) then begin
 >>>>>>> origin/fixes_2_2
+=======
+       end
+       else begin // we are the properties of the object tag
+         if (FLevel > 0 ) and (smbtOBJECT in FSiteMapBodyTags) then begin
+
+>>>>>>> origin/cpstrnew
            if LowerCase(GetTagName(AActualTag)) = 'param' then begin
 
              TagAttributeName := GetVal(AActualTag, 'name');
@@ -517,6 +563,7 @@ begin
        end;
      end;
 <<<<<<< HEAD
+<<<<<<< HEAD
   end
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -525,6 +572,9 @@ begin
 =======
   //end
 >>>>>>> origin/fixes_2.4
+=======
+  //end
+>>>>>>> origin/cpstrnew
 end;
 
 procedure TChmSiteMap.FoundText(AText: string);
@@ -609,6 +659,9 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 procedure TChmSiteMap.SaveToFile(AFileName:String);
 var
   fs : TFileStream;
@@ -620,6 +673,7 @@ begin
     fs.free;
     end;
 end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -641,6 +695,9 @@ end;
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+                    
+>>>>>>> origin/cpstrnew
 procedure TChmSiteMap.SaveToStream(AStream: TStream);
 var
   Indent: Integer;
@@ -791,6 +848,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   FInternalData := maxLongint;
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -799,6 +857,9 @@ begin
 =======
   FInternalData := maxLongint;
 >>>>>>> origin/fixes_2.4
+=======
+  FInternalData := maxLongint;
+>>>>>>> origin/cpstrnew
 end;
 
 destructor TChmSiteMapItems.Destroy;

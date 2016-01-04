@@ -148,8 +148,11 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 procedure TDatabase.SetParams(AValue: TStrings);
 begin
   if AValue<>nil then
@@ -157,12 +160,15 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 Function TDatabase.GetDataSetCount : Longint;
 
 begin
@@ -671,7 +677,6 @@ end;
 >>>>>>> origin/fixes_2_2
 procedure TCustomConnection.SetAfterConnect(const AValue: TNotifyEvent);
 begin
-  if FAfterConnect=AValue then exit;
   FAfterConnect:=AValue;
 end;
 
@@ -714,13 +719,17 @@ begin
 =======
 procedure TCustomConnection.SetAfterDisconnect(const AValue: TNotifyEvent);
 begin
+<<<<<<< HEAD
   if FAfterDisconnect=AValue then exit;
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
   FAfterDisconnect:=AValue;
 end;
 
 procedure TCustomConnection.SetBeforeConnect(const AValue: TNotifyEvent);
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   FBeforeConnect:=AValue;
@@ -754,6 +763,8 @@ procedure TCustomConnection.SetConnected(Value: boolean);
 =======
 >>>>>>> origin/fixes_2_2
   if FBeforeConnect=AValue then exit;
+=======
+>>>>>>> origin/cpstrnew
   FBeforeConnect:=AValue;
 end;
 
@@ -843,7 +854,6 @@ begin
 >>>>>>> origin/fixes_2_2
 procedure TCustomConnection.SetBeforeDisconnect(const AValue: TNotifyEvent);
 begin
-  if FBeforeDisconnect=AValue then exit;
   FBeforeDisconnect:=AValue;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2

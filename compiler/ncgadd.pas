@@ -93,6 +93,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         pushedfpu  : boolean;
 {$endif x86 and not llvm}
 =======
@@ -100,6 +101,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$ifdef x86}
@@ -133,11 +136,14 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         { are too few registers free? }
@@ -148,6 +154,7 @@ interface
             hlcg.location_force_mem(current_asmdata.CurrAsmList,left.location,left.resultdef);
             pushedfpu:=true;
           end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -165,6 +172,9 @@ interface
 =======
 {$endif x86}
 >>>>>>> origin/cpstrnew
+=======
+{$endif x86}
+>>>>>>> origin/cpstrnew
 
         secondpass(right);
         if right.location.loc in [LOC_FLAGS,LOC_JUMP] then
@@ -179,6 +189,7 @@ interface
             current_procinfo.CurrFalseLabel:=ofl;
           end;
 {$ifdef x86}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -236,23 +247,27 @@ interface
 =======
 {$ifdef x86}
             if use_sse(left.resultdef) then
+=======
+        if pushedfpu then
+          begin
+            if use_vectorfpu(left.resultdef) then
+>>>>>>> origin/cpstrnew
               begin
                 tmpreg := cg.getmmregister(current_asmdata.CurrAsmList,left.location.size);
                 cg.a_loadmm_loc_reg(current_asmdata.CurrAsmList,left.location.size,left.location,tmpreg,mms_movescalar);
                 location_reset(left.location,LOC_MMREGISTER,left.location.size);
-                left.location.register := tmpreg;
+                left.location.register:=tmpreg;
               end
             else
-{$endif x86}
               begin
                 tmpreg := cg.getfpuregister(current_asmdata.CurrAsmList,left.location.size);
                 cg.a_loadfpu_loc_reg(current_asmdata.CurrAsmList,left.location.size,left.location,tmpreg);
                 location_reset(left.location,LOC_FPUREGISTER,left.location.size);
                 left.location.register := tmpreg;
-{$ifdef x86}
                 { left operand is now on top of the stack, instead of the right one! }
                 if (right.location.loc=LOC_FPUREGISTER) then
                   toggleflag(nf_swapped);
+<<<<<<< HEAD
 {$endif x86}
 >>>>>>> origin/fixes_2_2
               end;
@@ -272,6 +287,11 @@ interface
 {$endif x86}
 >>>>>>> graemeg/cpstrnew
 =======
+{$endif x86}
+>>>>>>> origin/cpstrnew
+=======
+              end;
+          end;
 {$endif x86}
 >>>>>>> origin/cpstrnew
       end;
@@ -382,6 +402,7 @@ interface
       var
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -393,6 +414,8 @@ interface
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
         cgop    : TOpCg;
         opdone  : boolean;
       begin
@@ -490,6 +513,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   { make sure that location.register is different from
                     left.location.register, since right will overwrite it
                     and we'll use left afterwards }
@@ -527,6 +551,15 @@ interface
 =======
 >>>>>>> graemeg/cpstrnew
 =======
+>>>>>>> origin/cpstrnew
+=======
+                  { make sure we don't modify left/right.location, because we told
+                    force_reg_left_right above that they can be constant }
+                  cg.a_op_reg_reg(current_asmdata.CurrAsmList,OP_NOT,location.size,right.location.register,location.register);
+                  if left.location.loc = LOC_CONSTANT then
+                    cg.a_op_const_reg(current_asmdata.CurrAsmList,OP_AND,location.size,left.location.value,location.register)
+                  else
+                    cg.a_op_reg_reg(current_asmdata.CurrAsmList,OP_AND,location.size,left.location.register,location.register);
 >>>>>>> origin/cpstrnew
                 end;
             end;

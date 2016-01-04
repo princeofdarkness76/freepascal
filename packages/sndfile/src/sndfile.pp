@@ -265,11 +265,15 @@ type
                samplerate : ctypes.cint;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                channels   : ctypes.cint;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+               channels   : ctypes.cint;
+>>>>>>> origin/cpstrnew
                format     : ctypes.cint;
                sections   : ctypes.cint;
                seekable   : ctypes.cint;
@@ -434,6 +438,7 @@ type
 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function sf_open (path : pChar; mode : ctypes.cint; sfinfo : PSF_INFO) : PSNDFILE; cdecl;
 =======
 function sf_open (path : ctypes.pcchar; mode : ctypes.cint; sfinfo : PSF_INFO) : PSNDFILE; cdecl;
@@ -441,6 +446,9 @@ function sf_open (path : ctypes.pcchar; mode : ctypes.cint; sfinfo : PSF_INFO) :
 =======
 function sf_open (path : ctypes.pcchar; mode : ctypes.cint; sfinfo : PSF_INFO) : PSNDFILE; cdecl;
 >>>>>>> origin/fixes_2_2
+=======
+function sf_open (path : pChar; mode : ctypes.cint; sfinfo : PSF_INFO) : PSNDFILE; cdecl;
+>>>>>>> origin/cpstrnew
   external sndfilelib  name 'sf_open';
 
 {

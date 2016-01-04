@@ -98,6 +98,7 @@ unit rgcpu;
               begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 hreg:=getregisterinline(helplist,[R_SUBWHOLE]);
 =======
                 hreg:=getregisterinline(helplist,R_SUBWHOLE);
@@ -105,6 +106,9 @@ unit rgcpu;
 =======
                 hreg:=getregisterinline(helplist,R_SUBWHOLE);
 >>>>>>> origin/fixes_2_2
+=======
+                hreg:=getregisterinline(helplist,[R_SUBWHOLE]);
+>>>>>>> origin/cpstrnew
                 {Done by add_cpu_interferences now.
                 add_edge(getsupreg(hreg),RS_R0);}
               end
@@ -179,6 +183,7 @@ unit rgcpu;
               begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 hreg:=getregisterinline(helplist,[R_SUBWHOLE]);
 =======
                 hreg:=getregisterinline(helplist,R_SUBWHOLE);
@@ -186,6 +191,9 @@ unit rgcpu;
 =======
                 hreg:=getregisterinline(helplist,R_SUBWHOLE);
 >>>>>>> origin/fixes_2_2
+=======
+                hreg:=getregisterinline(helplist,[R_SUBWHOLE]);
+>>>>>>> origin/cpstrnew
                 {Done by add_cpu_interferences now.
                 add_edge(getsupreg(hreg),RS_R0);}
               end

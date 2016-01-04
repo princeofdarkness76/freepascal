@@ -18,6 +18,7 @@ name=winunits-base
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 version=3.1.1
 
 [require]
@@ -29,20 +30,26 @@ packages=rtl fpmkunit
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 version=2.5.1
 
 [require]
 packages=fcl-registry fcl-base
+<<<<<<< HEAD
 =======
 version=2.2.5
 >>>>>>> graemeg/fixes_2_2
 =======
 version=2.2.5
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 
 [target]
 units=buildwinutilsbase
 implicitunits=flatsb winver mmsystem comobj comconst commdlg commctrl ole2 activex shellapi shlobj oleserver \
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -56,6 +63,9 @@ implicitunits=flatsb winver mmsystem comobj comconst commdlg commctrl ole2 activ
 =======
                shfolder richedit imagehlp wininet uxtheme dwmapi multimon htmlhelp winutils
 >>>>>>> origin/fixes_2.4
+=======
+	shfolder richedit imagehlp wininet uxtheme dwmapi multimon htmlhelp winutils comserv winspool imm imm_dyn nb30
+>>>>>>> origin/cpstrnew
 
 examples=examples
 

@@ -52,6 +52,7 @@ _start:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 #       movq    %rdx,%r9                 /* Address of the shared library termination
 #               	                 function.  */
@@ -64,6 +65,10 @@ _start:
 #       movq    %rdx,%r9                 /* Address of the shared library termination
 #               	                 function.  */
 >>>>>>> graemeg/cpstrnew
+=======
+#       movq    %rdx,%r9                 /* Address of the shared library termination
+#               	                 function.  */
+>>>>>>> origin/cpstrnew
 =======
 #       movq    %rdx,%r9                 /* Address of the shared library termination
 #               	                 function.  */
@@ -94,6 +99,7 @@ _haltproc:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         movq    __dl_fini@GOTPCREL(%rip),%rax
         movq    (%rax),%rax
         testq   %rax,%rax
@@ -107,6 +113,8 @@ _haltproc:
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
         movq 	operatingsystem_result@GOTPCREL(%rip),%rax

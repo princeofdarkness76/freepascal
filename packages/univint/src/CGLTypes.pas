@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	Copyright:	(c) 1999-2008 Apple Inc. All rights reserved.
 }
 
@@ -22,6 +23,9 @@
 =======
 	Copyright:	(c) 1999-2008 Apple Inc. All rights reserved.
 >>>>>>> origin/fixes_2.4
+=======
+	Copyright:	(c) 1999-2008 Apple Inc. All rights reserved.
+>>>>>>> origin/cpstrnew
 }
 
 {	 Pascal Translation:  Gale R Paeper, <gpaeper@empirenet.com>, 2008 }
@@ -35,12 +39,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -52,6 +60,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -66,6 +75,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -81,6 +94,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -91,6 +105,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -98,13 +115,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -112,6 +133,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -120,8 +143,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -132,6 +158,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -152,6 +179,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -160,12 +189,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -173,6 +205,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -413,12 +446,25 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 	{$setc TARGET_CPU_PPC64 := FALSE}
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+>>>>>>> origin/cpstrnew
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
@@ -429,6 +475,8 @@ interface
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -463,6 +511,7 @@ interface
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 {$endc}
@@ -480,6 +529,17 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -508,6 +568,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -516,6 +577,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -529,13 +592,17 @@ uses MacTypes;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$endc} {not MACOSALLINCLUDE}
 
 
 {$ifc TARGET_OS_MAC}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -543,6 +610,8 @@ uses MacTypes;
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ALIGN POWER}
 
 {
@@ -552,8 +621,11 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	_CGLContextObject = Record end;
 	CGLContextObj = ^_CGLContextObject;
 	PCGLContextObj = ^CGLContextObj;
@@ -569,6 +641,7 @@ type
 	_CGLPBufferObject = Record end;
 	CGLPBufferObj = ^_CGLPBufferObject;
 	PCGLPBufferObj = ^CGLPBufferObj;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 { Test with gcc shows that sizeof all enumerations (constants in Pascal) = 4 in 32 and 64 bit }
@@ -636,6 +709,8 @@ const
 	CGLPBufferObj      = ^SInt32; { an opaque 32-bit type }
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 { Test with gcc shows that sizeof all enumerations (constants in Pascal) = 4 in 32 and 64 bit }
 {
@@ -648,6 +723,7 @@ type
 	PCGLPixelFormatAttribute = ^CGLPixelFormatAttribute;
 	
 const
+<<<<<<< HEAD
 <<<<<<< HEAD
 	kCGLPFAAllRenderers       = 1;	{ choose from all available renderers          }
 	kCGLPFADoubleBuffer       = 5;	{ choose a double buffered pixel format        }
@@ -690,6 +766,8 @@ const
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 	kCGLPFAAllRenderers       =   1;	{ choose from all available renderers          }
 	kCGLPFADoubleBuffer       =   5;	{ choose a double buffered pixel format        }
 	kCGLPFAStereo             =   6;	{ stereo buffering supported                   }
@@ -735,7 +813,10 @@ const
 	kCGLPFARobust             =  75;	{ renderer does not need failure recovery      }
 	kCGLPFAMPSafe             =  78;	{ renderer is multi-processor safe             }
 	kCGLPFAMultiScreen        =  81;	{ single window can span multiple screens      }
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {
 ** Property names for CGLDescribeRenderer.
@@ -743,13 +824,17 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 { CGLRendererProperty }
 type
 	CGLRendererProperty = SInt32;
 	PCGLRendererProperty = ^CGLRendererProperty;
 	
+<<<<<<< HEAD
 <<<<<<< HEAD
 const
 	kCGLRPOffScreen           =  53;
@@ -784,6 +869,9 @@ const
 >>>>>>> origin/fixes_2_2
 =======
 const
+=======
+const
+>>>>>>> origin/cpstrnew
 	kCGLRPOffScreen           =  53;
 	kCGLRPFullScreen          =  54;
 	kCGLRPRendererID          =  70;
@@ -795,7 +883,10 @@ const
 	kCGLRPMultiScreen         =  81;
 	kCGLRPCompliant           =  83;
 	kCGLRPDisplayMask         =  84;
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	kCGLRPBufferModes         = 100;	{ a bitfield of supported buffer modes          }
 	kCGLRPColorModes          = 103;	{ a bitfield of supported color buffer formats  }
 	kCGLRPAccumModes          = 104;	{ a bitfield of supported accum buffer formats  }
@@ -813,6 +904,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kCGLRPRendererCount       = 128;	{ the number of renderers in this renderer info }
 	kCGLRPOnline              = 129;	{ a boolean stating if renderer is on/offline   }
 	kCGLRPAcceleratedCompute  = 130;	{ hardware accelerated compute device           }
@@ -827,6 +919,11 @@ const
 	kCGLRPOnline              = 129;	{ a boolean stating if renderer is on/offline   }
 	kCGLRPAcceleratedCompute  = 130;	{ hardware accelerated compute device           }
 >>>>>>> origin/fixes_2.4
+=======
+	kCGLRPRendererCount       = 128;	{ the number of renderers in this renderer info }
+	kCGLRPOnline              = 129;	{ a boolean stating if renderer is on/offline   }
+	kCGLRPAcceleratedCompute  = 130;	{ hardware accelerated compute device           }
+>>>>>>> origin/cpstrnew
 
 {
 ** Enable names for CGLEnable, CGLDisable, and CGLIsEnabled.
@@ -834,13 +931,17 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 type
 	CGLContextEnable = SInt32;
 	PCGLContextEnable = ^CGLContextEnable;
 	
 { CGLContextEnable }
+<<<<<<< HEAD
 <<<<<<< HEAD
 const
 	kCGLCESwapRectangle    = 201;	{ Enable or disable the swap rectangle          }
@@ -855,6 +956,8 @@ const
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 const
 	kCGLCESwapRectangle    = 201;	{ Enable or disable the swap rectangle          }
 	kCGLCESwapLimit        = 203;	{ Enable or disable the swap async limit        }
@@ -862,6 +965,7 @@ const
 	kCGLCEStateValidation  = 301;	{ Validate state for multi-screen functionality }
 	kCGLCESurfaceBackingSize = 305;  { Enable or disable surface backing size override }
 	kCGLCEDisplayListOptimization = 307;  { Ability to turn off display list optimizer }
+<<<<<<< HEAD
 <<<<<<< HEAD
 	kCGLCEMPEngine            = 313;    { Enable or disable multi-threaded GL engine    }
 <<<<<<< HEAD
@@ -871,6 +975,9 @@ const
 =======
 	kCGLCEMPEngine         = 313; 	{ Enable or disable multi-threaded GL engine    }
 >>>>>>> origin/fixes_2.4
+=======
+	kCGLCEMPEngine         = 313; 	{ Enable or disable multi-threaded GL engine    }
+>>>>>>> origin/cpstrnew
 
 {
 ** Parameter names for CGLSetParameter and CGLGetParameter.
@@ -878,14 +985,20 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 type
 	CGLContextParameter = SInt32;
 	PCGLContextParameter = ^CGLContextParameter;
 	
 { CGLContextParameter }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 const
 	kCGLCPSwapRectangle          = 200; { 4 params.  Set or get the swap rectangle (x, y, w, h)        }
 	kCGLCPSwapInterval           = 222; { 1 param.   0 -> Don't sync, 1 -> Sync to vertical retrace    }
@@ -893,6 +1006,7 @@ const
 	{ Note: kCGLCPClientStorage is always a pointer-sized parameter, even though the API claims GLint. }
 	kCGLCPClientStorage          = 226; { 1 param.   Context specific generic storage                  }
 	kCGLCPSurfaceTexture         = 228; { 3 params.  SID, target, internal_format                      }
+<<<<<<< HEAD
 {  - Used by AGL - }
 {  AGL_STATE_VALIDATION           230 }
 {  AGL_BUFFER_NAME                231 }
@@ -949,6 +1063,17 @@ const
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+{  - Used by AGL - }
+{  AGL_STATE_VALIDATION           230 }
+{  AGL_BUFFER_NAME                231 }
+{  AGL_ORDER_CONTEXT_TO_FRONT     232 }
+{  AGL_CONTEXT_SURFACE_ID         233 }
+{  AGL_CONTEXT_DISPLAY_ID         234 }
+	kCGLCPSurfaceOrder           = 235; { 1 param.   1 -> Above window, -1 -> Below Window             }
+	kCGLCPSurfaceOpacity         = 236; { 1 param.   1 -> Surface is opaque (default), 0 -> non-opaque }
+{  - Used by AGL - }
+>>>>>>> origin/cpstrnew
 {  AGL_CLIP_REGION                254 }
 {  AGL_FS_CAPTURE_SINGLE          255 }
 	kCGLCPSurfaceBackingSize     = 304; { 2 params.  Width/height of surface backing size              }
@@ -960,7 +1085,10 @@ const
 	kCGLCPGPUFragmentProcessing  = 311; { 1 param.   Currently processing fragments with GPU (get)     }
 	kCGLCPHasDrawable			 = 314; { 1 param.   Boolean returned if drawable is attached			}
 	kCGLCPMPSwapsInFlight		 = 315; { 1 param.   Max number of swaps queued by the MP GL engine	}
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {
 ** Option names for CGLSetOption and CGLGetOption.
@@ -968,13 +1096,17 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 type
 	CGLGlobalOption = SInt32;
 	PCGLGlobalOption = ^CGLGlobalOption;
 	
 { CGLGlobalOption }
+<<<<<<< HEAD
 <<<<<<< HEAD
 const
 	kCGLGOFormatCacheSize  = 501;	{ Set the size of the pixel format cache        }
@@ -1001,6 +1133,9 @@ const
 >>>>>>> origin/fixes_2_2
 =======
 const
+=======
+const
+>>>>>>> origin/cpstrnew
 	kCGLGOFormatCacheSize  = 501;	{ Set the size of the pixel format cache        }
 	kCGLGOClearFormatCache = 502;	{ Reset the pixel format cache if true          }
 	kCGLGORetainRenderers  = 503;	{ Whether to retain loaded renderers in memory  }
@@ -1009,7 +1144,10 @@ const
 	kCGLGOUseErrorHandler  = 505;	{ Call the Core Graphics handler on CGL errors  }
 	kCGLGOUseBuildCache    = 506;	{ Enable the function compilation block cache.  }
 	                                { Off by default.  Must be enabled at startup.  }
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {
 ** Error return values from CGLGetError.
@@ -1017,13 +1155,17 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 type
 	CGLError	= SInt32; { in case there will be negative errors in the future }
 	PCGLError = ^CGLError;
 	
 { CGLError }
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -1031,6 +1173,8 @@ type
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 const
 	kCGLNoError               = 0;      { no error }
 	kCGLBadAttribute          = 10000;	{ invalid pixel format attribute  }
@@ -1123,6 +1267,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {TARGET_OS_MAC}
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
@@ -1135,9 +1280,14 @@ end.
 end.
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 {$endc} {TARGET_OS_MAC}
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
 {$endc} {not MACOSALLINCLUDE}
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew

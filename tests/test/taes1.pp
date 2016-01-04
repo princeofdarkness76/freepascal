@@ -42,6 +42,7 @@ Procedure OpenKey_AES(Key: PAESKey256; OpenedKey: PAESOpenedKey); Assembler; NoS
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    MOVDQU XMM4, [RDX]; AESKEYGENASSIST XMM4, XMM4, 0
 =======
    MOVDQU XMM4, [RDX]; AESKEYGEN XMM4, XMM4, 0
@@ -52,6 +53,9 @@ Procedure OpenKey_AES(Key: PAESKey256; OpenedKey: PAESOpenedKey); Assembler; NoS
 =======
    MOVDQU XMM4, [RDX]; AESKEYGEN XMM4, XMM4, 0
 >>>>>>> graemeg/cpstrnew
+=======
+   MOVDQU XMM4, [RDX]; AESKEYGEN XMM4, XMM4, 0
+>>>>>>> origin/cpstrnew
 =======
    MOVDQU XMM4, [RDX]; AESKEYGEN XMM4, XMM4, 0
 >>>>>>> origin/cpstrnew
@@ -76,6 +80,7 @@ Asm
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  AESKEYGENASSIST XMM2, XMM3, $1;  CALL key_expansion
  AESKEYGENASSIST XMM2, XMM3, $2;  CALL key_expansion
  AESKEYGENASSIST XMM2, XMM3, $4;  CALL key_expansion
@@ -90,6 +95,8 @@ Asm
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
  AESKEYGEN XMM2, XMM3, $1;  CALL key_expansion
  AESKEYGEN XMM2, XMM3, $2;  CALL key_expansion
  AESKEYGEN XMM2, XMM3, $4;  CALL key_expansion
@@ -100,11 +107,14 @@ Asm
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
  MOVDQU XMM0,  [R8+$00]; MOVDQU XMM1,  [R8+$10]; MOVDQU XMM2,  [R8+$20]; MOVDQU XMM3,  [R8+$30]

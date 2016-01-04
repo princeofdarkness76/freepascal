@@ -107,6 +107,7 @@ Const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                   cs_opt_tailrecursion,cs_opt_nodecse,
                                   cs_opt_reorder_fields,cs_opt_fastmath];
 =======
@@ -118,6 +119,9 @@ Const
 =======
 								  cs_opt_tailrecursion,cs_opt_nodecse];
 >>>>>>> graemeg/cpstrnew
+=======
+								  cs_opt_tailrecursion,cs_opt_nodecse];
+>>>>>>> origin/cpstrnew
 =======
 								  cs_opt_tailrecursion,cs_opt_nodecse];
 >>>>>>> origin/cpstrnew

@@ -19,6 +19,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  * created from; OpenBSD: syscalls.master,v 1.104 2010/10/28 15:02:41 millert Exp
  *  (OpenBSD/i386 4.9 release)
 
@@ -36,6 +37,10 @@
  * created from; OpenBSD: syscalls.master,v 1.104 2010/10/28 15:02:41 millert Exp 
  *  (OpenBSD/i386 4.9 release)
 >>>>>>> graemeg/cpstrnew
+=======
+ * created from; OpenBSD: syscalls.master,v 1.104 2010/10/28 15:02:41 millert Exp 
+ *  (OpenBSD/i386 4.9 release)
+>>>>>>> origin/cpstrnew
 =======
  * created from; OpenBSD: syscalls.master,v 1.104 2010/10/28 15:02:41 millert Exp 
  *  (OpenBSD/i386 4.9 release)
@@ -599,10 +604,13 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew

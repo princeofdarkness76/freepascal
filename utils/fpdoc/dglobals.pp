@@ -27,6 +27,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 uses Classes, DOM, PasTree, PParser, StrUtils,uriparser;
 
 Const
@@ -44,10 +45,14 @@ uses Classes, DOM, PasTree, PParser, StrUtils;
 =======
 uses Classes, DOM, PasTree, PParser, StrUtils;
 >>>>>>> origin/cpstrnew
+=======
+uses Classes, DOM, PasTree, PParser, StrUtils;
+>>>>>>> origin/cpstrnew
 
 Var
   LEOL : Integer;
   modir : string;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -57,6 +62,9 @@ Var
 =======
   
 >>>>>>> origin/fixes_2_2
+=======
+
+>>>>>>> origin/cpstrnew
 resourcestring
   // Output strings
   SDocPackageTitle           = 'Reference for package ''%s''';
@@ -104,6 +112,7 @@ resourcestring
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   SDocInterface              = 'Interfaces';
 =======
 >>>>>>> graemeg/cpstrnew
@@ -111,6 +120,8 @@ resourcestring
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   SDocPage                   = 'Page';
@@ -186,6 +197,7 @@ resourcestring
   SCHMUsageMakeSearch = 'Automatically generate a Search Index from filenames that match *.htm*';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   SCHMUsageChmTitle= 'Title of the chm. Defaults to the value from --package';
 
 <<<<<<< HEAD
@@ -209,6 +221,13 @@ resourcestring
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  SCHMUsageChmTitle= 'Title of the chm. Defaults to the value from --package';
+
+  // Linear usage
+  SLinearUsageDupLinkedDocsP1 = 'Duplicate linked element documentation in';
+  SLinearUsageDupLinkedDocsP2 = 'descendant classes.';
+>>>>>>> origin/cpstrnew
 
   STitle           = 'FPDoc - Free Pascal Documentation Tool';
   SVersion         = 'Version %s [%s]';
@@ -270,6 +289,7 @@ resourcestring
   SUsageOption180  = '--mo-dir=dir      Set directory where language files reside to dir';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   SUsageOption190  = '--parse-impl      (Experimental) try to parse implementation too';
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -287,6 +307,9 @@ resourcestring
 =======
   
 >>>>>>> origin/fixes_2_2
+=======
+  SUsageOption190  = '--parse-impl      (Experimental) try to parse implementation too';
+>>>>>>> origin/cpstrnew
   SUsageFormats        = 'The following output formats are supported by this fpdoc:';
   SUsageBackendHelp    = 'Specify an output format, combined with --help to get more help for this backend.';
   SUsageFormatSpecific = 'Output format "%s" supports the following options:';
@@ -305,6 +328,7 @@ resourcestring
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   SParsingUsedUnit            = 'Parsing used unit "%s" with commandLine "%s"';
 =======
 >>>>>>> graemeg/cpstrnew
@@ -312,6 +336,8 @@ resourcestring
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -388,11 +414,15 @@ type
     FRefCount : Integer;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FVersion: TDomElement;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    FVersion: TDomElement;
+>>>>>>> origin/cpstrnew
   public
     constructor Create(const AName: String; ANode: TDOMElement);
     destructor Destroy; override;
@@ -769,12 +799,15 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   FPackages := TFPList.Create;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   FPackages := TList.Create;
@@ -874,6 +907,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   function ResolvePackageModule(AName:String;out pkg:TPasPackage;out module:TPasModule;createnew:boolean):String;
 =======
   function ResolvePackageModule(AName:String;var pkg:TPasPackage;var module:TPasModule;createnew:boolean):String;
@@ -884,6 +918,9 @@ var
 =======
   function ResolvePackageModule(AName:String;var pkg:TPasPackage;var module:TPasModule;createnew:boolean):String;
 >>>>>>> graemeg/cpstrnew
+=======
+  function ResolvePackageModule(AName:String;var pkg:TPasPackage;var module:TPasModule;createnew:boolean):String;
+>>>>>>> origin/cpstrnew
 =======
   function ResolvePackageModule(AName:String;var pkg:TPasPackage;var module:TPasModule;createnew:boolean):String;
 >>>>>>> origin/cpstrnew
@@ -935,6 +972,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         Module := TPasExternalModule.Create(s, HPackage);
 =======
         Module := TPasModule.Create(s, HPackage);
@@ -948,6 +986,9 @@ var
 =======
         Module := TPasModule.Create(s, HPackage);
 >>>>>>> origin/cpstrnew
+=======
+        Module := TPasModule.Create(s, HPackage);
+>>>>>>> origin/cpstrnew
         Module.InterfaceSection := TInterfaceSection.Create('', Module);
         HPackage.Modules.Add(Module);
       end;
@@ -955,6 +996,7 @@ var
      result:=Copy(AName, DotPos2 + 1, length(AName)-dotpos2);
   end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -972,6 +1014,9 @@ var
 =======
   function SearchInList(clslist:TList;s:string):TPasElement;
 >>>>>>> origin/cpstrnew
+=======
+  function SearchInList(clslist:TList;s:string):TPasElement;
+>>>>>>> origin/cpstrnew
   var i : integer;
       ClassEl: TPasElement;
   begin
@@ -983,6 +1028,7 @@ var
           exit(Classel); 
       end;
   end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1157,6 +1203,50 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+
+  function ResolveClassType(AName:String):TPasClassType;
+  var 
+     pkg     : TPasPackage;
+     module  : TPasModule;
+     s       : string; 
+  begin
+    Result:=nil;
+    s:=ResolvePackageModule(AName,pkg,module,False);
+    if not assigned(module) then
+      exit;
+    result:=TPasClassType(SearchInList(Module.InterfaceSection.Classes,s));
+  end;
+
+  function ResolveAliasType(AName:String):TPasAliasType;
+  var 
+     pkg     : TPasPackage;
+     module  : TPasModule;
+     s       : string; 
+  begin
+    Result:=nil;
+    s:=ResolvePackageModule(AName,pkg,module,False);
+    if not assigned(module) then
+      exit;
+    result:=TPasAliasType(SearchInList(Module.InterfaceSection.Types,s));
+    if not (result is TPasAliasType) then
+      result:=nil;
+  end;
+
+  procedure ReadClasses;
+
+    function CreateClass(const AName: String;InheritanceStr:String): TPasClassType;
+    var
+      DotPos, DotPos2, i,j: Integer;
+      s: String;
+      HPackage: TPasPackage;
+      Module: TPasModule;
+
+    begin
+      s:= ResolvePackageModule(AName,HPackage,Module,True);
+      // Create node for class
+      Result := TPasClassType.Create(s, Module.InterfaceSection);
+>>>>>>> origin/cpstrnew
       Result.ObjKind := okClass;
       Module.InterfaceSection.Declarations.Add(Result);
       Module.InterfaceSection.Classes.Add(Result);
@@ -1204,6 +1294,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          DoLog('Warning : ancestor class %s of class %s could not be resolved',[clname,cls.name]);
 =======
          writeln(cls.name,'''s dependency '  ,clname,' could not be resolved');
@@ -1214,6 +1305,9 @@ var
 =======
          writeln(cls.name,'''s dependency '  ,clname,' could not be resolved');
 >>>>>>> graemeg/cpstrnew
+=======
+         writeln(cls.name,'''s dependency '  ,clname,' could not be resolved');
+>>>>>>> origin/cpstrnew
 =======
          writeln(cls.name,'''s dependency '  ,clname,' could not be resolved');
 >>>>>>> origin/cpstrnew
@@ -1240,6 +1334,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 //            writeln('found alias ',clname,' (',s,') ',result.classname);  
           end
         else
@@ -1252,6 +1347,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
             writeln('found alias ',clname,' (',s,') ',result.classname);  
           end
         else
@@ -1260,11 +1357,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
             cl2.addref;
@@ -1306,6 +1406,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                       DoLog('Warning: creating alias %s for %s failed!',[alname,clname]);
 =======
                       writeln('creating alias failed!');
@@ -1316,6 +1417,9 @@ end;
 =======
                       writeln('creating alias failed!');
 >>>>>>> graemeg/cpstrnew
+=======
+                      writeln('creating alias failed!');
+>>>>>>> origin/cpstrnew
 =======
                       writeln('creating alias failed!');
 >>>>>>> origin/cpstrnew
@@ -1736,11 +1840,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -1766,6 +1873,7 @@ begin
     end;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1797,6 +1905,9 @@ begin
 =======
     if not CanWeExit(Result) then
 >>>>>>> graemeg/cpstrnew
+=======
+    if not CanWeExit(Result) then
+>>>>>>> origin/cpstrnew
 =======
     if not CanWeExit(Result) then
 >>>>>>> origin/cpstrnew

@@ -5533,6 +5533,7 @@ type
      end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      RILSUPSERVICEDATA = rilsupservicedata_tag;
      LPRILSUPSERVICEDATA = ^rilsupservicedata_tag;
 =======
@@ -5543,6 +5544,10 @@ type
      RILSUPSERVICEDATA = rilmsgstorageinfo_tag;
      LPRILSUPSERVICEDATA = ^rilmsgstorageinfo_tag;
 >>>>>>> origin/fixes_2_2
+=======
+     RILSUPSERVICEDATA = rilsupservicedata_tag;
+     LPRILSUPSERVICEDATA = ^rilsupservicedata_tag;
+>>>>>>> origin/cpstrnew
 //#pragma warning(default : 4200)
 
 // -----------------------------------------------------------------------------

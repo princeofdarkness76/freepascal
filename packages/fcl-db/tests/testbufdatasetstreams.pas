@@ -37,6 +37,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure NullInsertChange(ADataset: TCustomBufDataset);
     procedure NullEditChange(ADataset: TCustomBufDataset);
     procedure AppendDeleteChange(ADataset: TCustomBufDataset);
@@ -49,6 +50,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   protected
@@ -102,12 +105,15 @@ type
   end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 implementation
@@ -215,6 +221,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TTestBufDatasetStreams.TestChangesXML(AUpdDatasetProc: TUpdDatasetProc);
 begin
   TestChanges(AUpdDatasetProc, dfXML);
@@ -229,6 +236,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 procedure TTestBufDatasetStreams.SimpleEditChange(ADataset: TCustomBufDataset);
@@ -479,7 +488,10 @@ begin
 
   LoadDs := TCustomBufDataset.Create(nil);
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   LoadDs.LoadFromFile('Basics.xml');
@@ -726,6 +738,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   TCustomBufDataset(ds).FileName:=TestBINFileName;
   ds.close;
 
@@ -767,13 +780,18 @@ begin
 =======
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   TCustomBufDataset(ds).FileName:='test.dat';
   ds.close;
 
   LoadDs := DBConnector.GetNDataset(True,2);
   TCustomBufDataset(LoadDs).FileName:='test.dat';
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   LoadDs.Open;
@@ -849,6 +867,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TTestBufDatasetStreams.NullInsertUpdateApplUpd;
 begin
   TestChangesApplyUpdates(@NullInsertChange, True);
@@ -873,6 +892,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 initialization

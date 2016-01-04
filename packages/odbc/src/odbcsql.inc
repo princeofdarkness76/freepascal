@@ -98,6 +98,14 @@
 =======
 >>>>>>> origin/fixes_2_2
 
+{$ifndef DYNLOADINGODBC}
+{$IFDEF WINDOWS}
+  {$linklib odbc32}
+{$ELSE}
+  {$linklib odbc}
+{$endif} 
+{$endif}
+
 interface
 
 uses
@@ -2048,11 +2056,15 @@ Procedure InitialiseODBC(OverrideName : string ='');
 
 
 {$IFDEF DYNLOADINGODBC}
+<<<<<<< HEAD
 Procedure InitialiseODBC;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+Procedure InitialiseODBC(OverrideName : string ='');
+>>>>>>> origin/cpstrnew
 Procedure ReleaseODBC;
 
 var ODBCLibraryHandle : TLibHandle;
@@ -2066,6 +2078,7 @@ var RefCount : integer;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure InitialiseODBC(OverrideName : string ='');
 
 var libname : string;
@@ -2075,11 +2088,17 @@ Procedure InitialiseODBC;
 =======
 Procedure InitialiseODBC;
 >>>>>>> origin/fixes_2_2
+=======
+Procedure InitialiseODBC(OverrideName : string ='');
+
+var libname : string;
+>>>>>>> origin/cpstrnew
 
 begin
   inc(RefCount);
   if RefCount = 1 then
     begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2099,16 +2118,22 @@ begin
 =======
     if OverrideName='' then 
 >>>>>>> origin/cpstrnew
+=======
+    if OverrideName='' then 
+>>>>>>> origin/cpstrnew
        libname:=odbclib
      else
        libname:=OverrideName;
     ODBCLibraryHandle := loadlibrary(libname);
+<<<<<<< HEAD
 =======
     ODBCLibraryHandle := loadlibrary(odbclib);
 >>>>>>> graemeg/fixes_2_2
 =======
     ODBCLibraryHandle := loadlibrary(odbclib);
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
     if ODBCLibraryHandle = nilhandle then
       begin
       RefCount := 0;
@@ -2299,10 +2324,14 @@ begin
   With B^ do
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
     begin
       // TryEncodeTime can not be used, because it doesn't supports times with more then 24 hours.
       Result:=TDateTime(cardinal(Hour)*3600000+cardinal(Minute)*60000+cardinal(Second)*1000)/MSecsPerDay;
     end;
+<<<<<<< HEAD
 end;
 
 function DateTimeToTimeStruct(b: TDateTime) : SQL_TIME_STRUCT;
@@ -2336,6 +2365,8 @@ end;
 =======
 >>>>>>> origin/fixes_2_2
     Result:=EncodeTime(Hour,Minute,Second,0);
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 

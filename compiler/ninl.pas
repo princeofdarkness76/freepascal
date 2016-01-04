@@ -42,6 +42,7 @@ interface
           function pass_typecheck:tnode;override;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           function simplify(forinline : boolean): tnode;override;
 =======
           function simplify: tnode;override;
@@ -49,6 +50,9 @@ interface
 =======
           function simplify: tnode;override;
 >>>>>>> origin/fixes_2_2
+=======
+          function simplify(forinline : boolean): tnode;override;
+>>>>>>> origin/cpstrnew
           function docompare(p: tnode): boolean; override;
 
           { pack and unpack are changed into for-loops by the compiler }
@@ -124,9 +128,13 @@ implementation
       pass_1,
       ncal,ncon,ncnv,nadd,nld,nbas,nflw,nmem,nmat,nutils,
 <<<<<<< HEAD
+<<<<<<< HEAD
       nobjc,objcdef,
 =======
 >>>>>>> origin/fixes_2.4
+=======
+      nobjc,objcdef,
+>>>>>>> origin/cpstrnew
       cgbase,procinfo
       ;
 
@@ -577,6 +585,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if m_isolike_io in current_settings.modeswitches then
 =======
         if m_iso in current_settings.modeswitches then
@@ -587,6 +596,9 @@ implementation
 =======
         if m_iso in current_settings.modeswitches then
 >>>>>>> graemeg/cpstrnew
+=======
+        if m_iso in current_settings.modeswitches then
+>>>>>>> origin/cpstrnew
 =======
         if m_iso in current_settings.modeswitches then
 >>>>>>> origin/cpstrnew
@@ -717,6 +729,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         func_suffix:string[8];
 =======
 >>>>>>> graemeg/cpstrnew
@@ -724,6 +737,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -818,6 +833,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                       if (m_isolike_io in current_settings.modeswitches) and do_read then
                         name:=name+'_iso';
                       readfunctype:=cansichartype;
@@ -826,6 +842,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
                       if (m_iso in current_settings.modeswitches) and do_read then
@@ -900,6 +918,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           if (m_isolike_io in current_settings.modeswitches) and not(do_read) then
 =======
           if (m_iso in current_settings.modeswitches) and not(do_read) then
@@ -910,6 +929,9 @@ implementation
 =======
           if (m_iso in current_settings.modeswitches) and not(do_read) then
 >>>>>>> graemeg/cpstrnew
+=======
+          if (m_iso in current_settings.modeswitches) and not(do_read) then
+>>>>>>> origin/cpstrnew
 =======
           if (m_iso in current_settings.modeswitches) and not(do_read) then
 >>>>>>> origin/cpstrnew
@@ -967,6 +989,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                           if m_isolike_io in current_settings.modeswitches then
 =======
                           if m_iso in current_settings.modeswitches then
@@ -977,6 +1000,9 @@ implementation
 =======
                           if m_iso in current_settings.modeswitches then
 >>>>>>> graemeg/cpstrnew
+=======
+                          if m_iso in current_settings.modeswitches then
+>>>>>>> origin/cpstrnew
 =======
                           if m_iso in current_settings.modeswitches then
 >>>>>>> origin/cpstrnew
@@ -1177,6 +1203,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 if m_isolike_io in current_settings.modeswitches then
 =======
                 if m_iso in current_settings.modeswitches then
@@ -1187,6 +1214,9 @@ implementation
 =======
                 if m_iso in current_settings.modeswitches then
 >>>>>>> graemeg/cpstrnew
+=======
+                if m_iso in current_settings.modeswitches then
+>>>>>>> origin/cpstrnew
 =======
                 if m_iso in current_settings.modeswitches then
 >>>>>>> origin/cpstrnew
@@ -1568,6 +1598,7 @@ implementation
                   { prefer strings to chararrays }
                   maybe_convert_to_string(para.left);
 
+<<<<<<< HEAD
                 if is_currency(para.left.resultdef) then
                   begin
                     is_real:=true;
@@ -1681,6 +1712,20 @@ implementation
                         error_para := true;
                       end
                   end;
+=======
+         { in case we are in a generic definition, we cannot
+           do all checks, the parameters might be type parameters }
+         if df_generic in current_procinfo.procdef.defoptions then
+           begin
+             result.Free;
+             result:=nil;
+             resultdef:=voidtype;
+             exit;
+           end;
+
+        { reverse parameters for easier processing }
+        left := reverseparameters(tcallparanode(left));
+>>>>>>> origin/cpstrnew
 
                 { check for length/fractional colon para's }
                 fracpara := nil;
@@ -2182,6 +2227,7 @@ implementation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function tinlinenode.simplify(forinline : boolean): tnode;
 =======
     function tinlinenode.simplify: tnode;
@@ -2189,6 +2235,9 @@ implementation
 =======
     function tinlinenode.simplify: tnode;
 >>>>>>> origin/fixes_2_2
+=======
+    function tinlinenode.simplify(forinline : boolean): tnode;
+>>>>>>> origin/cpstrnew
 
       function do_lowhigh(def:tdef) : tnode;
         var
@@ -2333,11 +2382,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -2373,6 +2425,7 @@ implementation
         hp        : tnode;
         vl,vl2    : TConstExprInt;
         vr        : bestreal;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2482,6 +2535,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -2746,6 +2801,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         result:=cordconstnode.create(vl,left.resultdef,not(nf_internal in flags))
 =======
                         result:=cordconstnode.create(vl,left.resultdef,true)
@@ -2756,6 +2812,9 @@ implementation
 =======
                         result:=cordconstnode.create(vl,left.resultdef,true)
 >>>>>>> graemeg/cpstrnew
+=======
+                        result:=cordconstnode.create(vl,left.resultdef,true)
+>>>>>>> origin/cpstrnew
 =======
                         result:=cordconstnode.create(vl,left.resultdef,true)
 >>>>>>> origin/cpstrnew
@@ -2920,6 +2979,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               in_rol_x,
               in_rol_x_y,
               in_ror_x,
@@ -2931,6 +2991,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
             end;
@@ -2969,11 +3031,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
             (tfloatdef(left.resultdef).floattype in [s32real,s64real,s80real,sc80real,s128real]) then
@@ -3024,6 +3089,7 @@ implementation
               if (source.left.resultdef.typ <> arraydef) or
                  is_packed_array(source.left.resultdef) then
                 CGMessagePos2(source.left.fileinfo,type_e_got_expected_unpacked_array,'1',source.left.resultdef.typename)
+<<<<<<< HEAD
               else
                 unpackedarraydef := tarraydef(source.left.resultdef);
               { target must be a packed array }
@@ -4227,11 +4293,13 @@ implementation
               if (source.left.resultdef.typ <> arraydef) or
                  is_packed_array(source.left.resultdef) then
                 CGMessagePos2(source.left.fileinfo,type_e_got_expected_unpacked_array,'1',source.left.resultdef.GetTypeName)
+=======
+>>>>>>> origin/cpstrnew
               else
                 unpackedarraydef := tarraydef(source.left.resultdef);
               { target must be a packed array }
               if not is_packed_array(target.left.resultdef) then
-                CGMessagePos2(target.left.fileinfo,type_e_got_expected_packed_array,'3',target.left.resultdef.GetTypeName)
+                CGMessagePos2(target.left.fileinfo,type_e_got_expected_packed_array,'3',target.left.resultdef.typename)
               else
                 packedarraydef := tarraydef(target.left.resultdef);
             end;
@@ -4246,9 +4314,15 @@ implementation
                  (index.left.nodetype = ordconstn) and
                  not is_special_array(unpackedarraydef) then
                 begin
+<<<<<<< HEAD
                   testrange(index.left.resultdef,unpackedarraydef,tordconstnode(index.left).value,false);
                   tempindex := tordconstnode(index.left).value + packedarraydef.highrange-packedarraydef.lowrange;
                   testrange(index.left.resultdef,unpackedarraydef,tempindex,false);
+=======
+                  testrange(unpackedarraydef,tordconstnode(index.left).value,false,false);
+                  tempindex := tordconstnode(index.left).value + packedarraydef.highrange-packedarraydef.lowrange;
+                  testrange(unpackedarraydef,tempindex,false,false);
+>>>>>>> origin/cpstrnew
                 end;
             end;
 
@@ -4265,6 +4339,17 @@ implementation
             result:=cnothingnode.create;
         end;
 
+
+      function handle_objc_encode: tnode;
+        var
+          encodedtype: ansistring;
+          errordef: tdef;
+        begin
+          encodedtype:='';
+          if not objctryencodetype(left.resultdef,encodedtype,errordef) then
+            Message1(type_e_objc_type_unsupported,errordef.typename);
+          result:=cstringconstnode.createpchar(ansistring2pchar(encodedtype),length(encodedtype));
+        end;
 
 
       var
@@ -4542,6 +4627,9 @@ implementation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
                   { in case of a complex procvar, only check the "code" pointer }
                   if (tcallparanode(left).left.resultdef.typ=procvardef) and
                      not tprocvardef(tcallparanode(left).left.resultdef).is_addressonly then
@@ -4551,6 +4639,7 @@ implementation
                       tcallparanode(left).get_paratype;
                     end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4587,6 +4676,11 @@ implementation
                   { must only check the first pointer -> can't just convert to an  }
                   { add node in all cases                                          }
 >>>>>>> origin/fixes_2_2
+=======
+                  { converting to an add node is tricky because of differences
+                    in procvar handling between FPC and Delphi handling, so
+                    handle specially }
+>>>>>>> origin/cpstrnew
                   set_varstate(tcallparanode(left).left,vs_read,[vsf_must_be_valid]);
                   resultdef:=pasbool8type;
                 end;
@@ -5172,7 +5266,7 @@ implementation
                   set_varstate(left,vs_read,[vsf_must_be_valid]);
                   { for direct float rounding, no best real type cast should be necessary }
                   if not((left.resultdef.typ=floatdef) and
-                         (tfloatdef(left.resultdef).floattype in [s32real,s64real,s80real,s128real])) and
+                         (tfloatdef(left.resultdef).floattype in [s32real,s64real,s80real,sc80real,s128real])) and
                      { converting an int64 to double on platforms without }
                      { extended can cause precision loss                  }
                      not(left.nodetype in [ordconstn,realconstn]) then
@@ -5224,13 +5318,16 @@ implementation
 =======
 >>>>>>> origin/fixes_2_2
 {$endif SUPPORT_MMX}
-{$ifdef SUPPORT_UNALIGNED}
               in_unaligned_x:
 >>>>>>> graemeg/fixes_2_2
                 begin
                   result:=handle_box;
                 end;
+<<<<<<< HEAD
               in_unbox_x_y:
+=======
+              in_assert_x_y :
+>>>>>>> origin/cpstrnew
                 begin
 <<<<<<< HEAD
                   result:=handle_unbox;
@@ -5265,7 +5362,23 @@ implementation
               in_get_frame,
               in_get_caller_frame,
               in_get_caller_addr:
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
+=======
+                begin
+                  resultdef:=voidpointertype;
+                end;
+              in_rol_x,
+              in_ror_x,
+              in_sar_x:
+                begin
+                  set_varstate(left,vs_read,[vsf_must_be_valid]);
+                  resultdef:=left.resultdef;
+                end;
+              in_rol_x_x,
+              in_ror_x_x,
+              in_sar_x_y:
+>>>>>>> origin/cpstrnew
                 begin
                   set_varstate(tcallparanode(left).left,vs_read,[vsf_must_be_valid]);
                   set_varstate(tcallparanode(tcallparanode(left).right).left,vs_read,[vsf_must_be_valid]);
@@ -5273,6 +5386,7 @@ implementation
                   set_varstate(tcallparanode(tcallparanode(tcallparanode(left).right).right).left,vs_read,[vsf_must_be_valid]);
                   resultdef:=tcallparanode(left).left.resultdef;
                 end;
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -5285,6 +5399,36 @@ implementation
                   resultdef:=tcallparanode(tcallparanode(left).right).left.resultdef;
                 end;
 >>>>>>> origin/fixes_2.4
+=======
+              in_bsf_x,
+              in_bsr_x:
+                 begin
+                   set_varstate(left,vs_read,[vsf_must_be_valid]);
+                   if not is_integer(left.resultdef) then
+                     CGMessage1(type_e_integer_expr_expected,left.resultdef.typename);
+                   if torddef(left.resultdef).ordtype in [u64bit, s64bit] then
+                     resultdef:=u64inttype
+                   else
+                     resultdef:=u32inttype
+                 end;
+
+              in_objc_selector_x:
+                begin
+                  result:=cobjcselectornode.create(left);
+                  { reused }
+                  left:=nil;
+                end;
+              in_objc_protocol_x:
+                begin
+                  result:=cobjcprotocolnode.create(left);
+                  { reused }
+                  left:=nil;
+                end;
+              in_objc_encode_x:
+                begin
+                  result:=handle_objc_encode;
+                end;
+>>>>>>> origin/cpstrnew
               else
                 internalerror(8);
             end;
@@ -5294,6 +5438,7 @@ implementation
            codegenerror then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           result:=simplify(false);
 =======
 =======
@@ -5301,6 +5446,9 @@ implementation
           result:=simplify;
         dec(parsing_para_level);
 >>>>>>> graemeg/fixes_2_2
+=======
+          result:=simplify(false);
+>>>>>>> origin/cpstrnew
       end;
 
 
@@ -5411,6 +5559,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef jvm}
               { enums are class instances in the JVM -> always need conversion }
               if ([cs_check_overflow,cs_check_range]*current_settings.localswitches)<>[] then
@@ -5424,6 +5573,9 @@ implementation
 =======
               if ([cs_check_overflow,cs_check_range]*current_settings.localswitches)<>[] then
 >>>>>>> graemeg/cpstrnew
+=======
+              if ([cs_check_overflow,cs_check_range]*current_settings.localswitches)<>[] then
+>>>>>>> origin/cpstrnew
 =======
               if ([cs_check_overflow,cs_check_range]*current_settings.localswitches)<>[] then
 >>>>>>> origin/cpstrnew
@@ -5449,6 +5601,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     inserttypeconv(hp,corddef.create(
 =======
                     inserttypeconv(hp,torddef.create(
@@ -5462,12 +5615,16 @@ implementation
 =======
                     inserttypeconv(hp,torddef.create(
 >>>>>>> origin/cpstrnew
+=======
+                    inserttypeconv(hp,torddef.create(
+>>>>>>> origin/cpstrnew
 {$ifdef cpu64bitaddr}
                       s64bit,
 {$else cpu64bitaddr}
                       s32bit,
 {$endif cpu64bitaddr}
                       get_min_value(resultdef),
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5483,6 +5640,9 @@ implementation
 =======
                       get_max_value(resultdef)))
 >>>>>>> graemeg/cpstrnew
+=======
+                      get_max_value(resultdef)))
+>>>>>>> origin/cpstrnew
 =======
                       get_max_value(resultdef)))
 >>>>>>> origin/cpstrnew
@@ -5752,6 +5912,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          in_aligned_x,
 =======
 >>>>>>> graemeg/cpstrnew
@@ -5761,6 +5922,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
          in_unaligned_x:
            begin
              expectloc:=tcallparanode(left).left.expectloc;
@@ -5768,6 +5931,7 @@ implementation
          in_rol_x,
          in_rol_x_y,
          in_ror_x,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5788,6 +5952,11 @@ implementation
          in_sar_x,
          in_sar_x_y,
 >>>>>>> graemeg/cpstrnew
+=======
+         in_ror_x_x,
+         in_sar_x,
+         in_sar_x_y,
+>>>>>>> origin/cpstrnew
 =======
          in_ror_x_x,
          in_sar_x,
@@ -6523,6 +6692,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
      function tinlinenode.first_fma: tnode;
        begin
@@ -6536,6 +6706,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 end.

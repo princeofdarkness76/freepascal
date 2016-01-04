@@ -71,6 +71,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           procedure end_of_parsing;override;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -82,6 +83,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
        private
          { Each time a unit's defs are (re)created, its defsgeneration is
            set to the value of a global counter, and the global counter is
@@ -91,9 +94,13 @@ interface
           defsgeneration : longint;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
           function  search_unit_files(onlysource:boolean):boolean;
 =======
 >>>>>>> origin/fixes_2.4
+=======
+          function  search_unit_files(onlysource:boolean):boolean;
+>>>>>>> origin/cpstrnew
           function  search_unit(onlysource,shortname:boolean):boolean;
           procedure load_interface;
           procedure load_implementation;
@@ -1216,15 +1223,21 @@ var
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
          ppufile.putsmallset(moduleoptions);
          if mo_has_deprecated_msg in moduleoptions then
            ppufile.putstring(deprecatedmsg^);
          ppufile.writeentry(ibmoduleoptions);
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
          { write the alternate main procedure name if any }
          if assigned(mainname) then
            begin
@@ -1636,6 +1649,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure tppumodule.end_of_parsing;
       begin
         { module is now compiled }
@@ -1661,6 +1675,8 @@ var
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
     procedure tppumodule.loadppu;
       const
@@ -1854,6 +1870,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1863,6 +1880,8 @@ var
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
               setdefgeneration;
             end
            else

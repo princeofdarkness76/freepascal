@@ -46,6 +46,7 @@ Resourcestring
   SErrIndexResultTooLong   = 'Index result for "%s" too long, >100 characters (%d).';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   SErrIndexBasedOnInvField = 'Field "%s" has an invalid field type (%s) to base index on.';
 =======
   SErrIndexBasedOnInvField = 'Field "%s" is an invalid field type to base index on.';
@@ -53,6 +54,9 @@ Resourcestring
 =======
   SErrIndexBasedOnInvField = 'Field "%s" is an invalid field type to base index on.';
 >>>>>>> origin/fixes_2_2
+=======
+  SErrIndexBasedOnInvField = 'Field "%s" has an invalid field type (%s) to base index on.';
+>>>>>>> origin/cpstrnew
   SErrIndexBasedOnUnkField = 'Index based on unknown field "%s".';
   SErrConnTransactionnSet  = 'Transaction of connection not set';
   SErrNotASQLConnection    = '"%s" is not a TSQLConnection';
@@ -142,6 +146,7 @@ Resourcestring
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   SCommitting               = 'Committing transaction';
   SRollingBack              = 'Rolling back transaction';
   SCommitRetaining          = 'Commit and retaining transaction';
@@ -167,10 +172,13 @@ Resourcestring
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   SCommitting              = 'Committing transaction';
   SRollingBack             = 'Rolling back transaction';
   SCommitRetaining         = 'Commit and retaining transaction';
   SRollBackRetaining       = 'Rollback and retaining transaction';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -187,6 +195,8 @@ Resourcestring
 =======
   
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 
 Implementation
 

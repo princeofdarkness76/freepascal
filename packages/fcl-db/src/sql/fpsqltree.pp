@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (c) 2010-2014 by the Free Pascal development team
 =======
     Copyright (c) 2010 by the Free Pascal development team
@@ -14,6 +15,9 @@
 =======
     Copyright (c) 2010 by the Free Pascal development team
 >>>>>>> graemeg/cpstrnew
+=======
+    Copyright (c) 2010 by the Free Pascal development team
+>>>>>>> origin/cpstrnew
 =======
     Copyright (c) 2010 by the Free Pascal development team
 >>>>>>> origin/cpstrnew
@@ -46,6 +50,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                       sfoDoubleQuoteIdentifier,  // quote Identifiers using " (e.g. as in Firebird)
 =======
                       sfoDoubleQuoteIdentifier,  // quote Identifiers using "
@@ -56,6 +61,9 @@ Type
 =======
                       sfoDoubleQuoteIdentifier,  // quote Identifiers using "
 >>>>>>> graemeg/cpstrnew
+=======
+                      sfoDoubleQuoteIdentifier,  // quote Identifiers using "
+>>>>>>> origin/cpstrnew
 =======
                       sfoDoubleQuoteIdentifier,  // quote Identifiers using "
 >>>>>>> origin/cpstrnew
@@ -186,6 +194,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> graemeg/cpstrnew
@@ -193,6 +202,8 @@ Type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   { TSQLIdentifierElement }
@@ -242,6 +253,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     // For array types: index of element in array
 =======
 >>>>>>> graemeg/cpstrnew
@@ -249,6 +261,8 @@ Type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     Property ElementIndex : Integer Read FElementIndex Write FElementIndex;
@@ -647,6 +661,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FAliasName: TSQLIdentifierName;
 =======
     FAliasName: TSQLIDentifierName;
@@ -660,11 +675,15 @@ Type
 =======
     FAliasName: TSQLIDentifierName;
 >>>>>>> origin/cpstrnew
+=======
+    FAliasName: TSQLIDentifierName;
+>>>>>>> origin/cpstrnew
     FExpression: TSQLExpression;
   Public
     Destructor Destroy; override;
     Function GetAsSQL(Options : TSQLFormatOptions; AIndent : Integer = 0): TSQLStringType; override;
     Property Expression : TSQLExpression Read FExpression Write FExpression;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -679,6 +698,9 @@ Type
 =======
     Property AliasName : TSQLIDentifierName Read FAliasName Write FAliasName;
 >>>>>>> graemeg/cpstrnew
+=======
+    Property AliasName : TSQLIDentifierName Read FAliasName Write FAliasName;
+>>>>>>> origin/cpstrnew
 =======
     Property AliasName : TSQLIDentifierName Read FAliasName Write FAliasName;
 >>>>>>> origin/cpstrnew
@@ -696,6 +718,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FAliasName: TSQLIdentifierName;
 =======
     FAliasName: TSQLIDentifierName;
@@ -709,6 +732,9 @@ Type
 =======
     FAliasName: TSQLIDentifierName;
 >>>>>>> origin/cpstrnew
+=======
+    FAliasName: TSQLIDentifierName;
+>>>>>>> origin/cpstrnew
     FObjectName: TSQLIdentifierName;
     FParams: TSQLElementList;
   Public
@@ -716,6 +742,7 @@ Type
     Function GetAsSQL(Options : TSQLFormatOptions; AIndent : Integer = 0): TSQLStringType; override;
     Property ObjectName : TSQLIdentifierName Read FObjectName Write FObjectName;
     Property Params : TSQLElementList Read FParams Write FParams;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -732,6 +759,8 @@ Type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     Property AliasName : TSQLIDentifierName Read FAliasName Write FAliasName;
   end;
 
@@ -740,11 +769,14 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   TSQLJoinTableReference = Class(TSQLTableReference)
@@ -858,6 +890,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FTN: TSQLIdentifierName;
 =======
     FTN: TSQLidentifierName;
@@ -868,6 +901,9 @@ Type
 =======
     FTN: TSQLidentifierName;
 >>>>>>> graemeg/cpstrnew
+=======
+    FTN: TSQLidentifierName;
+>>>>>>> origin/cpstrnew
 =======
     FTN: TSQLidentifierName;
 >>>>>>> origin/cpstrnew
@@ -882,6 +918,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Property TransactionName : TSQLIdentifierName Read FTN Write FTN;
 =======
     Property TransactionName : TSQLidentifierName Read FTN Write FTN;
@@ -892,6 +929,9 @@ Type
 =======
     Property TransactionName : TSQLidentifierName Read FTN Write FTN;
 >>>>>>> graemeg/cpstrnew
+=======
+    Property TransactionName : TSQLidentifierName Read FTN Write FTN;
+>>>>>>> origin/cpstrnew
 =======
     Property TransactionName : TSQLidentifierName Read FTN Write FTN;
 >>>>>>> origin/cpstrnew
@@ -947,6 +987,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FFieldName: TSQLIdentifierName;
 =======
     FFieldName: TSQLidentifierName;
@@ -960,10 +1001,14 @@ Type
 =======
     FFieldName: TSQLidentifierName;
 >>>>>>> origin/cpstrnew
+=======
+    FFieldName: TSQLidentifierName;
+>>>>>>> origin/cpstrnew
     FValue: TSQLExpression;
   Public
     Destructor Destroy; override;
     Function GetAsSQL(Options : TSQLFormatOptions; AIndent : Integer = 0): TSQLStringType; override;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -978,6 +1023,9 @@ Type
 =======
     Property FieldName : TSQLidentifierName Read FFieldName Write FFieldName;
 >>>>>>> graemeg/cpstrnew
+=======
+    Property FieldName : TSQLidentifierName Read FFieldName Write FFieldName;
+>>>>>>> origin/cpstrnew
 =======
     Property FieldName : TSQLidentifierName Read FFieldName Write FFieldName;
 >>>>>>> origin/cpstrnew
@@ -1089,6 +1137,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1096,6 +1145,8 @@ Type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   { TSQLSetGeneratorStatement }
@@ -1107,6 +1158,7 @@ Type
     Property NewValue : Integer Read FNewValue Write FNewValue;
   end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1128,6 +1180,8 @@ Type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   { TSQLCreateRoleStatement }
@@ -2088,6 +2142,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { TSQLSetISQLStatement }
 
 function TSQLSetISQLStatement.GetAsSQL(Options: TSQLFormatOptions;
@@ -2104,6 +2159,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 function TSQLElementList.GetE(AIndex : Integer): TSQLElement;
@@ -2198,6 +2255,7 @@ Var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     S:='';
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2205,6 +2263,8 @@ Var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
     if Not Assigned(List) or (List.Count=0) then
@@ -2310,6 +2370,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   S:='';
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2317,6 +2378,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   Result:=SQLKeyword('INSERT INTO ',Options);
@@ -2592,6 +2655,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:='';
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2599,6 +2663,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   Sep:=SQLListSeparator(Options);
@@ -2614,6 +2680,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -2623,6 +2690,9 @@ begin
 =======
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 =======
 
 >>>>>>> origin/cpstrnew
@@ -2799,6 +2869,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:='';
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2806,6 +2877,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   GetSepPrefixIndent(sfoOneFieldPerLine in Options,sfoIndentfields in Options,Sep,Pref,Ind);
@@ -2866,6 +2939,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:='';
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2873,6 +2947,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   If Assigned(FConstraintName) then
@@ -2927,6 +3003,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:='';
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2934,6 +3011,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   Sep:=SQLListSeparator(Options);
@@ -3064,6 +3143,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:='';
 =======
 >>>>>>> graemeg/cpstrnew
@@ -3071,6 +3151,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   GetSepPrefixIndent(sfoOneFieldPerLine in Options,sfoIndentFields in Options,Sep,Pref,Ind);
@@ -3349,6 +3431,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:='';
 =======
 >>>>>>> graemeg/cpstrnew
@@ -3356,6 +3439,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   If Assigned(FParams) and (FParams.Count>0) then
@@ -3393,6 +3478,7 @@ Const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           = ('','INNER ','LEFT ','RIGHT ','FULL OUTER ');
 =======
           = ('','INNER ','LEFT ','RIGHT ','OUTER ');
@@ -3403,6 +3489,9 @@ Const
 =======
           = ('','INNER ','LEFT ','RIGHT ','OUTER ');
 >>>>>>> graemeg/cpstrnew
+=======
+          = ('','INNER ','LEFT ','RIGHT ','OUTER ');
+>>>>>>> origin/cpstrnew
 =======
           = ('','INNER ','LEFT ','RIGHT ','OUTER ');
 >>>>>>> origin/cpstrnew
@@ -3560,6 +3649,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:='';
 =======
 >>>>>>> graemeg/cpstrnew
@@ -3567,6 +3657,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   Sep:=SQLListSeparator(Options);
@@ -3639,6 +3731,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:='';
 =======
 >>>>>>> graemeg/cpstrnew
@@ -3646,6 +3739,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   Sep:=SQLListSeparator(Options);
@@ -3700,6 +3795,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:='';
 =======
 >>>>>>> graemeg/cpstrnew
@@ -3707,6 +3803,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   Sep:=SQLListSeparator(Options);
@@ -3768,6 +3866,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   S:='';
 =======
 >>>>>>> graemeg/cpstrnew
@@ -3775,6 +3874,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   Result:=SQLKeyWord('EXECUTE PROCEDURE',Options);
@@ -3858,6 +3959,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   FreeAndNil(FCharSet);
 =======
   FreeAndNil(FCHarSet);
@@ -3868,6 +3970,9 @@ begin
 =======
   FreeAndNil(FCHarSet);
 >>>>>>> graemeg/cpstrnew
+=======
+  FreeAndNil(FCHarSet);
+>>>>>>> origin/cpstrnew
 =======
   FreeAndNil(FCHarSet);
 >>>>>>> origin/cpstrnew
@@ -3989,6 +4094,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   S:='';
   Result:='';
 =======
@@ -3997,6 +4103,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   If Self is TSQLAlterProcedureStatement then
@@ -4094,6 +4202,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   S:='';
 =======
 >>>>>>> graemeg/cpstrnew
@@ -4101,6 +4210,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   Result:=SQLKeyword('BEGIN',Options)+slineBreak;
@@ -4171,6 +4282,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   S:='';
 =======
 >>>>>>> graemeg/cpstrnew
@@ -4178,6 +4290,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   Result:=SQLKeyWord('FOR ',Options);
@@ -4357,6 +4471,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:='';
 =======
 >>>>>>> graemeg/cpstrnew
@@ -4364,6 +4479,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   For I:=0 to LocalVariables.Count-1 do
@@ -4800,6 +4917,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:=SQlKeyWord('FILE ',Options)+SQLFormatString(FileName,Options);
 =======
   Result:=SQlKeyWord('FILE ',OPtions)+SQLFormatString(FileName,Options);
@@ -4810,6 +4928,9 @@ begin
 =======
   Result:=SQlKeyWord('FILE ',OPtions)+SQLFormatString(FileName,Options);
 >>>>>>> graemeg/cpstrnew
+=======
+  Result:=SQlKeyWord('FILE ',OPtions)+SQLFormatString(FileName,Options);
+>>>>>>> origin/cpstrnew
 =======
   Result:=SQlKeyWord('FILE ',OPtions)+SQLFormatString(FileName,Options);
 >>>>>>> origin/cpstrnew
@@ -5019,6 +5140,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:='';
 =======
 >>>>>>> graemeg/cpstrnew
@@ -5026,6 +5148,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   For I:=0 to List.Count-1 do
@@ -5056,6 +5180,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:='';
 =======
 >>>>>>> graemeg/cpstrnew
@@ -5063,6 +5188,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   If Assigned(FColumns) then
@@ -5092,6 +5219,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:='';
 =======
 >>>>>>> graemeg/cpstrnew
@@ -5099,6 +5227,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   Sep:=SQLListSeparator(Options);
@@ -5153,6 +5283,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:='';
 =======
 >>>>>>> graemeg/cpstrnew
@@ -5160,6 +5291,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   Sep:=SQLListSeparator(Options);
@@ -5219,6 +5352,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:='';
   Sep:=SQLListSeparator(Options);
   For I:=0 to Roles.Count-1 do
@@ -5234,6 +5368,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
    Sep:=SQLListSeparator(Options);
    For I:=0 to Roles.Count-1 do
       begin
@@ -5244,11 +5380,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   Result:=SQLKeyWord('GRANT ',Options)+Result;
@@ -5402,6 +5541,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:='';
 =======
 >>>>>>> graemeg/cpstrnew
@@ -5409,6 +5549,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   Sep:=SQLListSeparator(Options);

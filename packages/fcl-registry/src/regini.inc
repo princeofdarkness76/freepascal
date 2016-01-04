@@ -112,6 +112,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     CloseSection;
 =======
 	  CloseKey;
@@ -122,6 +123,9 @@ begin
 =======
 	  CloseKey;
 >>>>>>> graemeg/cpstrnew
+=======
+	  CloseKey;
+>>>>>>> origin/cpstrnew
 =======
 	  CloseKey;
 >>>>>>> origin/cpstrnew
@@ -137,11 +141,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   try
@@ -158,6 +165,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     CloseSection;
 =======
     CloseKey;
@@ -171,11 +179,15 @@ begin
 =======
     CloseKey;
 >>>>>>> origin/cpstrnew
+=======
+    CloseKey;
+>>>>>>> origin/cpstrnew
   end;
 end;
 
 procedure TRegIniFile.WriteString(const Section, Ident, Value: String);
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -224,11 +236,14 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   if not OpenKey(fPath+Section,true) then Exit;
   try
    inherited WriteString(Ident,Value);
   finally
    CloseKey;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -255,6 +270,8 @@ begin
         inherited WriteString(Ident,TimeToStr(Value));
   finally
     CloseKey;
+=======
+>>>>>>> origin/cpstrnew
   end;
 end;
 
@@ -284,16 +301,22 @@ begin
     if ValueExists(Ident) then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
       if (not fPreferStringValues) or (GetDataType(Ident)=rdInteger) then
   	    Result := inherited ReadBool(Ident)
       else
         Result := StrToBool(inherited ReadString(Ident));
+<<<<<<< HEAD
 =======
 	    Result := inherited ReadBool(Ident);
 >>>>>>> graemeg/fixes_2_2
 =======
 	    Result := inherited ReadBool(Ident);
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 	finally
     CloseSection;
 	end;
@@ -307,16 +330,22 @@ begin
     if ValueExists(Ident) then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
       if (not fPreferStringValues) or (GetDataType(Ident)=rdInteger) then
         Result := inherited ReadInteger(Ident)
       else
         Result := StrToInt(inherited ReadString(Ident));
+<<<<<<< HEAD
 =======
       Result := inherited ReadInteger(Ident);
 >>>>>>> graemeg/fixes_2_2
 =======
       Result := inherited ReadInteger(Ident);
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
   finally
     CloseSection;
   end;

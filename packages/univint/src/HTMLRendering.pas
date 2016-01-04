@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       HTMLRendering/HTMLRendering.h
  
      Contains:   HTML Rendering Library Interfaces.
@@ -32,11 +33,15 @@
 =======
      File:       HTMLRendering/HTMLRendering.h
 >>>>>>> origin/fixes_2.4
+=======
+     File:       HTMLRendering/HTMLRendering.h
+>>>>>>> origin/cpstrnew
  
      Contains:   HTML Rendering Library Interfaces.
  
      Version:    HTMLRenderingLib-75~68
  
+<<<<<<< HEAD
 <<<<<<< HEAD
      Copyright:  © 1999-2002 by Apple Computer, Inc., all rights reserved
 <<<<<<< HEAD
@@ -46,6 +51,9 @@
 =======
      Copyright:  © 1999-2008 by Apple Computer, Inc., all rights reserved
 >>>>>>> origin/fixes_2.4
+=======
+     Copyright:  © 1999-2008 by Apple Computer, Inc., all rights reserved
+>>>>>>> origin/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -55,6 +63,7 @@
                      http://bugs.freepascal.org
  
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -86,6 +95,8 @@
                      http://www.freepascal.org/bugs.html
  
 }
+=======
+>>>>>>> origin/cpstrnew
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {
     Modified for use with Free Pascal
@@ -95,12 +106,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -112,6 +127,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -126,6 +142,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -141,6 +161,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -151,6 +172,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -158,13 +182,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -172,6 +200,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -180,8 +210,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -192,6 +225,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -212,6 +246,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -220,12 +256,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -233,6 +272,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -483,12 +523,27 @@ interface
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
+=======
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -523,6 +578,7 @@ interface
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 {$endc}
@@ -540,6 +596,17 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -568,6 +635,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -576,6 +644,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -585,6 +655,7 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -618,6 +689,14 @@ uses MacTypes,CFBase,QuickdrawTypes,Events,Files,CodeFragments,Controls,CFData,C
 {$ifc TARGET_OS_MAC}
 
 >>>>>>> origin/cpstrnew
+=======
+uses MacTypes,CFBase,QuickdrawTypes,Events,Files,CodeFragments,Controls,CFData,CFString,CFURL,HIObject;
+{$endc} {not MACOSALLINCLUDE}
+
+
+{$ifc TARGET_OS_MAC}
+
+>>>>>>> origin/cpstrnew
 {
     HTMLRenderingLib has been deprecated. Please use WebKit instead for your OS X Carbon web widget needs.
  }
@@ -636,6 +715,7 @@ type
  }
 function HRGetHTMLRenderingLibVersion( var returnVers: NumVersion ): OSStatus; external name '_HRGetHTMLRenderingLibVersion';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+<<<<<<< HEAD
 
 
 const
@@ -752,6 +832,8 @@ type
  }
 function HRGetHTMLRenderingLibVersion( var returnVers: NumVersion ): OSStatus; external name '_HRGetHTMLRenderingLibVersion';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+=======
+>>>>>>> origin/cpstrnew
 
 
 const
@@ -772,6 +854,7 @@ function HRNewReference( var hrRef: HRReference; rendererType: OSType; grafPtr_:
 
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  HRNewReferenceInWindow()
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -780,6 +863,9 @@ function HRNewReference( var hrRef: HRReference; rendererType: OSType; grafPtr_:
 =======
  *  HRNewReferenceInWindow()   *** DEPRECATED ***
 >>>>>>> origin/fixes_2.4
+=======
+ *  HRNewReferenceInWindow()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Discussion:
  *    Use this API from  a Carbon App. All the contrrols created by the
@@ -804,6 +890,9 @@ function HRNewReference( var hrRef: HRReference; rendererType: OSType; grafPtr_:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   not available
@@ -817,6 +906,7 @@ function HRNewReferenceInWindow( var hrRef: HRReference; rendererType: OSType; i
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in HTMLRenderingLib 1.0 and later
  }
@@ -845,10 +935,17 @@ function HRFreeMemory( inBytesNeeded: Size ): SInt32; external name '_HRFreeMemo
  *    Non-Carbon CFM:   not available
  }
 function HRNewReferenceInWindow( var hrRef: HRReference; rendererType: OSType; inWindowRef: WindowRef ): OSStatus; external name '_HRNewReferenceInWindow';
+=======
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in HTMLRenderingLib 1.0 and later
+ }
+function HRDisposeReference( hrRef: HRReference ): OSStatus; external name '_HRDisposeReference';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  HRDisposeReference()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -878,6 +975,17 @@ function HRFreeMemory(inBytesNeeded: Size): SInt32; external name '_HRFreeMemory
 function HRFreeMemory( inBytesNeeded: Size ): SInt32; external name '_HRFreeMemory';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> origin/fixes_2.4
+=======
+ *  HRFreeMemory()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in HTMLRenderingLib 1.0 and later
+ }
+function HRFreeMemory( inBytesNeeded: Size ): SInt32; external name '_HRFreeMemory';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> origin/cpstrnew
 
 
 { System level notifications }
@@ -885,6 +993,9 @@ function HRFreeMemory( inBytesNeeded: Size ): SInt32; external name '_HRFreeMemo
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
  *  HRScreenConfigurationChanged()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -898,6 +1009,7 @@ procedure HRScreenConfigurationChanged; external name '_HRScreenConfigurationCha
 
 {
  *  HRIsHREvent()   *** DEPRECATED ***
+<<<<<<< HEAD
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
@@ -941,6 +1053,16 @@ function HRIsHREvent(const (*var*) eventRecord_: EventRecord): boolean; external
 function HRIsHREvent( const (*var*) eventRecord_: EventRecord ): Boolean; external name '_HRIsHREvent';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> origin/fixes_2.4
+=======
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in HTMLRenderingLib 1.0 and later
+ }
+function HRIsHREvent( const (*var*) eventRecord_: EventRecord ): Boolean; external name '_HRIsHREvent';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> origin/cpstrnew
 
 
 { Drawing }
@@ -948,10 +1070,14 @@ function HRIsHREvent( const (*var*) eventRecord_: EventRecord ): Boolean; extern
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
  *  HRSetGrafPtr()   *** DEPRECATED ***
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in HTMLRenderingLib 1.0 and later
  }
@@ -971,6 +1097,8 @@ function HRSetGrafPtr( hrRef: HRReference; grafPtr_: GrafPtr ): OSStatus; extern
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
+=======
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in HTMLRenderingLib 1.0 and later
  }
@@ -980,6 +1108,7 @@ function HRSetGrafPtr( hrRef: HRReference; grafPtr_: GrafPtr ): OSStatus; extern
 
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  HRSetWindowRef()
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -988,6 +1117,9 @@ function HRSetGrafPtr( hrRef: HRReference; grafPtr_: GrafPtr ): OSStatus; extern
 =======
  *  HRSetWindowRef()   *** DEPRECATED ***
 >>>>>>> origin/fixes_2.4
+=======
+ *  HRSetWindowRef()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Discussion:
  *    Use this API from  a Carbon App. All the contrrols created by the
@@ -1007,6 +1139,7 @@ function HRSetGrafPtr( hrRef: HRReference; grafPtr_: GrafPtr ): OSStatus; extern
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   not available
@@ -1024,6 +1157,9 @@ function HRSetWindowRef( hrRef: HRReference; windowRef_: WindowRef ): OSStatus; 
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1032,6 +1168,7 @@ function HRSetWindowRef( hrRef: HRReference; windowRef_: WindowRef ): OSStatus; 
 
 
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  HRSetEmbeddingControl()
 <<<<<<< HEAD
@@ -1041,6 +1178,9 @@ function HRSetWindowRef( hrRef: HRReference; windowRef_: WindowRef ): OSStatus; 
 =======
  *  HRSetEmbeddingControl()   *** DEPRECATED ***
 >>>>>>> origin/fixes_2.4
+=======
+ *  HRSetEmbeddingControl()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Discussion:
  *    Use this API to tell the HTML Renderer to embed all the controls
@@ -1062,6 +1202,9 @@ function HRSetWindowRef( hrRef: HRReference; windowRef_: WindowRef ): OSStatus; 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   not available
@@ -1101,6 +1244,7 @@ function HRDeactivate( hrRef: HRReference ): OSStatus; external name '_HRDeactiv
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in HTMLRenderingLib 1.0 and later
+<<<<<<< HEAD
  }
 function HRDraw( hrRef: HRReference; updateRgnH: RgnHandle ): OSStatus; external name '_HRDraw';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
@@ -1153,12 +1297,15 @@ function HRDeactivate( hrRef: HRReference ): OSStatus; external name '_HRDeactiv
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in HTMLRenderingLib 1.0 and later
+=======
+>>>>>>> origin/cpstrnew
  }
 function HRDraw( hrRef: HRReference; updateRgnH: RgnHandle ): OSStatus; external name '_HRDraw';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  HRDrawInPort()
 <<<<<<< HEAD
@@ -1168,6 +1315,9 @@ function HRDraw( hrRef: HRReference; updateRgnH: RgnHandle ): OSStatus; external
 =======
  *  HRDrawInPort()   *** DEPRECATED ***
 >>>>>>> origin/fixes_2.4
+=======
+ *  HRDrawInPort()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Discussion:
  *    Use this API from  a Carbon App.  All the drawing will now happen
@@ -1190,6 +1340,9 @@ function HRDraw( hrRef: HRReference; updateRgnH: RgnHandle ): OSStatus; external
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   not available
@@ -1203,6 +1356,7 @@ function HRDrawInPort( hrRef: HRReference; updateRgnH: RgnHandle; grafPtr: CGraf
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in HTMLRenderingLib 1.0 and later
  }
@@ -1235,10 +1389,17 @@ function HRGetRenderedImageSize( hrRef: HRReference; var renderingSize: Point ):
  *    Non-Carbon CFM:   not available
  }
 function HRDrawInPort( hrRef: HRReference; updateRgnH: RgnHandle; grafPtr: CGrafPtr ): OSStatus; external name '_HRDrawInPort';
+=======
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in HTMLRenderingLib 1.0 and later
+ }
+function HRSetRenderingRect( hrRef: HRReference; const (*var*) renderingRect: Rect ): OSStatus; external name '_HRSetRenderingRect';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  HRSetRenderingRect()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -1255,6 +1416,12 @@ function HRSetRenderingRect( hrRef: HRReference; const (*var*) renderingRect: Re
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
+=======
+ *  HRGetRenderedImageSize()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in HTMLRenderingLib 1.0 and later
  }
@@ -1263,6 +1430,7 @@ function HRGetRenderedImageSize( hrRef: HRReference; var renderingSize: Point ):
 
 
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  HRGetRenderedImageSize32()
 <<<<<<< HEAD
@@ -1272,6 +1440,9 @@ function HRGetRenderedImageSize( hrRef: HRReference; var renderingSize: Point ):
 =======
  *  HRGetRenderedImageSize32()   *** DEPRECATED ***
 >>>>>>> origin/fixes_2.4
+=======
+ *  HRGetRenderedImageSize32()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Discussion:
  *    Use this API when the rendered image could have coordinates
@@ -1292,6 +1463,9 @@ function HRGetRenderedImageSize( hrRef: HRReference; var renderingSize: Point ):
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   not available
@@ -1305,6 +1479,7 @@ function HRGetRenderedImageSize32( hrRef: HRReference; var height: UInt32; var w
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in HTMLRenderingLib 1.0 and later
  }
@@ -1333,6 +1508,8 @@ function HRGetRenderedImageSize32( hrRef: HRReference; var height: UInt32; var w
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
+=======
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in HTMLRenderingLib 1.0 and later
  }
@@ -1341,6 +1518,7 @@ function HRScrollToLocation( hrRef: HRReference; var location: Point ): OSStatus
 
 
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  HRScrollToImageLocation32()
 <<<<<<< HEAD
@@ -1350,6 +1528,9 @@ function HRScrollToLocation( hrRef: HRReference; var location: Point ): OSStatus
 =======
  *  HRScrollToImageLocation32()   *** DEPRECATED ***
 >>>>>>> origin/fixes_2.4
+=======
+ *  HRScrollToImageLocation32()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Discussion:
  *    Use this API when specifying location to scroll to. Location is
@@ -1370,6 +1551,9 @@ function HRScrollToLocation( hrRef: HRReference; var location: Point ): OSStatus
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   not available
@@ -1396,6 +1580,7 @@ const
 	eHRScrollbarOn = 0;
 	eHRScrollbarOff = 1;
 	eHRScrollbarAuto = 2;
+<<<<<<< HEAD
 
 {
  *  HRSetScrollbarState()   *** DEPRECATED ***
@@ -1430,35 +1615,64 @@ function HRSetDrawBorder( hrRef: HRReference; drawBorder: Boolean ): OSStatus; e
  *    Non-Carbon CFM:   in HTMLRenderingLib 1.0 and later
  }
 function HRSetGrowboxCutout( hrRef: HRReference; allowCutout: Boolean ): OSStatus; external name '_HRSetGrowboxCutout';
+=======
+
+{
+ *  HRSetScrollbarState()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in HTMLRenderingLib 1.0 and later
+ }
+function HRSetScrollbarState( hrRef: HRReference; hScrollbarState: HRScrollbarState; vScrollbarState: HRScrollbarState ): OSStatus; external name '_HRSetScrollbarState';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 { Navigation }
 {
+<<<<<<< HEAD
  *  HRGoToFile()   *** DEPRECATED ***
+=======
+ *  HRSetDrawBorder()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in HTMLRenderingLib 1.0 and later
  }
+<<<<<<< HEAD
 function HRGoToFile( hrRef: HRReference; const (*var*) fsspec_: FSSpec; addToHistory: Boolean; forceRefresh: Boolean ): OSStatus; external name '_HRGoToFile';
+=======
+function HRSetDrawBorder( hrRef: HRReference; drawBorder: Boolean ): OSStatus; external name '_HRSetDrawBorder';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  HRGoToURL()   *** DEPRECATED ***
+=======
+ *  HRSetGrowboxCutout()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in HTMLRenderingLib 1.0 and later
  }
+<<<<<<< HEAD
 function HRGoToURL( hrRef: HRReference; url: ConstCStringPtr; addToHistory: Boolean; forceRefresh: Boolean ): OSStatus; external name '_HRGoToURL';
+=======
+function HRSetGrowboxCutout( hrRef: HRReference; allowCutout: Boolean ): OSStatus; external name '_HRSetGrowboxCutout';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  HRGoToAnchor()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -1495,10 +1709,21 @@ function HRGoToPtr( hrRef: HRReference; buffer: CStringPtr; bufferSize: UInt32; 
  *    Non-Carbon CFM:   not available
  }
 function HRScrollToImageLocation32( hrRef: HRReference; h: SInt32; v: SInt32 ): OSStatus; external name '_HRScrollToImageLocation32';
+=======
+ *  HRGoToFile()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in HTMLRenderingLib 1.0 and later
+ }
+function HRGoToFile( hrRef: HRReference; const (*var*) fsspec_: FSSpec; addToHistory: Boolean; forceRefresh: Boolean ): OSStatus; external name '_HRGoToFile';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  HRForceQuickdraw()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -1538,10 +1763,21 @@ function HRSetScrollbarState( hrRef: HRReference; hScrollbarState: HRScrollbarSt
  *    Non-Carbon CFM:   in HTMLRenderingLib 1.0 and later
  }
 function HRSetDrawBorder( hrRef: HRReference; drawBorder: Boolean ): OSStatus; external name '_HRSetDrawBorder';
+=======
+ *  HRGoToURL()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in HTMLRenderingLib 1.0 and later
+ }
+function HRGoToURL( hrRef: HRReference; url: ConstCStringPtr; addToHistory: Boolean; forceRefresh: Boolean ): OSStatus; external name '_HRGoToURL';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  HRSetGrowboxCutout()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -1563,10 +1799,21 @@ function HRSetGrowboxCutout( hrRef: HRReference; allowCutout: Boolean ): OSStatu
  *    Non-Carbon CFM:   in HTMLRenderingLib 1.0 and later
  }
 function HRGoToFile( hrRef: HRReference; const (*var*) fsspec_: FSSpec; addToHistory: Boolean; forceRefresh: Boolean ): OSStatus; external name '_HRGoToFile';
+=======
+ *  HRGoToAnchor()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in HTMLRenderingLib 1.0 and later
+ }
+function HRGoToAnchor( hrRef: HRReference; anchorName: ConstCStringPtr ): OSStatus; external name '_HRGoToAnchor';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  HRGoToURL()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -1597,12 +1844,21 @@ function HRGoToAnchor( hrRef: HRReference; anchorName: ConstCStringPtr ): OSStat
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in HTMLRenderingLib 1.0 and later
+=======
+ *  HRGoToPtr()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in HTMLRenderingLib 1.0 and later
+>>>>>>> origin/cpstrnew
  }
 function HRGoToPtr( hrRef: HRReference; buffer: CStringPtr; bufferSize: UInt32; addToHistory: Boolean; forceRefresh: Boolean ): OSStatus; external name '_HRGoToPtr';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  HRGoToFSRef()
 <<<<<<< HEAD
@@ -1612,6 +1868,9 @@ function HRGoToPtr( hrRef: HRReference; buffer: CStringPtr; bufferSize: UInt32; 
 =======
  *  HRGoToFSRef()   *** DEPRECATED ***
 >>>>>>> origin/fixes_2.4
+=======
+ *  HRGoToFSRef()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Discussion:
  *    Use these API from  a Carbon App instead of using HRGoToFile,
@@ -1638,6 +1897,7 @@ function HRGoToPtr( hrRef: HRReference; buffer: CStringPtr; bufferSize: UInt32; 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   not available
@@ -1655,6 +1915,9 @@ function HRGoToFSRef( hrRef: HRReference; const (*var*) fref: FSRef; addToHistor
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1663,6 +1926,7 @@ function HRGoToFSRef( hrRef: HRReference; const (*var*) fref: FSRef; addToHistor
 
 
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  HRGoToCFURL()
 <<<<<<< HEAD
@@ -1672,6 +1936,9 @@ function HRGoToFSRef( hrRef: HRReference; const (*var*) fref: FSRef; addToHistor
 =======
  *  HRGoToCFURL()   *** DEPRECATED ***
 >>>>>>> origin/fixes_2.4
+=======
+ *  HRGoToCFURL()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Discussion:
  *    Use these API from  a Carbon App instead of using HRGoToFile,
@@ -1698,6 +1965,7 @@ function HRGoToFSRef( hrRef: HRReference; const (*var*) fref: FSRef; addToHistor
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   not available
@@ -1715,6 +1983,9 @@ function HRGoToCFURL( hrRef: HRReference; url: CFURLRef; addToHistory: Boolean; 
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1723,6 +1994,7 @@ function HRGoToCFURL( hrRef: HRReference; url: CFURLRef; addToHistory: Boolean; 
 
 
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  HRGoToAnchorCFString()
 <<<<<<< HEAD
@@ -1732,6 +2004,9 @@ function HRGoToCFURL( hrRef: HRReference; url: CFURLRef; addToHistory: Boolean; 
 =======
  *  HRGoToAnchorCFString()   *** DEPRECATED ***
 >>>>>>> origin/fixes_2.4
+=======
+ *  HRGoToAnchorCFString()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Discussion:
  *    Use these API from  a Carbon App instead of using HRGoToFile,
@@ -1752,6 +2027,7 @@ function HRGoToCFURL( hrRef: HRReference; url: CFURLRef; addToHistory: Boolean; 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   not available
@@ -1769,6 +2045,9 @@ function HRGoToAnchorCFString( hrRef: HRReference; anchorName: CFStringRef ): OS
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   not available
  }
@@ -1777,6 +2056,7 @@ function HRGoToAnchorCFString( hrRef: HRReference; anchorName: CFStringRef ): OS
 
 
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  HRGoToData()
 <<<<<<< HEAD
@@ -1786,6 +2066,9 @@ function HRGoToAnchorCFString( hrRef: HRReference; anchorName: CFStringRef ): OS
 =======
  *  HRGoToData()   *** DEPRECATED ***
 >>>>>>> origin/fixes_2.4
+=======
+ *  HRGoToData()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Discussion:
  *    Use these API from  a Carbon App instead of using HRGoToFile,
@@ -1811,6 +2094,7 @@ function HRGoToAnchorCFString( hrRef: HRReference; anchorName: CFStringRef ): OS
 <<<<<<< HEAD
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   not available
@@ -1820,16 +2104,28 @@ function HRGoToData( hrRef: HRReference; data: CFDataRef; addToHistory: Boolean;
 
 =======
  *    Non-Carbon CFM:   not available
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.3 and later
- *    Mac OS X:         in version 10.0 and later
+ *    Non-Carbon CFM:   not available
  }
+<<<<<<< HEAD
 function HRGoToData(hrRef: HRReference; data: CFDataRef; addToHistory: boolean; forceRefresh: boolean): OSStatus; external name '_HRGoToData';
 >>>>>>> graemeg/fixes_2_2
+=======
+function HRGoToData( hrRef: HRReference; data: CFDataRef; addToHistory: Boolean; forceRefresh: Boolean ): OSStatus; external name '_HRGoToData';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+>>>>>>> origin/cpstrnew
 
 { Accessors }
 { either file url or url of <base> tag }
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
  *  HRGetRootURL()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -1893,6 +2189,7 @@ function HRGetHTMLFile( hrRef: HRReference; var fsspec_: FSSpec ): OSStatus; ext
 
 {
  *  HRGetRootURLAsCFString()   *** DEPRECATED ***
+<<<<<<< HEAD
 =======
 =======
  *  Availability:
@@ -1983,6 +2280,8 @@ function HRGetHTMLFile( hrRef: HRReference; var fsspec_: FSSpec ): OSStatus; ext
 =======
  *  HRGetRootURLAsCFString()   *** DEPRECATED ***
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
  *  
  *  Discussion:
  *    Use these API from  a Carbon App instead of using HRGetRootURL,
@@ -2003,6 +2302,7 @@ function HRGetHTMLFile( hrRef: HRReference; var fsspec_: FSSpec ): OSStatus; ext
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   not available
@@ -2020,6 +2320,9 @@ function HRGetRootURLAsCFString( hrRef: HRReference; var rootString: CFStringRef
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2028,6 +2331,7 @@ function HRGetRootURLAsCFString( hrRef: HRReference; var rootString: CFStringRef
 
 
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  HRGetBaseURLAsCFString()
 <<<<<<< HEAD
@@ -2037,6 +2341,9 @@ function HRGetRootURLAsCFString( hrRef: HRReference; var rootString: CFStringRef
 =======
  *  HRGetBaseURLAsCFString()   *** DEPRECATED ***
 >>>>>>> origin/fixes_2.4
+=======
+ *  HRGetBaseURLAsCFString()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Discussion:
  *    Use these API from  a Carbon App instead of using HRGetRootURL,
@@ -2057,6 +2364,7 @@ function HRGetRootURLAsCFString( hrRef: HRReference; var rootString: CFStringRef
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   not available
@@ -2074,6 +2382,9 @@ function HRGetBaseURLAsCFString( hrRef: HRReference; var baseString: CFStringRef
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2082,6 +2393,7 @@ function HRGetBaseURLAsCFString( hrRef: HRReference; var baseString: CFStringRef
 
 
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  HRGetHTMLURLAsCFURL()
 <<<<<<< HEAD
@@ -2091,6 +2403,9 @@ function HRGetBaseURLAsCFString( hrRef: HRReference; var baseString: CFStringRef
 =======
  *  HRGetHTMLURLAsCFURL()   *** DEPRECATED ***
 >>>>>>> origin/fixes_2.4
+=======
+ *  HRGetHTMLURLAsCFURL()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Discussion:
  *    Use these API from  a Carbon App instead of using HRGetRootURL,
@@ -2111,6 +2426,7 @@ function HRGetBaseURLAsCFString( hrRef: HRReference; var baseString: CFStringRef
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   not available
@@ -2128,6 +2444,9 @@ function HRGetHTMLURLAsCFURL( hrRef: HRReference; var theURL: CFURLRef ): OSStat
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2136,6 +2455,7 @@ function HRGetHTMLURLAsCFURL( hrRef: HRReference; var theURL: CFURLRef ): OSStat
 
 
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  HRGetTitleAsCFString()
 <<<<<<< HEAD
@@ -2145,6 +2465,9 @@ function HRGetHTMLURLAsCFURL( hrRef: HRReference; var theURL: CFURLRef ): OSStat
 =======
  *  HRGetTitleAsCFString()   *** DEPRECATED ***
 >>>>>>> origin/fixes_2.4
+=======
+ *  HRGetTitleAsCFString()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Discussion:
  *    Use these API from  a Carbon App instead of using HRGetRootURL,
@@ -2165,6 +2488,7 @@ function HRGetHTMLURLAsCFURL( hrRef: HRReference; var theURL: CFURLRef ): OSStat
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   not available
@@ -2182,6 +2506,9 @@ function HRGetTitleAsCFString( hrRef: HRReference; var title: CFStringRef ): OSS
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2190,6 +2517,7 @@ function HRGetTitleAsCFString( hrRef: HRReference; var title: CFStringRef ): OSS
 
 
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  HRGetHTMLFileAsFSRef()
 <<<<<<< HEAD
@@ -2199,6 +2527,9 @@ function HRGetTitleAsCFString( hrRef: HRReference; var title: CFStringRef ): OSS
 =======
  *  HRGetHTMLFileAsFSRef()   *** DEPRECATED ***
 >>>>>>> origin/fixes_2.4
+=======
+ *  HRGetHTMLFileAsFSRef()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Discussion:
  *    Use these API from  a Carbon App instead of using HRGetRootURL,
@@ -2219,6 +2550,9 @@ function HRGetTitleAsCFString( hrRef: HRReference; var title: CFStringRef ): OSS
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   not available
@@ -2233,6 +2567,7 @@ function HRGetHTMLFileAsFSRef( hrRef: HRReference; var fref: FSRef ): OSStatus; 
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in HTMLRenderingLib 1.0 and later
  }
@@ -2278,11 +2613,18 @@ function HRUtilGetURLFromFSSpec( const (*var*) fsspec_: FSSpec; urlHandle: Handl
  *    Non-Carbon CFM:   not available
  }
 function HRGetHTMLFileAsFSRef( hrRef: HRReference; var fref: FSRef ): OSStatus; external name '_HRGetHTMLFileAsFSRef';
+=======
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in HTMLRenderingLib 1.0 and later
+ }
+function HRUtilCreateFullURL( rootURL: ConstCStringPtr; linkURL: ConstCStringPtr; fullURLH: Handle ): OSStatus; external name '_HRUtilCreateFullURL';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 { Utilities }
 {
+<<<<<<< HEAD
  *  HRUtilCreateFullURL()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -2299,6 +2641,12 @@ function HRUtilCreateFullURL( rootURL: ConstCStringPtr; linkURL: ConstCStringPtr
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
+=======
+ *  HRUtilGetFSSpecFromURL()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in HTMLRenderingLib 1.0 and later
  }
@@ -2320,6 +2668,7 @@ function HRUtilGetURLFromFSSpec( const (*var*) fsspec_: FSSpec; urlHandle: Handl
 
 
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  HRUtilCreateFullCFURL()
 <<<<<<< HEAD
@@ -2329,6 +2678,9 @@ function HRUtilGetURLFromFSSpec( const (*var*) fsspec_: FSSpec; urlHandle: Handl
 =======
  *  HRUtilCreateFullCFURL()   *** DEPRECATED ***
 >>>>>>> origin/fixes_2.4
+=======
+ *  HRUtilCreateFullCFURL()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Discussion:
  *    Use these API from  a Carbon App instead of using
@@ -2353,6 +2705,7 @@ function HRUtilGetURLFromFSSpec( const (*var*) fsspec_: FSSpec; urlHandle: Handl
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   not available
@@ -2370,6 +2723,9 @@ function HRUtilCreateFullCFURL( rootString: CFStringRef; linkString: CFStringRef
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2378,6 +2734,7 @@ function HRUtilCreateFullCFURL( rootString: CFStringRef; linkString: CFStringRef
 
 
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  HRUtilGetFSRefFromURL()
 <<<<<<< HEAD
@@ -2387,6 +2744,9 @@ function HRUtilCreateFullCFURL( rootString: CFStringRef; linkString: CFStringRef
 =======
  *  HRUtilGetFSRefFromURL()   *** DEPRECATED ***
 >>>>>>> origin/fixes_2.4
+=======
+ *  HRUtilGetFSRefFromURL()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Discussion:
  *    Use these API from  a Carbon App instead of using
@@ -2412,6 +2772,7 @@ function HRUtilCreateFullCFURL( rootString: CFStringRef; linkString: CFStringRef
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   not available
@@ -2429,6 +2790,9 @@ function HRUtilGetFSRefFromURL( rootString: CFStringRef; linkString: CFStringRef
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   not available
  }
@@ -2437,6 +2801,7 @@ function HRUtilGetFSRefFromURL( rootString: CFStringRef; linkString: CFStringRef
 
 
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  HRUtilGetURLFromFSRef()
 <<<<<<< HEAD
@@ -2446,6 +2811,9 @@ function HRUtilGetFSRefFromURL( rootString: CFStringRef; linkString: CFStringRef
 =======
  *  HRUtilGetURLFromFSRef()   *** DEPRECATED ***
 >>>>>>> origin/fixes_2.4
+=======
+ *  HRUtilGetURLFromFSRef()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Discussion:
  *    Use these API from  a Carbon App instead of using
@@ -2465,6 +2833,7 @@ function HRUtilGetFSRefFromURL( rootString: CFStringRef; linkString: CFStringRef
  *      parameter.
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2496,6 +2865,15 @@ function HRUtilGetURLFromFSRef( const (*var*) fileRef: FSRef; var url: CFURLRef 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.3 and later
+ *    Non-Carbon CFM:   not available
+ }
+function HRUtilGetURLFromFSRef( const (*var*) fileRef: FSRef; var url: CFURLRef ): OSStatus; external name '_HRUtilGetURLFromFSRef';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+>>>>>>> origin/cpstrnew
 
 {
     Visited links
@@ -2512,6 +2890,9 @@ function HRUtilGetURLFromFSRef( const (*var*) fileRef: FSRef; var url: CFURLRef 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 type
 	HRWasURLVisitedProcPtr = function( url: ConstCStringPtr; refCon: UnivPtr ): Boolean;
 	HRWasURLVisitedUPP = HRWasURLVisitedProcPtr;
@@ -2532,6 +2913,7 @@ procedure HRRegisterWasURLVisitedUPP( inWasURLVisitedUPP: HRWasURLVisitedUPP; hr
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in HTMLRenderingLib 1.0 and later
  }
@@ -2578,6 +2960,14 @@ procedure HRUnregisterWasURLVisitedUPP( hrRef: HRReference ); external name '_HR
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in HTMLRenderingLib 1.0 and later
+ }
+procedure HRUnregisterWasURLVisitedUPP( hrRef: HRReference ); external name '_HRUnregisterWasURLVisitedUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+>>>>>>> origin/cpstrnew
 
 {
     Use these API from  a Carbon App instead of using HRRegisterWasURLVisitedUPP, HRUnregisterWasURLVisitedUPP. 
@@ -2588,6 +2978,7 @@ procedure HRUnregisterWasURLVisitedUPP( hrRef: HRReference ); external name '_HR
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 type
 	HRWasCFURLVisitedProcPtr = function( url: CFURLRef; refCon: UnivPtr ): Boolean;
 	HRWasCFURLVisitedUPP = HRWasCFURLVisitedProcPtr;
@@ -2622,6 +3013,11 @@ procedure HRUnregisterWasCFURLVisitedUPP( hrRef: HRReference ); external name '_
 type
 	HRWasCFURLVisitedProcPtr = function( url: CFURLRef; refCon: UnivPtr ): Boolean;
 	HRWasCFURLVisitedUPP = HRWasCFURLVisitedProcPtr;
+=======
+type
+	HRWasCFURLVisitedProcPtr = function( url: CFURLRef; refCon: UnivPtr ): Boolean;
+	HRWasCFURLVisitedUPP = HRWasCFURLVisitedProcPtr;
+>>>>>>> origin/cpstrnew
 {
  *  HRRegisterWasCFURLVisitedUPP()   *** DEPRECATED ***
  *  
@@ -2642,6 +3038,7 @@ procedure HRRegisterWasCFURLVisitedUPP( inWasCFURLVisitedUPP: HRWasCFURLVisitedU
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   not available
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure HRUnregisterWasCFURLVisitedUPP(hrRef: HRReference); external name '_HRUnregisterWasCFURLVisitedUPP';
 <<<<<<< HEAD
@@ -2652,6 +3049,10 @@ procedure HRUnregisterWasCFURLVisitedUPP(hrRef: HRReference); external name '_HR
 procedure HRUnregisterWasCFURLVisitedUPP( hrRef: HRReference ); external name '_HRUnregisterWasCFURLVisitedUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> origin/fixes_2.4
+=======
+procedure HRUnregisterWasCFURLVisitedUPP( hrRef: HRReference ); external name '_HRUnregisterWasCFURLVisitedUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2668,6 +3069,13 @@ procedure HRUnregisterWasCFURLVisitedUPP( hrRef: HRReference ); external name '_
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+type
+	HRNewURLProcPtr = function( url: ConstCStringPtr; targetFrame: ConstCStringPtr; addToHistory: Boolean; refCon: UnivPtr ): OSStatus;
+	HRNewURLUPP = HRNewURLProcPtr;
+{
+ *  HRRegisterNewURLUPP()   *** DEPRECATED ***
+=======
 type
 	HRNewURLProcPtr = function( url: ConstCStringPtr; targetFrame: ConstCStringPtr; addToHistory: Boolean; refCon: UnivPtr ): OSStatus;
 	HRNewURLUPP = HRNewURLProcPtr;
@@ -2679,6 +3087,20 @@ type
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in HTMLRenderingLib 1.0 and later
  }
+procedure HRRegisterNewURLUPP( inNewURLUPP: HRNewURLUPP; hrRef: HRReference; inRefCon: UnivPtr ); external name '_HRRegisterNewURLUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  HRUnregisterNewURLUPP()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in HTMLRenderingLib 1.0 and later
+ }
+<<<<<<< HEAD
 procedure HRRegisterNewURLUPP( inNewURLUPP: HRNewURLUPP; hrRef: HRReference; inRefCon: UnivPtr ); external name '_HRRegisterNewURLUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
@@ -2776,6 +3198,20 @@ procedure HRUnregisterNewCFURLUPP( hrRef: HRReference ); external name '_HRUnreg
 type
 	HRNewCFURLProcPtr = function( url: CFURLRef; targetString: CFStringRef; addToHistory: Boolean; refCon: UnivPtr ): OSStatus;
 	HRNewCFURLUPP = HRNewCFURLProcPtr;
+=======
+procedure HRUnregisterNewURLUPP( hrRef: HRReference ); external name '_HRUnregisterNewURLUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{ 
+    Use these API from  a Carbon App instead of using HRRegisterNewURLUPP, HRUnregisterNewURLUPP. 
+    These APIs are same in behavior with their old counter parts. The only difference is that they take 
+    CFURLRef as parameters.
+}
+type
+	HRNewCFURLProcPtr = function( url: CFURLRef; targetString: CFStringRef; addToHistory: Boolean; refCon: UnivPtr ): OSStatus;
+	HRNewCFURLUPP = HRNewCFURLProcPtr;
+>>>>>>> origin/cpstrnew
 {
  *  HRRegisterNewCFURLUPP()   *** DEPRECATED ***
  *  
@@ -2797,6 +3233,7 @@ procedure HRRegisterNewCFURLUPP( inURLUPP: HRNewCFURLUPP; hrRef: HRReference; in
  *    Non-Carbon CFM:   not available
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure HRUnregisterNewCFURLUPP(hrRef: HRReference); external name '_HRUnregisterNewCFURLUPP';
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -2806,6 +3243,10 @@ procedure HRUnregisterNewCFURLUPP(hrRef: HRReference); external name '_HRUnregis
 procedure HRUnregisterNewCFURLUPP( hrRef: HRReference ); external name '_HRUnregisterNewCFURLUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> origin/fixes_2.4
+=======
+procedure HRUnregisterNewCFURLUPP( hrRef: HRReference ); external name '_HRUnregisterNewCFURLUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2818,6 +3259,9 @@ procedure HRUnregisterNewCFURLUPP( hrRef: HRReference ); external name '_HRUnreg
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 type
 	URLSourceType = UInt16;
 const
@@ -2844,6 +3288,7 @@ procedure HRRegisterURLToFSSpecUPP( inURLToFSSpecUPP: HRURLToFSSpecUPP; hrRef: H
 
 {
  *  HRUnregisterURLToFSSpecUPP()   *** DEPRECATED ***
+<<<<<<< HEAD
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
@@ -2900,6 +3345,16 @@ procedure HRUnregisterURLToFSSpecUPP(hrRef: HRReference); external name '_HRUnre
 procedure HRUnregisterURLToFSSpecUPP( hrRef: HRReference ); external name '_HRUnregisterURLToFSSpecUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> origin/fixes_2.4
+=======
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in HTMLRenderingLib 1.0 and later
+ }
+procedure HRUnregisterURLToFSSpecUPP( hrRef: HRReference ); external name '_HRUnregisterURLToFSSpecUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> origin/cpstrnew
 
 
 { 
@@ -2907,6 +3362,7 @@ procedure HRUnregisterURLToFSSpecUPP( hrRef: HRReference ); external name '_HRUn
     These APIs are same in behavior with their old counter parts. The only difference is that they take 
     FSRef as parameters.
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2927,17 +3383,29 @@ procedure HRRegisterURLToFSRefUPP( inURLToFSRefUPP: HRURLToFSRefUPP; hrRef: HRRe
 
 {
  *  HRUnregisterURLToFSRefUPP()   *** DEPRECATED ***
+=======
+type
+	HRURLToFSRefProcPtr = function( rootString: CFStringRef; linkString: CFStringRef; var fref: FSRef; urlSourceType_: URLSourceType; refCon: UnivPtr ): OSStatus;
+	HRURLToFSRefUPP = HRURLToFSRefProcPtr;
+{
+ *  HRRegisterURLToFSRefUPP()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   not available
  }
+<<<<<<< HEAD
 procedure HRUnregisterURLToFSRefUPP( hrRef: HRReference ); external name '_HRUnregisterURLToFSRefUPP';
+=======
+procedure HRRegisterURLToFSRefUPP( inURLToFSRefUPP: HRURLToFSRefUPP; hrRef: HRReference; inRefCon: UnivPtr ); external name '_HRRegisterURLToFSRefUPP';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  NewHRWasURLVisitedUPP()
  *  
  *  Availability:
@@ -2959,17 +3427,25 @@ type
 	HRURLToFSRefUPP = HRURLToFSRefProcPtr;
 {
  *  HRRegisterURLToFSRefUPP()   *** DEPRECATED ***
+=======
+ *  HRUnregisterURLToFSRefUPP()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   not available
  }
+<<<<<<< HEAD
 procedure HRRegisterURLToFSRefUPP( inURLToFSRefUPP: HRURLToFSRefUPP; hrRef: HRReference; inRefCon: UnivPtr ); external name '_HRRegisterURLToFSRefUPP';
+=======
+procedure HRUnregisterURLToFSRefUPP( hrRef: HRReference ); external name '_HRUnregisterURLToFSRefUPP';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  HRUnregisterURLToFSRefUPP()   *** DEPRECATED ***
  *  
  *  Availability:
@@ -3004,6 +3480,8 @@ function NewHRWasURLVisitedUPP(userRoutine: HRWasURLVisitedProcPtr): HRWasURLVis
 >>>>>>> origin/fixes_2_2
 =======
 {
+=======
+>>>>>>> origin/cpstrnew
  *  NewHRWasURLVisitedUPP()
  *  
  *  Availability:
@@ -3014,11 +3492,15 @@ function NewHRWasURLVisitedUPP(userRoutine: HRWasURLVisitedProcPtr): HRWasURLVis
 function NewHRWasURLVisitedUPP( userRoutine: HRWasURLVisitedProcPtr ): HRWasURLVisitedUPP; external name '_NewHRWasURLVisitedUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {
  *  NewHRWasCFURLVisitedUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3050,10 +3532,20 @@ function NewHRWasCFURLVisitedUPP( userRoutine: HRWasCFURLVisitedProcPtr ): HRWas
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.3 and later
+ *    Non-Carbon CFM:   not available
+ }
+function NewHRWasCFURLVisitedUPP( userRoutine: HRWasCFURLVisitedProcPtr ): HRWasCFURLVisitedUPP; external name '_NewHRWasCFURLVisitedUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+>>>>>>> origin/cpstrnew
 {
  *  NewHRNewURLUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3085,10 +3577,20 @@ function NewHRNewURLUPP( userRoutine: HRNewURLProcPtr ): HRNewURLUPP; external n
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function NewHRNewURLUPP( userRoutine: HRNewURLProcPtr ): HRNewURLUPP; external name '_NewHRNewURLUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+>>>>>>> origin/cpstrnew
 {
  *  NewHRNewCFURLUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3120,10 +3622,20 @@ function NewHRNewCFURLUPP( userRoutine: HRNewCFURLProcPtr ): HRNewCFURLUPP; exte
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.3 and later
+ *    Non-Carbon CFM:   not available
+ }
+function NewHRNewCFURLUPP( userRoutine: HRNewCFURLProcPtr ): HRNewCFURLUPP; external name '_NewHRNewCFURLUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+>>>>>>> origin/cpstrnew
 {
  *  NewHRURLToFSSpecUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3155,10 +3667,20 @@ function NewHRURLToFSSpecUPP( userRoutine: HRURLToFSSpecProcPtr ): HRURLToFSSpec
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function NewHRURLToFSSpecUPP( userRoutine: HRURLToFSSpecProcPtr ): HRURLToFSSpecUPP; external name '_NewHRURLToFSSpecUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+>>>>>>> origin/cpstrnew
 {
  *  NewHRURLToFSRefUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3190,10 +3712,20 @@ function NewHRURLToFSRefUPP( userRoutine: HRURLToFSRefProcPtr ): HRURLToFSRefUPP
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.3 and later
+ *    Non-Carbon CFM:   not available
+ }
+function NewHRURLToFSRefUPP( userRoutine: HRURLToFSRefProcPtr ): HRURLToFSRefUPP; external name '_NewHRURLToFSRefUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+>>>>>>> origin/cpstrnew
 {
  *  DisposeHRWasURLVisitedUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3225,10 +3757,20 @@ procedure DisposeHRWasURLVisitedUPP( userUPP: HRWasURLVisitedUPP ); external nam
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeHRWasURLVisitedUPP( userUPP: HRWasURLVisitedUPP ); external name '_DisposeHRWasURLVisitedUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+>>>>>>> origin/cpstrnew
 {
  *  DisposeHRWasCFURLVisitedUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3260,10 +3802,20 @@ procedure DisposeHRWasCFURLVisitedUPP( userUPP: HRWasCFURLVisitedUPP ); external
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.3 and later
+ *    Non-Carbon CFM:   not available
+ }
+procedure DisposeHRWasCFURLVisitedUPP( userUPP: HRWasCFURLVisitedUPP ); external name '_DisposeHRWasCFURLVisitedUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+>>>>>>> origin/cpstrnew
 {
  *  DisposeHRNewURLUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3295,10 +3847,20 @@ procedure DisposeHRNewURLUPP( userUPP: HRNewURLUPP ); external name '_DisposeHRN
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeHRNewURLUPP( userUPP: HRNewURLUPP ); external name '_DisposeHRNewURLUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+>>>>>>> origin/cpstrnew
 {
  *  DisposeHRNewCFURLUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3330,10 +3892,20 @@ procedure DisposeHRNewCFURLUPP( userUPP: HRNewCFURLUPP ); external name '_Dispos
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.3 and later
+ *    Non-Carbon CFM:   not available
+ }
+procedure DisposeHRNewCFURLUPP( userUPP: HRNewCFURLUPP ); external name '_DisposeHRNewCFURLUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+>>>>>>> origin/cpstrnew
 {
  *  DisposeHRURLToFSSpecUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3365,10 +3937,20 @@ procedure DisposeHRURLToFSSpecUPP( userUPP: HRURLToFSSpecUPP ); external name '_
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeHRURLToFSSpecUPP( userUPP: HRURLToFSSpecUPP ); external name '_DisposeHRURLToFSSpecUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+>>>>>>> origin/cpstrnew
 {
  *  DisposeHRURLToFSRefUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3400,10 +3982,20 @@ procedure DisposeHRURLToFSRefUPP( userUPP: HRURLToFSRefUPP ); external name '_Di
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.3 and later
+ *    Non-Carbon CFM:   not available
+ }
+procedure DisposeHRURLToFSRefUPP( userUPP: HRURLToFSRefUPP ); external name '_DisposeHRURLToFSRefUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+>>>>>>> origin/cpstrnew
 {
  *  InvokeHRWasURLVisitedUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3435,10 +4027,20 @@ function InvokeHRWasURLVisitedUPP( url: ConstCStringPtr; refCon: UnivPtr; userUP
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function InvokeHRWasURLVisitedUPP( url: ConstCStringPtr; refCon: UnivPtr; userUPP: HRWasURLVisitedUPP ): Boolean; external name '_InvokeHRWasURLVisitedUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+>>>>>>> origin/cpstrnew
 {
  *  InvokeHRWasCFURLVisitedUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3470,10 +4072,20 @@ function InvokeHRWasCFURLVisitedUPP( url: CFURLRef; refCon: UnivPtr; userUPP: HR
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.3 and later
+ *    Non-Carbon CFM:   not available
+ }
+function InvokeHRWasCFURLVisitedUPP( url: CFURLRef; refCon: UnivPtr; userUPP: HRWasCFURLVisitedUPP ): Boolean; external name '_InvokeHRWasCFURLVisitedUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+>>>>>>> origin/cpstrnew
 {
  *  InvokeHRNewURLUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3505,10 +4117,20 @@ function InvokeHRNewURLUPP( url: ConstCStringPtr; targetFrame: ConstCStringPtr; 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function InvokeHRNewURLUPP( url: ConstCStringPtr; targetFrame: ConstCStringPtr; addToHistory: Boolean; refCon: UnivPtr; userUPP: HRNewURLUPP ): OSStatus; external name '_InvokeHRNewURLUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+>>>>>>> origin/cpstrnew
 {
  *  InvokeHRNewCFURLUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3540,10 +4162,20 @@ function InvokeHRNewCFURLUPP( url: CFURLRef; targetString: CFStringRef; addToHis
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.3 and later
+ *    Non-Carbon CFM:   not available
+ }
+function InvokeHRNewCFURLUPP( url: CFURLRef; targetString: CFStringRef; addToHistory: Boolean; refCon: UnivPtr; userUPP: HRNewCFURLUPP ): OSStatus; external name '_InvokeHRNewCFURLUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+>>>>>>> origin/cpstrnew
 {
  *  InvokeHRURLToFSSpecUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3575,10 +4207,20 @@ function InvokeHRURLToFSSpecUPP( rootURL: ConstCStringPtr; linkURL: ConstCString
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function InvokeHRURLToFSSpecUPP( rootURL: ConstCStringPtr; linkURL: ConstCStringPtr; var fsspec_: FSSpec; urlSourceType_: URLSourceType; refCon: UnivPtr; userUPP: HRURLToFSSpecUPP ): OSStatus; external name '_InvokeHRURLToFSSpecUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+>>>>>>> origin/cpstrnew
 {
  *  InvokeHRURLToFSRefUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3601,6 +4243,9 @@ end.
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework
 >>>>>>> origin/fixes_2.4
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   not available
  }
@@ -3611,6 +4256,7 @@ function InvokeHRURLToFSRefUPP( rootString: CFStringRef; linkString: CFStringRef
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -3619,3 +4265,6 @@ end.
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

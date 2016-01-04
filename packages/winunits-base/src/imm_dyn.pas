@@ -49,6 +49,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     lpBuf: LPVOID; dwBufLen: DWORD): LONG; stdcall = nil;
   ImmGetCompositionStringW: function (imc: HIMC; dwIndex: DWORD;
     lpBuf: LPVOID; dwBufLen: DWORD): LONG; stdcall = nil;
@@ -67,6 +68,11 @@ var
   ImmGetCompositionStringW: function (imc: HIMC; dwIndex: DWORD;
     lpBuf: LPVOID; dwBufLen: DWORD): Longword; stdcall = nil;
 >>>>>>> graemeg/cpstrnew
+=======
+    lpBuf: LPVOID; dwBufLen: DWORD): Longword; stdcall = nil;
+  ImmGetCompositionStringW: function (imc: HIMC; dwIndex: DWORD;
+    lpBuf: LPVOID; dwBufLen: DWORD): Longword; stdcall = nil;
+>>>>>>> origin/cpstrnew
 =======
     lpBuf: LPVOID; dwBufLen: DWORD): Longword; stdcall = nil;
   ImmGetCompositionStringW: function (imc: HIMC; dwIndex: DWORD;

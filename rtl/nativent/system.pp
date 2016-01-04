@@ -53,6 +53,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { FileNameCaseSensitive and FileNameCasePreserving are defined separately below!!! }
 =======
 { FileNameCaseSensitive is defined separately below!!! }
@@ -63,6 +64,9 @@ const
 =======
 { FileNameCaseSensitive is defined separately below!!! }
 >>>>>>> graemeg/cpstrnew
+=======
+{ FileNameCaseSensitive is defined separately below!!! }
+>>>>>>> origin/cpstrnew
 =======
 { FileNameCaseSensitive is defined separately below!!! }
 >>>>>>> origin/cpstrnew
@@ -107,6 +111,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   FileNameCasePreserving: boolean = true;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -114,6 +119,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   // todo: check whether this is really the case on NT
@@ -133,6 +140,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function fpc_pwidechar_length(p: PWideChar): SizeInt; external name 'FPC_PWIDECHAR_LENGTH';
 =======
 function fpc_pwidechar_length(p: PWideChar): LongInt; external name 'FPC_PWIDECHAR_LENGTH';
@@ -143,6 +151,9 @@ function fpc_pwidechar_length(p: PWideChar): LongInt; external name 'FPC_PWIDECH
 =======
 function fpc_pwidechar_length(p: PWideChar): LongInt; external name 'FPC_PWIDECHAR_LENGTH';
 >>>>>>> graemeg/cpstrnew
+=======
+function fpc_pwidechar_length(p: PWideChar): LongInt; external name 'FPC_PWIDECHAR_LENGTH';
+>>>>>>> origin/cpstrnew
 =======
 function fpc_pwidechar_length(p: PWideChar): LongInt; external name 'FPC_PWIDECHAR_LENGTH';
 >>>>>>> origin/cpstrnew
@@ -385,6 +396,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       internal_do_exit;
 =======
       do_exit;
@@ -395,6 +407,9 @@ begin
 =======
       do_exit;
 >>>>>>> graemeg/cpstrnew
+=======
+      do_exit;
+>>>>>>> origin/cpstrnew
 =======
       do_exit;
 >>>>>>> origin/cpstrnew
@@ -441,6 +456,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure SysInitStdIO;
 begin
   { This function is currently only called if the RTL is compiled for Usermode;
@@ -453,6 +469,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifndef kmode}
 
 // other user mode only stuff
@@ -462,11 +480,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   with PSimplePEB(CurrentPEB)^.ProcessParameters^ do begin
@@ -496,6 +517,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif}
 end;
 
@@ -504,6 +526,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 end;
@@ -517,11 +541,14 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 function GetProcessID: SizeUInt;
@@ -545,6 +572,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   { we do not use winlike widestrings and also the RTL can't be compiled with
     2.2, so we can savely use the UnicodeString manager only. }
   initunicodestringmanager;
@@ -560,6 +588,9 @@ begin
 =======
   initvariantmanager;
 >>>>>>> origin/cpstrnew
+=======
+  initvariantmanager;
+>>>>>>> origin/cpstrnew
 {$ifndef KMODE}
   SysInitStdIO;
   { Arguments }
@@ -572,6 +603,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   { we do not use winlike widestrings and also the RTL can't be compiled with
     2.2, so we can savely use the UnicodeString manager only. }
@@ -587,6 +619,11 @@ begin
     2.2, so we can savely use the UnicodeString manager only. }
   initunicodestringmanager;
 >>>>>>> graemeg/cpstrnew
+=======
+  { we do not use winlike widestrings and also the RTL can't be compiled with
+    2.2, so we can savely use the UnicodeString manager only. }
+  initunicodestringmanager;
+>>>>>>> origin/cpstrnew
 =======
   { we do not use winlike widestrings and also the RTL can't be compiled with
     2.2, so we can savely use the UnicodeString manager only. }

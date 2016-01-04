@@ -456,6 +456,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
            hlcg.location_force_mmregscalar(current_asmdata.CurrAsmList,left.location,left.resultdef,false);
 =======
            location_force_mmregscalar(current_asmdata.CurrAsmList,left.location,false);
@@ -466,6 +467,9 @@ interface
 =======
            location_force_mmregscalar(current_asmdata.CurrAsmList,left.location,false);
 >>>>>>> graemeg/cpstrnew
+=======
+           location_force_mmregscalar(current_asmdata.CurrAsmList,left.location,false);
+>>>>>>> origin/cpstrnew
 =======
            location_force_mmregscalar(current_asmdata.CurrAsmList,left.location,false);
 >>>>>>> origin/cpstrnew
@@ -548,6 +552,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         href: treference;
         tmpreg: tregister;
         procvarrectype: trecorddef;
@@ -561,6 +566,9 @@ interface
 =======
         tmpreg: tregister;
 >>>>>>> graemeg/cpstrnew
+=======
+        tmpreg: tregister;
+>>>>>>> origin/cpstrnew
 =======
         tmpreg: tregister;
 >>>>>>> origin/cpstrnew
@@ -620,6 +628,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 if not(left.location.loc in [LOC_REFERENCE,LOC_CREFERENCE]) then
                   internalerror(2013031503);
                 location_reset_ref(location,LOC_REFERENCE,int_cgsize(resultdef.size),sizeof(pint));
@@ -650,6 +659,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                 location_reset_ref(location,LOC_REFERENCE,int_cgsize(sizeof(pint)*2),sizeof(pint));
                 tg.gettemp(current_asmdata.CurrAsmList,resultdef.size,sizeof(pint),tt_normal,location.reference);
                 tmpreg:=cg.getaddressregister(current_asmdata.CurrAsmList);
@@ -664,11 +675,14 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
               end;

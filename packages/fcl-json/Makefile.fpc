@@ -18,6 +18,7 @@ name=fcl-json
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 version=3.1.1
 =======
 =======
@@ -48,10 +49,13 @@ packages=rtl fpmkunit
 =======
 >>>>>>> origin/fixes_2_2
 version=2.2.5
+=======
+version=2.5.1
+>>>>>>> origin/cpstrnew
 
 [target]
-units=fpjson jsonscanner jsonparser jsonconf
-rsts=fpjson jsonscanner jsonparser jsonconf
+units=fpjson jsonscanner jsonparser jsonconf fpjsonrtti
+rsts=fpjson jsonscanner jsonparser jsonconf fpjsonrtti
 
 [require]
 packages=fcl-base
@@ -183,8 +187,14 @@ fpjsonrtti$(PPUEXT): jsonparser$(PPUEXT) fpjson$(PPUEXT)
 jsonparser$(PPUEXT): jsonparser.pp fpjson$(PPUEXT) jsonscanner$(PPUEXT)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 jsonconf$(PPUEXT): jsonparser$(PPUEXT) fpjson$(PPUEXT)
 >>>>>>> graemeg/fixes_2_2
 =======
 jsonconf$(PPUEXT): jsonparser$(PPUEXT) fpjson$(PPUEXT)
 >>>>>>> origin/fixes_2_2
+=======
+jsonconf$(PPUEXT): jsonparser$(PPUEXT) fpjson$(PPUEXT)
+
+fpjsonrtti$(PPUEXT): jsonparser$(PPUEXT) fpjson$(PPUEXT)
+>>>>>>> origin/cpstrnew

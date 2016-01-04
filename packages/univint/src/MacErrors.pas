@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       CarbonCore/MacErrors.h
  
      Contains:   OSErr codes.
@@ -30,11 +31,15 @@
 =======
      File:       CarbonCore/MacErrors.h
 >>>>>>> origin/fixes_2.4
+=======
+     File:       CarbonCore/MacErrors.h
+>>>>>>> origin/cpstrnew
  
      Contains:   OSErr codes.
  
      Version:    CarbonCore-859.2~1
  
+<<<<<<< HEAD
 <<<<<<< HEAD
      Copyright:  © 1985-2002 by Apple Computer, Inc., all rights reserved
 <<<<<<< HEAD
@@ -44,6 +49,9 @@
 =======
      Copyright:  © 1985-2008 by Apple Computer, Inc., all rights reserved
 >>>>>>> origin/fixes_2.4
+=======
+     Copyright:  © 1985-2008 by Apple Computer, Inc., all rights reserved
+>>>>>>> origin/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -51,6 +59,7 @@
                      http://www.freepascal.org/bugs.html
  
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -80,6 +89,9 @@
 =======
 {      Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 >>>>>>> origin/fixes_2.4
+=======
+{      Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> origin/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -88,12 +100,16 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew
 {$mode macpas}
 {$packenum 1}
 {$macro on}
@@ -105,6 +121,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
@@ -119,6 +136,10 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 >>>>>>> origin/fixes_2.4
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -134,6 +155,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
@@ -144,6 +166,9 @@ interface
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 >>>>>>> origin/fixes_2.4
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
@@ -151,13 +176,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -165,6 +194,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
@@ -173,8 +204,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -185,6 +219,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -205,6 +240,8 @@ interface
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -213,12 +250,15 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -226,6 +266,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -491,12 +532,27 @@ interface
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
+=======
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -541,6 +597,7 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc TARGET_CPU_PPC_64 := FALSE}
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -548,6 +605,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -576,6 +635,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
@@ -584,6 +644,8 @@ interface
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -596,8 +658,11 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 uses MacTypes;
 {$endc} {not MACOSALLINCLUDE}
 
@@ -1155,6 +1220,7 @@ const
 	kFMIterationCompleted = -980;
 	kFMInvalidFontFamilyErr = -981;
 	kFMInvalidFontErr = -982;
+<<<<<<< HEAD
 <<<<<<< HEAD
 	kFMIterationScopeModifiedErr = -983;
 	kFMFontTableAccessErr = -984;
@@ -5103,6 +5169,8 @@ const
 	kFMInvalidFontErr			= -982;
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 	kFMIterationScopeModifiedErr = -983;
 	kFMFontTableAccessErr = -984;
 	kFMFontContainerAccessErr = -985;
@@ -6551,7 +6619,10 @@ const
 	codecOffscreenFailedPleaseRetryErr = -8992;
 	badCodecCharacterizationErr = -8993;
 	noThumbnailFoundErr = -8994;
+<<<<<<< HEAD
+=======
 
+>>>>>>> origin/cpstrnew
 
 { PCCard error codes }
 const
@@ -6617,6 +6688,73 @@ const
 	kNotZVCapableErr = -9108; { This socket does not support Zoomed Video }
 	kNoCardBusCISErr = -9109; { No valid CIS exists for this CardBus card }
 
+<<<<<<< HEAD
+{ PCCard error codes }
+const
+	kBadAdapterErr = -9050; { invalid adapter number}
+	kBadAttributeErr = -9051; { specified attributes field value is invalid}
+	kBadBaseErr = -9052; { specified base system memory address is invalid}
+	kBadEDCErr = -9053; { specified EDC generator specified is invalid}
+	kBadIRQErr = -9054; { specified IRQ level is invalid}
+	kBadOffsetErr = -9055; { specified PC card memory array offset is invalid}
+	kBadPageErr = -9056; { specified page is invalid}
+	kBadSizeErr = -9057; { specified size is invalid}
+	kBadSocketErr = -9058; { specified logical or physical socket number is invalid}
+	kBadTypeErr = -9059; { specified window or interface type is invalid}
+	kBadVccErr = -9060; { specified Vcc power level index is invalid}
+	kBadVppErr = -9061; { specified Vpp1 or Vpp2 power level index is invalid}
+	kBadWindowErr = -9062; { specified window is invalid}
+	kBadArgLengthErr = -9063; { ArgLength argument is invalid}
+	kBadArgsErr = -9064; { values in argument packet are invalid}
+	kBadHandleErr = -9065; { clientHandle is invalid}
+	kBadCISErr = -9066; { CIS on card is invalid}
+	kBadSpeedErr = -9067; { specified speed is unavailable}
+	kReadFailureErr = -9068; { unable to complete read request}
+	kWriteFailureErr = -9069; { unable to complete write request}
+	kGeneralFailureErr = -9070; { an undefined error has occurred}
+	kNoCardErr = -9071; { no PC card in the socket}
+	kUnsupportedFunctionErr = -9072; { function is not supported by this implementation}
+	kUnsupportedModeErr = -9073; { mode is not supported}
+	kBusyErr = -9074; { unable to process request at this time - try later}
+	kWriteProtectedErr = -9075; { media is write-protected}
+	kConfigurationLockedErr = -9076; { a configuration has already been locked}
+	kInUseErr = -9077; { requested resource is being used by a client}
+	kNoMoreItemsErr = -9078; { there are no more of the requested item}
+	kOutOfResourceErr = -9079; { Card Services has exhausted the resource}
+	kNoCardSevicesSocketsErr = -9080;
+	kInvalidRegEntryErr = -9081;
+	kBadLinkErr = -9082;
+	kBadDeviceErr = -9083;
+	k16BitCardErr = -9084;
+	kCardBusCardErr = -9085;
+	kPassCallToChainErr = -9086;
+	kCantConfigureCardErr = -9087;
+	kPostCardEventErr = -9088; { _PCCSLPostCardEvent failed and dropped an event }
+	kInvalidDeviceNumber = -9089;
+	kUnsupportedVsErr = -9090; { Unsupported Voltage Sense }
+	kInvalidCSClientErr = -9091; { Card Services ClientID is not registered }
+	kBadTupleDataErr = -9092; { Data in tuple is invalid }
+	kBadCustomIFIDErr = -9093; { Custom interface ID is invalid }
+	kNoIOWindowRequestedErr = -9094; { Request I/O window before calling configuration }
+	kNoMoreTimerClientsErr = -9095; { All timer callbacks are in use }
+	kNoMoreInterruptSlotsErr = -9096; { All internal Interrupt slots are in use }
+	kNoClientTableErr = -9097; { The client table has not be initialized yet }
+	kUnsupportedCardErr = -9098; { Card not supported by generic enabler}
+	kNoCardEnablersFoundErr = -9099; { No Enablers were found}
+	kNoEnablerForCardErr = -9100; { No Enablers were found that can support the card}
+	kNoCompatibleNameErr = -9101; { There is no compatible driver name for this device}
+	kClientRequestDenied = -9102; { CS Clients should return this code inorder to }
+                                        {   deny a request-type CS Event                }
+	kNotReadyErr = -9103; { PC Card failed to go ready }
+	kTooManyIOWindowsErr = -9104; { device requested more than one I/O window }
+	kAlreadySavedStateErr = -9105; { The state has been saved on previous call }
+	kAttemptDupCardEntryErr = -9106; { The Enabler was asked to create a duplicate card entry }
+	kCardPowerOffErr = -9107; { Power to the card has been turned off }
+	kNotZVCapableErr = -9108; { This socket does not support Zoomed Video }
+	kNoCardBusCISErr = -9109; { No valid CIS exists for this CardBus card }
+
+=======
+>>>>>>> origin/cpstrnew
 
 const
 	noDeviceForChannel = -9400;
@@ -7238,6 +7376,7 @@ const
    * and the kControlTabInfoTag.
    }
 	controlInvalidDataVersionErr = -30597;
+<<<<<<< HEAD
 
   {
    * You called SetControlProperty, GetControlProperty, or a similar
@@ -7256,8 +7395,31 @@ const
    * You passed an invalid ControlRef to a Control Manager API.
    }
 	controlHandleInvalidErr = -30599;
+=======
+>>>>>>> origin/cpstrnew
+
+  {
+   * You called SetControlProperty, GetControlProperty, or a similar
+   * API with an illegal property creator OSType.
+   }
+	controlPropertyInvalid = -5603;
+
+<<<<<<< HEAD
+=======
+  {
+   * You called GetControlProperty or a similar API with a property
+   * creator and property tag that does not currently exist on the
+   * given control.
+   }
+	controlPropertyNotFoundErr = -5604;
+
+  {
+   * You passed an invalid ControlRef to a Control Manager API.
+   }
+	controlHandleInvalidErr = -30599;
 
 
+>>>>>>> origin/cpstrnew
 { URLAccess Error Codes }
 const
 	kURLInvalidURLReferenceError = -30770;
@@ -7311,6 +7473,7 @@ const
 	badComponentInstance = $80008001; { when cast to an OSErr this is -32767}
 	badComponentSelector = $80008002; { when cast to an OSErr this is -32766}
 
+<<<<<<< HEAD
 
 const
 	dsBusError = 1;    {bus error}
@@ -7392,6 +7555,89 @@ const
 	dsMBExternFlpySysError = 29204; {Media Bay, external floppy drive reconnect warning}
 	dsPCCardATASysError = 29205; {PCCard has been ejected while still in use. }
 
+=======
+
+const
+	dsBusError = 1;    {bus error}
+	dsAddressErr = 2;    {address error}
+	dsIllInstErr = 3;    {illegal instruction error}
+	dsZeroDivErr = 4;    {zero divide error}
+	dsChkErr = 5;    {check trap error}
+	dsOvflowErr = 6;    {overflow trap error}
+	dsPrivErr = 7;    {privilege violation error}
+	dsTraceErr = 8;    {trace mode error}
+	dsLineAErr = 9;    {line 1010 trap error}
+	dsLineFErr = 10;   {line 1111 trap error}
+	dsMiscErr = 11;   {miscellaneous hardware exception error}
+	dsCoreErr = 12;   {unimplemented core routine error}
+	dsIrqErr = 13;   {uninstalled interrupt error}
+	dsIOCoreErr = 14;   {IO Core Error}
+	dsLoadErr = 15;   {Segment Loader Error}
+	dsFPErr = 16;   {Floating point error}
+	dsNoPackErr = 17;   {package 0 not present}
+	dsNoPk1 = 18;   {package 1 not present}
+	dsNoPk2 = 19;    {package 2 not present}
+
+const
+	dsNoPk3 = 20;   {package 3 not present}
+	dsNoPk4 = 21;   {package 4 not present}
+	dsNoPk5 = 22;   {package 5 not present}
+	dsNoPk6 = 23;   {package 6 not present}
+	dsNoPk7 = 24;   {package 7 not present}
+	dsMemFullErr = 25;   {out of memory!}
+	dsBadLaunch = 26;   {can't launch file}
+	dsFSErr = 27;   {file system map has been trashed}
+	dsStknHeap = 28;   {stack has moved into application heap}
+	negZcbFreeErr = 33;   {ZcbFree has gone negative}
+	dsFinderErr = 41;   {can't load the Finder error}
+	dsBadSlotInt = 51;   {unserviceable slot interrupt}
+	dsBadSANEOpcode = 81;   {bad opcode given to SANE Pack4}
+	dsBadPatchHeader = 83;   {SetTrapAddress saw the Òcome-fromÓ header}
+	menuPrgErr = 84;   {happens when a menu is purged}
+	dsMBarNFnd = 85;   {Menu Manager Errors}
+	dsHMenuFindErr = 86;   {Menu Manager Errors}
+	dsWDEFNotFound = 87;   {could not load WDEF}
+	dsCDEFNotFound = 88;   {could not load CDEF}
+	dsMDEFNotFound = 89;    {could not load MDEF}
+
+const
+	dsNoFPU = 90;   {an FPU instruction was executed and the machine doesnÕt have one}
+	dsNoPatch = 98;   {Can't patch for particular Model Mac}
+	dsBadPatch = 99;   {Can't load patch resource}
+	dsParityErr = 101;  {memory parity error}
+	dsOldSystem = 102;  {System is too old for this ROM}
+	ds32BitMode = 103;  {booting in 32-bit on a 24-bit sys}
+	dsNeedToWriteBootBlocks = 104;  {need to write new boot blocks}
+	dsNotEnoughRAMToBoot = 105;  {must have at least 1.5MB of RAM to boot 7.0}
+	dsBufPtrTooLow = 106;  {bufPtr moved too far during boot}
+	dsVMDeferredFuncTableFull = 112;  {VM's DeferUserFn table is full}
+	dsVMBadBackingStore = 113;  {Error occurred while reading or writing the VM backing-store file}
+	dsCantHoldSystemHeap = 114;  {Unable to hold the system heap during boot}
+	dsSystemRequiresPowerPC = 116;  {Startup disk requires PowerPC}
+	dsGibblyMovedToDisabledFolder = 117;  { For debug builds only, signals that active gibbly was disabled during boot. }
+	dsUnBootableSystem = 118;  { Active system file will not boot on this system because it was designed only to boot from a CD. }
+	dsMustUseFCBAccessors = 119;  { FCBSPtr and FSFCBLen are invalid - must use FSM FCB accessor functions }
+	dsMacOSROMVersionTooOld = 120;  { The version of the "Mac OS ROM" file is too old to be used with the installed version of system software }
+	dsLostConnectionToNetworkDisk = 121;  { Lost communication with Netboot server }
+	dsRAMDiskTooBig = 122;  { The RAM disk is too big to boot safely; will be turned off }
+	dsWriteToSupervisorStackGuardPage = 128; {the supervisor stack overflowed into its guard page }
+	dsReinsert = 30;   {request user to reinsert off-line volume}
+	shutDownAlert = 42;   {handled like a shutdown error}
+	dsShutDownOrRestart = 20000; {user choice between ShutDown and Restart}
+	dsSwitchOffOrRestart = 20001; {user choice between switching off and Restart}
+	dsForcedQuit = 20002; {allow the user to ExitToShell, return if Cancel}
+	dsRemoveDisk = 20003; {request user to remove disk from manual eject drive}
+	dsDirtyDisk = 20004; {request user to return a manually-ejected dirty disk}
+	dsShutDownOrResume = 20109; {allow user to return to Finder or ShutDown}
+	dsSCSIWarn = 20010; {Portable SCSI adapter warning.}
+	dsMBSysError = 29200; {Media Bay replace warning.}
+	dsMBFlpySysError = 29201; {Media Bay, floppy replace warning.}
+	dsMBATASysError = 29202; {Media Bay, ATA replace warning.}
+	dsMBATAPISysError = 29203; {Media Bay, ATAPI replace warning...}
+	dsMBExternFlpySysError = 29204; {Media Bay, external floppy drive reconnect warning}
+	dsPCCardATASysError = 29205; {PCCard has been ejected while still in use. }
+
+>>>>>>> origin/cpstrnew
 {
     System Errors that are used after MacsBug is loaded to put up dialogs since these should not 
     cause MacsBug to stop, they must be in the range (30, 42, 16384-32767) negative numbers add 
@@ -7557,9 +7803,13 @@ procedure SysError( errorCode: SInt16 ); external name '_SysError';
 end.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
 {$endc} {not MACOSALLINCLUDE}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {not MACOSALLINCLUDE}
+>>>>>>> origin/cpstrnew

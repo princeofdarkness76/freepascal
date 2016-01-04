@@ -8,6 +8,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure test_gas;
 =======
 procedure test_gas;   
@@ -21,6 +22,9 @@ procedure test_gas;
 =======
 procedure test_gas;   
 >>>>>>> origin/cpstrnew
+=======
+procedure test_gas;   
+>>>>>>> origin/cpstrnew
 var
   test : qword;
 begin
@@ -30,6 +34,7 @@ begin
   if (test < qword($ffffffff)) then
     runerror(2);
 asm
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -48,10 +53,14 @@ asm
 =======
   movq $0xffffffff,test
 >>>>>>> origin/cpstrnew
+=======
+  movq $0xffffffff,test
+>>>>>>> origin/cpstrnew
 end;
   if test <> $ffffffff then
     runerror(5);
 end ;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -66,6 +75,9 @@ end ;
 =======
   
 >>>>>>> graemeg/cpstrnew
+=======
+  
+>>>>>>> origin/cpstrnew
 =======
   
 >>>>>>> origin/cpstrnew

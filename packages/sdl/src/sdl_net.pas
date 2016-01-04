@@ -127,14 +127,20 @@ uses
 {$ENDIF}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 
 {$IFDEF MORPHOS}
   exec,
 {$ENDIF}
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
   sdl;
 
 const
@@ -156,14 +162,20 @@ const
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {$IFDEF MACOS}
   SDLNetLibName = 'powersdl_net.library';
 {$ENDIF}
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
   {* Printable format: "%d.%d.%d", MAJOR, MINOR, PATCHLEVEL *}
   SDL_NET_MAJOR_VERSION = 1;
 {$EXTERNALSYM SDL_NET_MAJOR_VERSION}
@@ -305,14 +317,20 @@ procedure SDL_NET_VERSION( var X : TSDL_version );
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {$IFDEF MORPHOS}
 {$INCLUDE powersdl_net.inc}
 {$ELSE MORPHOS}
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 {* Initialize/Cleanup the network API
    SDL must be initialized before calls to functions in this library,
    because this library uses utility functions from the SDL library.
@@ -541,6 +559,7 @@ cdecl; external{$IFDEF __GPC__}name 'SDLNet_AddSocket'{$ELSE}SDLNetLibName{$ENDI
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ENDIF MORPHOS}
 function SDLNet_TCP_AddSocket( set_ : PSDLNet_SocketSet; sock : PTCPSocket ) : integer;
 
@@ -557,6 +576,13 @@ function SDLNet_UDP_AddSocket( set_ : PSDLNet_SocketSet; sock : PUDPSocket ) : i
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$ENDIF MORPHOS}
+function SDLNet_TCP_AddSocket( set_ : PSDLNet_SocketSet; sock : PTCPSocket ) : integer;
+
+function SDLNet_UDP_AddSocket( set_ : PSDLNet_SocketSet; sock : PUDPSocket ) : integer;
+{$IFNDEF MORPHOS}
+>>>>>>> origin/cpstrnew
 
 {* Remove a socket from a set of sockets to be checked for available data *}
 function SDLNet_DelSocket( set_ : PSDLNet_SocketSet; sock : PSDLNet_GenericSocket ) : integer;
@@ -584,16 +610,22 @@ cdecl; external{$IFDEF __GPC__}name 'SDLNet_CheckSockets'{$ELSE}SDLNetLibName{$E
 *}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 
 {$ENDIF MORPHOS}
 function SDLNet_SocketReady( sock : PSDLNet_GenericSocket ) : boolean;
 {$IFNDEF MORPHOS}
+<<<<<<< HEAD
 =======
 function SDLNet_SocketReady( sock : PSDLNet_GenericSocket ) : boolean;
 >>>>>>> graemeg/fixes_2_2
 =======
 function SDLNet_SocketReady( sock : PSDLNet_GenericSocket ) : boolean;
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 
 {* Free a set of sockets allocated by SDL_NetAllocSocketSet() *}
 procedure SDLNet_FreeSocketSet( set_ : PSDLNet_SocketSet );
@@ -628,12 +660,17 @@ cdecl; external{$IFDEF __GPC__}name 'SDLNet_Read32'{$ELSE}SDLNetLibName{$ENDIF _
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ENDIF MORPHOS}
 
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$ENDIF MORPHOS}
+
+>>>>>>> origin/cpstrnew
 {* We'll use SDL's functions for error reporting *}
 procedure SDLNet_SetError( fmt : PChar );
 function SDLNet_GetError : PChar;

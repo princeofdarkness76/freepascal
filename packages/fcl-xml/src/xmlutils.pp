@@ -17,6 +17,7 @@ unit xmlutils;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef fpc}{$mode objfpc}{$endif}
 {$H+}
 {$ifopt Q+}{$define overflow_check}{$endif}
@@ -31,10 +32,16 @@ unit xmlutils;
 >>>>>>> origin/fixes_2.4
 {$H+}
 >>>>>>> origin/fixes_2_2
+=======
+{$ifdef fpc}{$mode objfpc}{$endif}
+{$H+}
+{$ifopt Q+}{$define overflow_check}{$endif}
+>>>>>>> origin/cpstrnew
 
 interface
 
 uses
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   SysUtils, Classes;
@@ -122,6 +129,9 @@ type
 =======
 >>>>>>> origin/fixes_2_2
   SysUtils;
+=======
+  SysUtils, Classes;
+>>>>>>> origin/cpstrnew
 
 function IsXmlName(const Value: WideString; Xml11: Boolean = False): Boolean; overload;
 function IsXmlName(Value: PWideChar; Len: Integer; Xml11: Boolean = False): Boolean; overload;
@@ -133,13 +143,50 @@ function Xml11NamePages: PByteArray;
 procedure NormalizeSpaces(var Value: WideString);
 function Hash(InitValue: LongWord; Key: PWideChar; KeyLen: Integer): LongWord;
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{ beware, works in ASCII range only }
+function WStrLIComp(S1, S2: PWideChar; Len: Integer): Integer;
+procedure WStrLower(var S: WideString);
+
+type
+  TXMLVersion = (xmlVersionUnknown, xmlVersion10, xmlVersion11);
+
+const
+  xmlVersionStr: array[TXMLVersion] of WideString = ('', '1.0', '1.1');
+
+type
+  TXMLNodeType = (ntNone, ntElement, ntAttribute, ntText,
+    ntCDATA, ntEntityReference, ntEntity, ntProcessingInstruction,
+    ntComment, ntDocument, ntDocumentType, ntDocumentFragment,
+    ntNotation,
+    ntWhitespace,
+    ntSignificantWhitespace,
+    ntEndElement,
+    ntEndEntity,
+    ntXmlDeclaration
+  );
+
+  TAttrDataType = (
+    dtCdata,
+    dtId,
+    dtIdRef,
+    dtIdRefs,
+    dtEntity,
+    dtEntities,
+    dtNmToken,
+    dtNmTokens,
+    dtNotation
+  );
+>>>>>>> origin/cpstrnew
 
 { a simple hash table with WideString keys }
 
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -177,6 +224,13 @@ type
 {$endif}  
 
 >>>>>>> origin/fixes_2.4
+=======
+{$ifndef fpc}
+  PtrInt = LongInt;
+  TFPList = TList;
+{$endif}  
+
+>>>>>>> origin/cpstrnew
   PPHashItem = ^PHashItem;
   PHashItem = ^THashItem;
   THashItem = record
@@ -189,6 +243,7 @@ type
     Next: PHashItem;
     Data: TObject;
   end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -222,6 +277,10 @@ type
   THashItemArray = array[0..0] of PHashItem;
   PHashItemArray = ^THashItemArray;
 >>>>>>> origin/fixes_2.4
+=======
+  THashItemArray = array[0..MaxInt div sizeof(Pointer)-1] of PHashItem;
+  PHashItemArray = ^THashItemArray;
+>>>>>>> origin/cpstrnew
 
   THashForEach = function(Entry: PHashItem; arg: Pointer): Boolean;
 
@@ -229,6 +288,7 @@ type
   private
     FCount: LongWord;
     FBucketCount: LongWord;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -250,6 +310,11 @@ type
     FOwnsObjects: Boolean;
     function Lookup(Key: PWideChar; KeyLength: Integer; out Found: Boolean; CanCreate: Boolean): PHashItem;
 >>>>>>> origin/fixes_2.4
+=======
+    FBucket: PHashItemArray;
+    FOwnsObjects: Boolean;
+    function Lookup(Key: PWideChar; KeyLength: Integer; out Found: Boolean; CanCreate: Boolean): PHashItem;
+>>>>>>> origin/cpstrnew
     procedure Resize(NewCapacity: LongWord);
   public
     constructor Create(InitSize: Integer; OwnObjects: Boolean);
@@ -292,6 +357,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef CPU16}
   TExpHashEntryArray = array[0..MaxSmallInt div sizeof(TExpHashEntry)-1] of TExpHashEntry;
 {$else CPU16}
@@ -312,6 +378,9 @@ type
 =======
   TExpHashEntryArray = array[0..0] of TExpHashEntry;
 >>>>>>> origin/fixes_2.4
+=======
+  TExpHashEntryArray = array[0..MaxInt div sizeof(TExpHashEntry)-1] of TExpHashEntry;
+>>>>>>> origin/cpstrnew
   PExpHashEntryArray = ^TExpHashEntryArray;
 
   TDblHashArray = class(TObject)
@@ -319,6 +388,7 @@ type
     FSizeLog: Integer;
     FRevision: LongWord;
     FData: PExpHashEntryArray;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -334,6 +404,8 @@ type
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
   public  
 >>>>>>> graemeg/cpstrnew
     procedure Init(NumSlots: Integer);
@@ -421,6 +493,7 @@ type
     LinePos: Integer;
   end;
 
+<<<<<<< HEAD
 { generic node info record, shared between DOM and reader }
 
   PNodeData = ^TNodeData;
@@ -445,6 +518,8 @@ type
 
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/cpstrnew
 { Source location. This may be augmented with ByteOffset, UTF8Offset, etc. }
   TLocation = record
     Line: Integer;
@@ -473,6 +548,9 @@ type
     FDenormalized: Boolean;        // Whether attribute value changes by normalization
   end;
 
+<<<<<<< HEAD
+>>>>>>> origin/cpstrnew
+=======
 >>>>>>> origin/cpstrnew
 { TNSSupport provides tracking of prefix-uri pairs and namespace fixup for writer }
 
@@ -514,7 +592,10 @@ type
   end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 { Buffer builder, used to compose long strings without too much memory allocations }
@@ -539,6 +620,7 @@ function Decode_UCS2_Swapped(Context: Pointer; InBuf: PChar; var InCnt: Cardinal
 function Decode_UTF8(Context: Pointer; InBuf: PChar; var InCnt: Cardinal; OutBuf: PWideChar; var OutCnt: Cardinal): Integer; stdcall;
 function Decode_8859_1(Context: Pointer; InBuf: PChar; var InCnt: Cardinal; OutBuf: PWideChar; var OutCnt: Cardinal): Integer; stdcall;
 
+<<<<<<< HEAD
 {$i names.inc}
 >>>>>>> graemeg/cpstrnew
 
@@ -647,6 +729,8 @@ implementation
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 {$i names.inc}
 
 implementation
@@ -732,6 +816,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function IsXmlName(Value: PWideChar; Len: Integer; Xml11: Boolean = False): Boolean;
 var
   I: Integer;
@@ -747,6 +832,9 @@ function IsXmlName(Value: PWideChar; Len: Integer; Xml11: Boolean = False): Bool
 =======
 function IsXmlName(Value: PWideChar; Len: Integer; Xml11: Boolean = False): Boolean;
 >>>>>>> origin/fixes_2.4
+=======
+function IsXmlName(Value: PWideChar; Len: Integer; Xml11: Boolean = False): Boolean;
+>>>>>>> origin/cpstrnew
 var
   Pages: PByteArray;
   I: Integer;
@@ -1034,6 +1122,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure WStrLower(var S: XMLString);
 =======
 procedure WStrLower(var S: WideString);
@@ -1047,6 +1136,9 @@ procedure WStrLower(var S: WideString);
 =======
 procedure WStrLower(var S: WideString);
 >>>>>>> origin/cpstrnew
+=======
+procedure WStrLower(var S: WideString);
+>>>>>>> origin/cpstrnew
 var
   i: Integer;
 begin
@@ -1055,15 +1147,19 @@ begin
       Inc(word(S[i]), 32);
 end;
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 function Hash(InitValue: LongWord; Key: PWideChar; KeyLen: Integer): LongWord;
 begin
   Result := InitValue;
   while KeyLen <> 0 do
   begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1099,6 +1195,11 @@ begin
 =======
     Result := Result * $F4243 xor ord(Key^);
 >>>>>>> origin/fixes_2_2
+=======
+{$ifdef overflow_check}{$q-}{$endif}
+    Result := Result * $F4243 xor ord(Key^);
+{$ifdef overflow_check}{$q+}{$endif}
+>>>>>>> origin/cpstrnew
     Inc(Key);
     Dec(KeyLen);
   end;
@@ -1138,7 +1239,9 @@ begin
 =======
 function KeyCompare(const Key1: WideString; Key2: Pointer; Key2Len: Integer): Boolean;
 begin
+{$IFDEF FPC}
   Result := (Length(Key1)=Key2Len) and (CompareWord(Pointer(Key1)^, Key2^, Key2Len) = 0);
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 function KeyCompare(const Key1: WideString; Key2: Pointer; Key2Len: Integer): Boolean;
@@ -1152,6 +1255,11 @@ begin
   Result := (Length(Key1)=Key2Len) and CompareMem(Pointer(Key1), Key2, Key2Len*2);
 {$ENDIF}
 >>>>>>> origin/fixes_2.4
+=======
+{$ELSE}
+  Result := (Length(Key1)=Key2Len) and CompareMem(Pointer(Key1), Key2, Key2Len*2);
+{$ENDIF}
+>>>>>>> origin/cpstrnew
 end;
 
 { THashTable }
@@ -1185,6 +1293,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     item := FBucket^[I];
 =======
     item := FBucket[I];
@@ -1195,6 +1304,9 @@ begin
 =======
     item := FBucket^[I];
 >>>>>>> origin/fixes_2.4
+=======
+    item := FBucket^[I];
+>>>>>>> origin/cpstrnew
     while Assigned(item) do
     begin
       next := item^.Next;
@@ -1206,6 +1318,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FBucket^[I] := nil;
   end;
 =======
@@ -1220,6 +1333,10 @@ begin
     FBucket^[I] := nil;
   end;
 >>>>>>> origin/fixes_2.4
+=======
+    FBucket^[I] := nil;
+  end;
+>>>>>>> origin/cpstrnew
 end;
 
 function THashTable.Find(Key: PWideChar; KeyLen: Integer): PHashItem;
@@ -1279,6 +1396,7 @@ end;
 
 function THashTable.Lookup(Key: PWideChar; KeyLength: Integer;
 <<<<<<< HEAD
+<<<<<<< HEAD
   var Found: Boolean; CanCreate: Boolean): PHashItem;
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -1287,11 +1405,15 @@ function THashTable.Lookup(Key: PWideChar; KeyLength: Integer;
 =======
   out Found: Boolean; CanCreate: Boolean): PHashItem;
 >>>>>>> origin/fixes_2.4
+=======
+  out Found: Boolean; CanCreate: Boolean): PHashItem;
+>>>>>>> origin/cpstrnew
 var
   Entry: PPHashItem;
   h: LongWord;
 begin
   h := Hash(0, Key, KeyLength);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   Entry := @FBucket^[h mod FBucketCount];
@@ -1301,6 +1423,9 @@ begin
 =======
   Entry := @FBucket[h mod FBucketCount];
 >>>>>>> origin/fixes_2_2
+=======
+  Entry := @FBucket^[h mod FBucketCount];
+>>>>>>> origin/cpstrnew
   while Assigned(Entry^) and not ((Entry^^.HashValue = h) and KeyCompare(Entry^^.Key, Key, KeyLength) ) do
     Entry := @Entry^^.Next;
   Found := Assigned(Entry^);
@@ -1319,6 +1444,9 @@ begin
     New(Result);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
     // SetString for WideStrings trims on zero chars [fixed, #14740]
     SetLength(Result^.Key, KeyLength);
     Move(Key^, Pointer(Result^.Key)^, KeyLength*sizeof(WideChar));
@@ -1341,6 +1469,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   p: PHashItemArray;
   chain: PPHashItem;
 =======
@@ -1353,12 +1482,17 @@ var
   p: PHashItemArray;
   chain: PPHashItem;
 >>>>>>> origin/fixes_2.4
+=======
+  p: PHashItemArray;
+  chain: PPHashItem;
+>>>>>>> origin/cpstrnew
   i: Integer;
   e, n: PHashItem;
 begin
   p := AllocMem(NewCapacity * sizeof(PHashItem));
   for i := 0 to FBucketCount-1 do
   begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1380,6 +1514,12 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    e := FBucket^[i];
+    while Assigned(e) do
+    begin
+      chain := @p^[e^.HashValue mod NewCapacity];
+>>>>>>> origin/cpstrnew
       n := e^.Next;
       e^.Next := chain^;
       chain^ := e;
@@ -1397,6 +1537,7 @@ var
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   chain := @FBucket^[Entry^.HashValue mod FBucketCount];
 =======
   chain := @FBucket[Entry^.HashValue mod FBucketCount];
@@ -1404,6 +1545,9 @@ begin
 =======
   chain := @FBucket[Entry^.HashValue mod FBucketCount];
 >>>>>>> origin/fixes_2_2
+=======
+  chain := @FBucket^[Entry^.HashValue mod FBucketCount];
+>>>>>>> origin/cpstrnew
   while Assigned(chain^) do
   begin
     if chain^ = Entry then
@@ -1464,6 +1608,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     e := FBucket^[i];
 =======
     e := FBucket[i];
@@ -1474,6 +1619,9 @@ begin
 =======
     e := FBucket^[i];
 >>>>>>> origin/fixes_2.4
+=======
+    e := FBucket^[i];
+>>>>>>> origin/cpstrnew
     while Assigned(e) do
     begin
       if not proc(e, arg) then
@@ -1534,6 +1682,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (HashValue = FData^[idx].hash) and (FData^[idx].uriPtr = uri) and
 =======
     if (HashValue = FData^[idx].hash) and (FData^[idx].uriPtr^ = uri^) and
@@ -1550,6 +1699,9 @@ begin
 =======
     if (HashValue = FData^[idx].hash) and (FData^[idx].uriPtr^ = uri^) and
 >>>>>>> origin/fixes_2.4
+=======
+    if (HashValue = FData^[idx].hash) and (FData^[idx].uriPtr^ = uri^) and
+>>>>>>> origin/cpstrnew
       (FData^[idx].lnameLen = localLength) and
        CompareMem(FData^[idx].lname, localName, localLength * sizeof(WideChar)) then
       Exit;
@@ -1575,6 +1727,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 constructor TNSSupport.Create(aNameTable: THashTable);
 =======
 constructor TNSSupport.Create;
@@ -1588,10 +1741,14 @@ constructor TNSSupport.Create;
 =======
 constructor TNSSupport.Create;
 >>>>>>> origin/cpstrnew
+=======
+constructor TNSSupport.Create;
+>>>>>>> origin/cpstrnew
 var
   b: TBinding;
 begin
   inherited Create;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1605,11 +1762,14 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   FPrefixes := THashTable.Create(16, False);
   FBindings := TFPList.Create;
   SetLength(FBindingStack, 16);
 
   { provide implicit binding for the 'xml' prefix }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1633,6 +1793,10 @@ begin
   // TODO: move stduri_xml, etc. to this unit, so they are reused.
   DefineBinding('xml', 'http://www.w3.org/XML/1998/namespace', b);
 >>>>>>> origin/cpstrnew
+=======
+  // TODO: move stduri_xml, etc. to this unit, so they are reused.
+  DefineBinding('xml', 'http://www.w3.org/XML/1998/namespace', b);
+>>>>>>> origin/cpstrnew
 end;
 
 destructor TNSSupport.Destroy;
@@ -1650,6 +1814,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TNSSupport.BindPrefix(nsURI, aPrefix: PHashItem): TBinding;
 =======
 function TNSSupport.BindPrefix(const nsURI: WideString; aPrefix: PHashItem): TBinding;
@@ -1660,6 +1825,9 @@ function TNSSupport.BindPrefix(const nsURI: WideString; aPrefix: PHashItem): TBi
 =======
 function TNSSupport.BindPrefix(const nsURI: WideString; aPrefix: PHashItem): TBinding;
 >>>>>>> graemeg/cpstrnew
+=======
+function TNSSupport.BindPrefix(const nsURI: WideString; aPrefix: PHashItem): TBinding;
+>>>>>>> origin/cpstrnew
 =======
 function TNSSupport.BindPrefix(const nsURI: WideString; aPrefix: PHashItem): TBinding;
 >>>>>>> origin/cpstrnew
@@ -1677,11 +1845,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 
@@ -2027,6 +2198,7 @@ begin
 end;
 
 
+<<<<<<< HEAD
 initialization
 >>>>>>> graemeg/cpstrnew
 
@@ -2401,6 +2573,8 @@ end;
 =======
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 initialization
 
 finalization

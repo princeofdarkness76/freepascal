@@ -10,6 +10,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$setc MACOSALLINCLUDE := TRUE}
 unit MacOSAll;
 interface
@@ -39,14 +40,26 @@ interface
 {$setc UNIVERSAL_INTERFACES_VERSION := $0400}
 {$setc GAP_INTERFACES_VERSION := $0308}
 =======
+=======
+{$setc MACOSALLINCLUDE := TRUE}
+>>>>>>> origin/cpstrnew
 unit MacOSAll;
 interface
 
+{$ifc defined CPUPOWERPC32 or defined CPUI386}
 {$linkframework Carbon}
+{$elsec}
+{$linkframework CoreFoundation}
+{$endc}
 
+<<<<<<< HEAD
 {$setc UNIVERSAL_INTERFACES_VERSION := $0342}
 {$setc GAP_INTERFACES_VERSION := $0210}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$setc UNIVERSAL_INTERFACES_VERSION := $0400}
+{$setc GAP_INTERFACES_VERSION := $0308}
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined USE_CFSTR_CONSTANT_MACROS}
     {$setc USE_CFSTR_CONSTANT_MACROS := TRUE}
@@ -60,28 +73,41 @@ interface
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __ppc__ and defined CPUPOWERPC32}
 =======
 {$ifc not defined __ppc__ and defined CPUPOWERPC}
 >>>>>>> graemeg/fixes_2_2
+=======
+{$ifc not defined __ppc__ and defined CPUPOWERPC32}
+>>>>>>> origin/cpstrnew
 	{$setc __ppc__ := 1}
 {$elsec}
 	{$setc __ppc__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __ppc64__ and defined CPUPOWERPC64}
 	{$setc __ppc64__ := 1}
 {$elsec}
 	{$setc __ppc64__ := 0}
 {$endc}
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __i386__ and defined CPUI386}
 	{$setc __i386__ := 1}
 {$elsec}
 	{$setc __i386__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined __x86_64__ and defined CPUX86_64}
 	{$setc __x86_64__ := 1}
 {$elsec}
@@ -92,6 +118,7 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -109,6 +136,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -116,8 +145,11 @@ interface
   {$setc __LP64__ := 0}
 {$endc}
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined __ppc__ and __ppc__ and defined __i386__ and __i386__}
 	{$error Conflicting definitions for __ppc__ and __i386__}
@@ -125,6 +157,7 @@ interface
 
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
@@ -347,15 +380,72 @@ interface
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 =======
+=======
+	{$setc TARGET_CPU_PPC64 := FALSE}
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+{$ifc defined(iphonesim)}
+ 	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
 {$elsec}
-	{$error Neither __ppc__ nor __i386__ is defined.}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+  {$setc TARGET_CPU_64 := FALSE}
+{$endc}
+<<<<<<< HEAD
 {$setc TARGET_CPU_PPC_64 := FALSE}
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined FPC_BIG_ENDIAN}
 	{$setc TARGET_RT_BIG_ENDIAN := TRUE}
@@ -382,9 +472,12 @@ interface
 {$setc TARGET_CPU_MIPS := FALSE}
 {$setc TARGET_CPU_SPARC := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$setc TARGET_OS_MAC := TRUE}
 >>>>>>> graemeg/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 {$setc TARGET_OS_UNIX := FALSE}
 {$setc TARGET_OS_WIN32 := FALSE}
 {$setc TARGET_RT_MAC_68881 := FALSE}
@@ -396,6 +489,9 @@ interface
 {$setc TYPE_LONGLONG := TRUE}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {unit AXConstants}
 {$i AXConstants.pas}
 {unit Accessibility}
@@ -417,6 +513,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {unit ObjC}
 {$i ObjC.pas}
 =======
@@ -431,6 +528,10 @@ interface
 {unit ObjCRuntime}
 {$i ObjCRuntime.pas}
 >>>>>>> graemeg/cpstrnew
+=======
+{unit ObjCRuntime}
+{$i ObjCRuntime.pas}
+>>>>>>> origin/cpstrnew
 =======
 {unit ObjCRuntime}
 {$i ObjCRuntime.pas}
@@ -618,6 +719,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {unit DictionaryServices}
 {$i DictionaryServices.pas}
 =======
@@ -626,6 +728,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {unit DigitalHubRegistry}
@@ -734,6 +838,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {unit acl}
 {$i acl.pas}
 =======
@@ -742,6 +847,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {unit certextensions}
@@ -766,6 +873,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {unit AudioHardwareBase}
 {$i AudioHardwareBase.pas}
 =======
@@ -774,6 +882,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {unit AuthSession}
@@ -804,6 +914,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {unit CGImageMetadata}
 {$i CGImageMetadata.pas}
 =======
@@ -812,6 +923,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {unit CGLCurrent}
@@ -830,6 +943,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {unit CSIdentityBase}
 {$i CSIdentityBase.pas}
 {unit CTFontDescriptor}
@@ -841,6 +955,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {unit CTFontDescriptor}
 {$i CTFontDescriptor.pas}
 {unit CTFontManager}
@@ -848,11 +964,14 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {unit CTParagraphStyle}
@@ -865,6 +984,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {unit CaptiveNetwork}
 {$i CaptiveNetwork.pas}
 =======
@@ -873,6 +993,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {unit ColorSyncProfile}
@@ -911,6 +1033,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {unit SKAnalysis}
 {$i SKAnalysis.pas}
 {unit SKSummary}
@@ -921,6 +1044,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {unit Scrap}
@@ -941,6 +1066,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {unit CFFileSecurity}
 {$i CFFileSecurity.pas}
 =======
@@ -949,6 +1075,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {unit CFRunLoop}
@@ -979,6 +1107,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {unit AudioHardwareDeprecated}
 {$i AudioHardwareDeprecated.pas}
 {unit CFFileDescriptor}
@@ -989,6 +1118,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {unit CFMachPort}
@@ -1033,6 +1164,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {unit CFURLEnumerator}
 {$i CFURLEnumerator.pas}
 =======
@@ -1041,6 +1173,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {unit CFUserNotification}
@@ -1067,6 +1201,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {unit CTFontManager}
 {$i CTFontManager.pas}
 =======
@@ -1076,6 +1211,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {unit CTFont}
 {$i CTFont.pas}
 {unit CTGlyphInfo}
@@ -1083,11 +1220,14 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {unit CarbonEventsCore}
@@ -1118,6 +1258,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {unit SKDocument}
 {$i SKDocument.pas}
 {unit SKIndex}
@@ -1130,6 +1271,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {unit SpeechSynthesis}
@@ -1200,6 +1343,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {unit CVPixelBufferIOSurface}
 {$i CVPixelBufferIOSurface.pas}
 =======
@@ -1208,6 +1352,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {unit CVPixelBufferPool}
@@ -1314,6 +1460,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {unit CTFont}
 {$i CTFont.pas}
 {unit CTFrame}
@@ -1332,6 +1479,10 @@ interface
 {unit CTFrame}
 {$i CTFrame.pas}
 >>>>>>> graemeg/cpstrnew
+=======
+{unit CTFrame}
+{$i CTFrame.pas}
+>>>>>>> origin/cpstrnew
 =======
 {unit CTFrame}
 {$i CTFrame.pas}
@@ -1376,6 +1527,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {unit QLThumbnail}
 {$i QLThumbnail.pas}
 =======
@@ -1384,6 +1536,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {unit Quickdraw}
@@ -1558,6 +1712,7 @@ interface
 {$i IBCarbonRuntime.pas}
 {unit HIToolbox}
 {$i HIToolbox.pas}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5081,6 +5236,7 @@ interface
 {$i IBCarbonRuntime.pas}
 {unit HIToolbox}
 {$i HIToolbox.pas}
+=======
 
 implementation
 
@@ -5097,6 +5253,74 @@ end;
 procedure DisposeRoutineDescriptor( theUPP: UniversalProcPtr ); inline;
 begin
 end;
+
+{implementation of unit cssmerr}
+
+{$ifc TARGET_OS_MAC}
+
+
+function CSSM_ERRCODE(arg: UInt32): UInt32; inline;
+begin
+  CSSM_ERRCODE:=(arg - CSSM_BASE_ERROR) and (CSSM_ERRORCODE_MODULE_EXTENT - 1)
+end;
+
+function CSSM_ERRBASE(arg: UInt32): UInt32; inline;
+begin
+  CSSM_ERRBASE:=((arg - CSSM_BASE_ERROR) and not(CSSM_ERRORCODE_MODULE_EXTENT - 1)) + CSSM_BASE_ERROR
+end;
+
+function CSSM_ERR_IS_CONVERTIBLE(arg: UInt32): Boolean; inline;
+begin
+  CSSM_ERR_IS_CONVERTIBLE:=CSSM_ERRCODE(arg) < CSSM_ERRORCODE_COMMON_EXTENT
+end;
+
+function CSSM_ERR_TAG(code, base: UInt32): UInt32; inline;
+begin
+  CSSM_ERR_TAG:=CSSM_ERRCODE(code) + base
+end;
+
+{$endc} {TARGET_OS_MAC}
+
+{implementation of unit mach_error}
+
+
+{$push}
+{$R-,Q-}
+
+function err_system(x: mach_error_t): mach_error_t; inline;
+begin
+  err_system:=(((x) and $3f) shl 26)
+end;
+>>>>>>> origin/cpstrnew
+
+function err_sub(x: mach_error_t): mach_error_t; inline;
+begin
+  err_sub:=(((x) shr 14) and $fff)
+end;
+
+
+function err_get_system(err: mach_error_t): mach_error_t; inline;
+begin
+  err_get_system:=(((err) shr 26) and $3f)
+end;
+
+function err_get_sub(err: mach_error_t): mach_error_t; inline;
+begin
+  err_get_sub:=(((err) shr 14) and $fff)
+end;
+
+function err_get_code(err: mach_error_t): mach_error_t; inline;
+begin
+  err_get_code:=((err) and $3fff)
+end;
+
+
+function unix_err(errno: SInt32): mach_error_t; inline;
+begin
+  unix_err:=err_kern or (((3) and $fff) shl 14) or errno;
+end;
+
+{$pop}
 
 {implementation of unit CFByteOrders}
 
@@ -5328,6 +5552,47 @@ begin
   CFConvertDoubleSwappedToHost := Float64(CFSwappedFloat64(CFSwapInt64(arg.v)));
 end;
 {$endc}
+
+
+{implementation of unit CGGeometry}
+
+function CGPointMake(x: CGFloat; y: CGFloat): CGPoint; inline;
+begin
+  CGPointMake.x := x;
+  CGPointMake.y := y;
+end;
+
+
+function CGSizeMake(width: CGFloat; height: CGFloat): CGSize; inline;
+begin
+  CGSizeMake.width := width;
+  CGSizeMake.height := height;
+end;
+
+
+function CGRectMake(x: CGFloat; y: CGFloat; width: CGFloat; height: CGFloat): CGRect;
+begin
+  CGRectMake.origin.x := x;
+  CGRectMake.origin.y := y;
+  CGRectMake.size.width := width;
+  CGRectMake.size.height := height;
+end;
+
+
+function CGPointEqualToPoint(const point1: CGPoint; const point2: CGPoint): boolean; inline;
+begin
+  CGPointEqualToPoint:=
+    (point1.x = point2.x) and
+    (point1.y = point2.y);
+end;
+
+
+function CGSizeEqualToSize(size1: CGSize; size2: CGSize): boolean; inline;
+begin
+  CGSizeEqualToSize:=
+    (size1.width = size2.width) and
+    (size1.height = size2.height);
+end;
 
 
 {implementation of unit CGGeometry}
@@ -5660,6 +5925,7 @@ function EndianS16_LtoB( arg: SInt16 ): SInt16; inline;
 begin
   EndianS16_LtoB:=EndianS16_Swap(arg);
 end;
+<<<<<<< HEAD
 
 function EndianS16_BtoL( arg: SInt16 ): SInt16; inline;
 begin
@@ -5730,8 +5996,106 @@ end;
 {$endc} { TARGET_OS_MAC }
 {implementation of unit MIDIThruConnection}
 {$ifc TARGET_OS_MAC}
+=======
+
+function EndianS16_BtoL( arg: SInt16 ): SInt16; inline;
+begin
+  EndianS16_BtoL:=EndianS16_Swap(arg);
+end;
+
+function EndianU16_LtoB( arg: UInt16 ): UInt16; inline;
+begin
+  EndianU16_LtoB:=Endian16_Swap(arg);
+end;
+
+function EndianU16_BtoL( arg: UInt16 ): UInt16; inline;
+begin
+  EndianU16_BtoL:=Endian16_Swap(arg);
+end;
+
+function EndianS32_LtoB( arg: SInt32 ): SInt32; inline;
+begin
+  EndianS32_LtoB:=EndianS32_Swap(arg);
+end;
+
+function EndianS32_BtoL( arg: SInt32 ): SInt32; inline;
+begin
+  EndianS32_BtoL:=EndianS32_Swap(arg);
+end;
+
+function EndianU32_LtoB( arg: UInt32 ): UInt32; inline;
+begin
+  EndianU32_LtoB:=Endian32_Swap(arg);
+end;
+
+function EndianU32_BtoL( arg: UInt32 ): UInt32; inline;
+begin
+  EndianU32_BtoL:=Endian32_Swap(arg);
+end;
+
+function EndianS64_LtoB( arg: SInt64 ): SInt64; inline;
+begin
+  EndianS64_LtoB:=EndianS64_Swap(arg);
+end;
+
+function EndianS64_BtoL( arg: SInt64 ): SInt64; inline;
+begin
+  EndianS64_BtoL:=EndianS64_Swap(arg);
+end;
+
+function EndianU64_LtoB( arg: UInt64 ): UInt64; inline;
+begin
+  EndianU64_LtoB:=Endian64_Swap_Pascal(arg);
+end;
+
+function EndianU64_BtoL( arg: UInt64 ): UInt64; inline;
+begin
+  EndianU64_BtoL:=Endian64_Swap_Pascal(arg);
+end;
 
 
+
+{implementation of unit IOKitReturn}
+
+>>>>>>> origin/cpstrnew
+
+{$push}
+{$R-,Q-}
+
+<<<<<<< HEAD
+=======
+function iokit_common_err(ret: IOReturn): IOReturn; inline;
+begin
+  iokit_common_err:=(sys_iokit or sub_iokit_common or (ret))
+end;
+
+function iokit_family_err(sub, ret: IOReturn): IOReturn; inline;
+begin
+  iokit_family_err:=(sys_iokit or (sub) or (ret))
+end;
+
+function iokit_vendor_specific_err(ret: IOReturn): IOReturn; inline;
+begin
+  iokit_vendor_specific_err:=(sys_iokit or sub_iokit_vendor_specific or (ret))
+end;
+
+{$pop}
+
+{implementation of unit MIDIServices}
+{$ifc TARGET_OS_MAC}
+
+
+{$R-}
+function MIDIPacketNext(pkt : MIDIPacketPtr) : MIDIPacketPtr; inline;
+begin
+	MIDIPacketNext := MIDIPacketPtr(@pkt^.data[pkt^.length])
+end;
+{$endc} { TARGET_OS_MAC }
+{implementation of unit MIDIThruConnection}
+{$ifc TARGET_OS_MAC}
+
+
+>>>>>>> origin/cpstrnew
 function MIDIThruConnectionParamsSize(ptr : MIDIThruConnectionParamsPtr) : size_t; inline;
 begin
 	MIDIThruConnectionParamsSize := sizeof(MIDIThruConnectionParams) +
@@ -5758,6 +6122,34 @@ end;
 
 {$endc} {TARGET_OS_MAC}
 
+<<<<<<< HEAD
+=======
+{implementation of unit cssmapple}
+
+{$ifc TARGET_OS_MAC}
+
+
+
+function CSSM_ACL_AUTHORIZATION_PREAUTH(slot: UInt32): UInt32; inline;
+begin
+  CSSM_ACL_AUTHORIZATION_PREAUTH:=CSSM_ACL_AUTHORIZATION_PREAUTH_BASE + slot
+end;
+
+function CSSM_ACL_AUTHORIZATION_PREAUTH_SLOT(auth: UInt32): UInt32; inline;
+begin
+  CSSM_ACL_AUTHORIZATION_PREAUTH_SLOT:=auth - CSSM_ACL_AUTHORIZATION_PREAUTH_BASE
+end;
+
+function CSSM_ACL_AUTHORIZATION_IS_PREAUTH(auth: UInt32): Boolean; inline;
+begin
+  CSSM_ACL_AUTHORIZATION_IS_PREAUTH:=
+    (auth >= CSSM_ACL_AUTHORIZATION_PREAUTH_BASE) and
+    (auth < CSSM_ACL_AUTHORIZATION_PREAUTH_END)
+end;
+
+{$endc} {TARGET_OS_MAC}
+
+>>>>>>> origin/cpstrnew
 {implementation of unit CFString}
 
 
@@ -5952,6 +6344,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {implementation of unit Menus}
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
@@ -5960,6 +6353,9 @@ end;
 =======
 {$endc} {TARGET_OS_MAC}
 >>>>>>> origin/fixes_2.4
+=======
+{$endc} {TARGET_OS_MAC}
+>>>>>>> origin/cpstrnew
 
 {implementation of unit MIDIDriver}
 
@@ -5974,18 +6370,30 @@ end;
 function kMIDIDriverInterfaceID : CFUUIDRef; inline;
 begin
 	kMIDIDriverInterfaceID := CFUUIDGetConstantUUIDWithBytes(nil, $49, $DF, $CA, $9E, $0F, $E5, $11, $D4, $95, $0D, $00, $50, $E4, $CE, $A5, $26)
+<<<<<<< HEAD
 end;
 
 function kMIDIDriverInterface2ID : CFUUIDRef; inline;
 begin
 	kMIDIDriverInterface2ID := CFUUIDGetConstantUUIDWithBytes(nil, $43, $C9, $8C, $3C, $30, $6C, $11, $D5, $AF, $73, $00, $30, $65, $A8, $30, $1E)
+=======
+>>>>>>> origin/cpstrnew
 end;
 {$endc}
 {implementation of unit AudioUnitProperties}
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {not TARGET_CPU_64}
+=======
+function kMIDIDriverInterface2ID : CFUUIDRef; inline;
+begin
+	kMIDIDriverInterface2ID := CFUUIDGetConstantUUIDWithBytes(nil, $43, $C9, $8C, $3C, $30, $6C, $11, $D5, $AF, $73, $00, $30, $65, $A8, $30, $1E)
+end;
+{$endc}
+{implementation of unit AudioUnitProperties}
+>>>>>>> origin/cpstrnew
 
 >>>>>>> origin/cpstrnew
 {$endc} {TARGET_OS_MAC}
@@ -6043,12 +6451,15 @@ begin
 	kQLGeneratorTypeID := CFUUIDGetConstantUUIDWithBytes(kCFAllocatorDefault, $5E, $2D, $96, $80, $50, $22, $40, $FA, $B8, $06, $43, $34, $96, $22, $E5, $B9)
 end;
 <<<<<<< HEAD
+<<<<<<< HEAD
   
 <<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
 =======
+=======
+>>>>>>> origin/cpstrnew
 
 function kQLGeneratorCallbacksInterfaceID: CFUUIDRef; inline; 
 begin
@@ -6084,7 +6495,10 @@ end;
 {$endc} {not TARGET_CPU_64}
 
 {$endc} {TARGET_OS_MAC}
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 
 end.

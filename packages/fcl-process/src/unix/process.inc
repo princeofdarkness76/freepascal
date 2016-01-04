@@ -266,9 +266,21 @@ end;
 Function MakeCommand(P : TProcess) : PPchar;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+{$ifdef darwin}
+Const
+  TerminalApp = 'open';
+{$endif}
+{$ifdef haiku}
+Const
+  TerminalApp = 'Terminal';
+{$endif}
+  
+>>>>>>> origin/cpstrnew
 Var
   Cmd : String;
   S  : TStringList;
@@ -328,9 +340,22 @@ begin
     if poNewConsole in P.Options then
       begin
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+      {$ifdef haiku}
+      If (P.ApplicationName<>'') then
+        begin
+        S.Insert(0,P.ApplicationName);
+        S.Insert(0,'--title');
+        end;
+      {$endif}
+      {$if defined(darwin) or defined(haiku)}
+      S.Insert(0,TerminalApp);
+      {$else}
+>>>>>>> origin/cpstrnew
       S.Insert(0,'-e');
       If (P.ApplicationName<>'') then
         begin
@@ -370,8 +395,13 @@ begin
 >>>>>>> graemeg/fixes_2_2
 =======
       S.Insert(0,'xterm');
+      {$endif}
       end;
+<<<<<<< HEAD
 >>>>>>> origin/fixes_2_2
+=======
+    {$ifndef haiku}
+>>>>>>> origin/cpstrnew
     if (P.ApplicationName<>'') then
       begin
       S.Add(TitleOption);
@@ -389,11 +419,15 @@ begin
       end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     {$endif}
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    {$endif}
+>>>>>>> origin/cpstrnew
     Result:=StringsToPcharList(S);
   Finally
     S.free;
@@ -526,6 +560,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           signal is delivered
 
           We also can't use vfork in case we have to change the working
@@ -548,6 +583,10 @@ begin
           signal is delivered }
         if not(poRunSuspended in Options) then
 >>>>>>> graemeg/cpstrnew
+=======
+          signal is delivered }
+        if not(poRunSuspended in Options) then
+>>>>>>> origin/cpstrnew
 =======
           signal is delivered }
         if not(poRunSuspended in Options) then
@@ -609,6 +648,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               FForkEvent(Self);
 =======
               FForkEvent;
@@ -619,6 +659,9 @@ begin
 =======
               FForkEvent;
 >>>>>>> graemeg/cpstrnew
+=======
+              FForkEvent;
+>>>>>>> origin/cpstrnew
 =======
               FForkEvent;
 >>>>>>> origin/cpstrnew
@@ -727,6 +770,9 @@ Var
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   if FRunning then
     fexitcode:=waitprocess(handle);
   Result:=(fexitcode>=0);
@@ -774,17 +820,23 @@ begin
     end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
   { the fact that the signal has been sent does not
     mean that the process has already handled the
     signal -> wait instead of calling getexitstatus }
   if Result then
     WaitOnExit;
+<<<<<<< HEAD
 =======
   GetExitStatus;
 >>>>>>> graemeg/fixes_2_2
 =======
   GetExitStatus;
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 Procedure TProcess.SetShowWindow (Value : TShowWindowOptions);

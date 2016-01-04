@@ -11,6 +11,7 @@ loaders=$(LOADERS)
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 units=system uuchar objpas macpas iso7185 buildrtl cpall lineinfo lnfodwrf
 =======
 units=system objpas macpas iso7185 buildrtl lineinfo lnfodwrf
@@ -21,6 +22,9 @@ units=system objpas macpas iso7185 buildrtl lineinfo lnfodwrf
 =======
 units=system objpas macpas iso7185 buildrtl lineinfo lnfodwrf
 >>>>>>> graemeg/cpstrnew
+=======
+units=system objpas macpas iso7185 buildrtl lineinfo lnfodwrf
+>>>>>>> origin/cpstrnew
 =======
 units=system objpas macpas iso7185 buildrtl lineinfo lnfodwrf
 >>>>>>> origin/cpstrnew
@@ -46,6 +50,7 @@ implicitunits=sysinitpas sysinitcyg sysinitgprof \
       video mouse keyboard fmtbcd \
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       winsysut sharemem exeinfo fpintres windirs
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -63,6 +68,9 @@ implicitunits=sysinitpas sysinitcyg sysinitgprof \
 =======
       winsysut sharemem exeinfo
 >>>>>>> origin/fixes_2_2
+=======
+      winsysut sharemem exeinfo fpintres windirs
+>>>>>>> origin/cpstrnew
 
 # shared=$(DLLS)
 

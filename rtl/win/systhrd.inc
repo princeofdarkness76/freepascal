@@ -99,10 +99,15 @@ var
     const
       TLSKey : DWord = $ffffffff;
 <<<<<<< HEAD
+<<<<<<< HEAD
     var
       MainThreadIdWin32 : DWORD;
 =======
 >>>>>>> origin/fixes_2.4
+=======
+    var
+      MainThreadIdWin32 : DWORD;
+>>>>>>> origin/cpstrnew
 
     procedure SysInitThreadvar(var offset : dword;size : dword);
       begin
@@ -197,11 +202,38 @@ var
 >>>>>>> origin/cpstrnew
       end;
 
+    function SysRelocateThreadvar(offset : dword) : pointer; forward;
+
+    procedure SysInitMultithreading;
+      begin
+        { do not check IsMultiThread, as program could have altered it, out of Delphi habit }
+
+        { the thread attach/detach code uses locks to avoid multiple calls of this }
+        if TLSKey=$ffffffff then
+         begin
+           { We're still running in single thread mode, setup the TLS }
+           TLSKey:=TlsAlloc;
+           InitThreadVars(@SysRelocateThreadvar);
+
+           IsMultiThread:=true;
+         end;
+      end;
+
+
+    procedure SysFiniMultithreading;
+      begin
+        if IsMultiThread then
+          begin
+            TlsFree(TLSKey);
+            TLSKey:=$ffffffff;
+          end;
+      end;
 
     function SysRelocateThreadvar(offset : dword) : pointer;
       var
         dataindex : pointer;
         errorsave : dword;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -215,6 +247,8 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
       begin	
@@ -234,6 +268,7 @@ var
           .LAddressInEAX:
            movl (%eax,%edx,4),%eax
           .LToDataIndex:
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -266,6 +301,8 @@ var
            movl (%eax,%edx,4),%eax
           .LToDataIndex:
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
           movl %eax,dataindex
         end;
         if DataIndex=nil then
@@ -291,6 +328,7 @@ var
             dataindex:=TlsGetValue(tlskey);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             InitThread($1000000);
           end;
         SetLastError(errorsave);
@@ -300,6 +338,9 @@ var
 {$endif win32}
 >>>>>>> graemeg/fixes_2_2
 =======
+=======
+            InitThread($1000000);
+>>>>>>> origin/cpstrnew
           end;
         SetLastError(errorsave);
 {$endif win32}
@@ -369,6 +410,7 @@ var
       end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     procedure SysInitMultithreading;
       begin
@@ -394,6 +436,8 @@ var
           end;
       end;
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
     function SysBeginThread(sa : Pointer;stacksize : ptruint;
                          ThreadFunction : tthreadfunc;p : pointer;
@@ -701,11 +745,14 @@ Procedure InitSystemThreads;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 {$IFDEF SUPPORT_WIN95}
@@ -755,6 +802,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef FPC_USE_TLS_DIRECTORY}
   if IsLibrary then
 {$endif}
@@ -771,6 +819,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   if IsLibrary then
     SysInitMultithreading;
 {$IFDEF SUPPORT_WIN95}
@@ -784,11 +834,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
   if not assigned(WinTryEnterCriticalSection) then

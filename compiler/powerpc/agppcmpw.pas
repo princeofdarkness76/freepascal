@@ -81,6 +81,9 @@ interface
         'csect', {bss} 'csect', '',
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
         'csect','csect','csect','csect','csect',
         'csect','csect','csect',
          '','','','','','','','','','','','','','',
@@ -121,6 +124,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         '',
         '',
 =======
@@ -143,6 +147,9 @@ interface
         'csect','csect','csect','csect',
          '','','','','','','','','','','','','',''
 >>>>>>> origin/fixes_2.4
+=======
+        ''
+>>>>>>> origin/cpstrnew
       );
 
     type

@@ -21,6 +21,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   HIDP_CONTROL_CHANNEL = $11;
   HIDP_DATA_CHANNEL = $13;
 =======
@@ -35,6 +36,10 @@ const
   HIDP_OUTPUT_CHANNEL = $11;
   HIDP_INPUT_CHANNEL = $13;
 >>>>>>> graemeg/cpstrnew
+=======
+  HIDP_OUTPUT_CHANNEL = $11;
+  HIDP_INPUT_CHANNEL = $13;
+>>>>>>> origin/cpstrnew
 =======
   HIDP_OUTPUT_CHANNEL = $11;
   HIDP_INPUT_CHANNEL = $13;
@@ -121,6 +126,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     ctl_pcb : Pl2cap_pcb;
     data_pcb : Pl2cap_pcb;
 =======
@@ -135,6 +141,10 @@ type
     out_pcb : Pl2cap_pcb;
     in_pcb : Pl2cap_pcb;
 >>>>>>> graemeg/cpstrnew
+=======
+    out_pcb : Pl2cap_pcb;
+    in_pcb : Pl2cap_pcb;
+>>>>>>> origin/cpstrnew
 =======
     out_pcb : Pl2cap_pcb;
     in_pcb : Pl2cap_pcb;
@@ -165,6 +175,7 @@ function BTE_ReadStoredLinkKey(keys: Plinkkey_info; max_cnt: cuint8;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function BTE_ReadBdAddr(bdaddr: P_bd_addr; cb: btecallback): cint32; cdecl; external;
 
 =======
@@ -173,6 +184,8 @@ function BTE_ReadBdAddr(bdaddr: P_bd_addr; cb: btecallback): cint32; cdecl; exte
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 type

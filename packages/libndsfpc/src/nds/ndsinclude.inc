@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -18,6 +19,9 @@
 >>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/fixes_2.4
+=======
+
+>>>>>>> origin/cpstrnew
 { $include helper.inc}
 {$include ndstypes.inc}
 {$include bios.inc}
@@ -50,6 +54,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$include input.inc} 
 =======
 {$include input.inc} // testing...
@@ -60,6 +65,9 @@
 =======
 {$include input.inc} // testing...
 >>>>>>> graemeg/cpstrnew
+=======
+{$include input.inc} // testing...
+>>>>>>> origin/cpstrnew
 =======
 {$include input.inc} // testing...
 >>>>>>> origin/cpstrnew
@@ -112,6 +120,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$include arm9/dldi.inc}
   {$include arm9/window.inc}
 =======
@@ -138,6 +147,8 @@
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 {$endif ARM9}
 
 {$ifdef ARM7}
@@ -147,6 +158,7 @@
 <<<<<<< HEAD
   {$include arm7/input.inc}
   {$include arm7/i2c.inc}
+<<<<<<< HEAD
   {$include arm7/serial.inc}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -167,5 +179,8 @@
 =======
   {$include arm7/serial.inc}
 >>>>>>> origin/fixes_2_2
+=======
+  {$include arm7/serial.inc}
+>>>>>>> origin/cpstrnew
   {$include arm7/touch.inc}
 {$endif ARM7}

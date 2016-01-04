@@ -83,6 +83,7 @@ ifeq ($(ARCH),arm)
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 CPU_SPECIFIC_COMMON_UNITS=sysutils math classes fgl macpas typinfo types rtlconsts getopts lineinfo
 ifeq ($(SUBARCH),armv7m)
 CPU_UNITS=lm3fury lm3tempest stm32f10x_ld stm32f10x_md stm32f10x_hd stm32f10x_xl stm32f10x_conn stm32f10x_cl lpc13xx lpc1768 lm4f120 sam3x8e xmc4500 cortexm3 cortexm4 # thumb2_bare
@@ -168,6 +169,8 @@ endif
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 CPU_UNITS=lpc21x4 at91sam7x256 stellaris stm32f103
 endif
 
@@ -176,11 +179,14 @@ CPU_UNITS=multiboot
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 endif

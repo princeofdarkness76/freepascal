@@ -35,6 +35,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    TBStrList = array[0..65535] of TBstr;
    PBStrList = ^TBStrList;
    POleStrList = ^TOleStrList;
@@ -46,10 +47,13 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
    TBStrList = array[0..(high(integer) div sizeof(TBSTR))-1] of TBstr;
    PBStrList = ^TBStrList;
    POleStrList = ^TOleStrList;
    TOleStrList = array[0..(high(integer) div sizeof(POleStr))-1] of POleStr;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -65,6 +69,9 @@ type
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+
+>>>>>>> origin/cpstrnew
    PBStr = ^TBStr;
    TOleEnum = type LongWord;
    LargeInt = Types.LargeInt;
@@ -97,6 +104,7 @@ type
    CY		       = CURRENCY;
    DATE	               = DOUBLE;
    BSTR	               = POLESTR;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -142,6 +150,11 @@ type
 =======
    OLE_HANDLE	       = UINT;
 >>>>>>> origin/cpstrnew
+=======
+   TOleDate	       = DATE;
+   POleDate	       = ^TOleDate;	
+   OLE_HANDLE	       = UINT;
+>>>>>>> origin/cpstrnew
    LPOLE_HANDLE        = ^OLE_HANDLE;
    OLE_COLOR	       = DWORD;
    LPOLE_COLOR         = ^OLE_COLOR;
@@ -149,6 +162,7 @@ type
    POleHandle          = LPOLE_HANDLE;
    TOleColor           = OLE_COLOR;
    POleColor           = LPOle_Color;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -256,6 +270,8 @@ CONST
    TOleDate	       = DATE;
    POleDate	       = ^TOleDate;	
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 
 CONST
    GUID_NULL  : TGUID =  '{00000000-0000-0000-0000-000000000000}';
@@ -1237,9 +1253,14 @@ TYPE
     MEMBERID            = DispId;
     HREFTYPE            = DWord;
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+    TResultList		= array[0..high(integer) div 4-50] of HResult;
+    PResultList         = ^TResultList;
+>>>>>>> origin/cpstrnew
 
     PSYSINT = ^SYSINT;
     SYSINT = LongInt;
@@ -1650,6 +1671,7 @@ TYPE
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    TBindOpts		        = tagBIND_OPTS;
    PBindOpts			= ^TBindOpts;
    Bind_Opts			= tagBind_opts;
@@ -1662,6 +1684,11 @@ TYPE
    PBindOpts			= ^TBindOpts;
    Bind_Opts			= tagBind_opts;
 >>>>>>> origin/fixes_2.4
+=======
+   TBindOpts		        = tagBIND_OPTS;
+   PBindOpts			= ^TBindOpts;
+   Bind_Opts			= tagBind_opts;
+>>>>>>> origin/cpstrnew
 
    tagBIND_OPTS2_CPP            = Record
                                     dwTrackFlags,
@@ -2053,11 +2080,15 @@ TYPE
    TYPEKIND                     = tagTYPEKIND;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    TTYPEKIND			= TYPEKIND;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+   TTYPEKIND			= TYPEKIND;
+>>>>>>> origin/cpstrnew
    INVOKEKIND                   = Dword;
    tagTYPEDESC                  = Record
                                     Case Integer OF
@@ -2150,6 +2181,7 @@ TYPE
   LPVARDESC                     = ^VARDESC;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   pVARDESC			= LPVARDESC;
   tagDISPPARAMS                 = Record
                                    rgvarg            : PVariantArgList;
@@ -2160,6 +2192,9 @@ TYPE
                                    rgdispidNamedArgs : lpDISPID;
 >>>>>>> graemeg/fixes_2_2
 =======
+=======
+  pVARDESC			= LPVARDESC;
+>>>>>>> origin/cpstrnew
   tagDISPPARAMS                 = Record
                                    rgvarg            : lpVARIANTARG;
                                    rgdispidNamedArgs : lpDISPID;
@@ -2224,6 +2259,7 @@ TYPE
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   PTYPEAttr			 = LPTYPEATTR;
 =======
 >>>>>>> graemeg/fixes_2_2
@@ -2232,6 +2268,9 @@ TYPE
 =======
   PTYPEAttr			 = LPTYPEATTR;
 >>>>>>> origin/fixes_2.4
+=======
+  PTYPEAttr			 = LPTYPEATTR;
+>>>>>>> origin/cpstrnew
 
   tagTLIBATTR                    = Record
                                      GUID        : guid;
@@ -2247,6 +2286,7 @@ TYPE
   PTLIBAttr			 = LPTLIBATTR;
 
   LPFUNCDESC                     = ^FUNCDESC;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   PFUNCDESC			 = LPFUNCDESC;
@@ -2265,6 +2305,13 @@ TYPE
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  PFUNCDESC			 = LPFUNCDESC;
+
+  tagFUNCDESC                    = Record
+                                     memid             : MEMBERID;
+                                     lprgscode         : PResultList;
+>>>>>>> origin/cpstrnew
                                      lprgelemdescParam : lpELEMDESC;    // array of param types
                                      FUNCKIND          : funckind;
                                      invkind           : INVOKEKIND;
@@ -2916,6 +2963,7 @@ TYPE
        ['{0000010c-0000-0000-C000-000000000046}']
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        Function GetClassId(out clsid:TClsId):HResult; StdCall;
 =======
        Function GetClassId(clsid:TClsId):HResult; StdCall;
@@ -2923,6 +2971,9 @@ TYPE
 =======
        Function GetClassId(clsid:TClsId):HResult; StdCall;
 >>>>>>> origin/fixes_2_2
+=======
+       Function GetClassId(out clsid:TClsId):HResult; StdCall;
+>>>>>>> origin/cpstrnew
        End;
 
     IPersistStream = Interface(IPersist)
@@ -3724,6 +3775,7 @@ TYPE
       Function  GetVarDesc(index: UINT; OUT ppVarDesc: lpVARDESC):HResult;StdCall;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       Function  GetNames(memid: MEMBERID;  rgBstrNames: PBStrList; cMaxNames: UINT; OUT pcNames: UINT):HResult;StdCall;
      {$else}
       Function  GetFuncDesc(index: UINT; OUT ppFuncDesc: LPFUNCDESC; OUT pDummy: CLEANLOCALSTORAGE):HResult;StdCall;
@@ -3741,6 +3793,13 @@ TYPE
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+      Function  GetNames(memid: MEMBERID;  rgBstrNames: PBStrList; cMaxNames: UINT; OUT pcNames: UINT):HResult;StdCall;
+     {$else}
+      Function  GetFuncDesc(index: UINT; OUT ppFuncDesc: LPFUNCDESC; OUT pDummy: CLEANLOCALSTORAGE):HResult;StdCall;
+      Function  GetVarDesc(index: UINT; OUT ppVarDesc: LPVARDESC; OUT pDummy: CLEANLOCALSTORAGE):HResult;StdCall;
+      Function  GetNames(memid: MEMBERID;  rgBstrNames: PBStrList; cMaxNames: UINT; OUT pcNames: UINT):HResult;StdCall;
+>>>>>>> origin/cpstrnew
      {$endif}
      Function  GetRefTypeOfImplType(index: UINT; OUT pRefType: HREFTYPE):HResult;StdCall;
      Function  GetImplTypeFlags(index: UINT; OUT pImplTypeFlags: WINT):HResult;StdCall;
@@ -3765,6 +3824,7 @@ TYPE
      {$ifndef Call_as}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      //Function  GetDocumentation(memid: MEMBERID; OUT pBstrName: WideString; OUT pBstrDocString: WideString; OUT pdwHelpContext: DWORD; OUT pBstrHelpFile: WideString):HResult;StdCall;
 	 Function  GetDocumentation(memid: MEMBERID; pBstrName: PWideString; pBstrDocString: PWideString; pdwHelpContext: PDWORD; pBstrHelpFile: PWideString):HResult;StdCall;
      {$else}
@@ -3779,6 +3839,12 @@ TYPE
      {$else}
      Function  GetDocumentation(memid: MEMBERID; refPtrFlags: DWORD; OUT pBstrName: WideString; OUT pBstrDocString: WideString; OUT pdwHelpContext: DWORD; OUT pBstrHelpFile: WideString):HResult;StdCall;
 >>>>>>> origin/fixes_2_2
+=======
+     //Function  GetDocumentation(memid: MEMBERID; OUT pBstrName: WideString; OUT pBstrDocString: WideString; OUT pdwHelpContext: DWORD; OUT pBstrHelpFile: WideString):HResult;StdCall;
+	 Function  GetDocumentation(memid: MEMBERID; pBstrName: PWideString; pBstrDocString: PWideString; pdwHelpContext: PDWORD; pBstrHelpFile: PWideString):HResult;StdCall;
+     {$else}
+	 Function  GetDocumentation(memid: MEMBERID; refPtrFlags: DWORD; OUT pBstrName: WideString; OUT pBstrDocString: WideString; OUT pdwHelpContext: DWORD; OUT pBstrHelpFile: WideString):HResult;StdCall;
+>>>>>>> origin/cpstrnew
      {$endif}
 
      {$ifndef Call_as}
@@ -3809,6 +3875,7 @@ TYPE
      {$ifndef Call_as}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       Procedure ReleaseTypeAttr( pTypeAttr: pTypeAttr); StdCall;
 =======
       Procedure ReleaseTypeAttr(Const pTypeAttr: TypeAttr); StdCall;
@@ -3816,11 +3883,15 @@ TYPE
 =======
       Procedure ReleaseTypeAttr(Const pTypeAttr: TypeAttr); StdCall;
 >>>>>>> origin/fixes_2_2
+=======
+      Procedure ReleaseTypeAttr( pTypeAttr: pTypeAttr); StdCall;
+>>>>>>> origin/cpstrnew
      {$else}
       Function  ReleaseTypeAttr():HResult;StdCall;
      {$endif}
 
      {$ifndef Call_as}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       Procedure ReleaseFuncDesc( pFuncDesc : lpFUNCDESC); StdCall;
@@ -3830,10 +3901,14 @@ TYPE
 =======
       Procedure ReleaseFuncDesc(const pFuncDesc : FUNCDESC); StdCall;
 >>>>>>> origin/fixes_2_2
+=======
+      Procedure ReleaseFuncDesc( pFuncDesc : lpFUNCDESC); StdCall;
+>>>>>>> origin/cpstrnew
      {$else}
       Function  LocalReleaseFuncDesc():HResult;StdCall;
      {$endif}
      {$ifndef Call_as}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       Procedure ReleaseVarDesc( pVarDesc : lpVarDesc); stdcall;
@@ -3843,6 +3918,9 @@ TYPE
 =======
       Procedure ReleaseVarDesc(Const pVarDesc : VarDesc);
 >>>>>>> origin/fixes_2_2
+=======
+      Procedure ReleaseVarDesc( pVarDesc : lpVarDesc); stdcall;
+>>>>>>> origin/cpstrnew
      {$else}
       Function  LocalReleaseVarDesc():HResult;StdCall;
      {$endif}
@@ -3862,6 +3940,7 @@ TYPE
      {$ifndef Call_as}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       Function  GetDocumentation2(memid: MEMBERID; lcid: LCID;  pbstrHelpString: PWideString; pdwHelpStringContext: PDWORD; pbstrHelpStringDll: PWideString):HResult;StdCall;
      {$else}
       Function  GetDocumentation2(memid: MEMBERID; lcid: LCID; refPtrFlags: DWORD; pbstrHelpString: PWideString;  pdwHelpStringContext: PDWORD; pbstrHelpStringDll: PWideString):HResult;StdCall;
@@ -3875,6 +3954,11 @@ TYPE
      {$else}
       Function  GetDocumentation2(memid: MEMBERID; lcid: LCID; refPtrFlags: DWORD; OUT pbstrHelpString: WideString; OUT pdwHelpStringContext: DWORD; OUT pbstrHelpStringDll: WideString):HResult;StdCall;
 >>>>>>> origin/fixes_2_2
+=======
+      Function  GetDocumentation2(memid: MEMBERID; lcid: LCID;  pbstrHelpString: PWideString; pdwHelpStringContext: PDWORD; pbstrHelpStringDll: PWideString):HResult;StdCall;
+     {$else}
+      Function  GetDocumentation2(memid: MEMBERID; lcid: LCID; refPtrFlags: DWORD; pbstrHelpString: PWideString;  pdwHelpStringContext: PDWORD; pbstrHelpStringDll: PWideString):HResult;StdCall;
+>>>>>>> origin/cpstrnew
      {$endif}
      Function  GetAllCustData(OUT pCustData: CUSTDATA):HResult;StdCall;
      Function  GetAllFuncCustData(index: UINT; OUT pCustData: CUSTDATA):HResult;StdCall;
@@ -3954,6 +4038,7 @@ TYPE
      {$ifndef Call_as}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Function  GetDocumentation2(index: WINT; lcid: LCID;  pbstrHelpString: PWideString;  pdwHelpStringContext: PDWORD;  pbstrHelpStringDll: PWideString):HResult;StdCall;
      {$else}
      Function  GetDocumentation2(index: WINT; lcid: LCID; refPtrFlags: DWORD; pbstrHelpString: PWideString; pdwHelpStringContext: PDWORD; pbstrHelpStringDll: PWideString):HResult;StdCall;
@@ -3967,6 +4052,11 @@ TYPE
      {$else}
      Function  GetDocumentation2(index: WINT; lcid: LCID; refPtrFlags: DWORD; OUT pbstrHelpString: WideString; OUT pdwHelpStringContext: DWORD; OUT pbstrHelpStringDll: WideString):HResult;StdCall;
 >>>>>>> origin/fixes_2_2
+=======
+     Function  GetDocumentation2(index: WINT; lcid: LCID;  pbstrHelpString: PWideString;  pdwHelpStringContext: PDWORD;  pbstrHelpStringDll: PWideString):HResult;StdCall;
+     {$else}
+     Function  GetDocumentation2(index: WINT; lcid: LCID; refPtrFlags: DWORD; pbstrHelpString: PWideString; pdwHelpStringContext: PDWORD; pbstrHelpStringDll: PWideString):HResult;StdCall;
+>>>>>>> origin/cpstrnew
      {$endif}
      Function  GetAllCustData(OUT pCustData: CUSTDATA):HResult;StdCall;
      End;
@@ -4793,6 +4883,7 @@ Type
      ['{0002E013-0000-0000-C000-000000000046}']
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      function EnumCategories(lcid:lcid;out ppenumCategoryInfo : IEnumCategoryInfo):HResult; StdCall;
 =======
      function EnumCategories(lcid:lcid;out ppenumCategoryInfo : ICatInformation):HResult; StdCall;
@@ -4800,6 +4891,9 @@ Type
 =======
      function EnumCategories(lcid:lcid;out ppenumCategoryInfo : ICatInformation):HResult; StdCall;
 >>>>>>> origin/fixes_2_2
+=======
+     function EnumCategories(lcid:lcid;out ppenumCategoryInfo : IEnumCategoryInfo):HResult; StdCall;
+>>>>>>> origin/cpstrnew
      function GetCategoryDesc(rcatid:PCATID;lcid:LCID;out pszdesc:lpwstr):HResult; StdCall;
      function EnumClassesOfCategories(cImplemented : ULong; rgcatidImpl:PCATID;cRequired:ULong; rgcatidreq:PCATID; out ppenumclsid : IEnumClsID):HResult; StdCall;
      function ISClassOfCategories(rclsid:pclsid;cImplemented:ULong;rgcatidimpl:PCATID;CRequired:ULONG;rgcatidreq : pcatid):HResult; StdCall;
@@ -4811,6 +4905,7 @@ Type
      ['{0000013A-0000-0000-C000-000000000046}']
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      function Create(const rfmtid:FMTID; const pclsid:CLSID; grfFlags:DWORD; grfMode:DWORD; out ppprstg:IPropertyStorage):HRESULT; StdCall;
 =======
      function Create(const rfmtid:FMTID; const pclsid:CLSID; grfFlags:DWORD; grfMode:DWORD; out ppprstg:IPropertyStorage):HRESULT;
@@ -4818,6 +4913,9 @@ Type
 =======
      function Create(const rfmtid:FMTID; const pclsid:CLSID; grfFlags:DWORD; grfMode:DWORD; out ppprstg:IPropertyStorage):HRESULT;
 >>>>>>> origin/fixes_2_2
+=======
+     function Create(const rfmtid:FMTID; const pclsid:CLSID; grfFlags:DWORD; grfMode:DWORD; out ppprstg:IPropertyStorage):HRESULT; StdCall;
+>>>>>>> origin/cpstrnew
      function Open(const fmtid:FMTID; grfMode:DWORD; out ppprstg:IPropertyStorage):HRESULT; StdCall;
      function Delete(const rfmtid:FMTID):HRESULT; StdCall;
      function Enum(out ppenum:IEnumSTATPROPSETSTG):HRESULT; StdCall;
@@ -5662,11 +5760,15 @@ type
   function  SysStringLen(bstr:pointer):UINT; stdcall; external oleaut32dll name 'SysStringLen';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   function  SysStringByteLen(bstr:pointer):UINT; stdcall; external oleaut32dll name 'SysStringByteLen';
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  function  SysStringByteLen(bstr:pointer):UINT; stdcall; external oleaut32dll name 'SysStringByteLen';
+>>>>>>> origin/cpstrnew
   function  SysReAllocString(var bstr:pointer;psz: pointer): Integer; stdcall; external oleaut32dll name 'SysReAllocString';
   function  SysReAllocStringLen(var bstr:pointer;psz: pointer; len:dword): Integer; stdcall; external oleaut32dll name 'SysReAllocStringLen';
 
@@ -5720,6 +5822,7 @@ function VariantTimeToDosDateTime( vtime:DOUBLE;pwdosdate:PUSHORT;pwDosTime:PUSH
 
 function SystemTimeToVariantTime(var lpsystemtime:TSystemTime;out pvtime: TOleDate):LONGINT; stdcall; external oleaut32dll name 'SystemTimeToVariantTime';
 function VariantTimeToSystemTime(vtime:TOleDate; out lpsystemtime: TSystemTime):LONGINT; stdcall; external oleaut32dll name 'VariantTimeToSystemTime';
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/fixes_2_2
@@ -5741,6 +5844,8 @@ function VariantTimeToSystemTime(vtime:DOUBLE; lpsystemtime: LPSYSTEMTIME):LONGI
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
 
 
 {--------------------------------------------------------------------- }

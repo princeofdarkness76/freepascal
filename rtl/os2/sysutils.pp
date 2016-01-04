@@ -568,6 +568,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> origin/cpstrnew
 function FileRead (Handle: THandle; Out Buffer; Count: longint): longint;
 =======
@@ -576,6 +577,9 @@ function FileRead (Handle: THandle; var Buffer; Count: longint): longint;
 =======
 function FileRead (Handle: THandle; var Buffer; Count: longint): longint;
 >>>>>>> origin/fixes_2_2
+=======
+function FileRead (Handle: THandle; Out Buffer; Count: longint): longint;
+>>>>>>> origin/cpstrnew
 Var
   T: cardinal;
   RC: cardinal;
@@ -1102,6 +1106,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   DosBeep (800, 250);
 end;
 
@@ -1117,6 +1122,10 @@ end;
   // Maybe implement later on ?
 
 >>>>>>> graemeg/cpstrnew
+=======
+  // Maybe implement later on ?
+
+>>>>>>> origin/cpstrnew
 =======
   // Maybe implement later on ?
 
@@ -1548,6 +1557,7 @@ Initialization
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   LastOSError := 0;
   OrigOSErrorWatch := TOSErrorWatch (SetOSErrorTracking (@TrackLastOSError));
 =======
@@ -1556,6 +1566,8 @@ Initialization
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
 Finalization

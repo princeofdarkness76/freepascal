@@ -1159,6 +1159,7 @@ begin
   FValue:=AValue;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   FBound:=not VarIsClear(AValue);
 =======
   FBound:=not VarIsClear(Value);
@@ -1166,6 +1167,9 @@ begin
 =======
   FBound:=not VarIsClear(Value);
 >>>>>>> origin/fixes_2_2
+=======
+  FBound:=not VarIsClear(AValue);
+>>>>>>> origin/cpstrnew
   if FDataType = ftUnknown then
     case VarType(Value) of
       varBoolean  : FDataType:=ftBoolean;

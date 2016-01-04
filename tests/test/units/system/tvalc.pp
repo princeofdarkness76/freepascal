@@ -1,8 +1,11 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew
 unit tvalc;
 
 interface
@@ -66,6 +69,7 @@ begin
 end;
 
 end.
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
@@ -139,3 +143,5 @@ end.
 >>>>>>> origin/fixes_2_2
 =======
 >>>>>>> origin/fixes_2.4
+=======
+>>>>>>> origin/cpstrnew

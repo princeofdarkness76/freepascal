@@ -84,6 +84,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     inc(x[it.Data]);
 =======
     inc(x[it.GetValue]);
@@ -94,6 +95,9 @@ begin
 =======
     inc(x[it.GetValue]);
 >>>>>>> graemeg/cpstrnew
+=======
+    inc(x[it.GetValue]);
+>>>>>>> origin/cpstrnew
 =======
     inc(x[it.GetValue]);
 >>>>>>> origin/cpstrnew

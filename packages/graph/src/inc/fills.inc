@@ -70,12 +70,17 @@ var
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   LastPolygonStart : Longint;
   Closing, PrevClosing : Boolean;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  LastPolygonStart : Longint;
+  Closing, PrevClosing : Boolean;
+>>>>>>> origin/cpstrnew
 
 begin
 { /********************************************************************
@@ -95,18 +100,26 @@ begin
   nEdges := 0;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   LastPolygonStart := 0;
   Closing := false;
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+  LastPolygonStart := 0;
+  Closing := false;
+>>>>>>> origin/cpstrnew
   for i := 0 to (numpoints-1) do begin
     p0 := ptable[i];
     if (i+1) >= numpoints then p1 := ptable[0]
     else p1 := ptable[i+1];
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
     { save the 'closing' flag for the previous edge }
     PrevClosing := Closing;
     { check if the current edge is 'closing'. This means that it 'closes'
@@ -228,6 +241,9 @@ begin
     i := 0;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
     while (i < (nActive - 1)) do begin
       x0 := AET^[i]^.x;
       x1 := AET^[i+1]^.x;
@@ -284,6 +300,9 @@ begin
   end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 
   { finally, draw the edges }
   LastPolygonStart := 0;
@@ -315,10 +334,13 @@ begin
     Line(p0.x,p0.y,p1.x,p1.y);
   end;
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/fixes_2_2
 =======
 >>>>>>> origin/fixes_2_2
+=======
+>>>>>>> origin/cpstrnew
   System.freemem(et, sizeof(tedge) * numpoints);
   System.freemem(get, sizeof(pedge) * numpoints);
   System.freemem(aet, sizeof(pedge) * numpoints);
